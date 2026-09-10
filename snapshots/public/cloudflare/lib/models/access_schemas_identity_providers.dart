@@ -1,64 +1,93 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_azure_ad.dart';import 'access_schemas_centrify.dart';import 'access_schemas_facebook.dart';import 'access_schemas_github.dart';import 'access_schemas_google.dart';import 'access_schemas_google_apps.dart';import 'access_schemas_linkedin.dart';import 'access_schemas_oidc.dart';import 'access_schemas_okta.dart';import 'access_schemas_onelogin.dart';import 'access_schemas_pingone.dart';import 'access_schemas_saml.dart';import 'access_schemas_yandex.dart';final class AccessSchemasIdentityProviders {const AccessSchemasIdentityProviders({this.accessSchemasAzureAd, this.accessSchemasCentrify, this.accessSchemasFacebook, this.accessSchemasGithub, this.accessSchemasGoogle, this.accessSchemasGoogleApps, this.accessSchemasLinkedin, this.accessSchemasOidc, this.accessSchemasOkta, this.accessSchemasOnelogin, this.accessSchemasPingone, this.accessSchemasSaml, this.accessSchemasYandex, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_azure_ad.dart';import 'access_schemas_centrify.dart';import 'access_schemas_facebook.dart';import 'access_schemas_github.dart';import 'access_schemas_google.dart';import 'access_schemas_google_apps.dart';import 'access_schemas_linkedin.dart';import 'access_schemas_oidc.dart';import 'access_schemas_okta.dart';import 'access_schemas_onelogin.dart';import 'access_schemas_pingone.dart';import 'access_schemas_saml.dart';import 'access_schemas_yandex.dart';
+@immutable
+final class AccessSchemasIdentityProviders {
+  const AccessSchemasIdentityProviders({this.accessSchemasAzureAd = const Omittable.absent(),
+this.accessSchemasCentrify = const Omittable.absent(),
+this.accessSchemasFacebook = const Omittable.absent(),
+this.accessSchemasGithub = const Omittable.absent(),
+this.accessSchemasGoogle = const Omittable.absent(),
+this.accessSchemasGoogleApps = const Omittable.absent(),
+this.accessSchemasLinkedin = const Omittable.absent(),
+this.accessSchemasOidc = const Omittable.absent(),
+this.accessSchemasOkta = const Omittable.absent(),
+this.accessSchemasOnelogin = const Omittable.absent(),
+this.accessSchemasPingone = const Omittable.absent(),
+this.accessSchemasSaml = const Omittable.absent(),
+this.accessSchemasYandex = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const AccessSchemasIdentityProviders._({required this.rawValue, required this.accessSchemasAzureAd,
+required this.accessSchemasCentrify,
+required this.accessSchemasFacebook,
+required this.accessSchemasGithub,
+required this.accessSchemasGoogle,
+required this.accessSchemasGoogleApps,
+required this.accessSchemasLinkedin,
+required this.accessSchemasOidc,
+required this.accessSchemasOkta,
+required this.accessSchemasOnelogin,
+required this.accessSchemasPingone,
+required this.accessSchemasSaml,
+required this.accessSchemasYandex,});
+  factory AccessSchemasIdentityProviders.fromJson(Object? json) => AccessSchemasIdentityProviders._(
+    rawValue: Omittable(json),
+    accessSchemasAzureAd: parseAnyOfVariant<AccessSchemasAzureAd>(json, (value) => AccessSchemasAzureAd.fromJson(value! as Map<String, dynamic>)),
+accessSchemasCentrify: parseAnyOfVariant<AccessSchemasCentrify>(json, (value) => AccessSchemasCentrify.fromJson(value! as Map<String, dynamic>)),
+accessSchemasFacebook: parseAnyOfVariant<AccessSchemasFacebook>(json, (value) => AccessSchemasFacebook.fromJson(value! as Map<String, dynamic>)),
+accessSchemasGithub: parseAnyOfVariant<AccessSchemasGithub>(json, (value) => AccessSchemasGithub.fromJson(value! as Map<String, dynamic>)),
+accessSchemasGoogle: parseAnyOfVariant<AccessSchemasGoogle>(json, (value) => AccessSchemasGoogle.fromJson(value! as Map<String, dynamic>)),
+accessSchemasGoogleApps: parseAnyOfVariant<AccessSchemasGoogleApps>(json, (value) => AccessSchemasGoogleApps.fromJson(value! as Map<String, dynamic>)),
+accessSchemasLinkedin: parseAnyOfVariant<AccessSchemasLinkedin>(json, (value) => AccessSchemasLinkedin.fromJson(value! as Map<String, dynamic>)),
+accessSchemasOidc: parseAnyOfVariant<AccessSchemasOidc>(json, (value) => AccessSchemasOidc.fromJson(value! as Map<String, dynamic>)),
+accessSchemasOkta: parseAnyOfVariant<AccessSchemasOkta>(json, (value) => AccessSchemasOkta.fromJson(value! as Map<String, dynamic>)),
+accessSchemasOnelogin: parseAnyOfVariant<AccessSchemasOnelogin>(json, (value) => AccessSchemasOnelogin.fromJson(value! as Map<String, dynamic>)),
+accessSchemasPingone: parseAnyOfVariant<AccessSchemasPingone>(json, (value) => AccessSchemasPingone.fromJson(value! as Map<String, dynamic>)),
+accessSchemasSaml: parseAnyOfVariant<AccessSchemasSaml>(json, (value) => AccessSchemasSaml.fromJson(value! as Map<String, dynamic>)),
+accessSchemasYandex: parseAnyOfVariant<AccessSchemasYandex>(json, (value) => AccessSchemasYandex.fromJson(value! as Map<String, dynamic>)),
+  );
 
-factory AccessSchemasIdentityProviders.fromJson(Map<String, dynamic> json) { return AccessSchemasIdentityProviders(
-  accessSchemasAzureAd: AccessSchemasAzureAd.canParse(json) ? AccessSchemasAzureAd.fromJson(json) : null,
-  accessSchemasCentrify: AccessSchemasCentrify.canParse(json) ? AccessSchemasCentrify.fromJson(json) : null,
-  accessSchemasFacebook: AccessSchemasFacebook.canParse(json) ? AccessSchemasFacebook.fromJson(json) : null,
-  accessSchemasGithub: AccessSchemasGithub.canParse(json) ? AccessSchemasGithub.fromJson(json) : null,
-  accessSchemasGoogle: AccessSchemasGoogle.canParse(json) ? AccessSchemasGoogle.fromJson(json) : null,
-  accessSchemasGoogleApps: AccessSchemasGoogleApps.canParse(json) ? AccessSchemasGoogleApps.fromJson(json) : null,
-  accessSchemasLinkedin: AccessSchemasLinkedin.canParse(json) ? AccessSchemasLinkedin.fromJson(json) : null,
-  accessSchemasOidc: AccessSchemasOidc.canParse(json) ? AccessSchemasOidc.fromJson(json) : null,
-  accessSchemasOkta: AccessSchemasOkta.canParse(json) ? AccessSchemasOkta.fromJson(json) : null,
-  accessSchemasOnelogin: AccessSchemasOnelogin.canParse(json) ? AccessSchemasOnelogin.fromJson(json) : null,
-  accessSchemasPingone: AccessSchemasPingone.canParse(json) ? AccessSchemasPingone.fromJson(json) : null,
-  accessSchemasSaml: AccessSchemasSaml.canParse(json) ? AccessSchemasSaml.fromJson(json) : null,
-  accessSchemasYandex: AccessSchemasYandex.canParse(json) ? AccessSchemasYandex.fromJson(json) : null,
-); }
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<AccessSchemasAzureAd> accessSchemasAzureAd;
+final Omittable<AccessSchemasCentrify> accessSchemasCentrify;
+final Omittable<AccessSchemasFacebook> accessSchemasFacebook;
+final Omittable<AccessSchemasGithub> accessSchemasGithub;
+final Omittable<AccessSchemasGoogle> accessSchemasGoogle;
+final Omittable<AccessSchemasGoogleApps> accessSchemasGoogleApps;
+final Omittable<AccessSchemasLinkedin> accessSchemasLinkedin;
+final Omittable<AccessSchemasOidc> accessSchemasOidc;
+final Omittable<AccessSchemasOkta> accessSchemasOkta;
+final Omittable<AccessSchemasOnelogin> accessSchemasOnelogin;
+final Omittable<AccessSchemasPingone> accessSchemasPingone;
+final Omittable<AccessSchemasSaml> accessSchemasSaml;
+final Omittable<AccessSchemasYandex> accessSchemasYandex;
 
-final AccessSchemasAzureAd? accessSchemasAzureAd;
+  /// Whether at least one known variant matched.
+  bool get isValid => accessSchemasAzureAd.isPresent || accessSchemasCentrify.isPresent || accessSchemasFacebook.isPresent || accessSchemasGithub.isPresent || accessSchemasGoogle.isPresent || accessSchemasGoogleApps.isPresent || accessSchemasLinkedin.isPresent || accessSchemasOidc.isPresent || accessSchemasOkta.isPresent || accessSchemasOnelogin.isPresent || accessSchemasPingone.isPresent || accessSchemasSaml.isPresent || accessSchemasYandex.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
 
-final AccessSchemasCentrify? accessSchemasCentrify;
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (accessSchemasAzureAd.isPresent) accessSchemasAzureAd.value?.toJson(),
+if (accessSchemasCentrify.isPresent) accessSchemasCentrify.value?.toJson(),
+if (accessSchemasFacebook.isPresent) accessSchemasFacebook.value?.toJson(),
+if (accessSchemasGithub.isPresent) accessSchemasGithub.value?.toJson(),
+if (accessSchemasGoogle.isPresent) accessSchemasGoogle.value?.toJson(),
+if (accessSchemasGoogleApps.isPresent) accessSchemasGoogleApps.value?.toJson(),
+if (accessSchemasLinkedin.isPresent) accessSchemasLinkedin.value?.toJson(),
+if (accessSchemasOidc.isPresent) accessSchemasOidc.value?.toJson(),
+if (accessSchemasOkta.isPresent) accessSchemasOkta.value?.toJson(),
+if (accessSchemasOnelogin.isPresent) accessSchemasOnelogin.value?.toJson(),
+if (accessSchemasPingone.isPresent) accessSchemasPingone.value?.toJson(),
+if (accessSchemasSaml.isPresent) accessSchemasSaml.value?.toJson(),
+if (accessSchemasYandex.isPresent) accessSchemasYandex.value?.toJson(),
+  ]);
 
-final AccessSchemasFacebook? accessSchemasFacebook;
-
-final AccessSchemasGithub? accessSchemasGithub;
-
-final AccessSchemasGoogle? accessSchemasGoogle;
-
-final AccessSchemasGoogleApps? accessSchemasGoogleApps;
-
-final AccessSchemasLinkedin? accessSchemasLinkedin;
-
-final AccessSchemasOidc? accessSchemasOidc;
-
-final AccessSchemasOkta? accessSchemasOkta;
-
-final AccessSchemasOnelogin? accessSchemasOnelogin;
-
-final AccessSchemasPingone? accessSchemasPingone;
-
-final AccessSchemasSaml? accessSchemasSaml;
-
-final AccessSchemasYandex? accessSchemasYandex;
-
-/// At least one variant must be present.
-bool get isValid { return accessSchemasAzureAd != null || accessSchemasCentrify != null || accessSchemasFacebook != null || accessSchemasGithub != null || accessSchemasGoogle != null || accessSchemasGoogleApps != null || accessSchemasLinkedin != null || accessSchemasOidc != null || accessSchemasOkta != null || accessSchemasOnelogin != null || accessSchemasPingone != null || accessSchemasSaml != null || accessSchemasYandex != null; } 
-Map<String, dynamic> toJson() { return {
-  ...?accessSchemasAzureAd?.toJson(),
-  ...?accessSchemasCentrify?.toJson(),
-  ...?accessSchemasFacebook?.toJson(),
-  ...?accessSchemasGithub?.toJson(),
-  ...?accessSchemasGoogle?.toJson(),
-  ...?accessSchemasGoogleApps?.toJson(),
-  ...?accessSchemasLinkedin?.toJson(),
-  ...?accessSchemasOidc?.toJson(),
-  ...?accessSchemasOkta?.toJson(),
-  ...?accessSchemasOnelogin?.toJson(),
-  ...?accessSchemasPingone?.toJson(),
-  ...?accessSchemasSaml?.toJson(),
-  ...?accessSchemasYandex?.toJson(),
-}; } 
- }
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is AccessSchemasIdentityProviders && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'AccessSchemasIdentityProviders(${toJson()})';
+}

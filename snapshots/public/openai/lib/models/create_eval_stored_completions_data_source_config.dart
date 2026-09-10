@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Deprecated in favor of LogsDataSourceConfig.
 /// 
-@immutable final class CreateEvalStoredCompletionsDataSourceConfig {const CreateEvalStoredCompletionsDataSourceConfig({this.type = CreateEvalStoredCompletionsDataSourceConfigType.storedCompletions, this.metadata, });
+@immutable final class CreateEvalStoredCompletionsDataSourceConfig {const CreateEvalStoredCompletionsDataSourceConfig({required this.type, this.metadata, });
 
 factory CreateEvalStoredCompletionsDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalStoredCompletionsDataSourceConfig(
   type: CreateEvalStoredCompletionsDataSourceConfigType.fromJson(json['type'] as String),

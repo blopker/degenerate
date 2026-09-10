@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_configurations2.dart';import 'firewall_lockdowns_components_schemas_id.dart';import 'firewall_modified_on.dart';import 'firewall_schemas_cidr_configuration.dart';import 'firewall_schemas_ip_configuration.dart';import 'firewall_schemas_paused.dart';/// The timestamp of when the rule was created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_configurations2.dart';import 'firewall_lockdowns_components_schemas_id.dart';import 'firewall_modified_on.dart';import 'firewall_schemas_paused.dart';/// The timestamp of when the rule was created.
 extension type FirewallCreatedOn(DateTime value) {
 factory FirewallCreatedOn.fromJson(String json) => FirewallCreatedOn(DateTime.parse(json));
 
@@ -17,7 +17,7 @@ String toJson() => value;
 @immutable final class FirewallZonelockdown {const FirewallZonelockdown({required this.configurations, required this.createdOn, required this.description, required this.id, required this.modifiedOn, required this.paused, required this.urls, });
 
 factory FirewallZonelockdown.fromJson(Map<String, dynamic> json) { return FirewallZonelockdown(
-  configurations: (json['configurations'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => FirewallSchemasIpConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallSchemasCidrConfiguration.fromJson(v as Map<String, dynamic>),)).toList(),
+  configurations: (json['configurations'] as List<dynamic>).map(FirewallConfigurations2.fromJson).toList(),
   createdOn: FirewallCreatedOn.fromJson(json['created_on'] as String),
   description: FirewallLockdownsComponentsSchemasDescription.fromJson(json['description'] as String),
   id: FirewallLockdownsComponentsSchemasId.fromJson(json['id'] as String),

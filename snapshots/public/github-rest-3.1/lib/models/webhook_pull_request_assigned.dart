@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory WebhookPullRequestAssigned.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAssigned(
   action: WebhookPullRequestAssignedAction.fromJson(json['action'] as String),
-  assignee: WebhooksUser.fromJson(json['assignee'] as Map<String, dynamic>),
+  assignee: json['assignee'] != null ? WebhooksUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   number: WebhooksNumber.fromJson(json['number'] as num),
@@ -37,7 +37,7 @@ factory WebhookPullRequestAssigned.fromJson(Map<String, dynamic> json) { return 
 
 final WebhookPullRequestAssignedAction action;
 
-final WebhooksUser assignee;
+final WebhooksUser? assignee;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -56,7 +56,7 @@ final SimpleUser sender;
 
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
-  'assignee': assignee.toJson(),
+  'assignee': assignee?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'number': number.toJson(),
@@ -71,9 +71,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('pull_request') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookPullRequestAssigned copyWith({WebhookPullRequestAssignedAction? action, WebhooksUser? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestAssignedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestAssigned(
+WebhookPullRequestAssigned copyWith({WebhookPullRequestAssignedAction? action, WebhooksUser? Function()? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestAssignedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestAssigned(
   action: action ?? this.action,
-  assignee: assignee ?? this.assignee,
+  assignee: assignee != null ? assignee() : this.assignee,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   number: number ?? this.number,

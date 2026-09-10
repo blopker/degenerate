@@ -37,7 +37,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectGroupListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectGroupListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -58,7 +59,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectGroup.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectGroup.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -77,7 +79,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectGroupDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectGroupDeletedResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

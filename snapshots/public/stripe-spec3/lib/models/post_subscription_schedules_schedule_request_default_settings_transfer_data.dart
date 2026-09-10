@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2($value)'; } 
  }
-typedef PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData = OneOf2<TransferDataSpecs6,PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2>;
+
+@immutable
+final class PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData {
+  const PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData({this.transferDataSpecs6 = const Omittable.absent(),
+this.postSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData._({required this.rawValue, required this.transferDataSpecs6,
+required this.postSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2,});
+  factory PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData.fromJson(Object? json) => PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData._(
+    rawValue: Omittable(json),
+    transferDataSpecs6: parseAnyOfVariant<TransferDataSpecs6>(json, (value) => TransferDataSpecs6.fromJson(value! as Map<String, dynamic>)),
+postSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2: parseAnyOfVariant<PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2>(json, (value) => PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<TransferDataSpecs6> transferDataSpecs6;
+final Omittable<PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2> postSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => transferDataSpecs6.isPresent || postSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (transferDataSpecs6.isPresent) transferDataSpecs6.value?.toJson(),
+if (postSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2.isPresent) postSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData(${toJson()})';
+}

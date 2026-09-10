@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2($value)'; } 
  }
-typedef PostSubscriptionSchedulesScheduleRequestPhasesDescription = OneOf2<String,PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2>;
+
+@immutable
+final class PostSubscriptionSchedulesScheduleRequestPhasesDescription {
+  const PostSubscriptionSchedulesScheduleRequestPhasesDescription({this.string = const Omittable.absent(),
+this.postSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSubscriptionSchedulesScheduleRequestPhasesDescription._({required this.rawValue, required this.string,
+required this.postSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2,});
+  factory PostSubscriptionSchedulesScheduleRequestPhasesDescription.fromJson(Object? json) => PostSubscriptionSchedulesScheduleRequestPhasesDescription._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2: parseAnyOfVariant<PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2>(json, (value) => PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2> postSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2.isPresent) postSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSubscriptionSchedulesScheduleRequestPhasesDescription && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSubscriptionSchedulesScheduleRequestPhasesDescription(${toJson()})';
+}

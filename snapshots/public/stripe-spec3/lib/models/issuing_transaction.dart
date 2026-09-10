@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_authorization.dart';import 'issuing_authorization_merchant_data.dart';import 'issuing_card.dart';import 'issuing_cardholder.dart';import 'issuing_dispute.dart';import 'issuing_token.dart';import 'issuing_transaction_amount_details.dart';import 'issuing_transaction_authorization.dart';import 'issuing_transaction_balance_transaction.dart';import 'issuing_transaction_card.dart';import 'issuing_transaction_cardholder.dart';import 'issuing_transaction_dispute.dart';import 'issuing_transaction_network_data.dart';import 'issuing_transaction_purchase_details.dart';import 'issuing_transaction_token.dart';import 'issuing_transaction_treasury.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_merchant_data.dart';import 'issuing_transaction_amount_details.dart';import 'issuing_transaction_authorization.dart';import 'issuing_transaction_balance_transaction.dart';import 'issuing_transaction_card.dart';import 'issuing_transaction_cardholder.dart';import 'issuing_transaction_dispute.dart';import 'issuing_transaction_network_data.dart';import 'issuing_transaction_purchase_details.dart';import 'issuing_transaction_token.dart';import 'issuing_transaction_treasury.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingTransactionObject {const IssuingTransactionObject._(this.value);
 
 factory IssuingTransactionObject.fromJson(String json) { return switch (json) {
@@ -85,13 +85,13 @@ bool get isUnknown { return !values.contains(this); }
 factory IssuingTransaction.fromJson(Map<String, dynamic> json) { return IssuingTransaction(
   amount: (json['amount'] as num).toInt(),
   amountDetails: json.containsKey('amount_details') ? Omittable(json['amount_details'] != null ? IssuingTransactionAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  authorization: json.containsKey('authorization') ? Omittable(json['authorization'] != null ? OneOf2.parse(json['authorization'], fromA: (v) => v as String, fromB: (v) => IssuingAuthorization.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  card: OneOf2.parse(json['card'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),),
-  cardholder: json.containsKey('cardholder') ? Omittable(json['cardholder'] != null ? OneOf2.parse(json['cardholder'], fromA: (v) => v as String, fromB: (v) => IssuingCardholder.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  authorization: json.containsKey('authorization') ? Omittable(json['authorization'] != null ? IssuingTransactionAuthorization.fromJson(json['authorization']) : null) : const Omittable.absent(),
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? IssuingTransactionBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
+  card: IssuingTransactionCard.fromJson(json['card']),
+  cardholder: json.containsKey('cardholder') ? Omittable(json['cardholder'] != null ? IssuingTransactionCardholder.fromJson(json['cardholder']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  dispute: json.containsKey('dispute') ? Omittable(json['dispute'] != null ? OneOf2.parse(json['dispute'], fromA: (v) => v as String, fromB: (v) => IssuingDispute.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  dispute: json.containsKey('dispute') ? Omittable(json['dispute'] != null ? IssuingTransactionDispute.fromJson(json['dispute']) : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   merchantAmount: (json['merchant_amount'] as num).toInt(),
@@ -101,7 +101,7 @@ factory IssuingTransaction.fromJson(Map<String, dynamic> json) { return IssuingT
   networkData: json.containsKey('network_data') ? Omittable(json['network_data'] != null ? IssuingTransactionNetworkData.fromJson(json['network_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   object: IssuingTransactionObject.fromJson(json['object'] as String),
   purchaseDetails: json.containsKey('purchase_details') ? Omittable(json['purchase_details'] != null ? IssuingTransactionPurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  token: json.containsKey('token') ? Omittable(json['token'] != null ? OneOf2.parse(json['token'], fromA: (v) => v as String, fromB: (v) => IssuingToken.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  token: json.containsKey('token') ? Omittable(json['token'] != null ? IssuingTransactionToken.fromJson(json['token']) : null) : const Omittable.absent(),
   treasury: json.containsKey('treasury') ? Omittable(json['treasury'] != null ? IssuingTransactionTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: IssuingTransactionType.fromJson(json['type'] as String),
   wallet: json.containsKey('wallet') ? Omittable(json['wallet'] != null ? IssuingTransactionWallet.fromJson(json['wallet'] as String) : null) : const Omittable.absent(),

@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SummaryTextContentType($value)'; } 
  }
 /// A summary text from the model.
-@immutable final class SummaryTextContent {const SummaryTextContent({required this.text, this.type = SummaryTextContentType.summaryText, });
+@immutable final class SummaryTextContent {const SummaryTextContent({required this.type, required this.text, });
 
 factory SummaryTextContent.fromJson(Map<String, dynamic> json) { return SummaryTextContent(
   type: SummaryTextContentType.fromJson(json['type'] as String),

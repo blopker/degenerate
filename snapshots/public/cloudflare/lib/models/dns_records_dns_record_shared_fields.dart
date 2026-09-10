@@ -8,7 +8,7 @@ factory DnsRecordsDnsRecordSharedFields.fromJson(Map<String, dynamic> json) { re
   proxied: json['proxied'] != null ? DnsRecordsProxied.fromJson(json['proxied'] as bool) : null,
   settings: json['settings'] != null ? DnsRecordsSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  ttl: json['ttl'] != null ? OneOf2.parse(json['ttl'], fromA: (v) => (v as num).toDouble(), fromB: (v) => DnsRecordsTtlVariant2.fromJson((v as num).toDouble()),) : null,
+  ttl: json['ttl'] != null ? DnsRecordsTtl.fromJson(json['ttl']) : null,
 ); }
 
 /// Comments or notes about the DNS record. This field has no effect on DNS responses.

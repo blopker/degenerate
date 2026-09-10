@@ -1,25 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// TokenRequestStatus is the result of a token request.
-@immutable final class TokenRequestStatus {const TokenRequestStatus({this.expirationTimestamp, this.token = '', });
+@immutable final class TokenRequestStatus {const TokenRequestStatus({this.expirationTimestamp, this.token, });
 
 factory TokenRequestStatus.fromJson(Map<String, dynamic> json) { return TokenRequestStatus(
   expirationTimestamp: json['expirationTimestamp'] != null ? Time.fromJson(json['expirationTimestamp'] as String) : null,
-  token: json.containsKey('token') ? json['token'] as String : '',
+  token: json['token'] as String?,
 ); }
 
 /// expirationTimestamp is the time of expiration of the returned token.
 final Time? expirationTimestamp;
 
 /// token is the opaque bearer token.
-final String token;
+final String? token;
 
+/// The value with the schema default applied when absent.
+String get tokenOrDefault { return token ?? ''; } 
 Map<String, dynamic> toJson() { return {
   if (expirationTimestamp != null) 'expirationTimestamp': expirationTimestamp?.toJson(),
-  'token': token,
+  'token': ?token,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expirationTimestamp', 'token'}.contains(key)); } 
-TokenRequestStatus copyWith({Time? Function()? expirationTimestamp, String Function()? token, }) { return TokenRequestStatus(
+TokenRequestStatus copyWith({Time? Function()? expirationTimestamp, String? Function()? token, }) { return TokenRequestStatus(
   expirationTimestamp: expirationTimestamp != null ? expirationTimestamp() : this.expirationTimestamp,
   token: token != null ? token() : this.token,
 ); } 

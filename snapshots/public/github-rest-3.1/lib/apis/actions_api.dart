@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_org_request.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_org_response.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_repo_request.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_repo_response.dart';import '../models/actions_artifact_and_log_retention.dart';import '../models/actions_artifact_and_log_retention_response.dart';import '../models/actions_cache_list.dart';import '../models/actions_cache_retention_limit_for_enterprise.dart';import '../models/actions_cache_retention_limit_for_organization.dart';import '../models/actions_cache_retention_limit_for_repository.dart';import '../models/actions_cache_storage_limit_for_enterprise.dart';import '../models/actions_cache_storage_limit_for_organization.dart';import '../models/actions_cache_storage_limit_for_repository.dart';import '../models/actions_cache_usage_by_repository.dart';import '../models/actions_cache_usage_org_enterprise.dart';import '../models/actions_create_environment_variable_request.dart';import '../models/actions_create_hosted_runner_for_org_request.dart';import '../models/actions_create_or_update_environment_secret_request.dart';import '../models/actions_create_or_update_org_secret_request.dart';import '../models/actions_create_or_update_repo_secret_request.dart';import '../models/actions_create_org_variable_request.dart';import '../models/actions_create_repo_variable_request.dart';import '../models/actions_create_self_hosted_runner_group_for_org_request.dart';import '../models/actions_create_workflow_dispatch_request.dart';import '../models/actions_fork_pr_contributor_approval.dart';import '../models/actions_fork_pr_workflows_private_repos.dart';import '../models/actions_fork_pr_workflows_private_repos_request.dart';import '../models/actions_generate_runner_jitconfig_for_org_request.dart';import '../models/actions_generate_runner_jitconfig_for_org_response.dart';import '../models/actions_generate_runner_jitconfig_for_repo_request.dart';import '../models/actions_generate_runner_jitconfig_for_repo_response.dart';import '../models/actions_get_actions_cache_list_direction.dart';import '../models/actions_get_actions_cache_list_sort.dart';import '../models/actions_get_actions_cache_usage_by_repo_for_org_response.dart';import '../models/actions_get_default_workflow_permissions.dart';import '../models/actions_get_hosted_runners_github_owned_images_for_org_response.dart';import '../models/actions_get_hosted_runners_machine_specs_for_org_response.dart';import '../models/actions_get_hosted_runners_partner_images_for_org_response.dart';import '../models/actions_get_hosted_runners_platforms_for_org_response.dart';import '../models/actions_hosted_runner.dart';import '../models/actions_hosted_runner_custom_image.dart';import '../models/actions_hosted_runner_custom_image_version.dart';import '../models/actions_hosted_runner_limits.dart';import '../models/actions_list_artifacts_for_repo_response.dart';import '../models/actions_list_custom_image_versions_for_org_response.dart';import '../models/actions_list_custom_images_for_org_response.dart';import '../models/actions_list_environment_secrets_response.dart';import '../models/actions_list_environment_variables_response.dart';import '../models/actions_list_github_hosted_runners_in_group_for_org_response.dart';import '../models/actions_list_hosted_runners_for_org_response.dart';import '../models/actions_list_jobs_for_workflow_run_attempt_response.dart';import '../models/actions_list_jobs_for_workflow_run_filter.dart';import '../models/actions_list_jobs_for_workflow_run_response.dart';import '../models/actions_list_labels_for_self_hosted_runner_for_org_response.dart';import '../models/actions_list_labels_for_self_hosted_runner_for_repo_response.dart';import '../models/actions_list_org_secrets_response.dart';import '../models/actions_list_org_variables_response.dart';import '../models/actions_list_repo_access_to_self_hosted_runner_group_in_org_response.dart';import '../models/actions_list_repo_organization_secrets_response.dart';import '../models/actions_list_repo_organization_variables_response.dart';import '../models/actions_list_repo_secrets_response.dart';import '../models/actions_list_repo_variables_response.dart';import '../models/actions_list_repo_workflows_response.dart';import '../models/actions_list_selected_repos_for_org_secret_response.dart';import '../models/actions_list_selected_repos_for_org_variable_response.dart';import '../models/actions_list_selected_repositories_enabled_github_actions_organization_response.dart';import '../models/actions_list_selected_repositories_self_hosted_runners_organization_response.dart';import '../models/actions_list_self_hosted_runner_groups_for_org_response.dart';import '../models/actions_list_self_hosted_runners_for_org_response.dart';import '../models/actions_list_self_hosted_runners_for_repo_response.dart';import '../models/actions_list_self_hosted_runners_in_group_for_org_response.dart';import '../models/actions_list_workflow_run_artifacts_direction.dart';import '../models/actions_list_workflow_run_artifacts_response.dart';import '../models/actions_list_workflow_runs_for_repo_response.dart';import '../models/actions_list_workflow_runs_for_repo_status.dart';import '../models/actions_list_workflow_runs_response.dart';import '../models/actions_list_workflow_runs_status.dart';import '../models/actions_organization_permissions.dart';import '../models/actions_public_key.dart';import '../models/actions_re_run_job_for_workflow_run_request.dart';import '../models/actions_re_run_workflow_failed_jobs_request.dart';import '../models/actions_re_run_workflow_request.dart';import '../models/actions_remove_all_custom_labels_from_self_hosted_runner_for_org_response.dart';import '../models/actions_remove_all_custom_labels_from_self_hosted_runner_for_repo_response.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_org_response.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_repo_response.dart';import '../models/actions_repository_permissions.dart';import '../models/actions_review_custom_gates_for_run_request.dart';import '../models/actions_review_pending_deployments_for_run_request.dart';import '../models/actions_secret.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_org_request.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_org_response.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_repo_request.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_repo_response.dart';import '../models/actions_set_custom_oidc_sub_claim_for_repo_request.dart';import '../models/actions_set_default_workflow_permissions.dart';import '../models/actions_set_github_actions_permissions_organization_request.dart';import '../models/actions_set_github_actions_permissions_repository_request.dart';import '../models/actions_set_repo_access_to_self_hosted_runner_group_in_org_request.dart';import '../models/actions_set_selected_repos_for_org_secret_request.dart';import '../models/actions_set_selected_repos_for_org_variable_request.dart';import '../models/actions_set_selected_repositories_enabled_github_actions_organization_request.dart';import '../models/actions_set_selected_repositories_self_hosted_runners_organization_request.dart';import '../models/actions_set_self_hosted_runners_in_group_for_org_request.dart';import '../models/actions_set_self_hosted_runners_permissions_organization_request.dart';import '../models/actions_update_environment_variable_request.dart';import '../models/actions_update_hosted_runner_for_org_request.dart';import '../models/actions_update_org_variable_request.dart';import '../models/actions_update_repo_variable_request.dart';import '../models/actions_update_self_hosted_runner_group_for_org_request.dart';import '../models/actions_variable.dart';import '../models/actions_workflow_access_to_repository.dart';import '../models/artifact.dart';import '../models/authentication_token.dart';import '../models/basic_error.dart';import '../models/deployment.dart';import '../models/empty_object.dart';import '../models/environment_approvals.dart';import '../models/job.dart';import '../models/oidc_custom_sub_repo.dart';import '../models/organization_actions_secret.dart';import '../models/organization_actions_variable.dart';import '../models/pending_deployment.dart';import '../models/runner.dart';import '../models/runner_application.dart';import '../models/runner_groups_org.dart';import '../models/selected_actions.dart';import '../models/self_hosted_runners_settings.dart';import '../models/validation_error_simple.dart';import '../models/workflow.dart';import '../models/workflow_dispatch_response.dart';import '../models/workflow_run.dart';import '../models/workflow_run_usage.dart';import '../models/workflow_usage.dart';/// ActionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_org_request.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_org_response.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_repo_request.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_repo_response.dart';import '../models/actions_artifact_and_log_retention.dart';import '../models/actions_artifact_and_log_retention_response.dart';import '../models/actions_cache_list.dart';import '../models/actions_cache_retention_limit_for_enterprise.dart';import '../models/actions_cache_retention_limit_for_organization.dart';import '../models/actions_cache_retention_limit_for_repository.dart';import '../models/actions_cache_storage_limit_for_enterprise.dart';import '../models/actions_cache_storage_limit_for_organization.dart';import '../models/actions_cache_storage_limit_for_repository.dart';import '../models/actions_cache_usage_by_repository.dart';import '../models/actions_cache_usage_org_enterprise.dart';import '../models/actions_create_environment_variable_request.dart';import '../models/actions_create_hosted_runner_for_org_request.dart';import '../models/actions_create_or_update_environment_secret_request.dart';import '../models/actions_create_or_update_org_secret_request.dart';import '../models/actions_create_or_update_repo_secret_request.dart';import '../models/actions_create_org_variable_request.dart';import '../models/actions_create_repo_variable_request.dart';import '../models/actions_create_self_hosted_runner_group_for_org_request.dart';import '../models/actions_create_workflow_dispatch_request.dart';import '../models/actions_fork_pr_contributor_approval.dart';import '../models/actions_fork_pr_workflows_private_repos.dart';import '../models/actions_fork_pr_workflows_private_repos_request.dart';import '../models/actions_generate_runner_jitconfig_for_org_request.dart';import '../models/actions_generate_runner_jitconfig_for_org_response.dart';import '../models/actions_generate_runner_jitconfig_for_repo_request.dart';import '../models/actions_generate_runner_jitconfig_for_repo_response.dart';import '../models/actions_get_actions_cache_list_direction.dart';import '../models/actions_get_actions_cache_list_sort.dart';import '../models/actions_get_actions_cache_usage_by_repo_for_org_response.dart';import '../models/actions_get_default_workflow_permissions.dart';import '../models/actions_get_hosted_runners_github_owned_images_for_org_response.dart';import '../models/actions_get_hosted_runners_machine_specs_for_org_response.dart';import '../models/actions_get_hosted_runners_partner_images_for_org_response.dart';import '../models/actions_get_hosted_runners_platforms_for_org_response.dart';import '../models/actions_hosted_runner.dart';import '../models/actions_hosted_runner_custom_image.dart';import '../models/actions_hosted_runner_custom_image_version.dart';import '../models/actions_hosted_runner_limits.dart';import '../models/actions_list_artifacts_for_repo_response.dart';import '../models/actions_list_custom_image_versions_for_org_response.dart';import '../models/actions_list_custom_images_for_org_response.dart';import '../models/actions_list_environment_secrets_response.dart';import '../models/actions_list_environment_variables_response.dart';import '../models/actions_list_github_hosted_runners_in_group_for_org_response.dart';import '../models/actions_list_hosted_runners_for_org_response.dart';import '../models/actions_list_jobs_for_workflow_run_attempt_response.dart';import '../models/actions_list_jobs_for_workflow_run_filter.dart';import '../models/actions_list_jobs_for_workflow_run_response.dart';import '../models/actions_list_labels_for_self_hosted_runner_for_org_response.dart';import '../models/actions_list_labels_for_self_hosted_runner_for_repo_response.dart';import '../models/actions_list_org_secrets_response.dart';import '../models/actions_list_org_variables_response.dart';import '../models/actions_list_repo_access_to_self_hosted_runner_group_in_org_response.dart';import '../models/actions_list_repo_organization_secrets_response.dart';import '../models/actions_list_repo_organization_variables_response.dart';import '../models/actions_list_repo_secrets_response.dart';import '../models/actions_list_repo_variables_response.dart';import '../models/actions_list_repo_workflows_response.dart';import '../models/actions_list_selected_repos_for_org_secret_response.dart';import '../models/actions_list_selected_repos_for_org_variable_response.dart';import '../models/actions_list_selected_repositories_enabled_github_actions_organization_response.dart';import '../models/actions_list_selected_repositories_self_hosted_runners_organization_response.dart';import '../models/actions_list_self_hosted_runner_groups_for_org_response.dart';import '../models/actions_list_self_hosted_runners_for_org_response.dart';import '../models/actions_list_self_hosted_runners_for_repo_response.dart';import '../models/actions_list_self_hosted_runners_in_group_for_org_response.dart';import '../models/actions_list_workflow_run_artifacts_direction.dart';import '../models/actions_list_workflow_run_artifacts_response.dart';import '../models/actions_list_workflow_runs_for_repo_response.dart';import '../models/actions_list_workflow_runs_for_repo_status.dart';import '../models/actions_list_workflow_runs_response.dart';import '../models/actions_list_workflow_runs_status.dart';import '../models/actions_organization_permissions.dart';import '../models/actions_public_key.dart';import '../models/actions_re_run_job_for_workflow_run_request.dart';import '../models/actions_re_run_workflow_failed_jobs_request.dart';import '../models/actions_re_run_workflow_request.dart';import '../models/actions_remove_all_custom_labels_from_self_hosted_runner_for_org_response.dart';import '../models/actions_remove_all_custom_labels_from_self_hosted_runner_for_repo_response.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_org_response.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_repo_response.dart';import '../models/actions_repository_permissions.dart';import '../models/actions_review_custom_gates_for_run_request.dart';import '../models/actions_review_pending_deployments_for_run_request.dart';import '../models/actions_secret.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_org_request.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_org_response.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_repo_request.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_repo_response.dart';import '../models/actions_set_custom_oidc_sub_claim_for_repo_request.dart';import '../models/actions_set_default_workflow_permissions.dart';import '../models/actions_set_github_actions_permissions_organization_request.dart';import '../models/actions_set_github_actions_permissions_repository_request.dart';import '../models/actions_set_repo_access_to_self_hosted_runner_group_in_org_request.dart';import '../models/actions_set_selected_repos_for_org_secret_request.dart';import '../models/actions_set_selected_repos_for_org_variable_request.dart';import '../models/actions_set_selected_repositories_enabled_github_actions_organization_request.dart';import '../models/actions_set_selected_repositories_self_hosted_runners_organization_request.dart';import '../models/actions_set_self_hosted_runners_in_group_for_org_request.dart';import '../models/actions_set_self_hosted_runners_permissions_organization_request.dart';import '../models/actions_update_environment_variable_request.dart';import '../models/actions_update_hosted_runner_for_org_request.dart';import '../models/actions_update_org_variable_request.dart';import '../models/actions_update_repo_variable_request.dart';import '../models/actions_update_self_hosted_runner_group_for_org_request.dart';import '../models/actions_variable.dart';import '../models/actions_workflow_access_to_repository.dart';import '../models/artifact.dart';import '../models/authentication_token.dart';import '../models/basic_error.dart';import '../models/deployment.dart';import '../models/empty_object.dart';import '../models/environment_approvals.dart';import '../models/job.dart';import '../models/oidc_custom_sub_repo.dart';import '../models/organization_actions_secret.dart';import '../models/organization_actions_variable.dart';import '../models/pending_deployment.dart';import '../models/runner.dart';import '../models/runner_application.dart';import '../models/runner_groups_org.dart';import '../models/scim_error.dart';import '../models/selected_actions.dart';import '../models/self_hosted_runners_settings.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';import '../models/workflow.dart';import '../models/workflow_dispatch_response.dart';import '../models/workflow_run.dart';import '../models/workflow_run_usage.dart';import '../models/workflow_usage.dart';/// ActionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -28,10 +28,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsCacheRetentionLimitForEnterprise.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsCacheRetentionLimitForEnterprise.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -43,7 +51,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `PUT /enterprises/{enterprise}/actions/cache/retention-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForEnterprise({required String enterprise, required ActionsCacheRetentionLimitForEnterprise body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ScimError>>> actionsSetActionsCacheRetentionLimitForEnterprise({required String enterprise, required ActionsCacheRetentionLimitForEnterprise body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,7 +66,27 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -82,10 +110,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsCacheStorageLimitForEnterprise.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsCacheStorageLimitForEnterprise.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -97,7 +133,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `PUT /enterprises/{enterprise}/actions/cache/storage-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForEnterprise({required String enterprise, required ActionsCacheStorageLimitForEnterprise body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ScimError>>> actionsSetActionsCacheStorageLimitForEnterprise({required String enterprise, required ActionsCacheStorageLimitForEnterprise body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -112,7 +148,27 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -136,10 +192,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsCacheRetentionLimitForOrganization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsCacheRetentionLimitForOrganization.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -151,7 +215,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
 ///
 /// `PUT /organizations/{org}/actions/cache/retention-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForOrganization({required String org, required ActionsCacheRetentionLimitForOrganization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ScimError>>> actionsSetActionsCacheRetentionLimitForOrganization({required String org, required ActionsCacheRetentionLimitForOrganization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -166,7 +230,27 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -190,10 +274,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsCacheStorageLimitForOrganization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsCacheStorageLimitForOrganization.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -205,7 +297,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
 ///
 /// `PUT /organizations/{org}/actions/cache/storage-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForOrganization({required String org, required ActionsCacheStorageLimitForOrganization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ScimError>>> actionsSetActionsCacheStorageLimitForOrganization({required String org, required ActionsCacheStorageLimitForOrganization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -220,7 +312,27 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -244,7 +356,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsCacheUsageOrgEnterprise.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsCacheUsageOrgEnterprise.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -279,7 +392,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -313,7 +427,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListHostedRunnersForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListHostedRunnersForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -337,7 +452,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsHostedRunner.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -360,7 +476,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListCustomImagesForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListCustomImagesForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -383,7 +500,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsHostedRunnerCustomImage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsHostedRunnerCustomImage.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -427,7 +545,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListCustomImageVersionsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListCustomImageVersionsForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -450,7 +569,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsHostedRunnerCustomImageVersion.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsHostedRunnerCustomImageVersion.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -492,7 +612,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -513,7 +634,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsGetHostedRunnersPartnerImagesForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsGetHostedRunnersPartnerImagesForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -534,7 +656,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsHostedRunnerLimits.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsHostedRunnerLimits.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -555,7 +678,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsGetHostedRunnersMachineSpecsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsGetHostedRunnersMachineSpecsForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -576,7 +700,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsGetHostedRunnersPlatformsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsGetHostedRunnersPlatformsForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -599,7 +724,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsHostedRunner.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -623,7 +749,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsHostedRunner.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -644,7 +771,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsHostedRunner.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -667,7 +795,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsOrganizationPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsOrganizationPermissions.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -713,10 +842,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsArtifactAndLogRetentionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsArtifactAndLogRetentionResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -727,7 +864,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/artifact-and-log-retention`
-Future<ApiResult<void, BasicError>> actionsSetArtifactAndLogRetentionSettingsOrganization({required String org, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> actionsSetArtifactAndLogRetentionSettingsOrganization({required String org, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -742,7 +879,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 409:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -765,10 +912,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsForkPrContributorApproval.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsForkPrContributorApproval.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -779,7 +934,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/fork-pr-contributor-approval`
-Future<ApiResult<void, BasicError>> actionsSetForkPrContributorApprovalPermissionsOrganization({required String org, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> actionsSetForkPrContributorApprovalPermissionsOrganization({required String org, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -794,7 +949,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -815,10 +980,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsForkPrWorkflowsPrivateRepos.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsForkPrWorkflowsPrivateRepos.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -827,7 +1000,7 @@ return execute(
 /// Sets the settings for whether workflows from fork pull requests can run on private repositories in an organization.
 ///
 /// `PUT /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos`
-Future<ApiResult<void, BasicError>> actionsSetPrivateRepoForkPrWorkflowsSettingsOrganization({required String org, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> actionsSetPrivateRepoForkPrWorkflowsSettingsOrganization({required String org, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -842,7 +1015,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -876,7 +1059,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -965,7 +1149,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SelectedActions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SelectedActions.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1011,10 +1196,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SelfHostedRunnersSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SelfHostedRunnersSettings.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1025,7 +1218,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/self-hosted-runners`
-Future<ApiResult<void, BasicError>> actionsSetSelfHostedRunnersPermissionsOrganization({required String org, required ActionsSetSelfHostedRunnersPermissionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> actionsSetSelfHostedRunnersPermissionsOrganization({required String org, required ActionsSetSelfHostedRunnersPermissionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1040,7 +1233,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 409:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1074,10 +1277,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1088,7 +1299,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories`
-Future<ApiResult<void, BasicError>> actionsSetSelectedRepositoriesSelfHostedRunnersOrganization({required String org, required ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> actionsSetSelectedRepositoriesSelfHostedRunnersOrganization({required String org, required ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1103,7 +1314,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1114,7 +1335,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> actionsEnableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> actionsEnableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -1127,7 +1348,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 409:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1138,7 +1369,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}`
-Future<ApiResult<void, BasicError>> actionsDisableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> actionsDisableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1151,7 +1382,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 409:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1176,7 +1417,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsGetDefaultWorkflowPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsGetDefaultWorkflowPermissions.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1238,7 +1480,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1263,7 +1506,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RunnerGroupsOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RunnerGroupsOrg.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1286,7 +1530,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RunnerGroupsOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RunnerGroupsOrg.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1311,7 +1556,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RunnerGroupsOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RunnerGroupsOrg.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1366,7 +1612,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListGithubHostedRunnersInGroupForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListGithubHostedRunnersInGroupForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1400,7 +1647,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1499,7 +1747,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1603,7 +1852,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListSelfHostedRunnersForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListSelfHostedRunnersForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1628,8 +1878,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => RunnerApplication.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => RunnerApplication.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -1642,7 +1892,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/actions/runners/generate-jitconfig`
-Future<ApiResult<ActionsGenerateRunnerJitconfigForOrgResponse, BasicError>> actionsGenerateRunnerJitconfigForOrg({required String org, required ActionsGenerateRunnerJitconfigForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsGenerateRunnerJitconfigForOrgResponse, OneOf2<BasicError, ValidationErrorSimple>>> actionsGenerateRunnerJitconfigForOrg({required String org, required ActionsGenerateRunnerJitconfigForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1656,10 +1906,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsGenerateRunnerJitconfigForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsGenerateRunnerJitconfigForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404 || 409:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1690,7 +1951,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AuthenticationToken.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1721,7 +1983,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AuthenticationToken.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1746,7 +2009,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Runner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Runner.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1772,7 +2036,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 422:
+final json = jsonDecode(response.body);
+return ValidationErrorSimple.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1797,10 +2068,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListLabelsForSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListLabelsForSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1813,7 +2092,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse, BasicError>> actionsAddCustomLabelsToSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse, OneOf2<BasicError, ValidationErrorSimple>>> actionsAddCustomLabelsToSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1827,10 +2106,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1844,7 +2134,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `PUT /orgs/{org}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse, BasicError>> actionsSetCustomLabelsForSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse, OneOf2<BasicError, ValidationErrorSimple>>> actionsSetCustomLabelsForSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1858,10 +2148,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1887,10 +2188,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1907,7 +2216,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
 ///
 /// `DELETE /orgs/{org}/actions/runners/{runner_id}/labels/{name}`
-Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse, BasicError>> actionsRemoveCustomLabelFromSelfHostedRunnerForOrg({required String org, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse, OneOf2<BasicError, ValidationErrorSimple>>> actionsRemoveCustomLabelFromSelfHostedRunnerForOrg({required String org, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1919,10 +2228,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1959,7 +2279,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListOrgSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListOrgSecretsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1985,7 +2306,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsPublicKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsPublicKey.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2010,7 +2332,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OrganizationActionsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrganizationActionsSecret.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2024,7 +2347,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/actions/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateOrgSecret({required String org, required String secretName, required ActionsCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmptyObject?, Never>> actionsCreateOrUpdateOrgSecret({required String org, required String secretName, required ActionsCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2038,7 +2361,17 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 201:
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
+case 204:
+return null;
+default:
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -2098,7 +2431,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListSelectedReposForOrgSecretResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListSelectedReposForOrgSecretResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2211,7 +2545,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListOrgVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListOrgVariablesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2238,7 +2573,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2263,7 +2599,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OrganizationActionsVariable.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrganizationActionsVariable.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2348,7 +2685,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListSelectedReposForOrgVariableResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListSelectedReposForOrgVariableResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2463,7 +2801,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListArtifactsForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListArtifactsForRepoResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2488,7 +2827,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Artifact.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Artifact.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2533,7 +2873,16 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 302:
+return null;
+case 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2557,10 +2906,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsCacheRetentionLimitForRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsCacheRetentionLimitForRepository.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2572,7 +2929,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/cache/retention-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForRepository({required String owner, required String repo, required ActionsCacheRetentionLimitForRepository body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ScimError>>> actionsSetActionsCacheRetentionLimitForRepository({required String owner, required String repo, required ActionsCacheRetentionLimitForRepository body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2587,7 +2944,27 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2611,10 +2988,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsCacheStorageLimitForRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsCacheStorageLimitForRepository.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2626,7 +3011,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/cache/storage-limit`
-Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForRepository({required String owner, required String repo, required ActionsCacheStorageLimitForRepository body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ScimError>>> actionsSetActionsCacheStorageLimitForRepository({required String owner, required String repo, required ActionsCacheStorageLimitForRepository body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2641,7 +3026,27 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2667,7 +3072,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsCacheUsageByRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsCacheUsageByRepository.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2713,7 +3119,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsCacheList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsCacheList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2745,7 +3152,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsCacheList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsCacheList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2791,7 +3199,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Job.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Job.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2840,10 +3249,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2854,7 +3271,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/actions/oidc/customization/sub`
-Future<ApiResult<OidcCustomSubRepo, BasicError>> actionsGetCustomOidcSubClaimForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OidcCustomSubRepo, OneOf2<BasicError, ScimError>>> actionsGetCustomOidcSubClaimForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -2866,10 +3283,31 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OidcCustomSubRepo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OidcCustomSubRepo.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2880,7 +3318,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/oidc/customization/sub`
-Future<ApiResult<EmptyObject, BasicError>> actionsSetCustomOidcSubClaimForRepo({required String owner, required String repo, required ActionsSetCustomOidcSubClaimForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmptyObject, OneOf3<BasicError, ScimError, ValidationErrorSimple>>> actionsSetCustomOidcSubClaimForRepo({required String owner, required String repo, required ActionsSetCustomOidcSubClaimForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2894,10 +3332,34 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationErrorSimple>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 404:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationErrorSimple>.c(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2934,7 +3396,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListRepoOrganizationSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListRepoOrganizationSecretsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2970,7 +3433,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListRepoOrganizationVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListRepoOrganizationVariablesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2993,7 +3457,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsRepositoryPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsRepositoryPermissions.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3041,7 +3506,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsWorkflowAccessToRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsWorkflowAccessToRepository.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3089,10 +3555,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsArtifactAndLogRetentionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsArtifactAndLogRetentionResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3103,7 +3577,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention`
-Future<ApiResult<void, BasicError>> actionsSetArtifactAndLogRetentionSettingsRepository({required String owner, required String repo, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> actionsSetArtifactAndLogRetentionSettingsRepository({required String owner, required String repo, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3118,7 +3592,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3141,10 +3625,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsForkPrContributorApproval.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsForkPrContributorApproval.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3155,7 +3647,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval`
-Future<ApiResult<void, BasicError>> actionsSetForkPrContributorApprovalPermissionsRepository({required String owner, required String repo, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> actionsSetForkPrContributorApprovalPermissionsRepository({required String owner, required String repo, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3170,7 +3662,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3193,10 +3695,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsForkPrWorkflowsPrivateRepos.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsForkPrWorkflowsPrivateRepos.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3207,7 +3717,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos`
-Future<ApiResult<void, BasicError>> actionsSetPrivateRepoForkPrWorkflowsSettingsRepository({required String owner, required String repo, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> actionsSetPrivateRepoForkPrWorkflowsSettingsRepository({required String owner, required String repo, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3222,7 +3732,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3245,7 +3765,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SelectedActions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SelectedActions.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3293,7 +3814,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsGetDefaultWorkflowPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsGetDefaultWorkflowPermissions.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3357,7 +3879,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListSelfHostedRunnersForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListSelfHostedRunnersForRepoResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3382,8 +3905,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => RunnerApplication.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => RunnerApplication.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -3396,7 +3919,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the`repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig`
-Future<ApiResult<ActionsGenerateRunnerJitconfigForRepoResponse, BasicError>> actionsGenerateRunnerJitconfigForRepo({required String owner, required String repo, required ActionsGenerateRunnerJitconfigForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsGenerateRunnerJitconfigForRepoResponse, OneOf2<BasicError, ValidationErrorSimple>>> actionsGenerateRunnerJitconfigForRepo({required String owner, required String repo, required ActionsGenerateRunnerJitconfigForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3410,10 +3933,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsGenerateRunnerJitconfigForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsGenerateRunnerJitconfigForRepoResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404 || 409:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3444,7 +3978,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AuthenticationToken.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3475,7 +4010,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AuthenticationToken.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3500,7 +4036,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Runner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Runner.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3526,7 +4063,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 422:
+final json = jsonDecode(response.body);
+return ValidationErrorSimple.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3551,10 +4095,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListLabelsForSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListLabelsForSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3567,7 +4119,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse, BasicError>> actionsAddCustomLabelsToSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse, OneOf2<BasicError, ValidationErrorSimple>>> actionsAddCustomLabelsToSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3581,10 +4133,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3598,7 +4161,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
-Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse, BasicError>> actionsSetCustomLabelsForSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse, OneOf2<BasicError, ValidationErrorSimple>>> actionsSetCustomLabelsForSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -3612,10 +4175,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3641,10 +4215,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3661,7 +4243,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}`
-Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse, BasicError>> actionsRemoveCustomLabelFromSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse, OneOf2<BasicError, ValidationErrorSimple>>> actionsRemoveCustomLabelFromSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -3673,10 +4255,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3738,7 +4331,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListWorkflowRunsForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListWorkflowRunsForRepoResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3771,7 +4365,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkflowRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return WorkflowRun.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3817,8 +4412,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => EnvironmentApprovals.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => EnvironmentApprovals.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -3841,10 +4436,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3886,7 +4489,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListWorkflowRunArtifactsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListWorkflowRunArtifactsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3919,7 +4523,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkflowRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return WorkflowRun.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -3956,10 +4561,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListJobsForWorkflowRunAttemptResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListJobsForWorkflowRunAttemptResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -4006,10 +4619,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 409:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -4059,10 +4680,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 409:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -4102,7 +4731,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListJobsForWorkflowRunResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListJobsForWorkflowRunResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4150,7 +4780,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -4175,8 +4812,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => PendingDeployment.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => PendingDeployment.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -4203,8 +4840,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Deployment.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Deployment.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -4229,7 +4866,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4254,7 +4892,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4282,7 +4921,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkflowRunUsage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return WorkflowRunUsage.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4319,7 +4959,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListRepoSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListRepoSecretsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4345,7 +4986,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsPublicKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsPublicKey.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4370,7 +5012,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsSecret.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4384,7 +5027,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required ActionsCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmptyObject?, Never>> actionsCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required ActionsCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4398,7 +5041,17 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 201:
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
+case 204:
+return null;
+default:
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -4457,7 +5110,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListRepoVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListRepoVariablesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4484,7 +5138,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4509,7 +5164,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsVariable.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsVariable.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4593,7 +5249,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListRepoWorkflowsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListRepoWorkflowsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4619,7 +5276,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Workflow.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Workflow.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4653,7 +5311,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches`
-Future<ApiResult<WorkflowDispatchResponse, Never>> actionsCreateWorkflowDispatch({required String owner, required String repo, required dynamic workflowId, required ActionsCreateWorkflowDispatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkflowDispatchResponse?, Never>> actionsCreateWorkflowDispatch({required String owner, required String repo, required dynamic workflowId, required ActionsCreateWorkflowDispatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4667,7 +5325,17 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkflowDispatchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 200:
+final json = jsonDecode(response.body);
+return WorkflowDispatchResponse.fromJson(json as Map<String, dynamic>);
+case 204:
+return null;
+default:
+final json = jsonDecode(response.body);
+return WorkflowDispatchResponse.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -4750,7 +5418,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListWorkflowRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListWorkflowRunsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4780,7 +5449,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return WorkflowUsage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return WorkflowUsage.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4817,7 +5487,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListEnvironmentSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListEnvironmentSecretsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4843,7 +5514,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsPublicKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsPublicKey.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4868,7 +5540,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsSecret.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4882,7 +5555,7 @@ return execute(
 /// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}`
-Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, required ActionsCreateOrUpdateEnvironmentSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmptyObject?, Never>> actionsCreateOrUpdateEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, required ActionsCreateOrUpdateEnvironmentSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -4896,7 +5569,17 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 201:
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
+case 204:
+return null;
+default:
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -4955,7 +5638,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsListEnvironmentVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsListEnvironmentVariablesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -4982,7 +5666,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return EmptyObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -5007,7 +5692,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ActionsVariable.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActionsVariable.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

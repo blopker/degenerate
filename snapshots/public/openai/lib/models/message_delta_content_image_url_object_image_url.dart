@@ -28,25 +28,27 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageDeltaContentImageUrlObjectImageUrlDetail($value)'; } 
  }
-@immutable final class MessageDeltaContentImageUrlObjectImageUrl {const MessageDeltaContentImageUrlObjectImageUrl({this.url, this.detail = MessageDeltaContentImageUrlObjectImageUrlDetail.auto, });
+@immutable final class MessageDeltaContentImageUrlObjectImageUrl {const MessageDeltaContentImageUrlObjectImageUrl({this.url, this.detail, });
 
 factory MessageDeltaContentImageUrlObjectImageUrl.fromJson(Map<String, dynamic> json) { return MessageDeltaContentImageUrlObjectImageUrl(
   url: json['url'] as String?,
-  detail: json.containsKey('detail') ? MessageDeltaContentImageUrlObjectImageUrlDetail.fromJson(json['detail'] as String) : MessageDeltaContentImageUrlObjectImageUrlDetail.auto,
+  detail: json['detail'] != null ? MessageDeltaContentImageUrlObjectImageUrlDetail.fromJson(json['detail'] as String) : null,
 ); }
 
 /// The URL of the image, must be a supported image types: jpeg, jpg, png, gif, webp.
 final String? url;
 
 /// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`.
-final MessageDeltaContentImageUrlObjectImageUrlDetail detail;
+final MessageDeltaContentImageUrlObjectImageUrlDetail? detail;
 
+/// The value with the schema default applied when absent.
+MessageDeltaContentImageUrlObjectImageUrlDetail get detailOrDefault { return detail ?? MessageDeltaContentImageUrlObjectImageUrlDetail.fromJson('auto'); } 
 Map<String, dynamic> toJson() { return {
   'url': ?url,
-  'detail': detail.toJson(),
+  if (detail != null) 'detail': detail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'detail'}.contains(key)); } 
-MessageDeltaContentImageUrlObjectImageUrl copyWith({String? Function()? url, MessageDeltaContentImageUrlObjectImageUrlDetail Function()? detail, }) { return MessageDeltaContentImageUrlObjectImageUrl(
+MessageDeltaContentImageUrlObjectImageUrl copyWith({String? Function()? url, MessageDeltaContentImageUrlObjectImageUrlDetail? Function()? detail, }) { return MessageDeltaContentImageUrlObjectImageUrl(
   url: url != null ? url() : this.url,
   detail: detail != null ? detail() : this.detail,
 ); } 

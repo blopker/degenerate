@@ -28,18 +28,18 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateReleaseRequestMakeLatest($value)'; } 
  }
-@immutable final class ReposCreateReleaseRequest {const ReposCreateReleaseRequest({required this.tagName, this.targetCommitish, this.name, this.body, this.draft = false, this.prerelease = false, this.discussionCategoryName, this.generateReleaseNotes = false, this.makeLatest = ReposCreateReleaseRequestMakeLatest.$true, });
+@immutable final class ReposCreateReleaseRequest {const ReposCreateReleaseRequest({required this.tagName, this.targetCommitish, this.name, this.body, this.draft, this.prerelease, this.discussionCategoryName, this.generateReleaseNotes, this.makeLatest, });
 
 factory ReposCreateReleaseRequest.fromJson(Map<String, dynamic> json) { return ReposCreateReleaseRequest(
   tagName: json['tag_name'] as String,
   targetCommitish: json['target_commitish'] as String?,
   name: json['name'] as String?,
   body: json['body'] as String?,
-  draft: json.containsKey('draft') ? json['draft'] as bool : false,
-  prerelease: json.containsKey('prerelease') ? json['prerelease'] as bool : false,
+  draft: json['draft'] as bool?,
+  prerelease: json['prerelease'] as bool?,
   discussionCategoryName: json['discussion_category_name'] as String?,
-  generateReleaseNotes: json.containsKey('generate_release_notes') ? json['generate_release_notes'] as bool : false,
-  makeLatest: json.containsKey('make_latest') ? ReposCreateReleaseRequestMakeLatest.fromJson(json['make_latest'] as String) : ReposCreateReleaseRequestMakeLatest.$true,
+  generateReleaseNotes: json['generate_release_notes'] as bool?,
+  makeLatest: json['make_latest'] != null ? ReposCreateReleaseRequestMakeLatest.fromJson(json['make_latest'] as String) : null,
 ); }
 
 /// The name of the tag.
@@ -55,33 +55,41 @@ final String? name;
 final String? body;
 
 /// `true` to create a draft (unpublished) release, `false` to create a published one.
-final bool draft;
+final bool? draft;
 
 /// `true` to identify the release as a prerelease. `false` to identify the release as a full release.
-final bool prerelease;
+final bool? prerelease;
 
 /// If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
 final String? discussionCategoryName;
 
 /// Whether to automatically generate the name and body for this release. If `name` is specified, the specified name will be used; otherwise, a name will be automatically generated. If `body` is specified, the body will be pre-pended to the automatically generated notes.
-final bool generateReleaseNotes;
+final bool? generateReleaseNotes;
 
 /// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
-final ReposCreateReleaseRequestMakeLatest makeLatest;
+final ReposCreateReleaseRequestMakeLatest? makeLatest;
 
+/// The value with the schema default applied when absent.
+bool get draftOrDefault { return draft ?? false; } 
+/// The value with the schema default applied when absent.
+bool get prereleaseOrDefault { return prerelease ?? false; } 
+/// The value with the schema default applied when absent.
+bool get generateReleaseNotesOrDefault { return generateReleaseNotes ?? false; } 
+/// The value with the schema default applied when absent.
+ReposCreateReleaseRequestMakeLatest get makeLatestOrDefault { return makeLatest ?? ReposCreateReleaseRequestMakeLatest.fromJson('true'); } 
 Map<String, dynamic> toJson() { return {
   'tag_name': tagName,
   'target_commitish': ?targetCommitish,
   'name': ?name,
   'body': ?body,
-  'draft': draft,
-  'prerelease': prerelease,
+  'draft': ?draft,
+  'prerelease': ?prerelease,
   'discussion_category_name': ?discussionCategoryName,
-  'generate_release_notes': generateReleaseNotes,
-  'make_latest': makeLatest.toJson(),
+  'generate_release_notes': ?generateReleaseNotes,
+  if (makeLatest != null) 'make_latest': makeLatest?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tag_name') && json['tag_name'] is String; } 
-ReposCreateReleaseRequest copyWith({String? tagName, String? Function()? targetCommitish, String? Function()? name, String? Function()? body, bool Function()? draft, bool Function()? prerelease, String? Function()? discussionCategoryName, bool Function()? generateReleaseNotes, ReposCreateReleaseRequestMakeLatest Function()? makeLatest, }) { return ReposCreateReleaseRequest(
+ReposCreateReleaseRequest copyWith({String? tagName, String? Function()? targetCommitish, String? Function()? name, String? Function()? body, bool? Function()? draft, bool? Function()? prerelease, String? Function()? discussionCategoryName, bool? Function()? generateReleaseNotes, ReposCreateReleaseRequestMakeLatest? Function()? makeLatest, }) { return ReposCreateReleaseRequest(
   tagName: tagName ?? this.tagName,
   targetCommitish: targetCommitish != null ? targetCommitish() : this.targetCommitish,
   name: name != null ? name() : this.name,

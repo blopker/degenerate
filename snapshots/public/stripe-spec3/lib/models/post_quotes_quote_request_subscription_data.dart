@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_
 @immutable final class PostQuotesQuoteRequestSubscriptionData {const PostQuotesQuoteRequestSubscriptionData({this.description, this.effectiveDate, this.metadata, this.trialPeriodDays, });
 
 factory PostQuotesQuoteRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequestSubscriptionData(
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostQuotesQuoteRequestSubscriptionDataDescriptionVariant2.fromJson(v as String),) : null,
-  effectiveDate: json['effective_date'] != null ? OneOf3.parse(json['effective_date'], fromA: (v) => PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(), fromC: (v) => PostQuotesQuoteRequestSubscriptionDataEffectiveDateVariant3.fromJson(v as String),) : null,
+  description: json['description'] != null ? PostQuotesQuoteRequestSubscriptionDataDescription.fromJson(json['description']) : null,
+  effectiveDate: json['effective_date'] != null ? PostQuotesQuoteRequestSubscriptionDataEffectiveDate.fromJson(json['effective_date']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  trialPeriodDays: json['trial_period_days'] != null ? OneOf2.parse(json['trial_period_days'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostQuotesQuoteRequestSubscriptionDataTrialPeriodDaysVariant2.fromJson(v as String),) : null,
+  trialPeriodDays: json['trial_period_days'] != null ? PostQuotesQuoteRequestSubscriptionDataTrialPeriodDays.fromJson(json['trial_period_days']) : null,
 ); }
 
 final PostQuotesQuoteRequestSubscriptionDataDescription? description;

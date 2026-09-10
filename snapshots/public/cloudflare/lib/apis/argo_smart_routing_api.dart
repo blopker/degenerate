@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/argo_config_identifier.dart';import '../models/argo_config_patch.dart';import '../models/argo_config_result_object.dart';/// ArgoSmartRoutingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/argo_config_identifier.dart';import '../models/argo_config_patch.dart';import '../models/argo_config_result_object.dart';import '../models/response_common_failure9.dart';/// ArgoSmartRoutingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ArgoSmartRoutingApi with ApiExecutor {const ArgoSmartRoutingApi(this
 /// Retrieves the value of Argo Smart Routing enablement setting.
 ///
 /// `GET /zones/{zone_id}/argo/smart_routing`
-Future<ApiResult<ArgoConfigResultObject, Never>> argoSmartRoutingGetArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ArgoConfigResultObject, ResponseCommonFailure9>> argoSmartRoutingGetArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,8 +25,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return ArgoConfigResultObject.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return ArgoConfigResultObject.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure9.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -35,7 +45,7 @@ return execute(
 /// Configures the value of the Argo Smart Routing enablement setting.
 ///
 /// `PATCH /zones/{zone_id}/argo/smart_routing`
-Future<ApiResult<ArgoConfigResultObject, Never>> argoSmartRoutingPatchArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId, required ArgoConfigPatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ArgoConfigResultObject, ResponseCommonFailure9>> argoSmartRoutingPatchArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId, required ArgoConfigPatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,8 +59,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return ArgoConfigResultObject.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return ArgoConfigResultObject.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure9.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

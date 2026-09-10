@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateServersResponseResultAuthType($value)'; } 
  }
-@immutable final class CreateServersResponseResult {const CreateServersResponseResult({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, this.createdAt, this.createdBy, this.description = const Omittable.absent(), this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.status = 'waiting', });
+@immutable final class CreateServersResponseResult {const CreateServersResponseResult({required this.authType, required this.hostname, required this.id, required this.name, required this.prompts, required this.tools, this.createdAt, this.createdBy, this.description = const Omittable.absent(), this.error, this.lastSuccessfulSync, this.lastSynced, this.modifiedAt, this.modifiedBy, this.status, });
 
 factory CreateServersResponseResult.fromJson(Map<String, dynamic> json) { return CreateServersResponseResult(
   authType: CreateServersResponseResultAuthType.fromJson(json['auth_type'] as String),
@@ -43,7 +43,7 @@ factory CreateServersResponseResult.fromJson(Map<String, dynamic> json) { return
   modifiedBy: json['modified_by'] as String?,
   name: json['name'] as String,
   prompts: (json['prompts'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
-  status: json.containsKey('status') ? json['status'] as String : 'waiting',
+  status: json['status'] as String?,
   tools: (json['tools'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
 ); }
 
@@ -74,10 +74,12 @@ final String name;
 
 final List<Map<String,dynamic>> prompts;
 
-final String status;
+final String? status;
 
 final List<Map<String,dynamic>> tools;
 
+/// The value with the schema default applied when absent.
+String get statusOrDefault { return status ?? 'waiting'; } 
 Map<String, dynamic> toJson() { return {
   'auth_type': authType.toJson(),
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
@@ -92,7 +94,7 @@ Map<String, dynamic> toJson() { return {
   'modified_by': ?modifiedBy,
   'name': name,
   'prompts': prompts.map((e) => e).toList(),
-  'status': status,
+  'status': ?status,
   'tools': tools.map((e) => e).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_type') &&
@@ -101,7 +103,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('prompts') &&
       json.containsKey('tools'); } 
-CreateServersResponseResult copyWith({CreateServersResponseResultAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String Function()? status, List<Map<String,dynamic>>? tools, }) { return CreateServersResponseResult(
+CreateServersResponseResult copyWith({CreateServersResponseResultAuthType? authType, DateTime? Function()? createdAt, String? Function()? createdBy, Omittable<String?>? description, String? Function()? error, Uri? hostname, String? id, DateTime? Function()? lastSuccessfulSync, DateTime? Function()? lastSynced, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, List<Map<String,dynamic>>? prompts, String? Function()? status, List<Map<String,dynamic>>? tools, }) { return CreateServersResponseResult(
   authType: authType ?? this.authType,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,

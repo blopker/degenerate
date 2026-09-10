@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListProvidersResponseResult {const AigConfigListProvidersResponseResult({required this.alias, required this.defaultConfig, required this.gatewayId, required this.id, required this.modifiedAt, required this.providerSlug, required this.secretId, required this.secretPreview, this.rateLimit, this.rateLimitPeriod = 60.0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListProvidersResponseResult {const AigConfigListProvidersResponseResult({required this.alias, required this.defaultConfig, required this.gatewayId, required this.id, required this.modifiedAt, required this.providerSlug, required this.secretId, required this.secretPreview, this.rateLimit, this.rateLimitPeriod, });
 
 factory AigConfigListProvidersResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigListProvidersResponseResult(
   alias: json['alias'] as String,
@@ -10,7 +10,7 @@ factory AigConfigListProvidersResponseResult.fromJson(Map<String, dynamic> json)
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   providerSlug: json['provider_slug'] as String,
   rateLimit: json['rate_limit'] != null ? (json['rate_limit'] as num).toDouble() : null,
-  rateLimitPeriod: json.containsKey('rate_limit_period') ? (json['rate_limit_period'] as num).toDouble() : 60.0,
+  rateLimitPeriod: json['rate_limit_period'] != null ? (json['rate_limit_period'] as num).toDouble() : null,
   secretId: json['secret_id'] as String,
   secretPreview: json['secret_preview'] as String,
 ); }
@@ -30,12 +30,14 @@ final String providerSlug;
 
 final double? rateLimit;
 
-final double rateLimitPeriod;
+final double? rateLimitPeriod;
 
 final String secretId;
 
 final String secretPreview;
 
+/// The value with the schema default applied when absent.
+double get rateLimitPeriodOrDefault { return rateLimitPeriod ?? 60.0; } 
 Map<String, dynamic> toJson() { return {
   'alias': alias,
   'default_config': defaultConfig,
@@ -44,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'modified_at': modifiedAt.toIso8601String(),
   'provider_slug': providerSlug,
   'rate_limit': ?rateLimit,
-  'rate_limit_period': rateLimitPeriod,
+  'rate_limit_period': ?rateLimitPeriod,
   'secret_id': secretId,
   'secret_preview': secretPreview,
 }; } 
@@ -56,7 +58,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('provider_slug') && json['provider_slug'] is String &&
       json.containsKey('secret_id') && json['secret_id'] is String &&
       json.containsKey('secret_preview') && json['secret_preview'] is String; } 
-AigConfigListProvidersResponseResult copyWith({String? alias, bool? defaultConfig, String? gatewayId, String? id, DateTime? modifiedAt, String? providerSlug, double? Function()? rateLimit, double Function()? rateLimitPeriod, String? secretId, String? secretPreview, }) { return AigConfigListProvidersResponseResult(
+AigConfigListProvidersResponseResult copyWith({String? alias, bool? defaultConfig, String? gatewayId, String? id, DateTime? modifiedAt, String? providerSlug, double? Function()? rateLimit, double? Function()? rateLimitPeriod, String? secretId, String? secretPreview, }) { return AigConfigListProvidersResponseResult(
   alias: alias ?? this.alias,
   defaultConfig: defaultConfig ?? this.defaultConfig,
   gatewayId: gatewayId ?? this.gatewayId,

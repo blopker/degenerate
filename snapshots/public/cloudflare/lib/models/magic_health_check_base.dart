@@ -53,35 +53,41 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MagicHealthCheckBaseType($value)'; } 
  }
-@immutable final class MagicHealthCheckBase {const MagicHealthCheckBase({this.enabled = true, this.rate = MagicHealthCheckBaseRate.mid, this.target, this.type = MagicHealthCheckBaseType.reply, });
+@immutable final class MagicHealthCheckBase {const MagicHealthCheckBase({this.enabled, this.rate, this.target, this.type, });
 
 factory MagicHealthCheckBase.fromJson(Map<String, dynamic> json) { return MagicHealthCheckBase(
-  enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
-  rate: json.containsKey('rate') ? MagicHealthCheckBaseRate.fromJson(json['rate'] as String) : MagicHealthCheckBaseRate.mid,
+  enabled: json['enabled'] as bool?,
+  rate: json['rate'] != null ? MagicHealthCheckBaseRate.fromJson(json['rate'] as String) : null,
   target: json['target'] != null ? OneOf2.parse(json['target'], fromA: (v) => MagicHealthCheckTarget.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
-  type: json.containsKey('type') ? MagicHealthCheckBaseType.fromJson(json['type'] as String) : MagicHealthCheckBaseType.reply,
+  type: json['type'] != null ? MagicHealthCheckBaseType.fromJson(json['type'] as String) : null,
 ); }
 
 /// Determines whether to run healthchecks for a tunnel.
-final bool enabled;
+final bool? enabled;
 
 /// How frequent the health check is run. The default value is `mid`.
-final MagicHealthCheckBaseRate rate;
+final MagicHealthCheckBaseRate? rate;
 
 /// The destination address in a request type health check. After the healthcheck is decapsulated at the customer end of the tunnel, the ICMP echo will be forwarded to this address. This field defaults to `customer_gre_endpoint address`. This field is ignored for bidirectional healthchecks as the interface_address (not assigned to the Cloudflare side of the tunnel) is used as the target. Must be in object form if the x-magic-new-hc-target header is set to true and string form if x-magic-new-hc-target is absent or set to false.
 final MagicHealthCheckBaseTarget? target;
 
 /// The type of healthcheck to run, reply or request. The default value is `reply`.
-final MagicHealthCheckBaseType type;
+final MagicHealthCheckBaseType? type;
 
+/// The value with the schema default applied when absent.
+bool get enabledOrDefault { return enabled ?? true; } 
+/// The value with the schema default applied when absent.
+MagicHealthCheckBaseRate get rateOrDefault { return rate ?? MagicHealthCheckBaseRate.fromJson('mid'); } 
+/// The value with the schema default applied when absent.
+MagicHealthCheckBaseType get typeOrDefault { return type ?? MagicHealthCheckBaseType.fromJson('reply'); } 
 Map<String, dynamic> toJson() { return {
-  'enabled': enabled,
-  'rate': rate.toJson(),
+  'enabled': ?enabled,
+  if (rate != null) 'rate': rate?.toJson(),
   if (target != null) 'target': target?.toJson(),
-  'type': type.toJson(),
+  if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'rate', 'target', 'type'}.contains(key)); } 
-MagicHealthCheckBase copyWith({bool Function()? enabled, MagicHealthCheckBaseRate Function()? rate, MagicHealthCheckBaseTarget? Function()? target, MagicHealthCheckBaseType Function()? type, }) { return MagicHealthCheckBase(
+MagicHealthCheckBase copyWith({bool? Function()? enabled, MagicHealthCheckBaseRate? Function()? rate, MagicHealthCheckBaseTarget? Function()? target, MagicHealthCheckBaseType? Function()? type, }) { return MagicHealthCheckBase(
   enabled: enabled != null ? enabled() : this.enabled,
   rate: rate != null ? rate() : this.rate,
   target: target != null ? target() : this.target,

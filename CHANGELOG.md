@@ -4,7 +4,7 @@ Important user-facing changes only. For full details see commit log.
 
 ## Unreleased
 
-**Omittable fields: generated models now distinguish "omitted" from "set to null" (JSON Merge Patch support).**
+**Presence-aware models, lossless overlapping unions, directional schemas, complete response types, and streaming middleware.**
 
 ### Breaking changes
 
@@ -15,10 +15,18 @@ Important user-facing changes only. For full details see commit log.
   - Migration: `model.field` → `model.field.value`, `copyWith(field: () => v)` → `copyWith(field: Omittable(v))`. Or pass `--omittable=off` to restore the previous plain-`T?` output (Dart `null` serializes as omitted).
   - `--omittable=all` additionally wraps optional *non-nullable* fields, for servers that accept null-clears the spec doesn't declare.
   - Generated code now requires the matching `degenerate_runtime` version (which adds `Omittable`).
-  - Known limitation: fields declared directly on sealed discriminated-union variants and `anyOf` classes keep the previous `T?` omit-null behavior; nested regular models inside them get omittable fields as usual.
+  - Fields declared directly on discriminated-union variants follow the same presence rules.
+- **Schema defaults no longer imply presence**: optional defaulted fields remain nullable or omittable and absent fields stay absent in `toJson()`. Read `fieldOrDefault` for the declared fallback; required fields remain required even when they declare defaults.
+- **`anyOf` uses lossless classes**: replace single-variant `.a()`/`.b()` construction with named, omittable typed views. All matching views are available, decoded JSON round-trips unchanged, and unknown shapes are retained. Caller-created views merge on serialization and reject conflicting values.
+- **Request and response schemas respect `readOnly`/`writeOnly`**: affected operation types use `NameRequest`/`NameResponse` models, including nested and recursive references. Migrate request construction to the generated request type and response annotations to the response type.
+- **Result types cover declared response shapes**: body-or-empty successes become nullable; distinct success and error body types use `OneOfN`. Decoding dispatches by status and content type, including status ranges. Declared `2xx` responses determine success types; `default` supplies fallback errors and contributes to success only when no `2xx` is declared. Update explicit result annotations and pattern matches after regeneration.
+- **Interceptors return `StreamedApiResponse`**: `Handler`, custom `intercept` methods, and `retryWhen` callbacks now use the streamed response. Status-based auth refresh, retry, logging, and cached responses work for streaming operations. Wrap buffered cached responses with `StreamedApiResponse.fromResponse`; body inspection consumes the stream and requires wrapping the buffered response before forwarding.
 
 ### Bug fixes
 
+- **Stable additional-properties hashes**: equal overflow maps hash equally regardless of insertion order, and repeated reads of an unchanged model's hash remain stable.
+- **Recursive `OneOf` serialization**: collection variants serialize nested models, enums, dates, URIs, big integers, durations, and bytes through their wire codecs.
+- **JSON string responses decode their JSON value**, removing the surrounding wire quotes.
 - **Object query and path parameters unwrap omittable fields**: serializers send scalar values and omit absent or null fields across query styles and path explode modes.
 - **Nullable binary fields serialize as base64**: optional, required nullable, and collection element byte values encode correctly, including explicit nulls.
 - **Schemas named `Omittable` avoid runtime name collisions**: generated model names receive a suffix, with references updated consistently.

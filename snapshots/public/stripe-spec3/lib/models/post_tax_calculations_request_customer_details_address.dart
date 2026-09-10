@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_calculations_request_customer_details_address_city.dart';import 'post_tax_calculations_request_customer_details_address_line1.dart';import 'post_tax_calculations_request_customer_details_address_line2.dart';import 'post_tax_calculations_request_customer_details_address_postal_code.dart';import 'post_tax_calculations_request_customer_details_address_state.dart';@immutable final class PostTaxCalculationsRequestCustomerDetailsAddress {const PostTaxCalculationsRequestCustomerDetailsAddress({required this.country, this.city, this.line1, this.line2, this.postalCode, this.state, });
 
 factory PostTaxCalculationsRequestCustomerDetailsAddress.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestCustomerDetailsAddress(
-  city: json['city'] != null ? OneOf2.parse(json['city'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestCustomerDetailsAddressCityVariant2.fromJson(v as String),) : null,
+  city: json['city'] != null ? PostTaxCalculationsRequestCustomerDetailsAddressCity.fromJson(json['city']) : null,
   country: json['country'] as String,
-  line1: json['line1'] != null ? OneOf2.parse(json['line1'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestCustomerDetailsAddressLine1Variant2.fromJson(v as String),) : null,
-  line2: json['line2'] != null ? OneOf2.parse(json['line2'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestCustomerDetailsAddressLine2Variant2.fromJson(v as String),) : null,
-  postalCode: json['postal_code'] != null ? OneOf2.parse(json['postal_code'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestCustomerDetailsAddressPostalCodeVariant2.fromJson(v as String),) : null,
-  state: json['state'] != null ? OneOf2.parse(json['state'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestCustomerDetailsAddressStateVariant2.fromJson(v as String),) : null,
+  line1: json['line1'] != null ? PostTaxCalculationsRequestCustomerDetailsAddressLine1.fromJson(json['line1']) : null,
+  line2: json['line2'] != null ? PostTaxCalculationsRequestCustomerDetailsAddressLine2.fromJson(json['line2']) : null,
+  postalCode: json['postal_code'] != null ? PostTaxCalculationsRequestCustomerDetailsAddressPostalCode.fromJson(json['postal_code']) : null,
+  state: json['state'] != null ? PostTaxCalculationsRequestCustomerDetailsAddressState.fromJson(json['state']) : null,
 ); }
 
 final PostTaxCalculationsRequestCustomerDetailsAddressCity? city;

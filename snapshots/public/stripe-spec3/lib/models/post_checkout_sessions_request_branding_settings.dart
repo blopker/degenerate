@@ -133,9 +133,9 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostCheckoutSessionsRequestBrandingSettings {const PostCheckoutSessionsRequestBrandingSettings({this.backgroundColor, this.borderStyle, this.buttonColor, this.displayName, this.fontFamily, this.icon, this.logo, });
 
 factory PostCheckoutSessionsRequestBrandingSettings.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestBrandingSettings(
-  backgroundColor: json['background_color'] != null ? OneOf2.parse(json['background_color'], fromA: (v) => v as String, fromB: (v) => PostCheckoutSessionsRequestBrandingSettingsBackgroundColorVariant2.fromJson(v as String),) : null,
+  backgroundColor: json['background_color'] != null ? PostCheckoutSessionsRequestBrandingSettingsBackgroundColor.fromJson(json['background_color']) : null,
   borderStyle: json['border_style'] != null ? PostCheckoutSessionsRequestBrandingSettingsBorderStyle.fromJson(json['border_style'] as String) : null,
-  buttonColor: json['button_color'] != null ? OneOf2.parse(json['button_color'], fromA: (v) => v as String, fromB: (v) => PostCheckoutSessionsRequestBrandingSettingsButtonColorVariant2.fromJson(v as String),) : null,
+  buttonColor: json['button_color'] != null ? PostCheckoutSessionsRequestBrandingSettingsButtonColor.fromJson(json['button_color']) : null,
   displayName: json['display_name'] as String?,
   fontFamily: json['font_family'] != null ? PostCheckoutSessionsRequestBrandingSettingsFontFamily.fromJson(json['font_family'] as String) : null,
   icon: json['icon'] != null ? PostCheckoutSessionsRequestBrandingSettingsIcon.fromJson(json['icon'] as Map<String, dynamic>) : null,

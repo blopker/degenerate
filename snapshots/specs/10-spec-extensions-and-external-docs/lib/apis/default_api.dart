@@ -22,7 +22,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Doc.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Doc.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

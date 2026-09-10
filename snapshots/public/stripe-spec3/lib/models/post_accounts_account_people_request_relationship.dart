@@ -9,7 +9,7 @@ factory PostAccountsAccountPeopleRequestRelationship.fromJson(Map<String, dynami
   executive: json['executive'] as bool?,
   legalGuardian: json['legal_guardian'] as bool?,
   owner: json['owner'] as bool?,
-  percentOwnership: json['percent_ownership'] != null ? OneOf2.parse(json['percent_ownership'], fromA: (v) => (v as num).toDouble(), fromB: (v) => PostAccountsAccountPeopleRequestRelationshipPercentOwnershipVariant2.fromJson(v as String),) : null,
+  percentOwnership: json['percent_ownership'] != null ? PostAccountsAccountPeopleRequestRelationshipPercentOwnership.fromJson(json['percent_ownership']) : null,
   representative: json['representative'] as bool?,
   title: json['title'] as String?,
 ); }

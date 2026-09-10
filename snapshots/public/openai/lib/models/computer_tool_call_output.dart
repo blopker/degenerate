@@ -55,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The output of a computer tool call.
 /// 
-@immutable final class ComputerToolCallOutput {const ComputerToolCallOutput({required this.callId, required this.output, this.type = ComputerToolCallOutputType.computerCallOutput, this.id, this.acknowledgedSafetyChecks, this.status, });
+@immutable final class ComputerToolCallOutput {const ComputerToolCallOutput({required this.type, required this.callId, required this.output, this.id, this.acknowledgedSafetyChecks, this.status, });
 
 factory ComputerToolCallOutput.fromJson(Map<String, dynamic> json) { return ComputerToolCallOutput(
   type: ComputerToolCallOutputType.fromJson(json['type'] as String),

@@ -1,24 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsCustomNameserversZoneMetadata {const DnsCustomNameserversZoneMetadata({this.enabled, this.nsSet = 1.0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsCustomNameserversZoneMetadata {const DnsCustomNameserversZoneMetadata({this.enabled, this.nsSet, });
 
 factory DnsCustomNameserversZoneMetadata.fromJson(Map<String, dynamic> json) { return DnsCustomNameserversZoneMetadata(
   enabled: json['enabled'] as bool?,
-  nsSet: json.containsKey('ns_set') ? (json['ns_set'] as num).toDouble() : 1.0,
+  nsSet: json['ns_set'] != null ? (json['ns_set'] as num).toDouble() : null,
 ); }
 
 /// Whether zone uses account-level custom nameservers.
 final bool? enabled;
 
 /// The number of the name server set to assign to the zone.
-final double nsSet;
+final double? nsSet;
 
+/// The value with the schema default applied when absent.
+double get nsSetOrDefault { return nsSet ?? 1.0; } 
 Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
-  'ns_set': nsSet,
+  'ns_set': ?nsSet,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'ns_set'}.contains(key)); } 
-DnsCustomNameserversZoneMetadata copyWith({bool? Function()? enabled, double Function()? nsSet, }) { return DnsCustomNameserversZoneMetadata(
+DnsCustomNameserversZoneMetadata copyWith({bool? Function()? enabled, double? Function()? nsSet, }) { return DnsCustomNameserversZoneMetadata(
   enabled: enabled != null ? enabled() : this.enabled,
   nsSet: nsSet != null ? nsSet() : this.nsSet,
 ); } 

@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// A delta to change the score by, which can be either positive or negative.
-extension type const RulesetsScoreIncrement(int value) {
-factory RulesetsScoreIncrement.fromJson(num json) => RulesetsScoreIncrement(json.toInt());
-
-num toJson() => value;
-
-}
-@immutable final class RulesetsScoreRuleActionParameters {const RulesetsScoreRuleActionParameters({required this.increment});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_score_increment.dart';@immutable final class RulesetsScoreRuleActionParameters {const RulesetsScoreRuleActionParameters({required this.increment});
 
 factory RulesetsScoreRuleActionParameters.fromJson(Map<String, dynamic> json) { return RulesetsScoreRuleActionParameters(
   increment: RulesetsScoreIncrement.fromJson(json['increment'] as num),

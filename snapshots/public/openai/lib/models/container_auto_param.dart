@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ContainerAutoParamType($value)'; } 
  }
-@immutable final class ContainerAutoParam {const ContainerAutoParam({this.type = ContainerAutoParamType.containerAuto, this.fileIds, this.memoryLimit = const Omittable.absent(), this.networkPolicy, this.skills, });
+@immutable final class ContainerAutoParam {const ContainerAutoParam({required this.type, this.fileIds, this.memoryLimit = const Omittable.absent(), this.networkPolicy, this.skills, });
 
 factory ContainerAutoParam.fromJson(Map<String, dynamic> json) { return ContainerAutoParam(
   type: ContainerAutoParamType.fromJson(json['type'] as String),

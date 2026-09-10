@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'regenerate_token_response_data.dart';@immutable final class RegenerateTokenResponse {const RegenerateTokenResponse({required this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'regenerate_token_response_data.dart';@immutable final class RegenerateTokenResponse {const RegenerateTokenResponse({required this.data, required this.success, });
 
 factory RegenerateTokenResponse.fromJson(Map<String, dynamic> json) { return RegenerateTokenResponse(
   data: RegenerateTokenResponseData.fromJson(json['data'] as Map<String, dynamic>),

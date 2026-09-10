@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Server-side voice activity detection (VAD) which flips on when user speech is detected and off after a period of silence.
-@immutable final class ServerVad {const ServerVad({this.type = 'server_vad', this.threshold, this.prefixPaddingMs, this.silenceDurationMs, this.createResponse = true, this.interruptResponse = true, this.idleTimeoutMs = const Omittable.absent(), });
+@immutable final class ServerVad {const ServerVad({required this.type, this.threshold, this.prefixPaddingMs, this.silenceDurationMs, this.createResponse, this.interruptResponse, this.idleTimeoutMs = const Omittable.absent(), });
 
 factory ServerVad.fromJson(Map<String, dynamic> json) { return ServerVad(
   type: json['type'] as String,
   threshold: json['threshold'] != null ? (json['threshold'] as num).toDouble() : null,
   prefixPaddingMs: json['prefix_padding_ms'] != null ? (json['prefix_padding_ms'] as num).toInt() : null,
   silenceDurationMs: json['silence_duration_ms'] != null ? (json['silence_duration_ms'] as num).toInt() : null,
-  createResponse: json.containsKey('create_response') ? json['create_response'] as bool : true,
-  interruptResponse: json.containsKey('interrupt_response') ? json['interrupt_response'] as bool : true,
+  createResponse: json['create_response'] as bool?,
+  interruptResponse: json['interrupt_response'] as bool?,
   idleTimeoutMs: json.containsKey('idle_timeout_ms') ? Omittable(json['idle_timeout_ms'] != null ? (json['idle_timeout_ms'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
@@ -38,14 +38,14 @@ final int? silenceDurationMs;
 /// 
 /// If both `create_response` and `interrupt_response` are set to `false`, the model will never respond automatically but VAD events will still be emitted.
 /// 
-final bool createResponse;
+final bool? createResponse;
 
 /// Whether or not to automatically interrupt (cancel) any ongoing response with output to the default
 /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs. If `true` then the response will be cancelled, otherwise it will continue until complete.
 /// 
 /// If both `create_response` and `interrupt_response` are set to `false`, the model will never respond automatically but VAD events will still be emitted.
 /// 
-final bool interruptResponse;
+final bool? interruptResponse;
 
 /// Optional timeout after which a model response will be triggered automatically. This is
 /// useful for situations in which a long pause from the user is unexpected, such as a phone
@@ -61,17 +61,21 @@ final bool interruptResponse;
 /// 
 final Omittable<int?> idleTimeoutMs;
 
+/// The value with the schema default applied when absent.
+bool get createResponseOrDefault { return createResponse ?? true; } 
+/// The value with the schema default applied when absent.
+bool get interruptResponseOrDefault { return interruptResponse ?? true; } 
 Map<String, dynamic> toJson() { return {
   'type': type,
   'threshold': ?threshold,
   'prefix_padding_ms': ?prefixPaddingMs,
   'silence_duration_ms': ?silenceDurationMs,
-  'create_response': createResponse,
-  'interrupt_response': interruptResponse,
+  'create_response': ?createResponse,
+  'interrupt_response': ?interruptResponse,
   if (idleTimeoutMs.isPresent) 'idle_timeout_ms': idleTimeoutMs.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-ServerVad copyWith({String? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, Omittable<int?>? idleTimeoutMs, }) { return ServerVad(
+ServerVad copyWith({String? type, double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool? Function()? createResponse, bool? Function()? interruptResponse, Omittable<int?>? idleTimeoutMs, }) { return ServerVad(
   type: type ?? this.type,
   threshold: threshold != null ? threshold() : this.threshold,
   prefixPaddingMs: prefixPaddingMs != null ? prefixPaddingMs() : this.prefixPaddingMs,

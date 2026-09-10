@@ -185,7 +185,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion($value)'; } 
  }
 /// Configure browser isolation behavior. Settable only for `http` rules with the action set to `isolate`.
-@immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControls {const ZeroTrustGatewayRuleSettingsBisoAdminControls({this.copy, this.dcp, this.dd, this.dk, this.download, this.dp, this.du, this.keyboard, this.paste, this.printing, this.upload, this.version = ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.v1, });
+@immutable final class ZeroTrustGatewayRuleSettingsBisoAdminControls {const ZeroTrustGatewayRuleSettingsBisoAdminControls({this.copy, this.dcp, this.dd, this.dk, this.download, this.dp, this.du, this.keyboard, this.paste, this.printing, this.upload, this.version, });
 
 factory ZeroTrustGatewayRuleSettingsBisoAdminControls.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsBisoAdminControls(
   copy: json['copy'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy.fromJson(json['copy'] as String) : null,
@@ -199,7 +199,7 @@ factory ZeroTrustGatewayRuleSettingsBisoAdminControls.fromJson(Map<String, dynam
   paste: json['paste'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste.fromJson(json['paste'] as String) : null,
   printing: json['printing'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting.fromJson(json['printing'] as String) : null,
   upload: json['upload'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload.fromJson(json['upload'] as String) : null,
-  version: json.containsKey('version') ? ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.fromJson(json['version'] as String) : ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.v1,
+  version: json['version'] != null ? ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.fromJson(json['version'] as String) : null,
 ); }
 
 /// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
@@ -236,8 +236,10 @@ final ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting? printing;
 final ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload? upload;
 
 /// Indicate which version of the browser isolation controls should apply.
-final ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion version;
+final ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion? version;
 
+/// The value with the schema default applied when absent.
+ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion get versionOrDefault { return version ?? ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion.fromJson('v1'); } 
 Map<String, dynamic> toJson() { return {
   if (copy != null) 'copy': copy?.toJson(),
   'dcp': ?dcp,
@@ -250,10 +252,10 @@ Map<String, dynamic> toJson() { return {
   if (paste != null) 'paste': paste?.toJson(),
   if (printing != null) 'printing': printing?.toJson(),
   if (upload != null) 'upload': upload?.toJson(),
-  'version': version.toJson(),
+  if (version != null) 'version': version?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'copy', 'dcp', 'dd', 'dk', 'download', 'dp', 'du', 'keyboard', 'paste', 'printing', 'upload', 'version'}.contains(key)); } 
-ZeroTrustGatewayRuleSettingsBisoAdminControls copyWith({ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy? Function()? copy, bool? Function()? dcp, bool? Function()? dd, bool? Function()? dk, ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload? Function()? download, bool? Function()? dp, bool? Function()? du, ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard? Function()? keyboard, ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste? Function()? paste, ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting? Function()? printing, ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload? Function()? upload, ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion Function()? version, }) { return ZeroTrustGatewayRuleSettingsBisoAdminControls(
+ZeroTrustGatewayRuleSettingsBisoAdminControls copyWith({ZeroTrustGatewayRuleSettingsBisoAdminControlsCopy? Function()? copy, bool? Function()? dcp, bool? Function()? dd, bool? Function()? dk, ZeroTrustGatewayRuleSettingsBisoAdminControlsDownload? Function()? download, bool? Function()? dp, bool? Function()? du, ZeroTrustGatewayRuleSettingsBisoAdminControlsKeyboard? Function()? keyboard, ZeroTrustGatewayRuleSettingsBisoAdminControlsPaste? Function()? paste, ZeroTrustGatewayRuleSettingsBisoAdminControlsPrinting? Function()? printing, ZeroTrustGatewayRuleSettingsBisoAdminControlsUpload? Function()? upload, ZeroTrustGatewayRuleSettingsBisoAdminControlsVersion? Function()? version, }) { return ZeroTrustGatewayRuleSettingsBisoAdminControls(
   copy: copy != null ? copy() : this.copy,
   dcp: dcp != null ? dcp() : this.dcp,
   dd: dd != null ? dd() : this.dd,

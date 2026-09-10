@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stripe_s710_splashscreen.dart';@immutable final class StripeS710 {const StripeS710({this.splashscreen});
 
 factory StripeS710.fromJson(Map<String, dynamic> json) { return StripeS710(
-  splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => StripeS710SplashscreenVariant2.fromJson(v as String),) : null,
+  splashscreen: json['splashscreen'] != null ? StripeS710Splashscreen.fromJson(json['splashscreen']) : null,
 ); }
 
 final StripeS710Splashscreen? splashscreen;

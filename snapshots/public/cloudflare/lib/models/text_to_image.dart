@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextToImage {const TextToImage({required this.prompt, this.guidance = 7.5, this.height, this.image, this.imageB64, this.mask, this.negativePrompt, this.numSteps = 20, this.seed, this.strength = 1.0, this.width, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextToImage {const TextToImage({required this.prompt, this.guidance, this.height, this.image, this.imageB64, this.mask, this.negativePrompt, this.numSteps, this.seed, this.strength, this.width, });
 
 factory TextToImage.fromJson(Map<String, dynamic> json) { return TextToImage(
-  guidance: json.containsKey('guidance') ? (json['guidance'] as num).toDouble() : 7.5,
+  guidance: json['guidance'] != null ? (json['guidance'] as num).toDouble() : null,
   height: json['height'] != null ? (json['height'] as num).toInt() : null,
   image: (json['image'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
   imageB64: json['image_b64'] as String?,
   mask: (json['mask'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
   negativePrompt: json['negative_prompt'] as String?,
-  numSteps: json.containsKey('num_steps') ? (json['num_steps'] as num).toInt() : 20,
+  numSteps: json['num_steps'] != null ? (json['num_steps'] as num).toInt() : null,
   prompt: json['prompt'] as String,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
-  strength: json.containsKey('strength') ? (json['strength'] as num).toDouble() : 1.0,
+  strength: json['strength'] != null ? (json['strength'] as num).toDouble() : null,
   width: json['width'] != null ? (json['width'] as num).toInt() : null,
 ); }
 
 /// Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
-final double guidance;
+final double? guidance;
 
 /// The height of the generated image in pixels
 final int? height;
@@ -35,7 +35,7 @@ final List<double>? mask;
 final String? negativePrompt;
 
 /// The number of diffusion steps; higher values can improve quality but take longer
-final int numSteps;
+final int? numSteps;
 
 /// A text description of the image you want to generate
 final String prompt;
@@ -44,26 +44,32 @@ final String prompt;
 final int? seed;
 
 /// A value between 0 and 1 indicating how strongly to apply the transformation during img2img tasks; lower values make the output closer to the input image
-final double strength;
+final double? strength;
 
 /// The width of the generated image in pixels
 final int? width;
 
+/// The value with the schema default applied when absent.
+double get guidanceOrDefault { return guidance ?? 7.5; } 
+/// The value with the schema default applied when absent.
+int get numStepsOrDefault { return numSteps ?? 20; } 
+/// The value with the schema default applied when absent.
+double get strengthOrDefault { return strength ?? 1.0; } 
 Map<String, dynamic> toJson() { return {
-  'guidance': guidance,
+  'guidance': ?guidance,
   'height': ?height,
   'image': ?image,
   'image_b64': ?imageB64,
   'mask': ?mask,
   'negative_prompt': ?negativePrompt,
-  'num_steps': numSteps,
+  'num_steps': ?numSteps,
   'prompt': prompt,
   'seed': ?seed,
-  'strength': strength,
+  'strength': ?strength,
   'width': ?width,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-TextToImage copyWith({double Function()? guidance, int? Function()? height, List<double>? Function()? image, String? Function()? imageB64, List<double>? Function()? mask, String? Function()? negativePrompt, int Function()? numSteps, String? prompt, int? Function()? seed, double Function()? strength, int? Function()? width, }) { return TextToImage(
+TextToImage copyWith({double? Function()? guidance, int? Function()? height, List<double>? Function()? image, String? Function()? imageB64, List<double>? Function()? mask, String? Function()? negativePrompt, int? Function()? numSteps, String? prompt, int? Function()? seed, double? Function()? strength, int? Function()? width, }) { return TextToImage(
   guidance: guidance != null ? guidance() : this.guidance,
   height: height != null ? height() : this.height,
   image: image != null ? image() : this.image,

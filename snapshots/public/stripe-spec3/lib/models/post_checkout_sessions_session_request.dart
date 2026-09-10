@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_session_request_collected_information.dart';import 'post_checkout_sessions_session_request_line_items.dart';import 'post_checkout_sessions_session_request_metadata.dart';import 'post_checkout_sessions_session_request_shipping_options.dart';import 'post_checkout_sessions_session_request_shipping_options_variant1.dart';@immutable final class PostCheckoutSessionsSessionRequest {const PostCheckoutSessionsSessionRequest({this.collectedInformation, this.expand, this.lineItems, this.metadata, this.shippingOptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_session_request_collected_information.dart';import 'post_checkout_sessions_session_request_line_items.dart';import 'post_checkout_sessions_session_request_metadata.dart';import 'post_checkout_sessions_session_request_shipping_options.dart';@immutable final class PostCheckoutSessionsSessionRequest {const PostCheckoutSessionsSessionRequest({this.collectedInformation, this.expand, this.lineItems, this.metadata, this.shippingOptions, });
 
 factory PostCheckoutSessionsSessionRequest.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequest(
   collectedInformation: json['collected_information'] != null ? PostCheckoutSessionsSessionRequestCollectedInformation.fromJson(json['collected_information'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   lineItems: (json['line_items'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsSessionRequestLineItems.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostCheckoutSessionsSessionRequestMetadataVariant2.fromJson(v as String),) : null,
-  shippingOptions: json['shipping_options'] != null ? OneOf2.parse(json['shipping_options'], fromA: (v) => (v as List<dynamic>).map((e) => PostCheckoutSessionsSessionRequestShippingOptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostCheckoutSessionsSessionRequestShippingOptionsVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostCheckoutSessionsSessionRequestMetadata.fromJson(json['metadata']) : null,
+  shippingOptions: json['shipping_options'] != null ? PostCheckoutSessionsSessionRequestShippingOptions.fromJson(json['shipping_options']) : null,
 ); }
 
 /// Information about the customer collected within the Checkout Session. Can only be set when updating `embedded` or `custom` sessions.

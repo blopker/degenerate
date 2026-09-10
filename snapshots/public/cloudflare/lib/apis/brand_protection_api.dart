@@ -13,7 +13,7 @@ final class BrandProtectionApi with ApiExecutor {const BrandProtectionApi(this.a
 /// Return all alerts on submitted domains
 ///
 /// `GET /accounts/{account_id}/brand-protection/alerts`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionAlerts({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionAlerts({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -24,9 +24,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -35,7 +43,7 @@ return execute(
 /// Return a success message after updating alerts on submitted domains by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlerts({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> patchAccountsBrandProtectionAlerts({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -46,9 +54,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -57,7 +73,7 @@ return execute(
 /// Return a success message after updating verification statuses of tracked URLs to awaiting by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts/clear`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsClear({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> patchAccountsBrandProtectionAlertsClear({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -68,9 +84,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -79,7 +103,7 @@ return execute(
 /// Return a success message after updating verification statuses of tracked URLs to disproven by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts/refute`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsRefute({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> patchAccountsBrandProtectionAlertsRefute({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -90,9 +114,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -101,7 +133,7 @@ return execute(
 /// Return a success message after updating verification statuses of tracked URLs to confirmed by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/alerts/verify`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionAlertsVerify({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> patchAccountsBrandProtectionAlertsVerify({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -112,9 +144,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -123,7 +163,7 @@ return execute(
 /// Return all brands
 ///
 /// `GET /accounts/{account_id}/brand-protection/brands`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -134,9 +174,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -145,7 +193,7 @@ return execute(
 /// Return new brands
 ///
 /// `POST /accounts/{account_id}/brand-protection/brands`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> postAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -156,9 +204,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -167,7 +223,7 @@ return execute(
 /// Return a success message after deleting brands by ID
 ///
 /// `DELETE /accounts/{account_id}/brand-protection/brands`
-Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> deleteAccountsBrandProtectionBrands({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -178,9 +234,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -189,7 +253,7 @@ return execute(
 /// Return patterns for brands based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/brands/patterns`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -200,9 +264,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -211,7 +283,7 @@ return execute(
 /// Return a success message after creating new patterns for brands by ID
 ///
 /// `POST /accounts/{account_id}/brand-protection/brands/patterns`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> postAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -222,9 +294,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -233,7 +313,7 @@ return execute(
 /// Return a success message after deleting patterns for brands by ID
 ///
 /// `DELETE /accounts/{account_id}/brand-protection/brands/patterns`
-Future<ApiResult<void, ErrorModel>> deleteAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> deleteAccountsBrandProtectionBrandsPatterns({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -244,9 +324,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -255,7 +343,7 @@ return execute(
 /// Return a success message after updating verification statuses of submitted URLs to awaiting by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/clear`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionClear({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> patchAccountsBrandProtectionClear({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -266,9 +354,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -277,7 +373,7 @@ return execute(
 /// Return submitted domains based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/domain-info`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionDomainInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionDomainInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -288,9 +384,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -299,7 +403,7 @@ return execute(
 /// Return recent URL submissions
 ///
 /// `GET /accounts/{account_id}/brand-protection/recent-submissions`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionRecentSubmissions({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionRecentSubmissions({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -310,9 +414,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -321,7 +433,7 @@ return execute(
 /// Return a success message after updating verification statuses of submitted URLs to disproven by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/refute`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionRefute({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> patchAccountsBrandProtectionRefute({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -332,9 +444,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -343,7 +463,7 @@ return execute(
 /// Return URL submissions based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/submission-info`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionSubmissionInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionSubmissionInfo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -354,9 +474,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -377,10 +505,16 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return UrlSubmit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return UrlSubmit.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -389,7 +523,7 @@ return execute(
 /// Return submitted domains based on pattern
 ///
 /// `GET /accounts/{account_id}/brand-protection/tracked-domains`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionTrackedDomains({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionTrackedDomains({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -400,9 +534,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -423,11 +565,16 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList();
   },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -436,7 +583,7 @@ return execute(
 /// Return a success message after updating verification statuses of submitted URLs to confirmed by ID
 ///
 /// `PATCH /accounts/{account_id}/brand-protection/verify`
-Future<ApiResult<void, ErrorModel>> patchAccountsBrandProtectionVerify({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> patchAccountsBrandProtectionVerify({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -447,16 +594,24 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
 /// Internal route for testing URL submissions
 ///
 /// `POST /internal/submit`
-Future<ApiResult<void, ErrorModel>> postInternalSubmit({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> postInternalSubmit({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -467,9 +622,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -478,7 +641,7 @@ return execute(
 /// Return a success message after running liveness checks
 ///
 /// `GET /live`
-Future<ApiResult<void, ErrorModel>> getLive({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getLive({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -489,9 +652,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -500,7 +671,7 @@ return execute(
 /// Return a success message after running readiness checks
 ///
 /// `GET /ready`
-Future<ApiResult<void, ErrorModel>> getReady({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getReady({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -511,9 +682,17 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 

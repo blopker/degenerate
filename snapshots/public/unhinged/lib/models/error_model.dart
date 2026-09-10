@@ -7,7 +7,7 @@ final class ErrorModel {
   const ErrorModel({
     required this.code,
     required this.message,
-    this.isYourFault = true,
+    this.isYourFault,
     this.error,
   });
 
@@ -15,9 +15,7 @@ final class ErrorModel {
     return ErrorModel(
       code: json['code'] as String,
       message: json['message'] as String,
-      isYourFault: json.containsKey('is_your_fault')
-          ? json['is_your_fault'] as bool
-          : true,
+      isYourFault: json['is_your_fault'] as bool?,
       error: json['error'] != null
           ? ErrorModel.fromJson(json['error'] as Map<String, dynamic>)
           : null,
@@ -28,15 +26,20 @@ final class ErrorModel {
 
   final String message;
 
-  final bool isYourFault;
+  final bool? isYourFault;
 
   final ErrorModel? error;
+
+  /// The value with the schema default applied when absent.
+  bool get isYourFaultOrDefault {
+    return isYourFault ?? true;
+  }
 
   Map<String, dynamic> toJson() {
     return {
       'code': code,
       'message': message,
-      'is_your_fault': isYourFault,
+      'is_your_fault': ?isYourFault,
       if (error != null) 'error': error?.toJson(),
     };
   }
@@ -51,7 +54,7 @@ final class ErrorModel {
   ErrorModel copyWith({
     String? code,
     String? message,
-    bool Function()? isYourFault,
+    bool? Function()? isYourFault,
     ErrorModel? Function()? error,
   }) {
     return ErrorModel(

@@ -77,7 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EvalGraderTextSimilarityEvaluationMetric($value)'; } 
  }
-@immutable final class EvalGraderTextSimilarity {const EvalGraderTextSimilarity({required this.name, required this.input, required this.reference, required this.evaluationMetric, required this.passThreshold, this.type = EvalGraderTextSimilarityType.textSimilarity, });
+@immutable final class EvalGraderTextSimilarity {const EvalGraderTextSimilarity({required this.type, required this.name, required this.input, required this.reference, required this.evaluationMetric, required this.passThreshold, });
 
 factory EvalGraderTextSimilarity.fromJson(Map<String, dynamic> json) { return EvalGraderTextSimilarity(
   type: EvalGraderTextSimilarityType.fromJson(json['type'] as String),

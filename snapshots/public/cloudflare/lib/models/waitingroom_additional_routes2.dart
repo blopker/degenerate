@@ -1,24 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WaitingroomAdditionalRoutes2 {const WaitingroomAdditionalRoutes2({this.host, this.path = '/', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WaitingroomAdditionalRoutes2 {const WaitingroomAdditionalRoutes2({this.host, this.path, });
 
 factory WaitingroomAdditionalRoutes2.fromJson(Map<String, dynamic> json) { return WaitingroomAdditionalRoutes2(
   host: json['host'] as String?,
-  path: json.containsKey('path') ? json['path'] as String : '/',
+  path: json['path'] as String?,
 ); }
 
 /// The hostname to which this waiting room will be applied (no wildcards). The hostname must be the primary domain, subdomain, or custom hostname (if using SSL for SaaS) of this zone. Please do not include the scheme (http:// or https://).
 final String? host;
 
 /// Sets the path within the host to enable the waiting room on. The waiting room will be enabled for all subpaths as well. If there are two waiting rooms on the same subpath, the waiting room for the most specific path will be chosen. Wildcards and query parameters are not supported.
-final String path;
+final String? path;
 
+/// The value with the schema default applied when absent.
+String get pathOrDefault { return path ?? '/'; } 
 Map<String, dynamic> toJson() { return {
   'host': ?host,
-  'path': path,
+  'path': ?path,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'path'}.contains(key)); } 
-WaitingroomAdditionalRoutes2 copyWith({String? Function()? host, String Function()? path, }) { return WaitingroomAdditionalRoutes2(
+WaitingroomAdditionalRoutes2 copyWith({String? Function()? host, String? Function()? path, }) { return WaitingroomAdditionalRoutes2(
   host: host != null ? host() : this.host,
   path: path != null ? path() : this.path,
 ); } 

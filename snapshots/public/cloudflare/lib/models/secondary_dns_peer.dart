@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_components_schemas_identifier.dart';import 'secondary_dns_components_schemas_name.dart';/// IPv4/IPv6 address of primary or secondary nameserver, depending on what zone this peer is linked to. For primary zones this IP defines the IP of the secondary nameserver Cloudflare will NOTIFY upon zone changes. For secondary zones this IP defines the IP of the primary nameserver Cloudflare will send AXFR/IXFR requests to.
-extension type const SecondaryDnsIp(String value) {
-factory SecondaryDnsIp.fromJson(String json) => SecondaryDnsIp(json);
-
-String toJson() => value;
-
-}
-/// Enable IXFR transfer protocol, default is AXFR. Only applicable to secondary zones.
-extension type const SecondaryDnsIxfrEnable(bool value) {
-factory SecondaryDnsIxfrEnable.fromJson(bool json) => SecondaryDnsIxfrEnable(json);
-
-bool toJson() => value;
-
-}
-/// DNS port of primary or secondary nameserver, depending on what zone this peer is linked to.
-extension type const SecondaryDnsPort(double value) {
-factory SecondaryDnsPort.fromJson(num json) => SecondaryDnsPort(json.toDouble());
-
-num toJson() => value;
-
-}
-/// TSIG authentication will be used for zone transfer if configured.
-extension type const SecondaryDnsTsigId(String value) {
-factory SecondaryDnsTsigId.fromJson(String json) => SecondaryDnsTsigId(json);
-
-String toJson() => value;
-
-}
-@immutable final class SecondaryDnsPeer {const SecondaryDnsPeer({required this.id, required this.name, this.ip, this.ixfrEnable, this.port, this.tsigId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_components_schemas_identifier.dart';import 'secondary_dns_components_schemas_name.dart';import 'secondary_dns_ip.dart';import 'secondary_dns_ixfr_enable.dart';import 'secondary_dns_port.dart';import 'secondary_dns_tsig_id.dart';@immutable final class SecondaryDnsPeer {const SecondaryDnsPeer({required this.id, required this.name, this.ip, this.ixfrEnable, this.port, this.tsigId, });
 
 factory SecondaryDnsPeer.fromJson(Map<String, dynamic> json) { return SecondaryDnsPeer(
   id: SecondaryDnsComponentsSchemasIdentifier.fromJson(json['id'] as String),

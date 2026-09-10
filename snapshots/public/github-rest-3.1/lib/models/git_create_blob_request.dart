@@ -1,24 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitCreateBlobRequest {const GitCreateBlobRequest({required this.content, this.encoding = 'utf-8', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitCreateBlobRequest {const GitCreateBlobRequest({required this.content, this.encoding, });
 
 factory GitCreateBlobRequest.fromJson(Map<String, dynamic> json) { return GitCreateBlobRequest(
   content: json['content'] as String,
-  encoding: json.containsKey('encoding') ? json['encoding'] as String : 'utf-8',
+  encoding: json['encoding'] as String?,
 ); }
 
 /// The new blob's content.
 final String content;
 
 /// The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
-final String encoding;
+final String? encoding;
 
+/// The value with the schema default applied when absent.
+String get encodingOrDefault { return encoding ?? 'utf-8'; } 
 Map<String, dynamic> toJson() { return {
   'content': content,
-  'encoding': encoding,
+  'encoding': ?encoding,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String; } 
-GitCreateBlobRequest copyWith({String? content, String Function()? encoding, }) { return GitCreateBlobRequest(
+GitCreateBlobRequest copyWith({String? content, String? Function()? encoding, }) { return GitCreateBlobRequest(
   content: content ?? this.content,
   encoding: encoding != null ? encoding() : this.encoding,
 ); } 

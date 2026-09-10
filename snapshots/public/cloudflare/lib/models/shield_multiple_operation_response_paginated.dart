@@ -7,7 +7,7 @@ factory ShieldMultipleOperationResponsePaginated.fromJson(Map<String, dynamic> j
   messages: (json['messages'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? ShieldMultipleOperationResponsePaginatedResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-  result: (json['result'] as List<dynamic>).map((e) => ShieldOperation.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => e == null ? null : ShieldOperation.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 final List<ShieldMessages2> errors;
@@ -19,20 +19,20 @@ final bool success;
 
 final ShieldMultipleOperationResponsePaginatedResultInfo? resultInfo;
 
-final List<ShieldOperation> result;
+final List<ShieldOperation?> result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-  'result': result.map((e) => e.toJson()).toList(),
+  'result': result.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-ShieldMultipleOperationResponsePaginated copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, ShieldMultipleOperationResponsePaginatedResultInfo? Function()? resultInfo, List<ShieldOperation>? result, }) { return ShieldMultipleOperationResponsePaginated(
+ShieldMultipleOperationResponsePaginated copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, ShieldMultipleOperationResponsePaginatedResultInfo? Function()? resultInfo, List<ShieldOperation?>? result, }) { return ShieldMultipleOperationResponsePaginated(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

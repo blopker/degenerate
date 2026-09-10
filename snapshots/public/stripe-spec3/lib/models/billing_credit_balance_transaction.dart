@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_transaction_credit_grant.dart';import 'billing_credit_balance_transaction_test_clock.dart';import 'billing_credit_grant.dart';import 'billing_credit_grants_resource_balance_credit.dart';import 'billing_credit_grants_resource_balance_debit.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_transaction_credit_grant.dart';import 'billing_credit_balance_transaction_test_clock.dart';import 'billing_credit_grants_resource_balance_credit.dart';import 'billing_credit_grants_resource_balance_debit.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingCreditBalanceTransactionObject {const BillingCreditBalanceTransactionObject._(this.value);
 
 factory BillingCreditBalanceTransactionObject.fromJson(String json) { return switch (json) {
@@ -53,13 +53,13 @@ bool get isUnknown { return !values.contains(this); }
 factory BillingCreditBalanceTransaction.fromJson(Map<String, dynamic> json) { return BillingCreditBalanceTransaction(
   created: (json['created'] as num).toInt(),
   credit: json.containsKey('credit') ? Omittable(json['credit'] != null ? BillingCreditGrantsResourceBalanceCredit.fromJson(json['credit'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  creditGrant: OneOf2.parse(json['credit_grant'], fromA: (v) => v as String, fromB: (v) => BillingCreditGrant.fromJson(v as Map<String, dynamic>),),
+  creditGrant: BillingCreditBalanceTransactionCreditGrant.fromJson(json['credit_grant']),
   debit: json.containsKey('debit') ? Omittable(json['debit'] != null ? BillingCreditGrantsResourceBalanceDebit.fromJson(json['debit'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   effectiveAt: (json['effective_at'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: BillingCreditBalanceTransactionObject.fromJson(json['object'] as String),
-  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? BillingCreditBalanceTransactionTestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
   type: json.containsKey('type') ? Omittable(json['type'] != null ? BillingCreditBalanceTransactionType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
 ); }
 

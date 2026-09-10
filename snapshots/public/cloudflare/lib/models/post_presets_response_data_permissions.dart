@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPresetsResponseDataPermissionsWaitingRoomType($value)'; } 
  }
-@immutable final class PostPresetsResponseDataPermissions {const PostPresetsResponseDataPermissions({required this.acceptWaitingRequests, required this.canAcceptProductionRequests, required this.canChangeParticipantPermissions, required this.canEditDisplayName, required this.canLivestream, required this.canRecord, required this.canSpotlight, required this.chat, required this.connectedMeetings, required this.disableParticipantAudio, required this.disableParticipantScreensharing, required this.disableParticipantVideo, required this.hiddenParticipant, required this.kickParticipant, required this.media, required this.pinParticipant, required this.plugins, required this.polls, required this.showParticipantList, required this.waitingRoomType, this.isRecorder = false, this.recorderType = PostPresetsResponseDataPermissionsRecorderType.none, });
+@immutable final class PostPresetsResponseDataPermissions {const PostPresetsResponseDataPermissions({required this.acceptWaitingRequests, required this.canAcceptProductionRequests, required this.canChangeParticipantPermissions, required this.canEditDisplayName, required this.canLivestream, required this.canRecord, required this.canSpotlight, required this.chat, required this.connectedMeetings, required this.disableParticipantAudio, required this.disableParticipantScreensharing, required this.disableParticipantVideo, required this.hiddenParticipant, required this.kickParticipant, required this.media, required this.pinParticipant, required this.plugins, required this.polls, required this.recorderType, required this.showParticipantList, required this.waitingRoomType, this.isRecorder, });
 
 factory PostPresetsResponseDataPermissions.fromJson(Map<String, dynamic> json) { return PostPresetsResponseDataPermissions(
   acceptWaitingRequests: json['accept_waiting_requests'] as bool,
@@ -72,7 +72,7 @@ factory PostPresetsResponseDataPermissions.fromJson(Map<String, dynamic> json) {
   disableParticipantScreensharing: json['disable_participant_screensharing'] as bool,
   disableParticipantVideo: json['disable_participant_video'] as bool,
   hiddenParticipant: json['hidden_participant'] as bool,
-  isRecorder: json.containsKey('is_recorder') ? json['is_recorder'] as bool : false,
+  isRecorder: json['is_recorder'] as bool?,
   kickParticipant: json['kick_participant'] as bool,
   media: PostPresetsResponseDataPermissionsMedia.fromJson(json['media'] as Map<String, dynamic>),
   pinParticipant: json['pin_participant'] as bool,
@@ -112,7 +112,7 @@ final bool disableParticipantVideo;
 /// Whether this participant is visible to others or not
 final bool hiddenParticipant;
 
-final bool isRecorder;
+final bool? isRecorder;
 
 final bool kickParticipant;
 
@@ -135,6 +135,8 @@ final bool showParticipantList;
 /// Waiting room type
 final PostPresetsResponseDataPermissionsWaitingRoomType waitingRoomType;
 
+/// The value with the schema default applied when absent.
+bool get isRecorderOrDefault { return isRecorder ?? false; } 
 Map<String, dynamic> toJson() { return {
   'accept_waiting_requests': acceptWaitingRequests,
   'can_accept_production_requests': canAcceptProductionRequests,
@@ -149,7 +151,7 @@ Map<String, dynamic> toJson() { return {
   'disable_participant_screensharing': disableParticipantScreensharing,
   'disable_participant_video': disableParticipantVideo,
   'hidden_participant': hiddenParticipant,
-  'is_recorder': isRecorder,
+  'is_recorder': ?isRecorder,
   'kick_participant': kickParticipant,
   'media': media.toJson(),
   'pin_participant': pinParticipant,
@@ -180,7 +182,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accep
       json.containsKey('recorder_type') &&
       json.containsKey('show_participant_list') && json['show_participant_list'] is bool &&
       json.containsKey('waiting_room_type'); } 
-PostPresetsResponseDataPermissions copyWith({bool? acceptWaitingRequests, bool? canAcceptProductionRequests, bool? canChangeParticipantPermissions, bool? canEditDisplayName, bool? canLivestream, bool? canRecord, bool? canSpotlight, PostPresetsResponseDataPermissionsChat? chat, PostPresetsResponseDataPermissionsConnectedMeetings? connectedMeetings, bool? disableParticipantAudio, bool? disableParticipantScreensharing, bool? disableParticipantVideo, bool? hiddenParticipant, bool Function()? isRecorder, bool? kickParticipant, PostPresetsResponseDataPermissionsMedia? media, bool? pinParticipant, PostPresetsResponseDataPermissionsPlugins? plugins, PostPresetsResponseDataPermissionsPolls? polls, PostPresetsResponseDataPermissionsRecorderType? recorderType, bool? showParticipantList, PostPresetsResponseDataPermissionsWaitingRoomType? waitingRoomType, }) { return PostPresetsResponseDataPermissions(
+PostPresetsResponseDataPermissions copyWith({bool? acceptWaitingRequests, bool? canAcceptProductionRequests, bool? canChangeParticipantPermissions, bool? canEditDisplayName, bool? canLivestream, bool? canRecord, bool? canSpotlight, PostPresetsResponseDataPermissionsChat? chat, PostPresetsResponseDataPermissionsConnectedMeetings? connectedMeetings, bool? disableParticipantAudio, bool? disableParticipantScreensharing, bool? disableParticipantVideo, bool? hiddenParticipant, bool? Function()? isRecorder, bool? kickParticipant, PostPresetsResponseDataPermissionsMedia? media, bool? pinParticipant, PostPresetsResponseDataPermissionsPlugins? plugins, PostPresetsResponseDataPermissionsPolls? polls, PostPresetsResponseDataPermissionsRecorderType? recorderType, bool? showParticipantList, PostPresetsResponseDataPermissionsWaitingRoomType? waitingRoomType, }) { return PostPresetsResponseDataPermissions(
   acceptWaitingRequests: acceptWaitingRequests ?? this.acceptWaitingRequests,
   canAcceptProductionRequests: canAcceptProductionRequests ?? this.canAcceptProductionRequests,
   canChangeParticipantPermissions: canChangeParticipantPermissions ?? this.canChangeParticipantPermissions,

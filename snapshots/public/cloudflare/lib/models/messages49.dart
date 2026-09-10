@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages49_functions.dart';import 'messages49_messages.dart';import 'messages49_response_format.dart';import 'messages49_tools.dart';import 'messages49_tools_variant1.dart';import 'messages49_tools_variant2.dart';@immutable final class Messages49 {const Messages49({required this.messages, this.frequencyPenalty, this.functions, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.tools, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages49_functions.dart';import 'messages49_messages.dart';import 'messages49_response_format.dart';import 'messages49_tools.dart';import 'messages49_tools_variant1.dart';import 'messages49_tools_variant2.dart';@immutable final class Messages49 {const Messages49({required this.messages, this.frequencyPenalty, this.functions, this.maxTokens, this.presencePenalty, this.raw, this.repetitionPenalty, this.responseFormat, this.seed, this.stream, this.temperature, this.tools, this.topK, this.topP, });
 
 factory Messages49.fromJson(Map<String, dynamic> json) { return Messages49(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => Messages49Functions.fromJson(e as Map<String, dynamic>)).toList(),
-  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
+  maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   messages: (json['messages'] as List<dynamic>).map((e) => Messages49Messages.fromJson(e as Map<String, dynamic>)).toList(),
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
-  raw: json.containsKey('raw') ? json['raw'] as bool : false,
+  raw: json['raw'] as bool?,
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
   responseFormat: json['response_format'] != null ? Messages49ResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
-  stream: json.containsKey('stream') ? json['stream'] as bool : false,
-  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.6,
+  stream: json['stream'] as bool?,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => Messages49ToolsVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => Messages49ToolsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
   topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
@@ -25,7 +25,7 @@ final double? frequencyPenalty;
 final List<Messages49Functions>? functions;
 
 /// The maximum number of tokens to generate in the response.
-final int maxTokens;
+final int? maxTokens;
 
 /// An array of message objects representing the conversation history.
 final List<Messages49Messages> messages;
@@ -34,7 +34,7 @@ final List<Messages49Messages> messages;
 final double? presencePenalty;
 
 /// If true, a chat template is not applied and you must adhere to the specific model's expected formatting.
-final bool raw;
+final bool? raw;
 
 /// Penalty for repeated tokens; higher values discourage repetition.
 final double? repetitionPenalty;
@@ -45,10 +45,10 @@ final Messages49ResponseFormat? responseFormat;
 final int? seed;
 
 /// If true, the response will be streamed back incrementally using SSE, Server Sent Events.
-final bool stream;
+final bool? stream;
 
 /// Controls the randomness of the output; higher values produce more random results.
-final double temperature;
+final double? temperature;
 
 /// A list of tools available for the assistant to use.
 final List<Messages49Tools>? tools;
@@ -59,24 +59,32 @@ final int? topK;
 /// Adjusts the creativity of the AI's responses by controlling how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 final double? topP;
 
+/// The value with the schema default applied when absent.
+int get maxTokensOrDefault { return maxTokens ?? 256; } 
+/// The value with the schema default applied when absent.
+bool get rawOrDefault { return raw ?? false; } 
+/// The value with the schema default applied when absent.
+bool get streamOrDefault { return stream ?? false; } 
+/// The value with the schema default applied when absent.
+double get temperatureOrDefault { return temperature ?? 0.6; } 
 Map<String, dynamic> toJson() { return {
   'frequency_penalty': ?frequencyPenalty,
   if (functions != null) 'functions': functions?.map((e) => e.toJson()).toList(),
-  'max_tokens': maxTokens,
+  'max_tokens': ?maxTokens,
   'messages': messages.map((e) => e.toJson()).toList(),
   'presence_penalty': ?presencePenalty,
-  'raw': raw,
+  'raw': ?raw,
   'repetition_penalty': ?repetitionPenalty,
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
   'seed': ?seed,
-  'stream': stream,
-  'temperature': temperature,
+  'stream': ?stream,
+  'temperature': ?temperature,
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   'top_k': ?topK,
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-Messages49 copyWith({double? Function()? frequencyPenalty, List<Messages49Functions>? Function()? functions, int Function()? maxTokens, List<Messages49Messages>? messages, double? Function()? presencePenalty, bool Function()? raw, double? Function()? repetitionPenalty, Messages49ResponseFormat? Function()? responseFormat, int? Function()? seed, bool Function()? stream, double Function()? temperature, List<Messages49Tools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) { return Messages49(
+Messages49 copyWith({double? Function()? frequencyPenalty, List<Messages49Functions>? Function()? functions, int? Function()? maxTokens, List<Messages49Messages>? messages, double? Function()? presencePenalty, bool? Function()? raw, double? Function()? repetitionPenalty, Messages49ResponseFormat? Function()? responseFormat, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, List<Messages49Tools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) { return Messages49(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   functions: functions != null ? functions() : this.functions,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,

@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserMessageQuotedTextType($value)'; } 
  }
 /// Quoted snippet that the user referenced in their message.
-@immutable final class UserMessageQuotedText {const UserMessageQuotedText({required this.text, this.type = UserMessageQuotedTextType.quotedText, });
+@immutable final class UserMessageQuotedText {const UserMessageQuotedText({required this.type, required this.text, });
 
 factory UserMessageQuotedText.fromJson(Map<String, dynamic> json) { return UserMessageQuotedText(
   type: UserMessageQuotedTextType.fromJson(json['type'] as String),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodReadinessGate contains the reference to a pod condition
-@immutable final class PodReadinessGate {const PodReadinessGate({this.conditionType = ''});
+@immutable final class PodReadinessGate {const PodReadinessGate({required this.conditionType});
 
 factory PodReadinessGate.fromJson(Map<String, dynamic> json) { return PodReadinessGate(
   conditionType: json['conditionType'] as String,

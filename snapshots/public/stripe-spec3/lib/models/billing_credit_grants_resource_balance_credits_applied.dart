@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_balance_credits_applied_invoice.dart';import 'invoice.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_balance_credits_applied_invoice.dart';/// 
 @immutable final class BillingCreditGrantsResourceBalanceCreditsApplied {const BillingCreditGrantsResourceBalanceCreditsApplied({required this.invoice, required this.invoiceLineItem, });
 
 factory BillingCreditGrantsResourceBalanceCreditsApplied.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceCreditsApplied(
-  invoice: OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),),
+  invoice: BillingCreditGrantsResourceBalanceCreditsAppliedInvoice.fromJson(json['invoice']),
   invoiceLineItem: json['invoice_line_item'] as String,
 ); }
 

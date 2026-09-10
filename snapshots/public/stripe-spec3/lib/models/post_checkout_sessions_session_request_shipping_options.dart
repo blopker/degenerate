@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsSessionRequestShippingOptionsVariant2($value)'; } 
  }
-typedef PostCheckoutSessionsSessionRequestShippingOptions = OneOf2<List<PostCheckoutSessionsSessionRequestShippingOptionsVariant1>,PostCheckoutSessionsSessionRequestShippingOptionsVariant2>;
+/// The shipping rate options to apply to this Session. Up to a maximum of 5.
+@immutable
+final class PostCheckoutSessionsSessionRequestShippingOptions {
+  const PostCheckoutSessionsSessionRequestShippingOptions({this.listPostCheckoutSessionsSessionRequestShippingOptionsVariant1 = const Omittable.absent(),
+this.postCheckoutSessionsSessionRequestShippingOptionsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCheckoutSessionsSessionRequestShippingOptions._({required this.rawValue, required this.listPostCheckoutSessionsSessionRequestShippingOptionsVariant1,
+required this.postCheckoutSessionsSessionRequestShippingOptionsVariant2,});
+  factory PostCheckoutSessionsSessionRequestShippingOptions.fromJson(Object? json) => PostCheckoutSessionsSessionRequestShippingOptions._(
+    rawValue: Omittable(json),
+    listPostCheckoutSessionsSessionRequestShippingOptionsVariant1: parseAnyOfVariant<List<PostCheckoutSessionsSessionRequestShippingOptionsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostCheckoutSessionsSessionRequestShippingOptionsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+postCheckoutSessionsSessionRequestShippingOptionsVariant2: parseAnyOfVariant<PostCheckoutSessionsSessionRequestShippingOptionsVariant2>(json, (value) => PostCheckoutSessionsSessionRequestShippingOptionsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostCheckoutSessionsSessionRequestShippingOptionsVariant1>> listPostCheckoutSessionsSessionRequestShippingOptionsVariant1;
+final Omittable<PostCheckoutSessionsSessionRequestShippingOptionsVariant2> postCheckoutSessionsSessionRequestShippingOptionsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostCheckoutSessionsSessionRequestShippingOptionsVariant1.isPresent || postCheckoutSessionsSessionRequestShippingOptionsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostCheckoutSessionsSessionRequestShippingOptionsVariant1.isPresent) listPostCheckoutSessionsSessionRequestShippingOptionsVariant1.value?.map((e) => e.toJson()).toList(),
+if (postCheckoutSessionsSessionRequestShippingOptionsVariant2.isPresent) postCheckoutSessionsSessionRequestShippingOptionsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCheckoutSessionsSessionRequestShippingOptions && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCheckoutSessionsSessionRequestShippingOptions(${toJson()})';
+}

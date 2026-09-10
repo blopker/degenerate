@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerRequestIndividualNameVariant2($value)'; } 
  }
-typedef PostCustomersCustomerRequestIndividualName = OneOf2<String,PostCustomersCustomerRequestIndividualNameVariant2>;
+/// The customer's full name. This may be up to *150 characters*.
+@immutable
+final class PostCustomersCustomerRequestIndividualName {
+  const PostCustomersCustomerRequestIndividualName({this.string = const Omittable.absent(),
+this.postCustomersCustomerRequestIndividualNameVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCustomersCustomerRequestIndividualName._({required this.rawValue, required this.string,
+required this.postCustomersCustomerRequestIndividualNameVariant2,});
+  factory PostCustomersCustomerRequestIndividualName.fromJson(Object? json) => PostCustomersCustomerRequestIndividualName._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postCustomersCustomerRequestIndividualNameVariant2: parseAnyOfVariant<PostCustomersCustomerRequestIndividualNameVariant2>(json, (value) => PostCustomersCustomerRequestIndividualNameVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostCustomersCustomerRequestIndividualNameVariant2> postCustomersCustomerRequestIndividualNameVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postCustomersCustomerRequestIndividualNameVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postCustomersCustomerRequestIndividualNameVariant2.isPresent) postCustomersCustomerRequestIndividualNameVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCustomersCustomerRequestIndividualName && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCustomersCustomerRequestIndividualName(${toJson()})';
+}

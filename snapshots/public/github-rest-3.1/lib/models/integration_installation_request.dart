@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise.dart';import 'integration_installation_request_account.dart';import 'simple_user.dart';/// Request to install an integration on a target
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration_installation_request_account.dart';import 'simple_user.dart';/// Request to install an integration on a target
 @immutable final class IntegrationInstallationRequest {const IntegrationInstallationRequest({required this.id, required this.account, required this.requester, required this.createdAt, this.nodeId, });
 
 factory IntegrationInstallationRequest.fromJson(Map<String, dynamic> json) { return IntegrationInstallationRequest(
   id: (json['id'] as num).toInt(),
   nodeId: json['node_id'] as String?,
-  account: OneOf2.parse(json['account'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => Enterprise.fromJson(v as Map<String, dynamic>),),
+  account: IntegrationInstallationRequestAccount.fromJson(json['account']),
   requester: SimpleUser.fromJson(json['requester'] as Map<String, dynamic>),
   createdAt: DateTime.parse(json['created_at'] as String),
 ); }

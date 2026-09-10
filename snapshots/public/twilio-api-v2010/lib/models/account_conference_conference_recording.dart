@@ -40,7 +40,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ConferenceRecordingEnumSource($value)'; } 
  }
-@immutable final class AccountConferenceConferenceRecording {const AccountConferenceConferenceRecording({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.callSid = const Omittable.absent(), this.conferenceSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.startTime = const Omittable.absent(), this.duration = const Omittable.absent(), this.sid = const Omittable.absent(), this.price = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.status, this.channels = 0, this.source, this.errorCode = const Omittable.absent(), this.encryptionDetails = const Omittable.absent(), this.uri = const Omittable.absent(), });
+@immutable final class AccountConferenceConferenceRecording {const AccountConferenceConferenceRecording({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.callSid = const Omittable.absent(), this.conferenceSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.startTime = const Omittable.absent(), this.duration = const Omittable.absent(), this.sid = const Omittable.absent(), this.price = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.status, this.channels, this.source, this.errorCode = const Omittable.absent(), this.encryptionDetails = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
 factory AccountConferenceConferenceRecording.fromJson(Map<String, dynamic> json) { return AccountConferenceConferenceRecording(
   accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
@@ -55,7 +55,7 @@ factory AccountConferenceConferenceRecording.fromJson(Map<String, dynamic> json)
   price: json.containsKey('price') ? Omittable(json['price'] as String?) : const Omittable.absent(),
   priceUnit: json.containsKey('price_unit') ? Omittable(json['price_unit'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? ConferenceRecordingEnumStatus.fromJson(json['status'] as String) : null,
-  channels: json.containsKey('channels') ? (json['channels'] as num).toInt() : 0,
+  channels: json['channels'] != null ? (json['channels'] as num).toInt() : null,
   source: json['source'] != null ? ConferenceRecordingEnumSource.fromJson(json['source'] as String) : null,
   errorCode: json.containsKey('error_code') ? Omittable(json['error_code'] != null ? (json['error_code'] as num).toInt() : null) : const Omittable.absent(),
   encryptionDetails: json.containsKey('encryption_details') ? Omittable(json['encryption_details']) : const Omittable.absent(),
@@ -98,7 +98,7 @@ final Omittable<String?> priceUnit;
 final ConferenceRecordingEnumStatus? status;
 
 /// The number of channels in the final recording file.  Can be: `1`, or `2`. Separating a two leg call into two separate channels of the recording file is supported in [Dial](https://www.twilio.com/docs/voice/twiml/dial#attributes-record) and [Outbound Rest API](https://www.twilio.com/docs/voice/make-calls) record options.
-final int channels;
+final int? channels;
 
 final ConferenceRecordingEnumSource? source;
 
@@ -111,6 +111,8 @@ final Omittable<dynamic> encryptionDetails;
 /// The URI of the resource, relative to `https://api.twilio.com`.
 final Omittable<String?> uri;
 
+/// The value with the schema default applied when absent.
+int get channelsOrDefault { return channels ?? 0; } 
 Map<String, dynamic> toJson() { return {
   if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (apiVersion.isPresent) 'api_version': apiVersion.value,
@@ -124,14 +126,14 @@ Map<String, dynamic> toJson() { return {
   if (price.isPresent) 'price': price.value,
   if (priceUnit.isPresent) 'price_unit': priceUnit.value,
   if (status != null) 'status': status?.toJson(),
-  'channels': channels,
+  'channels': ?channels,
   if (source != null) 'source': source?.toJson(),
   if (errorCode.isPresent) 'error_code': errorCode.value,
   if (encryptionDetails.isPresent) 'encryption_details': encryptionDetails.value,
   if (uri.isPresent) 'uri': uri.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'conference_sid', 'date_created', 'date_updated', 'start_time', 'duration', 'sid', 'price', 'price_unit', 'status', 'channels', 'source', 'error_code', 'encryption_details', 'uri'}.contains(key)); } 
-AccountConferenceConferenceRecording copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? callSid, Omittable<String?>? conferenceSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? startTime, Omittable<String?>? duration, Omittable<String?>? sid, Omittable<String?>? price, Omittable<String?>? priceUnit, ConferenceRecordingEnumStatus? Function()? status, int Function()? channels, ConferenceRecordingEnumSource? Function()? source, Omittable<int?>? errorCode, Omittable<dynamic>? encryptionDetails, Omittable<String?>? uri, }) { return AccountConferenceConferenceRecording(
+AccountConferenceConferenceRecording copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? callSid, Omittable<String?>? conferenceSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? startTime, Omittable<String?>? duration, Omittable<String?>? sid, Omittable<String?>? price, Omittable<String?>? priceUnit, ConferenceRecordingEnumStatus? Function()? status, int? Function()? channels, ConferenceRecordingEnumSource? Function()? source, Omittable<int?>? errorCode, Omittable<dynamic>? encryptionDetails, Omittable<String?>? uri, }) { return AccountConferenceConferenceRecording(
   accountSid: accountSid ?? this.accountSid,
   apiVersion: apiVersion ?? this.apiVersion,
   callSid: callSid ?? this.callSid,

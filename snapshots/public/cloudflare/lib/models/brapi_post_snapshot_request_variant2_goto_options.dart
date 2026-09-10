@@ -1,31 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_snapshot_request_variant2_goto_options_wait_until.dart';/// Check [options](https://pptr.dev/api/puppeteer.gotooptions).
-@immutable final class BrapiPostSnapshotRequestVariant2GotoOptions {const BrapiPostSnapshotRequestVariant2GotoOptions({this.referer, this.referrerPolicy, this.timeout = 30000.0, this.waitUntil, });
+@immutable final class BrapiPostSnapshotRequestVariant2GotoOptions {const BrapiPostSnapshotRequestVariant2GotoOptions({this.referer, this.referrerPolicy, this.timeout, this.waitUntil, });
 
 factory BrapiPostSnapshotRequestVariant2GotoOptions.fromJson(Map<String, dynamic> json) { return BrapiPostSnapshotRequestVariant2GotoOptions(
   referer: json['referer'] as String?,
   referrerPolicy: json['referrerPolicy'] as String?,
-  timeout: json.containsKey('timeout') ? (json['timeout'] as num).toDouble() : 30000.0,
-  waitUntil: json['waitUntil'] != null ? OneOf5.parse(json['waitUntil'], fromA: (v) => BrapiPostSnapshotRequestVariant2GotoOptionsWaitUntilVariant1.fromJson(v as String), fromB: (v) => BrapiPostSnapshotRequestVariant2GotoOptionsWaitUntilVariant2.fromJson(v as String), fromC: (v) => BrapiPostSnapshotRequestVariant2GotoOptionsWaitUntilVariant3.fromJson(v as String), fromD: (v) => BrapiPostSnapshotRequestVariant2GotoOptionsWaitUntilVariant4.fromJson(v as String), fromE: (v) => (v as List<dynamic>).map((e) => BrapiPostSnapshotRequestVariant2GotoOptionsWaitUntilVariant5.fromJson(e as String)).toList(),) : null,
+  timeout: json['timeout'] != null ? (json['timeout'] as num).toDouble() : null,
+  waitUntil: json['waitUntil'] != null ? BrapiPostSnapshotRequestVariant2GotoOptionsWaitUntil.fromJson(json['waitUntil']) : null,
 ); }
 
 final String? referer;
 
 final String? referrerPolicy;
 
-final double timeout;
+final double? timeout;
 
 final BrapiPostSnapshotRequestVariant2GotoOptionsWaitUntil? waitUntil;
 
+/// The value with the schema default applied when absent.
+double get timeoutOrDefault { return timeout ?? 30000.0; } 
 Map<String, dynamic> toJson() { return {
   'referer': ?referer,
   'referrerPolicy': ?referrerPolicy,
-  'timeout': timeout,
+  'timeout': ?timeout,
   if (waitUntil != null) 'waitUntil': waitUntil?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'referer', 'referrerPolicy', 'timeout', 'waitUntil'}.contains(key)); } 
-BrapiPostSnapshotRequestVariant2GotoOptions copyWith({String? Function()? referer, String? Function()? referrerPolicy, double Function()? timeout, BrapiPostSnapshotRequestVariant2GotoOptionsWaitUntil? Function()? waitUntil, }) { return BrapiPostSnapshotRequestVariant2GotoOptions(
+BrapiPostSnapshotRequestVariant2GotoOptions copyWith({String? Function()? referer, String? Function()? referrerPolicy, double? Function()? timeout, BrapiPostSnapshotRequestVariant2GotoOptionsWaitUntil? Function()? waitUntil, }) { return BrapiPostSnapshotRequestVariant2GotoOptions(
   referer: referer != null ? referer() : this.referer,
   referrerPolicy: referrerPolicy != null ? referrerPolicy() : this.referrerPolicy,
   timeout: timeout != null ? timeout() : this.timeout,

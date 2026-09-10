@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_participant.dart';@immutable final class GetMeetingParticipantResponse {const GetMeetingParticipantResponse({required this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_participant.dart';@immutable final class GetMeetingParticipantResponse {const GetMeetingParticipantResponse({required this.data, required this.success, });
 
 factory GetMeetingParticipantResponse.fromJson(Map<String, dynamic> json) { return GetMeetingParticipantResponse(
   data: RealtimekitParticipant.fromJson(json['data'] as Map<String, dynamic>),

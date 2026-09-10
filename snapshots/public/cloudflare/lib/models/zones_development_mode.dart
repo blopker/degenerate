@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_development_mode_value.dart';/// Development Mode temporarily allows you to enter development mode for your websites if you need to make changes to your site. This will bypass Cloudflare's accelerated cache and slow down your site, but is useful if you are making changes to cacheable content (like images, css, or JavaScript) and would like to see those changes right away. Once entered, development mode will last for 3 hours and then automatically toggle off.
-@immutable final class ZonesDevelopmentMode {const ZonesDevelopmentMode({required this.id, required this.value, this.editable = true, this.modifiedOn = const Omittable.absent(), this.timeRemaining, });
+@immutable final class ZonesDevelopmentMode {const ZonesDevelopmentMode({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), this.timeRemaining, });
 
 factory ZonesDevelopmentMode.fromJson(Map<String, dynamic> json) { return ZonesDevelopmentMode(
-  editable: json.containsKey('editable') ? json['editable'] as bool : true,
+  editable: json['editable'] as bool?,
   id: json['id'],
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesDevelopmentModeValue.fromJson(json['value'] as String),
@@ -12,7 +12,7 @@ factory ZonesDevelopmentMode.fromJson(Map<String, dynamic> json) { return ZonesD
 ); }
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
-final bool editable;
+final bool? editable;
 
 /// ID of the zone setting.
 final dynamic id;
@@ -26,8 +26,10 @@ final ZonesDevelopmentModeValue value;
 /// Notes: The interval (in seconds) from when development mode expires (positive integer) or last expired (negative integer) for the domain. If development mode has never been enabled, this value is false.
 final double? timeRemaining;
 
+/// The value with the schema default applied when absent.
+bool get editableOrDefault { return editable ?? true; } 
 Map<String, dynamic> toJson() { return {
-  'editable': editable,
+  'editable': ?editable,
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
@@ -35,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('value'); } 
-ZonesDevelopmentMode copyWith({bool Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesDevelopmentModeValue? value, double? Function()? timeRemaining, }) { return ZonesDevelopmentMode(
+ZonesDevelopmentMode copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesDevelopmentModeValue? value, double? Function()? timeRemaining, }) { return ZonesDevelopmentMode(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,

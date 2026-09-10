@@ -28,20 +28,22 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType($value)'; } 
  }
-@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression({this.type = AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType.gzip});
+@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression({this.type});
 
 factory AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression(
-  type: json.containsKey('type') ? AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType.fromJson(json['type'] as String) : AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType.gzip,
+  type: json['type'] != null ? AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType.fromJson(json['type'] as String) : null,
 ); }
 
 /// Specifies the desired compression algorithm and format.
-final AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType type;
+final AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType? type;
 
+/// The value with the schema default applied when absent.
+AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType get typeOrDefault { return type ?? AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType.fromJson('gzip'); } 
 Map<String, dynamic> toJson() { return {
-  'type': type.toJson(),
+  if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
-AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression copyWith({AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType Function()? type}) { return AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression(
+AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression copyWith({AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompressionType? Function()? type}) { return AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression(
   type: type != null ? type() : this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

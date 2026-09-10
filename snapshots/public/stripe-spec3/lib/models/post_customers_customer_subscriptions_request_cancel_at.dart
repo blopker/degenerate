@@ -24,4 +24,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsRequestCancelAtVariant2($value)'; } 
  }
-typedef PostCustomersCustomerSubscriptionsRequestCancelAt = OneOf2<int,PostCustomersCustomerSubscriptionsRequestCancelAtVariant2>;
+/// A timestamp at which the subscription should cancel. If set to a date before the current period ends, this will cause a proration if prorations have been enabled using `proration_behavior`. If set during a future period, this will always cause a proration for that period.
+@immutable
+final class PostCustomersCustomerSubscriptionsRequestCancelAt {
+  const PostCustomersCustomerSubscriptionsRequestCancelAt({this.$int = const Omittable.absent(),
+this.postCustomersCustomerSubscriptionsRequestCancelAtVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCustomersCustomerSubscriptionsRequestCancelAt._({required this.rawValue, required this.$int,
+required this.postCustomersCustomerSubscriptionsRequestCancelAtVariant2,});
+  factory PostCustomersCustomerSubscriptionsRequestCancelAt.fromJson(Object? json) => PostCustomersCustomerSubscriptionsRequestCancelAt._(
+    rawValue: Omittable(json),
+    $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+postCustomersCustomerSubscriptionsRequestCancelAtVariant2: parseAnyOfVariant<PostCustomersCustomerSubscriptionsRequestCancelAtVariant2>(json, (value) => PostCustomersCustomerSubscriptionsRequestCancelAtVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<int> $int;
+final Omittable<PostCustomersCustomerSubscriptionsRequestCancelAtVariant2> postCustomersCustomerSubscriptionsRequestCancelAtVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $int.isPresent || postCustomersCustomerSubscriptionsRequestCancelAtVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($int.isPresent) $int.value,
+if (postCustomersCustomerSubscriptionsRequestCancelAtVariant2.isPresent) postCustomersCustomerSubscriptionsRequestCancelAtVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCustomersCustomerSubscriptionsRequestCancelAt && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCustomersCustomerSubscriptionsRequestCancelAt(${toJson()})';
+}

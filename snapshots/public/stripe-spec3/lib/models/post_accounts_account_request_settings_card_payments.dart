@@ -5,8 +5,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account
 factory PostAccountsAccountRequestSettingsCardPayments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsCardPayments(
   declineOn: json['decline_on'] != null ? PostAccountsAccountRequestSettingsCardPaymentsDeclineOn.fromJson(json['decline_on'] as Map<String, dynamic>) : null,
   statementDescriptorPrefix: json['statement_descriptor_prefix'] as String?,
-  statementDescriptorPrefixKana: json['statement_descriptor_prefix_kana'] != null ? OneOf2.parse(json['statement_descriptor_prefix_kana'], fromA: (v) => v as String, fromB: (v) => PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2.fromJson(v as String),) : null,
-  statementDescriptorPrefixKanji: json['statement_descriptor_prefix_kanji'] != null ? OneOf2.parse(json['statement_descriptor_prefix_kanji'], fromA: (v) => v as String, fromB: (v) => PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanjiVariant2.fromJson(v as String),) : null,
+  statementDescriptorPrefixKana: json['statement_descriptor_prefix_kana'] != null ? PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKana.fromJson(json['statement_descriptor_prefix_kana']) : null,
+  statementDescriptorPrefixKanji: json['statement_descriptor_prefix_kanji'] != null ? PostAccountsAccountRequestSettingsCardPaymentsStatementDescriptorPrefixKanji.fromJson(json['statement_descriptor_prefix_kanji']) : null,
 ); }
 
 final PostAccountsAccountRequestSettingsCardPaymentsDeclineOn? declineOn;

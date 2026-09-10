@@ -28,25 +28,27 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageContentImageFileObjectImageFileDetail($value)'; } 
  }
-@immutable final class MessageContentImageFileObjectImageFile {const MessageContentImageFileObjectImageFile({required this.fileId, this.detail = MessageContentImageFileObjectImageFileDetail.auto, });
+@immutable final class MessageContentImageFileObjectImageFile {const MessageContentImageFileObjectImageFile({required this.fileId, this.detail, });
 
 factory MessageContentImageFileObjectImageFile.fromJson(Map<String, dynamic> json) { return MessageContentImageFileObjectImageFile(
   fileId: json['file_id'] as String,
-  detail: json.containsKey('detail') ? MessageContentImageFileObjectImageFileDetail.fromJson(json['detail'] as String) : MessageContentImageFileObjectImageFileDetail.auto,
+  detail: json['detail'] != null ? MessageContentImageFileObjectImageFileDetail.fromJson(json['detail'] as String) : null,
 ); }
 
 /// The [File](/docs/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
 final String fileId;
 
 /// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
-final MessageContentImageFileObjectImageFileDetail detail;
+final MessageContentImageFileObjectImageFileDetail? detail;
 
+/// The value with the schema default applied when absent.
+MessageContentImageFileObjectImageFileDetail get detailOrDefault { return detail ?? MessageContentImageFileObjectImageFileDetail.fromJson('auto'); } 
 Map<String, dynamic> toJson() { return {
   'file_id': fileId,
-  'detail': detail.toJson(),
+  if (detail != null) 'detail': detail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_id') && json['file_id'] is String; } 
-MessageContentImageFileObjectImageFile copyWith({String? fileId, MessageContentImageFileObjectImageFileDetail Function()? detail, }) { return MessageContentImageFileObjectImageFile(
+MessageContentImageFileObjectImageFile copyWith({String? fileId, MessageContentImageFileObjectImageFileDetail? Function()? detail, }) { return MessageContentImageFileObjectImageFile(
   fileId: fileId ?? this.fileId,
   detail: detail != null ? detail() : this.detail,
 ); } 

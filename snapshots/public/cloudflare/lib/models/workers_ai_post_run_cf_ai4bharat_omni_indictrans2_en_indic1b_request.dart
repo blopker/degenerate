@@ -121,7 +121,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage($value)'; } 
  }
-@immutable final class WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest {const WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest({required this.text, this.targetLanguage = WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage.hinDeva, });
+@immutable final class WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest {const WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest({required this.targetLanguage, required this.text, });
 
 factory WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequest(
   targetLanguage: WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bRequestTargetLanguage.fromJson(json['target_language'] as String),

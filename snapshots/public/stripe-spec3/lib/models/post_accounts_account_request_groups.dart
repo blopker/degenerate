@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account
 @immutable final class PostAccountsAccountRequestGroups {const PostAccountsAccountRequestGroups({this.paymentsPricing});
 
 factory PostAccountsAccountRequestGroups.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestGroups(
-  paymentsPricing: json['payments_pricing'] != null ? OneOf2.parse(json['payments_pricing'], fromA: (v) => v as String, fromB: (v) => PostAccountsAccountRequestGroupsPaymentsPricingVariant2.fromJson(v as String),) : null,
+  paymentsPricing: json['payments_pricing'] != null ? PostAccountsAccountRequestGroupsPaymentsPricing.fromJson(json['payments_pricing']) : null,
 ); }
 
 final PostAccountsAccountRequestGroupsPaymentsPricing? paymentsPricing;

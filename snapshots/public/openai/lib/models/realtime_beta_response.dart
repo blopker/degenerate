@@ -123,7 +123,7 @@ factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) { return Realti
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   usage: json['usage'] != null ? RealtimeBetaResponseUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   conversationId: json['conversation_id'] as String?,
-  voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),) : null,
+  voice: json['voice'] != null ? VoiceIdsShared.fromJson(json['voice']) : null,
   modalities: (json['modalities'] as List<dynamic>?)?.map((e) => RealtimeBetaResponseModalities.fromJson(e as String)).toList(),
   outputAudioFormat: json['output_audio_format'] != null ? RealtimeBetaResponseOutputAudioFormat.fromJson(json['output_audio_format'] as String) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,

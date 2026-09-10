@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_details_capture_params.dart';import 'post_payment_intents_intent_capture_request_amount_details.dart';import 'post_payment_intents_intent_capture_request_hooks.dart';import 'post_payment_intents_intent_capture_request_metadata.dart';import 'post_payment_intents_intent_capture_request_payment_details.dart';import 'post_payment_intents_intent_capture_request_transfer_data.dart';@immutable final class PostPaymentIntentsIntentCaptureRequest {const PostPaymentIntentsIntentCaptureRequest({this.amountDetails, this.amountToCapture, this.applicationFeeAmount, this.expand, this.finalCapture, this.hooks, this.metadata, this.paymentDetails, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_capture_request_amount_details.dart';import 'post_payment_intents_intent_capture_request_hooks.dart';import 'post_payment_intents_intent_capture_request_metadata.dart';import 'post_payment_intents_intent_capture_request_payment_details.dart';import 'post_payment_intents_intent_capture_request_transfer_data.dart';@immutable final class PostPaymentIntentsIntentCaptureRequest {const PostPaymentIntentsIntentCaptureRequest({this.amountDetails, this.amountToCapture, this.applicationFeeAmount, this.expand, this.finalCapture, this.hooks, this.metadata, this.paymentDetails, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, });
 
 factory PostPaymentIntentsIntentCaptureRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCaptureRequest(
   amountDetails: json['amount_details'] != null ? PostPaymentIntentsIntentCaptureRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
@@ -9,8 +9,8 @@ factory PostPaymentIntentsIntentCaptureRequest.fromJson(Map<String, dynamic> jso
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   finalCapture: json['final_capture'] as bool?,
   hooks: json['hooks'] != null ? PostPaymentIntentsIntentCaptureRequestHooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentIntentsIntentCaptureRequestMetadataVariant2.fromJson(v as String),) : null,
-  paymentDetails: json['payment_details'] != null ? OneOf2.parse(json['payment_details'], fromA: (v) => PaymentDetailsCaptureParams.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentCaptureRequestPaymentDetailsVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostPaymentIntentsIntentCaptureRequestMetadata.fromJson(json['metadata']) : null,
+  paymentDetails: json['payment_details'] != null ? PostPaymentIntentsIntentCaptureRequestPaymentDetails.fromJson(json['payment_details']) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   transferData: json['transfer_data'] != null ? PostPaymentIntentsIntentCaptureRequestTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,

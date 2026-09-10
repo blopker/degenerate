@@ -4,12 +4,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evi
 
 factory EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions.fromJson(Map<String, dynamic> json) { return EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions(
   charge: json['charge'] as String,
-  customerAccountId: json['customer_account_id'] != null ? OneOf2.parse(json['customer_account_id'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerAccountIdVariant2.fromJson(v as String),) : null,
-  customerDeviceFingerprint: json['customer_device_fingerprint'] != null ? OneOf2.parse(json['customer_device_fingerprint'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprintVariant2.fromJson(v as String),) : null,
-  customerDeviceId: json['customer_device_id'] != null ? OneOf2.parse(json['customer_device_id'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2.fromJson(v as String),) : null,
-  customerEmailAddress: json['customer_email_address'] != null ? OneOf2.parse(json['customer_email_address'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerEmailAddressVariant2.fromJson(v as String),) : null,
-  customerPurchaseIp: json['customer_purchase_ip'] != null ? OneOf2.parse(json['customer_purchase_ip'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerPurchaseIpVariant2.fromJson(v as String),) : null,
-  productDescription: json['product_description'] != null ? OneOf2.parse(json['product_description'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsProductDescriptionVariant2.fromJson(v as String),) : null,
+  customerAccountId: json['customer_account_id'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerAccountId.fromJson(json['customer_account_id']) : null,
+  customerDeviceFingerprint: json['customer_device_fingerprint'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceFingerprint.fromJson(json['customer_device_fingerprint']) : null,
+  customerDeviceId: json['customer_device_id'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceId.fromJson(json['customer_device_id']) : null,
+  customerEmailAddress: json['customer_email_address'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerEmailAddress.fromJson(json['customer_email_address']) : null,
+  customerPurchaseIp: json['customer_purchase_ip'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsCustomerPurchaseIp.fromJson(json['customer_purchase_ip']) : null,
+  productDescription: json['product_description'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsProductDescription.fromJson(json['product_description']) : null,
   shippingAddress: json['shipping_address'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
 ); }
 

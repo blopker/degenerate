@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountPeopleRequestDocumentsVisaFilesVariant2($value)'; } 
  }
-typedef PostAccountsAccountPeopleRequestDocumentsVisaFiles = OneOf2<String,PostAccountsAccountPeopleRequestDocumentsVisaFilesVariant2>;
+
+@immutable
+final class PostAccountsAccountPeopleRequestDocumentsVisaFiles {
+  const PostAccountsAccountPeopleRequestDocumentsVisaFiles({this.string = const Omittable.absent(),
+this.postAccountsAccountPeopleRequestDocumentsVisaFilesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostAccountsAccountPeopleRequestDocumentsVisaFiles._({required this.rawValue, required this.string,
+required this.postAccountsAccountPeopleRequestDocumentsVisaFilesVariant2,});
+  factory PostAccountsAccountPeopleRequestDocumentsVisaFiles.fromJson(Object? json) => PostAccountsAccountPeopleRequestDocumentsVisaFiles._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postAccountsAccountPeopleRequestDocumentsVisaFilesVariant2: parseAnyOfVariant<PostAccountsAccountPeopleRequestDocumentsVisaFilesVariant2>(json, (value) => PostAccountsAccountPeopleRequestDocumentsVisaFilesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostAccountsAccountPeopleRequestDocumentsVisaFilesVariant2> postAccountsAccountPeopleRequestDocumentsVisaFilesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postAccountsAccountPeopleRequestDocumentsVisaFilesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postAccountsAccountPeopleRequestDocumentsVisaFilesVariant2.isPresent) postAccountsAccountPeopleRequestDocumentsVisaFilesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostAccountsAccountPeopleRequestDocumentsVisaFiles && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostAccountsAccountPeopleRequestDocumentsVisaFiles(${toJson()})';
+}

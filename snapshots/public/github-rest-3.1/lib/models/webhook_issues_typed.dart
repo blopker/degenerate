@@ -28,7 +28,7 @@ factory WebhookIssuesTyped.fromJson(Map<String, dynamic> json) { return WebhookI
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   issue: WebhooksIssue.fromJson(json['issue'] as Map<String, dynamic>),
-  type: IssueType.fromJson(json['type'] as Map<String, dynamic>),
+  type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
@@ -42,7 +42,7 @@ final SimpleInstallation? installation;
 
 final WebhooksIssue issue;
 
-final IssueType type;
+final IssueType? type;
 
 final OrganizationSimpleWebhooks? organization;
 
@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'issue': issue.toJson(),
-  'type': type.toJson(),
+  'type': type?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
@@ -65,12 +65,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('type') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssuesTyped copyWith({WebhookIssuesTypedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue? issue, IssueType? type, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesTyped(
+WebhookIssuesTyped copyWith({WebhookIssuesTypedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue? issue, IssueType? Function()? type, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesTyped(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   issue: issue ?? this.issue,
-  type: type ?? this.type,
+  type: type != null ? type() : this.type,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2($value)'; } 
  }
-typedef PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKana = OneOf2<String,PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2>;
+
+@immutable
+final class PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKana {
+  const PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKana({this.string = const Omittable.absent(),
+this.postAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKana._({required this.rawValue, required this.string,
+required this.postAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2,});
+  factory PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKana.fromJson(Object? json) => PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKana._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2: parseAnyOfVariant<PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2>(json, (value) => PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2> postAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2.isPresent) postAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKanaVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKana && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostAccountsRequestSettingsCardPaymentsStatementDescriptorPrefixKana(${toJson()})';
+}

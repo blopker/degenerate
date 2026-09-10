@@ -28,7 +28,7 @@ factory ZeroTrustGatewaySubdomain.fromJson(String json) => ZeroTrustGatewaySubdo
 String toJson() => value;
 
 }
-@immutable final class ZeroTrustGatewayLocations {const ZeroTrustGatewayLocations({this.clientDefault, this.createdAt, this.dnsDestinationIpsId, this.dnsDestinationIpv6BlockId = const Omittable.absent(), this.dohSubdomain, this.ecsSupport, this.endpoints, this.id, this.ip, this.ipv4Destination, this.ipv4DestinationBackup, this.name, this.networks = const Omittable.absent(), this.updatedAt, });
+@immutable final class ZeroTrustGatewayLocations {const ZeroTrustGatewayLocations({this.clientDefault, this.createdAt, this.dnsDestinationIpsId, this.dnsDestinationIpv6BlockId = const Omittable.absent(), this.dohSubdomain, this.ecsSupport, this.endpoints = const Omittable.absent(), this.id, this.ip, this.ipv4Destination, this.ipv4DestinationBackup, this.name, this.networks = const Omittable.absent(), this.updatedAt, });
 
 factory ZeroTrustGatewayLocations.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayLocations(
   clientDefault: json['client_default'] != null ? ZeroTrustGatewayClientDefault.fromJson(json['client_default'] as bool) : null,
@@ -37,7 +37,7 @@ factory ZeroTrustGatewayLocations.fromJson(Map<String, dynamic> json) { return Z
   dnsDestinationIpv6BlockId: json.containsKey('dns_destination_ipv6_block_id') ? Omittable(json['dns_destination_ipv6_block_id'] != null ? ZeroTrustGatewayDnsDestinationIpv6BlockId.fromJson(json['dns_destination_ipv6_block_id'] as String) : null) : const Omittable.absent(),
   dohSubdomain: json['doh_subdomain'] != null ? ZeroTrustGatewaySubdomain.fromJson(json['doh_subdomain'] as String) : null,
   ecsSupport: json['ecs_support'] != null ? ZeroTrustGatewayEcsSupport.fromJson(json['ecs_support'] as bool) : null,
-  endpoints: json['endpoints'] != null ? ZeroTrustGatewayEndpoints.fromJson(json['endpoints'] as Map<String, dynamic>) : null,
+  endpoints: json.containsKey('endpoints') ? Omittable(json['endpoints'] != null ? ZeroTrustGatewayEndpoints.fromJson(json['endpoints'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] != null ? ZeroTrustGatewayComponentsSchemasUuid.fromJson(json['id'] as String) : null,
   ip: json['ip'] != null ? ZeroTrustGatewayIp.fromJson(json['ip'] as String) : null,
   ipv4Destination: json['ipv4_destination'] as String?,
@@ -63,7 +63,7 @@ final ZeroTrustGatewaySubdomain? dohSubdomain;
 /// Indicate whether the location must resolve EDNS queries.
 final ZeroTrustGatewayEcsSupport? ecsSupport;
 
-final ZeroTrustGatewayEndpoints? endpoints;
+final Omittable<ZeroTrustGatewayEndpoints?> endpoints;
 
 final ZeroTrustGatewayComponentsSchemasUuid? id;
 
@@ -90,7 +90,7 @@ Map<String, dynamic> toJson() { return {
   if (dnsDestinationIpv6BlockId.isPresent) 'dns_destination_ipv6_block_id': dnsDestinationIpv6BlockId.value?.toJson(),
   if (dohSubdomain != null) 'doh_subdomain': dohSubdomain?.toJson(),
   if (ecsSupport != null) 'ecs_support': ecsSupport?.toJson(),
-  if (endpoints != null) 'endpoints': endpoints?.toJson(),
+  if (endpoints.isPresent) 'endpoints': endpoints.value?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (ip != null) 'ip': ip?.toJson(),
   'ipv4_destination': ?ipv4Destination,
@@ -100,14 +100,14 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_default', 'created_at', 'dns_destination_ips_id', 'dns_destination_ipv6_block_id', 'doh_subdomain', 'ecs_support', 'endpoints', 'id', 'ip', 'ipv4_destination', 'ipv4_destination_backup', 'name', 'networks', 'updated_at'}.contains(key)); } 
-ZeroTrustGatewayLocations copyWith({ZeroTrustGatewayClientDefault? Function()? clientDefault, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayDnsDestinationIpsIdRead? Function()? dnsDestinationIpsId, Omittable<ZeroTrustGatewayDnsDestinationIpv6BlockId?>? dnsDestinationIpv6BlockId, ZeroTrustGatewaySubdomain? Function()? dohSubdomain, ZeroTrustGatewayEcsSupport? Function()? ecsSupport, ZeroTrustGatewayEndpoints? Function()? endpoints, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, ZeroTrustGatewayIp? Function()? ip, String? Function()? ipv4Destination, String? Function()? ipv4DestinationBackup, ZeroTrustGatewaySchemasName? Function()? name, Omittable<List<ZeroTrustGatewayIpv4Network>?>? networks, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayLocations(
+ZeroTrustGatewayLocations copyWith({ZeroTrustGatewayClientDefault? Function()? clientDefault, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayDnsDestinationIpsIdRead? Function()? dnsDestinationIpsId, Omittable<ZeroTrustGatewayDnsDestinationIpv6BlockId?>? dnsDestinationIpv6BlockId, ZeroTrustGatewaySubdomain? Function()? dohSubdomain, ZeroTrustGatewayEcsSupport? Function()? ecsSupport, Omittable<ZeroTrustGatewayEndpoints?>? endpoints, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, ZeroTrustGatewayIp? Function()? ip, String? Function()? ipv4Destination, String? Function()? ipv4DestinationBackup, ZeroTrustGatewaySchemasName? Function()? name, Omittable<List<ZeroTrustGatewayIpv4Network>?>? networks, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayLocations(
   clientDefault: clientDefault != null ? clientDefault() : this.clientDefault,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   dnsDestinationIpsId: dnsDestinationIpsId != null ? dnsDestinationIpsId() : this.dnsDestinationIpsId,
   dnsDestinationIpv6BlockId: dnsDestinationIpv6BlockId ?? this.dnsDestinationIpv6BlockId,
   dohSubdomain: dohSubdomain != null ? dohSubdomain() : this.dohSubdomain,
   ecsSupport: ecsSupport != null ? ecsSupport() : this.ecsSupport,
-  endpoints: endpoints != null ? endpoints() : this.endpoints,
+  endpoints: endpoints ?? this.endpoints,
   id: id != null ? id() : this.id,
   ip: ip != null ? ip() : this.ip,
   ipv4Destination: ipv4Destination != null ? ipv4Destination() : this.ipv4Destination,

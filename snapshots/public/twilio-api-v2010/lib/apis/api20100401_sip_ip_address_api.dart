@@ -37,7 +37,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListSipIpAddressResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListSipIpAddressResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -63,7 +64,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountSipSipIpAccessControlListSipIpAddress.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountSipSipIpAccessControlListSipIpAddress.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -82,7 +84,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountSipSipIpAccessControlListSipIpAddress.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountSipSipIpAccessControlListSipIpAddress.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -110,7 +113,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountSipSipIpAccessControlListSipIpAddress.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountSipSipIpAccessControlListSipIpAddress.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

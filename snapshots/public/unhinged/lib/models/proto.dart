@@ -6,21 +6,14 @@ import 'new.dart';
 
 @immutable
 final class Proto {
-  const Proto({
-    this.constructor,
-    this.$toString = '[object Object]',
-    this.valueOf,
-    this.prototype,
-  });
+  const Proto({this.constructor, this.$toString, this.valueOf, this.prototype});
 
   factory Proto.fromJson(Map<String, dynamic> json) {
     return Proto(
       constructor: json['constructor'] != null
           ? New.fromJson(json['constructor'] as Map<String, dynamic>)
           : null,
-      $toString: json.containsKey('toString')
-          ? json['toString'] as String
-          : '[object Object]',
+      $toString: json['toString'] as String?,
       valueOf: json['valueOf'] != null
           ? (json['valueOf'] as num).toInt()
           : null,
@@ -32,16 +25,21 @@ final class Proto {
 
   final New? constructor;
 
-  final String $toString;
+  final String? $toString;
 
   final int? valueOf;
 
   final Proto? prototype;
 
+  /// The value with the schema default applied when absent.
+  String get $toStringOrDefault {
+    return $toString ?? '[object Object]';
+  }
+
   Map<String, dynamic> toJson() {
     return {
       if (constructor != null) 'constructor': constructor?.toJson(),
-      'toString': $toString,
+      'toString': ?$toString,
       'valueOf': ?valueOf,
       if (prototype != null) 'prototype': prototype?.toJson(),
     };
@@ -60,7 +58,7 @@ final class Proto {
 
   Proto copyWith({
     New? Function()? constructor,
-    String Function()? $toString,
+    String? Function()? $toString,
     int? Function()? valueOf,
     Proto? Function()? prototype,
   }) {

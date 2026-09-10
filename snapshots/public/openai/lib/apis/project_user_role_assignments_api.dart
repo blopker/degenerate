@@ -37,7 +37,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RoleListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RoleListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -58,7 +59,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return UserRoleAssignment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return UserRoleAssignment.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -77,7 +79,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeletedRoleAssignmentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

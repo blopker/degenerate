@@ -1,0 +1,134 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_item.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_multiple_step_migrations.dart';import 'workers_placement_info_no_status.dart';import 'workers_placement_info_no_status_smart.dart';import 'workers_placement_info_no_status_targeted.dart';import 'workers_placement_info_no_status_targeted2.dart';import 'workers_placement_info_no_status_targeted3.dart';import 'workers_placement_info_no_status_targeted4.dart';import 'workers_placement_info_no_status_variant2.dart';import 'workers_placement_info_no_status_variant3.dart';import 'workers_placement_info_no_status_variant4.dart';import 'workers_single_step_migrations.dart';import 'workers_version_request_annotations.dart';import 'workers_version_request_assets.dart';import 'workers_version_request_limits.dart';import 'workers_version_request_migrations.dart';import 'workers_version_request_modules.dart';/// Usage model for the version.
+@immutable final class WorkersVersionRequestUsageModel {const WorkersVersionRequestUsageModel._(this.value);
+
+factory WorkersVersionRequestUsageModel.fromJson(String json) { return switch (json) {
+  'standard' => standard,
+  'bundled' => bundled,
+  'unbound' => unbound,
+  _ => WorkersVersionRequestUsageModel._(json),
+}; }
+
+static const WorkersVersionRequestUsageModel standard = WorkersVersionRequestUsageModel._('standard');
+
+static const WorkersVersionRequestUsageModel bundled = WorkersVersionRequestUsageModel._('bundled');
+
+static const WorkersVersionRequestUsageModel unbound = WorkersVersionRequestUsageModel._('unbound');
+
+static const List<WorkersVersionRequestUsageModel> values = [standard, bundled, unbound];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorkersVersionRequestUsageModel && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorkersVersionRequestUsageModel($value)'; } 
+ }
+@immutable final class WorkersVersionRequest {const WorkersVersionRequest({this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.mainModule, this.migrations, this.modules, this.placement, this.usageModel, });
+
+factory WorkersVersionRequest.fromJson(Map<String, dynamic> json) { return WorkersVersionRequest(
+  annotations: json['annotations'] != null ? WorkersVersionRequestAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
+  assets: json['assets'] != null ? WorkersVersionRequestAssets.fromJson(json['assets'] as Map<String, dynamic>) : null,
+  bindings: (json['bindings'] as List<dynamic>?)?.map((e) => WorkersBindingItem.fromJson(e as Map<String, dynamic>)).toList(),
+  compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
+  compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => WorkersCompatibilityFlag.fromJson(e as String)).toList(),
+  limits: json['limits'] != null ? WorkersVersionRequestLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
+  mainModule: json['main_module'] as String?,
+  migrations: json['migrations'] != null ? OneOf2.parse(json['migrations'], fromA: (v) => WorkersSingleStepMigrations.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersMultipleStepMigrations.fromJson(v as Map<String, dynamic>),) : null,
+  modules: (json['modules'] as List<dynamic>?)?.map((e) => WorkersVersionRequestModules.fromJson(e as Map<String, dynamic>)).toList(),
+  placement: json['placement'] != null ? OneOf8.parse(json['placement'], fromA: (v) => WorkersPlacementInfoNoStatusSmart.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersPlacementInfoNoStatusVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => WorkersPlacementInfoNoStatusVariant3.fromJson(v as Map<String, dynamic>), fromD: (v) => WorkersPlacementInfoNoStatusVariant4.fromJson(v as Map<String, dynamic>), fromE: (v) => WorkersPlacementInfoNoStatusTargeted.fromJson(v as Map<String, dynamic>), fromF: (v) => WorkersPlacementInfoNoStatusTargeted2.fromJson(v as Map<String, dynamic>), fromG: (v) => WorkersPlacementInfoNoStatusTargeted3.fromJson(v as Map<String, dynamic>), fromH: (v) => WorkersPlacementInfoNoStatusTargeted4.fromJson(v as Map<String, dynamic>),) : null,
+  usageModel: json['usage_model'] != null ? WorkersVersionRequestUsageModel.fromJson(json['usage_model'] as String) : null,
+); }
+
+/// Metadata about the version.
+final WorkersVersionRequestAnnotations? annotations;
+
+/// Configuration for assets within a Worker.
+/// 
+/// [`_headers`](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and
+/// [`_redirects`](https://developers.cloudflare.com/workers/static-assets/redirects/) files should be
+/// included as modules named `_headers` and `_redirects` with content type `text/plain`.
+/// 
+final WorkersVersionRequestAssets? assets;
+
+/// List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.
+final List<WorkersBindingItem>? bindings;
+
+/// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
+final WorkersCompatibilityDate? compatibilityDate;
+
+/// Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
+final List<WorkersCompatibilityFlag>? compatibilityFlags;
+
+/// Resource limits enforced at runtime.
+final WorkersVersionRequestLimits? limits;
+
+/// The name of the main module in the `modules` array (e.g. the name of the module that exports a `fetch` handler).
+final String? mainModule;
+
+/// Migrations for Durable Objects associated with the version. Migrations are applied when the version is deployed.
+final WorkersVersionRequestMigrations? migrations;
+
+/// Code, sourcemaps, and other content used at runtime.
+/// 
+/// This includes [`_headers`](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and
+/// [`_redirects`](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure
+/// [Static Assets](https://developers.cloudflare.com/workers/static-assets/). `_headers` and `_redirects` files should be
+/// included as modules named `_headers` and `_redirects` with content type `text/plain`.
+/// 
+final List<WorkersVersionRequestModules>? modules;
+
+final WorkersPlacementInfoNoStatus? placement;
+
+/// Usage model for the version.
+final WorkersVersionRequestUsageModel? usageModel;
+
+/// The value with the schema default applied when absent.
+WorkersVersionRequestUsageModel get usageModelOrDefault { return usageModel ?? WorkersVersionRequestUsageModel.fromJson('standard'); } 
+Map<String, dynamic> toJson() { return {
+  if (annotations != null) 'annotations': annotations?.toJson(),
+  if (assets != null) 'assets': assets?.toJson(),
+  if (bindings != null) 'bindings': bindings?.map((e) => e.toJson()).toList(),
+  if (compatibilityDate != null) 'compatibility_date': compatibilityDate?.toJson(),
+  if (compatibilityFlags != null) 'compatibility_flags': compatibilityFlags?.map((e) => e.toJson()).toList(),
+  if (limits != null) 'limits': limits?.toJson(),
+  'main_module': ?mainModule,
+  if (migrations != null) 'migrations': migrations?.toJson(),
+  if (modules != null) 'modules': modules?.map((e) => e.toJson()).toList(),
+  if (placement != null) 'placement': placement?.toJson(),
+  if (usageModel != null) 'usage_model': usageModel?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annotations', 'assets', 'bindings', 'compatibility_date', 'compatibility_flags', 'limits', 'main_module', 'migrations', 'modules', 'placement', 'usage_model'}.contains(key)); } 
+WorkersVersionRequest copyWith({WorkersVersionRequestAnnotations? Function()? annotations, WorkersVersionRequestAssets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersVersionRequestLimits? Function()? limits, String? Function()? mainModule, WorkersVersionRequestMigrations? Function()? migrations, List<WorkersVersionRequestModules>? Function()? modules, WorkersPlacementInfoNoStatus? Function()? placement, WorkersVersionRequestUsageModel? Function()? usageModel, }) { return WorkersVersionRequest(
+  annotations: annotations != null ? annotations() : this.annotations,
+  assets: assets != null ? assets() : this.assets,
+  bindings: bindings != null ? bindings() : this.bindings,
+  compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,
+  compatibilityFlags: compatibilityFlags != null ? compatibilityFlags() : this.compatibilityFlags,
+  limits: limits != null ? limits() : this.limits,
+  mainModule: mainModule != null ? mainModule() : this.mainModule,
+  migrations: migrations != null ? migrations() : this.migrations,
+  modules: modules != null ? modules() : this.modules,
+  placement: placement != null ? placement() : this.placement,
+  usageModel: usageModel != null ? usageModel() : this.usageModel,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersVersionRequest &&
+          annotations == other.annotations &&
+          assets == other.assets &&
+          listEquals(bindings, other.bindings) &&
+          compatibilityDate == other.compatibilityDate &&
+          listEquals(compatibilityFlags, other.compatibilityFlags) &&
+          limits == other.limits &&
+          mainModule == other.mainModule &&
+          migrations == other.migrations &&
+          listEquals(modules, other.modules) &&
+          placement == other.placement &&
+          usageModel == other.usageModel; } 
+@override int get hashCode { return Object.hash(annotations, assets, Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), limits, mainModule, migrations, Object.hashAll(modules ?? const []), placement, usageModel); } 
+@override String toString() { return 'WorkersVersionRequest(annotations: $annotations, assets: $assets, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, limits: $limits, mainModule: $mainModule, migrations: $migrations, modules: $modules, placement: $placement, usageModel: $usageModel)'; } 
+ }

@@ -53,35 +53,35 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BrapiPostPdfRequestVariant2PdfOptionsFormat($value)'; } 
  }
 /// Check [options](https://pptr.dev/api/puppeteer.pdfoptions).
-@immutable final class BrapiPostPdfRequestVariant2PdfOptions {const BrapiPostPdfRequestVariant2PdfOptions({this.displayHeaderFooter = false, this.footerTemplate, this.format = BrapiPostPdfRequestVariant2PdfOptionsFormat.letter, this.headerTemplate, this.height, this.landscape = false, this.margin, this.omitBackground = false, this.outline = false, this.pageRanges, this.preferCssPageSize = false, this.printBackground = false, this.scale = 1.0, this.tagged = true, this.timeout = 30000.0, this.width, });
+@immutable final class BrapiPostPdfRequestVariant2PdfOptions {const BrapiPostPdfRequestVariant2PdfOptions({this.displayHeaderFooter, this.footerTemplate, this.format, this.headerTemplate, this.height, this.landscape, this.margin, this.omitBackground, this.outline, this.pageRanges, this.preferCssPageSize, this.printBackground, this.scale, this.tagged, this.timeout, this.width, });
 
 factory BrapiPostPdfRequestVariant2PdfOptions.fromJson(Map<String, dynamic> json) { return BrapiPostPdfRequestVariant2PdfOptions(
-  displayHeaderFooter: json.containsKey('displayHeaderFooter') ? json['displayHeaderFooter'] as bool : false,
+  displayHeaderFooter: json['displayHeaderFooter'] as bool?,
   footerTemplate: json['footerTemplate'] as String?,
-  format: json.containsKey('format') ? BrapiPostPdfRequestVariant2PdfOptionsFormat.fromJson(json['format'] as String) : BrapiPostPdfRequestVariant2PdfOptionsFormat.letter,
+  format: json['format'] != null ? BrapiPostPdfRequestVariant2PdfOptionsFormat.fromJson(json['format'] as String) : null,
   headerTemplate: json['headerTemplate'] as String?,
   height: json['height'],
-  landscape: json.containsKey('landscape') ? json['landscape'] as bool : false,
+  landscape: json['landscape'] as bool?,
   margin: json['margin'] != null ? BrapiPostPdfRequestVariant2PdfOptionsMargin.fromJson(json['margin'] as Map<String, dynamic>) : null,
-  omitBackground: json.containsKey('omitBackground') ? json['omitBackground'] as bool : false,
-  outline: json.containsKey('outline') ? json['outline'] as bool : false,
+  omitBackground: json['omitBackground'] as bool?,
+  outline: json['outline'] as bool?,
   pageRanges: json['pageRanges'] as String?,
-  preferCssPageSize: json.containsKey('preferCSSPageSize') ? json['preferCSSPageSize'] as bool : false,
-  printBackground: json.containsKey('printBackground') ? json['printBackground'] as bool : false,
-  scale: json.containsKey('scale') ? (json['scale'] as num).toDouble() : 1.0,
-  tagged: json.containsKey('tagged') ? json['tagged'] as bool : true,
-  timeout: json.containsKey('timeout') ? (json['timeout'] as num).toDouble() : 30000.0,
+  preferCssPageSize: json['preferCSSPageSize'] as bool?,
+  printBackground: json['printBackground'] as bool?,
+  scale: json['scale'] != null ? (json['scale'] as num).toDouble() : null,
+  tagged: json['tagged'] as bool?,
+  timeout: json['timeout'] != null ? (json['timeout'] as num).toDouble() : null,
   width: json['width'],
 ); }
 
 /// Whether to show the header and footer.
-final bool displayHeaderFooter;
+final bool? displayHeaderFooter;
 
 /// HTML template for the print footer.
 final String? footerTemplate;
 
 /// Paper format. Takes priority over width and height if set.
-final BrapiPostPdfRequestVariant2PdfOptionsFormat format;
+final BrapiPostPdfRequestVariant2PdfOptionsFormat? format;
 
 /// HTML template for the print header.
 final String? headerTemplate;
@@ -94,34 +94,34 @@ final String? headerTemplate;
 final dynamic height;
 
 /// Whether to print in landscape orientation.
-final bool landscape;
+final bool? landscape;
 
 /// Set the PDF margins. Useful when setting header and footer.
 final BrapiPostPdfRequestVariant2PdfOptionsMargin? margin;
 
 /// Hides default white background and allows generating pdfs with transparency.
-final bool omitBackground;
+final bool? omitBackground;
 
 /// Generate document outline.
-final bool outline;
+final bool? outline;
 
 /// Paper ranges to print, e.g. '1-5, 8, 11-13'.
 final String? pageRanges;
 
 /// Give CSS @page size priority over other size declarations.
-final bool preferCssPageSize;
+final bool? preferCssPageSize;
 
 /// Set to true to print background graphics.
-final bool printBackground;
+final bool? printBackground;
 
 /// Scales the rendering of the web page. Amount must be between 0.1 and 2.
-final double scale;
+final double? scale;
 
 /// Generate tagged (accessible) PDF.
-final bool tagged;
+final bool? tagged;
 
 /// Timeout in milliseconds.
-final double timeout;
+final double? timeout;
 
 /// Sets the width of paper. Can be a number or string with unit.
 /// 
@@ -130,26 +130,46 @@ final double timeout;
 /// One of: String, double
 final dynamic width;
 
+/// The value with the schema default applied when absent.
+bool get displayHeaderFooterOrDefault { return displayHeaderFooter ?? false; } 
+/// The value with the schema default applied when absent.
+BrapiPostPdfRequestVariant2PdfOptionsFormat get formatOrDefault { return format ?? BrapiPostPdfRequestVariant2PdfOptionsFormat.fromJson('letter'); } 
+/// The value with the schema default applied when absent.
+bool get landscapeOrDefault { return landscape ?? false; } 
+/// The value with the schema default applied when absent.
+bool get omitBackgroundOrDefault { return omitBackground ?? false; } 
+/// The value with the schema default applied when absent.
+bool get outlineOrDefault { return outline ?? false; } 
+/// The value with the schema default applied when absent.
+bool get preferCssPageSizeOrDefault { return preferCssPageSize ?? false; } 
+/// The value with the schema default applied when absent.
+bool get printBackgroundOrDefault { return printBackground ?? false; } 
+/// The value with the schema default applied when absent.
+double get scaleOrDefault { return scale ?? 1.0; } 
+/// The value with the schema default applied when absent.
+bool get taggedOrDefault { return tagged ?? true; } 
+/// The value with the schema default applied when absent.
+double get timeoutOrDefault { return timeout ?? 30000.0; } 
 Map<String, dynamic> toJson() { return {
-  'displayHeaderFooter': displayHeaderFooter,
+  'displayHeaderFooter': ?displayHeaderFooter,
   'footerTemplate': ?footerTemplate,
-  'format': format.toJson(),
+  if (format != null) 'format': format?.toJson(),
   'headerTemplate': ?headerTemplate,
   'height': ?height,
-  'landscape': landscape,
+  'landscape': ?landscape,
   if (margin != null) 'margin': margin?.toJson(),
-  'omitBackground': omitBackground,
-  'outline': outline,
+  'omitBackground': ?omitBackground,
+  'outline': ?outline,
   'pageRanges': ?pageRanges,
-  'preferCSSPageSize': preferCssPageSize,
-  'printBackground': printBackground,
-  'scale': scale,
-  'tagged': tagged,
-  'timeout': timeout,
+  'preferCSSPageSize': ?preferCssPageSize,
+  'printBackground': ?printBackground,
+  'scale': ?scale,
+  'tagged': ?tagged,
+  'timeout': ?timeout,
   'width': ?width,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'displayHeaderFooter', 'footerTemplate', 'format', 'headerTemplate', 'height', 'landscape', 'margin', 'omitBackground', 'outline', 'pageRanges', 'preferCSSPageSize', 'printBackground', 'scale', 'tagged', 'timeout', 'width'}.contains(key)); } 
-BrapiPostPdfRequestVariant2PdfOptions copyWith({bool Function()? displayHeaderFooter, String? Function()? footerTemplate, BrapiPostPdfRequestVariant2PdfOptionsFormat Function()? format, String? Function()? headerTemplate, dynamic Function()? height, bool Function()? landscape, BrapiPostPdfRequestVariant2PdfOptionsMargin? Function()? margin, bool Function()? omitBackground, bool Function()? outline, String? Function()? pageRanges, bool Function()? preferCssPageSize, bool Function()? printBackground, double Function()? scale, bool Function()? tagged, double Function()? timeout, dynamic Function()? width, }) { return BrapiPostPdfRequestVariant2PdfOptions(
+BrapiPostPdfRequestVariant2PdfOptions copyWith({bool? Function()? displayHeaderFooter, String? Function()? footerTemplate, BrapiPostPdfRequestVariant2PdfOptionsFormat? Function()? format, String? Function()? headerTemplate, dynamic Function()? height, bool? Function()? landscape, BrapiPostPdfRequestVariant2PdfOptionsMargin? Function()? margin, bool? Function()? omitBackground, bool? Function()? outline, String? Function()? pageRanges, bool? Function()? preferCssPageSize, bool? Function()? printBackground, double? Function()? scale, bool? Function()? tagged, double? Function()? timeout, dynamic Function()? width, }) { return BrapiPostPdfRequestVariant2PdfOptions(
   displayHeaderFooter: displayHeaderFooter != null ? displayHeaderFooter() : this.displayHeaderFooter,
   footerTemplate: footerTemplate != null ? footerTemplate() : this.footerTemplate,
   format: format != null ? format() : this.format,

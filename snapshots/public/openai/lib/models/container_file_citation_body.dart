@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A citation for a container file used to generate a model response.
-@immutable final class ContainerFileCitationBody {const ContainerFileCitationBody({required this.containerId, required this.fileId, required this.startIndex, required this.endIndex, required this.filename, this.type = 'container_file_citation', });
+@immutable final class ContainerFileCitationBody {const ContainerFileCitationBody({required this.type, required this.containerId, required this.fileId, required this.startIndex, required this.endIndex, required this.filename, });
 
 factory ContainerFileCitationBody.fromJson(Map<String, dynamic> json) { return ContainerFileCitationBody(
   type: json['type'] as String,

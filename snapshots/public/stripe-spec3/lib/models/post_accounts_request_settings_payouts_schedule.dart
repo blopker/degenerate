@@ -105,7 +105,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostAccountsRequestSettingsPayoutsSchedule {const PostAccountsRequestSettingsPayoutsSchedule({this.delayDays, this.interval, this.monthlyAnchor, this.monthlyPayoutDays, this.weeklyAnchor, this.weeklyPayoutDays, });
 
 factory PostAccountsRequestSettingsPayoutsSchedule.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsPayoutsSchedule(
-  delayDays: json['delay_days'] != null ? OneOf2.parse(json['delay_days'], fromA: (v) => PostAccountsRequestSettingsPayoutsScheduleDelayDaysVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  delayDays: json['delay_days'] != null ? PostAccountsRequestSettingsPayoutsScheduleDelayDays.fromJson(json['delay_days']) : null,
   interval: json['interval'] != null ? PostAccountsRequestSettingsPayoutsScheduleInterval.fromJson(json['interval'] as String) : null,
   monthlyAnchor: json['monthly_anchor'] != null ? (json['monthly_anchor'] as num).toInt() : null,
   monthlyPayoutDays: (json['monthly_payout_days'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

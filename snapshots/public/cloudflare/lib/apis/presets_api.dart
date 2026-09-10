@@ -36,7 +36,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetPresetsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetPresetsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -59,7 +60,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostPresetsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostPresetsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -80,7 +82,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetPresetsPresetIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetPresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -103,7 +106,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PatchPresetsPresetIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PatchPresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -124,7 +128,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeletePresetsPresetIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeletePresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

@@ -30,4 +30,40 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateSpeechRequestModelVariant2($value)'; } 
  }
-typedef CreateSpeechRequestModel = OneOf2<String,CreateSpeechRequestModelVariant2>;
+/// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
+/// 
+@immutable
+final class CreateSpeechRequestModel {
+  const CreateSpeechRequestModel({this.string = const Omittable.absent(),
+this.createSpeechRequestModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CreateSpeechRequestModel._({required this.rawValue, required this.string,
+required this.createSpeechRequestModelVariant2,});
+  factory CreateSpeechRequestModel.fromJson(Object? json) => CreateSpeechRequestModel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+createSpeechRequestModelVariant2: parseAnyOfVariant<CreateSpeechRequestModelVariant2>(json, (value) => CreateSpeechRequestModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<CreateSpeechRequestModelVariant2> createSpeechRequestModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || createSpeechRequestModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (createSpeechRequestModelVariant2.isPresent) createSpeechRequestModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CreateSpeechRequestModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CreateSpeechRequestModel(${toJson()})';
+}

@@ -34,8 +34,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return BuildsConfigAutofillResponse.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return BuildsConfigAutofillResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 

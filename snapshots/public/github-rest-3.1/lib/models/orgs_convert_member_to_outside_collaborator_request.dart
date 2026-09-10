@@ -1,19 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsConvertMemberToOutsideCollaboratorRequest {const OrgsConvertMemberToOutsideCollaboratorRequest({this.$async = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsConvertMemberToOutsideCollaboratorRequest {const OrgsConvertMemberToOutsideCollaboratorRequest({this.$async});
 
 factory OrgsConvertMemberToOutsideCollaboratorRequest.fromJson(Map<String, dynamic> json) { return OrgsConvertMemberToOutsideCollaboratorRequest(
-  $async: json.containsKey('async') ? json['async'] as bool : false,
+  $async: json['async'] as bool?,
 ); }
 
 /// When set to `true`, the request will be performed asynchronously. Returns a 202 status code when the job is successfully queued.
-final bool $async;
+final bool? $async;
 
+/// The value with the schema default applied when absent.
+bool get $asyncOrDefault { return $async ?? false; } 
 Map<String, dynamic> toJson() { return {
-  'async': $async,
+  'async': ?$async,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'async'}.contains(key)); } 
-OrgsConvertMemberToOutsideCollaboratorRequest copyWith({bool Function()? $async}) { return OrgsConvertMemberToOutsideCollaboratorRequest(
+OrgsConvertMemberToOutsideCollaboratorRequest copyWith({bool? Function()? $async}) { return OrgsConvertMemberToOutsideCollaboratorRequest(
   $async: $async != null ? $async() : this.$async,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

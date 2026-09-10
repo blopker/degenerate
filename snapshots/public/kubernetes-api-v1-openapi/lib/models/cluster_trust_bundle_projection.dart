@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'label_selector.dart';/// ClusterTrustBundleProjection describes how to select a set of ClusterTrustBundle objects and project their contents into the pod filesystem.
-@immutable final class ClusterTrustBundleProjection {const ClusterTrustBundleProjection({this.labelSelector, this.name, this.optional, this.path = '', this.signerName, });
+@immutable final class ClusterTrustBundleProjection {const ClusterTrustBundleProjection({required this.path, this.labelSelector, this.name, this.optional, this.signerName, });
 
 factory ClusterTrustBundleProjection.fromJson(Map<String, dynamic> json) { return ClusterTrustBundleProjection(
   labelSelector: json['labelSelector'] != null ? LabelSelector.fromJson(json['labelSelector'] as Map<String, dynamic>) : null,

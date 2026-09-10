@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_files_r
 factory PostFilesRequestFileLinkData.fromJson(Map<String, dynamic> json) { return PostFilesRequestFileLinkData(
   create: json['create'] as bool,
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostFilesRequestFileLinkDataMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostFilesRequestFileLinkDataMetadata.fromJson(json['metadata']) : null,
 ); }
 
 final bool create;

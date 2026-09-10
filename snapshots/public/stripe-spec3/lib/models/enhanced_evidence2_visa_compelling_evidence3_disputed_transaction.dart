@@ -27,13 +27,13 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class EnhancedEvidence2VisaCompellingEvidence3DisputedTransaction {const EnhancedEvidence2VisaCompellingEvidence3DisputedTransaction({this.customerAccountId, this.customerDeviceFingerprint, this.customerDeviceId, this.customerEmailAddress, this.customerPurchaseIp, this.merchandiseOrServices, this.productDescription, this.shippingAddress, });
 
 factory EnhancedEvidence2VisaCompellingEvidence3DisputedTransaction.fromJson(Map<String, dynamic> json) { return EnhancedEvidence2VisaCompellingEvidence3DisputedTransaction(
-  customerAccountId: json['customer_account_id'] != null ? OneOf2.parse(json['customer_account_id'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionCustomerAccountIdVariant2.fromJson(v as String),) : null,
-  customerDeviceFingerprint: json['customer_device_fingerprint'] != null ? OneOf2.parse(json['customer_device_fingerprint'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionCustomerDeviceFingerprintVariant2.fromJson(v as String),) : null,
-  customerDeviceId: json['customer_device_id'] != null ? OneOf2.parse(json['customer_device_id'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionCustomerDeviceIdVariant2.fromJson(v as String),) : null,
-  customerEmailAddress: json['customer_email_address'] != null ? OneOf2.parse(json['customer_email_address'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionCustomerEmailAddressVariant2.fromJson(v as String),) : null,
-  customerPurchaseIp: json['customer_purchase_ip'] != null ? OneOf2.parse(json['customer_purchase_ip'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionCustomerPurchaseIpVariant2.fromJson(v as String),) : null,
+  customerAccountId: json['customer_account_id'] != null ? EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionCustomerAccountId.fromJson(json['customer_account_id']) : null,
+  customerDeviceFingerprint: json['customer_device_fingerprint'] != null ? EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionCustomerDeviceFingerprint.fromJson(json['customer_device_fingerprint']) : null,
+  customerDeviceId: json['customer_device_id'] != null ? EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionCustomerDeviceId.fromJson(json['customer_device_id']) : null,
+  customerEmailAddress: json['customer_email_address'] != null ? EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionCustomerEmailAddress.fromJson(json['customer_email_address']) : null,
+  customerPurchaseIp: json['customer_purchase_ip'] != null ? EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionCustomerPurchaseIp.fromJson(json['customer_purchase_ip']) : null,
   merchandiseOrServices: json['merchandise_or_services'] != null ? EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionMerchandiseOrServices.fromJson(json['merchandise_or_services'] as String) : null,
-  productDescription: json['product_description'] != null ? OneOf2.parse(json['product_description'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionProductDescriptionVariant2.fromJson(v as String),) : null,
+  productDescription: json['product_description'] != null ? EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionProductDescription.fromJson(json['product_description']) : null,
   shippingAddress: json['shipping_address'] != null ? EnhancedEvidence2VisaCompellingEvidence3DisputedTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
 ); }
 

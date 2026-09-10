@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_outbound_transfers_resource_returned_details_transaction.dart';import 'treasury_transaction.dart';/// Reason for the return.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_outbound_transfers_resource_returned_details_transaction.dart';/// Reason for the return.
 @immutable final class TreasuryOutboundTransfersResourceReturnedDetailsCode {const TreasuryOutboundTransfersResourceReturnedDetailsCode._(this.value);
 
 factory TreasuryOutboundTransfersResourceReturnedDetailsCode.fromJson(String json) { return switch (json) {
@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory TreasuryOutboundTransfersResourceReturnedDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransfersResourceReturnedDetails(
   code: TreasuryOutboundTransfersResourceReturnedDetailsCode.fromJson(json['code'] as String),
-  transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),),
+  transaction: TreasuryOutboundTransfersResourceReturnedDetailsTransaction.fromJson(json['transaction']),
 ); }
 
 /// Reason for the return.

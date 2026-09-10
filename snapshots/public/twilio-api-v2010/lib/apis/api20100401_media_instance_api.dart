@@ -23,7 +23,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountMessageMedia.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountMessageMedia.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

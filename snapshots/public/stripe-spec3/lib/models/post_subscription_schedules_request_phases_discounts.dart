@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesRequestPhasesDiscountsVariant2($value)'; } 
  }
-typedef PostSubscriptionSchedulesRequestPhasesDiscounts = OneOf2<List<PostSubscriptionSchedulesRequestPhasesDiscountsVariant1>,PostSubscriptionSchedulesRequestPhasesDiscountsVariant2>;
+
+@immutable
+final class PostSubscriptionSchedulesRequestPhasesDiscounts {
+  const PostSubscriptionSchedulesRequestPhasesDiscounts({this.listPostSubscriptionSchedulesRequestPhasesDiscountsVariant1 = const Omittable.absent(),
+this.postSubscriptionSchedulesRequestPhasesDiscountsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSubscriptionSchedulesRequestPhasesDiscounts._({required this.rawValue, required this.listPostSubscriptionSchedulesRequestPhasesDiscountsVariant1,
+required this.postSubscriptionSchedulesRequestPhasesDiscountsVariant2,});
+  factory PostSubscriptionSchedulesRequestPhasesDiscounts.fromJson(Object? json) => PostSubscriptionSchedulesRequestPhasesDiscounts._(
+    rawValue: Omittable(json),
+    listPostSubscriptionSchedulesRequestPhasesDiscountsVariant1: parseAnyOfVariant<List<PostSubscriptionSchedulesRequestPhasesDiscountsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostSubscriptionSchedulesRequestPhasesDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+postSubscriptionSchedulesRequestPhasesDiscountsVariant2: parseAnyOfVariant<PostSubscriptionSchedulesRequestPhasesDiscountsVariant2>(json, (value) => PostSubscriptionSchedulesRequestPhasesDiscountsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostSubscriptionSchedulesRequestPhasesDiscountsVariant1>> listPostSubscriptionSchedulesRequestPhasesDiscountsVariant1;
+final Omittable<PostSubscriptionSchedulesRequestPhasesDiscountsVariant2> postSubscriptionSchedulesRequestPhasesDiscountsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostSubscriptionSchedulesRequestPhasesDiscountsVariant1.isPresent || postSubscriptionSchedulesRequestPhasesDiscountsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostSubscriptionSchedulesRequestPhasesDiscountsVariant1.isPresent) listPostSubscriptionSchedulesRequestPhasesDiscountsVariant1.value?.map((e) => e.toJson()).toList(),
+if (postSubscriptionSchedulesRequestPhasesDiscountsVariant2.isPresent) postSubscriptionSchedulesRequestPhasesDiscountsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSubscriptionSchedulesRequestPhasesDiscounts && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSubscriptionSchedulesRequestPhasesDiscounts(${toJson()})';
+}

@@ -24,6 +24,6 @@ RadarGetAiInferenceTimeseriesGroupByModelResponseResultSerie0 copyWith({List<Dat
       other is RadarGetAiInferenceTimeseriesGroupByModelResponseResultSerie0 &&
           listEquals(timestamps, other.timestamps) &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(Object.hashAll(timestamps), Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(Object.hashAll(timestamps), mapHash(additionalProperties)); } 
 @override String toString() { return 'RadarGetAiInferenceTimeseriesGroupByModelResponseResultSerie0(timestamps: $timestamps, additionalProperties: $additionalProperties)'; } 
  }

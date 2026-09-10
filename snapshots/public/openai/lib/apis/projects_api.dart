@@ -37,7 +37,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectListResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -58,7 +59,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Project.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -77,7 +79,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Project.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -98,10 +101,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Project.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return ErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -131,7 +142,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return KeyListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return KeyListResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -150,7 +162,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Key3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Key3.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -173,10 +186,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return KeyDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return KeyDeleteResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return ErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -195,7 +216,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Project.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Project.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -228,7 +250,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectRateLimitListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectRateLimitListResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -249,10 +272,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectRateLimit.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectRateLimit.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return ErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -282,10 +313,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectServiceAccountListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectServiceAccountListResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return ErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -306,10 +345,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectServiceAccountCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectServiceAccountCreateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return ErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -328,7 +375,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectServiceAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectServiceAccount.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -351,7 +399,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectServiceAccountDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectServiceAccountDeleteResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -381,10 +430,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectUserListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectUserListResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return ErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -405,10 +462,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectUser.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return ErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -427,7 +492,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectUser.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -448,10 +514,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectUser.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return ErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -474,10 +548,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ProjectUserDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ProjectUserDeleteResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return ErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

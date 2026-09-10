@@ -9,7 +9,7 @@ factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItems.fro
   price: json['price'] as String?,
   priceData: json['price_data'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsTaxRatesVariant2.fromJson(v as String),) : null,
+  taxRates: json['tax_rates'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsTaxRates.fromJson(json['tax_rates']) : null,
 ); }
 
 final List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesAddInvoiceItemsDiscounts>? discounts;

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_create_webhook_request_config.dart';@immutable final class OrgsCreateWebhookRequest {const OrgsCreateWebhookRequest({required this.name, required this.config, this.events, this.active = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_create_webhook_request_config.dart';@immutable final class OrgsCreateWebhookRequest {const OrgsCreateWebhookRequest({required this.name, required this.config, this.events, this.active, });
 
 factory OrgsCreateWebhookRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateWebhookRequest(
   name: json['name'] as String,
   config: OrgsCreateWebhookRequestConfig.fromJson(json['config'] as Map<String, dynamic>),
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  active: json.containsKey('active') ? json['active'] as bool : true,
+  active: json['active'] as bool?,
 ); }
 
 /// Must be passed as "web".
@@ -19,17 +19,19 @@ final OrgsCreateWebhookRequestConfig config;
 final List<String>? events;
 
 /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
-final bool active;
+final bool? active;
 
+/// The value with the schema default applied when absent.
+bool get activeOrDefault { return active ?? true; } 
 Map<String, dynamic> toJson() { return {
   'name': name,
   'config': config.toJson(),
   'events': ?events,
-  'active': active,
+  'active': ?active,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('config'); } 
-OrgsCreateWebhookRequest copyWith({String? name, OrgsCreateWebhookRequestConfig? config, List<String>? Function()? events, bool Function()? active, }) { return OrgsCreateWebhookRequest(
+OrgsCreateWebhookRequest copyWith({String? name, OrgsCreateWebhookRequestConfig? config, List<String>? Function()? events, bool? Function()? active, }) { return OrgsCreateWebhookRequest(
   name: name ?? this.name,
   config: config ?? this.config,
   events: events != null ? events() : this.events,

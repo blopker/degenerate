@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalLocationsLocationRequestConfigurationOverridesVariant2($value)'; } 
  }
-typedef PostTerminalLocationsLocationRequestConfigurationOverrides = OneOf2<String,PostTerminalLocationsLocationRequestConfigurationOverridesVariant2>;
+/// The ID of a configuration that will be used to customize all readers in this location.
+@immutable
+final class PostTerminalLocationsLocationRequestConfigurationOverrides {
+  const PostTerminalLocationsLocationRequestConfigurationOverrides({this.string = const Omittable.absent(),
+this.postTerminalLocationsLocationRequestConfigurationOverridesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTerminalLocationsLocationRequestConfigurationOverrides._({required this.rawValue, required this.string,
+required this.postTerminalLocationsLocationRequestConfigurationOverridesVariant2,});
+  factory PostTerminalLocationsLocationRequestConfigurationOverrides.fromJson(Object? json) => PostTerminalLocationsLocationRequestConfigurationOverrides._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postTerminalLocationsLocationRequestConfigurationOverridesVariant2: parseAnyOfVariant<PostTerminalLocationsLocationRequestConfigurationOverridesVariant2>(json, (value) => PostTerminalLocationsLocationRequestConfigurationOverridesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostTerminalLocationsLocationRequestConfigurationOverridesVariant2> postTerminalLocationsLocationRequestConfigurationOverridesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postTerminalLocationsLocationRequestConfigurationOverridesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postTerminalLocationsLocationRequestConfigurationOverridesVariant2.isPresent) postTerminalLocationsLocationRequestConfigurationOverridesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTerminalLocationsLocationRequestConfigurationOverrides && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTerminalLocationsLocationRequestConfigurationOverrides(${toJson()})';
+}

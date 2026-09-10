@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookIssuesEditedIssueState($value)'; } 
  }
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-@immutable final class WebhookIssuesEditedIssue {const WebhookIssuesEditedIssue({required this.id, required this.url, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.updatedAt, required this.eventsUrl, required this.htmlUrl, required this.activeLockReason, required this.title, required this.labelsUrl, required this.user, required this.milestone, required this.nodeId, required this.number, required this.repositoryUrl, required this.reactions, this.performedViaGithubApp = const Omittable.absent(), this.locked, this.pinnedComment = const Omittable.absent(), this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.state, this.stateReason = const Omittable.absent(), this.timelineUrl, this.type, this.labels, this.draft, this.assignee = const Omittable.absent(), this.pullRequest, });
+@immutable final class WebhookIssuesEditedIssue {const WebhookIssuesEditedIssue({required this.id, required this.url, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.updatedAt, required this.eventsUrl, required this.htmlUrl, required this.activeLockReason, required this.title, required this.labelsUrl, required this.user, required this.milestone, required this.nodeId, required this.number, required this.repositoryUrl, required this.reactions, this.performedViaGithubApp = const Omittable.absent(), this.locked, this.pinnedComment = const Omittable.absent(), this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.state, this.stateReason = const Omittable.absent(), this.timelineUrl, this.type = const Omittable.absent(), this.labels, this.draft, this.assignee = const Omittable.absent(), this.pullRequest, });
 
 factory WebhookIssuesEditedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesEditedIssue(
   activeLockReason: json['active_lock_reason'] != null ? WebhookIssuesEditedIssueActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
@@ -135,7 +135,7 @@ factory WebhookIssuesEditedIssue.fromJson(Map<String, dynamic> json) { return We
   state: json['state'] != null ? WebhookIssuesEditedIssueState.fromJson(json['state'] as String) : null,
   stateReason: json.containsKey('state_reason') ? Omittable(json['state_reason'] as String?) : const Omittable.absent(),
   timelineUrl: json['timeline_url'] != null ? Uri.parse(json['timeline_url'] as String) : null,
-  type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   title: json['title'] as String,
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
@@ -207,7 +207,7 @@ final Omittable<String?> stateReason;
 
 final Uri? timelineUrl;
 
-final IssueType? type;
+final Omittable<IssueType?> type;
 
 /// Title of the issue
 final String title;
@@ -250,7 +250,7 @@ Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
   if (stateReason.isPresent) 'state_reason': stateReason.value,
   if (timelineUrl != null) 'timeline_url': timelineUrl?.toString(),
-  if (type != null) 'type': type?.toJson(),
+  if (type.isPresent) 'type': type.value?.toJson(),
   'title': title,
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
@@ -277,7 +277,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookIssuesEditedIssue copyWith({WebhookIssuesEditedIssueActiveLockReason? Function()? activeLockReason, Omittable<WebhookIssuesEditedIssueAssignee?>? assignee, List<WebhookIssuesEditedIssueAssignees?>? assignees, WebhookIssuesEditedIssueAuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesEditedIssueLabels>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhookIssuesEditedIssueMilestone? Function()? milestone, String? nodeId, int? number, Omittable<WebhookIssuesEditedIssuePerformedViaGithubApp?>? performedViaGithubApp, WebhookIssuesEditedIssuePullRequest? Function()? pullRequest, WebhookIssuesEditedIssueReactions? reactions, Uri? repositoryUrl, Omittable<IssueComment?>? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, WebhookIssuesEditedIssueState? Function()? state, Omittable<String?>? stateReason, Uri? Function()? timelineUrl, IssueType? Function()? type, String? title, DateTime? updatedAt, Uri? url, WebhookIssuesEditedIssueUser? Function()? user, }) { return WebhookIssuesEditedIssue(
+WebhookIssuesEditedIssue copyWith({WebhookIssuesEditedIssueActiveLockReason? Function()? activeLockReason, Omittable<WebhookIssuesEditedIssueAssignee?>? assignee, List<WebhookIssuesEditedIssueAssignees?>? assignees, WebhookIssuesEditedIssueAuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesEditedIssueLabels>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhookIssuesEditedIssueMilestone? Function()? milestone, String? nodeId, int? number, Omittable<WebhookIssuesEditedIssuePerformedViaGithubApp?>? performedViaGithubApp, WebhookIssuesEditedIssuePullRequest? Function()? pullRequest, WebhookIssuesEditedIssueReactions? reactions, Uri? repositoryUrl, Omittable<IssueComment?>? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, WebhookIssuesEditedIssueState? Function()? state, Omittable<String?>? stateReason, Uri? Function()? timelineUrl, Omittable<IssueType?>? type, String? title, DateTime? updatedAt, Uri? url, WebhookIssuesEditedIssueUser? Function()? user, }) { return WebhookIssuesEditedIssue(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee ?? this.assignee,
   assignees: assignees ?? this.assignees,
@@ -308,7 +308,7 @@ WebhookIssuesEditedIssue copyWith({WebhookIssuesEditedIssueActiveLockReason? Fun
   state: state != null ? state() : this.state,
   stateReason: stateReason ?? this.stateReason,
   timelineUrl: timelineUrl != null ? timelineUrl() : this.timelineUrl,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
   title: title ?? this.title,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,

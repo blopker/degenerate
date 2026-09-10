@@ -58,7 +58,7 @@ bool get isUnknown { return !values.contains(this); }
 factory PostIssuingCardsCardRequest.fromJson(Map<String, dynamic> json) { return PostIssuingCardsCardRequest(
   cancellationReason: json['cancellation_reason'] != null ? PostIssuingCardsCardRequestCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostIssuingCardsCardRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostIssuingCardsCardRequestMetadata.fromJson(json['metadata']) : null,
   personalizationDesign: json['personalization_design'] as String?,
   pin: json['pin'] != null ? PostIssuingCardsCardRequestPin.fromJson(json['pin'] as Map<String, dynamic>) : null,
   shipping: json['shipping'] != null ? PostIssuingCardsCardRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,

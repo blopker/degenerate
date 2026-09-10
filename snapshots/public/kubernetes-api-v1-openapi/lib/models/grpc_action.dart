@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// GRPCAction specifies an action involving a GRPC service.
-@immutable final class GrpcAction {const GrpcAction({this.port = 0, this.service = '', });
+@immutable final class GrpcAction {const GrpcAction({required this.port, this.service, });
 
 factory GrpcAction.fromJson(Map<String, dynamic> json) { return GrpcAction(
   port: (json['port'] as num).toInt(),
-  service: json.containsKey('service') ? json['service'] as String : '',
+  service: json['service'] as String?,
 ); }
 
 /// Port number of the gRPC service. Number must be in the range 1 to 65535.
@@ -14,14 +14,16 @@ final int port;
 /// Service is the name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
 /// 
 /// If this is not specified, the default behavior is defined by gRPC.
-final String service;
+final String? service;
 
+/// The value with the schema default applied when absent.
+String get serviceOrDefault { return service ?? ''; } 
 Map<String, dynamic> toJson() { return {
   'port': port,
-  'service': service,
+  'service': ?service,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') && json['port'] is num; } 
-GrpcAction copyWith({int? port, String Function()? service, }) { return GrpcAction(
+GrpcAction copyWith({int? port, String? Function()? service, }) { return GrpcAction(
   port: port ?? this.port,
   service: service != null ? service() : this.service,
 ); } 

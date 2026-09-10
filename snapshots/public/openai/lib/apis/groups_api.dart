@@ -37,7 +37,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GroupListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GroupListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -58,7 +59,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GroupResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -79,7 +81,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GroupResourceWithSuccess.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GroupResourceWithSuccess.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -98,7 +101,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GroupDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GroupDeletedResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

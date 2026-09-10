@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_pull_request_review_protection_request_bypass_pull_request_allowances.dart';import 'repos_update_pull_request_review_protection_request_dismissal_restrictions.dart';@immutable final class ReposUpdatePullRequestReviewProtectionRequest {const ReposUpdatePullRequestReviewProtectionRequest({this.dismissalRestrictions, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval = false, this.bypassPullRequestAllowances, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_pull_request_review_protection_request_bypass_pull_request_allowances.dart';import 'repos_update_pull_request_review_protection_request_dismissal_restrictions.dart';@immutable final class ReposUpdatePullRequestReviewProtectionRequest {const ReposUpdatePullRequestReviewProtectionRequest({this.dismissalRestrictions, this.dismissStaleReviews, this.requireCodeOwnerReviews, this.requiredApprovingReviewCount, this.requireLastPushApproval, this.bypassPullRequestAllowances, });
 
 factory ReposUpdatePullRequestReviewProtectionRequest.fromJson(Map<String, dynamic> json) { return ReposUpdatePullRequestReviewProtectionRequest(
   dismissalRestrictions: json['dismissal_restrictions'] != null ? ReposUpdatePullRequestReviewProtectionRequestDismissalRestrictions.fromJson(json['dismissal_restrictions'] as Map<String, dynamic>) : null,
   dismissStaleReviews: json['dismiss_stale_reviews'] as bool?,
   requireCodeOwnerReviews: json['require_code_owner_reviews'] as bool?,
   requiredApprovingReviewCount: json['required_approving_review_count'] != null ? (json['required_approving_review_count'] as num).toInt() : null,
-  requireLastPushApproval: json.containsKey('require_last_push_approval') ? json['require_last_push_approval'] as bool : false,
+  requireLastPushApproval: json['require_last_push_approval'] as bool?,
   bypassPullRequestAllowances: json['bypass_pull_request_allowances'] != null ? ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances.fromJson(json['bypass_pull_request_allowances'] as Map<String, dynamic>) : null,
 ); }
 
@@ -24,21 +24,23 @@ final bool? requireCodeOwnerReviews;
 final int? requiredApprovingReviewCount;
 
 /// Whether the most recent push must be approved by someone other than the person who pushed it. Default: `false`
-final bool requireLastPushApproval;
+final bool? requireLastPushApproval;
 
 /// Allow specific users, teams, or apps to bypass pull request requirements.
 final ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances? bypassPullRequestAllowances;
 
+/// The value with the schema default applied when absent.
+bool get requireLastPushApprovalOrDefault { return requireLastPushApproval ?? false; } 
 Map<String, dynamic> toJson() { return {
   if (dismissalRestrictions != null) 'dismissal_restrictions': dismissalRestrictions?.toJson(),
   'dismiss_stale_reviews': ?dismissStaleReviews,
   'require_code_owner_reviews': ?requireCodeOwnerReviews,
   'required_approving_review_count': ?requiredApprovingReviewCount,
-  'require_last_push_approval': requireLastPushApproval,
+  'require_last_push_approval': ?requireLastPushApproval,
   if (bypassPullRequestAllowances != null) 'bypass_pull_request_allowances': bypassPullRequestAllowances?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dismissal_restrictions', 'dismiss_stale_reviews', 'require_code_owner_reviews', 'required_approving_review_count', 'require_last_push_approval', 'bypass_pull_request_allowances'}.contains(key)); } 
-ReposUpdatePullRequestReviewProtectionRequest copyWith({ReposUpdatePullRequestReviewProtectionRequestDismissalRestrictions? Function()? dismissalRestrictions, bool? Function()? dismissStaleReviews, bool? Function()? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool Function()? requireLastPushApproval, ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, }) { return ReposUpdatePullRequestReviewProtectionRequest(
+ReposUpdatePullRequestReviewProtectionRequest copyWith({ReposUpdatePullRequestReviewProtectionRequestDismissalRestrictions? Function()? dismissalRestrictions, bool? Function()? dismissStaleReviews, bool? Function()? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool? Function()? requireLastPushApproval, ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, }) { return ReposUpdatePullRequestReviewProtectionRequest(
   dismissalRestrictions: dismissalRestrictions != null ? dismissalRestrictions() : this.dismissalRestrictions,
   dismissStaleReviews: dismissStaleReviews != null ? dismissStaleReviews() : this.dismissStaleReviews,
   requireCodeOwnerReviews: requireCodeOwnerReviews != null ? requireCodeOwnerReviews() : this.requireCodeOwnerReviews,

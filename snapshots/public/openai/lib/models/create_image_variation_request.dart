@@ -53,14 +53,14 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateImageVariationRequestSize($value)'; } 
  }
-@immutable final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model = const Omittable.absent(), this.n = 1, this.responseFormat = CreateImageVariationRequestResponseFormat.url, this.size = CreateImageVariationRequestSize.$1024x1024, this.user, });
+@immutable final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model = const Omittable.absent(), this.n = const Omittable.absent(), this.responseFormat = const Omittable.absent(), this.size = const Omittable.absent(), this.user, });
 
 factory CreateImageVariationRequest.fromJson(Map<String, dynamic> json) { return CreateImageVariationRequest(
   image: base64Decode(json['image'] as String),
-  model: json.containsKey('model') ? Omittable(json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateImageVariationRequestModelVariant2.fromJson(v as String),) : null) : const Omittable.absent(),
-  n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
-  responseFormat: json.containsKey('response_format') ? json['response_format'] != null ? CreateImageVariationRequestResponseFormat.fromJson(json['response_format'] as String) : null : CreateImageVariationRequestResponseFormat.url,
-  size: json.containsKey('size') ? json['size'] != null ? CreateImageVariationRequestSize.fromJson(json['size'] as String) : null : CreateImageVariationRequestSize.$1024x1024,
+  model: json.containsKey('model') ? Omittable(json['model'] != null ? CreateImageVariationRequestModel.fromJson(json['model']) : null) : const Omittable.absent(),
+  n: json.containsKey('n') ? Omittable(json['n'] != null ? (json['n'] as num).toInt() : null) : const Omittable.absent(),
+  responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? CreateImageVariationRequestResponseFormat.fromJson(json['response_format'] as String) : null) : const Omittable.absent(),
+  size: json.containsKey('size') ? Omittable(json['size'] != null ? CreateImageVariationRequestSize.fromJson(json['size'] as String) : null) : const Omittable.absent(),
   user: json['user'] as String?,
 ); }
 
@@ -71,33 +71,39 @@ final Uint8List image;
 final Omittable<CreateImageVariationRequestModel?> model;
 
 /// The number of images to generate. Must be between 1 and 10.
-final int? n;
+final Omittable<int?> n;
 
 /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.
-final CreateImageVariationRequestResponseFormat? responseFormat;
+final Omittable<CreateImageVariationRequestResponseFormat?> responseFormat;
 
 /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
-final CreateImageVariationRequestSize? size;
+final Omittable<CreateImageVariationRequestSize?> size;
 
 /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).
 /// 
 final String? user;
 
+/// The value with the schema default applied when absent.
+int? get nOrDefault { return n.valueOr(1); } 
+/// The value with the schema default applied when absent.
+CreateImageVariationRequestResponseFormat? get responseFormatOrDefault { return responseFormat.valueOr(CreateImageVariationRequestResponseFormat.fromJson('url')); } 
+/// The value with the schema default applied when absent.
+CreateImageVariationRequestSize? get sizeOrDefault { return size.valueOr(CreateImageVariationRequestSize.fromJson('1024x1024')); } 
 Map<String, dynamic> toJson() { return {
   'image': base64Encode(image),
   if (model.isPresent) 'model': model.value?.toJson(),
-  'n': ?n,
-  if (responseFormat != null) 'response_format': responseFormat?.toJson(),
-  if (size != null) 'size': size?.toJson(),
+  if (n.isPresent) 'n': n.value,
+  if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
+  if (size.isPresent) 'size': size.value?.toJson(),
   'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image'); } 
-CreateImageVariationRequest copyWith({Uint8List? image, Omittable<CreateImageVariationRequestModel?>? model, int? Function()? n, CreateImageVariationRequestResponseFormat? Function()? responseFormat, CreateImageVariationRequestSize? Function()? size, String? Function()? user, }) { return CreateImageVariationRequest(
+CreateImageVariationRequest copyWith({Uint8List? image, Omittable<CreateImageVariationRequestModel?>? model, Omittable<int?>? n, Omittable<CreateImageVariationRequestResponseFormat?>? responseFormat, Omittable<CreateImageVariationRequestSize?>? size, String? Function()? user, }) { return CreateImageVariationRequest(
   image: image ?? this.image,
   model: model ?? this.model,
-  n: n != null ? n() : this.n,
-  responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
-  size: size != null ? size() : this.size,
+  n: n ?? this.n,
+  responseFormat: responseFormat ?? this.responseFormat,
+  size: size ?? this.size,
   user: user != null ? user() : this.user,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

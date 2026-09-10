@@ -31,7 +31,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountCallUserDefinedMessageSubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountCallUserDefinedMessageSubscription.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

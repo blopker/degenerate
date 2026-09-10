@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetCreditNotesPreviewLinesTaxAmountsVariant2($value)'; } 
  }
-typedef GetCreditNotesPreviewLinesTaxAmounts = OneOf2<List<GetCreditNotesPreviewLinesTaxAmountsVariant1>,GetCreditNotesPreviewLinesTaxAmountsVariant2>;
+
+@immutable
+final class GetCreditNotesPreviewLinesTaxAmounts {
+  const GetCreditNotesPreviewLinesTaxAmounts({this.listGetCreditNotesPreviewLinesTaxAmountsVariant1 = const Omittable.absent(),
+this.getCreditNotesPreviewLinesTaxAmountsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const GetCreditNotesPreviewLinesTaxAmounts._({required this.rawValue, required this.listGetCreditNotesPreviewLinesTaxAmountsVariant1,
+required this.getCreditNotesPreviewLinesTaxAmountsVariant2,});
+  factory GetCreditNotesPreviewLinesTaxAmounts.fromJson(Object? json) => GetCreditNotesPreviewLinesTaxAmounts._(
+    rawValue: Omittable(json),
+    listGetCreditNotesPreviewLinesTaxAmountsVariant1: parseAnyOfVariant<List<GetCreditNotesPreviewLinesTaxAmountsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => GetCreditNotesPreviewLinesTaxAmountsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+getCreditNotesPreviewLinesTaxAmountsVariant2: parseAnyOfVariant<GetCreditNotesPreviewLinesTaxAmountsVariant2>(json, (value) => GetCreditNotesPreviewLinesTaxAmountsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<GetCreditNotesPreviewLinesTaxAmountsVariant1>> listGetCreditNotesPreviewLinesTaxAmountsVariant1;
+final Omittable<GetCreditNotesPreviewLinesTaxAmountsVariant2> getCreditNotesPreviewLinesTaxAmountsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listGetCreditNotesPreviewLinesTaxAmountsVariant1.isPresent || getCreditNotesPreviewLinesTaxAmountsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listGetCreditNotesPreviewLinesTaxAmountsVariant1.isPresent) listGetCreditNotesPreviewLinesTaxAmountsVariant1.value?.map((e) => e.toJson()).toList(),
+if (getCreditNotesPreviewLinesTaxAmountsVariant2.isPresent) getCreditNotesPreviewLinesTaxAmountsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is GetCreditNotesPreviewLinesTaxAmounts && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'GetCreditNotesPreviewLinesTaxAmounts(${toJson()})';
+}

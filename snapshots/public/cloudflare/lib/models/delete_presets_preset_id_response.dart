@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_presets_preset_id_response_data.dart';@immutable final class DeletePresetsPresetIdResponse {const DeletePresetsPresetIdResponse({required this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_presets_preset_id_response_data.dart';@immutable final class DeletePresetsPresetIdResponse {const DeletePresetsPresetIdResponse({required this.data, required this.success, });
 
 factory DeletePresetsPresetIdResponse.fromJson(Map<String, dynamic> json) { return DeletePresetsPresetIdResponse(
   data: DeletePresetsPresetIdResponseData.fromJson(json['data'] as Map<String, dynamic>),

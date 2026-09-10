@@ -6,13 +6,13 @@ factory PostTerminalLocationsLocationRequest.fromJson(Map<String, dynamic> json)
   address: json['address'] != null ? PostTerminalLocationsLocationRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? PostTerminalLocationsLocationRequestAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? PostTerminalLocationsLocationRequestAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
-  configurationOverrides: json['configuration_overrides'] != null ? OneOf2.parse(json['configuration_overrides'], fromA: (v) => v as String, fromB: (v) => PostTerminalLocationsLocationRequestConfigurationOverridesVariant2.fromJson(v as String),) : null,
-  displayName: json['display_name'] != null ? OneOf2.parse(json['display_name'], fromA: (v) => v as String, fromB: (v) => PostTerminalLocationsLocationRequestDisplayNameVariant2.fromJson(v as String),) : null,
-  displayNameKana: json['display_name_kana'] != null ? OneOf2.parse(json['display_name_kana'], fromA: (v) => v as String, fromB: (v) => PostTerminalLocationsLocationRequestDisplayNameKanaVariant2.fromJson(v as String),) : null,
-  displayNameKanji: json['display_name_kanji'] != null ? OneOf2.parse(json['display_name_kanji'], fromA: (v) => v as String, fromB: (v) => PostTerminalLocationsLocationRequestDisplayNameKanjiVariant2.fromJson(v as String),) : null,
+  configurationOverrides: json['configuration_overrides'] != null ? PostTerminalLocationsLocationRequestConfigurationOverrides.fromJson(json['configuration_overrides']) : null,
+  displayName: json['display_name'] != null ? PostTerminalLocationsLocationRequestDisplayName.fromJson(json['display_name']) : null,
+  displayNameKana: json['display_name_kana'] != null ? PostTerminalLocationsLocationRequestDisplayNameKana.fromJson(json['display_name_kana']) : null,
+  displayNameKanji: json['display_name_kanji'] != null ? PostTerminalLocationsLocationRequestDisplayNameKanji.fromJson(json['display_name_kanji']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostTerminalLocationsLocationRequestMetadataVariant2.fromJson(v as String),) : null,
-  phone: json['phone'] != null ? OneOf2.parse(json['phone'], fromA: (v) => v as String, fromB: (v) => PostTerminalLocationsLocationRequestPhoneVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostTerminalLocationsLocationRequestMetadata.fromJson(json['metadata']) : null,
+  phone: json['phone'] != null ? PostTerminalLocationsLocationRequestPhone.fromJson(json['phone']) : null,
 ); }
 
 /// The full address of the location. You can't change the location's `country`. If you need to modify the `country` field, create a new `Location` object and re-register any existing readers to that location.

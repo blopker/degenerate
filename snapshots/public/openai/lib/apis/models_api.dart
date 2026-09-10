@@ -23,7 +23,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListModelsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListModelsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -42,7 +43,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Model.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Model.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -61,7 +63,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteModelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteModelResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

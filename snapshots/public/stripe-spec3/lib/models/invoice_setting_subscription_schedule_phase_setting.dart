@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';import 'deleted_tax_id.dart';import 'invoice_setting_subscription_schedule_phase_setting_account_tax_ids.dart';import 'tax_id.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';import 'invoice_setting_subscription_schedule_phase_setting_account_tax_ids.dart';/// 
 @immutable final class InvoiceSettingSubscriptionSchedulePhaseSetting {const InvoiceSettingSubscriptionSchedulePhaseSetting({this.accountTaxIds = const Omittable.absent(), this.daysUntilDue = const Omittable.absent(), this.issuer = const Omittable.absent(), });
 
 factory InvoiceSettingSubscriptionSchedulePhaseSetting.fromJson(Map<String, dynamic> json) { return InvoiceSettingSubscriptionSchedulePhaseSetting(
-  accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedTaxId.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
+  accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map(InvoiceSettingSubscriptionSchedulePhaseSettingAccountTaxIds.fromJson).toList()) : const Omittable.absent(),
   daysUntilDue: json.containsKey('days_until_due') ? Omittable(json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null) : const Omittable.absent(),
   issuer: json.containsKey('issuer') ? Omittable(json['issuer'] != null ? ConnectAccountReference.fromJson(json['issuer'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }

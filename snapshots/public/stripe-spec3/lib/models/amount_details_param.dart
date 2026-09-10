@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param_discount_amount.dart';import 'amount_details_param_line_items.dart';import 'amount_details_param_line_items_variant1.dart';import 'amount_details_param_shipping.dart';import 'amount_details_param_tax.dart';import 'amount_details_shipping_param2.dart';import 'amount_details_tax_param2.dart';@immutable final class AmountDetailsParam {const AmountDetailsParam({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param_discount_amount.dart';import 'amount_details_param_line_items.dart';import 'amount_details_param_shipping.dart';import 'amount_details_param_tax.dart';@immutable final class AmountDetailsParam {const AmountDetailsParam({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
 
 factory AmountDetailsParam.fromJson(Map<String, dynamic> json) { return AmountDetailsParam(
-  discountAmount: json['discount_amount'] != null ? OneOf2.parse(json['discount_amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => AmountDetailsParamDiscountAmountVariant2.fromJson(v as String),) : null,
+  discountAmount: json['discount_amount'] != null ? AmountDetailsParamDiscountAmount.fromJson(json['discount_amount']) : null,
   enforceArithmeticValidation: json['enforce_arithmetic_validation'] as bool?,
-  lineItems: json['line_items'] != null ? OneOf2.parse(json['line_items'], fromA: (v) => (v as List<dynamic>).map((e) => AmountDetailsParamLineItemsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => AmountDetailsParamLineItemsVariant2.fromJson(v as String),) : null,
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => AmountDetailsShippingParam2.fromJson(v as Map<String, dynamic>), fromB: (v) => AmountDetailsParamShippingVariant2.fromJson(v as String),) : null,
-  tax: json['tax'] != null ? OneOf2.parse(json['tax'], fromA: (v) => AmountDetailsTaxParam2.fromJson(v as Map<String, dynamic>), fromB: (v) => AmountDetailsParamTaxVariant2.fromJson(v as String),) : null,
+  lineItems: json['line_items'] != null ? AmountDetailsParamLineItems.fromJson(json['line_items']) : null,
+  shipping: json['shipping'] != null ? AmountDetailsParamShipping.fromJson(json['shipping']) : null,
+  tax: json['tax'] != null ? AmountDetailsParamTax.fromJson(json['tax']) : null,
 ); }
 
 final AmountDetailsParamDiscountAmount? discountAmount;

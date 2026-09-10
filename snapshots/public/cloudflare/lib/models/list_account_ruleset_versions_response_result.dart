@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_kind.dart';import 'rulesets_ruleset_phase.dart';import 'rulesets_ruleset_version.dart';@immutable final class ListAccountRulesetVersionsResponseResult {const ListAccountRulesetVersionsResponseResult({required this.id, required this.lastUpdated, required this.name, required this.version, required this.kind, required this.phase, this.description = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_kind.dart';import 'rulesets_ruleset_phase.dart';import 'rulesets_ruleset_version.dart';@immutable final class ListAccountRulesetVersionsResponseResult {const ListAccountRulesetVersionsResponseResult({required this.id, required this.lastUpdated, required this.name, required this.version, required this.kind, required this.phase, this.description, });
 
 factory ListAccountRulesetVersionsResponseResult.fromJson(Map<String, dynamic> json) { return ListAccountRulesetVersionsResponseResult(
-  description: json.containsKey('description') ? json['description'] as String : '',
+  description: json['description'] as String?,
   id: RulesetsRulesetId.fromJson(json['id'] as String),
   lastUpdated: DateTime.parse(json['last_updated'] as String),
   name: json['name'] as String,
@@ -13,7 +13,7 @@ factory ListAccountRulesetVersionsResponseResult.fromJson(Map<String, dynamic> j
 ); }
 
 /// An informative description of the ruleset.
-final String description;
+final String? description;
 
 /// The unique ID of the ruleset.
 final RulesetsRulesetId id;
@@ -33,8 +33,10 @@ final RulesetsRulesetKind kind;
 /// The phase of the ruleset.
 final RulesetsRulesetPhase phase;
 
+/// The value with the schema default applied when absent.
+String get descriptionOrDefault { return description ?? ''; } 
 Map<String, dynamic> toJson() { return {
-  'description': description,
+  'description': ?description,
   'id': id.toJson(),
   'last_updated': lastUpdated.toIso8601String(),
   'name': name,
@@ -48,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('version') &&
       json.containsKey('kind') &&
       json.containsKey('phase'); } 
-ListAccountRulesetVersionsResponseResult copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? kind, RulesetsRulesetPhase? phase, }) { return ListAccountRulesetVersionsResponseResult(
+ListAccountRulesetVersionsResponseResult copyWith({String? Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? kind, RulesetsRulesetPhase? phase, }) { return ListAccountRulesetVersionsResponseResult(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   lastUpdated: lastUpdated ?? this.lastUpdated,

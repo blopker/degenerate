@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2($value)'; } 
  }
-typedef PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRates = OneOf2<List<String>,PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2>;
+
+@immutable
+final class PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRates {
+  const PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRates({this.listString = const Omittable.absent(),
+this.postSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRates._({required this.rawValue, required this.listString,
+required this.postSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2,});
+  factory PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRates.fromJson(Object? json) => PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRates._(
+    rawValue: Omittable(json),
+    listString: parseAnyOfVariant<List<String>>(json, (value) => (value! as List<dynamic>).map((e) => e as String).toList()),
+postSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2: parseAnyOfVariant<PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2>(json, (value) => PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<String>> listString;
+final Omittable<PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2> postSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listString.isPresent || postSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listString.isPresent) listString.value,
+if (postSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2.isPresent) postSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRates && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRates(${toJson()})';
+}

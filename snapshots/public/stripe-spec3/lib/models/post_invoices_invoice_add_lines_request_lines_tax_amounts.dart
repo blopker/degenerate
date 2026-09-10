@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2($value)'; } 
  }
-typedef PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts = OneOf2<List<PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1>,PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2>;
+
+@immutable
+final class PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts {
+  const PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts({this.listPostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1 = const Omittable.absent(),
+this.postInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts._({required this.rawValue, required this.listPostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1,
+required this.postInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2,});
+  factory PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts.fromJson(Object? json) => PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts._(
+    rawValue: Omittable(json),
+    listPostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1: parseAnyOfVariant<List<PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+postInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2: parseAnyOfVariant<PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2>(json, (value) => PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1>> listPostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1;
+final Omittable<PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2> postInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1.isPresent || postInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1.isPresent) listPostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1.value?.map((e) => e.toJson()).toList(),
+if (postInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2.isPresent) postInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts(${toJson()})';
+}

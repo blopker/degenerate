@@ -37,7 +37,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListSipCredentialListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListSipCredentialListResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -60,7 +61,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountSipSipCredentialList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountSipSipCredentialList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -79,7 +81,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountSipSipCredentialList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountSipSipCredentialList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -102,7 +105,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountSipSipCredentialList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountSipSipCredentialList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

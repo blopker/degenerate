@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AssistantObjectObject($value)'; } 
  }
 /// Represents an `assistant` that can call the model and use tools.
-@immutable final class AssistantObject {const AssistantObject({required this.id, required this.object, required this.createdAt, required this.name, required this.description, required this.model, required this.instructions, required this.metadata, this.tools = const [], this.toolResources = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.responseFormat = const Omittable.absent(), });
+@immutable final class AssistantObject {const AssistantObject({required this.id, required this.object, required this.createdAt, required this.name, required this.description, required this.model, required this.instructions, required this.tools, required this.metadata, this.toolResources = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.responseFormat = const Omittable.absent(), });
 
 factory AssistantObject.fromJson(Map<String, dynamic> json) { return AssistantObject(
   id: json['id'] as String,

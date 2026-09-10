@@ -74,12 +74,17 @@ final class IncidentsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return True.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+        final json = jsonDecode(response.body);
+        return True.fromJson(json as Map<String, dynamic>);
       },
       onError: (response) {
-        return ErrorModel.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 666:
+            return null;
+          default:
+            final json = jsonDecode(response.body);
+            return ErrorModel.fromJson(json as Map<String, dynamic>);
+        }
       },
     );
   }
@@ -104,9 +109,8 @@ final class IncidentsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return $3Incident.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return $3Incident.fromJson(json as Map<String, dynamic>);
       },
     );
   }

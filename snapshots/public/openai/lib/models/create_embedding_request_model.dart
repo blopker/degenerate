@@ -27,4 +27,40 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateEmbeddingRequestModelVariant2($value)'; } 
  }
-typedef CreateEmbeddingRequestModel = OneOf2<String,CreateEmbeddingRequestModelVariant2>;
+/// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+/// 
+@immutable
+final class CreateEmbeddingRequestModel {
+  const CreateEmbeddingRequestModel({this.string = const Omittable.absent(),
+this.createEmbeddingRequestModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CreateEmbeddingRequestModel._({required this.rawValue, required this.string,
+required this.createEmbeddingRequestModelVariant2,});
+  factory CreateEmbeddingRequestModel.fromJson(Object? json) => CreateEmbeddingRequestModel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+createEmbeddingRequestModelVariant2: parseAnyOfVariant<CreateEmbeddingRequestModelVariant2>(json, (value) => CreateEmbeddingRequestModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<CreateEmbeddingRequestModelVariant2> createEmbeddingRequestModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || createEmbeddingRequestModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (createEmbeddingRequestModelVariant2.isPresent) createEmbeddingRequestModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CreateEmbeddingRequestModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CreateEmbeddingRequestModel(${toJson()})';
+}

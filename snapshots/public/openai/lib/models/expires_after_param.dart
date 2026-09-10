@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ExpiresAfterParamAnchor($value)'; } 
  }
 /// Controls when the session expires relative to an anchor timestamp.
-@immutable final class ExpiresAfterParam {const ExpiresAfterParam({required this.seconds, this.anchor = ExpiresAfterParamAnchor.createdAt, });
+@immutable final class ExpiresAfterParam {const ExpiresAfterParam({required this.anchor, required this.seconds, });
 
 factory ExpiresAfterParam.fromJson(Map<String, dynamic> json) { return ExpiresAfterParam(
   anchor: ExpiresAfterParamAnchor.fromJson(json['anchor'] as String),

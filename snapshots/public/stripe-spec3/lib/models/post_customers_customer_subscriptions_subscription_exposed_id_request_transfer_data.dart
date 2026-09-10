@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2($value)'; } 
  }
-typedef PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData = OneOf2<TransferDataSpecs,PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2>;
+/// If specified, the funds from the subscription's invoices will be transferred to the destination and the ID of the resulting transfers will be found on the resulting charges. This will be unset if you POST an empty value.
+@immutable
+final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData {
+  const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData({this.transferDataSpecs = const Omittable.absent(),
+this.postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData._({required this.rawValue, required this.transferDataSpecs,
+required this.postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2,});
+  factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData.fromJson(Object? json) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData._(
+    rawValue: Omittable(json),
+    transferDataSpecs: parseAnyOfVariant<TransferDataSpecs>(json, (value) => TransferDataSpecs.fromJson(value! as Map<String, dynamic>)),
+postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2: parseAnyOfVariant<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2>(json, (value) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<TransferDataSpecs> transferDataSpecs;
+final Omittable<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2> postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => transferDataSpecs.isPresent || postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (transferDataSpecs.isPresent) transferDataSpecs.value?.toJson(),
+if (postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2.isPresent) postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferDataVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData(${toJson()})';
+}

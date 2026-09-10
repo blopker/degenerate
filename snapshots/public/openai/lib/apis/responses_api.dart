@@ -18,7 +18,7 @@ final class ResponsesApi with ApiExecutor {const ResponsesApi(this.apiConfig);
 /// 
 ///
 /// `POST /responses`
-Future<ApiResult<Response, Never>> createResponse({required CreateResponse body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOf2<Response, ResponseStreamEvent>, Never>> createResponse({required CreateResponse body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -32,7 +32,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<Response, ResponseStreamEvent>.a(Response.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ResponseStreamEvent
+throw UnsupportedError('Cannot decode text/event-stream response into ResponseStreamEvent');
+}
+final json = jsonDecode(response.body);
+return OneOf2<Response, ResponseStreamEvent>.a(Response.fromJson(json as Map<String, dynamic>));
+
   },
 );
  } 
@@ -71,7 +82,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Response.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -92,7 +104,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -114,10 +133,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Response.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -155,7 +182,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseItemList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ResponseItemList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

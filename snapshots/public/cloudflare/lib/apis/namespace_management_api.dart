@@ -48,11 +48,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? R2DataCatalogNamespaceListResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? R2DataCatalogNamespaceListResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
-    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

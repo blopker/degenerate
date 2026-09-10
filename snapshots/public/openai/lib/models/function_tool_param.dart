@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FunctionToolParamType($value)'; } 
  }
-@immutable final class FunctionToolParam {const FunctionToolParam({required this.name, this.description = const Omittable.absent(), this.parameters = const Omittable.absent(), this.strict = const Omittable.absent(), this.type = FunctionToolParamType.function, });
+@immutable final class FunctionToolParam {const FunctionToolParam({required this.name, required this.type, this.description = const Omittable.absent(), this.parameters = const Omittable.absent(), this.strict = const Omittable.absent(), });
 
 factory FunctionToolParam.fromJson(Map<String, dynamic> json) { return FunctionToolParam(
   name: json['name'] as String,

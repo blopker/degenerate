@@ -53,12 +53,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VideoResourceObject($value)'; } 
  }
 /// Structured information describing a generated video job.
-@immutable final class VideoResource {const VideoResource({required this.id, required this.model, required this.status, required this.progress, required this.createdAt, required this.completedAt, required this.expiresAt, required this.prompt, required this.size, required this.seconds, required this.remixedFromVideoId, required this.error, this.object = VideoResourceObject.video, });
+@immutable final class VideoResource {const VideoResource({required this.id, required this.object, required this.model, required this.status, required this.progress, required this.createdAt, required this.completedAt, required this.expiresAt, required this.prompt, required this.size, required this.seconds, required this.remixedFromVideoId, required this.error, });
 
 factory VideoResource.fromJson(Map<String, dynamic> json) { return VideoResource(
   id: json['id'] as String,
   object: VideoResourceObject.fromJson(json['object'] as String),
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => VideoModelVariant2.fromJson(v as String),),
+  model: VideoModel.fromJson(json['model']),
   status: VideoStatus.fromJson(json['status'] as String),
   progress: (json['progress'] as num).toInt(),
   createdAt: (json['created_at'] as num).toInt(),

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'NoValidAuthorizationAdditionalDocumentationVariant2($value)'; } 
  }
-typedef NoValidAuthorizationAdditionalDocumentation = OneOf2<String,NoValidAuthorizationAdditionalDocumentationVariant2>;
+
+@immutable
+final class NoValidAuthorizationAdditionalDocumentation {
+  const NoValidAuthorizationAdditionalDocumentation({this.string = const Omittable.absent(),
+this.noValidAuthorizationAdditionalDocumentationVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const NoValidAuthorizationAdditionalDocumentation._({required this.rawValue, required this.string,
+required this.noValidAuthorizationAdditionalDocumentationVariant2,});
+  factory NoValidAuthorizationAdditionalDocumentation.fromJson(Object? json) => NoValidAuthorizationAdditionalDocumentation._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+noValidAuthorizationAdditionalDocumentationVariant2: parseAnyOfVariant<NoValidAuthorizationAdditionalDocumentationVariant2>(json, (value) => NoValidAuthorizationAdditionalDocumentationVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<NoValidAuthorizationAdditionalDocumentationVariant2> noValidAuthorizationAdditionalDocumentationVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || noValidAuthorizationAdditionalDocumentationVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (noValidAuthorizationAdditionalDocumentationVariant2.isPresent) noValidAuthorizationAdditionalDocumentationVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is NoValidAuthorizationAdditionalDocumentation && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'NoValidAuthorizationAdditionalDocumentation(${toJson()})';
+}

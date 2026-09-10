@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ContainerReferenceResourceType($value)'; } 
  }
 /// Represents a container created with /v1/containers.
-@immutable final class ContainerReferenceResource {const ContainerReferenceResource({required this.containerId, this.type = ContainerReferenceResourceType.containerReference, });
+@immutable final class ContainerReferenceResource {const ContainerReferenceResource({required this.type, required this.containerId, });
 
 factory ContainerReferenceResource.fromJson(Map<String, dynamic> json) { return ContainerReferenceResource(
   type: ContainerReferenceResourceType.fromJson(json['type'] as String),

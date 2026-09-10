@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_messages2.dart';import 'aaa_webhooks.dart';@immutable final class NotificationWebhooksListWebhooksResponse4Xx {const NotificationWebhooksListWebhooksResponse4Xx({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_messages2.dart';import 'aaa_webhooks_response.dart';@immutable final class NotificationWebhooksListWebhooksResponse4Xx {const NotificationWebhooksListWebhooksResponse4Xx({required this.errors, required this.messages, required this.success, this.result, });
 
 factory NotificationWebhooksListWebhooksResponse4Xx.fromJson(Map<String, dynamic> json) { return NotificationWebhooksListWebhooksResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => AaaComponentsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AaaComponentsSchemasMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: (json['result'] as List<dynamic>?)?.map((e) => AaaWebhooks.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => AaaWebhooksResponse.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 final List<AaaComponentsSchemasMessages2> errors;
@@ -16,7 +16,7 @@ final List<AaaComponentsSchemasMessages2> messages;
 /// Whether the API call was successful
 final bool success;
 
-final List<AaaWebhooks>? result;
+final List<AaaWebhooksResponse>? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-NotificationWebhooksListWebhooksResponse4Xx copyWith({List<AaaComponentsSchemasMessages2>? errors, List<AaaComponentsSchemasMessages2>? messages, bool? success, List<AaaWebhooks>? Function()? result, }) { return NotificationWebhooksListWebhooksResponse4Xx(
+NotificationWebhooksListWebhooksResponse4Xx copyWith({List<AaaComponentsSchemasMessages2>? errors, List<AaaComponentsSchemasMessages2>? messages, bool? success, List<AaaWebhooksResponse>? Function()? result, }) { return NotificationWebhooksListWebhooksResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

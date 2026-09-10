@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType($value)'; } 
  }
-@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression {const CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression({this.type = CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType.gzip});
+@immutable final class CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression {const CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression({required this.type});
 
 factory CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesPipelineDestinationCompression(
   type: CloudflarePipelinesWorkersPipelinesPipelineDestinationCompressionType.fromJson(json['type'] as String),

@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreadItemListResourceObject($value)'; } 
  }
 /// A paginated list of thread items rendered for the ChatKit API.
-@immutable final class ThreadItemListResource {const ThreadItemListResource({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = ThreadItemListResourceObject.list, });
+@immutable final class ThreadItemListResource {const ThreadItemListResource({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory ThreadItemListResource.fromJson(Map<String, dynamic> json) { return ThreadItemListResource(
   object: ThreadItemListResourceObject.fromJson(json['object'] as String),

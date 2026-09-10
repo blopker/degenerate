@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_transfers_payment_method_details.dart';import 'treasury_outbound_transfer_transaction.dart';import 'treasury_outbound_transfers_resource_outbound_transfer_resource_tracking_details.dart';import 'treasury_outbound_transfers_resource_returned_details.dart';import 'treasury_outbound_transfers_resource_status_transitions.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_transfers_payment_method_details.dart';import 'treasury_outbound_transfer_transaction.dart';import 'treasury_outbound_transfers_resource_outbound_transfer_resource_tracking_details.dart';import 'treasury_outbound_transfers_resource_returned_details.dart';import 'treasury_outbound_transfers_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryOutboundTransferObject {const TreasuryOutboundTransferObject._(this.value);
 
 factory TreasuryOutboundTransferObject.fromJson(String json) { return switch (json) {
@@ -83,7 +83,7 @@ factory TreasuryOutboundTransfer.fromJson(Map<String, dynamic> json) { return Tr
   status: TreasuryOutboundTransferStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryOutboundTransfersResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   trackingDetails: json.containsKey('tracking_details') ? Omittable(json['tracking_details'] != null ? TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),),
+  transaction: TreasuryOutboundTransferTransaction.fromJson(json['transaction']),
 ); }
 
 /// Amount (in cents) transferred.

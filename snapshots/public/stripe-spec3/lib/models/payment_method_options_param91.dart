@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param91_on_demand.dart';import 'payment_method_options_param91_subscriptions.dart';import 'payment_method_options_param91_subscriptions_variant1.dart';@immutable final class PaymentMethodOptionsParam91CaptureMethod {const PaymentMethodOptionsParam91CaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param91_on_demand.dart';import 'payment_method_options_param91_subscriptions.dart';@immutable final class PaymentMethodOptionsParam91CaptureMethod {const PaymentMethodOptionsParam91CaptureMethod._(this.value);
 
 factory PaymentMethodOptionsParam91CaptureMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -214,7 +214,7 @@ factory PaymentMethodOptionsParam91.fromJson(Map<String, dynamic> json) { return
   onDemand: json['on_demand'] != null ? PaymentMethodOptionsParam91OnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
   preferredLocale: json['preferred_locale'] != null ? PaymentMethodOptionsParam91PreferredLocale.fromJson(json['preferred_locale'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam91SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  subscriptions: json['subscriptions'] != null ? OneOf2.parse(json['subscriptions'], fromA: (v) => (v as List<dynamic>).map((e) => PaymentMethodOptionsParam91SubscriptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PaymentMethodOptionsParam91SubscriptionsVariant2.fromJson(v as String),) : null,
+  subscriptions: json['subscriptions'] != null ? PaymentMethodOptionsParam91Subscriptions.fromJson(json['subscriptions']) : null,
 ); }
 
 final PaymentMethodOptionsParam91CaptureMethod? captureMethod;

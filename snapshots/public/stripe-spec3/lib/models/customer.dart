@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'bank_account.dart';import 'card.dart';import 'cash_balance.dart';import 'customer_default_source.dart';import 'customer_sources.dart';import 'customer_subscriptions.dart';import 'customer_tax.dart';import 'customer_tax_ids.dart';import 'customer_test_clock.dart';import 'discount.dart';import 'invoice_setting_customer_setting.dart';import 'shipping.dart';import 'source.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'cash_balance.dart';import 'customer_default_source.dart';import 'customer_sources.dart';import 'customer_subscriptions.dart';import 'customer_tax.dart';import 'customer_tax_ids.dart';import 'customer_test_clock.dart';import 'discount.dart';import 'invoice_setting_customer_setting.dart';import 'shipping.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CustomerObject {const CustomerObject._(this.value);
 
 factory CustomerObject.fromJson(String json) { return switch (json) {
@@ -62,7 +62,7 @@ factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
   created: (json['created'] as num).toInt(),
   currency: json.containsKey('currency') ? Omittable(json['currency'] as String?) : const Omittable.absent(),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
-  defaultSource: json.containsKey('default_source') ? Omittable(json['default_source'] != null ? OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  defaultSource: json.containsKey('default_source') ? Omittable(json['default_source'] != null ? CustomerDefaultSource.fromJson(json['default_source']) : null) : const Omittable.absent(),
   delinquent: json.containsKey('delinquent') ? Omittable(json['delinquent'] as bool?) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   discount: json.containsKey('discount') ? Omittable(json['discount'] != null ? Discount.fromJson(json['discount'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -85,7 +85,7 @@ factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
   tax: json['tax'] != null ? CustomerTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json.containsKey('tax_exempt') ? Omittable(json['tax_exempt'] != null ? CustomerTaxExempt.fromJson(json['tax_exempt'] as String) : null) : const Omittable.absent(),
   taxIds: json['tax_ids'] != null ? CustomerTaxIds.fromJson(json['tax_ids'] as Map<String, dynamic>) : null,
-  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? CustomerTestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
 ); }
 
 /// The customer's address.

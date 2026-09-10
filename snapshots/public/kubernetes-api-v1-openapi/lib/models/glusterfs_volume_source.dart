@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
-@immutable final class GlusterfsVolumeSource {const GlusterfsVolumeSource({this.endpoints = '', this.path = '', this.readOnly, });
+@immutable final class GlusterfsVolumeSource {const GlusterfsVolumeSource({required this.endpoints, required this.path, this.readOnly, });
 
 factory GlusterfsVolumeSource.fromJson(Map<String, dynamic> json) { return GlusterfsVolumeSource(
   endpoints: json['endpoints'] as String,

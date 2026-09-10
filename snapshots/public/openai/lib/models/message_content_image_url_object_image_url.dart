@@ -28,25 +28,27 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageContentImageUrlObjectImageUrlDetail($value)'; } 
  }
-@immutable final class MessageContentImageUrlObjectImageUrl {const MessageContentImageUrlObjectImageUrl({required this.url, this.detail = MessageContentImageUrlObjectImageUrlDetail.auto, });
+@immutable final class MessageContentImageUrlObjectImageUrl {const MessageContentImageUrlObjectImageUrl({required this.url, this.detail, });
 
 factory MessageContentImageUrlObjectImageUrl.fromJson(Map<String, dynamic> json) { return MessageContentImageUrlObjectImageUrl(
   url: Uri.parse(json['url'] as String),
-  detail: json.containsKey('detail') ? MessageContentImageUrlObjectImageUrlDetail.fromJson(json['detail'] as String) : MessageContentImageUrlObjectImageUrlDetail.auto,
+  detail: json['detail'] != null ? MessageContentImageUrlObjectImageUrlDetail.fromJson(json['detail'] as String) : null,
 ); }
 
 /// The external URL of the image, must be a supported image types: jpeg, jpg, png, gif, webp.
 final Uri url;
 
 /// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`. Default value is `auto`
-final MessageContentImageUrlObjectImageUrlDetail detail;
+final MessageContentImageUrlObjectImageUrlDetail? detail;
 
+/// The value with the schema default applied when absent.
+MessageContentImageUrlObjectImageUrlDetail get detailOrDefault { return detail ?? MessageContentImageUrlObjectImageUrlDetail.fromJson('auto'); } 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
-  'detail': detail.toJson(),
+  if (detail != null) 'detail': detail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-MessageContentImageUrlObjectImageUrl copyWith({Uri? url, MessageContentImageUrlObjectImageUrlDetail Function()? detail, }) { return MessageContentImageUrlObjectImageUrl(
+MessageContentImageUrlObjectImageUrl copyWith({Uri? url, MessageContentImageUrlObjectImageUrlDetail? Function()? detail, }) { return MessageContentImageUrlObjectImageUrl(
   url: url ?? this.url,
   detail: detail != null ? detail() : this.detail,
 ); } 

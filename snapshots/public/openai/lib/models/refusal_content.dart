@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A refusal from the model.
-@immutable final class RefusalContent {const RefusalContent({required this.refusal, this.type = 'refusal', });
+@immutable final class RefusalContent {const RefusalContent({required this.type, required this.refusal, });
 
 factory RefusalContent.fromJson(Map<String, dynamic> json) { return RefusalContent(
   type: json['type'] as String,

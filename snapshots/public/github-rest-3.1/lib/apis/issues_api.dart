@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/issue.dart';import '../models/issue_comment.dart';import '../models/issue_event.dart';import '../models/issue_event_for_issue.dart';import '../models/issues_add_assignees_request.dart';import '../models/issues_add_blocked_by_dependency_request.dart';import '../models/issues_add_labels_request.dart';import '../models/issues_add_sub_issue_request.dart';import '../models/issues_create_comment_request.dart';import '../models/issues_create_label_request.dart';import '../models/issues_create_milestone_request.dart';import '../models/issues_create_request.dart';import '../models/issues_list_comments_for_repo_direction.dart';import '../models/issues_list_comments_for_repo_sort.dart';import '../models/issues_list_direction.dart';import '../models/issues_list_filter.dart';import '../models/issues_list_for_authenticated_user_direction.dart';import '../models/issues_list_for_authenticated_user_filter.dart';import '../models/issues_list_for_authenticated_user_sort.dart';import '../models/issues_list_for_authenticated_user_state.dart';import '../models/issues_list_for_org_direction.dart';import '../models/issues_list_for_org_filter.dart';import '../models/issues_list_for_org_sort.dart';import '../models/issues_list_for_org_state.dart';import '../models/issues_list_for_repo_direction.dart';import '../models/issues_list_for_repo_sort.dart';import '../models/issues_list_for_repo_state.dart';import '../models/issues_list_milestones_direction.dart';import '../models/issues_list_milestones_sort.dart';import '../models/issues_list_milestones_state.dart';import '../models/issues_list_sort.dart';import '../models/issues_list_state.dart';import '../models/issues_lock_request.dart';import '../models/issues_remove_assignees_request.dart';import '../models/issues_remove_sub_issue_request.dart';import '../models/issues_reprioritize_sub_issue_request.dart';import '../models/issues_set_labels_request.dart';import '../models/issues_update_comment_request.dart';import '../models/issues_update_label_request.dart';import '../models/issues_update_milestone_request.dart';import '../models/issues_update_request.dart';import '../models/label.dart';import '../models/milestone.dart';import '../models/simple_user.dart';import '../models/timeline_issue_events.dart';import '../models/validation_error.dart';/// IssuesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/issue.dart';import '../models/issue_comment.dart';import '../models/issue_event.dart';import '../models/issue_event_for_issue.dart';import '../models/issues_add_assignees_request.dart';import '../models/issues_add_blocked_by_dependency_request.dart';import '../models/issues_add_labels_request.dart';import '../models/issues_add_sub_issue_request.dart';import '../models/issues_create_comment_request.dart';import '../models/issues_create_label_request.dart';import '../models/issues_create_milestone_request.dart';import '../models/issues_create_request.dart';import '../models/issues_create_response503.dart';import '../models/issues_list_comments_for_repo_direction.dart';import '../models/issues_list_comments_for_repo_sort.dart';import '../models/issues_list_direction.dart';import '../models/issues_list_filter.dart';import '../models/issues_list_for_authenticated_user_direction.dart';import '../models/issues_list_for_authenticated_user_filter.dart';import '../models/issues_list_for_authenticated_user_sort.dart';import '../models/issues_list_for_authenticated_user_state.dart';import '../models/issues_list_for_org_direction.dart';import '../models/issues_list_for_org_filter.dart';import '../models/issues_list_for_org_sort.dart';import '../models/issues_list_for_org_state.dart';import '../models/issues_list_for_repo_direction.dart';import '../models/issues_list_for_repo_sort.dart';import '../models/issues_list_for_repo_state.dart';import '../models/issues_list_milestones_direction.dart';import '../models/issues_list_milestones_sort.dart';import '../models/issues_list_milestones_state.dart';import '../models/issues_list_sort.dart';import '../models/issues_list_state.dart';import '../models/issues_lock_request.dart';import '../models/issues_remove_assignees_request.dart';import '../models/issues_remove_sub_issue_request.dart';import '../models/issues_reprioritize_sub_issue_request.dart';import '../models/issues_reprioritize_sub_issue_response503.dart';import '../models/issues_set_labels_request.dart';import '../models/issues_unpin_comment_response503.dart';import '../models/issues_update_comment_request.dart';import '../models/issues_update_label_request.dart';import '../models/issues_update_milestone_request.dart';import '../models/issues_update_request.dart';import '../models/issues_update_response503.dart';import '../models/label.dart';import '../models/milestone.dart';import '../models/scim_error.dart';import '../models/simple_user.dart';import '../models/timeline_issue_events.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';/// IssuesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -25,7 +25,7 @@ final class IssuesApi with ApiExecutor {const IssuesApi(this.apiConfig);
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /issues`
-Future<ApiResult<List<Issue>, ValidationError>> issuesList({IssuesListFilter? filter, IssuesListState? state, String? labels, IssuesListSort? sort, IssuesListDirection? direction, DateTime? since, bool? collab, bool? orgs, bool? owned, bool? pulls, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, OneOf2<BasicError, ValidationError>>> issuesList({IssuesListFilter? filter, IssuesListState? state, String? labels, IssuesListSort? sort, IssuesListDirection? direction, DateTime? since, bool? collab, bool? orgs, bool? owned, bool? pulls, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) {
   queryParameters['filter'] = filter.toJson();
@@ -78,11 +78,23 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -145,11 +157,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -181,11 +200,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -211,7 +237,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -230,7 +263,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues`
-Future<ApiResult<List<Issue>, ValidationError>> issuesListForRepo({required String owner, required String repo, String? milestone, IssuesListForRepoState? state, String? assignee, String? type, String? creator, String? mentioned, String? labels, IssuesListForRepoSort? sort, IssuesListForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, OneOf2<BasicError, ValidationError>>> issuesListForRepo({required String owner, required String repo, String? milestone, IssuesListForRepoState? state, String? assignee, String? type, String? creator, String? mentioned, String? labels, IssuesListForRepoSort? sort, IssuesListForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (milestone != null) {
   queryParameters['milestone'] = milestone;
@@ -283,11 +316,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -306,7 +349,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues`
-Future<ApiResult<Issue, BasicError>> issuesCreate({required String owner, required String repo, required IssuesCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>>> issuesCreate({required String owner, required String repo, required IssuesCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -320,10 +363,37 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Issue.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404 || 410:
+final json = jsonDecode(response.body);
+return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.c(ValidationError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.d(IssuesCreateResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -341,7 +411,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/comments`
-Future<ApiResult<List<IssueComment>, ValidationError>> issuesListCommentsForRepo({required String owner, required String repo, IssuesListCommentsForRepoSort? sort, IssuesListCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IssueComment>, OneOf2<BasicError, ValidationError>>> issuesListCommentsForRepo({required String owner, required String repo, IssuesListCommentsForRepoSort? sort, IssuesListCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) {
   queryParameters['sort'] = sort.toJson();
@@ -373,11 +443,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => IssueComment.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => IssueComment.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -405,10 +485,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return IssueComment.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -438,10 +526,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return IssueComment.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 422:
+final json = jsonDecode(response.body);
+return ValidationError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -476,7 +572,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PUT /repos/{owner}/{repo}/issues/comments/{comment_id}/pin`
-Future<ApiResult<IssueComment, BasicError>> issuesPinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueComment, OneOf2<BasicError, ValidationError>>> issuesPinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -488,10 +584,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return IssueComment.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401 || 403 || 404 || 410:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -500,7 +607,7 @@ return execute(
 /// You can use the REST API to unpin comments on issues.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/pin`
-Future<ApiResult<void, BasicError>> issuesUnpinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, IssuesUnpinCommentResponse503>>> issuesUnpinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -513,7 +620,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401 || 403 || 404 || 410:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, IssuesUnpinCommentResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, IssuesUnpinCommentResponse503>.b(IssuesUnpinCommentResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -545,11 +662,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => IssueEvent.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => IssueEvent.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 422:
+final json = jsonDecode(response.body);
+return ValidationError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -570,10 +694,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IssueEvent.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return IssueEvent.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -609,10 +741,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Issue.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 404 || 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+case 304:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -628,7 +770,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PATCH /repos/{owner}/{repo}/issues/{issue_number}`
-Future<ApiResult<Issue, ValidationError>> issuesUpdate({required String owner, required String repo, required int issueNumber, IssuesUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, OneOf3<BasicError, ValidationError, IssuesUpdateResponse503>>> issuesUpdate({required String owner, required String repo, required int issueNumber, IssuesUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -642,10 +784,24 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Issue.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 403 || 404 || 410:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ValidationError, IssuesUpdateResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ValidationError, IssuesUpdateResponse503>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ValidationError, IssuesUpdateResponse503>.c(IssuesUpdateResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -668,7 +824,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Issue.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -691,7 +848,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Issue.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -717,7 +875,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -761,11 +926,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => IssueComment.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => IssueComment.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404 || 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -786,7 +958,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/comments`
-Future<ApiResult<IssueComment, BasicError>> issuesCreateComment({required String owner, required String repo, required int issueNumber, required IssuesCreateCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueComment, OneOf2<BasicError, ValidationError>>> issuesCreateComment({required String owner, required String repo, required int issueNumber, required IssuesCreateCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -800,10 +972,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return IssueComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return IssueComment.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 410:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -842,11 +1025,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 404 || 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -866,7 +1056,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by`
-Future<ApiResult<Issue, BasicError>> issuesAddBlockedByDependency({required String owner, required String repo, required int issueNumber, required IssuesAddBlockedByDependencyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, OneOf2<BasicError, ValidationError>>> issuesAddBlockedByDependency({required String owner, required String repo, required int issueNumber, required IssuesAddBlockedByDependencyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -880,10 +1070,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Issue.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 403 || 404 || 410:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -902,7 +1103,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}`
-Future<ApiResult<Issue, BasicError>> issuesRemoveDependencyBlockedBy({required String owner, required String repo, required int issueNumber, required int issueId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, OneOf2<BasicError, ScimError>>> issuesRemoveDependencyBlockedBy({required String owner, required String repo, required int issueNumber, required int issueId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -914,10 +1115,31 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Issue.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 401 || 403 || 404 || 410:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+default:
+return null;
+}
+
   },
 );
  } 
@@ -956,11 +1178,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 404 || 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -992,11 +1221,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => IssueEventForIssue.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map(IssueEventForIssue.fromJson).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1028,11 +1264,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 404 || 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1041,7 +1284,7 @@ return execute(
 /// Adds labels to an issue.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<List<Label>, BasicError>> issuesAddLabels({required String owner, required String repo, required int issueNumber, IssuesAddLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Label>, OneOf2<BasicError, ValidationError>>> issuesAddLabels({required String owner, required String repo, required int issueNumber, IssuesAddLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1055,11 +1298,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 404 || 410:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1068,7 +1321,7 @@ return execute(
 /// Removes any previous labels and sets the new labels for an issue.
 ///
 /// `PUT /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<List<Label>, BasicError>> issuesSetLabels({required String owner, required String repo, required int issueNumber, IssuesSetLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Label>, OneOf2<BasicError, ValidationError>>> issuesSetLabels({required String owner, required String repo, required int issueNumber, IssuesSetLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1082,11 +1335,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 404 || 410:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1108,7 +1371,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 404 || 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1129,11 +1399,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 404 || 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1144,7 +1421,7 @@ return execute(
 /// Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// `PUT /repos/{owner}/{repo}/issues/{issue_number}/lock`
-Future<ApiResult<void, BasicError>> issuesLock({required String owner, required String repo, required int issueNumber, IssuesLockRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> issuesLock({required String owner, required String repo, required int issueNumber, IssuesLockRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1159,7 +1436,17 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 410:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1181,7 +1468,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1209,10 +1503,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Issue.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 404 || 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1229,7 +1531,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue`
-Future<ApiResult<Issue, BasicError>> issuesRemoveSubIssue({required String owner, required String repo, required int issueNumber, required IssuesRemoveSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, OneOf2<BasicError, ScimError>>> issuesRemoveSubIssue({required String owner, required String repo, required int issueNumber, required IssuesRemoveSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1243,10 +1545,31 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Issue.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1285,11 +1608,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404 || 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1309,7 +1639,7 @@ return execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues`
-Future<ApiResult<Issue, BasicError>> issuesAddSubIssue({required String owner, required String repo, required int issueNumber, required IssuesAddSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, OneOf2<BasicError, ValidationError>>> issuesAddSubIssue({required String owner, required String repo, required int issueNumber, required IssuesAddSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1323,10 +1653,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Issue.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 410:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1335,7 +1676,7 @@ return execute(
 /// You can use the REST API to reprioritize a sub-issue to a different position in the parent list.
 ///
 /// `PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority`
-Future<ApiResult<Issue, BasicError>> issuesReprioritizeSubIssue({required String owner, required String repo, required int issueNumber, required IssuesReprioritizeSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, OneOf3<BasicError, ValidationErrorSimple, IssuesReprioritizeSubIssueResponse503>>> issuesReprioritizeSubIssue({required String owner, required String repo, required int issueNumber, required IssuesReprioritizeSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1349,10 +1690,24 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Issue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Issue.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ValidationErrorSimple, IssuesReprioritizeSubIssueResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ValidationErrorSimple, IssuesReprioritizeSubIssueResponse503>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ValidationErrorSimple, IssuesReprioritizeSubIssueResponse503>.c(IssuesReprioritizeSubIssueResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1384,11 +1739,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => TimelineIssueEvents.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map(TimelineIssueEvents.fromJson).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404 || 410:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1420,11 +1782,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1433,7 +1802,7 @@ return execute(
 /// Creates a label for the specified repository with the given name and color. The name and color parameters are required. The color must be a valid [hexadecimal color code](http://www.color-hex.com/).
 ///
 /// `POST /repos/{owner}/{repo}/labels`
-Future<ApiResult<Label, ValidationError>> issuesCreateLabel({required String owner, required String repo, required IssuesCreateLabelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Label, OneOf2<BasicError, ValidationError>>> issuesCreateLabel({required String owner, required String repo, required IssuesCreateLabelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1447,10 +1816,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Label.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Label.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1471,10 +1851,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Label.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Label.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1497,7 +1885,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Label.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Label.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1557,11 +1946,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Milestone.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Milestone.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1570,7 +1966,7 @@ return execute(
 /// Creates a milestone.
 ///
 /// `POST /repos/{owner}/{repo}/milestones`
-Future<ApiResult<Milestone, BasicError>> issuesCreateMilestone({required String owner, required String repo, required IssuesCreateMilestoneRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Milestone, OneOf2<BasicError, ValidationError>>> issuesCreateMilestone({required String owner, required String repo, required IssuesCreateMilestoneRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1584,10 +1980,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Milestone.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Milestone.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1608,10 +2015,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Milestone.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Milestone.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1634,7 +2049,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Milestone.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Milestone.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1656,7 +2072,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1688,8 +2111,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -1749,11 +2172,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

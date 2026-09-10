@@ -16,6 +16,14 @@ final class StreamedApiResponse {
     this.headers = const {},
   });
 
+  /// Exposes a buffered response through the same middleware contract.
+  factory StreamedApiResponse.fromResponse(ApiResponse response) =>
+      StreamedApiResponse(
+        statusCode: response.statusCode,
+        headers: response.headers,
+        byteStream: Stream.value(response.bodyBytes),
+      );
+
   /// The HTTP status code.
   final int statusCode;
 
@@ -27,6 +35,9 @@ final class StreamedApiResponse {
 
   /// True if status code is 2xx.
   bool get isSuccessful => statusCode >= 200 && statusCode < 300;
+
+  /// Releases an unread response before retrying or replacing it.
+  Future<void> discard() => byteStream.listen(null).cancel();
 
   /// Buffer the entire stream into a regular [ApiResponse].
   ///

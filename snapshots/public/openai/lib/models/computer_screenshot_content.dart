@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ComputerScreenshotContentType($value)'; } 
  }
 /// A screenshot of a computer.
-@immutable final class ComputerScreenshotContent {const ComputerScreenshotContent({required this.imageUrl, required this.fileId, required this.detail, this.type = ComputerScreenshotContentType.computerScreenshot, });
+@immutable final class ComputerScreenshotContent {const ComputerScreenshotContent({required this.type, required this.imageUrl, required this.fileId, required this.detail, });
 
 factory ComputerScreenshotContent.fromJson(Map<String, dynamic> json) { return ComputerScreenshotContent(
   type: ComputerScreenshotContentType.fromJson(json['type'] as String),

@@ -37,7 +37,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListDependentPhoneNumberResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListDependentPhoneNumberResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

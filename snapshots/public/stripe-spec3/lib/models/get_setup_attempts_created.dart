@@ -1,3 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'range_query_specs41.dart';typedef GetSetupAttemptsCreated = OneOf2<RangeQuerySpecs41,int>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'range_query_specs41.dart';
+@immutable
+final class GetSetupAttemptsCreated {
+  const GetSetupAttemptsCreated({this.rangeQuerySpecs41 = const Omittable.absent(),
+this.$int = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const GetSetupAttemptsCreated._({required this.rawValue, required this.rangeQuerySpecs41,
+required this.$int,});
+  factory GetSetupAttemptsCreated.fromJson(Object? json) => GetSetupAttemptsCreated._(
+    rawValue: Omittable(json),
+    rangeQuerySpecs41: parseAnyOfVariant<RangeQuerySpecs41>(json, (value) => RangeQuerySpecs41.fromJson(value! as Map<String, dynamic>)),
+$int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<RangeQuerySpecs41> rangeQuerySpecs41;
+final Omittable<int> $int;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => rangeQuerySpecs41.isPresent || $int.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (rangeQuerySpecs41.isPresent) rangeQuerySpecs41.value?.toJson(),
+if ($int.isPresent) $int.value,
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is GetSetupAttemptsCreated && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'GetSetupAttemptsCreated(${toJson()})';
+}

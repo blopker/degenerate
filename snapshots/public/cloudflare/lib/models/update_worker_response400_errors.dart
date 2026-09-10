@@ -4,6 +4,14 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_erro
 
 /// Deserialize from JSON, dispatching on the `code` discriminator.
 factory UpdateWorkerResponse400Errors.fromJson(Map<String, dynamic> json) { return switch (json['code']) {
+  'workers_ErrorMissingParam' => UpdateWorkerResponse400ErrorsWorkersErrorMissingParam.fromJson(json),
+  'workers_ErrorWorkerNameInvalid' => UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameInvalid.fromJson(json),
+  'workers_ErrorWorkerInvalid' => UpdateWorkerResponse400ErrorsWorkersErrorWorkerInvalid.fromJson(json),
+  'workers_ErrorWorkerTagLengthLimit' => UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagLengthLimit.fromJson(json),
+  'workers_ErrorWorkerTagInvalid' => UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagInvalid.fromJson(json),
+  'workers_ErrorWorkerNameSubdomainLengthLimit' => UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameSubdomainLengthLimit.fromJson(json),
+  'workers_ErrorWorkerNamePreviewLengthLimit' => UpdateWorkerResponse400ErrorsWorkersErrorWorkerNamePreviewLengthLimit.fromJson(json),
+  'workers_ErrorWorkerObservabilitySamplingRateInvalid' => UpdateWorkerResponse400ErrorsWorkersErrorWorkerObservabilitySamplingRateInvalid.fromJson(json),
   '10003' => UpdateWorkerResponse400Errors10003.fromJson(json),
   '10016' => UpdateWorkerResponse400Errors10016.fromJson(json),
   '10021' => UpdateWorkerResponse400Errors10021.fromJson(json),
@@ -20,6 +28,110 @@ String get code;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UpdateWorkerResponse400Errors$Unknown; } 
+ }
+@immutable final class UpdateWorkerResponse400ErrorsWorkersErrorMissingParam extends UpdateWorkerResponse400Errors {const UpdateWorkerResponse400ErrorsWorkersErrorMissingParam(this.workersErrorMissingParam);
+
+factory UpdateWorkerResponse400ErrorsWorkersErrorMissingParam.fromJson(Map<String, dynamic> json) { return UpdateWorkerResponse400ErrorsWorkersErrorMissingParam(WorkersErrorMissingParam.fromJson(json)); }
+
+final WorkersErrorMissingParam workersErrorMissingParam;
+
+@override String get code { return 'workers_ErrorMissingParam'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorMissingParam.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UpdateWorkerResponse400ErrorsWorkersErrorMissingParam && workersErrorMissingParam == other.workersErrorMissingParam; } 
+@override int get hashCode { return workersErrorMissingParam.hashCode; } 
+@override String toString() { return 'UpdateWorkerResponse400ErrorsWorkersErrorMissingParam(workersErrorMissingParam: $workersErrorMissingParam)'; } 
+ }
+@immutable final class UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameInvalid extends UpdateWorkerResponse400Errors {const UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameInvalid(this.workersErrorWorkerNameInvalid);
+
+factory UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameInvalid.fromJson(Map<String, dynamic> json) { return UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameInvalid(WorkersErrorWorkerNameInvalid.fromJson(json)); }
+
+final WorkersErrorWorkerNameInvalid workersErrorWorkerNameInvalid;
+
+@override String get code { return 'workers_ErrorWorkerNameInvalid'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorWorkerNameInvalid.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameInvalid && workersErrorWorkerNameInvalid == other.workersErrorWorkerNameInvalid; } 
+@override int get hashCode { return workersErrorWorkerNameInvalid.hashCode; } 
+@override String toString() { return 'UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameInvalid(workersErrorWorkerNameInvalid: $workersErrorWorkerNameInvalid)'; } 
+ }
+@immutable final class UpdateWorkerResponse400ErrorsWorkersErrorWorkerInvalid extends UpdateWorkerResponse400Errors {const UpdateWorkerResponse400ErrorsWorkersErrorWorkerInvalid(this.workersErrorWorkerInvalid);
+
+factory UpdateWorkerResponse400ErrorsWorkersErrorWorkerInvalid.fromJson(Map<String, dynamic> json) { return UpdateWorkerResponse400ErrorsWorkersErrorWorkerInvalid(WorkersErrorWorkerInvalid.fromJson(json)); }
+
+final WorkersErrorWorkerInvalid workersErrorWorkerInvalid;
+
+@override String get code { return 'workers_ErrorWorkerInvalid'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorWorkerInvalid.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UpdateWorkerResponse400ErrorsWorkersErrorWorkerInvalid && workersErrorWorkerInvalid == other.workersErrorWorkerInvalid; } 
+@override int get hashCode { return workersErrorWorkerInvalid.hashCode; } 
+@override String toString() { return 'UpdateWorkerResponse400ErrorsWorkersErrorWorkerInvalid(workersErrorWorkerInvalid: $workersErrorWorkerInvalid)'; } 
+ }
+@immutable final class UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagLengthLimit extends UpdateWorkerResponse400Errors {const UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagLengthLimit(this.workersErrorWorkerTagLengthLimit);
+
+factory UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagLengthLimit.fromJson(Map<String, dynamic> json) { return UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagLengthLimit(WorkersErrorWorkerTagLengthLimit.fromJson(json)); }
+
+final WorkersErrorWorkerTagLengthLimit workersErrorWorkerTagLengthLimit;
+
+@override String get code { return 'workers_ErrorWorkerTagLengthLimit'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorWorkerTagLengthLimit.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagLengthLimit && workersErrorWorkerTagLengthLimit == other.workersErrorWorkerTagLengthLimit; } 
+@override int get hashCode { return workersErrorWorkerTagLengthLimit.hashCode; } 
+@override String toString() { return 'UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagLengthLimit(workersErrorWorkerTagLengthLimit: $workersErrorWorkerTagLengthLimit)'; } 
+ }
+@immutable final class UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagInvalid extends UpdateWorkerResponse400Errors {const UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagInvalid(this.workersErrorWorkerTagInvalid);
+
+factory UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagInvalid.fromJson(Map<String, dynamic> json) { return UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagInvalid(WorkersErrorWorkerTagInvalid.fromJson(json)); }
+
+final WorkersErrorWorkerTagInvalid workersErrorWorkerTagInvalid;
+
+@override String get code { return 'workers_ErrorWorkerTagInvalid'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorWorkerTagInvalid.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagInvalid && workersErrorWorkerTagInvalid == other.workersErrorWorkerTagInvalid; } 
+@override int get hashCode { return workersErrorWorkerTagInvalid.hashCode; } 
+@override String toString() { return 'UpdateWorkerResponse400ErrorsWorkersErrorWorkerTagInvalid(workersErrorWorkerTagInvalid: $workersErrorWorkerTagInvalid)'; } 
+ }
+@immutable final class UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameSubdomainLengthLimit extends UpdateWorkerResponse400Errors {const UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameSubdomainLengthLimit(this.workersErrorWorkerNameSubdomainLengthLimit);
+
+factory UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameSubdomainLengthLimit.fromJson(Map<String, dynamic> json) { return UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameSubdomainLengthLimit(WorkersErrorWorkerNameSubdomainLengthLimit.fromJson(json)); }
+
+final WorkersErrorWorkerNameSubdomainLengthLimit workersErrorWorkerNameSubdomainLengthLimit;
+
+@override String get code { return 'workers_ErrorWorkerNameSubdomainLengthLimit'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorWorkerNameSubdomainLengthLimit.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameSubdomainLengthLimit && workersErrorWorkerNameSubdomainLengthLimit == other.workersErrorWorkerNameSubdomainLengthLimit; } 
+@override int get hashCode { return workersErrorWorkerNameSubdomainLengthLimit.hashCode; } 
+@override String toString() { return 'UpdateWorkerResponse400ErrorsWorkersErrorWorkerNameSubdomainLengthLimit(workersErrorWorkerNameSubdomainLengthLimit: $workersErrorWorkerNameSubdomainLengthLimit)'; } 
+ }
+@immutable final class UpdateWorkerResponse400ErrorsWorkersErrorWorkerNamePreviewLengthLimit extends UpdateWorkerResponse400Errors {const UpdateWorkerResponse400ErrorsWorkersErrorWorkerNamePreviewLengthLimit(this.workersErrorWorkerNamePreviewLengthLimit);
+
+factory UpdateWorkerResponse400ErrorsWorkersErrorWorkerNamePreviewLengthLimit.fromJson(Map<String, dynamic> json) { return UpdateWorkerResponse400ErrorsWorkersErrorWorkerNamePreviewLengthLimit(WorkersErrorWorkerNamePreviewLengthLimit.fromJson(json)); }
+
+final WorkersErrorWorkerNamePreviewLengthLimit workersErrorWorkerNamePreviewLengthLimit;
+
+@override String get code { return 'workers_ErrorWorkerNamePreviewLengthLimit'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorWorkerNamePreviewLengthLimit.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UpdateWorkerResponse400ErrorsWorkersErrorWorkerNamePreviewLengthLimit && workersErrorWorkerNamePreviewLengthLimit == other.workersErrorWorkerNamePreviewLengthLimit; } 
+@override int get hashCode { return workersErrorWorkerNamePreviewLengthLimit.hashCode; } 
+@override String toString() { return 'UpdateWorkerResponse400ErrorsWorkersErrorWorkerNamePreviewLengthLimit(workersErrorWorkerNamePreviewLengthLimit: $workersErrorWorkerNamePreviewLengthLimit)'; } 
+ }
+@immutable final class UpdateWorkerResponse400ErrorsWorkersErrorWorkerObservabilitySamplingRateInvalid extends UpdateWorkerResponse400Errors {const UpdateWorkerResponse400ErrorsWorkersErrorWorkerObservabilitySamplingRateInvalid(this.workersErrorWorkerObservabilitySamplingRateInvalid);
+
+factory UpdateWorkerResponse400ErrorsWorkersErrorWorkerObservabilitySamplingRateInvalid.fromJson(Map<String, dynamic> json) { return UpdateWorkerResponse400ErrorsWorkersErrorWorkerObservabilitySamplingRateInvalid(WorkersErrorWorkerObservabilitySamplingRateInvalid.fromJson(json)); }
+
+final WorkersErrorWorkerObservabilitySamplingRateInvalid workersErrorWorkerObservabilitySamplingRateInvalid;
+
+@override String get code { return 'workers_ErrorWorkerObservabilitySamplingRateInvalid'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorWorkerObservabilitySamplingRateInvalid.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UpdateWorkerResponse400ErrorsWorkersErrorWorkerObservabilitySamplingRateInvalid && workersErrorWorkerObservabilitySamplingRateInvalid == other.workersErrorWorkerObservabilitySamplingRateInvalid; } 
+@override int get hashCode { return workersErrorWorkerObservabilitySamplingRateInvalid.hashCode; } 
+@override String toString() { return 'UpdateWorkerResponse400ErrorsWorkersErrorWorkerObservabilitySamplingRateInvalid(workersErrorWorkerObservabilitySamplingRateInvalid: $workersErrorWorkerObservabilitySamplingRateInvalid)'; } 
  }
 @immutable final class UpdateWorkerResponse400Errors10003 extends UpdateWorkerResponse400Errors {const UpdateWorkerResponse400Errors10003(this.workersErrorMissingParam);
 

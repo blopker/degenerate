@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_people_person_request_documents_visa_files.dart';@immutable final class PostAccountsAccountPeoplePersonRequestDocumentsVisa {const PostAccountsAccountPeoplePersonRequestDocumentsVisa({this.files});
 
 factory PostAccountsAccountPeoplePersonRequestDocumentsVisa.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeoplePersonRequestDocumentsVisa(
-  files: (json['files'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => PostAccountsAccountPeoplePersonRequestDocumentsVisaFilesVariant2.fromJson(v as String),)).toList(),
+  files: (json['files'] as List<dynamic>?)?.map(PostAccountsAccountPeoplePersonRequestDocumentsVisaFiles.fromJson).toList(),
 ); }
 
 final List<PostAccountsAccountPeoplePersonRequestDocumentsVisaFiles>? files;

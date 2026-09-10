@@ -50,7 +50,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ChatSessionResourceObject($value)'; } 
  }
 /// Represents a ChatKit session and its resolved configuration.
-@immutable final class ChatSessionResource {const ChatSessionResource({required this.id, required this.expiresAt, required this.clientSecret, required this.workflow, required this.user, required this.rateLimits, required this.maxRequestsPer1Minute, required this.status, required this.chatkitConfiguration, this.object = ChatSessionResourceObject.chatkitSession, });
+@immutable final class ChatSessionResource {const ChatSessionResource({required this.id, required this.object, required this.expiresAt, required this.clientSecret, required this.workflow, required this.user, required this.rateLimits, required this.maxRequestsPer1Minute, required this.status, required this.chatkitConfiguration, });
 
 factory ChatSessionResource.fromJson(Map<String, dynamic> json) { return ChatSessionResource(
   id: json['id'] as String,

@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostSnapshotRequestVariant1ScreenshotOptionsType($value)'; } 
  }
-@immutable final class BrapiPostSnapshotRequestVariant1ScreenshotOptions {const BrapiPostSnapshotRequestVariant1ScreenshotOptions({this.captureBeyondViewport, this.clip, this.fromSurface, this.fullPage, this.omitBackground, this.optimizeForSpeed, this.quality, this.type = BrapiPostSnapshotRequestVariant1ScreenshotOptionsType.png, });
+@immutable final class BrapiPostSnapshotRequestVariant1ScreenshotOptions {const BrapiPostSnapshotRequestVariant1ScreenshotOptions({this.captureBeyondViewport, this.clip, this.fromSurface, this.fullPage, this.omitBackground, this.optimizeForSpeed, this.quality, this.type, });
 
 factory BrapiPostSnapshotRequestVariant1ScreenshotOptions.fromJson(Map<String, dynamic> json) { return BrapiPostSnapshotRequestVariant1ScreenshotOptions(
   captureBeyondViewport: json['captureBeyondViewport'] as bool?,
@@ -37,7 +37,7 @@ factory BrapiPostSnapshotRequestVariant1ScreenshotOptions.fromJson(Map<String, d
   omitBackground: json['omitBackground'] as bool?,
   optimizeForSpeed: json['optimizeForSpeed'] as bool?,
   quality: json['quality'] != null ? (json['quality'] as num).toDouble() : null,
-  type: json.containsKey('type') ? BrapiPostSnapshotRequestVariant1ScreenshotOptionsType.fromJson(json['type'] as String) : BrapiPostSnapshotRequestVariant1ScreenshotOptionsType.png,
+  type: json['type'] != null ? BrapiPostSnapshotRequestVariant1ScreenshotOptionsType.fromJson(json['type'] as String) : null,
 ); }
 
 final bool? captureBeyondViewport;
@@ -54,8 +54,10 @@ final bool? optimizeForSpeed;
 
 final double? quality;
 
-final BrapiPostSnapshotRequestVariant1ScreenshotOptionsType type;
+final BrapiPostSnapshotRequestVariant1ScreenshotOptionsType? type;
 
+/// The value with the schema default applied when absent.
+BrapiPostSnapshotRequestVariant1ScreenshotOptionsType get typeOrDefault { return type ?? BrapiPostSnapshotRequestVariant1ScreenshotOptionsType.fromJson('png'); } 
 Map<String, dynamic> toJson() { return {
   'captureBeyondViewport': ?captureBeyondViewport,
   if (clip != null) 'clip': clip?.toJson(),
@@ -64,10 +66,10 @@ Map<String, dynamic> toJson() { return {
   'omitBackground': ?omitBackground,
   'optimizeForSpeed': ?optimizeForSpeed,
   'quality': ?quality,
-  'type': type.toJson(),
+  if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'captureBeyondViewport', 'clip', 'fromSurface', 'fullPage', 'omitBackground', 'optimizeForSpeed', 'quality', 'type'}.contains(key)); } 
-BrapiPostSnapshotRequestVariant1ScreenshotOptions copyWith({bool? Function()? captureBeyondViewport, BrapiPostSnapshotRequestVariant1ScreenshotOptionsClip? Function()? clip, bool? Function()? fromSurface, bool? Function()? fullPage, bool? Function()? omitBackground, bool? Function()? optimizeForSpeed, double? Function()? quality, BrapiPostSnapshotRequestVariant1ScreenshotOptionsType Function()? type, }) { return BrapiPostSnapshotRequestVariant1ScreenshotOptions(
+BrapiPostSnapshotRequestVariant1ScreenshotOptions copyWith({bool? Function()? captureBeyondViewport, BrapiPostSnapshotRequestVariant1ScreenshotOptionsClip? Function()? clip, bool? Function()? fromSurface, bool? Function()? fullPage, bool? Function()? omitBackground, bool? Function()? optimizeForSpeed, double? Function()? quality, BrapiPostSnapshotRequestVariant1ScreenshotOptionsType? Function()? type, }) { return BrapiPostSnapshotRequestVariant1ScreenshotOptions(
   captureBeyondViewport: captureBeyondViewport != null ? captureBeyondViewport() : this.captureBeyondViewport,
   clip: clip != null ? clip() : this.clip,
   fromSurface: fromSurface != null ? fromSurface() : this.fromSurface,

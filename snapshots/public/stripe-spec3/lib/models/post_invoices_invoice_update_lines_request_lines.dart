@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_update_lines_request_lines_discounts.dart';import 'post_invoices_invoice_update_lines_request_lines_discounts_variant1.dart';import 'post_invoices_invoice_update_lines_request_lines_metadata.dart';import 'post_invoices_invoice_update_lines_request_lines_period.dart';import 'post_invoices_invoice_update_lines_request_lines_price_data.dart';import 'post_invoices_invoice_update_lines_request_lines_pricing.dart';import 'post_invoices_invoice_update_lines_request_lines_tax_amounts.dart';import 'post_invoices_invoice_update_lines_request_lines_tax_amounts_variant1.dart';import 'post_invoices_invoice_update_lines_request_lines_tax_rates.dart';@immutable final class PostInvoicesInvoiceUpdateLinesRequestLines {const PostInvoicesInvoiceUpdateLinesRequestLines({required this.id, this.amount, this.description, this.discountable, this.discounts, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.taxAmounts, this.taxRates, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_update_lines_request_lines_discounts.dart';import 'post_invoices_invoice_update_lines_request_lines_metadata.dart';import 'post_invoices_invoice_update_lines_request_lines_period.dart';import 'post_invoices_invoice_update_lines_request_lines_price_data.dart';import 'post_invoices_invoice_update_lines_request_lines_pricing.dart';import 'post_invoices_invoice_update_lines_request_lines_tax_amounts.dart';import 'post_invoices_invoice_update_lines_request_lines_tax_rates.dart';@immutable final class PostInvoicesInvoiceUpdateLinesRequestLines {const PostInvoicesInvoiceUpdateLinesRequestLines({required this.id, this.amount, this.description, this.discountable, this.discounts, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.taxAmounts, this.taxRates, });
 
 factory PostInvoicesInvoiceUpdateLinesRequestLines.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceUpdateLinesRequestLines(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   discountable: json['discountable'] as bool?,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesDiscounts.fromJson(json['discounts']) : null,
   id: json['id'] as String,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesMetadata.fromJson(json['metadata']) : null,
   period: json['period'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
   priceData: json['price_data'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   pricing: json['pricing'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxAmounts: json['tax_amounts'] != null ? OneOf2.parse(json['tax_amounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmountsVariant2.fromJson(v as String),) : null,
-  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesInvoiceUpdateLinesRequestLinesTaxRatesVariant2.fromJson(v as String),) : null,
+  taxAmounts: json['tax_amounts'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesTaxAmounts.fromJson(json['tax_amounts']) : null,
+  taxRates: json['tax_rates'] != null ? PostInvoicesInvoiceUpdateLinesRequestLinesTaxRates.fromJson(json['tax_rates']) : null,
 ); }
 
 final int? amount;

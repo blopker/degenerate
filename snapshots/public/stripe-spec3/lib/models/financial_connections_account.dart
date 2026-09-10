@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_account_number_details.dart';import 'bank_connections_resource_accountholder.dart';import 'bank_connections_resource_balance.dart';import 'bank_connections_resource_balance_refresh.dart';import 'bank_connections_resource_ownership_refresh.dart';import 'bank_connections_resource_transaction_refresh.dart';import 'financial_connections_account_ownership.dart';import 'financial_connections_account_ownership2.dart';/// The type of the account. Account category is further divided in `subcategory`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_account_number_details.dart';import 'bank_connections_resource_accountholder.dart';import 'bank_connections_resource_balance.dart';import 'bank_connections_resource_balance_refresh.dart';import 'bank_connections_resource_ownership_refresh.dart';import 'bank_connections_resource_transaction_refresh.dart';import 'financial_connections_account_ownership2.dart';/// The type of the account. Account category is further divided in `subcategory`.
 @immutable final class FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory._(this.value);
 
 factory FinancialConnectionsAccountCategory.fromJson(String json) { return switch (json) {
@@ -222,7 +222,7 @@ factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return
   last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: FinancialConnectionsAccountObject.fromJson(json['object'] as String),
-  ownership: json.containsKey('ownership') ? Omittable(json['ownership'] != null ? OneOf2.parse(json['ownership'], fromA: (v) => v as String, fromB: (v) => FinancialConnectionsAccountOwnership.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  ownership: json.containsKey('ownership') ? Omittable(json['ownership'] != null ? FinancialConnectionsAccountOwnership2.fromJson(json['ownership']) : null) : const Omittable.absent(),
   ownershipRefresh: json.containsKey('ownership_refresh') ? Omittable(json['ownership_refresh'] != null ? BankConnectionsResourceOwnershipRefresh.fromJson(json['ownership_refresh'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   permissions: json.containsKey('permissions') ? Omittable((json['permissions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountPermissions.fromJson(e as String)).toList()) : const Omittable.absent(),
   status: FinancialConnectionsAccountStatus.fromJson(json['status'] as String),

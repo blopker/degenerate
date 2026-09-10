@@ -165,4 +165,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2($value)'; } 
  }
-typedef PostSubscriptionsRequestPaymentSettingsPaymentMethodTypes = OneOf2<List<PostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1>,PostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2>;
+
+@immutable
+final class PostSubscriptionsRequestPaymentSettingsPaymentMethodTypes {
+  const PostSubscriptionsRequestPaymentSettingsPaymentMethodTypes({this.listPostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1 = const Omittable.absent(),
+this.postSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSubscriptionsRequestPaymentSettingsPaymentMethodTypes._({required this.rawValue, required this.listPostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1,
+required this.postSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2,});
+  factory PostSubscriptionsRequestPaymentSettingsPaymentMethodTypes.fromJson(Object? json) => PostSubscriptionsRequestPaymentSettingsPaymentMethodTypes._(
+    rawValue: Omittable(json),
+    listPostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1: parseAnyOfVariant<List<PostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1.fromJson(e as String)).toList()),
+postSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2: parseAnyOfVariant<PostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2>(json, (value) => PostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1>> listPostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1;
+final Omittable<PostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2> postSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1.isPresent || postSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1.isPresent) listPostSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant1.value?.map((e) => e.toJson()).toList(),
+if (postSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2.isPresent) postSubscriptionsRequestPaymentSettingsPaymentMethodTypesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSubscriptionsRequestPaymentSettingsPaymentMethodTypes && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSubscriptionsRequestPaymentSettingsPaymentMethodTypes(${toJson()})';
+}

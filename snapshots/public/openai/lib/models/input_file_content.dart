@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FileInputDetail($value)'; } 
  }
 /// A file input to the model.
-@immutable final class InputFileContent {const InputFileContent({this.type = 'input_file', this.fileId = const Omittable.absent(), this.filename, this.fileData, this.fileUrl, this.detail, });
+@immutable final class InputFileContent {const InputFileContent({required this.type, this.fileId = const Omittable.absent(), this.filename, this.fileData, this.fileUrl, this.detail, });
 
 factory InputFileContent.fromJson(Map<String, dynamic> json) { return InputFileContent(
   type: json['type'] as String,

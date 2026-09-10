@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindService {const WorkersBindingKindService({required this.name, required this.service, required this.type, this.entrypoint, this.environment = 'production', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_binding_name.dart';@immutable final class WorkersBindingKindService {const WorkersBindingKindService({required this.name, required this.service, required this.type, this.entrypoint, this.environment, });
 
 factory WorkersBindingKindService.fromJson(Map<String, dynamic> json) { return WorkersBindingKindService(
   entrypoint: json['entrypoint'] as String?,
-  environment: json.containsKey('environment') ? json['environment'] as String : 'production',
+  environment: json['environment'] as String?,
   name: WorkersBindingName.fromJson(json['name'] as String),
   service: json['service'] as String,
   type: json['type'] as String,
@@ -14,7 +14,7 @@ factory WorkersBindingKindService.fromJson(Map<String, dynamic> json) { return W
 final String? entrypoint;
 
 /// Optional environment if the Worker utilizes one.
-final String environment;
+final String? environment;
 
 final WorkersBindingName name;
 
@@ -24,9 +24,11 @@ final String service;
 /// The kind of resource that the binding provides.
 final String type;
 
+/// The value with the schema default applied when absent.
+String get environmentOrDefault { return environment ?? 'production'; } 
 Map<String, dynamic> toJson() { return {
   'entrypoint': ?entrypoint,
-  'environment': environment,
+  'environment': ?environment,
   'name': name.toJson(),
   'service': service,
   'type': type,
@@ -34,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('service') && json['service'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindService copyWith({String? Function()? entrypoint, String Function()? environment, WorkersBindingName? name, String? service, String? type, }) { return WorkersBindingKindService(
+WorkersBindingKindService copyWith({String? Function()? entrypoint, String? Function()? environment, WorkersBindingName? name, String? service, String? type, }) { return WorkersBindingKindService(
   entrypoint: entrypoint != null ? entrypoint() : this.entrypoint,
   environment: environment != null ? environment() : this.environment,
   name: name ?? this.name,

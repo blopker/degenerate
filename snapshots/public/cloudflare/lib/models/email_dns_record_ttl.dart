@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailDnsRecordTtlVariant2($value)'; } 
  }
-typedef EmailDnsRecordTtl = OneOf2<double,EmailDnsRecordTtlVariant2>;
+/// Time to live, in seconds, of the DNS record. Must be between 60 and 86400, or 1 for 'automatic'.
+@immutable
+final class EmailDnsRecordTtl {
+  const EmailDnsRecordTtl({this.$double = const Omittable.absent(),
+this.emailDnsRecordTtlVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const EmailDnsRecordTtl._({required this.rawValue, required this.$double,
+required this.emailDnsRecordTtlVariant2,});
+  factory EmailDnsRecordTtl.fromJson(Object? json) => EmailDnsRecordTtl._(
+    rawValue: Omittable(json),
+    $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
+emailDnsRecordTtlVariant2: parseAnyOfVariant<EmailDnsRecordTtlVariant2>(json, (value) => EmailDnsRecordTtlVariant2.fromJson((value! as num).toDouble())),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<double> $double;
+final Omittable<EmailDnsRecordTtlVariant2> emailDnsRecordTtlVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $double.isPresent || emailDnsRecordTtlVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($double.isPresent) $double.value,
+if (emailDnsRecordTtlVariant2.isPresent) emailDnsRecordTtlVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is EmailDnsRecordTtl && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'EmailDnsRecordTtl(${toJson()})';
+}

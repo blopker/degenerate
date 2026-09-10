@@ -163,24 +163,24 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateImageEditRequestQuality($value)'; } 
  }
-@immutable final class CreateImageEditRequest {const CreateImageEditRequest({required this.image, required this.prompt, this.mask, this.background = CreateImageEditRequestBackground.auto, this.model = const Omittable.absent(), this.n = 1, this.size = CreateImageEditRequestSize.$1024x1024, this.responseFormat = const Omittable.absent(), this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression = 100, this.user, this.inputFidelity = const Omittable.absent(), this.stream = false, this.partialImages = const Omittable.absent(), this.quality = CreateImageEditRequestQuality.auto, });
+@immutable final class CreateImageEditRequest {const CreateImageEditRequest({required this.image, required this.prompt, this.mask, this.background = const Omittable.absent(), this.model = const Omittable.absent(), this.n = const Omittable.absent(), this.size = const Omittable.absent(), this.responseFormat = const Omittable.absent(), this.outputFormat = const Omittable.absent(), this.outputCompression = const Omittable.absent(), this.user, this.inputFidelity = const Omittable.absent(), this.stream = const Omittable.absent(), this.partialImages = const Omittable.absent(), this.quality = const Omittable.absent(), });
 
 factory CreateImageEditRequest.fromJson(Map<String, dynamic> json) { return CreateImageEditRequest(
-  image: OneOf2.parse(json['image'], fromA: (v) => base64Decode(v as String), fromB: (v) => (v as List<dynamic>).map((e) => base64Decode(e as String)).toList(),),
+  image: CreateImageEditRequestImage.fromJson(json['image']),
   prompt: json['prompt'] as String,
   mask: json['mask'] != null ? base64Decode(json['mask'] as String) : null,
-  background: json.containsKey('background') ? json['background'] != null ? CreateImageEditRequestBackground.fromJson(json['background'] as String) : null : CreateImageEditRequestBackground.auto,
-  model: json.containsKey('model') ? Omittable(json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateImageEditRequestModelVariant2.fromJson(v as String),) : null) : const Omittable.absent(),
-  n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
-  size: json.containsKey('size') ? json['size'] != null ? CreateImageEditRequestSize.fromJson(json['size'] as String) : null : CreateImageEditRequestSize.$1024x1024,
+  background: json.containsKey('background') ? Omittable(json['background'] != null ? CreateImageEditRequestBackground.fromJson(json['background'] as String) : null) : const Omittable.absent(),
+  model: json.containsKey('model') ? Omittable(json['model'] != null ? CreateImageEditRequestModel.fromJson(json['model']) : null) : const Omittable.absent(),
+  n: json.containsKey('n') ? Omittable(json['n'] != null ? (json['n'] as num).toInt() : null) : const Omittable.absent(),
+  size: json.containsKey('size') ? Omittable(json['size'] != null ? CreateImageEditRequestSize.fromJson(json['size'] as String) : null) : const Omittable.absent(),
   responseFormat: json.containsKey('response_format') ? Omittable(json['response_format'] != null ? CreateImageEditRequestResponseFormat.fromJson(json['response_format'] as String) : null) : const Omittable.absent(),
-  outputFormat: json.containsKey('output_format') ? json['output_format'] != null ? CreateImageEditRequestOutputFormat.fromJson(json['output_format'] as String) : null : CreateImageEditRequestOutputFormat.png,
-  outputCompression: json.containsKey('output_compression') ? json['output_compression'] != null ? (json['output_compression'] as num).toInt() : null : 100,
+  outputFormat: json.containsKey('output_format') ? Omittable(json['output_format'] != null ? CreateImageEditRequestOutputFormat.fromJson(json['output_format'] as String) : null) : const Omittable.absent(),
+  outputCompression: json.containsKey('output_compression') ? Omittable(json['output_compression'] != null ? (json['output_compression'] as num).toInt() : null) : const Omittable.absent(),
   user: json['user'] as String?,
   inputFidelity: json.containsKey('input_fidelity') ? Omittable(json['input_fidelity'] != null ? InputFidelity.fromJson(json['input_fidelity'] as String) : null) : const Omittable.absent(),
-  stream: json.containsKey('stream') ? json['stream'] as bool? : false,
+  stream: json.containsKey('stream') ? Omittable(json['stream'] as bool?) : const Omittable.absent(),
   partialImages: json.containsKey('partial_images') ? Omittable(json['partial_images'] != null ? PartialImages.fromJson(json['partial_images'] as num) : null) : const Omittable.absent(),
-  quality: json.containsKey('quality') ? json['quality'] != null ? CreateImageEditRequestQuality.fromJson(json['quality'] as String) : null : CreateImageEditRequestQuality.auto,
+  quality: json.containsKey('quality') ? Omittable(json['quality'] != null ? CreateImageEditRequestQuality.fromJson(json['quality'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The image(s) to edit. Must be a supported image file or an array of images.
@@ -208,16 +208,16 @@ final Uint8List? mask;
 /// If `transparent`, the output format needs to support transparency, so it
 /// should be set to either `png` (default value) or `webp`.
 /// 
-final CreateImageEditRequestBackground? background;
+final Omittable<CreateImageEditRequestBackground?> background;
 
 /// The model to use for image generation. Defaults to `gpt-image-1.5`.
 final Omittable<CreateImageEditRequestModel?> model;
 
 /// The number of images to generate. Must be between 1 and 10.
-final int? n;
+final Omittable<int?> n;
 
 /// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, and one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`.
-final CreateImageEditRequestSize? size;
+final Omittable<CreateImageEditRequestSize?> size;
 
 /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models always return base64-encoded images.
 final Omittable<CreateImageEditRequestResponseFormat?> responseFormat;
@@ -226,13 +226,13 @@ final Omittable<CreateImageEditRequestResponseFormat?> responseFormat;
 /// only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.
 /// The default value is `png`.
 /// 
-final CreateImageEditRequestOutputFormat? outputFormat;
+final Omittable<CreateImageEditRequestOutputFormat?> outputFormat;
 
 /// The compression level (0-100%) for the generated images. This parameter
 /// is only supported for the GPT image models with the `webp` or `jpeg` output
 /// formats, and defaults to 100.
 /// 
-final int? outputCompression;
+final Omittable<int?> outputCompression;
 
 /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).
 /// 
@@ -243,49 +243,63 @@ final Omittable<InputFidelity?> inputFidelity;
 /// Edit the image in streaming mode. Defaults to `false`. See the
 /// [Image generation guide](/docs/guides/image-generation) for more information.
 /// 
-final bool? stream;
+final Omittable<bool?> stream;
 
 final Omittable<PartialImages?> partialImages;
 
 /// The quality of the image that will be generated for GPT image models. Defaults to `auto`.
 /// 
-final CreateImageEditRequestQuality? quality;
+final Omittable<CreateImageEditRequestQuality?> quality;
 
+/// The value with the schema default applied when absent.
+CreateImageEditRequestBackground? get backgroundOrDefault { return background.valueOr(CreateImageEditRequestBackground.fromJson('auto')); } 
+/// The value with the schema default applied when absent.
+int? get nOrDefault { return n.valueOr(1); } 
+/// The value with the schema default applied when absent.
+CreateImageEditRequestSize? get sizeOrDefault { return size.valueOr(CreateImageEditRequestSize.fromJson('1024x1024')); } 
+/// The value with the schema default applied when absent.
+CreateImageEditRequestOutputFormat? get outputFormatOrDefault { return outputFormat.valueOr(CreateImageEditRequestOutputFormat.fromJson('png')); } 
+/// The value with the schema default applied when absent.
+int? get outputCompressionOrDefault { return outputCompression.valueOr(100); } 
+/// The value with the schema default applied when absent.
+bool? get streamOrDefault { return stream.valueOr(false); } 
+/// The value with the schema default applied when absent.
+CreateImageEditRequestQuality? get qualityOrDefault { return quality.valueOr(CreateImageEditRequestQuality.fromJson('auto')); } 
 Map<String, dynamic> toJson() { return {
   'image': image.toJson(),
   'prompt': prompt,
   if (mask != null) 'mask': switch (mask) { final bytes? => base64Encode(bytes), _ => null },
-  if (background != null) 'background': background?.toJson(),
+  if (background.isPresent) 'background': background.value?.toJson(),
   if (model.isPresent) 'model': model.value?.toJson(),
-  'n': ?n,
-  if (size != null) 'size': size?.toJson(),
+  if (n.isPresent) 'n': n.value,
+  if (size.isPresent) 'size': size.value?.toJson(),
   if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
-  if (outputFormat != null) 'output_format': outputFormat?.toJson(),
-  'output_compression': ?outputCompression,
+  if (outputFormat.isPresent) 'output_format': outputFormat.value?.toJson(),
+  if (outputCompression.isPresent) 'output_compression': outputCompression.value,
   'user': ?user,
   if (inputFidelity.isPresent) 'input_fidelity': inputFidelity.value?.toJson(),
-  'stream': ?stream,
+  if (stream.isPresent) 'stream': stream.value,
   if (partialImages.isPresent) 'partial_images': partialImages.value?.toJson(),
-  if (quality != null) 'quality': quality?.toJson(),
+  if (quality.isPresent) 'quality': quality.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') &&
       json.containsKey('prompt') && json['prompt'] is String; } 
-CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? prompt, Uint8List? Function()? mask, CreateImageEditRequestBackground? Function()? background, Omittable<CreateImageEditRequestModel?>? model, int? Function()? n, CreateImageEditRequestSize? Function()? size, Omittable<CreateImageEditRequestResponseFormat?>? responseFormat, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, String? Function()? user, Omittable<InputFidelity?>? inputFidelity, bool? Function()? stream, Omittable<PartialImages?>? partialImages, CreateImageEditRequestQuality? Function()? quality, }) { return CreateImageEditRequest(
+CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? prompt, Uint8List? Function()? mask, Omittable<CreateImageEditRequestBackground?>? background, Omittable<CreateImageEditRequestModel?>? model, Omittable<int?>? n, Omittable<CreateImageEditRequestSize?>? size, Omittable<CreateImageEditRequestResponseFormat?>? responseFormat, Omittable<CreateImageEditRequestOutputFormat?>? outputFormat, Omittable<int?>? outputCompression, String? Function()? user, Omittable<InputFidelity?>? inputFidelity, Omittable<bool?>? stream, Omittable<PartialImages?>? partialImages, Omittable<CreateImageEditRequestQuality?>? quality, }) { return CreateImageEditRequest(
   image: image ?? this.image,
   prompt: prompt ?? this.prompt,
   mask: mask != null ? mask() : this.mask,
-  background: background != null ? background() : this.background,
+  background: background ?? this.background,
   model: model ?? this.model,
-  n: n != null ? n() : this.n,
-  size: size != null ? size() : this.size,
+  n: n ?? this.n,
+  size: size ?? this.size,
   responseFormat: responseFormat ?? this.responseFormat,
-  outputFormat: outputFormat != null ? outputFormat() : this.outputFormat,
-  outputCompression: outputCompression != null ? outputCompression() : this.outputCompression,
+  outputFormat: outputFormat ?? this.outputFormat,
+  outputCompression: outputCompression ?? this.outputCompression,
   user: user != null ? user() : this.user,
   inputFidelity: inputFidelity ?? this.inputFidelity,
-  stream: stream != null ? stream() : this.stream,
+  stream: stream ?? this.stream,
   partialImages: partialImages ?? this.partialImages,
-  quality: quality != null ? quality() : this.quality,
+  quality: quality ?? this.quality,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreateImageEditRequest &&

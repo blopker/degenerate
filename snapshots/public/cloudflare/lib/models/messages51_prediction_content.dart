@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_prediction_content_content.dart';import 'messages51_prediction_content_content_variant2.dart';@immutable final class Messages51PredictionContentType {const Messages51PredictionContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_prediction_content_content.dart';@immutable final class Messages51PredictionContentType {const Messages51PredictionContentType._(this.value);
 
 factory Messages51PredictionContentType.fromJson(String json) { return switch (json) {
   'content' => content,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class Messages51PredictionContent {const Messages51PredictionContent({required this.content, required this.type, });
 
 factory Messages51PredictionContent.fromJson(Map<String, dynamic> json) { return Messages51PredictionContent(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => Messages51PredictionContentContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+  content: Messages51PredictionContentContent.fromJson(json['content']),
   type: Messages51PredictionContentType.fromJson(json['type'] as String),
 ); }
 

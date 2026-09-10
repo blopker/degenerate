@@ -95,7 +95,7 @@ factory PostIssuingCardsRequest.fromJson(Map<String, dynamic> json) { return Pos
   pin: json['pin'] != null ? PostIssuingCardsRequestPin.fromJson(json['pin'] as Map<String, dynamic>) : null,
   replacementFor: json['replacement_for'] as String?,
   replacementReason: json['replacement_reason'] != null ? PostIssuingCardsRequestReplacementReason.fromJson(json['replacement_reason'] as String) : null,
-  secondLine: json['second_line'] != null ? OneOf2.parse(json['second_line'], fromA: (v) => v as String, fromB: (v) => PostIssuingCardsRequestSecondLineVariant2.fromJson(v as String),) : null,
+  secondLine: json['second_line'] != null ? PostIssuingCardsRequestSecondLine.fromJson(json['second_line']) : null,
   shipping: json['shipping'] != null ? PostIssuingCardsRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   spendingControls: json['spending_controls'] != null ? PostIssuingCardsRequestSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: json['status'] != null ? PostIssuingCardsRequestStatus.fromJson(json['status'] as String) : null,

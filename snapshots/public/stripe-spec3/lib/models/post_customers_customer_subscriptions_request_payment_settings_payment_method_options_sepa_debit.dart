@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2($value)'; } 
  }
-typedef PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebit = OneOf2<InvoicePaymentMethodOptionsParam6,PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2>;
+
+@immutable
+final class PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebit {
+  const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebit({this.invoicePaymentMethodOptionsParam6 = const Omittable.absent(),
+this.postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebit._({required this.rawValue, required this.invoicePaymentMethodOptionsParam6,
+required this.postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2,});
+  factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebit.fromJson(Object? json) => PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebit._(
+    rawValue: Omittable(json),
+    invoicePaymentMethodOptionsParam6: parseAnyOfVariant<InvoicePaymentMethodOptionsParam6>(json, (value) => InvoicePaymentMethodOptionsParam6.fromJson(value! as Map<String, dynamic>)),
+postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2: parseAnyOfVariant<PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2>(json, (value) => PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<InvoicePaymentMethodOptionsParam6> invoicePaymentMethodOptionsParam6;
+final Omittable<PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2> postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => invoicePaymentMethodOptionsParam6.isPresent || postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (invoicePaymentMethodOptionsParam6.isPresent) invoicePaymentMethodOptionsParam6.value?.toJson(),
+if (postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2.isPresent) postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebit && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsSepaDebit(${toJson()})';
+}

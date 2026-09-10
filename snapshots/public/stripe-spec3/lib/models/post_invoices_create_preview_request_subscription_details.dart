@@ -52,18 +52,18 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostInvoicesCreatePreviewRequestSubscriptionDetails {const PostInvoicesCreatePreviewRequestSubscriptionDetails({this.billingCycleAnchor, this.billingMode, this.cancelAt, this.cancelAtPeriodEnd, this.cancelNow, this.defaultTaxRates, this.items, this.prorationBehavior, this.prorationDate, this.resumeAt, this.startDate, this.trialEnd, });
 
 factory PostInvoicesCreatePreviewRequestSubscriptionDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestSubscriptionDetails(
-  billingCycleAnchor: json['billing_cycle_anchor'] != null ? OneOf2.parse(json['billing_cycle_anchor'], fromA: (v) => PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingCycleAnchorVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingCycleAnchor.fromJson(json['billing_cycle_anchor']) : null,
   billingMode: json['billing_mode'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
-  cancelAt: json['cancel_at'] != null ? OneOf3.parse(json['cancel_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostInvoicesCreatePreviewRequestSubscriptionDetailsCancelAtVariant2.fromJson(v as String), fromC: (v) => PostInvoicesCreatePreviewRequestSubscriptionDetailsCancelAtVariant3.fromJson(v as String),) : null,
+  cancelAt: json['cancel_at'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsCancelAt.fromJson(json['cancel_at']) : null,
   cancelAtPeriodEnd: json['cancel_at_period_end'] as bool?,
   cancelNow: json['cancel_now'] as bool?,
-  defaultTaxRates: json['default_tax_rates'] != null ? OneOf2.parse(json['default_tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2.fromJson(v as String),) : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRates.fromJson(json['default_tax_rates']) : null,
   items: (json['items'] as List<dynamic>?)?.map((e) => PostInvoicesCreatePreviewRequestSubscriptionDetailsItems.fromJson(e as Map<String, dynamic>)).toList(),
   prorationBehavior: json['proration_behavior'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
   prorationDate: json['proration_date'] != null ? (json['proration_date'] as num).toInt() : null,
   resumeAt: json['resume_at'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsResumeAt.fromJson(json['resume_at'] as String) : null,
   startDate: json['start_date'] != null ? (json['start_date'] as num).toInt() : null,
-  trialEnd: json['trial_end'] != null ? OneOf2.parse(json['trial_end'], fromA: (v) => PostInvoicesCreatePreviewRequestSubscriptionDetailsTrialEndVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  trialEnd: json['trial_end'] != null ? PostInvoicesCreatePreviewRequestSubscriptionDetailsTrialEnd.fromJson(json['trial_end']) : null,
 ); }
 
 final PostInvoicesCreatePreviewRequestSubscriptionDetailsBillingCycleAnchor? billingCycleAnchor;

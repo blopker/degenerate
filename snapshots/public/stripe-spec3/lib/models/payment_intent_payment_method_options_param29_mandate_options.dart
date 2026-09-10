@@ -54,7 +54,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PaymentIntentPaymentMethodOptionsParam29MandateOptions {const PaymentIntentPaymentMethodOptionsParam29MandateOptions({this.customMandateUrl, this.intervalDescription, this.paymentSchedule, this.transactionType, });
 
 factory PaymentIntentPaymentMethodOptionsParam29MandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam29MandateOptions(
-  customMandateUrl: json['custom_mandate_url'] != null ? OneOf2.parse(json['custom_mandate_url'], fromA: (v) => v as String, fromB: (v) => PaymentIntentPaymentMethodOptionsParam29MandateOptionsCustomMandateUrlVariant2.fromJson(v as String),) : null,
+  customMandateUrl: json['custom_mandate_url'] != null ? PaymentIntentPaymentMethodOptionsParam29MandateOptionsCustomMandateUrl.fromJson(json['custom_mandate_url']) : null,
   intervalDescription: json['interval_description'] as String?,
   paymentSchedule: json['payment_schedule'] != null ? PaymentIntentPaymentMethodOptionsParam29MandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
   transactionType: json['transaction_type'] != null ? PaymentIntentPaymentMethodOptionsParam29MandateOptionsTransactionType.fromJson(json['transaction_type'] as String) : null,

@@ -63,7 +63,7 @@ factory PullRequest.fromJson(Map<String, dynamic> json) { return PullRequest(
   base: PullRequestBase.fromJson(json['base'] as Map<String, dynamic>),
   links: PullRequestLinks.fromJson(json['_links'] as Map<String, dynamic>),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
-  autoMerge: AutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>),
+  autoMerge: json['auto_merge'] != null ? AutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null,
   draft: json['draft'] as bool?,
   merged: json['merged'] as bool,
   mergeable: json['mergeable'] as bool?,
@@ -151,7 +151,7 @@ final PullRequestLinks links;
 /// How the author is associated with the repository.
 final AuthorAssociation authorAssociation;
 
-final AutoMerge autoMerge;
+final AutoMerge? autoMerge;
 
 /// Indicates whether or not the pull request is a draft.
 final bool? draft;
@@ -216,7 +216,7 @@ Map<String, dynamic> toJson() { return {
   'base': base.toJson(),
   '_links': links.toJson(),
   'author_association': authorAssociation.toJson(),
-  'auto_merge': autoMerge.toJson(),
+  'auto_merge': autoMerge?.toJson(),
   'draft': ?draft,
   'merged': merged,
   'mergeable': mergeable,
@@ -273,7 +273,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('additions') && json['additions'] is num &&
       json.containsKey('deletions') && json['deletions'] is num &&
       json.containsKey('changed_files') && json['changed_files'] is num; } 
-PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, PullRequestState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<TeamSimple>? Function()? requestedTeams, PullRequestHead? head, PullRequestBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? autoMerge, bool? Function()? draft, bool? merged, bool? Function()? mergeable, Omittable<bool?>? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, }) { return PullRequest(
+PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diffUrl, Uri? patchUrl, Uri? issueUrl, Uri? commitsUrl, Uri? reviewCommentsUrl, String? reviewCommentUrl, Uri? commentsUrl, Uri? statusesUrl, int? number, PullRequestState? state, bool? locked, String? title, SimpleUser? user, String? Function()? body, List<PullRequestLabels>? labels, Milestone? Function()? milestone, Omittable<String?>? activeLockReason, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? mergedAt, String? Function()? mergeCommitSha, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, List<SimpleUser>? Function()? requestedReviewers, List<TeamSimple>? Function()? requestedTeams, PullRequestHead? head, PullRequestBase? base, PullRequestLinks? links, AuthorAssociation? authorAssociation, AutoMerge? Function()? autoMerge, bool? Function()? draft, bool? merged, bool? Function()? mergeable, Omittable<bool?>? rebaseable, String? mergeableState, SimpleUser? Function()? mergedBy, int? comments, int? reviewComments, bool? maintainerCanModify, int? commits, int? additions, int? deletions, int? changedFiles, }) { return PullRequest(
   url: url ?? this.url,
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
@@ -308,7 +308,7 @@ PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diff
   base: base ?? this.base,
   links: links ?? this.links,
   authorAssociation: authorAssociation ?? this.authorAssociation,
-  autoMerge: autoMerge ?? this.autoMerge,
+  autoMerge: autoMerge != null ? autoMerge() : this.autoMerge,
   draft: draft != null ? draft() : this.draft,
   merged: merged ?? this.merged,
   mergeable: mergeable != null ? mergeable() : this.mergeable,

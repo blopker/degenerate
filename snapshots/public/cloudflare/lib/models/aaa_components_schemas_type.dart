@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of webhook endpoint.
+@immutable final class AaaComponentsSchemasType {const AaaComponentsSchemasType._(this.value);
+
+factory AaaComponentsSchemasType.fromJson(String json) { return switch (json) {
+  'datadog' => datadog,
+  'discord' => discord,
+  'feishu' => feishu,
+  'gchat' => gchat,
+  'generic' => generic,
+  'opsgenie' => opsgenie,
+  'slack' => slack,
+  'splunk' => splunk,
+  _ => AaaComponentsSchemasType._(json),
+}; }
+
+static const AaaComponentsSchemasType datadog = AaaComponentsSchemasType._('datadog');
+
+static const AaaComponentsSchemasType discord = AaaComponentsSchemasType._('discord');
+
+static const AaaComponentsSchemasType feishu = AaaComponentsSchemasType._('feishu');
+
+static const AaaComponentsSchemasType gchat = AaaComponentsSchemasType._('gchat');
+
+static const AaaComponentsSchemasType generic = AaaComponentsSchemasType._('generic');
+
+static const AaaComponentsSchemasType opsgenie = AaaComponentsSchemasType._('opsgenie');
+
+static const AaaComponentsSchemasType slack = AaaComponentsSchemasType._('slack');
+
+static const AaaComponentsSchemasType splunk = AaaComponentsSchemasType._('splunk');
+
+static const List<AaaComponentsSchemasType> values = [datadog, discord, feishu, gchat, generic, opsgenie, slack, splunk];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AaaComponentsSchemasType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AaaComponentsSchemasType($value)'; } 
+ }

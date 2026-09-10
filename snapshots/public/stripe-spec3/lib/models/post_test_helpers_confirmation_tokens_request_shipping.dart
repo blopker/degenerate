@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_he
 factory PostTestHelpersConfirmationTokensRequestShipping.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestShipping(
   address: PostTestHelpersConfirmationTokensRequestShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
-  phone: json['phone'] != null ? OneOf2.parse(json['phone'], fromA: (v) => v as String, fromB: (v) => PostTestHelpersConfirmationTokensRequestShippingPhoneVariant2.fromJson(v as String),) : null,
+  phone: json['phone'] != null ? PostTestHelpersConfirmationTokensRequestShippingPhone.fromJson(json['phone']) : null,
 ); }
 
 final PostTestHelpersConfirmationTokensRequestShippingAddress address;

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestCustomTextAfterSubmitVariant2($value)'; } 
  }
-typedef PostCheckoutSessionsRequestCustomTextAfterSubmit = OneOf2<CustomTextPositionParam,PostCheckoutSessionsRequestCustomTextAfterSubmitVariant2>;
+
+@immutable
+final class PostCheckoutSessionsRequestCustomTextAfterSubmit {
+  const PostCheckoutSessionsRequestCustomTextAfterSubmit({this.customTextPositionParam = const Omittable.absent(),
+this.postCheckoutSessionsRequestCustomTextAfterSubmitVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCheckoutSessionsRequestCustomTextAfterSubmit._({required this.rawValue, required this.customTextPositionParam,
+required this.postCheckoutSessionsRequestCustomTextAfterSubmitVariant2,});
+  factory PostCheckoutSessionsRequestCustomTextAfterSubmit.fromJson(Object? json) => PostCheckoutSessionsRequestCustomTextAfterSubmit._(
+    rawValue: Omittable(json),
+    customTextPositionParam: parseAnyOfVariant<CustomTextPositionParam>(json, (value) => CustomTextPositionParam.fromJson(value! as Map<String, dynamic>)),
+postCheckoutSessionsRequestCustomTextAfterSubmitVariant2: parseAnyOfVariant<PostCheckoutSessionsRequestCustomTextAfterSubmitVariant2>(json, (value) => PostCheckoutSessionsRequestCustomTextAfterSubmitVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<CustomTextPositionParam> customTextPositionParam;
+final Omittable<PostCheckoutSessionsRequestCustomTextAfterSubmitVariant2> postCheckoutSessionsRequestCustomTextAfterSubmitVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => customTextPositionParam.isPresent || postCheckoutSessionsRequestCustomTextAfterSubmitVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (customTextPositionParam.isPresent) customTextPositionParam.value?.toJson(),
+if (postCheckoutSessionsRequestCustomTextAfterSubmitVariant2.isPresent) postCheckoutSessionsRequestCustomTextAfterSubmitVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCheckoutSessionsRequestCustomTextAfterSubmit && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCheckoutSessionsRequestCustomTextAfterSubmit(${toJson()})';
+}

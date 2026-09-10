@@ -8,7 +8,7 @@ class _OrderInterceptor implements Interceptor {
   final List<String> log;
 
   @override
-  Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
+  Future<StreamedApiResponse> intercept(ApiRequest request, Handler next) async {
     log.add('$name:before');
     final response = await next(request);
     log.add('$name:after');
@@ -23,7 +23,7 @@ class _HeaderInterceptor implements Interceptor {
   final String value;
 
   @override
-  Future<ApiResponse> intercept(ApiRequest request, Handler next) {
+  Future<StreamedApiResponse> intercept(ApiRequest request, Handler next) {
     return next(request.copyWith(headers: {...request.headers, key: value}));
   }
 }
@@ -31,15 +31,15 @@ class _HeaderInterceptor implements Interceptor {
 /// Short-circuits without calling next.
 class _ShortCircuitInterceptor implements Interceptor {
   @override
-  Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
-    return ApiResponse(statusCode: 418, body: 'short-circuited');
+  Future<StreamedApiResponse> intercept(ApiRequest request, Handler next) async {
+    return _response(statusCode: 418, body: 'short-circuited');
   }
 }
 
 /// Retries once on failure.
 class _RetryOnceInterceptor implements Interceptor {
   @override
-  Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
+  Future<StreamedApiResponse> intercept(ApiRequest request, Handler next) async {
     final response = await next(request);
     if (!response.isSuccessful) {
       return next(request);
@@ -59,7 +59,7 @@ void main() {
 
       final chain = buildInterceptorChain(
         interceptors: interceptors,
-        terminal: (_) async => ApiResponse(statusCode: 200, body: 'ok'),
+        terminal: (_) async => _response(statusCode: 200, body: 'ok'),
       );
 
       await chain(const ApiRequest(method: 'GET', path: '/test'));
@@ -83,7 +83,7 @@ void main() {
         interceptors: interceptors,
         terminal: (req) async {
           capturedHeaders = req.headers;
-          return ApiResponse(statusCode: 200, body: 'ok');
+          return _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -105,14 +105,14 @@ void main() {
         interceptors: interceptors,
         terminal: (_) async {
           terminalCalled = true;
-          return ApiResponse(statusCode: 200, body: 'ok');
+          return _response(statusCode: 200, body: 'ok');
         },
       );
 
       final response = await chain(const ApiRequest(method: 'GET', path: '/test'));
 
       expect(response.statusCode, 418);
-      expect(response.body, 'short-circuited');
+      expect((await response.toApiResponse()).body, 'short-circuited');
       expect(terminalCalled, isFalse);
     });
 
@@ -125,8 +125,8 @@ void main() {
         terminal: (_) async {
           callCount++;
           return callCount == 1
-              ? ApiResponse(statusCode: 503, body: 'fail')
-              : ApiResponse(statusCode: 200, body: 'ok');
+              ? _response(statusCode: 503, body: 'fail')
+              : _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -142,7 +142,7 @@ void main() {
         interceptors: [],
         terminal: (_) async {
           called = true;
-          return ApiResponse(statusCode: 200, body: 'ok');
+          return _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -151,3 +151,11 @@ void main() {
     });
   });
 }
+
+StreamedApiResponse _response({
+  required int statusCode,
+  required String body,
+  Map<String, String> headers = const {},
+}) => StreamedApiResponse.fromResponse(ApiResponse(
+  statusCode: statusCode, body: body, headers: headers,
+));

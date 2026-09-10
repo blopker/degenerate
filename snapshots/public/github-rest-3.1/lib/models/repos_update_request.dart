@@ -149,34 +149,34 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposUpdateRequestMergeCommitMessage($value)'; } 
  }
-@immutable final class ReposUpdateRequest {const ReposUpdateRequest({this.name, this.description, this.homepage, this.private = false, this.visibility, this.securityAndAnalysis = const Omittable.absent(), this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.isTemplate = false, this.defaultBranch, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.allowUpdateBranch = false, this.useSquashPrTitleAsDefault = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.archived = false, this.allowForking = false, this.webCommitSignoffRequired = false, });
+@immutable final class ReposUpdateRequest {const ReposUpdateRequest({this.name, this.description, this.homepage, this.private, this.visibility, this.securityAndAnalysis = const Omittable.absent(), this.hasIssues, this.hasProjects, this.hasWiki, this.isTemplate, this.defaultBranch, this.allowSquashMerge, this.allowMergeCommit, this.allowRebaseMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowUpdateBranch, this.useSquashPrTitleAsDefault, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.archived, this.allowForking, this.webCommitSignoffRequired, });
 
 factory ReposUpdateRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateRequest(
   name: json['name'] as String?,
   description: json['description'] as String?,
   homepage: json['homepage'] as String?,
-  private: json.containsKey('private') ? json['private'] as bool : false,
+  private: json['private'] as bool?,
   visibility: json['visibility'] != null ? ReposUpdateRequestVisibility.fromJson(json['visibility'] as String) : null,
   securityAndAnalysis: json.containsKey('security_and_analysis') ? Omittable(json['security_and_analysis'] != null ? ReposUpdateRequestSecurityAndAnalysis.fromJson(json['security_and_analysis'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  hasIssues: json.containsKey('has_issues') ? json['has_issues'] as bool : true,
-  hasProjects: json.containsKey('has_projects') ? json['has_projects'] as bool : true,
-  hasWiki: json.containsKey('has_wiki') ? json['has_wiki'] as bool : true,
-  isTemplate: json.containsKey('is_template') ? json['is_template'] as bool : false,
+  hasIssues: json['has_issues'] as bool?,
+  hasProjects: json['has_projects'] as bool?,
+  hasWiki: json['has_wiki'] as bool?,
+  isTemplate: json['is_template'] as bool?,
   defaultBranch: json['default_branch'] as String?,
-  allowSquashMerge: json.containsKey('allow_squash_merge') ? json['allow_squash_merge'] as bool : true,
-  allowMergeCommit: json.containsKey('allow_merge_commit') ? json['allow_merge_commit'] as bool : true,
-  allowRebaseMerge: json.containsKey('allow_rebase_merge') ? json['allow_rebase_merge'] as bool : true,
-  allowAutoMerge: json.containsKey('allow_auto_merge') ? json['allow_auto_merge'] as bool : false,
-  deleteBranchOnMerge: json.containsKey('delete_branch_on_merge') ? json['delete_branch_on_merge'] as bool : false,
-  allowUpdateBranch: json.containsKey('allow_update_branch') ? json['allow_update_branch'] as bool : false,
-  useSquashPrTitleAsDefault: json.containsKey('use_squash_pr_title_as_default') ? json['use_squash_pr_title_as_default'] as bool : false,
+  allowSquashMerge: json['allow_squash_merge'] as bool?,
+  allowMergeCommit: json['allow_merge_commit'] as bool?,
+  allowRebaseMerge: json['allow_rebase_merge'] as bool?,
+  allowAutoMerge: json['allow_auto_merge'] as bool?,
+  deleteBranchOnMerge: json['delete_branch_on_merge'] as bool?,
+  allowUpdateBranch: json['allow_update_branch'] as bool?,
+  useSquashPrTitleAsDefault: json['use_squash_pr_title_as_default'] as bool?,
   squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? ReposUpdateRequestSquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null,
   squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? ReposUpdateRequestSquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
   mergeCommitTitle: json['merge_commit_title'] != null ? ReposUpdateRequestMergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
   mergeCommitMessage: json['merge_commit_message'] != null ? ReposUpdateRequestMergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
-  archived: json.containsKey('archived') ? json['archived'] as bool : false,
-  allowForking: json.containsKey('allow_forking') ? json['allow_forking'] as bool : false,
-  webCommitSignoffRequired: json.containsKey('web_commit_signoff_required') ? json['web_commit_signoff_required'] as bool : false,
+  archived: json['archived'] as bool?,
+  allowForking: json['allow_forking'] as bool?,
+  webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
 ); }
 
 /// The name of the repository.
@@ -190,7 +190,7 @@ final String? homepage;
 
 /// Either `true` to make the repository private or `false` to make it public. Default: `false`.
 /// **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
-final bool private;
+final bool? private;
 
 /// The visibility of the repository.
 final ReposUpdateRequestVisibility? visibility;
@@ -206,40 +206,40 @@ final ReposUpdateRequestVisibility? visibility;
 final Omittable<ReposUpdateRequestSecurityAndAnalysis?> securityAndAnalysis;
 
 /// Either `true` to enable issues for this repository or `false` to disable them.
-final bool hasIssues;
+final bool? hasIssues;
 
 /// Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error.
-final bool hasProjects;
+final bool? hasProjects;
 
 /// Either `true` to enable the wiki for this repository or `false` to disable it.
-final bool hasWiki;
+final bool? hasWiki;
 
 /// Either `true` to make this repo available as a template repository or `false` to prevent it.
-final bool isTemplate;
+final bool? isTemplate;
 
 /// Updates the default branch for this repository.
 final String? defaultBranch;
 
 /// Either `true` to allow squash-merging pull requests, or `false` to prevent squash-merging.
-final bool allowSquashMerge;
+final bool? allowSquashMerge;
 
 /// Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits.
-final bool allowMergeCommit;
+final bool? allowMergeCommit;
 
 /// Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.
-final bool allowRebaseMerge;
+final bool? allowRebaseMerge;
 
 /// Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.
-final bool allowAutoMerge;
+final bool? allowAutoMerge;
 
 /// Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.
-final bool deleteBranchOnMerge;
+final bool? deleteBranchOnMerge;
 
 /// Either `true` to always allow a pull request head branch that is behind its base branch to be updated even if it is not required to be up to date before merging, or false otherwise.
-final bool allowUpdateBranch;
+final bool? allowUpdateBranch;
 
 /// Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
-final bool useSquashPrTitleAsDefault;
+final bool? useSquashPrTitleAsDefault;
 
 /// Required when using `squash_merge_commit_message`.
 /// 
@@ -272,43 +272,73 @@ final ReposUpdateRequestMergeCommitTitle? mergeCommitTitle;
 final ReposUpdateRequestMergeCommitMessage? mergeCommitMessage;
 
 /// Whether to archive this repository. `false` will unarchive a previously archived repository.
-final bool archived;
+final bool? archived;
 
 /// Either `true` to allow private forks, or `false` to prevent private forks.
-final bool allowForking;
+final bool? allowForking;
 
 /// Either `true` to require contributors to sign off on web-based commits, or `false` to not require contributors to sign off on web-based commits.
-final bool webCommitSignoffRequired;
+final bool? webCommitSignoffRequired;
 
+/// The value with the schema default applied when absent.
+bool get privateOrDefault { return private ?? false; } 
+/// The value with the schema default applied when absent.
+bool get hasIssuesOrDefault { return hasIssues ?? true; } 
+/// The value with the schema default applied when absent.
+bool get hasProjectsOrDefault { return hasProjects ?? true; } 
+/// The value with the schema default applied when absent.
+bool get hasWikiOrDefault { return hasWiki ?? true; } 
+/// The value with the schema default applied when absent.
+bool get isTemplateOrDefault { return isTemplate ?? false; } 
+/// The value with the schema default applied when absent.
+bool get allowSquashMergeOrDefault { return allowSquashMerge ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowMergeCommitOrDefault { return allowMergeCommit ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowRebaseMergeOrDefault { return allowRebaseMerge ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowAutoMergeOrDefault { return allowAutoMerge ?? false; } 
+/// The value with the schema default applied when absent.
+bool get deleteBranchOnMergeOrDefault { return deleteBranchOnMerge ?? false; } 
+/// The value with the schema default applied when absent.
+bool get allowUpdateBranchOrDefault { return allowUpdateBranch ?? false; } 
+/// The value with the schema default applied when absent.
+bool get useSquashPrTitleAsDefaultOrDefault { return useSquashPrTitleAsDefault ?? false; } 
+/// The value with the schema default applied when absent.
+bool get archivedOrDefault { return archived ?? false; } 
+/// The value with the schema default applied when absent.
+bool get allowForkingOrDefault { return allowForking ?? false; } 
+/// The value with the schema default applied when absent.
+bool get webCommitSignoffRequiredOrDefault { return webCommitSignoffRequired ?? false; } 
 Map<String, dynamic> toJson() { return {
   'name': ?name,
   'description': ?description,
   'homepage': ?homepage,
-  'private': private,
+  'private': ?private,
   if (visibility != null) 'visibility': visibility?.toJson(),
   if (securityAndAnalysis.isPresent) 'security_and_analysis': securityAndAnalysis.value?.toJson(),
-  'has_issues': hasIssues,
-  'has_projects': hasProjects,
-  'has_wiki': hasWiki,
-  'is_template': isTemplate,
+  'has_issues': ?hasIssues,
+  'has_projects': ?hasProjects,
+  'has_wiki': ?hasWiki,
+  'is_template': ?isTemplate,
   'default_branch': ?defaultBranch,
-  'allow_squash_merge': allowSquashMerge,
-  'allow_merge_commit': allowMergeCommit,
-  'allow_rebase_merge': allowRebaseMerge,
-  'allow_auto_merge': allowAutoMerge,
-  'delete_branch_on_merge': deleteBranchOnMerge,
-  'allow_update_branch': allowUpdateBranch,
-  'use_squash_pr_title_as_default': useSquashPrTitleAsDefault,
+  'allow_squash_merge': ?allowSquashMerge,
+  'allow_merge_commit': ?allowMergeCommit,
+  'allow_rebase_merge': ?allowRebaseMerge,
+  'allow_auto_merge': ?allowAutoMerge,
+  'delete_branch_on_merge': ?deleteBranchOnMerge,
+  'allow_update_branch': ?allowUpdateBranch,
+  'use_squash_pr_title_as_default': ?useSquashPrTitleAsDefault,
   if (squashMergeCommitTitle != null) 'squash_merge_commit_title': squashMergeCommitTitle?.toJson(),
   if (squashMergeCommitMessage != null) 'squash_merge_commit_message': squashMergeCommitMessage?.toJson(),
   if (mergeCommitTitle != null) 'merge_commit_title': mergeCommitTitle?.toJson(),
   if (mergeCommitMessage != null) 'merge_commit_message': mergeCommitMessage?.toJson(),
-  'archived': archived,
-  'allow_forking': allowForking,
-  'web_commit_signoff_required': webCommitSignoffRequired,
+  'archived': ?archived,
+  'allow_forking': ?allowForking,
+  'web_commit_signoff_required': ?webCommitSignoffRequired,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'homepage', 'private', 'visibility', 'security_and_analysis', 'has_issues', 'has_projects', 'has_wiki', 'is_template', 'default_branch', 'allow_squash_merge', 'allow_merge_commit', 'allow_rebase_merge', 'allow_auto_merge', 'delete_branch_on_merge', 'allow_update_branch', 'use_squash_pr_title_as_default', 'squash_merge_commit_title', 'squash_merge_commit_message', 'merge_commit_title', 'merge_commit_message', 'archived', 'allow_forking', 'web_commit_signoff_required'}.contains(key)); } 
-ReposUpdateRequest copyWith({String? Function()? name, String? Function()? description, String? Function()? homepage, bool Function()? private, ReposUpdateRequestVisibility? Function()? visibility, Omittable<ReposUpdateRequestSecurityAndAnalysis?>? securityAndAnalysis, bool Function()? hasIssues, bool Function()? hasProjects, bool Function()? hasWiki, bool Function()? isTemplate, String? Function()? defaultBranch, bool Function()? allowSquashMerge, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? allowUpdateBranch, bool Function()? useSquashPrTitleAsDefault, ReposUpdateRequestSquashMergeCommitTitle? Function()? squashMergeCommitTitle, ReposUpdateRequestSquashMergeCommitMessage? Function()? squashMergeCommitMessage, ReposUpdateRequestMergeCommitTitle? Function()? mergeCommitTitle, ReposUpdateRequestMergeCommitMessage? Function()? mergeCommitMessage, bool Function()? archived, bool Function()? allowForking, bool Function()? webCommitSignoffRequired, }) { return ReposUpdateRequest(
+ReposUpdateRequest copyWith({String? Function()? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, ReposUpdateRequestVisibility? Function()? visibility, Omittable<ReposUpdateRequestSecurityAndAnalysis?>? securityAndAnalysis, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? isTemplate, String? Function()? defaultBranch, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowUpdateBranch, bool? Function()? useSquashPrTitleAsDefault, ReposUpdateRequestSquashMergeCommitTitle? Function()? squashMergeCommitTitle, ReposUpdateRequestSquashMergeCommitMessage? Function()? squashMergeCommitMessage, ReposUpdateRequestMergeCommitTitle? Function()? mergeCommitTitle, ReposUpdateRequestMergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? archived, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, }) { return ReposUpdateRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,

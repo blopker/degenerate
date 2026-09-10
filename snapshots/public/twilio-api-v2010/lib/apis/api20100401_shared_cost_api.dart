@@ -91,7 +91,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListAvailablePhoneNumberSharedCostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListAvailablePhoneNumberSharedCostResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

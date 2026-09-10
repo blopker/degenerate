@@ -1,5 +1,6 @@
 import 'package:degenerate_runtime/src/api_client.dart';
 import 'package:degenerate_runtime/src/interceptor.dart';
+import 'package:degenerate_runtime/src/streamed_api_response.dart';
 
 /// Middleware that adds an Authorization header and optionally refreshes
 /// the token on 401 responses.
@@ -34,7 +35,7 @@ class AuthInterceptor implements Interceptor {
   final String scheme;
 
   @override
-  Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
+  Future<StreamedApiResponse> intercept(ApiRequest request, Handler next) async {
     final token = await getToken();
     final authed = request.copyWith(
       headers: {...request.headers, 'Authorization': '$scheme $token'},
@@ -43,6 +44,7 @@ class AuthInterceptor implements Interceptor {
     final response = await next(authed);
 
     if (response.statusCode == 401 && refreshToken != null) {
+      await response.discard();
       final newToken = await refreshToken!();
       final retry = request.copyWith(
         headers: {...request.headers, 'Authorization': '$scheme $newToken'},

@@ -58,7 +58,7 @@ factory PostChargesChargeRefundsRequest.fromJson(Map<String, dynamic> json) { re
   customer: json['customer'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   instructionsEmail: json['instructions_email'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostChargesChargeRefundsRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostChargesChargeRefundsRequestMetadata.fromJson(json['metadata']) : null,
   origin: json['origin'] != null ? PostChargesChargeRefundsRequestOrigin.fromJson(json['origin'] as String) : null,
   paymentIntent: json['payment_intent'] as String?,
   reason: json['reason'] != null ? PostChargesChargeRefundsRequestReason.fromJson(json['reason'] as String) : null,

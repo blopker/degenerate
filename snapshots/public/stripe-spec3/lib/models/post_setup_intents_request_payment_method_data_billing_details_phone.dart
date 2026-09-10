@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2($value)'; } 
  }
-typedef PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhone = OneOf2<String,PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2>;
+
+@immutable
+final class PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhone {
+  const PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhone({this.string = const Omittable.absent(),
+this.postSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhone._({required this.rawValue, required this.string,
+required this.postSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2,});
+  factory PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhone.fromJson(Object? json) => PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhone._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2: parseAnyOfVariant<PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2>(json, (value) => PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2> postSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2.isPresent) postSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhone && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhone(${toJson()})';
+}

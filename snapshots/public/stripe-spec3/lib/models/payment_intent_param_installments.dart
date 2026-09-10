@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'installment_plan3.dart';import 'payment_intent_param_installments_plan.dart';@immutable final class PaymentIntentParamInstallments {const PaymentIntentParamInstallments({this.enabled, this.plan, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_param_installments_plan.dart';@immutable final class PaymentIntentParamInstallments {const PaymentIntentParamInstallments({this.enabled, this.plan, });
 
 factory PaymentIntentParamInstallments.fromJson(Map<String, dynamic> json) { return PaymentIntentParamInstallments(
   enabled: json['enabled'] as bool?,
-  plan: json['plan'] != null ? OneOf2.parse(json['plan'], fromA: (v) => InstallmentPlan3.fromJson(v as Map<String, dynamic>), fromB: (v) => PaymentIntentParamInstallmentsPlanVariant2.fromJson(v as String),) : null,
+  plan: json['plan'] != null ? PaymentIntentParamInstallmentsPlan.fromJson(json['plan']) : null,
 ); }
 
 final bool? enabled;

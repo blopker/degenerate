@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';import 'payment_method.dart';import 'setup_attempt_payment_method_details_bancontact_generated_sepa_debit.dart';import 'setup_attempt_payment_method_details_bancontact_generated_sepa_debit_mandate.dart';/// Preferred language of the Bancontact authorization page that the customer is redirected to.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_attempt_payment_method_details_bancontact_generated_sepa_debit.dart';import 'setup_attempt_payment_method_details_bancontact_generated_sepa_debit_mandate.dart';/// Preferred language of the Bancontact authorization page that the customer is redirected to.
 /// Can be one of `en`, `de`, `fr`, or `nl`
 @immutable final class SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage {const SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage._(this.value);
 
@@ -39,8 +39,8 @@ factory SetupAttemptPaymentMethodDetailsBancontact.fromJson(Map<String, dynamic>
   bankCode: json.containsKey('bank_code') ? Omittable(json['bank_code'] as String?) : const Omittable.absent(),
   bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
   bic: json.containsKey('bic') ? Omittable(json['bic'] as String?) : const Omittable.absent(),
-  generatedSepaDebit: json.containsKey('generated_sepa_debit') ? Omittable(json['generated_sepa_debit'] != null ? OneOf2.parse(json['generated_sepa_debit'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  generatedSepaDebitMandate: json.containsKey('generated_sepa_debit_mandate') ? Omittable(json['generated_sepa_debit_mandate'] != null ? OneOf2.parse(json['generated_sepa_debit_mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  generatedSepaDebit: json.containsKey('generated_sepa_debit') ? Omittable(json['generated_sepa_debit'] != null ? SetupAttemptPaymentMethodDetailsBancontactGeneratedSepaDebit.fromJson(json['generated_sepa_debit']) : null) : const Omittable.absent(),
+  generatedSepaDebitMandate: json.containsKey('generated_sepa_debit_mandate') ? Omittable(json['generated_sepa_debit_mandate'] != null ? SetupAttemptPaymentMethodDetailsBancontactGeneratedSepaDebitMandate.fromJson(json['generated_sepa_debit_mandate']) : null) : const Omittable.absent(),
   ibanLast4: json.containsKey('iban_last4') ? Omittable(json['iban_last4'] as String?) : const Omittable.absent(),
   preferredLanguage: json.containsKey('preferred_language') ? Omittable(json['preferred_language'] != null ? SetupAttemptPaymentMethodDetailsBancontactPreferredLanguage.fromJson(json['preferred_language'] as String) : null) : const Omittable.absent(),
   verifiedName: json.containsKey('verified_name') ? Omittable(json['verified_name'] as String?) : const Omittable.absent(),

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param7.dart';import 'post_subscription_schedules_schedule_request_phases_add_invoice_items.dart';import 'post_subscription_schedules_schedule_request_phases_automatic_tax.dart';import 'post_subscription_schedules_schedule_request_phases_billing_thresholds.dart';import 'post_subscription_schedules_schedule_request_phases_default_tax_rates.dart';import 'post_subscription_schedules_schedule_request_phases_description.dart';import 'post_subscription_schedules_schedule_request_phases_discounts.dart';import 'post_subscription_schedules_schedule_request_phases_discounts_variant1.dart';import 'post_subscription_schedules_schedule_request_phases_duration.dart';import 'post_subscription_schedules_schedule_request_phases_end_date.dart';import 'post_subscription_schedules_schedule_request_phases_invoice_settings.dart';import 'post_subscription_schedules_schedule_request_phases_items.dart';import 'post_subscription_schedules_schedule_request_phases_start_date.dart';import 'post_subscription_schedules_schedule_request_phases_transfer_data.dart';import 'post_subscription_schedules_schedule_request_phases_trial_end.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor {const PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_schedule_request_phases_add_invoice_items.dart';import 'post_subscription_schedules_schedule_request_phases_automatic_tax.dart';import 'post_subscription_schedules_schedule_request_phases_billing_thresholds.dart';import 'post_subscription_schedules_schedule_request_phases_default_tax_rates.dart';import 'post_subscription_schedules_schedule_request_phases_description.dart';import 'post_subscription_schedules_schedule_request_phases_discounts.dart';import 'post_subscription_schedules_schedule_request_phases_duration.dart';import 'post_subscription_schedules_schedule_request_phases_end_date.dart';import 'post_subscription_schedules_schedule_request_phases_invoice_settings.dart';import 'post_subscription_schedules_schedule_request_phases_items.dart';import 'post_subscription_schedules_schedule_request_phases_start_date.dart';import 'post_subscription_schedules_schedule_request_phases_transfer_data.dart';import 'post_subscription_schedules_schedule_request_phases_trial_end.dart';@immutable final class PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor {const PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor._(this.value);
 
 factory PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -82,23 +82,23 @@ factory PostSubscriptionSchedulesScheduleRequestPhases.fromJson(Map<String, dyna
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: json['automatic_tax'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
-  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => BillingThresholdsParam7.fromJson(v as Map<String, dynamic>), fromB: (v) => PostSubscriptionSchedulesScheduleRequestPhasesBillingThresholdsVariant2.fromJson(v as String),) : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesBillingThresholds.fromJson(json['billing_thresholds']) : null,
   collectionMethod: json['collection_method'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesCollectionMethod.fromJson(json['collection_method'] as String) : null,
   defaultPaymentMethod: json['default_payment_method'] as String?,
-  defaultTaxRates: json['default_tax_rates'] != null ? OneOf2.parse(json['default_tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRatesVariant2.fromJson(v as String),) : null,
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostSubscriptionSchedulesScheduleRequestPhasesDescriptionVariant2.fromJson(v as String),) : null,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostSubscriptionSchedulesScheduleRequestPhasesDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostSubscriptionSchedulesScheduleRequestPhasesDiscountsVariant2.fromJson(v as String),) : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesDefaultTaxRates.fromJson(json['default_tax_rates']) : null,
+  description: json['description'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesDescription.fromJson(json['description']) : null,
+  discounts: json['discounts'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesDiscounts.fromJson(json['discounts']) : null,
   duration: json['duration'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesDuration.fromJson(json['duration'] as Map<String, dynamic>) : null,
-  endDate: json['end_date'] != null ? OneOf2.parse(json['end_date'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostSubscriptionSchedulesScheduleRequestPhasesEndDateVariant2.fromJson(v as String),) : null,
+  endDate: json['end_date'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesEndDate.fromJson(json['end_date']) : null,
   invoiceSettings: json['invoice_settings'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   items: (json['items'] as List<dynamic>).map((e) => PostSubscriptionSchedulesScheduleRequestPhasesItems.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   onBehalfOf: json['on_behalf_of'] as String?,
   prorationBehavior: json['proration_behavior'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
-  startDate: json['start_date'] != null ? OneOf2.parse(json['start_date'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostSubscriptionSchedulesScheduleRequestPhasesStartDateVariant2.fromJson(v as String),) : null,
+  startDate: json['start_date'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesStartDate.fromJson(json['start_date']) : null,
   transferData: json['transfer_data'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trial: json['trial'] as bool?,
-  trialEnd: json['trial_end'] != null ? OneOf2.parse(json['trial_end'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostSubscriptionSchedulesScheduleRequestPhasesTrialEndVariant2.fromJson(v as String),) : null,
+  trialEnd: json['trial_end'] != null ? PostSubscriptionSchedulesScheduleRequestPhasesTrialEnd.fromJson(json['trial_end']) : null,
 ); }
 
 final List<PostSubscriptionSchedulesScheduleRequestPhasesAddInvoiceItems>? addInvoiceItems;

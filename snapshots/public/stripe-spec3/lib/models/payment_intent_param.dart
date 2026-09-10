@@ -249,8 +249,8 @@ factory PaymentIntentParam.fromJson(Map<String, dynamic> json) { return PaymentI
   requestThreeDSecure: json['request_three_d_secure'] != null ? PaymentIntentParamRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
   requireCvcRecollection: json['require_cvc_recollection'] as bool?,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentParamSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] != null ? OneOf2.parse(json['statement_descriptor_suffix_kana'], fromA: (v) => v as String, fromB: (v) => PaymentIntentParamStatementDescriptorSuffixKanaVariant2.fromJson(v as String),) : null,
-  statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] != null ? OneOf2.parse(json['statement_descriptor_suffix_kanji'], fromA: (v) => v as String, fromB: (v) => PaymentIntentParamStatementDescriptorSuffixKanjiVariant2.fromJson(v as String),) : null,
+  statementDescriptorSuffixKana: json['statement_descriptor_suffix_kana'] != null ? PaymentIntentParamStatementDescriptorSuffixKana.fromJson(json['statement_descriptor_suffix_kana']) : null,
+  statementDescriptorSuffixKanji: json['statement_descriptor_suffix_kanji'] != null ? PaymentIntentParamStatementDescriptorSuffixKanji.fromJson(json['statement_descriptor_suffix_kanji']) : null,
   threeDSecure: json['three_d_secure'] != null ? PaymentIntentParamThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
 ); }
 

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'beneficiary_params.dart';import 'post_climate_orders_order_request_beneficiary.dart';@immutable final class PostClimateOrdersOrderRequest {const PostClimateOrdersOrderRequest({this.beneficiary, this.expand, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_climate_orders_order_request_beneficiary.dart';@immutable final class PostClimateOrdersOrderRequest {const PostClimateOrdersOrderRequest({this.beneficiary, this.expand, this.metadata, });
 
 factory PostClimateOrdersOrderRequest.fromJson(Map<String, dynamic> json) { return PostClimateOrdersOrderRequest(
-  beneficiary: json['beneficiary'] != null ? OneOf2.parse(json['beneficiary'], fromA: (v) => BeneficiaryParams.fromJson(v as Map<String, dynamic>), fromB: (v) => PostClimateOrdersOrderRequestBeneficiaryVariant2.fromJson(v as String),) : null,
+  beneficiary: json['beneficiary'] != null ? PostClimateOrdersOrderRequestBeneficiary.fromJson(json['beneficiary']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }

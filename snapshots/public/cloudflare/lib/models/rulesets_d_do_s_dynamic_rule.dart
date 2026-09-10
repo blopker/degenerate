@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule_category.dart';import 'rulesets_rule_enabled.dart';import 'rulesets_rule_exposed_credential_check.dart';import 'rulesets_rule_id.dart';import 'rulesets_rule_logging.dart';import 'rulesets_rule_ratelimit.dart';@immutable final class RulesetsDDoSDynamicRule {const RulesetsDDoSDynamicRule({required this.lastUpdated, required this.version, this.action = const Omittable.absent(), this.actionParameters = const {}, this.categories, this.description = const Omittable.absent(), this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rule_category.dart';import 'rulesets_rule_enabled.dart';import 'rulesets_rule_exposed_credential_check.dart';import 'rulesets_rule_id.dart';import 'rulesets_rule_logging.dart';import 'rulesets_rule_ratelimit.dart';@immutable final class RulesetsDDoSDynamicRule {const RulesetsDDoSDynamicRule({required this.lastUpdated, required this.version, this.action = const Omittable.absent(), this.actionParameters, this.categories, this.description = const Omittable.absent(), this.enabled, this.exposedCredentialCheck, this.expression, this.id, this.logging, this.ratelimit, this.ref, });
 
 factory RulesetsDDoSDynamicRule.fromJson(Map<String, dynamic> json) { return RulesetsDDoSDynamicRule(
   action: json.containsKey('action') ? Omittable(json['action']) : const Omittable.absent(),
-  actionParameters: json.containsKey('action_parameters') ? json['action_parameters'] as Map<String, dynamic> : const {},
+  actionParameters: json['action_parameters'] as Map<String, dynamic>?,
   categories: (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList(),
   description: json.containsKey('description') ? Omittable(json['description']) : const Omittable.absent(),
   enabled: json['enabled'] != null ? RulesetsRuleEnabled.fromJson(json['enabled'] as bool) : null,
@@ -21,7 +21,7 @@ factory RulesetsDDoSDynamicRule.fromJson(Map<String, dynamic> json) { return Rul
 final Omittable<dynamic> action;
 
 /// The parameters configuring the rule's action.
-final Map<String,dynamic> actionParameters;
+final Map<String,dynamic>? actionParameters;
 
 final List<RulesetsRuleCategory>? categories;
 
@@ -49,9 +49,11 @@ final String? ref;
 /// The version of the rule.
 final String version;
 
+/// The value with the schema default applied when absent.
+Map<String,dynamic> get actionParametersOrDefault { return actionParameters ?? const {}; } 
 Map<String, dynamic> toJson() { return {
   if (action.isPresent) 'action': action.value,
-  'action_parameters': actionParameters,
+  'action_parameters': ?actionParameters,
   if (categories != null) 'categories': categories?.map((e) => e.toJson()).toList(),
   if (description.isPresent) 'description': description.value,
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -66,7 +68,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('version') && json['version'] is String; } 
-RulesetsDDoSDynamicRule copyWith({Omittable<dynamic>? action, Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsDDoSDynamicRule(
+RulesetsDDoSDynamicRule copyWith({Omittable<dynamic>? action, Map<String, dynamic>? Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, Omittable<dynamic>? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsDDoSDynamicRule(
   action: action ?? this.action,
   actionParameters: actionParameters != null ? actionParameters() : this.actionParameters,
   categories: categories != null ? categories() : this.categories,

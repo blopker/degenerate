@@ -1,62 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_settings_browser_ttl.dart';import 'rulesets_set_cache_settings_cache_key.dart';import 'rulesets_set_cache_settings_cache_reserve.dart';import 'rulesets_set_cache_settings_edge_ttl.dart';import 'rulesets_set_cache_settings_serve_stale.dart';/// Whether the request's response from the origin is eligible for caching. Caching itself will still depend on the cache control header and your other caching configurations.
-extension type const RulesetsSetCacheSettingsCache(bool value) {
-factory RulesetsSetCacheSettingsCache.fromJson(bool json) => RulesetsSetCacheSettingsCache(json);
-
-bool toJson() => value;
-
-}
-/// Whether Cloudflare will aim to strictly adhere to RFC 7234.
-extension type const RulesetsSetCacheSettingsOriginCacheControl(bool value) {
-factory RulesetsSetCacheSettingsOriginCacheControl.fromJson(bool json) => RulesetsSetCacheSettingsOriginCacheControl(json);
-
-bool toJson() => value;
-
-}
-/// Whether to generate Cloudflare error pages for issues from the origin server.
-extension type const RulesetsSetCacheSettingsOriginErrorPagePassthru(bool value) {
-factory RulesetsSetCacheSettingsOriginErrorPagePassthru.fromJson(bool json) => RulesetsSetCacheSettingsOriginErrorPagePassthru(json);
-
-bool toJson() => value;
-
-}
-/// A timeout value between two successive read operations to use for your origin server. Historically, the timeout value between two read options from Cloudflare to an origin server is 100 seconds. If you are attempting to reduce HTTP 524 errors because of timeouts from an origin server, try increasing this timeout value.
-extension type const RulesetsSetCacheSettingsReadTimeout(int value) {
-factory RulesetsSetCacheSettingsReadTimeout.fromJson(num json) => RulesetsSetCacheSettingsReadTimeout(json.toInt());
-
-num toJson() => value;
-
-}
-/// Whether Cloudflare should respect strong ETag (entity tag) headers. If false, Cloudflare converts strong ETag headers to weak ETag headers.
-extension type const RulesetsSetCacheSettingsRespectStrongEtags(bool value) {
-factory RulesetsSetCacheSettingsRespectStrongEtags.fromJson(bool json) => RulesetsSetCacheSettingsRespectStrongEtags(json);
-
-bool toJson() => value;
-
-}
-/// Whether to strip ETag headers from the origin response before caching.
-extension type const RulesetsSetCacheSettingsStripETags(bool value) {
-factory RulesetsSetCacheSettingsStripETags.fromJson(bool json) => RulesetsSetCacheSettingsStripETags(json);
-
-bool toJson() => value;
-
-}
-/// Whether to strip Last-Modified headers from the origin response before caching.
-extension type const RulesetsSetCacheSettingsStripLastModified(bool value) {
-factory RulesetsSetCacheSettingsStripLastModified.fromJson(bool json) => RulesetsSetCacheSettingsStripLastModified(json);
-
-bool toJson() => value;
-
-}
-/// Whether to strip Set-Cookie headers from the origin response before caching.
-extension type const RulesetsSetCacheSettingsStripSetCookie(bool value) {
-factory RulesetsSetCacheSettingsStripSetCookie.fromJson(bool json) => RulesetsSetCacheSettingsStripSetCookie(json);
-
-bool toJson() => value;
-
-}
-@immutable final class RulesetsSetCacheSettingsRuleActionParameters {const RulesetsSetCacheSettingsRuleActionParameters({this.additionalCacheablePorts, this.browserTtl, this.cache, this.cacheKey, this.cacheReserve, this.edgeTtl, this.originCacheControl, this.originErrorPagePassthru, this.readTimeout, this.respectStrongEtags, this.serveStale, this.stripEtags, this.stripLastModified, this.stripSetCookie, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_set_cache_settings_browser_ttl.dart';import 'rulesets_set_cache_settings_cache.dart';import 'rulesets_set_cache_settings_cache_key.dart';import 'rulesets_set_cache_settings_cache_reserve.dart';import 'rulesets_set_cache_settings_edge_ttl.dart';import 'rulesets_set_cache_settings_origin_cache_control.dart';import 'rulesets_set_cache_settings_origin_error_page_passthru.dart';import 'rulesets_set_cache_settings_read_timeout.dart';import 'rulesets_set_cache_settings_respect_strong_etags.dart';import 'rulesets_set_cache_settings_serve_stale.dart';import 'rulesets_set_cache_settings_strip_e_tags.dart';import 'rulesets_set_cache_settings_strip_last_modified.dart';import 'rulesets_set_cache_settings_strip_set_cookie.dart';@immutable final class RulesetsSetCacheSettingsRuleActionParameters {const RulesetsSetCacheSettingsRuleActionParameters({this.additionalCacheablePorts, this.browserTtl, this.cache, this.cacheKey, this.cacheReserve, this.edgeTtl, this.originCacheControl, this.originErrorPagePassthru, this.readTimeout, this.respectStrongEtags, this.serveStale, this.stripEtags, this.stripLastModified, this.stripSetCookie, });
 
 factory RulesetsSetCacheSettingsRuleActionParameters.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsRuleActionParameters(
   additionalCacheablePorts: (json['additional_cacheable_ports'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),

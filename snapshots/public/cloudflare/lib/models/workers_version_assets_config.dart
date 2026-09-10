@@ -60,29 +60,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WorkersVersionAssetsConfigNotFoundHandling($value)'; } 
  }
 /// Configuration for assets within a Worker.
-@immutable final class WorkersVersionAssetsConfig {const WorkersVersionAssetsConfig({this.htmlHandling = WorkersVersionAssetsConfigHtmlHandling.autoTrailingSlash, this.notFoundHandling = WorkersVersionAssetsConfigNotFoundHandling.none, this.runWorkerFirst, });
+@immutable final class WorkersVersionAssetsConfig {const WorkersVersionAssetsConfig({this.htmlHandling, this.notFoundHandling, this.runWorkerFirst, });
 
 factory WorkersVersionAssetsConfig.fromJson(Map<String, dynamic> json) { return WorkersVersionAssetsConfig(
-  htmlHandling: json.containsKey('html_handling') ? WorkersVersionAssetsConfigHtmlHandling.fromJson(json['html_handling'] as String) : WorkersVersionAssetsConfigHtmlHandling.autoTrailingSlash,
-  notFoundHandling: json.containsKey('not_found_handling') ? WorkersVersionAssetsConfigNotFoundHandling.fromJson(json['not_found_handling'] as String) : WorkersVersionAssetsConfigNotFoundHandling.none,
+  htmlHandling: json['html_handling'] != null ? WorkersVersionAssetsConfigHtmlHandling.fromJson(json['html_handling'] as String) : null,
+  notFoundHandling: json['not_found_handling'] != null ? WorkersVersionAssetsConfigNotFoundHandling.fromJson(json['not_found_handling'] as String) : null,
   runWorkerFirst: json['run_worker_first'] != null ? OneOf2.parse(json['run_worker_first'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => v as bool,) : null,
 ); }
 
 /// Determines the redirects and rewrites of requests for HTML content.
-final WorkersVersionAssetsConfigHtmlHandling htmlHandling;
+final WorkersVersionAssetsConfigHtmlHandling? htmlHandling;
 
 /// Determines the response when a request does not match a static asset, and there is no Worker script.
-final WorkersVersionAssetsConfigNotFoundHandling notFoundHandling;
+final WorkersVersionAssetsConfigNotFoundHandling? notFoundHandling;
 
 final WorkersVersionAssetsConfigRunWorkerFirst? runWorkerFirst;
 
+/// The value with the schema default applied when absent.
+WorkersVersionAssetsConfigHtmlHandling get htmlHandlingOrDefault { return htmlHandling ?? WorkersVersionAssetsConfigHtmlHandling.fromJson('auto-trailing-slash'); } 
+/// The value with the schema default applied when absent.
+WorkersVersionAssetsConfigNotFoundHandling get notFoundHandlingOrDefault { return notFoundHandling ?? WorkersVersionAssetsConfigNotFoundHandling.fromJson('none'); } 
 Map<String, dynamic> toJson() { return {
-  'html_handling': htmlHandling.toJson(),
-  'not_found_handling': notFoundHandling.toJson(),
+  if (htmlHandling != null) 'html_handling': htmlHandling?.toJson(),
+  if (notFoundHandling != null) 'not_found_handling': notFoundHandling?.toJson(),
   if (runWorkerFirst != null) 'run_worker_first': runWorkerFirst?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'html_handling', 'not_found_handling', 'run_worker_first'}.contains(key)); } 
-WorkersVersionAssetsConfig copyWith({WorkersVersionAssetsConfigHtmlHandling Function()? htmlHandling, WorkersVersionAssetsConfigNotFoundHandling Function()? notFoundHandling, WorkersVersionAssetsConfigRunWorkerFirst? Function()? runWorkerFirst, }) { return WorkersVersionAssetsConfig(
+WorkersVersionAssetsConfig copyWith({WorkersVersionAssetsConfigHtmlHandling? Function()? htmlHandling, WorkersVersionAssetsConfigNotFoundHandling? Function()? notFoundHandling, WorkersVersionAssetsConfigRunWorkerFirst? Function()? runWorkerFirst, }) { return WorkersVersionAssetsConfig(
   htmlHandling: htmlHandling != null ? htmlHandling() : this.htmlHandling,
   notFoundHandling: notFoundHandling != null ? notFoundHandling() : this.notFoundHandling,
   runWorkerFirst: runWorkerFirst != null ? runWorkerFirst() : this.runWorkerFirst,

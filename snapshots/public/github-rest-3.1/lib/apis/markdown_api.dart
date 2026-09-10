@@ -27,7 +27,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return response.body;
+return response.body;
   },
 );
  } 
@@ -50,7 +50,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return response.body;
+return response.body;
   },
 );
  } 

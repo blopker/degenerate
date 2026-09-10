@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+final json = jsonDecode(response.body);
+return (json as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
   },
 );
  } 

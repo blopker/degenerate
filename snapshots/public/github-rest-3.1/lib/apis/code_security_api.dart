@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/code_security_attach_configuration_request.dart';import '../models/code_security_attach_enterprise_configuration_request.dart';import '../models/code_security_configuration.dart';import '../models/code_security_configuration_for_repository.dart';import '../models/code_security_configuration_repositories.dart';import '../models/code_security_create_configuration_for_enterprise_request.dart';import '../models/code_security_create_configuration_request.dart';import '../models/code_security_default_configurations2.dart';import '../models/code_security_detach_configuration_request.dart';import '../models/code_security_get_configurations_for_org_target_type.dart';import '../models/code_security_set_configuration_as_default_for_enterprise_request.dart';import '../models/code_security_set_configuration_as_default_for_enterprise_response.dart';import '../models/code_security_set_configuration_as_default_request.dart';import '../models/code_security_set_configuration_as_default_response.dart';import '../models/code_security_update_configuration_request.dart';import '../models/code_security_update_enterprise_configuration_request.dart';/// CodeSecurityApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/code_security_attach_configuration_request.dart';import '../models/code_security_attach_enterprise_configuration_request.dart';import '../models/code_security_configuration.dart';import '../models/code_security_configuration_for_repository.dart';import '../models/code_security_configuration_repositories.dart';import '../models/code_security_create_configuration_for_enterprise_request.dart';import '../models/code_security_create_configuration_request.dart';import '../models/code_security_default_configurations2.dart';import '../models/code_security_detach_configuration_request.dart';import '../models/code_security_get_configurations_for_org_target_type.dart';import '../models/code_security_set_configuration_as_default_for_enterprise_request.dart';import '../models/code_security_set_configuration_as_default_for_enterprise_response.dart';import '../models/code_security_set_configuration_as_default_request.dart';import '../models/code_security_set_configuration_as_default_response.dart';import '../models/code_security_update_configuration_request.dart';import '../models/code_security_update_enterprise_configuration_request.dart';import '../models/scim_error.dart';/// CodeSecurityApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -43,11 +43,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CodeSecurityConfiguration.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => CodeSecurityConfiguration.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -60,7 +67,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `POST /enterprises/{enterprise}/code-security/configurations`
-Future<ApiResult<CodeSecurityConfiguration, BasicError>> codeSecurityCreateConfigurationForEnterprise({required String enterprise, required CodeSecurityCreateConfigurationForEnterpriseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityConfiguration, OneOf2<BasicError, ScimError>>> codeSecurityCreateConfigurationForEnterprise({required String enterprise, required CodeSecurityCreateConfigurationForEnterpriseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -74,10 +81,31 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -102,8 +130,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CodeSecurityDefaultConfigurations2.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => CodeSecurityDefaultConfigurations2.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -128,10 +156,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -158,10 +196,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 403 || 404 || 409:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -176,7 +224,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
 ///
 /// `DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}`
-Future<ApiResult<void, BasicError>> codeSecurityDeleteConfigurationForEnterprise({required String enterprise, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ScimError>>> codeSecurityDeleteConfigurationForEnterprise({required String enterprise, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -189,7 +237,27 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404 || 409:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -218,10 +286,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 409:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -250,10 +326,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CodeSecuritySetConfigurationAsDefaultForEnterpriseResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -295,11 +379,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CodeSecurityConfigurationRepositories.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => CodeSecurityConfigurationRepositories.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -341,11 +432,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CodeSecurityConfiguration.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => CodeSecurityConfiguration.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -372,7 +470,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -397,11 +496,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CodeSecurityDefaultConfigurations2.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => CodeSecurityDefaultConfigurations2.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -415,7 +523,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/code-security/configurations/detach`
-Future<ApiResult<void, BasicError>> codeSecurityDetachConfiguration({required String org, required CodeSecurityDetachConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ScimError>>> codeSecurityDetachConfiguration({required String org, required CodeSecurityDetachConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -430,7 +538,27 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404 || 409:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -455,10 +583,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -471,7 +609,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/code-security/configurations/{configuration_id}`
-Future<ApiResult<CodeSecurityConfiguration, Never>> codeSecurityUpdateConfiguration({required String org, required int configurationId, required CodeSecurityUpdateConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityConfiguration?, Never>> codeSecurityUpdateConfiguration({required String org, required int configurationId, required CodeSecurityUpdateConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -485,7 +623,17 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CodeSecurityConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 200:
+final json = jsonDecode(response.body);
+return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
+case 204:
+return null;
+default:
+final json = jsonDecode(response.body);
+return CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -500,7 +648,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/code-security/configurations/{configuration_id}`
-Future<ApiResult<void, BasicError>> codeSecurityDeleteConfiguration({required String org, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ScimError>>> codeSecurityDeleteConfiguration({required String org, required int configurationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -513,7 +661,27 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404 || 409:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -542,7 +710,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
 );
  } 
@@ -571,10 +740,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CodeSecuritySetConfigurationAsDefaultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CodeSecuritySetConfigurationAsDefaultResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -616,11 +793,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CodeSecurityConfigurationRepositories.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => CodeSecurityConfigurationRepositories.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -633,7 +817,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/code-security-configuration`
-Future<ApiResult<CodeSecurityConfigurationForRepository, BasicError>> codeSecurityGetConfigurationForRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodeSecurityConfigurationForRepository?, BasicError>> codeSecurityGetConfigurationForRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -645,10 +829,29 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CodeSecurityConfigurationForRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 200:
+final json = jsonDecode(response.body);
+return CodeSecurityConfigurationForRepository.fromJson(json as Map<String, dynamic>);
+case 204:
+return null;
+default:
+final json = jsonDecode(response.body);
+return CodeSecurityConfigurationForRepository.fromJson(json as Map<String, dynamic>);
+}
+
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

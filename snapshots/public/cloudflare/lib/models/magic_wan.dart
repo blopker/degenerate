@@ -28,10 +28,10 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MagicWanHealthCheckRate($value)'; } 
  }
-@immutable final class MagicWan {const MagicWan({this.healthCheckRate = MagicWanHealthCheckRate.mid, this.id, this.name, this.physport, this.priority, this.siteId, this.staticAddressing, this.vlanTag, });
+@immutable final class MagicWan {const MagicWan({this.healthCheckRate, this.id, this.name, this.physport, this.priority, this.siteId, this.staticAddressing, this.vlanTag, });
 
 factory MagicWan.fromJson(Map<String, dynamic> json) { return MagicWan(
-  healthCheckRate: json.containsKey('health_check_rate') ? MagicWanHealthCheckRate.fromJson(json['health_check_rate'] as String) : MagicWanHealthCheckRate.mid,
+  healthCheckRate: json['health_check_rate'] != null ? MagicWanHealthCheckRate.fromJson(json['health_check_rate'] as String) : null,
   id: json['id'] != null ? MagicIdentifier.fromJson(json['id'] as String) : null,
   name: json['name'] as String?,
   physport: json['physport'] != null ? MagicPort.fromJson(json['physport'] as num) : null,
@@ -42,7 +42,7 @@ factory MagicWan.fromJson(Map<String, dynamic> json) { return MagicWan(
 ); }
 
 /// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
-final MagicWanHealthCheckRate healthCheckRate;
+final MagicWanHealthCheckRate? healthCheckRate;
 
 /// Identifier
 final MagicIdentifier? id;
@@ -62,8 +62,10 @@ final MagicWanStaticAddressing? staticAddressing;
 /// VLAN ID. Use zero for untagged.
 final MagicVlanTag? vlanTag;
 
+/// The value with the schema default applied when absent.
+MagicWanHealthCheckRate get healthCheckRateOrDefault { return healthCheckRate ?? MagicWanHealthCheckRate.fromJson('mid'); } 
 Map<String, dynamic> toJson() { return {
-  'health_check_rate': healthCheckRate.toJson(),
+  if (healthCheckRate != null) 'health_check_rate': healthCheckRate?.toJson(),
   if (id != null) 'id': id?.toJson(),
   'name': ?name,
   if (physport != null) 'physport': physport?.toJson(),
@@ -73,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   if (vlanTag != null) 'vlan_tag': vlanTag?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'health_check_rate', 'id', 'name', 'physport', 'priority', 'site_id', 'static_addressing', 'vlan_tag'}.contains(key)); } 
-MagicWan copyWith({MagicWanHealthCheckRate Function()? healthCheckRate, MagicIdentifier? Function()? id, String? Function()? name, MagicPort? Function()? physport, int? Function()? priority, MagicIdentifier? Function()? siteId, MagicWanStaticAddressing? Function()? staticAddressing, MagicVlanTag? Function()? vlanTag, }) { return MagicWan(
+MagicWan copyWith({MagicWanHealthCheckRate? Function()? healthCheckRate, MagicIdentifier? Function()? id, String? Function()? name, MagicPort? Function()? physport, int? Function()? priority, MagicIdentifier? Function()? siteId, MagicWanStaticAddressing? Function()? staticAddressing, MagicVlanTag? Function()? vlanTag, }) { return MagicWan(
   healthCheckRate: healthCheckRate != null ? healthCheckRate() : this.healthCheckRate,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

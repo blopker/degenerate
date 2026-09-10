@@ -167,7 +167,7 @@ void main() {
   for (final json in <Map<String, dynamic>>[
     {'requiredTerm': null},
     {'requiredTerm': null, 'term': null, 'count': null, 'plain': null},
-    {'requiredTerm': null, 'term': 'a/b', 'count': 3, 'plain': 'x y'},
+    {'requiredTerm': null, 'term': 'a/b', 'count': 3, 'plain': 'x y', 'enabled': true},
   ]) {
     final filter = Filter.fromJson(json);
     for (final call in [api.deep, api.form, api.joined, api.reserved]) {
@@ -207,12 +207,12 @@ void main() {
             },
           );
           const empty = [
-            {'filter[enabled]': 'true'},
-            {'enabled': 'true'},
-            {'filter': 'enabled,true'},
-            {'filter': 'enabled,true'},
-            '/path/enabled,true',
-            '/exploded/enabled=true',
+            <String, String>{},
+            <String, String>{},
+            {'filter': ''},
+            {'filter': ''},
+            '/path/',
+            '/exploded/',
           ];
           expect(result, [
             ...empty,

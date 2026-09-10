@@ -21,27 +21,31 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptionsStorageType($value)'; } 
  }
-@immutable final class AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptions {const AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptions({required this.storageId, this.r2Jurisdiction = 'default', this.storageType = AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptionsStorageType.r2, });
+@immutable final class AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptions {const AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptions({required this.storageId, this.r2Jurisdiction, this.storageType, });
 
 factory AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptions.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptions(
-  r2Jurisdiction: json.containsKey('r2_jurisdiction') ? json['r2_jurisdiction'] as String : 'default',
+  r2Jurisdiction: json['r2_jurisdiction'] as String?,
   storageId: json['storage_id'] as String,
-  storageType: json.containsKey('storage_type') ? AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptionsStorageType.fromJson(json['storage_type'] as String) : AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptionsStorageType.r2,
+  storageType: json['storage_type'] != null ? AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptionsStorageType.fromJson(json['storage_type'] as String) : null,
 ); }
 
-final String r2Jurisdiction;
+final String? r2Jurisdiction;
 
 final String storageId;
 
-final AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptionsStorageType storageType;
+final AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptionsStorageType? storageType;
 
+/// The value with the schema default applied when absent.
+String get r2JurisdictionOrDefault { return r2Jurisdiction ?? 'default'; } 
+/// The value with the schema default applied when absent.
+AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptionsStorageType get storageTypeOrDefault { return storageType ?? AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptionsStorageType.fromJson('r2'); } 
 Map<String, dynamic> toJson() { return {
-  'r2_jurisdiction': r2Jurisdiction,
+  'r2_jurisdiction': ?r2Jurisdiction,
   'storage_id': storageId,
-  'storage_type': storageType.toJson(),
+  if (storageType != null) 'storage_type': storageType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('storage_id') && json['storage_id'] is String; } 
-AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptions copyWith({String Function()? r2Jurisdiction, String? storageId, AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptionsStorageType Function()? storageType, }) { return AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptions(
+AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptions copyWith({String? Function()? r2Jurisdiction, String? storageId, AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptionsStorageType? Function()? storageType, }) { return AiSearchCreateInstancesRequestSourceParamsWebCrawlerStoreOptions(
   r2Jurisdiction: r2Jurisdiction != null ? r2Jurisdiction() : this.r2Jurisdiction,
   storageId: storageId ?? this.storageId,
   storageType: storageType != null ? storageType() : this.storageType,

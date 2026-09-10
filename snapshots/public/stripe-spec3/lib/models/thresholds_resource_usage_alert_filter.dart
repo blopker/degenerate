@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'thresholds_resource_usage_alert_filter_customer.dart';@immutable final class ThresholdsResourceUsageAlertFilterType {const ThresholdsResourceUsageAlertFilterType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thresholds_resource_usage_alert_filter_customer.dart';@immutable final class ThresholdsResourceUsageAlertFilterType {const ThresholdsResourceUsageAlertFilterType._(this.value);
 
 factory ThresholdsResourceUsageAlertFilterType.fromJson(String json) { return switch (json) {
   'customer' => customer,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class ThresholdsResourceUsageAlertFilter {const ThresholdsResourceUsageAlertFilter({required this.type, this.customer = const Omittable.absent(), });
 
 factory ThresholdsResourceUsageAlertFilter.fromJson(Map<String, dynamic> json) { return ThresholdsResourceUsageAlertFilter(
-  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? ThresholdsResourceUsageAlertFilterCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
   type: ThresholdsResourceUsageAlertFilterType.fromJson(json['type'] as String),
 ); }
 

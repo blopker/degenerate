@@ -657,7 +657,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'UrlscannerCreateScanRequest2Visibility($value)'; } 
  }
-@immutable final class UrlscannerCreateScanRequest2 {const UrlscannerCreateScanRequest2({required this.url, this.country, this.customHeaders, this.customagent, this.referer, this.screenshotsResolutions, this.visibility = UrlscannerCreateScanRequest2Visibility.public, });
+@immutable final class UrlscannerCreateScanRequest2 {const UrlscannerCreateScanRequest2({required this.url, this.country, this.customHeaders, this.customagent, this.referer, this.screenshotsResolutions, this.visibility, });
 
 factory UrlscannerCreateScanRequest2.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanRequest2(
   country: json['country'] != null ? UrlscannerCreateScanRequest2Country.fromJson(json['country'] as String) : null,
@@ -666,7 +666,7 @@ factory UrlscannerCreateScanRequest2.fromJson(Map<String, dynamic> json) { retur
   referer: json['referer'] as String?,
   screenshotsResolutions: (json['screenshotsResolutions'] as List<dynamic>?)?.map((e) => UrlscannerCreateScanRequest2ScreenshotsResolutions.fromJson(e as String)).toList(),
   url: json['url'] as String,
-  visibility: json.containsKey('visibility') ? UrlscannerCreateScanRequest2Visibility.fromJson(json['visibility'] as String) : UrlscannerCreateScanRequest2Visibility.public,
+  visibility: json['visibility'] != null ? UrlscannerCreateScanRequest2Visibility.fromJson(json['visibility'] as String) : null,
 ); }
 
 /// Country to geo egress from
@@ -685,8 +685,10 @@ final List<UrlscannerCreateScanRequest2ScreenshotsResolutions>? screenshotsResol
 final String url;
 
 /// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
-final UrlscannerCreateScanRequest2Visibility visibility;
+final UrlscannerCreateScanRequest2Visibility? visibility;
 
+/// The value with the schema default applied when absent.
+UrlscannerCreateScanRequest2Visibility get visibilityOrDefault { return visibility ?? UrlscannerCreateScanRequest2Visibility.fromJson('Public'); } 
 Map<String, dynamic> toJson() { return {
   if (country != null) 'country': country?.toJson(),
   'customHeaders': ?customHeaders,
@@ -694,10 +696,10 @@ Map<String, dynamic> toJson() { return {
   'referer': ?referer,
   if (screenshotsResolutions != null) 'screenshotsResolutions': screenshotsResolutions?.map((e) => e.toJson()).toList(),
   'url': url,
-  'visibility': visibility.toJson(),
+  if (visibility != null) 'visibility': visibility?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-UrlscannerCreateScanRequest2 copyWith({UrlscannerCreateScanRequest2Country? Function()? country, Map<String, String>? Function()? customHeaders, String? Function()? customagent, String? Function()? referer, List<UrlscannerCreateScanRequest2ScreenshotsResolutions>? Function()? screenshotsResolutions, String? url, UrlscannerCreateScanRequest2Visibility Function()? visibility, }) { return UrlscannerCreateScanRequest2(
+UrlscannerCreateScanRequest2 copyWith({UrlscannerCreateScanRequest2Country? Function()? country, Map<String, String>? Function()? customHeaders, String? Function()? customagent, String? Function()? referer, List<UrlscannerCreateScanRequest2ScreenshotsResolutions>? Function()? screenshotsResolutions, String? url, UrlscannerCreateScanRequest2Visibility? Function()? visibility, }) { return UrlscannerCreateScanRequest2(
   country: country != null ? country() : this.country,
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   customagent: customagent != null ? customagent() : this.customagent,

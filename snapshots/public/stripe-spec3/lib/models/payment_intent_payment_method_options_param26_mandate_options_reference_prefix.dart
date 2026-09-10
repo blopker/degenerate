@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2($value)'; } 
  }
-typedef PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefix = OneOf2<String,PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2>;
+
+@immutable
+final class PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefix {
+  const PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefix({this.string = const Omittable.absent(),
+this.paymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefix._({required this.rawValue, required this.string,
+required this.paymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2,});
+  factory PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefix.fromJson(Object? json) => PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefix._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+paymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2: parseAnyOfVariant<PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2>(json, (value) => PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2> paymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || paymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (paymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2.isPresent) paymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefixVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefix && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PaymentIntentPaymentMethodOptionsParam26MandateOptionsReferencePrefix(${toJson()})';
+}

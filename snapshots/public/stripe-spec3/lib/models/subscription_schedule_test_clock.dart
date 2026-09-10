@@ -1,3 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'test_helpers_test_clock.dart';typedef SubscriptionScheduleTestClock = OneOf2<String,TestHelpersTestClock>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'test_helpers_test_clock.dart';/// ID of the test clock this subscription schedule belongs to.
+@immutable
+final class SubscriptionScheduleTestClock {
+  const SubscriptionScheduleTestClock({this.string = const Omittable.absent(),
+this.testHelpersTestClock = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const SubscriptionScheduleTestClock._({required this.rawValue, required this.string,
+required this.testHelpersTestClock,});
+  factory SubscriptionScheduleTestClock.fromJson(Object? json) => SubscriptionScheduleTestClock._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+testHelpersTestClock: parseAnyOfVariant<TestHelpersTestClock>(json, (value) => TestHelpersTestClock.fromJson(value! as Map<String, dynamic>)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<TestHelpersTestClock> testHelpersTestClock;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => (rawValue.isPresent && rawValue.value == null) || string.isPresent || testHelpersTestClock.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (testHelpersTestClock.isPresent) testHelpersTestClock.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is SubscriptionScheduleTestClock && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'SubscriptionScheduleTestClock(${toJson()})';
+}

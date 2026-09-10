@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaskItemObject($value)'; } 
  }
 /// Task emitted by the workflow to show progress and status updates.
-@immutable final class TaskItem {const TaskItem({required this.id, required this.createdAt, required this.threadId, required this.taskType, required this.heading, required this.summary, this.object = TaskItemObject.chatkitThreadItem, this.type = 'chatkit.task', });
+@immutable final class TaskItem {const TaskItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.taskType, required this.heading, required this.summary, });
 
 factory TaskItem.fromJson(Map<String, dynamic> json) { return TaskItem(
   id: json['id'] as String,

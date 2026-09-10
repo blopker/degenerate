@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ContainerNetworkPolicyDisabledParamType($value)'; } 
  }
-@immutable final class ContainerNetworkPolicyDisabledParam {const ContainerNetworkPolicyDisabledParam({this.type = ContainerNetworkPolicyDisabledParamType.disabled});
+@immutable final class ContainerNetworkPolicyDisabledParam {const ContainerNetworkPolicyDisabledParam({required this.type});
 
 factory ContainerNetworkPolicyDisabledParam.fromJson(Map<String, dynamic> json) { return ContainerNetworkPolicyDisabledParam(
   type: ContainerNetworkPolicyDisabledParamType.fromJson(json['type'] as String),

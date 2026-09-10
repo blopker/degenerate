@@ -102,7 +102,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookIssuesReopenedIssueState($value)'; } 
  }
 /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
-@immutable final class WebhookIssuesReopenedIssue {const WebhookIssuesReopenedIssue({required this.id, required this.user, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.url, required this.eventsUrl, required this.htmlUrl, required this.activeLockReason, required this.updatedAt, required this.labelsUrl, required this.title, required this.milestone, required this.nodeId, required this.number, required this.state, required this.reactions, required this.repositoryUrl, this.type, this.pinnedComment = const Omittable.absent(), this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.performedViaGithubApp = const Omittable.absent(), this.stateReason = const Omittable.absent(), this.timelineUrl, this.locked, this.labels, this.draft, this.assignee = const Omittable.absent(), this.pullRequest, });
+@immutable final class WebhookIssuesReopenedIssue {const WebhookIssuesReopenedIssue({required this.id, required this.user, required this.assignees, required this.authorAssociation, required this.body, required this.closedAt, required this.comments, required this.commentsUrl, required this.createdAt, required this.url, required this.eventsUrl, required this.htmlUrl, required this.activeLockReason, required this.updatedAt, required this.labelsUrl, required this.title, required this.milestone, required this.nodeId, required this.number, required this.state, required this.reactions, required this.repositoryUrl, this.type = const Omittable.absent(), this.pinnedComment = const Omittable.absent(), this.subIssuesSummary, this.issueDependenciesSummary, this.issueFieldValues, this.performedViaGithubApp = const Omittable.absent(), this.stateReason = const Omittable.absent(), this.timelineUrl, this.locked, this.labels, this.draft, this.assignee = const Omittable.absent(), this.pullRequest, });
 
 factory WebhookIssuesReopenedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesReopenedIssue(
   activeLockReason: json['active_lock_reason'] != null ? WebhookIssuesReopenedIssueActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
@@ -139,7 +139,7 @@ factory WebhookIssuesReopenedIssue.fromJson(Map<String, dynamic> json) { return 
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
   user: json['user'] != null ? WebhookIssuesReopenedIssueUser.fromJson(json['user'] as Map<String, dynamic>) : null,
-  type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 final WebhookIssuesReopenedIssueActiveLockReason? activeLockReason;
@@ -217,7 +217,7 @@ final Uri url;
 
 final WebhookIssuesReopenedIssueUser? user;
 
-final IssueType? type;
+final Omittable<IssueType?> type;
 
 Map<String, dynamic> toJson() { return {
   'active_lock_reason': activeLockReason?.toJson(),
@@ -254,7 +254,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'user': user?.toJson(),
-  if (type != null) 'type': type?.toJson(),
+  if (type.isPresent) 'type': type.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') &&
       json.containsKey('assignees') &&
@@ -278,7 +278,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookIssuesReopenedIssue copyWith({WebhookIssuesReopenedIssueActiveLockReason? Function()? activeLockReason, Omittable<WebhookIssuesReopenedIssueAssignee?>? assignee, List<WebhookIssuesReopenedIssueAssignees?>? assignees, WebhookIssuesReopenedIssueAuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesReopenedIssueLabels?>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhookIssuesReopenedIssueMilestone? Function()? milestone, String? nodeId, int? number, Omittable<WebhookIssuesReopenedIssuePerformedViaGithubApp?>? performedViaGithubApp, WebhookIssuesReopenedIssuePullRequest? Function()? pullRequest, WebhookIssuesReopenedIssueReactions? reactions, Uri? repositoryUrl, Omittable<IssueComment?>? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, WebhookIssuesReopenedIssueState? state, Omittable<String?>? stateReason, Uri? Function()? timelineUrl, String? title, DateTime? updatedAt, Uri? url, WebhookIssuesReopenedIssueUser? Function()? user, IssueType? Function()? type, }) { return WebhookIssuesReopenedIssue(
+WebhookIssuesReopenedIssue copyWith({WebhookIssuesReopenedIssueActiveLockReason? Function()? activeLockReason, Omittable<WebhookIssuesReopenedIssueAssignee?>? assignee, List<WebhookIssuesReopenedIssueAssignees?>? assignees, WebhookIssuesReopenedIssueAuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesReopenedIssueLabels?>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhookIssuesReopenedIssueMilestone? Function()? milestone, String? nodeId, int? number, Omittable<WebhookIssuesReopenedIssuePerformedViaGithubApp?>? performedViaGithubApp, WebhookIssuesReopenedIssuePullRequest? Function()? pullRequest, WebhookIssuesReopenedIssueReactions? reactions, Uri? repositoryUrl, Omittable<IssueComment?>? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, WebhookIssuesReopenedIssueState? state, Omittable<String?>? stateReason, Uri? Function()? timelineUrl, String? title, DateTime? updatedAt, Uri? url, WebhookIssuesReopenedIssueUser? Function()? user, Omittable<IssueType?>? type, }) { return WebhookIssuesReopenedIssue(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee ?? this.assignee,
   assignees: assignees ?? this.assignees,
@@ -313,7 +313,7 @@ WebhookIssuesReopenedIssue copyWith({WebhookIssuesReopenedIssueActiveLockReason?
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
   user: user != null ? user() : this.user,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WebhookIssuesReopenedIssue &&

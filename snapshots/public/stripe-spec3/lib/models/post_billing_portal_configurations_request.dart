@@ -4,12 +4,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing
 
 factory PostBillingPortalConfigurationsRequest.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequest(
   businessProfile: json['business_profile'] != null ? PostBillingPortalConfigurationsRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
-  defaultReturnUrl: json['default_return_url'] != null ? OneOf2.parse(json['default_return_url'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsRequestDefaultReturnUrlVariant2.fromJson(v as String),) : null,
+  defaultReturnUrl: json['default_return_url'] != null ? PostBillingPortalConfigurationsRequestDefaultReturnUrl.fromJson(json['default_return_url']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   features: PostBillingPortalConfigurationsRequestFeatures.fromJson(json['features'] as Map<String, dynamic>),
   loginPage: json['login_page'] != null ? PostBillingPortalConfigurationsRequestLoginPage.fromJson(json['login_page'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  name: json['name'] != null ? OneOf2.parse(json['name'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsRequestNameVariant2.fromJson(v as String),) : null,
+  name: json['name'] != null ? PostBillingPortalConfigurationsRequestName.fromJson(json['name']) : null,
 ); }
 
 /// The business information shown to customers in the portal.

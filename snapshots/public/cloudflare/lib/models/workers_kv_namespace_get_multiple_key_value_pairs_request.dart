@@ -25,30 +25,34 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersKvNamespaceGetMultipleKeyValuePairsRequestType($value)'; } 
  }
-@immutable final class WorkersKvNamespaceGetMultipleKeyValuePairsRequest {const WorkersKvNamespaceGetMultipleKeyValuePairsRequest({required this.keys, this.type = WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.text, this.withMetadata = false, });
+@immutable final class WorkersKvNamespaceGetMultipleKeyValuePairsRequest {const WorkersKvNamespaceGetMultipleKeyValuePairsRequest({required this.keys, this.type, this.withMetadata, });
 
 factory WorkersKvNamespaceGetMultipleKeyValuePairsRequest.fromJson(Map<String, dynamic> json) { return WorkersKvNamespaceGetMultipleKeyValuePairsRequest(
   keys: (json['keys'] as List<dynamic>).map((e) => WorkersKvKeyNameBulk.fromJson(e as String)).toList(),
-  type: json.containsKey('type') ? WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.fromJson(json['type'] as String) : WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.text,
-  withMetadata: json.containsKey('withMetadata') ? json['withMetadata'] as bool : false,
+  type: json['type'] != null ? WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.fromJson(json['type'] as String) : null,
+  withMetadata: json['withMetadata'] as bool?,
 ); }
 
 /// Array of keys to retrieve (maximum of 100).
 final List<WorkersKvKeyNameBulk> keys;
 
 /// Whether to parse JSON values in the response.
-final WorkersKvNamespaceGetMultipleKeyValuePairsRequestType type;
+final WorkersKvNamespaceGetMultipleKeyValuePairsRequestType? type;
 
 /// Whether to include metadata in the response.
-final bool withMetadata;
+final bool? withMetadata;
 
+/// The value with the schema default applied when absent.
+WorkersKvNamespaceGetMultipleKeyValuePairsRequestType get typeOrDefault { return type ?? WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.fromJson('text'); } 
+/// The value with the schema default applied when absent.
+bool get withMetadataOrDefault { return withMetadata ?? false; } 
 Map<String, dynamic> toJson() { return {
   'keys': keys.map((e) => e.toJson()).toList(),
-  'type': type.toJson(),
-  'withMetadata': withMetadata,
+  if (type != null) 'type': type?.toJson(),
+  'withMetadata': ?withMetadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('keys'); } 
-WorkersKvNamespaceGetMultipleKeyValuePairsRequest copyWith({List<WorkersKvKeyNameBulk>? keys, WorkersKvNamespaceGetMultipleKeyValuePairsRequestType Function()? type, bool Function()? withMetadata, }) { return WorkersKvNamespaceGetMultipleKeyValuePairsRequest(
+WorkersKvNamespaceGetMultipleKeyValuePairsRequest copyWith({List<WorkersKvKeyNameBulk>? keys, WorkersKvNamespaceGetMultipleKeyValuePairsRequestType? Function()? type, bool? Function()? withMetadata, }) { return WorkersKvNamespaceGetMultipleKeyValuePairsRequest(
   keys: keys ?? this.keys,
   type: type != null ? type() : this.type,
   withMetadata: withMetadata != null ? withMetadata() : this.withMetadata,

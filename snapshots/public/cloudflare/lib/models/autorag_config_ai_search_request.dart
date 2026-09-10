@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_ai_search_request_filters.dart';import 'autorag_config_ai_search_request_filters_variant1.dart';import 'autorag_config_ai_search_request_filters_variant2.dart';import 'autorag_config_ai_search_request_model.dart';import 'autorag_config_ai_search_request_ranking_options.dart';import 'autorag_config_ai_search_request_reranking.dart';@immutable final class AutoragConfigAiSearchRequest {const AutoragConfigAiSearchRequest({required this.query, this.filters, this.maxNumResults = 10, this.model, this.rankingOptions, this.reranking, this.rewriteQuery = false, this.stream = false, this.systemPrompt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_ai_search_request_filters.dart';import 'autorag_config_ai_search_request_model.dart';import 'autorag_config_ai_search_request_ranking_options.dart';import 'autorag_config_ai_search_request_reranking.dart';@immutable final class AutoragConfigAiSearchRequest {const AutoragConfigAiSearchRequest({required this.query, this.filters, this.maxNumResults, this.model, this.rankingOptions, this.reranking, this.rewriteQuery, this.stream, this.systemPrompt, });
 
 factory AutoragConfigAiSearchRequest.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchRequest(
-  filters: json['filters'] != null ? OneOf2.parse(json['filters'], fromA: (v) => AutoragConfigAiSearchRequestFiltersVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => AutoragConfigAiSearchRequestFiltersVariant2.fromJson(v as Map<String, dynamic>),) : null,
-  maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => AutoragConfigAiSearchRequestModelVariant1.fromJson(v as String), fromB: (v) => AutoragConfigAiSearchRequestModelVariant2.fromJson(v as String),) : null,
+  filters: json['filters'] != null ? AutoragConfigAiSearchRequestFilters.fromJson(json['filters']) : null,
+  maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
+  model: json['model'] != null ? AutoragConfigAiSearchRequestModel.fromJson(json['model']) : null,
   query: json['query'] as String,
   rankingOptions: json['ranking_options'] != null ? AutoragConfigAiSearchRequestRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
   reranking: json['reranking'] != null ? AutoragConfigAiSearchRequestReranking.fromJson(json['reranking'] as Map<String, dynamic>) : null,
-  rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
-  stream: json.containsKey('stream') ? json['stream'] as bool : false,
+  rewriteQuery: json['rewrite_query'] as bool?,
+  stream: json['stream'] as bool?,
   systemPrompt: json['system_prompt'] as String?,
 ); }
 
 final AutoragConfigAiSearchRequestFilters? filters;
 
-final int maxNumResults;
+final int? maxNumResults;
 
 final AutoragConfigAiSearchRequestModel? model;
 
@@ -26,25 +26,31 @@ final AutoragConfigAiSearchRequestRankingOptions? rankingOptions;
 
 final AutoragConfigAiSearchRequestReranking? reranking;
 
-final bool rewriteQuery;
+final bool? rewriteQuery;
 
-final bool stream;
+final bool? stream;
 
 final String? systemPrompt;
 
+/// The value with the schema default applied when absent.
+int get maxNumResultsOrDefault { return maxNumResults ?? 10; } 
+/// The value with the schema default applied when absent.
+bool get rewriteQueryOrDefault { return rewriteQuery ?? false; } 
+/// The value with the schema default applied when absent.
+bool get streamOrDefault { return stream ?? false; } 
 Map<String, dynamic> toJson() { return {
   if (filters != null) 'filters': filters?.toJson(),
-  'max_num_results': maxNumResults,
+  'max_num_results': ?maxNumResults,
   if (model != null) 'model': model?.toJson(),
   'query': query,
   if (rankingOptions != null) 'ranking_options': rankingOptions?.toJson(),
   if (reranking != null) 'reranking': reranking?.toJson(),
-  'rewrite_query': rewriteQuery,
-  'stream': stream,
+  'rewrite_query': ?rewriteQuery,
+  'stream': ?stream,
   'system_prompt': ?systemPrompt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('query') && json['query'] is String; } 
-AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Function()? filters, int Function()? maxNumResults, AutoragConfigAiSearchRequestModel? Function()? model, String? query, AutoragConfigAiSearchRequestRankingOptions? Function()? rankingOptions, AutoragConfigAiSearchRequestReranking? Function()? reranking, bool Function()? rewriteQuery, bool Function()? stream, String? Function()? systemPrompt, }) { return AutoragConfigAiSearchRequest(
+AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Function()? filters, int? Function()? maxNumResults, AutoragConfigAiSearchRequestModel? Function()? model, String? query, AutoragConfigAiSearchRequestRankingOptions? Function()? rankingOptions, AutoragConfigAiSearchRequestReranking? Function()? reranking, bool? Function()? rewriteQuery, bool? Function()? stream, String? Function()? systemPrompt, }) { return AutoragConfigAiSearchRequest(
   filters: filters != null ? filters() : this.filters,
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   model: model != null ? model() : this.model,

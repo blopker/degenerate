@@ -6,28 +6,33 @@ import 'end_reason.dart';
 
 @immutable
 final class EndRoomEvent {
-  const EndRoomEvent({required this.reason, this.type = 'end_room'});
+  const EndRoomEvent({required this.reason, this.type});
 
   factory EndRoomEvent.fromJson(Map<String, dynamic> json) {
     return EndRoomEvent(
-      type: json.containsKey('type') ? json['type'] as String : 'end_room',
+      type: json['type'] as String?,
       reason: EndReason.fromJson(json['reason'] as String),
     );
   }
 
-  final String type;
+  final String? type;
 
   final EndReason reason;
 
+  /// The value with the schema default applied when absent.
+  String get typeOrDefault {
+    return type ?? 'end_room';
+  }
+
   Map<String, dynamic> toJson() {
-    return {'type': type, 'reason': reason.toJson()};
+    return {'type': ?type, 'reason': reason.toJson()};
   }
 
   static bool canParse(Map<String, dynamic> json) {
     return json.containsKey('reason');
   }
 
-  EndRoomEvent copyWith({String Function()? type, EndReason? reason}) {
+  EndRoomEvent copyWith({String? Function()? type, EndReason? reason}) {
     return EndRoomEvent(
       type: type != null ? type() : this.type,
       reason: reason ?? this.reason,

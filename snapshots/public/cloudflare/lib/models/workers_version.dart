@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WorkersVersionUsageModel($value)'; } 
  }
-@immutable final class WorkersVersion {const WorkersVersion({required this.createdOn, required this.id, required this.number, required this.urls, this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.mainModule, this.migrations, this.modules, this.placement, this.source, this.startupTimeMs, this.usageModel = WorkersVersionUsageModel.standard, });
+@immutable final class WorkersVersion {const WorkersVersion({required this.createdOn, required this.id, required this.number, required this.urls, this.annotations, this.assets, this.bindings, this.compatibilityDate, this.compatibilityFlags, this.limits, this.mainModule, this.migrations, this.modules, this.placement, this.source, this.startupTimeMs, this.usageModel, });
 
 factory WorkersVersion.fromJson(Map<String, dynamic> json) { return WorkersVersion(
   annotations: json['annotations'] != null ? WorkersVersionAnnotations.fromJson(json['annotations'] as Map<String, dynamic>) : null,
@@ -47,7 +47,7 @@ factory WorkersVersion.fromJson(Map<String, dynamic> json) { return WorkersVersi
   source: json['source'] as String?,
   startupTimeMs: json['startup_time_ms'] != null ? (json['startup_time_ms'] as num).toInt() : null,
   urls: (json['urls'] as List<dynamic>).map((e) => Uri.parse(e as String)).toList(),
-  usageModel: json.containsKey('usage_model') ? WorkersVersionUsageModel.fromJson(json['usage_model'] as String) : WorkersVersionUsageModel.standard,
+  usageModel: json['usage_model'] != null ? WorkersVersionUsageModel.fromJson(json['usage_model'] as String) : null,
 ); }
 
 /// Metadata about the version.
@@ -106,8 +106,10 @@ final int? startupTimeMs;
 final List<Uri> urls;
 
 /// Usage model for the version.
-final WorkersVersionUsageModel usageModel;
+final WorkersVersionUsageModel? usageModel;
 
+/// The value with the schema default applied when absent.
+WorkersVersionUsageModel get usageModelOrDefault { return usageModel ?? WorkersVersionUsageModel.fromJson('standard'); } 
 Map<String, dynamic> toJson() { return {
   if (annotations != null) 'annotations': annotations?.toJson(),
   if (assets != null) 'assets': assets?.toJson(),
@@ -125,13 +127,13 @@ Map<String, dynamic> toJson() { return {
   'source': ?source,
   'startup_time_ms': ?startupTimeMs,
   'urls': urls.map((e) => e.toString()).toList(),
-  'usage_model': usageModel.toJson(),
+  if (usageModel != null) 'usage_model': usageModel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('urls'); } 
-WorkersVersion copyWith({WorkersVersionAnnotations? Function()? annotations, WorkersVersionAssets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, DateTime? createdOn, String? id, WorkersVersionLimits? Function()? limits, String? Function()? mainModule, WorkersVersionMigrations? Function()? migrations, List<WorkersVersionModules>? Function()? modules, int? number, WorkersPlacementInfoNoStatus? Function()? placement, String? Function()? source, int? Function()? startupTimeMs, List<Uri>? urls, WorkersVersionUsageModel Function()? usageModel, }) { return WorkersVersion(
+WorkersVersion copyWith({WorkersVersionAnnotations? Function()? annotations, WorkersVersionAssets? Function()? assets, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, DateTime? createdOn, String? id, WorkersVersionLimits? Function()? limits, String? Function()? mainModule, WorkersVersionMigrations? Function()? migrations, List<WorkersVersionModules>? Function()? modules, int? number, WorkersPlacementInfoNoStatus? Function()? placement, String? Function()? source, int? Function()? startupTimeMs, List<Uri>? urls, WorkersVersionUsageModel? Function()? usageModel, }) { return WorkersVersion(
   annotations: annotations != null ? annotations() : this.annotations,
   assets: assets != null ? assets() : this.assets,
   bindings: bindings != null ? bindings() : this.bindings,

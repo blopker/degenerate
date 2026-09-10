@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MerchandiseNotAsDescribedReceivedAtVariant2($value)'; } 
  }
-typedef MerchandiseNotAsDescribedReceivedAt = OneOf2<int,MerchandiseNotAsDescribedReceivedAtVariant2>;
+
+@immutable
+final class MerchandiseNotAsDescribedReceivedAt {
+  const MerchandiseNotAsDescribedReceivedAt({this.$int = const Omittable.absent(),
+this.merchandiseNotAsDescribedReceivedAtVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const MerchandiseNotAsDescribedReceivedAt._({required this.rawValue, required this.$int,
+required this.merchandiseNotAsDescribedReceivedAtVariant2,});
+  factory MerchandiseNotAsDescribedReceivedAt.fromJson(Object? json) => MerchandiseNotAsDescribedReceivedAt._(
+    rawValue: Omittable(json),
+    $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+merchandiseNotAsDescribedReceivedAtVariant2: parseAnyOfVariant<MerchandiseNotAsDescribedReceivedAtVariant2>(json, (value) => MerchandiseNotAsDescribedReceivedAtVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<int> $int;
+final Omittable<MerchandiseNotAsDescribedReceivedAtVariant2> merchandiseNotAsDescribedReceivedAtVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $int.isPresent || merchandiseNotAsDescribedReceivedAtVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($int.isPresent) $int.value,
+if (merchandiseNotAsDescribedReceivedAtVariant2.isPresent) merchandiseNotAsDescribedReceivedAtVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is MerchandiseNotAsDescribedReceivedAt && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'MerchandiseNotAsDescribedReceivedAt(${toJson()})';
+}

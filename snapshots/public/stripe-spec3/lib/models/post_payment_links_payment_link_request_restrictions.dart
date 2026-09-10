@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestRestrictionsVariant2($value)'; } 
  }
-typedef PostPaymentLinksPaymentLinkRequestRestrictions = OneOf2<RestrictionsParams,PostPaymentLinksPaymentLinkRequestRestrictionsVariant2>;
+/// Settings that restrict the usage of a payment link.
+@immutable
+final class PostPaymentLinksPaymentLinkRequestRestrictions {
+  const PostPaymentLinksPaymentLinkRequestRestrictions({this.restrictionsParams = const Omittable.absent(),
+this.postPaymentLinksPaymentLinkRequestRestrictionsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentLinksPaymentLinkRequestRestrictions._({required this.rawValue, required this.restrictionsParams,
+required this.postPaymentLinksPaymentLinkRequestRestrictionsVariant2,});
+  factory PostPaymentLinksPaymentLinkRequestRestrictions.fromJson(Object? json) => PostPaymentLinksPaymentLinkRequestRestrictions._(
+    rawValue: Omittable(json),
+    restrictionsParams: parseAnyOfVariant<RestrictionsParams>(json, (value) => RestrictionsParams.fromJson(value! as Map<String, dynamic>)),
+postPaymentLinksPaymentLinkRequestRestrictionsVariant2: parseAnyOfVariant<PostPaymentLinksPaymentLinkRequestRestrictionsVariant2>(json, (value) => PostPaymentLinksPaymentLinkRequestRestrictionsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<RestrictionsParams> restrictionsParams;
+final Omittable<PostPaymentLinksPaymentLinkRequestRestrictionsVariant2> postPaymentLinksPaymentLinkRequestRestrictionsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => restrictionsParams.isPresent || postPaymentLinksPaymentLinkRequestRestrictionsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (restrictionsParams.isPresent) restrictionsParams.value?.toJson(),
+if (postPaymentLinksPaymentLinkRequestRestrictionsVariant2.isPresent) postPaymentLinksPaymentLinkRequestRestrictionsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestRestrictions && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentLinksPaymentLinkRequestRestrictions(${toJson()})';
+}

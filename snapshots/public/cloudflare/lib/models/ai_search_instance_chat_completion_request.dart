@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_in
 factory AiSearchInstanceChatCompletionRequest.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequest(
   aiSearchOptions: json['ai_search_options'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptions.fromJson(json['ai_search_options'] as Map<String, dynamic>) : null,
   messages: (json['messages'] as List<dynamic>).map((e) => AiSearchInstanceChatCompletionRequestMessages.fromJson(e as Map<String, dynamic>)).toList(),
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => AiSearchInstanceChatCompletionRequestModelVariant1.fromJson(v as String), fromB: (v) => AiSearchInstanceChatCompletionRequestModelVariant2.fromJson(v as String),) : null,
+  model: json['model'] != null ? AiSearchInstanceChatCompletionRequestModel.fromJson(json['model']) : null,
   stream: json['stream'] as bool?,
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'ai_search_options', 'messages', 'model', 'stream'}.contains(e.key))),
 ); }
@@ -42,6 +42,6 @@ AiSearchInstanceChatCompletionRequest copyWith({AiSearchInstanceChatCompletionRe
           model == other.model &&
           stream == other.stream &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(aiSearchOptions, Object.hashAll(messages), model, stream, Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(aiSearchOptions, Object.hashAll(messages), model, stream, mapHash(additionalProperties)); } 
 @override String toString() { return 'AiSearchInstanceChatCompletionRequest(aiSearchOptions: $aiSearchOptions, messages: $messages, model: $model, stream: $stream, additionalProperties: $additionalProperties)'; } 
  }

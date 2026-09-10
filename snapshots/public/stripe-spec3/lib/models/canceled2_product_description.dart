@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Canceled2ProductDescriptionVariant2($value)'; } 
  }
-typedef Canceled2ProductDescription = OneOf2<String,Canceled2ProductDescriptionVariant2>;
+
+@immutable
+final class Canceled2ProductDescription {
+  const Canceled2ProductDescription({this.string = const Omittable.absent(),
+this.canceled2ProductDescriptionVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const Canceled2ProductDescription._({required this.rawValue, required this.string,
+required this.canceled2ProductDescriptionVariant2,});
+  factory Canceled2ProductDescription.fromJson(Object? json) => Canceled2ProductDescription._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+canceled2ProductDescriptionVariant2: parseAnyOfVariant<Canceled2ProductDescriptionVariant2>(json, (value) => Canceled2ProductDescriptionVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<Canceled2ProductDescriptionVariant2> canceled2ProductDescriptionVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || canceled2ProductDescriptionVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (canceled2ProductDescriptionVariant2.isPresent) canceled2ProductDescriptionVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is Canceled2ProductDescription && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'Canceled2ProductDescription(${toJson()})';
+}

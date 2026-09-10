@@ -116,9 +116,8 @@ final class DefaultApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return ListModel.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return ListModel.fromJson(json as Map<String, dynamic>);
       },
     );
   }

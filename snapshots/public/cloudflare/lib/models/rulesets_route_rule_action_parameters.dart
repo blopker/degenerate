@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_route_origin.dart';import 'rulesets_route_sni.dart';/// A value to rewrite the HTTP host header to.
-extension type const RulesetsRouteHostHeader(String value) {
-factory RulesetsRouteHostHeader.fromJson(String json) => RulesetsRouteHostHeader(json);
-
-String toJson() => value;
-
-}
-@immutable final class RulesetsRouteRuleActionParameters {const RulesetsRouteRuleActionParameters({this.hostHeader, this.origin, this.sni, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_route_host_header.dart';import 'rulesets_route_origin.dart';import 'rulesets_route_sni.dart';@immutable final class RulesetsRouteRuleActionParameters {const RulesetsRouteRuleActionParameters({this.hostHeader, this.origin, this.sni, });
 
 factory RulesetsRouteRuleActionParameters.fromJson(Map<String, dynamic> json) { return RulesetsRouteRuleActionParameters(
   hostHeader: json['host_header'] != null ? RulesetsRouteHostHeader.fromJson(json['host_header'] as String) : null,

@@ -50,30 +50,34 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitTranscriptionConfigLanguage($value)'; } 
  }
 /// Transcription Configurations
-@immutable final class RealtimekitTranscriptionConfig {const RealtimekitTranscriptionConfig({this.keywords, this.language = RealtimekitTranscriptionConfigLanguage.enUs, this.profanityFilter = false, });
+@immutable final class RealtimekitTranscriptionConfig {const RealtimekitTranscriptionConfig({this.keywords, this.language, this.profanityFilter, });
 
 factory RealtimekitTranscriptionConfig.fromJson(Map<String, dynamic> json) { return RealtimekitTranscriptionConfig(
   keywords: (json['keywords'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  language: json.containsKey('language') ? RealtimekitTranscriptionConfigLanguage.fromJson(json['language'] as String) : RealtimekitTranscriptionConfigLanguage.enUs,
-  profanityFilter: json.containsKey('profanity_filter') ? json['profanity_filter'] as bool : false,
+  language: json['language'] != null ? RealtimekitTranscriptionConfigLanguage.fromJson(json['language'] as String) : null,
+  profanityFilter: json['profanity_filter'] as bool?,
 ); }
 
 /// Adds specific terms to improve accurate detection during transcription.
 final List<String>? keywords;
 
 /// Specifies the language code for transcription to ensure accurate results.
-final RealtimekitTranscriptionConfigLanguage language;
+final RealtimekitTranscriptionConfigLanguage? language;
 
 /// Control the inclusion of offensive language in transcriptions.
-final bool profanityFilter;
+final bool? profanityFilter;
 
+/// The value with the schema default applied when absent.
+RealtimekitTranscriptionConfigLanguage get languageOrDefault { return language ?? RealtimekitTranscriptionConfigLanguage.fromJson('en-US'); } 
+/// The value with the schema default applied when absent.
+bool get profanityFilterOrDefault { return profanityFilter ?? false; } 
 Map<String, dynamic> toJson() { return {
   'keywords': ?keywords,
-  'language': language.toJson(),
-  'profanity_filter': profanityFilter,
+  if (language != null) 'language': language?.toJson(),
+  'profanity_filter': ?profanityFilter,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'keywords', 'language', 'profanity_filter'}.contains(key)); } 
-RealtimekitTranscriptionConfig copyWith({List<String>? Function()? keywords, RealtimekitTranscriptionConfigLanguage Function()? language, bool Function()? profanityFilter, }) { return RealtimekitTranscriptionConfig(
+RealtimekitTranscriptionConfig copyWith({List<String>? Function()? keywords, RealtimekitTranscriptionConfigLanguage? Function()? language, bool? Function()? profanityFilter, }) { return RealtimekitTranscriptionConfig(
   keywords: keywords != null ? keywords() : this.keywords,
   language: language != null ? language() : this.language,
   profanityFilter: profanityFilter != null ? profanityFilter() : this.profanityFilter,

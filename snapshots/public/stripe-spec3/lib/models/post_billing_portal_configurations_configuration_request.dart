@@ -5,12 +5,12 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing
 factory PostBillingPortalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequest(
   active: json['active'] as bool?,
   businessProfile: json['business_profile'] != null ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
-  defaultReturnUrl: json['default_return_url'] != null ? OneOf2.parse(json['default_return_url'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsConfigurationRequestDefaultReturnUrlVariant2.fromJson(v as String),) : null,
+  defaultReturnUrl: json['default_return_url'] != null ? PostBillingPortalConfigurationsConfigurationRequestDefaultReturnUrl.fromJson(json['default_return_url']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   features: json['features'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   loginPage: json['login_page'] != null ? PostBillingPortalConfigurationsConfigurationRequestLoginPage.fromJson(json['login_page'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostBillingPortalConfigurationsConfigurationRequestMetadataVariant2.fromJson(v as String),) : null,
-  name: json['name'] != null ? OneOf2.parse(json['name'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsConfigurationRequestNameVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostBillingPortalConfigurationsConfigurationRequestMetadata.fromJson(json['metadata']) : null,
+  name: json['name'] != null ? PostBillingPortalConfigurationsConfigurationRequestName.fromJson(json['name']) : null,
 ); }
 
 /// Whether the configuration is active and can be used to create portal sessions.

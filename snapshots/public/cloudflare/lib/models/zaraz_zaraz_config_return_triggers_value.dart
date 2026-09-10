@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_click_listener_rule.dart';import 'zaraz_element_visibility_rule.dart';import 'zaraz_form_submission_rule.dart';import 'zaraz_load_rule.dart';import 'zaraz_scroll_depth_rule.dart';import 'zaraz_timer_rule.dart';import 'zaraz_variable_match_rule.dart';import 'zaraz_zaraz_config_return_triggers_value_exclude_rules.dart';import 'zaraz_zaraz_config_return_triggers_value_load_rules.dart';@immutable final class ZarazZarazConfigReturnTriggersValueSystem {const ZarazZarazConfigReturnTriggersValueSystem._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_zaraz_config_return_triggers_value_exclude_rules.dart';import 'zaraz_zaraz_config_return_triggers_value_load_rules.dart';@immutable final class ZarazZarazConfigReturnTriggersValueSystem {const ZarazZarazConfigReturnTriggersValueSystem._(this.value);
 
 factory ZarazZarazConfigReturnTriggersValueSystem.fromJson(String json) { return switch (json) {
   'pageload' => pageload,
@@ -25,8 +25,8 @@ bool get isUnknown { return !values.contains(this); }
 
 factory ZarazZarazConfigReturnTriggersValue.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigReturnTriggersValue(
   description: json['description'] as String?,
-  excludeRules: (json['excludeRules'] as List<dynamic>).map((e) => OneOf7.parse(e, fromA: (v) => ZarazLoadRule.fromJson(v as Map<String, dynamic>), fromB: (v) => ZarazClickListenerRule.fromJson(v as Map<String, dynamic>), fromC: (v) => ZarazTimerRule.fromJson(v as Map<String, dynamic>), fromD: (v) => ZarazFormSubmissionRule.fromJson(v as Map<String, dynamic>), fromE: (v) => ZarazVariableMatchRule.fromJson(v as Map<String, dynamic>), fromF: (v) => ZarazScrollDepthRule.fromJson(v as Map<String, dynamic>), fromG: (v) => ZarazElementVisibilityRule.fromJson(v as Map<String, dynamic>),)).toList(),
-  loadRules: (json['loadRules'] as List<dynamic>).map((e) => OneOf7.parse(e, fromA: (v) => ZarazLoadRule.fromJson(v as Map<String, dynamic>), fromB: (v) => ZarazClickListenerRule.fromJson(v as Map<String, dynamic>), fromC: (v) => ZarazTimerRule.fromJson(v as Map<String, dynamic>), fromD: (v) => ZarazFormSubmissionRule.fromJson(v as Map<String, dynamic>), fromE: (v) => ZarazVariableMatchRule.fromJson(v as Map<String, dynamic>), fromF: (v) => ZarazScrollDepthRule.fromJson(v as Map<String, dynamic>), fromG: (v) => ZarazElementVisibilityRule.fromJson(v as Map<String, dynamic>),)).toList(),
+  excludeRules: (json['excludeRules'] as List<dynamic>).map(ZarazZarazConfigReturnTriggersValueExcludeRules.fromJson).toList(),
+  loadRules: (json['loadRules'] as List<dynamic>).map(ZarazZarazConfigReturnTriggersValueLoadRules.fromJson).toList(),
   name: json['name'] as String,
   system: json['system'] != null ? ZarazZarazConfigReturnTriggersValueSystem.fromJson(json['system'] as String) : null,
 ); }

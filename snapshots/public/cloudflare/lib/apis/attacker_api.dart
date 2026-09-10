@@ -33,10 +33,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetAttackerListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetAttackerListResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetAttackerListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return GetAttackerListResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

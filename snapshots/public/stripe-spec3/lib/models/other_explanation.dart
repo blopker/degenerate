@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OtherExplanationVariant2($value)'; } 
  }
-typedef OtherExplanation = OneOf2<String,OtherExplanationVariant2>;
+
+@immutable
+final class OtherExplanation {
+  const OtherExplanation({this.string = const Omittable.absent(),
+this.otherExplanationVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const OtherExplanation._({required this.rawValue, required this.string,
+required this.otherExplanationVariant2,});
+  factory OtherExplanation.fromJson(Object? json) => OtherExplanation._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+otherExplanationVariant2: parseAnyOfVariant<OtherExplanationVariant2>(json, (value) => OtherExplanationVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<OtherExplanationVariant2> otherExplanationVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || otherExplanationVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (otherExplanationVariant2.isPresent) otherExplanationVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is OtherExplanation && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'OtherExplanation(${toJson()})';
+}

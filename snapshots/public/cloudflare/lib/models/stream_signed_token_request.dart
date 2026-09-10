@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_access_rules.dart';@immutable final class StreamSignedTokenRequest {const StreamSignedTokenRequest({this.accessRules, this.downloadable = false, this.exp, this.id, this.nbf, this.pem, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_access_rules.dart';@immutable final class StreamSignedTokenRequest {const StreamSignedTokenRequest({this.accessRules, this.downloadable, this.exp, this.id, this.nbf, this.pem, });
 
 factory StreamSignedTokenRequest.fromJson(Map<String, dynamic> json) { return StreamSignedTokenRequest(
   accessRules: (json['accessRules'] as List<dynamic>?)?.map((e) => StreamAccessRules.fromJson(e as Map<String, dynamic>)).toList(),
-  downloadable: json.containsKey('downloadable') ? json['downloadable'] as bool : false,
+  downloadable: json['downloadable'] as bool?,
   exp: json['exp'] != null ? (json['exp'] as num).toInt() : null,
   id: json['id'] as String?,
   nbf: json['nbf'] != null ? (json['nbf'] as num).toInt() : null,
@@ -15,7 +15,7 @@ factory StreamSignedTokenRequest.fromJson(Map<String, dynamic> json) { return St
 final List<StreamAccessRules>? accessRules;
 
 /// The optional boolean value that enables using signed tokens to access MP4 download links for a video.
-final bool downloadable;
+final bool? downloadable;
 
 /// The optional unix epoch timestamp that specficies the time after a token is not accepted. The maximum time specification is 24 hours from issuing time. If this field is not set, the default is one hour after issuing.
 final int? exp;
@@ -29,16 +29,18 @@ final int? nbf;
 /// The optional base64 encoded private key in PEM format associated with a Stream signing key. If present, the `id` field is also required.
 final String? pem;
 
+/// The value with the schema default applied when absent.
+bool get downloadableOrDefault { return downloadable ?? false; } 
 Map<String, dynamic> toJson() { return {
   if (accessRules != null) 'accessRules': accessRules?.map((e) => e.toJson()).toList(),
-  'downloadable': downloadable,
+  'downloadable': ?downloadable,
   'exp': ?exp,
   'id': ?id,
   'nbf': ?nbf,
   'pem': ?pem,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessRules', 'downloadable', 'exp', 'id', 'nbf', 'pem'}.contains(key)); } 
-StreamSignedTokenRequest copyWith({List<StreamAccessRules>? Function()? accessRules, bool Function()? downloadable, int? Function()? exp, String? Function()? id, int? Function()? nbf, String? Function()? pem, }) { return StreamSignedTokenRequest(
+StreamSignedTokenRequest copyWith({List<StreamAccessRules>? Function()? accessRules, bool? Function()? downloadable, int? Function()? exp, String? Function()? id, int? Function()? nbf, String? Function()? pem, }) { return StreamSignedTokenRequest(
   accessRules: accessRules != null ? accessRules() : this.accessRules,
   downloadable: downloadable != null ? downloadable() : this.downloadable,
   exp: exp != null ? exp() : this.exp,

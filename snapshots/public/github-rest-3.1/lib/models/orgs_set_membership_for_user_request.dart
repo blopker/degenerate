@@ -27,22 +27,24 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsSetMembershipForUserRequestRole($value)'; } 
  }
-@immutable final class OrgsSetMembershipForUserRequest {const OrgsSetMembershipForUserRequest({this.role = OrgsSetMembershipForUserRequestRole.member});
+@immutable final class OrgsSetMembershipForUserRequest {const OrgsSetMembershipForUserRequest({this.role});
 
 factory OrgsSetMembershipForUserRequest.fromJson(Map<String, dynamic> json) { return OrgsSetMembershipForUserRequest(
-  role: json.containsKey('role') ? OrgsSetMembershipForUserRequestRole.fromJson(json['role'] as String) : OrgsSetMembershipForUserRequestRole.member,
+  role: json['role'] != null ? OrgsSetMembershipForUserRequestRole.fromJson(json['role'] as String) : null,
 ); }
 
 /// The role to give the user in the organization. Can be one of:
 ///  * `admin` - The user will become an owner of the organization.
 ///  * `member` - The user will become a non-owner member of the organization.
-final OrgsSetMembershipForUserRequestRole role;
+final OrgsSetMembershipForUserRequestRole? role;
 
+/// The value with the schema default applied when absent.
+OrgsSetMembershipForUserRequestRole get roleOrDefault { return role ?? OrgsSetMembershipForUserRequestRole.fromJson('member'); } 
 Map<String, dynamic> toJson() { return {
-  'role': role.toJson(),
+  if (role != null) 'role': role?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role'}.contains(key)); } 
-OrgsSetMembershipForUserRequest copyWith({OrgsSetMembershipForUserRequestRole Function()? role}) { return OrgsSetMembershipForUserRequest(
+OrgsSetMembershipForUserRequest copyWith({OrgsSetMembershipForUserRequestRole? Function()? role}) { return OrgsSetMembershipForUserRequest(
   role: role != null ? role() : this.role,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

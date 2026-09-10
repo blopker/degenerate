@@ -6,7 +6,7 @@ factory ShieldSingleOperationResponse.fromJson(Map<String, dynamic> json) { retu
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: ShieldOperation.fromJson(json['result'] as Map<String, dynamic>),
+  result: json['result'] != null ? ShieldOperation.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<ShieldMessages2> errors;
@@ -16,23 +16,23 @@ final List<ShieldMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final ShieldOperation result;
+final ShieldOperation? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  'result': result.toJson(),
+  'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-ShieldSingleOperationResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, ShieldOperation? result, }) { return ShieldSingleOperationResponse(
+ShieldSingleOperationResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, ShieldOperation? Function()? result, }) { return ShieldSingleOperationResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-  result: result ?? this.result,
+  result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldSingleOperationResponse &&

@@ -32,7 +32,7 @@ factory WebhookInstallationRepositoriesRemoved.fromJson(Map<String, dynamic> jso
   repositoriesRemoved: (json['repositories_removed'] as List<dynamic>).map((e) => WebhookInstallationRepositoriesRemovedRepositoriesRemoved.fromJson(e as Map<String, dynamic>)).toList(),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   repositorySelection: WebhooksRepositorySelection.fromJson(json['repository_selection'] as String),
-  requester: WebhooksUser.fromJson(json['requester'] as Map<String, dynamic>),
+  requester: json['requester'] != null ? WebhooksUser.fromJson(json['requester'] as Map<String, dynamic>) : null,
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
 ); }
 
@@ -55,7 +55,7 @@ final RepositoryWebhooks? repository;
 /// Describe whether all repositories have been selected or there's a selection involved
 final WebhooksRepositorySelection repositorySelection;
 
-final WebhooksUser requester;
+final WebhooksUser? requester;
 
 final SimpleUser sender;
 
@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'repositories_removed': repositoriesRemoved.map((e) => e.toJson()).toList(),
   if (repository != null) 'repository': repository?.toJson(),
   'repository_selection': repositorySelection.toJson(),
-  'requester': requester.toJson(),
+  'requester': requester?.toJson(),
   'sender': sender.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
@@ -78,7 +78,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('repository_selection') &&
       json.containsKey('requester') &&
       json.containsKey('sender'); } 
-WebhookInstallationRepositoriesRemoved copyWith({WebhookInstallationRepositoriesRemovedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositoriesAdded2>? repositoriesAdded, List<WebhookInstallationRepositoriesRemovedRepositoriesRemoved>? repositoriesRemoved, RepositoryWebhooks? Function()? repository, WebhooksRepositorySelection? repositorySelection, WebhooksUser? requester, SimpleUser? sender, }) { return WebhookInstallationRepositoriesRemoved(
+WebhookInstallationRepositoriesRemoved copyWith({WebhookInstallationRepositoriesRemovedAction? action, EnterpriseWebhooks? Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhooksRepositoriesAdded2>? repositoriesAdded, List<WebhookInstallationRepositoriesRemovedRepositoriesRemoved>? repositoriesRemoved, RepositoryWebhooks? Function()? repository, WebhooksRepositorySelection? repositorySelection, WebhooksUser? Function()? requester, SimpleUser? sender, }) { return WebhookInstallationRepositoriesRemoved(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation ?? this.installation,
@@ -87,7 +87,7 @@ WebhookInstallationRepositoriesRemoved copyWith({WebhookInstallationRepositories
   repositoriesRemoved: repositoriesRemoved ?? this.repositoriesRemoved,
   repository: repository != null ? repository() : this.repository,
   repositorySelection: repositorySelection ?? this.repositorySelection,
-  requester: requester ?? this.requester,
+  requester: requester != null ? requester() : this.requester,
   sender: sender ?? this.sender,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

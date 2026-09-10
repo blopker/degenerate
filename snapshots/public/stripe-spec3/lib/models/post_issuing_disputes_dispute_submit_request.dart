@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing
 
 factory PostIssuingDisputesDisputeSubmitRequest.fromJson(Map<String, dynamic> json) { return PostIssuingDisputesDisputeSubmitRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostIssuingDisputesDisputeSubmitRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostIssuingDisputesDisputeSubmitRequestMetadata.fromJson(json['metadata']) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddParticipantRequest {const AddParticipantRequest({required this.customParticipantId, this.name = const Omittable.absent(), this.picture = const Omittable.absent(), this.presetName = 'group_call_host', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AddParticipantRequest {const AddParticipantRequest({required this.customParticipantId, required this.presetName, this.name = const Omittable.absent(), this.picture = const Omittable.absent(), });
 
 factory AddParticipantRequest.fromJson(Map<String, dynamic> json) { return AddParticipantRequest(
   customParticipantId: json['custom_participant_id'] as String,

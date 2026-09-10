@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_automatic_payment_methods.dart';import 'post_setup_intents_request_mandate_data.dart';import 'post_setup_intents_request_payment_method_data.dart';import 'post_setup_intents_request_payment_method_options.dart';import 'post_setup_intents_request_single_use.dart';import 'secret_key_param3.dart';@immutable final class PostSetupIntentsRequestExcludedPaymentMethodTypes {const PostSetupIntentsRequestExcludedPaymentMethodTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_automatic_payment_methods.dart';import 'post_setup_intents_request_mandate_data.dart';import 'post_setup_intents_request_payment_method_data.dart';import 'post_setup_intents_request_payment_method_options.dart';import 'post_setup_intents_request_single_use.dart';@immutable final class PostSetupIntentsRequestExcludedPaymentMethodTypes {const PostSetupIntentsRequestExcludedPaymentMethodTypes._(this.value);
 
 factory PostSetupIntentsRequestExcludedPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'acss_debit' => acssDebit,
@@ -227,7 +227,7 @@ factory PostSetupIntentsRequest.fromJson(Map<String, dynamic> json) { return Pos
   excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => PostSetupIntentsRequestExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => PostSetupIntentsRequestFlowDirections.fromJson(e as String)).toList(),
-  mandateData: json['mandate_data'] != null ? OneOf2.parse(json['mandate_data'], fromA: (v) => SecretKeyParam3.fromJson(v as Map<String, dynamic>), fromB: (v) => PostSetupIntentsRequestMandateDataVariant2.fromJson(v as String),) : null,
+  mandateData: json['mandate_data'] != null ? PostSetupIntentsRequestMandateData.fromJson(json['mandate_data']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   onBehalfOf: json['on_behalf_of'] as String?,
   paymentMethod: json['payment_method'] as String?,

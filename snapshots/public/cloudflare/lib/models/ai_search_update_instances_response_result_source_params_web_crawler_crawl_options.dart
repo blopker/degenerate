@@ -27,35 +27,41 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource($value)'; } 
  }
-@immutable final class AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions {const AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions({this.depth, this.includeExternalLinks = false, this.includeSubdomains = false, this.maxAge, this.source = AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource.all, });
+@immutable final class AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions {const AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions({this.depth, this.includeExternalLinks, this.includeSubdomains, this.maxAge, this.source, });
 
 factory AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions(
   depth: json['depth'] != null ? (json['depth'] as num).toDouble() : null,
-  includeExternalLinks: json.containsKey('include_external_links') ? json['include_external_links'] as bool : false,
-  includeSubdomains: json.containsKey('include_subdomains') ? json['include_subdomains'] as bool : false,
+  includeExternalLinks: json['include_external_links'] as bool?,
+  includeSubdomains: json['include_subdomains'] as bool?,
   maxAge: json['max_age'] != null ? (json['max_age'] as num).toDouble() : null,
-  source: json.containsKey('source') ? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource.fromJson(json['source'] as String) : AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource.all,
+  source: json['source'] != null ? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource.fromJson(json['source'] as String) : null,
 ); }
 
 final double? depth;
 
-final bool includeExternalLinks;
+final bool? includeExternalLinks;
 
-final bool includeSubdomains;
+final bool? includeSubdomains;
 
 final double? maxAge;
 
-final AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource source;
+final AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource? source;
 
+/// The value with the schema default applied when absent.
+bool get includeExternalLinksOrDefault { return includeExternalLinks ?? false; } 
+/// The value with the schema default applied when absent.
+bool get includeSubdomainsOrDefault { return includeSubdomains ?? false; } 
+/// The value with the schema default applied when absent.
+AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource get sourceOrDefault { return source ?? AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource.fromJson('all'); } 
 Map<String, dynamic> toJson() { return {
   'depth': ?depth,
-  'include_external_links': includeExternalLinks,
-  'include_subdomains': includeSubdomains,
+  'include_external_links': ?includeExternalLinks,
+  'include_subdomains': ?includeSubdomains,
   'max_age': ?maxAge,
-  'source': source.toJson(),
+  if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'depth', 'include_external_links', 'include_subdomains', 'max_age', 'source'}.contains(key)); } 
-AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions copyWith({double? Function()? depth, bool Function()? includeExternalLinks, bool Function()? includeSubdomains, double? Function()? maxAge, AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource Function()? source, }) { return AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions(
+AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions copyWith({double? Function()? depth, bool? Function()? includeExternalLinks, bool? Function()? includeSubdomains, double? Function()? maxAge, AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptionsSource? Function()? source, }) { return AiSearchUpdateInstancesResponseResultSourceParamsWebCrawlerCrawlOptions(
   depth: depth != null ? depth() : this.depth,
   includeExternalLinks: includeExternalLinks != null ? includeExternalLinks() : this.includeExternalLinks,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,

@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SkillResourceObject($value)'; } 
  }
-@immutable final class SkillResource {const SkillResource({required this.id, required this.name, required this.description, required this.createdAt, required this.defaultVersion, required this.latestVersion, this.object = SkillResourceObject.skill, });
+@immutable final class SkillResource {const SkillResource({required this.id, required this.object, required this.name, required this.description, required this.createdAt, required this.defaultVersion, required this.latestVersion, });
 
 factory SkillResource.fromJson(Map<String, dynamic> json) { return SkillResource(
   id: json['id'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'tax_i_ds_owner_account.dart';import 'tax_i_ds_owner_application.dart';import 'tax_i_ds_owner_customer.dart';/// Type of owner referenced.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_i_ds_owner_account.dart';import 'tax_i_ds_owner_application.dart';import 'tax_i_ds_owner_customer.dart';/// Type of owner referenced.
 @immutable final class TaxIDsOwnerType {const TaxIDsOwnerType._(this.value);
 
 factory TaxIDsOwnerType.fromJson(String json) { return switch (json) {
@@ -35,9 +35,9 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class TaxIDsOwner {const TaxIDsOwner({required this.type, this.account, this.application, this.customer, this.customerAccount = const Omittable.absent(), });
 
 factory TaxIDsOwner.fromJson(Map<String, dynamic> json) { return TaxIDsOwner(
-  account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
-  application: json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,
-  customer: json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null,
+  account: json['account'] != null ? TaxIDsOwnerAccount.fromJson(json['account']) : null,
+  application: json['application'] != null ? TaxIDsOwnerApplication.fromJson(json['application']) : null,
+  customer: json['customer'] != null ? TaxIDsOwnerCustomer.fromJson(json['customer']) : null,
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   type: TaxIDsOwnerType.fromJson(json['type'] as String),
 ); }

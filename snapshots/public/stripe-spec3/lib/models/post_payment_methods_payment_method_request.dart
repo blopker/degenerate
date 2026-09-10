@@ -35,7 +35,7 @@ factory PostPaymentMethodsPaymentMethodRequest.fromJson(Map<String, dynamic> jso
   billingDetails: json['billing_details'] != null ? PostPaymentMethodsPaymentMethodRequestBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
   card: json['card'] != null ? PostPaymentMethodsPaymentMethodRequestCard.fromJson(json['card'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentMethodsPaymentMethodRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostPaymentMethodsPaymentMethodRequestMetadata.fromJson(json['metadata']) : null,
   payto: json['payto'] != null ? PostPaymentMethodsPaymentMethodRequestPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
   usBankAccount: json['us_bank_account'] != null ? PostPaymentMethodsPaymentMethodRequestUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
 ); }

@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_fork_forkee_owner.dart';import 'webhook_fork_forkee_permissions.dart';/// A git repository
-@immutable final class WebhookForkForkee {const WebhookForkForkee({required this.forksUrl, required this.watchersCount, required this.watchers, required this.visibility, required this.url, required this.updatedAt, required this.archiveUrl, required this.archived, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.cloneUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.createdAt, required this.defaultBranch, required this.treesUrl, required this.deploymentsUrl, required this.description, required this.topics, required this.downloadsUrl, required this.eventsUrl, required this.fork, required this.forks, required this.forksCount, required this.teamsUrl, required this.fullName, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.hasDownloads, required this.hasIssues, required this.hasPages, required this.hasProjects, required this.hasWiki, required this.homepage, required this.hooksUrl, required this.htmlUrl, required this.id, required this.notificationsUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.language, required this.languagesUrl, required this.license, required this.tagsUrl, required this.mergesUrl, required this.milestonesUrl, required this.mirrorUrl, required this.name, required this.nodeId, required this.svnUrl, required this.openIssues, required this.openIssuesCount, required this.subscriptionUrl, required this.owner, required this.subscribersUrl, required this.private, required this.statusesUrl, required this.pullsUrl, required this.pushedAt, required this.releasesUrl, required this.stargazersUrl, required this.size, required this.stargazersCount, required this.sshUrl, this.isTemplate, this.roleName = const Omittable.absent(), this.public, this.permissions, this.organization, this.webCommitSignoffRequired, this.masterBranch, this.allowAutoMerge = false, this.disabled, this.deleteBranchOnMerge = false, this.allowUpdateBranch, this.allowSquashMerge = true, this.allowRebaseMerge = true, this.allowMergeCommit = true, this.allowForking, this.stargazers, });
+@immutable final class WebhookForkForkee {const WebhookForkForkee({required this.forksUrl, required this.watchersCount, required this.watchers, required this.visibility, required this.url, required this.updatedAt, required this.archiveUrl, required this.archived, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.cloneUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.createdAt, required this.defaultBranch, required this.treesUrl, required this.deploymentsUrl, required this.description, required this.topics, required this.downloadsUrl, required this.eventsUrl, required this.fork, required this.forks, required this.forksCount, required this.teamsUrl, required this.fullName, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.hasDownloads, required this.hasIssues, required this.hasPages, required this.hasProjects, required this.hasWiki, required this.homepage, required this.hooksUrl, required this.htmlUrl, required this.id, required this.notificationsUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.language, required this.languagesUrl, required this.license, required this.tagsUrl, required this.mergesUrl, required this.milestonesUrl, required this.mirrorUrl, required this.name, required this.nodeId, required this.svnUrl, required this.openIssues, required this.openIssuesCount, required this.subscriptionUrl, required this.owner, required this.subscribersUrl, required this.private, required this.statusesUrl, required this.pullsUrl, required this.pushedAt, required this.releasesUrl, required this.stargazersUrl, required this.size, required this.stargazersCount, required this.sshUrl, this.isTemplate, this.roleName = const Omittable.absent(), this.public, this.permissions, this.organization, this.webCommitSignoffRequired, this.masterBranch, this.allowAutoMerge, this.disabled, this.deleteBranchOnMerge, this.allowUpdateBranch, this.allowSquashMerge, this.allowRebaseMerge, this.allowMergeCommit, this.allowForking, this.stargazers, });
 
 factory WebhookForkForkee.fromJson(Map<String, dynamic> json) { return WebhookForkForkee(
-  allowAutoMerge: json.containsKey('allow_auto_merge') ? json['allow_auto_merge'] as bool : false,
+  allowAutoMerge: json['allow_auto_merge'] as bool?,
   allowForking: json['allow_forking'] as bool?,
-  allowMergeCommit: json.containsKey('allow_merge_commit') ? json['allow_merge_commit'] as bool : true,
-  allowRebaseMerge: json.containsKey('allow_rebase_merge') ? json['allow_rebase_merge'] as bool : true,
-  allowSquashMerge: json.containsKey('allow_squash_merge') ? json['allow_squash_merge'] as bool : true,
+  allowMergeCommit: json['allow_merge_commit'] as bool?,
+  allowRebaseMerge: json['allow_rebase_merge'] as bool?,
+  allowSquashMerge: json['allow_squash_merge'] as bool?,
   allowUpdateBranch: json['allow_update_branch'] as bool?,
   archiveUrl: json['archive_url'] as String,
   archived: json['archived'] as bool,
@@ -24,7 +24,7 @@ factory WebhookForkForkee.fromJson(Map<String, dynamic> json) { return WebhookFo
   contributorsUrl: json['contributors_url'] as String,
   createdAt: json['created_at'] as String,
   defaultBranch: json['default_branch'] as String,
-  deleteBranchOnMerge: json.containsKey('delete_branch_on_merge') ? json['delete_branch_on_merge'] as bool : false,
+  deleteBranchOnMerge: json['delete_branch_on_merge'] as bool?,
   deploymentsUrl: json['deployments_url'] as String,
   description: json['description'] as String?,
   disabled: json['disabled'] as bool?,
@@ -97,18 +97,18 @@ factory WebhookForkForkee.fromJson(Map<String, dynamic> json) { return WebhookFo
 ); }
 
 /// Whether to allow auto-merge for pull requests.
-final bool allowAutoMerge;
+final bool? allowAutoMerge;
 
 final bool? allowForking;
 
 /// Whether to allow merge commits for pull requests.
-final bool allowMergeCommit;
+final bool? allowMergeCommit;
 
 /// Whether to allow rebase merges for pull requests.
-final bool allowRebaseMerge;
+final bool? allowRebaseMerge;
 
 /// Whether to allow squash merges for pull requests.
-final bool allowSquashMerge;
+final bool? allowSquashMerge;
 
 final bool? allowUpdateBranch;
 
@@ -141,7 +141,7 @@ final String createdAt;
 final String defaultBranch;
 
 /// Whether to delete head branches when pull requests are merged
-final bool deleteBranchOnMerge;
+final bool? deleteBranchOnMerge;
 
 final String deploymentsUrl;
 
@@ -282,12 +282,22 @@ final int watchersCount;
 /// Whether to require contributors to sign off on web-based commits
 final bool? webCommitSignoffRequired;
 
+/// The value with the schema default applied when absent.
+bool get allowAutoMergeOrDefault { return allowAutoMerge ?? false; } 
+/// The value with the schema default applied when absent.
+bool get allowMergeCommitOrDefault { return allowMergeCommit ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowRebaseMergeOrDefault { return allowRebaseMerge ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowSquashMergeOrDefault { return allowSquashMerge ?? true; } 
+/// The value with the schema default applied when absent.
+bool get deleteBranchOnMergeOrDefault { return deleteBranchOnMerge ?? false; } 
 Map<String, dynamic> toJson() { return {
-  'allow_auto_merge': allowAutoMerge,
+  'allow_auto_merge': ?allowAutoMerge,
   'allow_forking': ?allowForking,
-  'allow_merge_commit': allowMergeCommit,
-  'allow_rebase_merge': allowRebaseMerge,
-  'allow_squash_merge': allowSquashMerge,
+  'allow_merge_commit': ?allowMergeCommit,
+  'allow_rebase_merge': ?allowRebaseMerge,
+  'allow_squash_merge': ?allowSquashMerge,
   'allow_update_branch': ?allowUpdateBranch,
   'archive_url': archiveUrl,
   'archived': archived,
@@ -303,7 +313,7 @@ Map<String, dynamic> toJson() { return {
   'contributors_url': contributorsUrl,
   'created_at': createdAt,
   'default_branch': defaultBranch,
-  'delete_branch_on_merge': deleteBranchOnMerge,
+  'delete_branch_on_merge': ?deleteBranchOnMerge,
   'deployments_url': deploymentsUrl,
   'description': description,
   'disabled': ?disabled,
@@ -448,7 +458,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('visibility') && json['visibility'] is String &&
       json.containsKey('watchers') && json['watchers'] is num &&
       json.containsKey('watchers_count') && json['watchers_count'] is num; } 
-WebhookForkForkee copyWith({bool Function()? allowAutoMerge, bool? Function()? allowForking, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowSquashMerge, bool? Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, String? contributorsUrl, String? createdAt, String? defaultBranch, bool Function()? deleteBranchOnMerge, String? deploymentsUrl, String? Function()? description, bool? Function()? disabled, String? downloadsUrl, String? eventsUrl, bool? fork, int? forks, int? forksCount, String? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, String? Function()? homepage, String? hooksUrl, String? htmlUrl, int? id, bool? Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, dynamic Function()? language, String? languagesUrl, Map<String, dynamic>? Function()? license, String? Function()? masterBranch, String? mergesUrl, String? milestonesUrl, dynamic Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String? Function()? organization, WebhookForkForkeeOwner? owner, WebhookForkForkeePermissions? Function()? permissions, bool? private, bool? Function()? public, String? pullsUrl, String? pushedAt, String? releasesUrl, Omittable<String?>? roleName, int? size, String? sshUrl, int? Function()? stargazers, int? stargazersCount, String? stargazersUrl, String? statusesUrl, String? subscribersUrl, String? subscriptionUrl, String? svnUrl, String? tagsUrl, String? teamsUrl, List<dynamic>? topics, String? treesUrl, String? updatedAt, String? url, String? visibility, int? watchers, int? watchersCount, bool? Function()? webCommitSignoffRequired, }) { return WebhookForkForkee(
+WebhookForkForkee copyWith({bool? Function()? allowAutoMerge, bool? Function()? allowForking, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowSquashMerge, bool? Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, String? contributorsUrl, String? createdAt, String? defaultBranch, bool? Function()? deleteBranchOnMerge, String? deploymentsUrl, String? Function()? description, bool? Function()? disabled, String? downloadsUrl, String? eventsUrl, bool? fork, int? forks, int? forksCount, String? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, String? Function()? homepage, String? hooksUrl, String? htmlUrl, int? id, bool? Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, dynamic Function()? language, String? languagesUrl, Map<String, dynamic>? Function()? license, String? Function()? masterBranch, String? mergesUrl, String? milestonesUrl, dynamic Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String? Function()? organization, WebhookForkForkeeOwner? owner, WebhookForkForkeePermissions? Function()? permissions, bool? private, bool? Function()? public, String? pullsUrl, String? pushedAt, String? releasesUrl, Omittable<String?>? roleName, int? size, String? sshUrl, int? Function()? stargazers, int? stargazersCount, String? stargazersUrl, String? statusesUrl, String? subscribersUrl, String? subscriptionUrl, String? svnUrl, String? tagsUrl, String? teamsUrl, List<dynamic>? topics, String? treesUrl, String? updatedAt, String? url, String? visibility, int? watchers, int? watchersCount, bool? Function()? webCommitSignoffRequired, }) { return WebhookForkForkee(
   allowAutoMerge: allowAutoMerge != null ? allowAutoMerge() : this.allowAutoMerge,
   allowForking: allowForking != null ? allowForking() : this.allowForking,
   allowMergeCommit: allowMergeCommit != null ? allowMergeCommit() : this.allowMergeCommit,

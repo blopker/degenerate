@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostQuotesQuoteRequestDescriptionVariant2($value)'; } 
  }
-typedef PostQuotesQuoteRequestDescription = OneOf2<String,PostQuotesQuoteRequestDescriptionVariant2>;
+/// A description that will be displayed on the quote PDF.
+@immutable
+final class PostQuotesQuoteRequestDescription {
+  const PostQuotesQuoteRequestDescription({this.string = const Omittable.absent(),
+this.postQuotesQuoteRequestDescriptionVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostQuotesQuoteRequestDescription._({required this.rawValue, required this.string,
+required this.postQuotesQuoteRequestDescriptionVariant2,});
+  factory PostQuotesQuoteRequestDescription.fromJson(Object? json) => PostQuotesQuoteRequestDescription._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postQuotesQuoteRequestDescriptionVariant2: parseAnyOfVariant<PostQuotesQuoteRequestDescriptionVariant2>(json, (value) => PostQuotesQuoteRequestDescriptionVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostQuotesQuoteRequestDescriptionVariant2> postQuotesQuoteRequestDescriptionVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postQuotesQuoteRequestDescriptionVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postQuotesQuoteRequestDescriptionVariant2.isPresent) postQuotesQuoteRequestDescriptionVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostQuotesQuoteRequestDescription && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostQuotesQuoteRequestDescription(${toJson()})';
+}

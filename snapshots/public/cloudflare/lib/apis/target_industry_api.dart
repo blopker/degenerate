@@ -23,10 +23,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetTargetIndustryListByDatasetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetTargetIndustryListByDatasetResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetTargetIndustryListByDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return GetTargetIndustryListByDatasetResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -55,10 +63,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetTargetIndustryListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetTargetIndustryListResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetTargetIndustryListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return GetTargetIndustryListResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -77,10 +93,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetTargetIndustryListCompleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetTargetIndustryListCompleteResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetTargetIndustryListCompleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return GetTargetIndustryListCompleteResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

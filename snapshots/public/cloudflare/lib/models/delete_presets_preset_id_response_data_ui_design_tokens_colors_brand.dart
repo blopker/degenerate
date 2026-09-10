@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletePresetsPresetIdResponseDataUiDesignTokensColorsBrand {const DeletePresetsPresetIdResponseDataUiDesignTokensColorsBrand({this.$300 = '#844d1c', this.$400 = '#9d5b22', this.$500 = '#b56927', this.$600 = '#d37c30', this.$700 = '#d9904f', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletePresetsPresetIdResponseDataUiDesignTokensColorsBrand {const DeletePresetsPresetIdResponseDataUiDesignTokensColorsBrand({required this.$300, required this.$400, required this.$500, required this.$600, required this.$700, });
 
 factory DeletePresetsPresetIdResponseDataUiDesignTokensColorsBrand.fromJson(Map<String, dynamic> json) { return DeletePresetsPresetIdResponseDataUiDesignTokensColorsBrand(
   $300: json['300'] as String,

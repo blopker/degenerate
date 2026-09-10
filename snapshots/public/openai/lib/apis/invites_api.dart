@@ -34,7 +34,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return InviteListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return InviteListResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -55,7 +56,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Invite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Invite.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -74,7 +76,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Invite.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Invite.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -93,7 +96,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return InviteDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return InviteDeleteResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

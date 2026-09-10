@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2($value)'; } 
  }
-typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWay = OneOf2<PaymentMethodOptionsParam94,PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2>;
+
+@immutable
+final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWay {
+  const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWay({this.paymentMethodOptionsParam94 = const Omittable.absent(),
+this.postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWay._({required this.rawValue, required this.paymentMethodOptionsParam94,
+required this.postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2,});
+  factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWay.fromJson(Object? json) => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWay._(
+    rawValue: Omittable(json),
+    paymentMethodOptionsParam94: parseAnyOfVariant<PaymentMethodOptionsParam94>(json, (value) => PaymentMethodOptionsParam94.fromJson(value! as Map<String, dynamic>)),
+postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2: parseAnyOfVariant<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2>(json, (value) => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<PaymentMethodOptionsParam94> paymentMethodOptionsParam94;
+final Omittable<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2> postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => paymentMethodOptionsParam94.isPresent || postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (paymentMethodOptionsParam94.isPresent) paymentMethodOptionsParam94.value?.toJson(),
+if (postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2.isPresent) postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWayVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWay && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsMbWay(${toJson()})';
+}

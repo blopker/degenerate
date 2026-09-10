@@ -62,15 +62,15 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TelemetryQueryRequestView($value)'; } 
  }
-@immutable final class TelemetryQueryRequest {const TelemetryQueryRequest({required this.queryId, required this.timeframe, this.chart, this.compare, this.dry = false, this.granularity, this.ignoreSeries = false, this.limit = 50.0, this.offset, this.offsetBy, this.offsetDirection, this.parameters, this.patternType, this.view = TelemetryQueryRequestView.calculations, });
+@immutable final class TelemetryQueryRequest {const TelemetryQueryRequest({required this.queryId, required this.timeframe, this.chart, this.compare, this.dry, this.granularity, this.ignoreSeries, this.limit, this.offset, this.offsetBy, this.offsetDirection, this.parameters, this.patternType, this.view, });
 
 factory TelemetryQueryRequest.fromJson(Map<String, dynamic> json) { return TelemetryQueryRequest(
   chart: json['chart'] as bool?,
   compare: json['compare'] as bool?,
-  dry: json.containsKey('dry') ? json['dry'] as bool : false,
+  dry: json['dry'] as bool?,
   granularity: json['granularity'] != null ? (json['granularity'] as num).toDouble() : null,
-  ignoreSeries: json.containsKey('ignoreSeries') ? json['ignoreSeries'] as bool : false,
-  limit: json.containsKey('limit') ? (json['limit'] as num).toDouble() : 50.0,
+  ignoreSeries: json['ignoreSeries'] as bool?,
+  limit: json['limit'] != null ? (json['limit'] as num).toDouble() : null,
   offset: json['offset'] as String?,
   offsetBy: json['offsetBy'] != null ? (json['offsetBy'] as num).toDouble() : null,
   offsetDirection: json['offsetDirection'] as String?,
@@ -78,7 +78,7 @@ factory TelemetryQueryRequest.fromJson(Map<String, dynamic> json) { return Telem
   patternType: json['patternType'] != null ? TelemetryQueryRequestPatternType.fromJson(json['patternType'] as String) : null,
   queryId: json['queryId'] as String,
   timeframe: TelemetryQueryRequestTimeframe.fromJson(json['timeframe'] as Map<String, dynamic>),
-  view: json.containsKey('view') ? TelemetryQueryRequestView.fromJson(json['view'] as String) : TelemetryQueryRequestView.calculations,
+  view: json['view'] != null ? TelemetryQueryRequestView.fromJson(json['view'] as String) : null,
 ); }
 
 /// Whether to include timeseties data in the response
@@ -88,16 +88,16 @@ final bool? chart;
 final bool? compare;
 
 /// Whether to perform a dry run without saving the results of the query. Useful for validation
-final bool dry;
+final bool? dry;
 
 /// Time granularity for aggregating results (in milliseconds). Controls the bucketing of time-series data
 final double? granularity;
 
 /// Whether to ignore time-series data in the results and return only aggregated values
-final bool ignoreSeries;
+final bool? ignoreSeries;
 
 /// Maximum number of events to return.
-final double limit;
+final double? limit;
 
 /// Cursor for pagination to retrieve the next set of results
 final String? offset;
@@ -121,15 +121,23 @@ final String queryId;
 final TelemetryQueryRequestTimeframe timeframe;
 
 /// View type for presenting the query results.
-final TelemetryQueryRequestView view;
+final TelemetryQueryRequestView? view;
 
+/// The value with the schema default applied when absent.
+bool get dryOrDefault { return dry ?? false; } 
+/// The value with the schema default applied when absent.
+bool get ignoreSeriesOrDefault { return ignoreSeries ?? false; } 
+/// The value with the schema default applied when absent.
+double get limitOrDefault { return limit ?? 50.0; } 
+/// The value with the schema default applied when absent.
+TelemetryQueryRequestView get viewOrDefault { return view ?? TelemetryQueryRequestView.fromJson('calculations'); } 
 Map<String, dynamic> toJson() { return {
   'chart': ?chart,
   'compare': ?compare,
-  'dry': dry,
+  'dry': ?dry,
   'granularity': ?granularity,
-  'ignoreSeries': ignoreSeries,
-  'limit': limit,
+  'ignoreSeries': ?ignoreSeries,
+  'limit': ?limit,
   'offset': ?offset,
   'offsetBy': ?offsetBy,
   'offsetDirection': ?offsetDirection,
@@ -137,11 +145,11 @@ Map<String, dynamic> toJson() { return {
   if (patternType != null) 'patternType': patternType?.toJson(),
   'queryId': queryId,
   'timeframe': timeframe.toJson(),
-  'view': view.toJson(),
+  if (view != null) 'view': view?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('queryId') && json['queryId'] is String &&
       json.containsKey('timeframe'); } 
-TelemetryQueryRequest copyWith({bool? Function()? chart, bool? Function()? compare, bool Function()? dry, double? Function()? granularity, bool Function()? ignoreSeries, double Function()? limit, String? Function()? offset, double? Function()? offsetBy, String? Function()? offsetDirection, TelemetryQueryRequestParameters? Function()? parameters, TelemetryQueryRequestPatternType? Function()? patternType, String? queryId, TelemetryQueryRequestTimeframe? timeframe, TelemetryQueryRequestView Function()? view, }) { return TelemetryQueryRequest(
+TelemetryQueryRequest copyWith({bool? Function()? chart, bool? Function()? compare, bool? Function()? dry, double? Function()? granularity, bool? Function()? ignoreSeries, double? Function()? limit, String? Function()? offset, double? Function()? offsetBy, String? Function()? offsetDirection, TelemetryQueryRequestParameters? Function()? parameters, TelemetryQueryRequestPatternType? Function()? patternType, String? queryId, TelemetryQueryRequestTimeframe? timeframe, TelemetryQueryRequestView? Function()? view, }) { return TelemetryQueryRequest(
   chart: chart != null ? chart() : this.chart,
   compare: compare != null ? compare() : this.compare,
   dry: dry != null ? dry() : this.dry,

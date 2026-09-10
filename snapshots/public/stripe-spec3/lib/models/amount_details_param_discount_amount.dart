@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AmountDetailsParamDiscountAmountVariant2($value)'; } 
  }
-typedef AmountDetailsParamDiscountAmount = OneOf2<int,AmountDetailsParamDiscountAmountVariant2>;
+
+@immutable
+final class AmountDetailsParamDiscountAmount {
+  const AmountDetailsParamDiscountAmount({this.$int = const Omittable.absent(),
+this.amountDetailsParamDiscountAmountVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const AmountDetailsParamDiscountAmount._({required this.rawValue, required this.$int,
+required this.amountDetailsParamDiscountAmountVariant2,});
+  factory AmountDetailsParamDiscountAmount.fromJson(Object? json) => AmountDetailsParamDiscountAmount._(
+    rawValue: Omittable(json),
+    $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+amountDetailsParamDiscountAmountVariant2: parseAnyOfVariant<AmountDetailsParamDiscountAmountVariant2>(json, (value) => AmountDetailsParamDiscountAmountVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<int> $int;
+final Omittable<AmountDetailsParamDiscountAmountVariant2> amountDetailsParamDiscountAmountVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $int.isPresent || amountDetailsParamDiscountAmountVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($int.isPresent) $int.value,
+if (amountDetailsParamDiscountAmountVariant2.isPresent) amountDetailsParamDiscountAmountVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is AmountDetailsParamDiscountAmount && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'AmountDetailsParamDiscountAmount(${toJson()})';
+}

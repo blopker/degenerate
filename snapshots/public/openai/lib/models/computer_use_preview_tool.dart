@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ComputerEnvironment($value)'; } 
  }
 /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
-@immutable final class ComputerUsePreviewTool {const ComputerUsePreviewTool({required this.environment, required this.displayWidth, required this.displayHeight, this.type = 'computer_use_preview', });
+@immutable final class ComputerUsePreviewTool {const ComputerUsePreviewTool({required this.type, required this.environment, required this.displayWidth, required this.displayHeight, });
 
 factory ComputerUsePreviewTool.fromJson(Map<String, dynamic> json) { return ComputerUsePreviewTool(
   type: json['type'] as String,

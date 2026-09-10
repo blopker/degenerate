@@ -46,7 +46,7 @@ num toJson() => value;
 
 factory FirewallActionVariant1.fromJson(Map<String, dynamic> json) { return FirewallActionVariant1(
   mode: json['mode'] != null ? FirewallMode.fromJson(json['mode'] as String) : null,
-  response: json['response'] != null ? FirewallCustomResponse.fromJson(json['response'] as Map<String, dynamic>) : null,
+  response: json['response'] != null ? FirewallCustomResponse.fromJson(json['response']) : null,
   timeout: json['timeout'] != null ? FirewallTimeout.fromJson(json['timeout'] as num) : null,
 ); }
 

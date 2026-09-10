@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostProductsIdRequestImagesVariant2($value)'; } 
  }
-typedef PostProductsIdRequestImages = OneOf2<List<String>,PostProductsIdRequestImagesVariant2>;
+/// A list of up to 8 URLs of images for this product, meant to be displayable to the customer.
+@immutable
+final class PostProductsIdRequestImages {
+  const PostProductsIdRequestImages({this.listString = const Omittable.absent(),
+this.postProductsIdRequestImagesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostProductsIdRequestImages._({required this.rawValue, required this.listString,
+required this.postProductsIdRequestImagesVariant2,});
+  factory PostProductsIdRequestImages.fromJson(Object? json) => PostProductsIdRequestImages._(
+    rawValue: Omittable(json),
+    listString: parseAnyOfVariant<List<String>>(json, (value) => (value! as List<dynamic>).map((e) => e as String).toList()),
+postProductsIdRequestImagesVariant2: parseAnyOfVariant<PostProductsIdRequestImagesVariant2>(json, (value) => PostProductsIdRequestImagesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<String>> listString;
+final Omittable<PostProductsIdRequestImagesVariant2> postProductsIdRequestImagesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listString.isPresent || postProductsIdRequestImagesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listString.isPresent) listString.value,
+if (postProductsIdRequestImagesVariant2.isPresent) postProductsIdRequestImagesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostProductsIdRequestImages && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostProductsIdRequestImages(${toJson()})';
+}

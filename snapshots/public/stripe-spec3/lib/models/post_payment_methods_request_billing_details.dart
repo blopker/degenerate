@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address5.dart';import 'post_payment_methods_request_billing_details_address.dart';import 'post_payment_methods_request_billing_details_email.dart';import 'post_payment_methods_request_billing_details_name.dart';import 'post_payment_methods_request_billing_details_phone.dart';/// Billing information associated with the PaymentMethod that may be used or required by particular types of payment methods.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_methods_request_billing_details_address.dart';import 'post_payment_methods_request_billing_details_email.dart';import 'post_payment_methods_request_billing_details_name.dart';import 'post_payment_methods_request_billing_details_phone.dart';/// Billing information associated with the PaymentMethod that may be used or required by particular types of payment methods.
 @immutable final class PostPaymentMethodsRequestBillingDetails {const PostPaymentMethodsRequestBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
 
 factory PostPaymentMethodsRequestBillingDetails.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestBillingDetails(
-  address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => BillingDetailsAddress5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentMethodsRequestBillingDetailsAddressVariant2.fromJson(v as String),) : null,
-  email: json['email'] != null ? OneOf2.parse(json['email'], fromA: (v) => v as String, fromB: (v) => PostPaymentMethodsRequestBillingDetailsEmailVariant2.fromJson(v as String),) : null,
-  name: json['name'] != null ? OneOf2.parse(json['name'], fromA: (v) => v as String, fromB: (v) => PostPaymentMethodsRequestBillingDetailsNameVariant2.fromJson(v as String),) : null,
-  phone: json['phone'] != null ? OneOf2.parse(json['phone'], fromA: (v) => v as String, fromB: (v) => PostPaymentMethodsRequestBillingDetailsPhoneVariant2.fromJson(v as String),) : null,
+  address: json['address'] != null ? PostPaymentMethodsRequestBillingDetailsAddress.fromJson(json['address']) : null,
+  email: json['email'] != null ? PostPaymentMethodsRequestBillingDetailsEmail.fromJson(json['email']) : null,
+  name: json['name'] != null ? PostPaymentMethodsRequestBillingDetailsName.fromJson(json['name']) : null,
+  phone: json['phone'] != null ? PostPaymentMethodsRequestBillingDetailsPhone.fromJson(json['phone']) : null,
   taxId: json['tax_id'] as String?,
 ); }
 

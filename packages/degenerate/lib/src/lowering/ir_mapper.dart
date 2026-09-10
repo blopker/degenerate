@@ -986,6 +986,9 @@ class IrMapper {
     final anyOfName = name ?? _uniqueTypeName('InlineAnyOf');
 
     final anyOf = schema['anyOf'] as List;
+    final hasNullVariant = anyOf.any(
+      (variant) => variant is Map<String, dynamic> && variant['type'] == 'null',
+    );
 
     // Collapse anyOf of single-value string enums into one enum.
     final collapsed = _trySingleValueEnumCollapse(anyOf);
@@ -1002,6 +1005,9 @@ class IrMapper {
     for (var i = 0; i < anyOf.length; i++) {
       final variant = anyOf[i];
       if (variant is Map<String, dynamic>) {
+        // A null-only alternative contributes nullability, not a dynamic view
+        // that would accept every JSON value.
+        if (variant['type'] == 'null') continue;
         // Use lowerInlineSchema for inline variants so they get registered
         // in the type registry and emitted as separate files.
         final hint =
@@ -1032,7 +1038,8 @@ class IrMapper {
       anyOfName,
       deduped.length >= 2 ? deduped : variants,
       description: description,
-      isNullable: nullable,
+      isNullable:
+          nullable || hasNullVariant || variants.any((v) => v.isNullable),
     );
   }
 
@@ -1220,7 +1227,8 @@ class IrMapper {
     final pascal = toPascalCase(rawName);
     final sanitized = sanitizeDartName(pascal);
     // Avoid shadowing core and runtime types used in generated code.
-    final candidate = dartCoreTypeNames.contains(sanitized) ||
+    final candidate =
+        dartCoreTypeNames.contains(sanitized) ||
             runtimeTypeNames.contains(sanitized)
         ? '${sanitized}Model'
         : sanitized;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_personalization_design_card_logo.dart';import 'issuing_personalization_design_carrier_text.dart';import 'issuing_personalization_design_physical_bundle.dart';import 'issuing_personalization_design_preferences.dart';import 'issuing_personalization_design_rejection_reasons.dart';import 'issuing_physical_bundle.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_personalization_design_card_logo.dart';import 'issuing_personalization_design_carrier_text.dart';import 'issuing_personalization_design_physical_bundle.dart';import 'issuing_personalization_design_preferences.dart';import 'issuing_personalization_design_rejection_reasons.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject._(this.value);
 
 factory IssuingPersonalizationDesignObject.fromJson(String json) { return switch (json) {
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class IssuingPersonalizationDesign {const IssuingPersonalizationDesign({required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.physicalBundle, required this.preferences, required this.rejectionReasons, required this.status, this.cardLogo = const Omittable.absent(), this.carrierText = const Omittable.absent(), this.lookupKey = const Omittable.absent(), this.name = const Omittable.absent(), });
 
 factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { return IssuingPersonalizationDesign(
-  cardLogo: json.containsKey('card_logo') ? Omittable(json['card_logo'] != null ? OneOf2.parse(json['card_logo'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  cardLogo: json.containsKey('card_logo') ? Omittable(json['card_logo'] != null ? IssuingPersonalizationDesignCardLogo.fromJson(json['card_logo']) : null) : const Omittable.absent(),
   carrierText: json.containsKey('carrier_text') ? Omittable(json['carrier_text'] != null ? IssuingPersonalizationDesignCarrierText.fromJson(json['carrier_text'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
@@ -66,7 +66,7 @@ factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { retur
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: IssuingPersonalizationDesignObject.fromJson(json['object'] as String),
-  physicalBundle: OneOf2.parse(json['physical_bundle'], fromA: (v) => v as String, fromB: (v) => IssuingPhysicalBundle.fromJson(v as Map<String, dynamic>),),
+  physicalBundle: IssuingPersonalizationDesignPhysicalBundle.fromJson(json['physical_bundle']),
   preferences: IssuingPersonalizationDesignPreferences.fromJson(json['preferences'] as Map<String, dynamic>),
   rejectionReasons: IssuingPersonalizationDesignRejectionReasons.fromJson(json['rejection_reasons'] as Map<String, dynamic>),
   status: IssuingPersonalizationDesignStatus.fromJson(json['status'] as String),

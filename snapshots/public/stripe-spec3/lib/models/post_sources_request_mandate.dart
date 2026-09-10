@@ -65,7 +65,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory PostSourcesRequestMandate.fromJson(Map<String, dynamic> json) { return PostSourcesRequestMandate(
   acceptance: json['acceptance'] != null ? PostSourcesRequestMandateAcceptance.fromJson(json['acceptance'] as Map<String, dynamic>) : null,
-  amount: json['amount'] != null ? OneOf2.parse(json['amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostSourcesRequestMandateAmountVariant2.fromJson(v as String),) : null,
+  amount: json['amount'] != null ? PostSourcesRequestMandateAmount.fromJson(json['amount']) : null,
   currency: json['currency'] as String?,
   interval: json['interval'] != null ? PostSourcesRequestMandateInterval.fromJson(json['interval'] as String) : null,
   notificationMethod: json['notification_method'] != null ? PostSourcesRequestMandateNotificationMethod.fromJson(json['notification_method'] as String) : null,

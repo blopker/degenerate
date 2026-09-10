@@ -4,6 +4,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_erro
 
 /// Deserialize from JSON, dispatching on the `code` discriminator.
 factory CreateWorkerResponse403Errors.fromJson(Map<String, dynamic> json) { return switch (json['code']) {
+  'workers_ErrorWorkerLimit' => CreateWorkerResponse403ErrorsWorkersErrorWorkerLimit.fromJson(json),
+  'workers_ErrorWorkerTagLimit' => CreateWorkerResponse403ErrorsWorkersErrorWorkerTagLimit.fromJson(json),
   '10037' => CreateWorkerResponse403Errors10037.fromJson(json),
   '100103' => CreateWorkerResponse403Errors100103.fromJson(json),
   _ => CreateWorkerResponse403Errors$Unknown(json),
@@ -14,6 +16,32 @@ String get code;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CreateWorkerResponse403Errors$Unknown; } 
+ }
+@immutable final class CreateWorkerResponse403ErrorsWorkersErrorWorkerLimit extends CreateWorkerResponse403Errors {const CreateWorkerResponse403ErrorsWorkersErrorWorkerLimit(this.workersErrorWorkerLimit);
+
+factory CreateWorkerResponse403ErrorsWorkersErrorWorkerLimit.fromJson(Map<String, dynamic> json) { return CreateWorkerResponse403ErrorsWorkersErrorWorkerLimit(WorkersErrorWorkerLimit.fromJson(json)); }
+
+final WorkersErrorWorkerLimit workersErrorWorkerLimit;
+
+@override String get code { return 'workers_ErrorWorkerLimit'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorWorkerLimit.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateWorkerResponse403ErrorsWorkersErrorWorkerLimit && workersErrorWorkerLimit == other.workersErrorWorkerLimit; } 
+@override int get hashCode { return workersErrorWorkerLimit.hashCode; } 
+@override String toString() { return 'CreateWorkerResponse403ErrorsWorkersErrorWorkerLimit(workersErrorWorkerLimit: $workersErrorWorkerLimit)'; } 
+ }
+@immutable final class CreateWorkerResponse403ErrorsWorkersErrorWorkerTagLimit extends CreateWorkerResponse403Errors {const CreateWorkerResponse403ErrorsWorkersErrorWorkerTagLimit(this.workersErrorWorkerTagLimit);
+
+factory CreateWorkerResponse403ErrorsWorkersErrorWorkerTagLimit.fromJson(Map<String, dynamic> json) { return CreateWorkerResponse403ErrorsWorkersErrorWorkerTagLimit(WorkersErrorWorkerTagLimit.fromJson(json)); }
+
+final WorkersErrorWorkerTagLimit workersErrorWorkerTagLimit;
+
+@override String get code { return 'workers_ErrorWorkerTagLimit'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorWorkerTagLimit.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateWorkerResponse403ErrorsWorkersErrorWorkerTagLimit && workersErrorWorkerTagLimit == other.workersErrorWorkerTagLimit; } 
+@override int get hashCode { return workersErrorWorkerTagLimit.hashCode; } 
+@override String toString() { return 'CreateWorkerResponse403ErrorsWorkersErrorWorkerTagLimit(workersErrorWorkerTagLimit: $workersErrorWorkerTagLimit)'; } 
  }
 @immutable final class CreateWorkerResponse403Errors10037 extends CreateWorkerResponse403Errors {const CreateWorkerResponse403Errors10037(this.workersErrorWorkerLimit);
 

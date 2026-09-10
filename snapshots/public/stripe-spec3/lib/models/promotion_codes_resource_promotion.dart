@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon.dart';import 'promotion_codes_resource_promotion_coupon.dart';/// The type of promotion.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'promotion_codes_resource_promotion_coupon.dart';/// The type of promotion.
 @immutable final class PromotionCodesResourcePromotionType {const PromotionCodesResourcePromotionType._(this.value);
 
 factory PromotionCodesResourcePromotionType.fromJson(String json) { return switch (json) {
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PromotionCodesResourcePromotion {const PromotionCodesResourcePromotion({required this.type, this.coupon = const Omittable.absent(), });
 
 factory PromotionCodesResourcePromotion.fromJson(Map<String, dynamic> json) { return PromotionCodesResourcePromotion(
-  coupon: json.containsKey('coupon') ? Omittable(json['coupon'] != null ? OneOf2.parse(json['coupon'], fromA: (v) => v as String, fromB: (v) => Coupon.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  coupon: json.containsKey('coupon') ? Omittable(json['coupon'] != null ? PromotionCodesResourcePromotionCoupon.fromJson(json['coupon']) : null) : const Omittable.absent(),
   type: PromotionCodesResourcePromotionType.fromJson(json['type'] as String),
 ); }
 

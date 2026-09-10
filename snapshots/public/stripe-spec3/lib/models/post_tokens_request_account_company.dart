@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_account_company_address.dart';import 'post_tokens_request_account_company_address_kana.dart';import 'post_tokens_request_account_company_address_kanji.dart';import 'post_tokens_request_account_company_directorship_declaration.dart';import 'post_tokens_request_account_company_ownership_declaration.dart';import 'post_tokens_request_account_company_registration_date.dart';import 'post_tokens_request_account_company_representative_declaration.dart';import 'post_tokens_request_account_company_verification.dart';import 'registration_date_specs3.dart';@immutable final class PostTokensRequestAccountCompanyOwnershipExemptionReason {const PostTokensRequestAccountCompanyOwnershipExemptionReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_account_company_address.dart';import 'post_tokens_request_account_company_address_kana.dart';import 'post_tokens_request_account_company_address_kanji.dart';import 'post_tokens_request_account_company_directorship_declaration.dart';import 'post_tokens_request_account_company_ownership_declaration.dart';import 'post_tokens_request_account_company_registration_date.dart';import 'post_tokens_request_account_company_representative_declaration.dart';import 'post_tokens_request_account_company_verification.dart';@immutable final class PostTokensRequestAccountCompanyOwnershipExemptionReason {const PostTokensRequestAccountCompanyOwnershipExemptionReason._(this.value);
 
 factory PostTokensRequestAccountCompanyOwnershipExemptionReason.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -136,7 +136,7 @@ factory PostTokensRequestAccountCompany.fromJson(Map<String, dynamic> json) { re
   ownershipDeclarationShownAndSigned: json['ownership_declaration_shown_and_signed'] as bool?,
   ownershipExemptionReason: json['ownership_exemption_reason'] != null ? PostTokensRequestAccountCompanyOwnershipExemptionReason.fromJson(json['ownership_exemption_reason'] as String) : null,
   phone: json['phone'] as String?,
-  registrationDate: json['registration_date'] != null ? OneOf2.parse(json['registration_date'], fromA: (v) => RegistrationDateSpecs3.fromJson(v as Map<String, dynamic>), fromB: (v) => PostTokensRequestAccountCompanyRegistrationDateVariant2.fromJson(v as String),) : null,
+  registrationDate: json['registration_date'] != null ? PostTokensRequestAccountCompanyRegistrationDate.fromJson(json['registration_date']) : null,
   registrationNumber: json['registration_number'] as String?,
   representativeDeclaration: json['representative_declaration'] != null ? PostTokensRequestAccountCompanyRepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>) : null,
   structure: json['structure'] != null ? PostTokensRequestAccountCompanyStructure.fromJson(json['structure'] as String) : null,

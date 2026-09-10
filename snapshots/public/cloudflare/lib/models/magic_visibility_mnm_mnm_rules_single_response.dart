@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibi
 factory MagicVisibilityMnmMnmRulesSingleResponse.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmRulesSingleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => MagicVisibilityMnmMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: MagicVisibilityMnmMnmRule.fromJson(json['result'] as Map<String, dynamic>),
+  result: json['result'] != null ? MagicVisibilityMnmMnmRule.fromJson(json['result'] as Map<String, dynamic>) : null,
   success: json['success'] as bool,
 ); }
 
@@ -13,7 +13,7 @@ final List<MagicVisibilityMnmMessages2> errors;
 
 final List<MagicVisibilityMnmMessages2> messages;
 
-final MagicVisibilityMnmMnmRule result;
+final MagicVisibilityMnmMnmRule? result;
 
 /// Whether the API call was successful
 final bool success;
@@ -21,17 +21,17 @@ final bool success;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': result.toJson(),
+  'result': result?.toJson(),
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-MagicVisibilityMnmMnmRulesSingleResponse copyWith({List<MagicVisibilityMnmMessages2>? errors, List<MagicVisibilityMnmMessages2>? messages, MagicVisibilityMnmMnmRule? result, bool? success, }) { return MagicVisibilityMnmMnmRulesSingleResponse(
+MagicVisibilityMnmMnmRulesSingleResponse copyWith({List<MagicVisibilityMnmMessages2>? errors, List<MagicVisibilityMnmMessages2>? messages, MagicVisibilityMnmMnmRule? Function()? result, bool? success, }) { return MagicVisibilityMnmMnmRulesSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
-  result: result ?? this.result,
+  result: result != null ? result() : this.result,
   success: success ?? this.success,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

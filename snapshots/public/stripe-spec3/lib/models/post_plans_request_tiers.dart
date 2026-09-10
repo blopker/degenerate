@@ -7,7 +7,7 @@ factory PostPlansRequestTiers.fromJson(Map<String, dynamic> json) { return PostP
   flatAmountDecimal: json['flat_amount_decimal'] as String?,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-  upTo: OneOf2.parse(json['up_to'], fromA: (v) => PostPlansRequestTiersUpToVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),),
+  upTo: PostPlansRequestTiersUpTo.fromJson(json['up_to']),
 ); }
 
 final int? flatAmount;

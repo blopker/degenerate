@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsRequestAmountDetailsLineItemsVariant2($value)'; } 
  }
-typedef PostPaymentIntentsRequestAmountDetailsLineItems = OneOf2<List<PostPaymentIntentsRequestAmountDetailsLineItemsVariant1>,PostPaymentIntentsRequestAmountDetailsLineItemsVariant2>;
+
+@immutable
+final class PostPaymentIntentsRequestAmountDetailsLineItems {
+  const PostPaymentIntentsRequestAmountDetailsLineItems({this.listPostPaymentIntentsRequestAmountDetailsLineItemsVariant1 = const Omittable.absent(),
+this.postPaymentIntentsRequestAmountDetailsLineItemsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsRequestAmountDetailsLineItems._({required this.rawValue, required this.listPostPaymentIntentsRequestAmountDetailsLineItemsVariant1,
+required this.postPaymentIntentsRequestAmountDetailsLineItemsVariant2,});
+  factory PostPaymentIntentsRequestAmountDetailsLineItems.fromJson(Object? json) => PostPaymentIntentsRequestAmountDetailsLineItems._(
+    rawValue: Omittable(json),
+    listPostPaymentIntentsRequestAmountDetailsLineItemsVariant1: parseAnyOfVariant<List<PostPaymentIntentsRequestAmountDetailsLineItemsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostPaymentIntentsRequestAmountDetailsLineItemsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+postPaymentIntentsRequestAmountDetailsLineItemsVariant2: parseAnyOfVariant<PostPaymentIntentsRequestAmountDetailsLineItemsVariant2>(json, (value) => PostPaymentIntentsRequestAmountDetailsLineItemsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostPaymentIntentsRequestAmountDetailsLineItemsVariant1>> listPostPaymentIntentsRequestAmountDetailsLineItemsVariant1;
+final Omittable<PostPaymentIntentsRequestAmountDetailsLineItemsVariant2> postPaymentIntentsRequestAmountDetailsLineItemsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostPaymentIntentsRequestAmountDetailsLineItemsVariant1.isPresent || postPaymentIntentsRequestAmountDetailsLineItemsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostPaymentIntentsRequestAmountDetailsLineItemsVariant1.isPresent) listPostPaymentIntentsRequestAmountDetailsLineItemsVariant1.value?.map((e) => e.toJson()).toList(),
+if (postPaymentIntentsRequestAmountDetailsLineItemsVariant2.isPresent) postPaymentIntentsRequestAmountDetailsLineItemsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsRequestAmountDetailsLineItems && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsRequestAmountDetailsLineItems(${toJson()})';
+}

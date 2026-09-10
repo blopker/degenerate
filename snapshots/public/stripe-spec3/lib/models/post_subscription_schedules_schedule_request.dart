@@ -65,7 +65,7 @@ factory PostSubscriptionSchedulesScheduleRequest.fromJson(Map<String, dynamic> j
   defaultSettings: json['default_settings'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>) : null,
   endBehavior: json['end_behavior'] != null ? PostSubscriptionSchedulesScheduleRequestEndBehavior.fromJson(json['end_behavior'] as String) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostSubscriptionSchedulesScheduleRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostSubscriptionSchedulesScheduleRequestMetadata.fromJson(json['metadata']) : null,
   phases: (json['phases'] as List<dynamic>?)?.map((e) => PostSubscriptionSchedulesScheduleRequestPhases.fromJson(e as Map<String, dynamic>)).toList(),
   prorationBehavior: json['proration_behavior'] != null ? PostSubscriptionSchedulesScheduleRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
 ); }

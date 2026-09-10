@@ -24,6 +24,6 @@ RadarGetDnsTimeseriesGroupByQueryTypeResponseResultSerie0 copyWith({List<DateTim
       other is RadarGetDnsTimeseriesGroupByQueryTypeResponseResultSerie0 &&
           listEquals(timestamps, other.timestamps) &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(Object.hashAll(timestamps), Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(Object.hashAll(timestamps), mapHash(additionalProperties)); } 
 @override String toString() { return 'RadarGetDnsTimeseriesGroupByQueryTypeResponseResultSerie0(timestamps: $timestamps, additionalProperties: $additionalProperties)'; } 
  }

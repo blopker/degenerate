@@ -6,7 +6,7 @@ factory PostTerminalReadersRequest.fromJson(Map<String, dynamic> json) { return 
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   label: json['label'] as String?,
   location: json['location'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostTerminalReadersRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostTerminalReadersRequestMetadata.fromJson(json['metadata']) : null,
   registrationCode: json['registration_code'] as String,
 ); }
 

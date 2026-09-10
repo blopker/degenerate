@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'billing_details.dart';import 'charge_application.dart';import 'charge_application_fee.dart';import 'charge_balance_transaction.dart';import 'charge_customer.dart';import 'charge_failure_balance_transaction.dart';import 'charge_fraud_details.dart';import 'charge_on_behalf_of.dart';import 'charge_outcome.dart';import 'charge_payment_intent.dart';import 'charge_refunds.dart';import 'charge_review.dart';import 'charge_source_transfer.dart';import 'charge_transfer.dart';import 'charge_transfer_data.dart';import 'customer.dart';import 'deleted_customer.dart';import 'payment_flows_payment_intent_presentment_details.dart';import 'payment_intent.dart';import 'payment_method_details.dart';import 'radar_radar_options.dart';import 'review.dart';import 'shipping.dart';import 'transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details.dart';import 'charge_application.dart';import 'charge_application_fee.dart';import 'charge_balance_transaction.dart';import 'charge_customer.dart';import 'charge_failure_balance_transaction.dart';import 'charge_fraud_details.dart';import 'charge_on_behalf_of.dart';import 'charge_outcome.dart';import 'charge_payment_intent.dart';import 'charge_refunds.dart';import 'charge_review.dart';import 'charge_source_transfer.dart';import 'charge_transfer.dart';import 'charge_transfer_data.dart';import 'payment_flows_payment_intent_presentment_details.dart';import 'payment_method_details.dart';import 'radar_radar_options.dart';import 'shipping.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ChargeObject {const ChargeObject._(this.value);
 
 factory ChargeObject.fromJson(String json) { return switch (json) {
@@ -59,19 +59,19 @@ factory Charge.fromJson(Map<String, dynamic> json) { return Charge(
   amount: (json['amount'] as num).toInt(),
   amountCaptured: (json['amount_captured'] as num).toInt(),
   amountRefunded: (json['amount_refunded'] as num).toInt(),
-  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  applicationFee: json.containsKey('application_fee') ? Omittable(json['application_fee'] != null ? OneOf2.parse(json['application_fee'], fromA: (v) => v as String, fromB: (v) => ApplicationFee.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? ChargeApplication.fromJson(json['application']) : null) : const Omittable.absent(),
+  applicationFee: json.containsKey('application_fee') ? Omittable(json['application_fee'] != null ? ChargeApplicationFee.fromJson(json['application_fee']) : null) : const Omittable.absent(),
   applicationFeeAmount: json.containsKey('application_fee_amount') ? Omittable(json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null) : const Omittable.absent(),
-  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? ChargeBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
   billingDetails: BillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>),
   calculatedStatementDescriptor: json.containsKey('calculated_statement_descriptor') ? Omittable(json['calculated_statement_descriptor'] as String?) : const Omittable.absent(),
   captured: json['captured'] as bool,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? ChargeCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   disputed: json['disputed'] as bool,
-  failureBalanceTransaction: json.containsKey('failure_balance_transaction') ? Omittable(json['failure_balance_transaction'] != null ? OneOf2.parse(json['failure_balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  failureBalanceTransaction: json.containsKey('failure_balance_transaction') ? Omittable(json['failure_balance_transaction'] != null ? ChargeFailureBalanceTransaction.fromJson(json['failure_balance_transaction']) : null) : const Omittable.absent(),
   failureCode: json.containsKey('failure_code') ? Omittable(json['failure_code'] as String?) : const Omittable.absent(),
   failureMessage: json.containsKey('failure_message') ? Omittable(json['failure_message'] as String?) : const Omittable.absent(),
   fraudDetails: json.containsKey('fraud_details') ? Omittable(json['fraud_details'] != null ? ChargeFraudDetails.fromJson(json['fraud_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -79,10 +79,10 @@ factory Charge.fromJson(Map<String, dynamic> json) { return Charge(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: ChargeObject.fromJson(json['object'] as String),
-  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? ChargeOnBehalfOf.fromJson(json['on_behalf_of']) : null) : const Omittable.absent(),
   outcome: json.containsKey('outcome') ? Omittable(json['outcome'] != null ? ChargeOutcome.fromJson(json['outcome'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   paid: json['paid'] as bool,
-  paymentIntent: json.containsKey('payment_intent') ? Omittable(json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  paymentIntent: json.containsKey('payment_intent') ? Omittable(json['payment_intent'] != null ? ChargePaymentIntent.fromJson(json['payment_intent']) : null) : const Omittable.absent(),
   paymentMethod: json.containsKey('payment_method') ? Omittable(json['payment_method'] as String?) : const Omittable.absent(),
   paymentMethodDetails: json.containsKey('payment_method_details') ? Omittable(json['payment_method_details'] != null ? PaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   presentmentDetails: json['presentment_details'] != null ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>) : null,
@@ -92,13 +92,13 @@ factory Charge.fromJson(Map<String, dynamic> json) { return Charge(
   receiptUrl: json.containsKey('receipt_url') ? Omittable(json['receipt_url'] as String?) : const Omittable.absent(),
   refunded: json['refunded'] as bool,
   refunds: json.containsKey('refunds') ? Omittable(json['refunds'] != null ? ChargeRefunds.fromJson(json['refunds'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  review: json.containsKey('review') ? Omittable(json['review'] != null ? OneOf2.parse(json['review'], fromA: (v) => v as String, fromB: (v) => Review.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  review: json.containsKey('review') ? Omittable(json['review'] != null ? ChargeReview.fromJson(json['review']) : null) : const Omittable.absent(),
   shipping: json.containsKey('shipping') ? Omittable(json['shipping'] != null ? Shipping.fromJson(json['shipping'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  sourceTransfer: json.containsKey('source_transfer') ? Omittable(json['source_transfer'] != null ? OneOf2.parse(json['source_transfer'], fromA: (v) => v as String, fromB: (v) => Transfer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  sourceTransfer: json.containsKey('source_transfer') ? Omittable(json['source_transfer'] != null ? ChargeSourceTransfer.fromJson(json['source_transfer']) : null) : const Omittable.absent(),
   statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
   statementDescriptorSuffix: json.containsKey('statement_descriptor_suffix') ? Omittable(json['statement_descriptor_suffix'] as String?) : const Omittable.absent(),
   status: ChargeStatus.fromJson(json['status'] as String),
-  transfer: json['transfer'] != null ? OneOf2.parse(json['transfer'], fromA: (v) => v as String, fromB: (v) => Transfer.fromJson(v as Map<String, dynamic>),) : null,
+  transfer: json['transfer'] != null ? ChargeTransfer.fromJson(json['transfer']) : null,
   transferData: json.containsKey('transfer_data') ? Omittable(json['transfer_data'] != null ? ChargeTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   transferGroup: json.containsKey('transfer_group') ? Omittable(json['transfer_group'] as String?) : const Omittable.absent(),
 ); }

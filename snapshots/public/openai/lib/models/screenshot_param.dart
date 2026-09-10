@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A screenshot action.
-@immutable final class ScreenshotParam {const ScreenshotParam({this.type = 'screenshot'});
+@immutable final class ScreenshotParam {const ScreenshotParam({required this.type});
 
 factory ScreenshotParam.fromJson(Map<String, dynamic> json) { return ScreenshotParam(
   type: json['type'] as String,

@@ -28,7 +28,7 @@ factory WorDescribeWorkflowInstanceResponseResultStepsWaitForEvent.fromJson(Map<
   error: json['error'] != null ? WorDescribeWorkflowInstanceResponseResultStepsWaitForEventError.fromJson(json['error'] as Map<String, dynamic>) : null,
   finished: json['finished'] as bool,
   name: json['name'] as String,
-  output: OneOf4.parse(json['output'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String, fromC: (v) => (v as num).toDouble(), fromD: (v) => v as bool,),
+  output: WorDescribeWorkflowInstanceResponseResultStepsWaitForEventOutput.fromJson(json['output']),
   start: DateTime.parse(json['start'] as String),
   type: WorDescribeWorkflowInstanceResponseResultStepsWaitForEventType.fromJson(json['type'] as String),
 ); }

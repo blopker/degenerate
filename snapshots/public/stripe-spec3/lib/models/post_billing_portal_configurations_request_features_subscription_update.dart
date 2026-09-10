@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_update_default_allowed_updates.dart';import 'post_billing_portal_configurations_request_features_subscription_update_products.dart';import 'post_billing_portal_configurations_request_features_subscription_update_products_variant1.dart';import 'post_billing_portal_configurations_request_features_subscription_update_schedule_at_period_end.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateBillingCycleAnchor {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateBillingCycleAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_update_default_allowed_updates.dart';import 'post_billing_portal_configurations_request_features_subscription_update_products.dart';import 'post_billing_portal_configurations_request_features_subscription_update_schedule_at_period_end.dart';@immutable final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateBillingCycleAnchor {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateBillingCycleAnchor._(this.value);
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'now' => now,
@@ -79,9 +79,9 @@ bool get isUnknown { return !values.contains(this); }
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate(
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
-  defaultAllowedUpdates: json['default_allowed_updates'] != null ? OneOf2.parse(json['default_allowed_updates'], fromA: (v) => (v as List<dynamic>).map((e) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1.fromJson(e as String)).toList(), fromB: (v) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2.fromJson(v as String),) : null,
+  defaultAllowedUpdates: json['default_allowed_updates'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdates.fromJson(json['default_allowed_updates']) : null,
   enabled: json['enabled'] as bool,
-  products: json['products'] != null ? OneOf2.parse(json['products'], fromA: (v) => (v as List<dynamic>).map((e) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant2.fromJson(v as String),) : null,
+  products: json['products'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProducts.fromJson(json['products']) : null,
   prorationBehavior: json['proration_behavior'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
   scheduleAtPeriodEnd: json['schedule_at_period_end'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd.fromJson(json['schedule_at_period_end'] as Map<String, dynamic>) : null,
   trialUpdateBehavior: json['trial_update_behavior'] != null ? PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateTrialUpdateBehavior.fromJson(json['trial_update_behavior'] as String) : null,

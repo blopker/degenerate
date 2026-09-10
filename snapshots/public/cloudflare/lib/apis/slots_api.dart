@@ -46,7 +46,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NscSlotList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NscSlotList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -65,7 +66,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NscSlotInfo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NscSlotInfo.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

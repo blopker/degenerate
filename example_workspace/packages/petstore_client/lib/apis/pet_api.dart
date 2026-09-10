@@ -25,7 +25,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return Pet.fromJson(json as Map<String, dynamic>);
+}
+if (responseMediaTypeMatches(contentType, 'application/xml')) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into Pet
+throw UnsupportedError('Cannot decode application/xml response into Pet');
+}
+final json = jsonDecode(response.body);
+return Pet.fromJson(json as Map<String, dynamic>);
+
   },
 );
  } 
@@ -48,7 +59,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return Pet.fromJson(json as Map<String, dynamic>);
+}
+if (responseMediaTypeMatches(contentType, 'application/xml')) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into Pet
+throw UnsupportedError('Cannot decode application/xml response into Pet');
+}
+final json = jsonDecode(response.body);
+return Pet.fromJson(json as Map<String, dynamic>);
+
   },
 );
  } 
@@ -75,8 +97,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
+}
+if (responseMediaTypeMatches(contentType, 'application/xml')) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into List<Pet>
+throw UnsupportedError('Cannot decode application/xml response into List<Pet>');
+}
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
+
   },
 );
  } 
@@ -105,8 +137,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
+}
+if (responseMediaTypeMatches(contentType, 'application/xml')) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into List<Pet>
+throw UnsupportedError('Cannot decode application/xml response into List<Pet>');
+}
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
+
   },
 );
  } 
@@ -127,7 +169,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return Pet.fromJson(json as Map<String, dynamic>);
+}
+if (responseMediaTypeMatches(contentType, 'application/xml')) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into Pet
+throw UnsupportedError('Cannot decode application/xml response into Pet');
+}
+final json = jsonDecode(response.body);
+return Pet.fromJson(json as Map<String, dynamic>);
+
   },
 );
  } 
@@ -159,7 +212,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return Pet.fromJson(json as Map<String, dynamic>);
+}
+if (responseMediaTypeMatches(contentType, 'application/xml')) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into Pet
+throw UnsupportedError('Cannot decode application/xml response into Pet');
+}
+final json = jsonDecode(response.body);
+return Pet.fromJson(json as Map<String, dynamic>);
+
   },
 );
  } 
@@ -212,7 +276,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Response.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

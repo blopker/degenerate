@@ -1,68 +1,98 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_azure_ad.dart';import 'access_centrify.dart';import 'access_facebook.dart';import 'access_github.dart';import 'access_google.dart';import 'access_google_apps.dart';import 'access_linkedin.dart';import 'access_oidc.dart';import 'access_okta.dart';import 'access_onelogin.dart';import 'access_onetimepin.dart';import 'access_pingone.dart';import 'access_saml.dart';import 'access_yandex.dart';final class AccessIdentityProviders {const AccessIdentityProviders({this.accessAzureAd, this.accessCentrify, this.accessFacebook, this.accessGithub, this.accessGoogle, this.accessGoogleApps, this.accessLinkedin, this.accessOidc, this.accessOkta, this.accessOnelogin, this.accessPingone, this.accessSaml, this.accessYandex, this.accessOnetimepin, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_azure_ad.dart';import 'access_centrify.dart';import 'access_facebook.dart';import 'access_github.dart';import 'access_google.dart';import 'access_google_apps.dart';import 'access_linkedin.dart';import 'access_oidc.dart';import 'access_okta.dart';import 'access_onelogin.dart';import 'access_onetimepin.dart';import 'access_pingone.dart';import 'access_saml.dart';import 'access_yandex.dart';
+@immutable
+final class AccessIdentityProviders {
+  const AccessIdentityProviders({this.accessAzureAd = const Omittable.absent(),
+this.accessCentrify = const Omittable.absent(),
+this.accessFacebook = const Omittable.absent(),
+this.accessGithub = const Omittable.absent(),
+this.accessGoogle = const Omittable.absent(),
+this.accessGoogleApps = const Omittable.absent(),
+this.accessLinkedin = const Omittable.absent(),
+this.accessOidc = const Omittable.absent(),
+this.accessOkta = const Omittable.absent(),
+this.accessOnelogin = const Omittable.absent(),
+this.accessPingone = const Omittable.absent(),
+this.accessSaml = const Omittable.absent(),
+this.accessYandex = const Omittable.absent(),
+this.accessOnetimepin = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const AccessIdentityProviders._({required this.rawValue, required this.accessAzureAd,
+required this.accessCentrify,
+required this.accessFacebook,
+required this.accessGithub,
+required this.accessGoogle,
+required this.accessGoogleApps,
+required this.accessLinkedin,
+required this.accessOidc,
+required this.accessOkta,
+required this.accessOnelogin,
+required this.accessPingone,
+required this.accessSaml,
+required this.accessYandex,
+required this.accessOnetimepin,});
+  factory AccessIdentityProviders.fromJson(Object? json) => AccessIdentityProviders._(
+    rawValue: Omittable(json),
+    accessAzureAd: parseAnyOfVariant<AccessAzureAd>(json, (value) => AccessAzureAd.fromJson(value! as Map<String, dynamic>)),
+accessCentrify: parseAnyOfVariant<AccessCentrify>(json, (value) => AccessCentrify.fromJson(value! as Map<String, dynamic>)),
+accessFacebook: parseAnyOfVariant<AccessFacebook>(json, (value) => AccessFacebook.fromJson(value! as Map<String, dynamic>)),
+accessGithub: parseAnyOfVariant<AccessGithub>(json, (value) => AccessGithub.fromJson(value! as Map<String, dynamic>)),
+accessGoogle: parseAnyOfVariant<AccessGoogle>(json, (value) => AccessGoogle.fromJson(value! as Map<String, dynamic>)),
+accessGoogleApps: parseAnyOfVariant<AccessGoogleApps>(json, (value) => AccessGoogleApps.fromJson(value! as Map<String, dynamic>)),
+accessLinkedin: parseAnyOfVariant<AccessLinkedin>(json, (value) => AccessLinkedin.fromJson(value! as Map<String, dynamic>)),
+accessOidc: parseAnyOfVariant<AccessOidc>(json, (value) => AccessOidc.fromJson(value! as Map<String, dynamic>)),
+accessOkta: parseAnyOfVariant<AccessOkta>(json, (value) => AccessOkta.fromJson(value! as Map<String, dynamic>)),
+accessOnelogin: parseAnyOfVariant<AccessOnelogin>(json, (value) => AccessOnelogin.fromJson(value! as Map<String, dynamic>)),
+accessPingone: parseAnyOfVariant<AccessPingone>(json, (value) => AccessPingone.fromJson(value! as Map<String, dynamic>)),
+accessSaml: parseAnyOfVariant<AccessSaml>(json, (value) => AccessSaml.fromJson(value! as Map<String, dynamic>)),
+accessYandex: parseAnyOfVariant<AccessYandex>(json, (value) => AccessYandex.fromJson(value! as Map<String, dynamic>)),
+accessOnetimepin: parseAnyOfVariant<AccessOnetimepin>(json, (value) => AccessOnetimepin.fromJson(value! as Map<String, dynamic>)),
+  );
 
-factory AccessIdentityProviders.fromJson(Map<String, dynamic> json) { return AccessIdentityProviders(
-  accessAzureAd: AccessAzureAd.canParse(json) ? AccessAzureAd.fromJson(json) : null,
-  accessCentrify: AccessCentrify.canParse(json) ? AccessCentrify.fromJson(json) : null,
-  accessFacebook: AccessFacebook.canParse(json) ? AccessFacebook.fromJson(json) : null,
-  accessGithub: AccessGithub.canParse(json) ? AccessGithub.fromJson(json) : null,
-  accessGoogle: AccessGoogle.canParse(json) ? AccessGoogle.fromJson(json) : null,
-  accessGoogleApps: AccessGoogleApps.canParse(json) ? AccessGoogleApps.fromJson(json) : null,
-  accessLinkedin: AccessLinkedin.canParse(json) ? AccessLinkedin.fromJson(json) : null,
-  accessOidc: AccessOidc.canParse(json) ? AccessOidc.fromJson(json) : null,
-  accessOkta: AccessOkta.canParse(json) ? AccessOkta.fromJson(json) : null,
-  accessOnelogin: AccessOnelogin.canParse(json) ? AccessOnelogin.fromJson(json) : null,
-  accessPingone: AccessPingone.canParse(json) ? AccessPingone.fromJson(json) : null,
-  accessSaml: AccessSaml.canParse(json) ? AccessSaml.fromJson(json) : null,
-  accessYandex: AccessYandex.canParse(json) ? AccessYandex.fromJson(json) : null,
-  accessOnetimepin: AccessOnetimepin.canParse(json) ? AccessOnetimepin.fromJson(json) : null,
-); }
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<AccessAzureAd> accessAzureAd;
+final Omittable<AccessCentrify> accessCentrify;
+final Omittable<AccessFacebook> accessFacebook;
+final Omittable<AccessGithub> accessGithub;
+final Omittable<AccessGoogle> accessGoogle;
+final Omittable<AccessGoogleApps> accessGoogleApps;
+final Omittable<AccessLinkedin> accessLinkedin;
+final Omittable<AccessOidc> accessOidc;
+final Omittable<AccessOkta> accessOkta;
+final Omittable<AccessOnelogin> accessOnelogin;
+final Omittable<AccessPingone> accessPingone;
+final Omittable<AccessSaml> accessSaml;
+final Omittable<AccessYandex> accessYandex;
+final Omittable<AccessOnetimepin> accessOnetimepin;
 
-final AccessAzureAd? accessAzureAd;
+  /// Whether at least one known variant matched.
+  bool get isValid => accessAzureAd.isPresent || accessCentrify.isPresent || accessFacebook.isPresent || accessGithub.isPresent || accessGoogle.isPresent || accessGoogleApps.isPresent || accessLinkedin.isPresent || accessOidc.isPresent || accessOkta.isPresent || accessOnelogin.isPresent || accessPingone.isPresent || accessSaml.isPresent || accessYandex.isPresent || accessOnetimepin.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
 
-final AccessCentrify? accessCentrify;
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (accessAzureAd.isPresent) accessAzureAd.value?.toJson(),
+if (accessCentrify.isPresent) accessCentrify.value?.toJson(),
+if (accessFacebook.isPresent) accessFacebook.value?.toJson(),
+if (accessGithub.isPresent) accessGithub.value?.toJson(),
+if (accessGoogle.isPresent) accessGoogle.value?.toJson(),
+if (accessGoogleApps.isPresent) accessGoogleApps.value?.toJson(),
+if (accessLinkedin.isPresent) accessLinkedin.value?.toJson(),
+if (accessOidc.isPresent) accessOidc.value?.toJson(),
+if (accessOkta.isPresent) accessOkta.value?.toJson(),
+if (accessOnelogin.isPresent) accessOnelogin.value?.toJson(),
+if (accessPingone.isPresent) accessPingone.value?.toJson(),
+if (accessSaml.isPresent) accessSaml.value?.toJson(),
+if (accessYandex.isPresent) accessYandex.value?.toJson(),
+if (accessOnetimepin.isPresent) accessOnetimepin.value?.toJson(),
+  ]);
 
-final AccessFacebook? accessFacebook;
-
-final AccessGithub? accessGithub;
-
-final AccessGoogle? accessGoogle;
-
-final AccessGoogleApps? accessGoogleApps;
-
-final AccessLinkedin? accessLinkedin;
-
-final AccessOidc? accessOidc;
-
-final AccessOkta? accessOkta;
-
-final AccessOnelogin? accessOnelogin;
-
-final AccessPingone? accessPingone;
-
-final AccessSaml? accessSaml;
-
-final AccessYandex? accessYandex;
-
-final AccessOnetimepin? accessOnetimepin;
-
-/// At least one variant must be present.
-bool get isValid { return accessAzureAd != null || accessCentrify != null || accessFacebook != null || accessGithub != null || accessGoogle != null || accessGoogleApps != null || accessLinkedin != null || accessOidc != null || accessOkta != null || accessOnelogin != null || accessPingone != null || accessSaml != null || accessYandex != null || accessOnetimepin != null; } 
-Map<String, dynamic> toJson() { return {
-  ...?accessAzureAd?.toJson(),
-  ...?accessCentrify?.toJson(),
-  ...?accessFacebook?.toJson(),
-  ...?accessGithub?.toJson(),
-  ...?accessGoogle?.toJson(),
-  ...?accessGoogleApps?.toJson(),
-  ...?accessLinkedin?.toJson(),
-  ...?accessOidc?.toJson(),
-  ...?accessOkta?.toJson(),
-  ...?accessOnelogin?.toJson(),
-  ...?accessPingone?.toJson(),
-  ...?accessSaml?.toJson(),
-  ...?accessYandex?.toJson(),
-  ...?accessOnetimepin?.toJson(),
-}; } 
- }
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is AccessIdentityProviders && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'AccessIdentityProviders(${toJson()})';
+}

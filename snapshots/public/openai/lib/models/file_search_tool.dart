@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'comparison_filter.dart';import 'compound_filter.dart';import 'filters.dart';import 'ranking_options.dart';/// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
-@immutable final class FileSearchTool {const FileSearchTool({required this.vectorStoreIds, this.type = 'file_search', this.maxNumResults, this.rankingOptions, this.filters = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'filters.dart';import 'ranking_options.dart';/// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
+@immutable final class FileSearchTool {const FileSearchTool({required this.type, required this.vectorStoreIds, this.maxNumResults, this.rankingOptions, this.filters = const Omittable.absent(), });
 
 factory FileSearchTool.fromJson(Map<String, dynamic> json) { return FileSearchTool(
   type: json['type'] as String,
   vectorStoreIds: (json['vector_store_ids'] as List<dynamic>).map((e) => e as String).toList(),
   maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
   rankingOptions: json['ranking_options'] != null ? RankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
-  filters: json.containsKey('filters') ? Omittable(json['filters'] != null ? OneOf2.parse(json['filters'], fromA: (v) => ComparisonFilter.fromJson(v as Map<String, dynamic>), fromB: (v) => CompoundFilter.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  filters: json.containsKey('filters') ? Omittable(json['filters'] != null ? Filters.fromJson(json['filters']) : null) : const Omittable.absent(),
 ); }
 
 /// The type of the file search tool. Always `file_search`.

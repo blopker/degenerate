@@ -32,16 +32,16 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimekitVideoConfigWatermarkPosition($value)'; } 
  }
 /// Watermark to be added to the recording
-@immutable final class RealtimekitVideoConfigWatermark {const RealtimekitVideoConfigWatermark({this.position = RealtimekitVideoConfigWatermarkPosition.leftTop, this.size, this.url, });
+@immutable final class RealtimekitVideoConfigWatermark {const RealtimekitVideoConfigWatermark({this.position, this.size, this.url, });
 
 factory RealtimekitVideoConfigWatermark.fromJson(Map<String, dynamic> json) { return RealtimekitVideoConfigWatermark(
-  position: json.containsKey('position') ? RealtimekitVideoConfigWatermarkPosition.fromJson(json['position'] as String) : RealtimekitVideoConfigWatermarkPosition.leftTop,
+  position: json['position'] != null ? RealtimekitVideoConfigWatermarkPosition.fromJson(json['position'] as String) : null,
   size: json['size'] != null ? RealtimekitVideoConfigWatermarkSize.fromJson(json['size'] as Map<String, dynamic>) : null,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 
 /// Position of the watermark
-final RealtimekitVideoConfigWatermarkPosition position;
+final RealtimekitVideoConfigWatermarkPosition? position;
 
 /// Size of the watermark
 final RealtimekitVideoConfigWatermarkSize? size;
@@ -49,13 +49,15 @@ final RealtimekitVideoConfigWatermarkSize? size;
 /// URL of the watermark image
 final Uri? url;
 
+/// The value with the schema default applied when absent.
+RealtimekitVideoConfigWatermarkPosition get positionOrDefault { return position ?? RealtimekitVideoConfigWatermarkPosition.fromJson('left top'); } 
 Map<String, dynamic> toJson() { return {
-  'position': position.toJson(),
+  if (position != null) 'position': position?.toJson(),
   if (size != null) 'size': size?.toJson(),
   if (url != null) 'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'position', 'size', 'url'}.contains(key)); } 
-RealtimekitVideoConfigWatermark copyWith({RealtimekitVideoConfigWatermarkPosition Function()? position, RealtimekitVideoConfigWatermarkSize? Function()? size, Uri? Function()? url, }) { return RealtimekitVideoConfigWatermark(
+RealtimekitVideoConfigWatermark copyWith({RealtimekitVideoConfigWatermarkPosition? Function()? position, RealtimekitVideoConfigWatermarkSize? Function()? size, Uri? Function()? url, }) { return RealtimekitVideoConfigWatermark(
   position: position != null ? position() : this.position,
   size: size != null ? size() : this.size,
   url: url != null ? url() : this.url,

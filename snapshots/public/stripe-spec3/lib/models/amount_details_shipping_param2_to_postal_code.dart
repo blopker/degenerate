@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AmountDetailsShippingParam2ToPostalCodeVariant2($value)'; } 
  }
-typedef AmountDetailsShippingParam2ToPostalCode = OneOf2<String,AmountDetailsShippingParam2ToPostalCodeVariant2>;
+
+@immutable
+final class AmountDetailsShippingParam2ToPostalCode {
+  const AmountDetailsShippingParam2ToPostalCode({this.string = const Omittable.absent(),
+this.amountDetailsShippingParam2ToPostalCodeVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const AmountDetailsShippingParam2ToPostalCode._({required this.rawValue, required this.string,
+required this.amountDetailsShippingParam2ToPostalCodeVariant2,});
+  factory AmountDetailsShippingParam2ToPostalCode.fromJson(Object? json) => AmountDetailsShippingParam2ToPostalCode._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+amountDetailsShippingParam2ToPostalCodeVariant2: parseAnyOfVariant<AmountDetailsShippingParam2ToPostalCodeVariant2>(json, (value) => AmountDetailsShippingParam2ToPostalCodeVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<AmountDetailsShippingParam2ToPostalCodeVariant2> amountDetailsShippingParam2ToPostalCodeVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || amountDetailsShippingParam2ToPostalCodeVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (amountDetailsShippingParam2ToPostalCodeVariant2.isPresent) amountDetailsShippingParam2ToPostalCodeVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is AmountDetailsShippingParam2ToPostalCode && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'AmountDetailsShippingParam2ToPostalCode(${toJson()})';
+}

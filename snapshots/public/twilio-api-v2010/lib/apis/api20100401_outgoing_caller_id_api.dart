@@ -23,7 +23,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountOutgoingCallerId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountOutgoingCallerId.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -47,7 +48,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountOutgoingCallerId.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountOutgoingCallerId.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -103,7 +105,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListOutgoingCallerIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListOutgoingCallerIdResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SpecificFunctionShellParamType($value)'; } 
  }
 /// Forces the model to call the shell tool when a tool call is required.
-@immutable final class SpecificFunctionShellParam {const SpecificFunctionShellParam({this.type = SpecificFunctionShellParamType.shell});
+@immutable final class SpecificFunctionShellParam {const SpecificFunctionShellParam({required this.type});
 
 factory SpecificFunctionShellParam.fromJson(Map<String, dynamic> json) { return SpecificFunctionShellParam(
   type: SpecificFunctionShellParamType.fromJson(json['type'] as String),

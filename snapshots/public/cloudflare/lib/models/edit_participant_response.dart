@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'edit_participant_response_data.dart';@immutable final class EditParticipantResponse {const EditParticipantResponse({this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'edit_participant_response_data.dart';@immutable final class EditParticipantResponse {const EditParticipantResponse({required this.success, this.data, });
 
 factory EditParticipantResponse.fromJson(Map<String, dynamic> json) { return EditParticipantResponse(
   data: json['data'] != null ? EditParticipantResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

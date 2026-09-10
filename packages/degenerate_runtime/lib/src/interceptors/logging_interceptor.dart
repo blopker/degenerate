@@ -1,5 +1,6 @@
 import 'package:degenerate_runtime/src/api_client.dart';
 import 'package:degenerate_runtime/src/interceptor.dart';
+import 'package:degenerate_runtime/src/streamed_api_response.dart';
 
 /// Middleware that logs requests and responses.
 ///
@@ -17,11 +18,11 @@ class LoggingInterceptor implements Interceptor {
   final void Function(String message) logger;
 
   @override
-  Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
+  Future<StreamedApiResponse> intercept(ApiRequest request, Handler next) async {
     logger('--> ${request.method} ${request.path}');
     try {
       final response = await next(request);
-      logger('<-- ${response.statusCode} (${response.body.length} bytes)');
+      logger('<-- ${response.statusCode}');
       return response;
     } on Object catch (e) {
       logger('<-- ERROR: $e');

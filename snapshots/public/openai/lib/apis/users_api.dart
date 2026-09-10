@@ -39,7 +39,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return UserListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return UserListResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -58,7 +59,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return User.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return User.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -79,7 +81,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return User.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return User.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -98,7 +101,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return UserDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return UserDeleteResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

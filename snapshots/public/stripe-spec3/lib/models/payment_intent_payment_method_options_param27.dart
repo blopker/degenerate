@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PaymentIntentPaymentMethodOptionsParam27 {const PaymentIntentPaymentMethodOptionsParam27({this.reference, this.setupFutureUsage, });
 
 factory PaymentIntentPaymentMethodOptionsParam27.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam27(
-  reference: json['reference'] != null ? OneOf2.parse(json['reference'], fromA: (v) => v as String, fromB: (v) => PaymentIntentPaymentMethodOptionsParam27ReferenceVariant2.fromJson(v as String),) : null,
+  reference: json['reference'] != null ? PaymentIntentPaymentMethodOptionsParam27Reference.fromJson(json['reference']) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam27SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 

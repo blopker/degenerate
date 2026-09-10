@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_lines_line_item_id_request_discounts.dart';import 'post_invoices_invoice_lines_line_item_id_request_discounts_variant1.dart';import 'post_invoices_invoice_lines_line_item_id_request_metadata.dart';import 'post_invoices_invoice_lines_line_item_id_request_period.dart';import 'post_invoices_invoice_lines_line_item_id_request_price_data.dart';import 'post_invoices_invoice_lines_line_item_id_request_pricing.dart';import 'post_invoices_invoice_lines_line_item_id_request_tax_amounts.dart';import 'post_invoices_invoice_lines_line_item_id_request_tax_amounts_variant1.dart';import 'post_invoices_invoice_lines_line_item_id_request_tax_rates.dart';@immutable final class PostInvoicesInvoiceLinesLineItemIdRequest {const PostInvoicesInvoiceLinesLineItemIdRequest({this.amount, this.description, this.discountable, this.discounts, this.expand, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.taxAmounts, this.taxRates, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_lines_line_item_id_request_discounts.dart';import 'post_invoices_invoice_lines_line_item_id_request_metadata.dart';import 'post_invoices_invoice_lines_line_item_id_request_period.dart';import 'post_invoices_invoice_lines_line_item_id_request_price_data.dart';import 'post_invoices_invoice_lines_line_item_id_request_pricing.dart';import 'post_invoices_invoice_lines_line_item_id_request_tax_amounts.dart';import 'post_invoices_invoice_lines_line_item_id_request_tax_rates.dart';@immutable final class PostInvoicesInvoiceLinesLineItemIdRequest {const PostInvoicesInvoiceLinesLineItemIdRequest({this.amount, this.description, this.discountable, this.discounts, this.expand, this.metadata, this.period, this.priceData, this.pricing, this.quantity, this.taxAmounts, this.taxRates, });
 
 factory PostInvoicesInvoiceLinesLineItemIdRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceLinesLineItemIdRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   discountable: json['discountable'] as bool?,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesInvoiceLinesLineItemIdRequestDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoicesInvoiceLinesLineItemIdRequestDiscountsVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? PostInvoicesInvoiceLinesLineItemIdRequestDiscounts.fromJson(json['discounts']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostInvoicesInvoiceLinesLineItemIdRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostInvoicesInvoiceLinesLineItemIdRequestMetadata.fromJson(json['metadata']) : null,
   period: json['period'] != null ? PostInvoicesInvoiceLinesLineItemIdRequestPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
   priceData: json['price_data'] != null ? PostInvoicesInvoiceLinesLineItemIdRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   pricing: json['pricing'] != null ? PostInvoicesInvoiceLinesLineItemIdRequestPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxAmounts: json['tax_amounts'] != null ? OneOf2.parse(json['tax_amounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant2.fromJson(v as String),) : null,
-  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesInvoiceLinesLineItemIdRequestTaxRatesVariant2.fromJson(v as String),) : null,
+  taxAmounts: json['tax_amounts'] != null ? PostInvoicesInvoiceLinesLineItemIdRequestTaxAmounts.fromJson(json['tax_amounts']) : null,
+  taxRates: json['tax_rates'] != null ? PostInvoicesInvoiceLinesLineItemIdRequestTaxRates.fromJson(json['tax_rates']) : null,
 ); }
 
 /// The integer amount in cents (or local equivalent) of the charge to be applied to the upcoming invoice. If you want to apply a credit to the customer's account, pass a negative amount.

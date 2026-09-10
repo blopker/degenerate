@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2($value)'; } 
  }
-typedef PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCard = OneOf2<InvoicePaymentMethodOptionsParam17,PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2>;
+
+@immutable
+final class PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCard {
+  const PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCard({this.invoicePaymentMethodOptionsParam17 = const Omittable.absent(),
+this.postInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCard._({required this.rawValue, required this.invoicePaymentMethodOptionsParam17,
+required this.postInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2,});
+  factory PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCard.fromJson(Object? json) => PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCard._(
+    rawValue: Omittable(json),
+    invoicePaymentMethodOptionsParam17: parseAnyOfVariant<InvoicePaymentMethodOptionsParam17>(json, (value) => InvoicePaymentMethodOptionsParam17.fromJson(value! as Map<String, dynamic>)),
+postInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2: parseAnyOfVariant<PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2>(json, (value) => PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<InvoicePaymentMethodOptionsParam17> invoicePaymentMethodOptionsParam17;
+final Omittable<PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2> postInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => invoicePaymentMethodOptionsParam17.isPresent || postInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (invoicePaymentMethodOptionsParam17.isPresent) invoicePaymentMethodOptionsParam17.value?.toJson(),
+if (postInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2.isPresent) postInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCard && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCard(${toJson()})';
+}

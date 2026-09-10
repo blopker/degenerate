@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FunctionShellCallOutputExitOutcomeType($value)'; } 
  }
 /// Indicates that the shell commands finished and returned an exit code.
-@immutable final class FunctionShellCallOutputExitOutcome {const FunctionShellCallOutputExitOutcome({required this.exitCode, this.type = FunctionShellCallOutputExitOutcomeType.exit, });
+@immutable final class FunctionShellCallOutputExitOutcome {const FunctionShellCallOutputExitOutcome({required this.type, required this.exitCode, });
 
 factory FunctionShellCallOutputExitOutcome.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputExitOutcome(
   type: FunctionShellCallOutputExitOutcomeType.fromJson(json['type'] as String),

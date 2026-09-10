@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptions {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptions({this.customMandateUrl, this.defaultFor, this.intervalDescription, this.paymentSchedule, this.transactionType, });
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptions.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptions(
-  customMandateUrl: json['custom_mandate_url'] != null ? OneOf2.parse(json['custom_mandate_url'], fromA: (v) => v as String, fromB: (v) => PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2.fromJson(v as String),) : null,
+  customMandateUrl: json['custom_mandate_url'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrl.fromJson(json['custom_mandate_url']) : null,
   defaultFor: (json['default_for'] as List<dynamic>?)?.map((e) => PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptionsDefaultFor.fromJson(e as String)).toList(),
   intervalDescription: json['interval_description'] as String?,
   paymentSchedule: json['payment_schedule'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,

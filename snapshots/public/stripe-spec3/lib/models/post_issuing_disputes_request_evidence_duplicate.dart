@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingDisputesRequestEvidenceDuplicateVariant2($value)'; } 
  }
-typedef PostIssuingDisputesRequestEvidenceDuplicate = OneOf2<Duplicate,PostIssuingDisputesRequestEvidenceDuplicateVariant2>;
+
+@immutable
+final class PostIssuingDisputesRequestEvidenceDuplicate {
+  const PostIssuingDisputesRequestEvidenceDuplicate({this.duplicate = const Omittable.absent(),
+this.postIssuingDisputesRequestEvidenceDuplicateVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostIssuingDisputesRequestEvidenceDuplicate._({required this.rawValue, required this.duplicate,
+required this.postIssuingDisputesRequestEvidenceDuplicateVariant2,});
+  factory PostIssuingDisputesRequestEvidenceDuplicate.fromJson(Object? json) => PostIssuingDisputesRequestEvidenceDuplicate._(
+    rawValue: Omittable(json),
+    duplicate: parseAnyOfVariant<Duplicate>(json, (value) => Duplicate.fromJson(value! as Map<String, dynamic>)),
+postIssuingDisputesRequestEvidenceDuplicateVariant2: parseAnyOfVariant<PostIssuingDisputesRequestEvidenceDuplicateVariant2>(json, (value) => PostIssuingDisputesRequestEvidenceDuplicateVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<Duplicate> duplicate;
+final Omittable<PostIssuingDisputesRequestEvidenceDuplicateVariant2> postIssuingDisputesRequestEvidenceDuplicateVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => duplicate.isPresent || postIssuingDisputesRequestEvidenceDuplicateVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (duplicate.isPresent) duplicate.value?.toJson(),
+if (postIssuingDisputesRequestEvidenceDuplicateVariant2.isPresent) postIssuingDisputesRequestEvidenceDuplicateVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostIssuingDisputesRequestEvidenceDuplicate && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostIssuingDisputesRequestEvidenceDuplicate(${toJson()})';
+}

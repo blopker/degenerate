@@ -38,7 +38,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return HostedComputeListNetworkConfigurationsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return HostedComputeListNetworkConfigurationsForOrgResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -63,7 +64,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NetworkConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NetworkConfiguration.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -86,7 +88,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NetworkConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NetworkConfiguration.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -111,7 +114,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NetworkConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NetworkConfiguration.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -155,7 +159,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NetworkSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NetworkSettings.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

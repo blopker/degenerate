@@ -63,14 +63,14 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitUpdatePresetUiDesignTokensTheme($value)'; } 
  }
-@immutable final class RealtimekitUpdatePresetUiDesignTokens {const RealtimekitUpdatePresetUiDesignTokens({this.borderRadius, this.borderWidth, this.colors, this.logo, this.spacingBase = 4.0, this.theme, });
+@immutable final class RealtimekitUpdatePresetUiDesignTokens {const RealtimekitUpdatePresetUiDesignTokens({this.borderRadius, this.borderWidth, this.colors, this.logo, this.spacingBase, this.theme, });
 
 factory RealtimekitUpdatePresetUiDesignTokens.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetUiDesignTokens(
   borderRadius: json['border_radius'] != null ? RealtimekitUpdatePresetUiDesignTokensBorderRadius.fromJson(json['border_radius'] as String) : null,
   borderWidth: json['border_width'] != null ? RealtimekitUpdatePresetUiDesignTokensBorderWidth.fromJson(json['border_width'] as String) : null,
   colors: json['colors'] != null ? RealtimekitUpdatePresetUiDesignTokensColors.fromJson(json['colors'] as Map<String, dynamic>) : null,
   logo: json['logo'] as String?,
-  spacingBase: json.containsKey('spacing_base') ? (json['spacing_base'] as num).toDouble() : 4.0,
+  spacingBase: json['spacing_base'] != null ? (json['spacing_base'] as num).toDouble() : null,
   theme: json['theme'] != null ? RealtimekitUpdatePresetUiDesignTokensTheme.fromJson(json['theme'] as String) : null,
 ); }
 
@@ -82,20 +82,22 @@ final RealtimekitUpdatePresetUiDesignTokensColors? colors;
 
 final String? logo;
 
-final double spacingBase;
+final double? spacingBase;
 
 final RealtimekitUpdatePresetUiDesignTokensTheme? theme;
 
+/// The value with the schema default applied when absent.
+double get spacingBaseOrDefault { return spacingBase ?? 4.0; } 
 Map<String, dynamic> toJson() { return {
   if (borderRadius != null) 'border_radius': borderRadius?.toJson(),
   if (borderWidth != null) 'border_width': borderWidth?.toJson(),
   if (colors != null) 'colors': colors?.toJson(),
   'logo': ?logo,
-  'spacing_base': spacingBase,
+  'spacing_base': ?spacingBase,
   if (theme != null) 'theme': theme?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'border_radius', 'border_width', 'colors', 'logo', 'spacing_base', 'theme'}.contains(key)); } 
-RealtimekitUpdatePresetUiDesignTokens copyWith({RealtimekitUpdatePresetUiDesignTokensBorderRadius? Function()? borderRadius, RealtimekitUpdatePresetUiDesignTokensBorderWidth? Function()? borderWidth, RealtimekitUpdatePresetUiDesignTokensColors? Function()? colors, String? Function()? logo, double Function()? spacingBase, RealtimekitUpdatePresetUiDesignTokensTheme? Function()? theme, }) { return RealtimekitUpdatePresetUiDesignTokens(
+RealtimekitUpdatePresetUiDesignTokens copyWith({RealtimekitUpdatePresetUiDesignTokensBorderRadius? Function()? borderRadius, RealtimekitUpdatePresetUiDesignTokensBorderWidth? Function()? borderWidth, RealtimekitUpdatePresetUiDesignTokensColors? Function()? colors, String? Function()? logo, double? Function()? spacingBase, RealtimekitUpdatePresetUiDesignTokensTheme? Function()? theme, }) { return RealtimekitUpdatePresetUiDesignTokens(
   borderRadius: borderRadius != null ? borderRadius() : this.borderRadius,
   borderWidth: borderWidth != null ? borderWidth() : this.borderWidth,
   colors: colors != null ? colors() : this.colors,

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'beneficiary_params_public_name.dart';@immutable final class BeneficiaryParams {const BeneficiaryParams({required this.publicName});
 
 factory BeneficiaryParams.fromJson(Map<String, dynamic> json) { return BeneficiaryParams(
-  publicName: OneOf2.parse(json['public_name'], fromA: (v) => v as String, fromB: (v) => BeneficiaryParamsPublicNameVariant2.fromJson(v as String),),
+  publicName: BeneficiaryParamsPublicName.fromJson(json['public_name']),
 ); }
 
 final BeneficiaryParamsPublicName publicName;

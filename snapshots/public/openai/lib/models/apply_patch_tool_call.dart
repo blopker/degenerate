@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_call_status.dart';import 'apply_patch_tool_call_operation.dart';/// A tool call that applies file diffs by creating, deleting, or updating files.
-@immutable final class ApplyPatchToolCall {const ApplyPatchToolCall({required this.id, required this.callId, required this.status, required this.operation, this.type = 'apply_patch_call', this.createdBy, });
+@immutable final class ApplyPatchToolCall {const ApplyPatchToolCall({required this.type, required this.id, required this.callId, required this.status, required this.operation, this.createdBy, });
 
 factory ApplyPatchToolCall.fromJson(Map<String, dynamic> json) { return ApplyPatchToolCall(
   type: json['type'] as String,

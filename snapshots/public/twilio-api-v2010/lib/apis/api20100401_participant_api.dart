@@ -23,7 +23,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountConferenceParticipant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountConferenceParticipant.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -69,7 +70,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountConferenceParticipant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountConferenceParticipant.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -128,7 +130,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListParticipantResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListParticipantResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -248,7 +251,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountConferenceParticipant.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountConferenceParticipant.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

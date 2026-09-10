@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentStatusCreatedAction($value)'; } 
  }
-@immutable final class WebhookDeploymentStatusCreated {const WebhookDeploymentStatusCreated({required this.action, required this.deployment, required this.deploymentStatus, required this.repository, required this.sender, this.checkRun = const Omittable.absent(), this.enterprise, this.installation, this.organization, this.workflow, this.workflowRun = const Omittable.absent(), });
+@immutable final class WebhookDeploymentStatusCreated {const WebhookDeploymentStatusCreated({required this.action, required this.deployment, required this.deploymentStatus, required this.repository, required this.sender, this.checkRun = const Omittable.absent(), this.enterprise, this.installation, this.organization, this.workflow = const Omittable.absent(), this.workflowRun = const Omittable.absent(), });
 
 factory WebhookDeploymentStatusCreated.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreated(
   action: WebhookDeploymentStatusCreatedAction.fromJson(json['action'] as String),
@@ -33,7 +33,7 @@ factory WebhookDeploymentStatusCreated.fromJson(Map<String, dynamic> json) { ret
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-  workflow: json['workflow'] != null ? WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>) : null,
+  workflow: json.containsKey('workflow') ? Omittable(json['workflow'] != null ? WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   workflowRun: json.containsKey('workflow_run') ? Omittable(json['workflow_run'] != null ? WebhookDeploymentStatusCreatedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
@@ -57,7 +57,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-final WebhooksWorkflow? workflow;
+final Omittable<WebhooksWorkflow?> workflow;
 
 final Omittable<WebhookDeploymentStatusCreatedWorkflowRun?> workflowRun;
 
@@ -71,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-  if (workflow != null) 'workflow': workflow?.toJson(),
+  if (workflow.isPresent) 'workflow': workflow.value?.toJson(),
   if (workflowRun.isPresent) 'workflow_run': workflowRun.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
@@ -79,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('deployment_status') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookDeploymentStatusCreated copyWith({WebhookDeploymentStatusCreatedAction? action, Omittable<WebhookDeploymentStatusCreatedCheckRun?>? checkRun, WebhookDeploymentStatusCreatedDeployment? deployment, WebhookDeploymentStatusCreatedDeploymentStatus? deploymentStatus, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? Function()? workflow, Omittable<WebhookDeploymentStatusCreatedWorkflowRun?>? workflowRun, }) { return WebhookDeploymentStatusCreated(
+WebhookDeploymentStatusCreated copyWith({WebhookDeploymentStatusCreatedAction? action, Omittable<WebhookDeploymentStatusCreatedCheckRun?>? checkRun, WebhookDeploymentStatusCreatedDeployment? deployment, WebhookDeploymentStatusCreatedDeploymentStatus? deploymentStatus, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, Omittable<WebhooksWorkflow?>? workflow, Omittable<WebhookDeploymentStatusCreatedWorkflowRun?>? workflowRun, }) { return WebhookDeploymentStatusCreated(
   action: action ?? this.action,
   checkRun: checkRun ?? this.checkRun,
   deployment: deployment ?? this.deployment,
@@ -89,7 +89,7 @@ WebhookDeploymentStatusCreated copyWith({WebhookDeploymentStatusCreatedAction? a
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-  workflow: workflow != null ? workflow() : this.workflow,
+  workflow: workflow ?? this.workflow,
   workflowRun: workflowRun ?? this.workflowRun,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

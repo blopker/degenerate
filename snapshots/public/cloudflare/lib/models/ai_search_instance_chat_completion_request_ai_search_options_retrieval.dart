@@ -76,53 +76,63 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType($value)'; } 
  }
-@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval({this.boostBy, this.contextExpansion = 0, this.filters, this.fusionMethod, this.keywordMatchMode = AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.exactMatch, this.matchThreshold = 0.4, this.maxNumResults = 10, this.retrievalType, this.returnOnFailure = true, });
+@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval {const AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval({this.boostBy, this.contextExpansion, this.filters, this.fusionMethod, this.keywordMatchMode, this.matchThreshold, this.maxNumResults, this.retrievalType, this.returnOnFailure, });
 
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy.fromJson(e as Map<String, dynamic>)).toList(),
-  contextExpansion: json.containsKey('context_expansion') ? (json['context_expansion'] as num).toInt() : 0,
+  contextExpansion: json['context_expansion'] != null ? (json['context_expansion'] as num).toInt() : null,
   filters: json['filters'] as Map<String, dynamic>?,
   fusionMethod: json['fusion_method'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod.fromJson(json['fusion_method'] as String) : null,
-  keywordMatchMode: json.containsKey('keyword_match_mode') ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.exactMatch,
-  matchThreshold: json.containsKey('match_threshold') ? (json['match_threshold'] as num).toDouble() : 0.4,
-  maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
+  keywordMatchMode: json['keyword_match_mode'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : null,
+  matchThreshold: json['match_threshold'] != null ? (json['match_threshold'] as num).toDouble() : null,
+  maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
   retrievalType: json['retrieval_type'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType.fromJson(json['retrieval_type'] as String) : null,
-  returnOnFailure: json.containsKey('return_on_failure') ? json['return_on_failure'] as bool : true,
+  returnOnFailure: json['return_on_failure'] as bool?,
 ); }
 
 /// Metadata fields to boost search results by. Overrides the instance-level boost_by config. Direction defaults to 'asc' for numeric fields, 'exists' for text/boolean fields. Fields must match 'timestamp' or a defined custom_metadata field.
 final List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy>? boostBy;
 
-final int contextExpansion;
+final int? contextExpansion;
 
 final Map<String,dynamic>? filters;
 
 final AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod? fusionMethod;
 
 /// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
-final AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode keywordMatchMode;
+final AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode? keywordMatchMode;
 
-final double matchThreshold;
+final double? matchThreshold;
 
-final int maxNumResults;
+final int? maxNumResults;
 
 final AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType? retrievalType;
 
-final bool returnOnFailure;
+final bool? returnOnFailure;
 
+/// The value with the schema default applied when absent.
+int get contextExpansionOrDefault { return contextExpansion ?? 0; } 
+/// The value with the schema default applied when absent.
+AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode get keywordMatchModeOrDefault { return keywordMatchMode ?? AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson('exact_match'); } 
+/// The value with the schema default applied when absent.
+double get matchThresholdOrDefault { return matchThreshold ?? 0.4; } 
+/// The value with the schema default applied when absent.
+int get maxNumResultsOrDefault { return maxNumResults ?? 10; } 
+/// The value with the schema default applied when absent.
+bool get returnOnFailureOrDefault { return returnOnFailure ?? true; } 
 Map<String, dynamic> toJson() { return {
   if (boostBy != null) 'boost_by': boostBy?.map((e) => e.toJson()).toList(),
-  'context_expansion': contextExpansion,
+  'context_expansion': ?contextExpansion,
   'filters': ?filters,
   if (fusionMethod != null) 'fusion_method': fusionMethod?.toJson(),
-  'keyword_match_mode': keywordMatchMode.toJson(),
-  'match_threshold': matchThreshold,
-  'max_num_results': maxNumResults,
+  if (keywordMatchMode != null) 'keyword_match_mode': keywordMatchMode?.toJson(),
+  'match_threshold': ?matchThreshold,
+  'max_num_results': ?maxNumResults,
   if (retrievalType != null) 'retrieval_type': retrievalType?.toJson(),
-  'return_on_failure': returnOnFailure,
+  'return_on_failure': ?returnOnFailure,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'boost_by', 'context_expansion', 'filters', 'fusion_method', 'keyword_match_mode', 'match_threshold', 'max_num_results', 'retrieval_type', 'return_on_failure'}.contains(key)); } 
-AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval copyWith({List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy>? Function()? boostBy, int Function()? contextExpansion, Map<String, dynamic>? Function()? filters, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod? Function()? fusionMethod, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode Function()? keywordMatchMode, double Function()? matchThreshold, int Function()? maxNumResults, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType? Function()? retrievalType, bool Function()? returnOnFailure, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
+AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval copyWith({List<AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalBoostBy>? Function()? boostBy, int? Function()? contextExpansion, Map<String, dynamic>? Function()? filters, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalFusionMethod? Function()? fusionMethod, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalKeywordMatchMode? Function()? keywordMatchMode, double? Function()? matchThreshold, int? Function()? maxNumResults, AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrievalRetrievalType? Function()? retrievalType, bool? Function()? returnOnFailure, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsRetrieval(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   contextExpansion: contextExpansion != null ? contextExpansion() : this.contextExpansion,
   filters: filters != null ? filters() : this.filters,

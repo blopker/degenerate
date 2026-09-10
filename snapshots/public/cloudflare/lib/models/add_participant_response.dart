@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'add_participant_response_data.dart';@immutable final class AddParticipantResponse {const AddParticipantResponse({this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'add_participant_response_data.dart';@immutable final class AddParticipantResponse {const AddParticipantResponse({required this.success, this.data, });
 
 factory AddParticipantResponse.fromJson(Map<String, dynamic> json) { return AddParticipantResponse(
   data: json['data'] != null ? AddParticipantResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

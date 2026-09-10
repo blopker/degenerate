@@ -1,3 +1,43 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_tax_id.dart';import 'tax_id.dart';typedef InvoiceSettingSubscriptionScheduleSettingAccountTaxIds = OneOf3<String,TaxId,DeletedTaxId>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_tax_id.dart';import 'tax_id.dart';
+@immutable
+final class InvoiceSettingSubscriptionScheduleSettingAccountTaxIds {
+  const InvoiceSettingSubscriptionScheduleSettingAccountTaxIds({this.string = const Omittable.absent(),
+this.taxId = const Omittable.absent(),
+this.deletedTaxId = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const InvoiceSettingSubscriptionScheduleSettingAccountTaxIds._({required this.rawValue, required this.string,
+required this.taxId,
+required this.deletedTaxId,});
+  factory InvoiceSettingSubscriptionScheduleSettingAccountTaxIds.fromJson(Object? json) => InvoiceSettingSubscriptionScheduleSettingAccountTaxIds._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+taxId: parseAnyOfVariant<TaxId>(json, (value) => TaxId.fromJson(value! as Map<String, dynamic>)),
+deletedTaxId: parseAnyOfVariant<DeletedTaxId>(json, (value) => DeletedTaxId.fromJson(value! as Map<String, dynamic>)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<TaxId> taxId;
+final Omittable<DeletedTaxId> deletedTaxId;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || taxId.isPresent || deletedTaxId.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (taxId.isPresent) taxId.value?.toJson(),
+if (deletedTaxId.isPresent) deletedTaxId.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is InvoiceSettingSubscriptionScheduleSettingAccountTaxIds && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'InvoiceSettingSubscriptionScheduleSettingAccountTaxIds(${toJson()})';
+}

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountQueueMember {const AccountQueueMember({this.callSid = const Omittable.absent(), this.dateEnqueued = const Omittable.absent(), this.position = 0, this.uri = const Omittable.absent(), this.waitTime = 0, this.queueSid = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountQueueMember {const AccountQueueMember({this.callSid = const Omittable.absent(), this.dateEnqueued = const Omittable.absent(), this.position, this.uri = const Omittable.absent(), this.waitTime, this.queueSid = const Omittable.absent(), });
 
 factory AccountQueueMember.fromJson(Map<String, dynamic> json) { return AccountQueueMember(
   callSid: json.containsKey('call_sid') ? Omittable(json['call_sid'] as String?) : const Omittable.absent(),
   dateEnqueued: json.containsKey('date_enqueued') ? Omittable(json['date_enqueued'] as String?) : const Omittable.absent(),
-  position: json.containsKey('position') ? (json['position'] as num).toInt() : 0,
+  position: json['position'] != null ? (json['position'] as num).toInt() : null,
   uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
-  waitTime: json.containsKey('wait_time') ? (json['wait_time'] as num).toInt() : 0,
+  waitTime: json['wait_time'] != null ? (json['wait_time'] as num).toInt() : null,
   queueSid: json.containsKey('queue_sid') ? Omittable(json['queue_sid'] as String?) : const Omittable.absent(),
 ); }
 
@@ -18,27 +18,31 @@ final Omittable<String?> callSid;
 final Omittable<String?> dateEnqueued;
 
 /// This member's current position in the queue.
-final int position;
+final int? position;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
 final Omittable<String?> uri;
 
 /// The number of seconds the member has been in the queue.
-final int waitTime;
+final int? waitTime;
 
 /// The SID of the Queue the member is in.
 final Omittable<String?> queueSid;
 
+/// The value with the schema default applied when absent.
+int get positionOrDefault { return position ?? 0; } 
+/// The value with the schema default applied when absent.
+int get waitTimeOrDefault { return waitTime ?? 0; } 
 Map<String, dynamic> toJson() { return {
   if (callSid.isPresent) 'call_sid': callSid.value,
   if (dateEnqueued.isPresent) 'date_enqueued': dateEnqueued.value,
-  'position': position,
+  'position': ?position,
   if (uri.isPresent) 'uri': uri.value,
-  'wait_time': waitTime,
+  'wait_time': ?waitTime,
   if (queueSid.isPresent) 'queue_sid': queueSid.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'call_sid', 'date_enqueued', 'position', 'uri', 'wait_time', 'queue_sid'}.contains(key)); } 
-AccountQueueMember copyWith({Omittable<String?>? callSid, Omittable<String?>? dateEnqueued, int Function()? position, Omittable<String?>? uri, int Function()? waitTime, Omittable<String?>? queueSid, }) { return AccountQueueMember(
+AccountQueueMember copyWith({Omittable<String?>? callSid, Omittable<String?>? dateEnqueued, int? Function()? position, Omittable<String?>? uri, int? Function()? waitTime, Omittable<String?>? queueSid, }) { return AccountQueueMember(
   callSid: callSid ?? this.callSid,
   dateEnqueued: dateEnqueued ?? this.dateEnqueued,
   position: position != null ? position() : this.position,

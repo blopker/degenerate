@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VideoListResourceObject($value)'; } 
  }
-@immutable final class VideoListResource {const VideoListResource({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = VideoListResourceObject.list, });
+@immutable final class VideoListResource {const VideoListResource({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory VideoListResource.fromJson(Map<String, dynamic> json) { return VideoListResource(
   object: VideoListResourceObject.fromJson(json['object'] as String),

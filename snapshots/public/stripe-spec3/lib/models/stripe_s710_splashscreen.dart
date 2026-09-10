@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'StripeS710SplashscreenVariant2($value)'; } 
  }
-typedef StripeS710Splashscreen = OneOf2<String,StripeS710SplashscreenVariant2>;
+
+@immutable
+final class StripeS710Splashscreen {
+  const StripeS710Splashscreen({this.string = const Omittable.absent(),
+this.stripeS710SplashscreenVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const StripeS710Splashscreen._({required this.rawValue, required this.string,
+required this.stripeS710SplashscreenVariant2,});
+  factory StripeS710Splashscreen.fromJson(Object? json) => StripeS710Splashscreen._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+stripeS710SplashscreenVariant2: parseAnyOfVariant<StripeS710SplashscreenVariant2>(json, (value) => StripeS710SplashscreenVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<StripeS710SplashscreenVariant2> stripeS710SplashscreenVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || stripeS710SplashscreenVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (stripeS710SplashscreenVariant2.isPresent) stripeS710SplashscreenVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is StripeS710Splashscreen && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'StripeS710Splashscreen(${toJson()})';
+}

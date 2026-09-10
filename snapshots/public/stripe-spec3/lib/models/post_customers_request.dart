@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_shipping2.dart';import 'optional_fields_customer_address.dart';import 'post_customers_request_address.dart';import 'post_customers_request_business_name.dart';import 'post_customers_request_cash_balance.dart';import 'post_customers_request_individual_name.dart';import 'post_customers_request_invoice_settings.dart';import 'post_customers_request_metadata.dart';import 'post_customers_request_shipping.dart';import 'post_customers_request_tax.dart';import 'post_customers_request_tax_id_data.dart';/// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_request_address.dart';import 'post_customers_request_business_name.dart';import 'post_customers_request_cash_balance.dart';import 'post_customers_request_individual_name.dart';import 'post_customers_request_invoice_settings.dart';import 'post_customers_request_metadata.dart';import 'post_customers_request_shipping.dart';import 'post_customers_request_tax.dart';import 'post_customers_request_tax_id_data.dart';/// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
 @immutable final class PostCustomersRequestTaxExempt {const PostCustomersRequestTaxExempt._(this.value);
 
 factory PostCustomersRequestTaxExempt.fromJson(String json) { return switch (json) {
@@ -34,23 +34,23 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostCustomersRequest {const PostCustomersRequest({this.address, this.balance, this.businessName, this.cashBalance, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.paymentMethod, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, this.taxIdData, this.testClock, });
 
 factory PostCustomersRequest.fromJson(Map<String, dynamic> json) { return PostCustomersRequest(
-  address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => OptionalFieldsCustomerAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => PostCustomersRequestAddressVariant2.fromJson(v as String),) : null,
+  address: json['address'] != null ? PostCustomersRequestAddress.fromJson(json['address']) : null,
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
-  businessName: json['business_name'] != null ? OneOf2.parse(json['business_name'], fromA: (v) => v as String, fromB: (v) => PostCustomersRequestBusinessNameVariant2.fromJson(v as String),) : null,
+  businessName: json['business_name'] != null ? PostCustomersRequestBusinessName.fromJson(json['business_name']) : null,
   cashBalance: json['cash_balance'] != null ? PostCustomersRequestCashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  individualName: json['individual_name'] != null ? OneOf2.parse(json['individual_name'], fromA: (v) => v as String, fromB: (v) => PostCustomersRequestIndividualNameVariant2.fromJson(v as String),) : null,
+  individualName: json['individual_name'] != null ? PostCustomersRequestIndividualName.fromJson(json['individual_name']) : null,
   invoicePrefix: json['invoice_prefix'] as String?,
   invoiceSettings: json['invoice_settings'] != null ? PostCustomersRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostCustomersRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostCustomersRequestMetadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
   nextInvoiceSequence: json['next_invoice_sequence'] != null ? (json['next_invoice_sequence'] as num).toInt() : null,
   paymentMethod: json['payment_method'] as String?,
   phone: json['phone'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => CustomerShipping2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostCustomersRequestShippingVariant2.fromJson(v as String),) : null,
+  shipping: json['shipping'] != null ? PostCustomersRequestShipping.fromJson(json['shipping']) : null,
   source: json['source'] as String?,
   tax: json['tax'] != null ? PostCustomersRequestTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json['tax_exempt'] != null ? PostCustomersRequestTaxExempt.fromJson(json['tax_exempt'] as String) : null,

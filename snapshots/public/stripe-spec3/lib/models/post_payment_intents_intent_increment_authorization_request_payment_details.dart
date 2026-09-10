@@ -4,8 +4,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment
 @immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails {const PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails({this.customerReference, this.orderReference, });
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetails(
-  customerReference: json['customer_reference'] != null ? OneOf2.parse(json['customer_reference'], fromA: (v) => v as String, fromB: (v) => PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReferenceVariant2.fromJson(v as String),) : null,
-  orderReference: json['order_reference'] != null ? OneOf2.parse(json['order_reference'], fromA: (v) => v as String, fromB: (v) => PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsOrderReferenceVariant2.fromJson(v as String),) : null,
+  customerReference: json['customer_reference'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReference.fromJson(json['customer_reference']) : null,
+  orderReference: json['order_reference'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsOrderReference.fromJson(json['order_reference']) : null,
 ); }
 
 final PostPaymentIntentsIntentIncrementAuthorizationRequestPaymentDetailsCustomerReference? customerReference;

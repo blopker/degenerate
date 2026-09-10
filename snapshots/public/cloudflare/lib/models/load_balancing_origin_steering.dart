@@ -36,10 +36,10 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingOriginSteeringPolicy($value)'; } 
  }
 /// Configures origin steering for the pool. Controls how origins are selected for new sessions and traffic without session affinity.
-@immutable final class LoadBalancingOriginSteering {const LoadBalancingOriginSteering({this.policy = LoadBalancingOriginSteeringPolicy.random});
+@immutable final class LoadBalancingOriginSteering {const LoadBalancingOriginSteering({this.policy});
 
 factory LoadBalancingOriginSteering.fromJson(Map<String, dynamic> json) { return LoadBalancingOriginSteering(
-  policy: json.containsKey('policy') ? LoadBalancingOriginSteeringPolicy.fromJson(json['policy'] as String) : LoadBalancingOriginSteeringPolicy.random,
+  policy: json['policy'] != null ? LoadBalancingOriginSteeringPolicy.fromJson(json['policy'] as String) : null,
 ); }
 
 /// The type of origin steering policy to use.
@@ -47,13 +47,15 @@ factory LoadBalancingOriginSteering.fromJson(Map<String, dynamic> json) { return
 /// - `"hash"`: Select an origin by computing a hash over the CF-Connecting-IP address.
 /// - `"least_outstanding_requests"`: Select an origin by taking into consideration origin weights, as well as each origin's number of outstanding requests. Origins with more pending requests are weighted proportionately less relative to others.
 /// - `"least_connections"`: Select an origin by taking into consideration origin weights, as well as each origin's number of open connections. Origins with more open connections are weighted proportionately less relative to others. Supported for HTTP/1 and HTTP/2 connections.
-final LoadBalancingOriginSteeringPolicy policy;
+final LoadBalancingOriginSteeringPolicy? policy;
 
+/// The value with the schema default applied when absent.
+LoadBalancingOriginSteeringPolicy get policyOrDefault { return policy ?? LoadBalancingOriginSteeringPolicy.fromJson('random'); } 
 Map<String, dynamic> toJson() { return {
-  'policy': policy.toJson(),
+  if (policy != null) 'policy': policy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'policy'}.contains(key)); } 
-LoadBalancingOriginSteering copyWith({LoadBalancingOriginSteeringPolicy Function()? policy}) { return LoadBalancingOriginSteering(
+LoadBalancingOriginSteering copyWith({LoadBalancingOriginSteeringPolicy? Function()? policy}) { return LoadBalancingOriginSteering(
   policy: policy != null ? policy() : this.policy,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

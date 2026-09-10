@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing
 
 factory PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdate(
   enabled: json['enabled'] as bool,
-  paymentMethodConfiguration: json['payment_method_configuration'] != null ? OneOf2.parse(json['payment_method_configuration'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdatePaymentMethodConfigurationVariant2.fromJson(v as String),) : null,
+  paymentMethodConfiguration: json['payment_method_configuration'] != null ? PostBillingPortalConfigurationsConfigurationRequestFeaturesPaymentMethodUpdatePaymentMethodConfiguration.fromJson(json['payment_method_configuration']) : null,
 ); }
 
 final bool enabled;

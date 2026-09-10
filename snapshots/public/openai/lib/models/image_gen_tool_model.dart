@@ -29,4 +29,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ImageGenToolModelVariant2($value)'; } 
  }
-typedef ImageGenToolModel = OneOf2<String,ImageGenToolModelVariant2>;
+
+@immutable
+final class ImageGenToolModel {
+  const ImageGenToolModel({this.string = const Omittable.absent(),
+this.imageGenToolModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const ImageGenToolModel._({required this.rawValue, required this.string,
+required this.imageGenToolModelVariant2,});
+  factory ImageGenToolModel.fromJson(Object? json) => ImageGenToolModel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+imageGenToolModelVariant2: parseAnyOfVariant<ImageGenToolModelVariant2>(json, (value) => ImageGenToolModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<ImageGenToolModelVariant2> imageGenToolModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || imageGenToolModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (imageGenToolModelVariant2.isPresent) imageGenToolModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is ImageGenToolModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'ImageGenToolModel(${toJson()})';
+}

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_person_documents_passport_files.dart';@immutable final class PostTokensRequestPersonDocumentsPassport {const PostTokensRequestPersonDocumentsPassport({this.files});
 
 factory PostTokensRequestPersonDocumentsPassport.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonDocumentsPassport(
-  files: (json['files'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => PostTokensRequestPersonDocumentsPassportFilesVariant2.fromJson(v as String),)).toList(),
+  files: (json['files'] as List<dynamic>?)?.map(PostTokensRequestPersonDocumentsPassportFiles.fromJson).toList(),
 ); }
 
 final List<PostTokensRequestPersonDocumentsPassportFiles>? files;

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTokensRequestAccountIndividualDobVariant2($value)'; } 
  }
-typedef PostTokensRequestAccountIndividualDob = OneOf2<DateOfBirthSpecs7,PostTokensRequestAccountIndividualDobVariant2>;
+
+@immutable
+final class PostTokensRequestAccountIndividualDob {
+  const PostTokensRequestAccountIndividualDob({this.dateOfBirthSpecs7 = const Omittable.absent(),
+this.postTokensRequestAccountIndividualDobVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTokensRequestAccountIndividualDob._({required this.rawValue, required this.dateOfBirthSpecs7,
+required this.postTokensRequestAccountIndividualDobVariant2,});
+  factory PostTokensRequestAccountIndividualDob.fromJson(Object? json) => PostTokensRequestAccountIndividualDob._(
+    rawValue: Omittable(json),
+    dateOfBirthSpecs7: parseAnyOfVariant<DateOfBirthSpecs7>(json, (value) => DateOfBirthSpecs7.fromJson(value! as Map<String, dynamic>)),
+postTokensRequestAccountIndividualDobVariant2: parseAnyOfVariant<PostTokensRequestAccountIndividualDobVariant2>(json, (value) => PostTokensRequestAccountIndividualDobVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<DateOfBirthSpecs7> dateOfBirthSpecs7;
+final Omittable<PostTokensRequestAccountIndividualDobVariant2> postTokensRequestAccountIndividualDobVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => dateOfBirthSpecs7.isPresent || postTokensRequestAccountIndividualDobVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (dateOfBirthSpecs7.isPresent) dateOfBirthSpecs7.value?.toJson(),
+if (postTokensRequestAccountIndividualDobVariant2.isPresent) postTokensRequestAccountIndividualDobVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTokensRequestAccountIndividualDob && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTokensRequestAccountIndividualDob(${toJson()})';
+}

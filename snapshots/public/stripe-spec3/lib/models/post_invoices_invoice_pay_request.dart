@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoice
 factory PostInvoicesInvoicePayRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoicePayRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   forgive: json['forgive'] as bool?,
-  mandate: json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => PostInvoicesInvoicePayRequestMandateVariant2.fromJson(v as String),) : null,
+  mandate: json['mandate'] != null ? PostInvoicesInvoicePayRequestMandate.fromJson(json['mandate']) : null,
   offSession: json['off_session'] as bool?,
   paidOutOfBand: json['paid_out_of_band'] as bool?,
   paymentMethod: json['payment_method'] as String?,

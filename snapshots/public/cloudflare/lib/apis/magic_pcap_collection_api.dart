@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_pcap_collection_add_buckets_for_full_packet_captures_responsedefault.dart';import '../models/magic_pcap_collection_create_pcap_request_responsedefault.dart';import '../models/magic_pcap_collection_get_pcap_request_responsedefault.dart';import '../models/magic_pcap_collection_list_packet_capture_requests_responsedefault.dart';import '../models/magic_pcap_collection_list_pca_ps_bucket_ownership_responsedefault.dart';import '../models/magic_pcap_collection_validate_buckets_for_full_packet_captures_responsedefault.dart';import '../models/magic_visibility_pcaps_identifier.dart';import '../models/magic_visibility_pcaps_pcaps_collection_response.dart';import '../models/magic_visibility_pcaps_pcaps_collection_response_result.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_collection.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_request.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_response.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_single_response.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_validate_request.dart';import '../models/magic_visibility_pcaps_pcaps_request_pcap.dart';import '../models/magic_visibility_pcaps_pcaps_response_full.dart';import '../models/magic_visibility_pcaps_pcaps_response_simple.dart';import '../models/magic_visibility_pcaps_pcaps_single_response.dart';import '../models/magic_visibility_pcaps_pcaps_single_response_result.dart';import '../models/response_common_failure49.dart';/// MagicPcapCollectionApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_pcap_collection_add_buckets_for_full_packet_captures_responsedefault.dart';import '../models/magic_pcap_collection_create_pcap_request_responsedefault.dart';import '../models/magic_pcap_collection_get_pcap_request_responsedefault.dart';import '../models/magic_pcap_collection_list_packet_capture_requests_responsedefault.dart';import '../models/magic_pcap_collection_list_pca_ps_bucket_ownership_responsedefault.dart';import '../models/magic_pcap_collection_validate_buckets_for_full_packet_captures_responsedefault.dart';import '../models/magic_visibility_pcaps_identifier.dart';import '../models/magic_visibility_pcaps_pcaps_collection_response.dart';import '../models/magic_visibility_pcaps_pcaps_collection_response_result.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_collection.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_request.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_response.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_single_response.dart';import '../models/magic_visibility_pcaps_pcaps_ownership_validate_request.dart';import '../models/magic_visibility_pcaps_pcaps_request_pcap.dart';import '../models/magic_visibility_pcaps_pcaps_single_response.dart';import '../models/magic_visibility_pcaps_pcaps_single_response_result.dart';import '../models/response_common_failure49.dart';/// MagicPcapCollectionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -25,11 +25,16 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map(MagicVisibilityPcapsPcapsCollectionResponseResult.fromJson).toList();
   },
   onError: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => MagicVisibilityPcapsPcapsCollectionResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsCollectionResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+}
+
   },
 );
  } 
@@ -52,11 +57,16 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MagicVisibilityPcapsPcapsSingleResponseResult.fromJson(json['result']);
   },
   onError: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+}
+
   },
 );
  } 
@@ -77,11 +87,16 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return OneOf2.parse(json['result'], fromA: (v) => MagicVisibilityPcapsPcapsResponseSimple.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicVisibilityPcapsPcapsResponseFull.fromJson(v as Map<String, dynamic>),);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MagicVisibilityPcapsPcapsSingleResponseResult.fromJson(json['result']);
   },
   onError: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+}
+
   },
 );
  } 
@@ -122,7 +137,12 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ResponseCommonFailure49.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure49.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -143,11 +163,16 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>?)?.map((e) => MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => MagicVisibilityPcapsPcapsOwnershipCollection.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipCollection.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+}
+
   },
 );
  } 
@@ -170,11 +195,16 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => MagicVisibilityPcapsPcapsOwnershipSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+}
+
   },
 );
  } 
@@ -216,11 +246,16 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => MagicVisibilityPcapsPcapsOwnershipSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
+}
+
   },
 );
  } 

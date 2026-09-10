@@ -25,24 +25,26 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return '\$5RequestVariant1Pooling($value)'; } 
  }
-@immutable final class $5RequestVariant1 {const $5RequestVariant1({required this.text, this.pooling = $5RequestVariant1Pooling.mean, });
+@immutable final class $5RequestVariant1 {const $5RequestVariant1({required this.text, this.pooling, });
 
 factory $5RequestVariant1.fromJson(Map<String, dynamic> json) { return $5RequestVariant1(
-  pooling: json.containsKey('pooling') ? $5RequestVariant1Pooling.fromJson(json['pooling'] as String) : $5RequestVariant1Pooling.mean,
+  pooling: json['pooling'] != null ? $5RequestVariant1Pooling.fromJson(json['pooling'] as String) : null,
   text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
 ); }
 
 /// The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.
-final $5RequestVariant1Pooling pooling;
+final $5RequestVariant1Pooling? pooling;
 
 final $5RequestVariant1Text text;
 
+/// The value with the schema default applied when absent.
+$5RequestVariant1Pooling get poolingOrDefault { return pooling ?? $5RequestVariant1Pooling.fromJson('mean'); } 
 Map<String, dynamic> toJson() { return {
-  'pooling': pooling.toJson(),
+  if (pooling != null) 'pooling': pooling?.toJson(),
   'text': text.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'); } 
-$5RequestVariant1 copyWith({$5RequestVariant1Pooling Function()? pooling, $5RequestVariant1Text? text, }) { return $5RequestVariant1(
+$5RequestVariant1 copyWith({$5RequestVariant1Pooling? Function()? pooling, $5RequestVariant1Text? text, }) { return $5RequestVariant1(
   pooling: pooling != null ? pooling() : this.pooling,
   text: text ?? this.text,
 ); } 

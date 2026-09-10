@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/billing_get_all_budgets_org_scope.dart';import '../models/billing_premium_request_usage_report_org.dart';import '../models/billing_premium_request_usage_report_user.dart';import '../models/billing_update_budget_org_request.dart';import '../models/billing_update_budget_org_response.dart';import '../models/billing_usage_report.dart';import '../models/billing_usage_report_user.dart';import '../models/billing_usage_summary_report_org.dart';import '../models/billing_usage_summary_report_user.dart';import '../models/delete_budget.dart';import '../models/get_all_budgets.dart';import '../models/get_budget.dart';/// BillingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/billing_delete_budget_org_response503.dart';import '../models/billing_get_all_budgets_org_scope.dart';import '../models/billing_get_budget_org_response503.dart';import '../models/billing_get_github_billing_premium_request_usage_report_org_response503.dart';import '../models/billing_get_github_billing_premium_request_usage_report_user_response503.dart';import '../models/billing_get_github_billing_usage_report_org_response503.dart';import '../models/billing_get_github_billing_usage_report_user_response503.dart';import '../models/billing_get_github_billing_usage_summary_report_org_response503.dart';import '../models/billing_get_github_billing_usage_summary_report_user_response503.dart';import '../models/billing_premium_request_usage_report_org.dart';import '../models/billing_premium_request_usage_report_user.dart';import '../models/billing_update_budget_org_request.dart';import '../models/billing_update_budget_org_response.dart';import '../models/billing_usage_report.dart';import '../models/billing_usage_report_user.dart';import '../models/billing_usage_summary_report_org.dart';import '../models/billing_usage_summary_report_user.dart';import '../models/delete_budget.dart';import '../models/get_all_budgets.dart';import '../models/get_budget.dart';import '../models/scim_error.dart';import '../models/validation_error.dart';/// BillingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -43,10 +43,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetAllBudgets.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetAllBudgets.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -58,7 +66,7 @@ return execute(
 /// Gets a budget by ID. The authenticated user must be an organization admin or billing manager.
 ///
 /// `GET /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<GetBudget, BasicError>> billingGetBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetBudget, OneOf3<BasicError, ScimError, BillingGetBudgetOrgResponse503>>> billingGetBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -70,10 +78,34 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetBudget.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetBudget.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetBudgetOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetBudgetOrgResponse503>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetBudgetOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetBudgetOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetBudgetOrgResponse503>.c(BillingGetBudgetOrgResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -85,7 +117,7 @@ return execute(
 /// Updates an existing budget for an organization. The authenticated user must be an organization admin or billing manager.
 ///
 /// `PATCH /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<BillingUpdateBudgetOrgResponse, BasicError>> billingUpdateBudgetOrg({required String org, required String budgetId, required BillingUpdateBudgetOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BillingUpdateBudgetOrgResponse, OneOf3<BasicError, ScimError, ValidationError>>> billingUpdateBudgetOrg({required String org, required String budgetId, required BillingUpdateBudgetOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,10 +131,34 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return BillingUpdateBudgetOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return BillingUpdateBudgetOrgResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.c(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -114,7 +170,7 @@ return execute(
 /// Deletes a budget by ID for an organization. The authenticated user must be an organization admin or billing manager.
 ///
 /// `DELETE /organizations/{org}/settings/billing/budgets/{budget_id}`
-Future<ApiResult<DeleteBudget, BasicError>> billingDeleteBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteBudget, OneOf3<BasicError, ScimError, BillingDeleteBudgetOrgResponse503>>> billingDeleteBudgetOrg({required String org, required String budgetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -126,10 +182,34 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteBudget.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteBudget.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingDeleteBudgetOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingDeleteBudgetOrgResponse503>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingDeleteBudgetOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingDeleteBudgetOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingDeleteBudgetOrgResponse503>.c(BillingDeleteBudgetOrgResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -140,7 +220,7 @@ return execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /organizations/{org}/settings/billing/premium_request/usage`
-Future<ApiResult<BillingPremiumRequestUsageReportOrg, BasicError>> billingGetGithubBillingPremiumRequestUsageReportOrg({required String org, int? year, int? month, int? day, String? user, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingPremiumRequestUsageReportOrg, OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportOrgResponse503>>> billingGetGithubBillingPremiumRequestUsageReportOrg({required String org, int? year, int? month, int? day, String? user, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -175,10 +255,34 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return BillingPremiumRequestUsageReportOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return BillingPremiumRequestUsageReportOrg.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportOrgResponse503>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportOrgResponse503>.c(BillingGetGithubBillingPremiumRequestUsageReportOrgResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -189,7 +293,7 @@ return execute(
 /// **Note:** This endpoint is only available to organizations with access to the enhanced billing platform. For more information, see "[About the enhanced billing platform](https://docs.github.com/billing/using-the-new-billing-platform)."
 ///
 /// `GET /organizations/{org}/settings/billing/usage`
-Future<ApiResult<BillingUsageReport, BasicError>> billingGetGithubBillingUsageReportOrg({required String org, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingUsageReport, OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportOrgResponse503>>> billingGetGithubBillingUsageReportOrg({required String org, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -215,10 +319,34 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return BillingUsageReport.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return BillingUsageReport.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportOrgResponse503>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 500:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportOrgResponse503>.c(BillingGetGithubBillingUsageReportOrgResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -232,7 +360,7 @@ return execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /organizations/{org}/settings/billing/usage/summary`
-Future<ApiResult<BillingUsageSummaryReportOrg, BasicError>> billingGetGithubBillingUsageSummaryReportOrg({required String org, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingUsageSummaryReportOrg, OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportOrgResponse503>>> billingGetGithubBillingUsageSummaryReportOrg({required String org, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -267,10 +395,34 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return BillingUsageSummaryReportOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return BillingUsageSummaryReportOrg.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportOrgResponse503>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 500:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportOrgResponse503>.c(BillingGetGithubBillingUsageSummaryReportOrgResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -281,7 +433,7 @@ return execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /users/{username}/settings/billing/premium_request/usage`
-Future<ApiResult<BillingPremiumRequestUsageReportUser, BasicError>> billingGetGithubBillingPremiumRequestUsageReportUser({required String username, int? year, int? month, int? day, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingPremiumRequestUsageReportUser, OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportUserResponse503>>> billingGetGithubBillingPremiumRequestUsageReportUser({required String username, int? year, int? month, int? day, String? model, String? product, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -313,10 +465,34 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return BillingPremiumRequestUsageReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return BillingPremiumRequestUsageReportUser.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportUserResponse503>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingPremiumRequestUsageReportUserResponse503>.c(BillingGetGithubBillingPremiumRequestUsageReportUserResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -327,7 +503,7 @@ return execute(
 /// **Note:** This endpoint is only available to users with access to the enhanced billing platform.
 ///
 /// `GET /users/{username}/settings/billing/usage`
-Future<ApiResult<BillingUsageReportUser, BasicError>> billingGetGithubBillingUsageReportUser({required String username, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingUsageReportUser, OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportUserResponse503>>> billingGetGithubBillingUsageReportUser({required String username, int? year, int? month, int? day, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -353,10 +529,34 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return BillingUsageReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return BillingUsageReportUser.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportUserResponse503>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 500:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageReportUserResponse503>.c(BillingGetGithubBillingUsageReportUserResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -370,7 +570,7 @@ return execute(
 /// **Note:** Only data from the past 24 months is accessible via this endpoint.
 ///
 /// `GET /users/{username}/settings/billing/usage/summary`
-Future<ApiResult<BillingUsageSummaryReportUser, BasicError>> billingGetGithubBillingUsageSummaryReportUser({required String username, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<BillingUsageSummaryReportUser, OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportUserResponse503>>> billingGetGithubBillingUsageSummaryReportUser({required String username, int? year, int? month, int? day, String? repository, String? product, String? sku, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (year != null) {
   queryParameters['year'] = year.toString();
@@ -405,10 +605,34 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return BillingUsageSummaryReportUser.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return BillingUsageSummaryReportUser.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportUserResponse503>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, BillingGetGithubBillingUsageSummaryReportUserResponse503>.c(BillingGetGithubBillingUsageSummaryReportUserResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 

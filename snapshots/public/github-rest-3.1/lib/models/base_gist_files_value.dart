@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BaseGistFilesValue {const BaseGistFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, this.encoding = 'utf-8', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BaseGistFilesValue {const BaseGistFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, this.encoding, });
 
 factory BaseGistFilesValue.fromJson(Map<String, dynamic> json) { return BaseGistFilesValue(
   filename: json['filename'] as String?,
@@ -8,7 +8,7 @@ factory BaseGistFilesValue.fromJson(Map<String, dynamic> json) { return BaseGist
   language: json['language'] as String?,
   rawUrl: json['raw_url'] as String?,
   size: json['size'] != null ? (json['size'] as num).toInt() : null,
-  encoding: json.containsKey('encoding') ? json['encoding'] as String : 'utf-8',
+  encoding: json['encoding'] as String?,
 ); }
 
 final String? filename;
@@ -22,18 +22,20 @@ final String? rawUrl;
 final int? size;
 
 /// The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
-final String encoding;
+final String? encoding;
 
+/// The value with the schema default applied when absent.
+String get encodingOrDefault { return encoding ?? 'utf-8'; } 
 Map<String, dynamic> toJson() { return {
   'filename': ?filename,
   'type': ?type,
   'language': ?language,
   'raw_url': ?rawUrl,
   'size': ?size,
-  'encoding': encoding,
+  'encoding': ?encoding,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filename', 'type', 'language', 'raw_url', 'size', 'encoding'}.contains(key)); } 
-BaseGistFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, String Function()? encoding, }) { return BaseGistFilesValue(
+BaseGistFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, String? Function()? encoding, }) { return BaseGistFilesValue(
   filename: filename != null ? filename() : this.filename,
   type: type != null ? type() : this.type,
   language: language != null ? language() : this.language,

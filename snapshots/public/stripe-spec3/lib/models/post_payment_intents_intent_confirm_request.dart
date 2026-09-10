@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param2.dart';import 'client_key_param.dart';import 'optional_fields_shipping2.dart';import 'payment_details2.dart';import 'post_payment_intents_intent_confirm_request_amount_details.dart';import 'post_payment_intents_intent_confirm_request_excluded_payment_method_types.dart';import 'post_payment_intents_intent_confirm_request_hooks.dart';import 'post_payment_intents_intent_confirm_request_mandate_data.dart';import 'post_payment_intents_intent_confirm_request_off_session.dart';import 'post_payment_intents_intent_confirm_request_payment_details.dart';import 'post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'post_payment_intents_intent_confirm_request_payment_method_options.dart';import 'post_payment_intents_intent_confirm_request_radar_options.dart';import 'post_payment_intents_intent_confirm_request_receipt_email.dart';import 'post_payment_intents_intent_confirm_request_shipping.dart';import 'secret_key_param2.dart';/// Controls when the funds will be captured from the customer's account.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_confirm_request_amount_details.dart';import 'post_payment_intents_intent_confirm_request_excluded_payment_method_types.dart';import 'post_payment_intents_intent_confirm_request_hooks.dart';import 'post_payment_intents_intent_confirm_request_mandate_data.dart';import 'post_payment_intents_intent_confirm_request_off_session.dart';import 'post_payment_intents_intent_confirm_request_payment_details.dart';import 'post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'post_payment_intents_intent_confirm_request_payment_method_options.dart';import 'post_payment_intents_intent_confirm_request_radar_options.dart';import 'post_payment_intents_intent_confirm_request_receipt_email.dart';import 'post_payment_intents_intent_confirm_request_shipping.dart';/// Controls when the funds will be captured from the customer's account.
 @immutable final class PostPaymentIntentsIntentConfirmRequestCaptureMethod {const PostPaymentIntentsIntentConfirmRequestCaptureMethod._(this.value);
 
 factory PostPaymentIntentsIntentConfirmRequestCaptureMethod.fromJson(String json) { return switch (json) {
@@ -67,27 +67,27 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostPaymentIntentsIntentConfirmRequest {const PostPaymentIntentsIntentConfirmRequest({this.amountDetails, this.captureMethod, this.clientSecret, this.confirmationToken, this.errorOnRequiresAction, this.excludedPaymentMethodTypes, this.expand, this.hooks, this.mandate, this.mandateData, this.offSession, this.paymentDetails, this.paymentMethod, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.radarOptions, this.receiptEmail, this.returnUrl, this.setupFutureUsage, this.shipping, this.useStripeSdk, });
 
 factory PostPaymentIntentsIntentConfirmRequest.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequest(
-  amountDetails: json['amount_details'] != null ? OneOf2.parse(json['amount_details'], fromA: (v) => AmountDetailsParam2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentConfirmRequestAmountDetailsVariant2.fromJson(v as String),) : null,
+  amountDetails: json['amount_details'] != null ? PostPaymentIntentsIntentConfirmRequestAmountDetails.fromJson(json['amount_details']) : null,
   captureMethod: json['capture_method'] != null ? PostPaymentIntentsIntentConfirmRequestCaptureMethod.fromJson(json['capture_method'] as String) : null,
   clientSecret: json['client_secret'] as String?,
   confirmationToken: json['confirmation_token'] as String?,
   errorOnRequiresAction: json['error_on_requires_action'] as bool?,
-  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null ? OneOf2.parse(json['excluded_payment_method_types'], fromA: (v) => (v as List<dynamic>).map((e) => PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1.fromJson(e as String)).toList(), fromB: (v) => PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2.fromJson(v as String),) : null,
+  excludedPaymentMethodTypes: json['excluded_payment_method_types'] != null ? PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes.fromJson(json['excluded_payment_method_types']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   hooks: json['hooks'] != null ? PostPaymentIntentsIntentConfirmRequestHooks.fromJson(json['hooks'] as Map<String, dynamic>) : null,
   mandate: json['mandate'] as String?,
-  mandateData: json['mandate_data'] != null ? OneOf3.parse(json['mandate_data'], fromA: (v) => SecretKeyParam2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentConfirmRequestMandateDataVariant2.fromJson(v as String), fromC: (v) => ClientKeyParam.fromJson(v as Map<String, dynamic>),) : null,
-  offSession: json['off_session'] != null ? OneOf2.parse(json['off_session'], fromA: (v) => v as bool, fromB: (v) => PostPaymentIntentsIntentConfirmRequestOffSessionVariant2.fromJson(v as String),) : null,
-  paymentDetails: json['payment_details'] != null ? OneOf2.parse(json['payment_details'], fromA: (v) => PaymentDetails2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentConfirmRequestPaymentDetailsVariant2.fromJson(v as String),) : null,
+  mandateData: json['mandate_data'] != null ? PostPaymentIntentsIntentConfirmRequestMandateData.fromJson(json['mandate_data']) : null,
+  offSession: json['off_session'] != null ? PostPaymentIntentsIntentConfirmRequestOffSession.fromJson(json['off_session']) : null,
+  paymentDetails: json['payment_details'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentDetails.fromJson(json['payment_details']) : null,
   paymentMethod: json['payment_method'] as String?,
   paymentMethodData: json['payment_method_data'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodData.fromJson(json['payment_method_data'] as Map<String, dynamic>) : null,
   paymentMethodOptions: json['payment_method_options'] != null ? PostPaymentIntentsIntentConfirmRequestPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
   radarOptions: json['radar_options'] != null ? PostPaymentIntentsIntentConfirmRequestRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
-  receiptEmail: json['receipt_email'] != null ? OneOf2.parse(json['receipt_email'], fromA: (v) => v as String, fromB: (v) => PostPaymentIntentsIntentConfirmRequestReceiptEmailVariant2.fromJson(v as String),) : null,
+  receiptEmail: json['receipt_email'] != null ? PostPaymentIntentsIntentConfirmRequestReceiptEmail.fromJson(json['receipt_email']) : null,
   returnUrl: json['return_url'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? PostPaymentIntentsIntentConfirmRequestSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => OptionalFieldsShipping2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentConfirmRequestShippingVariant2.fromJson(v as String),) : null,
+  shipping: json['shipping'] != null ? PostPaymentIntentsIntentConfirmRequestShipping.fromJson(json['shipping']) : null,
   useStripeSdk: json['use_stripe_sdk'] as bool?,
 ); }
 

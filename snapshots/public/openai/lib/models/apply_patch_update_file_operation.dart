@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ApplyPatchUpdateFileOperationType($value)'; } 
  }
 /// Instruction describing how to update a file via the apply_patch tool.
-@immutable final class ApplyPatchUpdateFileOperation {const ApplyPatchUpdateFileOperation({required this.path, required this.diff, this.type = ApplyPatchUpdateFileOperationType.updateFile, });
+@immutable final class ApplyPatchUpdateFileOperation {const ApplyPatchUpdateFileOperation({required this.type, required this.path, required this.diff, });
 
 factory ApplyPatchUpdateFileOperation.fromJson(Map<String, dynamic> json) { return ApplyPatchUpdateFileOperation(
   type: ApplyPatchUpdateFileOperationType.fromJson(json['type'] as String),

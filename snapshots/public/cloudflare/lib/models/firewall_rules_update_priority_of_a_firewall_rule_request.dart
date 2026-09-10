@@ -1,24 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_components_schemas_identifier.dart';@immutable final class FirewallRulesUpdatePriorityOfAFirewallRuleRequest {const FirewallRulesUpdatePriorityOfAFirewallRuleRequest({required this.id});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FirewallRulesUpdatePriorityOfAFirewallRuleRequest {const FirewallRulesUpdatePriorityOfAFirewallRuleRequest();
 
-factory FirewallRulesUpdatePriorityOfAFirewallRuleRequest.fromJson(Map<String, dynamic> json) { return FirewallRulesUpdatePriorityOfAFirewallRuleRequest(
-  id: FirewallComponentsSchemasIdentifier.fromJson(json['id'] as String),
-); }
-
-/// The unique identifier of the resource.
-final FirewallComponentsSchemasIdentifier id;
+factory FirewallRulesUpdatePriorityOfAFirewallRuleRequest.fromJson(Map<String, dynamic> _) { return const FirewallRulesUpdatePriorityOfAFirewallRuleRequest(); }
 
 Map<String, dynamic> toJson() { return {
-  'id': id.toJson(),
+
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-FirewallRulesUpdatePriorityOfAFirewallRuleRequest copyWith({FirewallComponentsSchemasIdentifier? id}) { return FirewallRulesUpdatePriorityOfAFirewallRuleRequest(
-  id: id ?? this.id,
+static bool canParse(Map<String, dynamic> json) { return true; } 
+FirewallRulesUpdatePriorityOfAFirewallRuleRequest copyWith() { return const FirewallRulesUpdatePriorityOfAFirewallRuleRequest(
+
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-      other is FirewallRulesUpdatePriorityOfAFirewallRuleRequest &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'FirewallRulesUpdatePriorityOfAFirewallRuleRequest(id: $id)'; } 
+@override bool operator ==(Object other) { return identical(this, other) || other is FirewallRulesUpdatePriorityOfAFirewallRuleRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'FirewallRulesUpdatePriorityOfAFirewallRuleRequest()'; } 
  }

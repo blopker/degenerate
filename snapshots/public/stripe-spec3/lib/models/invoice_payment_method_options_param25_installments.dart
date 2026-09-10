@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'installment_plan2.dart';import 'invoice_payment_method_options_param25_installments_plan.dart';@immutable final class InvoicePaymentMethodOptionsParam25Installments {const InvoicePaymentMethodOptionsParam25Installments({this.enabled, this.plan, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param25_installments_plan.dart';@immutable final class InvoicePaymentMethodOptionsParam25Installments {const InvoicePaymentMethodOptionsParam25Installments({this.enabled, this.plan, });
 
 factory InvoicePaymentMethodOptionsParam25Installments.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam25Installments(
   enabled: json['enabled'] as bool?,
-  plan: json['plan'] != null ? OneOf2.parse(json['plan'], fromA: (v) => InstallmentPlan2.fromJson(v as Map<String, dynamic>), fromB: (v) => InvoicePaymentMethodOptionsParam25InstallmentsPlanVariant2.fromJson(v as String),) : null,
+  plan: json['plan'] != null ? InvoicePaymentMethodOptionsParam25InstallmentsPlan.fromJson(json['plan']) : null,
 ); }
 
 final bool? enabled;

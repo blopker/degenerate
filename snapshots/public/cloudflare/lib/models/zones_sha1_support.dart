@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_sha1_support_value.dart';/// Allow SHA1 support.
-@immutable final class ZonesSha1Support {const ZonesSha1Support({required this.id, required this.value, this.editable = true, this.modifiedOn = const Omittable.absent(), });
+@immutable final class ZonesSha1Support {const ZonesSha1Support({required this.id, required this.value, this.editable, this.modifiedOn = const Omittable.absent(), });
 
 factory ZonesSha1Support.fromJson(Map<String, dynamic> json) { return ZonesSha1Support(
-  editable: json.containsKey('editable') ? json['editable'] as bool : true,
+  editable: json['editable'] as bool?,
   id: json['id'],
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesSha1SupportValue.fromJson(json['value'] as String),
 ); }
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
-final bool editable;
+final bool? editable;
 
 /// Zone setting identifier.
 final dynamic id;
@@ -21,15 +21,17 @@ final Omittable<DateTime?> modifiedOn;
 
 final ZonesSha1SupportValue value;
 
+/// The value with the schema default applied when absent.
+bool get editableOrDefault { return editable ?? true; } 
 Map<String, dynamic> toJson() { return {
-  'editable': editable,
+  'editable': ?editable,
   'id': id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('value'); } 
-ZonesSha1Support copyWith({bool Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesSha1SupportValue? value, }) { return ZonesSha1Support(
+ZonesSha1Support copyWith({bool? Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesSha1SupportValue? value, }) { return ZonesSha1Support(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,

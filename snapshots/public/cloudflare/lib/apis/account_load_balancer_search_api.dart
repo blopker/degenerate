@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_load_balancer_search_search_resources_references.dart';import '../models/load_balancing_components_schemas_identifier.dart';import '../models/load_balancing_search.dart';/// AccountLoadBalancerSearchApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_load_balancer_search_search_resources_references.dart';import '../models/load_balancing_components_schemas_identifier.dart';import '../models/load_balancing_search.dart';import '../models/response_common_failure43.dart';/// AccountLoadBalancerSearchApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccountLoadBalancerSearchApi with ApiExecutor {const AccountLoadBala
 /// Search for Load Balancing resources.
 ///
 /// `GET /accounts/{account_id}/load_balancers/search`
-Future<ApiResult<LoadBalancingSearch, Never>> accountLoadBalancerSearchResources({required LoadBalancingComponentsSchemasIdentifier accountId, String? query, AccountLoadBalancerSearchSearchResourcesReferences? references, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LoadBalancingSearch, ResponseCommonFailure43>> accountLoadBalancerSearchResources({required LoadBalancingComponentsSchemasIdentifier accountId, String? query, AccountLoadBalancerSearchSearchResourcesReferences? references, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (query != null) {
   queryParameters['query'] = query;
@@ -42,8 +42,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return LoadBalancingSearch.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return LoadBalancingSearch.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure43.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

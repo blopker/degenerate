@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'date_of_birth_specs5.dart';import 'post_accounts_account_persons_request_additional_tos_acceptances.dart';import 'post_accounts_account_persons_request_address.dart';import 'post_accounts_account_persons_request_address_kana.dart';import 'post_accounts_account_persons_request_address_kanji.dart';import 'post_accounts_account_persons_request_dob.dart';import 'post_accounts_account_persons_request_documents.dart';import 'post_accounts_account_persons_request_full_name_aliases.dart';import 'post_accounts_account_persons_request_metadata.dart';import 'post_accounts_account_persons_request_registered_address.dart';import 'post_accounts_account_persons_request_relationship.dart';import 'post_accounts_account_persons_request_us_cfpb_data.dart';import 'post_accounts_account_persons_request_verification.dart';/// Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_persons_request_additional_tos_acceptances.dart';import 'post_accounts_account_persons_request_address.dart';import 'post_accounts_account_persons_request_address_kana.dart';import 'post_accounts_account_persons_request_address_kanji.dart';import 'post_accounts_account_persons_request_dob.dart';import 'post_accounts_account_persons_request_documents.dart';import 'post_accounts_account_persons_request_full_name_aliases.dart';import 'post_accounts_account_persons_request_metadata.dart';import 'post_accounts_account_persons_request_registered_address.dart';import 'post_accounts_account_persons_request_relationship.dart';import 'post_accounts_account_persons_request_us_cfpb_data.dart';import 'post_accounts_account_persons_request_verification.dart';/// Indicates if the person or any of their representatives, family members, or other closely related persons, declares that they hold or have held an important public job or function, in any jurisdiction.
 @immutable final class PostAccountsAccountPersonsRequestPoliticalExposure {const PostAccountsAccountPersonsRequestPoliticalExposure._(this.value);
 
 factory PostAccountsAccountPersonsRequestPoliticalExposure.fromJson(String json) { return switch (json) {
@@ -32,14 +32,14 @@ factory PostAccountsAccountPersonsRequest.fromJson(Map<String, dynamic> json) { 
   address: json['address'] != null ? PostAccountsAccountPersonsRequestAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? PostAccountsAccountPersonsRequestAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? PostAccountsAccountPersonsRequestAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
-  dob: json['dob'] != null ? OneOf2.parse(json['dob'], fromA: (v) => DateOfBirthSpecs5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostAccountsAccountPersonsRequestDobVariant2.fromJson(v as String),) : null,
+  dob: json['dob'] != null ? PostAccountsAccountPersonsRequestDob.fromJson(json['dob']) : null,
   documents: json['documents'] != null ? PostAccountsAccountPersonsRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   firstName: json['first_name'] as String?,
   firstNameKana: json['first_name_kana'] as String?,
   firstNameKanji: json['first_name_kanji'] as String?,
-  fullNameAliases: json['full_name_aliases'] != null ? OneOf2.parse(json['full_name_aliases'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostAccountsAccountPersonsRequestFullNameAliasesVariant2.fromJson(v as String),) : null,
+  fullNameAliases: json['full_name_aliases'] != null ? PostAccountsAccountPersonsRequestFullNameAliases.fromJson(json['full_name_aliases']) : null,
   gender: json['gender'] as String?,
   idNumber: json['id_number'] as String?,
   idNumberSecondary: json['id_number_secondary'] as String?,
@@ -47,7 +47,7 @@ factory PostAccountsAccountPersonsRequest.fromJson(Map<String, dynamic> json) { 
   lastNameKana: json['last_name_kana'] as String?,
   lastNameKanji: json['last_name_kanji'] as String?,
   maidenName: json['maiden_name'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostAccountsAccountPersonsRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostAccountsAccountPersonsRequestMetadata.fromJson(json['metadata']) : null,
   nationality: json['nationality'] as String?,
   personToken: json['person_token'] as String?,
   phone: json['phone'] as String?,

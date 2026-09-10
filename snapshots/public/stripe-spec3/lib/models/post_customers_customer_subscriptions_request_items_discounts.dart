@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2($value)'; } 
  }
-typedef PostCustomersCustomerSubscriptionsRequestItemsDiscounts = OneOf2<List<PostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant1>,PostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2>;
+
+@immutable
+final class PostCustomersCustomerSubscriptionsRequestItemsDiscounts {
+  const PostCustomersCustomerSubscriptionsRequestItemsDiscounts({this.listPostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant1 = const Omittable.absent(),
+this.postCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCustomersCustomerSubscriptionsRequestItemsDiscounts._({required this.rawValue, required this.listPostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant1,
+required this.postCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2,});
+  factory PostCustomersCustomerSubscriptionsRequestItemsDiscounts.fromJson(Object? json) => PostCustomersCustomerSubscriptionsRequestItemsDiscounts._(
+    rawValue: Omittable(json),
+    listPostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant1: parseAnyOfVariant<List<PostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+postCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2: parseAnyOfVariant<PostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2>(json, (value) => PostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant1>> listPostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant1;
+final Omittable<PostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2> postCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant1.isPresent || postCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant1.isPresent) listPostCustomersCustomerSubscriptionsRequestItemsDiscountsVariant1.value?.map((e) => e.toJson()).toList(),
+if (postCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2.isPresent) postCustomersCustomerSubscriptionsRequestItemsDiscountsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCustomersCustomerSubscriptionsRequestItemsDiscounts && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCustomersCustomerSubscriptionsRequestItemsDiscounts(${toJson()})';
+}

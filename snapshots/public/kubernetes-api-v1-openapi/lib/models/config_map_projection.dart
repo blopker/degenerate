@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key_to_path.dart';/// Adapts a ConfigMap into a projected volume.
 /// 
 /// The contents of the target ConfigMap's Data field will be presented in a projected volume as files using the keys in the Data field as the file names, unless the items element is populated with specific mappings of keys to paths. Note that this is identical to a configmap volume source without the default mode.
-@immutable final class ConfigMapProjection {const ConfigMapProjection({this.items, this.name = '', this.optional, });
+@immutable final class ConfigMapProjection {const ConfigMapProjection({this.items, this.name, this.optional, });
 
 factory ConfigMapProjection.fromJson(Map<String, dynamic> json) { return ConfigMapProjection(
   items: (json['items'] as List<dynamic>?)?.map((e) => KeyToPath.fromJson(e as Map<String, dynamic>)).toList(),
-  name: json.containsKey('name') ? json['name'] as String : '',
+  name: json['name'] as String?,
   optional: json['optional'] as bool?,
 ); }
 
@@ -15,18 +15,20 @@ factory ConfigMapProjection.fromJson(Map<String, dynamic> json) { return ConfigM
 final List<KeyToPath>? items;
 
 /// Name of the referent. This field is effectively required, but due to backwards compatibility is allowed to be empty. Instances of this type with an empty value here are almost certainly wrong. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-final String name;
+final String? name;
 
 /// optional specify whether the ConfigMap or its keys must be defined
 final bool? optional;
 
+/// The value with the schema default applied when absent.
+String get nameOrDefault { return name ?? ''; } 
 Map<String, dynamic> toJson() { return {
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
-  'name': name,
+  'name': ?name,
   'optional': ?optional,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'items', 'name', 'optional'}.contains(key)); } 
-ConfigMapProjection copyWith({List<KeyToPath>? Function()? items, String Function()? name, bool? Function()? optional, }) { return ConfigMapProjection(
+ConfigMapProjection copyWith({List<KeyToPath>? Function()? items, String? Function()? name, bool? Function()? optional, }) { return ConfigMapProjection(
   items: items != null ? items() : this.items,
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,

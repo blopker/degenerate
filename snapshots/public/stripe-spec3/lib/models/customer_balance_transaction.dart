@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_session.dart';import 'credit_note.dart';import 'customer.dart';import 'customer_balance_transaction_checkout_session.dart';import 'customer_balance_transaction_credit_note.dart';import 'customer_balance_transaction_customer.dart';import 'customer_balance_transaction_invoice.dart';import 'invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_transaction_checkout_session.dart';import 'customer_balance_transaction_credit_note.dart';import 'customer_balance_transaction_customer.dart';import 'customer_balance_transaction_invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject._(this.value);
 
 factory CustomerBalanceTransactionObject.fromJson(String json) { return switch (json) {
@@ -87,16 +87,16 @@ bool get isUnknown { return !values.contains(this); }
 
 factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceTransaction(
   amount: (json['amount'] as num).toInt(),
-  checkoutSession: json.containsKey('checkout_session') ? Omittable(json['checkout_session'] != null ? OneOf2.parse(json['checkout_session'], fromA: (v) => v as String, fromB: (v) => CheckoutSession.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  checkoutSession: json.containsKey('checkout_session') ? Omittable(json['checkout_session'] != null ? CustomerBalanceTransactionCheckoutSession.fromJson(json['checkout_session']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
-  creditNote: json.containsKey('credit_note') ? Omittable(json['credit_note'] != null ? OneOf2.parse(json['credit_note'], fromA: (v) => v as String, fromB: (v) => CreditNote.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  creditNote: json.containsKey('credit_note') ? Omittable(json['credit_note'] != null ? CustomerBalanceTransactionCreditNote.fromJson(json['credit_note']) : null) : const Omittable.absent(),
   currency: json['currency'] as String,
-  customer: OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),),
+  customer: CustomerBalanceTransactionCustomer.fromJson(json['customer']),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   endingBalance: (json['ending_balance'] as num).toInt(),
   id: json['id'] as String,
-  invoice: json.containsKey('invoice') ? Omittable(json['invoice'] != null ? OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  invoice: json.containsKey('invoice') ? Omittable(json['invoice'] != null ? CustomerBalanceTransactionInvoice.fromJson(json['invoice']) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: CustomerBalanceTransactionObject.fromJson(json['object'] as String),

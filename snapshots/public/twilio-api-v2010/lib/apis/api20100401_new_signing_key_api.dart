@@ -28,7 +28,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountNewSigningKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountNewSigningKey.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

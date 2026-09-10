@@ -13,7 +13,7 @@ final class UserSchema {
     required this.dateCreated,
     this.name = const Omittable.absent(),
     this.slug = const Omittable.absent(),
-    this.isStaff = false,
+    this.isStaff,
     this.apiKey,
     this.profileAvatarSeed,
     this.profileImage = const Omittable.absent(),
@@ -31,7 +31,7 @@ final class UserSchema {
       slug: json.containsKey('slug')
           ? Omittable(json['slug'] as String?)
           : const Omittable.absent(),
-      isStaff: json.containsKey('is_staff') ? json['is_staff'] as bool : false,
+      isStaff: json['is_staff'] as bool?,
       apiKey: json['api_key'] as String?,
       profileAvatarSeed: json['profile_avatar_seed'] as String?,
       profileImage: json.containsKey('profile_image')
@@ -51,7 +51,7 @@ final class UserSchema {
   final Omittable<String?> slug;
 
   /// Designates whether the user can log into this admin site.
-  final bool isStaff;
+  final bool? isStaff;
 
   final String? apiKey;
 
@@ -64,13 +64,18 @@ final class UserSchema {
 
   final DateTime dateCreated;
 
+  /// The value with the schema default applied when absent.
+  bool get isStaffOrDefault {
+    return isStaff ?? false;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'profile_avatar_type': profileAvatarType.toJson(),
       'circle_count': circleCount,
       if (name.isPresent) 'name': name.value,
       if (slug.isPresent) 'slug': slug.value,
-      'is_staff': isStaff,
+      'is_staff': ?isStaff,
       'api_key': ?apiKey,
       'profile_avatar_seed': ?profileAvatarSeed,
       if (profileImage.isPresent) 'profile_image': profileImage.value,
@@ -94,7 +99,7 @@ final class UserSchema {
     int? circleCount,
     Omittable<String?>? name,
     Omittable<String?>? slug,
-    bool Function()? isStaff,
+    bool? Function()? isStaff,
     String? Function()? apiKey,
     String? Function()? profileAvatarSeed,
     Omittable<String?>? profileImage,

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'terminal_configuration_configuration_resource_device_type_specific_config_splashscreen.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_configuration_configuration_resource_device_type_specific_config_splashscreen.dart';/// 
 @immutable final class TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig {const TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig({this.splashscreen});
 
 factory TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig(
-  splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,
+  splashscreen: json['splashscreen'] != null ? TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfigSplashscreen.fromJson(json['splashscreen']) : null,
 ); }
 
 /// A File ID representing an image to display on the reader

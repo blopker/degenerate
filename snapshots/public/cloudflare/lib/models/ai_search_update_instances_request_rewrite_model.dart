@@ -120,4 +120,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesRequestRewriteModelVariant2($value)'; } 
  }
-typedef AiSearchUpdateInstancesRequestRewriteModel = OneOf2<AiSearchUpdateInstancesRequestRewriteModelVariant1,AiSearchUpdateInstancesRequestRewriteModelVariant2>;
+
+@immutable
+final class AiSearchUpdateInstancesRequestRewriteModel {
+  const AiSearchUpdateInstancesRequestRewriteModel({this.aiSearchUpdateInstancesRequestRewriteModelVariant1 = const Omittable.absent(),
+this.aiSearchUpdateInstancesRequestRewriteModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const AiSearchUpdateInstancesRequestRewriteModel._({required this.rawValue, required this.aiSearchUpdateInstancesRequestRewriteModelVariant1,
+required this.aiSearchUpdateInstancesRequestRewriteModelVariant2,});
+  factory AiSearchUpdateInstancesRequestRewriteModel.fromJson(Object? json) => AiSearchUpdateInstancesRequestRewriteModel._(
+    rawValue: Omittable(json),
+    aiSearchUpdateInstancesRequestRewriteModelVariant1: parseAnyOfVariant<AiSearchUpdateInstancesRequestRewriteModelVariant1>(json, (value) => AiSearchUpdateInstancesRequestRewriteModelVariant1.fromJson(value! as String)),
+aiSearchUpdateInstancesRequestRewriteModelVariant2: parseAnyOfVariant<AiSearchUpdateInstancesRequestRewriteModelVariant2>(json, (value) => AiSearchUpdateInstancesRequestRewriteModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<AiSearchUpdateInstancesRequestRewriteModelVariant1> aiSearchUpdateInstancesRequestRewriteModelVariant1;
+final Omittable<AiSearchUpdateInstancesRequestRewriteModelVariant2> aiSearchUpdateInstancesRequestRewriteModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => aiSearchUpdateInstancesRequestRewriteModelVariant1.isPresent || aiSearchUpdateInstancesRequestRewriteModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (aiSearchUpdateInstancesRequestRewriteModelVariant1.isPresent) aiSearchUpdateInstancesRequestRewriteModelVariant1.value?.toJson(),
+if (aiSearchUpdateInstancesRequestRewriteModelVariant2.isPresent) aiSearchUpdateInstancesRequestRewriteModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is AiSearchUpdateInstancesRequestRewriteModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'AiSearchUpdateInstancesRequestRewriteModel(${toJson()})';
+}

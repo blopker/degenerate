@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class CreateVideoBody {const CreateVideoBody({required this.prompt, this.model, this.inputReference, this.imageReference, this.seconds, this.size, });
 
 factory CreateVideoBody.fromJson(Map<String, dynamic> json) { return CreateVideoBody(
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => VideoModelVariant2.fromJson(v as String),) : null,
+  model: json['model'] != null ? VideoModel.fromJson(json['model']) : null,
   prompt: json['prompt'] as String,
   inputReference: json['input_reference'] != null ? base64Decode(json['input_reference'] as String) : null,
   imageReference: json['image_reference'] != null ? ImageRefParam2.fromJson(json['image_reference'] as Map<String, dynamic>) : null,

@@ -6,27 +6,28 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 /// The next speaker won't have a chance to accept — the stick will be passed immediately.
 @immutable
 final class ForcePassStickEvent {
-  const ForcePassStickEvent({this.type = 'force_pass_stick'});
+  const ForcePassStickEvent({this.type});
 
   factory ForcePassStickEvent.fromJson(Map<String, dynamic> json) {
-    return ForcePassStickEvent(
-      type: json.containsKey('type')
-          ? json['type'] as String
-          : 'force_pass_stick',
-    );
+    return ForcePassStickEvent(type: json['type'] as String?);
   }
 
-  final String type;
+  final String? type;
+
+  /// The value with the schema default applied when absent.
+  String get typeOrDefault {
+    return type ?? 'force_pass_stick';
+  }
 
   Map<String, dynamic> toJson() {
-    return {'type': type};
+    return {'type': ?type};
   }
 
   static bool canParse(Map<String, dynamic> json) {
     return json.keys.any((key) => const {'type'}.contains(key));
   }
 
-  ForcePassStickEvent copyWith({String Function()? type}) {
+  ForcePassStickEvent copyWith({String? Function()? type}) {
     return ForcePassStickEvent(type: type != null ? type() : this.type);
   }
 

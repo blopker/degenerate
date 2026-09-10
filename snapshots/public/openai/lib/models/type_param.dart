@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An action to type in text.
-@immutable final class TypeParam {const TypeParam({required this.text, this.type = 'type', });
+@immutable final class TypeParam {const TypeParam({required this.type, required this.text, });
 
 factory TypeParam.fromJson(Map<String, dynamic> json) { return TypeParam(
   type: json['type'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/copilot_add_copilot_seats_for_teams_request.dart';import '../models/copilot_add_copilot_seats_for_teams_response.dart';import '../models/copilot_add_copilot_seats_for_users_request.dart';import '../models/copilot_add_copilot_seats_for_users_response.dart';import '../models/copilot_cancel_copilot_seat_assignment_for_teams_request.dart';import '../models/copilot_cancel_copilot_seat_assignment_for_teams_response.dart';import '../models/copilot_cancel_copilot_seat_assignment_for_users_request.dart';import '../models/copilot_cancel_copilot_seat_assignment_for_users_response.dart';import '../models/copilot_list_copilot_seats_response.dart';import '../models/copilot_organization_details.dart';import '../models/copilot_seat_details.dart';import '../models/copilot_set_copilot_content_exclusion_for_organization_request_value.dart';import '../models/copilot_set_copilot_content_exclusion_for_organization_response.dart';import '../models/copilot_usage_metrics_day.dart';/// CopilotApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/copilot_add_copilot_seats_for_teams_request.dart';import '../models/copilot_add_copilot_seats_for_teams_response.dart';import '../models/copilot_add_copilot_seats_for_users_request.dart';import '../models/copilot_add_copilot_seats_for_users_response.dart';import '../models/copilot_cancel_copilot_seat_assignment_for_teams_request.dart';import '../models/copilot_cancel_copilot_seat_assignment_for_teams_response.dart';import '../models/copilot_cancel_copilot_seat_assignment_for_users_request.dart';import '../models/copilot_cancel_copilot_seat_assignment_for_users_response.dart';import '../models/copilot_list_copilot_seats_response.dart';import '../models/copilot_organization_details.dart';import '../models/copilot_seat_details.dart';import '../models/copilot_set_copilot_content_exclusion_for_organization_request_value.dart';import '../models/copilot_set_copilot_content_exclusion_for_organization_response.dart';import '../models/copilot_usage_metrics_day.dart';import '../models/validation_error_simple.dart';/// CopilotApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -34,10 +34,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CopilotOrganizationDetails.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CopilotOrganizationDetails.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+case 422:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -78,10 +88,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CopilotListCopilotSeatsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CopilotListCopilotSeatsResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -116,10 +134,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CopilotAddCopilotSeatsForTeamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CopilotAddCopilotSeatsForTeamsResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+case 422:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -153,10 +181,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+case 422:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -191,10 +229,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CopilotAddCopilotSeatsForUsersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CopilotAddCopilotSeatsForUsersResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+case 422:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -228,10 +276,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CopilotCancelCopilotSeatAssignmentForUsersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CopilotCancelCopilotSeatAssignmentForUsersResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+case 422:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -265,10 +323,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList()));
+final json = jsonDecode(response.body);
+return (json as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList()));
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -290,7 +356,7 @@ return execute(
 /// > * At this time, the API does not support duplicate keys. If you submit content exclusions through the API with duplicate keys, only the last occurrence will be saved. Earlier entries with the same key will be overwritten.
 ///
 /// `PUT /orgs/{org}/copilot/content_exclusion`
-Future<ApiResult<CopilotSetCopilotContentExclusionForOrganizationResponse, BasicError>> copilotSetCopilotContentExclusionForOrganization({required String org, required Map<String,List<CopilotSetCopilotContentExclusionForOrganizationRequestValue>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CopilotSetCopilotContentExclusionForOrganizationResponse, OneOf2<BasicError, ValidationErrorSimple>>> copilotSetCopilotContentExclusionForOrganization({required String org, required Map<String,List<CopilotSetCopilotContentExclusionForOrganizationRequestValue>> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -304,10 +370,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401 || 403 || 404 || 413 || 500:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -357,11 +434,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CopilotUsageMetricsDay.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => CopilotUsageMetricsDay.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 422 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -392,10 +476,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CopilotSeatDetails.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CopilotSeatDetails.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+case 422:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -445,11 +539,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CopilotUsageMetricsDay.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => CopilotUsageMetricsDay.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 422 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

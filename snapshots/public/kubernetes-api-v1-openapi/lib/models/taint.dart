@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// The node this Taint is attached to has the "effect" on any pod that does not tolerate the Taint.
-@immutable final class Taint {const Taint({this.effect = '', this.key = '', this.timeAdded, this.value, });
+@immutable final class Taint {const Taint({required this.effect, required this.key, this.timeAdded, this.value, });
 
 factory Taint.fromJson(Map<String, dynamic> json) { return Taint(
   effect: json['effect'] as String,

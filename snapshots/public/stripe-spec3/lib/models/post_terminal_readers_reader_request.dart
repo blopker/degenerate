@@ -4,8 +4,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_termina
 
 factory PostTerminalReadersReaderRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  label: json['label'] != null ? OneOf2.parse(json['label'], fromA: (v) => v as String, fromB: (v) => PostTerminalReadersReaderRequestLabelVariant2.fromJson(v as String),) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostTerminalReadersReaderRequestMetadataVariant2.fromJson(v as String),) : null,
+  label: json['label'] != null ? PostTerminalReadersReaderRequestLabel.fromJson(json['label']) : null,
+  metadata: json['metadata'] != null ? PostTerminalReadersReaderRequestMetadata.fromJson(json['metadata']) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

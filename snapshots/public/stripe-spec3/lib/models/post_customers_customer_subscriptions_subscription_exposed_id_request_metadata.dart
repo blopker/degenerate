@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2($value)'; } 
  }
-typedef PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadata = OneOf2<Map<String,String>,PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2>;
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+@immutable
+final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadata {
+  const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadata({this.mapStringString = const Omittable.absent(),
+this.postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadata._({required this.rawValue, required this.mapStringString,
+required this.postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2,});
+  factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadata.fromJson(Object? json) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadata._(
+    rawValue: Omittable(json),
+    mapStringString: parseAnyOfVariant<Map<String, String>>(json, (value) => (value! as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))),
+postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2: parseAnyOfVariant<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2>(json, (value) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<Map<String, String>> mapStringString;
+final Omittable<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2> postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => mapStringString.isPresent || postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (mapStringString.isPresent) mapStringString.value,
+if (postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2.isPresent) postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadataVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadata && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestMetadata(${toJson()})';
+}

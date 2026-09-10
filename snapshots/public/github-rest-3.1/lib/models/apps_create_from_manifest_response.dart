@@ -140,6 +140,6 @@ AppsCreateFromManifestResponse copyWith({int? id, String? Function()? slug, Stri
           webhookSecret == other.webhookSecret &&
           pem == other.pem &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount, clientSecret, webhookSecret, pem, Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount, clientSecret, webhookSecret, pem, mapHash(additionalProperties)); } 
 @override String toString() { return 'AppsCreateFromManifestResponse(id: $id, slug: $slug, nodeId: $nodeId, clientId: $clientId, owner: $owner, name: $name, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events, installationsCount: $installationsCount, clientSecret: $clientSecret, webhookSecret: $webhookSecret, pem: $pem, additionalProperties: $additionalProperties)'; } 
  }

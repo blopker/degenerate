@@ -27,12 +27,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType($value)'; } 
  }
-@immutable final class AiSearchUpdateInstancesRequestSourceParamsWebCrawler {const AiSearchUpdateInstancesRequestSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType = AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.sitemap, this.storeOptions, });
+@immutable final class AiSearchUpdateInstancesRequestSourceParamsWebCrawler {const AiSearchUpdateInstancesRequestSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType, this.storeOptions, });
 
 factory AiSearchUpdateInstancesRequestSourceParamsWebCrawler.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesRequestSourceParamsWebCrawler(
   crawlOptions: json['crawl_options'] != null ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>) : null,
   parseOptions: json['parse_options'] != null ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseOptions.fromJson(json['parse_options'] as Map<String, dynamic>) : null,
-  parseType: json.containsKey('parse_type') ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.fromJson(json['parse_type'] as String) : AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.sitemap,
+  parseType: json['parse_type'] != null ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.fromJson(json['parse_type'] as String) : null,
   storeOptions: json['store_options'] != null ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerStoreOptions.fromJson(json['store_options'] as Map<String, dynamic>) : null,
 ); }
 
@@ -40,18 +40,20 @@ final AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions? crawlOpt
 
 final AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseOptions? parseOptions;
 
-final AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType parseType;
+final AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType? parseType;
 
 final AiSearchUpdateInstancesRequestSourceParamsWebCrawlerStoreOptions? storeOptions;
 
+/// The value with the schema default applied when absent.
+AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType get parseTypeOrDefault { return parseType ?? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.fromJson('sitemap'); } 
 Map<String, dynamic> toJson() { return {
   if (crawlOptions != null) 'crawl_options': crawlOptions?.toJson(),
   if (parseOptions != null) 'parse_options': parseOptions?.toJson(),
-  'parse_type': parseType.toJson(),
+  if (parseType != null) 'parse_type': parseType?.toJson(),
   if (storeOptions != null) 'store_options': storeOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'crawl_options', 'parse_options', 'parse_type', 'store_options'}.contains(key)); } 
-AiSearchUpdateInstancesRequestSourceParamsWebCrawler copyWith({AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions? Function()? crawlOptions, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseOptions? Function()? parseOptions, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType Function()? parseType, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerStoreOptions? Function()? storeOptions, }) { return AiSearchUpdateInstancesRequestSourceParamsWebCrawler(
+AiSearchUpdateInstancesRequestSourceParamsWebCrawler copyWith({AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions? Function()? crawlOptions, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseOptions? Function()? parseOptions, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType? Function()? parseType, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerStoreOptions? Function()? storeOptions, }) { return AiSearchUpdateInstancesRequestSourceParamsWebCrawler(
   crawlOptions: crawlOptions != null ? crawlOptions() : this.crawlOptions,
   parseOptions: parseOptions != null ? parseOptions() : this.parseOptions,
   parseType: parseType != null ? parseType() : this.parseType,

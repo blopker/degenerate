@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MerchandiseNotAsDescribed2AdditionalDocumentationVariant2($value)'; } 
  }
-typedef MerchandiseNotAsDescribed2AdditionalDocumentation = OneOf2<String,MerchandiseNotAsDescribed2AdditionalDocumentationVariant2>;
+
+@immutable
+final class MerchandiseNotAsDescribed2AdditionalDocumentation {
+  const MerchandiseNotAsDescribed2AdditionalDocumentation({this.string = const Omittable.absent(),
+this.merchandiseNotAsDescribed2AdditionalDocumentationVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const MerchandiseNotAsDescribed2AdditionalDocumentation._({required this.rawValue, required this.string,
+required this.merchandiseNotAsDescribed2AdditionalDocumentationVariant2,});
+  factory MerchandiseNotAsDescribed2AdditionalDocumentation.fromJson(Object? json) => MerchandiseNotAsDescribed2AdditionalDocumentation._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+merchandiseNotAsDescribed2AdditionalDocumentationVariant2: parseAnyOfVariant<MerchandiseNotAsDescribed2AdditionalDocumentationVariant2>(json, (value) => MerchandiseNotAsDescribed2AdditionalDocumentationVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<MerchandiseNotAsDescribed2AdditionalDocumentationVariant2> merchandiseNotAsDescribed2AdditionalDocumentationVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || merchandiseNotAsDescribed2AdditionalDocumentationVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (merchandiseNotAsDescribed2AdditionalDocumentationVariant2.isPresent) merchandiseNotAsDescribed2AdditionalDocumentationVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is MerchandiseNotAsDescribed2AdditionalDocumentation && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'MerchandiseNotAsDescribed2AdditionalDocumentation(${toJson()})';
+}

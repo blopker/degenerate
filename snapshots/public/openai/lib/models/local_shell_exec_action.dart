@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LocalShellExecActionType($value)'; } 
  }
 /// Execute a shell command on the server.
-@immutable final class LocalShellExecAction {const LocalShellExecAction({required this.command, required this.env, this.type = LocalShellExecActionType.exec, this.timeoutMs = const Omittable.absent(), this.workingDirectory = const Omittable.absent(), this.user = const Omittable.absent(), });
+@immutable final class LocalShellExecAction {const LocalShellExecAction({required this.type, required this.command, required this.env, this.timeoutMs = const Omittable.absent(), this.workingDirectory = const Omittable.absent(), this.user = const Omittable.absent(), });
 
 factory LocalShellExecAction.fromJson(Map<String, dynamic> json) { return LocalShellExecAction(
   type: LocalShellExecActionType.fromJson(json['type'] as String),

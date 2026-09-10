@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/telemetry_keys_list_request.dart';import '../models/telemetry_keys_list_response401.dart';import '../models/telemetry_keys_list_response_result.dart';/// KeysApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/telemetry_keys_list_request.dart';import '../models/telemetry_keys_list_response401.dart';import '../models/telemetry_keys_list_response500.dart';import '../models/telemetry_keys_list_response_result.dart';/// KeysApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class KeysApi with ApiExecutor {const KeysApi(this.apiConfig);
 /// List all the keys in your telemetry events.
 ///
 /// `POST /accounts/{account_id}/workers/observability/telemetry/keys`
-Future<ApiResult<List<TelemetryKeysListResponseResult>, TelemetryKeysListResponse401>> telemetryKeysList({required String accountId, required TelemetryKeysListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TelemetryKeysListResponseResult>, OneOf2<TelemetryKeysListResponse401, TelemetryKeysListResponse500>>> telemetryKeysList({required String accountId, required TelemetryKeysListRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -27,11 +27,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => TelemetryKeysListResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => TelemetryKeysListResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return TelemetryKeysListResponse401.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 401:
+final json = jsonDecode(response.body);
+return OneOf2<TelemetryKeysListResponse401, TelemetryKeysListResponse500>.a(TelemetryKeysListResponse401.fromJson(json as Map<String, dynamic>));
+case 500:
+final json = jsonDecode(response.body);
+return OneOf2<TelemetryKeysListResponse401, TelemetryKeysListResponse500>.b(TelemetryKeysListResponse500.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 

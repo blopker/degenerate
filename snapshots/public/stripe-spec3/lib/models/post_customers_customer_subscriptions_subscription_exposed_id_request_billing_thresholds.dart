@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2($value)'; } 
  }
-typedef PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholds = OneOf2<BillingThresholdsParam2,PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2>;
+/// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period. When updating, pass an empty string to remove previously-defined thresholds.
+@immutable
+final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholds {
+  const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholds({this.billingThresholdsParam2 = const Omittable.absent(),
+this.postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholds._({required this.rawValue, required this.billingThresholdsParam2,
+required this.postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2,});
+  factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholds.fromJson(Object? json) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholds._(
+    rawValue: Omittable(json),
+    billingThresholdsParam2: parseAnyOfVariant<BillingThresholdsParam2>(json, (value) => BillingThresholdsParam2.fromJson(value! as Map<String, dynamic>)),
+postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2: parseAnyOfVariant<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2>(json, (value) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<BillingThresholdsParam2> billingThresholdsParam2;
+final Omittable<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2> postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => billingThresholdsParam2.isPresent || postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (billingThresholdsParam2.isPresent) billingThresholdsParam2.value?.toJson(),
+if (postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2.isPresent) postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholdsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholds && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestBillingThresholds(${toJson()})';
+}

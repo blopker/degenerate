@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'connect_collection_transfer_destination.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_collection_transfer_destination.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ConnectCollectionTransferObject {const ConnectCollectionTransferObject._(this.value);
 
 factory ConnectCollectionTransferObject.fromJson(String json) { return switch (json) {
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 factory ConnectCollectionTransfer.fromJson(Map<String, dynamic> json) { return ConnectCollectionTransfer(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
-  destination: OneOf2.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
+  destination: ConnectCollectionTransferDestination.fromJson(json['destination']),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ConnectCollectionTransferObject.fromJson(json['object'] as String),

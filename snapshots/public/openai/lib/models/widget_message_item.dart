@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WidgetMessageItemObject($value)'; } 
  }
 /// Thread item that renders a widget payload.
-@immutable final class WidgetMessageItem {const WidgetMessageItem({required this.id, required this.createdAt, required this.threadId, required this.widget, this.object = WidgetMessageItemObject.chatkitThreadItem, this.type = 'chatkit.widget', });
+@immutable final class WidgetMessageItem {const WidgetMessageItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.widget, });
 
 factory WidgetMessageItem.fromJson(Map<String, dynamic> json) { return WidgetMessageItem(
   id: json['id'] as String,

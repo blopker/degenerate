@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'external_account_payout_bank_account2.dart';import 'post_accounts_account_bank_accounts_request_bank_account.dart';@immutable final class PostAccountsAccountBankAccountsRequest {const PostAccountsAccountBankAccountsRequest({this.bankAccount, this.defaultForCurrency, this.expand, this.externalAccount, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_bank_accounts_request_bank_account.dart';@immutable final class PostAccountsAccountBankAccountsRequest {const PostAccountsAccountBankAccountsRequest({this.bankAccount, this.defaultForCurrency, this.expand, this.externalAccount, this.metadata, });
 
 factory PostAccountsAccountBankAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountBankAccountsRequest(
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => ExternalAccountPayoutBankAccount2.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  bankAccount: json['bank_account'] != null ? PostAccountsAccountBankAccountsRequestBankAccount.fromJson(json['bank_account']) : null,
   defaultForCurrency: json['default_for_currency'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   externalAccount: json['external_account'] as String?,

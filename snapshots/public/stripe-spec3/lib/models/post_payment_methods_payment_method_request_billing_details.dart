@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address6.dart';import 'post_payment_methods_payment_method_request_billing_details_address.dart';import 'post_payment_methods_payment_method_request_billing_details_email.dart';import 'post_payment_methods_payment_method_request_billing_details_name.dart';import 'post_payment_methods_payment_method_request_billing_details_phone.dart';/// Billing information associated with the PaymentMethod that may be used or required by particular types of payment methods.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_methods_payment_method_request_billing_details_address.dart';import 'post_payment_methods_payment_method_request_billing_details_email.dart';import 'post_payment_methods_payment_method_request_billing_details_name.dart';import 'post_payment_methods_payment_method_request_billing_details_phone.dart';/// Billing information associated with the PaymentMethod that may be used or required by particular types of payment methods.
 @immutable final class PostPaymentMethodsPaymentMethodRequestBillingDetails {const PostPaymentMethodsPaymentMethodRequestBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
 
 factory PostPaymentMethodsPaymentMethodRequestBillingDetails.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequestBillingDetails(
-  address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => BillingDetailsAddress6.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentMethodsPaymentMethodRequestBillingDetailsAddressVariant2.fromJson(v as String),) : null,
-  email: json['email'] != null ? OneOf2.parse(json['email'], fromA: (v) => v as String, fromB: (v) => PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2.fromJson(v as String),) : null,
-  name: json['name'] != null ? OneOf2.parse(json['name'], fromA: (v) => v as String, fromB: (v) => PostPaymentMethodsPaymentMethodRequestBillingDetailsNameVariant2.fromJson(v as String),) : null,
-  phone: json['phone'] != null ? OneOf2.parse(json['phone'], fromA: (v) => v as String, fromB: (v) => PostPaymentMethodsPaymentMethodRequestBillingDetailsPhoneVariant2.fromJson(v as String),) : null,
+  address: json['address'] != null ? PostPaymentMethodsPaymentMethodRequestBillingDetailsAddress.fromJson(json['address']) : null,
+  email: json['email'] != null ? PostPaymentMethodsPaymentMethodRequestBillingDetailsEmail.fromJson(json['email']) : null,
+  name: json['name'] != null ? PostPaymentMethodsPaymentMethodRequestBillingDetailsName.fromJson(json['name']) : null,
+  phone: json['phone'] != null ? PostPaymentMethodsPaymentMethodRequestBillingDetailsPhone.fromJson(json['phone']) : null,
   taxId: json['tax_id'] as String?,
 ); }
 

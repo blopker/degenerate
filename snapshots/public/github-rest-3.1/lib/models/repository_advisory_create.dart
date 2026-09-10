@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RepositoryAdvisoryCreateSeverity($value)'; } 
  }
-@immutable final class RepositoryAdvisoryCreate {const RepositoryAdvisoryCreate({required this.summary, required this.description, required this.vulnerabilities, this.cveId = const Omittable.absent(), this.cweIds = const Omittable.absent(), this.credits = const Omittable.absent(), this.severity = const Omittable.absent(), this.cvssVectorString = const Omittable.absent(), this.startPrivateFork = false, });
+@immutable final class RepositoryAdvisoryCreate {const RepositoryAdvisoryCreate({required this.summary, required this.description, required this.vulnerabilities, this.cveId = const Omittable.absent(), this.cweIds = const Omittable.absent(), this.credits = const Omittable.absent(), this.severity = const Omittable.absent(), this.cvssVectorString = const Omittable.absent(), this.startPrivateFork, });
 
 factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCreate(
   summary: json['summary'] as String,
@@ -45,7 +45,7 @@ factory RepositoryAdvisoryCreate.fromJson(Map<String, dynamic> json) { return Re
   credits: json.containsKey('credits') ? Omittable((json['credits'] as List<dynamic>?)?.map((e) => RepositoryAdvisoryCreateCredits.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   severity: json.containsKey('severity') ? Omittable(json['severity'] != null ? RepositoryAdvisoryCreateSeverity.fromJson(json['severity'] as String) : null) : const Omittable.absent(),
   cvssVectorString: json.containsKey('cvss_vector_string') ? Omittable(json['cvss_vector_string'] as String?) : const Omittable.absent(),
-  startPrivateFork: json.containsKey('start_private_fork') ? json['start_private_fork'] as bool : false,
+  startPrivateFork: json['start_private_fork'] as bool?,
 ); }
 
 /// A short summary of the advisory.
@@ -73,8 +73,10 @@ final Omittable<RepositoryAdvisoryCreateSeverity?> severity;
 final Omittable<String?> cvssVectorString;
 
 /// Whether to create a temporary private fork of the repository to collaborate on a fix.
-final bool startPrivateFork;
+final bool? startPrivateFork;
 
+/// The value with the schema default applied when absent.
+bool get startPrivateForkOrDefault { return startPrivateFork ?? false; } 
 Map<String, dynamic> toJson() { return {
   'summary': summary,
   'description': description,
@@ -84,12 +86,12 @@ Map<String, dynamic> toJson() { return {
   if (credits.isPresent) 'credits': credits.value?.map((e) => e.toJson()).toList(),
   if (severity.isPresent) 'severity': severity.value?.toJson(),
   if (cvssVectorString.isPresent) 'cvss_vector_string': cvssVectorString.value,
-  'start_private_fork': startPrivateFork,
+  'start_private_fork': ?startPrivateFork,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('description') && json['description'] is String &&
       json.containsKey('vulnerabilities'); } 
-RepositoryAdvisoryCreate copyWith({String? summary, String? description, Omittable<String?>? cveId, List<RepositoryAdvisoryCreateVulnerabilities>? vulnerabilities, Omittable<List<String>?>? cweIds, Omittable<List<RepositoryAdvisoryCreateCredits>?>? credits, Omittable<RepositoryAdvisoryCreateSeverity?>? severity, Omittable<String?>? cvssVectorString, bool Function()? startPrivateFork, }) { return RepositoryAdvisoryCreate(
+RepositoryAdvisoryCreate copyWith({String? summary, String? description, Omittable<String?>? cveId, List<RepositoryAdvisoryCreateVulnerabilities>? vulnerabilities, Omittable<List<String>?>? cweIds, Omittable<List<RepositoryAdvisoryCreateCredits>?>? credits, Omittable<RepositoryAdvisoryCreateSeverity?>? severity, Omittable<String?>? cvssVectorString, bool? Function()? startPrivateFork, }) { return RepositoryAdvisoryCreate(
   summary: summary ?? this.summary,
   description: description ?? this.description,
   cveId: cveId ?? this.cveId,

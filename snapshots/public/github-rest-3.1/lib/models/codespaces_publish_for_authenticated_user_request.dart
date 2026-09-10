@@ -1,24 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesPublishForAuthenticatedUserRequest {const CodespacesPublishForAuthenticatedUserRequest({this.name, this.private = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodespacesPublishForAuthenticatedUserRequest {const CodespacesPublishForAuthenticatedUserRequest({this.name, this.private, });
 
 factory CodespacesPublishForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesPublishForAuthenticatedUserRequest(
   name: json['name'] as String?,
-  private: json.containsKey('private') ? json['private'] as bool : false,
+  private: json['private'] as bool?,
 ); }
 
 /// A name for the new repository.
 final String? name;
 
 /// Whether the new repository should be private.
-final bool private;
+final bool? private;
 
+/// The value with the schema default applied when absent.
+bool get privateOrDefault { return private ?? false; } 
 Map<String, dynamic> toJson() { return {
   'name': ?name,
-  'private': private,
+  'private': ?private,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'private'}.contains(key)); } 
-CodespacesPublishForAuthenticatedUserRequest copyWith({String? Function()? name, bool Function()? private, }) { return CodespacesPublishForAuthenticatedUserRequest(
+CodespacesPublishForAuthenticatedUserRequest copyWith({String? Function()? name, bool? Function()? private, }) { return CodespacesPublishForAuthenticatedUserRequest(
   name: name != null ? name() : this.name,
   private: private != null ? private() : this.private,
 ); } 

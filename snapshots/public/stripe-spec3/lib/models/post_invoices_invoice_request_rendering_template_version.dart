@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesInvoiceRequestRenderingTemplateVersionVariant2($value)'; } 
  }
-typedef PostInvoicesInvoiceRequestRenderingTemplateVersion = OneOf2<int,PostInvoicesInvoiceRequestRenderingTemplateVersionVariant2>;
+
+@immutable
+final class PostInvoicesInvoiceRequestRenderingTemplateVersion {
+  const PostInvoicesInvoiceRequestRenderingTemplateVersion({this.$int = const Omittable.absent(),
+this.postInvoicesInvoiceRequestRenderingTemplateVersionVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostInvoicesInvoiceRequestRenderingTemplateVersion._({required this.rawValue, required this.$int,
+required this.postInvoicesInvoiceRequestRenderingTemplateVersionVariant2,});
+  factory PostInvoicesInvoiceRequestRenderingTemplateVersion.fromJson(Object? json) => PostInvoicesInvoiceRequestRenderingTemplateVersion._(
+    rawValue: Omittable(json),
+    $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+postInvoicesInvoiceRequestRenderingTemplateVersionVariant2: parseAnyOfVariant<PostInvoicesInvoiceRequestRenderingTemplateVersionVariant2>(json, (value) => PostInvoicesInvoiceRequestRenderingTemplateVersionVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<int> $int;
+final Omittable<PostInvoicesInvoiceRequestRenderingTemplateVersionVariant2> postInvoicesInvoiceRequestRenderingTemplateVersionVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $int.isPresent || postInvoicesInvoiceRequestRenderingTemplateVersionVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($int.isPresent) $int.value,
+if (postInvoicesInvoiceRequestRenderingTemplateVersionVariant2.isPresent) postInvoicesInvoiceRequestRenderingTemplateVersionVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostInvoicesInvoiceRequestRenderingTemplateVersion && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostInvoicesInvoiceRequestRenderingTemplateVersion(${toJson()})';
+}

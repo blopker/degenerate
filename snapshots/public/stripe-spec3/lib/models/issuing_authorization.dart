@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_authorization_amount_details.dart';import 'issuing_authorization_cardholder.dart';import 'issuing_authorization_fleet_data.dart';import 'issuing_authorization_fraud_challenge.dart';import 'issuing_authorization_fuel_data.dart';import 'issuing_authorization_merchant_data.dart';import 'issuing_authorization_network_data.dart';import 'issuing_authorization_pending_request.dart';import 'issuing_authorization_request.dart';import 'issuing_authorization_token.dart';import 'issuing_authorization_treasury.dart';import 'issuing_authorization_verification_data.dart';import 'issuing_card.dart';import 'issuing_cardholder.dart';import 'issuing_token.dart';import 'issuing_transaction.dart';/// How the card details were provided.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_authorization_amount_details.dart';import 'issuing_authorization_cardholder.dart';import 'issuing_authorization_fleet_data.dart';import 'issuing_authorization_fraud_challenge.dart';import 'issuing_authorization_fuel_data.dart';import 'issuing_authorization_merchant_data.dart';import 'issuing_authorization_network_data.dart';import 'issuing_authorization_pending_request.dart';import 'issuing_authorization_request.dart';import 'issuing_authorization_token.dart';import 'issuing_authorization_treasury.dart';import 'issuing_authorization_verification_data.dart';import 'issuing_card.dart';import 'issuing_transaction.dart';/// How the card details were provided.
 @immutable final class IssuingAuthorizationAuthorizationMethod {const IssuingAuthorizationAuthorizationMethod._(this.value);
 
 factory IssuingAuthorizationAuthorizationMethod.fromJson(String json) { return switch (json) {
@@ -101,7 +101,7 @@ factory IssuingAuthorization.fromJson(Map<String, dynamic> json) { return Issuin
   authorizationMethod: IssuingAuthorizationAuthorizationMethod.fromJson(json['authorization_method'] as String),
   balanceTransactions: (json['balance_transactions'] as List<dynamic>).map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
   card: IssuingCard.fromJson(json['card'] as Map<String, dynamic>),
-  cardholder: json.containsKey('cardholder') ? Omittable(json['cardholder'] != null ? OneOf2.parse(json['cardholder'], fromA: (v) => v as String, fromB: (v) => IssuingCardholder.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  cardholder: json.containsKey('cardholder') ? Omittable(json['cardholder'] != null ? IssuingAuthorizationCardholder.fromJson(json['cardholder']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   fleet: json.containsKey('fleet') ? Omittable(json['fleet'] != null ? IssuingAuthorizationFleetData.fromJson(json['fleet'] as Map<String, dynamic>) : null) : const Omittable.absent(),
@@ -118,7 +118,7 @@ factory IssuingAuthorization.fromJson(Map<String, dynamic> json) { return Issuin
   pendingRequest: json.containsKey('pending_request') ? Omittable(json['pending_request'] != null ? IssuingAuthorizationPendingRequest.fromJson(json['pending_request'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   requestHistory: (json['request_history'] as List<dynamic>).map((e) => IssuingAuthorizationRequest.fromJson(e as Map<String, dynamic>)).toList(),
   status: IssuingAuthorizationStatus.fromJson(json['status'] as String),
-  token: json.containsKey('token') ? Omittable(json['token'] != null ? OneOf2.parse(json['token'], fromA: (v) => v as String, fromB: (v) => IssuingToken.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  token: json.containsKey('token') ? Omittable(json['token'] != null ? IssuingAuthorizationToken.fromJson(json['token']) : null) : const Omittable.absent(),
   transactions: (json['transactions'] as List<dynamic>).map((e) => IssuingTransaction.fromJson(e as Map<String, dynamic>)).toList(),
   treasury: json.containsKey('treasury') ? Omittable(json['treasury'] != null ? IssuingAuthorizationTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   verificationData: IssuingAuthorizationVerificationData.fromJson(json['verification_data'] as Map<String, dynamic>),

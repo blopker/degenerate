@@ -1,24 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest {const WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest({required this.prompt, this.steps = 4, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest {const WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest({required this.prompt, this.steps, });
 
 factory WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(
   prompt: json['prompt'] as String,
-  steps: json.containsKey('steps') ? (json['steps'] as num).toInt() : 4,
+  steps: json['steps'] != null ? (json['steps'] as num).toInt() : null,
 ); }
 
 /// A text description of the image you want to generate.
 final String prompt;
 
 /// The number of diffusion steps; higher values can improve quality but take longer.
-final int steps;
+final int? steps;
 
+/// The value with the schema default applied when absent.
+int get stepsOrDefault { return steps ?? 4; } 
 Map<String, dynamic> toJson() { return {
   'prompt': prompt,
-  'steps': steps,
+  'steps': ?steps,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest copyWith({String? prompt, int Function()? steps, }) { return WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(
+WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest copyWith({String? prompt, int? Function()? steps, }) { return WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(
   prompt: prompt ?? this.prompt,
   steps: steps != null ? steps() : this.steps,
 ); } 

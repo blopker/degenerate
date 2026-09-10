@@ -1,29 +1,35 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch({this.maxBytes = 100000000, this.maxDurationS = 300.0, this.maxRows = 10000000, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch({this.maxBytes, this.maxDurationS, this.maxRows, });
 
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch(
-  maxBytes: json.containsKey('max_bytes') ? (json['max_bytes'] as num).toInt() : 100000000,
-  maxDurationS: json.containsKey('max_duration_s') ? (json['max_duration_s'] as num).toDouble() : 300.0,
-  maxRows: json.containsKey('max_rows') ? (json['max_rows'] as num).toInt() : 10000000,
+  maxBytes: json['max_bytes'] != null ? (json['max_bytes'] as num).toInt() : null,
+  maxDurationS: json['max_duration_s'] != null ? (json['max_duration_s'] as num).toDouble() : null,
+  maxRows: json['max_rows'] != null ? (json['max_rows'] as num).toInt() : null,
 ); }
 
 /// Specifies rough maximum size of files.
-final int maxBytes;
+final int? maxBytes;
 
 /// Specifies duration to wait to aggregate batches files.
-final double maxDurationS;
+final double? maxDurationS;
 
 /// Specifies rough maximum number of rows per file.
-final int maxRows;
+final int? maxRows;
 
+/// The value with the schema default applied when absent.
+int get maxBytesOrDefault { return maxBytes ?? 100000000; } 
+/// The value with the schema default applied when absent.
+double get maxDurationSOrDefault { return maxDurationS ?? 300.0; } 
+/// The value with the schema default applied when absent.
+int get maxRowsOrDefault { return maxRows ?? 10000000; } 
 Map<String, dynamic> toJson() { return {
-  'max_bytes': maxBytes,
-  'max_duration_s': maxDurationS,
-  'max_rows': maxRows,
+  'max_bytes': ?maxBytes,
+  'max_duration_s': ?maxDurationS,
+  'max_rows': ?maxRows,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_bytes', 'max_duration_s', 'max_rows'}.contains(key)); } 
-AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch copyWith({int Function()? maxBytes, double Function()? maxDurationS, int Function()? maxRows, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch(
+AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch copyWith({int? Function()? maxBytes, double? Function()? maxDurationS, int? Function()? maxRows, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch(
   maxBytes: maxBytes != null ? maxBytes() : this.maxBytes,
   maxDurationS: maxDurationS != null ? maxDurationS() : this.maxDurationS,
   maxRows: maxRows != null ? maxRows() : this.maxRows,

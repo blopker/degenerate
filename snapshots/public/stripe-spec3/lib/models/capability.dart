@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'account_capability_future_requirements.dart';import 'account_capability_requirements.dart';import 'capability_account.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_capability_future_requirements.dart';import 'account_capability_requirements.dart';import 'capability_account.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CapabilityObject {const CapabilityObject._(this.value);
 
 factory CapabilityObject.fromJson(String json) { return switch (json) {
@@ -59,7 +59,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class Capability {const Capability({required this.account, required this.id, required this.object, required this.requested, required this.status, this.futureRequirements, this.requestedAt = const Omittable.absent(), this.requirements, });
 
 factory Capability.fromJson(Map<String, dynamic> json) { return Capability(
-  account: OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
+  account: CapabilityAccount.fromJson(json['account']),
   futureRequirements: json['future_requirements'] != null ? AccountCapabilityFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   object: CapabilityObject.fromJson(json['object'] as String),

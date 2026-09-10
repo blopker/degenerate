@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param5.dart';import 'post_subscription_schedules_request_phases_add_invoice_items.dart';import 'post_subscription_schedules_request_phases_automatic_tax.dart';import 'post_subscription_schedules_request_phases_billing_thresholds.dart';import 'post_subscription_schedules_request_phases_default_tax_rates.dart';import 'post_subscription_schedules_request_phases_description.dart';import 'post_subscription_schedules_request_phases_discounts.dart';import 'post_subscription_schedules_request_phases_discounts_variant1.dart';import 'post_subscription_schedules_request_phases_duration.dart';import 'post_subscription_schedules_request_phases_invoice_settings.dart';import 'post_subscription_schedules_request_phases_items.dart';import 'post_subscription_schedules_request_phases_transfer_data.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor {const PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_phases_add_invoice_items.dart';import 'post_subscription_schedules_request_phases_automatic_tax.dart';import 'post_subscription_schedules_request_phases_billing_thresholds.dart';import 'post_subscription_schedules_request_phases_default_tax_rates.dart';import 'post_subscription_schedules_request_phases_description.dart';import 'post_subscription_schedules_request_phases_discounts.dart';import 'post_subscription_schedules_request_phases_duration.dart';import 'post_subscription_schedules_request_phases_invoice_settings.dart';import 'post_subscription_schedules_request_phases_items.dart';import 'post_subscription_schedules_request_phases_transfer_data.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor {const PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor._(this.value);
 
 factory PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -82,13 +82,13 @@ factory PostSubscriptionSchedulesRequestPhases.fromJson(Map<String, dynamic> jso
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: json['automatic_tax'] != null ? PostSubscriptionSchedulesRequestPhasesAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostSubscriptionSchedulesRequestPhasesBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
-  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => BillingThresholdsParam5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostSubscriptionSchedulesRequestPhasesBillingThresholdsVariant2.fromJson(v as String),) : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionSchedulesRequestPhasesBillingThresholds.fromJson(json['billing_thresholds']) : null,
   collectionMethod: json['collection_method'] != null ? PostSubscriptionSchedulesRequestPhasesCollectionMethod.fromJson(json['collection_method'] as String) : null,
   currency: json['currency'] as String?,
   defaultPaymentMethod: json['default_payment_method'] as String?,
-  defaultTaxRates: json['default_tax_rates'] != null ? OneOf2.parse(json['default_tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostSubscriptionSchedulesRequestPhasesDefaultTaxRatesVariant2.fromJson(v as String),) : null,
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostSubscriptionSchedulesRequestPhasesDescriptionVariant2.fromJson(v as String),) : null,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostSubscriptionSchedulesRequestPhasesDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostSubscriptionSchedulesRequestPhasesDiscountsVariant2.fromJson(v as String),) : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? PostSubscriptionSchedulesRequestPhasesDefaultTaxRates.fromJson(json['default_tax_rates']) : null,
+  description: json['description'] != null ? PostSubscriptionSchedulesRequestPhasesDescription.fromJson(json['description']) : null,
+  discounts: json['discounts'] != null ? PostSubscriptionSchedulesRequestPhasesDiscounts.fromJson(json['discounts']) : null,
   duration: json['duration'] != null ? PostSubscriptionSchedulesRequestPhasesDuration.fromJson(json['duration'] as Map<String, dynamic>) : null,
   endDate: json['end_date'] != null ? (json['end_date'] as num).toInt() : null,
   invoiceSettings: json['invoice_settings'] != null ? PostSubscriptionSchedulesRequestPhasesInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,

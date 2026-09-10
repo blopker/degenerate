@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_invoice_items_discounts.dart';import 'post_invoices_create_preview_request_invoice_items_discounts_variant1.dart';import 'post_invoices_create_preview_request_invoice_items_metadata.dart';import 'post_invoices_create_preview_request_invoice_items_period.dart';import 'post_invoices_create_preview_request_invoice_items_price_data.dart';import 'post_invoices_create_preview_request_invoice_items_tax_code.dart';import 'post_invoices_create_preview_request_invoice_items_tax_rates.dart';@immutable final class PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior {const PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_invoice_items_discounts.dart';import 'post_invoices_create_preview_request_invoice_items_metadata.dart';import 'post_invoices_create_preview_request_invoice_items_period.dart';import 'post_invoices_create_preview_request_invoice_items_price_data.dart';import 'post_invoices_create_preview_request_invoice_items_tax_code.dart';import 'post_invoices_create_preview_request_invoice_items_tax_rates.dart';@immutable final class PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior {const PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior._(this.value);
 
 factory PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
@@ -34,16 +34,16 @@ factory PostInvoicesCreatePreviewRequestInvoiceItems.fromJson(Map<String, dynami
   currency: json['currency'] as String?,
   description: json['description'] as String?,
   discountable: json['discountable'] as bool?,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsDiscounts.fromJson(json['discounts']) : null,
   invoiceitem: json['invoiceitem'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostInvoicesCreatePreviewRequestInvoiceItemsMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsMetadata.fromJson(json['metadata']) : null,
   period: json['period'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
   price: json['price'] as String?,
   priceData: json['price_data'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxBehavior: json['tax_behavior'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-  taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => PostInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2.fromJson(v as String),) : null,
-  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesCreatePreviewRequestInvoiceItemsTaxRatesVariant2.fromJson(v as String),) : null,
+  taxCode: json['tax_code'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode.fromJson(json['tax_code']) : null,
+  taxRates: json['tax_rates'] != null ? PostInvoicesCreatePreviewRequestInvoiceItemsTaxRates.fromJson(json['tax_rates']) : null,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
 ); }

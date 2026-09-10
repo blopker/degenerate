@@ -7,7 +7,7 @@ factory PostTopupsRequest.fromJson(Map<String, dynamic> json) { return PostTopup
   currency: json['currency'] as String,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostTopupsRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostTopupsRequestMetadata.fromJson(json['metadata']) : null,
   source: json['source'] as String?,
   statementDescriptor: json['statement_descriptor'] as String?,
   transferGroup: json['transfer_group'] as String?,

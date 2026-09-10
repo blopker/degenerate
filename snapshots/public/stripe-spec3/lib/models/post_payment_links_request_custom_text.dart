@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_text_position_param5.dart';import 'custom_text_position_param6.dart';import 'custom_text_position_param7.dart';import 'custom_text_position_param8.dart';import 'post_payment_links_request_custom_text_after_submit.dart';import 'post_payment_links_request_custom_text_shipping_address.dart';import 'post_payment_links_request_custom_text_submit.dart';import 'post_payment_links_request_custom_text_terms_of_service_acceptance.dart';/// Display additional text for your customers using custom text. You can't set this parameter if `ui_mode` is `custom`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_custom_text_after_submit.dart';import 'post_payment_links_request_custom_text_shipping_address.dart';import 'post_payment_links_request_custom_text_submit.dart';import 'post_payment_links_request_custom_text_terms_of_service_acceptance.dart';/// Display additional text for your customers using custom text. You can't set this parameter if `ui_mode` is `custom`.
 @immutable final class PostPaymentLinksRequestCustomText {const PostPaymentLinksRequestCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PostPaymentLinksRequestCustomText.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestCustomText(
-  afterSubmit: json['after_submit'] != null ? OneOf2.parse(json['after_submit'], fromA: (v) => CustomTextPositionParam5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentLinksRequestCustomTextAfterSubmitVariant2.fromJson(v as String),) : null,
-  shippingAddress: json['shipping_address'] != null ? OneOf2.parse(json['shipping_address'], fromA: (v) => CustomTextPositionParam6.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentLinksRequestCustomTextShippingAddressVariant2.fromJson(v as String),) : null,
-  submit: json['submit'] != null ? OneOf2.parse(json['submit'], fromA: (v) => CustomTextPositionParam7.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentLinksRequestCustomTextSubmitVariant2.fromJson(v as String),) : null,
-  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? OneOf2.parse(json['terms_of_service_acceptance'], fromA: (v) => CustomTextPositionParam8.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentLinksRequestCustomTextTermsOfServiceAcceptanceVariant2.fromJson(v as String),) : null,
+  afterSubmit: json['after_submit'] != null ? PostPaymentLinksRequestCustomTextAfterSubmit.fromJson(json['after_submit']) : null,
+  shippingAddress: json['shipping_address'] != null ? PostPaymentLinksRequestCustomTextShippingAddress.fromJson(json['shipping_address']) : null,
+  submit: json['submit'] != null ? PostPaymentLinksRequestCustomTextSubmit.fromJson(json['submit']) : null,
+  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? PostPaymentLinksRequestCustomTextTermsOfServiceAcceptance.fromJson(json['terms_of_service_acceptance']) : null,
 ); }
 
 final PostPaymentLinksRequestCustomTextAfterSubmit? afterSubmit;

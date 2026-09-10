@@ -24,6 +24,6 @@ ChecksCreateRequestVariant2 copyWith({Omittable<dynamic>? status, Map<String, dy
       other is ChecksCreateRequestVariant2 &&
           status == other.status &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(status, Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(status, mapHash(additionalProperties)); } 
 @override String toString() { return 'ChecksCreateRequestVariant2(status: $status, additionalProperties: $additionalProperties)'; } 
  }

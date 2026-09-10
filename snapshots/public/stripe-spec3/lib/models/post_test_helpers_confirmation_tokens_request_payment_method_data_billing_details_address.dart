@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2($value)'; } 
  }
-typedef PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddress = OneOf2<BillingDetailsAddress10,PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2>;
+
+@immutable
+final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddress {
+  const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddress({this.billingDetailsAddress10 = const Omittable.absent(),
+this.postTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddress._({required this.rawValue, required this.billingDetailsAddress10,
+required this.postTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2,});
+  factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddress.fromJson(Object? json) => PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddress._(
+    rawValue: Omittable(json),
+    billingDetailsAddress10: parseAnyOfVariant<BillingDetailsAddress10>(json, (value) => BillingDetailsAddress10.fromJson(value! as Map<String, dynamic>)),
+postTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2: parseAnyOfVariant<PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2>(json, (value) => PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<BillingDetailsAddress10> billingDetailsAddress10;
+final Omittable<PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2> postTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => billingDetailsAddress10.isPresent || postTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (billingDetailsAddress10.isPresent) billingDetailsAddress10.value?.toJson(),
+if (postTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2.isPresent) postTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddress && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddress(${toJson()})';
+}

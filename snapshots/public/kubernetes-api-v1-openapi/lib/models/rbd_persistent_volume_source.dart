@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_reference.dart';/// Represents a Rados Block Device mount that lasts the lifetime of a pod. RBD volumes support ownership management and SELinux relabeling.
-@immutable final class RbdPersistentVolumeSource {const RbdPersistentVolumeSource({required this.monitors, this.fsType, this.image = '', this.keyring = '/etc/ceph/keyring', this.pool = 'rbd', this.readOnly, this.secretRef, this.user = 'admin', });
+@immutable final class RbdPersistentVolumeSource {const RbdPersistentVolumeSource({required this.image, required this.monitors, this.fsType, this.keyring, this.pool, this.readOnly, this.secretRef, this.user, });
 
 factory RbdPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return RbdPersistentVolumeSource(
   fsType: json['fsType'] as String?,
   image: json['image'] as String,
-  keyring: json.containsKey('keyring') ? json['keyring'] as String : '/etc/ceph/keyring',
+  keyring: json['keyring'] as String?,
   monitors: (json['monitors'] as List<dynamic>).map((e) => e as String).toList(),
-  pool: json.containsKey('pool') ? json['pool'] as String : 'rbd',
+  pool: json['pool'] as String?,
   readOnly: json['readOnly'] as bool?,
   secretRef: json['secretRef'] != null ? SecretReference.fromJson(json['secretRef'] as Map<String, dynamic>) : null,
-  user: json.containsKey('user') ? json['user'] as String : 'admin',
+  user: json['user'] as String?,
 ); }
 
 /// fsType is the filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#rbd
@@ -21,13 +21,13 @@ final String? fsType;
 final String image;
 
 /// keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
-final String keyring;
+final String? keyring;
 
 /// monitors is a collection of Ceph monitors. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
 final List<String> monitors;
 
 /// pool is the rados pool name. Default is rbd. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
-final String pool;
+final String? pool;
 
 /// readOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
 final bool? readOnly;
@@ -36,21 +36,27 @@ final bool? readOnly;
 final SecretReference? secretRef;
 
 /// user is the rados user name. Default is admin. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
-final String user;
+final String? user;
 
+/// The value with the schema default applied when absent.
+String get keyringOrDefault { return keyring ?? '/etc/ceph/keyring'; } 
+/// The value with the schema default applied when absent.
+String get poolOrDefault { return pool ?? 'rbd'; } 
+/// The value with the schema default applied when absent.
+String get userOrDefault { return user ?? 'admin'; } 
 Map<String, dynamic> toJson() { return {
   'fsType': ?fsType,
   'image': image,
-  'keyring': keyring,
+  'keyring': ?keyring,
   'monitors': monitors,
-  'pool': pool,
+  'pool': ?pool,
   'readOnly': ?readOnly,
   if (secretRef != null) 'secretRef': secretRef?.toJson(),
-  'user': user,
+  'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') && json['image'] is String &&
       json.containsKey('monitors'); } 
-RbdPersistentVolumeSource copyWith({String? Function()? fsType, String? image, String Function()? keyring, List<String>? monitors, String Function()? pool, bool? Function()? readOnly, SecretReference? Function()? secretRef, String Function()? user, }) { return RbdPersistentVolumeSource(
+RbdPersistentVolumeSource copyWith({String? Function()? fsType, String? image, String? Function()? keyring, List<String>? monitors, String? Function()? pool, bool? Function()? readOnly, SecretReference? Function()? secretRef, String? Function()? user, }) { return RbdPersistentVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   image: image ?? this.image,
   keyring: keyring != null ? keyring() : this.keyring,

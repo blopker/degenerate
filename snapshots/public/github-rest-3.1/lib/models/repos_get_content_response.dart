@@ -4,10 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'content_dire
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ReposGetContentResponse.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'array' => ReposGetContentResponseArray.fromJson(json),
+  'content-directory' => ReposGetContentResponseContentDirectory.fromJson(json),
   'file' => ReposGetContentResponseFile.fromJson(json),
   'symlink' => ReposGetContentResponseSymlink.fromJson(json),
   'submodule' => ReposGetContentResponseSubmodule.fromJson(json),
+  'array' => ReposGetContentResponseArray.fromJson(json),
   _ => ReposGetContentResponse$Unknown(json),
 }; }
 
@@ -17,18 +18,18 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is ReposGetContentResponse$Unknown; } 
  }
-@immutable final class ReposGetContentResponseArray extends ReposGetContentResponse {const ReposGetContentResponseArray(this.listContentDirectory2);
+@immutable final class ReposGetContentResponseContentDirectory extends ReposGetContentResponse {const ReposGetContentResponseContentDirectory(this.listContentDirectory2);
 
-factory ReposGetContentResponseArray.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseArray((json as List<dynamic>).map((e) => ContentDirectory2.fromJson(e as Map<String, dynamic>)).toList()); }
+factory ReposGetContentResponseContentDirectory.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseContentDirectory((json as List<dynamic>).map((e) => ContentDirectory2.fromJson(e as Map<String, dynamic>)).toList()); }
 
 final List<ContentDirectory2> listContentDirectory2;
 
-@override String get type { return 'array'; } 
+@override String get type { return 'content-directory'; } 
 @override Map<String, dynamic> toJson() { return {'type': type, 'data': listContentDirectory2.map((e) => e.toJson()).toList()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponseArray && listContentDirectory2 == other.listContentDirectory2; } 
+    other is ReposGetContentResponseContentDirectory && listContentDirectory2 == other.listContentDirectory2; } 
 @override int get hashCode { return listContentDirectory2.hashCode; } 
-@override String toString() { return 'ReposGetContentResponseArray(listContentDirectory2: $listContentDirectory2)'; } 
+@override String toString() { return 'ReposGetContentResponseContentDirectory(listContentDirectory2: $listContentDirectory2)'; } 
  }
 @immutable final class ReposGetContentResponseFile extends ReposGetContentResponse {const ReposGetContentResponseFile(this.contentFile);
 
@@ -68,6 +69,19 @@ final ContentSubmodule contentSubmodule;
     other is ReposGetContentResponseSubmodule && contentSubmodule == other.contentSubmodule; } 
 @override int get hashCode { return contentSubmodule.hashCode; } 
 @override String toString() { return 'ReposGetContentResponseSubmodule(contentSubmodule: $contentSubmodule)'; } 
+ }
+@immutable final class ReposGetContentResponseArray extends ReposGetContentResponse {const ReposGetContentResponseArray(this.listContentDirectory2);
+
+factory ReposGetContentResponseArray.fromJson(Map<String, dynamic> json) { return ReposGetContentResponseArray((json as List<dynamic>).map((e) => ContentDirectory2.fromJson(e as Map<String, dynamic>)).toList()); }
+
+final List<ContentDirectory2> listContentDirectory2;
+
+@override String get type { return 'array'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, 'data': listContentDirectory2.map((e) => e.toJson()).toList()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ReposGetContentResponseArray && listContentDirectory2 == other.listContentDirectory2; } 
+@override int get hashCode { return listContentDirectory2.hashCode; } 
+@override String toString() { return 'ReposGetContentResponseArray(listContentDirectory2: $listContentDirectory2)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

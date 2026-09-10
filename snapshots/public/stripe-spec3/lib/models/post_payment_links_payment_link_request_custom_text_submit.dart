@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2($value)'; } 
  }
-typedef PostPaymentLinksPaymentLinkRequestCustomTextSubmit = OneOf2<CustomTextPositionParam11,PostPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2>;
+
+@immutable
+final class PostPaymentLinksPaymentLinkRequestCustomTextSubmit {
+  const PostPaymentLinksPaymentLinkRequestCustomTextSubmit({this.customTextPositionParam11 = const Omittable.absent(),
+this.postPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentLinksPaymentLinkRequestCustomTextSubmit._({required this.rawValue, required this.customTextPositionParam11,
+required this.postPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2,});
+  factory PostPaymentLinksPaymentLinkRequestCustomTextSubmit.fromJson(Object? json) => PostPaymentLinksPaymentLinkRequestCustomTextSubmit._(
+    rawValue: Omittable(json),
+    customTextPositionParam11: parseAnyOfVariant<CustomTextPositionParam11>(json, (value) => CustomTextPositionParam11.fromJson(value! as Map<String, dynamic>)),
+postPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2: parseAnyOfVariant<PostPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2>(json, (value) => PostPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<CustomTextPositionParam11> customTextPositionParam11;
+final Omittable<PostPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2> postPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => customTextPositionParam11.isPresent || postPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (customTextPositionParam11.isPresent) customTextPositionParam11.value?.toJson(),
+if (postPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2.isPresent) postPaymentLinksPaymentLinkRequestCustomTextSubmitVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestCustomTextSubmit && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentLinksPaymentLinkRequestCustomTextSubmit(${toJson()})';
+}

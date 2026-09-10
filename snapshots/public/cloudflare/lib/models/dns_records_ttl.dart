@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DnsRecordsTtlVariant2($value)'; } 
  }
-typedef DnsRecordsTtl = OneOf2<double,DnsRecordsTtlVariant2>;
+/// Time To Live (TTL) of the DNS record in seconds. Setting to 1 means 'automatic'. Value must be between 60 and 86400, with the minimum reduced to 30 for Enterprise zones.
+@immutable
+final class DnsRecordsTtl {
+  const DnsRecordsTtl({this.$double = const Omittable.absent(),
+this.dnsRecordsTtlVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const DnsRecordsTtl._({required this.rawValue, required this.$double,
+required this.dnsRecordsTtlVariant2,});
+  factory DnsRecordsTtl.fromJson(Object? json) => DnsRecordsTtl._(
+    rawValue: Omittable(json),
+    $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
+dnsRecordsTtlVariant2: parseAnyOfVariant<DnsRecordsTtlVariant2>(json, (value) => DnsRecordsTtlVariant2.fromJson((value! as num).toDouble())),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<double> $double;
+final Omittable<DnsRecordsTtlVariant2> dnsRecordsTtlVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $double.isPresent || dnsRecordsTtlVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($double.isPresent) $double.value,
+if (dnsRecordsTtlVariant2.isPresent) dnsRecordsTtlVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is DnsRecordsTtl && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'DnsRecordsTtl(${toJson()})';
+}

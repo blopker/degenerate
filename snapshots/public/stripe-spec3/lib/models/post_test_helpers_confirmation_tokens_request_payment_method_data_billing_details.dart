@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address10.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_address.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_email.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_name.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_phone.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_address.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_email.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_name.dart';import 'post_test_helpers_confirmation_tokens_request_payment_method_data_billing_details_phone.dart';@immutable final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
 
 factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetails(
-  address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => BillingDetailsAddress10.fromJson(v as Map<String, dynamic>), fromB: (v) => PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddressVariant2.fromJson(v as String),) : null,
-  email: json['email'] != null ? OneOf2.parse(json['email'], fromA: (v) => v as String, fromB: (v) => PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2.fromJson(v as String),) : null,
-  name: json['name'] != null ? OneOf2.parse(json['name'], fromA: (v) => v as String, fromB: (v) => PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsNameVariant2.fromJson(v as String),) : null,
-  phone: json['phone'] != null ? OneOf2.parse(json['phone'], fromA: (v) => v as String, fromB: (v) => PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsPhoneVariant2.fromJson(v as String),) : null,
+  address: json['address'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsAddress.fromJson(json['address']) : null,
+  email: json['email'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmail.fromJson(json['email']) : null,
+  name: json['name'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsName.fromJson(json['name']) : null,
+  phone: json['phone'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsPhone.fromJson(json['phone']) : null,
   taxId: json['tax_id'] as String?,
 ); }
 

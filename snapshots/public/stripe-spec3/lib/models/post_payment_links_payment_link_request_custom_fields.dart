@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestCustomFieldsVariant2($value)'; } 
  }
-typedef PostPaymentLinksPaymentLinkRequestCustomFields = OneOf2<List<PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1>,PostPaymentLinksPaymentLinkRequestCustomFieldsVariant2>;
+/// Collect additional information from your customer using custom fields. Up to 3 fields are supported. You can't set this parameter if `ui_mode` is `custom`.
+@immutable
+final class PostPaymentLinksPaymentLinkRequestCustomFields {
+  const PostPaymentLinksPaymentLinkRequestCustomFields({this.listPostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 = const Omittable.absent(),
+this.postPaymentLinksPaymentLinkRequestCustomFieldsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentLinksPaymentLinkRequestCustomFields._({required this.rawValue, required this.listPostPaymentLinksPaymentLinkRequestCustomFieldsVariant1,
+required this.postPaymentLinksPaymentLinkRequestCustomFieldsVariant2,});
+  factory PostPaymentLinksPaymentLinkRequestCustomFields.fromJson(Object? json) => PostPaymentLinksPaymentLinkRequestCustomFields._(
+    rawValue: Omittable(json),
+    listPostPaymentLinksPaymentLinkRequestCustomFieldsVariant1: parseAnyOfVariant<List<PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+postPaymentLinksPaymentLinkRequestCustomFieldsVariant2: parseAnyOfVariant<PostPaymentLinksPaymentLinkRequestCustomFieldsVariant2>(json, (value) => PostPaymentLinksPaymentLinkRequestCustomFieldsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1>> listPostPaymentLinksPaymentLinkRequestCustomFieldsVariant1;
+final Omittable<PostPaymentLinksPaymentLinkRequestCustomFieldsVariant2> postPaymentLinksPaymentLinkRequestCustomFieldsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostPaymentLinksPaymentLinkRequestCustomFieldsVariant1.isPresent || postPaymentLinksPaymentLinkRequestCustomFieldsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostPaymentLinksPaymentLinkRequestCustomFieldsVariant1.isPresent) listPostPaymentLinksPaymentLinkRequestCustomFieldsVariant1.value?.map((e) => e.toJson()).toList(),
+if (postPaymentLinksPaymentLinkRequestCustomFieldsVariant2.isPresent) postPaymentLinksPaymentLinkRequestCustomFieldsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestCustomFields && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentLinksPaymentLinkRequestCustomFields(${toJson()})';
+}

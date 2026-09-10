@@ -47,7 +47,7 @@ factory PostAccountsAccountRequestBusinessProfile.fromJson(Map<String, dynamic> 
   supportAddress: json['support_address'] != null ? PostAccountsAccountRequestBusinessProfileSupportAddress.fromJson(json['support_address'] as Map<String, dynamic>) : null,
   supportEmail: json['support_email'] as String?,
   supportPhone: json['support_phone'] as String?,
-  supportUrl: json['support_url'] != null ? OneOf2.parse(json['support_url'], fromA: (v) => v as String, fromB: (v) => PostAccountsAccountRequestBusinessProfileSupportUrlVariant2.fromJson(v as String),) : null,
+  supportUrl: json['support_url'] != null ? PostAccountsAccountRequestBusinessProfileSupportUrl.fromJson(json['support_url']) : null,
   url: json['url'] as String?,
 ); }
 

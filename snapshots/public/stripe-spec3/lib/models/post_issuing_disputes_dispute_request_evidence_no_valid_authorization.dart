@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2($value)'; } 
  }
-typedef PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization = OneOf2<NoValidAuthorization2,PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2>;
+
+@immutable
+final class PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization {
+  const PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization({this.noValidAuthorization2 = const Omittable.absent(),
+this.postIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization._({required this.rawValue, required this.noValidAuthorization2,
+required this.postIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2,});
+  factory PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization.fromJson(Object? json) => PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization._(
+    rawValue: Omittable(json),
+    noValidAuthorization2: parseAnyOfVariant<NoValidAuthorization2>(json, (value) => NoValidAuthorization2.fromJson(value! as Map<String, dynamic>)),
+postIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2: parseAnyOfVariant<PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2>(json, (value) => PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<NoValidAuthorization2> noValidAuthorization2;
+final Omittable<PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2> postIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => noValidAuthorization2.isPresent || postIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (noValidAuthorization2.isPresent) noValidAuthorization2.value?.toJson(),
+if (postIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2.isPresent) postIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization(${toJson()})';
+}

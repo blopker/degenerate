@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_components_schemas_name.dart';import 'aaa_components_schemas_type.dart';import 'aaa_created_at.dart';import 'aaa_last_failure.dart';import 'aaa_last_success.dart';import 'aaa_url.dart';import 'aaa_webhook_id.dart';@immutable final class AaaWebhooksResponse {const AaaWebhooksResponse({this.createdAt, this.id, this.lastFailure, this.lastSuccess, this.name, this.type, this.url, });
+
+factory AaaWebhooksResponse.fromJson(Map<String, dynamic> json) { return AaaWebhooksResponse(
+  createdAt: json['created_at'] != null ? AaaCreatedAt.fromJson(json['created_at'] as String) : null,
+  id: json['id'] != null ? AaaWebhookId.fromJson(json['id'] as String) : null,
+  lastFailure: json['last_failure'] != null ? AaaLastFailure.fromJson(json['last_failure'] as String) : null,
+  lastSuccess: json['last_success'] != null ? AaaLastSuccess.fromJson(json['last_success'] as String) : null,
+  name: json['name'] != null ? AaaComponentsSchemasName.fromJson(json['name'] as String) : null,
+  type: json['type'] != null ? AaaComponentsSchemasType.fromJson(json['type'] as String) : null,
+  url: json['url'] != null ? AaaUrl.fromJson(json['url'] as String) : null,
+); }
+
+/// Timestamp of when the webhook destination was created.
+final AaaCreatedAt? createdAt;
+
+/// The unique identifier of a webhook
+final AaaWebhookId? id;
+
+/// Timestamp of the last time an attempt to dispatch a notification to this webhook failed.
+final AaaLastFailure? lastFailure;
+
+/// Timestamp of the last time Cloudflare was able to successfully dispatch a notification using this webhook.
+final AaaLastSuccess? lastSuccess;
+
+/// The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
+final AaaComponentsSchemasName? name;
+
+/// Type of webhook endpoint.
+final AaaComponentsSchemasType? type;
+
+/// The POST endpoint to call when dispatching a notification.
+final AaaUrl? url;
+
+Map<String, dynamic> toJson() { return {
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (lastFailure != null) 'last_failure': lastFailure?.toJson(),
+  if (lastSuccess != null) 'last_success': lastSuccess?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (type != null) 'type': type?.toJson(),
+  if (url != null) 'url': url?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'id', 'last_failure', 'last_success', 'name', 'type', 'url'}.contains(key)); } 
+AaaWebhooksResponse copyWith({AaaCreatedAt? Function()? createdAt, AaaWebhookId? Function()? id, AaaLastFailure? Function()? lastFailure, AaaLastSuccess? Function()? lastSuccess, AaaComponentsSchemasName? Function()? name, AaaComponentsSchemasType? Function()? type, AaaUrl? Function()? url, }) { return AaaWebhooksResponse(
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  id: id != null ? id() : this.id,
+  lastFailure: lastFailure != null ? lastFailure() : this.lastFailure,
+  lastSuccess: lastSuccess != null ? lastSuccess() : this.lastSuccess,
+  name: name != null ? name() : this.name,
+  type: type != null ? type() : this.type,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AaaWebhooksResponse &&
+          createdAt == other.createdAt &&
+          id == other.id &&
+          lastFailure == other.lastFailure &&
+          lastSuccess == other.lastSuccess &&
+          name == other.name &&
+          type == other.type &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(createdAt, id, lastFailure, lastSuccess, name, type, url); } 
+@override String toString() { return 'AaaWebhooksResponse(createdAt: $createdAt, id: $id, lastFailure: $lastFailure, lastSuccess: $lastSuccess, name: $name, type: $type, url: $url)'; } 
+ }

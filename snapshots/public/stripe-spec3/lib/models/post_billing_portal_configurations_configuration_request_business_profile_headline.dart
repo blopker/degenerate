@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2($value)'; } 
  }
-typedef PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline = OneOf2<String,PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2>;
+
+@immutable
+final class PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline {
+  const PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline({this.string = const Omittable.absent(),
+this.postBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline._({required this.rawValue, required this.string,
+required this.postBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2,});
+  factory PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline.fromJson(Object? json) => PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2: parseAnyOfVariant<PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2>(json, (value) => PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2> postBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2.isPresent) postBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline(${toJson()})';
+}

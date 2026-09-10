@@ -4,8 +4,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_file_li
 
 factory PostFileLinksLinkRequest.fromJson(Map<String, dynamic> json) { return PostFileLinksLinkRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  expiresAt: json['expires_at'] != null ? OneOf3.parse(json['expires_at'], fromA: (v) => PostFileLinksLinkRequestExpiresAtVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(), fromC: (v) => PostFileLinksLinkRequestExpiresAtVariant3.fromJson(v as String),) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostFileLinksLinkRequestMetadataVariant2.fromJson(v as String),) : null,
+  expiresAt: json['expires_at'] != null ? PostFileLinksLinkRequestExpiresAt.fromJson(json['expires_at']) : null,
+  metadata: json['metadata'] != null ? PostFileLinksLinkRequestMetadata.fromJson(json['metadata']) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

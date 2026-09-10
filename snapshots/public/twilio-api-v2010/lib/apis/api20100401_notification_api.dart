@@ -23,7 +23,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountNotificationInstance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountNotificationInstance.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -68,7 +69,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListNotificationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListNotificationResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

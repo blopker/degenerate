@@ -45,17 +45,33 @@ bool get isUnknown { return !values.contains(this); }
 /// - "standard-3": 2 vCPU, 8 GiB memory, 16 GB disk
 /// - "standard-4": 4 vCPU, 12 GiB memory, 20 GB disk
 /// 
-final class CcInstanceType {const CcInstanceType({this.ccInstanceTypeVariant1});
+@immutable
+final class CcInstanceType {
+  const CcInstanceType({this.ccInstanceTypeVariant1 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CcInstanceType._({required this.rawValue, required this.ccInstanceTypeVariant1,});
+  factory CcInstanceType.fromJson(Object? json) => CcInstanceType._(
+    rawValue: Omittable(json),
+    ccInstanceTypeVariant1: parseAnyOfVariant<CcInstanceTypeVariant1>(json, (value) => CcInstanceTypeVariant1.fromJson(value! as String)),
+  );
 
-factory CcInstanceType.fromJson(dynamic json) { return CcInstanceType(
-  ccInstanceTypeVariant1: json is String ? CcInstanceTypeVariant1.fromJson(json) : null,
-); }
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<CcInstanceTypeVariant1> ccInstanceTypeVariant1;
 
-final CcInstanceTypeVariant1? ccInstanceTypeVariant1;
+  /// Whether at least one known variant matched.
+  bool get isValid => ccInstanceTypeVariant1.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
 
-/// At least one variant must be present.
-bool get isValid { return ccInstanceTypeVariant1 != null; } 
-Map<String, dynamic> toJson() { return {
-  if (ccInstanceTypeVariant1 != null) 'ccInstanceTypeVariant1': ccInstanceTypeVariant1!.toJson(),
-}; } 
- }
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (ccInstanceTypeVariant1.isPresent) ccInstanceTypeVariant1.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CcInstanceType && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CcInstanceType(${toJson()})';
+}

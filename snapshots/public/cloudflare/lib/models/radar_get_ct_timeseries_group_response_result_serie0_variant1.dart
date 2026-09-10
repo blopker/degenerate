@@ -24,6 +24,6 @@ RadarGetCtTimeseriesGroupResponseResultSerie0Variant1 copyWith({List<DateTime>? 
       other is RadarGetCtTimeseriesGroupResponseResultSerie0Variant1 &&
           listEquals(timestamps, other.timestamps) &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(Object.hashAll(timestamps), Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(Object.hashAll(timestamps), mapHash(additionalProperties)); } 
 @override String toString() { return 'RadarGetCtTimeseriesGroupResponseResultSerie0Variant1(timestamps: $timestamps, additionalProperties: $additionalProperties)'; } 
  }

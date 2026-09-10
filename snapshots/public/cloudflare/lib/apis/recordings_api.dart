@@ -13,7 +13,7 @@ final class RecordingsApi with ApiExecutor {const RecordingsApi(this.apiConfig);
 /// Returns all recordings for an App. If the `meeting_id` parameter is passed, returns all recordings for the given meeting ID.
 ///
 /// `GET /accounts/{account_id}/realtime/kit/{app_id}/recordings`
-Future<ApiResult<GetAllRecordingsResponse, Never>> getAllRecordings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? meetingId, double? pageNo, double? perPage, bool? expired, String? search, GetAllRecordingsSortBy? sortBy, GetAllRecordingsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, List<GetAllRecordingsStatus>? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetAllRecordingsResponse?, Never>> getAllRecordings({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, String? meetingId, double? pageNo, double? perPage, bool? expired, String? search, GetAllRecordingsSortBy? sortBy, GetAllRecordingsSortOrder? sortOrder, DateTime? startTime, DateTime? endTime, List<GetAllRecordingsStatus>? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (meetingId != null) {
   queryParameters['meeting_id'] = meetingId;
@@ -60,7 +60,17 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetAllRecordingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 200:
+final json = jsonDecode(response.body);
+return GetAllRecordingsResponse.fromJson(json as Map<String, dynamic>);
+case 201:
+return null;
+default:
+final json = jsonDecode(response.body);
+return GetAllRecordingsResponse.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -83,7 +93,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return StartRecordingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return StartRecordingResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -104,7 +115,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetOneRecordingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetOneRecordingResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -127,7 +139,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PauseResumeStopRecordingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PauseResumeStopRecordingResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -148,10 +161,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetActiveRecordingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetActiveRecordingResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

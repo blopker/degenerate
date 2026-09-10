@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoiceitemsRequestTaxCodeVariant2($value)'; } 
  }
-typedef PostInvoiceitemsRequestTaxCode = OneOf2<String,PostInvoiceitemsRequestTaxCodeVariant2>;
+/// A [tax code](https://docs.stripe.com/tax/tax-categories) ID.
+@immutable
+final class PostInvoiceitemsRequestTaxCode {
+  const PostInvoiceitemsRequestTaxCode({this.string = const Omittable.absent(),
+this.postInvoiceitemsRequestTaxCodeVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostInvoiceitemsRequestTaxCode._({required this.rawValue, required this.string,
+required this.postInvoiceitemsRequestTaxCodeVariant2,});
+  factory PostInvoiceitemsRequestTaxCode.fromJson(Object? json) => PostInvoiceitemsRequestTaxCode._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postInvoiceitemsRequestTaxCodeVariant2: parseAnyOfVariant<PostInvoiceitemsRequestTaxCodeVariant2>(json, (value) => PostInvoiceitemsRequestTaxCodeVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostInvoiceitemsRequestTaxCodeVariant2> postInvoiceitemsRequestTaxCodeVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postInvoiceitemsRequestTaxCodeVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postInvoiceitemsRequestTaxCodeVariant2.isPresent) postInvoiceitemsRequestTaxCodeVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostInvoiceitemsRequestTaxCode && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostInvoiceitemsRequestTaxCode(${toJson()})';
+}

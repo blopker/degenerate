@@ -25,20 +25,22 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsAddOrUpdateMembershipForUserLegacyRequestRole($value)'; } 
  }
-@immutable final class TeamsAddOrUpdateMembershipForUserLegacyRequest {const TeamsAddOrUpdateMembershipForUserLegacyRequest({this.role = TeamsAddOrUpdateMembershipForUserLegacyRequestRole.member});
+@immutable final class TeamsAddOrUpdateMembershipForUserLegacyRequest {const TeamsAddOrUpdateMembershipForUserLegacyRequest({this.role});
 
 factory TeamsAddOrUpdateMembershipForUserLegacyRequest.fromJson(Map<String, dynamic> json) { return TeamsAddOrUpdateMembershipForUserLegacyRequest(
-  role: json.containsKey('role') ? TeamsAddOrUpdateMembershipForUserLegacyRequestRole.fromJson(json['role'] as String) : TeamsAddOrUpdateMembershipForUserLegacyRequestRole.member,
+  role: json['role'] != null ? TeamsAddOrUpdateMembershipForUserLegacyRequestRole.fromJson(json['role'] as String) : null,
 ); }
 
 /// The role that this user should have in the team.
-final TeamsAddOrUpdateMembershipForUserLegacyRequestRole role;
+final TeamsAddOrUpdateMembershipForUserLegacyRequestRole? role;
 
+/// The value with the schema default applied when absent.
+TeamsAddOrUpdateMembershipForUserLegacyRequestRole get roleOrDefault { return role ?? TeamsAddOrUpdateMembershipForUserLegacyRequestRole.fromJson('member'); } 
 Map<String, dynamic> toJson() { return {
-  'role': role.toJson(),
+  if (role != null) 'role': role?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role'}.contains(key)); } 
-TeamsAddOrUpdateMembershipForUserLegacyRequest copyWith({TeamsAddOrUpdateMembershipForUserLegacyRequestRole Function()? role}) { return TeamsAddOrUpdateMembershipForUserLegacyRequest(
+TeamsAddOrUpdateMembershipForUserLegacyRequest copyWith({TeamsAddOrUpdateMembershipForUserLegacyRequestRole? Function()? role}) { return TeamsAddOrUpdateMembershipForUserLegacyRequest(
   role: role != null ? role() : this.role,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -114,4 +114,54 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5($value)'; } 
  }
-typedef BrapiPostLinksRequestVariant2GotoOptionsWaitUntil = OneOf5<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant1,BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant2,BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant3,BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant4,List<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5>>;
+
+@immutable
+final class BrapiPostLinksRequestVariant2GotoOptionsWaitUntil {
+  const BrapiPostLinksRequestVariant2GotoOptionsWaitUntil({this.brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant1 = const Omittable.absent(),
+this.brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant2 = const Omittable.absent(),
+this.brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant3 = const Omittable.absent(),
+this.brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant4 = const Omittable.absent(),
+this.listBrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const BrapiPostLinksRequestVariant2GotoOptionsWaitUntil._({required this.rawValue, required this.brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant1,
+required this.brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant2,
+required this.brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant3,
+required this.brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant4,
+required this.listBrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5,});
+  factory BrapiPostLinksRequestVariant2GotoOptionsWaitUntil.fromJson(Object? json) => BrapiPostLinksRequestVariant2GotoOptionsWaitUntil._(
+    rawValue: Omittable(json),
+    brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant1: parseAnyOfVariant<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant1>(json, (value) => BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant1.fromJson(value! as String)),
+brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant2: parseAnyOfVariant<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant2>(json, (value) => BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant2.fromJson(value! as String)),
+brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant3: parseAnyOfVariant<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant3>(json, (value) => BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant3.fromJson(value! as String)),
+brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant4: parseAnyOfVariant<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant4>(json, (value) => BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant4.fromJson(value! as String)),
+listBrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5: parseAnyOfVariant<List<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5>>(json, (value) => (value! as List<dynamic>).map((e) => BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5.fromJson(e as String)).toList()),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant1> brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant1;
+final Omittable<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant2> brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant2;
+final Omittable<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant3> brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant3;
+final Omittable<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant4> brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant4;
+final Omittable<List<BrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5>> listBrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant1.isPresent || brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant2.isPresent || brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant3.isPresent || brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant4.isPresent || listBrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant1.isPresent) brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant1.value?.toJson(),
+if (brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant2.isPresent) brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant2.value?.toJson(),
+if (brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant3.isPresent) brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant3.value?.toJson(),
+if (brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant4.isPresent) brapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant4.value?.toJson(),
+if (listBrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5.isPresent) listBrapiPostLinksRequestVariant2GotoOptionsWaitUntilVariant5.value?.map((e) => e.toJson()).toList(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is BrapiPostLinksRequestVariant2GotoOptionsWaitUntil && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'BrapiPostLinksRequestVariant2GotoOptionsWaitUntil(${toJson()})';
+}

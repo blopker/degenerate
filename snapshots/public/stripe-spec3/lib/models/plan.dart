@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_product.dart';import 'plan_product.dart';import 'plan_tier.dart';import 'product.dart';import 'transform_usage.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `amount`) will be charged per unit in `quantity` (for plans with `usage_type=licensed`), or per unit of total usage (for plans with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'plan_product.dart';import 'plan_tier.dart';import 'transform_usage.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `amount`) will be charged per unit in `quantity` (for plans with `usage_type=licensed`), or per unit of total usage (for plans with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
 @immutable final class PlanBillingScheme {const PlanBillingScheme._(this.value);
 
 factory PlanBillingScheme.fromJson(String json) { return switch (json) {
@@ -153,7 +153,7 @@ factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
   meter: json.containsKey('meter') ? Omittable(json['meter'] as String?) : const Omittable.absent(),
   nickname: json.containsKey('nickname') ? Omittable(json['nickname'] as String?) : const Omittable.absent(),
   object: PlanObject.fromJson(json['object'] as String),
-  product: json.containsKey('product') ? Omittable(json['product'] != null ? OneOf3.parse(json['product'], fromA: (v) => v as String, fromB: (v) => Product.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedProduct.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  product: json.containsKey('product') ? Omittable(json['product'] != null ? PlanProduct.fromJson(json['product']) : null) : const Omittable.absent(),
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PlanTier.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json.containsKey('tiers_mode') ? Omittable(json['tiers_mode'] != null ? PlanTiersMode.fromJson(json['tiers_mode'] as String) : null) : const Omittable.absent(),
   transformUsage: json.containsKey('transform_usage') ? Omittable(json['transform_usage'] != null ? TransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null) : const Omittable.absent(),

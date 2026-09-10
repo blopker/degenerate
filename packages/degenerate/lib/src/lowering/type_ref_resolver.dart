@@ -167,7 +167,7 @@ class TypeRefResolver {
           resolved is IrDiscriminatedUnion ||
           resolved is IrUntaggedUnion ||
           resolved is IrAnyOf) {
-        return current; // keep the ref - these get their own emitted files
+        return resolved.isNullable ? current.copyAsNullable() : current;
       }
       // Extension types are emittable but resolve like enums - the
       // IrExtensionType node itself carries the fromJson/toJson semantics.

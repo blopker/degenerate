@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CanceledProductDescriptionVariant2($value)'; } 
  }
-typedef CanceledProductDescription = OneOf2<String,CanceledProductDescriptionVariant2>;
+
+@immutable
+final class CanceledProductDescription {
+  const CanceledProductDescription({this.string = const Omittable.absent(),
+this.canceledProductDescriptionVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CanceledProductDescription._({required this.rawValue, required this.string,
+required this.canceledProductDescriptionVariant2,});
+  factory CanceledProductDescription.fromJson(Object? json) => CanceledProductDescription._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+canceledProductDescriptionVariant2: parseAnyOfVariant<CanceledProductDescriptionVariant2>(json, (value) => CanceledProductDescriptionVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<CanceledProductDescriptionVariant2> canceledProductDescriptionVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || canceledProductDescriptionVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (canceledProductDescriptionVariant2.isPresent) canceledProductDescriptionVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CanceledProductDescription && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CanceledProductDescription(${toJson()})';
+}

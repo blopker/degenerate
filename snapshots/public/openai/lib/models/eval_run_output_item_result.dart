@@ -57,6 +57,6 @@ EvalRunOutputItemResult copyWith({String? name, String? Function()? type, double
           passed == other.passed &&
           sample == other.sample &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(name, type, score, passed, sample, Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(name, type, score, passed, sample, mapHash(additionalProperties)); } 
 @override String toString() { return 'EvalRunOutputItemResult(name: $name, type: $type, score: $score, passed: $passed, sample: $sample, additionalProperties: $additionalProperties)'; } 
  }

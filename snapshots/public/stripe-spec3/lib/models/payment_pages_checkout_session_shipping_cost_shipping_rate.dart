@@ -1,3 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate.dart';typedef PaymentPagesCheckoutSessionShippingCostShippingRate = OneOf2<String,ShippingRate>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate.dart';/// The ID of the ShippingRate for this order.
+@immutable
+final class PaymentPagesCheckoutSessionShippingCostShippingRate {
+  const PaymentPagesCheckoutSessionShippingCostShippingRate({this.string = const Omittable.absent(),
+this.shippingRate = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PaymentPagesCheckoutSessionShippingCostShippingRate._({required this.rawValue, required this.string,
+required this.shippingRate,});
+  factory PaymentPagesCheckoutSessionShippingCostShippingRate.fromJson(Object? json) => PaymentPagesCheckoutSessionShippingCostShippingRate._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+shippingRate: parseAnyOfVariant<ShippingRate>(json, (value) => ShippingRate.fromJson(value! as Map<String, dynamic>)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<ShippingRate> shippingRate;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => (rawValue.isPresent && rawValue.value == null) || string.isPresent || shippingRate.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (shippingRate.isPresent) shippingRate.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PaymentPagesCheckoutSessionShippingCostShippingRate && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PaymentPagesCheckoutSessionShippingCostShippingRate(${toJson()})';
+}

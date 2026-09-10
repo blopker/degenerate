@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// FileKeySelector selects a key of the env file.
-@immutable final class FileKeySelector {const FileKeySelector({this.key = '', this.optional = false, this.path = '', this.volumeName = '', });
+@immutable final class FileKeySelector {const FileKeySelector({required this.key, required this.path, required this.volumeName, this.optional, });
 
 factory FileKeySelector.fromJson(Map<String, dynamic> json) { return FileKeySelector(
   key: json['key'] as String,
-  optional: json.containsKey('optional') ? json['optional'] as bool : false,
+  optional: json['optional'] as bool?,
   path: json['path'] as String,
   volumeName: json['volumeName'] as String,
 ); }
@@ -16,7 +16,7 @@ final String key;
 /// Specify whether the file or its key must be defined. If the file or key does not exist, then the env var is not published. If optional is set to true and the specified key does not exist, the environment variable will not be set in the Pod's containers.
 /// 
 /// If optional is set to false and the specified key does not exist, an error will be returned during Pod creation.
-final bool optional;
+final bool? optional;
 
 /// The path within the volume from which to select the file. Must be relative and may not contain the '..' path or start with '..'.
 final String path;
@@ -24,16 +24,18 @@ final String path;
 /// The name of the volume mount containing the env file.
 final String volumeName;
 
+/// The value with the schema default applied when absent.
+bool get optionalOrDefault { return optional ?? false; } 
 Map<String, dynamic> toJson() { return {
   'key': key,
-  'optional': optional,
+  'optional': ?optional,
   'path': path,
   'volumeName': volumeName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('volumeName') && json['volumeName'] is String; } 
-FileKeySelector copyWith({String? key, bool Function()? optional, String? path, String? volumeName, }) { return FileKeySelector(
+FileKeySelector copyWith({String? key, bool? Function()? optional, String? path, String? volumeName, }) { return FileKeySelector(
   key: key ?? this.key,
   optional: optional != null ? optional() : this.optional,
   path: path ?? this.path,

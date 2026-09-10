@@ -57,4 +57,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2($value)'; } 
  }
-typedef PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates = OneOf2<List<PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1>,PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2>;
+
+@immutable
+final class PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates {
+  const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates({this.listPostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1 = const Omittable.absent(),
+this.postBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates._({required this.rawValue, required this.listPostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1,
+required this.postBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2,});
+  factory PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates.fromJson(Object? json) => PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates._(
+    rawValue: Omittable(json),
+    listPostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1: parseAnyOfVariant<List<PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1.fromJson(e as String)).toList()),
+postBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2: parseAnyOfVariant<PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2>(json, (value) => PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1>> listPostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1;
+final Omittable<PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2> postBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1.isPresent || postBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1.isPresent) listPostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant1.value?.map((e) => e.toJson()).toList(),
+if (postBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2.isPresent) postBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdatesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostBillingPortalConfigurationsConfigurationRequestFeaturesCustomerUpdateAllowedUpdates(${toJson()})';
+}

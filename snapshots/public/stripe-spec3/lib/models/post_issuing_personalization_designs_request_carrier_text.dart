@@ -4,10 +4,10 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing
 @immutable final class PostIssuingPersonalizationDesignsRequestCarrierText {const PostIssuingPersonalizationDesignsRequestCarrierText({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
 
 factory PostIssuingPersonalizationDesignsRequestCarrierText.fromJson(Map<String, dynamic> json) { return PostIssuingPersonalizationDesignsRequestCarrierText(
-  footerBody: json['footer_body'] != null ? OneOf2.parse(json['footer_body'], fromA: (v) => v as String, fromB: (v) => PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2.fromJson(v as String),) : null,
-  footerTitle: json['footer_title'] != null ? OneOf2.parse(json['footer_title'], fromA: (v) => v as String, fromB: (v) => PostIssuingPersonalizationDesignsRequestCarrierTextFooterTitleVariant2.fromJson(v as String),) : null,
-  headerBody: json['header_body'] != null ? OneOf2.parse(json['header_body'], fromA: (v) => v as String, fromB: (v) => PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBodyVariant2.fromJson(v as String),) : null,
-  headerTitle: json['header_title'] != null ? OneOf2.parse(json['header_title'], fromA: (v) => v as String, fromB: (v) => PostIssuingPersonalizationDesignsRequestCarrierTextHeaderTitleVariant2.fromJson(v as String),) : null,
+  footerBody: json['footer_body'] != null ? PostIssuingPersonalizationDesignsRequestCarrierTextFooterBody.fromJson(json['footer_body']) : null,
+  footerTitle: json['footer_title'] != null ? PostIssuingPersonalizationDesignsRequestCarrierTextFooterTitle.fromJson(json['footer_title']) : null,
+  headerBody: json['header_body'] != null ? PostIssuingPersonalizationDesignsRequestCarrierTextHeaderBody.fromJson(json['header_body']) : null,
+  headerTitle: json['header_title'] != null ? PostIssuingPersonalizationDesignsRequestCarrierTextHeaderTitle.fromJson(json['header_title']) : null,
 ); }
 
 final PostIssuingPersonalizationDesignsRequestCarrierTextFooterBody? footerBody;

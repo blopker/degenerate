@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_tag_delete_response.dart';import '../models/delete_tag_delete_response400.dart';import '../models/get_tag_indicators_list_response.dart';import '../models/get_tag_indicators_list_response400.dart';import '../models/get_tag_list_response.dart';import '../models/get_tag_list_response400.dart';import '../models/patch_tag_update_request.dart';import '../models/patch_tag_update_response.dart';import '../models/patch_tag_update_response400.dart';import '../models/post_tag_create_request.dart';import '../models/post_tag_create_response.dart';import '../models/post_tag_create_response400.dart';/// TagApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_tag_delete_response.dart';import '../models/delete_tag_delete_response400.dart';import '../models/delete_tag_delete_response404.dart';import '../models/get_tag_indicators_list_response.dart';import '../models/get_tag_indicators_list_response400.dart';import '../models/get_tag_indicators_list_response404.dart';import '../models/get_tag_indicators_list_response500.dart';import '../models/get_tag_list_response.dart';import '../models/get_tag_list_response400.dart';import '../models/patch_tag_update_request.dart';import '../models/patch_tag_update_response.dart';import '../models/patch_tag_update_response400.dart';import '../models/patch_tag_update_response404.dart';import '../models/post_tag_create_request.dart';import '../models/post_tag_create_response.dart';import '../models/post_tag_create_response400.dart';import '../models/post_tag_create_response404.dart';/// TagApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class TagApi with ApiExecutor {const TagApi(this.apiConfig);
 /// Returns indicators associated with the provided tag UUID across all indicator datasets, with pagination.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators`
-Future<ApiResult<GetTagIndicatorsListResponse, GetTagIndicatorsListResponse400>> getTagIndicatorsList({required String accountId, required String tagUuid, required String datasetId, double? page, double? pageSize, String? indicatorType, List<String>? relatedEvent, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetTagIndicatorsListResponse, OneOf3<GetTagIndicatorsListResponse400, GetTagIndicatorsListResponse404, GetTagIndicatorsListResponse500>>> getTagIndicatorsList({required String accountId, required String tagUuid, required String datasetId, double? page, double? pageSize, String? indicatorType, List<String>? relatedEvent, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -44,10 +44,24 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetTagIndicatorsListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetTagIndicatorsListResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetTagIndicatorsListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf3<GetTagIndicatorsListResponse400, GetTagIndicatorsListResponse404, GetTagIndicatorsListResponse500>.a(GetTagIndicatorsListResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf3<GetTagIndicatorsListResponse400, GetTagIndicatorsListResponse404, GetTagIndicatorsListResponse500>.b(GetTagIndicatorsListResponse404.fromJson(json as Map<String, dynamic>));
+case 500:
+final json = jsonDecode(response.body);
+return OneOf3<GetTagIndicatorsListResponse400, GetTagIndicatorsListResponse404, GetTagIndicatorsListResponse500>.c(GetTagIndicatorsListResponse500.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -85,10 +99,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetTagListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetTagListResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetTagListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return GetTagListResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -97,7 +119,7 @@ return execute(
 /// Updates a Source-of-Truth tag by UUID.
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}`
-Future<ApiResult<PatchTagUpdateResponse, PatchTagUpdateResponse400>> patchTagUpdate({required String accountId, required String tagUuid, PatchTagUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchTagUpdateResponse, OneOf2<PatchTagUpdateResponse400, PatchTagUpdateResponse404>>> patchTagUpdate({required String accountId, required String tagUuid, PatchTagUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -111,10 +133,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PatchTagUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PatchTagUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PatchTagUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<PatchTagUpdateResponse400, PatchTagUpdateResponse404>.a(PatchTagUpdateResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<PatchTagUpdateResponse400, PatchTagUpdateResponse404>.b(PatchTagUpdateResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -123,7 +156,7 @@ return execute(
 /// Deletes a Source-of-Truth tag by UUID.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}`
-Future<ApiResult<DeleteTagDeleteResponse, DeleteTagDeleteResponse400>> deleteTagDelete({required String accountId, required String tagUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteTagDeleteResponse, OneOf2<DeleteTagDeleteResponse400, DeleteTagDeleteResponse404>>> deleteTagDelete({required String accountId, required String tagUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -135,10 +168,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteTagDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteTagDeleteResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return DeleteTagDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<DeleteTagDeleteResponse400, DeleteTagDeleteResponse404>.a(DeleteTagDeleteResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<DeleteTagDeleteResponse400, DeleteTagDeleteResponse404>.b(DeleteTagDeleteResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -147,7 +191,7 @@ return execute(
 /// Creates a new tag to be used accross threat events.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/tags/create`
-Future<ApiResult<PostTagCreateResponse, PostTagCreateResponse400>> postTagCreate({required String accountId, PostTagCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostTagCreateResponse, OneOf2<PostTagCreateResponse400, PostTagCreateResponse404>>> postTagCreate({required String accountId, PostTagCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -161,10 +205,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostTagCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostTagCreateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostTagCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<PostTagCreateResponse400, PostTagCreateResponse404>.a(PostTagCreateResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<PostTagCreateResponse400, PostTagCreateResponse404>.b(PostTagCreateResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 

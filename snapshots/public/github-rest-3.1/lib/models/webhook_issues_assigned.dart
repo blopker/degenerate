@@ -22,11 +22,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookIssuesAssignedAction($value)'; } 
  }
-@immutable final class WebhookIssuesAssigned {const WebhookIssuesAssigned({required this.action, required this.issue, required this.repository, required this.sender, this.assignee, this.enterprise, this.installation, this.organization, });
+@immutable final class WebhookIssuesAssigned {const WebhookIssuesAssigned({required this.action, required this.issue, required this.repository, required this.sender, this.assignee = const Omittable.absent(), this.enterprise, this.installation, this.organization, });
 
 factory WebhookIssuesAssigned.fromJson(Map<String, dynamic> json) { return WebhookIssuesAssigned(
   action: WebhookIssuesAssignedAction.fromJson(json['action'] as String),
-  assignee: json['assignee'] != null ? WebhooksUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
+  assignee: json.containsKey('assignee') ? Omittable(json['assignee'] != null ? WebhooksUser.fromJson(json['assignee'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   issue: WebhooksIssue.fromJson(json['issue'] as Map<String, dynamic>),
@@ -38,7 +38,7 @@ factory WebhookIssuesAssigned.fromJson(Map<String, dynamic> json) { return Webho
 /// The action that was performed.
 final WebhookIssuesAssignedAction action;
 
-final WebhooksUser? assignee;
+final Omittable<WebhooksUser?> assignee;
 
 final EnterpriseWebhooks? enterprise;
 
@@ -54,7 +54,7 @@ final SimpleUser sender;
 
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
-  if (assignee != null) 'assignee': assignee?.toJson(),
+  if (assignee.isPresent) 'assignee': assignee.value?.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
   'issue': issue.toJson(),
@@ -66,9 +66,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('issue') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookIssuesAssigned copyWith({WebhookIssuesAssignedAction? action, WebhooksUser? Function()? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesAssigned(
+WebhookIssuesAssigned copyWith({WebhookIssuesAssignedAction? action, Omittable<WebhooksUser?>? assignee, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksIssue? issue, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesAssigned(
   action: action ?? this.action,
-  assignee: assignee != null ? assignee() : this.assignee,
+  assignee: assignee ?? this.assignee,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   issue: issue ?? this.issue,

@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertSecurityAdvisorySeverity($value)'; } 
  }
 /// Details for the GitHub Security Advisory.
-@immutable final class DependabotAlertSecurityAdvisory {const DependabotAlertSecurityAdvisory({required this.ghsaId, required this.cveId, required this.summary, required this.description, required this.vulnerabilities, required this.severity, required this.cvss, required this.cwes, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.withdrawnAt, this.cvssSeverities, this.epss, });
+@immutable final class DependabotAlertSecurityAdvisory {const DependabotAlertSecurityAdvisory({required this.ghsaId, required this.cveId, required this.summary, required this.description, required this.vulnerabilities, required this.severity, required this.cvss, required this.cwes, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.withdrawnAt, this.cvssSeverities = const Omittable.absent(), this.epss = const Omittable.absent(), });
 
 factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { return DependabotAlertSecurityAdvisory(
   ghsaId: json['ghsa_id'] as String,
@@ -42,8 +42,8 @@ factory DependabotAlertSecurityAdvisory.fromJson(Map<String, dynamic> json) { re
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>).map((e) => DependabotAlertSecurityVulnerability.fromJson(e as Map<String, dynamic>)).toList(),
   severity: DependabotAlertSecurityAdvisorySeverity.fromJson(json['severity'] as String),
   cvss: DependabotAlertSecurityAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>),
-  cvssSeverities: json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null,
-  epss: json['epss'] != null ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>) : null,
+  cvssSeverities: json.containsKey('cvss_severities') ? Omittable(json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  epss: json.containsKey('epss') ? Omittable(json['epss'] != null ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   cwes: (json['cwes'] as List<dynamic>).map((e) => DependabotAlertSecurityAdvisoryCwes.fromJson(e as Map<String, dynamic>)).toList(),
   identifiers: (json['identifiers'] as List<dynamic>).map((e) => DependabotAlertSecurityAdvisoryIdentifiers.fromJson(e as Map<String, dynamic>)).toList(),
   references: (json['references'] as List<dynamic>).map((e) => DependabotAlertSecurityAdvisoryReferences.fromJson(e as Map<String, dynamic>)).toList(),
@@ -73,9 +73,9 @@ final DependabotAlertSecurityAdvisorySeverity severity;
 /// Details for the advisory pertaining to the Common Vulnerability Scoring System.
 final DependabotAlertSecurityAdvisoryCvss cvss;
 
-final CvssSeverities? cvssSeverities;
+final Omittable<CvssSeverities?> cvssSeverities;
 
-final SecurityAdvisoryEpss? epss;
+final Omittable<SecurityAdvisoryEpss?> epss;
 
 /// Details for the advisory pertaining to Common Weakness Enumeration.
 final List<DependabotAlertSecurityAdvisoryCwes> cwes;
@@ -103,8 +103,8 @@ Map<String, dynamic> toJson() { return {
   'vulnerabilities': vulnerabilities.map((e) => e.toJson()).toList(),
   'severity': severity.toJson(),
   'cvss': cvss.toJson(),
-  if (cvssSeverities != null) 'cvss_severities': cvssSeverities?.toJson(),
-  if (epss != null) 'epss': epss?.toJson(),
+  if (cvssSeverities.isPresent) 'cvss_severities': cvssSeverities.value?.toJson(),
+  if (epss.isPresent) 'epss': epss.value?.toJson(),
   'cwes': cwes.map((e) => e.toJson()).toList(),
   'identifiers': identifiers.map((e) => e.toJson()).toList(),
   'references': references.map((e) => e.toJson()).toList(),
@@ -125,7 +125,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('published_at') && json['published_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String); } 
-DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, CvssSeverities? Function()? cvssSeverities, SecurityAdvisoryEpss? Function()? epss, List<DependabotAlertSecurityAdvisoryCwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<DependabotAlertSecurityAdvisoryReferences>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
+DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, Omittable<CvssSeverities?>? cvssSeverities, Omittable<SecurityAdvisoryEpss?>? epss, List<DependabotAlertSecurityAdvisoryCwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<DependabotAlertSecurityAdvisoryReferences>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   summary: summary ?? this.summary,
@@ -133,8 +133,8 @@ DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cv
   vulnerabilities: vulnerabilities ?? this.vulnerabilities,
   severity: severity ?? this.severity,
   cvss: cvss ?? this.cvss,
-  cvssSeverities: cvssSeverities != null ? cvssSeverities() : this.cvssSeverities,
-  epss: epss != null ? epss() : this.epss,
+  cvssSeverities: cvssSeverities ?? this.cvssSeverities,
+  epss: epss ?? this.epss,
   cwes: cwes ?? this.cwes,
   identifiers: identifiers ?? this.identifiers,
   references: references ?? this.references,

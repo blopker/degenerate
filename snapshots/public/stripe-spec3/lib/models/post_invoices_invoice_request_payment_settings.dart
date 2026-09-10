@@ -4,9 +4,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoice
 @immutable final class PostInvoicesInvoiceRequestPaymentSettings {const PostInvoicesInvoiceRequestPaymentSettings({this.defaultMandate, this.paymentMethodOptions, this.paymentMethodTypes, });
 
 factory PostInvoicesInvoiceRequestPaymentSettings.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequestPaymentSettings(
-  defaultMandate: json['default_mandate'] != null ? OneOf2.parse(json['default_mandate'], fromA: (v) => v as String, fromB: (v) => PostInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2.fromJson(v as String),) : null,
+  defaultMandate: json['default_mandate'] != null ? PostInvoicesInvoiceRequestPaymentSettingsDefaultMandate.fromJson(json['default_mandate']) : null,
   paymentMethodOptions: json['payment_method_options'] != null ? PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
-  paymentMethodTypes: json['payment_method_types'] != null ? OneOf2.parse(json['payment_method_types'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1.fromJson(e as String)).toList(), fromB: (v) => PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2.fromJson(v as String),) : null,
+  paymentMethodTypes: json['payment_method_types'] != null ? PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypes.fromJson(json['payment_method_types']) : null,
 ); }
 
 final PostInvoicesInvoiceRequestPaymentSettingsDefaultMandate? defaultMandate;

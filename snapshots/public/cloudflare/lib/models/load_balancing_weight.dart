@@ -1,0 +1,11 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The weight of this origin relative to other origins in the pool. Based on the configured weight the total traffic is distributed among origins within the pool.
+/// - `origin_steering.policy="least_outstanding_requests"`: Use weight to scale the origin's outstanding requests.
+/// - `origin_steering.policy="least_connections"`: Use weight to scale the origin's open connections.
+extension type const LoadBalancingWeight(double value) {
+factory LoadBalancingWeight.fromJson(num json) => LoadBalancingWeight(json.toDouble());
+
+num toJson() => value;
+
+}

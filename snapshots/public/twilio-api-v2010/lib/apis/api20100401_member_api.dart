@@ -23,7 +23,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountQueueMember.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountQueueMember.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountQueueMember.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountQueueMember.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -81,7 +83,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListMemberResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListMemberResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam18ExpiresAtVariant2($value)'; } 
  }
-typedef PaymentMethodOptionsParam18ExpiresAt = OneOf2<int,PaymentMethodOptionsParam18ExpiresAtVariant2>;
+
+@immutable
+final class PaymentMethodOptionsParam18ExpiresAt {
+  const PaymentMethodOptionsParam18ExpiresAt({this.$int = const Omittable.absent(),
+this.paymentMethodOptionsParam18ExpiresAtVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PaymentMethodOptionsParam18ExpiresAt._({required this.rawValue, required this.$int,
+required this.paymentMethodOptionsParam18ExpiresAtVariant2,});
+  factory PaymentMethodOptionsParam18ExpiresAt.fromJson(Object? json) => PaymentMethodOptionsParam18ExpiresAt._(
+    rawValue: Omittable(json),
+    $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+paymentMethodOptionsParam18ExpiresAtVariant2: parseAnyOfVariant<PaymentMethodOptionsParam18ExpiresAtVariant2>(json, (value) => PaymentMethodOptionsParam18ExpiresAtVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<int> $int;
+final Omittable<PaymentMethodOptionsParam18ExpiresAtVariant2> paymentMethodOptionsParam18ExpiresAtVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $int.isPresent || paymentMethodOptionsParam18ExpiresAtVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($int.isPresent) $int.value,
+if (paymentMethodOptionsParam18ExpiresAtVariant2.isPresent) paymentMethodOptionsParam18ExpiresAtVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PaymentMethodOptionsParam18ExpiresAt && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PaymentMethodOptionsParam18ExpiresAt(${toJson()})';
+}

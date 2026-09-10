@@ -1,5 +1,6 @@
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
+import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart';
 
@@ -17,13 +18,20 @@ String _safeTypeName(String typeName) =>
 /// Emits a sealed class hierarchy from an [IrDiscriminatedUnion].
 class DiscriminatedUnionEmitter {
   /// Creates an emitter for the given discriminated [union].
-  const DiscriminatedUnionEmitter(this.union);
+  const DiscriminatedUnionEmitter(
+    this.union, {
+    this.typeRegistry = const {},
+    this.omittable = OmittableMode.nullableOnly,
+  });
+  final Map<String, IrType> typeRegistry;
+  final OmittableMode omittable;
 
   /// The discriminated union IR to emit.
   final IrDiscriminatedUnion union;
 
   /// The Dart getter name for the discriminator property.
-  String get _discDartName => union.discriminatorProperty.toIdentifier(toCamelCase);
+  String get _discDartName =>
+      union.discriminatorProperty.toIdentifier(toCamelCase);
 
   /// Class name for the variant wrapping [type], keyed by discriminator
   /// value.
@@ -178,7 +186,9 @@ class DiscriminatedUnionEmitter {
               ..type = MethodType.getter
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code("return json[${_discJsonKey.literal}] as String? ?? '';"),
+              ..body = Code(
+                "return json[${_discJsonKey.literal}] as String? ?? '';",
+              ),
           ),
         )
         ..methods.add(
@@ -221,151 +231,83 @@ class DiscriminatedUnionEmitter {
     return [_buildRefVariant(className, discriminatorValue, variantType)];
   }
 
-  Class _buildObjectVariant(String className, SpecString discValue, IrObject obj) {
-    // Filter out the discriminator field from the object's fields
-    final fields = obj.fields
-        .where((f) => f.originalName != _discJsonKey)
-        .toList();
-
-    final fieldDecls = fields.map(
-      (f) => Field(
-        (b) => b
-          ..name = f.name
-          ..modifier = FieldModifier.final$
-          ..type = irTypeToReference(f.type, forceNullable: !f.isRequired),
-      ),
+  Class _buildObjectVariant(
+    String className,
+    SpecString discValue,
+    IrObject obj,
+  ) {
+    final model = IrObject(
+      className,
+      obj.fields.where((f) => f.originalName != _discJsonKey).toList(),
+      additionalProperties: obj.additionalProperties,
+      description: obj.description,
     );
-
-    final ctorParams = fields.map(
-      (f) => Parameter(
-        (p) => p
-          ..name = f.name
-          ..named = true
-          ..toThis = true
-          ..required = f.isRequired,
-      ),
-    );
-
-    final fromJsonArgs = fields
-        .map((f) {
-          final accessor = 'json[${f.originalName.literal}]';
-          final isOptional = !f.isRequired;
-          return '  ${f.name}: ${buildFromJsonCode(f.type, accessor, isOptional: isOptional)},';
-        })
-        .join('\n');
-
-    final toJsonEntries = <String>['  ${_discJsonKey.literal}: $_discDartName,'];
-    for (final f in fields) {
-      final key = f.originalName.literal;
-      final isNullable = !f.isRequired || f.type.isNullable;
-      final value = buildToJsonCode(f.type, f.name, nullable: isNullable);
-      if (!f.isRequired) {
-        if (value == f.name) {
-          toJsonEntries.add('  $key: ?${f.name},');
-        } else {
-          toJsonEntries.add('  if (${f.name} != null) $key: $value,');
+    final declaration =
+        ModelEmitter(
+              model,
+              typeRegistry: typeRegistry,
+              omittable: omittable,
+              ignoredJsonKeys: [_discJsonKey],
+            ).emit().single
+            as Class;
+    return declaration.rebuild((b) {
+      b.extend = refer(union.name);
+      b.methods.clear();
+      for (final method in declaration.methods) {
+        if (method.name != 'toJson') {
+          b.methods.add(method);
+          continue;
         }
-      } else {
-        toJsonEntries.add('  $key: $value,');
+        final body = method.body!.toString();
+        final end = body.lastIndexOf('};');
+        b.methods.add(
+          method.rebuild(
+            (m) => m
+              ..annotations.add(refer('override'))
+              ..body = Code(
+                '${body.substring(0, end)}  ${_discJsonKey.literal}: ${discValue.literal},\n};',
+              ),
+          ),
+        );
       }
-    }
-
-    final eqComparisons = fields
-        .map((f) => '${f.name} == other.${f.name}')
-        .join(' && ');
-    final eqBody = eqComparisons.isEmpty
-        ? 'return identical(this, other) || other is $className;'
-        : 'return identical(this, other) ||\n      other is $className && $eqComparisons;';
-
-    final hashFields = fields.map((f) => f.name).join(', ');
-    final hashBody = hashFields.isEmpty
-        ? 'return runtimeType.hashCode;'
-        : 'return Object.hash(runtimeType, $hashFields);';
-
-    final toStrFields = fields
-        .map((f) {
-          // `$` is legal anywhere in a Dart identifier ($-prefixed reserved
-          // words, spec names like `c$d`). The label must escape it, and the
-          // interpolation needs braces so the `$` isn't read as a nested
-          // interpolation start.
-          if (f.name.contains(r'$')) {
-            final escaped = f.name.replaceAll(r'$', r'\$');
-            return '$escaped: \${${f.name}}';
-          }
-          return '${f.name}: \$${f.name}';
-        })
-        .join(', ');
-
-    return Class(
-      (b) => b
-        ..name = className
-        ..modifier = ClassModifier.final$
-        ..annotations.add(refer('immutable'))
-        ..extend = refer(union.name)
-        ..constructors.add(
-          Constructor(
-            (c) => c
-              ..constant = true
-              ..optionalParameters.addAll(ctorParams),
-          ),
-        )
-        ..constructors.add(
-          Constructor(
-            (c) => c
-              ..name = 'fromJson'
-              ..factory = true
-              ..requiredParameters.add(
-                Parameter(
-                  (p) => p
-                    ..name = 'json'
-                    ..type = refer('Map<String, dynamic>'),
-                ),
-              )
-              ..body = Code('return $className(\n$fromJsonArgs\n);'),
-          ),
-        )
-        ..fields.addAll(fieldDecls)
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = _discDartName
-              ..type = MethodType.getter
-              ..annotations.add(refer('override'))
-              ..returns = refer('String')
-              ..body = Code('return ${discValue.literal};'),
-          ),
-        )
-        ..methods.add(
-          Method(
-            (m) => m
-              ..name = 'toJson'
-              ..annotations.add(refer('override'))
-              ..returns = refer('Map<String, dynamic>')
-              ..body = Code('return {\n${toJsonEntries.join('\n')}\n};'),
-          ),
-        )
-        ..methods.add(buildEqualsOverride(eqBody))
-        ..methods.add(buildHashCodeOverride(hashBody))
-        ..methods.add(
-          buildToStringOverride(
-            "return '${escapeNameForString(className)}($toStrFields)';",
-          ),
+      b.methods.add(
+        Method(
+          (m) => m
+            ..name = _discDartName
+            ..type = MethodType.getter
+            ..annotations.add(refer('override'))
+            ..returns = refer('String')
+            ..body = Code('return ${discValue.literal};'),
         ),
-    );
+      );
+    });
   }
 
   String _refVariantToJsonBody(IrType type, String fieldName) {
     // For object-like types, spread their toJson() map into the result.
     // For non-map types (list, primitive, enum), store under 'data' key.
-    final toJsonExpr = buildToJsonCode(type, fieldName);
+    final toJsonExpr = buildToJsonCode(
+      type,
+      fieldName,
+      nullable: type.isNullable,
+    );
+    final q = type.isNullable ? '?' : '';
+    final resolved = type is IrTypeRef ? typeRegistry[type.name] ?? type : type;
+    if (resolved is IrAnyOf || resolved is IrUntaggedUnion) {
+      // A discriminator identifies object payloads, while union codecs also
+      // support scalar values and therefore return Object?.
+      return 'return {...$q($toJsonExpr as Map<String, dynamic>$q), ${_discJsonKey.literal}: $_discDartName};';
+    }
     return switch (type) {
       IrObject() ||
       IrTypeRef() ||
       IrDiscriminatedUnion() ||
       IrUntaggedUnion() ||
       // Spread first so the discriminator key always wins.
-      IrAnyOf() => 'return {...$toJsonExpr, ${_discJsonKey.literal}: $_discDartName};',
-      _ => "return {${_discJsonKey.literal}: $_discDartName, 'data': $toJsonExpr};",
+      IrAnyOf() =>
+        'return {...$q$toJsonExpr, ${_discJsonKey.literal}: $_discDartName};',
+      _ =>
+        "return {${_discJsonKey.literal}: $_discDartName, 'data': $toJsonExpr};",
     };
   }
 
@@ -744,311 +686,107 @@ class UntaggedUnionEmitter {
   }
 }
 
-/// Emits a final class with nullable variant fields from an [IrAnyOf].
+/// Emits a lossless anyOf payload with independently decoded typed views.
 class AnyOfEmitter {
-  /// Creates an emitter for the given [anyOf] type.
-  const AnyOfEmitter(
-    this.anyOf, {
-    this.typeRegistry = const {},
-  });
-
-  /// The anyOf IR to emit.
+  const AnyOfEmitter(this.anyOf, {this.typeRegistry = const {}});
   final IrAnyOf anyOf;
-
-  /// Registry of all known IR types for resolution.
   final Map<String, IrType> typeRegistry;
 
-  /// Resolve an [IrTypeRef] to its underlying type, if available.
-  IrType _resolveType(IrType type) {
-    if (type is IrTypeRef && typeRegistry.containsKey(type.name)) {
-      return typeRegistry[type.name]!;
-    }
-    return type;
-  }
-
-  /// Check if a type (possibly via IrTypeRef) is a union/sealed type.
-  bool _isUnionType(IrType type) {
-    final resolved = _resolveType(type);
-    return resolved is IrDiscriminatedUnion ||
-        resolved is IrUntaggedUnion ||
-        resolved is IrAnyOf;
-  }
-
-  /// Check if a type resolves to a OneOf-eligible union typedef
-  /// (excluding self-referencing types which can't be Dart typedefs).
-  bool _isOneOfType(IrType type) {
-    final resolved = _resolveType(type);
-    return switch (resolved) {
-      IrUntaggedUnion(:final name, :final variants)
-          when isOneOfEligible(variants) &&
-              !_isSelfReferencingUnion(name, variants) =>
-        true,
-      IrAnyOf(:final name, :final variants)
-          when isOneOfEligible(variants) &&
-              !_isSelfReferencingUnion(name, variants) =>
-        true,
-      _ => false,
-    };
-  }
-
-  /// Check if any variant (recursively through List/Map) references [typeName].
-  static bool _isSelfReferencingUnion(String typeName, List<IrType> variants) {
-    bool check(IrType type) => switch (type) {
-      IrTypeRef(:final name) => name == typeName,
-      IrList(:final items) => check(items),
-      IrMap(:final values) => check(values),
-      _ => false,
-    };
-    return variants.any(check);
-  }
-
-  /// Emit the anyOf class as code_builder specs.
   List<Spec> emit() {
-    // Deduplicate variants by type name - anyOf specs can list the same type
-    // multiple times (e.g., 29 String variants). Only keep the first of each.
-    final seenTypeNames = <String>{};
-    final seenFieldNames = <String>{};
-    final variantFields = <({String name, IrType type, String typeName})>[];
-    for (final v in anyOf.variants) {
-      final typeName = irTypeName(v);
-      if (!seenTypeNames.add(typeName)) continue;
-      var fieldName = sanitizeFieldName(toCamelCase(typeName));
-      fieldName = deduplicateName(fieldName, seenFieldNames);
-      seenFieldNames.add(fieldName);
-      variantFields.add((name: fieldName, type: v, typeName: typeName));
+    final fields = <({String name, IrType type, String typeName})>[];
+    final names = <String>{
+      'rawValue',
+      'isValid',
+      'isUnknown',
+      'toJson',
+      'fromJson',
+    };
+    for (final variant in anyOf.variants) {
+      final typeName =
+          irTypeName(variant) +
+          (variant.isNullable && irTypeName(variant) != 'dynamic' ? '?' : '');
+      final name = deduplicateName(
+        sanitizeFieldName(toCamelCase(_safeTypeName(typeName))),
+        names,
+      );
+      names.add(name);
+      fields.add((name: name, type: variant, typeName: typeName));
     }
-
-    return [
-      Class(
-        (b) => b
-          ..name = anyOf.name
-          ..modifier = ClassModifier.final$
-          ..docs.addAll(_buildDocs())
-          ..fields.addAll(
-            variantFields.map(
-              (f) => Field(
-                (fb) => fb
-                  ..name = f.name
-                  ..modifier = FieldModifier.final$
-                  ..type = irTypeToReference(f.type, forceNullable: true),
-              ),
-            ),
-          )
-          ..constructors.add(
-            Constructor(
-              (c) => c
-                ..constant = true
-                ..optionalParameters.addAll(
-                  variantFields.map(
-                    (f) => Parameter(
-                      (p) => p
-                        ..name = f.name
-                        ..named = true
-                        ..toThis = true,
-                    ),
-                  ),
-                ),
-            ),
-          )
-          ..methods.add(
-            Method(
-              (m) => m
-                ..name = 'isValid'
-                ..type = MethodType.getter
-                ..returns = refer('bool')
-                ..docs.add('/// At least one variant must be present.')
-                ..body = Code(
-                  'return ${variantFields.map((f) => '${f.name} != null').join(' || ')};',
-                ),
-            ),
-          )
-          ..constructors.add(_buildFromJson(variantFields))
-          ..methods.add(_buildToJson(variantFields)),
-      ),
-    ];
-  }
-
-  List<String> _buildDocs() {
-    if (anyOf.description == null) return [];
-    return anyOf.description!.docComment;
-  }
-
-  Constructor _buildFromJson(
-    List<({String name, IrType type, String typeName})> fields,
-  ) {
-    // If all variants are objects/refs (have canParse), accept Map<String,
-    // dynamic>.
-    // Otherwise accept Object? to support primitive/enum variants.
-    final allObjectLike = fields.every(
-      (f) =>
-          f.type is IrObject ||
-          f.type is IrTypeRef ||
-          f.type is IrDiscriminatedUnion ||
-          f.type is IrUntaggedUnion ||
-          f.type is IrAnyOf ||
-          _isUnionType(f.type),
-    );
-    final paramType = allObjectLike ? 'Map<String, dynamic>' : 'dynamic';
-
-    // Only declare 'map' when we actually need it (non-primitive, non-enum
-    // variants
-    // in a mixed-type anyOf).
-    final needsMap =
-        !allObjectLike &&
-        fields.any(
+    final name = anyOf.name;
+    final declarations = fields
+        .map((f) => 'final Omittable<${f.typeName}> ${f.name};')
+        .join('\n');
+    final params = fields
+        .map((f) => 'this.${f.name} = const Omittable.absent(),')
+        .join('\n');
+    final rawParams = fields.map((f) => 'required this.${f.name},').join('\n');
+    final parses = fields
+        .map((f) {
+          final type = f.type;
+          final resolved = type is IrTypeRef
+              ? typeRegistry[type.name] ?? type
+              : type;
+          var code = buildFromJsonCode(
+            type,
+            'value',
+            isOptional: type.isNullable,
+            typeRegistry: typeRegistry,
+          );
+          // Assert only where a non-nullable cast is needed. Union codecs
+          // themselves accept Object?, and nested parser arguments are scoped
+          // independently from this callback's value.
+          if (!type.isNullable) {
+            code = code.replaceAll('value as ', 'value! as ');
+          }
+          final parser = asTearoff(code, 'value') ?? '(value) => $code';
+          final validation = resolved is IrAnyOf
+              ? ', isValid: (value) => ${type.isNullable ? 'value == null || ' : ''}value.isValid'
+              : '';
+          return '${f.name}: parseAnyOfVariant<${f.typeName}>(json, $parser$validation),';
+        })
+        .join('\n');
+    final values = fields
+        .map(
           (f) =>
-              f.type is IrObject || f.type is IrTypeRef || _isUnionType(f.type),
-        );
-    final prelude = needsMap
-        ? 'final map = json is Map<String, dynamic> ? json : null;\n'
-        : '';
-
-    final args = fields
-        .map((f) {
-          // Primitive types don't have canParse/fromJson - handle them inline.
-          if (f.type is IrPrimitive) {
-            return '  ${f.name}: ${_primitiveAnyOfExpr(f.type as IrPrimitive, 'json')},';
-          }
-          // Enums don't have canParse - they deserialize from a string value.
-          if (f.type is IrEnum) {
-            return '  ${f.name}: json is String ? ${f.typeName}.fromJson(json) : null,';
-          }
-          // Extension types wrap a primitive - deserialize like primitives.
-          if (f.type is IrExtensionType) {
-            final ext = f.type as IrExtensionType;
-            final jsonType = _extensionTypeJsonType(ext.inner);
-            return '  ${f.name}: json is $jsonType ? ${f.typeName}.fromJson(json) : null,';
-          }
-          // Lists/maps don't have canParse/fromJson as static methods.
-          if (f.type is IrList || f.type is IrMap) {
-            return '  // ${f.name}: skipped (collection type in anyOf not supported)';
-          }
-          // OneOf typedef types use OneOf.parse() instead of .fromJson().
-          if (_isOneOfType(f.type)) {
-            final accessor = allObjectLike ? 'json' : 'map';
-            final parseCode = buildFromJsonCode(
-              f.type,
-              accessor,
-              paramIsMap: true,
-              typeRegistry: typeRegistry,
-            );
-            if (allObjectLike) {
-              return '  ${f.name}: $parseCode,';
-            }
-            return '  ${f.name}: map != null ? $parseCode : null,';
-          }
-          // Union/AnyOf types don't have canParse - just try fromJson.
-          // If the data doesn't match, it'll parse as the $Unknown variant.
-          if (_isUnionType(f.type)) {
-            if (allObjectLike) {
-              return '  ${f.name}: ${f.typeName}.fromJson(json),';
-            }
-            return '  ${f.name}: map != null ? ${f.typeName}.fromJson(map) : null,';
-          }
-          if (allObjectLike) {
-            return '  ${f.name}: ${f.typeName}.canParse(json) ? ${f.typeName}.fromJson(json) : null,';
-          }
-          return '  ${f.name}: map != null && ${f.typeName}.canParse(map) ? ${f.typeName}.fromJson(map) : null,';
-        })
-        .join('\n');
-
-    return Constructor(
-      (c) => c
-        ..name = 'fromJson'
-        ..factory = true
-        ..requiredParameters.add(
-          Parameter(
-            (p) => p
-              ..name = 'json'
-              ..type = refer(paramType),
-          ),
+              'if (${f.name}.isPresent) ${buildToJsonCode(f.type, '${f.name}.value', nullable: true)},',
         )
-        ..body = Code('${prelude}return ${anyOf.name}(\n$args\n);'),
-    );
-  }
-
-  /// Generate a single expression for a primitive AnyOf variant.
-  /// Uses type promotion (is check + direct access) to avoid unnecessary casts.
-  /// Generate a single expression for a primitive AnyOf variant.
-  /// Uses type checks with promotion to avoid unnecessary casts and to
-  /// prevent breaking type promotion across named arguments in constructor
-  /// calls.
-  static String _primitiveAnyOfExpr(IrPrimitive p, String accessor) {
-    return switch (p.kind) {
-      PrimitiveKind.dynamic_ => accessor,
-      PrimitiveKind.string => '$accessor is String ? $accessor : null',
-      PrimitiveKind.int => '$accessor is num ? $accessor.toInt() : null',
-      PrimitiveKind.double => '$accessor is num ? $accessor.toDouble() : null',
-      PrimitiveKind.num => '$accessor is num ? $accessor : null',
-      PrimitiveKind.bool => '$accessor is bool ? $accessor : null',
-      PrimitiveKind.dateTime =>
-        '$accessor is String ? DateTime.parse($accessor) : null',
-      PrimitiveKind.uri => '$accessor is String ? Uri.parse($accessor) : null',
-      PrimitiveKind.bigInt =>
-        '$accessor is String ? BigInt.parse($accessor) : null',
-      PrimitiveKind.bytes =>
-        '$accessor is String ? base64Decode($accessor) : null',
-      PrimitiveKind.duration =>
-        '$accessor is num ? Duration(milliseconds: $accessor.toInt()) : null',
-    };
-  }
-
-  Method _buildToJson(
-    List<({String name, IrType type, String typeName})> fields,
-  ) {
-    final spreads = fields
-        .map((f) {
-          // Field names may be `$`-prefixed (dart:core collisions like
-          // $double); an unescaped key would interpolate the field value
-          // instead of emitting the name.
-          final key = dartStringLiteral(f.name);
-          // Primitives and enums can't be spread into a Map - include as named
-          // entries.
-          if (f.type is IrPrimitive) {
-            return '  $key: ?${f.name},';
-          }
-          if (f.type is IrEnum) {
-            return '  if (${f.name} != null) $key: ${f.name}!.toJson(),';
-          }
-          // Extension types wrap a primitive - toJson returns a primitive, not
-          // a Map.
-          if (f.type is IrExtensionType) {
-            return '  if (${f.name} != null) $key: ${f.name}!.toJson(),';
-          }
-          if (f.type is IrList || f.type is IrMap) {
-            return '  $key: ?${f.name},';
-          }
-          // Sealed/union types have toJson returning Object?, so we can't
-          // spread.
-          if (_isUnionType(f.type)) {
-            return '  if (${f.name} != null) $key: ${f.name}!.toJson(),';
-          }
-          return '  ...?${f.name}?.toJson(),';
-        })
         .join('\n');
+    final matched = fields.map((f) => '${f.name}.isPresent').join(' || ');
+    final docs = anyOf.description?.docComment.join('\n') ?? '';
+    return [
+      Code('''
+$docs
+@immutable
+final class $name {
+  const $name({$params}) : rawValue = const Omittable.absent();
+  const $name._({required this.rawValue, $rawParams});
+  factory $name.fromJson(Object? json) => $name._(
+    rawValue: Omittable(json),
+    $parses
+  );
 
-    return Method(
-      (m) => m
-        ..name = 'toJson'
-        ..returns = refer('Map<String, dynamic>')
-        ..body = Code('return {\n$spreads\n};'),
-    );
-  }
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  $declarations
 
-  /// The JSON wire type for an extension type's inner primitive.
-  static String _extensionTypeJsonType(IrPrimitive inner) {
-    return switch (inner.kind) {
-      PrimitiveKind.dateTime ||
-      PrimitiveKind.uri ||
-      PrimitiveKind.bigInt ||
-      PrimitiveKind.bytes ||
-      PrimitiveKind.string => 'String',
-      PrimitiveKind.dynamic_ => 'dynamic',
-      PrimitiveKind.int ||
-      PrimitiveKind.double ||
-      PrimitiveKind.duration ||
-      PrimitiveKind.num => 'num',
-      PrimitiveKind.bool => 'bool',
-    };
+  /// Whether at least one known variant matched.
+  bool get isValid => ${anyOf.isNullable ? '(rawValue.isPresent && rawValue.value == null) || ' : ''}${matched.isEmpty ? 'false' : matched};
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    $values
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is $name && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => '${escapeNameForString(name)}(\${toJson()})';
+}
+'''),
+    ];
   }
 }

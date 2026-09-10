@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'license_simple.dart';import 'simple_user.dart';import 'team_repository_permissions.dart';/// A team's access to a repository.
-@immutable final class TeamRepository {const TeamRepository({required this.gitTagsUrl, required this.nodeId, required this.name, required this.fullName, required this.license, required this.forks, required this.watchers, required this.openIssues, required this.owner, required this.updatedAt, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.id, required this.gitUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.sshUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.cloneUrl, required this.mirrorUrl, required this.hooksUrl, required this.svnUrl, required this.homepage, required this.language, required this.forksCount, required this.createdAt, required this.watchersCount, required this.size, required this.defaultBranch, required this.openIssuesCount, required this.pushedAt, required this.disabled, required this.stargazersCount, required this.hasPages, this.hasWiki = true, this.hasIssues = true, this.hasDownloads = true, this.archived = false, this.topics, this.visibility = 'public', this.isTemplate = false, this.masterBranch, this.private = false, this.allowRebaseMerge = true, this.tempCloneToken, this.allowSquashMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.allowMergeCommit = true, this.allowForking = false, this.webCommitSignoffRequired = false, this.subscribersCount, this.networkCount, this.roleName, this.permissions, this.hasProjects = true, });
+@immutable final class TeamRepository {const TeamRepository({required this.gitTagsUrl, required this.nodeId, required this.name, required this.fullName, required this.license, required this.forks, required this.watchers, required this.openIssues, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.id, required this.gitUrl, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.sshUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.cloneUrl, required this.mirrorUrl, required this.hooksUrl, required this.svnUrl, required this.homepage, required this.language, required this.forksCount, required this.updatedAt, required this.watchersCount, required this.size, required this.defaultBranch, required this.openIssuesCount, required this.createdAt, required this.pushedAt, required this.hasIssues, required this.hasProjects, required this.hasWiki, required this.hasPages, required this.hasDownloads, required this.archived, required this.stargazersCount, required this.disabled, this.topics, this.isTemplate, this.masterBranch, this.allowRebaseMerge, this.tempCloneToken, this.allowSquashMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.allowMergeCommit, this.allowForking, this.webCommitSignoffRequired, this.subscribersCount, this.networkCount, this.roleName, this.permissions, this.visibility, });
 
 factory TeamRepository.fromJson(Map<String, dynamic> json) { return TeamRepository(
   id: (json['id'] as num).toInt(),
@@ -67,7 +67,7 @@ factory TeamRepository.fromJson(Map<String, dynamic> json) { return TeamReposito
   size: (json['size'] as num).toInt(),
   defaultBranch: json['default_branch'] as String,
   openIssuesCount: (json['open_issues_count'] as num).toInt(),
-  isTemplate: json.containsKey('is_template') ? json['is_template'] as bool : false,
+  isTemplate: json['is_template'] as bool?,
   topics: (json['topics'] as List<dynamic>?)?.map((e) => e as String).toList(),
   hasIssues: json['has_issues'] as bool,
   hasProjects: json['has_projects'] as bool,
@@ -76,18 +76,18 @@ factory TeamRepository.fromJson(Map<String, dynamic> json) { return TeamReposito
   hasDownloads: json['has_downloads'] as bool,
   archived: json['archived'] as bool,
   disabled: json['disabled'] as bool,
-  visibility: json.containsKey('visibility') ? json['visibility'] as String : 'public',
+  visibility: json['visibility'] as String?,
   pushedAt: json['pushed_at'] != null ? DateTime.parse(json['pushed_at'] as String) : null,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  allowRebaseMerge: json.containsKey('allow_rebase_merge') ? json['allow_rebase_merge'] as bool : true,
+  allowRebaseMerge: json['allow_rebase_merge'] as bool?,
   tempCloneToken: json['temp_clone_token'] as String?,
-  allowSquashMerge: json.containsKey('allow_squash_merge') ? json['allow_squash_merge'] as bool : true,
-  allowAutoMerge: json.containsKey('allow_auto_merge') ? json['allow_auto_merge'] as bool : false,
-  deleteBranchOnMerge: json.containsKey('delete_branch_on_merge') ? json['delete_branch_on_merge'] as bool : false,
-  allowMergeCommit: json.containsKey('allow_merge_commit') ? json['allow_merge_commit'] as bool : true,
-  allowForking: json.containsKey('allow_forking') ? json['allow_forking'] as bool : false,
-  webCommitSignoffRequired: json.containsKey('web_commit_signoff_required') ? json['web_commit_signoff_required'] as bool : false,
+  allowSquashMerge: json['allow_squash_merge'] as bool?,
+  allowAutoMerge: json['allow_auto_merge'] as bool?,
+  deleteBranchOnMerge: json['delete_branch_on_merge'] as bool?,
+  allowMergeCommit: json['allow_merge_commit'] as bool?,
+  allowForking: json['allow_forking'] as bool?,
+  webCommitSignoffRequired: json['web_commit_signoff_required'] as bool?,
   subscribersCount: json['subscribers_count'] != null ? (json['subscribers_count'] as num).toInt() : null,
   networkCount: json['network_count'] != null ? (json['network_count'] as num).toInt() : null,
   openIssues: (json['open_issues'] as num).toInt(),
@@ -226,7 +226,7 @@ final String defaultBranch;
 final int openIssuesCount;
 
 /// Whether this repository acts as a template that can be used to generate new repositories.
-final bool isTemplate;
+final bool? isTemplate;
 
 final List<String>? topics;
 
@@ -251,7 +251,7 @@ final bool archived;
 final bool disabled;
 
 /// The repository visibility: public, private, or internal.
-final String visibility;
+final String? visibility;
 
 final DateTime? pushedAt;
 
@@ -260,27 +260,27 @@ final DateTime? createdAt;
 final DateTime? updatedAt;
 
 /// Whether to allow rebase merges for pull requests.
-final bool allowRebaseMerge;
+final bool? allowRebaseMerge;
 
 final String? tempCloneToken;
 
 /// Whether to allow squash merges for pull requests.
-final bool allowSquashMerge;
+final bool? allowSquashMerge;
 
 /// Whether to allow Auto-merge to be used on pull requests.
-final bool allowAutoMerge;
+final bool? allowAutoMerge;
 
 /// Whether to delete head branches when pull requests are merged
-final bool deleteBranchOnMerge;
+final bool? deleteBranchOnMerge;
 
 /// Whether to allow merge commits for pull requests.
-final bool allowMergeCommit;
+final bool? allowMergeCommit;
 
 /// Whether to allow forking this repo
-final bool allowForking;
+final bool? allowForking;
 
 /// Whether to require contributors to sign off on web-based commits
-final bool webCommitSignoffRequired;
+final bool? webCommitSignoffRequired;
 
 final int? subscribersCount;
 
@@ -292,6 +292,24 @@ final int watchers;
 
 final String? masterBranch;
 
+/// The value with the schema default applied when absent.
+bool get isTemplateOrDefault { return isTemplate ?? false; } 
+/// The value with the schema default applied when absent.
+String get visibilityOrDefault { return visibility ?? 'public'; } 
+/// The value with the schema default applied when absent.
+bool get allowRebaseMergeOrDefault { return allowRebaseMerge ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowSquashMergeOrDefault { return allowSquashMerge ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowAutoMergeOrDefault { return allowAutoMerge ?? false; } 
+/// The value with the schema default applied when absent.
+bool get deleteBranchOnMergeOrDefault { return deleteBranchOnMerge ?? false; } 
+/// The value with the schema default applied when absent.
+bool get allowMergeCommitOrDefault { return allowMergeCommit ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowForkingOrDefault { return allowForking ?? false; } 
+/// The value with the schema default applied when absent.
+bool get webCommitSignoffRequiredOrDefault { return webCommitSignoffRequired ?? false; } 
 Map<String, dynamic> toJson() { return {
   'id': id,
   'node_id': nodeId,
@@ -356,7 +374,7 @@ Map<String, dynamic> toJson() { return {
   'size': size,
   'default_branch': defaultBranch,
   'open_issues_count': openIssuesCount,
-  'is_template': isTemplate,
+  'is_template': ?isTemplate,
   'topics': ?topics,
   'has_issues': hasIssues,
   'has_projects': hasProjects,
@@ -365,18 +383,18 @@ Map<String, dynamic> toJson() { return {
   'has_downloads': hasDownloads,
   'archived': archived,
   'disabled': disabled,
-  'visibility': visibility,
+  'visibility': ?visibility,
   'pushed_at': pushedAt?.toIso8601String(),
   'created_at': createdAt?.toIso8601String(),
   'updated_at': updatedAt?.toIso8601String(),
-  'allow_rebase_merge': allowRebaseMerge,
+  'allow_rebase_merge': ?allowRebaseMerge,
   'temp_clone_token': ?tempCloneToken,
-  'allow_squash_merge': allowSquashMerge,
-  'allow_auto_merge': allowAutoMerge,
-  'delete_branch_on_merge': deleteBranchOnMerge,
-  'allow_merge_commit': allowMergeCommit,
-  'allow_forking': allowForking,
-  'web_commit_signoff_required': webCommitSignoffRequired,
+  'allow_squash_merge': ?allowSquashMerge,
+  'allow_auto_merge': ?allowAutoMerge,
+  'delete_branch_on_merge': ?deleteBranchOnMerge,
+  'allow_merge_commit': ?allowMergeCommit,
+  'allow_forking': ?allowForking,
+  'web_commit_signoff_required': ?webCommitSignoffRequired,
   'subscribers_count': ?subscribersCount,
   'network_count': ?networkCount,
   'open_issues': openIssues,
@@ -456,7 +474,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String) &&
       json.containsKey('open_issues') && json['open_issues'] is num &&
       json.containsKey('watchers') && json['watchers'] is num; } 
-TeamRepository copyWith({int? id, String? nodeId, String? name, String? fullName, LicenseSimple? Function()? license, int? forks, TeamRepositoryPermissions? Function()? permissions, String? Function()? roleName, SimpleUser? Function()? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool Function()? isTemplate, List<String>? Function()? topics, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool? hasDownloads, bool? archived, bool? disabled, String Function()? visibility, DateTime? Function()? pushedAt, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool Function()? allowRebaseMerge, String? Function()? tempCloneToken, bool Function()? allowSquashMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? allowMergeCommit, bool Function()? allowForking, bool Function()? webCommitSignoffRequired, int? Function()? subscribersCount, int? Function()? networkCount, int? openIssues, int? watchers, String? Function()? masterBranch, }) { return TeamRepository(
+TeamRepository copyWith({int? id, String? nodeId, String? name, String? fullName, LicenseSimple? Function()? license, int? forks, TeamRepositoryPermissions? Function()? permissions, String? Function()? roleName, SimpleUser? Function()? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? cloneUrl, Uri? Function()? mirrorUrl, Uri? hooksUrl, Uri? svnUrl, Uri? Function()? homepage, String? Function()? language, int? forksCount, int? stargazersCount, int? watchersCount, int? size, String? defaultBranch, int? openIssuesCount, bool? Function()? isTemplate, List<String>? Function()? topics, bool? hasIssues, bool? hasProjects, bool? hasWiki, bool? hasPages, bool? hasDownloads, bool? archived, bool? disabled, String? Function()? visibility, DateTime? Function()? pushedAt, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, bool? Function()? allowRebaseMerge, String? Function()? tempCloneToken, bool? Function()? allowSquashMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowMergeCommit, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, int? Function()? subscribersCount, int? Function()? networkCount, int? openIssues, int? watchers, String? Function()? masterBranch, }) { return TeamRepository(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

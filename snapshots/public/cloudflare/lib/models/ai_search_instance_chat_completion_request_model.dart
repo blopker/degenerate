@@ -120,4 +120,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceChatCompletionRequestModelVariant2($value)'; } 
  }
-typedef AiSearchInstanceChatCompletionRequestModel = OneOf2<AiSearchInstanceChatCompletionRequestModelVariant1,AiSearchInstanceChatCompletionRequestModelVariant2>;
+
+@immutable
+final class AiSearchInstanceChatCompletionRequestModel {
+  const AiSearchInstanceChatCompletionRequestModel({this.aiSearchInstanceChatCompletionRequestModelVariant1 = const Omittable.absent(),
+this.aiSearchInstanceChatCompletionRequestModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const AiSearchInstanceChatCompletionRequestModel._({required this.rawValue, required this.aiSearchInstanceChatCompletionRequestModelVariant1,
+required this.aiSearchInstanceChatCompletionRequestModelVariant2,});
+  factory AiSearchInstanceChatCompletionRequestModel.fromJson(Object? json) => AiSearchInstanceChatCompletionRequestModel._(
+    rawValue: Omittable(json),
+    aiSearchInstanceChatCompletionRequestModelVariant1: parseAnyOfVariant<AiSearchInstanceChatCompletionRequestModelVariant1>(json, (value) => AiSearchInstanceChatCompletionRequestModelVariant1.fromJson(value! as String)),
+aiSearchInstanceChatCompletionRequestModelVariant2: parseAnyOfVariant<AiSearchInstanceChatCompletionRequestModelVariant2>(json, (value) => AiSearchInstanceChatCompletionRequestModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<AiSearchInstanceChatCompletionRequestModelVariant1> aiSearchInstanceChatCompletionRequestModelVariant1;
+final Omittable<AiSearchInstanceChatCompletionRequestModelVariant2> aiSearchInstanceChatCompletionRequestModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => aiSearchInstanceChatCompletionRequestModelVariant1.isPresent || aiSearchInstanceChatCompletionRequestModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (aiSearchInstanceChatCompletionRequestModelVariant1.isPresent) aiSearchInstanceChatCompletionRequestModelVariant1.value?.toJson(),
+if (aiSearchInstanceChatCompletionRequestModelVariant2.isPresent) aiSearchInstanceChatCompletionRequestModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is AiSearchInstanceChatCompletionRequestModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'AiSearchInstanceChatCompletionRequestModel(${toJson()})';
+}

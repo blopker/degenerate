@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An object representing a list of runs for an evaluation.
 /// 
-@immutable final class EvalRunList {const EvalRunList({required this.data, required this.firstId, required this.lastId, required this.hasMore, this.object = EvalRunListObject.list, });
+@immutable final class EvalRunList {const EvalRunList({required this.object, required this.data, required this.firstId, required this.lastId, required this.hasMore, });
 
 factory EvalRunList.fromJson(Map<String, dynamic> json) { return EvalRunList(
   object: EvalRunListObject.fromJson(json['object'] as String),

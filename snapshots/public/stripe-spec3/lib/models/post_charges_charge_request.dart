@@ -7,7 +7,7 @@ factory PostChargesChargeRequest.fromJson(Map<String, dynamic> json) { return Po
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   fraudDetails: json['fraud_details'] != null ? PostChargesChargeRequestFraudDetails.fromJson(json['fraud_details'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostChargesChargeRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostChargesChargeRequestMetadata.fromJson(json['metadata']) : null,
   receiptEmail: json['receipt_email'] as String?,
   shipping: json['shipping'] != null ? PostChargesChargeRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,

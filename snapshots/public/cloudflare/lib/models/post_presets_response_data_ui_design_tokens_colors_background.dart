@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPresetsResponseDataUiDesignTokensColorsBackground {const PostPresetsResponseDataUiDesignTokensColorsBackground({this.$600 = '#222222', this.$700 = '#1f1f1f', this.$800 = '#1b1b1b', this.$900 = '#181818', this.$1000 = '#141414', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostPresetsResponseDataUiDesignTokensColorsBackground {const PostPresetsResponseDataUiDesignTokensColorsBackground({required this.$600, required this.$700, required this.$800, required this.$900, required this.$1000, });
 
 factory PostPresetsResponseDataUiDesignTokensColorsBackground.fromJson(Map<String, dynamic> json) { return PostPresetsResponseDataUiDesignTokensColorsBackground(
   $600: json['600'] as String,

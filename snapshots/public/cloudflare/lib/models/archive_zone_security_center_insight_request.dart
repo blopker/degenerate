@@ -1,18 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArchiveZoneSecurityCenterInsightRequest {const ArchiveZoneSecurityCenterInsightRequest({this.dismiss = true});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ArchiveZoneSecurityCenterInsightRequest {const ArchiveZoneSecurityCenterInsightRequest({this.dismiss});
 
 factory ArchiveZoneSecurityCenterInsightRequest.fromJson(Map<String, dynamic> json) { return ArchiveZoneSecurityCenterInsightRequest(
-  dismiss: json.containsKey('dismiss') ? json['dismiss'] as bool : true,
+  dismiss: json['dismiss'] as bool?,
 ); }
 
-final bool dismiss;
+final bool? dismiss;
 
+/// The value with the schema default applied when absent.
+bool get dismissOrDefault { return dismiss ?? true; } 
 Map<String, dynamic> toJson() { return {
-  'dismiss': dismiss,
+  'dismiss': ?dismiss,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dismiss'}.contains(key)); } 
-ArchiveZoneSecurityCenterInsightRequest copyWith({bool Function()? dismiss}) { return ArchiveZoneSecurityCenterInsightRequest(
+ArchiveZoneSecurityCenterInsightRequest copyWith({bool? Function()? dismiss}) { return ArchiveZoneSecurityCenterInsightRequest(
   dismiss: dismiss != null ? dismiss() : this.dismiss,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

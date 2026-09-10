@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingCreditGrantsIdRequestExpiresAtVariant2($value)'; } 
  }
-typedef PostBillingCreditGrantsIdRequestExpiresAt = OneOf2<int,PostBillingCreditGrantsIdRequestExpiresAtVariant2>;
+/// The time when the billing credits created by this credit grant expire. If set to empty, the billing credits never expire.
+@immutable
+final class PostBillingCreditGrantsIdRequestExpiresAt {
+  const PostBillingCreditGrantsIdRequestExpiresAt({this.$int = const Omittable.absent(),
+this.postBillingCreditGrantsIdRequestExpiresAtVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostBillingCreditGrantsIdRequestExpiresAt._({required this.rawValue, required this.$int,
+required this.postBillingCreditGrantsIdRequestExpiresAtVariant2,});
+  factory PostBillingCreditGrantsIdRequestExpiresAt.fromJson(Object? json) => PostBillingCreditGrantsIdRequestExpiresAt._(
+    rawValue: Omittable(json),
+    $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+postBillingCreditGrantsIdRequestExpiresAtVariant2: parseAnyOfVariant<PostBillingCreditGrantsIdRequestExpiresAtVariant2>(json, (value) => PostBillingCreditGrantsIdRequestExpiresAtVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<int> $int;
+final Omittable<PostBillingCreditGrantsIdRequestExpiresAtVariant2> postBillingCreditGrantsIdRequestExpiresAtVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $int.isPresent || postBillingCreditGrantsIdRequestExpiresAtVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($int.isPresent) $int.value,
+if (postBillingCreditGrantsIdRequestExpiresAtVariant2.isPresent) postBillingCreditGrantsIdRequestExpiresAtVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostBillingCreditGrantsIdRequestExpiresAt && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostBillingCreditGrantsIdRequestExpiresAt(${toJson()})';
+}

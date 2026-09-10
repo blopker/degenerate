@@ -44,7 +44,7 @@ factory SmartshieldTimestamp.fromJson(String json) => SmartshieldTimestamp(DateT
 String toJson() => value.toIso8601String();
 
 }
-@immutable final class SmartshieldHealthchecks {const SmartshieldHealthchecks({this.address, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.createdOn, this.description, this.failureReason, this.httpConfig, this.id, this.interval, this.modifiedOn, this.name, this.retries, this.status, this.suspended, this.tcpConfig, this.timeout, this.type, });
+@immutable final class SmartshieldHealthchecks {const SmartshieldHealthchecks({this.address, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.createdOn, this.description, this.failureReason, this.httpConfig = const Omittable.absent(), this.id, this.interval, this.modifiedOn, this.name, this.retries, this.status, this.suspended, this.tcpConfig = const Omittable.absent(), this.timeout, this.type, });
 
 factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return SmartshieldHealthchecks(
   address: json['address'] != null ? SmartshieldAddress.fromJson(json['address'] as String) : null,
@@ -54,7 +54,7 @@ factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return Sma
   createdOn: json['created_on'] != null ? SmartshieldTimestamp.fromJson(json['created_on'] as String) : null,
   description: json['description'] != null ? SmartshieldDescription.fromJson(json['description'] as String) : null,
   failureReason: json['failure_reason'] != null ? SmartshieldFailureReason.fromJson(json['failure_reason'] as String) : null,
-  httpConfig: json['http_config'] != null ? SmartshieldHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null,
+  httpConfig: json.containsKey('http_config') ? Omittable(json['http_config'] != null ? SmartshieldHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] != null ? SmartshieldIdentifier.fromJson(json['id'] as String) : null,
   interval: json['interval'] != null ? SmartshieldInterval.fromJson(json['interval'] as num) : null,
   modifiedOn: json['modified_on'] != null ? SmartshieldTimestamp.fromJson(json['modified_on'] as String) : null,
@@ -62,7 +62,7 @@ factory SmartshieldHealthchecks.fromJson(Map<String, dynamic> json) { return Sma
   retries: json['retries'] != null ? SmartshieldRetries.fromJson(json['retries'] as num) : null,
   status: json['status'] != null ? SmartshieldStatus.fromJson(json['status'] as String) : null,
   suspended: json['suspended'] != null ? SmartshieldSuspended.fromJson(json['suspended'] as bool) : null,
-  tcpConfig: json['tcp_config'] != null ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null,
+  tcpConfig: json.containsKey('tcp_config') ? Omittable(json['tcp_config'] != null ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   timeout: json['timeout'] != null ? SmartshieldTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? SmartshieldType.fromJson(json['type'] as String) : null,
 ); }
@@ -87,7 +87,7 @@ final SmartshieldDescription? description;
 /// The current failure reason if status is unhealthy.
 final SmartshieldFailureReason? failureReason;
 
-final SmartshieldHttpConfig? httpConfig;
+final Omittable<SmartshieldHttpConfig?> httpConfig;
 
 final SmartshieldIdentifier? id;
 
@@ -103,7 +103,7 @@ final SmartshieldStatus? status;
 
 final SmartshieldSuspended? suspended;
 
-final SmartshieldTcpConfig? tcpConfig;
+final Omittable<SmartshieldTcpConfig?> tcpConfig;
 
 final SmartshieldTimeout? timeout;
 
@@ -117,7 +117,7 @@ Map<String, dynamic> toJson() { return {
   if (createdOn != null) 'created_on': createdOn?.toJson(),
   if (description != null) 'description': description?.toJson(),
   if (failureReason != null) 'failure_reason': failureReason?.toJson(),
-  if (httpConfig != null) 'http_config': httpConfig?.toJson(),
+  if (httpConfig.isPresent) 'http_config': httpConfig.value?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (interval != null) 'interval': interval?.toJson(),
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
@@ -125,12 +125,12 @@ Map<String, dynamic> toJson() { return {
   if (retries != null) 'retries': retries?.toJson(),
   if (status != null) 'status': status?.toJson(),
   if (suspended != null) 'suspended': suspended?.toJson(),
-  if (tcpConfig != null) 'tcp_config': tcpConfig?.toJson(),
+  if (tcpConfig.isPresent) 'tcp_config': tcpConfig.value?.toJson(),
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'check_regions', 'consecutive_fails', 'consecutive_successes', 'created_on', 'description', 'failure_reason', 'http_config', 'id', 'interval', 'modified_on', 'name', 'retries', 'status', 'suspended', 'tcp_config', 'timeout', 'type'}.contains(key)); } 
-SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, Omittable<List<SmartshieldCheckRegions2>?>? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldTimestamp? Function()? createdOn, SmartshieldDescription? Function()? description, SmartshieldFailureReason? Function()? failureReason, SmartshieldHttpConfig? Function()? httpConfig, SmartshieldIdentifier? Function()? id, SmartshieldInterval? Function()? interval, SmartshieldTimestamp? Function()? modifiedOn, SmartshieldName? Function()? name, SmartshieldRetries? Function()? retries, SmartshieldStatus? Function()? status, SmartshieldSuspended? Function()? suspended, SmartshieldTcpConfig? Function()? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) { return SmartshieldHealthchecks(
+SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, Omittable<List<SmartshieldCheckRegions2>?>? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldTimestamp? Function()? createdOn, SmartshieldDescription? Function()? description, SmartshieldFailureReason? Function()? failureReason, Omittable<SmartshieldHttpConfig?>? httpConfig, SmartshieldIdentifier? Function()? id, SmartshieldInterval? Function()? interval, SmartshieldTimestamp? Function()? modifiedOn, SmartshieldName? Function()? name, SmartshieldRetries? Function()? retries, SmartshieldStatus? Function()? status, SmartshieldSuspended? Function()? suspended, Omittable<SmartshieldTcpConfig?>? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) { return SmartshieldHealthchecks(
   address: address != null ? address() : this.address,
   checkRegions: checkRegions ?? this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
@@ -138,7 +138,7 @@ SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, Omitt
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   failureReason: failureReason != null ? failureReason() : this.failureReason,
-  httpConfig: httpConfig != null ? httpConfig() : this.httpConfig,
+  httpConfig: httpConfig ?? this.httpConfig,
   id: id != null ? id() : this.id,
   interval: interval != null ? interval() : this.interval,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
@@ -146,7 +146,7 @@ SmartshieldHealthchecks copyWith({SmartshieldAddress? Function()? address, Omitt
   retries: retries != null ? retries() : this.retries,
   status: status != null ? status() : this.status,
   suspended: suspended != null ? suspended() : this.suspended,
-  tcpConfig: tcpConfig != null ? tcpConfig() : this.tcpConfig,
+  tcpConfig: tcpConfig ?? this.tcpConfig,
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
 ); } 

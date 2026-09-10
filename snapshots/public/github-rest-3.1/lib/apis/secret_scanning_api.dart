@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/alert_number.dart';import '../models/basic_error.dart';import '../models/organization_secret_scanning_alert.dart';import '../models/secret_scanning_alert.dart';import '../models/secret_scanning_create_push_protection_bypass_request.dart';import '../models/secret_scanning_create_push_protection_bypass_response503.dart';import '../models/secret_scanning_get_alert_response503.dart';import '../models/secret_scanning_get_scan_history_response503.dart';import '../models/secret_scanning_list_alerts_for_org_direction.dart';import '../models/secret_scanning_list_alerts_for_org_sort.dart';import '../models/secret_scanning_list_alerts_for_org_state.dart';import '../models/secret_scanning_list_alerts_for_repo_direction.dart';import '../models/secret_scanning_list_alerts_for_repo_response503.dart';import '../models/secret_scanning_list_alerts_for_repo_sort.dart';import '../models/secret_scanning_list_alerts_for_repo_state.dart';import '../models/secret_scanning_list_locations_for_alert_response503.dart';import '../models/secret_scanning_location.dart';import '../models/secret_scanning_pattern_configuration.dart';import '../models/secret_scanning_push_protection_bypass.dart';import '../models/secret_scanning_scan_history.dart';import '../models/secret_scanning_update_alert_response503.dart';import '../models/secret_scanning_update_org_pattern_configs_request.dart';import '../models/secret_scanning_update_org_pattern_configs_response.dart';/// SecretScanningApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/alert_number.dart';import '../models/basic_error.dart';import '../models/organization_secret_scanning_alert.dart';import '../models/scim_error.dart';import '../models/secret_scanning_alert.dart';import '../models/secret_scanning_create_push_protection_bypass_request.dart';import '../models/secret_scanning_create_push_protection_bypass_response503.dart';import '../models/secret_scanning_get_alert_response503.dart';import '../models/secret_scanning_get_scan_history_response503.dart';import '../models/secret_scanning_list_alerts_for_org_direction.dart';import '../models/secret_scanning_list_alerts_for_org_response503.dart';import '../models/secret_scanning_list_alerts_for_org_sort.dart';import '../models/secret_scanning_list_alerts_for_org_state.dart';import '../models/secret_scanning_list_alerts_for_repo_direction.dart';import '../models/secret_scanning_list_alerts_for_repo_response503.dart';import '../models/secret_scanning_list_alerts_for_repo_sort.dart';import '../models/secret_scanning_list_alerts_for_repo_state.dart';import '../models/secret_scanning_list_locations_for_alert_response503.dart';import '../models/secret_scanning_location.dart';import '../models/secret_scanning_pattern_configuration.dart';import '../models/secret_scanning_push_protection_bypass.dart';import '../models/secret_scanning_scan_history.dart';import '../models/secret_scanning_update_alert_response503.dart';import '../models/secret_scanning_update_org_pattern_configs_request.dart';import '../models/secret_scanning_update_org_pattern_configs_response.dart';import '../models/validation_error.dart';/// SecretScanningApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -17,7 +17,7 @@ final class SecretScanningApi with ApiExecutor {const SecretScanningApi(this.api
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /orgs/{org}/secret-scanning/alerts`
-Future<ApiResult<List<OrganizationSecretScanningAlert>, BasicError>> secretScanningListAlertsForOrg({required String org, SecretScanningListAlertsForOrgState? state, String? secretType, String? resolution, String? assignee, SecretScanningListAlertsForOrgSort? sort, SecretScanningListAlertsForOrgDirection? direction, int? page, int? perPage, String? before, String? after, String? validity, bool? isPubliclyLeaked, bool? isMultiRepo, bool? hideSecret, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrganizationSecretScanningAlert>, OneOf2<BasicError, SecretScanningListAlertsForOrgResponse503>>> secretScanningListAlertsForOrg({required String org, SecretScanningListAlertsForOrgState? state, String? secretType, String? resolution, String? assignee, SecretScanningListAlertsForOrgSort? sort, SecretScanningListAlertsForOrgDirection? direction, int? page, int? perPage, String? before, String? after, String? validity, bool? isPubliclyLeaked, bool? isMultiRepo, bool? hideSecret, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) {
   queryParameters['state'] = state.toJson();
@@ -76,11 +76,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrganizationSecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrganizationSecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, SecretScanningListAlertsForOrgResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, SecretScanningListAlertsForOrgResponse503>.b(SecretScanningListAlertsForOrgResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -103,10 +113,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SecretScanningPatternConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SecretScanningPatternConfiguration.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -117,7 +135,7 @@ return execute(
 /// Personal access tokens (classic) need the `write:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/secret-scanning/pattern-configurations`
-Future<ApiResult<SecretScanningUpdateOrgPatternConfigsResponse, BasicError>> secretScanningUpdateOrgPatternConfigs({required String org, required SecretScanningUpdateOrgPatternConfigsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretScanningUpdateOrgPatternConfigsResponse, OneOf3<BasicError, ScimError, ValidationError>>> secretScanningUpdateOrgPatternConfigs({required String org, required SecretScanningUpdateOrgPatternConfigsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -131,10 +149,34 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SecretScanningUpdateOrgPatternConfigsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SecretScanningUpdateOrgPatternConfigsResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 403 || 404 || 409:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.c(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -206,11 +248,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => SecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => SecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return SecretScanningListAlertsForRepoResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+return null;
+case 503:
+final json = jsonDecode(response.body);
+return SecretScanningListAlertsForRepoResponse503.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -243,10 +294,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SecretScanningAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SecretScanningAlert.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return SecretScanningGetAlertResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304 || 404:
+return null;
+case 503:
+final json = jsonDecode(response.body);
+return SecretScanningGetAlertResponse503.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -275,10 +336,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SecretScanningAlert.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SecretScanningAlert.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return SecretScanningUpdateAlertResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 404 || 422:
+return null;
+case 503:
+final json = jsonDecode(response.body);
+return SecretScanningUpdateAlertResponse503.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -314,11 +385,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => SecretScanningLocation.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => SecretScanningLocation.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return SecretScanningListLocationsForAlertResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+return null;
+case 503:
+final json = jsonDecode(response.body);
+return SecretScanningListLocationsForAlertResponse503.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -345,10 +425,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SecretScanningPushProtectionBypass.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SecretScanningPushProtectionBypass.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return SecretScanningCreatePushProtectionBypassResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 422:
+return null;
+case 503:
+final json = jsonDecode(response.body);
+return SecretScanningCreatePushProtectionBypassResponse503.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -374,10 +464,20 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SecretScanningScanHistory.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SecretScanningScanHistory.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return SecretScanningGetScanHistoryResponse503.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+return null;
+case 503:
+final json = jsonDecode(response.body);
+return SecretScanningGetScanHistoryResponse503.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

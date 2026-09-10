@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'start_recording_response_data.dart';@immutable final class StartRecordingResponse {const StartRecordingResponse({this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'start_recording_response_data.dart';@immutable final class StartRecordingResponse {const StartRecordingResponse({required this.success, this.data, });
 
 factory StartRecordingResponse.fromJson(Map<String, dynamic> json) { return StartRecordingResponse(
   data: json['data'] != null ? StartRecordingResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

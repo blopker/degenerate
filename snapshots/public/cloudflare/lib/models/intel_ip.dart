@@ -12,4 +12,39 @@ factory IntelIpv6.fromJson(String json) => IntelIpv6(json);
 String toJson() => value;
 
 }
-typedef IntelIp = OneOf2<IntelIpv4,IntelIpv6>;
+
+@immutable
+final class IntelIp {
+  const IntelIp({this.intelIpv4 = const Omittable.absent(),
+this.intelIpv6 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const IntelIp._({required this.rawValue, required this.intelIpv4,
+required this.intelIpv6,});
+  factory IntelIp.fromJson(Object? json) => IntelIp._(
+    rawValue: Omittable(json),
+    intelIpv4: parseAnyOfVariant<IntelIpv4>(json, (value) => IntelIpv4.fromJson(value! as String)),
+intelIpv6: parseAnyOfVariant<IntelIpv6>(json, (value) => IntelIpv6.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<IntelIpv4> intelIpv4;
+final Omittable<IntelIpv6> intelIpv6;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => intelIpv4.isPresent || intelIpv6.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (intelIpv4.isPresent) intelIpv4.value?.toJson(),
+if (intelIpv6.isPresent) intelIpv6.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is IntelIp && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'IntelIp(${toJson()})';
+}

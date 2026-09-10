@@ -3,9 +3,9 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_registrations_id_request_active_from.dart';import 'post_tax_registrations_id_request_expires_at.dart';@immutable final class PostTaxRegistrationsIdRequest {const PostTaxRegistrationsIdRequest({this.activeFrom, this.expand, this.expiresAt, });
 
 factory PostTaxRegistrationsIdRequest.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsIdRequest(
-  activeFrom: json['active_from'] != null ? OneOf2.parse(json['active_from'], fromA: (v) => PostTaxRegistrationsIdRequestActiveFromVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  activeFrom: json['active_from'] != null ? PostTaxRegistrationsIdRequestActiveFrom.fromJson(json['active_from']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  expiresAt: json['expires_at'] != null ? OneOf3.parse(json['expires_at'], fromA: (v) => PostTaxRegistrationsIdRequestExpiresAtVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(), fromC: (v) => PostTaxRegistrationsIdRequestExpiresAtVariant3.fromJson(v as String),) : null,
+  expiresAt: json['expires_at'] != null ? PostTaxRegistrationsIdRequestExpiresAt.fromJson(json['expires_at']) : null,
 ); }
 
 /// Time at which the registration becomes active. It can be either `now` to indicate the current time, or a timestamp measured in seconds since the Unix epoch.

@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_registrations_request_active_from.dart';import 'post_tax_registrations_request_country_options.dart';@immutable final class PostTaxRegistrationsRequest {const PostTaxRegistrationsRequest({required this.activeFrom, required this.country, required this.countryOptions, this.expand, this.expiresAt, });
 
 factory PostTaxRegistrationsRequest.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequest(
-  activeFrom: OneOf2.parse(json['active_from'], fromA: (v) => PostTaxRegistrationsRequestActiveFromVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),),
+  activeFrom: PostTaxRegistrationsRequestActiveFrom.fromJson(json['active_from']),
   country: json['country'] as String,
   countryOptions: PostTaxRegistrationsRequestCountryOptions.fromJson(json['country_options'] as Map<String, dynamic>),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

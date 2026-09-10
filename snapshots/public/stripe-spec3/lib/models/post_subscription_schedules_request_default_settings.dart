@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param4.dart';import 'post_subscription_schedules_request_default_settings_automatic_tax.dart';import 'post_subscription_schedules_request_default_settings_billing_thresholds.dart';import 'post_subscription_schedules_request_default_settings_description.dart';import 'post_subscription_schedules_request_default_settings_invoice_settings.dart';import 'post_subscription_schedules_request_default_settings_on_behalf_of.dart';import 'post_subscription_schedules_request_default_settings_transfer_data.dart';import 'transfer_data_specs5.dart';@immutable final class PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor {const PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_default_settings_automatic_tax.dart';import 'post_subscription_schedules_request_default_settings_billing_thresholds.dart';import 'post_subscription_schedules_request_default_settings_description.dart';import 'post_subscription_schedules_request_default_settings_invoice_settings.dart';import 'post_subscription_schedules_request_default_settings_on_behalf_of.dart';import 'post_subscription_schedules_request_default_settings_transfer_data.dart';@immutable final class PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor {const PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor._(this.value);
 
 factory PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
@@ -55,13 +55,13 @@ factory PostSubscriptionSchedulesRequestDefaultSettings.fromJson(Map<String, dyn
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: json['automatic_tax'] != null ? PostSubscriptionSchedulesRequestDefaultSettingsAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostSubscriptionSchedulesRequestDefaultSettingsBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
-  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => BillingThresholdsParam4.fromJson(v as Map<String, dynamic>), fromB: (v) => PostSubscriptionSchedulesRequestDefaultSettingsBillingThresholdsVariant2.fromJson(v as String),) : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionSchedulesRequestDefaultSettingsBillingThresholds.fromJson(json['billing_thresholds']) : null,
   collectionMethod: json['collection_method'] != null ? PostSubscriptionSchedulesRequestDefaultSettingsCollectionMethod.fromJson(json['collection_method'] as String) : null,
   defaultPaymentMethod: json['default_payment_method'] as String?,
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostSubscriptionSchedulesRequestDefaultSettingsDescriptionVariant2.fromJson(v as String),) : null,
+  description: json['description'] != null ? PostSubscriptionSchedulesRequestDefaultSettingsDescription.fromJson(json['description']) : null,
   invoiceSettings: json['invoice_settings'] != null ? PostSubscriptionSchedulesRequestDefaultSettingsInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
-  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => PostSubscriptionSchedulesRequestDefaultSettingsOnBehalfOfVariant2.fromJson(v as String),) : null,
-  transferData: json['transfer_data'] != null ? OneOf2.parse(json['transfer_data'], fromA: (v) => TransferDataSpecs5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostSubscriptionSchedulesRequestDefaultSettingsTransferDataVariant2.fromJson(v as String),) : null,
+  onBehalfOf: json['on_behalf_of'] != null ? PostSubscriptionSchedulesRequestDefaultSettingsOnBehalfOf.fromJson(json['on_behalf_of']) : null,
+  transferData: json['transfer_data'] != null ? PostSubscriptionSchedulesRequestDefaultSettingsTransferData.fromJson(json['transfer_data']) : null,
 ); }
 
 final double? applicationFeePercent;

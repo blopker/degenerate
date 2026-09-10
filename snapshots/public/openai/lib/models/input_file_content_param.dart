@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InputFileContentParamType($value)'; } 
  }
 /// A file input to the model.
-@immutable final class InputFileContentParam {const InputFileContentParam({this.type = InputFileContentParamType.inputFile, this.fileId = const Omittable.absent(), this.filename = const Omittable.absent(), this.fileData = const Omittable.absent(), this.fileUrl = const Omittable.absent(), this.detail, });
+@immutable final class InputFileContentParam {const InputFileContentParam({required this.type, this.fileId = const Omittable.absent(), this.filename = const Omittable.absent(), this.fileData = const Omittable.absent(), this.fileUrl = const Omittable.absent(), this.detail, });
 
 factory InputFileContentParam.fromJson(Map<String, dynamic> json) { return InputFileContentParam(
   type: InputFileContentParamType.fromJson(json['type'] as String),

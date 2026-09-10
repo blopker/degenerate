@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Timestamp of the last time Cloudflare was able to successfully dispatch a notification using this webhook.
+extension type AaaLastSuccess(DateTime value) {
+factory AaaLastSuccess.fromJson(String json) => AaaLastSuccess(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}

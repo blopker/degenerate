@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CreateEmbeddingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CreateEmbeddingResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

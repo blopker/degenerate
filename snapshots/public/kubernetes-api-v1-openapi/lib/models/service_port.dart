@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'io_k8s_apimachinery_pkg_util_intstr_int_or_string.dart';/// ServicePort contains information on service's port.
-@immutable final class ServicePort {const ServicePort({this.appProtocol, this.name, this.nodePort, this.port = 0, this.protocol = 'TCP', this.targetPort, });
+@immutable final class ServicePort {const ServicePort({required this.port, this.appProtocol, this.name, this.nodePort, this.protocol, this.targetPort, });
 
 factory ServicePort.fromJson(Map<String, dynamic> json) { return ServicePort(
   appProtocol: json['appProtocol'] as String?,
   name: json['name'] as String?,
   nodePort: json['nodePort'] != null ? (json['nodePort'] as num).toInt() : null,
   port: (json['port'] as num).toInt(),
-  protocol: json.containsKey('protocol') ? json['protocol'] as String : 'TCP',
+  protocol: json['protocol'] as String?,
   targetPort: json['targetPort'] != null ? OneOf2.parse(json['targetPort'], fromA: (v) => (v as num).toInt(), fromB: (v) => v as String,) : null,
 ); }
 
@@ -34,21 +34,23 @@ final int? nodePort;
 final int port;
 
 /// The IP protocol for this port. Supports "TCP", "UDP", and "SCTP". Default is TCP.
-final String protocol;
+final String? protocol;
 
 /// Number or name of the port to access on the pods targeted by the service. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. If this is a string, it will be looked up as a named port in the target Pod's container ports. If this is not specified, the value of the 'port' field is used (an identity map). This field is ignored for services with clusterIP=None, and should be omitted or set equal to the 'port' field. More info: https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
 final IoK8sApimachineryPkgUtilIntstrIntOrString? targetPort;
 
+/// The value with the schema default applied when absent.
+String get protocolOrDefault { return protocol ?? 'TCP'; } 
 Map<String, dynamic> toJson() { return {
   'appProtocol': ?appProtocol,
   'name': ?name,
   'nodePort': ?nodePort,
   'port': port,
-  'protocol': protocol,
+  'protocol': ?protocol,
   if (targetPort != null) 'targetPort': targetPort?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') && json['port'] is num; } 
-ServicePort copyWith({String? Function()? appProtocol, String? Function()? name, int? Function()? nodePort, int? port, String Function()? protocol, IoK8sApimachineryPkgUtilIntstrIntOrString? Function()? targetPort, }) { return ServicePort(
+ServicePort copyWith({String? Function()? appProtocol, String? Function()? name, int? Function()? nodePort, int? port, String? Function()? protocol, IoK8sApimachineryPkgUtilIntstrIntOrString? Function()? targetPort, }) { return ServicePort(
   appProtocol: appProtocol != null ? appProtocol() : this.appProtocol,
   name: name != null ? name() : this.name,
   nodePort: nodePort != null ? nodePort() : this.nodePort,

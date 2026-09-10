@@ -4,25 +4,28 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 
 @immutable
 final class PassStickEvent {
-  const PassStickEvent({this.type = 'pass_stick'});
+  const PassStickEvent({this.type});
 
   factory PassStickEvent.fromJson(Map<String, dynamic> json) {
-    return PassStickEvent(
-      type: json.containsKey('type') ? json['type'] as String : 'pass_stick',
-    );
+    return PassStickEvent(type: json['type'] as String?);
   }
 
-  final String type;
+  final String? type;
+
+  /// The value with the schema default applied when absent.
+  String get typeOrDefault {
+    return type ?? 'pass_stick';
+  }
 
   Map<String, dynamic> toJson() {
-    return {'type': type};
+    return {'type': ?type};
   }
 
   static bool canParse(Map<String, dynamic> json) {
     return json.keys.any((key) => const {'type'}.contains(key));
   }
 
-  PassStickEvent copyWith({String Function()? type}) {
+  PassStickEvent copyWith({String? Function()? type}) {
     return PassStickEvent(type: type != null ? type() : this.type);
   }
 

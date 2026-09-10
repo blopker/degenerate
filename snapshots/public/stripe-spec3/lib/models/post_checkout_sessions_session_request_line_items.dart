@@ -5,11 +5,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkou
 factory PostCheckoutSessionsSessionRequestLineItems.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequestLineItems(
   adjustableQuantity: json['adjustable_quantity'] != null ? PostCheckoutSessionsSessionRequestLineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   id: json['id'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostCheckoutSessionsSessionRequestLineItemsMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostCheckoutSessionsSessionRequestLineItemsMetadata.fromJson(json['metadata']) : null,
   price: json['price'] as String?,
   priceData: json['price_data'] != null ? PostCheckoutSessionsSessionRequestLineItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostCheckoutSessionsSessionRequestLineItemsTaxRatesVariant2.fromJson(v as String),) : null,
+  taxRates: json['tax_rates'] != null ? PostCheckoutSessionsSessionRequestLineItemsTaxRates.fromJson(json['tax_rates']) : null,
 ); }
 
 final PostCheckoutSessionsSessionRequestLineItemsAdjustableQuantity? adjustableQuantity;

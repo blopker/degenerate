@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_ai_post_run_cf_deepgram_aura1_request.dart';import '../models/workers_ai_post_run_cf_deepgram_aura1_response400.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_en_request.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_en_response400.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_es_request.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_es_response400.dart';import '../models/workers_ai_post_run_cf_myshell_ai_melotts_request.dart';import '../models/workers_ai_post_run_cf_myshell_ai_melotts_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura1_internal_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura1_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura2_en_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura2_es_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura2_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura_response400.dart';/// WorkersAiTextToSpeechApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_ai_post_run_cf_deepgram_aura1_request.dart';import '../models/workers_ai_post_run_cf_deepgram_aura1_response400.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_en_request.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_en_response400.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_es_request.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_es_response400.dart';import '../models/workers_ai_post_run_cf_myshell_ai_melotts_request.dart';import '../models/workers_ai_post_run_cf_myshell_ai_melotts_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura1_internal_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura1_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura2_en_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura2_es_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura2_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura_response400.dart';/// WorkersAiTextToSpeechApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -26,7 +26,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramAuraResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostWebsocketRunCfDeepgramAuraResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -48,7 +55,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramAura1Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostWebsocketRunCfDeepgramAura1Response400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -57,7 +71,7 @@ return execute(
 /// Runs inference on the @cf/deepgram/aura-1 model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-1`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura1Response400>> workersAiPostRunCfDeepgramAura1({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura1Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<OneOf2<Map<String, dynamic>, Uint8List>, WorkersAiPostRunCfDeepgramAura1Response400>> workersAiPostRunCfDeepgramAura1({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura1Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -82,10 +96,28 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<Map<String, dynamic>, Uint8List>.a(json as Map<String, dynamic>);
+}
+if (responseMediaTypeMatches(contentType, 'audio/mpeg')) {
+final value = (() { return Uint8List.fromList(response.bodyBytes); })();
+return OneOf2<Map<String, dynamic>, Uint8List>.b(value);
+}
+final json = jsonDecode(response.body);
+return OneOf2<Map<String, dynamic>, Uint8List>.a(json as Map<String, dynamic>);
+
   },
   onError: (response) {
-    return WorkersAiPostRunCfDeepgramAura1Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostRunCfDeepgramAura1Response400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -107,7 +139,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramAura1InternalResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostWebsocketRunCfDeepgramAura1InternalResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -129,7 +168,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramAura2Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostWebsocketRunCfDeepgramAura2Response400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -151,7 +197,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -160,7 +213,7 @@ return execute(
 /// Runs inference on the @cf/deepgram/aura-2-en model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-en`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura2EnResponse400>> workersAiPostRunCfDeepgramAura2En({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<OneOf2<Map<String, dynamic>, Uint8List>, WorkersAiPostRunCfDeepgramAura2EnResponse400>> workersAiPostRunCfDeepgramAura2En({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -185,10 +238,28 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<Map<String, dynamic>, Uint8List>.a(json as Map<String, dynamic>);
+}
+if (responseMediaTypeMatches(contentType, 'audio/mpeg')) {
+final value = (() { return Uint8List.fromList(response.bodyBytes); })();
+return OneOf2<Map<String, dynamic>, Uint8List>.b(value);
+}
+final json = jsonDecode(response.body);
+return OneOf2<Map<String, dynamic>, Uint8List>.a(json as Map<String, dynamic>);
+
   },
   onError: (response) {
-    return WorkersAiPostRunCfDeepgramAura2EnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostRunCfDeepgramAura2EnResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -210,7 +281,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -219,7 +297,7 @@ return execute(
 /// Runs inference on the @cf/deepgram/aura-2-es model.
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-es`
-Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura2EsResponse400>> workersAiPostRunCfDeepgramAura2Es({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<OneOf2<Map<String, dynamic>, Uint8List>, WorkersAiPostRunCfDeepgramAura2EsResponse400>> workersAiPostRunCfDeepgramAura2Es({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (queueRequest != null) {
   queryParameters['queueRequest'] = queueRequest;
@@ -244,10 +322,28 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<Map<String, dynamic>, Uint8List>.a(json as Map<String, dynamic>);
+}
+if (responseMediaTypeMatches(contentType, 'audio/mpeg')) {
+final value = (() { return Uint8List.fromList(response.bodyBytes); })();
+return OneOf2<Map<String, dynamic>, Uint8List>.b(value);
+}
+final json = jsonDecode(response.body);
+return OneOf2<Map<String, dynamic>, Uint8List>.a(json as Map<String, dynamic>);
+
   },
   onError: (response) {
-    return WorkersAiPostRunCfDeepgramAura2EsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostRunCfDeepgramAura2EsResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -281,10 +377,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return WorkersAiPostRunCfMyshellAiMelottsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostRunCfMyshellAiMelottsResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

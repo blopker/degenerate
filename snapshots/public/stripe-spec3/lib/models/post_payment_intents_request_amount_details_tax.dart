@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsRequestAmountDetailsTaxVariant2($value)'; } 
  }
-typedef PostPaymentIntentsRequestAmountDetailsTax = OneOf2<AmountDetailsTaxParam,PostPaymentIntentsRequestAmountDetailsTaxVariant2>;
+
+@immutable
+final class PostPaymentIntentsRequestAmountDetailsTax {
+  const PostPaymentIntentsRequestAmountDetailsTax({this.amountDetailsTaxParam = const Omittable.absent(),
+this.postPaymentIntentsRequestAmountDetailsTaxVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsRequestAmountDetailsTax._({required this.rawValue, required this.amountDetailsTaxParam,
+required this.postPaymentIntentsRequestAmountDetailsTaxVariant2,});
+  factory PostPaymentIntentsRequestAmountDetailsTax.fromJson(Object? json) => PostPaymentIntentsRequestAmountDetailsTax._(
+    rawValue: Omittable(json),
+    amountDetailsTaxParam: parseAnyOfVariant<AmountDetailsTaxParam>(json, (value) => AmountDetailsTaxParam.fromJson(value! as Map<String, dynamic>)),
+postPaymentIntentsRequestAmountDetailsTaxVariant2: parseAnyOfVariant<PostPaymentIntentsRequestAmountDetailsTaxVariant2>(json, (value) => PostPaymentIntentsRequestAmountDetailsTaxVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<AmountDetailsTaxParam> amountDetailsTaxParam;
+final Omittable<PostPaymentIntentsRequestAmountDetailsTaxVariant2> postPaymentIntentsRequestAmountDetailsTaxVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => amountDetailsTaxParam.isPresent || postPaymentIntentsRequestAmountDetailsTaxVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (amountDetailsTaxParam.isPresent) amountDetailsTaxParam.value?.toJson(),
+if (postPaymentIntentsRequestAmountDetailsTaxVariant2.isPresent) postPaymentIntentsRequestAmountDetailsTaxVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsRequestAmountDetailsTax && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsRequestAmountDetailsTax(${toJson()})';
+}

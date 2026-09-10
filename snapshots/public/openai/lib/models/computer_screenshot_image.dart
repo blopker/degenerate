@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A computer screenshot image used with the computer use tool.
 /// 
-@immutable final class ComputerScreenshotImage {const ComputerScreenshotImage({this.type = ComputerScreenshotImageType.computerScreenshot, this.imageUrl, this.fileId, });
+@immutable final class ComputerScreenshotImage {const ComputerScreenshotImage({required this.type, this.imageUrl, this.fileId, });
 
 factory ComputerScreenshotImage.fromJson(Map<String, dynamic> json) { return ComputerScreenshotImage(
   type: ComputerScreenshotImageType.fromJson(json['type'] as String),

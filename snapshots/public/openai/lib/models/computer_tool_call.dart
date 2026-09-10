@@ -33,7 +33,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A tool call to a computer use tool. See the
 /// [computer use guide](/docs/guides/tools-computer-use) for more information.
 /// 
-@immutable final class ComputerToolCall {const ComputerToolCall({required this.id, required this.callId, required this.pendingSafetyChecks, required this.status, this.type = 'computer_call', this.action, this.actions, });
+@immutable final class ComputerToolCall {const ComputerToolCall({required this.type, required this.id, required this.callId, required this.pendingSafetyChecks, required this.status, this.action, this.actions, });
 
 factory ComputerToolCall.fromJson(Map<String, dynamic> json) { return ComputerToolCall(
   type: json['type'] as String,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/shield_credentials.dart';import '../models/shield_identifier.dart';import '../models/shield_token_configuration.dart';import '../models/shield_uuid.dart';import '../models/token_validation_config_create_request.dart';import '../models/token_validation_config_credentials_update_response.dart';import '../models/token_validation_config_delete_response_result.dart';import '../models/token_validation_config_edit_request.dart';import '../models/token_validation_config_edit_response_result.dart';/// TokenValidationTokenConfigurationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure7.dart';import '../models/shield_credentials.dart';import '../models/shield_identifier.dart';import '../models/shield_token_configuration.dart';import '../models/shield_uuid.dart';import '../models/token_validation_config_create_request.dart';import '../models/token_validation_config_credentials_update_response.dart';import '../models/token_validation_config_delete_response_result.dart';import '../models/token_validation_config_edit_request.dart';import '../models/token_validation_config_edit_response_result.dart';/// TokenValidationTokenConfigurationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class TokenValidationTokenConfigurationApi with ApiExecutor {const TokenVa
 /// Lists all token validation configurations for this zone
 ///
 /// `GET /zones/{zone_id}/token_validation/config`
-Future<ApiResult<List<ShieldTokenConfiguration>, Never>> tokenValidationConfigList({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldTokenConfiguration>, ResponseCommonFailure7>> tokenValidationConfigList({required ShieldIdentifier zoneId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -36,15 +36,25 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => ShieldTokenConfiguration.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => ShieldTokenConfiguration.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
 /// Create a new Token Validation configuration
 ///
 /// `POST /zones/{zone_id}/token_validation/config`
-Future<ApiResult<ShieldTokenConfiguration, Never>> tokenValidationConfigCreate({required ShieldIdentifier zoneId, required TokenValidationConfigCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldTokenConfiguration, ResponseCommonFailure7>> tokenValidationConfigCreate({required ShieldIdentifier zoneId, required TokenValidationConfigCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,15 +68,25 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return ShieldTokenConfiguration.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return ShieldTokenConfiguration.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
 /// Get a single Token Configuration
 ///
 /// `GET /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<ShieldTokenConfiguration, Never>> tokenValidationConfigGet({required ShieldIdentifier zoneId, required ShieldUuid configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldTokenConfiguration, ResponseCommonFailure7>> tokenValidationConfigGet({required ShieldIdentifier zoneId, required ShieldUuid configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -78,8 +98,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return ShieldTokenConfiguration.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return ShieldTokenConfiguration.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -88,7 +118,7 @@ return execute(
 /// Edit fields of an existing Token Configuration
 ///
 /// `PATCH /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<TokenValidationConfigEditResponseResult, Never>> tokenValidationConfigEdit({required ShieldIdentifier zoneId, required ShieldUuid configId, required TokenValidationConfigEditRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TokenValidationConfigEditResponseResult, ResponseCommonFailure7>> tokenValidationConfigEdit({required ShieldIdentifier zoneId, required ShieldUuid configId, required TokenValidationConfigEditRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,15 +132,25 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TokenValidationConfigEditResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TokenValidationConfigEditResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
 /// Delete Token Configuration
 ///
 /// `DELETE /zones/{zone_id}/token_validation/config/{config_id}`
-Future<ApiResult<TokenValidationConfigDeleteResponseResult, Never>> tokenValidationConfigDelete({required ShieldIdentifier zoneId, required ShieldUuid configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TokenValidationConfigDeleteResponseResult, ResponseCommonFailure7>> tokenValidationConfigDelete({required ShieldIdentifier zoneId, required ShieldUuid configId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -122,15 +162,25 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TokenValidationConfigDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TokenValidationConfigDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
 /// Update Token Configuration credentials
 ///
 /// `PUT /zones/{zone_id}/token_validation/config/{config_id}/credentials`
-Future<ApiResult<TokenValidationConfigCredentialsUpdateResponse, Never>> tokenValidationConfigCredentialsUpdate({required ShieldIdentifier zoneId, required ShieldUuid configId, required ShieldCredentials body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TokenValidationConfigCredentialsUpdateResponse, ResponseCommonFailure7>> tokenValidationConfigCredentialsUpdate({required ShieldIdentifier zoneId, required ShieldUuid configId, required ShieldCredentials body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -144,7 +194,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return TokenValidationConfigCredentialsUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return TokenValidationConfigCredentialsUpdateResponse.fromJson(json as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

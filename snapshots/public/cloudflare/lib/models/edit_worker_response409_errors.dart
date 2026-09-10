@@ -4,6 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_erro
 
 /// Deserialize from JSON, dispatching on the `code` discriminator.
 factory EditWorkerResponse409Errors.fromJson(Map<String, dynamic> json) { return switch (json['code']) {
+  'workers_ErrorWorkerNameConflict' => EditWorkerResponse409ErrorsWorkersErrorWorkerNameConflict.fromJson(json),
   '10040' => EditWorkerResponse409Errors10040.fromJson(json),
   _ => EditWorkerResponse409Errors$Unknown(json),
 }; }
@@ -13,6 +14,19 @@ String get code;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is EditWorkerResponse409Errors$Unknown; } 
+ }
+@immutable final class EditWorkerResponse409ErrorsWorkersErrorWorkerNameConflict extends EditWorkerResponse409Errors {const EditWorkerResponse409ErrorsWorkersErrorWorkerNameConflict(this.workersErrorWorkerNameConflict);
+
+factory EditWorkerResponse409ErrorsWorkersErrorWorkerNameConflict.fromJson(Map<String, dynamic> json) { return EditWorkerResponse409ErrorsWorkersErrorWorkerNameConflict(WorkersErrorWorkerNameConflict.fromJson(json)); }
+
+final WorkersErrorWorkerNameConflict workersErrorWorkerNameConflict;
+
+@override String get code { return 'workers_ErrorWorkerNameConflict'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorWorkerNameConflict.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is EditWorkerResponse409ErrorsWorkersErrorWorkerNameConflict && workersErrorWorkerNameConflict == other.workersErrorWorkerNameConflict; } 
+@override int get hashCode { return workersErrorWorkerNameConflict.hashCode; } 
+@override String toString() { return 'EditWorkerResponse409ErrorsWorkersErrorWorkerNameConflict(workersErrorWorkerNameConflict: $workersErrorWorkerNameConflict)'; } 
  }
 @immutable final class EditWorkerResponse409Errors10040 extends EditWorkerResponse409Errors {const EditWorkerResponse409Errors10040(this.workersErrorWorkerNameConflict);
 

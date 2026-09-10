@@ -23,7 +23,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountTranscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountTranscription.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -73,7 +74,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListTranscriptionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListTranscriptionResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

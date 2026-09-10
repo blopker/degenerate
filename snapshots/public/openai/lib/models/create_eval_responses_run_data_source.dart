@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A ResponsesRunDataSource object describing a model sampling configuration.
 /// 
-@immutable final class CreateEvalResponsesRunDataSource {const CreateEvalResponsesRunDataSource({required this.source, this.type = CreateEvalResponsesRunDataSourceType.responses, this.inputMessages, this.samplingParams, this.model, });
+@immutable final class CreateEvalResponsesRunDataSource {const CreateEvalResponsesRunDataSource({required this.type, required this.source, this.inputMessages, this.samplingParams, this.model, });
 
 factory CreateEvalResponsesRunDataSource.fromJson(Map<String, dynamic> json) { return CreateEvalResponsesRunDataSource(
   type: CreateEvalResponsesRunDataSourceType.fromJson(json['type'] as String),

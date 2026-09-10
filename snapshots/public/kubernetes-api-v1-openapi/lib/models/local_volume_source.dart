@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Local represents directly-attached storage with node affinity
-@immutable final class LocalVolumeSource {const LocalVolumeSource({this.fsType, this.path = '', });
+@immutable final class LocalVolumeSource {const LocalVolumeSource({required this.path, this.fsType, });
 
 factory LocalVolumeSource.fromJson(Map<String, dynamic> json) { return LocalVolumeSource(
   fsType: json['fsType'] as String?,

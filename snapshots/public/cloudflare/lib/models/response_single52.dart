@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'response_sin
 factory ResponseSingle52.fromJson(Map<String, dynamic> json) { return ResponseSingle52(
   errors: (json['errors'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => VectorizeMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,) : null,
+  result: json['result'] != null ? ResponseSingle52Result.fromJson(json['result']) : null,
   success: json['success'] as bool,
 ); }
 

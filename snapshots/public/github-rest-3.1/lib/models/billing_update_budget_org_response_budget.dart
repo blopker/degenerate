@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BillingUpdateBudgetOrgResponseBudgetBudgetType($value)'; } 
  }
-@immutable final class BillingUpdateBudgetOrgResponseBudget {const BillingUpdateBudgetOrgResponseBudget({this.id, this.budgetAmount, this.preventFurtherUsage, this.budgetAlerting, this.budgetScope, this.budgetEntityName = '', this.budgetType, this.budgetProductSku, });
+@immutable final class BillingUpdateBudgetOrgResponseBudget {const BillingUpdateBudgetOrgResponseBudget({this.id, this.budgetAmount, this.preventFurtherUsage, this.budgetAlerting, this.budgetScope, this.budgetEntityName, this.budgetType, this.budgetProductSku, });
 
 factory BillingUpdateBudgetOrgResponseBudget.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgResponseBudget(
   id: json['id'] as String?,
@@ -64,7 +64,7 @@ factory BillingUpdateBudgetOrgResponseBudget.fromJson(Map<String, dynamic> json)
   preventFurtherUsage: json['prevent_further_usage'] as bool?,
   budgetAlerting: json['budget_alerting'] != null ? BillingUpdateBudgetOrgResponseBudgetBudgetAlerting.fromJson(json['budget_alerting'] as Map<String, dynamic>) : null,
   budgetScope: json['budget_scope'] != null ? BillingUpdateBudgetOrgResponseBudgetBudgetScope.fromJson(json['budget_scope'] as String) : null,
-  budgetEntityName: json.containsKey('budget_entity_name') ? json['budget_entity_name'] as String : '',
+  budgetEntityName: json['budget_entity_name'] as String?,
   budgetType: json['budget_type'] != null ? BillingUpdateBudgetOrgResponseBudgetBudgetType.fromJson(json['budget_type'] as String) : null,
   budgetProductSku: json['budget_product_sku'] as String?,
 ); }
@@ -84,7 +84,7 @@ final BillingUpdateBudgetOrgResponseBudgetBudgetAlerting? budgetAlerting;
 final BillingUpdateBudgetOrgResponseBudgetBudgetScope? budgetScope;
 
 /// The name of the entity to apply the budget to
-final String budgetEntityName;
+final String? budgetEntityName;
 
 /// The type of pricing for the budget
 final BillingUpdateBudgetOrgResponseBudgetBudgetType? budgetType;
@@ -92,18 +92,20 @@ final BillingUpdateBudgetOrgResponseBudgetBudgetType? budgetType;
 /// A single product or SKU that will be covered in the budget
 final String? budgetProductSku;
 
+/// The value with the schema default applied when absent.
+String get budgetEntityNameOrDefault { return budgetEntityName ?? ''; } 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
   'budget_amount': ?budgetAmount,
   'prevent_further_usage': ?preventFurtherUsage,
   if (budgetAlerting != null) 'budget_alerting': budgetAlerting?.toJson(),
   if (budgetScope != null) 'budget_scope': budgetScope?.toJson(),
-  'budget_entity_name': budgetEntityName,
+  'budget_entity_name': ?budgetEntityName,
   if (budgetType != null) 'budget_type': budgetType?.toJson(),
   'budget_product_sku': ?budgetProductSku,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'budget_amount', 'prevent_further_usage', 'budget_alerting', 'budget_scope', 'budget_entity_name', 'budget_type', 'budget_product_sku'}.contains(key)); } 
-BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? Function()? budgetAmount, bool? Function()? preventFurtherUsage, BillingUpdateBudgetOrgResponseBudgetBudgetAlerting? Function()? budgetAlerting, BillingUpdateBudgetOrgResponseBudgetBudgetScope? Function()? budgetScope, String Function()? budgetEntityName, BillingUpdateBudgetOrgResponseBudgetBudgetType? Function()? budgetType, String? Function()? budgetProductSku, }) { return BillingUpdateBudgetOrgResponseBudget(
+BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? Function()? budgetAmount, bool? Function()? preventFurtherUsage, BillingUpdateBudgetOrgResponseBudgetBudgetAlerting? Function()? budgetAlerting, BillingUpdateBudgetOrgResponseBudgetBudgetScope? Function()? budgetScope, String? Function()? budgetEntityName, BillingUpdateBudgetOrgResponseBudgetBudgetType? Function()? budgetType, String? Function()? budgetProductSku, }) { return BillingUpdateBudgetOrgResponseBudget(
   id: id != null ? id() : this.id,
   budgetAmount: budgetAmount != null ? budgetAmount() : this.budgetAmount,
   preventFurtherUsage: preventFurtherUsage != null ? preventFurtherUsage() : this.preventFurtherUsage,

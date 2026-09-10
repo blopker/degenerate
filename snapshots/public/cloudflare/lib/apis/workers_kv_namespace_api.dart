@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_kv_any.dart';import '../models/workers_kv_bulk_get_result.dart';import '../models/workers_kv_bulk_get_result_with_metadata.dart';import '../models/workers_kv_bulk_result.dart';import '../models/workers_kv_bulk_write2.dart';import '../models/workers_kv_create_rename_namespace_body.dart';import '../models/workers_kv_expiration.dart';import '../models/workers_kv_expiration_ttl.dart';import '../models/workers_kv_identifier.dart';import '../models/workers_kv_key.dart';import '../models/workers_kv_key_name.dart';import '../models/workers_kv_key_name_bulk.dart';import '../models/workers_kv_namespace.dart';import '../models/workers_kv_namespace_get_multiple_key_value_pairs_request.dart';import '../models/workers_kv_namespace_get_multiple_key_value_pairs_response_result.dart';import '../models/workers_kv_namespace_identifier.dart';import '../models/workers_kv_namespace_list_namespaces_direction.dart';import '../models/workers_kv_namespace_list_namespaces_order.dart';import '../models/workers_kv_namespace_write_key_value_pair_with_metadata_request.dart';import '../models/workers_kv_value.dart';/// WorkersKvNamespaceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure81.dart';import '../models/workers_kv_any.dart';import '../models/workers_kv_bulk_get_result.dart';import '../models/workers_kv_bulk_get_result_with_metadata.dart';import '../models/workers_kv_bulk_result.dart';import '../models/workers_kv_bulk_write2.dart';import '../models/workers_kv_create_rename_namespace_body.dart';import '../models/workers_kv_expiration.dart';import '../models/workers_kv_expiration_ttl.dart';import '../models/workers_kv_identifier.dart';import '../models/workers_kv_key.dart';import '../models/workers_kv_key_name.dart';import '../models/workers_kv_key_name_bulk.dart';import '../models/workers_kv_namespace.dart';import '../models/workers_kv_namespace_delete_multiple_key_value_pairs_response4_xx.dart';import '../models/workers_kv_namespace_get_multiple_key_value_pairs_request.dart';import '../models/workers_kv_namespace_get_multiple_key_value_pairs_response_result.dart';import '../models/workers_kv_namespace_identifier.dart';import '../models/workers_kv_namespace_list_namespaces_direction.dart';import '../models/workers_kv_namespace_list_namespaces_order.dart';import '../models/workers_kv_namespace_write_key_value_pair_with_metadata_request.dart';import '../models/workers_kv_namespace_write_multiple_key_value_pairs_response4_xx.dart';import '../models/workers_kv_value.dart';/// WorkersKvNamespaceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkersKvNamespaceApi with ApiExecutor {const WorkersKvNamespaceApi(
 /// Returns the namespaces owned by an account.
 ///
 /// `GET /accounts/{account_id}/storage/kv/namespaces`
-Future<ApiResult<List<WorkersKvNamespace>?, Never>> workersKvNamespaceListNamespaces({required WorkersKvIdentifier accountId, double? page, double? perPage, WorkersKvNamespaceListNamespacesOrder? order, WorkersKvNamespaceListNamespacesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersKvNamespace>?, ResponseCommonFailure81>> workersKvNamespaceListNamespaces({required WorkersKvIdentifier accountId, double? page, double? perPage, WorkersKvNamespaceListNamespacesOrder? order, WorkersKvNamespaceListNamespacesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -42,8 +42,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => WorkersKvNamespace.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>?)?.map((e) => WorkersKvNamespace.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure81.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -52,7 +62,7 @@ return execute(
 /// Creates a namespace under the given title. A `400` is returned if the account already owns a namespace with this title. A namespace must be explicitly deleted to be replaced.
 ///
 /// `POST /accounts/{account_id}/storage/kv/namespaces`
-Future<ApiResult<WorkersKvNamespace?, Never>> workersKvNamespaceCreateANamespace({required WorkersKvIdentifier accountId, required WorkersKvCreateRenameNamespaceBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersKvNamespace?, ResponseCommonFailure81>> workersKvNamespaceCreateANamespace({required WorkersKvIdentifier accountId, required WorkersKvCreateRenameNamespaceBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,8 +76,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersKvNamespace.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? WorkersKvNamespace.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure81.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -76,7 +96,7 @@ return execute(
 /// Get the namespace corresponding to the given ID.
 ///
 /// `GET /accounts/{account_id}/storage/kv/namespaces/{namespace_id}`
-Future<ApiResult<WorkersKvNamespace?, Never>> workersKvNamespaceGetANamespace({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersKvNamespace?, ResponseCommonFailure81>> workersKvNamespaceGetANamespace({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -88,8 +108,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersKvNamespace.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? WorkersKvNamespace.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure81.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -98,7 +128,7 @@ return execute(
 /// Modifies a namespace's title.
 ///
 /// `PUT /accounts/{account_id}/storage/kv/namespaces/{namespace_id}`
-Future<ApiResult<WorkersKvNamespace, Never>> workersKvNamespaceRenameANamespace({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required WorkersKvCreateRenameNamespaceBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersKvNamespace, ResponseCommonFailure81>> workersKvNamespaceRenameANamespace({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required WorkersKvCreateRenameNamespaceBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -112,8 +142,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return WorkersKvNamespace.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return WorkersKvNamespace.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure81.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -122,7 +162,7 @@ return execute(
 /// Deletes the namespace corresponding to the given ID.
 ///
 /// `DELETE /accounts/{account_id}/storage/kv/namespaces/{namespace_id}`
-Future<ApiResult<Map<String, dynamic>?, Never>> workersKvNamespaceRemoveANamespace({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure81>> workersKvNamespaceRemoveANamespace({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -134,8 +174,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] as Map<String, dynamic>?;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure81.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -144,7 +194,7 @@ return execute(
 /// Write multiple keys and values at once. Body should be an array of up to 10,000 key-value pairs to be stored, along with optional expiration information. Existing values and expirations will be overwritten. If neither `expiration` nor `expiration_ttl` is specified, the key-value pair will never expire. If both are set, `expiration_ttl` is used and `expiration` is ignored. The entire request size must be 100 megabytes or less.
 ///
 /// `PUT /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/bulk`
-Future<ApiResult<WorkersKvBulkResult?, Never>> workersKvNamespaceWriteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvBulkWrite2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersKvBulkResult?, WorkersKvNamespaceWriteMultipleKeyValuePairsResponse4Xx>> workersKvNamespaceWriteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvBulkWrite2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -158,8 +208,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersKvBulkResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? WorkersKvBulkResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return WorkersKvNamespaceWriteMultipleKeyValuePairsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -168,7 +228,7 @@ return execute(
 /// Remove multiple KV pairs from the namespace. Body should be an array of up to 10,000 keys to be removed.
 ///
 /// `POST /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/bulk/delete`
-Future<ApiResult<WorkersKvBulkResult?, Never>> workersKvNamespaceDeleteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvKeyNameBulk> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersKvBulkResult?, WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse4Xx>> workersKvNamespaceDeleteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvKeyNameBulk> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -182,8 +242,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersKvBulkResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? WorkersKvBulkResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -192,7 +262,7 @@ return execute(
 /// Retrieve up to 100 KV pairs from the namespace. Keys must contain text-based values. JSON values can optionally be parsed instead of being returned as a string value. Metadata can be included if `withMetadata` is true.
 ///
 /// `POST /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/bulk/get`
-Future<ApiResult<WorkersKvNamespaceGetMultipleKeyValuePairsResponseResult?, Never>> workersKvNamespaceGetMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required WorkersKvNamespaceGetMultipleKeyValuePairsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersKvNamespaceGetMultipleKeyValuePairsResponseResult?, ResponseCommonFailure81>> workersKvNamespaceGetMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required WorkersKvNamespaceGetMultipleKeyValuePairsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -206,8 +276,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => WorkersKvBulkGetResult.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersKvBulkGetResultWithMetadata.fromJson(v as Map<String, dynamic>),) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => WorkersKvBulkGetResult.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersKvBulkGetResultWithMetadata.fromJson(v as Map<String, dynamic>),) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure81.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -216,7 +296,7 @@ return execute(
 /// Lists a namespace's keys.
 ///
 /// `GET /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/keys`
-Future<ApiResult<List<WorkersKvKey>?, Never>> workersKvNamespaceListANamespaceSKeys({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, double? limit, String? prefix, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersKvKey>?, ResponseCommonFailure81>> workersKvNamespaceListANamespaceSKeys({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, double? limit, String? prefix, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -242,8 +322,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => WorkersKvKey.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>?)?.map((e) => WorkersKvKey.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure81.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -252,7 +342,7 @@ return execute(
 /// Returns the metadata associated with the given key in the given namespace. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name.
 ///
 /// `GET /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/metadata/{key_name}`
-Future<ApiResult<WorkersKvAny?, Never>> workersKvNamespaceReadTheMetadataForAKey({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersKvAny?, ResponseCommonFailure81>> workersKvNamespaceReadTheMetadataForAKey({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -264,8 +354,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? WorkersKvAny.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? WorkersKvAny.fromJson(json['result']) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure81.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -274,7 +374,7 @@ return execute(
 /// Returns the value associated with the given key in the given namespace. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name. If the KV-pair is set to expire at some point, the expiration time as measured in seconds since the UNIX epoch will be returned in the `expiration` response header.
 ///
 /// `GET /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}`
-Future<ApiResult<WorkersKvValue, Never>> workersKvNamespaceReadKeyValuePair({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersKvValue, ResponseCommonFailure81>> workersKvNamespaceReadKeyValuePair({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -286,8 +386,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    // TODO: Unsupported non-JSON response schema Cannot decode application/octet-stream response into WorkersKvValue
+// TODO: Unsupported non-JSON response schema Cannot decode application/octet-stream response into WorkersKvValue
 throw UnsupportedError('Cannot decode application/octet-stream response into WorkersKvValue');
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure81.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -296,7 +406,7 @@ throw UnsupportedError('Cannot decode application/octet-stream response into Wor
 /// Write a value identified by a key. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name. Body should be the value to be stored. If JSON metadata to be associated with the key/value pair is needed, use `multipart/form-data` content type for your PUT request (see dropdown below in `REQUEST BODY SCHEMA`). Existing values, expirations, and metadata will be overwritten. If neither `expiration` nor `expiration_ttl` is specified, the key-value pair will never expire. If both are set, `expiration_ttl` is used and `expiration` is ignored.
 ///
 /// `PUT /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}`
-Future<ApiResult<Map<String, dynamic>?, Never>> workersKvNamespaceWriteKeyValuePairWithMetadata({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest body, WorkersKvExpiration? expiration, WorkersKvExpirationTtl? expirationTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure81>> workersKvNamespaceWriteKeyValuePairWithMetadata({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest body, WorkersKvExpiration? expiration, WorkersKvExpirationTtl? expirationTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (expiration != null) {
   queryParameters['expiration'] = expiration.toString();
@@ -314,7 +424,7 @@ final request = ApiRequest(
   queryParameters: queryParameters,
   queryParametersList: queryParametersList,
   body: [
-    if (body.metadata case final metadata$?)
+    if (body.metadata.value case final metadata$?)
       ApiMultipartField.text('metadata', metadata$.toString()),
     ApiMultipartField.text('value', body.value.toString()),
   ],
@@ -325,8 +435,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] as Map<String, dynamic>?;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure81.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -335,7 +455,7 @@ return execute(
 /// Remove a KV pair from the namespace. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name.
 ///
 /// `DELETE /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key_name}`
-Future<ApiResult<Map<String, dynamic>?, Never>> workersKvNamespaceDeleteKeyValuePair({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ResponseCommonFailure81>> workersKvNamespaceDeleteKeyValuePair({required WorkersKvKeyName keyName, required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -347,8 +467,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] as Map<String, dynamic>?;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure81.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

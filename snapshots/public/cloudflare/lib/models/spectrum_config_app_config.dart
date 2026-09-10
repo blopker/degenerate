@@ -1,112 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_config_dns.dart';import 'spectrum_config_edge_ips.dart';import 'spectrum_config_edge_ips_dynamic.dart';import 'spectrum_config_edge_ips_static.dart';import 'spectrum_config_identifier.dart';import 'spectrum_config_origin_dns.dart';import 'spectrum_config_origin_port.dart';import 'spectrum_config_protocol.dart';import 'spectrum_config_timestamp.dart';/// Enables Argo Smart Routing for this application.
-/// Notes: Only available for TCP applications with traffic_type set to "direct".
-extension type const SpectrumConfigArgoSmartRouting(bool value) {
-factory SpectrumConfigArgoSmartRouting.fromJson(bool json) => SpectrumConfigArgoSmartRouting(json);
-
-bool toJson() => value;
-
-}
-/// Enables IP Access Rules for this application.
-/// Notes: Only available for TCP applications.
-extension type const SpectrumConfigIpFirewall(bool value) {
-factory SpectrumConfigIpFirewall.fromJson(bool json) => SpectrumConfigIpFirewall(json);
-
-bool toJson() => value;
-
-}
-/// Enables Proxy Protocol to the origin. Refer to [Enable Proxy protocol](https://developers.cloudflare.com/spectrum/getting-started/proxy-protocol/) for implementation details on PROXY Protocol V1, PROXY Protocol V2, and Simple Proxy Protocol.
-@immutable final class SpectrumConfigProxyProtocol {const SpectrumConfigProxyProtocol._(this.value);
-
-factory SpectrumConfigProxyProtocol.fromJson(String json) { return switch (json) {
-  'off' => off,
-  'v1' => v1,
-  'v2' => v2,
-  'simple' => simple,
-  _ => SpectrumConfigProxyProtocol._(json),
-}; }
-
-static const SpectrumConfigProxyProtocol off = SpectrumConfigProxyProtocol._('off');
-
-static const SpectrumConfigProxyProtocol v1 = SpectrumConfigProxyProtocol._('v1');
-
-static const SpectrumConfigProxyProtocol v2 = SpectrumConfigProxyProtocol._('v2');
-
-static const SpectrumConfigProxyProtocol simple = SpectrumConfigProxyProtocol._('simple');
-
-static const List<SpectrumConfigProxyProtocol> values = [off, v1, v2, simple];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumConfigProxyProtocol && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumConfigProxyProtocol($value)'; } 
- }
-/// The type of TLS termination associated with the application.
-@immutable final class SpectrumConfigTls {const SpectrumConfigTls._(this.value);
-
-factory SpectrumConfigTls.fromJson(String json) { return switch (json) {
-  'off' => off,
-  'flexible' => flexible,
-  'full' => full,
-  'strict' => strict,
-  _ => SpectrumConfigTls._(json),
-}; }
-
-static const SpectrumConfigTls off = SpectrumConfigTls._('off');
-
-static const SpectrumConfigTls flexible = SpectrumConfigTls._('flexible');
-
-static const SpectrumConfigTls full = SpectrumConfigTls._('full');
-
-static const SpectrumConfigTls strict = SpectrumConfigTls._('strict');
-
-static const List<SpectrumConfigTls> values = [off, flexible, full, strict];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumConfigTls && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumConfigTls($value)'; } 
- }
-/// Determines how data travels from the edge to your origin. When set to "direct", Spectrum will send traffic directly to your origin, and the application's type is derived from the `protocol`. When set to "http" or "https", Spectrum will apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly.
-@immutable final class SpectrumConfigTrafficType {const SpectrumConfigTrafficType._(this.value);
-
-factory SpectrumConfigTrafficType.fromJson(String json) { return switch (json) {
-  'direct' => direct,
-  'http' => http,
-  'https' => https,
-  _ => SpectrumConfigTrafficType._(json),
-}; }
-
-static const SpectrumConfigTrafficType direct = SpectrumConfigTrafficType._('direct');
-
-static const SpectrumConfigTrafficType http = SpectrumConfigTrafficType._('http');
-
-static const SpectrumConfigTrafficType https = SpectrumConfigTrafficType._('https');
-
-static const List<SpectrumConfigTrafficType> values = [direct, http, https];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumConfigTrafficType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumConfigTrafficType($value)'; } 
- }
-@immutable final class SpectrumConfigAppConfig {const SpectrumConfigAppConfig({required this.createdOn, required this.id, required this.modifiedOn, required this.dns, required this.protocol, required this.trafficType, this.argoSmartRouting, this.edgeIps, this.ipFirewall, this.originDirect, this.originDns, this.originPort, this.proxyProtocol, this.tls, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_config_argo_smart_routing.dart';import 'spectrum_config_dns.dart';import 'spectrum_config_edge_ips.dart';import 'spectrum_config_edge_ips_dynamic.dart';import 'spectrum_config_edge_ips_static.dart';import 'spectrum_config_identifier.dart';import 'spectrum_config_ip_firewall.dart';import 'spectrum_config_origin_dns.dart';import 'spectrum_config_origin_port.dart';import 'spectrum_config_protocol.dart';import 'spectrum_config_proxy_protocol.dart';import 'spectrum_config_timestamp.dart';import 'spectrum_config_tls.dart';import 'spectrum_config_traffic_type.dart';@immutable final class SpectrumConfigAppConfig {const SpectrumConfigAppConfig({required this.createdOn, required this.id, required this.modifiedOn, required this.dns, required this.protocol, required this.trafficType, this.argoSmartRouting, this.edgeIps, this.ipFirewall, this.originDirect, this.originDns, this.originPort, this.proxyProtocol, this.tls, });
 
 factory SpectrumConfigAppConfig.fromJson(Map<String, dynamic> json) { return SpectrumConfigAppConfig(
   createdOn: SpectrumConfigTimestamp.fromJson(json['created_on'] as String),
@@ -118,7 +12,7 @@ factory SpectrumConfigAppConfig.fromJson(Map<String, dynamic> json) { return Spe
   ipFirewall: json['ip_firewall'] != null ? SpectrumConfigIpFirewall.fromJson(json['ip_firewall'] as bool) : null,
   originDirect: (json['origin_direct'] as List<dynamic>?)?.map((e) => e as String).toList(),
   originDns: json['origin_dns'] != null ? SpectrumConfigOriginDns.fromJson(json['origin_dns'] as Map<String, dynamic>) : null,
-  originPort: json['origin_port'] != null ? OneOf2.parse(json['origin_port'], fromA: (v) => (v as num).toInt(), fromB: (v) => v as String,) : null,
+  originPort: json['origin_port'] != null ? SpectrumConfigOriginPort.fromJson(json['origin_port']) : null,
   protocol: SpectrumConfigProtocol.fromJson(json['protocol'] as String),
   proxyProtocol: json['proxy_protocol'] != null ? SpectrumConfigProxyProtocol.fromJson(json['proxy_protocol'] as String) : null,
   tls: json['tls'] != null ? SpectrumConfigTls.fromJson(json['tls'] as String) : null,

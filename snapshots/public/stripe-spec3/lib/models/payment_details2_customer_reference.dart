@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentDetails2CustomerReferenceVariant2($value)'; } 
  }
-typedef PaymentDetails2CustomerReference = OneOf2<String,PaymentDetails2CustomerReferenceVariant2>;
+
+@immutable
+final class PaymentDetails2CustomerReference {
+  const PaymentDetails2CustomerReference({this.string = const Omittable.absent(),
+this.paymentDetails2CustomerReferenceVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PaymentDetails2CustomerReference._({required this.rawValue, required this.string,
+required this.paymentDetails2CustomerReferenceVariant2,});
+  factory PaymentDetails2CustomerReference.fromJson(Object? json) => PaymentDetails2CustomerReference._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+paymentDetails2CustomerReferenceVariant2: parseAnyOfVariant<PaymentDetails2CustomerReferenceVariant2>(json, (value) => PaymentDetails2CustomerReferenceVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PaymentDetails2CustomerReferenceVariant2> paymentDetails2CustomerReferenceVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || paymentDetails2CustomerReferenceVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (paymentDetails2CustomerReferenceVariant2.isPresent) paymentDetails2CustomerReferenceVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PaymentDetails2CustomerReference && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PaymentDetails2CustomerReference(${toJson()})';
+}

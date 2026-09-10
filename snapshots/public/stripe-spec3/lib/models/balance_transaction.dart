@@ -230,7 +230,7 @@ factory BalanceTransaction.fromJson(Map<String, dynamic> json) { return BalanceT
   net: (json['net'] as num).toInt(),
   object: BalanceTransactionObject.fromJson(json['object'] as String),
   reportingCategory: json['reporting_category'] as String,
-  source: json.containsKey('source') ? Omittable(json['source'] != null ? BalanceTransactionSource.fromJson(json['source'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  source: json.containsKey('source') ? Omittable(json['source'] != null ? BalanceTransactionSource.fromJson(json['source']) : null) : const Omittable.absent(),
   status: json['status'] as String,
   type: BalanceTransactionType.fromJson(json['type'] as String),
 ); }

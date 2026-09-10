@@ -49,9 +49,8 @@ final class DefaultApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return FcmTokenResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return FcmTokenResponseSchema.fromJson(json as Map<String, dynamic>);
       },
     );
   }
@@ -96,9 +95,8 @@ final class DefaultApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return OnboardSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return OnboardSchema.fromJson(json as Map<String, dynamic>);
       },
     );
   }
@@ -124,9 +122,8 @@ final class DefaultApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return OnboardSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return OnboardSchema.fromJson(json as Map<String, dynamic>);
       },
     );
   }
@@ -155,14 +152,17 @@ final class DefaultApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return MessageResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return MessageResponse.fromJson(json as Map<String, dynamic>);
       },
       onError: (response) {
-        return ErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 429:
+            final json = jsonDecode(response.body);
+            return ErrorResponse.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -190,14 +190,17 @@ final class DefaultApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return TokenResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return TokenResponse.fromJson(json as Map<String, dynamic>);
       },
       onError: (response) {
-        return ErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 429:
+            final json = jsonDecode(response.body);
+            return ErrorResponse.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -225,14 +228,17 @@ final class DefaultApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return TokenResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return TokenResponse.fromJson(json as Map<String, dynamic>);
       },
       onError: (response) {
-        return ErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 429:
+            final json = jsonDecode(response.body);
+            return ErrorResponse.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -260,14 +266,17 @@ final class DefaultApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return MessageResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return MessageResponse.fromJson(json as Map<String, dynamic>);
       },
       onError: (response) {
-        return ErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400:
+            final json = jsonDecode(response.body);
+            return ErrorResponse.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }

@@ -54,9 +54,8 @@ final class BlogApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return PagedBlogPostListSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return PagedBlogPostListSchema.fromJson(json as Map<String, dynamic>);
       },
     );
   }
@@ -80,9 +79,8 @@ final class BlogApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return BlogPostSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return BlogPostSchema.fromJson(json as Map<String, dynamic>);
       },
     );
   }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_billing_thresholds_param5.dart';import 'post_subscription_items_request_billing_thresholds.dart';import 'post_subscription_items_request_discounts.dart';import 'post_subscription_items_request_discounts_variant1.dart';import 'post_subscription_items_request_price_data.dart';import 'post_subscription_items_request_tax_rates.dart';/// Use `allow_incomplete` to transition the subscription to `status=past_due` if a payment is required but cannot be paid. This allows you to manage scenarios where additional user actions are needed to pay a subscription's invoice. For example, SCA regulation may require 3DS authentication to complete payment. See the [SCA Migration Guide](https://docs.stripe.com/billing/migration/strong-customer-authentication) for Billing to learn more. This is the default behavior.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_items_request_billing_thresholds.dart';import 'post_subscription_items_request_discounts.dart';import 'post_subscription_items_request_price_data.dart';import 'post_subscription_items_request_tax_rates.dart';/// Use `allow_incomplete` to transition the subscription to `status=past_due` if a payment is required but cannot be paid. This allows you to manage scenarios where additional user actions are needed to pay a subscription's invoice. For example, SCA regulation may require 3DS authentication to complete payment. See the [SCA Migration Guide](https://docs.stripe.com/billing/migration/strong-customer-authentication) for Billing to learn more. This is the default behavior.
 /// 
 /// Use `default_incomplete` to transition the subscription to `status=past_due` when payment is required and await explicit confirmation of the invoice's payment intent. This allows simpler management of scenarios where additional user actions are needed to pay a subscription’s invoice. Such as failed payments, [SCA regulation](https://docs.stripe.com/billing/migration/strong-customer-authentication), or collecting a mandate for a bank debit payment method.
 /// 
@@ -68,8 +68,8 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostSubscriptionItemsRequest {const PostSubscriptionItemsRequest({required this.subscription, this.billingThresholds, this.discounts, this.expand, this.metadata, this.paymentBehavior, this.price, this.priceData, this.prorationBehavior, this.prorationDate, this.quantity, this.taxRates, });
 
 factory PostSubscriptionItemsRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionItemsRequest(
-  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => ItemBillingThresholdsParam5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostSubscriptionItemsRequestBillingThresholdsVariant2.fromJson(v as String),) : null,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostSubscriptionItemsRequestDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostSubscriptionItemsRequestDiscountsVariant2.fromJson(v as String),) : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionItemsRequestBillingThresholds.fromJson(json['billing_thresholds']) : null,
+  discounts: json['discounts'] != null ? PostSubscriptionItemsRequestDiscounts.fromJson(json['discounts']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   paymentBehavior: json['payment_behavior'] != null ? PostSubscriptionItemsRequestPaymentBehavior.fromJson(json['payment_behavior'] as String) : null,
@@ -79,7 +79,7 @@ factory PostSubscriptionItemsRequest.fromJson(Map<String, dynamic> json) { retur
   prorationDate: json['proration_date'] != null ? (json['proration_date'] as num).toInt() : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   subscription: json['subscription'] as String,
-  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostSubscriptionItemsRequestTaxRatesVariant2.fromJson(v as String),) : null,
+  taxRates: json['tax_rates'] != null ? PostSubscriptionItemsRequestTaxRates.fromJson(json['tax_rates']) : null,
 ); }
 
 /// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period. Pass an empty string to remove previously-defined thresholds.

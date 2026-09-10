@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft.dart';import 'customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_refunded_from_payment_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_transferred_to_balance.dart';import 'customer_balance_resource_cash_balance_transaction_resource_unapplied_from_payment_transaction.dart';import 'customer_cash_balance_transaction_customer.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_resource_cash_balance_transaction_resource_adjusted_for_overdraft.dart';import 'customer_balance_resource_cash_balance_transaction_resource_applied_to_payment_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_funded_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_refunded_from_payment_transaction.dart';import 'customer_balance_resource_cash_balance_transaction_resource_transferred_to_balance.dart';import 'customer_balance_resource_cash_balance_transaction_resource_unapplied_from_payment_transaction.dart';import 'customer_cash_balance_transaction_customer.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CustomerCashBalanceTransactionObject {const CustomerCashBalanceTransactionObject._(this.value);
 
 factory CustomerCashBalanceTransactionObject.fromJson(String json) { return switch (json) {
@@ -79,7 +79,7 @@ factory CustomerCashBalanceTransaction.fromJson(Map<String, dynamic> json) { ret
   appliedToPayment: json['applied_to_payment'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction.fromJson(json['applied_to_payment'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  customer: OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),),
+  customer: CustomerCashBalanceTransactionCustomer.fromJson(json['customer']),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   endingBalance: (json['ending_balance'] as num).toInt(),
   funded: json['funded'] != null ? CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction.fromJson(json['funded'] as Map<String, dynamic>) : null,

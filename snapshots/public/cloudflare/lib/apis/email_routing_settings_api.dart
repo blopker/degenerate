@@ -25,8 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -55,7 +55,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => EmailEmailRoutingDnsQueryResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);
+final json = jsonDecode(response.body);
+return OneOf2.parse(json, fromA: (v) => EmailEmailRoutingDnsQueryResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 
@@ -78,8 +79,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -102,8 +103,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
 );
  } 
@@ -126,7 +127,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon30.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);
+final json = jsonDecode(response.body);
+return OneOf2.parse(json, fromA: (v) => ResponseCommon30.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 

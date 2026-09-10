@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeResponseCreateParamsOutputModalities($value)'; } 
  }
 /// Create a new Realtime response with these parameters
-@immutable final class RealtimeResponseCreateParams {const RealtimeResponseCreateParams({this.outputModalities, this.instructions, this.audio, this.tools, this.toolChoice, this.maxOutputTokens, this.conversation, this.metadata = const Omittable.absent(), this.prompt, this.input, });
+@immutable final class RealtimeResponseCreateParams {const RealtimeResponseCreateParams({this.outputModalities, this.instructions, this.audio, this.tools, this.toolChoice, this.maxOutputTokens, this.conversation, this.metadata = const Omittable.absent(), this.prompt = const Omittable.absent(), this.input, });
 
 factory RealtimeResponseCreateParams.fromJson(Map<String, dynamic> json) { return RealtimeResponseCreateParams(
   outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => RealtimeResponseCreateParamsOutputModalities.fromJson(e as String)).toList(),
@@ -36,7 +36,7 @@ factory RealtimeResponseCreateParams.fromJson(Map<String, dynamic> json) { retur
   maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeResponseCreateParamsMaxOutputTokensVariant2.fromJson(v as String),) : null,
   conversation: json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => RealtimeResponseCreateParamsConversationVariant2.fromJson(v as String),) : null,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
-  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
+  prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   input: (json['input'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
@@ -86,7 +86,7 @@ final RealtimeResponseCreateParamsConversation? conversation;
 /// 
 final Omittable<Map<String,String>?> metadata;
 
-final Prompt? prompt;
+final Omittable<Prompt?> prompt;
 
 /// Input items to include in the prompt for the model. Using this field
 /// creates a new context for this Response instead of using the default
@@ -105,11 +105,11 @@ Map<String, dynamic> toJson() { return {
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
   if (conversation != null) 'conversation': conversation?.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
-  if (prompt != null) 'prompt': prompt?.toJson(),
+  if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
   if (input != null) 'input': input?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'output_modalities', 'instructions', 'audio', 'tools', 'tool_choice', 'max_output_tokens', 'conversation', 'metadata', 'prompt', 'input'}.contains(key)); } 
-RealtimeResponseCreateParams copyWith({List<RealtimeResponseCreateParamsOutputModalities>? Function()? outputModalities, String? Function()? instructions, RealtimeResponseCreateParamsAudio? Function()? audio, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeResponseCreateParamsToolChoice? Function()? toolChoice, RealtimeResponseCreateParamsMaxOutputTokens? Function()? maxOutputTokens, RealtimeResponseCreateParamsConversation? Function()? conversation, Omittable<Map<String,String>?>? metadata, Prompt? Function()? prompt, List<RealtimeConversationItem>? Function()? input, }) { return RealtimeResponseCreateParams(
+RealtimeResponseCreateParams copyWith({List<RealtimeResponseCreateParamsOutputModalities>? Function()? outputModalities, String? Function()? instructions, RealtimeResponseCreateParamsAudio? Function()? audio, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeResponseCreateParamsToolChoice? Function()? toolChoice, RealtimeResponseCreateParamsMaxOutputTokens? Function()? maxOutputTokens, RealtimeResponseCreateParamsConversation? Function()? conversation, Omittable<Map<String,String>?>? metadata, Omittable<Prompt?>? prompt, List<RealtimeConversationItem>? Function()? input, }) { return RealtimeResponseCreateParams(
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,
   instructions: instructions != null ? instructions() : this.instructions,
   audio: audio != null ? audio() : this.audio,
@@ -118,7 +118,7 @@ RealtimeResponseCreateParams copyWith({List<RealtimeResponseCreateParamsOutputMo
   maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
   conversation: conversation != null ? conversation() : this.conversation,
   metadata: metadata ?? this.metadata,
-  prompt: prompt != null ? prompt() : this.prompt,
+  prompt: prompt ?? this.prompt,
   input: input != null ? input() : this.input,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

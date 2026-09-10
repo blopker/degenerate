@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoice
 factory PostInvoicesRequestShippingDetails.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestShippingDetails(
   address: PostInvoicesRequestShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
-  phone: json['phone'] != null ? OneOf2.parse(json['phone'], fromA: (v) => v as String, fromB: (v) => PostInvoicesRequestShippingDetailsPhoneVariant2.fromJson(v as String),) : null,
+  phone: json['phone'] != null ? PostInvoicesRequestShippingDetailsPhone.fromJson(json['phone']) : null,
 ); }
 
 final PostInvoicesRequestShippingDetailsAddress address;

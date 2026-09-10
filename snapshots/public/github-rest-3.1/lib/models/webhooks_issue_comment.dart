@@ -54,7 +54,7 @@ factory WebhooksIssueComment.fromJson(Map<String, dynamic> json) { return Webhoo
   id: (json['id'] as num).toInt(),
   issueUrl: Uri.parse(json['issue_url'] as String),
   nodeId: json['node_id'] as String,
-  performedViaGithubApp: Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>),
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
   reactions: WebhooksIssueCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>),
   updatedAt: DateTime.parse(json['updated_at'] as String),
   url: Uri.parse(json['url'] as String),
@@ -79,7 +79,7 @@ final Uri issueUrl;
 
 final String nodeId;
 
-final Integration performedViaGithubApp;
+final Integration? performedViaGithubApp;
 
 final WebhooksIssueCommentReactions reactions;
 
@@ -100,7 +100,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'issue_url': issueUrl.toString(),
   'node_id': nodeId,
-  'performed_via_github_app': performedViaGithubApp.toJson(),
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
   'reactions': reactions.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
@@ -119,7 +119,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhooksIssueComment copyWith({WebhooksIssueCommentAuthorAssociation? authorAssociation, String? body, DateTime? createdAt, Uri? htmlUrl, int? id, Uri? issueUrl, String? nodeId, Integration? performedViaGithubApp, WebhooksIssueCommentReactions? reactions, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, Omittable<PinnedIssueComment?>? pin, }) { return WebhooksIssueComment(
+WebhooksIssueComment copyWith({WebhooksIssueCommentAuthorAssociation? authorAssociation, String? body, DateTime? createdAt, Uri? htmlUrl, int? id, Uri? issueUrl, String? nodeId, Integration? Function()? performedViaGithubApp, WebhooksIssueCommentReactions? reactions, DateTime? updatedAt, Uri? url, WebhooksIssueCommentUser? Function()? user, Omittable<PinnedIssueComment?>? pin, }) { return WebhooksIssueComment(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   createdAt: createdAt ?? this.createdAt,
@@ -127,7 +127,7 @@ WebhooksIssueComment copyWith({WebhooksIssueCommentAuthorAssociation? authorAsso
   id: id ?? this.id,
   issueUrl: issueUrl ?? this.issueUrl,
   nodeId: nodeId ?? this.nodeId,
-  performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
+  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   reactions: reactions ?? this.reactions,
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,

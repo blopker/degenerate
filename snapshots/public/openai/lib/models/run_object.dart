@@ -69,7 +69,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RunObjectStatus($value)'; } 
  }
 /// Represents an execution run on a [thread](/docs/api-reference/threads).
-@immutable final class RunObject {const RunObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.assistantId, required this.status, required this.requiredAction, required this.lastError, required this.expiresAt, required this.startedAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.incompleteDetails, required this.model, required this.instructions, required this.metadata, required this.usage, required this.maxPromptTokens, required this.maxCompletionTokens, required this.truncationStrategy, required this.toolChoice, required this.parallelToolCalls, required this.responseFormat, this.tools = const [], this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), });
+@immutable final class RunObject {const RunObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.assistantId, required this.status, required this.requiredAction, required this.lastError, required this.expiresAt, required this.startedAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.incompleteDetails, required this.model, required this.instructions, required this.tools, required this.metadata, required this.usage, required this.maxPromptTokens, required this.maxCompletionTokens, required this.truncationStrategy, required this.toolChoice, required this.parallelToolCalls, required this.responseFormat, this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), });
 
 factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
   id: json['id'] as String,
@@ -90,7 +90,7 @@ factory RunObject.fromJson(Map<String, dynamic> json) { return RunObject(
   instructions: json['instructions'] as String,
   tools: (json['tools'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  usage: RunCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>),
+  usage: json['usage'] != null ? RunCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
   topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   maxPromptTokens: json['max_prompt_tokens'] != null ? (json['max_prompt_tokens'] as num).toInt() : null,
@@ -161,7 +161,7 @@ final List<RunObjectTools> tools;
 /// 
 final Map<String,String>? metadata;
 
-final RunCompletionUsage usage;
+final RunCompletionUsage? usage;
 
 /// The sampling temperature used for this run. If not set, defaults to 1.
 final Omittable<double?> temperature;
@@ -205,7 +205,7 @@ Map<String, dynamic> toJson() { return {
   'instructions': instructions,
   'tools': tools.map((e) => e.toJson()).toList(),
   'metadata': metadata,
-  'usage': usage.toJson(),
+  'usage': usage?.toJson(),
   if (temperature.isPresent) 'temperature': temperature.value,
   if (topP.isPresent) 'top_p': topP.value,
   'max_prompt_tokens': maxPromptTokens,
@@ -240,7 +240,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('tool_choice') &&
       json.containsKey('parallel_tool_calls') &&
       json.containsKey('response_format'); } 
-RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String? threadId, String? assistantId, RunObjectStatus? status, RunObjectRequiredAction? Function()? requiredAction, RunObjectLastError? Function()? lastError, int? Function()? expiresAt, int? Function()? startedAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, RunObjectIncompleteDetails? Function()? incompleteDetails, String? model, String? instructions, List<RunObjectTools>? tools, Map<String, String>? Function()? metadata, RunCompletionUsage? usage, Omittable<double?>? temperature, Omittable<double?>? topP, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) { return RunObject(
+RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String? threadId, String? assistantId, RunObjectStatus? status, RunObjectRequiredAction? Function()? requiredAction, RunObjectLastError? Function()? lastError, int? Function()? expiresAt, int? Function()? startedAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, RunObjectIncompleteDetails? Function()? incompleteDetails, String? model, String? instructions, List<RunObjectTools>? tools, Map<String, String>? Function()? metadata, RunCompletionUsage? Function()? usage, Omittable<double?>? temperature, Omittable<double?>? topP, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) { return RunObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -259,7 +259,7 @@ RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String?
   instructions: instructions ?? this.instructions,
   tools: tools ?? this.tools,
   metadata: metadata != null ? metadata() : this.metadata,
-  usage: usage ?? this.usage,
+  usage: usage != null ? usage() : this.usage,
   temperature: temperature ?? this.temperature,
   topP: topP ?? this.topP,
   maxPromptTokens: maxPromptTokens != null ? maxPromptTokens() : this.maxPromptTokens,

@@ -27,12 +27,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseType($value)'; } 
  }
-@immutable final class AiSearchListInstancesResponseResultSourceParamsWebCrawler {const AiSearchListInstancesResponseResultSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType = AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseType.sitemap, this.storeOptions, });
+@immutable final class AiSearchListInstancesResponseResultSourceParamsWebCrawler {const AiSearchListInstancesResponseResultSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType, this.storeOptions, });
 
 factory AiSearchListInstancesResponseResultSourceParamsWebCrawler.fromJson(Map<String, dynamic> json) { return AiSearchListInstancesResponseResultSourceParamsWebCrawler(
   crawlOptions: json['crawl_options'] != null ? AiSearchListInstancesResponseResultSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>) : null,
   parseOptions: json['parse_options'] != null ? AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions.fromJson(json['parse_options'] as Map<String, dynamic>) : null,
-  parseType: json.containsKey('parse_type') ? AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseType.fromJson(json['parse_type'] as String) : AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseType.sitemap,
+  parseType: json['parse_type'] != null ? AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseType.fromJson(json['parse_type'] as String) : null,
   storeOptions: json['store_options'] != null ? AiSearchListInstancesResponseResultSourceParamsWebCrawlerStoreOptions.fromJson(json['store_options'] as Map<String, dynamic>) : null,
 ); }
 
@@ -40,18 +40,20 @@ final AiSearchListInstancesResponseResultSourceParamsWebCrawlerCrawlOptions? cra
 
 final AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions? parseOptions;
 
-final AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseType parseType;
+final AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseType? parseType;
 
 final AiSearchListInstancesResponseResultSourceParamsWebCrawlerStoreOptions? storeOptions;
 
+/// The value with the schema default applied when absent.
+AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseType get parseTypeOrDefault { return parseType ?? AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseType.fromJson('sitemap'); } 
 Map<String, dynamic> toJson() { return {
   if (crawlOptions != null) 'crawl_options': crawlOptions?.toJson(),
   if (parseOptions != null) 'parse_options': parseOptions?.toJson(),
-  'parse_type': parseType.toJson(),
+  if (parseType != null) 'parse_type': parseType?.toJson(),
   if (storeOptions != null) 'store_options': storeOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'crawl_options', 'parse_options', 'parse_type', 'store_options'}.contains(key)); } 
-AiSearchListInstancesResponseResultSourceParamsWebCrawler copyWith({AiSearchListInstancesResponseResultSourceParamsWebCrawlerCrawlOptions? Function()? crawlOptions, AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions? Function()? parseOptions, AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseType Function()? parseType, AiSearchListInstancesResponseResultSourceParamsWebCrawlerStoreOptions? Function()? storeOptions, }) { return AiSearchListInstancesResponseResultSourceParamsWebCrawler(
+AiSearchListInstancesResponseResultSourceParamsWebCrawler copyWith({AiSearchListInstancesResponseResultSourceParamsWebCrawlerCrawlOptions? Function()? crawlOptions, AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions? Function()? parseOptions, AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseType? Function()? parseType, AiSearchListInstancesResponseResultSourceParamsWebCrawlerStoreOptions? Function()? storeOptions, }) { return AiSearchListInstancesResponseResultSourceParamsWebCrawler(
   crawlOptions: crawlOptions != null ? crawlOptions() : this.crawlOptions,
   parseOptions: parseOptions != null ? parseOptions() : this.parseOptions,
   parseType: parseType != null ? parseType() : this.parseType,

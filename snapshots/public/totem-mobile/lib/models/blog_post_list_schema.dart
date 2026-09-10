@@ -13,8 +13,8 @@ final class BlogPostListSchema {
     this.subtitle = const Omittable.absent(),
     this.datePublished,
     this.slug = const Omittable.absent(),
-    this.publish = false,
-    this.readTime = 1,
+    this.publish,
+    this.readTime,
     this.summary = const Omittable.absent(),
   });
 
@@ -42,10 +42,10 @@ final class BlogPostListSchema {
       slug: json.containsKey('slug')
           ? Omittable(json['slug'] as String?)
           : const Omittable.absent(),
-      publish: json.containsKey('publish') ? json['publish'] as bool : false,
-      readTime: json.containsKey('read_time')
+      publish: json['publish'] as bool?,
+      readTime: json['read_time'] != null
           ? (json['read_time'] as num).toInt()
-          : 1,
+          : null,
       summary: json.containsKey('summary')
           ? Omittable(json['summary'] as String?)
           : const Omittable.absent(),
@@ -64,13 +64,23 @@ final class BlogPostListSchema {
 
   final Omittable<String?> slug;
 
-  final bool publish;
+  final bool? publish;
 
   /// Estimated reading time in minutes (auto-calculated)
-  final int readTime;
+  final int? readTime;
 
   /// Short summary of the blog post to show in list pages. No Markdown allowed. Max 2000 characters.
   final Omittable<String?> summary;
+
+  /// The value with the schema default applied when absent.
+  bool get publishOrDefault {
+    return publish ?? false;
+  }
+
+  /// The value with the schema default applied when absent.
+  int get readTimeOrDefault {
+    return readTime ?? 1;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -81,8 +91,8 @@ final class BlogPostListSchema {
       if (datePublished != null)
         'date_published': datePublished?.toIso8601String(),
       if (slug.isPresent) 'slug': slug.value,
-      'publish': publish,
-      'read_time': readTime,
+      'publish': ?publish,
+      'read_time': ?readTime,
       if (summary.isPresent) 'summary': summary.value,
     };
   }
@@ -98,8 +108,8 @@ final class BlogPostListSchema {
     Omittable<String?>? subtitle,
     DateTime? Function()? datePublished,
     Omittable<String?>? slug,
-    bool Function()? publish,
-    int Function()? readTime,
+    bool? Function()? publish,
+    int? Function()? readTime,
     Omittable<String?>? summary,
   }) {
     return BlogPostListSchema(

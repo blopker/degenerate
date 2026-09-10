@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'external_account_payout_bank_account.dart';import 'post_accounts_request_bank_account.dart';import 'post_accounts_request_business_profile.dart';import 'post_accounts_request_capabilities.dart';import 'post_accounts_request_company.dart';import 'post_accounts_request_controller.dart';import 'post_accounts_request_documents.dart';import 'post_accounts_request_groups.dart';import 'post_accounts_request_individual.dart';import 'post_accounts_request_metadata.dart';import 'post_accounts_request_settings.dart';import 'post_accounts_request_tos_acceptance.dart';/// The business type. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_bank_account.dart';import 'post_accounts_request_business_profile.dart';import 'post_accounts_request_capabilities.dart';import 'post_accounts_request_company.dart';import 'post_accounts_request_controller.dart';import 'post_accounts_request_documents.dart';import 'post_accounts_request_groups.dart';import 'post_accounts_request_individual.dart';import 'post_accounts_request_metadata.dart';import 'post_accounts_request_settings.dart';import 'post_accounts_request_tos_acceptance.dart';/// The business type. Once you create an [Account Link](/api/account_links) or [Account Session](/api/account_sessions), this property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts.
 @immutable final class PostAccountsRequestBusinessType {const PostAccountsRequestBusinessType._(this.value);
 
 factory PostAccountsRequestBusinessType.fromJson(String json) { return switch (json) {
@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory PostAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsRequest(
   accountToken: json['account_token'] as String?,
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => ExternalAccountPayoutBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  bankAccount: json['bank_account'] != null ? PostAccountsRequestBankAccount.fromJson(json['bank_account']) : null,
   businessProfile: json['business_profile'] != null ? PostAccountsRequestBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>) : null,
   businessType: json['business_type'] != null ? PostAccountsRequestBusinessType.fromJson(json['business_type'] as String) : null,
   capabilities: json['capabilities'] != null ? PostAccountsRequestCapabilities.fromJson(json['capabilities'] as Map<String, dynamic>) : null,
@@ -77,7 +77,7 @@ factory PostAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAcc
   externalAccount: json['external_account'] as String?,
   groups: json['groups'] != null ? PostAccountsRequestGroups.fromJson(json['groups'] as Map<String, dynamic>) : null,
   individual: json['individual'] != null ? PostAccountsRequestIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostAccountsRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostAccountsRequestMetadata.fromJson(json['metadata']) : null,
   settings: json['settings'] != null ? PostAccountsRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
   tosAcceptance: json['tos_acceptance'] != null ? PostAccountsRequestTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
   type: json['type'] != null ? PostAccountsRequestType.fromJson(json['type'] as String) : null,

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';import 'deleted_tax_id.dart';import 'invoice_setting_checkout_rendering_options.dart';import 'invoice_setting_custom_field.dart';import 'payment_pages_checkout_session_invoice_settings_account_tax_ids.dart';import 'tax_id.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';import 'invoice_setting_checkout_rendering_options.dart';import 'invoice_setting_custom_field.dart';import 'payment_pages_checkout_session_invoice_settings_account_tax_ids.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionInvoiceSettings {const PaymentPagesCheckoutSessionInvoiceSettings({this.accountTaxIds = const Omittable.absent(), this.customFields = const Omittable.absent(), this.description = const Omittable.absent(), this.footer = const Omittable.absent(), this.issuer = const Omittable.absent(), this.metadata = const Omittable.absent(), this.renderingOptions = const Omittable.absent(), });
 
 factory PaymentPagesCheckoutSessionInvoiceSettings.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionInvoiceSettings(
-  accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedTaxId.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
+  accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map(PaymentPagesCheckoutSessionInvoiceSettingsAccountTaxIds.fromJson).toList()) : const Omittable.absent(),
   customFields: json.containsKey('custom_fields') ? Omittable((json['custom_fields'] as List<dynamic>?)?.map((e) => InvoiceSettingCustomField.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   footer: json.containsKey('footer') ? Omittable(json['footer'] as String?) : const Omittable.absent(),

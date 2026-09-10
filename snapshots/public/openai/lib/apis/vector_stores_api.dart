@@ -40,7 +40,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListVectorStoresResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListVectorStoresResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -61,7 +62,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return VectorStoreObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VectorStoreObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -80,7 +82,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return VectorStoreObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VectorStoreObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -101,7 +104,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return VectorStoreObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VectorStoreObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -120,7 +124,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteVectorStoreResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteVectorStoreResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -129,21 +134,22 @@ return execute(
 /// The maximum number of files in a single batch request is 2000.
 ///
 /// `POST /vector_stores/{vector_store_id}/file_batches`
-Future<ApiResult<VectorStoreFileBatchObject, Never>> createVectorStoreFileBatch({required String vectorStoreId, required CreateVectorStoreFileBatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<VectorStoreFileBatchObject, Never>> createVectorStoreFileBatch({required String vectorStoreId, required CreateVectorStoreFileBatchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/vector_stores/${Uri.encodeComponent(vectorStoreId)}/file_batches',
   headers: headers,
-  body: jsonEncode(body.toJson()),
+  body: jsonEncode(body?.toJson()),
   options: options,
 );
 
 return execute(
   request,
   onSuccess: (response) {
-    return VectorStoreFileBatchObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VectorStoreFileBatchObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -162,7 +168,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return VectorStoreFileBatchObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VectorStoreFileBatchObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -181,7 +188,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return VectorStoreFileBatchObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VectorStoreFileBatchObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -220,7 +228,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListVectorStoreFilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListVectorStoreFilesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -259,7 +268,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListVectorStoreFilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListVectorStoreFilesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -280,7 +290,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return VectorStoreFileObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VectorStoreFileObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -299,7 +310,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return VectorStoreFileObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VectorStoreFileObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -320,7 +332,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return VectorStoreFileObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VectorStoreFileObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -339,7 +352,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteVectorStoreFileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteVectorStoreFileResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -358,7 +372,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return VectorStoreFileContentResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VectorStoreFileContentResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -379,7 +394,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return VectorStoreSearchResultsPage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VectorStoreSearchResultsPage.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

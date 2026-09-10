@@ -40,7 +40,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListFilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListFilesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -83,7 +84,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OpenAiFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OpenAiFile.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -102,7 +104,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OpenAiFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OpenAiFile.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -121,7 +124,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteFileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteFileResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -140,7 +144,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return response.body;
+final json = jsonDecode(response.body);
+return json as String;
   },
 );
  } 

@@ -26,6 +26,6 @@ UpdateZoneSnippetRequest copyWith({UpdateZoneSnippetRequestMetadata? metadata, M
       other is UpdateZoneSnippetRequest &&
           metadata == other.metadata &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(metadata, Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(metadata, mapHash(additionalProperties)); } 
 @override String toString() { return 'UpdateZoneSnippetRequest(metadata: $metadata, additionalProperties: $additionalProperties)'; } 
  }

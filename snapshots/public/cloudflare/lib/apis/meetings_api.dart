@@ -45,7 +45,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetAllMeetingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetAllMeetingsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -68,7 +69,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -97,10 +99,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 500:
+final json = jsonDecode(response.body);
+return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -123,7 +133,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -146,10 +157,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RealtimekitGenericSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 500:
+final json = jsonDecode(response.body);
+return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -181,10 +200,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetMeetingParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetMeetingParticipantsResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 500:
+final json = jsonDecode(response.body);
+return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -207,10 +234,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AddParticipantResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AddParticipantResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 500:
+final json = jsonDecode(response.body);
+return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -231,10 +266,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetMeetingParticipantResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetMeetingParticipantResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 500:
+final json = jsonDecode(response.body);
+return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -257,10 +300,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return EditParticipantResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return EditParticipantResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 500:
+final json = jsonDecode(response.body);
+return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -281,10 +332,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteMeetingParticipantResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteMeetingParticipantResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 500:
+final json = jsonDecode(response.body);
+return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -305,10 +364,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RegenerateTokenResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RegenerateTokenResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 500:
+final json = jsonDecode(response.body);
+return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

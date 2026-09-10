@@ -25,11 +25,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => McnCatalogSync.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => McnCatalogSync.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return McnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -55,11 +62,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 409 || 422 || 500:
+final json = jsonDecode(response.body);
+return McnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -80,11 +94,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return McnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -107,11 +128,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 409 || 422 || 500:
+final json = jsonDecode(response.body);
+return McnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -134,11 +162,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return McnCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 409 || 422 || 500:
+final json = jsonDecode(response.body);
+return McnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -167,11 +202,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return McnDeletedCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return McnDeletedCatalogSync.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 409 || 500:
+final json = jsonDecode(response.body);
+return McnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -192,11 +234,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return McnPolicyResult.fromJson(json['result'] as String);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return McnPolicyResult.fromJson(json['result'] as String);
   },
   onError: (response) {
-    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 409 || 422 || 500:
+final json = jsonDecode(response.body);
+return McnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -225,11 +274,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => McnCatalogSyncsPrebuiltPolicy.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => McnCatalogSyncsPrebuiltPolicy.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 500:
+final json = jsonDecode(response.body);
+return McnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

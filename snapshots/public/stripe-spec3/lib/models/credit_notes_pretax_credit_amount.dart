@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_transaction.dart';import 'credit_notes_pretax_credit_amount_credit_balance_transaction.dart';import 'credit_notes_pretax_credit_amount_discount.dart';import 'deleted_discount.dart';import 'discount.dart';/// Type of the pretax credit amount referenced.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_notes_pretax_credit_amount_credit_balance_transaction.dart';import 'credit_notes_pretax_credit_amount_discount.dart';/// Type of the pretax credit amount referenced.
 @immutable final class CreditNotesPretaxCreditAmountType {const CreditNotesPretaxCreditAmountType._(this.value);
 
 factory CreditNotesPretaxCreditAmountType.fromJson(String json) { return switch (json) {
@@ -30,8 +30,8 @@ bool get isUnknown { return !values.contains(this); }
 
 factory CreditNotesPretaxCreditAmount.fromJson(Map<String, dynamic> json) { return CreditNotesPretaxCreditAmount(
   amount: (json['amount'] as num).toInt(),
-  creditBalanceTransaction: json['credit_balance_transaction'] != null ? OneOf2.parse(json['credit_balance_transaction'], fromA: (v) => v as String, fromB: (v) => BillingCreditBalanceTransaction.fromJson(v as Map<String, dynamic>),) : null,
-  discount: json['discount'] != null ? OneOf3.parse(json['discount'], fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedDiscount.fromJson(v as Map<String, dynamic>),) : null,
+  creditBalanceTransaction: json['credit_balance_transaction'] != null ? CreditNotesPretaxCreditAmountCreditBalanceTransaction.fromJson(json['credit_balance_transaction']) : null,
+  discount: json['discount'] != null ? CreditNotesPretaxCreditAmountDiscount.fromJson(json['discount']) : null,
   type: CreditNotesPretaxCreditAmountType.fromJson(json['type'] as String),
 ); }
 

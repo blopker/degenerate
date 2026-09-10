@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTokensRequestPersonRelationshipPercentOwnershipVariant2($value)'; } 
  }
-typedef PostTokensRequestPersonRelationshipPercentOwnership = OneOf2<double,PostTokensRequestPersonRelationshipPercentOwnershipVariant2>;
+
+@immutable
+final class PostTokensRequestPersonRelationshipPercentOwnership {
+  const PostTokensRequestPersonRelationshipPercentOwnership({this.$double = const Omittable.absent(),
+this.postTokensRequestPersonRelationshipPercentOwnershipVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTokensRequestPersonRelationshipPercentOwnership._({required this.rawValue, required this.$double,
+required this.postTokensRequestPersonRelationshipPercentOwnershipVariant2,});
+  factory PostTokensRequestPersonRelationshipPercentOwnership.fromJson(Object? json) => PostTokensRequestPersonRelationshipPercentOwnership._(
+    rawValue: Omittable(json),
+    $double: parseAnyOfVariant<double>(json, (value) => (value! as num).toDouble()),
+postTokensRequestPersonRelationshipPercentOwnershipVariant2: parseAnyOfVariant<PostTokensRequestPersonRelationshipPercentOwnershipVariant2>(json, (value) => PostTokensRequestPersonRelationshipPercentOwnershipVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<double> $double;
+final Omittable<PostTokensRequestPersonRelationshipPercentOwnershipVariant2> postTokensRequestPersonRelationshipPercentOwnershipVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $double.isPresent || postTokensRequestPersonRelationshipPercentOwnershipVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($double.isPresent) $double.value,
+if (postTokensRequestPersonRelationshipPercentOwnershipVariant2.isPresent) postTokensRequestPersonRelationshipPercentOwnershipVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTokensRequestPersonRelationshipPercentOwnership && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTokensRequestPersonRelationshipPercentOwnership(${toJson()})';
+}

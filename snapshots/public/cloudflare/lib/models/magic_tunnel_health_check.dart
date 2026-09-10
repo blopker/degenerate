@@ -78,40 +78,48 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MagicTunnelHealthCheckDirection($value)'; } 
  }
-@immutable final class MagicTunnelHealthCheck {const MagicTunnelHealthCheck({this.enabled = true, this.rate = MagicTunnelHealthCheckRate.mid, this.target, this.type = MagicTunnelHealthCheckType.reply, this.direction = MagicTunnelHealthCheckDirection.unidirectional, });
+@immutable final class MagicTunnelHealthCheck {const MagicTunnelHealthCheck({this.enabled, this.rate, this.target, this.type, this.direction, });
 
 factory MagicTunnelHealthCheck.fromJson(Map<String, dynamic> json) { return MagicTunnelHealthCheck(
-  enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
-  rate: json.containsKey('rate') ? MagicTunnelHealthCheckRate.fromJson(json['rate'] as String) : MagicTunnelHealthCheckRate.mid,
+  enabled: json['enabled'] as bool?,
+  rate: json['rate'] != null ? MagicTunnelHealthCheckRate.fromJson(json['rate'] as String) : null,
   target: json['target'] != null ? OneOf2.parse(json['target'], fromA: (v) => MagicHealthCheckTarget.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
-  type: json.containsKey('type') ? MagicTunnelHealthCheckType.fromJson(json['type'] as String) : MagicTunnelHealthCheckType.reply,
-  direction: json.containsKey('direction') ? MagicTunnelHealthCheckDirection.fromJson(json['direction'] as String) : MagicTunnelHealthCheckDirection.unidirectional,
+  type: json['type'] != null ? MagicTunnelHealthCheckType.fromJson(json['type'] as String) : null,
+  direction: json['direction'] != null ? MagicTunnelHealthCheckDirection.fromJson(json['direction'] as String) : null,
 ); }
 
 /// Determines whether to run healthchecks for a tunnel.
-final bool enabled;
+final bool? enabled;
 
 /// How frequent the health check is run. The default value is `mid`.
-final MagicTunnelHealthCheckRate rate;
+final MagicTunnelHealthCheckRate? rate;
 
 /// The destination address in a request type health check. After the healthcheck is decapsulated at the customer end of the tunnel, the ICMP echo will be forwarded to this address. This field defaults to `customer_gre_endpoint address`. This field is ignored for bidirectional healthchecks as the interface_address (not assigned to the Cloudflare side of the tunnel) is used as the target. Must be in object form if the x-magic-new-hc-target header is set to true and string form if x-magic-new-hc-target is absent or set to false.
 final MagicTunnelHealthCheckTarget? target;
 
 /// The type of healthcheck to run, reply or request. The default value is `reply`.
-final MagicTunnelHealthCheckType type;
+final MagicTunnelHealthCheckType? type;
 
 /// The direction of the flow of the healthcheck. Either unidirectional, where the probe comes to you via the tunnel and the result comes back to Cloudflare via the open Internet, or bidirectional where both the probe and result come and go via the tunnel.
-final MagicTunnelHealthCheckDirection direction;
+final MagicTunnelHealthCheckDirection? direction;
 
+/// The value with the schema default applied when absent.
+bool get enabledOrDefault { return enabled ?? true; } 
+/// The value with the schema default applied when absent.
+MagicTunnelHealthCheckRate get rateOrDefault { return rate ?? MagicTunnelHealthCheckRate.fromJson('mid'); } 
+/// The value with the schema default applied when absent.
+MagicTunnelHealthCheckType get typeOrDefault { return type ?? MagicTunnelHealthCheckType.fromJson('reply'); } 
+/// The value with the schema default applied when absent.
+MagicTunnelHealthCheckDirection get directionOrDefault { return direction ?? MagicTunnelHealthCheckDirection.fromJson('unidirectional'); } 
 Map<String, dynamic> toJson() { return {
-  'enabled': enabled,
-  'rate': rate.toJson(),
+  'enabled': ?enabled,
+  if (rate != null) 'rate': rate?.toJson(),
   if (target != null) 'target': target?.toJson(),
-  'type': type.toJson(),
-  'direction': direction.toJson(),
+  if (type != null) 'type': type?.toJson(),
+  if (direction != null) 'direction': direction?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'rate', 'target', 'type', 'direction'}.contains(key)); } 
-MagicTunnelHealthCheck copyWith({bool Function()? enabled, MagicTunnelHealthCheckRate Function()? rate, MagicTunnelHealthCheckTarget? Function()? target, MagicTunnelHealthCheckType Function()? type, MagicTunnelHealthCheckDirection Function()? direction, }) { return MagicTunnelHealthCheck(
+MagicTunnelHealthCheck copyWith({bool? Function()? enabled, MagicTunnelHealthCheckRate? Function()? rate, MagicTunnelHealthCheckTarget? Function()? target, MagicTunnelHealthCheckType? Function()? type, MagicTunnelHealthCheckDirection? Function()? direction, }) { return MagicTunnelHealthCheck(
   enabled: enabled != null ? enabled() : this.enabled,
   rate: rate != null ? rate() : this.rate,
   target: target != null ? target() : this.target,

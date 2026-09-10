@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UrlAnnotationType($value)'; } 
  }
 /// Annotation that references a URL.
-@immutable final class UrlAnnotation {const UrlAnnotation({required this.source, this.type = UrlAnnotationType.url, });
+@immutable final class UrlAnnotation {const UrlAnnotation({required this.type, required this.source, });
 
 factory UrlAnnotation.fromJson(Map<String, dynamic> json) { return UrlAnnotation(
   type: UrlAnnotationType.fromJson(json['type'] as String),

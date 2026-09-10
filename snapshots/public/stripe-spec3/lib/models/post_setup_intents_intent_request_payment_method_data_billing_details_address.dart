@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2($value)'; } 
  }
-typedef PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress = OneOf2<BillingDetailsAddress8,PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2>;
+
+@immutable
+final class PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress {
+  const PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress({this.billingDetailsAddress8 = const Omittable.absent(),
+this.postSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress._({required this.rawValue, required this.billingDetailsAddress8,
+required this.postSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2,});
+  factory PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress.fromJson(Object? json) => PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress._(
+    rawValue: Omittable(json),
+    billingDetailsAddress8: parseAnyOfVariant<BillingDetailsAddress8>(json, (value) => BillingDetailsAddress8.fromJson(value! as Map<String, dynamic>)),
+postSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2: parseAnyOfVariant<PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2>(json, (value) => PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<BillingDetailsAddress8> billingDetailsAddress8;
+final Omittable<PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2> postSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => billingDetailsAddress8.isPresent || postSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (billingDetailsAddress8.isPresent) billingDetailsAddress8.value?.toJson(),
+if (postSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2.isPresent) postSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddressVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSetupIntentsIntentRequestPaymentMethodDataBillingDetailsAddress(${toJson()})';
+}

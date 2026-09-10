@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2($value)'; } 
  }
-typedef PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrl = OneOf2<String,PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2>;
+
+@immutable
+final class PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrl {
+  const PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrl({this.string = const Omittable.absent(),
+this.postSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrl._({required this.rawValue, required this.string,
+required this.postSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2,});
+  factory PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrl.fromJson(Object? json) => PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrl._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2: parseAnyOfVariant<PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2>(json, (value) => PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2> postSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2.isPresent) postSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrlVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrl && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSetupIntentsRequestPaymentMethodOptionsAcssDebitMandateOptionsCustomMandateUrl(${toJson()})';
+}

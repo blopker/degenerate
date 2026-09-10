@@ -33,6 +33,6 @@ CopilotDotcomPullRequests copyWith({int? Function()? totalEngagedUsers, List<Cop
           totalEngagedUsers == other.totalEngagedUsers &&
           listEquals(repositories, other.repositories) &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(totalEngagedUsers, Object.hashAll(repositories ?? const []), Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(totalEngagedUsers, Object.hashAll(repositories ?? const []), mapHash(additionalProperties)); } 
 @override String toString() { return 'CopilotDotcomPullRequests(totalEngagedUsers: $totalEngagedUsers, repositories: $repositories, additionalProperties: $additionalProperties)'; } 
  }

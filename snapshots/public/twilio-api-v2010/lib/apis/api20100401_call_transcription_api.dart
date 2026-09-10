@@ -56,7 +56,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountCallRealtimeTranscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountCallRealtimeTranscription.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -79,7 +80,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountCallRealtimeTranscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountCallRealtimeTranscription.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

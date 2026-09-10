@@ -32,6 +32,6 @@ CopilotIdeChat copyWith({int? Function()? totalEngagedUsers, List<CopilotIdeChat
           totalEngagedUsers == other.totalEngagedUsers &&
           listEquals(editors, other.editors) &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(totalEngagedUsers, Object.hashAll(editors ?? const []), Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(totalEngagedUsers, Object.hashAll(editors ?? const []), mapHash(additionalProperties)); } 
 @override String toString() { return 'CopilotIdeChat(totalEngagedUsers: $totalEngagedUsers, editors: $editors, additionalProperties: $additionalProperties)'; } 
  }

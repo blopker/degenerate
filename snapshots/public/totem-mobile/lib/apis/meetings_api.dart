@@ -41,14 +41,19 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
+        final json = jsonDecode(response.body);
         return LivekitTokenResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
+          json as Map<String, dynamic>,
         );
       },
       onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 403 || 404 || 500:
+            final json = jsonDecode(response.body);
+            return ErrorResponseSchema.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -75,9 +80,13 @@ final class MeetingsApi with ApiExecutor {
       request,
       onSuccess: (_) {},
       onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 500:
+            final json = jsonDecode(response.body);
+            return ErrorResponseSchema.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -104,9 +113,13 @@ final class MeetingsApi with ApiExecutor {
       request,
       onSuccess: (_) {},
       onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 500:
+            final json = jsonDecode(response.body);
+            return ErrorResponseSchema.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -133,9 +146,13 @@ final class MeetingsApi with ApiExecutor {
       request,
       onSuccess: (_) {},
       onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 500:
+            final json = jsonDecode(response.body);
+            return ErrorResponseSchema.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -162,9 +179,13 @@ final class MeetingsApi with ApiExecutor {
       request,
       onSuccess: (_) {},
       onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 500:
+            final json = jsonDecode(response.body);
+            return ErrorResponseSchema.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -192,9 +213,13 @@ final class MeetingsApi with ApiExecutor {
       request,
       onSuccess: (_) {},
       onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 500:
+            final json = jsonDecode(response.body);
+            return ErrorResponseSchema.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -221,9 +246,13 @@ final class MeetingsApi with ApiExecutor {
       request,
       onSuccess: (_) {},
       onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 500:
+            final json = jsonDecode(response.body);
+            return ErrorResponseSchema.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -251,9 +280,13 @@ final class MeetingsApi with ApiExecutor {
       request,
       onSuccess: (_) {},
       onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 500:
+            final json = jsonDecode(response.body);
+            return ErrorResponseSchema.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -282,14 +315,17 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return LivekitOrderSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return LivekitOrderSchema.fromJson(json as Map<String, dynamic>);
       },
       onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 500:
+            final json = jsonDecode(response.body);
+            return ErrorResponseSchema.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -320,14 +356,17 @@ final class MeetingsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return SessionState.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return SessionState.fromJson(json as Map<String, dynamic>);
       },
       onError: (response) {
-        return ErrorResponseSchema.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 403 || 404 || 500:
+            final json = jsonDecode(response.body);
+            return ErrorResponseSchema.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }

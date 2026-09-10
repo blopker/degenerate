@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'subscription_transfer_data_destination.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription_transfer_data_destination.dart';/// 
 @immutable final class SubscriptionTransferData {const SubscriptionTransferData({required this.destination, this.amountPercent = const Omittable.absent(), });
 
 factory SubscriptionTransferData.fromJson(Map<String, dynamic> json) { return SubscriptionTransferData(
   amountPercent: json.containsKey('amount_percent') ? Omittable(json['amount_percent'] != null ? (json['amount_percent'] as num).toDouble() : null) : const Omittable.absent(),
-  destination: OneOf2.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
+  destination: SubscriptionTransferDataDestination.fromJson(json['destination']),
 ); }
 
 /// A non-negative decimal between 0 and 100, with at most two decimal places. This represents the percentage of the subscription invoice total that will be transferred to the destination account. By default, the entire amount is transferred to the destination.

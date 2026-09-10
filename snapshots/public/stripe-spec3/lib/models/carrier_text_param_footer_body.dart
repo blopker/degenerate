@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CarrierTextParamFooterBodyVariant2($value)'; } 
  }
-typedef CarrierTextParamFooterBody = OneOf2<String,CarrierTextParamFooterBodyVariant2>;
+
+@immutable
+final class CarrierTextParamFooterBody {
+  const CarrierTextParamFooterBody({this.string = const Omittable.absent(),
+this.carrierTextParamFooterBodyVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CarrierTextParamFooterBody._({required this.rawValue, required this.string,
+required this.carrierTextParamFooterBodyVariant2,});
+  factory CarrierTextParamFooterBody.fromJson(Object? json) => CarrierTextParamFooterBody._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+carrierTextParamFooterBodyVariant2: parseAnyOfVariant<CarrierTextParamFooterBodyVariant2>(json, (value) => CarrierTextParamFooterBodyVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<CarrierTextParamFooterBodyVariant2> carrierTextParamFooterBodyVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || carrierTextParamFooterBodyVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (carrierTextParamFooterBodyVariant2.isPresent) carrierTextParamFooterBodyVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CarrierTextParamFooterBody && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CarrierTextParamFooterBody(${toJson()})';
+}

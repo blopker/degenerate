@@ -45,17 +45,17 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitWebhookRequestEvents($value)'; } 
  }
-@immutable final class RealtimekitWebhookRequest {const RealtimekitWebhookRequest({required this.events, required this.name, required this.url, this.enabled = true, });
+@immutable final class RealtimekitWebhookRequest {const RealtimekitWebhookRequest({required this.events, required this.name, required this.url, this.enabled, });
 
 factory RealtimekitWebhookRequest.fromJson(Map<String, dynamic> json) { return RealtimekitWebhookRequest(
-  enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
+  enabled: json['enabled'] as bool?,
   events: (json['events'] as List<dynamic>).map((e) => RealtimekitWebhookRequestEvents.fromJson(e as String)).toList(),
   name: json['name'] as String,
   url: Uri.parse(json['url'] as String),
 ); }
 
 /// Set whether or not the webhook should be active when created
-final bool enabled;
+final bool? enabled;
 
 /// Events that this webhook will get triggered by
 final List<RealtimekitWebhookRequestEvents> events;
@@ -66,8 +66,10 @@ final String name;
 /// URL this webhook will send events to
 final Uri url;
 
+/// The value with the schema default applied when absent.
+bool get enabledOrDefault { return enabled ?? true; } 
 Map<String, dynamic> toJson() { return {
-  'enabled': enabled,
+  'enabled': ?enabled,
   'events': events.map((e) => e.toJson()).toList(),
   'name': name,
   'url': url.toString(),
@@ -75,7 +77,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('events') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-RealtimekitWebhookRequest copyWith({bool Function()? enabled, List<RealtimekitWebhookRequestEvents>? events, String? name, Uri? url, }) { return RealtimekitWebhookRequest(
+RealtimekitWebhookRequest copyWith({bool? Function()? enabled, List<RealtimekitWebhookRequestEvents>? events, String? name, Uri? url, }) { return RealtimekitWebhookRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   events: events ?? this.events,
   name: name ?? this.name,

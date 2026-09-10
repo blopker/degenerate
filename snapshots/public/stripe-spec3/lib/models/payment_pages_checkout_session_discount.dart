@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'coupon.dart';import 'payment_pages_checkout_session_discount_coupon.dart';import 'payment_pages_checkout_session_discount_promotion_code.dart';import 'promotion_code.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_discount_coupon.dart';import 'payment_pages_checkout_session_discount_promotion_code.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionDiscount {const PaymentPagesCheckoutSessionDiscount({this.coupon = const Omittable.absent(), this.promotionCode = const Omittable.absent(), });
 
 factory PaymentPagesCheckoutSessionDiscount.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionDiscount(
-  coupon: json.containsKey('coupon') ? Omittable(json['coupon'] != null ? OneOf2.parse(json['coupon'], fromA: (v) => v as String, fromB: (v) => Coupon.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  promotionCode: json.containsKey('promotion_code') ? Omittable(json['promotion_code'] != null ? OneOf2.parse(json['promotion_code'], fromA: (v) => v as String, fromB: (v) => PromotionCode.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  coupon: json.containsKey('coupon') ? Omittable(json['coupon'] != null ? PaymentPagesCheckoutSessionDiscountCoupon.fromJson(json['coupon']) : null) : const Omittable.absent(),
+  promotionCode: json.containsKey('promotion_code') ? Omittable(json['promotion_code'] != null ? PaymentPagesCheckoutSessionDiscountPromotionCode.fromJson(json['promotion_code']) : null) : const Omittable.absent(),
 ); }
 
 /// Coupon attached to the Checkout Session.

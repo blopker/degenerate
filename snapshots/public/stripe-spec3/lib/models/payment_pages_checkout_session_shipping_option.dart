@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_shipping_option_shipping_rate.dart';import 'shipping_rate.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_shipping_option_shipping_rate.dart';/// 
 @immutable final class PaymentPagesCheckoutSessionShippingOption {const PaymentPagesCheckoutSessionShippingOption({required this.shippingAmount, required this.shippingRate, });
 
 factory PaymentPagesCheckoutSessionShippingOption.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionShippingOption(
   shippingAmount: (json['shipping_amount'] as num).toInt(),
-  shippingRate: OneOf2.parse(json['shipping_rate'], fromA: (v) => v as String, fromB: (v) => ShippingRate.fromJson(v as Map<String, dynamic>),),
+  shippingRate: PaymentPagesCheckoutSessionShippingOptionShippingRate.fromJson(json['shipping_rate']),
 ); }
 
 /// A non-negative integer in cents representing how much to charge.

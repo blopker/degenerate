@@ -34,7 +34,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListBatchesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListBatchesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -55,7 +56,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Batch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Batch.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -74,7 +76,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Batch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Batch.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -93,7 +96,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Batch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Batch.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

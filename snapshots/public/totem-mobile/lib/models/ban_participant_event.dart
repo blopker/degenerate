@@ -5,26 +5,26 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 /// Keeper permanently bans a participant, removing them from the talking order.
 @immutable
 final class BanParticipantEvent {
-  const BanParticipantEvent({
-    required this.participantSlug,
-    this.type = 'ban_participant',
-  });
+  const BanParticipantEvent({required this.participantSlug, this.type});
 
   factory BanParticipantEvent.fromJson(Map<String, dynamic> json) {
     return BanParticipantEvent(
-      type: json.containsKey('type')
-          ? json['type'] as String
-          : 'ban_participant',
+      type: json['type'] as String?,
       participantSlug: json['participantSlug'] as String,
     );
   }
 
-  final String type;
+  final String? type;
 
   final String participantSlug;
 
+  /// The value with the schema default applied when absent.
+  String get typeOrDefault {
+    return type ?? 'ban_participant';
+  }
+
   Map<String, dynamic> toJson() {
-    return {'type': type, 'participantSlug': participantSlug};
+    return {'type': ?type, 'participantSlug': participantSlug};
   }
 
   static bool canParse(Map<String, dynamic> json) {
@@ -33,7 +33,7 @@ final class BanParticipantEvent {
   }
 
   BanParticipantEvent copyWith({
-    String Function()? type,
+    String? Function()? type,
     String? participantSlug,
   }) {
     return BanParticipantEvent(

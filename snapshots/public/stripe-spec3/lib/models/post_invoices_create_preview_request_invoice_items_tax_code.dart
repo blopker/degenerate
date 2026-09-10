@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2($value)'; } 
  }
-typedef PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode = OneOf2<String,PostInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2>;
+
+@immutable
+final class PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode {
+  const PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode({this.string = const Omittable.absent(),
+this.postInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode._({required this.rawValue, required this.string,
+required this.postInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2,});
+  factory PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode.fromJson(Object? json) => PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2: parseAnyOfVariant<PostInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2>(json, (value) => PostInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2> postInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2.isPresent) postInvoicesCreatePreviewRequestInvoiceItemsTaxCodeVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostInvoicesCreatePreviewRequestInvoiceItemsTaxCode(${toJson()})';
+}

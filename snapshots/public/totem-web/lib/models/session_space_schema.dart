@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'public_user_schema.dart';@immutable final class SessionSpaceSchema {const SessionSpaceSchema({required this.author, required this.title, required this.dateCreated, required this.dateModified, required this.subtitle, required this.categories, required this.recurring, this.slug = const Omittable.absent(), this.shortDescription = const Omittable.absent(), this.image = const Omittable.absent(), this.content = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'public_user_schema.dart';@immutable final class SessionSpaceSchema {const SessionSpaceSchema({required this.author, required this.title, required this.dateCreated, required this.dateModified, required this.subtitle, required this.categories, required this.recurring, this.slug = const Omittable.absent(), this.shortDescription = const Omittable.absent(), this.image = const Omittable.absent(), this.content, });
 
 factory SessionSpaceSchema.fromJson(Map<String, dynamic> json) { return SessionSpaceSchema(
   author: PublicUserSchema.fromJson(json['author'] as Map<String, dynamic>),
@@ -13,7 +13,7 @@ factory SessionSpaceSchema.fromJson(Map<String, dynamic> json) { return SessionS
   shortDescription: json.containsKey('short_description') ? Omittable(json['short_description'] as String?) : const Omittable.absent(),
   recurring: json['recurring'] as String,
   image: json.containsKey('image') ? Omittable(json['image'] as String?) : const Omittable.absent(),
-  content: json.containsKey('content') ? json['content'] as String : '',
+  content: json['content'] as String?,
 ); }
 
 final PublicUserSchema author;
@@ -39,8 +39,10 @@ final String recurring;
 /// Image for the Space header, must be under 5mb
 final Omittable<String?> image;
 
-final String content;
+final String? content;
 
+/// The value with the schema default applied when absent.
+String get contentOrDefault { return content ?? ''; } 
 Map<String, dynamic> toJson() { return {
   'author': author.toJson(),
   'title': title,
@@ -52,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (shortDescription.isPresent) 'short_description': shortDescription.value,
   'recurring': recurring,
   if (image.isPresent) 'image': image.value,
-  'content': content,
+  'content': ?content,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author') &&
       json.containsKey('title') && json['title'] is String &&
@@ -61,7 +63,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('subtitle') && json['subtitle'] is String &&
       json.containsKey('categories') &&
       json.containsKey('recurring') && json['recurring'] is String; } 
-SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<String?>? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, List<int>? categories, Omittable<String?>? shortDescription, String? recurring, Omittable<String?>? image, String Function()? content, }) { return SessionSpaceSchema(
+SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, Omittable<String?>? slug, DateTime? dateCreated, DateTime? dateModified, String? subtitle, List<int>? categories, Omittable<String?>? shortDescription, String? recurring, Omittable<String?>? image, String? Function()? content, }) { return SessionSpaceSchema(
   author: author ?? this.author,
   title: title ?? this.title,
   slug: slug ?? this.slug,

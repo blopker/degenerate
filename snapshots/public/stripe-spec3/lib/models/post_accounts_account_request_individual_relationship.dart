@@ -6,7 +6,7 @@ factory PostAccountsAccountRequestIndividualRelationship.fromJson(Map<String, dy
   director: json['director'] as bool?,
   executive: json['executive'] as bool?,
   owner: json['owner'] as bool?,
-  percentOwnership: json['percent_ownership'] != null ? OneOf2.parse(json['percent_ownership'], fromA: (v) => (v as num).toDouble(), fromB: (v) => PostAccountsAccountRequestIndividualRelationshipPercentOwnershipVariant2.fromJson(v as String),) : null,
+  percentOwnership: json['percent_ownership'] != null ? PostAccountsAccountRequestIndividualRelationshipPercentOwnership.fromJson(json['percent_ownership']) : null,
   title: json['title'] as String?,
 ); }
 

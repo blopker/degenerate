@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchDeleteTokensResponseResult {const AiSearchDeleteTokensResponseResult({required this.cfApiId, required this.createdAt, required this.id, required this.modifiedAt, required this.name, this.createdBy = const Omittable.absent(), this.enabled = true, this.legacy = true, this.modifiedBy = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchDeleteTokensResponseResult {const AiSearchDeleteTokensResponseResult({required this.cfApiId, required this.createdAt, required this.id, required this.modifiedAt, required this.name, this.createdBy = const Omittable.absent(), this.enabled, this.legacy, this.modifiedBy = const Omittable.absent(), });
 
 factory AiSearchDeleteTokensResponseResult.fromJson(Map<String, dynamic> json) { return AiSearchDeleteTokensResponseResult(
   cfApiId: json['cf_api_id'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
   createdBy: json.containsKey('created_by') ? Omittable(json['created_by'] as String?) : const Omittable.absent(),
-  enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
+  enabled: json['enabled'] as bool?,
   id: json['id'] as String,
-  legacy: json.containsKey('legacy') ? json['legacy'] as bool : true,
+  legacy: json['legacy'] as bool?,
   modifiedAt: DateTime.parse(json['modified_at'] as String),
   modifiedBy: json.containsKey('modified_by') ? Omittable(json['modified_by'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
@@ -20,11 +20,11 @@ final DateTime createdAt;
 
 final Omittable<String?> createdBy;
 
-final bool enabled;
+final bool? enabled;
 
 final String id;
 
-final bool legacy;
+final bool? legacy;
 
 final DateTime modifiedAt;
 
@@ -32,13 +32,17 @@ final Omittable<String?> modifiedBy;
 
 final String name;
 
+/// The value with the schema default applied when absent.
+bool get enabledOrDefault { return enabled ?? true; } 
+/// The value with the schema default applied when absent.
+bool get legacyOrDefault { return legacy ?? true; } 
 Map<String, dynamic> toJson() { return {
   'cf_api_id': cfApiId,
   'created_at': createdAt.toIso8601String(),
   if (createdBy.isPresent) 'created_by': createdBy.value,
-  'enabled': enabled,
+  'enabled': ?enabled,
   'id': id,
-  'legacy': legacy,
+  'legacy': ?legacy,
   'modified_at': modifiedAt.toIso8601String(),
   if (modifiedBy.isPresent) 'modified_by': modifiedBy.value,
   'name': name,
@@ -48,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cf_ap
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-AiSearchDeleteTokensResponseResult copyWith({String? cfApiId, DateTime? createdAt, Omittable<String?>? createdBy, bool Function()? enabled, String? id, bool Function()? legacy, DateTime? modifiedAt, Omittable<String?>? modifiedBy, String? name, }) { return AiSearchDeleteTokensResponseResult(
+AiSearchDeleteTokensResponseResult copyWith({String? cfApiId, DateTime? createdAt, Omittable<String?>? createdBy, bool? Function()? enabled, String? id, bool? Function()? legacy, DateTime? modifiedAt, Omittable<String?>? modifiedBy, String? name, }) { return AiSearchDeleteTokensResponseResult(
   cfApiId: cfApiId ?? this.cfApiId,
   createdAt: createdAt ?? this.createdAt,
   createdBy: createdBy ?? this.createdBy,

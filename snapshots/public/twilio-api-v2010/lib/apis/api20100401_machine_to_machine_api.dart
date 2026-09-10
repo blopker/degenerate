@@ -91,7 +91,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListAvailablePhoneNumberMachineToMachineResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListAvailablePhoneNumberMachineToMachineResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

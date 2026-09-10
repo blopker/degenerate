@@ -1,34 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitUpdatePresetUiDesignTokensColorsBackground {const RealtimekitUpdatePresetUiDesignTokensColorsBackground({this.$600 = '#222222', this.$700 = '#1f1f1f', this.$800 = '#1b1b1b', this.$900 = '#181818', this.$1000 = '#141414', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitUpdatePresetUiDesignTokensColorsBackground {const RealtimekitUpdatePresetUiDesignTokensColorsBackground({this.$600, this.$700, this.$800, this.$900, this.$1000, });
 
 factory RealtimekitUpdatePresetUiDesignTokensColorsBackground.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetUiDesignTokensColorsBackground(
-  $600: json.containsKey('600') ? json['600'] as String : '#222222',
-  $700: json.containsKey('700') ? json['700'] as String : '#1f1f1f',
-  $800: json.containsKey('800') ? json['800'] as String : '#1b1b1b',
-  $900: json.containsKey('900') ? json['900'] as String : '#181818',
-  $1000: json.containsKey('1000') ? json['1000'] as String : '#141414',
+  $600: json['600'] as String?,
+  $700: json['700'] as String?,
+  $800: json['800'] as String?,
+  $900: json['900'] as String?,
+  $1000: json['1000'] as String?,
 ); }
 
-final String $600;
+final String? $600;
 
-final String $700;
+final String? $700;
 
-final String $800;
+final String? $800;
 
-final String $900;
+final String? $900;
 
-final String $1000;
+final String? $1000;
 
+/// The value with the schema default applied when absent.
+String get $600OrDefault { return $600 ?? '#222222'; } 
+/// The value with the schema default applied when absent.
+String get $700OrDefault { return $700 ?? '#1f1f1f'; } 
+/// The value with the schema default applied when absent.
+String get $800OrDefault { return $800 ?? '#1b1b1b'; } 
+/// The value with the schema default applied when absent.
+String get $900OrDefault { return $900 ?? '#181818'; } 
+/// The value with the schema default applied when absent.
+String get $1000OrDefault { return $1000 ?? '#141414'; } 
 Map<String, dynamic> toJson() { return {
-  '600': $600,
-  '700': $700,
-  '800': $800,
-  '900': $900,
-  '1000': $1000,
+  '600': ?$600,
+  '700': ?$700,
+  '800': ?$800,
+  '900': ?$900,
+  '1000': ?$1000,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'600', '700', '800', '900', '1000'}.contains(key)); } 
-RealtimekitUpdatePresetUiDesignTokensColorsBackground copyWith({String Function()? $600, String Function()? $700, String Function()? $800, String Function()? $900, String Function()? $1000, }) { return RealtimekitUpdatePresetUiDesignTokensColorsBackground(
+RealtimekitUpdatePresetUiDesignTokensColorsBackground copyWith({String? Function()? $600, String? Function()? $700, String? Function()? $800, String? Function()? $900, String? Function()? $1000, }) { return RealtimekitUpdatePresetUiDesignTokensColorsBackground(
   $600: $600 != null ? $600() : this.$600,
   $700: $700 != null ? $700() : this.$700,
   $800: $800 != null ? $800() : this.$800,

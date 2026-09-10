@@ -26,7 +26,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RunGraderResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RunGraderResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -48,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ValidateGraderResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ValidateGraderResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -87,7 +89,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListFineTuningCheckpointPermissionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListFineTuningCheckpointPermissionResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -111,7 +114,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListFineTuningCheckpointPermissionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListFineTuningCheckpointPermissionResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -133,7 +137,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteFineTuningCheckpointPermissionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteFineTuningCheckpointPermissionResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -169,7 +174,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListPaginatedFineTuningJobsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListPaginatedFineTuningJobsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -195,7 +201,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return FineTuningJob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return FineTuningJob.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -217,7 +224,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return FineTuningJob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return FineTuningJob.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -237,7 +245,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return FineTuningJob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return FineTuningJob.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -268,7 +277,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListFineTuningJobCheckpointsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListFineTuningJobCheckpointsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -299,7 +309,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListFineTuningJobEventsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListFineTuningJobEventsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -319,7 +330,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return FineTuningJob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return FineTuningJob.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -339,7 +351,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return FineTuningJob.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return FineTuningJob.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

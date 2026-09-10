@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2($value)'; } 
  }
-typedef PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed = OneOf2<ServiceNotAsDescribed2,PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2>;
+
+@immutable
+final class PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed {
+  const PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed({this.serviceNotAsDescribed2 = const Omittable.absent(),
+this.postIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed._({required this.rawValue, required this.serviceNotAsDescribed2,
+required this.postIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2,});
+  factory PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed.fromJson(Object? json) => PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed._(
+    rawValue: Omittable(json),
+    serviceNotAsDescribed2: parseAnyOfVariant<ServiceNotAsDescribed2>(json, (value) => ServiceNotAsDescribed2.fromJson(value! as Map<String, dynamic>)),
+postIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2: parseAnyOfVariant<PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2>(json, (value) => PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<ServiceNotAsDescribed2> serviceNotAsDescribed2;
+final Omittable<PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2> postIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => serviceNotAsDescribed2.isPresent || postIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (serviceNotAsDescribed2.isPresent) serviceNotAsDescribed2.value?.toJson(),
+if (postIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2.isPresent) postIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed(${toJson()})';
+}

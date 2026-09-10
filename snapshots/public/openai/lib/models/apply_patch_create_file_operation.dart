@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ApplyPatchCreateFileOperationType($value)'; } 
  }
 /// Instruction describing how to create a file via the apply_patch tool.
-@immutable final class ApplyPatchCreateFileOperation {const ApplyPatchCreateFileOperation({required this.path, required this.diff, this.type = ApplyPatchCreateFileOperationType.createFile, });
+@immutable final class ApplyPatchCreateFileOperation {const ApplyPatchCreateFileOperation({required this.type, required this.path, required this.diff, });
 
 factory ApplyPatchCreateFileOperation.fromJson(Map<String, dynamic> json) { return ApplyPatchCreateFileOperation(
   type: ApplyPatchCreateFileOperationType.fromJson(json['type'] as String),

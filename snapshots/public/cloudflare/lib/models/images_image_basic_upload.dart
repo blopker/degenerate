@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImageBasicUpload {const ImagesImageBasicUpload({this.creator, this.file, this.id, this.metadata, this.requireSignedUrLs = false, this.url, });
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImagesImageBasicUpload {const ImagesImageBasicUpload({this.creator, this.file, this.id, this.metadata, this.requireSignedUrLs, this.url, });
 
 factory ImagesImageBasicUpload.fromJson(Map<String, dynamic> json) { return ImagesImageBasicUpload(
   creator: json['creator'] as String?,
   file: json['file'] != null ? base64Decode(json['file'] as String) : null,
   id: json['id'] as String?,
   metadata: json['metadata'] as Map<String, dynamic>?,
-  requireSignedUrLs: json.containsKey('requireSignedURLs') ? json['requireSignedURLs'] as bool : false,
+  requireSignedUrLs: json['requireSignedURLs'] as bool?,
   url: json['url'] as String?,
 ); }
 
@@ -24,21 +24,23 @@ final String? id;
 final Map<String,dynamic>? metadata;
 
 /// Indicates whether the image requires a signature token for the access.
-final bool requireSignedUrLs;
+final bool? requireSignedUrLs;
 
 /// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
 final String? url;
 
+/// The value with the schema default applied when absent.
+bool get requireSignedUrLsOrDefault { return requireSignedUrLs ?? false; } 
 Map<String, dynamic> toJson() { return {
   'creator': ?creator,
   if (file != null) 'file': switch (file) { final bytes? => base64Encode(bytes), _ => null },
   'id': ?id,
   'metadata': ?metadata,
-  'requireSignedURLs': requireSignedUrLs,
+  'requireSignedURLs': ?requireSignedUrLs,
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'file', 'id', 'metadata', 'requireSignedURLs', 'url'}.contains(key)); } 
-ImagesImageBasicUpload copyWith({String? Function()? creator, Uint8List? Function()? file, String? Function()? id, Map<String, dynamic>? Function()? metadata, bool Function()? requireSignedUrLs, String? Function()? url, }) { return ImagesImageBasicUpload(
+ImagesImageBasicUpload copyWith({String? Function()? creator, Uint8List? Function()? file, String? Function()? id, Map<String, dynamic>? Function()? metadata, bool? Function()? requireSignedUrLs, String? Function()? url, }) { return ImagesImageBasicUpload(
   creator: creator != null ? creator() : this.creator,
   file: file != null ? file() : this.file,
   id: id != null ? id() : this.id,

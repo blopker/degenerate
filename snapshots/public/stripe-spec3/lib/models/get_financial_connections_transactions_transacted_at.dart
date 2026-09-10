@@ -1,3 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'range_query_specs15.dart';typedef GetFinancialConnectionsTransactionsTransactedAt = OneOf2<RangeQuerySpecs15,int>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'range_query_specs15.dart';
+@immutable
+final class GetFinancialConnectionsTransactionsTransactedAt {
+  const GetFinancialConnectionsTransactionsTransactedAt({this.rangeQuerySpecs15 = const Omittable.absent(),
+this.$int = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const GetFinancialConnectionsTransactionsTransactedAt._({required this.rawValue, required this.rangeQuerySpecs15,
+required this.$int,});
+  factory GetFinancialConnectionsTransactionsTransactedAt.fromJson(Object? json) => GetFinancialConnectionsTransactionsTransactedAt._(
+    rawValue: Omittable(json),
+    rangeQuerySpecs15: parseAnyOfVariant<RangeQuerySpecs15>(json, (value) => RangeQuerySpecs15.fromJson(value! as Map<String, dynamic>)),
+$int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<RangeQuerySpecs15> rangeQuerySpecs15;
+final Omittable<int> $int;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => rangeQuerySpecs15.isPresent || $int.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (rangeQuerySpecs15.isPresent) rangeQuerySpecs15.value?.toJson(),
+if ($int.isPresent) $int.value,
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is GetFinancialConnectionsTransactionsTransactedAt && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'GetFinancialConnectionsTransactionsTransactedAt(${toJson()})';
+}

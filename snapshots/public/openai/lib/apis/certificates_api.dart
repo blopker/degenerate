@@ -37,7 +37,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -61,7 +62,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Certificate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Certificate.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -85,7 +87,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -109,7 +112,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -141,7 +145,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Certificate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Certificate.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -163,7 +168,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Certificate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Certificate.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -185,7 +191,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteCertificateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteCertificateResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -218,7 +225,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -242,7 +250,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -265,7 +274,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListCertificatesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

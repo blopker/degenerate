@@ -1,3 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_type_specific_payment_method_options_client.dart';import 'payment_method_options_paypal.dart';typedef PaymentIntentPaymentMethodOptionsPaypal = OneOf2<PaymentMethodOptionsPaypal,PaymentIntentTypeSpecificPaymentMethodOptionsClient>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_type_specific_payment_method_options_client.dart';import 'payment_method_options_paypal.dart';
+@immutable
+final class PaymentIntentPaymentMethodOptionsPaypal {
+  const PaymentIntentPaymentMethodOptionsPaypal({this.paymentMethodOptionsPaypal = const Omittable.absent(),
+this.paymentIntentTypeSpecificPaymentMethodOptionsClient = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PaymentIntentPaymentMethodOptionsPaypal._({required this.rawValue, required this.paymentMethodOptionsPaypal,
+required this.paymentIntentTypeSpecificPaymentMethodOptionsClient,});
+  factory PaymentIntentPaymentMethodOptionsPaypal.fromJson(Object? json) => PaymentIntentPaymentMethodOptionsPaypal._(
+    rawValue: Omittable(json),
+    paymentMethodOptionsPaypal: parseAnyOfVariant<PaymentMethodOptionsPaypal>(json, (value) => PaymentMethodOptionsPaypal.fromJson(value! as Map<String, dynamic>)),
+paymentIntentTypeSpecificPaymentMethodOptionsClient: parseAnyOfVariant<PaymentIntentTypeSpecificPaymentMethodOptionsClient>(json, (value) => PaymentIntentTypeSpecificPaymentMethodOptionsClient.fromJson(value! as Map<String, dynamic>)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<PaymentMethodOptionsPaypal> paymentMethodOptionsPaypal;
+final Omittable<PaymentIntentTypeSpecificPaymentMethodOptionsClient> paymentIntentTypeSpecificPaymentMethodOptionsClient;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => paymentMethodOptionsPaypal.isPresent || paymentIntentTypeSpecificPaymentMethodOptionsClient.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (paymentMethodOptionsPaypal.isPresent) paymentMethodOptionsPaypal.value?.toJson(),
+if (paymentIntentTypeSpecificPaymentMethodOptionsClient.isPresent) paymentIntentTypeSpecificPaymentMethodOptionsClient.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PaymentIntentPaymentMethodOptionsPaypal && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PaymentIntentPaymentMethodOptionsPaypal(${toJson()})';
+}

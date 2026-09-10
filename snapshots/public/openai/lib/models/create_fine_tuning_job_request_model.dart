@@ -30,4 +30,41 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateFineTuningJobRequestModelVariant2($value)'; } 
  }
-typedef CreateFineTuningJobRequestModel = OneOf2<String,CreateFineTuningJobRequestModelVariant2>;
+/// The name of the model to fine-tune. You can select one of the
+/// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).
+/// 
+@immutable
+final class CreateFineTuningJobRequestModel {
+  const CreateFineTuningJobRequestModel({this.string = const Omittable.absent(),
+this.createFineTuningJobRequestModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CreateFineTuningJobRequestModel._({required this.rawValue, required this.string,
+required this.createFineTuningJobRequestModelVariant2,});
+  factory CreateFineTuningJobRequestModel.fromJson(Object? json) => CreateFineTuningJobRequestModel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+createFineTuningJobRequestModelVariant2: parseAnyOfVariant<CreateFineTuningJobRequestModelVariant2>(json, (value) => CreateFineTuningJobRequestModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<CreateFineTuningJobRequestModelVariant2> createFineTuningJobRequestModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || createFineTuningJobRequestModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (createFineTuningJobRequestModelVariant2.isPresent) createFineTuningJobRequestModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CreateFineTuningJobRequestModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CreateFineTuningJobRequestModel(${toJson()})';
+}

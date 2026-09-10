@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_meta_llama_guard38b_request_messages.dart';import 'workers_ai_post_run_cf_meta_llama_guard38b_request_response_format.dart';@immutable final class WorkersAiPostRunCfMetaLlamaGuard38bRequest {const WorkersAiPostRunCfMetaLlamaGuard38bRequest({required this.messages, this.maxTokens = 256, this.responseFormat, this.temperature = 0.6, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_meta_llama_guard38b_request_messages.dart';import 'workers_ai_post_run_cf_meta_llama_guard38b_request_response_format.dart';@immutable final class WorkersAiPostRunCfMetaLlamaGuard38bRequest {const WorkersAiPostRunCfMetaLlamaGuard38bRequest({required this.messages, this.maxTokens, this.responseFormat, this.temperature, });
 
 factory WorkersAiPostRunCfMetaLlamaGuard38bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
-  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
+  maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   messages: (json['messages'] as List<dynamic>).map((e) => WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages.fromJson(e as Map<String, dynamic>)).toList(),
   responseFormat: json['response_format'] != null ? WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
-  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.6,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
 ); }
 
 /// The maximum number of tokens to generate in the response.
-final int maxTokens;
+final int? maxTokens;
 
 /// An array of message objects representing the conversation history.
 final List<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages> messages;
@@ -19,16 +19,20 @@ final List<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages> messages;
 final WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat? responseFormat;
 
 /// Controls the randomness of the output; higher values produce more random results.
-final double temperature;
+final double? temperature;
 
+/// The value with the schema default applied when absent.
+int get maxTokensOrDefault { return maxTokens ?? 256; } 
+/// The value with the schema default applied when absent.
+double get temperatureOrDefault { return temperature ?? 0.6; } 
 Map<String, dynamic> toJson() { return {
-  'max_tokens': maxTokens,
+  'max_tokens': ?maxTokens,
   'messages': messages.map((e) => e.toJson()).toList(),
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
-  'temperature': temperature,
+  'temperature': ?temperature,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-WorkersAiPostRunCfMetaLlamaGuard38bRequest copyWith({int Function()? maxTokens, List<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages>? messages, WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat? Function()? responseFormat, double Function()? temperature, }) { return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
+WorkersAiPostRunCfMetaLlamaGuard38bRequest copyWith({int? Function()? maxTokens, List<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages>? messages, WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat? Function()? responseFormat, double? Function()? temperature, }) { return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
   messages: messages ?? this.messages,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,

@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserMessageItemObject($value)'; } 
  }
 /// User-authored messages within a thread.
-@immutable final class UserMessageItem {const UserMessageItem({required this.id, required this.createdAt, required this.threadId, required this.content, required this.attachments, required this.inferenceOptions, this.object = UserMessageItemObject.chatkitThreadItem, this.type = 'chatkit.user_message', });
+@immutable final class UserMessageItem {const UserMessageItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.content, required this.attachments, required this.inferenceOptions, });
 
 factory UserMessageItem.fromJson(Map<String, dynamic> json) { return UserMessageItem(
   id: json['id'] as String,

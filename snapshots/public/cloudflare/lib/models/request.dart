@@ -28,13 +28,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RequestReturnMetadata($value)'; } 
  }
-@immutable final class Request {const Request({required this.vector, this.filter, this.returnMetadata = RequestReturnMetadata.none, this.returnValues = false, this.topK = 5.0, });
+@immutable final class Request {const Request({required this.vector, this.filter, this.returnMetadata, this.returnValues, this.topK, });
 
 factory Request.fromJson(Map<String, dynamic> json) { return Request(
   filter: json['filter'] as Map<String, dynamic>?,
-  returnMetadata: json.containsKey('returnMetadata') ? RequestReturnMetadata.fromJson(json['returnMetadata'] as String) : RequestReturnMetadata.none,
-  returnValues: json.containsKey('returnValues') ? json['returnValues'] as bool : false,
-  topK: json.containsKey('topK') ? (json['topK'] as num).toDouble() : 5.0,
+  returnMetadata: json['returnMetadata'] != null ? RequestReturnMetadata.fromJson(json['returnMetadata'] as String) : null,
+  returnValues: json['returnValues'] as bool?,
+  topK: json['topK'] != null ? (json['topK'] as num).toDouble() : null,
   vector: (json['vector'] as List<dynamic>).map((e) => (e as num).toDouble()).toList(),
 ); }
 
@@ -42,26 +42,32 @@ factory Request.fromJson(Map<String, dynamic> json) { return Request(
 final Map<String,dynamic>? filter;
 
 /// Whether to return no metadata, indexed metadata or all metadata associated with the closest vectors.
-final RequestReturnMetadata returnMetadata;
+final RequestReturnMetadata? returnMetadata;
 
 /// Whether to return the values associated with the closest vectors.
-final bool returnValues;
+final bool? returnValues;
 
 /// The number of nearest neighbors to find.
-final double topK;
+final double? topK;
 
 /// The search vector that will be used to find the nearest neighbors.
 final List<double> vector;
 
+/// The value with the schema default applied when absent.
+RequestReturnMetadata get returnMetadataOrDefault { return returnMetadata ?? RequestReturnMetadata.fromJson('none'); } 
+/// The value with the schema default applied when absent.
+bool get returnValuesOrDefault { return returnValues ?? false; } 
+/// The value with the schema default applied when absent.
+double get topKOrDefault { return topK ?? 5.0; } 
 Map<String, dynamic> toJson() { return {
   'filter': ?filter,
-  'returnMetadata': returnMetadata.toJson(),
-  'returnValues': returnValues,
-  'topK': topK,
+  if (returnMetadata != null) 'returnMetadata': returnMetadata?.toJson(),
+  'returnValues': ?returnValues,
+  'topK': ?topK,
   'vector': vector,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector'); } 
-Request copyWith({Map<String, dynamic>? Function()? filter, RequestReturnMetadata Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return Request(
+Request copyWith({Map<String, dynamic>? Function()? filter, RequestReturnMetadata? Function()? returnMetadata, bool? Function()? returnValues, double? Function()? topK, List<double>? vector, }) { return Request(
   filter: filter != null ? filter() : this.filter,
   returnMetadata: returnMetadata != null ? returnMetadata() : this.returnMetadata,
   returnValues: returnValues != null ? returnValues() : this.returnValues,

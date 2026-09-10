@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'canceled2.dart';import 'duplicate2.dart';import 'fraudulent2.dart';import 'merchandise_not_as_described2.dart';import 'no_valid_authorization2.dart';import 'not_received2.dart';import 'other2.dart';import 'post_issuing_disputes_dispute_request_evidence_canceled.dart';import 'post_issuing_disputes_dispute_request_evidence_duplicate.dart';import 'post_issuing_disputes_dispute_request_evidence_fraudulent.dart';import 'post_issuing_disputes_dispute_request_evidence_merchandise_not_as_described.dart';import 'post_issuing_disputes_dispute_request_evidence_no_valid_authorization.dart';import 'post_issuing_disputes_dispute_request_evidence_not_received.dart';import 'post_issuing_disputes_dispute_request_evidence_other.dart';import 'post_issuing_disputes_dispute_request_evidence_service_not_as_described.dart';import 'service_not_as_described2.dart';@immutable final class PostIssuingDisputesDisputeRequestEvidenceReason {const PostIssuingDisputesDisputeRequestEvidenceReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_disputes_dispute_request_evidence_canceled.dart';import 'post_issuing_disputes_dispute_request_evidence_duplicate.dart';import 'post_issuing_disputes_dispute_request_evidence_fraudulent.dart';import 'post_issuing_disputes_dispute_request_evidence_merchandise_not_as_described.dart';import 'post_issuing_disputes_dispute_request_evidence_no_valid_authorization.dart';import 'post_issuing_disputes_dispute_request_evidence_not_received.dart';import 'post_issuing_disputes_dispute_request_evidence_other.dart';import 'post_issuing_disputes_dispute_request_evidence_service_not_as_described.dart';@immutable final class PostIssuingDisputesDisputeRequestEvidenceReason {const PostIssuingDisputesDisputeRequestEvidenceReason._(this.value);
 
 factory PostIssuingDisputesDisputeRequestEvidenceReason.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -46,15 +46,15 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostIssuingDisputesDisputeRequestEvidence {const PostIssuingDisputesDisputeRequestEvidence({this.canceled, this.duplicate, this.fraudulent, this.merchandiseNotAsDescribed, this.noValidAuthorization, this.notReceived, this.other, this.reason, this.serviceNotAsDescribed, });
 
 factory PostIssuingDisputesDisputeRequestEvidence.fromJson(Map<String, dynamic> json) { return PostIssuingDisputesDisputeRequestEvidence(
-  canceled: json['canceled'] != null ? OneOf2.parse(json['canceled'], fromA: (v) => Canceled2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostIssuingDisputesDisputeRequestEvidenceCanceledVariant2.fromJson(v as String),) : null,
-  duplicate: json['duplicate'] != null ? OneOf2.parse(json['duplicate'], fromA: (v) => Duplicate2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostIssuingDisputesDisputeRequestEvidenceDuplicateVariant2.fromJson(v as String),) : null,
-  fraudulent: json['fraudulent'] != null ? OneOf2.parse(json['fraudulent'], fromA: (v) => Fraudulent2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostIssuingDisputesDisputeRequestEvidenceFraudulentVariant2.fromJson(v as String),) : null,
-  merchandiseNotAsDescribed: json['merchandise_not_as_described'] != null ? OneOf2.parse(json['merchandise_not_as_described'], fromA: (v) => MerchandiseNotAsDescribed2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostIssuingDisputesDisputeRequestEvidenceMerchandiseNotAsDescribedVariant2.fromJson(v as String),) : null,
-  noValidAuthorization: json['no_valid_authorization'] != null ? OneOf2.parse(json['no_valid_authorization'], fromA: (v) => NoValidAuthorization2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorizationVariant2.fromJson(v as String),) : null,
-  notReceived: json['not_received'] != null ? OneOf2.parse(json['not_received'], fromA: (v) => NotReceived2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2.fromJson(v as String),) : null,
-  other: json['other'] != null ? OneOf2.parse(json['other'], fromA: (v) => Other2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostIssuingDisputesDisputeRequestEvidenceOtherVariant2.fromJson(v as String),) : null,
+  canceled: json['canceled'] != null ? PostIssuingDisputesDisputeRequestEvidenceCanceled.fromJson(json['canceled']) : null,
+  duplicate: json['duplicate'] != null ? PostIssuingDisputesDisputeRequestEvidenceDuplicate.fromJson(json['duplicate']) : null,
+  fraudulent: json['fraudulent'] != null ? PostIssuingDisputesDisputeRequestEvidenceFraudulent.fromJson(json['fraudulent']) : null,
+  merchandiseNotAsDescribed: json['merchandise_not_as_described'] != null ? PostIssuingDisputesDisputeRequestEvidenceMerchandiseNotAsDescribed.fromJson(json['merchandise_not_as_described']) : null,
+  noValidAuthorization: json['no_valid_authorization'] != null ? PostIssuingDisputesDisputeRequestEvidenceNoValidAuthorization.fromJson(json['no_valid_authorization']) : null,
+  notReceived: json['not_received'] != null ? PostIssuingDisputesDisputeRequestEvidenceNotReceived.fromJson(json['not_received']) : null,
+  other: json['other'] != null ? PostIssuingDisputesDisputeRequestEvidenceOther.fromJson(json['other']) : null,
   reason: json['reason'] != null ? PostIssuingDisputesDisputeRequestEvidenceReason.fromJson(json['reason'] as String) : null,
-  serviceNotAsDescribed: json['service_not_as_described'] != null ? OneOf2.parse(json['service_not_as_described'], fromA: (v) => ServiceNotAsDescribed2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribedVariant2.fromJson(v as String),) : null,
+  serviceNotAsDescribed: json['service_not_as_described'] != null ? PostIssuingDisputesDisputeRequestEvidenceServiceNotAsDescribed.fromJson(json['service_not_as_described']) : null,
 ); }
 
 final PostIssuingDisputesDisputeRequestEvidenceCanceled? canceled;

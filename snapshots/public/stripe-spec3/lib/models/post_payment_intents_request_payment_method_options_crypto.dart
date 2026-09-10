@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2($value)'; } 
  }
-typedef PostPaymentIntentsRequestPaymentMethodOptionsCrypto = OneOf2<PaymentMethodOptionsParam10,PostPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2>;
+
+@immutable
+final class PostPaymentIntentsRequestPaymentMethodOptionsCrypto {
+  const PostPaymentIntentsRequestPaymentMethodOptionsCrypto({this.paymentMethodOptionsParam10 = const Omittable.absent(),
+this.postPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsRequestPaymentMethodOptionsCrypto._({required this.rawValue, required this.paymentMethodOptionsParam10,
+required this.postPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2,});
+  factory PostPaymentIntentsRequestPaymentMethodOptionsCrypto.fromJson(Object? json) => PostPaymentIntentsRequestPaymentMethodOptionsCrypto._(
+    rawValue: Omittable(json),
+    paymentMethodOptionsParam10: parseAnyOfVariant<PaymentMethodOptionsParam10>(json, (value) => PaymentMethodOptionsParam10.fromJson(value! as Map<String, dynamic>)),
+postPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2: parseAnyOfVariant<PostPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2>(json, (value) => PostPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<PaymentMethodOptionsParam10> paymentMethodOptionsParam10;
+final Omittable<PostPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2> postPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => paymentMethodOptionsParam10.isPresent || postPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (paymentMethodOptionsParam10.isPresent) paymentMethodOptionsParam10.value?.toJson(),
+if (postPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2.isPresent) postPaymentIntentsRequestPaymentMethodOptionsCryptoVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsRequestPaymentMethodOptionsCrypto && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsRequestPaymentMethodOptionsCrypto(${toJson()})';
+}

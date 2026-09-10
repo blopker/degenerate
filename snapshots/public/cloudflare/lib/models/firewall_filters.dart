@@ -56,12 +56,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FirewallFiltersMatch($value)'; } 
  }
-@immutable final class FirewallFilters {const FirewallFilters({this.configurationTarget, this.configurationValue, this.match = FirewallFiltersMatch.all, this.mode, this.notes, });
+@immutable final class FirewallFilters {const FirewallFilters({this.configurationTarget, this.configurationValue, this.match, this.mode, this.notes, });
 
 factory FirewallFilters.fromJson(Map<String, dynamic> json) { return FirewallFilters(
   configurationTarget: json['configuration.target'] != null ? FirewallFiltersConfigurationTarget.fromJson(json['configuration.target'] as String) : null,
   configurationValue: json['configuration.value'] as String?,
-  match: json.containsKey('match') ? FirewallFiltersMatch.fromJson(json['match'] as String) : FirewallFiltersMatch.all,
+  match: json['match'] != null ? FirewallFiltersMatch.fromJson(json['match'] as String) : null,
   mode: json['mode'] != null ? FirewallSchemasMode.fromJson(json['mode'] as String) : null,
   notes: json['notes'] as String?,
 ); }
@@ -74,7 +74,7 @@ final FirewallFiltersConfigurationTarget? configurationTarget;
 final String? configurationValue;
 
 /// When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
-final FirewallFiltersMatch match;
+final FirewallFiltersMatch? match;
 
 final FirewallSchemasMode? mode;
 
@@ -82,15 +82,17 @@ final FirewallSchemasMode? mode;
 /// Notes: For example, the string 'attack' would match IP Access rules with notes 'Attack 26/02' and 'Attack 27/02'. The search is case insensitive.
 final String? notes;
 
+/// The value with the schema default applied when absent.
+FirewallFiltersMatch get matchOrDefault { return match ?? FirewallFiltersMatch.fromJson('all'); } 
 Map<String, dynamic> toJson() { return {
   if (configurationTarget != null) 'configuration.target': configurationTarget?.toJson(),
   'configuration.value': ?configurationValue,
-  'match': match.toJson(),
+  if (match != null) 'match': match?.toJson(),
   if (mode != null) 'mode': mode?.toJson(),
   'notes': ?notes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configuration.target', 'configuration.value', 'match', 'mode', 'notes'}.contains(key)); } 
-FirewallFilters copyWith({FirewallFiltersConfigurationTarget? Function()? configurationTarget, String? Function()? configurationValue, FirewallFiltersMatch Function()? match, FirewallSchemasMode? Function()? mode, String? Function()? notes, }) { return FirewallFilters(
+FirewallFilters copyWith({FirewallFiltersConfigurationTarget? Function()? configurationTarget, String? Function()? configurationValue, FirewallFiltersMatch? Function()? match, FirewallSchemasMode? Function()? mode, String? Function()? notes, }) { return FirewallFilters(
   configurationTarget: configurationTarget != null ? configurationTarget() : this.configurationTarget,
   configurationValue: configurationValue != null ? configurationValue() : this.configurationValue,
   match: match != null ? match() : this.match,

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2($value)'; } 
  }
-typedef PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptance = OneOf2<CustomTextPositionParam12,PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2>;
+
+@immutable
+final class PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptance {
+  const PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptance({this.customTextPositionParam12 = const Omittable.absent(),
+this.postPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptance._({required this.rawValue, required this.customTextPositionParam12,
+required this.postPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2,});
+  factory PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptance.fromJson(Object? json) => PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptance._(
+    rawValue: Omittable(json),
+    customTextPositionParam12: parseAnyOfVariant<CustomTextPositionParam12>(json, (value) => CustomTextPositionParam12.fromJson(value! as Map<String, dynamic>)),
+postPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2: parseAnyOfVariant<PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2>(json, (value) => PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<CustomTextPositionParam12> customTextPositionParam12;
+final Omittable<PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2> postPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => customTextPositionParam12.isPresent || postPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (customTextPositionParam12.isPresent) customTextPositionParam12.value?.toJson(),
+if (postPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2.isPresent) postPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptanceVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptance && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentLinksPaymentLinkRequestCustomTextTermsOfServiceAcceptance(${toJson()})';
+}

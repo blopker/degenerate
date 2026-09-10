@@ -47,7 +47,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ChatCompletionList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ChatCompletionList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -72,7 +73,7 @@ return execute(
 /// 
 ///
 /// `POST /chat/completions`
-Future<ApiResult<CreateChatCompletionResponse, Never>> createChatCompletion({required CreateChatCompletionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOf2<CreateChatCompletionResponse, CreateChatCompletionStreamResponse>, Never>> createChatCompletion({required CreateChatCompletionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -86,7 +87,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CreateChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<CreateChatCompletionResponse, CreateChatCompletionStreamResponse>.a(CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into CreateChatCompletionStreamResponse
+throw UnsupportedError('Cannot decode text/event-stream response into CreateChatCompletionStreamResponse');
+}
+final json = jsonDecode(response.body);
+return OneOf2<CreateChatCompletionResponse, CreateChatCompletionStreamResponse>.a(CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>));
+
   },
 );
  } 
@@ -107,7 +119,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CreateChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -131,7 +144,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return CreateChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -152,7 +166,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ChatCompletionDeleted.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ChatCompletionDeleted.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -188,7 +203,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ChatCompletionMessageList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ChatCompletionMessageList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

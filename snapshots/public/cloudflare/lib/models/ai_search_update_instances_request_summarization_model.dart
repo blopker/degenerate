@@ -120,4 +120,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchUpdateInstancesRequestSummarizationModelVariant2($value)'; } 
  }
-typedef AiSearchUpdateInstancesRequestSummarizationModel = OneOf2<AiSearchUpdateInstancesRequestSummarizationModelVariant1,AiSearchUpdateInstancesRequestSummarizationModelVariant2>;
+
+@immutable
+final class AiSearchUpdateInstancesRequestSummarizationModel {
+  const AiSearchUpdateInstancesRequestSummarizationModel({this.aiSearchUpdateInstancesRequestSummarizationModelVariant1 = const Omittable.absent(),
+this.aiSearchUpdateInstancesRequestSummarizationModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const AiSearchUpdateInstancesRequestSummarizationModel._({required this.rawValue, required this.aiSearchUpdateInstancesRequestSummarizationModelVariant1,
+required this.aiSearchUpdateInstancesRequestSummarizationModelVariant2,});
+  factory AiSearchUpdateInstancesRequestSummarizationModel.fromJson(Object? json) => AiSearchUpdateInstancesRequestSummarizationModel._(
+    rawValue: Omittable(json),
+    aiSearchUpdateInstancesRequestSummarizationModelVariant1: parseAnyOfVariant<AiSearchUpdateInstancesRequestSummarizationModelVariant1>(json, (value) => AiSearchUpdateInstancesRequestSummarizationModelVariant1.fromJson(value! as String)),
+aiSearchUpdateInstancesRequestSummarizationModelVariant2: parseAnyOfVariant<AiSearchUpdateInstancesRequestSummarizationModelVariant2>(json, (value) => AiSearchUpdateInstancesRequestSummarizationModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<AiSearchUpdateInstancesRequestSummarizationModelVariant1> aiSearchUpdateInstancesRequestSummarizationModelVariant1;
+final Omittable<AiSearchUpdateInstancesRequestSummarizationModelVariant2> aiSearchUpdateInstancesRequestSummarizationModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => aiSearchUpdateInstancesRequestSummarizationModelVariant1.isPresent || aiSearchUpdateInstancesRequestSummarizationModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (aiSearchUpdateInstancesRequestSummarizationModelVariant1.isPresent) aiSearchUpdateInstancesRequestSummarizationModelVariant1.value?.toJson(),
+if (aiSearchUpdateInstancesRequestSummarizationModelVariant2.isPresent) aiSearchUpdateInstancesRequestSummarizationModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is AiSearchUpdateInstancesRequestSummarizationModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'AiSearchUpdateInstancesRequestSummarizationModel(${toJson()})';
+}

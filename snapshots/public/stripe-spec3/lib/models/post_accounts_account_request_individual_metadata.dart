@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountRequestIndividualMetadataVariant2($value)'; } 
  }
-typedef PostAccountsAccountRequestIndividualMetadata = OneOf2<Map<String,String>,PostAccountsAccountRequestIndividualMetadataVariant2>;
+
+@immutable
+final class PostAccountsAccountRequestIndividualMetadata {
+  const PostAccountsAccountRequestIndividualMetadata({this.mapStringString = const Omittable.absent(),
+this.postAccountsAccountRequestIndividualMetadataVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostAccountsAccountRequestIndividualMetadata._({required this.rawValue, required this.mapStringString,
+required this.postAccountsAccountRequestIndividualMetadataVariant2,});
+  factory PostAccountsAccountRequestIndividualMetadata.fromJson(Object? json) => PostAccountsAccountRequestIndividualMetadata._(
+    rawValue: Omittable(json),
+    mapStringString: parseAnyOfVariant<Map<String, String>>(json, (value) => (value! as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))),
+postAccountsAccountRequestIndividualMetadataVariant2: parseAnyOfVariant<PostAccountsAccountRequestIndividualMetadataVariant2>(json, (value) => PostAccountsAccountRequestIndividualMetadataVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<Map<String, String>> mapStringString;
+final Omittable<PostAccountsAccountRequestIndividualMetadataVariant2> postAccountsAccountRequestIndividualMetadataVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => mapStringString.isPresent || postAccountsAccountRequestIndividualMetadataVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (mapStringString.isPresent) mapStringString.value,
+if (postAccountsAccountRequestIndividualMetadataVariant2.isPresent) postAccountsAccountRequestIndividualMetadataVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostAccountsAccountRequestIndividualMetadata && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostAccountsAccountRequestIndividualMetadata(${toJson()})';
+}

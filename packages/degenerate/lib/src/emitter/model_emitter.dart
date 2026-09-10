@@ -12,6 +12,7 @@ class ModelEmitter {
     this.model, {
     this.typeRegistry = const {},
     this.omittable = OmittableMode.nullableOnly,
+    this.ignoredJsonKeys = const [],
   });
 
   /// The object IR to emit.
@@ -22,6 +23,9 @@ class ModelEmitter {
 
   /// How optional fields represent "omitted" vs "set to null".
   final OmittableMode omittable;
+
+  /// Keys owned by an enclosing discriminator, excluded from overflow fields.
+  final List<SpecString> ignoredJsonKeys;
 
   /// Whether [f] is emitted as an `Omittable<...>` presence-wrapped field.
   bool _isOmittable(IrField f) => isOmittableField(f, omittable);
@@ -56,6 +60,7 @@ class ModelEmitter {
           ..constructors.add(_buildConstructor())
           ..constructors.add(_buildFromJson())
           ..fields.addAll(_buildFields())
+          ..methods.addAll(_buildDefaultGetters())
           ..methods.add(_buildToJson())
           ..methods.add(_buildCanParse())
           ..methods.add(_buildCopyWith())
@@ -90,7 +95,7 @@ class ModelEmitter {
               ? _omittableRef(f)
               : irTypeToReference(
                   f.type,
-                  forceNullable: !f.isRequired && !_hasDefault(f),
+                  forceNullable: !f.isRequired,
                 )
           ..docs.addAll(
             f.description != null ? f.description!.docComment : [],
@@ -109,6 +114,26 @@ class ModelEmitter {
     ];
   }
 
+  Iterable<Method> _buildDefaultGetters() sync* {
+    final names = {...model.fields.map((f) => f.name), _overflowFieldName};
+    for (final field in model.fields) {
+      final fallback = defaultFieldCode(field);
+      if (field.isRequired || fallback == null) continue;
+      var name = '${field.name}OrDefault';
+      while (!names.add(name)) {
+        name = '\$$name';
+      }
+      yield Method((b) => b
+        ..name = name
+        ..type = MethodType.getter
+        ..returns = irTypeToReference(field.type, forceNullable: _isOmittable(field))
+        ..docs.add('/// The value with the schema default applied when absent.')
+        ..body = Code(_isOmittable(field)
+            ? 'return ${field.name}.valueOr($fallback);'
+            : 'return ${field.name} ?? $fallback;'));
+    }
+  }
+
   Constructor _buildConstructor() {
     final fieldParams = model.fields.map((f) {
       return Parameter(
@@ -116,10 +141,10 @@ class ModelEmitter {
           ..name = f.name
           ..named = true
           ..toThis = true
-          ..required = f.isRequired && !_hasDefault(f)
+          ..required = f.isRequired
           ..defaultTo = _isOmittable(f)
               ? const Code('const Omittable.absent()')
-              : _defaultCode(f),
+              : null,
       );
     }).toList();
     // Sort required named parameters before optional ones.
@@ -149,14 +174,7 @@ class ModelEmitter {
     var args = model.fields
         .map((f) {
           final accessor = 'json[${f.originalName.literal}]';
-          // A field is "nullable in fromJson" if:
-          // 1. It's not required AND has no default, OR
-          // 2. Its type is explicitly nullable (required + nullable is valid in
-          // OpenAPI).
-          // Fields with defaults have non-nullable types, so fromJson must not
-          // produce null.
-          final isOptional =
-              (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
+          final isOptional = !f.isRequired || f.type.isNullable;
           final code = buildFromJsonCode(
             f.type,
             accessor,
@@ -168,13 +186,6 @@ class ModelEmitter {
             // to Omittable(null), preserving the three wire states.
             return '  ${f.name}: json.containsKey(${f.originalName.literal}) ? Omittable($code) : const Omittable.absent(),';
           }
-          if (!f.isRequired && _hasDefault(f)) {
-            // Optional with default: use null-safe extraction or skip entirely.
-            // The constructor default handles missing values.
-            final defaultCode = _defaultCode(f);
-            final defaultStr = defaultCode?.toString() ?? 'null';
-            return '  ${f.name}: json.containsKey(${f.originalName.literal}) ? $code : $defaultStr,';
-          }
           return '  ${f.name}: $code,';
         })
         .join('\n');
@@ -184,6 +195,7 @@ class ModelEmitter {
       final knownKeysList = model.fields
           .map((f) => f.originalName.literal)
           .toList();
+      knownKeysList.addAll(ignoredJsonKeys.map((key) => key.literal));
       // Use explicit <String>{} to avoid Dart parsing empty const {} as a Map.
       final knownKeys = knownKeysList.isEmpty
           ? '<String>{}'
@@ -248,10 +260,9 @@ class ModelEmitter {
           if (f.isRequired && f.type.isNullable) {
             return '  $key: ${_toJsonValueNullable(f)},';
           }
-          // Only use null check if the Dart field type is actually nullable.
-          // Fields with defaults are non-nullable even if not required.
+          // Optional fields can be absent regardless of a schema default.
           final isNullableInDart =
-              (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
+              (!f.isRequired) || f.type.isNullable;
           if (isNullableInDart) {
             final nullableValue = _toJsonValueNullable(f);
             if (nullableValue == f.name) {
@@ -419,7 +430,7 @@ class ModelEmitter {
         // the field nullable), so `copyWith(x: () => null)` can unset any
         // field that can hold null.
         final fieldIsNullable =
-            (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
+            (!f.isRequired) || f.type.isNullable;
         final base = irTypeName(f.type);
         final typeStr = fieldIsNullable && base != 'dynamic' ? '$base?' : base;
         return Parameter(
@@ -518,7 +529,7 @@ class ModelEmitter {
           return 'Object.hashAll(${f.name}.value ?? const [])';
         }
         final isNullable =
-            (!f.isRequired && !_hasDefault(f)) || f.type.isNullable;
+            (!f.isRequired) || f.type.isNullable;
         if (isNullable) {
           return 'Object.hashAll(${f.name} ?? const [])';
         }
@@ -527,7 +538,7 @@ class ModelEmitter {
       return f.name;
     }).toList();
     if (model.additionalProperties != null) {
-      fieldExprs.add('Object.hashAll($_overflowFieldName.entries)');
+      fieldExprs.add('mapHash($_overflowFieldName)');
     }
 
     final String body;
@@ -570,7 +581,4 @@ class ModelEmitter {
     );
   }
 
-  bool _hasDefault(IrField f) => hasUsableDartDefault(f);
-
-  Code? _defaultCode(IrField f) => defaultFieldCode(f);
 }

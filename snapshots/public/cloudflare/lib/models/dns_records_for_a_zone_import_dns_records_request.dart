@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsForAZoneImportDnsRecordsRequest {const DnsRecordsForAZoneImportDnsRecordsRequest({required this.file, this.proxied = 'false', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DnsRecordsForAZoneImportDnsRecordsRequest {const DnsRecordsForAZoneImportDnsRecordsRequest({required this.file, this.proxied, });
 
 factory DnsRecordsForAZoneImportDnsRecordsRequest.fromJson(Map<String, dynamic> json) { return DnsRecordsForAZoneImportDnsRecordsRequest(
   file: json['file'] as String,
-  proxied: json.containsKey('proxied') ? json['proxied'] as String : 'false',
+  proxied: json['proxied'] as String?,
 ); }
 
 /// BIND config to import.
@@ -16,14 +16,16 @@ final String file;
 /// Whether or not proxiable records should receive the performance and security benefits of Cloudflare.
 /// 
 /// The value should be either `true` or `false`.
-final String proxied;
+final String? proxied;
 
+/// The value with the schema default applied when absent.
+String get proxiedOrDefault { return proxied ?? 'false'; } 
 Map<String, dynamic> toJson() { return {
   'file': file,
-  'proxied': proxied,
+  'proxied': ?proxied,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') && json['file'] is String; } 
-DnsRecordsForAZoneImportDnsRecordsRequest copyWith({String? file, String Function()? proxied, }) { return DnsRecordsForAZoneImportDnsRecordsRequest(
+DnsRecordsForAZoneImportDnsRecordsRequest copyWith({String? file, String? Function()? proxied, }) { return DnsRecordsForAZoneImportDnsRecordsRequest(
   file: file ?? this.file,
   proxied: proxied != null ? proxied() : this.proxied,
 ); } 

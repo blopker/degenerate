@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'carrier_text_param_footer_body.dart';import 'carrier_text_param_footer_title.dart';import 'carrier_text_param_header_body.dart';import 'carrier_text_param_header_title.dart';@immutable final class CarrierTextParam {const CarrierTextParam({this.footerBody, this.footerTitle, this.headerBody, this.headerTitle, });
 
 factory CarrierTextParam.fromJson(Map<String, dynamic> json) { return CarrierTextParam(
-  footerBody: json['footer_body'] != null ? OneOf2.parse(json['footer_body'], fromA: (v) => v as String, fromB: (v) => CarrierTextParamFooterBodyVariant2.fromJson(v as String),) : null,
-  footerTitle: json['footer_title'] != null ? OneOf2.parse(json['footer_title'], fromA: (v) => v as String, fromB: (v) => CarrierTextParamFooterTitleVariant2.fromJson(v as String),) : null,
-  headerBody: json['header_body'] != null ? OneOf2.parse(json['header_body'], fromA: (v) => v as String, fromB: (v) => CarrierTextParamHeaderBodyVariant2.fromJson(v as String),) : null,
-  headerTitle: json['header_title'] != null ? OneOf2.parse(json['header_title'], fromA: (v) => v as String, fromB: (v) => CarrierTextParamHeaderTitleVariant2.fromJson(v as String),) : null,
+  footerBody: json['footer_body'] != null ? CarrierTextParamFooterBody.fromJson(json['footer_body']) : null,
+  footerTitle: json['footer_title'] != null ? CarrierTextParamFooterTitle.fromJson(json['footer_title']) : null,
+  headerBody: json['header_body'] != null ? CarrierTextParamHeaderBody.fromJson(json['header_body']) : null,
+  headerTitle: json['header_title'] != null ? CarrierTextParamHeaderTitle.fromJson(json['header_title']) : null,
 ); }
 
 final CarrierTextParamFooterBody? footerBody;

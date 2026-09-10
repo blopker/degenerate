@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeInterpreterOutputImageType($value)'; } 
  }
 /// The image output from the code interpreter.
-@immutable final class CodeInterpreterOutputImage {const CodeInterpreterOutputImage({required this.url, this.type = CodeInterpreterOutputImageType.image, });
+@immutable final class CodeInterpreterOutputImage {const CodeInterpreterOutputImage({required this.type, required this.url, });
 
 factory CodeInterpreterOutputImage.fromJson(Map<String, dynamic> json) { return CodeInterpreterOutputImage(
   type: CodeInterpreterOutputImageType.fromJson(json['type'] as String),

@@ -32,6 +32,6 @@ GetEventAggregateResponseAggregations copyWith({double? count, String? Function(
           count == other.count &&
           date == other.date &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(count, date, Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(count, date, mapHash(additionalProperties)); } 
 @override String toString() { return 'GetEventAggregateResponseAggregations(count: $count, date: $date, additionalProperties: $additionalProperties)'; } 
  }

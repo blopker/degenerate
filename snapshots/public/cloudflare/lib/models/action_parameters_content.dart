@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The response content.
-extension type const RulesetsServeErrorContent(String value) {
-factory RulesetsServeErrorContent.fromJson(String json) => RulesetsServeErrorContent(json);
-
-String toJson() => value;
-
-}
-@immutable final class ActionParametersContent {const ActionParametersContent({required this.content});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_serve_error_content.dart';@immutable final class ActionParametersContent {const ActionParametersContent({required this.content});
 
 factory ActionParametersContent.fromJson(Map<String, dynamic> json) { return ActionParametersContent(
   content: RulesetsServeErrorContent.fromJson(json['content'] as String),

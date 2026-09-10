@@ -40,7 +40,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PagedSessionListSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PagedSessionListSchema.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -59,7 +60,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return FilterOptionsSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return FilterOptionsSchema.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -78,7 +80,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SessionDetailSchema.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SessionDetailSchema.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -111,8 +114,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => EventCalendarSchema.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => EventCalendarSchema.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

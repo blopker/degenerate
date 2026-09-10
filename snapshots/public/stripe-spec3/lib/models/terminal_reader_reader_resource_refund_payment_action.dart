@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'payment_intent.dart';import 'refund.dart';import 'terminal_reader_reader_resource_refund_payment_action_charge.dart';import 'terminal_reader_reader_resource_refund_payment_action_payment_intent.dart';import 'terminal_reader_reader_resource_refund_payment_action_refund.dart';import 'terminal_reader_reader_resource_refund_payment_config.dart';/// The reason for the refund.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_refund_payment_action_charge.dart';import 'terminal_reader_reader_resource_refund_payment_action_payment_intent.dart';import 'terminal_reader_reader_resource_refund_payment_action_refund.dart';import 'terminal_reader_reader_resource_refund_payment_config.dart';/// The reason for the refund.
 @immutable final class TerminalReaderReaderResourceRefundPaymentActionReason {const TerminalReaderReaderResourceRefundPaymentActionReason._(this.value);
 
 factory TerminalReaderReaderResourceRefundPaymentActionReason.fromJson(String json) { return switch (json) {
@@ -33,11 +33,11 @@ bool get isUnknown { return !values.contains(this); }
 
 factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceRefundPaymentAction(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  charge: json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
+  charge: json['charge'] != null ? TerminalReaderReaderResourceRefundPaymentActionCharge.fromJson(json['charge']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
+  paymentIntent: json['payment_intent'] != null ? TerminalReaderReaderResourceRefundPaymentActionPaymentIntent.fromJson(json['payment_intent']) : null,
   reason: json['reason'] != null ? TerminalReaderReaderResourceRefundPaymentActionReason.fromJson(json['reason'] as String) : null,
-  refund: json['refund'] != null ? OneOf2.parse(json['refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),) : null,
+  refund: json['refund'] != null ? TerminalReaderReaderResourceRefundPaymentActionRefund.fromJson(json['refund']) : null,
   refundApplicationFee: json['refund_application_fee'] as bool?,
   refundPaymentConfig: json['refund_payment_config'] != null ? TerminalReaderReaderResourceRefundPaymentConfig.fromJson(json['refund_payment_config'] as Map<String, dynamic>) : null,
   reverseTransfer: json['reverse_transfer'] as bool?,

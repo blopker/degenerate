@@ -9,27 +9,30 @@ final class RemoveParticipantPayload {
   const RemoveParticipantPayload({
     required this.identity,
     required this.reason,
-    this.action = 'remove_participant',
+    this.action,
   });
 
   factory RemoveParticipantPayload.fromJson(Map<String, dynamic> json) {
     return RemoveParticipantPayload(
-      action: json.containsKey('action')
-          ? json['action'] as String
-          : 'remove_participant',
+      action: json['action'] as String?,
       identity: json['identity'] as String,
       reason: RemoveReason.fromJson(json['reason'] as String),
     );
   }
 
-  final String action;
+  final String? action;
 
   final String identity;
 
   final RemoveReason reason;
 
+  /// The value with the schema default applied when absent.
+  String get actionOrDefault {
+    return action ?? 'remove_participant';
+  }
+
   Map<String, dynamic> toJson() {
-    return {'action': action, 'identity': identity, 'reason': reason.toJson()};
+    return {'action': ?action, 'identity': identity, 'reason': reason.toJson()};
   }
 
   static bool canParse(Map<String, dynamic> json) {
@@ -39,7 +42,7 @@ final class RemoveParticipantPayload {
   }
 
   RemoveParticipantPayload copyWith({
-    String Function()? action,
+    String? Function()? action,
     String? identity,
     RemoveReason? reason,
   }) {

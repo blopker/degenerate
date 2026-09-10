@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostQuotesQuoteRequestApplicationFeeAmountVariant2($value)'; } 
  }
-typedef PostQuotesQuoteRequestApplicationFeeAmount = OneOf2<int,PostQuotesQuoteRequestApplicationFeeAmountVariant2>;
+/// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account. There cannot be any line items with recurring prices when using this field.
+@immutable
+final class PostQuotesQuoteRequestApplicationFeeAmount {
+  const PostQuotesQuoteRequestApplicationFeeAmount({this.$int = const Omittable.absent(),
+this.postQuotesQuoteRequestApplicationFeeAmountVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostQuotesQuoteRequestApplicationFeeAmount._({required this.rawValue, required this.$int,
+required this.postQuotesQuoteRequestApplicationFeeAmountVariant2,});
+  factory PostQuotesQuoteRequestApplicationFeeAmount.fromJson(Object? json) => PostQuotesQuoteRequestApplicationFeeAmount._(
+    rawValue: Omittable(json),
+    $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+postQuotesQuoteRequestApplicationFeeAmountVariant2: parseAnyOfVariant<PostQuotesQuoteRequestApplicationFeeAmountVariant2>(json, (value) => PostQuotesQuoteRequestApplicationFeeAmountVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<int> $int;
+final Omittable<PostQuotesQuoteRequestApplicationFeeAmountVariant2> postQuotesQuoteRequestApplicationFeeAmountVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $int.isPresent || postQuotesQuoteRequestApplicationFeeAmountVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($int.isPresent) $int.value,
+if (postQuotesQuoteRequestApplicationFeeAmountVariant2.isPresent) postQuotesQuoteRequestApplicationFeeAmountVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostQuotesQuoteRequestApplicationFeeAmount && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostQuotesQuoteRequestApplicationFeeAmount(${toJson()})';
+}

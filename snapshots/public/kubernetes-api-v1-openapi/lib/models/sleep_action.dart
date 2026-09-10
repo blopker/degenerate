@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// SleepAction describes a "sleep" action.
-@immutable final class SleepAction {const SleepAction({this.seconds = 0});
+@immutable final class SleepAction {const SleepAction({required this.seconds});
 
 factory SleepAction.fromJson(Map<String, dynamic> json) { return SleepAction(
   seconds: (json['seconds'] as num).toInt(),

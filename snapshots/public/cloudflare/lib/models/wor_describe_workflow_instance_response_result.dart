@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_error.dart';import 'wor_describe_workflow_instance_response_result_steps.dart';import 'wor_describe_workflow_instance_response_result_steps_sleep.dart';import 'wor_describe_workflow_instance_response_result_steps_step.dart';import 'wor_describe_workflow_instance_response_result_steps_termination.dart';import 'wor_describe_workflow_instance_response_result_steps_wait_for_event.dart';import 'wor_describe_workflow_instance_response_result_trigger.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStatus {const WorDescribeWorkflowInstanceResponseResultStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_describe_workflow_instance_response_result_error.dart';import 'wor_describe_workflow_instance_response_result_steps.dart';import 'wor_describe_workflow_instance_response_result_trigger.dart';@immutable final class WorDescribeWorkflowInstanceResponseResultStatus {const WorDescribeWorkflowInstanceResponseResultStatus._(this.value);
 
 factory WorDescribeWorkflowInstanceResponseResultStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -53,7 +53,7 @@ factory WorDescribeWorkflowInstanceResponseResult.fromJson(Map<String, dynamic> 
   start: json['start'] != null ? DateTime.parse(json['start'] as String) : null,
   status: WorDescribeWorkflowInstanceResponseResultStatus.fromJson(json['status'] as String),
   stepCount: (json['step_count'] as num).toInt(),
-  steps: (json['steps'] as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => WorDescribeWorkflowInstanceResponseResultStepsStep.fromJson(v as Map<String, dynamic>), fromB: (v) => WorDescribeWorkflowInstanceResponseResultStepsSleep.fromJson(v as Map<String, dynamic>), fromC: (v) => WorDescribeWorkflowInstanceResponseResultStepsTermination.fromJson(v as Map<String, dynamic>), fromD: (v) => WorDescribeWorkflowInstanceResponseResultStepsWaitForEvent.fromJson(v as Map<String, dynamic>),)).toList(),
+  steps: (json['steps'] as List<dynamic>).map(WorDescribeWorkflowInstanceResponseResultSteps.fromJson).toList(),
   success: json['success'] as bool?,
   trigger: WorDescribeWorkflowInstanceResponseResultTrigger.fromJson(json['trigger'] as Map<String, dynamic>),
   versionId: json['versionId'] as String,

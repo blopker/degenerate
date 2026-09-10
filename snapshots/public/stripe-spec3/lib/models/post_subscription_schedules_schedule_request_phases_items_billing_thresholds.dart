@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2($value)'; } 
  }
-typedef PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds = OneOf2<ItemBillingThresholdsParam8,PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2>;
+
+@immutable
+final class PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds {
+  const PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds({this.itemBillingThresholdsParam8 = const Omittable.absent(),
+this.postSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds._({required this.rawValue, required this.itemBillingThresholdsParam8,
+required this.postSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2,});
+  factory PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds.fromJson(Object? json) => PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds._(
+    rawValue: Omittable(json),
+    itemBillingThresholdsParam8: parseAnyOfVariant<ItemBillingThresholdsParam8>(json, (value) => ItemBillingThresholdsParam8.fromJson(value! as Map<String, dynamic>)),
+postSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2: parseAnyOfVariant<PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2>(json, (value) => PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<ItemBillingThresholdsParam8> itemBillingThresholdsParam8;
+final Omittable<PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2> postSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => itemBillingThresholdsParam8.isPresent || postSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (itemBillingThresholdsParam8.isPresent) itemBillingThresholdsParam8.value?.toJson(),
+if (postSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2.isPresent) postSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholdsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSubscriptionSchedulesScheduleRequestPhasesItemsBillingThresholds(${toJson()})';
+}

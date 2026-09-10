@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoices_resource_shipping_cost_shipping_rate.dart';import 'line_items_tax_amount.dart';import 'shipping_rate.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoices_resource_shipping_cost_shipping_rate.dart';import 'line_items_tax_amount.dart';/// 
 @immutable final class InvoicesResourceShippingCost {const InvoicesResourceShippingCost({required this.amountSubtotal, required this.amountTax, required this.amountTotal, this.shippingRate = const Omittable.absent(), this.taxes, });
 
 factory InvoicesResourceShippingCost.fromJson(Map<String, dynamic> json) { return InvoicesResourceShippingCost(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
-  shippingRate: json.containsKey('shipping_rate') ? Omittable(json['shipping_rate'] != null ? OneOf2.parse(json['shipping_rate'], fromA: (v) => v as String, fromB: (v) => ShippingRate.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  shippingRate: json.containsKey('shipping_rate') ? Omittable(json['shipping_rate'] != null ? InvoicesResourceShippingCostShippingRate.fromJson(json['shipping_rate']) : null) : const Omittable.absent(),
   taxes: (json['taxes'] as List<dynamic>?)?.map((e) => LineItemsTaxAmount.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

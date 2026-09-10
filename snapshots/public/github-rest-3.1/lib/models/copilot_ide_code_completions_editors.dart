@@ -40,6 +40,6 @@ CopilotIdeCodeCompletionsEditors copyWith({String? Function()? name, int? Functi
           totalEngagedUsers == other.totalEngagedUsers &&
           listEquals(models, other.models) &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(name, totalEngagedUsers, Object.hashAll(models ?? const []), Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(name, totalEngagedUsers, Object.hashAll(models ?? const []), mapHash(additionalProperties)); } 
 @override String toString() { return 'CopilotIdeCodeCompletionsEditors(name: $name, totalEngagedUsers: $totalEngagedUsers, models: $models, additionalProperties: $additionalProperties)'; } 
  }

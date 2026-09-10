@@ -6,7 +6,7 @@ factory PostTransfersIdReversalsRequest.fromJson(Map<String, dynamic> json) { re
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostTransfersIdReversalsRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostTransfersIdReversalsRequestMetadata.fromJson(json['metadata']) : null,
   refundApplicationFee: json['refund_application_fee'] as bool?,
 ); }
 

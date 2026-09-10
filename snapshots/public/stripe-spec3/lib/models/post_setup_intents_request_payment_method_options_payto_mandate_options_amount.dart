@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2($value)'; } 
  }
-typedef PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount = OneOf2<int,PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2>;
+
+@immutable
+final class PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount {
+  const PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount({this.$int = const Omittable.absent(),
+this.postSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount._({required this.rawValue, required this.$int,
+required this.postSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2,});
+  factory PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount.fromJson(Object? json) => PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount._(
+    rawValue: Omittable(json),
+    $int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+postSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2: parseAnyOfVariant<PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2>(json, (value) => PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<int> $int;
+final Omittable<PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2> postSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $int.isPresent || postSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($int.isPresent) $int.value,
+if (postSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2.isPresent) postSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount(${toJson()})';
+}

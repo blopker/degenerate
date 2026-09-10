@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_a_record.dart';import 'dns_records_aaaa_record.dart';import 'dns_records_cname_record.dart';import 'dns_records_dns_record_batch_delete.dart';import 'dns_records_dns_record_batch_patch.dart';import 'dns_records_dns_record_batch_put.dart';import 'dns_records_dns_record_post.dart';import 'dns_records_dns_record_with_data.dart';import 'dns_records_mx_record.dart';import 'dns_records_ns_record.dart';import 'dns_records_openpgpkey_record.dart';import 'dns_records_ptr_record.dart';import 'dns_records_txt_record.dart';@immutable final class DnsRecordsDnsRequestBatchObject {const DnsRecordsDnsRequestBatchObject({this.deletes, this.patches, this.posts, this.puts, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_dns_record_batch_delete.dart';import 'dns_records_dns_record_batch_patch.dart';import 'dns_records_dns_record_batch_put.dart';import 'dns_records_dns_record_post.dart';@immutable final class DnsRecordsDnsRequestBatchObject {const DnsRecordsDnsRequestBatchObject({this.deletes, this.patches, this.posts, this.puts, });
 
 factory DnsRecordsDnsRequestBatchObject.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRequestBatchObject(
   deletes: (json['deletes'] as List<dynamic>?)?.map((e) => DnsRecordsDnsRecordBatchDelete.fromJson(e as Map<String, dynamic>)).toList(),
   patches: (json['patches'] as List<dynamic>?)?.map((e) => DnsRecordsDnsRecordBatchPatch.fromJson(e as Map<String, dynamic>)).toList(),
-  posts: (json['posts'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => OneOf8.parse(v, fromA: (v) => DnsRecordsARecord.fromJson(v as Map<String, dynamic>), fromB: (v) => DnsRecordsAaaaRecord.fromJson(v as Map<String, dynamic>), fromC: (v) => DnsRecordsCnameRecord.fromJson(v as Map<String, dynamic>), fromD: (v) => DnsRecordsMxRecord.fromJson(v as Map<String, dynamic>), fromE: (v) => DnsRecordsNsRecord.fromJson(v as Map<String, dynamic>), fromF: (v) => DnsRecordsOpenpgpkeyRecord.fromJson(v as Map<String, dynamic>), fromG: (v) => DnsRecordsPtrRecord.fromJson(v as Map<String, dynamic>), fromH: (v) => DnsRecordsTxtRecord.fromJson(v as Map<String, dynamic>),), fromB: (v) => DnsRecordsDnsRecordWithData.fromJson(v as Map<String, dynamic>),)).toList(),
+  posts: (json['posts'] as List<dynamic>?)?.map(DnsRecordsDnsRecordPost.fromJson).toList(),
   puts: (json['puts'] as List<dynamic>?)?.map((e) => DnsRecordsDnsRecordBatchPut.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'LocalEnvironmentParamType($value)'; } 
  }
-@immutable final class LocalEnvironmentParam {const LocalEnvironmentParam({this.type = LocalEnvironmentParamType.local, this.skills, });
+@immutable final class LocalEnvironmentParam {const LocalEnvironmentParam({required this.type, this.skills, });
 
 factory LocalEnvironmentParam.fromJson(Map<String, dynamic> json) { return LocalEnvironmentParam(
   type: LocalEnvironmentParamType.fromJson(json['type'] as String),

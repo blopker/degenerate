@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application.dart';import 'billing_portal_configuration_application.dart';import 'deleted_application.dart';import 'portal_business_profile.dart';import 'portal_features.dart';import 'portal_login_page.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_portal_configuration_application.dart';import 'portal_business_profile.dart';import 'portal_features.dart';import 'portal_login_page.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingPortalConfigurationObject {const BillingPortalConfigurationObject._(this.value);
 
 factory BillingPortalConfigurationObject.fromJson(String json) { return switch (json) {
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory BillingPortalConfiguration.fromJson(Map<String, dynamic> json) { return BillingPortalConfiguration(
   active: json['active'] as bool,
-  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? BillingPortalConfigurationApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   businessProfile: PortalBusinessProfile.fromJson(json['business_profile'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
   defaultReturnUrl: json.containsKey('default_return_url') ? Omittable(json['default_return_url'] as String?) : const Omittable.absent(),

@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Root.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Root.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -53,7 +54,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Overview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Overview.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -82,7 +84,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return response.body;
+return response.body;
   },
 );
  } 
@@ -103,11 +105,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => e as String).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => e as String).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -128,7 +137,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return response.body;
+return response.body;
   },
 );
  } 

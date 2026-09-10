@@ -25,7 +25,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ThreadObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ThreadObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -46,7 +47,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RunObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -65,7 +67,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ThreadObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ThreadObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -86,7 +89,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ThreadObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ThreadObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -105,7 +109,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteThreadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteThreadResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -144,7 +149,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListMessagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListMessagesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -165,7 +171,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MessageObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return MessageObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -184,7 +191,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MessageObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return MessageObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -205,7 +213,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return MessageObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return MessageObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -224,7 +233,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return DeleteMessageResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteMessageResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -260,7 +270,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListRunsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -291,7 +302,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RunObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -310,7 +322,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RunObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -331,7 +344,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RunObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -350,7 +364,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RunObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -391,7 +406,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListRunStepsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListRunStepsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -420,7 +436,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RunStepObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RunStepObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -442,7 +459,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return RunObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RunObject.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

@@ -124,32 +124,32 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateForAuthenticatedUserRequestMergeCommitMessage($value)'; } 
  }
-@immutable final class ReposCreateForAuthenticatedUserRequest {const ReposCreateForAuthenticatedUserRequest({required this.name, this.description, this.homepage, this.private = false, this.hasIssues = true, this.hasProjects = true, this.hasWiki = true, this.hasDiscussions = false, this.teamId, this.autoInit = false, this.gitignoreTemplate, this.licenseTemplate, this.allowSquashMerge = true, this.allowMergeCommit = true, this.allowRebaseMerge = true, this.allowAutoMerge = false, this.deleteBranchOnMerge = false, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.hasDownloads = true, this.isTemplate = false, });
+@immutable final class ReposCreateForAuthenticatedUserRequest {const ReposCreateForAuthenticatedUserRequest({required this.name, this.description, this.homepage, this.private, this.hasIssues, this.hasProjects, this.hasWiki, this.hasDiscussions, this.teamId, this.autoInit, this.gitignoreTemplate, this.licenseTemplate, this.allowSquashMerge, this.allowMergeCommit, this.allowRebaseMerge, this.allowAutoMerge, this.deleteBranchOnMerge, this.squashMergeCommitTitle, this.squashMergeCommitMessage, this.mergeCommitTitle, this.mergeCommitMessage, this.hasDownloads, this.isTemplate, });
 
 factory ReposCreateForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return ReposCreateForAuthenticatedUserRequest(
   name: json['name'] as String,
   description: json['description'] as String?,
   homepage: json['homepage'] as String?,
-  private: json.containsKey('private') ? json['private'] as bool : false,
-  hasIssues: json.containsKey('has_issues') ? json['has_issues'] as bool : true,
-  hasProjects: json.containsKey('has_projects') ? json['has_projects'] as bool : true,
-  hasWiki: json.containsKey('has_wiki') ? json['has_wiki'] as bool : true,
-  hasDiscussions: json.containsKey('has_discussions') ? json['has_discussions'] as bool : false,
+  private: json['private'] as bool?,
+  hasIssues: json['has_issues'] as bool?,
+  hasProjects: json['has_projects'] as bool?,
+  hasWiki: json['has_wiki'] as bool?,
+  hasDiscussions: json['has_discussions'] as bool?,
   teamId: json['team_id'] != null ? (json['team_id'] as num).toInt() : null,
-  autoInit: json.containsKey('auto_init') ? json['auto_init'] as bool : false,
+  autoInit: json['auto_init'] as bool?,
   gitignoreTemplate: json['gitignore_template'] as String?,
   licenseTemplate: json['license_template'] as String?,
-  allowSquashMerge: json.containsKey('allow_squash_merge') ? json['allow_squash_merge'] as bool : true,
-  allowMergeCommit: json.containsKey('allow_merge_commit') ? json['allow_merge_commit'] as bool : true,
-  allowRebaseMerge: json.containsKey('allow_rebase_merge') ? json['allow_rebase_merge'] as bool : true,
-  allowAutoMerge: json.containsKey('allow_auto_merge') ? json['allow_auto_merge'] as bool : false,
-  deleteBranchOnMerge: json.containsKey('delete_branch_on_merge') ? json['delete_branch_on_merge'] as bool : false,
+  allowSquashMerge: json['allow_squash_merge'] as bool?,
+  allowMergeCommit: json['allow_merge_commit'] as bool?,
+  allowRebaseMerge: json['allow_rebase_merge'] as bool?,
+  allowAutoMerge: json['allow_auto_merge'] as bool?,
+  deleteBranchOnMerge: json['delete_branch_on_merge'] as bool?,
   squashMergeCommitTitle: json['squash_merge_commit_title'] != null ? ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle.fromJson(json['squash_merge_commit_title'] as String) : null,
   squashMergeCommitMessage: json['squash_merge_commit_message'] != null ? ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage.fromJson(json['squash_merge_commit_message'] as String) : null,
   mergeCommitTitle: json['merge_commit_title'] != null ? ReposCreateForAuthenticatedUserRequestMergeCommitTitle.fromJson(json['merge_commit_title'] as String) : null,
   mergeCommitMessage: json['merge_commit_message'] != null ? ReposCreateForAuthenticatedUserRequestMergeCommitMessage.fromJson(json['merge_commit_message'] as String) : null,
-  hasDownloads: json.containsKey('has_downloads') ? json['has_downloads'] as bool : true,
-  isTemplate: json.containsKey('is_template') ? json['is_template'] as bool : false,
+  hasDownloads: json['has_downloads'] as bool?,
+  isTemplate: json['is_template'] as bool?,
 ); }
 
 /// The name of the repository.
@@ -162,25 +162,25 @@ final String? description;
 final String? homepage;
 
 /// Whether the repository is private.
-final bool private;
+final bool? private;
 
 /// Whether issues are enabled.
-final bool hasIssues;
+final bool? hasIssues;
 
 /// Whether projects are enabled.
-final bool hasProjects;
+final bool? hasProjects;
 
 /// Whether the wiki is enabled.
-final bool hasWiki;
+final bool? hasWiki;
 
 /// Whether discussions are enabled.
-final bool hasDiscussions;
+final bool? hasDiscussions;
 
 /// The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
 final int? teamId;
 
 /// Whether the repository is initialized with a minimal README.
-final bool autoInit;
+final bool? autoInit;
 
 /// The desired language or platform to apply to the .gitignore.
 final String? gitignoreTemplate;
@@ -189,19 +189,19 @@ final String? gitignoreTemplate;
 final String? licenseTemplate;
 
 /// Whether to allow squash merges for pull requests.
-final bool allowSquashMerge;
+final bool? allowSquashMerge;
 
 /// Whether to allow merge commits for pull requests.
-final bool allowMergeCommit;
+final bool? allowMergeCommit;
 
 /// Whether to allow rebase merges for pull requests.
-final bool allowRebaseMerge;
+final bool? allowRebaseMerge;
 
 /// Whether to allow Auto-merge to be used on pull requests.
-final bool allowAutoMerge;
+final bool? allowAutoMerge;
 
 /// Whether to delete head branches when pull requests are merged
-final bool deleteBranchOnMerge;
+final bool? deleteBranchOnMerge;
 
 /// Required when using `squash_merge_commit_message`.
 /// 
@@ -234,38 +234,64 @@ final ReposCreateForAuthenticatedUserRequestMergeCommitTitle? mergeCommitTitle;
 final ReposCreateForAuthenticatedUserRequestMergeCommitMessage? mergeCommitMessage;
 
 /// Whether downloads are enabled.
-final bool hasDownloads;
+final bool? hasDownloads;
 
 /// Whether this repository acts as a template that can be used to generate new repositories.
-final bool isTemplate;
+final bool? isTemplate;
 
+/// The value with the schema default applied when absent.
+bool get privateOrDefault { return private ?? false; } 
+/// The value with the schema default applied when absent.
+bool get hasIssuesOrDefault { return hasIssues ?? true; } 
+/// The value with the schema default applied when absent.
+bool get hasProjectsOrDefault { return hasProjects ?? true; } 
+/// The value with the schema default applied when absent.
+bool get hasWikiOrDefault { return hasWiki ?? true; } 
+/// The value with the schema default applied when absent.
+bool get hasDiscussionsOrDefault { return hasDiscussions ?? false; } 
+/// The value with the schema default applied when absent.
+bool get autoInitOrDefault { return autoInit ?? false; } 
+/// The value with the schema default applied when absent.
+bool get allowSquashMergeOrDefault { return allowSquashMerge ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowMergeCommitOrDefault { return allowMergeCommit ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowRebaseMergeOrDefault { return allowRebaseMerge ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowAutoMergeOrDefault { return allowAutoMerge ?? false; } 
+/// The value with the schema default applied when absent.
+bool get deleteBranchOnMergeOrDefault { return deleteBranchOnMerge ?? false; } 
+/// The value with the schema default applied when absent.
+bool get hasDownloadsOrDefault { return hasDownloads ?? true; } 
+/// The value with the schema default applied when absent.
+bool get isTemplateOrDefault { return isTemplate ?? false; } 
 Map<String, dynamic> toJson() { return {
   'name': name,
   'description': ?description,
   'homepage': ?homepage,
-  'private': private,
-  'has_issues': hasIssues,
-  'has_projects': hasProjects,
-  'has_wiki': hasWiki,
-  'has_discussions': hasDiscussions,
+  'private': ?private,
+  'has_issues': ?hasIssues,
+  'has_projects': ?hasProjects,
+  'has_wiki': ?hasWiki,
+  'has_discussions': ?hasDiscussions,
   'team_id': ?teamId,
-  'auto_init': autoInit,
+  'auto_init': ?autoInit,
   'gitignore_template': ?gitignoreTemplate,
   'license_template': ?licenseTemplate,
-  'allow_squash_merge': allowSquashMerge,
-  'allow_merge_commit': allowMergeCommit,
-  'allow_rebase_merge': allowRebaseMerge,
-  'allow_auto_merge': allowAutoMerge,
-  'delete_branch_on_merge': deleteBranchOnMerge,
+  'allow_squash_merge': ?allowSquashMerge,
+  'allow_merge_commit': ?allowMergeCommit,
+  'allow_rebase_merge': ?allowRebaseMerge,
+  'allow_auto_merge': ?allowAutoMerge,
+  'delete_branch_on_merge': ?deleteBranchOnMerge,
   if (squashMergeCommitTitle != null) 'squash_merge_commit_title': squashMergeCommitTitle?.toJson(),
   if (squashMergeCommitMessage != null) 'squash_merge_commit_message': squashMergeCommitMessage?.toJson(),
   if (mergeCommitTitle != null) 'merge_commit_title': mergeCommitTitle?.toJson(),
   if (mergeCommitMessage != null) 'merge_commit_message': mergeCommitMessage?.toJson(),
-  'has_downloads': hasDownloads,
-  'is_template': isTemplate,
+  'has_downloads': ?hasDownloads,
+  'is_template': ?isTemplate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ReposCreateForAuthenticatedUserRequest copyWith({String? name, String? Function()? description, String? Function()? homepage, bool Function()? private, bool Function()? hasIssues, bool Function()? hasProjects, bool Function()? hasWiki, bool Function()? hasDiscussions, int? Function()? teamId, bool Function()? autoInit, String? Function()? gitignoreTemplate, String? Function()? licenseTemplate, bool Function()? allowSquashMerge, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle? Function()? squashMergeCommitTitle, ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage? Function()? squashMergeCommitMessage, ReposCreateForAuthenticatedUserRequestMergeCommitTitle? Function()? mergeCommitTitle, ReposCreateForAuthenticatedUserRequestMergeCommitMessage? Function()? mergeCommitMessage, bool Function()? hasDownloads, bool Function()? isTemplate, }) { return ReposCreateForAuthenticatedUserRequest(
+ReposCreateForAuthenticatedUserRequest copyWith({String? name, String? Function()? description, String? Function()? homepage, bool? Function()? private, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? hasDiscussions, int? Function()? teamId, bool? Function()? autoInit, String? Function()? gitignoreTemplate, String? Function()? licenseTemplate, bool? Function()? allowSquashMerge, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, ReposCreateForAuthenticatedUserRequestSquashMergeCommitTitle? Function()? squashMergeCommitTitle, ReposCreateForAuthenticatedUserRequestSquashMergeCommitMessage? Function()? squashMergeCommitMessage, ReposCreateForAuthenticatedUserRequestMergeCommitTitle? Function()? mergeCommitTitle, ReposCreateForAuthenticatedUserRequestMergeCommitMessage? Function()? mergeCommitMessage, bool? Function()? hasDownloads, bool? Function()? isTemplate, }) { return ReposCreateForAuthenticatedUserRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   homepage: homepage != null ? homepage() : this.homepage,

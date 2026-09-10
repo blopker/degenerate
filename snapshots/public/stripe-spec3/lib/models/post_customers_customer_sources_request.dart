@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_payment_source_bank_account4.dart';import 'customer_payment_source_card5.dart';import 'post_customers_customer_sources_request_bank_account.dart';import 'post_customers_customer_sources_request_card.dart';@immutable final class PostCustomersCustomerSourcesRequest {const PostCustomersCustomerSourcesRequest({this.alipayAccount, this.bankAccount, this.card, this.expand, this.metadata, this.source, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_sources_request_bank_account.dart';import 'post_customers_customer_sources_request_card.dart';@immutable final class PostCustomersCustomerSourcesRequest {const PostCustomersCustomerSourcesRequest({this.alipayAccount, this.bankAccount, this.card, this.expand, this.metadata, this.source, });
 
 factory PostCustomersCustomerSourcesRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSourcesRequest(
   alipayAccount: json['alipay_account'] as String?,
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => CustomerPaymentSourceBankAccount4.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CustomerPaymentSourceCard5.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  bankAccount: json['bank_account'] != null ? PostCustomersCustomerSourcesRequestBankAccount.fromJson(json['bank_account']) : null,
+  card: json['card'] != null ? PostCustomersCustomerSourcesRequestCard.fromJson(json['card']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   source: json['source'] as String?,

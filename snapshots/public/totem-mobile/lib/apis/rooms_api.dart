@@ -47,14 +47,17 @@ final class RoomsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return RoomState.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return RoomState.fromJson(json as Map<String, dynamic>);
       },
       onError: (response) {
-        return RoomErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 409 || 500:
+            final json = jsonDecode(response.body);
+            return RoomErrorResponse.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -81,14 +84,17 @@ final class RoomsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return RoomState.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return RoomState.fromJson(json as Map<String, dynamic>);
       },
       onError: (response) {
-        return RoomErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 409 || 500:
+            final json = jsonDecode(response.body);
+            return RoomErrorResponse.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -115,14 +121,17 @@ final class RoomsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return JoinResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return JoinResponse.fromJson(json as Map<String, dynamic>);
       },
       onError: (response) {
-        return RoomErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 409 || 500:
+            final json = jsonDecode(response.body);
+            return RoomErrorResponse.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -151,9 +160,13 @@ final class RoomsApi with ApiExecutor {
       request,
       onSuccess: (_) {},
       onError: (response) {
-        return RoomErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 409 || 500:
+            final json = jsonDecode(response.body);
+            return RoomErrorResponse.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -181,9 +194,13 @@ final class RoomsApi with ApiExecutor {
       request,
       onSuccess: (_) {},
       onError: (response) {
-        return RoomErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 409 || 500:
+            final json = jsonDecode(response.body);
+            return RoomErrorResponse.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }
@@ -223,14 +240,17 @@ final class RoomsApi with ApiExecutor {
     return execute(
       request,
       onSuccess: (response) {
-        return RemoveParticipantPayload.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        final json = jsonDecode(response.body);
+        return RemoveParticipantPayload.fromJson(json as Map<String, dynamic>);
       },
       onError: (response) {
-        return RoomErrorResponse.fromJson(
-          jsonDecode(response.body) as Map<String, dynamic>,
-        );
+        switch (response.statusCode) {
+          case 400 || 403 || 404 || 409 || 500:
+            final json = jsonDecode(response.body);
+            return RoomErrorResponse.fromJson(json as Map<String, dynamic>);
+          default:
+            return null;
+        }
       },
     );
   }

@@ -21,7 +21,7 @@ factory LogpushLastError.fromJson(String json) => LogpushLastError(DateTime.pars
 String toJson() => value.toIso8601String();
 
 }
-@immutable final class LogpushLogpushJob {const LogpushLogpushJob({this.dataset = const Omittable.absent(), this.destinationConf, this.enabled, this.errorMessage = const Omittable.absent(), this.frequency = const Omittable.absent(), this.id, this.kind, this.lastComplete = const Omittable.absent(), this.lastError = const Omittable.absent(), this.logpullOptions = const Omittable.absent(), this.maxUploadBytes, this.maxUploadIntervalSeconds, this.maxUploadRecords, this.name = const Omittable.absent(), this.outputOptions, });
+@immutable final class LogpushLogpushJob {const LogpushLogpushJob({this.dataset = const Omittable.absent(), this.destinationConf, this.enabled, this.errorMessage = const Omittable.absent(), this.frequency = const Omittable.absent(), this.id, this.kind, this.lastComplete = const Omittable.absent(), this.lastError = const Omittable.absent(), this.logpullOptions = const Omittable.absent(), this.maxUploadBytes = const Omittable.absent(), this.maxUploadIntervalSeconds = const Omittable.absent(), this.maxUploadRecords = const Omittable.absent(), this.name = const Omittable.absent(), this.outputOptions = const Omittable.absent(), });
 
 factory LogpushLogpushJob.fromJson(Map<String, dynamic> json) { return LogpushLogpushJob(
   dataset: json.containsKey('dataset') ? Omittable(json['dataset'] != null ? LogpushDataset.fromJson(json['dataset'] as String) : null) : const Omittable.absent(),
@@ -34,11 +34,11 @@ factory LogpushLogpushJob.fromJson(Map<String, dynamic> json) { return LogpushLo
   lastComplete: json.containsKey('last_complete') ? Omittable(json['last_complete'] != null ? LogpushLastComplete.fromJson(json['last_complete'] as String) : null) : const Omittable.absent(),
   lastError: json.containsKey('last_error') ? Omittable(json['last_error'] != null ? LogpushLastError.fromJson(json['last_error'] as String) : null) : const Omittable.absent(),
   logpullOptions: json.containsKey('logpull_options') ? Omittable(json['logpull_options'] != null ? LogpushLogpullOptions.fromJson(json['logpull_options'] as String) : null) : const Omittable.absent(),
-  maxUploadBytes: json['max_upload_bytes'] != null ? OneOf2.parse(json['max_upload_bytes'], fromA: (v) => LogpushMaxUploadBytesVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
-  maxUploadIntervalSeconds: json['max_upload_interval_seconds'] != null ? OneOf2.parse(json['max_upload_interval_seconds'], fromA: (v) => LogpushMaxUploadIntervalSecondsVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
-  maxUploadRecords: json['max_upload_records'] != null ? OneOf2.parse(json['max_upload_records'], fromA: (v) => LogpushMaxUploadRecordsVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null,
+  maxUploadBytes: json.containsKey('max_upload_bytes') ? Omittable(json['max_upload_bytes'] != null ? OneOf2.parse(json['max_upload_bytes'], fromA: (v) => LogpushMaxUploadBytesVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null) : const Omittable.absent(),
+  maxUploadIntervalSeconds: json.containsKey('max_upload_interval_seconds') ? Omittable(json['max_upload_interval_seconds'] != null ? OneOf2.parse(json['max_upload_interval_seconds'], fromA: (v) => LogpushMaxUploadIntervalSecondsVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null) : const Omittable.absent(),
+  maxUploadRecords: json.containsKey('max_upload_records') ? Omittable(json['max_upload_records'] != null ? OneOf2.parse(json['max_upload_records'], fromA: (v) => LogpushMaxUploadRecordsVariant1.fromJson((v as num).toInt()), fromB: (v) => (v as num).toInt(),) : null) : const Omittable.absent(),
   name: json.containsKey('name') ? Omittable(json['name'] != null ? LogpushName.fromJson(json['name'] as String) : null) : const Omittable.absent(),
-  outputOptions: json['output_options'] != null ? LogpushOutputOptions.fromJson(json['output_options'] as Map<String, dynamic>) : null,
+  outputOptions: json.containsKey('output_options') ? Omittable(json['output_options'] != null ? LogpushOutputOptions.fromJson(json['output_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
@@ -71,15 +71,15 @@ final Omittable<LogpushLastError?> lastError;
 /// This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.
 final Omittable<LogpushLogpullOptions?> logpullOptions;
 
-final LogpushMaxUploadBytes? maxUploadBytes;
+final Omittable<LogpushMaxUploadBytes?> maxUploadBytes;
 
-final LogpushMaxUploadIntervalSeconds? maxUploadIntervalSeconds;
+final Omittable<LogpushMaxUploadIntervalSeconds?> maxUploadIntervalSeconds;
 
-final LogpushMaxUploadRecords? maxUploadRecords;
+final Omittable<LogpushMaxUploadRecords?> maxUploadRecords;
 
 final Omittable<LogpushName?> name;
 
-final LogpushOutputOptions? outputOptions;
+final Omittable<LogpushOutputOptions?> outputOptions;
 
 Map<String, dynamic> toJson() { return {
   if (dataset.isPresent) 'dataset': dataset.value?.toJson(),
@@ -92,14 +92,14 @@ Map<String, dynamic> toJson() { return {
   if (lastComplete.isPresent) 'last_complete': lastComplete.value?.toJson(),
   if (lastError.isPresent) 'last_error': lastError.value?.toJson(),
   if (logpullOptions.isPresent) 'logpull_options': logpullOptions.value?.toJson(),
-  if (maxUploadBytes != null) 'max_upload_bytes': maxUploadBytes?.toJson(),
-  if (maxUploadIntervalSeconds != null) 'max_upload_interval_seconds': maxUploadIntervalSeconds?.toJson(),
-  if (maxUploadRecords != null) 'max_upload_records': maxUploadRecords?.toJson(),
+  if (maxUploadBytes.isPresent) 'max_upload_bytes': maxUploadBytes.value?.toJson(),
+  if (maxUploadIntervalSeconds.isPresent) 'max_upload_interval_seconds': maxUploadIntervalSeconds.value?.toJson(),
+  if (maxUploadRecords.isPresent) 'max_upload_records': maxUploadRecords.value?.toJson(),
   if (name.isPresent) 'name': name.value?.toJson(),
-  if (outputOptions != null) 'output_options': outputOptions?.toJson(),
+  if (outputOptions.isPresent) 'output_options': outputOptions.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dataset', 'destination_conf', 'enabled', 'error_message', 'frequency', 'id', 'kind', 'last_complete', 'last_error', 'logpull_options', 'max_upload_bytes', 'max_upload_interval_seconds', 'max_upload_records', 'name', 'output_options'}.contains(key)); } 
-LogpushLogpushJob copyWith({Omittable<LogpushDataset?>? dataset, LogpushDestinationConf? Function()? destinationConf, LogpushEnabled? Function()? enabled, Omittable<LogpushErrorMessage?>? errorMessage, Omittable<LogpushFrequency?>? frequency, LogpushId? Function()? id, LogpushKind? Function()? kind, Omittable<LogpushLastComplete?>? lastComplete, Omittable<LogpushLastError?>? lastError, Omittable<LogpushLogpullOptions?>? logpullOptions, LogpushMaxUploadBytes? Function()? maxUploadBytes, LogpushMaxUploadIntervalSeconds? Function()? maxUploadIntervalSeconds, LogpushMaxUploadRecords? Function()? maxUploadRecords, Omittable<LogpushName?>? name, LogpushOutputOptions? Function()? outputOptions, }) { return LogpushLogpushJob(
+LogpushLogpushJob copyWith({Omittable<LogpushDataset?>? dataset, LogpushDestinationConf? Function()? destinationConf, LogpushEnabled? Function()? enabled, Omittable<LogpushErrorMessage?>? errorMessage, Omittable<LogpushFrequency?>? frequency, LogpushId? Function()? id, LogpushKind? Function()? kind, Omittable<LogpushLastComplete?>? lastComplete, Omittable<LogpushLastError?>? lastError, Omittable<LogpushLogpullOptions?>? logpullOptions, Omittable<LogpushMaxUploadBytes?>? maxUploadBytes, Omittable<LogpushMaxUploadIntervalSeconds?>? maxUploadIntervalSeconds, Omittable<LogpushMaxUploadRecords?>? maxUploadRecords, Omittable<LogpushName?>? name, Omittable<LogpushOutputOptions?>? outputOptions, }) { return LogpushLogpushJob(
   dataset: dataset ?? this.dataset,
   destinationConf: destinationConf != null ? destinationConf() : this.destinationConf,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -110,11 +110,11 @@ LogpushLogpushJob copyWith({Omittable<LogpushDataset?>? dataset, LogpushDestinat
   lastComplete: lastComplete ?? this.lastComplete,
   lastError: lastError ?? this.lastError,
   logpullOptions: logpullOptions ?? this.logpullOptions,
-  maxUploadBytes: maxUploadBytes != null ? maxUploadBytes() : this.maxUploadBytes,
-  maxUploadIntervalSeconds: maxUploadIntervalSeconds != null ? maxUploadIntervalSeconds() : this.maxUploadIntervalSeconds,
-  maxUploadRecords: maxUploadRecords != null ? maxUploadRecords() : this.maxUploadRecords,
+  maxUploadBytes: maxUploadBytes ?? this.maxUploadBytes,
+  maxUploadIntervalSeconds: maxUploadIntervalSeconds ?? this.maxUploadIntervalSeconds,
+  maxUploadRecords: maxUploadRecords ?? this.maxUploadRecords,
   name: name ?? this.name,
-  outputOptions: outputOptions != null ? outputOptions() : this.outputOptions,
+  outputOptions: outputOptions ?? this.outputOptions,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is LogpushLogpushJob &&

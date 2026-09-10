@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_configurations2.dart';import 'firewall_description.dart';import 'firewall_schemas_cidr_configuration.dart';import 'firewall_schemas_ip_configuration.dart';import 'firewall_schemas_paused.dart';import 'firewall_schemas_priority.dart';@immutable final class ZoneLockdownCreateAZoneLockdownRuleRequest {const ZoneLockdownCreateAZoneLockdownRuleRequest({required this.configurations, required this.urls, this.description, this.paused, this.priority, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_configurations2.dart';import 'firewall_description.dart';import 'firewall_schemas_paused.dart';import 'firewall_schemas_priority.dart';@immutable final class ZoneLockdownCreateAZoneLockdownRuleRequest {const ZoneLockdownCreateAZoneLockdownRuleRequest({required this.configurations, required this.urls, this.description, this.paused, this.priority, });
 
 factory ZoneLockdownCreateAZoneLockdownRuleRequest.fromJson(Map<String, dynamic> json) { return ZoneLockdownCreateAZoneLockdownRuleRequest(
-  configurations: (json['configurations'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => FirewallSchemasIpConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallSchemasCidrConfiguration.fromJson(v as Map<String, dynamic>),)).toList(),
+  configurations: (json['configurations'] as List<dynamic>).map(FirewallConfigurations2.fromJson).toList(),
   description: json['description'] != null ? FirewallDescription.fromJson(json['description'] as String) : null,
   paused: json['paused'] != null ? FirewallSchemasPaused.fromJson(json['paused'] as bool) : null,
   priority: json['priority'] != null ? FirewallSchemasPriority.fromJson(json['priority'] as num) : null,

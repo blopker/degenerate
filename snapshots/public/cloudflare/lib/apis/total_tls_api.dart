@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';import '../models/tls_certificates_and_hostnames_total_tls_settings_response_result.dart';import '../models/total_tls_enable_or_disable_total_tls_request.dart';/// TotalTlsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';import '../models/tls_certificates_and_hostnames_total_tls_settings_response_result.dart';import '../models/total_tls_enable_or_disable_total_tls_request.dart';import '../models/total_tls_enable_or_disable_total_tls_response4_xx.dart';import '../models/total_tls_total_tls_settings_details_response4_xx.dart';/// TotalTlsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class TotalTlsApi with ApiExecutor {const TotalTlsApi(this.apiConfig);
 /// Get Total TLS Settings for a Zone.
 ///
 /// `GET /zones/{zone_id}/acm/total_tls`
-Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, Never>> totalTlsSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsTotalTlsSettingsDetailsResponse4Xx>> totalTlsSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,8 +25,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return TotalTlsTotalTlsSettingsDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -35,7 +45,7 @@ return execute(
 /// Set Total TLS Settings or disable the feature for a Zone.
 ///
 /// `POST /zones/{zone_id}/acm/total_tls`
-Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, Never>> totalTlsEnableOrDisableTotalTls({required TlsCertificatesAndHostnamesIdentifier zoneId, required TotalTlsEnableOrDisableTotalTlsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsEnableOrDisableTotalTlsResponse4Xx>> totalTlsEnableOrDisableTotalTls({required TlsCertificatesAndHostnamesIdentifier zoneId, required TotalTlsEnableOrDisableTotalTlsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,8 +59,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return TotalTlsEnableOrDisableTotalTlsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

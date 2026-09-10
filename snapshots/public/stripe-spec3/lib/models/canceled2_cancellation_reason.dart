@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Canceled2CancellationReasonVariant2($value)'; } 
  }
-typedef Canceled2CancellationReason = OneOf2<String,Canceled2CancellationReasonVariant2>;
+
+@immutable
+final class Canceled2CancellationReason {
+  const Canceled2CancellationReason({this.string = const Omittable.absent(),
+this.canceled2CancellationReasonVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const Canceled2CancellationReason._({required this.rawValue, required this.string,
+required this.canceled2CancellationReasonVariant2,});
+  factory Canceled2CancellationReason.fromJson(Object? json) => Canceled2CancellationReason._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+canceled2CancellationReasonVariant2: parseAnyOfVariant<Canceled2CancellationReasonVariant2>(json, (value) => Canceled2CancellationReasonVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<Canceled2CancellationReasonVariant2> canceled2CancellationReasonVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || canceled2CancellationReasonVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (canceled2CancellationReasonVariant2.isPresent) canceled2CancellationReasonVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is Canceled2CancellationReason && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'Canceled2CancellationReason(${toJson()})';
+}

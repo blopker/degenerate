@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_termina
 @immutable final class PostTerminalConfigurationsRequestVerifoneP400 {const PostTerminalConfigurationsRequestVerifoneP400({this.splashscreen});
 
 factory PostTerminalConfigurationsRequestVerifoneP400.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequestVerifoneP400(
-  splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => PostTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2.fromJson(v as String),) : null,
+  splashscreen: json['splashscreen'] != null ? PostTerminalConfigurationsRequestVerifoneP400Splashscreen.fromJson(json['splashscreen']) : null,
 ); }
 
 final PostTerminalConfigurationsRequestVerifoneP400Splashscreen? splashscreen;

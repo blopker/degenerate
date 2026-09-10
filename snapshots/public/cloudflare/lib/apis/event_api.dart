@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_event_delete_response400.dart';import '../models/delete_event_query_alert_delete_response404.dart';import '../models/delete_event_query_delete_response404.dart';import '../models/delete_event_reference_delete_request.dart';import '../models/delete_event_reference_delete_response400.dart';import '../models/delete_event_reference_delete_response_result.dart';import '../models/delete_event_tag_delete_request.dart';import '../models/delete_event_tag_delete_response400.dart';import '../models/delete_event_tag_delete_response_result.dart';import '../models/get_event_aggregate_dataset_id.dart';import '../models/get_event_aggregate_response.dart';import '../models/get_event_aggregate_response400.dart';import '../models/get_event_list_get_format.dart';import '../models/get_event_list_get_order.dart';import '../models/get_event_list_get_response.dart';import '../models/get_event_list_get_response400.dart';import '../models/get_event_list_get_search.dart';import '../models/get_event_query_alert_list_response.dart';import '../models/get_event_query_alert_list_response500.dart';import '../models/get_event_query_alert_read_response.dart';import '../models/get_event_query_alert_read_response404.dart';import '../models/get_event_query_list_response.dart';import '../models/get_event_query_list_response500.dart';import '../models/get_event_query_read_response.dart';import '../models/get_event_query_read_response404.dart';import '../models/get_event_raw_read_ds_response.dart';import '../models/get_event_raw_read_ds_response404.dart';import '../models/get_event_raw_read_response.dart';import '../models/get_event_raw_read_response400.dart';import '../models/get_event_read_response.dart';import '../models/get_event_read_response404.dart';import '../models/get_event_relationships_direction.dart';import '../models/get_event_relationships_relationship_types.dart';import '../models/get_event_relationships_response.dart';import '../models/get_event_relationships_response400.dart';import '../models/patch_event_query_alert_update_request.dart';import '../models/patch_event_query_alert_update_response.dart';import '../models/patch_event_query_alert_update_response400.dart';import '../models/patch_event_query_update_request.dart';import '../models/patch_event_query_update_response.dart';import '../models/patch_event_query_update_response400.dart';import '../models/patch_event_raw_update_request.dart';import '../models/patch_event_raw_update_response.dart';import '../models/patch_event_raw_update_response400.dart';import '../models/patch_event_update_request.dart';import '../models/patch_event_update_response.dart';import '../models/patch_event_update_response400.dart';import '../models/post_create_event_relationship_request.dart';import '../models/post_create_event_relationship_response.dart';import '../models/post_create_event_relationship_response400.dart';import '../models/post_event_create_bulk_request.dart';import '../models/post_event_create_bulk_response202.dart';import '../models/post_event_create_bulk_response400.dart';import '../models/post_event_create_request.dart';import '../models/post_event_create_response.dart';import '../models/post_event_create_response400.dart';import '../models/post_event_do_revert_request.dart';import '../models/post_event_do_revert_response.dart';import '../models/post_event_do_revert_response400.dart';import '../models/post_event_graph_ql_response.dart';import '../models/post_event_graph_ql_response400.dart';import '../models/post_event_move_to_new_ds_request.dart';import '../models/post_event_move_to_new_ds_response400.dart';import '../models/post_event_query_alert_create_request.dart';import '../models/post_event_query_alert_create_response.dart';import '../models/post_event_query_alert_create_response400.dart';import '../models/post_event_query_alert_update_request.dart';import '../models/post_event_query_alert_update_response.dart';import '../models/post_event_query_alert_update_response400.dart';import '../models/post_event_query_create_request.dart';import '../models/post_event_query_create_response.dart';import '../models/post_event_query_create_response400.dart';import '../models/post_event_query_update_request.dart';import '../models/post_event_query_update_response.dart';import '../models/post_event_query_update_response400.dart';import '../models/post_event_raw_update_request.dart';import '../models/post_event_raw_update_response.dart';import '../models/post_event_raw_update_response400.dart';import '../models/post_event_reference_create_request.dart';import '../models/post_event_reference_create_response400.dart';import '../models/post_event_reference_create_response_result.dart';import '../models/post_event_tag_create_request.dart';import '../models/post_event_tag_create_response400.dart';import '../models/post_event_tag_create_response_result.dart';import '../models/post_event_update_request.dart';import '../models/post_event_update_response.dart';import '../models/post_event_update_response400.dart';/// EventApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_event_delete_response400.dart';import '../models/delete_event_query_alert_delete_response404.dart';import '../models/delete_event_query_delete_response404.dart';import '../models/delete_event_reference_delete_request.dart';import '../models/delete_event_reference_delete_response400.dart';import '../models/delete_event_reference_delete_response_result.dart';import '../models/delete_event_tag_delete_request.dart';import '../models/delete_event_tag_delete_response400.dart';import '../models/delete_event_tag_delete_response_result.dart';import '../models/get_event_aggregate_dataset_id.dart';import '../models/get_event_aggregate_response.dart';import '../models/get_event_aggregate_response400.dart';import '../models/get_event_list_get_format.dart';import '../models/get_event_list_get_order.dart';import '../models/get_event_list_get_response.dart';import '../models/get_event_list_get_response400.dart';import '../models/get_event_list_get_search.dart';import '../models/get_event_query_alert_list_response.dart';import '../models/get_event_query_alert_list_response500.dart';import '../models/get_event_query_alert_read_response.dart';import '../models/get_event_query_alert_read_response404.dart';import '../models/get_event_query_list_response.dart';import '../models/get_event_query_list_response500.dart';import '../models/get_event_query_read_response.dart';import '../models/get_event_query_read_response404.dart';import '../models/get_event_raw_read_ds_response.dart';import '../models/get_event_raw_read_ds_response404.dart';import '../models/get_event_raw_read_ds_response500.dart';import '../models/get_event_raw_read_response.dart';import '../models/get_event_raw_read_response400.dart';import '../models/get_event_read_response.dart';import '../models/get_event_read_response404.dart';import '../models/get_event_relationships_direction.dart';import '../models/get_event_relationships_relationship_types.dart';import '../models/get_event_relationships_response.dart';import '../models/get_event_relationships_response400.dart';import '../models/patch_event_query_alert_update_request.dart';import '../models/patch_event_query_alert_update_response.dart';import '../models/patch_event_query_alert_update_response400.dart';import '../models/patch_event_query_alert_update_response404.dart';import '../models/patch_event_query_update_request.dart';import '../models/patch_event_query_update_response.dart';import '../models/patch_event_query_update_response400.dart';import '../models/patch_event_query_update_response404.dart';import '../models/patch_event_raw_update_request.dart';import '../models/patch_event_raw_update_response.dart';import '../models/patch_event_raw_update_response400.dart';import '../models/patch_event_update_request.dart';import '../models/patch_event_update_response.dart';import '../models/patch_event_update_response400.dart';import '../models/post_create_event_relationship_request.dart';import '../models/post_create_event_relationship_response.dart';import '../models/post_create_event_relationship_response400.dart';import '../models/post_event_create_bulk_request.dart';import '../models/post_event_create_bulk_response202.dart';import '../models/post_event_create_bulk_response400.dart';import '../models/post_event_create_request.dart';import '../models/post_event_create_response.dart';import '../models/post_event_create_response400.dart';import '../models/post_event_do_revert_request.dart';import '../models/post_event_do_revert_response.dart';import '../models/post_event_do_revert_response400.dart';import '../models/post_event_graph_ql_response.dart';import '../models/post_event_graph_ql_response400.dart';import '../models/post_event_move_to_new_ds_request.dart';import '../models/post_event_move_to_new_ds_response400.dart';import '../models/post_event_query_alert_create_request.dart';import '../models/post_event_query_alert_create_response.dart';import '../models/post_event_query_alert_create_response400.dart';import '../models/post_event_query_alert_update_request.dart';import '../models/post_event_query_alert_update_response.dart';import '../models/post_event_query_alert_update_response400.dart';import '../models/post_event_query_alert_update_response404.dart';import '../models/post_event_query_create_request.dart';import '../models/post_event_query_create_response.dart';import '../models/post_event_query_create_response400.dart';import '../models/post_event_query_update_request.dart';import '../models/post_event_query_update_response.dart';import '../models/post_event_query_update_response400.dart';import '../models/post_event_query_update_response404.dart';import '../models/post_event_raw_update_request.dart';import '../models/post_event_raw_update_response.dart';import '../models/post_event_raw_update_response400.dart';import '../models/post_event_reference_create_request.dart';import '../models/post_event_reference_create_response400.dart';import '../models/post_event_reference_create_response_result.dart';import '../models/post_event_tag_create_request.dart';import '../models/post_event_tag_create_response400.dart';import '../models/post_event_tag_create_response_result.dart';import '../models/post_event_update_request.dart';import '../models/post_event_update_response.dart';import '../models/post_event_update_response400.dart';/// EventApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -61,11 +61,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => GetEventListGetResponse.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => GetEventListGetResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return GetEventListGetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return GetEventListGetResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -92,10 +99,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return double.parse(response.body);
+final json = jsonDecode(response.body);
+return (json as num).toDouble();
   },
   onError: (response) {
-    return DeleteEventDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return DeleteEventDeleteResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -116,10 +131,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostEventDoRevertResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostEventDoRevertResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventDoRevertResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostEventDoRevertResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -140,10 +163,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostEventUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostEventUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostEventUpdateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -164,10 +195,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PatchEventUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PatchEventUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PatchEventUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PatchEventUpdateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -186,10 +225,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetEventRawReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetEventRawReadResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetEventRawReadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return GetEventRawReadResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -210,10 +257,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostEventRawUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostEventRawUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventRawUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostEventRawUpdateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -234,10 +289,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PatchEventRawUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PatchEventRawUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PatchEventRawUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PatchEventRawUpdateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -287,11 +350,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => GetEventRelationshipsResponse.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => GetEventRelationshipsResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return GetEventRelationshipsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return GetEventRelationshipsResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -333,10 +403,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetEventAggregateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetEventAggregateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetEventAggregateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return GetEventAggregateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -359,10 +437,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostEventCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostEventCreateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostEventCreateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -385,10 +471,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostEventCreateBulkResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostEventCreateBulkResponse202.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventCreateBulkResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostEventCreateBulkResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -409,10 +503,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetEventReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetEventReadResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetEventReadResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return GetEventReadResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -441,10 +543,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return double.parse(response.body);
+final json = jsonDecode(response.body);
+return (json as num).toDouble();
   },
   onError: (response) {
-    return PostEventMoveToNewDsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostEventMoveToNewDsResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -465,11 +575,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return DeleteEventTagDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return DeleteEventTagDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return DeleteEventTagDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return DeleteEventTagDeleteResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -490,11 +607,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return PostEventTagCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return PostEventTagCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventTagCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostEventTagCreateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -515,11 +639,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => GetEventQueryListResponse.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => GetEventQueryListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return GetEventQueryListResponse500.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 500:
+final json = jsonDecode(response.body);
+return GetEventQueryListResponse500.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -540,10 +671,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetEventQueryReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetEventQueryReadResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetEventQueryReadResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return GetEventQueryReadResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -552,7 +691,7 @@ return execute(
 /// Update an existing saved event query by its ID
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/queries/{query_id}`
-Future<ApiResult<PostEventQueryUpdateResponse, PostEventQueryUpdateResponse400>> postEventQueryUpdate({required String accountId, required int queryId, PostEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostEventQueryUpdateResponse, OneOf2<PostEventQueryUpdateResponse400, PostEventQueryUpdateResponse404>>> postEventQueryUpdate({required String accountId, required int queryId, PostEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -566,10 +705,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostEventQueryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostEventQueryUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventQueryUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<PostEventQueryUpdateResponse400, PostEventQueryUpdateResponse404>.a(PostEventQueryUpdateResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<PostEventQueryUpdateResponse400, PostEventQueryUpdateResponse404>.b(PostEventQueryUpdateResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -578,7 +728,7 @@ return execute(
 /// Update an existing saved event query by its ID
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/queries/{query_id}`
-Future<ApiResult<PatchEventQueryUpdateResponse, PatchEventQueryUpdateResponse400>> patchEventQueryUpdate({required String accountId, required int queryId, PatchEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchEventQueryUpdateResponse, OneOf2<PatchEventQueryUpdateResponse400, PatchEventQueryUpdateResponse404>>> patchEventQueryUpdate({required String accountId, required int queryId, PatchEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -592,10 +742,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PatchEventQueryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PatchEventQueryUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PatchEventQueryUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<PatchEventQueryUpdateResponse400, PatchEventQueryUpdateResponse404>.a(PatchEventQueryUpdateResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<PatchEventQueryUpdateResponse400, PatchEventQueryUpdateResponse404>.b(PatchEventQueryUpdateResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -617,7 +778,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return DeleteEventQueryDeleteResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return DeleteEventQueryDeleteResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -638,11 +806,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => GetEventQueryAlertListResponse.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => GetEventQueryAlertListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return GetEventQueryAlertListResponse500.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 500:
+final json = jsonDecode(response.body);
+return GetEventQueryAlertListResponse500.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -663,10 +838,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetEventQueryAlertReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetEventQueryAlertReadResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetEventQueryAlertReadResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return GetEventQueryAlertReadResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -675,7 +858,7 @@ return execute(
 /// Update an existing event query alert by its ID
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/queries/alerts/{alert_id}`
-Future<ApiResult<PostEventQueryAlertUpdateResponse, PostEventQueryAlertUpdateResponse400>> postEventQueryAlertUpdate({required String accountId, required int alertId, PostEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostEventQueryAlertUpdateResponse, OneOf2<PostEventQueryAlertUpdateResponse400, PostEventQueryAlertUpdateResponse404>>> postEventQueryAlertUpdate({required String accountId, required int alertId, PostEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -689,10 +872,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostEventQueryAlertUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostEventQueryAlertUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventQueryAlertUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<PostEventQueryAlertUpdateResponse400, PostEventQueryAlertUpdateResponse404>.a(PostEventQueryAlertUpdateResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<PostEventQueryAlertUpdateResponse400, PostEventQueryAlertUpdateResponse404>.b(PostEventQueryAlertUpdateResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -701,7 +895,7 @@ return execute(
 /// Update an existing event query alert by its ID
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/queries/alerts/{alert_id}`
-Future<ApiResult<PatchEventQueryAlertUpdateResponse, PatchEventQueryAlertUpdateResponse400>> patchEventQueryAlertUpdate({required String accountId, required int alertId, PatchEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchEventQueryAlertUpdateResponse, OneOf2<PatchEventQueryAlertUpdateResponse400, PatchEventQueryAlertUpdateResponse404>>> patchEventQueryAlertUpdate({required String accountId, required int alertId, PatchEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -715,10 +909,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PatchEventQueryAlertUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PatchEventQueryAlertUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PatchEventQueryAlertUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<PatchEventQueryAlertUpdateResponse400, PatchEventQueryAlertUpdateResponse404>.a(PatchEventQueryAlertUpdateResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<PatchEventQueryAlertUpdateResponse400, PatchEventQueryAlertUpdateResponse404>.b(PatchEventQueryAlertUpdateResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -740,7 +945,14 @@ return execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return DeleteEventQueryAlertDeleteResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return DeleteEventQueryAlertDeleteResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -763,10 +975,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostEventQueryAlertCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostEventQueryAlertCreateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventQueryAlertCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostEventQueryAlertCreateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -789,10 +1009,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostEventQueryCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostEventQueryCreateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventQueryCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostEventQueryCreateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -801,7 +1029,7 @@ return execute(
 /// Retrieves the raw data associated with an event. Searches across all shards in the dataset.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}`
-Future<ApiResult<GetEventRawReadDsResponse, GetEventRawReadDsResponse404>> getEventRawReadDs({required String accountId, required String eventId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetEventRawReadDsResponse, OneOf2<GetEventRawReadDsResponse404, GetEventRawReadDsResponse500>>> getEventRawReadDs({required String accountId, required String eventId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -813,10 +1041,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return GetEventRawReadDsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetEventRawReadDsResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetEventRawReadDsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<GetEventRawReadDsResponse404, GetEventRawReadDsResponse500>.a(GetEventRawReadDsResponse404.fromJson(json as Map<String, dynamic>));
+case 500:
+final json = jsonDecode(response.body);
+return OneOf2<GetEventRawReadDsResponse404, GetEventRawReadDsResponse500>.b(GetEventRawReadDsResponse500.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -837,11 +1076,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return DeleteEventReferenceDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return DeleteEventReferenceDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return DeleteEventReferenceDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return DeleteEventReferenceDeleteResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -862,11 +1108,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return PostEventReferenceCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return PostEventReferenceCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventReferenceCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostEventReferenceCreateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -889,10 +1142,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostCreateEventRelationshipResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostCreateEventRelationshipResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostCreateEventRelationshipResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostCreateEventRelationshipResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -913,10 +1174,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return PostEventGraphQlResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostEventGraphQlResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostEventGraphQlResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostEventGraphQlResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

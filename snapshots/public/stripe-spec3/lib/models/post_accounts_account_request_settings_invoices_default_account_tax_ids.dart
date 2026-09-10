@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2($value)'; } 
  }
-typedef PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIds = OneOf2<List<String>,PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2>;
+
+@immutable
+final class PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIds {
+  const PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIds({this.listString = const Omittable.absent(),
+this.postAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIds._({required this.rawValue, required this.listString,
+required this.postAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2,});
+  factory PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIds.fromJson(Object? json) => PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIds._(
+    rawValue: Omittable(json),
+    listString: parseAnyOfVariant<List<String>>(json, (value) => (value! as List<dynamic>).map((e) => e as String).toList()),
+postAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2: parseAnyOfVariant<PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2>(json, (value) => PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<String>> listString;
+final Omittable<PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2> postAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listString.isPresent || postAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listString.isPresent) listString.value,
+if (postAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2.isPresent) postAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIdsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIds && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostAccountsAccountRequestSettingsInvoicesDefaultAccountTaxIds(${toJson()})';
+}

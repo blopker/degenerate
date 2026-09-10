@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';import 'enterprise.dart';import 'installation_account.dart';import 'simple_user.dart';/// Describe whether all repositories have been selected or there's a selection involved
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';import 'installation_account.dart';import 'simple_user.dart';/// Describe whether all repositories have been selected or there's a selection involved
 @immutable final class InstallationRepositorySelection {const InstallationRepositorySelection._(this.value);
 
 factory InstallationRepositorySelection.fromJson(String json) { return switch (json) {
@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory Installation.fromJson(Map<String, dynamic> json) { return Installation(
   id: (json['id'] as num).toInt(),
-  account: json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => Enterprise.fromJson(v as Map<String, dynamic>),) : null,
+  account: json['account'] != null ? InstallationAccount.fromJson(json['account']) : null,
   repositorySelection: InstallationRepositorySelection.fromJson(json['repository_selection'] as String),
   accessTokensUrl: Uri.parse(json['access_tokens_url'] as String),
   repositoriesUrl: Uri.parse(json['repositories_url'] as String),

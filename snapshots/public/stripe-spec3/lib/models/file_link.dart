@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'file_link_file.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_link_file.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class FileLinkObject {const FileLinkObject._(this.value);
 
 factory FileLinkObject.fromJson(String json) { return switch (json) {
@@ -31,7 +31,7 @@ factory FileLink.fromJson(Map<String, dynamic> json) { return FileLink(
   created: (json['created'] as num).toInt(),
   expired: json['expired'] as bool,
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
-  file: OneOf2.parse(json['file'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),),
+  file: FileLinkFile.fromJson(json['file']),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),

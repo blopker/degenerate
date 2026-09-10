@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_termina
 @immutable final class PostTerminalConfigurationsRequestBbposWiseposE {const PostTerminalConfigurationsRequestBbposWiseposE({this.splashscreen});
 
 factory PostTerminalConfigurationsRequestBbposWiseposE.fromJson(Map<String, dynamic> json) { return PostTerminalConfigurationsRequestBbposWiseposE(
-  splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => PostTerminalConfigurationsRequestBbposWiseposESplashscreenVariant2.fromJson(v as String),) : null,
+  splashscreen: json['splashscreen'] != null ? PostTerminalConfigurationsRequestBbposWiseposESplashscreen.fromJson(json['splashscreen']) : null,
 ); }
 
 final PostTerminalConfigurationsRequestBbposWiseposESplashscreen? splashscreen;

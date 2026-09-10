@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_payment_source_card.dart';import 'destination_specs.dart';import 'post_charges_request_card.dart';import 'post_charges_request_destination.dart';import 'post_charges_request_metadata.dart';import 'post_charges_request_radar_options.dart';import 'post_charges_request_shipping.dart';import 'post_charges_request_transfer_data.dart';@immutable final class PostChargesRequest {const PostChargesRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.capture, this.card, this.currency, this.customer, this.description, this.destination, this.expand, this.metadata, this.onBehalfOf, this.radarOptions, this.receiptEmail, this.shipping, this.source, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_request_card.dart';import 'post_charges_request_destination.dart';import 'post_charges_request_metadata.dart';import 'post_charges_request_radar_options.dart';import 'post_charges_request_shipping.dart';import 'post_charges_request_transfer_data.dart';@immutable final class PostChargesRequest {const PostChargesRequest({this.amount, this.applicationFee, this.applicationFeeAmount, this.capture, this.card, this.currency, this.customer, this.description, this.destination, this.expand, this.metadata, this.onBehalfOf, this.radarOptions, this.receiptEmail, this.shipping, this.source, this.statementDescriptor, this.statementDescriptorSuffix, this.transferData, this.transferGroup, });
 
 factory PostChargesRequest.fromJson(Map<String, dynamic> json) { return PostChargesRequest(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   applicationFee: json['application_fee'] != null ? (json['application_fee'] as num).toInt() : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   capture: json['capture'] as bool?,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CustomerPaymentSourceCard.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  card: json['card'] != null ? PostChargesRequestCard.fromJson(json['card']) : null,
   currency: json['currency'] as String?,
   customer: json['customer'] as String?,
   description: json['description'] as String?,
-  destination: json['destination'] != null ? OneOf2.parse(json['destination'], fromA: (v) => DestinationSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  destination: json['destination'] != null ? PostChargesRequestDestination.fromJson(json['destination']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostChargesRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostChargesRequestMetadata.fromJson(json['metadata']) : null,
   onBehalfOf: json['on_behalf_of'] as String?,
   radarOptions: json['radar_options'] != null ? PostChargesRequestRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
   receiptEmail: json['receipt_email'] as String?,

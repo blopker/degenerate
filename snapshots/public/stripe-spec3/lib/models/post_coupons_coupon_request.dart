@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_coupons
 factory PostCouponsCouponRequest.fromJson(Map<String, dynamic> json) { return PostCouponsCouponRequest(
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostCouponsCouponRequestCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostCouponsCouponRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostCouponsCouponRequestMetadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
 ); }
 

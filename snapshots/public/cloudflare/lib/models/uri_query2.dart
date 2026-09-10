@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_rewrite_uri_query.dart';/// A URI query rewrite.
+@immutable final class UriQuery2 {const UriQuery2({required this.query});
+
+factory UriQuery2.fromJson(Map<String, dynamic> json) { return UriQuery2(
+  query: RulesetsRewriteUriQuery.fromJson(json['query'] as Map<String, dynamic>),
+); }
+
+final RulesetsRewriteUriQuery query;
+
+Map<String, dynamic> toJson() { return {
+  'query': query.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('query'); } 
+UriQuery2 copyWith({RulesetsRewriteUriQuery? query}) { return UriQuery2(
+  query: query ?? this.query,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UriQuery2 &&
+          query == other.query; } 
+@override int get hashCode { return query.hashCode; } 
+@override String toString() { return 'UriQuery2(query: $query)'; } 
+ }

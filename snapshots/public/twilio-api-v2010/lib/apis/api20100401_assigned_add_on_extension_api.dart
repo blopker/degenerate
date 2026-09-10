@@ -23,7 +23,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -56,7 +57,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListIncomingPhoneNumberAssignedAddOnExtensionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListIncomingPhoneNumberAssignedAddOnExtensionResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_instances_request.dart';import '../models/ai_search_create_instances_response400.dart';import '../models/ai_search_create_instances_response_result.dart';import '../models/ai_search_delete_instances_response404.dart';import '../models/ai_search_delete_instances_response_result.dart';import '../models/ai_search_fetch_instances_response400.dart';import '../models/ai_search_fetch_instances_response_result.dart';import '../models/ai_search_instance_chat_completion_request.dart';import '../models/ai_search_instance_chat_completion_response.dart';import '../models/ai_search_instance_chat_completion_response404.dart';import '../models/ai_search_instance_search_request.dart';import '../models/ai_search_instance_search_response404.dart';import '../models/ai_search_instance_search_response_result.dart';import '../models/ai_search_list_instances_order_by.dart';import '../models/ai_search_list_instances_order_by_direction.dart';import '../models/ai_search_list_instances_response400.dart';import '../models/ai_search_list_instances_response_result.dart';import '../models/ai_search_stats_response404.dart';import '../models/ai_search_stats_response_result.dart';import '../models/ai_search_update_instances_request.dart';import '../models/ai_search_update_instances_response400.dart';import '../models/ai_search_update_instances_response_result.dart';/// AiSearchInstancesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_instances_request.dart';import '../models/ai_search_create_instances_response400.dart';import '../models/ai_search_create_instances_response_result.dart';import '../models/ai_search_delete_instances_response404.dart';import '../models/ai_search_delete_instances_response_result.dart';import '../models/ai_search_fetch_instances_response400.dart';import '../models/ai_search_fetch_instances_response404.dart';import '../models/ai_search_fetch_instances_response_result.dart';import '../models/ai_search_instance_chat_completion_request.dart';import '../models/ai_search_instance_chat_completion_response.dart';import '../models/ai_search_instance_chat_completion_response404.dart';import '../models/ai_search_instance_search_request.dart';import '../models/ai_search_instance_search_response404.dart';import '../models/ai_search_instance_search_response_result.dart';import '../models/ai_search_list_instances_order_by.dart';import '../models/ai_search_list_instances_order_by_direction.dart';import '../models/ai_search_list_instances_response400.dart';import '../models/ai_search_list_instances_response_result.dart';import '../models/ai_search_stats_response404.dart';import '../models/ai_search_stats_response_result.dart';import '../models/ai_search_update_instances_request.dart';import '../models/ai_search_update_instances_response400.dart';import '../models/ai_search_update_instances_response404.dart';import '../models/ai_search_update_instances_response_result.dart';/// AiSearchInstancesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -43,11 +43,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => AiSearchListInstancesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => AiSearchListInstancesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return AiSearchListInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return AiSearchListInstancesResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -70,18 +77,25 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AiSearchCreateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AiSearchCreateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AiSearchCreateInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return AiSearchCreateInstancesResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
 /// Read instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchFetchInstancesResponseResult, AiSearchFetchInstancesResponse400>> aiSearchFetchInstances({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchFetchInstancesResponseResult, OneOf2<AiSearchFetchInstancesResponse400, AiSearchFetchInstancesResponse404>>> aiSearchFetchInstances({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -93,18 +107,28 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AiSearchFetchInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AiSearchFetchInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AiSearchFetchInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<AiSearchFetchInstancesResponse400, AiSearchFetchInstancesResponse404>.a(AiSearchFetchInstancesResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<AiSearchFetchInstancesResponse400, AiSearchFetchInstancesResponse404>.b(AiSearchFetchInstancesResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
 /// Update instances.
 ///
 /// `PUT /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchUpdateInstancesResponseResult, AiSearchUpdateInstancesResponse400>> aiSearchUpdateInstances({required String accountId, required String id, AiSearchUpdateInstancesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchUpdateInstancesResponseResult, OneOf2<AiSearchUpdateInstancesResponse400, AiSearchUpdateInstancesResponse404>>> aiSearchUpdateInstances({required String accountId, required String id, AiSearchUpdateInstancesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -118,11 +142,21 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AiSearchUpdateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AiSearchUpdateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AiSearchUpdateInstancesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<AiSearchUpdateInstancesResponse400, AiSearchUpdateInstancesResponse404>.a(AiSearchUpdateInstancesResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<AiSearchUpdateInstancesResponse400, AiSearchUpdateInstancesResponse404>.b(AiSearchUpdateInstancesResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -141,11 +175,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AiSearchDeleteInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AiSearchDeleteInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AiSearchDeleteInstancesResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return AiSearchDeleteInstancesResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -168,10 +209,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return AiSearchInstanceChatCompletionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AiSearchInstanceChatCompletionResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return AiSearchInstanceChatCompletionResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return AiSearchInstanceChatCompletionResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -194,11 +243,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AiSearchInstanceSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AiSearchInstanceSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AiSearchInstanceSearchResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return AiSearchInstanceSearchResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -219,11 +275,18 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AiSearchStatsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AiSearchStatsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AiSearchStatsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return AiSearchStatsResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

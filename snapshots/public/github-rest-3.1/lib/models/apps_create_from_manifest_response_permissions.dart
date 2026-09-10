@@ -49,6 +49,6 @@ AppsCreateFromManifestResponsePermissions copyWith({String? Function()? issues, 
           contents == other.contents &&
           deployments == other.deployments &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(issues, checks, metadata, contents, deployments, Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(issues, checks, metadata, contents, deployments, mapHash(additionalProperties)); } 
 @override String toString() { return 'AppsCreateFromManifestResponsePermissions(issues: $issues, checks: $checks, metadata: $metadata, contents: $contents, deployments: $deployments, additionalProperties: $additionalProperties)'; } 
  }

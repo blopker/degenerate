@@ -49,7 +49,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ListUsageRecordYearlyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListUsageRecordYearlyResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

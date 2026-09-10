@@ -40,7 +40,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NscCniList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NscCniList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -61,7 +62,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NscCni.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NscCni.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -80,7 +82,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NscCni.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NscCni.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -101,7 +104,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NscCni.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NscCni.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

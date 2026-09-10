@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2($value)'; } 
  }
-typedef PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgent = OneOf2<String,PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2>;
+
+@immutable
+final class PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgent {
+  const PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgent({this.string = const Omittable.absent(),
+this.postTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgent._({required this.rawValue, required this.string,
+required this.postTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2,});
+  factory PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgent.fromJson(Object? json) => PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgent._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2: parseAnyOfVariant<PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2>(json, (value) => PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2> postTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2.isPresent) postTokensRequestPersonAdditionalTosAcceptancesAccountUserAgentVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgent && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTokensRequestPersonAdditionalTosAcceptancesAccountUserAgent(${toJson()})';
+}

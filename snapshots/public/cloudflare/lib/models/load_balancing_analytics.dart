@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_origin_analytics.dart';@immutable final class LoadBalancingAnalytics {const LoadBalancingAnalytics({this.id = 1, this.origins, this.pool, this.timestamp, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_origin_analytics.dart';@immutable final class LoadBalancingAnalytics {const LoadBalancingAnalytics({this.id, this.origins, this.pool, this.timestamp, });
 
 factory LoadBalancingAnalytics.fromJson(Map<String, dynamic> json) { return LoadBalancingAnalytics(
-  id: json.containsKey('id') ? (json['id'] as num).toInt() : 1,
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
   origins: (json['origins'] as List<dynamic>?)?.map((e) => LoadBalancingOriginAnalytics.fromJson(e as Map<String, dynamic>)).toList(),
   pool: json['pool'] as Map<String, dynamic>?,
   timestamp: json['timestamp'] != null ? DateTime.parse(json['timestamp'] as String) : null,
 ); }
 
-final int id;
+final int? id;
 
 final List<LoadBalancingOriginAnalytics>? origins;
 
@@ -17,14 +17,16 @@ final Map<String,dynamic>? pool;
 
 final DateTime? timestamp;
 
+/// The value with the schema default applied when absent.
+int get idOrDefault { return id ?? 1; } 
 Map<String, dynamic> toJson() { return {
-  'id': id,
+  'id': ?id,
   if (origins != null) 'origins': origins?.map((e) => e.toJson()).toList(),
   'pool': ?pool,
   if (timestamp != null) 'timestamp': timestamp?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'origins', 'pool', 'timestamp'}.contains(key)); } 
-LoadBalancingAnalytics copyWith({int Function()? id, List<LoadBalancingOriginAnalytics>? Function()? origins, Map<String, dynamic>? Function()? pool, DateTime? Function()? timestamp, }) { return LoadBalancingAnalytics(
+LoadBalancingAnalytics copyWith({int? Function()? id, List<LoadBalancingOriginAnalytics>? Function()? origins, Map<String, dynamic>? Function()? pool, DateTime? Function()? timestamp, }) { return LoadBalancingAnalytics(
   id: id != null ? id() : this.id,
   origins: origins != null ? origins() : this.origins,
   pool: pool != null ? pool() : this.pool,

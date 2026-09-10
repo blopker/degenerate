@@ -52,21 +52,19 @@ enum OmittableMode {
 /// Whether [f] is emitted as an `Omittable<...>` presence-wrapped field.
 ///
 /// Required fields always serialize their key, so they have no third state.
-/// Fields with usable Dart defaults deliberately collapse "absent" into the
-/// default value. Both ModelEmitter and ApiEmitter must agree on this
+/// Schema defaults are resolved separately from presence. Both the model
+/// and API emitters must agree on this
 /// predicate — drift produces uncompilable multipart/form body code.
 bool isOmittableField(IrField f, OmittableMode mode) {
   if (mode == OmittableMode.off) return false;
-  if (f.isRequired || hasUsableDartDefault(f)) return false;
+  if (f.isRequired) return false;
   return mode == OmittableMode.all || f.type.isNullable;
 }
 
-/// Whether a field's spec default can be represented as a Dart compile-time
-/// constant (making the generated field non-nullable). Single source of
-/// truth: `defaultFieldCode`.
+/// Whether a field's spec default has a type-compatible Dart expression.
 bool hasUsableDartDefault(IrField f) => defaultFieldCode(f) != null;
 
-/// The Dart constant expression for a field's spec default, or null when the
+/// The Dart expression for a field's spec default, or null when the
 /// default can't be represented (type mismatch, object-typed empty maps, …).
 Code? defaultFieldCode(IrField f) {
   if (f.defaultValue == null) return null;
@@ -74,12 +72,17 @@ Code? defaultFieldCode(IrField f) {
   // Don't use empty map/object defaults for object-typed fields -
   // they don't make sense as Dart defaults (const {} is Map, not the object).
   if (v is Map && v.isEmpty && _isObjectLikeType(f.type)) return null;
-  // For enum-typed fields, emit the enum constant instead of a raw string.
-  if (v is String && f.type is IrEnum) {
+  // Decode the exact wire value rather than reconstructing a member name:
+  // different values can normalize to the same Dart identifier.
+  if (f.type is IrEnum) {
     final enumType = f.type as IrEnum;
-    final enumName = enumType.name;
-    final dartValue = enumValueName(v);
-    return Code('$enumName.$dartValue');
+    final literal = switch (enumType.valueKind) {
+      PrimitiveKind.string when v is String => dartStringLiteral(v),
+      PrimitiveKind.int when v is num => '${v.toInt()}',
+      PrimitiveKind.double when v is num => '${v.toDouble()}',
+      _ => null,
+    };
+    return literal == null ? null : Code('${enumType.name}.fromJson($literal)');
   }
   if (v is String) {
     // Only emit string default if the field type is actually a String
@@ -291,10 +294,7 @@ IrType _resolveOneOfRef(
         when isOneOfEligible(variants) &&
             !_isSelfReferencingUnion(type.name, variants) =>
       target,
-    IrAnyOf(:final variants)
-        when isOneOfEligible(variants) &&
-            !_isSelfReferencingUnion(type.name, variants) =>
-      target,
+    IrAnyOf() => target,
     _ => type,
   };
 }
@@ -326,10 +326,11 @@ String? _simpleCastFromJson(
       _ => null, // needs null-check wrapper
     },
     IrList(:final items) =>
-      '($accessor as List<dynamic>?)?.map((e) => ${_elementFromJson(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
-    IrMap(:final values) => _isIdentityMapValue(values)
-        ? '$accessor as Map<String, dynamic>?'
-        : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_elementFromJson(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+      '($accessor as List<dynamic>?)?.map(${_listElementParser(items, typeRegistry, resolving)}).toList()',
+    IrMap(:final values) =>
+      _isIdentityMapValue(values)
+          ? '$accessor as Map<String, dynamic>?'
+          : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_elementFromJson(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     _ => null,
   };
 }
@@ -373,15 +374,32 @@ String _elementFromJson(
 bool _isIdentityMapValue(IrType type) =>
     type is IrPrimitive && type.kind == PrimitiveKind.dynamic_;
 
-/// If [expr] is a simple function call `funcName(accessor)`, returns the
-/// function name for use as a tearoff. Returns null otherwise.
+String _listElementParser(
+  IrType items,
+  Map<String, IrType> registry,
+  Set<String>? resolving,
+) {
+  final expression = _elementFromJson(
+    items,
+    'e',
+    typeRegistry: registry,
+    resolving: resolving,
+  );
+  return asTearoff(expression, 'e') ?? '(e) => $expression';
+}
+
+/// Extracts a function or static method tearoff from a call whose sole argument
+/// is [accessor]. Returns null for expressions needing a callback body.
 String? asTearoff(String expr, String accessor) {
-  // Match pattern: identifier(accessor) — no dots, no chaining.
   if (!expr.endsWith('($accessor)')) return null;
   final funcName = expr.substring(0, expr.length - accessor.length - 2);
   if (funcName.isEmpty) return null;
-  // Must be a simple identifier (no dots, spaces, etc.)
-  if (!RegExp(r'^[a-zA-Z_]\w*$').hasMatch(funcName)) return null;
+  // Functions and static codecs such as Model.fromJson support tearoffs.
+  if (!RegExp(
+    r'^[a-zA-Z_$][\w$]*(?:\.[a-zA-Z_$][\w$]*)*$',
+  ).hasMatch(funcName)) {
+    return null;
+  }
   return funcName;
 }
 
@@ -403,10 +421,11 @@ String _buildFromJsonNonNull(
       _ => '$name.fromJson($accessor as String)',
     },
     IrList(:final items) =>
-      '($accessor as List<dynamic>).map((e) => ${_elementFromJson(items, 'e', typeRegistry: typeRegistry, resolving: resolving)}).toList()',
-    IrMap(:final values) => _isIdentityMapValue(values)
-        ? '$accessor as Map<String, dynamic>'
-        : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_elementFromJson(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
+      '($accessor as List<dynamic>).map(${_listElementParser(items, typeRegistry, resolving)}).toList()',
+    IrMap(:final values) =>
+      _isIdentityMapValue(values)
+          ? '$accessor as Map<String, dynamic>'
+          : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_elementFromJson(values, 'v', typeRegistry: typeRegistry, resolving: resolving)}))',
     IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
       buildOneOfParseCode(
         variants,
@@ -420,21 +439,14 @@ String _buildFromJsonNonNull(
           : '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
     IrExtensionType(:final name, :final inner) =>
       '$name.fromJson(${_extensionTypeJsonCast(inner, accessor)})',
-    IrAnyOf(:final variants) when isOneOfEligible(variants) =>
-      buildOneOfParseCode(
-        variants,
-        accessor,
-        typeRegistry: typeRegistry,
-        resolving: resolving,
-      ),
+    IrAnyOf(:final name) => '$name.fromJson($accessor)',
     // Cycle-detected OneOf typedef: use generated parse helper function.
     IrTypeRef(:final name) when _isOneOfInRegistry(name, typeRegistry) =>
       'parse$name($accessor)',
     // Object, TypeRef, DiscriminatedUnion, AnyOf all use .fromJson(map)
     IrObject(:final name) ||
     IrTypeRef(:final name) ||
-    IrDiscriminatedUnion(:final name) ||
-    IrAnyOf(:final name) =>
+    IrDiscriminatedUnion(:final name) =>
       '$name.fromJson(${paramIsMap ? accessor : '$accessor as Map<String, dynamic>'})',
   };
 }
@@ -458,7 +470,11 @@ String buildToJsonCode(IrType type, String accessor, {bool nullable = false}) {
     }(),
     IrMap(:final values) => () {
       if (!mapValueNeedsToJson(values)) return accessor;
-      final valueExpr = buildToJsonCode(values, 'v', nullable: values.isNullable);
+      final valueExpr = buildToJsonCode(
+        values,
+        'v',
+        nullable: values.isNullable,
+      );
       // Skip identity map transform.
       if (valueExpr == 'v') return accessor;
       return '$accessor$q.map((k, v) => MapEntry(k, $valueExpr))';
@@ -528,10 +544,6 @@ bool _isOneOfInRegistry(String name, Map<String, IrType> registry) {
         when isOneOfEligible(variants) &&
             !_isSelfReferencingUnion(name, variants) =>
       true,
-    IrAnyOf(:final variants)
-        when isOneOfEligible(variants) &&
-            !_isSelfReferencingUnion(name, variants) =>
-      true,
     _ => false,
   };
 }
@@ -541,8 +553,7 @@ bool _isOneOfInRegistry(String name, Map<String, IrType> registry) {
 /// bytes (`Uint8List` implements `List<int>`). These need `listEquals` /
 /// `Object.hashAll` for value equality instead of `==`/`hashCode`.
 bool isListType(IrType type) =>
-    type is IrList ||
-    (type is IrPrimitive && type.kind == PrimitiveKind.bytes);
+    type is IrList || (type is IrPrimitive && type.kind == PrimitiveKind.bytes);
 
 // ─── OneOf helpers ──────────────────────────────────────
 
@@ -584,9 +595,14 @@ String buildOneOfParseCode(
     final branchResolving = resolving != null
         ? Set<String>.from(resolving)
         : null;
-    args.add(
-      'from${_oneOfLetters[i]}: (v) => ${_buildFromJsonNonNull(variant, 'v', typeRegistry: typeRegistry, resolving: branchResolving)}',
+    final expression = _buildFromJsonNonNull(
+      variant,
+      'v',
+      typeRegistry: typeRegistry,
+      resolving: branchResolving,
     );
+    final parser = asTearoff(expression, 'v') ?? '(v) => $expression';
+    args.add('from${_oneOfLetters[i]}: $parser');
   }
 
   final call = 'OneOf$n.parse($accessor, ${args.join(', ')},)';
@@ -628,8 +644,6 @@ String enumValueName(String value) {
 ///
 /// Names like `$0Request` need `$` escaped to avoid string interpolation.
 String escapeNameForString(String name) => name.replaceAll(r'$', r'\$');
-
-
 
 /// Convert a field name to a file-system-friendly snake_case name.
 String toSnakeCase(String input) {
@@ -727,8 +741,9 @@ String primitiveToJsonExpr(
   PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
   PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
   PrimitiveKind.duration => '$accessor$q.inMilliseconds',
-  PrimitiveKind.bytes => q.isEmpty
-      ? 'base64Encode($accessor)'
-      : 'switch ($accessor) { final bytes? => base64Encode(bytes), _ => null }',
+  PrimitiveKind.bytes =>
+    q.isEmpty
+        ? 'base64Encode($accessor)'
+        : 'switch ($accessor) { final bytes? => base64Encode(bytes), _ => null }',
   _ => accessor,
 };

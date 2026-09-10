@@ -12,6 +12,7 @@ import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
+import 'package:degenerate/src/normalizer/directional_schemas.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:degenerate/src/parser/ref_inliner.dart';
@@ -169,7 +170,7 @@ class Generator {
         : p.dirname(p.absolute(config.inputPath));
     final inliner = RefInliner(baseDir);
     final inlinedRoot = inliner.inline(doc.root);
-    final inlinedDoc = OpenApiDocument(inlinedRoot);
+    final inlinedDoc = DirectionalSchemas(OpenApiDocument(inlinedRoot)).project();
 
     // 3. Normalize schemas (name allocation, discriminator detection)
     _log('Normalizing schemas...');

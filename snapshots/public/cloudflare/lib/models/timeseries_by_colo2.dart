@@ -5,9 +5,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bandwidth_by
 factory TimeseriesByColo2.fromJson(Map<String, dynamic> json) { return TimeseriesByColo2(
   bandwidth: json['bandwidth'] != null ? BandwidthByColo.fromJson(json['bandwidth'] as Map<String, dynamic>) : null,
   requests: json['requests'] != null ? RequestsByColo.fromJson(json['requests'] as Map<String, dynamic>) : null,
-  since: json['since'] != null ? OneOf2.parse(json['since'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(),) : null,
+  since: json['since'] != null ? Since.fromJson(json['since']) : null,
   threats: json['threats'] != null ? Threats.fromJson(json['threats'] as Map<String, dynamic>) : null,
-  until: json['until'] != null ? OneOf2.parse(json['until'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(),) : null,
+  until: json['until'] != null ? Until.fromJson(json['until']) : null,
 ); }
 
 final BandwidthByColo? bandwidth;

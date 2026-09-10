@@ -40,7 +40,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NscInterconnectList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NscInterconnectList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -61,7 +62,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NscInterconnect.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NscInterconnect.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -80,7 +82,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NscInterconnect.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NscInterconnect.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -133,7 +136,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return NscStatusInfo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return NscStatusInfo.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

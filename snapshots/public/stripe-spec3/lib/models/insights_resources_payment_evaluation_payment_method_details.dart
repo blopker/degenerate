@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_billing_details.dart';import 'insights_resources_payment_evaluation_payment_method_details_payment_method.dart';import 'payment_method.dart';/// Payment method details attached to this payment evaluation.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_billing_details.dart';import 'insights_resources_payment_evaluation_payment_method_details_payment_method.dart';/// Payment method details attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationPaymentMethodDetails {const InsightsResourcesPaymentEvaluationPaymentMethodDetails({required this.paymentMethod, this.billingDetails = const Omittable.absent(), });
 
 factory InsightsResourcesPaymentEvaluationPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationPaymentMethodDetails(
   billingDetails: json.containsKey('billing_details') ? Omittable(json['billing_details'] != null ? InsightsResourcesPaymentEvaluationBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  paymentMethod: OneOf2.parse(json['payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),),
+  paymentMethod: InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod.fromJson(json['payment_method']),
 ); }
 
 /// Billing information associated with the payment evaluation.

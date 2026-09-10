@@ -102,30 +102,30 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchCreateInstancesRequestType($value)'; } 
  }
-@immutable final class AiSearchCreateInstancesRequest {const AiSearchCreateInstancesRequest({required this.id, this.aiGatewayId = const Omittable.absent(), this.aiSearchModel, this.cache = true, this.cacheThreshold = AiSearchCreateInstancesRequestCacheThreshold.closeEnough, this.chunk = true, this.chunkOverlap = 10, this.chunkSize = 256, this.customMetadata, this.embeddingModel, this.fusionMethod = AiSearchCreateInstancesRequestFusionMethod.rrf, this.hybridSearchEnabled = false, this.maxNumResults = 10, this.metadata, this.publicEndpointParams, this.reranking = false, this.rerankingModel, this.retrievalOptions = const Omittable.absent(), this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.source, this.sourceParams = const Omittable.absent(), this.tokenId, this.type, });
+@immutable final class AiSearchCreateInstancesRequest {const AiSearchCreateInstancesRequest({required this.id, this.aiGatewayId = const Omittable.absent(), this.aiSearchModel, this.cache, this.cacheThreshold, this.chunk, this.chunkOverlap, this.chunkSize, this.customMetadata, this.embeddingModel, this.fusionMethod, this.hybridSearchEnabled, this.maxNumResults, this.metadata, this.publicEndpointParams, this.reranking, this.rerankingModel, this.retrievalOptions = const Omittable.absent(), this.rewriteModel, this.rewriteQuery, this.scoreThreshold, this.source, this.sourceParams = const Omittable.absent(), this.tokenId, this.type, });
 
 factory AiSearchCreateInstancesRequest.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesRequest(
   aiGatewayId: json.containsKey('ai_gateway_id') ? Omittable(json['ai_gateway_id'] as String?) : const Omittable.absent(),
-  aiSearchModel: json['ai_search_model'] != null ? OneOf2.parse(json['ai_search_model'], fromA: (v) => AiSearchCreateInstancesRequestAiSearchModelVariant1.fromJson(v as String), fromB: (v) => AiSearchCreateInstancesRequestAiSearchModelVariant2.fromJson(v as String),) : null,
-  cache: json.containsKey('cache') ? json['cache'] as bool : true,
-  cacheThreshold: json.containsKey('cache_threshold') ? AiSearchCreateInstancesRequestCacheThreshold.fromJson(json['cache_threshold'] as String) : AiSearchCreateInstancesRequestCacheThreshold.closeEnough,
-  chunk: json.containsKey('chunk') ? json['chunk'] as bool : true,
-  chunkOverlap: json.containsKey('chunk_overlap') ? (json['chunk_overlap'] as num).toInt() : 10,
-  chunkSize: json.containsKey('chunk_size') ? (json['chunk_size'] as num).toInt() : 256,
+  aiSearchModel: json['ai_search_model'] != null ? AiSearchCreateInstancesRequestAiSearchModel.fromJson(json['ai_search_model']) : null,
+  cache: json['cache'] as bool?,
+  cacheThreshold: json['cache_threshold'] != null ? AiSearchCreateInstancesRequestCacheThreshold.fromJson(json['cache_threshold'] as String) : null,
+  chunk: json['chunk'] as bool?,
+  chunkOverlap: json['chunk_overlap'] != null ? (json['chunk_overlap'] as num).toInt() : null,
+  chunkSize: json['chunk_size'] != null ? (json['chunk_size'] as num).toInt() : null,
   customMetadata: (json['custom_metadata'] as List<dynamic>?)?.map((e) => AiSearchCreateInstancesRequestCustomMetadata.fromJson(e as Map<String, dynamic>)).toList(),
-  embeddingModel: json['embedding_model'] != null ? OneOf2.parse(json['embedding_model'], fromA: (v) => AiSearchCreateInstancesRequestEmbeddingModelVariant1.fromJson(v as String), fromB: (v) => AiSearchCreateInstancesRequestEmbeddingModelVariant2.fromJson(v as String),) : null,
-  fusionMethod: json.containsKey('fusion_method') ? AiSearchCreateInstancesRequestFusionMethod.fromJson(json['fusion_method'] as String) : AiSearchCreateInstancesRequestFusionMethod.rrf,
-  hybridSearchEnabled: json.containsKey('hybrid_search_enabled') ? json['hybrid_search_enabled'] as bool : false,
+  embeddingModel: json['embedding_model'] != null ? AiSearchCreateInstancesRequestEmbeddingModel.fromJson(json['embedding_model']) : null,
+  fusionMethod: json['fusion_method'] != null ? AiSearchCreateInstancesRequestFusionMethod.fromJson(json['fusion_method'] as String) : null,
+  hybridSearchEnabled: json['hybrid_search_enabled'] as bool?,
   id: json['id'] as String,
-  maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
+  maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
   metadata: json['metadata'] != null ? AiSearchCreateInstancesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
   publicEndpointParams: json['public_endpoint_params'] != null ? AiSearchCreateInstancesRequestPublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>) : null,
-  reranking: json.containsKey('reranking') ? json['reranking'] as bool : false,
+  reranking: json['reranking'] as bool?,
   rerankingModel: json['reranking_model'] != null ? AiSearchCreateInstancesRequestRerankingModel.fromJson(json['reranking_model'] as String) : null,
   retrievalOptions: json.containsKey('retrieval_options') ? Omittable(json['retrieval_options'] != null ? AiSearchCreateInstancesRequestRetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  rewriteModel: json['rewrite_model'] != null ? OneOf2.parse(json['rewrite_model'], fromA: (v) => AiSearchCreateInstancesRequestRewriteModelVariant1.fromJson(v as String), fromB: (v) => AiSearchCreateInstancesRequestRewriteModelVariant2.fromJson(v as String),) : null,
-  rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
-  scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.4,
+  rewriteModel: json['rewrite_model'] != null ? AiSearchCreateInstancesRequestRewriteModel.fromJson(json['rewrite_model']) : null,
+  rewriteQuery: json['rewrite_query'] as bool?,
+  scoreThreshold: json['score_threshold'] != null ? (json['score_threshold'] as num).toDouble() : null,
   source: json['source'] as String?,
   sourceParams: json.containsKey('source_params') ? Omittable(json['source_params'] != null ? AiSearchCreateInstancesRequestSourceParams.fromJson(json['source_params'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   tokenId: json['token_id'] as String?,
@@ -136,34 +136,34 @@ final Omittable<String?> aiGatewayId;
 
 final AiSearchCreateInstancesRequestAiSearchModel? aiSearchModel;
 
-final bool cache;
+final bool? cache;
 
-final AiSearchCreateInstancesRequestCacheThreshold cacheThreshold;
+final AiSearchCreateInstancesRequestCacheThreshold? cacheThreshold;
 
-final bool chunk;
+final bool? chunk;
 
-final int chunkOverlap;
+final int? chunkOverlap;
 
-final int chunkSize;
+final int? chunkSize;
 
 final List<AiSearchCreateInstancesRequestCustomMetadata>? customMetadata;
 
 final AiSearchCreateInstancesRequestEmbeddingModel? embeddingModel;
 
-final AiSearchCreateInstancesRequestFusionMethod fusionMethod;
+final AiSearchCreateInstancesRequestFusionMethod? fusionMethod;
 
-final bool hybridSearchEnabled;
+final bool? hybridSearchEnabled;
 
 /// Use your AI Search ID.
 final String id;
 
-final int maxNumResults;
+final int? maxNumResults;
 
 final AiSearchCreateInstancesRequestMetadata? metadata;
 
 final AiSearchCreateInstancesRequestPublicEndpointParams? publicEndpointParams;
 
-final bool reranking;
+final bool? reranking;
 
 final AiSearchCreateInstancesRequestRerankingModel? rerankingModel;
 
@@ -171,9 +171,9 @@ final Omittable<AiSearchCreateInstancesRequestRetrievalOptions?> retrievalOption
 
 final AiSearchCreateInstancesRequestRewriteModel? rewriteModel;
 
-final bool rewriteQuery;
+final bool? rewriteQuery;
 
-final double scoreThreshold;
+final double? scoreThreshold;
 
 final String? source;
 
@@ -183,35 +183,57 @@ final String? tokenId;
 
 final AiSearchCreateInstancesRequestType? type;
 
+/// The value with the schema default applied when absent.
+bool get cacheOrDefault { return cache ?? true; } 
+/// The value with the schema default applied when absent.
+AiSearchCreateInstancesRequestCacheThreshold get cacheThresholdOrDefault { return cacheThreshold ?? AiSearchCreateInstancesRequestCacheThreshold.fromJson('close_enough'); } 
+/// The value with the schema default applied when absent.
+bool get chunkOrDefault { return chunk ?? true; } 
+/// The value with the schema default applied when absent.
+int get chunkOverlapOrDefault { return chunkOverlap ?? 10; } 
+/// The value with the schema default applied when absent.
+int get chunkSizeOrDefault { return chunkSize ?? 256; } 
+/// The value with the schema default applied when absent.
+AiSearchCreateInstancesRequestFusionMethod get fusionMethodOrDefault { return fusionMethod ?? AiSearchCreateInstancesRequestFusionMethod.fromJson('rrf'); } 
+/// The value with the schema default applied when absent.
+bool get hybridSearchEnabledOrDefault { return hybridSearchEnabled ?? false; } 
+/// The value with the schema default applied when absent.
+int get maxNumResultsOrDefault { return maxNumResults ?? 10; } 
+/// The value with the schema default applied when absent.
+bool get rerankingOrDefault { return reranking ?? false; } 
+/// The value with the schema default applied when absent.
+bool get rewriteQueryOrDefault { return rewriteQuery ?? false; } 
+/// The value with the schema default applied when absent.
+double get scoreThresholdOrDefault { return scoreThreshold ?? 0.4; } 
 Map<String, dynamic> toJson() { return {
   if (aiGatewayId.isPresent) 'ai_gateway_id': aiGatewayId.value,
   if (aiSearchModel != null) 'ai_search_model': aiSearchModel?.toJson(),
-  'cache': cache,
-  'cache_threshold': cacheThreshold.toJson(),
-  'chunk': chunk,
-  'chunk_overlap': chunkOverlap,
-  'chunk_size': chunkSize,
+  'cache': ?cache,
+  if (cacheThreshold != null) 'cache_threshold': cacheThreshold?.toJson(),
+  'chunk': ?chunk,
+  'chunk_overlap': ?chunkOverlap,
+  'chunk_size': ?chunkSize,
   if (customMetadata != null) 'custom_metadata': customMetadata?.map((e) => e.toJson()).toList(),
   if (embeddingModel != null) 'embedding_model': embeddingModel?.toJson(),
-  'fusion_method': fusionMethod.toJson(),
-  'hybrid_search_enabled': hybridSearchEnabled,
+  if (fusionMethod != null) 'fusion_method': fusionMethod?.toJson(),
+  'hybrid_search_enabled': ?hybridSearchEnabled,
   'id': id,
-  'max_num_results': maxNumResults,
+  'max_num_results': ?maxNumResults,
   if (metadata != null) 'metadata': metadata?.toJson(),
   if (publicEndpointParams != null) 'public_endpoint_params': publicEndpointParams?.toJson(),
-  'reranking': reranking,
+  'reranking': ?reranking,
   if (rerankingModel != null) 'reranking_model': rerankingModel?.toJson(),
   if (retrievalOptions.isPresent) 'retrieval_options': retrievalOptions.value?.toJson(),
   if (rewriteModel != null) 'rewrite_model': rewriteModel?.toJson(),
-  'rewrite_query': rewriteQuery,
-  'score_threshold': scoreThreshold,
+  'rewrite_query': ?rewriteQuery,
+  'score_threshold': ?scoreThreshold,
   'source': ?source,
   if (sourceParams.isPresent) 'source_params': sourceParams.value?.toJson(),
   'token_id': ?tokenId,
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-AiSearchCreateInstancesRequest copyWith({Omittable<String?>? aiGatewayId, AiSearchCreateInstancesRequestAiSearchModel? Function()? aiSearchModel, bool Function()? cache, AiSearchCreateInstancesRequestCacheThreshold Function()? cacheThreshold, bool Function()? chunk, int Function()? chunkOverlap, int Function()? chunkSize, List<AiSearchCreateInstancesRequestCustomMetadata>? Function()? customMetadata, AiSearchCreateInstancesRequestEmbeddingModel? Function()? embeddingModel, AiSearchCreateInstancesRequestFusionMethod Function()? fusionMethod, bool Function()? hybridSearchEnabled, String? id, int Function()? maxNumResults, AiSearchCreateInstancesRequestMetadata? Function()? metadata, AiSearchCreateInstancesRequestPublicEndpointParams? Function()? publicEndpointParams, bool Function()? reranking, AiSearchCreateInstancesRequestRerankingModel? Function()? rerankingModel, Omittable<AiSearchCreateInstancesRequestRetrievalOptions?>? retrievalOptions, AiSearchCreateInstancesRequestRewriteModel? Function()? rewriteModel, bool Function()? rewriteQuery, double Function()? scoreThreshold, String? Function()? source, Omittable<AiSearchCreateInstancesRequestSourceParams?>? sourceParams, String? Function()? tokenId, AiSearchCreateInstancesRequestType? Function()? type, }) { return AiSearchCreateInstancesRequest(
+AiSearchCreateInstancesRequest copyWith({Omittable<String?>? aiGatewayId, AiSearchCreateInstancesRequestAiSearchModel? Function()? aiSearchModel, bool? Function()? cache, AiSearchCreateInstancesRequestCacheThreshold? Function()? cacheThreshold, bool? Function()? chunk, int? Function()? chunkOverlap, int? Function()? chunkSize, List<AiSearchCreateInstancesRequestCustomMetadata>? Function()? customMetadata, AiSearchCreateInstancesRequestEmbeddingModel? Function()? embeddingModel, AiSearchCreateInstancesRequestFusionMethod? Function()? fusionMethod, bool? Function()? hybridSearchEnabled, String? id, int? Function()? maxNumResults, AiSearchCreateInstancesRequestMetadata? Function()? metadata, AiSearchCreateInstancesRequestPublicEndpointParams? Function()? publicEndpointParams, bool? Function()? reranking, AiSearchCreateInstancesRequestRerankingModel? Function()? rerankingModel, Omittable<AiSearchCreateInstancesRequestRetrievalOptions?>? retrievalOptions, AiSearchCreateInstancesRequestRewriteModel? Function()? rewriteModel, bool? Function()? rewriteQuery, double? Function()? scoreThreshold, String? Function()? source, Omittable<AiSearchCreateInstancesRequestSourceParams?>? sourceParams, String? Function()? tokenId, AiSearchCreateInstancesRequestType? Function()? type, }) { return AiSearchCreateInstancesRequest(
   aiGatewayId: aiGatewayId ?? this.aiGatewayId,
   aiSearchModel: aiSearchModel != null ? aiSearchModel() : this.aiSearchModel,
   cache: cache != null ? cache() : this.cache,

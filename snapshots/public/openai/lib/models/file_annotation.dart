@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FileAnnotationType($value)'; } 
  }
 /// Annotation that references an uploaded file.
-@immutable final class FileAnnotation {const FileAnnotation({required this.source, this.type = FileAnnotationType.file, });
+@immutable final class FileAnnotation {const FileAnnotation({required this.type, required this.source, });
 
 factory FileAnnotation.fromJson(Map<String, dynamic> json) { return FileAnnotation(
   type: FileAnnotationType.fromJson(json['type'] as String),

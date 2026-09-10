@@ -34,7 +34,7 @@ factory PostShippingRatesShippingRateTokenRequest.fromJson(Map<String, dynamic> 
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   fixedAmount: json['fixed_amount'] != null ? PostShippingRatesShippingRateTokenRequestFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostShippingRatesShippingRateTokenRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostShippingRatesShippingRateTokenRequestMetadata.fromJson(json['metadata']) : null,
   taxBehavior: json['tax_behavior'] != null ? PostShippingRatesShippingRateTokenRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
 ); }
 

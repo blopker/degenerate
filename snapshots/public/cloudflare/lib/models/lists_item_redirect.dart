@@ -31,44 +31,54 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ListsItemRedirectStatusCode($value)'; } 
  }
 /// The definition of the redirect.
-@immutable final class ListsItemRedirect {const ListsItemRedirect({required this.sourceUrl, required this.targetUrl, this.includeSubdomains = false, this.preservePathSuffix = false, this.preserveQueryString = false, this.statusCode, this.subpathMatching = false, });
+@immutable final class ListsItemRedirect {const ListsItemRedirect({required this.sourceUrl, required this.targetUrl, this.includeSubdomains, this.preservePathSuffix, this.preserveQueryString, this.statusCode, this.subpathMatching, });
 
 factory ListsItemRedirect.fromJson(Map<String, dynamic> json) { return ListsItemRedirect(
-  includeSubdomains: json.containsKey('include_subdomains') ? json['include_subdomains'] as bool : false,
-  preservePathSuffix: json.containsKey('preserve_path_suffix') ? json['preserve_path_suffix'] as bool : false,
-  preserveQueryString: json.containsKey('preserve_query_string') ? json['preserve_query_string'] as bool : false,
+  includeSubdomains: json['include_subdomains'] as bool?,
+  preservePathSuffix: json['preserve_path_suffix'] as bool?,
+  preserveQueryString: json['preserve_query_string'] as bool?,
   sourceUrl: json['source_url'] as String,
   statusCode: json['status_code'] != null ? ListsItemRedirectStatusCode.fromJson((json['status_code'] as num).toInt()) : null,
-  subpathMatching: json.containsKey('subpath_matching') ? json['subpath_matching'] as bool : false,
+  subpathMatching: json['subpath_matching'] as bool?,
   targetUrl: json['target_url'] as String,
 ); }
 
-final bool includeSubdomains;
+final bool? includeSubdomains;
 
-final bool preservePathSuffix;
+final bool? preservePathSuffix;
 
-final bool preserveQueryString;
+final bool? preserveQueryString;
 
 final String sourceUrl;
 
 final ListsItemRedirectStatusCode? statusCode;
 
-final bool subpathMatching;
+final bool? subpathMatching;
 
 final String targetUrl;
 
+/// The value with the schema default applied when absent.
+bool get includeSubdomainsOrDefault { return includeSubdomains ?? false; } 
+/// The value with the schema default applied when absent.
+bool get preservePathSuffixOrDefault { return preservePathSuffix ?? false; } 
+/// The value with the schema default applied when absent.
+bool get preserveQueryStringOrDefault { return preserveQueryString ?? false; } 
+/// The value with the schema default applied when absent.
+ListsItemRedirectStatusCode get statusCodeOrDefault { return statusCode ?? ListsItemRedirectStatusCode.fromJson(301); } 
+/// The value with the schema default applied when absent.
+bool get subpathMatchingOrDefault { return subpathMatching ?? false; } 
 Map<String, dynamic> toJson() { return {
-  'include_subdomains': includeSubdomains,
-  'preserve_path_suffix': preservePathSuffix,
-  'preserve_query_string': preserveQueryString,
+  'include_subdomains': ?includeSubdomains,
+  'preserve_path_suffix': ?preservePathSuffix,
+  'preserve_query_string': ?preserveQueryString,
   'source_url': sourceUrl,
   if (statusCode != null) 'status_code': statusCode?.toJson(),
-  'subpath_matching': subpathMatching,
+  'subpath_matching': ?subpathMatching,
   'target_url': targetUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('source_url') && json['source_url'] is String &&
       json.containsKey('target_url') && json['target_url'] is String; } 
-ListsItemRedirect copyWith({bool Function()? includeSubdomains, bool Function()? preservePathSuffix, bool Function()? preserveQueryString, String? sourceUrl, ListsItemRedirectStatusCode? Function()? statusCode, bool Function()? subpathMatching, String? targetUrl, }) { return ListsItemRedirect(
+ListsItemRedirect copyWith({bool? Function()? includeSubdomains, bool? Function()? preservePathSuffix, bool? Function()? preserveQueryString, String? sourceUrl, ListsItemRedirectStatusCode? Function()? statusCode, bool? Function()? subpathMatching, String? targetUrl, }) { return ListsItemRedirect(
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
   preservePathSuffix: preservePathSuffix != null ? preservePathSuffix() : this.preservePathSuffix,
   preserveQueryString: preserveQueryString != null ? preserveQueryString() : this.preserveQueryString,

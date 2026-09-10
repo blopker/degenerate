@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentMethodOptionsParam54SubscriptionsVariant2($value)'; } 
  }
-typedef PaymentMethodOptionsParam54Subscriptions = OneOf2<List<PaymentMethodOptionsParam54SubscriptionsVariant1>,PaymentMethodOptionsParam54SubscriptionsVariant2>;
+
+@immutable
+final class PaymentMethodOptionsParam54Subscriptions {
+  const PaymentMethodOptionsParam54Subscriptions({this.listPaymentMethodOptionsParam54SubscriptionsVariant1 = const Omittable.absent(),
+this.paymentMethodOptionsParam54SubscriptionsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PaymentMethodOptionsParam54Subscriptions._({required this.rawValue, required this.listPaymentMethodOptionsParam54SubscriptionsVariant1,
+required this.paymentMethodOptionsParam54SubscriptionsVariant2,});
+  factory PaymentMethodOptionsParam54Subscriptions.fromJson(Object? json) => PaymentMethodOptionsParam54Subscriptions._(
+    rawValue: Omittable(json),
+    listPaymentMethodOptionsParam54SubscriptionsVariant1: parseAnyOfVariant<List<PaymentMethodOptionsParam54SubscriptionsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PaymentMethodOptionsParam54SubscriptionsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+paymentMethodOptionsParam54SubscriptionsVariant2: parseAnyOfVariant<PaymentMethodOptionsParam54SubscriptionsVariant2>(json, (value) => PaymentMethodOptionsParam54SubscriptionsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PaymentMethodOptionsParam54SubscriptionsVariant1>> listPaymentMethodOptionsParam54SubscriptionsVariant1;
+final Omittable<PaymentMethodOptionsParam54SubscriptionsVariant2> paymentMethodOptionsParam54SubscriptionsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPaymentMethodOptionsParam54SubscriptionsVariant1.isPresent || paymentMethodOptionsParam54SubscriptionsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPaymentMethodOptionsParam54SubscriptionsVariant1.isPresent) listPaymentMethodOptionsParam54SubscriptionsVariant1.value?.map((e) => e.toJson()).toList(),
+if (paymentMethodOptionsParam54SubscriptionsVariant2.isPresent) paymentMethodOptionsParam54SubscriptionsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PaymentMethodOptionsParam54Subscriptions && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PaymentMethodOptionsParam54Subscriptions(${toJson()})';
+}

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_tool_content.dart';import 'messages51_messages_tool_content_variant2.dart';@immutable final class Messages51MessagesToolRole {const Messages51MessagesToolRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_tool_content.dart';@immutable final class Messages51MessagesToolRole {const Messages51MessagesToolRole._(this.value);
 
 factory Messages51MessagesToolRole.fromJson(String json) { return switch (json) {
   'tool' => tool,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class Messages51MessagesTool {const Messages51MessagesTool({required this.content, required this.role, required this.toolCallId, });
 
 factory Messages51MessagesTool.fromJson(Map<String, dynamic> json) { return Messages51MessagesTool(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => Messages51MessagesToolContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+  content: Messages51MessagesToolContent.fromJson(json['content']),
   role: Messages51MessagesToolRole.fromJson(json['role'] as String),
   toolCallId: json['tool_call_id'] as String,
 ); }
