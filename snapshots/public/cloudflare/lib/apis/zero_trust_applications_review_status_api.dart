@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/zero_trust_applications_review_status_list_response4_xx.dart';import '../models/zero_trust_applications_review_status_update_request.dart';import '../models/zero_trust_applications_review_status_update_response4_xx.dart';import '../models/zero_trust_gateway_applications_review_status_response_content.dart';import '../models/zero_trust_gateway_components_schemas_identifier.dart';/// ZeroTrustApplicationsReviewStatusApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/zero_trust_applications_review_status_list_response4xx.dart';import '../models/zero_trust_applications_review_status_update_request.dart';import '../models/zero_trust_applications_review_status_update_response4xx.dart';import '../models/zero_trust_gateway_applications_review_status_response_content.dart';import '../models/zero_trust_gateway_components_schemas_identifier.dart';/// ZeroTrustApplicationsReviewStatusApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustApplicationsReviewStatusApi with ApiExecutor {const ZeroTru
 /// Retrieve the statuses of your applications.
 ///
 /// `GET /accounts/{account_id}/gateway/apps/review_status`
-Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusListResponse4Xx>> zeroTrustApplicationsReviewStatusList({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusListResponse4xx>> zeroTrustApplicationsReviewStatusList({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return json['result'] != null ? ZeroTrustGatewayApplicationsReviewStatusResponse
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustApplicationsReviewStatusListResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustApplicationsReviewStatusListResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Update the statuses of your applications.
 ///
 /// `PUT /accounts/{account_id}/gateway/apps/review_status`
-Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusUpdateResponse4Xx>> zeroTrustApplicationsReviewStatusUpdate({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, required ZeroTrustApplicationsReviewStatusUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayApplicationsReviewStatusResponseContent?, ZeroTrustApplicationsReviewStatusUpdateResponse4xx>> zeroTrustApplicationsReviewStatusUpdate({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, required ZeroTrustApplicationsReviewStatusUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return json['result'] != null ? ZeroTrustGatewayApplicationsReviewStatusResponse
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustApplicationsReviewStatusUpdateResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustApplicationsReviewStatusUpdateResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/issue.dart';import '../models/issue_comment.dart';import '../models/issue_event.dart';import '../models/issue_event_for_issue.dart';import '../models/issues_add_assignees_request.dart';import '../models/issues_add_blocked_by_dependency_request.dart';import '../models/issues_add_labels_request.dart';import '../models/issues_add_sub_issue_request.dart';import '../models/issues_create_comment_request.dart';import '../models/issues_create_label_request.dart';import '../models/issues_create_milestone_request.dart';import '../models/issues_create_request.dart';import '../models/issues_create_response503.dart';import '../models/issues_list_comments_for_repo_direction.dart';import '../models/issues_list_comments_for_repo_sort.dart';import '../models/issues_list_direction.dart';import '../models/issues_list_filter.dart';import '../models/issues_list_for_authenticated_user_direction.dart';import '../models/issues_list_for_authenticated_user_filter.dart';import '../models/issues_list_for_authenticated_user_sort.dart';import '../models/issues_list_for_authenticated_user_state.dart';import '../models/issues_list_for_org_direction.dart';import '../models/issues_list_for_org_filter.dart';import '../models/issues_list_for_org_sort.dart';import '../models/issues_list_for_org_state.dart';import '../models/issues_list_for_repo_direction.dart';import '../models/issues_list_for_repo_sort.dart';import '../models/issues_list_for_repo_state.dart';import '../models/issues_list_milestones_direction.dart';import '../models/issues_list_milestones_sort.dart';import '../models/issues_list_milestones_state.dart';import '../models/issues_list_sort.dart';import '../models/issues_list_state.dart';import '../models/issues_lock_request.dart';import '../models/issues_remove_assignees_request.dart';import '../models/issues_remove_sub_issue_request.dart';import '../models/issues_reprioritize_sub_issue_request.dart';import '../models/issues_reprioritize_sub_issue_response503.dart';import '../models/issues_set_labels_request.dart';import '../models/issues_unpin_comment_response503.dart';import '../models/issues_update_comment_request.dart';import '../models/issues_update_label_request.dart';import '../models/issues_update_milestone_request.dart';import '../models/issues_update_request.dart';import '../models/issues_update_response503.dart';import '../models/label.dart';import '../models/milestone.dart';import '../models/scim_error.dart';import '../models/simple_user.dart';import '../models/timeline_issue_events.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';/// IssuesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/issue.dart';import '../models/issue_comment.dart';import '../models/issue_event.dart';import '../models/issue_event_for_issue.dart';import '../models/issues_add_assignees_request.dart';import '../models/issues_add_blocked_by_dependency_error.dart';import '../models/issues_add_blocked_by_dependency_request.dart';import '../models/issues_add_labels_error.dart';import '../models/issues_add_labels_request.dart';import '../models/issues_add_sub_issue_error.dart';import '../models/issues_add_sub_issue_request.dart';import '../models/issues_create_comment_error.dart';import '../models/issues_create_comment_request.dart';import '../models/issues_create_error.dart';import '../models/issues_create_label_error.dart';import '../models/issues_create_label_request.dart';import '../models/issues_create_milestone_error.dart';import '../models/issues_create_milestone_request.dart';import '../models/issues_create_request.dart';import '../models/issues_get_error.dart';import '../models/issues_list_comments_for_repo_direction.dart';import '../models/issues_list_comments_for_repo_error.dart';import '../models/issues_list_comments_for_repo_sort.dart';import '../models/issues_list_direction.dart';import '../models/issues_list_error.dart';import '../models/issues_list_filter.dart';import '../models/issues_list_for_authenticated_user_direction.dart';import '../models/issues_list_for_authenticated_user_error.dart';import '../models/issues_list_for_authenticated_user_filter.dart';import '../models/issues_list_for_authenticated_user_sort.dart';import '../models/issues_list_for_authenticated_user_state.dart';import '../models/issues_list_for_org_direction.dart';import '../models/issues_list_for_org_filter.dart';import '../models/issues_list_for_org_sort.dart';import '../models/issues_list_for_org_state.dart';import '../models/issues_list_for_repo_direction.dart';import '../models/issues_list_for_repo_error.dart';import '../models/issues_list_for_repo_sort.dart';import '../models/issues_list_for_repo_state.dart';import '../models/issues_list_milestones_direction.dart';import '../models/issues_list_milestones_sort.dart';import '../models/issues_list_milestones_state.dart';import '../models/issues_list_sort.dart';import '../models/issues_list_state.dart';import '../models/issues_lock_error.dart';import '../models/issues_lock_request.dart';import '../models/issues_pin_comment_error.dart';import '../models/issues_remove_assignees_request.dart';import '../models/issues_remove_dependency_blocked_by_error.dart';import '../models/issues_remove_sub_issue_error.dart';import '../models/issues_remove_sub_issue_request.dart';import '../models/issues_reprioritize_sub_issue_error.dart';import '../models/issues_reprioritize_sub_issue_request.dart';import '../models/issues_set_labels_error.dart';import '../models/issues_set_labels_request.dart';import '../models/issues_unpin_comment_error.dart';import '../models/issues_update_comment_request.dart';import '../models/issues_update_error.dart';import '../models/issues_update_label_request.dart';import '../models/issues_update_milestone_request.dart';import '../models/issues_update_request.dart';import '../models/label.dart';import '../models/milestone.dart';import '../models/simple_user.dart';import '../models/timeline_issue_events.dart';import '../models/validation_error.dart';/// IssuesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -25,7 +25,7 @@ final class IssuesApi with ApiExecutor {const IssuesApi(this.apiConfig);
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /issues`
-Future<ApiResult<List<Issue>, OneOf2<BasicError, ValidationError>>> issuesList({IssuesListFilter? filter, IssuesListState? state, String? labels, IssuesListSort? sort, IssuesListDirection? direction, DateTime? since, bool? collab, bool? orgs, bool? owned, bool? pulls, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, IssuesListError>> issuesList({IssuesListFilter? filter, IssuesListState? state, String? labels, IssuesListSort? sort, IssuesListDirection? direction, DateTime? since, bool? collab, bool? orgs, bool? owned, bool? pulls, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) {
   queryParameters['filter'] = filter.toJson();
@@ -81,21 +81,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesListError.parse,
 );
  } 
 /// List organization issues assigned to the authenticated user
@@ -263,7 +249,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues`
-Future<ApiResult<List<Issue>, OneOf2<BasicError, ValidationError>>> issuesListForRepo({required String owner, required String repo, String? milestone, IssuesListForRepoState? state, String? assignee, String? type, String? creator, String? mentioned, String? labels, IssuesListForRepoSort? sort, IssuesListForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, IssuesListForRepoError>> issuesListForRepo({required String owner, required String repo, String? milestone, IssuesListForRepoState? state, String? assignee, String? type, String? creator, String? mentioned, String? labels, IssuesListForRepoSort? sort, IssuesListForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (milestone != null) {
   queryParameters['milestone'] = milestone;
@@ -319,19 +305,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 301 || 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesListForRepoError.parse,
 );
  } 
 /// Create an issue
@@ -349,7 +323,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues`
-Future<ApiResult<Issue, OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>>> issuesCreate({required String owner, required String repo, required IssuesCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesCreateError>> issuesCreate({required String owner, required String repo, required IssuesCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -366,35 +340,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Issue.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
-final json = jsonDecode(response.body);
-return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.b(ScimError.fromJson(json as Map<String, dynamic>));
-}
-final json = jsonDecode(response.body);
-return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403 || 404 || 410:
-final json = jsonDecode(response.body);
-return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.c(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf4<BasicError, ScimError, ValidationError, IssuesCreateResponse503>.d(IssuesCreateResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesCreateError.parse,
 );
  } 
 /// List issue comments for a repository
@@ -411,7 +357,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/comments`
-Future<ApiResult<List<IssueComment>, OneOf2<BasicError, ValidationError>>> issuesListCommentsForRepo({required String owner, required String repo, IssuesListCommentsForRepoSort? sort, IssuesListCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IssueComment>, IssuesListCommentsForRepoError>> issuesListCommentsForRepo({required String owner, required String repo, IssuesListCommentsForRepoSort? sort, IssuesListCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) {
   queryParameters['sort'] = sort.toJson();
@@ -446,19 +392,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => IssueComment.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesListCommentsForRepoError.parse,
 );
  } 
 /// Get an issue comment
@@ -572,7 +506,7 @@ return await execute(
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PUT /repos/{owner}/{repo}/issues/comments/{comment_id}/pin`
-Future<ApiResult<IssueComment, OneOf2<BasicError, ValidationError>>> issuesPinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueComment, IssuesPinCommentError>> issuesPinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -587,19 +521,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return IssueComment.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 401 || 403 || 404 || 410:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesPinCommentError.parse,
 );
  } 
 /// Unpin an issue comment
@@ -607,7 +529,7 @@ return null;
 /// You can use the REST API to unpin comments on issues.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/pin`
-Future<ApiResult<void, OneOf2<BasicError, IssuesUnpinCommentResponse503>>> issuesUnpinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, IssuesUnpinCommentError>> issuesUnpinComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -619,19 +541,7 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 401 || 403 || 404 || 410:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, IssuesUnpinCommentResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, IssuesUnpinCommentResponse503>.b(IssuesUnpinCommentResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesUnpinCommentError.parse,
 );
  } 
 /// List issue events for a repository
@@ -729,7 +639,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /repos/{owner}/{repo}/issues/{issue_number}`
-Future<ApiResult<Issue, BasicError>> issuesGet({required String owner, required String repo, required int issueNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesGetError>> issuesGet({required String owner, required String repo, required int issueNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -744,18 +654,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Issue.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 301 || 404 || 410:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-case 304:
-return null;
-default:
-return null;
-}
-
-  },
+  onError: IssuesGetError.parse,
 );
  } 
 /// Update an issue
@@ -770,7 +669,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `PATCH /repos/{owner}/{repo}/issues/{issue_number}`
-Future<ApiResult<Issue, OneOf3<BasicError, ValidationError, IssuesUpdateResponse503>>> issuesUpdate({required String owner, required String repo, required int issueNumber, IssuesUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesUpdateError>> issuesUpdate({required String owner, required String repo, required int issueNumber, IssuesUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -787,22 +686,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Issue.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 301 || 403 || 404 || 410:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, IssuesUpdateResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, IssuesUpdateResponse503>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, IssuesUpdateResponse503>.c(IssuesUpdateResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesUpdateError.parse,
 );
  } 
 /// Add assignees to an issue
@@ -958,7 +842,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/comments`
-Future<ApiResult<IssueComment, OneOf2<BasicError, ValidationError>>> issuesCreateComment({required String owner, required String repo, required int issueNumber, required IssuesCreateCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueComment, IssuesCreateCommentError>> issuesCreateComment({required String owner, required String repo, required int issueNumber, required IssuesCreateCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -975,19 +859,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return IssueComment.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 403 || 404 || 410:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesCreateCommentError.parse,
 );
  } 
 /// List dependencies an issue is blocked by
@@ -1056,7 +928,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by`
-Future<ApiResult<Issue, OneOf2<BasicError, ValidationError>>> issuesAddBlockedByDependency({required String owner, required String repo, required int issueNumber, required IssuesAddBlockedByDependencyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesAddBlockedByDependencyError>> issuesAddBlockedByDependency({required String owner, required String repo, required int issueNumber, required IssuesAddBlockedByDependencyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1073,19 +945,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Issue.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 301 || 403 || 404 || 410:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesAddBlockedByDependencyError.parse,
 );
  } 
 /// Remove dependency an issue is blocked by
@@ -1103,7 +963,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}`
-Future<ApiResult<Issue, OneOf2<BasicError, ScimError>>> issuesRemoveDependencyBlockedBy({required String owner, required String repo, required int issueNumber, required int issueId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesRemoveDependencyBlockedByError>> issuesRemoveDependencyBlockedBy({required String owner, required String repo, required int issueNumber, required int issueId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1118,29 +978,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Issue.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 301 || 401 || 403 || 404 || 410:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 400:
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
-}
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-
-default:
-return null;
-}
-
-  },
+  onError: IssuesRemoveDependencyBlockedByError.parse,
 );
  } 
 /// List dependencies an issue is blocking
@@ -1284,7 +1122,7 @@ return null;
 /// Adds labels to an issue.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<List<Label>, OneOf2<BasicError, ValidationError>>> issuesAddLabels({required String owner, required String repo, required int issueNumber, IssuesAddLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Label>, IssuesAddLabelsError>> issuesAddLabels({required String owner, required String repo, required int issueNumber, IssuesAddLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1301,19 +1139,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 301 || 404 || 410:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesAddLabelsError.parse,
 );
  } 
 /// Set labels for an issue
@@ -1321,7 +1147,7 @@ return null;
 /// Removes any previous labels and sets the new labels for an issue.
 ///
 /// `PUT /repos/{owner}/{repo}/issues/{issue_number}/labels`
-Future<ApiResult<List<Label>, OneOf2<BasicError, ValidationError>>> issuesSetLabels({required String owner, required String repo, required int issueNumber, IssuesSetLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Label>, IssuesSetLabelsError>> issuesSetLabels({required String owner, required String repo, required int issueNumber, IssuesSetLabelsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1338,19 +1164,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Label.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 301 || 404 || 410:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesSetLabelsError.parse,
 );
  } 
 /// Remove all labels from an issue
@@ -1421,7 +1235,7 @@ return null;
 /// Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 ///
 /// `PUT /repos/{owner}/{repo}/issues/{issue_number}/lock`
-Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> issuesLock({required String owner, required String repo, required int issueNumber, IssuesLockRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, IssuesLockError>> issuesLock({required String owner, required String repo, required int issueNumber, IssuesLockRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1435,19 +1249,7 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 403 || 404 || 410:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesLockError.parse,
 );
  } 
 /// Unlock an issue
@@ -1531,7 +1333,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue`
-Future<ApiResult<Issue, OneOf2<BasicError, ScimError>>> issuesRemoveSubIssue({required String owner, required String repo, required int issueNumber, required IssuesRemoveSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesRemoveSubIssueError>> issuesRemoveSubIssue({required String owner, required String repo, required int issueNumber, required IssuesRemoveSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1548,29 +1350,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Issue.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
-}
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesRemoveSubIssueError.parse,
 );
  } 
 /// List sub-issues
@@ -1639,7 +1419,7 @@ return null;
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues`
-Future<ApiResult<Issue, OneOf2<BasicError, ValidationError>>> issuesAddSubIssue({required String owner, required String repo, required int issueNumber, required IssuesAddSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesAddSubIssueError>> issuesAddSubIssue({required String owner, required String repo, required int issueNumber, required IssuesAddSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1656,19 +1436,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Issue.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 403 || 404 || 410:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesAddSubIssueError.parse,
 );
  } 
 /// Reprioritize sub-issue
@@ -1676,7 +1444,7 @@ return null;
 /// You can use the REST API to reprioritize a sub-issue to a different position in the parent list.
 ///
 /// `PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority`
-Future<ApiResult<Issue, OneOf3<BasicError, ValidationErrorSimple, IssuesReprioritizeSubIssueResponse503>>> issuesReprioritizeSubIssue({required String owner, required String repo, required int issueNumber, required IssuesReprioritizeSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Issue, IssuesReprioritizeSubIssueError>> issuesReprioritizeSubIssue({required String owner, required String repo, required int issueNumber, required IssuesReprioritizeSubIssueRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1693,22 +1461,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Issue.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationErrorSimple, IssuesReprioritizeSubIssueResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationErrorSimple, IssuesReprioritizeSubIssueResponse503>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationErrorSimple, IssuesReprioritizeSubIssueResponse503>.c(IssuesReprioritizeSubIssueResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesReprioritizeSubIssueError.parse,
 );
  } 
 /// List timeline events for an issue
@@ -1802,7 +1555,7 @@ return null;
 /// Creates a label for the specified repository with the given name and color. The name and color parameters are required. The color must be a valid [hexadecimal color code](http://www.color-hex.com/).
 ///
 /// `POST /repos/{owner}/{repo}/labels`
-Future<ApiResult<Label, OneOf2<BasicError, ValidationError>>> issuesCreateLabel({required String owner, required String repo, required IssuesCreateLabelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Label, IssuesCreateLabelError>> issuesCreateLabel({required String owner, required String repo, required IssuesCreateLabelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1819,19 +1572,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Label.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesCreateLabelError.parse,
 );
  } 
 /// Get a label
@@ -1966,7 +1707,7 @@ return null;
 /// Creates a milestone.
 ///
 /// `POST /repos/{owner}/{repo}/milestones`
-Future<ApiResult<Milestone, OneOf2<BasicError, ValidationError>>> issuesCreateMilestone({required String owner, required String repo, required IssuesCreateMilestoneRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Milestone, IssuesCreateMilestoneError>> issuesCreateMilestone({required String owner, required String repo, required IssuesCreateMilestoneRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1983,19 +1724,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Milestone.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: IssuesCreateMilestoneError.parse,
 );
  } 
 /// Get a milestone
@@ -2131,7 +1860,7 @@ return (json as List<dynamic>).map((e) => Label.fromJson(e as Map<String, dynami
 /// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
 ///
 /// `GET /user/issues`
-Future<ApiResult<List<Issue>, BasicError>> issuesListForAuthenticatedUser({IssuesListForAuthenticatedUserFilter? filter, IssuesListForAuthenticatedUserState? state, String? labels, IssuesListForAuthenticatedUserSort? sort, IssuesListForAuthenticatedUserDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Issue>, IssuesListForAuthenticatedUserError>> issuesListForAuthenticatedUser({IssuesListForAuthenticatedUserFilter? filter, IssuesListForAuthenticatedUserState? state, String? labels, IssuesListForAuthenticatedUserSort? sort, IssuesListForAuthenticatedUserDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) {
   queryParameters['filter'] = filter.toJson();
@@ -2175,18 +1904,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Issue.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: IssuesListForAuthenticatedUserError.parse,
 );
  } 
  }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/package.dart';import '../models/package_version.dart';import '../models/packages_delete_package_for_authenticated_user_package_type.dart';import '../models/packages_delete_package_for_org_package_type.dart';import '../models/packages_delete_package_for_user_package_type.dart';import '../models/packages_delete_package_version_for_authenticated_user_package_type.dart';import '../models/packages_delete_package_version_for_org_package_type.dart';import '../models/packages_delete_package_version_for_user_package_type.dart';import '../models/packages_get_all_package_versions_for_package_owned_by_authenticated_user_package_type.dart';import '../models/packages_get_all_package_versions_for_package_owned_by_authenticated_user_state.dart';import '../models/packages_get_all_package_versions_for_package_owned_by_org_package_type.dart';import '../models/packages_get_all_package_versions_for_package_owned_by_org_state.dart';import '../models/packages_get_all_package_versions_for_package_owned_by_user_package_type.dart';import '../models/packages_get_package_for_authenticated_user_package_type.dart';import '../models/packages_get_package_for_organization_package_type.dart';import '../models/packages_get_package_for_user_package_type.dart';import '../models/packages_get_package_version_for_authenticated_user_package_type.dart';import '../models/packages_get_package_version_for_organization_package_type.dart';import '../models/packages_get_package_version_for_user_package_type.dart';import '../models/packages_list_packages_for_authenticated_user_package_type.dart';import '../models/packages_list_packages_for_authenticated_user_visibility.dart';import '../models/packages_list_packages_for_organization_package_type.dart';import '../models/packages_list_packages_for_organization_visibility.dart';import '../models/packages_list_packages_for_user_package_type.dart';import '../models/packages_list_packages_for_user_visibility.dart';import '../models/packages_restore_package_for_authenticated_user_package_type.dart';import '../models/packages_restore_package_for_org_package_type.dart';import '../models/packages_restore_package_for_user_package_type.dart';import '../models/packages_restore_package_version_for_authenticated_user_package_type.dart';import '../models/packages_restore_package_version_for_org_package_type.dart';import '../models/packages_restore_package_version_for_user_package_type.dart';/// PackagesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/package.dart';import '../models/package_version.dart';import '../models/packages_delete_package_for_authenticated_user_package_type.dart';import '../models/packages_delete_package_for_org_package_type.dart';import '../models/packages_delete_package_for_user_package_type.dart';import '../models/packages_delete_package_version_for_authenticated_user_package_type.dart';import '../models/packages_delete_package_version_for_org_package_type.dart';import '../models/packages_delete_package_version_for_user_package_type.dart';import '../models/packages_get_all_package_versions_for_package_owned_by_authenticated_user_package_type.dart';import '../models/packages_get_all_package_versions_for_package_owned_by_authenticated_user_state.dart';import '../models/packages_get_all_package_versions_for_package_owned_by_org_package_type.dart';import '../models/packages_get_all_package_versions_for_package_owned_by_org_state.dart';import '../models/packages_get_all_package_versions_for_package_owned_by_user_package_type.dart';import '../models/packages_get_package_for_authenticated_user_package_type.dart';import '../models/packages_get_package_for_organization_package_type.dart';import '../models/packages_get_package_for_user_package_type.dart';import '../models/packages_get_package_version_for_authenticated_user_package_type.dart';import '../models/packages_get_package_version_for_organization_package_type.dart';import '../models/packages_get_package_version_for_user_package_type.dart';import '../models/packages_list_packages_for_authenticated_user_package_type.dart';import '../models/packages_list_packages_for_authenticated_user_visibility.dart';import '../models/packages_list_packages_for_organization_error.dart';import '../models/packages_list_packages_for_organization_package_type.dart';import '../models/packages_list_packages_for_organization_visibility.dart';import '../models/packages_list_packages_for_user_error.dart';import '../models/packages_list_packages_for_user_package_type.dart';import '../models/packages_list_packages_for_user_visibility.dart';import '../models/packages_restore_package_for_authenticated_user_package_type.dart';import '../models/packages_restore_package_for_org_package_type.dart';import '../models/packages_restore_package_for_user_package_type.dart';import '../models/packages_restore_package_version_for_authenticated_user_package_type.dart';import '../models/packages_restore_package_version_for_org_package_type.dart';import '../models/packages_restore_package_version_for_user_package_type.dart';/// PackagesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -49,7 +49,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /orgs/{org}/packages`
-Future<ApiResult<List<Package>, BasicError>> packagesListPackagesForOrganization({required String org, required PackagesListPackagesForOrganizationPackageType packageType, PackagesListPackagesForOrganizationVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Package>, PackagesListPackagesForOrganizationError>> packagesListPackagesForOrganization({required String org, required PackagesListPackagesForOrganizationPackageType packageType, PackagesListPackagesForOrganizationVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['package_type'] = packageType.toJson();
 if (visibility != null) {
@@ -79,18 +79,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Package.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: PackagesListPackagesForOrganizationError.parse,
 );
  } 
 /// Get a package for an organization
@@ -679,7 +668,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 ///
 /// `GET /users/{username}/packages`
-Future<ApiResult<List<Package>, BasicError>> packagesListPackagesForUser({required String username, required PackagesListPackagesForUserPackageType packageType, PackagesListPackagesForUserVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Package>, PackagesListPackagesForUserError>> packagesListPackagesForUser({required String username, required PackagesListPackagesForUserPackageType packageType, PackagesListPackagesForUserVisibility? visibility, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['package_type'] = packageType.toJson();
 if (visibility != null) {
@@ -709,18 +698,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Package.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: PackagesListPackagesForUserError.parse,
 );
  } 
 /// Get a package for a user

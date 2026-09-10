@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/d1_account_identifier.dart';import '../models/d1_batch_query.dart';import '../models/d1_create_database_request.dart';import '../models/d1_database_details_response.dart';import '../models/d1_database_identifier.dart';import '../models/d1_database_response.dart';import '../models/d1_database_update_partial_request_body.dart';import '../models/d1_database_update_request_body.dart';import '../models/d1_export_database_request.dart';import '../models/d1_export_database_response202_result.dart';import '../models/d1_export_database_response_result.dart';import '../models/d1_import_database_request.dart';import '../models/d1_import_database_response202_result.dart';import '../models/d1_import_database_response_result.dart';import '../models/d1_query_result_response.dart';import '../models/d1_raw_result_response.dart';import '../models/d1_time_travel_bookmark.dart';import '../models/d1_time_travel_get_bookmark_response_result.dart';import '../models/d1_time_travel_restore_response.dart';import '../models/d1_time_travel_timestamp.dart';import '../models/response_common_failure23.dart';/// D1Api operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/d1_account_identifier.dart';import '../models/d1_batch_query.dart';import '../models/d1_create_database_request.dart';import '../models/d1_database_details_response.dart';import '../models/d1_database_identifier.dart';import '../models/d1_database_response.dart';import '../models/d1_database_update_partial_request_body.dart';import '../models/d1_database_update_request_body.dart';import '../models/d1_export_database_request.dart';import '../models/d1_export_database_success.dart';import '../models/d1_import_database_request.dart';import '../models/d1_import_database_success.dart';import '../models/d1_query_result_response.dart';import '../models/d1_raw_result_response.dart';import '../models/d1_time_travel_bookmark.dart';import '../models/d1_time_travel_get_bookmark_response_result.dart';import '../models/d1_time_travel_restore_response.dart';import '../models/d1_time_travel_timestamp.dart';import '../models/response_common_failure23.dart';/// D1Api operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -228,7 +228,7 @@ return null;
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/export`
-Future<ApiResult<OneOf2<D1ExportDatabaseResponseResult, D1ExportDatabaseResponse202Result>, ResponseCommonFailure23>> d1ExportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ExportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1ExportDatabaseSuccess, ResponseCommonFailure23>> d1ExportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ExportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -241,19 +241,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 200:
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return OneOf2<D1ExportDatabaseResponseResult, D1ExportDatabaseResponse202Result>.a(D1ExportDatabaseResponseResult.fromJson(json['result'] as Map<String, dynamic>));
-case 202:
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return OneOf2<D1ExportDatabaseResponseResult, D1ExportDatabaseResponse202Result>.b(D1ExportDatabaseResponse202Result.fromJson(json['result'] as Map<String, dynamic>));
-default:
-throw const FormatException('Undeclared success response status');
-}
-
-  },
+  onSuccess: D1ExportDatabaseSuccess.parse,
   onError: (response) {
 switch (response.statusCode) {
 case >= 400 && < 500:
@@ -273,7 +261,7 @@ return null;
 /// 
 ///
 /// `POST /accounts/{account_id}/d1/database/{database_id}/import`
-Future<ApiResult<OneOf2<D1ImportDatabaseResponseResult, D1ImportDatabaseResponse202Result>, ResponseCommonFailure23>> d1ImportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ImportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<D1ImportDatabaseSuccess, ResponseCommonFailure23>> d1ImportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ImportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -286,19 +274,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 200:
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return OneOf2<D1ImportDatabaseResponseResult, D1ImportDatabaseResponse202Result>.a(D1ImportDatabaseResponseResult.fromJson(json['result'] as Map<String, dynamic>));
-case 202:
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return OneOf2<D1ImportDatabaseResponseResult, D1ImportDatabaseResponse202Result>.b(D1ImportDatabaseResponse202Result.fromJson(json['result'] as Map<String, dynamic>));
-default:
-throw const FormatException('Undeclared success response status');
-}
-
-  },
+  onSuccess: D1ImportDatabaseSuccess.parse,
   onError: (response) {
 switch (response.statusCode) {
 case >= 400 && < 500:

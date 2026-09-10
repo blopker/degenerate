@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/domain_history_get_domain_history_response4_xx.dart';import '../models/intel_domain_history.dart';import '../models/intel_identifier.dart';/// DomainHistoryApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/domain_history_get_domain_history_response4xx.dart';import '../models/intel_domain_history.dart';import '../models/intel_identifier.dart';/// DomainHistoryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DomainHistoryApi with ApiExecutor {const DomainHistoryApi(this.apiCo
 /// Gets historical security threat and content categories currently and previously assigned to a domain.
 ///
 /// `GET /accounts/{account_id}/intel/domain-history`
-Future<ApiResult<List<IntelDomainHistory>, DomainHistoryGetDomainHistoryResponse4Xx>> domainHistoryGetDomainHistory({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IntelDomainHistory>, DomainHistoryGetDomainHistoryResponse4xx>> domainHistoryGetDomainHistory({required IntelIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (domain != null) {
   queryParameters['domain'] = domain;
@@ -40,7 +40,7 @@ return (json['result'] as List<dynamic>).map((e) => IntelDomainHistory.fromJson(
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DomainHistoryGetDomainHistoryResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DomainHistoryGetDomainHistoryResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

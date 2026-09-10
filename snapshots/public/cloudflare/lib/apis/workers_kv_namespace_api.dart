@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure81.dart';import '../models/workers_kv_any.dart';import '../models/workers_kv_bulk_get_result.dart';import '../models/workers_kv_bulk_get_result_with_metadata.dart';import '../models/workers_kv_bulk_result.dart';import '../models/workers_kv_bulk_write2.dart';import '../models/workers_kv_create_rename_namespace_body.dart';import '../models/workers_kv_expiration.dart';import '../models/workers_kv_expiration_ttl.dart';import '../models/workers_kv_identifier.dart';import '../models/workers_kv_key.dart';import '../models/workers_kv_key_name.dart';import '../models/workers_kv_key_name_bulk.dart';import '../models/workers_kv_namespace.dart';import '../models/workers_kv_namespace_delete_multiple_key_value_pairs_response4_xx.dart';import '../models/workers_kv_namespace_get_multiple_key_value_pairs_request.dart';import '../models/workers_kv_namespace_get_multiple_key_value_pairs_response_result.dart';import '../models/workers_kv_namespace_identifier.dart';import '../models/workers_kv_namespace_list_namespaces_direction.dart';import '../models/workers_kv_namespace_list_namespaces_order.dart';import '../models/workers_kv_namespace_write_key_value_pair_with_metadata_request.dart';import '../models/workers_kv_namespace_write_multiple_key_value_pairs_response4_xx.dart';import '../models/workers_kv_value.dart';/// WorkersKvNamespaceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure81.dart';import '../models/workers_kv_any.dart';import '../models/workers_kv_bulk_get_result.dart';import '../models/workers_kv_bulk_get_result_with_metadata.dart';import '../models/workers_kv_bulk_result.dart';import '../models/workers_kv_bulk_write2.dart';import '../models/workers_kv_create_rename_namespace_body.dart';import '../models/workers_kv_expiration.dart';import '../models/workers_kv_expiration_ttl.dart';import '../models/workers_kv_identifier.dart';import '../models/workers_kv_key.dart';import '../models/workers_kv_key_name.dart';import '../models/workers_kv_key_name_bulk.dart';import '../models/workers_kv_namespace.dart';import '../models/workers_kv_namespace_delete_multiple_key_value_pairs_response4xx.dart';import '../models/workers_kv_namespace_get_multiple_key_value_pairs_request.dart';import '../models/workers_kv_namespace_get_multiple_key_value_pairs_response_result.dart';import '../models/workers_kv_namespace_identifier.dart';import '../models/workers_kv_namespace_list_namespaces_direction.dart';import '../models/workers_kv_namespace_list_namespaces_order.dart';import '../models/workers_kv_namespace_write_key_value_pair_with_metadata_request.dart';import '../models/workers_kv_namespace_write_multiple_key_value_pairs_response4xx.dart';import '../models/workers_kv_value.dart';/// WorkersKvNamespaceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -194,7 +194,7 @@ return null;
 /// Write multiple keys and values at once. Body should be an array of up to 10,000 key-value pairs to be stored, along with optional expiration information. Existing values and expirations will be overwritten. If neither `expiration` nor `expiration_ttl` is specified, the key-value pair will never expire. If both are set, `expiration_ttl` is used and `expiration` is ignored. The entire request size must be 100 megabytes or less.
 ///
 /// `PUT /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/bulk`
-Future<ApiResult<WorkersKvBulkResult?, WorkersKvNamespaceWriteMultipleKeyValuePairsResponse4Xx>> workersKvNamespaceWriteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvBulkWrite2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersKvBulkResult?, WorkersKvNamespaceWriteMultipleKeyValuePairsResponse4xx>> workersKvNamespaceWriteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvBulkWrite2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -215,7 +215,7 @@ return json['result'] != null ? WorkersKvBulkResult.fromJson(json['result'] as M
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WorkersKvNamespaceWriteMultipleKeyValuePairsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WorkersKvNamespaceWriteMultipleKeyValuePairsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -228,7 +228,7 @@ return null;
 /// Remove multiple KV pairs from the namespace. Body should be an array of up to 10,000 keys to be removed.
 ///
 /// `POST /accounts/{account_id}/storage/kv/namespaces/{namespace_id}/bulk/delete`
-Future<ApiResult<WorkersKvBulkResult?, WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse4Xx>> workersKvNamespaceDeleteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvKeyNameBulk> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersKvBulkResult?, WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse4xx>> workersKvNamespaceDeleteMultipleKeyValuePairs({required WorkersKvNamespaceIdentifier namespaceId, required WorkersKvIdentifier accountId, required List<WorkersKvKeyNameBulk> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -249,7 +249,7 @@ return json['result'] != null ? WorkersKvBulkResult.fromJson(json['result'] as M
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WorkersKvNamespaceDeleteMultipleKeyValuePairsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

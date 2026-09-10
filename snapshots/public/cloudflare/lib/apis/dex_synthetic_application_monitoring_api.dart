@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/devices_live_status_response4_xx.dart';import '../models/dex_endpoints_http_test_details_interval.dart';import '../models/dex_endpoints_list_colos_sort_by.dart';import '../models/dex_endpoints_list_tests_overview_kind.dart';import '../models/dex_endpoints_traceroute_test_details_interval.dart';import '../models/dex_endpoints_traceroute_test_network_path_interval.dart';import '../models/dex_fleet_status_devices_response4_xx.dart';import '../models/dex_fleet_status_live_response4_xx.dart';import '../models/dex_fleet_status_over_time_response4_xx.dart';import '../models/digital_experience_monitoring_account_identifier.dart';import '../models/digital_experience_monitoring_colo.dart';import '../models/digital_experience_monitoring_colos_response2.dart';import '../models/digital_experience_monitoring_device.dart';import '../models/digital_experience_monitoring_device_id.dart';import '../models/digital_experience_monitoring_fleet_status_live_response_result.dart';import '../models/digital_experience_monitoring_fleet_status_over_time_response_result.dart';import '../models/digital_experience_monitoring_http_details_percentiles_response.dart';import '../models/digital_experience_monitoring_http_details_response.dart';import '../models/digital_experience_monitoring_mode.dart';import '../models/digital_experience_monitoring_page.dart';import '../models/digital_experience_monitoring_per_page.dart';import '../models/digital_experience_monitoring_platform.dart';import '../models/digital_experience_monitoring_since_minutes.dart';import '../models/digital_experience_monitoring_sort_by.dart';import '../models/digital_experience_monitoring_source.dart';import '../models/digital_experience_monitoring_status.dart';import '../models/digital_experience_monitoring_tests_response.dart';import '../models/digital_experience_monitoring_time_now.dart';import '../models/digital_experience_monitoring_timestamp.dart';import '../models/digital_experience_monitoring_traceroute_details_percentiles_response.dart';import '../models/digital_experience_monitoring_traceroute_details_response.dart';import '../models/digital_experience_monitoring_traceroute_test_network_path_response.dart';import '../models/digital_experience_monitoring_traceroute_test_result_network_path_response.dart';import '../models/digital_experience_monitoring_unique_devices_response.dart';import '../models/digital_experience_monitoring_uuid.dart';import '../models/digital_experience_monitoring_version.dart';import '../models/response_common_failure24.dart';/// DexSyntheticApplicationMonitoringApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/devices_live_status_response4xx.dart';import '../models/dex_endpoints_http_test_details_interval.dart';import '../models/dex_endpoints_list_colos_sort_by.dart';import '../models/dex_endpoints_list_tests_overview_kind.dart';import '../models/dex_endpoints_traceroute_test_details_interval.dart';import '../models/dex_endpoints_traceroute_test_network_path_interval.dart';import '../models/dex_fleet_status_devices_response4xx.dart';import '../models/dex_fleet_status_live_response4xx.dart';import '../models/dex_fleet_status_over_time_response4xx.dart';import '../models/digital_experience_monitoring_account_identifier.dart';import '../models/digital_experience_monitoring_colo.dart';import '../models/digital_experience_monitoring_colos_response2.dart';import '../models/digital_experience_monitoring_device.dart';import '../models/digital_experience_monitoring_device_id.dart';import '../models/digital_experience_monitoring_fleet_status_live_response_result.dart';import '../models/digital_experience_monitoring_fleet_status_over_time_response_result.dart';import '../models/digital_experience_monitoring_http_details_percentiles_response.dart';import '../models/digital_experience_monitoring_http_details_response.dart';import '../models/digital_experience_monitoring_mode.dart';import '../models/digital_experience_monitoring_page.dart';import '../models/digital_experience_monitoring_per_page.dart';import '../models/digital_experience_monitoring_platform.dart';import '../models/digital_experience_monitoring_since_minutes.dart';import '../models/digital_experience_monitoring_sort_by.dart';import '../models/digital_experience_monitoring_source.dart';import '../models/digital_experience_monitoring_status.dart';import '../models/digital_experience_monitoring_tests_response.dart';import '../models/digital_experience_monitoring_time_now.dart';import '../models/digital_experience_monitoring_timestamp.dart';import '../models/digital_experience_monitoring_traceroute_details_percentiles_response.dart';import '../models/digital_experience_monitoring_traceroute_details_response.dart';import '../models/digital_experience_monitoring_traceroute_test_network_path_response.dart';import '../models/digital_experience_monitoring_traceroute_test_result_network_path_response.dart';import '../models/digital_experience_monitoring_unique_devices_response.dart';import '../models/digital_experience_monitoring_uuid.dart';import '../models/digital_experience_monitoring_version.dart';import '../models/response_common_failure24.dart';/// DexSyntheticApplicationMonitoringApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -55,7 +55,7 @@ return null;
 /// Get the live status of a latest device given device_id from the device_state table
 ///
 /// `GET /accounts/{account_id}/dex/devices/{device_id}/fleet-status/live`
-Future<ApiResult<DigitalExperienceMonitoringDevice, DevicesLiveStatusResponse4Xx>> devicesLiveStatus({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceId deviceId, required DigitalExperienceMonitoringSinceMinutes sinceMinutes, DigitalExperienceMonitoringTimeNow? timeNow, DigitalExperienceMonitoringColo? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringDevice, DevicesLiveStatusResponse4xx>> devicesLiveStatus({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceId deviceId, required DigitalExperienceMonitoringSinceMinutes sinceMinutes, DigitalExperienceMonitoringTimeNow? timeNow, DigitalExperienceMonitoringColo? colo, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['since_minutes'] = sinceMinutes.toString();
 if (timeNow != null) {
@@ -86,7 +86,7 @@ return DigitalExperienceMonitoringDevice.fromJson(json as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DevicesLiveStatusResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DevicesLiveStatusResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -99,7 +99,7 @@ return null;
 /// List details for devices using WARP
 ///
 /// `GET /accounts/{account_id}/dex/fleet-status/devices`
-Future<ApiResult<List<DigitalExperienceMonitoringDevice>?, DexFleetStatusDevicesResponse4Xx>> dexFleetStatusDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringTimestamp to, required DigitalExperienceMonitoringTimestamp from, required DigitalExperienceMonitoringPage page, required DigitalExperienceMonitoringPerPage perPage, DigitalExperienceMonitoringSortBy? sortBy, DigitalExperienceMonitoringColo? colo, DigitalExperienceMonitoringDeviceId? deviceId, DigitalExperienceMonitoringMode? mode, DigitalExperienceMonitoringStatus? status, DigitalExperienceMonitoringPlatform? platform, DigitalExperienceMonitoringVersion? version, DigitalExperienceMonitoringSource? source, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DigitalExperienceMonitoringDevice>?, DexFleetStatusDevicesResponse4xx>> dexFleetStatusDevices({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringTimestamp to, required DigitalExperienceMonitoringTimestamp from, required DigitalExperienceMonitoringPage page, required DigitalExperienceMonitoringPerPage perPage, DigitalExperienceMonitoringSortBy? sortBy, DigitalExperienceMonitoringColo? colo, DigitalExperienceMonitoringDeviceId? deviceId, DigitalExperienceMonitoringMode? mode, DigitalExperienceMonitoringStatus? status, DigitalExperienceMonitoringPlatform? platform, DigitalExperienceMonitoringVersion? version, DigitalExperienceMonitoringSource? source, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['to'] = to.toString();
 queryParameters['from'] = from.toString();
@@ -151,7 +151,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitorin
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DexFleetStatusDevicesResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DexFleetStatusDevicesResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -164,7 +164,7 @@ return null;
 /// List details for live (up to 60 minutes) devices using WARP
 ///
 /// `GET /accounts/{account_id}/dex/fleet-status/live`
-Future<ApiResult<DigitalExperienceMonitoringFleetStatusLiveResponseResult?, DexFleetStatusLiveResponse4Xx>> dexFleetStatusLive({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSinceMinutes sinceMinutes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringFleetStatusLiveResponseResult?, DexFleetStatusLiveResponse4xx>> dexFleetStatusLive({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSinceMinutes sinceMinutes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['since_minutes'] = sinceMinutes.toString();
 
@@ -189,7 +189,7 @@ return json['result'] != null ? DigitalExperienceMonitoringFleetStatusLiveRespon
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DexFleetStatusLiveResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DexFleetStatusLiveResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -202,7 +202,7 @@ return null;
 /// List details for devices using WARP, up to 7 days
 ///
 /// `GET /accounts/{account_id}/dex/fleet-status/over-time`
-Future<ApiResult<DigitalExperienceMonitoringFleetStatusOverTimeResponseResult?, DexFleetStatusOverTimeResponse4Xx>> dexFleetStatusOverTime({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringTimestamp to, required DigitalExperienceMonitoringTimestamp from, DigitalExperienceMonitoringColo? colo, DigitalExperienceMonitoringDeviceId? deviceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DigitalExperienceMonitoringFleetStatusOverTimeResponseResult?, DexFleetStatusOverTimeResponse4xx>> dexFleetStatusOverTime({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringTimestamp to, required DigitalExperienceMonitoringTimestamp from, DigitalExperienceMonitoringColo? colo, DigitalExperienceMonitoringDeviceId? deviceId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['to'] = to.toString();
 queryParameters['from'] = from.toString();
@@ -234,7 +234,7 @@ return json['result'] != null ? DigitalExperienceMonitoringFleetStatusOverTimeRe
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DexFleetStatusOverTimeResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DexFleetStatusOverTimeResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

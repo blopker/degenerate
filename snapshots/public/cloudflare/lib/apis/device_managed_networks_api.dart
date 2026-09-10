@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/device_managed_networks_create_device_managed_network_request.dart';import '../models/device_managed_networks_create_device_managed_network_response4_xx.dart';import '../models/device_managed_networks_delete_device_managed_network_response4_xx.dart';import '../models/device_managed_networks_device_managed_network_details_response4_xx.dart';import '../models/device_managed_networks_list_device_managed_networks_response4_xx.dart';import '../models/device_managed_networks_update_device_managed_network_request.dart';import '../models/device_managed_networks_update_device_managed_network_response4_xx.dart';import '../models/teams_devices_device_managed_networks.dart';import '../models/teams_devices_identifier.dart';import '../models/teams_devices_uuid.dart';/// DeviceManagedNetworksApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/device_managed_networks_create_device_managed_network_request.dart';import '../models/device_managed_networks_create_device_managed_network_response4xx.dart';import '../models/device_managed_networks_delete_device_managed_network_response4xx.dart';import '../models/device_managed_networks_device_managed_network_details_response4xx.dart';import '../models/device_managed_networks_list_device_managed_networks_response4xx.dart';import '../models/device_managed_networks_update_device_managed_network_request.dart';import '../models/device_managed_networks_update_device_managed_network_response4xx.dart';import '../models/teams_devices_device_managed_networks.dart';import '../models/teams_devices_identifier.dart';import '../models/teams_devices_uuid.dart';/// DeviceManagedNetworksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DeviceManagedNetworksApi with ApiExecutor {const DeviceManagedNetwor
 /// Fetches a list of managed networks for an account.
 ///
 /// `GET /accounts/{account_id}/devices/networks`
-Future<ApiResult<List<TeamsDevicesDeviceManagedNetworks>, DeviceManagedNetworksListDeviceManagedNetworksResponse4Xx>> deviceManagedNetworksListDeviceManagedNetworks({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesDeviceManagedNetworks>, DeviceManagedNetworksListDeviceManagedNetworksResponse4xx>> deviceManagedNetworksListDeviceManagedNetworks({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return (json['result'] as List<dynamic>).map((e) => TeamsDevicesDeviceManagedNet
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeviceManagedNetworksListDeviceManagedNetworksResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeviceManagedNetworksListDeviceManagedNetworksResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Creates a new device managed network.
 ///
 /// `POST /accounts/{account_id}/devices/networks`
-Future<ApiResult<TeamsDevicesDeviceManagedNetworks, DeviceManagedNetworksCreateDeviceManagedNetworkResponse4Xx>> deviceManagedNetworksCreateDeviceManagedNetwork({required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksCreateDeviceManagedNetworkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDeviceManagedNetworks, DeviceManagedNetworksCreateDeviceManagedNetworkResponse4xx>> deviceManagedNetworksCreateDeviceManagedNetwork({required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksCreateDeviceManagedNetworkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return TeamsDevicesDeviceManagedNetworks.fromJson(json['result'] as Map<String, 
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeviceManagedNetworksCreateDeviceManagedNetworkResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeviceManagedNetworksCreateDeviceManagedNetworkResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Fetches details for a single managed network.
 ///
 /// `GET /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<TeamsDevicesDeviceManagedNetworks, DeviceManagedNetworksDeviceManagedNetworkDetailsResponse4Xx>> deviceManagedNetworksDeviceManagedNetworkDetails({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDeviceManagedNetworks, DeviceManagedNetworksDeviceManagedNetworkDetailsResponse4xx>> deviceManagedNetworksDeviceManagedNetworkDetails({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ return TeamsDevicesDeviceManagedNetworks.fromJson(json['result'] as Map<String, 
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeviceManagedNetworksDeviceManagedNetworkDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeviceManagedNetworksDeviceManagedNetworkDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -111,7 +111,7 @@ return null;
 /// Updates a configured device managed network.
 ///
 /// `PUT /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<TeamsDevicesDeviceManagedNetworks, DeviceManagedNetworksUpdateDeviceManagedNetworkResponse4Xx>> deviceManagedNetworksUpdateDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksUpdateDeviceManagedNetworkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDeviceManagedNetworks, DeviceManagedNetworksUpdateDeviceManagedNetworkResponse4xx>> deviceManagedNetworksUpdateDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, required DeviceManagedNetworksUpdateDeviceManagedNetworkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,7 +132,7 @@ return TeamsDevicesDeviceManagedNetworks.fromJson(json['result'] as Map<String, 
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeviceManagedNetworksUpdateDeviceManagedNetworkResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeviceManagedNetworksUpdateDeviceManagedNetworkResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -145,7 +145,7 @@ return null;
 /// Deletes a device managed network and fetches a list of the remaining device managed networks for an account.
 ///
 /// `DELETE /accounts/{account_id}/devices/networks/{network_id}`
-Future<ApiResult<List<TeamsDevicesDeviceManagedNetworks>, DeviceManagedNetworksDeleteDeviceManagedNetworkResponse4Xx>> deviceManagedNetworksDeleteDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesDeviceManagedNetworks>, DeviceManagedNetworksDeleteDeviceManagedNetworkResponse4xx>> deviceManagedNetworksDeleteDeviceManagedNetwork({required TeamsDevicesUuid networkId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -164,7 +164,7 @@ return (json['result'] as List<dynamic>).map((e) => TeamsDevicesDeviceManagedNet
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeviceManagedNetworksDeleteDeviceManagedNetworkResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeviceManagedNetworksDeleteDeviceManagedNetworkResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

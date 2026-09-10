@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_zone_ruleset_request.dart';import '../models/create_zone_ruleset_response4_xx.dart';import '../models/create_zone_ruleset_response_result.dart';import '../models/create_zone_ruleset_rule_request.dart';import '../models/create_zone_ruleset_rule_response4_xx.dart';import '../models/create_zone_ruleset_rule_response_result.dart';import '../models/delete_zone_ruleset_response4_xx.dart';import '../models/delete_zone_ruleset_rule_response4_xx.dart';import '../models/delete_zone_ruleset_rule_response_result.dart';import '../models/delete_zone_ruleset_version_response4_xx.dart';import '../models/get_zone_entrypoint_ruleset_response4_xx.dart';import '../models/get_zone_entrypoint_ruleset_response_result.dart';import '../models/get_zone_entrypoint_ruleset_version_response4_xx.dart';import '../models/get_zone_entrypoint_ruleset_version_response_result.dart';import '../models/get_zone_ruleset_response4_xx.dart';import '../models/get_zone_ruleset_response_result.dart';import '../models/get_zone_ruleset_version_response4_xx.dart';import '../models/get_zone_ruleset_version_response_result.dart';import '../models/list_zone_entrypoint_ruleset_versions_response4_xx.dart';import '../models/list_zone_entrypoint_ruleset_versions_response_result.dart';import '../models/list_zone_ruleset_version_rules_by_tag_response4_xx.dart';import '../models/list_zone_ruleset_version_rules_by_tag_response_result.dart';import '../models/list_zone_ruleset_versions_response4_xx.dart';import '../models/list_zone_ruleset_versions_response_result.dart';import '../models/list_zone_rulesets_response4_xx.dart';import '../models/list_zone_rulesets_response_result.dart';import '../models/rulesets_cursor.dart';import '../models/rulesets_per_page.dart';import '../models/rulesets_rule_category.dart';import '../models/rulesets_rule_id.dart';import '../models/rulesets_ruleset_id.dart';import '../models/rulesets_ruleset_phase.dart';import '../models/rulesets_ruleset_version.dart';import '../models/rulesets_zone_id.dart';import '../models/update_zone_entrypoint_ruleset_request.dart';import '../models/update_zone_entrypoint_ruleset_response4_xx.dart';import '../models/update_zone_entrypoint_ruleset_response_result.dart';import '../models/update_zone_ruleset_request.dart';import '../models/update_zone_ruleset_response4_xx.dart';import '../models/update_zone_ruleset_response_result.dart';import '../models/update_zone_ruleset_rule_request.dart';import '../models/update_zone_ruleset_rule_response4_xx.dart';import '../models/update_zone_ruleset_rule_response_result.dart';/// ZoneRulesetsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_zone_ruleset_request.dart';import '../models/create_zone_ruleset_response4xx.dart';import '../models/create_zone_ruleset_response_result.dart';import '../models/create_zone_ruleset_rule_request.dart';import '../models/create_zone_ruleset_rule_response4xx.dart';import '../models/create_zone_ruleset_rule_response_result.dart';import '../models/delete_zone_ruleset_response4xx.dart';import '../models/delete_zone_ruleset_rule_response4xx.dart';import '../models/delete_zone_ruleset_rule_response_result.dart';import '../models/delete_zone_ruleset_version_response4xx.dart';import '../models/get_zone_entrypoint_ruleset_response4xx.dart';import '../models/get_zone_entrypoint_ruleset_response_result.dart';import '../models/get_zone_entrypoint_ruleset_version_response4xx.dart';import '../models/get_zone_entrypoint_ruleset_version_response_result.dart';import '../models/get_zone_ruleset_response4xx.dart';import '../models/get_zone_ruleset_response_result.dart';import '../models/get_zone_ruleset_version_response4xx.dart';import '../models/get_zone_ruleset_version_response_result.dart';import '../models/list_zone_entrypoint_ruleset_versions_response4xx.dart';import '../models/list_zone_entrypoint_ruleset_versions_response_result.dart';import '../models/list_zone_ruleset_version_rules_by_tag_response4xx.dart';import '../models/list_zone_ruleset_version_rules_by_tag_response_result.dart';import '../models/list_zone_ruleset_versions_response4xx.dart';import '../models/list_zone_ruleset_versions_response_result.dart';import '../models/list_zone_rulesets_response4xx.dart';import '../models/list_zone_rulesets_response_result.dart';import '../models/rulesets_cursor.dart';import '../models/rulesets_per_page.dart';import '../models/rulesets_rule_category.dart';import '../models/rulesets_rule_id.dart';import '../models/rulesets_ruleset_id.dart';import '../models/rulesets_ruleset_phase.dart';import '../models/rulesets_ruleset_version.dart';import '../models/rulesets_zone_id.dart';import '../models/update_zone_entrypoint_ruleset_request.dart';import '../models/update_zone_entrypoint_ruleset_response4xx.dart';import '../models/update_zone_entrypoint_ruleset_response_result.dart';import '../models/update_zone_ruleset_request.dart';import '../models/update_zone_ruleset_response4xx.dart';import '../models/update_zone_ruleset_response_result.dart';import '../models/update_zone_ruleset_rule_request.dart';import '../models/update_zone_ruleset_rule_response4xx.dart';import '../models/update_zone_ruleset_rule_response_result.dart';/// ZoneRulesetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZoneRulesetsApi with ApiExecutor {const ZoneRulesetsApi(this.apiConf
 /// Fetches all rulesets at the zone level.
 ///
 /// `GET /zones/{zone_id}/rulesets`
-Future<ApiResult<List<ListZoneRulesetsResponseResult>, ListZoneRulesetsResponse4Xx>> listZoneRulesets({required RulesetsZoneId zoneId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ListZoneRulesetsResponseResult>, ListZoneRulesetsResponse4xx>> listZoneRulesets({required RulesetsZoneId zoneId, RulesetsCursor? cursor, RulesetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
   queryParameters['cursor'] = cursor.toString();
@@ -43,7 +43,7 @@ return (json['result'] as List<dynamic>).map((e) => ListZoneRulesetsResponseResu
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ListZoneRulesetsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ListZoneRulesetsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -56,7 +56,7 @@ return null;
 /// Creates a ruleset at the zone level.
 ///
 /// `POST /zones/{zone_id}/rulesets`
-Future<ApiResult<CreateZoneRulesetResponseResult, CreateZoneRulesetResponse4Xx>> createZoneRuleset({required RulesetsZoneId zoneId, required CreateZoneRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateZoneRulesetResponseResult, CreateZoneRulesetResponse4xx>> createZoneRuleset({required RulesetsZoneId zoneId, required CreateZoneRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,7 +77,7 @@ return CreateZoneRulesetResponseResult.fromJson(json['result'] as Map<String, dy
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CreateZoneRulesetResponse4Xx.fromJson(json as Map<String, dynamic>);
+return CreateZoneRulesetResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -90,7 +90,7 @@ return null;
 /// Fetches the latest version of a zone ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}`
-Future<ApiResult<GetZoneRulesetResponseResult, GetZoneRulesetResponse4Xx>> getZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetZoneRulesetResponseResult, GetZoneRulesetResponse4xx>> getZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -109,7 +109,7 @@ return GetZoneRulesetResponseResult.fromJson(json['result'] as Map<String, dynam
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return GetZoneRulesetResponse4Xx.fromJson(json as Map<String, dynamic>);
+return GetZoneRulesetResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -122,7 +122,7 @@ return null;
 /// Updates a zone ruleset, creating a new version.
 ///
 /// `PUT /zones/{zone_id}/rulesets/{ruleset_id}`
-Future<ApiResult<UpdateZoneRulesetResponseResult, UpdateZoneRulesetResponse4Xx>> updateZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required UpdateZoneRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UpdateZoneRulesetResponseResult, UpdateZoneRulesetResponse4xx>> updateZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required UpdateZoneRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -143,7 +143,7 @@ return UpdateZoneRulesetResponseResult.fromJson(json['result'] as Map<String, dy
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return UpdateZoneRulesetResponse4Xx.fromJson(json as Map<String, dynamic>);
+return UpdateZoneRulesetResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -156,7 +156,7 @@ return null;
 /// Deletes all versions of an existing zone ruleset.
 ///
 /// `DELETE /zones/{zone_id}/rulesets/{ruleset_id}`
-Future<ApiResult<void, DeleteZoneRulesetResponse4Xx>> deleteZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteZoneRulesetResponse4xx>> deleteZoneRuleset({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -172,7 +172,7 @@ return await execute(
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeleteZoneRulesetResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeleteZoneRulesetResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -185,7 +185,7 @@ return null;
 /// Adds a new rule to a zone ruleset. The rule will be added to the end of the existing list of rules in the ruleset by default.
 ///
 /// `POST /zones/{zone_id}/rulesets/{ruleset_id}/rules`
-Future<ApiResult<CreateZoneRulesetRuleResponseResult, CreateZoneRulesetRuleResponse4Xx>> createZoneRulesetRule({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required CreateZoneRulesetRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateZoneRulesetRuleResponseResult, CreateZoneRulesetRuleResponse4xx>> createZoneRulesetRule({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required CreateZoneRulesetRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -206,7 +206,7 @@ return CreateZoneRulesetRuleResponseResult.fromJson(json['result'] as Map<String
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CreateZoneRulesetRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return CreateZoneRulesetRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -219,7 +219,7 @@ return null;
 /// Updates an existing rule in a zone ruleset.
 ///
 /// `PATCH /zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}`
-Future<ApiResult<UpdateZoneRulesetRuleResponseResult, UpdateZoneRulesetRuleResponse4Xx>> updateZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required UpdateZoneRulesetRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UpdateZoneRulesetRuleResponseResult, UpdateZoneRulesetRuleResponse4xx>> updateZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, required UpdateZoneRulesetRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -240,7 +240,7 @@ return UpdateZoneRulesetRuleResponseResult.fromJson(json['result'] as Map<String
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return UpdateZoneRulesetRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return UpdateZoneRulesetRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -253,7 +253,7 @@ return null;
 /// Deletes an existing rule from a zone ruleset.
 ///
 /// `DELETE /zones/{zone_id}/rulesets/{ruleset_id}/rules/{rule_id}`
-Future<ApiResult<DeleteZoneRulesetRuleResponseResult, DeleteZoneRulesetRuleResponse4Xx>> deleteZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteZoneRulesetRuleResponseResult, DeleteZoneRulesetRuleResponse4xx>> deleteZoneRulesetRule({required RulesetsRuleId ruleId, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -272,7 +272,7 @@ return DeleteZoneRulesetRuleResponseResult.fromJson(json['result'] as Map<String
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeleteZoneRulesetRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeleteZoneRulesetRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -285,7 +285,7 @@ return null;
 /// Fetches the versions of a zone ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}/versions`
-Future<ApiResult<List<ListZoneRulesetVersionsResponseResult>, ListZoneRulesetVersionsResponse4Xx>> listZoneRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ListZoneRulesetVersionsResponseResult>, ListZoneRulesetVersionsResponse4xx>> listZoneRulesetVersions({required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -304,7 +304,7 @@ return (json['result'] as List<dynamic>).map((e) => ListZoneRulesetVersionsRespo
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ListZoneRulesetVersionsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ListZoneRulesetVersionsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -317,7 +317,7 @@ return null;
 /// Fetches a specific version of a zone ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}`
-Future<ApiResult<GetZoneRulesetVersionResponseResult, GetZoneRulesetVersionResponse4Xx>> getZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetZoneRulesetVersionResponseResult, GetZoneRulesetVersionResponse4xx>> getZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -336,7 +336,7 @@ return GetZoneRulesetVersionResponseResult.fromJson(json['result'] as Map<String
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return GetZoneRulesetVersionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return GetZoneRulesetVersionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -349,7 +349,7 @@ return null;
 /// Deletes an existing version of a zone ruleset.
 ///
 /// `DELETE /zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}`
-Future<ApiResult<void, DeleteZoneRulesetVersionResponse4Xx>> deleteZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteZoneRulesetVersionResponse4xx>> deleteZoneRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -365,7 +365,7 @@ return await execute(
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeleteZoneRulesetVersionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeleteZoneRulesetVersionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -378,7 +378,7 @@ return null;
 /// Fetches the rules of a managed zone ruleset version for a given tag.
 ///
 /// `GET /zones/{zone_id}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}`
-Future<ApiResult<ListZoneRulesetVersionRulesByTagResponseResult, ListZoneRulesetVersionRulesByTagResponse4Xx>> listZoneRulesetVersionRulesByTag({required RulesetsRuleCategory ruleTag, required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListZoneRulesetVersionRulesByTagResponseResult, ListZoneRulesetVersionRulesByTagResponse4xx>> listZoneRulesetVersionRulesByTag({required RulesetsRuleCategory ruleTag, required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetId rulesetId, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -397,7 +397,7 @@ return ListZoneRulesetVersionRulesByTagResponseResult.fromJson(json['result'] as
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ListZoneRulesetVersionRulesByTagResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ListZoneRulesetVersionRulesByTagResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -410,7 +410,7 @@ return null;
 /// Fetches the latest version of the zone entry point ruleset for a given phase.
 ///
 /// `GET /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint`
-Future<ApiResult<GetZoneEntrypointRulesetResponseResult, GetZoneEntrypointRulesetResponse4Xx>> getZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetZoneEntrypointRulesetResponseResult, GetZoneEntrypointRulesetResponse4xx>> getZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -429,7 +429,7 @@ return GetZoneEntrypointRulesetResponseResult.fromJson(json['result'] as Map<Str
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return GetZoneEntrypointRulesetResponse4Xx.fromJson(json as Map<String, dynamic>);
+return GetZoneEntrypointRulesetResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -442,7 +442,7 @@ return null;
 /// Updates a zone entry point ruleset, creating a new version.
 ///
 /// `PUT /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint`
-Future<ApiResult<UpdateZoneEntrypointRulesetResponseResult, UpdateZoneEntrypointRulesetResponse4Xx>> updateZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, required UpdateZoneEntrypointRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UpdateZoneEntrypointRulesetResponseResult, UpdateZoneEntrypointRulesetResponse4xx>> updateZoneEntrypointRuleset({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, required UpdateZoneEntrypointRulesetRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -463,7 +463,7 @@ return UpdateZoneEntrypointRulesetResponseResult.fromJson(json['result'] as Map<
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return UpdateZoneEntrypointRulesetResponse4Xx.fromJson(json as Map<String, dynamic>);
+return UpdateZoneEntrypointRulesetResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -476,7 +476,7 @@ return null;
 /// Fetches the versions of a zone entry point ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions`
-Future<ApiResult<List<ListZoneEntrypointRulesetVersionsResponseResult>, ListZoneEntrypointRulesetVersionsResponse4Xx>> listZoneEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ListZoneEntrypointRulesetVersionsResponseResult>, ListZoneEntrypointRulesetVersionsResponse4xx>> listZoneEntrypointRulesetVersions({required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -495,7 +495,7 @@ return (json['result'] as List<dynamic>).map((e) => ListZoneEntrypointRulesetVer
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ListZoneEntrypointRulesetVersionsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ListZoneEntrypointRulesetVersionsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -508,7 +508,7 @@ return null;
 /// Fetches a specific version of a zone entry point ruleset.
 ///
 /// `GET /zones/{zone_id}/rulesets/phases/{ruleset_phase}/entrypoint/versions/{ruleset_version}`
-Future<ApiResult<GetZoneEntrypointRulesetVersionResponseResult, GetZoneEntrypointRulesetVersionResponse4Xx>> getZoneEntrypointRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetZoneEntrypointRulesetVersionResponseResult, GetZoneEntrypointRulesetVersionResponse4xx>> getZoneEntrypointRulesetVersion({required RulesetsRulesetVersion rulesetVersion, required RulesetsRulesetPhase rulesetPhase, required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -527,7 +527,7 @@ return GetZoneEntrypointRulesetVersionResponseResult.fromJson(json['result'] as 
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return GetZoneEntrypointRulesetVersionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return GetZoneEntrypointRulesetVersionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_identifier.dart';import '../models/intel_miscategorization.dart';import '../models/miscategorization_create_miscategorization_response4_xx.dart';import '../models/response_common40.dart';/// MiscategorizationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_identifier.dart';import '../models/intel_miscategorization.dart';import '../models/miscategorization_create_miscategorization_response4xx.dart';import '../models/response_common40.dart';/// MiscategorizationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class MiscategorizationApi with ApiExecutor {const MiscategorizationApi(th
 /// Allows you to submit requests to change a domain’s category.
 ///
 /// `POST /accounts/{account_id}/intel/miscategorization`
-Future<ApiResult<ResponseCommon40, MiscategorizationCreateMiscategorizationResponse4Xx>> miscategorizationCreateMiscategorization({required IntelIdentifier accountId, required IntelMiscategorization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon40, MiscategorizationCreateMiscategorizationResponse4xx>> miscategorizationCreateMiscategorization({required IntelIdentifier accountId, required IntelMiscategorization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -34,7 +34,7 @@ return ResponseCommon40.fromJson(json as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MiscategorizationCreateMiscategorizationResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MiscategorizationCreateMiscategorizationResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

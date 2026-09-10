@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/secondary_dns_account_identifier.dart';import '../models/secondary_dns_acl.dart';import '../models/secondary_dns_acl_acl_details_response4_xx.dart';import '../models/secondary_dns_acl_create_acl_request.dart';import '../models/secondary_dns_acl_create_acl_response4_xx.dart';import '../models/secondary_dns_acl_delete_acl_response4_xx.dart';import '../models/secondary_dns_acl_list_ac_ls_response4_xx.dart';import '../models/secondary_dns_acl_request.dart';import '../models/secondary_dns_acl_update_acl_response4_xx.dart';import '../models/secondary_dns_components_schemas_id_response_result.dart';import '../models/secondary_dns_components_schemas_identifier.dart';/// SecondaryDnsAclApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/secondary_dns_account_identifier.dart';import '../models/secondary_dns_acl.dart';import '../models/secondary_dns_acl_acl_details_response4xx.dart';import '../models/secondary_dns_acl_create_acl_request.dart';import '../models/secondary_dns_acl_create_acl_response4xx.dart';import '../models/secondary_dns_acl_delete_acl_response4xx.dart';import '../models/secondary_dns_acl_list_ac_ls_response4xx.dart';import '../models/secondary_dns_acl_request.dart';import '../models/secondary_dns_acl_update_acl_response4xx.dart';import '../models/secondary_dns_components_schemas_id_response_result.dart';import '../models/secondary_dns_components_schemas_identifier.dart';/// SecondaryDnsAclApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class SecondaryDnsAclApi with ApiExecutor {const SecondaryDnsAclApi(this.a
 /// List ACLs.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/acls`
-Future<ApiResult<List<SecondaryDnsAcl>?, SecondaryDnsAclListAcLsResponse4Xx>> secondaryDnsAclListAcLs({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecondaryDnsAcl>?, SecondaryDnsAclListAcLsResponse4xx>> secondaryDnsAclListAcLs({required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => SecondaryDnsAcl.fromJson(e
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SecondaryDnsAclListAcLsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return SecondaryDnsAclListAcLsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Create ACL.
 ///
 /// `POST /accounts/{account_id}/secondary_dns/acls`
-Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclCreateAclResponse4Xx>> secondaryDnsAclCreateAcl({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAclCreateAclRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclCreateAclResponse4xx>> secondaryDnsAclCreateAcl({required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAclCreateAclRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return json['result'] != null ? SecondaryDnsAcl.fromJson(json['result'] as Map<S
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SecondaryDnsAclCreateAclResponse4Xx.fromJson(json as Map<String, dynamic>);
+return SecondaryDnsAclCreateAclResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Get ACL.
 ///
 /// `GET /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclAclDetailsResponse4Xx>> secondaryDnsAclAclDetails({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclAclDetailsResponse4xx>> secondaryDnsAclAclDetails({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ return json['result'] != null ? SecondaryDnsAcl.fromJson(json['result'] as Map<S
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SecondaryDnsAclAclDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return SecondaryDnsAclAclDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -111,7 +111,7 @@ return null;
 /// Modify ACL.
 ///
 /// `PUT /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclUpdateAclResponse4Xx>> secondaryDnsAclUpdateAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAclRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsAcl?, SecondaryDnsAclUpdateAclResponse4xx>> secondaryDnsAclUpdateAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, required SecondaryDnsAclRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,7 +132,7 @@ return json['result'] != null ? SecondaryDnsAcl.fromJson(json['result'] as Map<S
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SecondaryDnsAclUpdateAclResponse4Xx.fromJson(json as Map<String, dynamic>);
+return SecondaryDnsAclUpdateAclResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -145,7 +145,7 @@ return null;
 /// Delete ACL.
 ///
 /// `DELETE /accounts/{account_id}/secondary_dns/acls/{acl_id}`
-Future<ApiResult<SecondaryDnsComponentsSchemasIdResponseResult?, SecondaryDnsAclDeleteAclResponse4Xx>> secondaryDnsAclDeleteAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecondaryDnsComponentsSchemasIdResponseResult?, SecondaryDnsAclDeleteAclResponse4xx>> secondaryDnsAclDeleteAcl({required SecondaryDnsComponentsSchemasIdentifier aclId, required SecondaryDnsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -164,7 +164,7 @@ return json['result'] != null ? SecondaryDnsComponentsSchemasIdResponseResult.fr
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SecondaryDnsAclDeleteAclResponse4Xx.fromJson(json as Map<String, dynamic>);
+return SecondaryDnsAclDeleteAclResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

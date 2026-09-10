@@ -57,7 +57,9 @@ void main() {
           quiet: true,
         ),
       ).generate();
-      final source = files['apis/default_api.dart']!;
+      final source =
+          files['models/get_value_error.dart'] ??
+          files['apis/default_api.dart']!;
       expect(source, contains(pattern));
       expect(
         RegExp('^case ', multiLine: true).allMatches(source).length,
@@ -79,7 +81,12 @@ void main() {
     client.nextResponse = ApiResponse(statusCode: entry.key, body: jsonEncode(entry.value));
     final result = await api.getValue();
     values.add(switch (result) {
-      ApiError(:final error) => error?.toJson(),
+      ApiError(:final error) => switch (error) {
+        GetValueError4xx(:final data) => data,
+        GetValueError409(:final data) => data,
+        GetValueErrorDefault(:final data) => data,
+        null => null,
+      },
       _ => result.toString(),
     });
   }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_account_id.dart';import '../models/aaa_id_response_result.dart';import '../models/aaa_policies.dart';import '../models/aaa_policy_id.dart';import '../models/notification_policies_create_a_notification_policy_request.dart';import '../models/notification_policies_create_a_notification_policy_response4_xx.dart';import '../models/notification_policies_delete_a_notification_policy_response4_xx.dart';import '../models/notification_policies_get_a_notification_policy_response4_xx.dart';import '../models/notification_policies_update_a_notification_policy_request.dart';import '../models/notification_policies_update_a_notification_policy_response4_xx.dart';import '../models/response_collection.dart';import '../models/response_common_failure2.dart';/// NotificationPoliciesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_account_id.dart';import '../models/aaa_id_response_result.dart';import '../models/aaa_policies.dart';import '../models/aaa_policy_id.dart';import '../models/notification_policies_create_a_notification_policy_request.dart';import '../models/notification_policies_create_a_notification_policy_response4xx.dart';import '../models/notification_policies_delete_a_notification_policy_response4xx.dart';import '../models/notification_policies_get_a_notification_policy_response4xx.dart';import '../models/notification_policies_update_a_notification_policy_request.dart';import '../models/notification_policies_update_a_notification_policy_response4xx.dart';import '../models/response_collection.dart';import '../models/response_common_failure2.dart';/// NotificationPoliciesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -45,7 +45,7 @@ return null;
 /// Creates a new Notification policy.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/policies`
-Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesCreateANotificationPolicyResponse4Xx>> notificationPoliciesCreateANotificationPolicy({required AaaAccountId accountId, required NotificationPoliciesCreateANotificationPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesCreateANotificationPolicyResponse4xx>> notificationPoliciesCreateANotificationPolicy({required AaaAccountId accountId, required NotificationPoliciesCreateANotificationPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as M
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return NotificationPoliciesCreateANotificationPolicyResponse4Xx.fromJson(json as Map<String, dynamic>);
+return NotificationPoliciesCreateANotificationPolicyResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Get details for a single policy.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<AaaPolicies?, NotificationPoliciesGetANotificationPolicyResponse4Xx>> notificationPoliciesGetANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaPolicies?, NotificationPoliciesGetANotificationPolicyResponse4xx>> notificationPoliciesGetANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ return json['result'] != null ? AaaPolicies.fromJson(json['result'] as Map<Strin
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return NotificationPoliciesGetANotificationPolicyResponse4Xx.fromJson(json as Map<String, dynamic>);
+return NotificationPoliciesGetANotificationPolicyResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -111,7 +111,7 @@ return null;
 /// Update a Notification policy.
 ///
 /// `PUT /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesUpdateANotificationPolicyResponse4Xx>> notificationPoliciesUpdateANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, required NotificationPoliciesUpdateANotificationPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationPoliciesUpdateANotificationPolicyResponse4xx>> notificationPoliciesUpdateANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, required NotificationPoliciesUpdateANotificationPolicyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,7 +132,7 @@ return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as M
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return NotificationPoliciesUpdateANotificationPolicyResponse4Xx.fromJson(json as Map<String, dynamic>);
+return NotificationPoliciesUpdateANotificationPolicyResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -145,7 +145,7 @@ return null;
 /// Delete a Notification policy.
 ///
 /// `DELETE /accounts/{account_id}/alerting/v3/policies/{policy_id}`
-Future<ApiResult<ResponseCollection, NotificationPoliciesDeleteANotificationPolicyResponse4Xx>> notificationPoliciesDeleteANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCollection, NotificationPoliciesDeleteANotificationPolicyResponse4xx>> notificationPoliciesDeleteANotificationPolicy({required AaaAccountId accountId, required AaaPolicyId policyId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -164,7 +164,7 @@ return ResponseCollection.fromJson(json as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return NotificationPoliciesDeleteANotificationPolicyResponse4Xx.fromJson(json as Map<String, dynamic>);
+return NotificationPoliciesDeleteANotificationPolicyResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

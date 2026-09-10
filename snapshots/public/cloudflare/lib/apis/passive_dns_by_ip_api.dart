@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_identifier.dart';import '../models/intel_passive_dns_by_ip.dart';import '../models/intel_start_end_params.dart';import '../models/passive_dns_by_ip_get_passive_dns_by_ip_response4_xx.dart';/// PassiveDnsByIpApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_identifier.dart';import '../models/intel_passive_dns_by_ip.dart';import '../models/intel_start_end_params.dart';import '../models/passive_dns_by_ip_get_passive_dns_by_ip_response4xx.dart';/// PassiveDnsByIpApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class PassiveDnsByIpApi with ApiExecutor {const PassiveDnsByIpApi(this.api
 /// Gets a list of all the domains that have resolved to a specific IP address.
 ///
 /// `GET /accounts/{account_id}/intel/dns`
-Future<ApiResult<IntelPassiveDnsByIp?, PassiveDnsByIpGetPassiveDnsByIpResponse4Xx>> passiveDnsByIpGetPassiveDnsByIp({required IntelIdentifier accountId, IntelStartEndParams? startEndParams, String? ipv4, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IntelPassiveDnsByIp?, PassiveDnsByIpGetPassiveDnsByIpResponse4xx>> passiveDnsByIpGetPassiveDnsByIp({required IntelIdentifier accountId, IntelStartEndParams? startEndParams, String? ipv4, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (startEndParams != null) {
 if (startEndParams.end case final end$?) { queryParametersList.add(ApiQueryParameter(name: 'end', value: end$)); }
@@ -50,7 +50,7 @@ return json['result'] != null ? IntelPassiveDnsByIp.fromJson(json['result'] as M
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return PassiveDnsByIpGetPassiveDnsByIpResponse4Xx.fromJson(json as Map<String, dynamic>);
+return PassiveDnsByIpGetPassiveDnsByIpResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/bot_management_bm_subscription_config.dart';import '../models/bot_management_bot_fight_mode_config.dart';import '../models/bot_management_bot_management_response_body_result.dart';import '../models/bot_management_config_single_request.dart';import '../models/bot_management_for_a_zone_get_config_response4_xx.dart';import '../models/bot_management_for_a_zone_update_config_response4_xx.dart';import '../models/bot_management_identifier.dart';import '../models/bot_management_sbfm_definitely_config.dart';import '../models/bot_management_sbfm_likely_config.dart';/// BotSettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/bot_management_bm_subscription_config.dart';import '../models/bot_management_bot_fight_mode_config.dart';import '../models/bot_management_bot_management_response_body_result.dart';import '../models/bot_management_config_single_request.dart';import '../models/bot_management_for_a_zone_get_config_response4xx.dart';import '../models/bot_management_for_a_zone_update_config_response4xx.dart';import '../models/bot_management_identifier.dart';import '../models/bot_management_sbfm_definitely_config.dart';import '../models/bot_management_sbfm_likely_config.dart';/// BotSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class BotSettingsApi with ApiExecutor {const BotSettingsApi(this.apiConfig
 /// Retrieve a zone's Bot Management Config
 ///
 /// `GET /zones/{zone_id}/bot_management`
-Future<ApiResult<BotManagementBotManagementResponseBodyResult?, BotManagementForAZoneGetConfigResponse4Xx>> botManagementForAZoneGetConfig({required BotManagementIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BotManagementBotManagementResponseBodyResult?, BotManagementForAZoneGetConfigResponse4xx>> botManagementForAZoneGetConfig({required BotManagementIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return json['result'] != null ? OneOf4.parse(json['result'], fromA: (v) => BotMa
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return BotManagementForAZoneGetConfigResponse4Xx.fromJson(json as Map<String, dynamic>);
+return BotManagementForAZoneGetConfigResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -92,7 +92,7 @@ return null;
 /// 
 ///
 /// `PUT /zones/{zone_id}/bot_management`
-Future<ApiResult<BotManagementBotManagementResponseBodyResult?, BotManagementForAZoneUpdateConfigResponse4Xx>> botManagementForAZoneUpdateConfig({required BotManagementIdentifier zoneId, required BotManagementConfigSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BotManagementBotManagementResponseBodyResult?, BotManagementForAZoneUpdateConfigResponse4xx>> botManagementForAZoneUpdateConfig({required BotManagementIdentifier zoneId, required BotManagementConfigSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,7 +113,7 @@ return json['result'] != null ? OneOf4.parse(json['result'], fromA: (v) => BotMa
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return BotManagementForAZoneUpdateConfigResponse4Xx.fromJson(json as Map<String, dynamic>);
+return BotManagementForAZoneUpdateConfigResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

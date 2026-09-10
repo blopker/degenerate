@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/waiting_room_create_a_custom_waiting_room_page_preview_response4_xx.dart';import '../models/waiting_room_create_event_response4_xx.dart';import '../models/waiting_room_create_waiting_room_response4_xx.dart';import '../models/waiting_room_create_waiting_room_rule_response4_xx.dart';import '../models/waiting_room_delete_event_response4_xx.dart';import '../models/waiting_room_delete_waiting_room_response4_xx.dart';import '../models/waiting_room_delete_waiting_room_rule_response4_xx.dart';import '../models/waiting_room_event_details_response4_xx.dart';import '../models/waiting_room_get_waiting_room_status_response4_xx.dart';import '../models/waiting_room_get_zone_settings_response4_xx.dart';import '../models/waiting_room_list_events_response4_xx.dart';import '../models/waiting_room_list_waiting_room_rules_response4_xx.dart';import '../models/waiting_room_list_waiting_rooms_account_response4_xx.dart';import '../models/waiting_room_list_waiting_rooms_response4_xx.dart';import '../models/waiting_room_patch_event_response4_xx.dart';import '../models/waiting_room_patch_waiting_room_response4_xx.dart';import '../models/waiting_room_patch_waiting_room_rule_response4_xx.dart';import '../models/waiting_room_patch_zone_settings_response4_xx.dart';import '../models/waiting_room_preview_active_event_details_response4_xx.dart';import '../models/waiting_room_replace_waiting_room_rules_response4_xx.dart';import '../models/waiting_room_update_event_response4_xx.dart';import '../models/waiting_room_update_waiting_room_response4_xx.dart';import '../models/waiting_room_update_zone_settings_response4_xx.dart';import '../models/waiting_room_waiting_room_details_response4_xx.dart';import '../models/waitingroom_create_rule.dart';import '../models/waitingroom_event_details_result.dart';import '../models/waitingroom_event_id.dart';import '../models/waitingroom_event_id_response_result.dart';import '../models/waitingroom_event_result.dart';import '../models/waitingroom_identifier.dart';import '../models/waitingroom_patch_rule.dart';import '../models/waitingroom_preview_response_result.dart';import '../models/waitingroom_query_event.dart';import '../models/waitingroom_query_preview.dart';import '../models/waitingroom_query_waitingroom.dart';import '../models/waitingroom_rule_id.dart';import '../models/waitingroom_rule_result.dart';import '../models/waitingroom_status_response_result.dart';import '../models/waitingroom_waiting_room_id.dart';import '../models/waitingroom_waiting_room_id_response_result.dart';import '../models/waitingroom_waitingroom.dart';import '../models/waitingroom_zone_settings.dart';import '../models/waitingroom_zone_settings_response_result.dart';/// WaitingRoomApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/waiting_room_create_a_custom_waiting_room_page_preview_response4xx.dart';import '../models/waiting_room_create_event_response4xx.dart';import '../models/waiting_room_create_waiting_room_response4xx.dart';import '../models/waiting_room_create_waiting_room_rule_response4xx.dart';import '../models/waiting_room_delete_event_response4xx.dart';import '../models/waiting_room_delete_waiting_room_response4xx.dart';import '../models/waiting_room_delete_waiting_room_rule_response4xx.dart';import '../models/waiting_room_event_details_response4xx.dart';import '../models/waiting_room_get_waiting_room_status_response4xx.dart';import '../models/waiting_room_get_zone_settings_response4xx.dart';import '../models/waiting_room_list_events_response4xx.dart';import '../models/waiting_room_list_waiting_room_rules_response4xx.dart';import '../models/waiting_room_list_waiting_rooms_account_response4xx.dart';import '../models/waiting_room_list_waiting_rooms_response4xx.dart';import '../models/waiting_room_patch_event_response4xx.dart';import '../models/waiting_room_patch_waiting_room_response4xx.dart';import '../models/waiting_room_patch_waiting_room_rule_response4xx.dart';import '../models/waiting_room_patch_zone_settings_response4xx.dart';import '../models/waiting_room_preview_active_event_details_response4xx.dart';import '../models/waiting_room_replace_waiting_room_rules_response4xx.dart';import '../models/waiting_room_update_event_response4xx.dart';import '../models/waiting_room_update_waiting_room_response4xx.dart';import '../models/waiting_room_update_zone_settings_response4xx.dart';import '../models/waiting_room_waiting_room_details_response4xx.dart';import '../models/waitingroom_create_rule.dart';import '../models/waitingroom_event_details_result.dart';import '../models/waitingroom_event_id.dart';import '../models/waitingroom_event_id_response_result.dart';import '../models/waitingroom_event_result.dart';import '../models/waitingroom_identifier.dart';import '../models/waitingroom_patch_rule.dart';import '../models/waitingroom_preview_response_result.dart';import '../models/waitingroom_query_event.dart';import '../models/waitingroom_query_preview.dart';import '../models/waitingroom_query_waitingroom.dart';import '../models/waitingroom_rule_id.dart';import '../models/waitingroom_rule_result.dart';import '../models/waitingroom_status_response_result.dart';import '../models/waitingroom_waiting_room_id.dart';import '../models/waitingroom_waiting_room_id_response_result.dart';import '../models/waitingroom_waitingroom.dart';import '../models/waitingroom_zone_settings.dart';import '../models/waitingroom_zone_settings_response_result.dart';/// WaitingRoomApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WaitingRoomApi with ApiExecutor {const WaitingRoomApi(this.apiConfig
 /// Lists waiting rooms for account.
 ///
 /// `GET /accounts/{account_id}/waiting_rooms`
-Future<ApiResult<List<WaitingroomWaitingroom>?, WaitingRoomListWaitingRoomsAccountResponse4Xx>> waitingRoomListWaitingRoomsAccount({required WaitingroomIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WaitingroomWaitingroom>?, WaitingRoomListWaitingRoomsAccountResponse4xx>> waitingRoomListWaitingRoomsAccount({required WaitingroomIdentifier accountId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -43,7 +43,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => WaitingroomWaitingroom.fro
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomListWaitingRoomsAccountResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomListWaitingRoomsAccountResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -56,7 +56,7 @@ return null;
 /// Lists waiting rooms for zone.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms`
-Future<ApiResult<List<WaitingroomWaitingroom>?, WaitingRoomListWaitingRoomsResponse4Xx>> waitingRoomListWaitingRooms({required WaitingroomIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WaitingroomWaitingroom>?, WaitingRoomListWaitingRoomsResponse4xx>> waitingRoomListWaitingRooms({required WaitingroomIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -86,7 +86,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => WaitingroomWaitingroom.fro
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomListWaitingRoomsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomListWaitingRoomsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -99,7 +99,7 @@ return null;
 /// Creates a new waiting room.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms`
-Future<ApiResult<WaitingroomWaitingroom, WaitingRoomCreateWaitingRoomResponse4Xx>> waitingRoomCreateWaitingRoom({required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomCreateWaitingRoomResponse4xx>> waitingRoomCreateWaitingRoom({required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -120,7 +120,7 @@ return WaitingroomWaitingroom.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomCreateWaitingRoomResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomCreateWaitingRoomResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -133,7 +133,7 @@ return null;
 /// Fetches a single configured waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<WaitingroomWaitingroom, WaitingRoomWaitingRoomDetailsResponse4Xx>> waitingRoomDetails({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomWaitingRoomDetailsResponse4xx>> waitingRoomDetails({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -152,7 +152,7 @@ return WaitingroomWaitingroom.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomWaitingRoomDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomWaitingRoomDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -165,7 +165,7 @@ return null;
 /// Updates a configured waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<WaitingroomWaitingroom, WaitingRoomUpdateWaitingRoomResponse4Xx>> waitingRoomUpdateWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomUpdateWaitingRoomResponse4xx>> waitingRoomUpdateWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -186,7 +186,7 @@ return WaitingroomWaitingroom.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomUpdateWaitingRoomResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomUpdateWaitingRoomResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -199,7 +199,7 @@ return null;
 /// Patches a configured waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<WaitingroomWaitingroom, WaitingRoomPatchWaitingRoomResponse4Xx>> waitingRoomPatchWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingroom, WaitingRoomPatchWaitingRoomResponse4xx>> waitingRoomPatchWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryWaitingroom body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -220,7 +220,7 @@ return WaitingroomWaitingroom.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomPatchWaitingRoomResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomPatchWaitingRoomResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -233,7 +233,7 @@ return null;
 /// Deletes a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}`
-Future<ApiResult<WaitingroomWaitingRoomIdResponseResult, WaitingRoomDeleteWaitingRoomResponse4Xx>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomWaitingRoomIdResponseResult, WaitingRoomDeleteWaitingRoomResponse4xx>> waitingRoomDeleteWaitingRoom({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -252,7 +252,7 @@ return WaitingroomWaitingRoomIdResponseResult.fromJson(json['result'] as Map<Str
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomDeleteWaitingRoomResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomDeleteWaitingRoomResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -265,7 +265,7 @@ return null;
 /// Lists events for a waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events`
-Future<ApiResult<List<WaitingroomEventResult>?, WaitingRoomListEventsResponse4Xx>> waitingRoomListEvents({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WaitingroomEventResult>?, WaitingRoomListEventsResponse4xx>> waitingRoomListEvents({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -295,7 +295,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => WaitingroomEventResult.fro
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomListEventsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomListEventsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -308,7 +308,7 @@ return null;
 /// Only available for the Waiting Room Advanced subscription. Creates an event for a waiting room. An event takes place during a specified period of time, temporarily changing the behavior of a waiting room. While the event is active, some of the properties in the event's configuration may either override or inherit from the waiting room's configuration. Note that events cannot overlap with each other, so only one event can be active at a time.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events`
-Future<ApiResult<WaitingroomEventResult, WaitingRoomCreateEventResponse4Xx>> waitingRoomCreateEvent({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomCreateEventResponse4xx>> waitingRoomCreateEvent({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -329,7 +329,7 @@ return WaitingroomEventResult.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomCreateEventResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomCreateEventResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -342,7 +342,7 @@ return null;
 /// Fetches a single configured event for a waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<WaitingroomEventResult, WaitingRoomEventDetailsResponse4Xx>> waitingRoomEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomEventDetailsResponse4xx>> waitingRoomEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -361,7 +361,7 @@ return WaitingroomEventResult.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomEventDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomEventDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -374,7 +374,7 @@ return null;
 /// Updates a configured event for a waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<WaitingroomEventResult, WaitingRoomUpdateEventResponse4Xx>> waitingRoomUpdateEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomUpdateEventResponse4xx>> waitingRoomUpdateEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -395,7 +395,7 @@ return WaitingroomEventResult.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomUpdateEventResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomUpdateEventResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -408,7 +408,7 @@ return null;
 /// Patches a configured event for a waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<WaitingroomEventResult, WaitingRoomPatchEventResponse4Xx>> waitingRoomPatchEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventResult, WaitingRoomPatchEventResponse4xx>> waitingRoomPatchEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomQueryEvent body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -429,7 +429,7 @@ return WaitingroomEventResult.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomPatchEventResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomPatchEventResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -442,7 +442,7 @@ return null;
 /// Deletes an event for a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}`
-Future<ApiResult<WaitingroomEventIdResponseResult, WaitingRoomDeleteEventResponse4Xx>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventIdResponseResult, WaitingRoomDeleteEventResponse4xx>> waitingRoomDeleteEvent({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -461,7 +461,7 @@ return WaitingroomEventIdResponseResult.fromJson(json['result'] as Map<String, d
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomDeleteEventResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomDeleteEventResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -474,7 +474,7 @@ return null;
 /// Previews an event's configuration as if it was active. Inherited fields from the waiting room will be displayed with their current values.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/events/{event_id}/details`
-Future<ApiResult<WaitingroomEventDetailsResult, WaitingRoomPreviewActiveEventDetailsResponse4Xx>> waitingRoomPreviewActiveEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomEventDetailsResult, WaitingRoomPreviewActiveEventDetailsResponse4xx>> waitingRoomPreviewActiveEventDetails({required WaitingroomEventId eventId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -493,7 +493,7 @@ return WaitingroomEventDetailsResult.fromJson(json['result'] as Map<String, dyna
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomPreviewActiveEventDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomPreviewActiveEventDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -506,7 +506,7 @@ return null;
 /// Lists rules for a waiting room.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules`
-Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomListWaitingRoomRulesResponse4Xx>> waitingRoomListWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomListWaitingRoomRulesResponse4xx>> waitingRoomListWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -525,7 +525,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => WaitingroomRuleResult.from
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomListWaitingRoomRulesResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomListWaitingRoomRulesResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -538,7 +538,7 @@ return null;
 /// Only available for the Waiting Room Advanced subscription. Creates a rule for a waiting room.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules`
-Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomCreateWaitingRoomRuleResponse4Xx>> waitingRoomCreateWaitingRoomRule({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomCreateRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomCreateWaitingRoomRuleResponse4xx>> waitingRoomCreateWaitingRoomRule({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomCreateRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -559,7 +559,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => WaitingroomRuleResult.from
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomCreateWaitingRoomRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomCreateWaitingRoomRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -572,7 +572,7 @@ return null;
 /// Only available for the Waiting Room Advanced subscription. Replaces all rules for a waiting room.
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules`
-Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomReplaceWaitingRoomRulesResponse4Xx>> waitingRoomReplaceWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required List<WaitingroomCreateRule> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomReplaceWaitingRoomRulesResponse4xx>> waitingRoomReplaceWaitingRoomRules({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required List<WaitingroomCreateRule> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -593,7 +593,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => WaitingroomRuleResult.from
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomReplaceWaitingRoomRulesResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomReplaceWaitingRoomRulesResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -606,7 +606,7 @@ return null;
 /// Patches a rule for a waiting room.
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules/{rule_id}`
-Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomPatchWaitingRoomRuleResponse4Xx>> waitingRoomPatchWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomPatchRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomPatchWaitingRoomRuleResponse4xx>> waitingRoomPatchWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, required WaitingroomPatchRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -627,7 +627,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => WaitingroomRuleResult.from
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomPatchWaitingRoomRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomPatchWaitingRoomRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -640,7 +640,7 @@ return null;
 /// Deletes a rule for a waiting room.
 ///
 /// `DELETE /zones/{zone_id}/waiting_rooms/{waiting_room_id}/rules/{rule_id}`
-Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomDeleteWaitingRoomRuleResponse4Xx>> waitingRoomDeleteWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<WaitingroomRuleResult>?, WaitingRoomDeleteWaitingRoomRuleResponse4xx>> waitingRoomDeleteWaitingRoomRule({required WaitingroomRuleId ruleId, required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -659,7 +659,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => WaitingroomRuleResult.from
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomDeleteWaitingRoomRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomDeleteWaitingRoomRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -681,7 +681,7 @@ return null;
 /// 5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/{waiting_room_id}/status`
-Future<ApiResult<WaitingroomStatusResponseResult, WaitingRoomGetWaitingRoomStatusResponse4Xx>> waitingRoomGetWaitingRoomStatus({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomStatusResponseResult, WaitingRoomGetWaitingRoomStatusResponse4xx>> waitingRoomGetWaitingRoomStatus({required WaitingroomWaitingRoomId waitingRoomId, required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -700,7 +700,7 @@ return WaitingroomStatusResponseResult.fromJson(json['result'] as Map<String, dy
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomGetWaitingRoomStatusResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomGetWaitingRoomStatusResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -730,7 +730,7 @@ return null;
 /// For example, you can make a request to `http://waitingrooms.dev/preview/<uuid>?waitTime=50` to configure the estimated wait time as 50 minutes.
 ///
 /// `POST /zones/{zone_id}/waiting_rooms/preview`
-Future<ApiResult<WaitingroomPreviewResponseResult, WaitingRoomCreateACustomWaitingRoomPagePreviewResponse4Xx>> waitingRoomCreateACustomWaitingRoomPagePreview({required WaitingroomIdentifier zoneId, required WaitingroomQueryPreview body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomPreviewResponseResult, WaitingRoomCreateACustomWaitingRoomPagePreviewResponse4xx>> waitingRoomCreateACustomWaitingRoomPagePreview({required WaitingroomIdentifier zoneId, required WaitingroomQueryPreview body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -751,7 +751,7 @@ return WaitingroomPreviewResponseResult.fromJson(json['result'] as Map<String, d
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomCreateACustomWaitingRoomPagePreviewResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomCreateACustomWaitingRoomPagePreviewResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -762,7 +762,7 @@ return null;
 /// Get zone-level Waiting Room settings
 ///
 /// `GET /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomGetZoneSettingsResponse4Xx>> waitingRoomGetZoneSettings({required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomGetZoneSettingsResponse4xx>> waitingRoomGetZoneSettings({required WaitingroomIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -781,7 +781,7 @@ return WaitingroomZoneSettingsResponseResult.fromJson(json['result'] as Map<Stri
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomGetZoneSettingsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomGetZoneSettingsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -792,7 +792,7 @@ return null;
 /// Update zone-level Waiting Room settings
 ///
 /// `PUT /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomUpdateZoneSettingsResponse4Xx>> waitingRoomUpdateZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomUpdateZoneSettingsResponse4xx>> waitingRoomUpdateZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -813,7 +813,7 @@ return WaitingroomZoneSettingsResponseResult.fromJson(json['result'] as Map<Stri
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomUpdateZoneSettingsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomUpdateZoneSettingsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -824,7 +824,7 @@ return null;
 /// Patch zone-level Waiting Room settings
 ///
 /// `PATCH /zones/{zone_id}/waiting_rooms/settings`
-Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomPatchZoneSettingsResponse4Xx>> waitingRoomPatchZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WaitingroomZoneSettingsResponseResult, WaitingRoomPatchZoneSettingsResponse4xx>> waitingRoomPatchZoneSettings({required WaitingroomIdentifier zoneId, required WaitingroomZoneSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -845,7 +845,7 @@ return WaitingroomZoneSettingsResponseResult.fromJson(json['result'] as Map<Stri
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WaitingRoomPatchZoneSettingsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WaitingRoomPatchZoneSettingsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

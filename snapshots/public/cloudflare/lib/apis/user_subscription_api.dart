@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/request2.dart';import '../models/schemas_identifier.dart';import '../models/subscription2.dart';import '../models/user_subscription_delete_user_subscription_response.dart';import '../models/user_subscription_delete_user_subscription_response4_xx.dart';import '../models/user_subscription_get_user_subscriptions_response4_xx.dart';import '../models/user_subscription_update_user_subscription_response4_xx.dart';/// UserSubscriptionApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/request2.dart';import '../models/schemas_identifier.dart';import '../models/subscription2.dart';import '../models/user_subscription_delete_user_subscription_response.dart';import '../models/user_subscription_delete_user_subscription_response4xx.dart';import '../models/user_subscription_get_user_subscriptions_response4xx.dart';import '../models/user_subscription_update_user_subscription_response4xx.dart';/// UserSubscriptionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class UserSubscriptionApi with ApiExecutor {const UserSubscriptionApi(this
 /// Lists all of a user's subscriptions.
 ///
 /// `GET /user/subscriptions`
-Future<ApiResult<List<Subscription2>, UserSubscriptionGetUserSubscriptionsResponse4Xx>> userSubscriptionGetUserSubscriptions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Subscription2>, UserSubscriptionGetUserSubscriptionsResponse4xx>> userSubscriptionGetUserSubscriptions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return (json['result'] as List<dynamic>).map((e) => Subscription2.fromJson(e as 
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return UserSubscriptionGetUserSubscriptionsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return UserSubscriptionGetUserSubscriptionsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Updates a user's subscriptions.
 ///
 /// `PUT /user/subscriptions/{identifier}`
-Future<ApiResult<Map<String, dynamic>, UserSubscriptionUpdateUserSubscriptionResponse4Xx>> userSubscriptionUpdateUserSubscription({required SchemasIdentifier identifier, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, UserSubscriptionUpdateUserSubscriptionResponse4xx>> userSubscriptionUpdateUserSubscription({required SchemasIdentifier identifier, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return json['result'] as Map<String, dynamic>;
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return UserSubscriptionUpdateUserSubscriptionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return UserSubscriptionUpdateUserSubscriptionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Deletes a user's subscription.
 ///
 /// `DELETE /user/subscriptions/{identifier}`
-Future<ApiResult<UserSubscriptionDeleteUserSubscriptionResponse, UserSubscriptionDeleteUserSubscriptionResponse4Xx>> userSubscriptionDeleteUserSubscription({required SchemasIdentifier identifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UserSubscriptionDeleteUserSubscriptionResponse, UserSubscriptionDeleteUserSubscriptionResponse4xx>> userSubscriptionDeleteUserSubscription({required SchemasIdentifier identifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -98,7 +98,7 @@ return UserSubscriptionDeleteUserSubscriptionResponse.fromJson(json as Map<Strin
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return UserSubscriptionDeleteUserSubscriptionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return UserSubscriptionDeleteUserSubscriptionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

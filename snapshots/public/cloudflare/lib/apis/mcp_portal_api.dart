@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_portals_request.dart';import '../models/create_portals_response400.dart';import '../models/create_portals_response_result.dart';import '../models/delete_portals_response404.dart';import '../models/delete_portals_response_result.dart';import '../models/fetch_gateways_response404.dart';import '../models/fetch_gateways_response_result.dart';import '../models/list_portals_response400.dart';import '../models/list_portals_response_result.dart';import '../models/update_portals_request.dart';import '../models/update_portals_response400.dart';import '../models/update_portals_response404.dart';import '../models/update_portals_response_result.dart';/// McpPortalApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_portals_request.dart';import '../models/create_portals_response400.dart';import '../models/create_portals_response_result.dart';import '../models/delete_portals_response404.dart';import '../models/delete_portals_response_result.dart';import '../models/fetch_gateways_response404.dart';import '../models/fetch_gateways_response_result.dart';import '../models/list_portals_response400.dart';import '../models/list_portals_response_result.dart';import '../models/update_portals_error.dart';import '../models/update_portals_request.dart';import '../models/update_portals_response_result.dart';/// McpPortalApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -117,7 +117,7 @@ return null;
 /// Update a MCP Portal
 ///
 /// `PUT /accounts/{account_id}/access/ai-controls/mcp/portals/{id}`
-Future<ApiResult<UpdatePortalsResponseResult, OneOf2<UpdatePortalsResponse400, UpdatePortalsResponse404>>> mcpPortalsApiUpdatePortals({required String id, required String accountId, UpdatePortalsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UpdatePortalsResponseResult, UpdatePortalsError>> mcpPortalsApiUpdatePortals({required String id, required String accountId, UpdatePortalsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -134,19 +134,7 @@ return await execute(
 final json = jsonDecode(response.body) as Map<String, dynamic>;
 return UpdatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<UpdatePortalsResponse400, UpdatePortalsResponse404>.a(UpdatePortalsResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<UpdatePortalsResponse400, UpdatePortalsResponse404>.b(UpdatePortalsResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: UpdatePortalsError.parse,
 );
  } 
 /// Delete a MCP Portal

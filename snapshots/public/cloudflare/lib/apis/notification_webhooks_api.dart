@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_account_id.dart';import '../models/aaa_id_response_result.dart';import '../models/aaa_webhook_id.dart';import '../models/aaa_webhooks_response.dart';import '../models/notification_webhooks_create_a_webhook_request.dart';import '../models/notification_webhooks_create_a_webhook_response4_xx.dart';import '../models/notification_webhooks_get_a_webhook_response4_xx.dart';import '../models/notification_webhooks_list_webhooks_response4_xx.dart';import '../models/notification_webhooks_update_a_webhook_request.dart';import '../models/notification_webhooks_update_a_webhook_response4_xx.dart';import '../models/response_common2.dart';import '../models/response_common_failure2.dart';/// NotificationWebhooksApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_account_id.dart';import '../models/aaa_id_response_result.dart';import '../models/aaa_webhook_id.dart';import '../models/aaa_webhooks_response.dart';import '../models/notification_webhooks_create_a_webhook_request.dart';import '../models/notification_webhooks_create_a_webhook_response4xx.dart';import '../models/notification_webhooks_get_a_webhook_response4xx.dart';import '../models/notification_webhooks_list_webhooks_response4xx.dart';import '../models/notification_webhooks_update_a_webhook_request.dart';import '../models/notification_webhooks_update_a_webhook_response4xx.dart';import '../models/response_common2.dart';import '../models/response_common_failure2.dart';/// NotificationWebhooksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class NotificationWebhooksApi with ApiExecutor {const NotificationWebhooks
 /// Gets a list of all configured webhook destinations.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/webhooks`
-Future<ApiResult<List<AaaWebhooksResponse>?, NotificationWebhooksListWebhooksResponse4Xx>> notificationWebhooksListWebhooks({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AaaWebhooksResponse>?, NotificationWebhooksListWebhooksResponse4xx>> notificationWebhooksListWebhooks({required AaaAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => AaaWebhooksResponse.fromJs
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return NotificationWebhooksListWebhooksResponse4Xx.fromJson(json as Map<String, dynamic>);
+return NotificationWebhooksListWebhooksResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Creates a new webhook destination.
 ///
 /// `POST /accounts/{account_id}/alerting/v3/destinations/webhooks`
-Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksCreateAWebhookResponse4Xx>> notificationWebhooksCreateAWebhook({required AaaAccountId accountId, required NotificationWebhooksCreateAWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksCreateAWebhookResponse4xx>> notificationWebhooksCreateAWebhook({required AaaAccountId accountId, required NotificationWebhooksCreateAWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as M
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return NotificationWebhooksCreateAWebhookResponse4Xx.fromJson(json as Map<String, dynamic>);
+return NotificationWebhooksCreateAWebhookResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Get details for a single webhooks destination.
 ///
 /// `GET /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}`
-Future<ApiResult<AaaWebhooksResponse?, NotificationWebhooksGetAWebhookResponse4Xx>> notificationWebhooksGetAWebhook({required AaaAccountId accountId, required AaaWebhookId webhookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaWebhooksResponse?, NotificationWebhooksGetAWebhookResponse4xx>> notificationWebhooksGetAWebhook({required AaaAccountId accountId, required AaaWebhookId webhookId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ return json['result'] != null ? AaaWebhooksResponse.fromJson(json['result'] as M
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return NotificationWebhooksGetAWebhookResponse4Xx.fromJson(json as Map<String, dynamic>);
+return NotificationWebhooksGetAWebhookResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -111,7 +111,7 @@ return null;
 /// Update a webhook destination.
 ///
 /// `PUT /accounts/{account_id}/alerting/v3/destinations/webhooks/{webhook_id}`
-Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksUpdateAWebhookResponse4Xx>> notificationWebhooksUpdateAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, required NotificationWebhooksUpdateAWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, NotificationWebhooksUpdateAWebhookResponse4xx>> notificationWebhooksUpdateAWebhook({required AaaWebhookId webhookId, required AaaAccountId accountId, required NotificationWebhooksUpdateAWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,7 +132,7 @@ return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as M
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return NotificationWebhooksUpdateAWebhookResponse4Xx.fromJson(json as Map<String, dynamic>);
+return NotificationWebhooksUpdateAWebhookResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

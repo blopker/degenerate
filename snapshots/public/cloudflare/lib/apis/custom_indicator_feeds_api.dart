@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/custom_indicator_feeds_add_permission_response4_xx.dart';import '../models/custom_indicator_feeds_create_feed.dart';import '../models/custom_indicator_feeds_create_indicator_feeds_response4_xx.dart';import '../models/custom_indicator_feeds_feed_id.dart';import '../models/custom_indicator_feeds_get_indicator_feed_metadata_response4_xx.dart';import '../models/custom_indicator_feeds_get_indicator_feeds_response4_xx.dart';import '../models/custom_indicator_feeds_identifier.dart';import '../models/custom_indicator_feeds_indicator_feed_item.dart';import '../models/custom_indicator_feeds_indicator_feed_metadata.dart';import '../models/custom_indicator_feeds_permission_list_item.dart';import '../models/custom_indicator_feeds_permissions_request.dart';import '../models/custom_indicator_feeds_permissions_update.dart';import '../models/custom_indicator_feeds_remove_permission_response4_xx.dart';import '../models/custom_indicator_feeds_update_feed.dart';import '../models/custom_indicator_feeds_update_indicator_feed_data_request.dart';import '../models/custom_indicator_feeds_update_indicator_feed_metadata_response4_xx.dart';import '../models/custom_indicator_feeds_update_public_field_request.dart';import '../models/custom_indicator_feeds_view_permissions_response4_xx.dart';import '../models/response_common_failure21.dart';/// CustomIndicatorFeedsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/custom_indicator_feeds_add_permission_response4xx.dart';import '../models/custom_indicator_feeds_create_feed.dart';import '../models/custom_indicator_feeds_create_indicator_feeds_response4xx.dart';import '../models/custom_indicator_feeds_feed_id.dart';import '../models/custom_indicator_feeds_get_indicator_feed_metadata_response4xx.dart';import '../models/custom_indicator_feeds_get_indicator_feeds_response4xx.dart';import '../models/custom_indicator_feeds_identifier.dart';import '../models/custom_indicator_feeds_indicator_feed_item.dart';import '../models/custom_indicator_feeds_indicator_feed_metadata.dart';import '../models/custom_indicator_feeds_permission_list_item.dart';import '../models/custom_indicator_feeds_permissions_request.dart';import '../models/custom_indicator_feeds_permissions_update.dart';import '../models/custom_indicator_feeds_remove_permission_response4xx.dart';import '../models/custom_indicator_feeds_update_feed.dart';import '../models/custom_indicator_feeds_update_indicator_feed_data_request.dart';import '../models/custom_indicator_feeds_update_indicator_feed_metadata_response4xx.dart';import '../models/custom_indicator_feeds_update_public_field_request.dart';import '../models/custom_indicator_feeds_view_permissions_response4xx.dart';import '../models/response_common_failure21.dart';/// CustomIndicatorFeedsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CustomIndicatorFeedsApi with ApiExecutor {const CustomIndicatorFeeds
 /// Retrieves details for all accessible custom threat indicator feeds.
 ///
 /// `GET /accounts/{account_id}/intel/indicator-feeds`
-Future<ApiResult<List<CustomIndicatorFeedsIndicatorFeedItem>?, CustomIndicatorFeedsGetIndicatorFeedsResponse4Xx>> customIndicatorFeedsGetIndicatorFeeds({required CustomIndicatorFeedsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CustomIndicatorFeedsIndicatorFeedItem>?, CustomIndicatorFeedsGetIndicatorFeedsResponse4xx>> customIndicatorFeedsGetIndicatorFeeds({required CustomIndicatorFeedsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => CustomIndicatorFeedsIndica
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CustomIndicatorFeedsGetIndicatorFeedsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return CustomIndicatorFeedsGetIndicatorFeedsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Creates a new custom threat indicator feed for sharing threat intelligence data.
 ///
 /// `POST /accounts/{account_id}/intel/indicator-feeds`
-Future<ApiResult<CustomIndicatorFeedsIndicatorFeedItem?, CustomIndicatorFeedsCreateIndicatorFeedsResponse4Xx>> customIndicatorFeedsCreateIndicatorFeeds({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsCreateFeed body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomIndicatorFeedsIndicatorFeedItem?, CustomIndicatorFeedsCreateIndicatorFeedsResponse4xx>> customIndicatorFeedsCreateIndicatorFeeds({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsCreateFeed body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return json['result'] != null ? CustomIndicatorFeedsIndicatorFeedItem.fromJson(j
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CustomIndicatorFeedsCreateIndicatorFeedsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return CustomIndicatorFeedsCreateIndicatorFeedsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Retrieves details for a specific custom threat indicator feed.
 ///
 /// `GET /accounts/{account_id}/intel/indicator-feeds/{feed_id}`
-Future<ApiResult<CustomIndicatorFeedsIndicatorFeedMetadata?, CustomIndicatorFeedsGetIndicatorFeedMetadataResponse4Xx>> customIndicatorFeedsGetIndicatorFeedMetadata({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomIndicatorFeedsIndicatorFeedMetadata?, CustomIndicatorFeedsGetIndicatorFeedMetadataResponse4xx>> customIndicatorFeedsGetIndicatorFeedMetadata({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ return json['result'] != null ? CustomIndicatorFeedsIndicatorFeedMetadata.fromJs
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CustomIndicatorFeedsGetIndicatorFeedMetadataResponse4Xx.fromJson(json as Map<String, dynamic>);
+return CustomIndicatorFeedsGetIndicatorFeedMetadataResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -111,7 +111,7 @@ return null;
 /// Revises details for a specific custom threat indicator feed.
 ///
 /// `PUT /accounts/{account_id}/intel/indicator-feeds/{feed_id}`
-Future<ApiResult<CustomIndicatorFeedsIndicatorFeedItem?, CustomIndicatorFeedsUpdateIndicatorFeedMetadataResponse4Xx>> customIndicatorFeedsUpdateIndicatorFeedMetadata({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, required CustomIndicatorFeedsUpdatePublicFieldRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomIndicatorFeedsIndicatorFeedItem?, CustomIndicatorFeedsUpdateIndicatorFeedMetadataResponse4xx>> customIndicatorFeedsUpdateIndicatorFeedMetadata({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsFeedId feedId, required CustomIndicatorFeedsUpdatePublicFieldRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,7 +132,7 @@ return json['result'] != null ? CustomIndicatorFeedsIndicatorFeedItem.fromJson(j
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CustomIndicatorFeedsUpdateIndicatorFeedMetadataResponse4Xx.fromJson(json as Map<String, dynamic>);
+return CustomIndicatorFeedsUpdateIndicatorFeedMetadataResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -245,7 +245,7 @@ return null;
 /// Grants access permissions for a custom threat indicator feed to other accounts.
 ///
 /// `PUT /accounts/{account_id}/intel/indicator-feeds/permissions/add`
-Future<ApiResult<CustomIndicatorFeedsPermissionsUpdate?, CustomIndicatorFeedsAddPermissionResponse4Xx>> customIndicatorFeedsAddPermission({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsPermissionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomIndicatorFeedsPermissionsUpdate?, CustomIndicatorFeedsAddPermissionResponse4xx>> customIndicatorFeedsAddPermission({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsPermissionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -266,7 +266,7 @@ return json['result'] != null ? CustomIndicatorFeedsPermissionsUpdate.fromJson(j
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CustomIndicatorFeedsAddPermissionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return CustomIndicatorFeedsAddPermissionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -279,7 +279,7 @@ return null;
 /// Revokes access permissions for a custom threat indicator feed.
 ///
 /// `PUT /accounts/{account_id}/intel/indicator-feeds/permissions/remove`
-Future<ApiResult<CustomIndicatorFeedsPermissionsUpdate?, CustomIndicatorFeedsRemovePermissionResponse4Xx>> customIndicatorFeedsRemovePermission({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsPermissionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CustomIndicatorFeedsPermissionsUpdate?, CustomIndicatorFeedsRemovePermissionResponse4xx>> customIndicatorFeedsRemovePermission({required CustomIndicatorFeedsIdentifier accountId, required CustomIndicatorFeedsPermissionsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -300,7 +300,7 @@ return json['result'] != null ? CustomIndicatorFeedsPermissionsUpdate.fromJson(j
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CustomIndicatorFeedsRemovePermissionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return CustomIndicatorFeedsRemovePermissionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -313,7 +313,7 @@ return null;
 /// Lists current access permissions for custom threat indicator feeds.
 ///
 /// `GET /accounts/{account_id}/intel/indicator-feeds/permissions/view`
-Future<ApiResult<List<CustomIndicatorFeedsPermissionListItem>?, CustomIndicatorFeedsViewPermissionsResponse4Xx>> customIndicatorFeedsViewPermissions({required CustomIndicatorFeedsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CustomIndicatorFeedsPermissionListItem>?, CustomIndicatorFeedsViewPermissionsResponse4xx>> customIndicatorFeedsViewPermissions({required CustomIndicatorFeedsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -332,7 +332,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => CustomIndicatorFeedsPermis
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CustomIndicatorFeedsViewPermissionsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return CustomIndicatorFeedsViewPermissionsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_components_schemas_modified_tunnels_collection_response_result.dart';import '../models/magic_components_schemas_tunnel_modified_response_result.dart';import '../models/magic_components_schemas_tunnel_single_response_result.dart';import '../models/magic_components_schemas_tunnels_collection_response_result.dart';import '../models/magic_identifier.dart';import '../models/magic_interconnect_tunnel_update_request_request.dart';import '../models/magic_interconnects_list_interconnect_details_response4_xx.dart';import '../models/magic_interconnects_list_interconnects_response4_xx.dart';import '../models/magic_interconnects_update_interconnect_response4_xx.dart';import '../models/magic_interconnects_update_multiple_interconnects_response4_xx.dart';/// MagicInterconnectsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_components_schemas_modified_tunnels_collection_response_result.dart';import '../models/magic_components_schemas_tunnel_modified_response_result.dart';import '../models/magic_components_schemas_tunnel_single_response_result.dart';import '../models/magic_components_schemas_tunnels_collection_response_result.dart';import '../models/magic_identifier.dart';import '../models/magic_interconnect_tunnel_update_request_request.dart';import '../models/magic_interconnects_list_interconnect_details_response4xx.dart';import '../models/magic_interconnects_list_interconnects_response4xx.dart';import '../models/magic_interconnects_update_interconnect_response4xx.dart';import '../models/magic_interconnects_update_multiple_interconnects_response4xx.dart';/// MagicInterconnectsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class MagicInterconnectsApi with ApiExecutor {const MagicInterconnectsApi(
 /// Lists interconnects associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/cf_interconnects`
-Future<ApiResult<MagicComponentsSchemasTunnelsCollectionResponseResult, MagicInterconnectsListInterconnectsResponse4Xx>> magicInterconnectsListInterconnects({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicComponentsSchemasTunnelsCollectionResponseResult, MagicInterconnectsListInterconnectsResponse4xx>> magicInterconnectsListInterconnects({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -35,7 +35,7 @@ return MagicComponentsSchemasTunnelsCollectionResponseResult.fromJson(json['resu
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicInterconnectsListInterconnectsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MagicInterconnectsListInterconnectsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -48,7 +48,7 @@ return null;
 /// Updates multiple interconnects associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/cf_interconnects`
-Future<ApiResult<MagicComponentsSchemasModifiedTunnelsCollectionResponseResult, MagicInterconnectsUpdateMultipleInterconnectsResponse4Xx>> magicInterconnectsUpdateMultipleInterconnects({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicComponentsSchemasModifiedTunnelsCollectionResponseResult, MagicInterconnectsUpdateMultipleInterconnectsResponse4xx>> magicInterconnectsUpdateMultipleInterconnects({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -72,7 +72,7 @@ return MagicComponentsSchemasModifiedTunnelsCollectionResponseResult.fromJson(js
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicInterconnectsUpdateMultipleInterconnectsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MagicInterconnectsUpdateMultipleInterconnectsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -85,7 +85,7 @@ return null;
 /// Lists details for a specific interconnect.
 ///
 /// `GET /accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}`
-Future<ApiResult<MagicComponentsSchemasTunnelSingleResponseResult, MagicInterconnectsListInterconnectDetailsResponse4Xx>> magicInterconnectsListInterconnectDetails({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicComponentsSchemasTunnelSingleResponseResult, MagicInterconnectsListInterconnectDetailsResponse4xx>> magicInterconnectsListInterconnectDetails({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -107,7 +107,7 @@ return MagicComponentsSchemasTunnelSingleResponseResult.fromJson(json['result'] 
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicInterconnectsListInterconnectDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MagicInterconnectsListInterconnectDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -120,7 +120,7 @@ return null;
 /// Updates a specific interconnect associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/cf_interconnects/{cf_interconnect_id}`
-Future<ApiResult<MagicComponentsSchemasTunnelModifiedResponseResult, MagicInterconnectsUpdateInterconnectResponse4Xx>> magicInterconnectsUpdateInterconnect({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, required MagicInterconnectTunnelUpdateRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicComponentsSchemasTunnelModifiedResponseResult, MagicInterconnectsUpdateInterconnectResponse4xx>> magicInterconnectsUpdateInterconnect({required MagicIdentifier cfInterconnectId, required MagicIdentifier accountId, required MagicInterconnectTunnelUpdateRequestRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -144,7 +144,7 @@ return MagicComponentsSchemasTunnelModifiedResponseResult.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicInterconnectsUpdateInterconnectResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MagicInterconnectsUpdateInterconnectResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

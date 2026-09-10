@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/discovery_origin.dart';import '../models/discovery_patch_multiple_request_entry.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_as_openapi_response4_xx.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_direction.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_order.dart';import '../models/discovery_state.dart';import '../models/patch_discovered_operation_request.dart';import '../models/response_common_failure7.dart';import '../models/shield_discovery_operation.dart';import '../models/shield_identifier.dart';import '../models/shield_patch_discovery_response_result.dart';import '../models/shield_schema_response_discovery_result.dart';import '../models/shield_uuid.dart';/// DiscoveryApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/discovery_origin.dart';import '../models/discovery_patch_multiple_request_entry.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_as_openapi_response4xx.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_direction.dart';import '../models/discovery_retrieve_discovered_operations_on_a_zone_order.dart';import '../models/discovery_state.dart';import '../models/patch_discovered_operation_request.dart';import '../models/response_common_failure7.dart';import '../models/shield_discovery_operation.dart';import '../models/shield_identifier.dart';import '../models/shield_patch_discovery_response_result.dart';import '../models/shield_schema_response_discovery_result.dart';import '../models/shield_uuid.dart';/// DiscoveryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DiscoveryApi with ApiExecutor {const DiscoveryApi(this.apiConfig);
 /// Retrieve the most up to date view of discovered operations, rendered as OpenAPI schemas
 ///
 /// `GET /zones/{zone_id}/api_gateway/discovery`
-Future<ApiResult<ShieldSchemaResponseDiscoveryResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapiResponse4Xx>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldSchemaResponseDiscoveryResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapiResponse4xx>> apiShieldApiDiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapi({required ShieldIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return ShieldSchemaResponseDiscoveryResult.fromJson(json['result'] as Map<String
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapiResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapiResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

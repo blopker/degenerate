@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/zero_trust_gateway_components_schemas_uuid.dart';import '../models/zero_trust_gateway_locations.dart';import '../models/zero_trust_gateway_locations_create_zero_trust_gateway_location_request.dart';import '../models/zero_trust_gateway_locations_create_zero_trust_gateway_location_response4_xx.dart';import '../models/zero_trust_gateway_locations_delete_zero_trust_gateway_location_response4_xx.dart';import '../models/zero_trust_gateway_locations_list_zero_trust_gateway_locations_response4_xx.dart';import '../models/zero_trust_gateway_locations_update_zero_trust_gateway_location_request.dart';import '../models/zero_trust_gateway_locations_update_zero_trust_gateway_location_response4_xx.dart';import '../models/zero_trust_gateway_locations_zero_trust_gateway_location_details_response4_xx.dart';import '../models/zero_trust_gateway_schemas_identifier.dart';/// ZeroTrustGatewayLocationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/zero_trust_gateway_components_schemas_uuid.dart';import '../models/zero_trust_gateway_locations.dart';import '../models/zero_trust_gateway_locations_create_zero_trust_gateway_location_request.dart';import '../models/zero_trust_gateway_locations_create_zero_trust_gateway_location_response4xx.dart';import '../models/zero_trust_gateway_locations_delete_zero_trust_gateway_location_response4xx.dart';import '../models/zero_trust_gateway_locations_list_zero_trust_gateway_locations_response4xx.dart';import '../models/zero_trust_gateway_locations_update_zero_trust_gateway_location_request.dart';import '../models/zero_trust_gateway_locations_update_zero_trust_gateway_location_response4xx.dart';import '../models/zero_trust_gateway_locations_zero_trust_gateway_location_details_response4xx.dart';import '../models/zero_trust_gateway_schemas_identifier.dart';/// ZeroTrustGatewayLocationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustGatewayLocationsApi with ApiExecutor {const ZeroTrustGatewa
 /// List Zero Trust Gateway locations for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/locations`
-Future<ApiResult<List<ZeroTrustGatewayLocations>?, ZeroTrustGatewayLocationsListZeroTrustGatewayLocationsResponse4Xx>> zeroTrustGatewayLocationsListZeroTrustGatewayLocations({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayLocations>?, ZeroTrustGatewayLocationsListZeroTrustGatewayLocationsResponse4xx>> zeroTrustGatewayLocationsListZeroTrustGatewayLocations({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayLocations.
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustGatewayLocationsListZeroTrustGatewayLocationsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustGatewayLocationsListZeroTrustGatewayLocationsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Create a new Zero Trust Gateway location.
 ///
 /// `POST /accounts/{account_id}/gateway/locations`
-Future<ApiResult<ZeroTrustGatewayLocations?, ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationResponse4Xx>> zeroTrustGatewayLocationsCreateZeroTrustGatewayLocation({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayLocations?, ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationResponse4xx>> zeroTrustGatewayLocationsCreateZeroTrustGatewayLocation({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return json['result'] != null ? ZeroTrustGatewayLocations.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Get a single Zero Trust Gateway location.
 ///
 /// `GET /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<ZeroTrustGatewayLocations?, ZeroTrustGatewayLocationsZeroTrustGatewayLocationDetailsResponse4Xx>> zeroTrustGatewayLocationsZeroTrustGatewayLocationDetails({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayLocations?, ZeroTrustGatewayLocationsZeroTrustGatewayLocationDetailsResponse4xx>> zeroTrustGatewayLocationsZeroTrustGatewayLocationDetails({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ return json['result'] != null ? ZeroTrustGatewayLocations.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustGatewayLocationsZeroTrustGatewayLocationDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustGatewayLocationsZeroTrustGatewayLocationDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -111,7 +111,7 @@ return null;
 /// Update a configured Zero Trust Gateway location.
 ///
 /// `PUT /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<ZeroTrustGatewayLocations?, ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationResponse4Xx>> zeroTrustGatewayLocationsUpdateZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayLocations?, ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationResponse4xx>> zeroTrustGatewayLocationsUpdateZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,7 +132,7 @@ return json['result'] != null ? ZeroTrustGatewayLocations.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -145,7 +145,7 @@ return null;
 /// Delete a configured Zero Trust Gateway location.
 ///
 /// `DELETE /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<Map<String, dynamic>?, ZeroTrustGatewayLocationsDeleteZeroTrustGatewayLocationResponse4Xx>> zeroTrustGatewayLocationsDeleteZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ZeroTrustGatewayLocationsDeleteZeroTrustGatewayLocationResponse4xx>> zeroTrustGatewayLocationsDeleteZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -164,7 +164,7 @@ return json['result'] as Map<String, dynamic>?;
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustGatewayLocationsDeleteZeroTrustGatewayLocationResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustGatewayLocationsDeleteZeroTrustGatewayLocationResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

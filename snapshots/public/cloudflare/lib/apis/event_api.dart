@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_event_delete_response400.dart';import '../models/delete_event_query_alert_delete_response404.dart';import '../models/delete_event_query_delete_response404.dart';import '../models/delete_event_reference_delete_request.dart';import '../models/delete_event_reference_delete_response400.dart';import '../models/delete_event_reference_delete_response_result.dart';import '../models/delete_event_tag_delete_request.dart';import '../models/delete_event_tag_delete_response400.dart';import '../models/delete_event_tag_delete_response_result.dart';import '../models/get_event_aggregate_dataset_id.dart';import '../models/get_event_aggregate_response.dart';import '../models/get_event_aggregate_response400.dart';import '../models/get_event_list_get_format.dart';import '../models/get_event_list_get_order.dart';import '../models/get_event_list_get_response.dart';import '../models/get_event_list_get_response400.dart';import '../models/get_event_list_get_search.dart';import '../models/get_event_query_alert_list_response.dart';import '../models/get_event_query_alert_list_response500.dart';import '../models/get_event_query_alert_read_response.dart';import '../models/get_event_query_alert_read_response404.dart';import '../models/get_event_query_list_response.dart';import '../models/get_event_query_list_response500.dart';import '../models/get_event_query_read_response.dart';import '../models/get_event_query_read_response404.dart';import '../models/get_event_raw_read_ds_response.dart';import '../models/get_event_raw_read_ds_response404.dart';import '../models/get_event_raw_read_ds_response500.dart';import '../models/get_event_raw_read_response.dart';import '../models/get_event_raw_read_response400.dart';import '../models/get_event_read_response.dart';import '../models/get_event_read_response404.dart';import '../models/get_event_relationships_direction.dart';import '../models/get_event_relationships_relationship_types.dart';import '../models/get_event_relationships_response.dart';import '../models/get_event_relationships_response400.dart';import '../models/patch_event_query_alert_update_request.dart';import '../models/patch_event_query_alert_update_response.dart';import '../models/patch_event_query_alert_update_response400.dart';import '../models/patch_event_query_alert_update_response404.dart';import '../models/patch_event_query_update_request.dart';import '../models/patch_event_query_update_response.dart';import '../models/patch_event_query_update_response400.dart';import '../models/patch_event_query_update_response404.dart';import '../models/patch_event_raw_update_request.dart';import '../models/patch_event_raw_update_response.dart';import '../models/patch_event_raw_update_response400.dart';import '../models/patch_event_update_request.dart';import '../models/patch_event_update_response.dart';import '../models/patch_event_update_response400.dart';import '../models/post_create_event_relationship_request.dart';import '../models/post_create_event_relationship_response.dart';import '../models/post_create_event_relationship_response400.dart';import '../models/post_event_create_bulk_request.dart';import '../models/post_event_create_bulk_response202.dart';import '../models/post_event_create_bulk_response400.dart';import '../models/post_event_create_request.dart';import '../models/post_event_create_response.dart';import '../models/post_event_create_response400.dart';import '../models/post_event_do_revert_request.dart';import '../models/post_event_do_revert_response.dart';import '../models/post_event_do_revert_response400.dart';import '../models/post_event_graph_ql_response.dart';import '../models/post_event_graph_ql_response400.dart';import '../models/post_event_move_to_new_ds_request.dart';import '../models/post_event_move_to_new_ds_response400.dart';import '../models/post_event_query_alert_create_request.dart';import '../models/post_event_query_alert_create_response.dart';import '../models/post_event_query_alert_create_response400.dart';import '../models/post_event_query_alert_update_request.dart';import '../models/post_event_query_alert_update_response.dart';import '../models/post_event_query_alert_update_response400.dart';import '../models/post_event_query_alert_update_response404.dart';import '../models/post_event_query_create_request.dart';import '../models/post_event_query_create_response.dart';import '../models/post_event_query_create_response400.dart';import '../models/post_event_query_update_request.dart';import '../models/post_event_query_update_response.dart';import '../models/post_event_query_update_response400.dart';import '../models/post_event_query_update_response404.dart';import '../models/post_event_raw_update_request.dart';import '../models/post_event_raw_update_response.dart';import '../models/post_event_raw_update_response400.dart';import '../models/post_event_reference_create_request.dart';import '../models/post_event_reference_create_response400.dart';import '../models/post_event_reference_create_response_result.dart';import '../models/post_event_tag_create_request.dart';import '../models/post_event_tag_create_response400.dart';import '../models/post_event_tag_create_response_result.dart';import '../models/post_event_update_request.dart';import '../models/post_event_update_response.dart';import '../models/post_event_update_response400.dart';/// EventApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_event_delete_response400.dart';import '../models/delete_event_query_alert_delete_response404.dart';import '../models/delete_event_query_delete_response404.dart';import '../models/delete_event_reference_delete_request.dart';import '../models/delete_event_reference_delete_response400.dart';import '../models/delete_event_reference_delete_response_result.dart';import '../models/delete_event_tag_delete_request.dart';import '../models/delete_event_tag_delete_response400.dart';import '../models/delete_event_tag_delete_response_result.dart';import '../models/get_event_aggregate_dataset_id.dart';import '../models/get_event_aggregate_response.dart';import '../models/get_event_aggregate_response400.dart';import '../models/get_event_list_get_format.dart';import '../models/get_event_list_get_order.dart';import '../models/get_event_list_get_response.dart';import '../models/get_event_list_get_response400.dart';import '../models/get_event_list_get_search.dart';import '../models/get_event_query_alert_list_response.dart';import '../models/get_event_query_alert_list_response500.dart';import '../models/get_event_query_alert_read_response.dart';import '../models/get_event_query_alert_read_response404.dart';import '../models/get_event_query_list_response.dart';import '../models/get_event_query_list_response500.dart';import '../models/get_event_query_read_response.dart';import '../models/get_event_query_read_response404.dart';import '../models/get_event_raw_read_ds_error.dart';import '../models/get_event_raw_read_ds_response.dart';import '../models/get_event_raw_read_response.dart';import '../models/get_event_raw_read_response400.dart';import '../models/get_event_read_response.dart';import '../models/get_event_read_response404.dart';import '../models/get_event_relationships_direction.dart';import '../models/get_event_relationships_relationship_types.dart';import '../models/get_event_relationships_response.dart';import '../models/get_event_relationships_response400.dart';import '../models/patch_event_query_alert_update_error.dart';import '../models/patch_event_query_alert_update_request.dart';import '../models/patch_event_query_alert_update_response.dart';import '../models/patch_event_query_update_error.dart';import '../models/patch_event_query_update_request.dart';import '../models/patch_event_query_update_response.dart';import '../models/patch_event_raw_update_request.dart';import '../models/patch_event_raw_update_response.dart';import '../models/patch_event_raw_update_response400.dart';import '../models/patch_event_update_request.dart';import '../models/patch_event_update_response.dart';import '../models/patch_event_update_response400.dart';import '../models/post_create_event_relationship_request.dart';import '../models/post_create_event_relationship_response.dart';import '../models/post_create_event_relationship_response400.dart';import '../models/post_event_create_bulk_request.dart';import '../models/post_event_create_bulk_response.dart';import '../models/post_event_create_bulk_response400.dart';import '../models/post_event_create_request.dart';import '../models/post_event_create_response.dart';import '../models/post_event_create_response400.dart';import '../models/post_event_do_revert_request.dart';import '../models/post_event_do_revert_response.dart';import '../models/post_event_do_revert_response400.dart';import '../models/post_event_graph_ql_response.dart';import '../models/post_event_graph_ql_response400.dart';import '../models/post_event_move_to_new_ds_request.dart';import '../models/post_event_move_to_new_ds_response400.dart';import '../models/post_event_query_alert_create_request.dart';import '../models/post_event_query_alert_create_response.dart';import '../models/post_event_query_alert_create_response400.dart';import '../models/post_event_query_alert_update_error.dart';import '../models/post_event_query_alert_update_request.dart';import '../models/post_event_query_alert_update_response.dart';import '../models/post_event_query_create_request.dart';import '../models/post_event_query_create_response.dart';import '../models/post_event_query_create_response400.dart';import '../models/post_event_query_update_error.dart';import '../models/post_event_query_update_request.dart';import '../models/post_event_query_update_response.dart';import '../models/post_event_raw_update_request.dart';import '../models/post_event_raw_update_response.dart';import '../models/post_event_raw_update_response400.dart';import '../models/post_event_reference_create_request.dart';import '../models/post_event_reference_create_response400.dart';import '../models/post_event_reference_create_response_result.dart';import '../models/post_event_tag_create_request.dart';import '../models/post_event_tag_create_response400.dart';import '../models/post_event_tag_create_response_result.dart';import '../models/post_event_update_request.dart';import '../models/post_event_update_response.dart';import '../models/post_event_update_response400.dart';/// EventApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -457,7 +457,7 @@ return null;
 /// The `datasetId` parameter must be defined. To list existing datasets (and their IDs) in your account, use the [`List Datasets`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/subresources/datasets/methods/list/) endpoint.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/create/bulk`
-Future<ApiResult<PostEventCreateBulkResponse202, PostEventCreateBulkResponse400>> postEventCreateBulk({required String accountId, PostEventCreateBulkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostEventCreateBulkResponse, PostEventCreateBulkResponse400>> postEventCreateBulk({required String accountId, PostEventCreateBulkRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -472,7 +472,7 @@ return await execute(
   request,
   onSuccess: (response) {
 final json = jsonDecode(response.body);
-return PostEventCreateBulkResponse202.fromJson(json as Map<String, dynamic>);
+return PostEventCreateBulkResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
 switch (response.statusCode) {
@@ -691,7 +691,7 @@ return null;
 /// Update an existing saved event query by its ID
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/queries/{query_id}`
-Future<ApiResult<PostEventQueryUpdateResponse, OneOf2<PostEventQueryUpdateResponse400, PostEventQueryUpdateResponse404>>> postEventQueryUpdate({required String accountId, required int queryId, PostEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostEventQueryUpdateResponse, PostEventQueryUpdateError>> postEventQueryUpdate({required String accountId, required int queryId, PostEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -708,19 +708,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return PostEventQueryUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<PostEventQueryUpdateResponse400, PostEventQueryUpdateResponse404>.a(PostEventQueryUpdateResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<PostEventQueryUpdateResponse400, PostEventQueryUpdateResponse404>.b(PostEventQueryUpdateResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: PostEventQueryUpdateError.parse,
 );
  } 
 /// Update a saved event query
@@ -728,7 +716,7 @@ return null;
 /// Update an existing saved event query by its ID
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/queries/{query_id}`
-Future<ApiResult<PatchEventQueryUpdateResponse, OneOf2<PatchEventQueryUpdateResponse400, PatchEventQueryUpdateResponse404>>> patchEventQueryUpdate({required String accountId, required int queryId, PatchEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchEventQueryUpdateResponse, PatchEventQueryUpdateError>> patchEventQueryUpdate({required String accountId, required int queryId, PatchEventQueryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -745,19 +733,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return PatchEventQueryUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<PatchEventQueryUpdateResponse400, PatchEventQueryUpdateResponse404>.a(PatchEventQueryUpdateResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<PatchEventQueryUpdateResponse400, PatchEventQueryUpdateResponse404>.b(PatchEventQueryUpdateResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: PatchEventQueryUpdateError.parse,
 );
  } 
 /// Delete a saved event query
@@ -858,7 +834,7 @@ return null;
 /// Update an existing event query alert by its ID
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/queries/alerts/{alert_id}`
-Future<ApiResult<PostEventQueryAlertUpdateResponse, OneOf2<PostEventQueryAlertUpdateResponse400, PostEventQueryAlertUpdateResponse404>>> postEventQueryAlertUpdate({required String accountId, required int alertId, PostEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostEventQueryAlertUpdateResponse, PostEventQueryAlertUpdateError>> postEventQueryAlertUpdate({required String accountId, required int alertId, PostEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -875,19 +851,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return PostEventQueryAlertUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<PostEventQueryAlertUpdateResponse400, PostEventQueryAlertUpdateResponse404>.a(PostEventQueryAlertUpdateResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<PostEventQueryAlertUpdateResponse400, PostEventQueryAlertUpdateResponse404>.b(PostEventQueryAlertUpdateResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: PostEventQueryAlertUpdateError.parse,
 );
  } 
 /// Update an event query alert
@@ -895,7 +859,7 @@ return null;
 /// Update an existing event query alert by its ID
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/queries/alerts/{alert_id}`
-Future<ApiResult<PatchEventQueryAlertUpdateResponse, OneOf2<PatchEventQueryAlertUpdateResponse400, PatchEventQueryAlertUpdateResponse404>>> patchEventQueryAlertUpdate({required String accountId, required int alertId, PatchEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchEventQueryAlertUpdateResponse, PatchEventQueryAlertUpdateError>> patchEventQueryAlertUpdate({required String accountId, required int alertId, PatchEventQueryAlertUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -912,19 +876,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return PatchEventQueryAlertUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<PatchEventQueryAlertUpdateResponse400, PatchEventQueryAlertUpdateResponse404>.a(PatchEventQueryAlertUpdateResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<PatchEventQueryAlertUpdateResponse400, PatchEventQueryAlertUpdateResponse404>.b(PatchEventQueryAlertUpdateResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: PatchEventQueryAlertUpdateError.parse,
 );
  } 
 /// Delete an event query alert
@@ -1029,7 +981,7 @@ return null;
 /// Retrieves the raw data associated with an event. Searches across all shards in the dataset.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}`
-Future<ApiResult<GetEventRawReadDsResponse, OneOf2<GetEventRawReadDsResponse404, GetEventRawReadDsResponse500>>> getEventRawReadDs({required String accountId, required String eventId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<GetEventRawReadDsResponse, GetEventRawReadDsError>> getEventRawReadDs({required String accountId, required String eventId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1044,19 +996,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return GetEventRawReadDsResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<GetEventRawReadDsResponse404, GetEventRawReadDsResponse500>.a(GetEventRawReadDsResponse404.fromJson(json as Map<String, dynamic>));
-case 500:
-final json = jsonDecode(response.body);
-return OneOf2<GetEventRawReadDsResponse404, GetEventRawReadDsResponse500>.b(GetEventRawReadDsResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: GetEventRawReadDsError.parse,
 );
  } 
 /// Removes an event reference

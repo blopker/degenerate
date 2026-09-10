@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_indicator_delete_response.dart';import '../models/delete_indicator_delete_response404.dart';import '../models/get_indicator_list_format.dart';import '../models/get_indicator_list_legacy_response.dart';import '../models/get_indicator_list_response.dart';import '../models/get_indicator_list_response400.dart';import '../models/get_indicator_read_response.dart';import '../models/get_indicator_read_response404.dart';import '../models/get_indicator_tags_list_response400.dart';import '../models/get_indicator_tags_list_response404.dart';import '../models/get_indicator_tags_list_response500.dart';import '../models/patch_indicator_update_request.dart';import '../models/patch_indicator_update_response.dart';import '../models/patch_indicator_update_response400.dart';import '../models/patch_indicator_update_response404.dart';import '../models/post_indicator_create_bulk_request.dart';import '../models/post_indicator_create_bulk_response400.dart';import '../models/post_indicator_create_request.dart';import '../models/post_indicator_create_response.dart';import '../models/post_indicator_create_response400.dart';/// IndicatorApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_indicator_delete_response.dart';import '../models/delete_indicator_delete_response404.dart';import '../models/get_indicator_list_format.dart';import '../models/get_indicator_list_legacy_response.dart';import '../models/get_indicator_list_response.dart';import '../models/get_indicator_list_response400.dart';import '../models/get_indicator_read_response.dart';import '../models/get_indicator_read_response404.dart';import '../models/get_indicator_tags_list_error.dart';import '../models/patch_indicator_update_error.dart';import '../models/patch_indicator_update_request.dart';import '../models/patch_indicator_update_response.dart';import '../models/post_indicator_create_bulk_request.dart';import '../models/post_indicator_create_bulk_response400.dart';import '../models/post_indicator_create_request.dart';import '../models/post_indicator_create_response.dart';import '../models/post_indicator_create_response400.dart';/// IndicatorApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -89,7 +89,7 @@ return null;
 /// Updates an existing indicator's properties.
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}`
-Future<ApiResult<PatchIndicatorUpdateResponse, OneOf2<PatchIndicatorUpdateResponse400, PatchIndicatorUpdateResponse404>>> patchIndicatorUpdate({required String accountId, required String datasetId, required String indicatorId, PatchIndicatorUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PatchIndicatorUpdateResponse, PatchIndicatorUpdateError>> patchIndicatorUpdate({required String accountId, required String datasetId, required String indicatorId, PatchIndicatorUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,19 +106,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return PatchIndicatorUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<PatchIndicatorUpdateResponse400, PatchIndicatorUpdateResponse404>.a(PatchIndicatorUpdateResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<PatchIndicatorUpdateResponse400, PatchIndicatorUpdateResponse404>.b(PatchIndicatorUpdateResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: PatchIndicatorUpdateError.parse,
 );
  } 
 /// Deletes an indicator
@@ -226,7 +214,7 @@ return null;
 /// Returns all mirrored tags from the indicator dataset (DO mirror table). No pagination.
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags`
-Future<ApiResult<List<Map<String, dynamic>>, OneOf3<GetIndicatorTagsListResponse400, GetIndicatorTagsListResponse404, GetIndicatorTagsListResponse500>>> getIndicatorTagsList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Map<String, dynamic>>, GetIndicatorTagsListError>> getIndicatorTagsList({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -241,22 +229,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf3<GetIndicatorTagsListResponse400, GetIndicatorTagsListResponse404, GetIndicatorTagsListResponse500>.a(GetIndicatorTagsListResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf3<GetIndicatorTagsListResponse400, GetIndicatorTagsListResponse404, GetIndicatorTagsListResponse500>.b(GetIndicatorTagsListResponse404.fromJson(json as Map<String, dynamic>));
-case 500:
-final json = jsonDecode(response.body);
-return OneOf3<GetIndicatorTagsListResponse400, GetIndicatorTagsListResponse404, GetIndicatorTagsListResponse500>.c(GetIndicatorTagsListResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: GetIndicatorTagsListError.parse,
 );
  } 
 /// Lists indicators across multiple datasets

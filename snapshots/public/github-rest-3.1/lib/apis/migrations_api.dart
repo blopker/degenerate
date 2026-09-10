@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/migration.dart';import '../models/migrations_get_status_for_org_exclude.dart';import '../models/migrations_list_for_org_exclude.dart';import '../models/migrations_start_for_authenticated_user_request.dart';import '../models/migrations_start_for_org_request.dart';import '../models/minimal_repository.dart';import '../models/validation_error.dart';/// MigrationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/migration.dart';import '../models/migrations_delete_archive_for_authenticated_user_error.dart';import '../models/migrations_download_archive_for_org_error.dart';import '../models/migrations_get_archive_for_authenticated_user_error.dart';import '../models/migrations_get_status_for_authenticated_user_error.dart';import '../models/migrations_get_status_for_org_exclude.dart';import '../models/migrations_list_for_authenticated_user_error.dart';import '../models/migrations_list_for_org_exclude.dart';import '../models/migrations_start_for_authenticated_user_error.dart';import '../models/migrations_start_for_authenticated_user_request.dart';import '../models/migrations_start_for_org_error.dart';import '../models/migrations_start_for_org_request.dart';import '../models/migrations_unlock_repo_for_authenticated_user_error.dart';import '../models/minimal_repository.dart';/// MigrationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -53,7 +53,7 @@ return (json as List<dynamic>).map((e) => Migration.fromJson(e as Map<String, dy
 /// Initiates the generation of a migration archive.
 ///
 /// `POST /orgs/{org}/migrations`
-Future<ApiResult<Migration, OneOf2<BasicError, ValidationError>>> migrationsStartForOrg({required String org, required MigrationsStartForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Migration, MigrationsStartForOrgError>> migrationsStartForOrg({required String org, required MigrationsStartForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -70,19 +70,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Migration.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: MigrationsStartForOrgError.parse,
 );
  } 
 /// Get an organization migration status
@@ -139,7 +127,7 @@ return null;
 /// Fetches the URL to a migration archive.
 ///
 /// `GET /orgs/{org}/migrations/{migration_id}/archive`
-Future<ApiResult<void, BasicError>> migrationsDownloadArchiveForOrg({required String org, required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, MigrationsDownloadArchiveForOrgError>> migrationsDownloadArchiveForOrg({required String org, required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -151,18 +139,7 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 302:
-return null;
-case 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: MigrationsDownloadArchiveForOrgError.parse,
 );
  } 
 /// Delete an organization migration archive
@@ -271,7 +248,7 @@ return null;
 /// Lists all migrations a user has started.
 ///
 /// `GET /user/migrations`
-Future<ApiResult<List<Migration>, BasicError>> migrationsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Migration>, MigrationsListForAuthenticatedUserError>> migrationsListForAuthenticatedUser({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -297,18 +274,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => Migration.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: MigrationsListForAuthenticatedUserError.parse,
 );
  } 
 /// Start a user migration
@@ -316,7 +282,7 @@ return null;
 /// Initiates the generation of a user migration archive.
 ///
 /// `POST /user/migrations`
-Future<ApiResult<Migration, OneOf2<BasicError, ValidationError>>> migrationsStartForAuthenticatedUser({required MigrationsStartForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Migration, MigrationsStartForAuthenticatedUserError>> migrationsStartForAuthenticatedUser({required MigrationsStartForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -333,21 +299,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Migration.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: MigrationsStartForAuthenticatedUserError.parse,
 );
  } 
 /// Get a user migration status
@@ -362,7 +314,7 @@ return null;
 /// Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).
 ///
 /// `GET /user/migrations/{migration_id}`
-Future<ApiResult<Migration, BasicError>> migrationsGetStatusForAuthenticatedUser({required int migrationId, List<String>? exclude, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Migration, MigrationsGetStatusForAuthenticatedUserError>> migrationsGetStatusForAuthenticatedUser({required int migrationId, List<String>? exclude, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (exclude != null) {
 for (final item in exclude) {
@@ -387,18 +339,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Migration.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: MigrationsGetStatusForAuthenticatedUserError.parse,
 );
  } 
 /// Download a user migration archive
@@ -426,7 +367,7 @@ return null;
 /// The archive will also contain an `attachments` directory that includes all attachment files uploaded to GitHub.com and a `repositories` directory that contains the repository's Git data.
 ///
 /// `GET /user/migrations/{migration_id}/archive`
-Future<ApiResult<void, BasicError>> migrationsGetArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, MigrationsGetArchiveForAuthenticatedUserError>> migrationsGetArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -438,18 +379,7 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 302 || 304:
-return null;
-case 401 || 403:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: MigrationsGetArchiveForAuthenticatedUserError.parse,
 );
  } 
 /// Delete a user migration archive
@@ -457,7 +387,7 @@ return null;
 /// Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://docs.github.com/rest/migrations/users#list-user-migrations) and [Get a user migration status](https://docs.github.com/rest/migrations/users#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
 ///
 /// `DELETE /user/migrations/{migration_id}/archive`
-Future<ApiResult<void, BasicError>> migrationsDeleteArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, MigrationsDeleteArchiveForAuthenticatedUserError>> migrationsDeleteArchiveForAuthenticatedUser({required int migrationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -469,18 +399,7 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: MigrationsDeleteArchiveForAuthenticatedUserError.parse,
 );
  } 
 /// Unlock a user repository
@@ -488,7 +407,7 @@ return null;
 /// Unlocks a repository. You can lock repositories when you [start a user migration](https://docs.github.com/rest/migrations/users#start-a-user-migration). Once the migration is complete you can unlock each repository to begin using it again or [delete the repository](https://docs.github.com/rest/repos/repos#delete-a-repository) if you no longer need the source data. Returns a status of `404 Not Found` if the repository is not locked.
 ///
 /// `DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock`
-Future<ApiResult<void, BasicError>> migrationsUnlockRepoForAuthenticatedUser({required int migrationId, required String repoName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, MigrationsUnlockRepoForAuthenticatedUserError>> migrationsUnlockRepoForAuthenticatedUser({required int migrationId, required String repoName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -500,18 +419,7 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: MigrationsUnlockRepoForAuthenticatedUserError.parse,
 );
  } 
 /// List repositories for a user migration

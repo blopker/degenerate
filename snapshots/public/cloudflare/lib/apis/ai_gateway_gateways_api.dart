@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_gateway_request.dart';import '../models/aig_config_create_gateway_response400.dart';import '../models/aig_config_create_gateway_response_result.dart';import '../models/aig_config_delete_gateway_response404.dart';import '../models/aig_config_delete_gateway_response_result.dart';import '../models/aig_config_fetch_gateway_response404.dart';import '../models/aig_config_fetch_gateway_response_result.dart';import '../models/aig_config_get_gateway_url_response400.dart';import '../models/aig_config_list_gateway_response400.dart';import '../models/aig_config_list_gateway_response_result.dart';import '../models/aig_config_update_gateway_request.dart';import '../models/aig_config_update_gateway_response400.dart';import '../models/aig_config_update_gateway_response404.dart';import '../models/aig_config_update_gateway_response_result.dart';/// AiGatewayGatewaysApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_gateway_request.dart';import '../models/aig_config_create_gateway_response400.dart';import '../models/aig_config_create_gateway_response_result.dart';import '../models/aig_config_delete_gateway_response404.dart';import '../models/aig_config_delete_gateway_response_result.dart';import '../models/aig_config_fetch_gateway_response404.dart';import '../models/aig_config_fetch_gateway_response_result.dart';import '../models/aig_config_get_gateway_url_response400.dart';import '../models/aig_config_list_gateway_response400.dart';import '../models/aig_config_list_gateway_response_result.dart';import '../models/aig_config_update_gateway_error.dart';import '../models/aig_config_update_gateway_request.dart';import '../models/aig_config_update_gateway_response_result.dart';/// AiGatewayGatewaysApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -157,7 +157,7 @@ return null;
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{id}`
-Future<ApiResult<AigConfigUpdateGatewayResponseResult, OneOf2<AigConfigUpdateGatewayResponse400, AigConfigUpdateGatewayResponse404>>> aigConfigUpdateGateway({required String accountId, required String id, AigConfigUpdateGatewayRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigUpdateGatewayResponseResult, AigConfigUpdateGatewayError>> aigConfigUpdateGateway({required String accountId, required String id, AigConfigUpdateGatewayRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -174,19 +174,7 @@ return await execute(
 final json = jsonDecode(response.body) as Map<String, dynamic>;
 return AigConfigUpdateGatewayResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<AigConfigUpdateGatewayResponse400, AigConfigUpdateGatewayResponse404>.a(AigConfigUpdateGatewayResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<AigConfigUpdateGatewayResponse400, AigConfigUpdateGatewayResponse404>.b(AigConfigUpdateGatewayResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: AigConfigUpdateGatewayError.parse,
 );
  } 
 /// Delete a Gateway

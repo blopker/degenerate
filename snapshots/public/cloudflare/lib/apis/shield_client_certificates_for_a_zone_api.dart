@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/client_certificate_for_a_zone_create_client_certificate_request.dart';import '../models/client_certificate_for_a_zone_create_client_certificate_response4_xx.dart';import '../models/client_certificate_for_a_zone_edit_client_certificate_request.dart';import '../models/response_common_failure71.dart';import '../models/tls_certificates_and_hostnames_client_certificate.dart';import '../models/tls_certificates_and_hostnames_hostname_association.dart';import '../models/tls_certificates_and_hostnames_hostname_associations_response_result.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// ShieldClientCertificatesForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/client_certificate_for_a_zone_create_client_certificate_request.dart';import '../models/client_certificate_for_a_zone_create_client_certificate_response4xx.dart';import '../models/client_certificate_for_a_zone_edit_client_certificate_request.dart';import '../models/response_common_failure71.dart';import '../models/tls_certificates_and_hostnames_client_certificate.dart';import '../models/tls_certificates_and_hostnames_hostname_association.dart';import '../models/tls_certificates_and_hostnames_hostname_associations_response_result.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// ShieldClientCertificatesForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -135,7 +135,7 @@ return null;
 /// Create a new API Shield mTLS Client Certificate
 ///
 /// `POST /zones/{zone_id}/client_certificates`
-Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, ClientCertificateForAZoneCreateClientCertificateResponse4Xx>> clientCertificateForAZoneCreateClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ClientCertificateForAZoneCreateClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesClientCertificate?, ClientCertificateForAZoneCreateClientCertificateResponse4xx>> clientCertificateForAZoneCreateClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required ClientCertificateForAZoneCreateClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,7 +156,7 @@ return json['result'] != null ? TlsCertificatesAndHostnamesClientCertificate.fro
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ClientCertificateForAZoneCreateClientCertificateResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ClientCertificateForAZoneCreateClientCertificateResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

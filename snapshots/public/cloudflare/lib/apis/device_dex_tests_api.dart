@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/device_dex_test_create_device_dex_test_response4_xx.dart';import '../models/device_dex_test_delete_device_dex_test_response4_xx.dart';import '../models/device_dex_test_details_kind.dart';import '../models/device_dex_test_details_response4_xx.dart';import '../models/device_dex_test_get_device_dex_test_response4_xx.dart';import '../models/device_dex_test_update_device_dex_test_response4_xx.dart';import '../models/digital_experience_monitoring_account_identifier.dart';import '../models/digital_experience_monitoring_device_dex_test_schemas_http.dart';import '../models/digital_experience_monitoring_device_dex_test_schemas_http_request.dart';import '../models/digital_experience_monitoring_dex_delete_response_collection_result.dart';import '../models/digital_experience_monitoring_schemas_test_id.dart';import '../models/digital_experience_monitoring_uuid.dart';/// DeviceDexTestsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/device_dex_test_create_device_dex_test_response4xx.dart';import '../models/device_dex_test_delete_device_dex_test_response4xx.dart';import '../models/device_dex_test_details_kind.dart';import '../models/device_dex_test_details_response4xx.dart';import '../models/device_dex_test_get_device_dex_test_response4xx.dart';import '../models/device_dex_test_update_device_dex_test_response4xx.dart';import '../models/digital_experience_monitoring_account_identifier.dart';import '../models/digital_experience_monitoring_device_dex_test_schemas_http.dart';import '../models/digital_experience_monitoring_device_dex_test_schemas_http_request.dart';import '../models/digital_experience_monitoring_dex_delete_response_collection_result.dart';import '../models/digital_experience_monitoring_schemas_test_id.dart';import '../models/digital_experience_monitoring_uuid.dart';/// DeviceDexTestsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DeviceDexTestsApi with ApiExecutor {const DeviceDexTestsApi(this.api
 /// Fetch all DEX tests
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<List<DigitalExperienceMonitoringDeviceDexTestSchemasHttp>?, DeviceDexTestDetailsResponse4Xx>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DigitalExperienceMonitoringDeviceDexTestSchemasHttp>?, DeviceDexTestDetailsResponse4xx>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -49,7 +49,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitorin
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeviceDexTestDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeviceDexTestDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -62,7 +62,7 @@ return null;
 /// Create a DEX test.
 ///
 /// `POST /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestCreateDeviceDexTestResponse4Xx>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestCreateDeviceDexTestResponse4xx>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -83,7 +83,7 @@ return json['result'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasH
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeviceDexTestCreateDeviceDexTestResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeviceDexTestCreateDeviceDexTestResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -96,7 +96,7 @@ return null;
 /// Fetch a single DEX test.
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestGetDeviceDexTestResponse4Xx>> deviceDexTestGetDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSchemasTestId dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestGetDeviceDexTestResponse4xx>> deviceDexTestGetDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSchemasTestId dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -115,7 +115,7 @@ return json['result'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasH
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeviceDexTestGetDeviceDexTestResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeviceDexTestGetDeviceDexTestResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -128,7 +128,7 @@ return null;
 /// Update a DEX test.
 ///
 /// `PUT /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestUpdateDeviceDexTestResponse4Xx>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestUpdateDeviceDexTestResponse4xx>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -149,7 +149,7 @@ return json['result'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasH
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeviceDexTestUpdateDeviceDexTestResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeviceDexTestUpdateDeviceDexTestResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -162,7 +162,7 @@ return null;
 /// Delete a Device DEX test. Returns the remaining device dex tests for the account.
 ///
 /// `DELETE /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<DigitalExperienceMonitoringDexDeleteResponseCollectionResult?, DeviceDexTestDeleteDeviceDexTestResponse4Xx>> deviceDexTestDeleteDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDexDeleteResponseCollectionResult?, DeviceDexTestDeleteDeviceDexTestResponse4xx>> deviceDexTestDeleteDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -181,7 +181,7 @@ return json['result'] != null ? DigitalExperienceMonitoringDexDeleteResponseColl
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeviceDexTestDeleteDeviceDexTestResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeviceDexTestDeleteDeviceDexTestResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure7.dart';import '../models/schema_validation_create_schema_request.dart';import '../models/schema_validation_create_schema_response4_xx.dart';import '../models/schema_validation_delete_schema_response_result.dart';import '../models/schema_validation_edit_schema_request.dart';import '../models/schema_validation_extract_operations_from_schema_feature.dart';import '../models/schema_validation_extract_operations_from_schema_operation_status.dart';import '../models/schema_validation_extract_operations_from_schema_response_result.dart';import '../models/shield_identifier.dart';import '../models/shield_public_schema.dart';import '../models/shield_schema_hosts.dart';import '../models/shield_uuid.dart';/// SchemaValidationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure7.dart';import '../models/schema_validation_create_schema_request.dart';import '../models/schema_validation_create_schema_response4xx.dart';import '../models/schema_validation_delete_schema_response_result.dart';import '../models/schema_validation_edit_schema_request.dart';import '../models/schema_validation_extract_operations_from_schema_feature.dart';import '../models/schema_validation_extract_operations_from_schema_operation_status.dart';import '../models/schema_validation_extract_operations_from_schema_response_result.dart';import '../models/shield_identifier.dart';import '../models/shield_public_schema.dart';import '../models/shield_schema_hosts.dart';import '../models/shield_uuid.dart';/// SchemaValidationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -62,7 +62,7 @@ return null;
 /// Uploads a new OpenAPI schema for API Shield schema validation. The schema defines expected request/response formats for API endpoints.
 ///
 /// `POST /zones/{zone_id}/schema_validation/schemas`
-Future<ApiResult<ShieldPublicSchema, SchemaValidationCreateSchemaResponse4Xx>> schemaValidationCreateSchema({required ShieldIdentifier zoneId, required SchemaValidationCreateSchemaRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldPublicSchema, SchemaValidationCreateSchemaResponse4xx>> schemaValidationCreateSchema({required ShieldIdentifier zoneId, required SchemaValidationCreateSchemaRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -83,7 +83,7 @@ return ShieldPublicSchema.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SchemaValidationCreateSchemaResponse4Xx.fromJson(json as Map<String, dynamic>);
+return SchemaValidationCreateSchemaResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

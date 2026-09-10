@@ -1,19 +1,46 @@
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
+import 'package:degenerate/src/naming.dart';
+
+typedef OperationResponsePlans = ({ResponsePlan success, ResponsePlan error});
 
 /// A status/media-type branch and its optional unwrapped response field.
 class ResponseBranch {
-  const ResponseBranch(this.status, this.content, this.type, {this.field});
+  const ResponseBranch(
+    this.status,
+    this.content,
+    this.type, {
+    this.field,
+    this.statusKey,
+  });
   final int? status;
   final (SpecString, IrMediaType)? content;
   final IrType? type;
   final SpecString? field;
+  final String? statusKey;
+
+  String get statusSuffix => (statusKey ?? status?.toString() ?? 'default')
+      .replaceAll('default', 'Default')
+      .replaceAll('XX', 'xx');
+}
+
+/// One exhaustively matchable status and media response shape.
+class ResponseVariant {
+  ResponseVariant(this.name, this.branch);
+  final String name;
+  final ResponseBranch branch;
 }
 
 /// The public data type and decoding branches for one side of ApiResult.
 class ResponsePlan {
-  ResponsePlan(this.branches, {required this.isError}) {
+  ResponsePlan(
+    this.branches, {
+    required this.isError,
+    required String name,
+    Set<String>? usedNames,
+    Set<String>? usedFiles,
+  }) {
     for (final branch in branches) {
       final type = branch.type;
       if (type == null) continue;
@@ -24,11 +51,81 @@ class ResponsePlan {
         types[index] = types[index].copyAsNullable();
       }
     }
+    if (!isUnion) return;
+    final suffixes = <ResponseBranch, String>{};
+    final shapes = <(String, String?), String>{};
+    final allocatedSuffixes = <String>{};
+    for (final branch in branches) {
+      final shape = (branch.statusSuffix, _branchTypeName(branch));
+      suffixes[branch] = shapes.putIfAbsent(shape, () {
+        final mediaSuffix =
+            branches.any(
+              (other) =>
+                  other.statusSuffix == branch.statusSuffix &&
+                  _branchTypeName(other) != _branchTypeName(branch),
+            )
+            ? branch.content!.$1.toIdentifier(
+                (value) => sanitizeDartName(
+                  toPascalCase(value.replaceAll(RegExp('[^a-zA-Z0-9]'), ' ')),
+                ),
+              )
+            : '';
+        final suffix = deduplicateName(
+          '${branch.statusSuffix}$mediaSuffix',
+          allocatedSuffixes,
+        );
+        allocatedSuffixes.add(suffix);
+        return suffix;
+      });
+    }
+    final reserved = usedNames ?? <String>{};
+    reserved.addAll(_reservedResponseNames);
+    final reservedFiles = usedFiles ?? reserved.map(toSnakeCase).toSet();
+    var candidate = name;
+    var index = 2;
+    while ([
+          candidate,
+          for (final suffix in allocatedSuffixes) '$candidate$suffix',
+          if (hasUnknown) '${candidate}Unknown',
+        ].any(reserved.contains) ||
+        reservedFiles.contains(toSnakeCase(candidate))) {
+      candidate = '$name${index++}';
+    }
+    unionName = candidate;
+    reserved.add(candidate);
+    reservedFiles.add(toSnakeCase(candidate));
+    for (final entry in suffixes.entries) {
+      final variantName = '$candidate${entry.value}';
+      _variantNames[entry.key] = variantName;
+      if (reserved.add(variantName)) {
+        variants.add(ResponseVariant(variantName, entry.key));
+      }
+    }
+    if (hasUnknown) reserved.add(unknownName);
   }
 
   final List<ResponseBranch> branches;
   final bool isError;
   final List<IrType> types = [];
+  String? unionName;
+  final List<ResponseVariant> variants = [];
+  final Map<ResponseBranch, String> _variantNames = {};
+
+  bool get isUnion =>
+      types.length > 1 ||
+      (types.isNotEmpty && branches.any((b) => b.type == null));
+  bool get hasUnknown => !branches.any((b) => b.status == null);
+  String get unknownName => '${unionName}Unknown';
+
+  static String? _branchTypeName(ResponseBranch branch) {
+    final type = branch.type;
+    if (type == null) return null;
+    final name = irTypeName(type);
+    return type.isNullable && name != 'dynamic' ? '$name?' : name;
+  }
+
+  String variantType(ResponseVariant variant) =>
+      _branchTypeName(variant.branch)!;
 
   bool get nullable =>
       !isError &&
@@ -37,38 +134,15 @@ class ResponsePlan {
       );
 
   String get typeName {
+    if (isUnion) return unionName!;
     if (types.isEmpty) return isError ? 'Never' : 'void';
-    final base = responseUnionType(types.map(_variantTypeName).toList());
+    final base = irTypeName(types.single);
     return nullable && base != 'dynamic' ? '$base?' : base;
   }
 
-  String wrap(IrType type, String value) => _wrap(
-    types.map(_variantTypeName).toList(),
-    types.indexWhere((t) => irTypeName(t) == irTypeName(type)),
-    value,
-  );
-
-  String _variantTypeName(IrType type) {
-    final name = irTypeName(type);
-    return types.length > 1 && type.isNullable && name != 'dynamic'
-        ? '$name?'
-        : name;
-  }
-}
-
-String responseUnionType(List<String> types) {
-  if (types.length == 1) return types.single;
-  if (types.length <= 9) return 'OneOf${types.length}<${types.join(', ')}>';
-  return 'OneOf9<${types.take(8).join(', ')}, ${responseUnionType(types.sublist(8))}>';
-}
-
-String _wrap(List<String> types, int index, String value) {
-  if (types.length == 1) return value;
-  final type = responseUnionType(types);
-  if (types.length > 9 && index >= 8) {
-    return '$type.i(${_wrap(types.sublist(8), index - 8, value)})';
-  }
-  return '$type.${'abcdefghi'[index]}($value)';
+  String wrap(ResponseBranch branch, String value) => isUnion
+      ? '${branch.type == null ? 'const ' : ''}${_variantNames[branch]}(${branch.type == null ? '' : value})'
+      : value;
 }
 
 ResponsePlan planResponses(
@@ -76,18 +150,20 @@ ResponsePlan planResponses(
   required bool errors,
   Map<String, IrType> registry = const {},
   List<String> unwrapFields = const [],
+  Set<String>? usedNames,
+  Set<String>? usedFiles,
 }) {
   final responses =
       operation.responses.entries
-          .where(
-            (e) => errors ? e.key >= 300 : e.key >= 200 && e.key < 300,
-          )
+          .where((e) => errors ? e.key >= 300 : e.key >= 200 && e.key < 300)
           .toList()
         ..sort((a, b) => a.key.compareTo(b.key));
   final branches = <ResponseBranch>[];
   void add(int? status, IrResponse response) {
     if (response.content.isEmpty) {
-      branches.add(ResponseBranch(status, null, null));
+      branches.add(
+        ResponseBranch(status, null, null, statusKey: response.statusKey),
+      );
       return;
     }
     final preferred = preferredContent(response.content)!.$1;
@@ -114,7 +190,13 @@ ResponsePlan planResponses(
         }
       }
       branches.add(
-        ResponseBranch(status, (entry.key, entry.value), type, field: field),
+        ResponseBranch(
+          status,
+          (entry.key, entry.value),
+          type,
+          field: field,
+          statusKey: response.statusKey,
+        ),
       );
     }
   }
@@ -127,5 +209,31 @@ ResponsePlan planResponses(
   if (operation.defaultResponse != null && (errors || responses.isEmpty)) {
     add(null, operation.defaultResponse!);
   }
-  return ResponsePlan(branches, isError: errors);
+  return ResponsePlan(
+    branches,
+    isError: errors,
+    name:
+        '${sanitizeDartName(toPascalCase(operation.dartMethodName))}${errors ? 'Error' : 'Success'}',
+    usedNames: usedNames,
+    usedFiles: usedFiles,
+  );
 }
+
+/// Core and runtime names that can also be operation response names.
+const _reservedResponseNames = {
+  'ApiSuccess',
+  'ApiError',
+  'ApiStreamError',
+  'ArgumentError',
+  'StateError',
+  'UnsupportedError',
+  'RangeError',
+  'TypeError',
+  'AssertionError',
+  'UnimplementedError',
+  'ConcurrentModificationError',
+  'StackOverflowError',
+  'OutOfMemoryError',
+  'NoSuchMethodError',
+  'AbstractClassInstantiationError',
+};

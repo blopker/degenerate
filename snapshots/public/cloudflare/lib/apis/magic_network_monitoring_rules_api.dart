@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_network_monitoring_rules_create_rules_request.dart';import '../models/magic_network_monitoring_rules_create_rules_response4_xx.dart';import '../models/magic_network_monitoring_rules_delete_rule_response4_xx.dart';import '../models/magic_network_monitoring_rules_get_rule_response4_xx.dart';import '../models/magic_network_monitoring_rules_list_rules_response4_xx.dart';import '../models/magic_network_monitoring_rules_update_advertisement_for_rule_response4_xx.dart';import '../models/magic_network_monitoring_rules_update_rule_request.dart';import '../models/magic_network_monitoring_rules_update_rule_response4_xx.dart';import '../models/magic_network_monitoring_rules_update_rules_request.dart';import '../models/magic_network_monitoring_rules_update_rules_response4_xx.dart';import '../models/magic_visibility_mnm_account_identifier.dart';import '../models/magic_visibility_mnm_mnm_rule.dart';import '../models/magic_visibility_mnm_mnm_rule_advertisable_response.dart';import '../models/magic_visibility_mnm_rule_identifier.dart';/// MagicNetworkMonitoringRulesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_network_monitoring_rules_create_rules_request.dart';import '../models/magic_network_monitoring_rules_create_rules_response4xx.dart';import '../models/magic_network_monitoring_rules_delete_rule_response4xx.dart';import '../models/magic_network_monitoring_rules_get_rule_response4xx.dart';import '../models/magic_network_monitoring_rules_list_rules_response4xx.dart';import '../models/magic_network_monitoring_rules_update_advertisement_for_rule_response4xx.dart';import '../models/magic_network_monitoring_rules_update_rule_request.dart';import '../models/magic_network_monitoring_rules_update_rule_response4xx.dart';import '../models/magic_network_monitoring_rules_update_rules_request.dart';import '../models/magic_network_monitoring_rules_update_rules_response4xx.dart';import '../models/magic_visibility_mnm_account_identifier.dart';import '../models/magic_visibility_mnm_mnm_rule.dart';import '../models/magic_visibility_mnm_mnm_rule_advertisable_response.dart';import '../models/magic_visibility_mnm_rule_identifier.dart';/// MagicNetworkMonitoringRulesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class MagicNetworkMonitoringRulesApi with ApiExecutor {const MagicNetworkM
 /// Lists network monitoring rules for account.
 ///
 /// `GET /accounts/{account_id}/mnm/rules`
-Future<ApiResult<List<MagicVisibilityMnmMnmRule?>?, MagicNetworkMonitoringRulesListRulesResponse4Xx>> magicNetworkMonitoringRulesListRules({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicVisibilityMnmMnmRule?>?, MagicNetworkMonitoringRulesListRulesResponse4xx>> magicNetworkMonitoringRulesListRules({required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => e == null ? null : MagicVi
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringRulesListRulesResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MagicNetworkMonitoringRulesListRulesResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Create network monitoring rules for account. Currently only supports creating a single rule per API request.
 ///
 /// `POST /accounts/{account_id}/mnm/rules`
-Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesCreateRulesResponse4Xx>> magicNetworkMonitoringRulesCreateRules({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesCreateRulesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesCreateRulesResponse4xx>> magicNetworkMonitoringRulesCreateRules({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesCreateRulesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return json['result'] != null ? MagicVisibilityMnmMnmRule.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringRulesCreateRulesResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MagicNetworkMonitoringRulesCreateRulesResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Update network monitoring rules for account.
 ///
 /// `PUT /accounts/{account_id}/mnm/rules`
-Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesUpdateRulesResponse4Xx>> magicNetworkMonitoringRulesUpdateRules({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesUpdateRulesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesUpdateRulesResponse4xx>> magicNetworkMonitoringRulesUpdateRules({required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesUpdateRulesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,7 +100,7 @@ return json['result'] != null ? MagicVisibilityMnmMnmRule.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringRulesUpdateRulesResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MagicNetworkMonitoringRulesUpdateRulesResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -113,7 +113,7 @@ return null;
 /// List a single network monitoring rule for account.
 ///
 /// `GET /accounts/{account_id}/mnm/rules/{rule_id}`
-Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesGetRuleResponse4Xx>> magicNetworkMonitoringRulesGetRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesGetRuleResponse4xx>> magicNetworkMonitoringRulesGetRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -132,7 +132,7 @@ return json['result'] != null ? MagicVisibilityMnmMnmRule.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringRulesGetRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MagicNetworkMonitoringRulesGetRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -145,7 +145,7 @@ return null;
 /// Update a network monitoring rule for account.
 ///
 /// `PATCH /accounts/{account_id}/mnm/rules/{rule_id}`
-Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesUpdateRuleResponse4Xx>> magicNetworkMonitoringRulesUpdateRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesUpdateRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesUpdateRuleResponse4xx>> magicNetworkMonitoringRulesUpdateRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, required MagicNetworkMonitoringRulesUpdateRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -166,7 +166,7 @@ return json['result'] != null ? MagicVisibilityMnmMnmRule.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringRulesUpdateRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MagicNetworkMonitoringRulesUpdateRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -179,7 +179,7 @@ return null;
 /// Delete a network monitoring rule for account.
 ///
 /// `DELETE /accounts/{account_id}/mnm/rules/{rule_id}`
-Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesDeleteRuleResponse4Xx>> magicNetworkMonitoringRulesDeleteRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRule?, MagicNetworkMonitoringRulesDeleteRuleResponse4xx>> magicNetworkMonitoringRulesDeleteRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -198,7 +198,7 @@ return json['result'] != null ? MagicVisibilityMnmMnmRule.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringRulesDeleteRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MagicNetworkMonitoringRulesDeleteRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -211,7 +211,7 @@ return null;
 /// Update advertisement for rule.
 ///
 /// `PATCH /accounts/{account_id}/mnm/rules/{rule_id}/advertisement`
-Future<ApiResult<MagicVisibilityMnmMnmRuleAdvertisableResponse?, MagicNetworkMonitoringRulesUpdateAdvertisementForRuleResponse4Xx>> magicNetworkMonitoringRulesUpdateAdvertisementForRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicVisibilityMnmMnmRuleAdvertisableResponse?, MagicNetworkMonitoringRulesUpdateAdvertisementForRuleResponse4xx>> magicNetworkMonitoringRulesUpdateAdvertisementForRule({required MagicVisibilityMnmRuleIdentifier ruleId, required MagicVisibilityMnmAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -230,7 +230,7 @@ return json['result'] != null ? MagicVisibilityMnmMnmRuleAdvertisableResponse.fr
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringRulesUpdateAdvertisementForRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return MagicNetworkMonitoringRulesUpdateAdvertisementForRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

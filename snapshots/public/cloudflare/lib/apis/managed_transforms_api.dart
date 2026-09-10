@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_managed_transforms_response4_xx.dart';import '../models/list_managed_transforms_response4_xx.dart';import '../models/rulesets_managed_transforms.dart';import '../models/rulesets_managed_transforms_request.dart';import '../models/rulesets_zone_id.dart';import '../models/update_managed_transforms_response4_xx.dart';/// ManagedTransformsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_managed_transforms_response4xx.dart';import '../models/list_managed_transforms_response4xx.dart';import '../models/rulesets_managed_transforms.dart';import '../models/rulesets_managed_transforms_request.dart';import '../models/rulesets_zone_id.dart';import '../models/update_managed_transforms_response4xx.dart';/// ManagedTransformsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ManagedTransformsApi with ApiExecutor {const ManagedTransformsApi(th
 /// Fetches a list of all Managed Transforms.
 ///
 /// `GET /zones/{zone_id}/managed_headers`
-Future<ApiResult<RulesetsManagedTransforms, ListManagedTransformsResponse4Xx>> listManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsManagedTransforms, ListManagedTransformsResponse4xx>> listManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return RulesetsManagedTransforms.fromJson(json['result'] as Map<String, dynamic>
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ListManagedTransformsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ListManagedTransformsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Updates the status of one or more Managed Transforms.
 ///
 /// `PATCH /zones/{zone_id}/managed_headers`
-Future<ApiResult<RulesetsManagedTransforms, UpdateManagedTransformsResponse4Xx>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransformsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RulesetsManagedTransforms, UpdateManagedTransformsResponse4xx>> updateManagedTransforms({required RulesetsZoneId zoneId, required RulesetsManagedTransformsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return RulesetsManagedTransforms.fromJson(json['result'] as Map<String, dynamic>
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return UpdateManagedTransformsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return UpdateManagedTransformsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Disables all Managed Transforms.
 ///
 /// `DELETE /zones/{zone_id}/managed_headers`
-Future<ApiResult<void, DeleteManagedTransformsResponse4Xx>> deleteManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DeleteManagedTransformsResponse4xx>> deleteManagedTransforms({required RulesetsZoneId zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -95,7 +95,7 @@ return await execute(
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeleteManagedTransformsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DeleteManagedTransformsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

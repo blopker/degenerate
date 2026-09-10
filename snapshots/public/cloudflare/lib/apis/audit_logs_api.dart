@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_audit_logs2.dart';import '../models/aaa_audit_logs_response_collection.dart';import '../models/aaa_audit_logs_response_collection_variant1.dart';import '../models/aaa_identifier.dart';import '../models/audit_logs_get_account_audit_logs_direction.dart';import '../models/audit_logs_get_account_audit_logs_response4_xx.dart';import '../models/audit_logs_get_account_audit_logs_response4_xx_variant1.dart';import '../models/audit_logs_get_user_audit_logs_direction.dart';import '../models/audit_logs_get_user_audit_logs_response4_xx.dart';import '../models/audit_logs_get_user_audit_logs_response4_xx_variant1.dart';import '../models/get_account_audit_logs_action_result.dart';import '../models/get_account_audit_logs_action_result_not.dart';import '../models/get_account_audit_logs_action_type.dart';import '../models/get_account_audit_logs_action_type_not.dart';import '../models/get_account_audit_logs_actor_context.dart';import '../models/get_account_audit_logs_actor_context_not.dart';import '../models/get_account_audit_logs_actor_type.dart';import '../models/get_account_audit_logs_actor_type_not.dart';import '../models/get_account_audit_logs_direction.dart';import '../models/get_account_audit_logs_resource_scope.dart';import '../models/get_account_audit_logs_resource_scope_not.dart';import '../models/response_common.dart';import '../models/response_common_failure3.dart';/// AuditLogsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aaa_audit_logs2.dart';import '../models/aaa_audit_logs_response_collection.dart';import '../models/aaa_audit_logs_response_collection_variant1.dart';import '../models/aaa_identifier.dart';import '../models/audit_logs_get_account_audit_logs_direction.dart';import '../models/audit_logs_get_account_audit_logs_response4xx.dart';import '../models/audit_logs_get_account_audit_logs_response4xx_variant1.dart';import '../models/audit_logs_get_user_audit_logs_direction.dart';import '../models/audit_logs_get_user_audit_logs_response4xx.dart';import '../models/audit_logs_get_user_audit_logs_response4xx_variant1.dart';import '../models/get_account_audit_logs_action_result.dart';import '../models/get_account_audit_logs_action_result_not.dart';import '../models/get_account_audit_logs_action_type.dart';import '../models/get_account_audit_logs_action_type_not.dart';import '../models/get_account_audit_logs_actor_context.dart';import '../models/get_account_audit_logs_actor_context_not.dart';import '../models/get_account_audit_logs_actor_type.dart';import '../models/get_account_audit_logs_actor_type_not.dart';import '../models/get_account_audit_logs_direction.dart';import '../models/get_account_audit_logs_resource_scope.dart';import '../models/get_account_audit_logs_resource_scope_not.dart';import '../models/response_common.dart';import '../models/response_common_failure3.dart';/// AuditLogsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AuditLogsApi with ApiExecutor {const AuditLogsApi(this.apiConfig);
 /// Gets a list of audit logs for an account. Can be filtered by who made the change, on which zone, and the timeframe of the change.
 ///
 /// `GET /accounts/{account_id}/audit_logs`
-Future<ApiResult<AaaAuditLogsResponseCollection, AuditLogsGetAccountAuditLogsResponse4Xx>> auditLogsGetAccountAuditLogs({required AaaIdentifier accountId, String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, dynamic since, dynamic before, String? zoneName, AuditLogsGetAccountAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AaaAuditLogsResponseCollection, AuditLogsGetAccountAuditLogsResponse4xx>> auditLogsGetAccountAuditLogs({required AaaIdentifier accountId, String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, dynamic since, dynamic before, String? zoneName, AuditLogsGetAccountAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -73,7 +73,7 @@ return OneOf2.parse(json, fromA: (v) => AaaAuditLogsResponseCollectionVariant1.f
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => AuditLogsGetAccountAuditLogsResponse4XxVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);
+return OneOf2.parse(json, fromA: (v) => AuditLogsGetAccountAuditLogsResponse4xxVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);
 default:
 return null;
 }
@@ -354,7 +354,7 @@ return null;
 /// Gets a list of audit logs for a user account. Can be filtered by who made the change, on which zone, and the timeframe of the change.
 ///
 /// `GET /user/audit_logs`
-Future<ApiResult<AaaAuditLogsResponseCollection, AuditLogsGetUserAuditLogsResponse4Xx>> auditLogsGetUserAuditLogs({String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, dynamic since, dynamic before, String? zoneName, AuditLogsGetUserAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AaaAuditLogsResponseCollection, AuditLogsGetUserAuditLogsResponse4xx>> auditLogsGetUserAuditLogs({String? id, bool? $export, String? actionType, String? actorIp, String? actorEmail, dynamic since, dynamic before, String? zoneName, AuditLogsGetUserAuditLogsDirection? direction, double? perPage, double? page, bool? hideUserLogs, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id;
@@ -414,7 +414,7 @@ return OneOf2.parse(json, fromA: (v) => AaaAuditLogsResponseCollectionVariant1.f
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => AuditLogsGetUserAuditLogsResponse4XxVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);
+return OneOf2.parse(json, fromA: (v) => AuditLogsGetUserAuditLogsResponse4xxVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);
 default:
 return null;
 }

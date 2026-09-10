@@ -7,6 +7,7 @@ import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
 import 'package:degenerate/src/emitter/response_plan.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
+import 'package:degenerate/src/emitter/status_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart'
     show sanitizeDartName, sanitizeFieldName, toPascalCase;
@@ -41,6 +42,11 @@ class FileEmitter {
       typeToFile[name] = toSnakeCase(name);
       typeRegistry[name] = type;
     }
+
+    final usedNames = {...typeRegistry.keys, ...apis.map((api) => api.name)};
+    final usedResponseFiles = typeToFile.values.toSet();
+    final responsePlans = <IrOperation, OperationResponsePlans>{};
+    final statusUnions = <ResponsePlan>[];
 
     // ── Determine which small types can be inlined into their parent's file ──
     // Build a map of type name → set of parent type names that reference it.
@@ -104,6 +110,7 @@ class FileEmitter {
       }
       specs.addAll(_emitType(type, typeRegistry, omittable: omittable));
       if (specs.isEmpty) continue;
+      usedNames.addAll(specs.whereType<Class>().map((spec) => spec.name));
 
       // Single-pass analysis: collect imports and detect special types
       final modelAnalysis = _analyzeModel(type, typeRegistry);
@@ -160,6 +167,74 @@ class FileEmitter {
       files['models/$fileName.dart'] = emitRaw(library);
     }
 
+    for (final api in apis) {
+      for (final op in api.operations) {
+        final success = planResponses(
+          op,
+          errors: false,
+          registry: typeRegistry,
+          unwrapFields: unwrapFields,
+          usedNames: usedNames,
+          usedFiles: usedResponseFiles,
+        );
+        final error = planResponses(
+          op,
+          errors: true,
+          registry: typeRegistry,
+          usedNames: usedNames,
+          usedFiles: usedResponseFiles,
+        );
+        responsePlans[op] = (success: success, error: error);
+        for (final plan in [success, error]) {
+          if (!plan.isUnion) continue;
+          statusUnions.add(plan);
+          typeToFile[plan.unionName!] = toSnakeCase(plan.unionName!);
+        }
+      }
+    }
+
+    for (final plan in statusUnions) {
+      final names = <String>{};
+      var needsTypedData = false;
+      for (final variant in plan.variants) {
+        final type = variant.branch.type;
+        if (type == null) continue;
+        _collectTopLevelTypeName(type, names, typeRegistry);
+        needsTypedData |= _isBytesType(type);
+      }
+      final imports =
+          names
+              .where(typeToFile.containsKey)
+              .map((name) => typeToFile[name]!)
+              .toSet()
+              .toList()
+            ..sort();
+      files['models/${toSnakeCase(plan.unionName!)}.dart'] = emitRaw(
+        Library((b) {
+          b.comments.addAll(_header);
+          if (plan.branches.any(
+            (branch) => branch.content?.$1.test(isJsonLikeMediaType) ?? false,
+          )) {
+            b.directives.add(Directive.import('dart:convert'));
+          }
+          if (needsTypedData) {
+            b.directives.add(Directive.import('dart:typed_data'));
+          }
+          b.directives.add(
+            Directive.import(
+              'package:degenerate_runtime/degenerate_runtime.dart',
+            ),
+          );
+          b.directives.addAll(
+            imports.map((file) => Directive.import('$file.dart')),
+          );
+          b.body.addAll(
+            StatusUnionEmitter(plan, typeRegistry: typeRegistry).emit(),
+          );
+        }),
+      );
+    }
+
     // Emit API files
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
@@ -169,11 +244,18 @@ class FileEmitter {
         typeRegistry: typeRegistry,
         unwrapFields: unwrapFields,
         omittable: omittable,
+        responsePlans: responsePlans,
       );
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
 
       final analysis = _analyzeApi(api, typeRegistry, unwrapFields);
+      for (final op in api.operations) {
+        final plans = responsePlans[op]!;
+        for (final plan in [plans.success, plans.error]) {
+          if (plan.isUnion) analysis.referencedTypes.add(plan.unionName!);
+        }
+      }
 
       // Derive imports directly from referenced types using pre-built lookup
       final sortedApiFiles =
@@ -239,6 +321,7 @@ class FileEmitter {
       apis: apis,
       packageName: packageName,
       inlinedTypes: inlinedInto.keys.toSet(),
+      statusUnionNames: statusUnions.map((plan) => plan.unionName!).toList(),
       hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
     );
 
@@ -259,15 +342,18 @@ class FileEmitter {
     OmittableMode omittable = OmittableMode.nullableOnly,
   }) {
     return switch (type) {
-      IrObject() =>
-        ModelEmitter(
-          type,
-          typeRegistry: typeRegistry,
-          omittable: omittable,
-        ).emit(),
+      IrObject() => ModelEmitter(
+        type,
+        typeRegistry: typeRegistry,
+        omittable: omittable,
+      ).emit(),
       IrEnum() => EnumEmitter(type).emit(),
       IrExtensionType() => ExtensionTypeEmitter(type).emit(),
-      IrDiscriminatedUnion() => DiscriminatedUnionEmitter(type, typeRegistry: typeRegistry, omittable: omittable).emit(),
+      IrDiscriminatedUnion() => DiscriminatedUnionEmitter(
+        type,
+        typeRegistry: typeRegistry,
+        omittable: omittable,
+      ).emit(),
       IrUntaggedUnion(:final variants)
           when isOneOfEligible(variants) &&
               !_isSelfReferencing(type.name, variants) =>
@@ -353,17 +439,11 @@ class FileEmitter {
     final names = <String>{};
     var needsConvert = false;
     var needsTypedData = false;
-    bool isBytesType(IrType t) => switch (t) {
-      IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
-      IrList(:final items) => isBytesType(items),
-      IrMap(:final values) => isBytesType(values),
-      _ => false,
-    };
 
     for (final op in api.operations) {
       for (final param in op.parameters) {
         _collectTopLevelTypeName(param.type, names);
-        if (isBytesType(param.type)) {
+        if (_isBytesType(param.type)) {
           needsTypedData = true;
           // Bytes params serialize via base64Encode.
           needsConvert = true;
@@ -375,7 +455,7 @@ class FileEmitter {
               ? (typeRegistry?[(param.type as IrTypeRef).name] ?? param.type)
               : param.type;
           if (resolved is IrObject &&
-              resolved.fields.any((f) => isBytesType(f.type))) {
+              resolved.fields.any((f) => _isBytesType(f.type))) {
             needsConvert = true;
           }
         }
@@ -388,17 +468,24 @@ class FileEmitter {
         final schema = bodyContent.$2.schema;
         // Request bodies use .toJson() only - don't resolve OneOf variants.
         _collectTopLevelTypeName(schema, names);
-        if (isBytesType(schema)) needsTypedData = true;
+        if (_isBytesType(schema)) needsTypedData = true;
       }
       for (final errors in [false, true]) {
-        final plan = planResponses(op, errors: errors,
-            registry: typeRegistry ?? const {}, unwrapFields: unwrapFields);
+        final plan = planResponses(
+          op,
+          errors: errors,
+          registry: typeRegistry ?? const {},
+          unwrapFields: unwrapFields,
+        );
+        if (plan.isUnion && typeRegistry != null) continue;
         for (final branch in plan.branches) {
-          if (branch.content?.$1.test(isJsonLikeMediaType) ?? false) needsConvert = true;
+          if (branch.content?.$1.test(isJsonLikeMediaType) ?? false) {
+            needsConvert = true;
+          }
           final schema = branch.type;
           if (schema == null) continue;
           _collectTopLevelTypeName(schema, names, typeRegistry);
-          if (isBytesType(schema)) needsTypedData = true;
+          if (_isBytesType(schema)) needsTypedData = true;
         }
       }
       // Collect types from streaming responses (SSE, JSONL)
@@ -415,6 +502,13 @@ class FileEmitter {
       needsTypedData: needsTypedData,
     );
   }
+
+  bool _isBytesType(IrType type) => switch (type) {
+    IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
+    IrList(:final items) => _isBytesType(items),
+    IrMap(:final values) => _isBytesType(values),
+    _ => false,
+  };
 
   /// Collect only the top-level type name from a type, without recursing
   /// into fields. For lists/maps, collect the item/value types.
@@ -683,10 +777,12 @@ class FileEmitter {
     required List<IrApi> apis,
     required String packageName,
     Set<String> inlinedTypes = const {},
+    List<String> statusUnionNames = const [],
     bool hasSecurityFile = false,
   }) {
     // Collect all relative exports and sort them alphabetically.
     final relativeExports = <String>[
+      for (final name in statusUnionNames) 'models/${toSnakeCase(name)}.dart',
       if (apis.isNotEmpty) 'client/${packageName}_api.dart',
       if (hasSecurityFile) 'client/${packageName}_security.dart',
       for (final name
@@ -809,7 +905,9 @@ class FileEmitter {
       '  static final securitySchemes = <String, ApiSecurityScheme>{',
     );
     for (final scheme in securitySchemes) {
-      buf.writeln('    ${scheme.name.literal}: ${_securitySchemeLiteral(scheme)},');
+      buf.writeln(
+        '    ${scheme.name.literal}: ${_securitySchemeLiteral(scheme)},',
+      );
     }
     buf.writeln('  };');
     buf.writeln();
@@ -853,10 +951,7 @@ class FileEmitter {
       _ => 'ApiSecuritySchemeType.http',
     };
     // Only include optional parameters that differ from their defaults.
-    final args = <String>[
-      "name: '${scheme.name.escaped}'",
-      'type: $type',
-    ];
+    final args = <String>["name: '${scheme.name.escaped}'", 'type: $type'];
     if (scheme.scheme != null) {
       args.add('scheme: ${_stringOrNull(scheme.scheme)}');
     }
@@ -876,9 +971,7 @@ class FileEmitter {
       if (location != 'null') args.add('location: $location');
     }
     if (scheme.openIdConnectUrl != null) {
-      args.add(
-        'openIdConnectUrl: ${_stringOrNull(scheme.openIdConnectUrl)}',
-      );
+      args.add('openIdConnectUrl: ${_stringOrNull(scheme.openIdConnectUrl)}');
     }
     if (scheme.flows.isNotEmpty) {
       final flowLiterals = scheme.flows.map(_oauthFlowLiteral).join(', ');
@@ -949,7 +1042,8 @@ class FileEmitter {
   }
 
   String? _securityApplyMethod(IrSecurityScheme scheme) {
-    final methodName = 'apply${scheme.name.toIdentifier(_securityMethodSuffix)}';
+    final methodName =
+        'apply${scheme.name.toIdentifier(_securityMethodSuffix)}';
     // An apiKey scheme without a parameter name can't be applied anywhere.
     if (scheme.type == 'apiKey' && scheme.parameterName == null) return null;
     return switch (scheme.type) {

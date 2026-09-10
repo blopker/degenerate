@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/diagnostics_traceroute_request.dart';import '../models/diagnostics_traceroute_response4_xx.dart';import '../models/magic_transit_identifier.dart';import '../models/magic_transit_target_result.dart';/// DiagnosticsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/diagnostics_traceroute_request.dart';import '../models/diagnostics_traceroute_response4xx.dart';import '../models/magic_transit_identifier.dart';import '../models/magic_transit_target_result.dart';/// DiagnosticsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DiagnosticsApi with ApiExecutor {const DiagnosticsApi(this.apiConfig
 /// Run traceroutes from Cloudflare colos.
 ///
 /// `POST /accounts/{account_id}/diagnostics/traceroute`
-Future<ApiResult<List<MagicTransitTargetResult>?, DiagnosticsTracerouteResponse4Xx>> diagnosticsTraceroute({required MagicTransitIdentifier accountId, required DiagnosticsTracerouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicTransitTargetResult>?, DiagnosticsTracerouteResponse4xx>> diagnosticsTraceroute({required MagicTransitIdentifier accountId, required DiagnosticsTracerouteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -34,7 +34,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => MagicTransitTargetResult.f
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DiagnosticsTracerouteResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DiagnosticsTracerouteResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

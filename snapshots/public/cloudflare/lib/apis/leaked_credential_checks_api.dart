@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/bundle_custom_detection.dart';import '../models/bundle_custom_detection_request.dart';import '../models/bundle_identifier.dart';import '../models/bundle_status.dart';import '../models/leaked_credentials_create_detection_response4_xx.dart';import '../models/leaked_credentials_get_detection_response4_xx.dart';import '../models/leaked_credentials_get_status_response4_xx.dart';import '../models/leaked_credentials_list_detections_response4_xx.dart';import '../models/leaked_credentials_set_status_response4_xx.dart';import '../models/leaked_credentials_update_detection_response4_xx.dart';import '../models/response_common74_result.dart';import '../models/response_common_failure77.dart';/// LeakedCredentialChecksApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/bundle_custom_detection.dart';import '../models/bundle_custom_detection_request.dart';import '../models/bundle_identifier.dart';import '../models/bundle_status.dart';import '../models/leaked_credentials_create_detection_response4xx.dart';import '../models/leaked_credentials_get_detection_response4xx.dart';import '../models/leaked_credentials_get_status_response4xx.dart';import '../models/leaked_credentials_list_detections_response4xx.dart';import '../models/leaked_credentials_set_status_response4xx.dart';import '../models/leaked_credentials_update_detection_response4xx.dart';import '../models/response_common74_result.dart';import '../models/response_common_failure77.dart';/// LeakedCredentialChecksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class LeakedCredentialChecksApi with ApiExecutor {const LeakedCredentialCh
 /// Retrieves the current status of Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks`
-Future<ApiResult<BundleStatus, LeakedCredentialsGetStatusResponse4Xx>> wafProductApiLeakedCredentialsGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleStatus, LeakedCredentialsGetStatusResponse4xx>> wafProductApiLeakedCredentialsGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return BundleStatus.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return LeakedCredentialsGetStatusResponse4Xx.fromJson(json as Map<String, dynamic>);
+return LeakedCredentialsGetStatusResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Updates the current status of Leaked Credential Checks.
 ///
 /// `POST /zones/{zone_id}/leaked-credential-checks`
-Future<ApiResult<BundleStatus, LeakedCredentialsSetStatusResponse4Xx>> wafProductApiLeakedCredentialsSetStatus({required BundleIdentifier zoneId, required BundleStatus body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleStatus, LeakedCredentialsSetStatusResponse4xx>> wafProductApiLeakedCredentialsSetStatus({required BundleIdentifier zoneId, required BundleStatus body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return BundleStatus.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return LeakedCredentialsSetStatusResponse4Xx.fromJson(json as Map<String, dynamic>);
+return LeakedCredentialsSetStatusResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// List user-defined detection patterns for Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks/detections`
-Future<ApiResult<List<BundleCustomDetection>, LeakedCredentialsListDetectionsResponse4Xx>> wafProductApiLeakedCredentialsListDetections({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomDetection>, LeakedCredentialsListDetectionsResponse4xx>> wafProductApiLeakedCredentialsListDetections({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ return (json['result'] as List<dynamic>).map((e) => BundleCustomDetection.fromJs
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return LeakedCredentialsListDetectionsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return LeakedCredentialsListDetectionsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -111,7 +111,7 @@ return null;
 /// Create user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `POST /zones/{zone_id}/leaked-credential-checks/detections`
-Future<ApiResult<BundleCustomDetection, LeakedCredentialsCreateDetectionResponse4Xx>> wafProductApiLeakedCredentialsCreateDetection({required BundleIdentifier zoneId, required BundleCustomDetectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleCustomDetection, LeakedCredentialsCreateDetectionResponse4xx>> wafProductApiLeakedCredentialsCreateDetection({required BundleIdentifier zoneId, required BundleCustomDetectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,7 +132,7 @@ return BundleCustomDetection.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return LeakedCredentialsCreateDetectionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return LeakedCredentialsCreateDetectionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -145,7 +145,7 @@ return null;
 /// Get user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `GET /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<BundleCustomDetection, LeakedCredentialsGetDetectionResponse4Xx>> wafProductApiLeakedCredentialsGetDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleCustomDetection, LeakedCredentialsGetDetectionResponse4xx>> wafProductApiLeakedCredentialsGetDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -164,7 +164,7 @@ return BundleCustomDetection.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return LeakedCredentialsGetDetectionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return LeakedCredentialsGetDetectionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -177,7 +177,7 @@ return null;
 /// Update user-defined detection pattern for Leaked Credential Checks.
 ///
 /// `PUT /zones/{zone_id}/leaked-credential-checks/detections/{detection_id}`
-Future<ApiResult<BundleCustomDetection, LeakedCredentialsUpdateDetectionResponse4Xx>> wafProductApiLeakedCredentialsUpdateDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, required BundleCustomDetectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleCustomDetection, LeakedCredentialsUpdateDetectionResponse4xx>> wafProductApiLeakedCredentialsUpdateDetection({required BundleIdentifier zoneId, required BundleIdentifier detectionId, required BundleCustomDetectionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -198,7 +198,7 @@ return BundleCustomDetection.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return LeakedCredentialsUpdateDetectionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return LeakedCredentialsUpdateDetectionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

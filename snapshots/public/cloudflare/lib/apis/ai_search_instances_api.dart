@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_instances_request.dart';import '../models/ai_search_create_instances_response400.dart';import '../models/ai_search_create_instances_response_result.dart';import '../models/ai_search_delete_instances_response404.dart';import '../models/ai_search_delete_instances_response_result.dart';import '../models/ai_search_fetch_instances_response400.dart';import '../models/ai_search_fetch_instances_response404.dart';import '../models/ai_search_fetch_instances_response_result.dart';import '../models/ai_search_instance_chat_completion_request.dart';import '../models/ai_search_instance_chat_completion_response.dart';import '../models/ai_search_instance_chat_completion_response404.dart';import '../models/ai_search_instance_search_request.dart';import '../models/ai_search_instance_search_response404.dart';import '../models/ai_search_instance_search_response_result.dart';import '../models/ai_search_list_instances_order_by.dart';import '../models/ai_search_list_instances_order_by_direction.dart';import '../models/ai_search_list_instances_response400.dart';import '../models/ai_search_list_instances_response_result.dart';import '../models/ai_search_stats_response404.dart';import '../models/ai_search_stats_response_result.dart';import '../models/ai_search_update_instances_request.dart';import '../models/ai_search_update_instances_response400.dart';import '../models/ai_search_update_instances_response404.dart';import '../models/ai_search_update_instances_response_result.dart';/// AiSearchInstancesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_instances_request.dart';import '../models/ai_search_create_instances_response400.dart';import '../models/ai_search_create_instances_response_result.dart';import '../models/ai_search_delete_instances_response404.dart';import '../models/ai_search_delete_instances_response_result.dart';import '../models/ai_search_fetch_instances_error.dart';import '../models/ai_search_fetch_instances_response_result.dart';import '../models/ai_search_instance_chat_completion_request.dart';import '../models/ai_search_instance_chat_completion_response.dart';import '../models/ai_search_instance_chat_completion_response404.dart';import '../models/ai_search_instance_search_request.dart';import '../models/ai_search_instance_search_response404.dart';import '../models/ai_search_instance_search_response_result.dart';import '../models/ai_search_list_instances_order_by.dart';import '../models/ai_search_list_instances_order_by_direction.dart';import '../models/ai_search_list_instances_response400.dart';import '../models/ai_search_list_instances_response_result.dart';import '../models/ai_search_stats_response404.dart';import '../models/ai_search_stats_response_result.dart';import '../models/ai_search_update_instances_error.dart';import '../models/ai_search_update_instances_request.dart';import '../models/ai_search_update_instances_response_result.dart';/// AiSearchInstancesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -95,7 +95,7 @@ return null;
 /// Read instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchFetchInstancesResponseResult, OneOf2<AiSearchFetchInstancesResponse400, AiSearchFetchInstancesResponse404>>> aiSearchFetchInstances({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchFetchInstancesResponseResult, AiSearchFetchInstancesError>> aiSearchFetchInstances({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -110,25 +110,13 @@ return await execute(
 final json = jsonDecode(response.body) as Map<String, dynamic>;
 return AiSearchFetchInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchFetchInstancesResponse400, AiSearchFetchInstancesResponse404>.a(AiSearchFetchInstancesResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchFetchInstancesResponse400, AiSearchFetchInstancesResponse404>.b(AiSearchFetchInstancesResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: AiSearchFetchInstancesError.parse,
 );
  } 
 /// Update instances.
 ///
 /// `PUT /accounts/{account_id}/ai-search/instances/{id}`
-Future<ApiResult<AiSearchUpdateInstancesResponseResult, OneOf2<AiSearchUpdateInstancesResponse400, AiSearchUpdateInstancesResponse404>>> aiSearchUpdateInstances({required String accountId, required String id, AiSearchUpdateInstancesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchUpdateInstancesResponseResult, AiSearchUpdateInstancesError>> aiSearchUpdateInstances({required String accountId, required String id, AiSearchUpdateInstancesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -145,19 +133,7 @@ return await execute(
 final json = jsonDecode(response.body) as Map<String, dynamic>;
 return AiSearchUpdateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchUpdateInstancesResponse400, AiSearchUpdateInstancesResponse404>.a(AiSearchUpdateInstancesResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchUpdateInstancesResponse400, AiSearchUpdateInstancesResponse404>.b(AiSearchUpdateInstancesResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: AiSearchUpdateInstancesError.parse,
 );
  } 
 /// Delete instances.

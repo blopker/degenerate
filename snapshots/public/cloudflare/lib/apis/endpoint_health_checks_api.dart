@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/diagnostics_endpoint_healthcheck_get_response4_xx.dart';import '../models/magic_transit_endpoint_health_check.dart';import '../models/magic_transit_endpoint_health_check_response.dart';import '../models/magic_transit_identifier.dart';import '../models/magic_transit_uuid.dart';import '../models/response_common45.dart';import '../models/response_common_failure47.dart';/// EndpointHealthChecksApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/diagnostics_endpoint_healthcheck_get_response4xx.dart';import '../models/magic_transit_endpoint_health_check.dart';import '../models/magic_transit_endpoint_health_check_response.dart';import '../models/magic_transit_identifier.dart';import '../models/magic_transit_uuid.dart';import '../models/response_common45.dart';import '../models/response_common_failure47.dart';/// EndpointHealthChecksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -79,7 +79,7 @@ return null;
 /// Get a single Endpoint Health Check.
 ///
 /// `GET /accounts/{account_id}/diagnostics/endpoint-healthchecks/{id}`
-Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, DiagnosticsEndpointHealthcheckGetResponse4Xx>> diagnosticsEndpointHealthcheckGet({required MagicTransitIdentifier accountId, required MagicTransitUuid id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicTransitEndpointHealthCheckResponse?, DiagnosticsEndpointHealthcheckGetResponse4xx>> diagnosticsEndpointHealthcheckGet({required MagicTransitIdentifier accountId, required MagicTransitUuid id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ return json['result'] != null ? MagicTransitEndpointHealthCheckResponse.fromJson
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DiagnosticsEndpointHealthcheckGetResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DiagnosticsEndpointHealthcheckGetResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

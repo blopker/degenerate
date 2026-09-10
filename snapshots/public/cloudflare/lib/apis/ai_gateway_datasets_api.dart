@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_dataset_request.dart';import '../models/aig_config_create_dataset_response400.dart';import '../models/aig_config_create_dataset_response_result.dart';import '../models/aig_config_delete_dataset_response404.dart';import '../models/aig_config_delete_dataset_response_result.dart';import '../models/aig_config_fetch_dataset_response404.dart';import '../models/aig_config_fetch_dataset_response_result.dart';import '../models/aig_config_list_dataset_response400.dart';import '../models/aig_config_list_dataset_response_result.dart';import '../models/aig_config_update_dataset_request.dart';import '../models/aig_config_update_dataset_response400.dart';import '../models/aig_config_update_dataset_response404.dart';import '../models/aig_config_update_dataset_response_result.dart';/// AiGatewayDatasetsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_dataset_request.dart';import '../models/aig_config_create_dataset_response400.dart';import '../models/aig_config_create_dataset_response_result.dart';import '../models/aig_config_delete_dataset_response404.dart';import '../models/aig_config_delete_dataset_response_result.dart';import '../models/aig_config_fetch_dataset_response404.dart';import '../models/aig_config_fetch_dataset_response_result.dart';import '../models/aig_config_list_dataset_response400.dart';import '../models/aig_config_list_dataset_response_result.dart';import '../models/aig_config_update_dataset_error.dart';import '../models/aig_config_update_dataset_request.dart';import '../models/aig_config_update_dataset_response_result.dart';/// AiGatewayDatasetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -131,7 +131,7 @@ return null;
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}`
-Future<ApiResult<AigConfigUpdateDatasetResponseResult, OneOf2<AigConfigUpdateDatasetResponse400, AigConfigUpdateDatasetResponse404>>> aigConfigUpdateDataset({required String accountId, required String gatewayId, required String id, AigConfigUpdateDatasetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigUpdateDatasetResponseResult, AigConfigUpdateDatasetError>> aigConfigUpdateDataset({required String accountId, required String gatewayId, required String id, AigConfigUpdateDatasetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -148,19 +148,7 @@ return await execute(
 final json = jsonDecode(response.body) as Map<String, dynamic>;
 return AigConfigUpdateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<AigConfigUpdateDatasetResponse400, AigConfigUpdateDatasetResponse404>.a(AigConfigUpdateDatasetResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<AigConfigUpdateDatasetResponse400, AigConfigUpdateDatasetResponse404>.b(AigConfigUpdateDatasetResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: AigConfigUpdateDatasetError.parse,
 );
  } 
 /// Delete a Dataset

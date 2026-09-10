@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_image_request.dart';import '../models/create_image_variation_request.dart';import '../models/edit_image_body_json_param.dart';import '../models/image_edit_stream_event.dart';import '../models/image_gen_stream_event.dart';import '../models/images_response.dart';/// ImagesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_image_edit_success.dart';import '../models/create_image_request.dart';import '../models/create_image_success.dart';import '../models/create_image_variation_request.dart';import '../models/edit_image_body_json_param.dart';import '../models/image_edit_stream_event.dart';import '../models/image_gen_stream_event.dart';import '../models/images_response.dart';/// ImagesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -19,7 +19,7 @@ final class ImagesApi with ApiExecutor {const ImagesApi(this.apiConfig);
 /// 
 ///
 /// `POST /images/edits`
-Future<ApiResult<OneOf2<ImagesResponse, ImageEditStreamEvent>, Never>> createImageEdit({required EditImageBodyJsonParam body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateImageEditSuccess, Never>> createImageEdit({required EditImageBodyJsonParam body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -32,27 +32,14 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<ImagesResponse, ImageEditStreamEvent>.a(ImagesResponse.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ImageEditStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into ImageEditStreamEvent');
-}
-final json = jsonDecode(response.body);
-return OneOf2<ImagesResponse, ImageEditStreamEvent>.a(ImagesResponse.fromJson(json as Map<String, dynamic>));
-
-  },
+  onSuccess: CreateImageEditSuccess.parse,
 );
  } 
 /// Creates an image given a prompt. [Learn more](/docs/guides/images).
 /// 
 ///
 /// `POST /images/generations`
-Future<ApiResult<OneOf2<ImagesResponse, ImageGenStreamEvent>, Never>> createImage({required CreateImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateImageSuccess, Never>> createImage({required CreateImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,20 +52,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<ImagesResponse, ImageGenStreamEvent>.a(ImagesResponse.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ImageGenStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into ImageGenStreamEvent');
-}
-final json = jsonDecode(response.body);
-return OneOf2<ImagesResponse, ImageGenStreamEvent>.a(ImagesResponse.fromJson(json as Map<String, dynamic>));
-
-  },
+  onSuccess: CreateImageSuccess.parse,
 );
  } 
 /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/interaction_limit.dart';import '../models/interaction_limit_response.dart';import '../models/interactions_get_restrictions_for_authenticated_user_response.dart';import '../models/interactions_get_restrictions_for_org_response.dart';import '../models/interactions_get_restrictions_for_repo_response.dart';import '../models/validation_error.dart';/// InteractionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/interaction_limit.dart';import '../models/interaction_limit_response.dart';import '../models/interactions_get_restrictions_for_authenticated_user_success.dart';import '../models/interactions_get_restrictions_for_org_response.dart';import '../models/interactions_get_restrictions_for_repo_response.dart';import '../models/validation_error.dart';/// InteractionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -153,7 +153,7 @@ return await execute(
 /// Shows which type of GitHub user can interact with your public repositories and when the restriction expires.
 ///
 /// `GET /user/interaction-limits`
-Future<ApiResult<InteractionsGetRestrictionsForAuthenticatedUserResponse?, Never>> interactionsGetRestrictionsForAuthenticatedUser({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InteractionsGetRestrictionsForAuthenticatedUserSuccess, Never>> interactionsGetRestrictionsForAuthenticatedUser({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -164,19 +164,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 200:
-final json = jsonDecode(response.body);
-return InteractionsGetRestrictionsForAuthenticatedUserResponse.fromJson(json);
-case 204:
-return null;
-default:
-final json = jsonDecode(response.body);
-return InteractionsGetRestrictionsForAuthenticatedUserResponse.fromJson(json);
-}
-
-  },
+  onSuccess: InteractionsGetRestrictionsForAuthenticatedUserSuccess.parse,
 );
  } 
 /// Set interaction restrictions for your public repositories

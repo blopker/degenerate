@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_response.dart';import '../models/error_model.dart';import '../models/include_enum.dart';import '../models/list_input_items_order.dart';import '../models/response.dart';import '../models/response_item_list.dart';import '../models/response_stream_event.dart';/// ResponsesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_response.dart';import '../models/create_response_success.dart';import '../models/error_model.dart';import '../models/include_enum.dart';import '../models/list_input_items_order.dart';import '../models/response.dart';import '../models/response_item_list.dart';import '../models/response_stream_event.dart';/// ResponsesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -18,7 +18,7 @@ final class ResponsesApi with ApiExecutor {const ResponsesApi(this.apiConfig);
 /// 
 ///
 /// `POST /responses`
-Future<ApiResult<OneOf2<Response, ResponseStreamEvent>, Never>> createResponse({required CreateResponse body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateResponseSuccess, Never>> createResponse({required CreateResponse body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -31,20 +31,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<Response, ResponseStreamEvent>.a(Response.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ResponseStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into ResponseStreamEvent');
-}
-final json = jsonDecode(response.body);
-return OneOf2<Response, ResponseStreamEvent>.a(Response.fromJson(json as Map<String, dynamic>));
-
-  },
+  onSuccess: CreateResponseSuccess.parse,
 );
  } 
 /// Retrieves a model response with the given ID.

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/addressing_account_identifier.dart';import '../models/addressing_bgp_prefix_create.dart';import '../models/addressing_bgp_prefix_identifier.dart';import '../models/addressing_bgp_prefix_update_advertisement.dart';import '../models/addressing_ipam_bgp_prefixes.dart';import '../models/addressing_prefix_identifier.dart';import '../models/ip_address_management_prefixes_create_bgp_prefix_response4_xx.dart';import '../models/ip_address_management_prefixes_fetch_bgp_prefix_response4_xx.dart';import '../models/ip_address_management_prefixes_list_bgp_prefixes_response4_xx.dart';import '../models/ip_address_management_prefixes_update_bgp_prefix_response4_xx.dart';import '../models/response_common4.dart';import '../models/response_common_failure5.dart';/// IpAddressManagementBgpPrefixesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/addressing_account_identifier.dart';import '../models/addressing_bgp_prefix_create.dart';import '../models/addressing_bgp_prefix_identifier.dart';import '../models/addressing_bgp_prefix_update_advertisement.dart';import '../models/addressing_ipam_bgp_prefixes.dart';import '../models/addressing_prefix_identifier.dart';import '../models/ip_address_management_prefixes_create_bgp_prefix_response4xx.dart';import '../models/ip_address_management_prefixes_fetch_bgp_prefix_response4xx.dart';import '../models/ip_address_management_prefixes_list_bgp_prefixes_response4xx.dart';import '../models/ip_address_management_prefixes_update_bgp_prefix_response4xx.dart';import '../models/response_common4.dart';import '../models/response_common_failure5.dart';/// IpAddressManagementBgpPrefixesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class IpAddressManagementBgpPrefixesApi with ApiExecutor {const IpAddressM
 /// List all BGP Prefixes within the specified IP Prefix. BGP Prefixes are used to control which specific subnets are advertised to the Internet. It is possible to advertise subnets more specific than an IP Prefix by creating more specific BGP Prefixes.
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes`
-Future<ApiResult<List<AddressingIpamBgpPrefixes>?, IpAddressManagementPrefixesListBgpPrefixesResponse4Xx>> ipAddressManagementPrefixesListBgpPrefixes({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AddressingIpamBgpPrefixes>?, IpAddressManagementPrefixesListBgpPrefixesResponse4xx>> ipAddressManagementPrefixesListBgpPrefixes({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return (json['result'] as List<dynamic>?)?.map((e) => AddressingIpamBgpPrefixes.
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementPrefixesListBgpPrefixesResponse4Xx.fromJson(json as Map<String, dynamic>);
+return IpAddressManagementPrefixesListBgpPrefixesResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Create a BGP prefix, controlling the BGP advertisement status of a specific subnet. When created, BGP prefixes are initially withdrawn, and can be advertised with the Update BGP Prefix API.
 ///
 /// `POST /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes`
-Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesCreateBgpPrefixResponse4Xx>> ipAddressManagementPrefixesCreateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesCreateBgpPrefixResponse4xx>> ipAddressManagementPrefixesCreateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return json['result'] != null ? AddressingIpamBgpPrefixes.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementPrefixesCreateBgpPrefixResponse4Xx.fromJson(json as Map<String, dynamic>);
+return IpAddressManagementPrefixesCreateBgpPrefixResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Retrieve a single BGP Prefix according to its identifier
 ///
 /// `GET /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}`
-Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesFetchBgpPrefixResponse4Xx>> ipAddressManagementPrefixesFetchBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesFetchBgpPrefixResponse4xx>> ipAddressManagementPrefixesFetchBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ return json['result'] != null ? AddressingIpamBgpPrefixes.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementPrefixesFetchBgpPrefixResponse4Xx.fromJson(json as Map<String, dynamic>);
+return IpAddressManagementPrefixesFetchBgpPrefixResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -111,7 +111,7 @@ return null;
 /// Update the properties of a BGP Prefix, such as the on demand advertisement status (advertised or withdrawn).
 ///
 /// `PATCH /accounts/{account_id}/addressing/prefixes/{prefix_id}/bgp/prefixes/{bgp_prefix_id}`
-Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesUpdateBgpPrefixResponse4Xx>> ipAddressManagementPrefixesUpdateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, required AddressingBgpPrefixUpdateAdvertisement body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AddressingIpamBgpPrefixes?, IpAddressManagementPrefixesUpdateBgpPrefixResponse4xx>> ipAddressManagementPrefixesUpdateBgpPrefix({required AddressingAccountIdentifier accountId, required AddressingPrefixIdentifier prefixId, required AddressingBgpPrefixIdentifier bgpPrefixId, required AddressingBgpPrefixUpdateAdvertisement body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,7 +132,7 @@ return json['result'] != null ? AddressingIpamBgpPrefixes.fromJson(json['result'
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementPrefixesUpdateBgpPrefixResponse4Xx.fromJson(json as Map<String, dynamic>);
+return IpAddressManagementPrefixesUpdateBgpPrefixResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

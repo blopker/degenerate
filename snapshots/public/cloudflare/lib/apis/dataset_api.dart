@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_dataset_delete_response.dart';import '../models/delete_dataset_delete_response400.dart';import '../models/delete_dataset_delete_response404.dart';import '../models/get_dataset_list_response.dart';import '../models/get_dataset_list_response400.dart';import '../models/get_dataset_read_response.dart';import '../models/get_dataset_read_response400.dart';import '../models/patch_dataset_update_request.dart';import '../models/patch_dataset_update_response.dart';import '../models/patch_dataset_update_response400.dart';import '../models/post_dataset_create_request.dart';import '../models/post_dataset_create_response.dart';import '../models/post_dataset_create_response400.dart';import '../models/post_dataset_update_request.dart';import '../models/post_dataset_update_response.dart';import '../models/post_dataset_update_response400.dart';/// DatasetApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_dataset_delete_error.dart';import '../models/delete_dataset_delete_response.dart';import '../models/get_dataset_list_response.dart';import '../models/get_dataset_list_response400.dart';import '../models/get_dataset_read_response.dart';import '../models/get_dataset_read_response400.dart';import '../models/patch_dataset_update_request.dart';import '../models/patch_dataset_update_response.dart';import '../models/patch_dataset_update_response400.dart';import '../models/post_dataset_create_request.dart';import '../models/post_dataset_create_response.dart';import '../models/post_dataset_create_response400.dart';import '../models/post_dataset_update_request.dart';import '../models/post_dataset_update_response.dart';import '../models/post_dataset_update_response400.dart';/// DatasetApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -137,7 +137,7 @@ return null;
 /// Deletes a dataset given a datasetId.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<DeleteDatasetDeleteResponse, OneOf2<DeleteDatasetDeleteResponse400, DeleteDatasetDeleteResponse404>>> deleteDatasetDelete({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteDatasetDeleteResponse, DeleteDatasetDeleteError>> deleteDatasetDelete({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -152,19 +152,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return DeleteDatasetDeleteResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<DeleteDatasetDeleteResponse400, DeleteDatasetDeleteResponse404>.a(DeleteDatasetDeleteResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<DeleteDatasetDeleteResponse400, DeleteDatasetDeleteResponse404>.b(DeleteDatasetDeleteResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: DeleteDatasetDeleteError.parse,
 );
  } 
 /// Creates a dataset

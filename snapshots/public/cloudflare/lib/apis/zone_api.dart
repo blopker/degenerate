@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_purge_identifier.dart';import '../models/put_zones_zone_id_activation_check_response_result.dart';import '../models/response_common_failure85.dart';import '../models/response_common_failure87.dart';import '../models/response_single_id8_result.dart';import '../models/response_single_id_result.dart';import '../models/zone_activation_identifier.dart';import '../models/zone_purge_request.dart';import '../models/zone_purge_response4_xx.dart';import '../models/zones0_patch_request.dart';import '../models/zones_get_direction.dart';import '../models/zones_get_match.dart';import '../models/zones_get_order.dart';import '../models/zones_get_status.dart';import '../models/zones_identifier.dart';import '../models/zones_post_request.dart';import '../models/zones_zone.dart';/// ZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_purge_identifier.dart';import '../models/put_zones_zone_id_activation_check_response_result.dart';import '../models/response_common_failure85.dart';import '../models/response_common_failure87.dart';import '../models/response_single_id8_result.dart';import '../models/response_single_id_result.dart';import '../models/zone_activation_identifier.dart';import '../models/zone_purge_request.dart';import '../models/zone_purge_response4xx.dart';import '../models/zones0_patch_request.dart';import '../models/zones_get_direction.dart';import '../models/zones_get_match.dart';import '../models/zones_get_order.dart';import '../models/zones_get_status.dart';import '../models/zones_identifier.dart';import '../models/zones_post_request.dart';import '../models/zones_zone.dart';/// ZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -281,7 +281,7 @@ return null;
 /// 
 ///
 /// `POST /zones/{zone_id}/purge_cache`
-Future<ApiResult<ResponseSingleIdResult?, ZonePurgeResponse4Xx>> zonePurge({required CachePurgeIdentifier zoneId, required ZonePurgeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleIdResult?, ZonePurgeResponse4xx>> zonePurge({required CachePurgeIdentifier zoneId, required ZonePurgeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -302,7 +302,7 @@ return json['result'] != null ? ResponseSingleIdResult.fromJson(json['result'] a
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZonePurgeResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZonePurgeResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

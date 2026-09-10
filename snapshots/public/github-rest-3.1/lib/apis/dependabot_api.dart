@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/alert_number.dart';import '../models/basic_error.dart';import '../models/dependabot_alert.dart';import '../models/dependabot_alert_with_repository.dart';import '../models/dependabot_create_or_update_org_secret_request.dart';import '../models/dependabot_create_or_update_repo_secret_request.dart';import '../models/dependabot_list_alerts_for_enterprise_direction.dart';import '../models/dependabot_list_alerts_for_enterprise_has.dart';import '../models/dependabot_list_alerts_for_enterprise_scope.dart';import '../models/dependabot_list_alerts_for_enterprise_sort.dart';import '../models/dependabot_list_alerts_for_org_direction.dart';import '../models/dependabot_list_alerts_for_org_has.dart';import '../models/dependabot_list_alerts_for_org_scope.dart';import '../models/dependabot_list_alerts_for_org_sort.dart';import '../models/dependabot_list_alerts_for_repo_direction.dart';import '../models/dependabot_list_alerts_for_repo_has.dart';import '../models/dependabot_list_alerts_for_repo_scope.dart';import '../models/dependabot_list_alerts_for_repo_sort.dart';import '../models/dependabot_list_org_secrets_response.dart';import '../models/dependabot_list_repo_secrets_response.dart';import '../models/dependabot_list_selected_repos_for_org_secret_response.dart';import '../models/dependabot_public_key.dart';import '../models/dependabot_repository_access_details.dart';import '../models/dependabot_secret.dart';import '../models/dependabot_set_repository_access_default_level_request.dart';import '../models/dependabot_set_selected_repos_for_org_secret_request.dart';import '../models/dependabot_update_repository_access_for_org_request.dart';import '../models/empty_object.dart';import '../models/organization_dependabot_secret.dart';import '../models/scim_error.dart';import '../models/validation_error_simple.dart';/// DependabotApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/alert_number.dart';import '../models/basic_error.dart';import '../models/dependabot_alert.dart';import '../models/dependabot_alert_with_repository.dart';import '../models/dependabot_create_or_update_org_secret_request.dart';import '../models/dependabot_create_or_update_org_secret_success.dart';import '../models/dependabot_create_or_update_repo_secret_request.dart';import '../models/dependabot_create_or_update_repo_secret_success.dart';import '../models/dependabot_get_alert_error.dart';import '../models/dependabot_list_alerts_for_enterprise_direction.dart';import '../models/dependabot_list_alerts_for_enterprise_error.dart';import '../models/dependabot_list_alerts_for_enterprise_has.dart';import '../models/dependabot_list_alerts_for_enterprise_scope.dart';import '../models/dependabot_list_alerts_for_enterprise_sort.dart';import '../models/dependabot_list_alerts_for_org_direction.dart';import '../models/dependabot_list_alerts_for_org_error.dart';import '../models/dependabot_list_alerts_for_org_has.dart';import '../models/dependabot_list_alerts_for_org_scope.dart';import '../models/dependabot_list_alerts_for_org_sort.dart';import '../models/dependabot_list_alerts_for_repo_direction.dart';import '../models/dependabot_list_alerts_for_repo_error.dart';import '../models/dependabot_list_alerts_for_repo_has.dart';import '../models/dependabot_list_alerts_for_repo_scope.dart';import '../models/dependabot_list_alerts_for_repo_sort.dart';import '../models/dependabot_list_org_secrets_response.dart';import '../models/dependabot_list_repo_secrets_response.dart';import '../models/dependabot_list_selected_repos_for_org_secret_response.dart';import '../models/dependabot_public_key.dart';import '../models/dependabot_repository_access_details.dart';import '../models/dependabot_secret.dart';import '../models/dependabot_set_repository_access_default_level_request.dart';import '../models/dependabot_set_selected_repos_for_org_secret_request.dart';import '../models/dependabot_update_alert_error.dart';import '../models/dependabot_update_repository_access_for_org_request.dart';import '../models/organization_dependabot_secret.dart';/// DependabotApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -19,7 +19,7 @@ final class DependabotApi with ApiExecutor {const DependabotApi(this.apiConfig);
 /// OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint.
 ///
 /// `GET /enterprises/{enterprise}/dependabot/alerts`
-Future<ApiResult<List<DependabotAlertWithRepository>, OneOf2<BasicError, ValidationErrorSimple>>> dependabotListAlertsForEnterprise({required String enterprise, String? state, String? severity, String? ecosystem, String? package, String? epssPercentage, DependabotListAlertsForEnterpriseHas? has, String? assignee, DependabotListAlertsForEnterpriseScope? scope, DependabotListAlertsForEnterpriseSort? sort, DependabotListAlertsForEnterpriseDirection? direction, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DependabotAlertWithRepository>, DependabotListAlertsForEnterpriseError>> dependabotListAlertsForEnterprise({required String enterprise, String? state, String? severity, String? ecosystem, String? package, String? epssPercentage, DependabotListAlertsForEnterpriseHas? has, String? assignee, DependabotListAlertsForEnterpriseScope? scope, DependabotListAlertsForEnterpriseSort? sort, DependabotListAlertsForEnterpriseDirection? direction, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) {
   queryParameters['state'] = state;
@@ -78,21 +78,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => DependabotAlertWithRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: DependabotListAlertsForEnterpriseError.parse,
 );
  } 
 /// Lists the repositories Dependabot can access in an organization
@@ -230,7 +216,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /orgs/{org}/dependabot/alerts`
-Future<ApiResult<List<DependabotAlertWithRepository>, OneOf3<BasicError, ScimError, ValidationErrorSimple>>> dependabotListAlertsForOrg({required String org, String? state, String? severity, String? ecosystem, String? package, String? epssPercentage, String? artifactRegistryUrl, String? artifactRegistry, DependabotListAlertsForOrgHas? has, String? assignee, String? runtimeRisk, DependabotListAlertsForOrgScope? scope, DependabotListAlertsForOrgSort? sort, DependabotListAlertsForOrgDirection? direction, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DependabotAlertWithRepository>, DependabotListAlertsForOrgError>> dependabotListAlertsForOrg({required String org, String? state, String? severity, String? ecosystem, String? package, String? epssPercentage, String? artifactRegistryUrl, String? artifactRegistry, DependabotListAlertsForOrgHas? has, String? assignee, String? runtimeRisk, DependabotListAlertsForOrgScope? scope, DependabotListAlertsForOrgSort? sort, DependabotListAlertsForOrgDirection? direction, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) {
   queryParameters['state'] = state;
@@ -298,34 +284,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => DependabotAlertWithRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 400:
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.b(ScimError.fromJson(json as Map<String, dynamic>));
-}
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.c(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: DependabotListAlertsForOrgError.parse,
 );
  } 
 /// List organization secrets
@@ -421,7 +380,7 @@ return OrganizationDependabotSecret.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/dependabot/secrets/{secret_name}`
-Future<ApiResult<EmptyObject?, Never>> dependabotCreateOrUpdateOrgSecret({required String org, required String secretName, required DependabotCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DependabotCreateOrUpdateOrgSecretSuccess, Never>> dependabotCreateOrUpdateOrgSecret({required String org, required String secretName, required DependabotCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -434,19 +393,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 201:
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-case 204:
-return null;
-default:
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-}
-
-  },
+  onSuccess: DependabotCreateOrUpdateOrgSecretSuccess.parse,
 );
  } 
 /// Delete an organization secret
@@ -582,7 +529,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /repos/{owner}/{repo}/dependabot/alerts`
-Future<ApiResult<List<DependabotAlert>, OneOf3<BasicError, ScimError, ValidationErrorSimple>>> dependabotListAlertsForRepo({required String owner, required String repo, String? state, String? severity, String? ecosystem, String? package, String? manifest, String? epssPercentage, DependabotListAlertsForRepoHas? has, String? assignee, DependabotListAlertsForRepoScope? scope, DependabotListAlertsForRepoSort? sort, DependabotListAlertsForRepoDirection? direction, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DependabotAlert>, DependabotListAlertsForRepoError>> dependabotListAlertsForRepo({required String owner, required String repo, String? state, String? severity, String? ecosystem, String? package, String? manifest, String? epssPercentage, DependabotListAlertsForRepoHas? has, String? assignee, DependabotListAlertsForRepoScope? scope, DependabotListAlertsForRepoSort? sort, DependabotListAlertsForRepoDirection? direction, String? before, String? after, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) {
   queryParameters['state'] = state;
@@ -644,34 +591,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return (json as List<dynamic>).map((e) => DependabotAlert.fromJson(e as Map<String, dynamic>)).toList();
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 400:
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.b(ScimError.fromJson(json as Map<String, dynamic>));
-}
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.c(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: DependabotListAlertsForRepoError.parse,
 );
  } 
 /// Get a Dependabot alert
@@ -679,7 +599,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}`
-Future<ApiResult<DependabotAlert, BasicError>> dependabotGetAlert({required String owner, required String repo, required AlertNumber alertNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DependabotAlert, DependabotGetAlertError>> dependabotGetAlert({required String owner, required String repo, required AlertNumber alertNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -694,18 +614,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return DependabotAlert.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 403 || 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: DependabotGetAlertError.parse,
 );
  } 
 /// Update a Dependabot alert
@@ -715,7 +624,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
 ///
 /// `PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}`
-Future<ApiResult<DependabotAlert, OneOf3<BasicError, ScimError, ValidationErrorSimple>>> dependabotUpdateAlert({required String owner, required String repo, required AlertNumber alertNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DependabotAlert, DependabotUpdateAlertError>> dependabotUpdateAlert({required String owner, required String repo, required AlertNumber alertNumber, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -732,32 +641,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return DependabotAlert.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.b(ScimError.fromJson(json as Map<String, dynamic>));
-}
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403 || 404 || 409:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, ValidationErrorSimple>.c(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: DependabotUpdateAlertError.parse,
 );
  } 
 /// List repository secrets
@@ -854,7 +738,7 @@ return DependabotSecret.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 ///
 /// `PUT /repos/{owner}/{repo}/dependabot/secrets/{secret_name}`
-Future<ApiResult<EmptyObject?, Never>> dependabotCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required DependabotCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DependabotCreateOrUpdateRepoSecretSuccess, Never>> dependabotCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required DependabotCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -867,19 +751,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 201:
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-case 204:
-return null;
-default:
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-}
-
-  },
+  onSuccess: DependabotCreateOrUpdateRepoSecretSuccess.parse,
 );
  } 
 /// Delete a repository secret

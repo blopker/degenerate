@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/codespace.dart';import '../models/codespace_export_details.dart';import '../models/codespace_with_full_repository.dart';import '../models/codespaces_check_permissions_for_devcontainer_response503.dart';import '../models/codespaces_codespace_machines_for_authenticated_user_response.dart';import '../models/codespaces_create_for_authenticated_user_request.dart';import '../models/codespaces_create_for_authenticated_user_response503.dart';import '../models/codespaces_create_or_update_org_secret_request.dart';import '../models/codespaces_create_or_update_repo_secret_request.dart';import '../models/codespaces_create_or_update_secret_for_authenticated_user_request.dart';import '../models/codespaces_create_with_pr_for_authenticated_user_request.dart';import '../models/codespaces_create_with_pr_for_authenticated_user_response503.dart';import '../models/codespaces_create_with_repo_for_authenticated_user_request.dart';import '../models/codespaces_create_with_repo_for_authenticated_user_response503.dart';import '../models/codespaces_get_codespaces_for_user_in_org_response.dart';import '../models/codespaces_list_devcontainers_in_repository_for_authenticated_user_response.dart';import '../models/codespaces_list_for_authenticated_user_response.dart';import '../models/codespaces_list_in_organization_response.dart';import '../models/codespaces_list_in_repository_for_authenticated_user_response.dart';import '../models/codespaces_list_org_secrets_response.dart';import '../models/codespaces_list_repo_secrets_response.dart';import '../models/codespaces_list_repositories_for_secret_for_authenticated_user_response.dart';import '../models/codespaces_list_secrets_for_authenticated_user_response.dart';import '../models/codespaces_list_selected_repos_for_org_secret_response.dart';import '../models/codespaces_org_secret.dart';import '../models/codespaces_permissions_check_for_devcontainer.dart';import '../models/codespaces_pre_flight_with_repo_for_authenticated_user_response.dart';import '../models/codespaces_public_key.dart';import '../models/codespaces_publish_for_authenticated_user_request.dart';import '../models/codespaces_repo_machines_for_authenticated_user_response.dart';import '../models/codespaces_secret.dart';import '../models/codespaces_set_repositories_for_secret_for_authenticated_user_request.dart';import '../models/codespaces_set_selected_repos_for_org_secret_request.dart';import '../models/codespaces_update_for_authenticated_user_request.dart';import '../models/codespaces_user_public_key.dart';import '../models/empty_object.dart';import '../models/repo_codespaces_secret.dart';import '../models/scim_error.dart';import '../models/validation_error.dart';/// CodespacesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/codespace.dart';import '../models/codespace_export_details.dart';import '../models/codespace_with_full_repository.dart';import '../models/codespaces_add_selected_repo_to_org_secret_error.dart';import '../models/codespaces_check_permissions_for_devcontainer_error.dart';import '../models/codespaces_codespace_machines_for_authenticated_user_error.dart';import '../models/codespaces_codespace_machines_for_authenticated_user_response.dart';import '../models/codespaces_create_for_authenticated_user_error.dart';import '../models/codespaces_create_for_authenticated_user_request.dart';import '../models/codespaces_create_or_update_org_secret_error.dart';import '../models/codespaces_create_or_update_org_secret_request.dart';import '../models/codespaces_create_or_update_org_secret_success.dart';import '../models/codespaces_create_or_update_repo_secret_request.dart';import '../models/codespaces_create_or_update_repo_secret_success.dart';import '../models/codespaces_create_or_update_secret_for_authenticated_user_error.dart';import '../models/codespaces_create_or_update_secret_for_authenticated_user_request.dart';import '../models/codespaces_create_or_update_secret_for_authenticated_user_success.dart';import '../models/codespaces_create_with_pr_for_authenticated_user_error.dart';import '../models/codespaces_create_with_pr_for_authenticated_user_request.dart';import '../models/codespaces_create_with_repo_for_authenticated_user_error.dart';import '../models/codespaces_create_with_repo_for_authenticated_user_request.dart';import '../models/codespaces_delete_for_authenticated_user_error.dart';import '../models/codespaces_delete_from_organization_error.dart';import '../models/codespaces_export_for_authenticated_user_error.dart';import '../models/codespaces_get_codespaces_for_user_in_org_error.dart';import '../models/codespaces_get_codespaces_for_user_in_org_response.dart';import '../models/codespaces_get_for_authenticated_user_error.dart';import '../models/codespaces_list_devcontainers_in_repository_for_authenticated_user_error.dart';import '../models/codespaces_list_devcontainers_in_repository_for_authenticated_user_response.dart';import '../models/codespaces_list_for_authenticated_user_error.dart';import '../models/codespaces_list_for_authenticated_user_response.dart';import '../models/codespaces_list_in_organization_error.dart';import '../models/codespaces_list_in_organization_response.dart';import '../models/codespaces_list_in_repository_for_authenticated_user_response.dart';import '../models/codespaces_list_org_secrets_response.dart';import '../models/codespaces_list_repo_secrets_response.dart';import '../models/codespaces_list_repositories_for_secret_for_authenticated_user_response.dart';import '../models/codespaces_list_secrets_for_authenticated_user_response.dart';import '../models/codespaces_list_selected_repos_for_org_secret_response.dart';import '../models/codespaces_org_secret.dart';import '../models/codespaces_permissions_check_for_devcontainer.dart';import '../models/codespaces_pre_flight_with_repo_for_authenticated_user_response.dart';import '../models/codespaces_public_key.dart';import '../models/codespaces_publish_for_authenticated_user_error.dart';import '../models/codespaces_publish_for_authenticated_user_request.dart';import '../models/codespaces_remove_selected_repo_from_org_secret_error.dart';import '../models/codespaces_repo_machines_for_authenticated_user_error.dart';import '../models/codespaces_repo_machines_for_authenticated_user_response.dart';import '../models/codespaces_secret.dart';import '../models/codespaces_set_repositories_for_secret_for_authenticated_user_request.dart';import '../models/codespaces_set_selected_repos_for_org_secret_error.dart';import '../models/codespaces_set_selected_repos_for_org_secret_request.dart';import '../models/codespaces_start_for_authenticated_user_error.dart';import '../models/codespaces_stop_in_organization_error.dart';import '../models/codespaces_update_for_authenticated_user_request.dart';import '../models/codespaces_user_public_key.dart';import '../models/repo_codespaces_secret.dart';/// CodespacesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -15,7 +15,7 @@ final class CodespacesApi with ApiExecutor {const CodespacesApi(this.apiConfig);
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/codespaces`
-Future<ApiResult<CodespacesListInOrganizationResponse, BasicError>> codespacesListInOrganization({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CodespacesListInOrganizationResponse, CodespacesListInOrganizationError>> codespacesListInOrganization({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -41,18 +41,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return CodespacesListInOrganizationResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404 || 500:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: CodespacesListInOrganizationError.parse,
 );
  } 
 /// List organization secrets
@@ -146,7 +135,7 @@ return CodespacesOrgSecret.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/codespaces/secrets/{secret_name}`
-Future<ApiResult<EmptyObject?, OneOf2<BasicError, ValidationError>>> codespacesCreateOrUpdateOrgSecret({required String org, required String secretName, required CodespacesCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodespacesCreateOrUpdateOrgSecretSuccess, CodespacesCreateOrUpdateOrgSecretError>> codespacesCreateOrUpdateOrgSecret({required String org, required String secretName, required CodespacesCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -159,32 +148,8 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 201:
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-case 204:
-return null;
-default:
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onSuccess: CodespacesCreateOrUpdateOrgSecretSuccess.parse,
+  onError: CodespacesCreateOrUpdateOrgSecretError.parse,
 );
  } 
 /// Delete an organization secret
@@ -273,7 +238,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories`
-Future<ApiResult<void, BasicError>> codespacesSetSelectedReposForOrgSecret({required String org, required String secretName, required CodespacesSetSelectedReposForOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CodespacesSetSelectedReposForOrgSecretError>> codespacesSetSelectedReposForOrgSecret({required String org, required String secretName, required CodespacesSetSelectedReposForOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -287,18 +252,7 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-case 409:
-return null;
-default:
-return null;
-}
-
-  },
+  onError: CodespacesSetSelectedReposForOrgSecretError.parse,
 );
  } 
 /// Add selected repository to an organization secret
@@ -307,7 +261,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}`
-Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> codespacesAddSelectedRepoToOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CodespacesAddSelectedRepoToOrgSecretError>> codespacesAddSelectedRepoToOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -319,21 +273,7 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
-return null;
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: CodespacesAddSelectedRepoToOrgSecretError.parse,
 );
  } 
 /// Remove selected repository from an organization secret
@@ -345,7 +285,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}`
-Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> codespacesRemoveSelectedRepoFromOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, CodespacesRemoveSelectedRepoFromOrgSecretError>> codespacesRemoveSelectedRepoFromOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -357,21 +297,7 @@ final request = ApiRequest(
 return await execute(
   request,
   onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
-return null;
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: CodespacesRemoveSelectedRepoFromOrgSecretError.parse,
 );
  } 
 /// List codespaces for a user in organization
@@ -381,7 +307,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/members/{username}/codespaces`
-Future<ApiResult<CodespacesGetCodespacesForUserInOrgResponse, BasicError>> codespacesGetCodespacesForUserInOrg({required String org, required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CodespacesGetCodespacesForUserInOrgResponse, CodespacesGetCodespacesForUserInOrgError>> codespacesGetCodespacesForUserInOrg({required String org, required String username, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -407,18 +333,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return CodespacesGetCodespacesForUserInOrgResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404 || 500:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: CodespacesGetCodespacesForUserInOrgError.parse,
 );
  } 
 /// Delete a codespace from the organization
@@ -428,7 +343,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}`
-Future<ApiResult<Map<String, dynamic>, BasicError>> codespacesDeleteFromOrganization({required String org, required String username, required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, CodespacesDeleteFromOrganizationError>> codespacesDeleteFromOrganization({required String org, required String username, required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -443,18 +358,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return json as Map<String, dynamic>;
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404 || 500:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: CodespacesDeleteFromOrganizationError.parse,
 );
  } 
 /// Stop a codespace for an organization user
@@ -464,7 +368,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop`
-Future<ApiResult<Codespace, BasicError>> codespacesStopInOrganization({required String org, required String username, required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Codespace, CodespacesStopInOrganizationError>> codespacesStopInOrganization({required String org, required String username, required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -479,18 +383,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Codespace.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404 || 500:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: CodespacesStopInOrganizationError.parse,
 );
  } 
 /// List codespaces in a repository for the authenticated user
@@ -545,7 +438,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/codespaces`
-Future<ApiResult<Codespace, OneOf3<BasicError, ScimError, CodespacesCreateWithRepoForAuthenticatedUserResponse503>>> codespacesCreateWithRepoForAuthenticatedUser({required String owner, required String repo, required CodespacesCreateWithRepoForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Codespace, CodespacesCreateWithRepoForAuthenticatedUserError>> codespacesCreateWithRepoForAuthenticatedUser({required String owner, required String repo, required CodespacesCreateWithRepoForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -569,32 +462,7 @@ return Codespace.fromJson(json as Map<String, dynamic>);
 }
 
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, CodespacesCreateWithRepoForAuthenticatedUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, CodespacesCreateWithRepoForAuthenticatedUserResponse503>.b(ScimError.fromJson(json as Map<String, dynamic>));
-}
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, CodespacesCreateWithRepoForAuthenticatedUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 401 || 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, CodespacesCreateWithRepoForAuthenticatedUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ScimError, CodespacesCreateWithRepoForAuthenticatedUserResponse503>.c(CodespacesCreateWithRepoForAuthenticatedUserResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: CodespacesCreateWithRepoForAuthenticatedUserError.parse,
 );
  } 
 /// List devcontainer configurations in a repository for the authenticated user
@@ -605,7 +473,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/codespaces/devcontainers`
-Future<ApiResult<CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse, OneOf2<BasicError, ScimError>>> codespacesListDevcontainersInRepositoryForAuthenticatedUser({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse, CodespacesListDevcontainersInRepositoryForAuthenticatedUserError>> codespacesListDevcontainersInRepositoryForAuthenticatedUser({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -631,29 +499,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
-}
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 401 || 403 || 404 || 500:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: CodespacesListDevcontainersInRepositoryForAuthenticatedUserError.parse,
 );
  } 
 /// List available machine types for a repository
@@ -663,7 +509,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/codespaces/machines`
-Future<ApiResult<CodespacesRepoMachinesForAuthenticatedUserResponse, BasicError>> codespacesRepoMachinesForAuthenticatedUser({required String owner, required String repo, String? location, String? clientIp, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CodespacesRepoMachinesForAuthenticatedUserResponse, CodespacesRepoMachinesForAuthenticatedUserError>> codespacesRepoMachinesForAuthenticatedUser({required String owner, required String repo, String? location, String? clientIp, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (location != null) {
   queryParameters['location'] = location;
@@ -692,18 +538,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return CodespacesRepoMachinesForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404 || 500:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: CodespacesRepoMachinesForAuthenticatedUserError.parse,
 );
  } 
 /// Get default attributes for a codespace
@@ -758,7 +593,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /repos/{owner}/{repo}/codespaces/permissions_check`
-Future<ApiResult<CodespacesPermissionsCheckForDevcontainer, OneOf3<BasicError, ValidationError, CodespacesCheckPermissionsForDevcontainerResponse503>>> codespacesCheckPermissionsForDevcontainer({required String owner, required String repo, required String ref, required String devcontainerPath, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CodespacesPermissionsCheckForDevcontainer, CodespacesCheckPermissionsForDevcontainerError>> codespacesCheckPermissionsForDevcontainer({required String owner, required String repo, required String ref, required String devcontainerPath, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['ref'] = ref;
 queryParameters['devcontainer_path'] = devcontainerPath;
@@ -780,22 +615,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return CodespacesPermissionsCheckForDevcontainer.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 401 || 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, CodespacesCheckPermissionsForDevcontainerResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, CodespacesCheckPermissionsForDevcontainerResponse503>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, CodespacesCheckPermissionsForDevcontainerResponse503>.c(CodespacesCheckPermissionsForDevcontainerResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: CodespacesCheckPermissionsForDevcontainerError.parse,
 );
  } 
 /// List repository secrets
@@ -891,7 +711,7 @@ return RepoCodespacesSecret.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.
 ///
 /// `PUT /repos/{owner}/{repo}/codespaces/secrets/{secret_name}`
-Future<ApiResult<EmptyObject?, Never>> codespacesCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required CodespacesCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodespacesCreateOrUpdateRepoSecretSuccess, Never>> codespacesCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required CodespacesCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -904,19 +724,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 201:
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-case 204:
-return null;
-default:
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-}
-
-  },
+  onSuccess: CodespacesCreateOrUpdateRepoSecretSuccess.parse,
 );
  } 
 /// Delete a repository secret
@@ -947,7 +755,7 @@ return await execute(
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /repos/{owner}/{repo}/pulls/{pull_number}/codespaces`
-Future<ApiResult<Codespace, OneOf2<BasicError, CodespacesCreateWithPrForAuthenticatedUserResponse503>>> codespacesCreateWithPrForAuthenticatedUser({required String owner, required String repo, required int pullNumber, required CodespacesCreateWithPrForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Codespace, CodespacesCreateWithPrForAuthenticatedUserError>> codespacesCreateWithPrForAuthenticatedUser({required String owner, required String repo, required int pullNumber, required CodespacesCreateWithPrForAuthenticatedUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -971,19 +779,7 @@ return Codespace.fromJson(json as Map<String, dynamic>);
 }
 
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 401 || 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, CodespacesCreateWithPrForAuthenticatedUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, CodespacesCreateWithPrForAuthenticatedUserResponse503>.b(CodespacesCreateWithPrForAuthenticatedUserResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: CodespacesCreateWithPrForAuthenticatedUserError.parse,
 );
  } 
 /// List codespaces for the authenticated user
@@ -993,7 +789,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /user/codespaces`
-Future<ApiResult<CodespacesListForAuthenticatedUserResponse, BasicError>> codespacesListForAuthenticatedUser({int? perPage, int? page, int? repositoryId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CodespacesListForAuthenticatedUserResponse, CodespacesListForAuthenticatedUserError>> codespacesListForAuthenticatedUser({int? perPage, int? page, int? repositoryId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1022,18 +818,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return CodespacesListForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404 || 500:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: CodespacesListForAuthenticatedUserError.parse,
 );
  } 
 /// Create a codespace for the authenticated user
@@ -1045,7 +830,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /user/codespaces`
-Future<ApiResult<Codespace, OneOf2<BasicError, CodespacesCreateForAuthenticatedUserResponse503>>> codespacesCreateForAuthenticatedUser({required CodespacesCreateForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Codespace, CodespacesCreateForAuthenticatedUserError>> codespacesCreateForAuthenticatedUser({required CodespacesCreateForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1069,19 +854,7 @@ return Codespace.fromJson(json as Map<String, dynamic>);
 }
 
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 401 || 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, CodespacesCreateForAuthenticatedUserResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, CodespacesCreateForAuthenticatedUserResponse503>.b(CodespacesCreateForAuthenticatedUserResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: CodespacesCreateForAuthenticatedUserError.parse,
 );
  } 
 /// List secrets for the authenticated user
@@ -1184,7 +957,7 @@ return CodespacesSecret.fromJson(json as Map<String, dynamic>);
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
 ///
 /// `PUT /user/codespaces/secrets/{secret_name}`
-Future<ApiResult<EmptyObject?, OneOf2<BasicError, ValidationError>>> codespacesCreateOrUpdateSecretForAuthenticatedUser({required String secretName, required CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess, CodespacesCreateOrUpdateSecretForAuthenticatedUserError>> codespacesCreateOrUpdateSecretForAuthenticatedUser({required String secretName, required CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1197,32 +970,8 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-switch (response.statusCode) {
-case 201:
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-case 204:
-return null;
-default:
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-  onError: (response) {
-switch (response.statusCode) {
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onSuccess: CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess.parse,
+  onError: CodespacesCreateOrUpdateSecretForAuthenticatedUserError.parse,
 );
  } 
 /// Delete a secret for the authenticated user
@@ -1392,7 +1141,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /user/codespaces/{codespace_name}`
-Future<ApiResult<Codespace, BasicError>> codespacesGetForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Codespace, CodespacesGetForAuthenticatedUserError>> codespacesGetForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1407,18 +1156,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Codespace.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404 || 500:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: CodespacesGetForAuthenticatedUserError.parse,
 );
  } 
 /// Update a codespace for the authenticated user
@@ -1466,7 +1204,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `DELETE /user/codespaces/{codespace_name}`
-Future<ApiResult<Map<String, dynamic>, BasicError>> codespacesDeleteForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, CodespacesDeleteForAuthenticatedUserError>> codespacesDeleteForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1481,18 +1219,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return json as Map<String, dynamic>;
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404 || 500:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: CodespacesDeleteForAuthenticatedUserError.parse,
 );
  } 
 /// Export a codespace for the authenticated user
@@ -1504,7 +1231,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /user/codespaces/{codespace_name}/exports`
-Future<ApiResult<CodespaceExportDetails, OneOf2<BasicError, ValidationError>>> codespacesExportForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodespaceExportDetails, CodespacesExportForAuthenticatedUserError>> codespacesExportForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -1519,19 +1246,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return CodespaceExportDetails.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 401 || 403 || 404 || 500:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: CodespacesExportForAuthenticatedUserError.parse,
 );
  } 
 /// Get details about a codespace export
@@ -1575,7 +1290,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `GET /user/codespaces/{codespace_name}/machines`
-Future<ApiResult<CodespacesCodespaceMachinesForAuthenticatedUserResponse, BasicError>> codespacesCodespaceMachinesForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodespacesCodespaceMachinesForAuthenticatedUserResponse, CodespacesCodespaceMachinesForAuthenticatedUserError>> codespacesCodespaceMachinesForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1590,18 +1305,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 401 || 403 || 404 || 500:
-final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
+  onError: CodespacesCodespaceMachinesForAuthenticatedUserError.parse,
 );
  } 
 /// Create a repository from an unpublished codespace
@@ -1615,7 +1319,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /user/codespaces/{codespace_name}/publish`
-Future<ApiResult<CodespaceWithFullRepository, OneOf2<BasicError, ValidationError>>> codespacesPublishForAuthenticatedUser({required String codespaceName, required CodespacesPublishForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CodespaceWithFullRepository, CodespacesPublishForAuthenticatedUserError>> codespacesPublishForAuthenticatedUser({required String codespaceName, required CodespacesPublishForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1632,19 +1336,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return CodespaceWithFullRepository.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 401 || 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: CodespacesPublishForAuthenticatedUserError.parse,
 );
  } 
 /// Start a codespace for the authenticated user
@@ -1654,7 +1346,7 @@ return null;
 /// OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 ///
 /// `POST /user/codespaces/{codespace_name}/start`
-Future<ApiResult<Codespace, OneOf2<BasicError, ScimError>>> codespacesStartForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Codespace, CodespacesStartForAuthenticatedUserError>> codespacesStartForAuthenticatedUser({required String codespaceName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -1669,31 +1361,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return Codespace.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 400:
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
-}
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-
-case >= 401 && < 405 || 409 || 500:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: CodespacesStartForAuthenticatedUserError.parse,
 );
  } 
 /// Stop a codespace for the authenticated user

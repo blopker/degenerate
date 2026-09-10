@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure82.dart';import '../models/worker_script_patch_settings_request.dart';import '../models/worker_script_post_subdomain_request.dart';import '../models/worker_script_put_content_request.dart';import '../models/worker_script_search_workers_order_by.dart';import '../models/worker_script_search_workers_response_result.dart';import '../models/worker_script_update_create_assets_upload_session_response4_xx.dart';import '../models/worker_script_update_usage_model_request.dart';import '../models/worker_script_upload_worker_module_bindings_inherit.dart';import '../models/worker_script_upload_worker_module_request.dart';import '../models/workers_completed_upload_assets_response_result.dart';import '../models/workers_create_assets_upload_session_object.dart';import '../models/workers_create_assets_upload_session_response_result.dart';import '../models/workers_identifier.dart';import '../models/workers_script_and_version_settings_item_response.dart';import '../models/workers_script_name.dart';import '../models/workers_script_response.dart';import '../models/workers_script_response_collection_result.dart';import '../models/workers_script_response_upload.dart';import '../models/workers_script_settings_item.dart';import '../models/workers_secret.dart';import '../models/workers_secret_name.dart';import '../models/workers_secret_name_url_encoded.dart';import '../models/workers_secret_response.dart';import '../models/workers_subdomain.dart';import '../models/workers_usage_model_response_result.dart';/// WorkerScriptApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure82.dart';import '../models/worker_assets_upload_success.dart';import '../models/worker_script_download_worker_success.dart';import '../models/worker_script_patch_settings_request.dart';import '../models/worker_script_post_subdomain_request.dart';import '../models/worker_script_put_content_request.dart';import '../models/worker_script_search_workers_order_by.dart';import '../models/worker_script_search_workers_response_result.dart';import '../models/worker_script_update_create_assets_upload_session_response4xx.dart';import '../models/worker_script_update_usage_model_request.dart';import '../models/worker_script_upload_worker_module_bindings_inherit.dart';import '../models/worker_script_upload_worker_module_request.dart';import '../models/workers_create_assets_upload_session_object.dart';import '../models/workers_create_assets_upload_session_response_result.dart';import '../models/workers_identifier.dart';import '../models/workers_script_and_version_settings_item_response.dart';import '../models/workers_script_name.dart';import '../models/workers_script_response.dart';import '../models/workers_script_response_collection_result.dart';import '../models/workers_script_response_upload.dart';import '../models/workers_script_settings_item.dart';import '../models/workers_secret.dart';import '../models/workers_secret_name.dart';import '../models/workers_secret_name_url_encoded.dart';import '../models/workers_secret_response.dart';import '../models/workers_subdomain.dart';import '../models/workers_usage_model_response_result.dart';/// WorkerScriptApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkerScriptApi with ApiExecutor {const WorkerScriptApi(this.apiConf
 /// Upload assets ahead of creating a Worker version.  To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
 ///
 /// `POST /accounts/{account_id}/workers/assets/upload`
-Future<ApiResult<OneOf2<WorkersCompletedUploadAssetsResponseResult?, Map<String, dynamic>?>, ResponseCommonFailure82>> workerAssetsUpload({required WorkersIdentifier accountId, required bool base64, required Map<String,String> body, RequestOptions? options, }) async  { throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from Map<String, String>');
+Future<ApiResult<WorkerAssetsUploadSuccess, ResponseCommonFailure82>> workerAssetsUpload({required WorkersIdentifier accountId, required bool base64, required Map<String,String> body, RequestOptions? options, }) async  { throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from Map<String, String>');
  } 
 /// List Workers
 ///
@@ -112,7 +112,7 @@ return null;
 /// Fetch raw script content for your worker. Note this is the original script content, not JSON encoded.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}`
-Future<ApiResult<OneOf2<Map<String, Uint8List>, String>, ResponseCommonFailure82>> workerScriptDownloadWorker({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerScriptDownloadWorkerSuccess, ResponseCommonFailure82>> workerScriptDownloadWorker({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -123,20 +123,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'multipart/form-data')) {
-// TODO: Unsupported non-JSON response schema Cannot decode multipart/form-data response into Map<String, Uint8List>
-throw UnsupportedError('Cannot decode multipart/form-data response into Map<String, Uint8List>');
-}
-if (responseMediaTypeMatches(contentType, 'application/javascript')) {
-final value = (() { return response.body; })();
-return OneOf2<Map<String, Uint8List>, String>.b(value);
-}
-// TODO: Unsupported non-JSON response schema Cannot decode multipart/form-data response into Map<String, Uint8List>
-throw UnsupportedError('Cannot decode multipart/form-data response into Map<String, Uint8List>');
-
-  },
+  onSuccess: WorkerScriptDownloadWorkerSuccess.parse,
   onError: (response) {
 switch (response.statusCode) {
 case >= 400 && < 500:
@@ -240,7 +227,7 @@ return null;
 /// Start uploading a collection of assets for use in a Worker version. To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/assets-upload-session`
-Future<ApiResult<WorkersCreateAssetsUploadSessionResponseResult?, WorkerScriptUpdateCreateAssetsUploadSessionResponse4Xx>> workerScriptUpdateCreateAssetsUploadSession({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersCreateAssetsUploadSessionObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersCreateAssetsUploadSessionResponseResult?, WorkerScriptUpdateCreateAssetsUploadSessionResponse4xx>> workerScriptUpdateCreateAssetsUploadSession({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersCreateAssetsUploadSessionObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -261,7 +248,7 @@ return json['result'] != null ? WorkersCreateAssetsUploadSessionResponseResult.f
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return WorkerScriptUpdateCreateAssetsUploadSessionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return WorkerScriptUpdateCreateAssetsUploadSessionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

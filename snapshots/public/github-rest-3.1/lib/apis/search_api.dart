@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/search_code_order.dart';import '../models/search_code_response.dart';import '../models/search_code_response503.dart';import '../models/search_code_sort.dart';import '../models/search_commits_order.dart';import '../models/search_commits_response.dart';import '../models/search_commits_sort.dart';import '../models/search_issues_and_pull_requests_order.dart';import '../models/search_issues_and_pull_requests_response.dart';import '../models/search_issues_and_pull_requests_response503.dart';import '../models/search_issues_and_pull_requests_sort.dart';import '../models/search_labels_order.dart';import '../models/search_labels_response.dart';import '../models/search_labels_sort.dart';import '../models/search_repos_order.dart';import '../models/search_repos_response.dart';import '../models/search_repos_response503.dart';import '../models/search_repos_sort.dart';import '../models/search_topics_response.dart';import '../models/search_users_order.dart';import '../models/search_users_response.dart';import '../models/search_users_response503.dart';import '../models/search_users_sort.dart';import '../models/validation_error.dart';/// SearchApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/search_code_error.dart';import '../models/search_code_order.dart';import '../models/search_code_response.dart';import '../models/search_code_sort.dart';import '../models/search_commits_order.dart';import '../models/search_commits_response.dart';import '../models/search_commits_sort.dart';import '../models/search_issues_and_pull_requests_error.dart';import '../models/search_issues_and_pull_requests_order.dart';import '../models/search_issues_and_pull_requests_response.dart';import '../models/search_issues_and_pull_requests_sort.dart';import '../models/search_labels_error.dart';import '../models/search_labels_order.dart';import '../models/search_labels_response.dart';import '../models/search_labels_sort.dart';import '../models/search_repos_error.dart';import '../models/search_repos_order.dart';import '../models/search_repos_response.dart';import '../models/search_repos_sort.dart';import '../models/search_topics_response.dart';import '../models/search_users_error.dart';import '../models/search_users_order.dart';import '../models/search_users_response.dart';import '../models/search_users_sort.dart';/// SearchApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -32,7 +32,7 @@ final class SearchApi with ApiExecutor {const SearchApi(this.apiConfig);
 /// This endpoint requires you to authenticate and limits you to 10 requests per minute.
 ///
 /// `GET /search/code`
-Future<ApiResult<SearchCodeResponse, OneOf3<BasicError, ValidationError, SearchCodeResponse503>>> searchCode({required String q, SearchCodeSort? sort, SearchCodeOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchCodeResponse, SearchCodeError>> searchCode({required String q, SearchCodeSort? sort, SearchCodeOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -65,24 +65,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return SearchCodeResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 403:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, SearchCodeResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, SearchCodeResponse503>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, SearchCodeResponse503>.c(SearchCodeResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: SearchCodeError.parse,
 );
  } 
 /// Search commits
@@ -149,7 +132,7 @@ return SearchCommitsResponse.fromJson(json as Map<String, dynamic>);
 /// > For requests made by GitHub Apps with a user access token, you can't retrieve a combination of issues and pull requests in a single query. Requests that don't include the `is:issue` or `is:pull-request` qualifier will receive an HTTP `422 Unprocessable Entity` response. To get results for both issues and pull requests, you must send separate queries for issues and pull requests. For more information about the `is` qualifier, see "[Searching only issues or pull requests](https://docs.github.com/github/searching-for-information-on-github/searching-issues-and-pull-requests#search-only-issues-or-pull-requests)."
 ///
 /// `GET /search/issues`
-Future<ApiResult<SearchIssuesAndPullRequestsResponse, OneOf3<BasicError, ValidationError, SearchIssuesAndPullRequestsResponse503>>> searchIssuesAndPullRequests({required String q, SearchIssuesAndPullRequestsSort? sort, SearchIssuesAndPullRequestsOrder? order, int? perPage, int? page, String? advancedSearch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchIssuesAndPullRequestsResponse, SearchIssuesAndPullRequestsError>> searchIssuesAndPullRequests({required String q, SearchIssuesAndPullRequestsSort? sort, SearchIssuesAndPullRequestsOrder? order, int? perPage, int? page, String? advancedSearch, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -185,24 +168,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return SearchIssuesAndPullRequestsResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 403:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, SearchIssuesAndPullRequestsResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, SearchIssuesAndPullRequestsResponse503>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf3<BasicError, ValidationError, SearchIssuesAndPullRequestsResponse503>.c(SearchIssuesAndPullRequestsResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: SearchIssuesAndPullRequestsError.parse,
 );
  } 
 /// Search labels
@@ -218,7 +184,7 @@ return null;
 /// The labels that best match the query appear first in the search results.
 ///
 /// `GET /search/labels`
-Future<ApiResult<SearchLabelsResponse, OneOf2<BasicError, ValidationError>>> searchLabels({required int repositoryId, required String q, SearchLabelsSort? sort, SearchLabelsOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchLabelsResponse, SearchLabelsError>> searchLabels({required int repositoryId, required String q, SearchLabelsSort? sort, SearchLabelsOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['repository_id'] = repositoryId.toString();
 queryParameters['q'] = q;
@@ -252,21 +218,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return SearchLabelsResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 403 || 404:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: SearchLabelsError.parse,
 );
  } 
 /// Search repositories
@@ -282,7 +234,7 @@ return null;
 /// This query searches for repositories with the word `tetris` in the name, the description, or the README. The results are limited to repositories where the primary language is assembly. The results are sorted by stars in descending order, so that the most popular repositories appear first in the search results.
 ///
 /// `GET /search/repositories`
-Future<ApiResult<SearchReposResponse, OneOf2<ValidationError, SearchReposResponse503>>> searchRepos({required String q, SearchReposSort? sort, SearchReposOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchReposResponse, SearchReposError>> searchRepos({required String q, SearchReposSort? sort, SearchReposOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -315,21 +267,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return SearchReposResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<ValidationError, SearchReposResponse503>.a(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf2<ValidationError, SearchReposResponse503>.b(SearchReposResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: SearchReposError.parse,
 );
  } 
 /// Search topics
@@ -389,7 +327,7 @@ return SearchTopicsResponse.fromJson(json as Map<String, dynamic>);
 /// This endpoint does not accept authentication and will only include publicly visible users. As an alternative, you can use the GraphQL API. The GraphQL API requires authentication and will return private users, including Enterprise Managed Users (EMUs), that you are authorized to view. For more information, see "[GraphQL Queries](https://docs.github.com/graphql/reference/queries#search)."
 ///
 /// `GET /search/users`
-Future<ApiResult<SearchUsersResponse, OneOf2<ValidationError, SearchUsersResponse503>>> searchUsers({required String q, SearchUsersSort? sort, SearchUsersOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SearchUsersResponse, SearchUsersError>> searchUsers({required String q, SearchUsersSort? sort, SearchUsersOrder? order, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['q'] = q;
 if (sort != null) {
@@ -422,21 +360,7 @@ return await execute(
 final json = jsonDecode(response.body);
 return SearchUsersResponse.fromJson(json as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 304:
-return null;
-case 422:
-final json = jsonDecode(response.body);
-return OneOf2<ValidationError, SearchUsersResponse503>.a(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
-final json = jsonDecode(response.body);
-return OneOf2<ValidationError, SearchUsersResponse503>.b(SearchUsersResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: SearchUsersError.parse,
 );
  } 
  }

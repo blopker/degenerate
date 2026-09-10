@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/teams_devices_identifier.dart';import '../models/teams_devices_zero_trust_account_device_settings.dart';import '../models/zero_trust_accounts_create_zero_trust_account_response4_xx.dart';import '../models/zero_trust_accounts_delete_device_settings_for_zero_trust_account_response4_xx.dart';import '../models/zero_trust_accounts_get_device_settings_for_zero_trust_account_response4_xx.dart';import '../models/zero_trust_accounts_get_logging_settings_for_the_zero_trust_account_response4_xx.dart';import '../models/zero_trust_accounts_get_zero_trust_account_configuration_response4_xx.dart';import '../models/zero_trust_accounts_get_zero_trust_account_information_response4_xx.dart';import '../models/zero_trust_accounts_patch_device_settings_for_the_zero_trust_account_response4_xx.dart';import '../models/zero_trust_accounts_patch_zero_trust_account_configuration_response4_xx.dart';import '../models/zero_trust_accounts_update_device_settings_for_the_zero_trust_account_response4_xx.dart';import '../models/zero_trust_accounts_update_logging_settings_for_the_zero_trust_account_response4_xx.dart';import '../models/zero_trust_accounts_update_zero_trust_account_configuration_response4_xx.dart';import '../models/zero_trust_gateway_gateway_account_config_result.dart';import '../models/zero_trust_gateway_gateway_account_logging_settings.dart';import '../models/zero_trust_gateway_gateway_account_result.dart';import '../models/zero_trust_gateway_gateway_account_settings_request.dart';import '../models/zero_trust_gateway_identifier.dart';/// ZeroTrustAccountsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/teams_devices_identifier.dart';import '../models/teams_devices_zero_trust_account_device_settings.dart';import '../models/zero_trust_accounts_create_zero_trust_account_response4xx.dart';import '../models/zero_trust_accounts_delete_device_settings_for_zero_trust_account_response4xx.dart';import '../models/zero_trust_accounts_get_device_settings_for_zero_trust_account_response4xx.dart';import '../models/zero_trust_accounts_get_logging_settings_for_the_zero_trust_account_response4xx.dart';import '../models/zero_trust_accounts_get_zero_trust_account_configuration_response4xx.dart';import '../models/zero_trust_accounts_get_zero_trust_account_information_response4xx.dart';import '../models/zero_trust_accounts_patch_device_settings_for_the_zero_trust_account_response4xx.dart';import '../models/zero_trust_accounts_patch_zero_trust_account_configuration_response4xx.dart';import '../models/zero_trust_accounts_update_device_settings_for_the_zero_trust_account_response4xx.dart';import '../models/zero_trust_accounts_update_logging_settings_for_the_zero_trust_account_response4xx.dart';import '../models/zero_trust_accounts_update_zero_trust_account_configuration_response4xx.dart';import '../models/zero_trust_gateway_gateway_account_config_result.dart';import '../models/zero_trust_gateway_gateway_account_logging_settings.dart';import '../models/zero_trust_gateway_gateway_account_result.dart';import '../models/zero_trust_gateway_gateway_account_settings_request.dart';import '../models/zero_trust_gateway_identifier.dart';/// ZeroTrustAccountsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustAccountsApi with ApiExecutor {const ZeroTrustAccountsApi(th
 /// Describes the current device settings for a Zero Trust account.
 ///
 /// `GET /accounts/{account_id}/devices/settings`
-Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsGetDeviceSettingsForZeroTrustAccountResponse4Xx>> zeroTrustAccountsGetDeviceSettingsForZeroTrustAccount({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsGetDeviceSettingsForZeroTrustAccountResponse4xx>> zeroTrustAccountsGetDeviceSettingsForZeroTrustAccount({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return TeamsDevicesZeroTrustAccountDeviceSettings.fromJson(json['result'] as Map
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustAccountsGetDeviceSettingsForZeroTrustAccountResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustAccountsGetDeviceSettingsForZeroTrustAccountResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Updates the current device settings for a Zero Trust account.
 ///
 /// `PUT /accounts/{account_id}/devices/settings`
-Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccountResponse4Xx>> zeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccount({required TeamsDevicesIdentifier accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccountResponse4xx>> zeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccount({required TeamsDevicesIdentifier accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return TeamsDevicesZeroTrustAccountDeviceSettings.fromJson(json['result'] as Map
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccountResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustAccountsUpdateDeviceSettingsForTheZeroTrustAccountResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Patches the current device settings for a Zero Trust account.
 ///
 /// `PATCH /accounts/{account_id}/devices/settings`
-Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccountResponse4Xx>> zeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccount({required TeamsDevicesIdentifier accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccountResponse4xx>> zeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccount({required TeamsDevicesIdentifier accountId, required TeamsDevicesZeroTrustAccountDeviceSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,7 +100,7 @@ return TeamsDevicesZeroTrustAccountDeviceSettings.fromJson(json['result'] as Map
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccountResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustAccountsPatchDeviceSettingsForTheZeroTrustAccountResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -113,7 +113,7 @@ return null;
 /// Resets the current device settings for a Zero Trust account.
 ///
 /// `DELETE /accounts/{account_id}/devices/settings`
-Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccountResponse4Xx>> zeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccount({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesZeroTrustAccountDeviceSettings, ZeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccountResponse4xx>> zeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccount({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -132,7 +132,7 @@ return TeamsDevicesZeroTrustAccountDeviceSettings.fromJson(json['result'] as Map
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccountResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustAccountsDeleteDeviceSettingsForZeroTrustAccountResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -145,7 +145,7 @@ return null;
 /// Retrieve information about the current Zero Trust account.
 ///
 /// `GET /accounts/{account_id}/gateway`
-Future<ApiResult<ZeroTrustGatewayGatewayAccountResult?, ZeroTrustAccountsGetZeroTrustAccountInformationResponse4Xx>> zeroTrustAccountsGetZeroTrustAccountInformation({required ZeroTrustGatewayIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayGatewayAccountResult?, ZeroTrustAccountsGetZeroTrustAccountInformationResponse4xx>> zeroTrustAccountsGetZeroTrustAccountInformation({required ZeroTrustGatewayIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -164,7 +164,7 @@ return json['result'] != null ? ZeroTrustGatewayGatewayAccountResult.fromJson(js
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustAccountsGetZeroTrustAccountInformationResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustAccountsGetZeroTrustAccountInformationResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -177,7 +177,7 @@ return null;
 /// Create a Zero Trust account for an existing Cloudflare account.
 ///
 /// `POST /accounts/{account_id}/gateway`
-Future<ApiResult<ZeroTrustGatewayGatewayAccountResult?, ZeroTrustAccountsCreateZeroTrustAccountResponse4Xx>> zeroTrustAccountsCreateZeroTrustAccount({required ZeroTrustGatewayIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayGatewayAccountResult?, ZeroTrustAccountsCreateZeroTrustAccountResponse4xx>> zeroTrustAccountsCreateZeroTrustAccount({required ZeroTrustGatewayIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -196,7 +196,7 @@ return json['result'] != null ? ZeroTrustGatewayGatewayAccountResult.fromJson(js
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustAccountsCreateZeroTrustAccountResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustAccountsCreateZeroTrustAccountResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -209,7 +209,7 @@ return null;
 /// Retrieve the current Zero Trust account configuration.
 ///
 /// `GET /accounts/{account_id}/gateway/configuration`
-Future<ApiResult<ZeroTrustGatewayGatewayAccountConfigResult?, ZeroTrustAccountsGetZeroTrustAccountConfigurationResponse4Xx>> zeroTrustAccountsGetZeroTrustAccountConfiguration({required ZeroTrustGatewayIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayGatewayAccountConfigResult?, ZeroTrustAccountsGetZeroTrustAccountConfigurationResponse4xx>> zeroTrustAccountsGetZeroTrustAccountConfiguration({required ZeroTrustGatewayIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -228,7 +228,7 @@ return json['result'] != null ? ZeroTrustGatewayGatewayAccountConfigResult.fromJ
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustAccountsGetZeroTrustAccountConfigurationResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustAccountsGetZeroTrustAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -241,7 +241,7 @@ return null;
 /// Update the current Zero Trust account configuration.
 ///
 /// `PUT /accounts/{account_id}/gateway/configuration`
-Future<ApiResult<ZeroTrustGatewayGatewayAccountConfigResult?, ZeroTrustAccountsUpdateZeroTrustAccountConfigurationResponse4Xx>> zeroTrustAccountsUpdateZeroTrustAccountConfiguration({required ZeroTrustGatewayIdentifier accountId, required ZeroTrustGatewayGatewayAccountSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayGatewayAccountConfigResult?, ZeroTrustAccountsUpdateZeroTrustAccountConfigurationResponse4xx>> zeroTrustAccountsUpdateZeroTrustAccountConfiguration({required ZeroTrustGatewayIdentifier accountId, required ZeroTrustGatewayGatewayAccountSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -262,7 +262,7 @@ return json['result'] != null ? ZeroTrustGatewayGatewayAccountConfigResult.fromJ
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustAccountsUpdateZeroTrustAccountConfigurationResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustAccountsUpdateZeroTrustAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -275,7 +275,7 @@ return null;
 /// Update (PATCH) a single subcollection of settings such as `antivirus`, `tls_decrypt`, `activity_log`, `block_page`, `browser_isolation`, `fips`, `body_scanning`, or `certificate` without updating the entire configuration object. This endpoint returns an error if any settings collection lacks proper configuration.
 ///
 /// `PATCH /accounts/{account_id}/gateway/configuration`
-Future<ApiResult<ZeroTrustGatewayGatewayAccountConfigResult?, ZeroTrustAccountsPatchZeroTrustAccountConfigurationResponse4Xx>> zeroTrustAccountsPatchZeroTrustAccountConfiguration({required ZeroTrustGatewayIdentifier accountId, required ZeroTrustGatewayGatewayAccountSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayGatewayAccountConfigResult?, ZeroTrustAccountsPatchZeroTrustAccountConfigurationResponse4xx>> zeroTrustAccountsPatchZeroTrustAccountConfiguration({required ZeroTrustGatewayIdentifier accountId, required ZeroTrustGatewayGatewayAccountSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -296,7 +296,7 @@ return json['result'] != null ? ZeroTrustGatewayGatewayAccountConfigResult.fromJ
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustAccountsPatchZeroTrustAccountConfigurationResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustAccountsPatchZeroTrustAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -309,7 +309,7 @@ return null;
 /// Retrieve the current logging settings for the Zero Trust account.
 ///
 /// `GET /accounts/{account_id}/gateway/logging`
-Future<ApiResult<ZeroTrustGatewayGatewayAccountLoggingSettings?, ZeroTrustAccountsGetLoggingSettingsForTheZeroTrustAccountResponse4Xx>> zeroTrustAccountsGetLoggingSettingsForTheZeroTrustAccount({required ZeroTrustGatewayIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayGatewayAccountLoggingSettings?, ZeroTrustAccountsGetLoggingSettingsForTheZeroTrustAccountResponse4xx>> zeroTrustAccountsGetLoggingSettingsForTheZeroTrustAccount({required ZeroTrustGatewayIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -328,7 +328,7 @@ return json['result'] != null ? ZeroTrustGatewayGatewayAccountLoggingSettings.fr
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustAccountsGetLoggingSettingsForTheZeroTrustAccountResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustAccountsGetLoggingSettingsForTheZeroTrustAccountResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -341,7 +341,7 @@ return null;
 /// Update logging settings for the current Zero Trust account.
 ///
 /// `PUT /accounts/{account_id}/gateway/logging`
-Future<ApiResult<ZeroTrustGatewayGatewayAccountLoggingSettings?, ZeroTrustAccountsUpdateLoggingSettingsForTheZeroTrustAccountResponse4Xx>> zeroTrustAccountsUpdateLoggingSettingsForTheZeroTrustAccount({required ZeroTrustGatewayIdentifier accountId, required ZeroTrustGatewayGatewayAccountLoggingSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayGatewayAccountLoggingSettings?, ZeroTrustAccountsUpdateLoggingSettingsForTheZeroTrustAccountResponse4xx>> zeroTrustAccountsUpdateLoggingSettingsForTheZeroTrustAccount({required ZeroTrustGatewayIdentifier accountId, required ZeroTrustGatewayGatewayAccountLoggingSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -362,7 +362,7 @@ return json['result'] != null ? ZeroTrustGatewayGatewayAccountLoggingSettings.fr
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ZeroTrustAccountsUpdateLoggingSettingsForTheZeroTrustAccountResponse4Xx.fromJson(json as Map<String, dynamic>);
+return ZeroTrustAccountsUpdateLoggingSettingsForTheZeroTrustAccountResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'basic_error.dart';import 'scim_error.dart';import 'validation_error.dart';/// Error response variants. Match the concrete type to access its payload.
+sealed class ReposCreatePagesDeploymentError {const ReposCreatePagesDeploymentError();
+
+/// Decodes the payload for its declared status and content type.
+static ReposCreatePagesDeploymentError parse(ApiResponse response) { switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return ReposCreatePagesDeploymentError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return ReposCreatePagesDeploymentError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return ReposCreatePagesDeploymentError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 404:
+final json = jsonDecode(response.body);
+return ReposCreatePagesDeploymentError404(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return ReposCreatePagesDeploymentError422(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return ReposCreatePagesDeploymentErrorUnknown(response);
+}
+ } 
+ }
+/// Response for 400 (application/json).
+final class ReposCreatePagesDeploymentError400ApplicationJson extends ReposCreatePagesDeploymentError {const ReposCreatePagesDeploymentError400ApplicationJson(this.data);
+
+/// The decoded response payload.
+final BasicError data;
+
+ }
+/// Response for 400 (application/scim+json).
+final class ReposCreatePagesDeploymentError400ApplicationScimJson extends ReposCreatePagesDeploymentError {const ReposCreatePagesDeploymentError400ApplicationScimJson(this.data);
+
+/// The decoded response payload.
+final ScimError data;
+
+ }
+/// Response for 404 (application/json).
+final class ReposCreatePagesDeploymentError404 extends ReposCreatePagesDeploymentError {const ReposCreatePagesDeploymentError404(this.data);
+
+/// The decoded response payload.
+final BasicError data;
+
+ }
+/// Response for 422 (application/json).
+final class ReposCreatePagesDeploymentError422 extends ReposCreatePagesDeploymentError {const ReposCreatePagesDeploymentError422(this.data);
+
+/// The decoded response payload.
+final ValidationError data;
+
+ }
+/// An undeclared status. The complete response is retained for manual handling.
+final class ReposCreatePagesDeploymentErrorUnknown extends ReposCreatePagesDeploymentError {const ReposCreatePagesDeploymentErrorUnknown(this.response);
+
+/// The original status, headers, and body bytes.
+final ApiResponse response;
+
+ }

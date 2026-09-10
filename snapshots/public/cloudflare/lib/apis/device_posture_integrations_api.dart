@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/device_posture_integrations_create_device_posture_integration_request.dart';import '../models/device_posture_integrations_create_device_posture_integration_response4_xx.dart';import '../models/device_posture_integrations_delete_device_posture_integration_response4_xx.dart';import '../models/device_posture_integrations_device_posture_integration_details_response4_xx.dart';import '../models/device_posture_integrations_list_device_posture_integrations_response4_xx.dart';import '../models/device_posture_integrations_update_device_posture_integration_request.dart';import '../models/device_posture_integrations_update_device_posture_integration_response4_xx.dart';import '../models/teams_devices_device_posture_integrations.dart';import '../models/teams_devices_identifier.dart';import '../models/teams_devices_uuid.dart';/// DevicePostureIntegrationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/device_posture_integrations_create_device_posture_integration_request.dart';import '../models/device_posture_integrations_create_device_posture_integration_response4xx.dart';import '../models/device_posture_integrations_delete_device_posture_integration_response4xx.dart';import '../models/device_posture_integrations_device_posture_integration_details_response4xx.dart';import '../models/device_posture_integrations_list_device_posture_integrations_response4xx.dart';import '../models/device_posture_integrations_update_device_posture_integration_request.dart';import '../models/device_posture_integrations_update_device_posture_integration_response4xx.dart';import '../models/teams_devices_device_posture_integrations.dart';import '../models/teams_devices_identifier.dart';import '../models/teams_devices_uuid.dart';/// DevicePostureIntegrationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DevicePostureIntegrationsApi with ApiExecutor {const DevicePostureIn
 /// Fetches the list of device posture integrations for an account.
 ///
 /// `GET /accounts/{account_id}/devices/posture/integration`
-Future<ApiResult<List<TeamsDevicesDevicePostureIntegrations>, DevicePostureIntegrationsListDevicePostureIntegrationsResponse4Xx>> devicePostureIntegrationsListDevicePostureIntegrations({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TeamsDevicesDevicePostureIntegrations>, DevicePostureIntegrationsListDevicePostureIntegrationsResponse4xx>> devicePostureIntegrationsListDevicePostureIntegrations({required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return (json['result'] as List<dynamic>).map((e) => TeamsDevicesDevicePostureInt
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DevicePostureIntegrationsListDevicePostureIntegrationsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DevicePostureIntegrationsListDevicePostureIntegrationsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Create a new device posture integration.
 ///
 /// `POST /accounts/{account_id}/devices/posture/integration`
-Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsCreateDevicePostureIntegrationResponse4Xx>> devicePostureIntegrationsCreateDevicePostureIntegration({required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsCreateDevicePostureIntegrationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsCreateDevicePostureIntegrationResponse4xx>> devicePostureIntegrationsCreateDevicePostureIntegration({required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsCreateDevicePostureIntegrationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return TeamsDevicesDevicePostureIntegrations.fromJson(json['result'] as Map<Stri
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DevicePostureIntegrationsCreateDevicePostureIntegrationResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DevicePostureIntegrationsCreateDevicePostureIntegrationResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Fetches details for a single device posture integration.
 ///
 /// `GET /accounts/{account_id}/devices/posture/integration/{integration_id}`
-Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsDevicePostureIntegrationDetailsResponse4Xx>> devicePostureIntegrationsDevicePostureIntegrationDetails({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsDevicePostureIntegrationDetailsResponse4xx>> devicePostureIntegrationsDevicePostureIntegrationDetails({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,7 +98,7 @@ return TeamsDevicesDevicePostureIntegrations.fromJson(json['result'] as Map<Stri
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DevicePostureIntegrationsDevicePostureIntegrationDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DevicePostureIntegrationsDevicePostureIntegrationDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -111,7 +111,7 @@ return null;
 /// Updates a configured device posture integration.
 ///
 /// `PATCH /accounts/{account_id}/devices/posture/integration/{integration_id}`
-Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsUpdateDevicePostureIntegrationResponse4Xx>> devicePostureIntegrationsUpdateDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TeamsDevicesDevicePostureIntegrations, DevicePostureIntegrationsUpdateDevicePostureIntegrationResponse4xx>> devicePostureIntegrationsUpdateDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, required DevicePostureIntegrationsUpdateDevicePostureIntegrationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -132,7 +132,7 @@ return TeamsDevicesDevicePostureIntegrations.fromJson(json['result'] as Map<Stri
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DevicePostureIntegrationsUpdateDevicePostureIntegrationResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DevicePostureIntegrationsUpdateDevicePostureIntegrationResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -145,7 +145,7 @@ return null;
 /// Delete a configured device posture integration.
 ///
 /// `DELETE /accounts/{account_id}/devices/posture/integration/{integration_id}`
-Future<ApiResult<Map<String, dynamic>?, DevicePostureIntegrationsDeleteDevicePostureIntegrationResponse4Xx>> devicePostureIntegrationsDeleteDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DevicePostureIntegrationsDeleteDevicePostureIntegrationResponse4xx>> devicePostureIntegrationsDeleteDevicePostureIntegration({required TeamsDevicesUuid integrationId, required TeamsDevicesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -164,7 +164,7 @@ return json['result'] as Map<String, dynamic>?;
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DevicePostureIntegrationsDeleteDevicePostureIntegrationResponse4Xx.fromJson(json as Map<String, dynamic>);
+return DevicePostureIntegrationsDeleteDevicePostureIntegrationResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

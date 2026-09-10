@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_speech_request.dart';import '../models/create_speech_response_stream_event.dart';import '../models/create_transcription_request.dart';import '../models/create_transcription_response.dart';import '../models/create_transcription_response_diarized_json.dart';import '../models/create_transcription_response_json.dart';import '../models/create_transcription_response_stream_event.dart';import '../models/create_transcription_response_verbose_json.dart';import '../models/create_translation_request.dart';import '../models/create_translation_response.dart';import '../models/create_translation_response_json.dart';import '../models/create_translation_response_verbose_json.dart';import '../models/create_voice_consent_request.dart';import '../models/create_voice_request.dart';import '../models/update_voice_consent_request.dart';import '../models/voice_consent_deleted_resource.dart';import '../models/voice_consent_list_resource.dart';import '../models/voice_consent_resource.dart';import '../models/voice_resource.dart';/// AudioApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_speech_request.dart';import '../models/create_speech_response_stream_event.dart';import '../models/create_speech_success.dart';import '../models/create_transcription_request.dart';import '../models/create_transcription_response_stream_event.dart';import '../models/create_transcription_success.dart';import '../models/create_translation_request.dart';import '../models/create_translation_response.dart';import '../models/create_translation_response_json.dart';import '../models/create_translation_response_verbose_json.dart';import '../models/create_voice_consent_request.dart';import '../models/create_voice_request.dart';import '../models/update_voice_consent_request.dart';import '../models/voice_consent_deleted_resource.dart';import '../models/voice_consent_list_resource.dart';import '../models/voice_consent_resource.dart';import '../models/voice_resource.dart';/// AudioApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class AudioApi with ApiExecutor {const AudioApi(this.apiConfig);
 /// 
 ///
 /// `POST /audio/speech`
-Future<ApiResult<OneOf2<Uint8List, CreateSpeechResponseStreamEvent>, Never>> createSpeech({required CreateSpeechRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateSpeechSuccess, Never>> createSpeech({required CreateSpeechRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -27,20 +27,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/octet-stream')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return OneOf2<Uint8List, CreateSpeechResponseStreamEvent>.a(value);
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into CreateSpeechResponseStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into CreateSpeechResponseStreamEvent');
-}
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return OneOf2<Uint8List, CreateSpeechResponseStreamEvent>.a(value);
-
-  },
+  onSuccess: CreateSpeechSuccess.parse,
 );
  } 
 /// Transcribes audio into the input language.
@@ -50,7 +37,7 @@ return OneOf2<Uint8List, CreateSpeechResponseStreamEvent>.a(value);
 /// 
 ///
 /// `POST /audio/transcriptions`
-Future<ApiResult<OneOf2<CreateTranscriptionResponse, CreateTranscriptionResponseStreamEvent>, Never>> createTranscription({required CreateTranscriptionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CreateTranscriptionSuccess, Never>> createTranscription({required CreateTranscriptionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -86,20 +73,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<CreateTranscriptionResponse, CreateTranscriptionResponseStreamEvent>.a(OneOf3.parse(json, fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),));
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into CreateTranscriptionResponseStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into CreateTranscriptionResponseStreamEvent');
-}
-final json = jsonDecode(response.body);
-return OneOf2<CreateTranscriptionResponse, CreateTranscriptionResponseStreamEvent>.a(OneOf3.parse(json, fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),));
-
-  },
+  onSuccess: CreateTranscriptionSuccess.parse,
 );
  } 
 /// Translates audio into English.

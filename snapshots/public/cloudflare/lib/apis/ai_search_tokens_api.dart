@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_tokens_request.dart';import '../models/ai_search_create_tokens_response400.dart';import '../models/ai_search_create_tokens_response_result.dart';import '../models/ai_search_delete_tokens_response404.dart';import '../models/ai_search_delete_tokens_response_result.dart';import '../models/ai_search_fetch_tokens_response400.dart';import '../models/ai_search_fetch_tokens_response404.dart';import '../models/ai_search_fetch_tokens_response_result.dart';import '../models/ai_search_list_tokens_order_by.dart';import '../models/ai_search_list_tokens_order_by_direction.dart';import '../models/ai_search_list_tokens_response400.dart';import '../models/ai_search_list_tokens_response_result.dart';import '../models/ai_search_update_tokens_request.dart';import '../models/ai_search_update_tokens_response400.dart';import '../models/ai_search_update_tokens_response404.dart';import '../models/ai_search_update_tokens_response_result.dart';/// AiSearchTokensApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/ai_search_create_tokens_request.dart';import '../models/ai_search_create_tokens_response400.dart';import '../models/ai_search_create_tokens_response_result.dart';import '../models/ai_search_delete_tokens_response404.dart';import '../models/ai_search_delete_tokens_response_result.dart';import '../models/ai_search_fetch_tokens_error.dart';import '../models/ai_search_fetch_tokens_response_result.dart';import '../models/ai_search_list_tokens_order_by.dart';import '../models/ai_search_list_tokens_order_by_direction.dart';import '../models/ai_search_list_tokens_response400.dart';import '../models/ai_search_list_tokens_response_result.dart';import '../models/ai_search_update_tokens_error.dart';import '../models/ai_search_update_tokens_request.dart';import '../models/ai_search_update_tokens_response_result.dart';/// AiSearchTokensApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -92,7 +92,7 @@ return null;
 /// Read tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchFetchTokensResponseResult, OneOf2<AiSearchFetchTokensResponse400, AiSearchFetchTokensResponse404>>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchFetchTokensResponseResult, AiSearchFetchTokensError>> aiSearchFetchTokens({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -107,25 +107,13 @@ return await execute(
 final json = jsonDecode(response.body) as Map<String, dynamic>;
 return AiSearchFetchTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchFetchTokensResponse400, AiSearchFetchTokensResponse404>.a(AiSearchFetchTokensResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchFetchTokensResponse400, AiSearchFetchTokensResponse404>.b(AiSearchFetchTokensResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: AiSearchFetchTokensError.parse,
 );
  } 
 /// Update tokens.
 ///
 /// `PUT /accounts/{account_id}/ai-search/tokens/{id}`
-Future<ApiResult<AiSearchUpdateTokensResponseResult, OneOf2<AiSearchUpdateTokensResponse400, AiSearchUpdateTokensResponse404>>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AiSearchUpdateTokensResponseResult, AiSearchUpdateTokensError>> aiSearchUpdateTokens({required String accountId, required String id, AiSearchUpdateTokensRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -142,19 +130,7 @@ return await execute(
 final json = jsonDecode(response.body) as Map<String, dynamic>;
 return AiSearchUpdateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
-  onError: (response) {
-switch (response.statusCode) {
-case 400:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchUpdateTokensResponse400, AiSearchUpdateTokensResponse404>.a(AiSearchUpdateTokensResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
-final json = jsonDecode(response.body);
-return OneOf2<AiSearchUpdateTokensResponse400, AiSearchUpdateTokensResponse404>.b(AiSearchUpdateTokensResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return null;
-}
-
-  },
+  onError: AiSearchUpdateTokensError.parse,
 );
  } 
 /// Delete tokens.

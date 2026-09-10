@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_subscriptions_create_subscription_response4_xx.dart';import '../models/account_subscriptions_delete_subscription_response_result.dart';import '../models/account_subscriptions_list_subscriptions_response4_xx.dart';import '../models/account_subscriptions_update_subscription_response4_xx.dart';import '../models/identifier.dart';import '../models/request2.dart';import '../models/response_common_failure10.dart';import '../models/schemas_identifier.dart';import '../models/subscription2.dart';/// AccountSubscriptionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_subscriptions_create_subscription_response4xx.dart';import '../models/account_subscriptions_delete_subscription_response_result.dart';import '../models/account_subscriptions_list_subscriptions_response4xx.dart';import '../models/account_subscriptions_update_subscription_response4xx.dart';import '../models/identifier.dart';import '../models/request2.dart';import '../models/response_common_failure10.dart';import '../models/schemas_identifier.dart';import '../models/subscription2.dart';/// AccountSubscriptionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccountSubscriptionsApi with ApiExecutor {const AccountSubscriptions
 /// Lists all of an account's subscriptions.
 ///
 /// `GET /accounts/{account_id}/subscriptions`
-Future<ApiResult<List<Subscription2>, AccountSubscriptionsListSubscriptionsResponse4Xx>> accountSubscriptionsListSubscriptions({required Identifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<Subscription2>, AccountSubscriptionsListSubscriptionsResponse4xx>> accountSubscriptionsListSubscriptions({required Identifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -32,7 +32,7 @@ return (json['result'] as List<dynamic>).map((e) => Subscription2.fromJson(e as 
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return AccountSubscriptionsListSubscriptionsResponse4Xx.fromJson(json as Map<String, dynamic>);
+return AccountSubscriptionsListSubscriptionsResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -45,7 +45,7 @@ return null;
 /// Creates an account subscription.
 ///
 /// `POST /accounts/{account_id}/subscriptions`
-Future<ApiResult<Subscription2, AccountSubscriptionsCreateSubscriptionResponse4Xx>> accountSubscriptionsCreateSubscription({required Identifier accountId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription2, AccountSubscriptionsCreateSubscriptionResponse4xx>> accountSubscriptionsCreateSubscription({required Identifier accountId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,7 +66,7 @@ return Subscription2.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return AccountSubscriptionsCreateSubscriptionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return AccountSubscriptionsCreateSubscriptionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Updates an account subscription.
 ///
 /// `PUT /accounts/{account_id}/subscriptions/{subscription_identifier}`
-Future<ApiResult<Subscription2, AccountSubscriptionsUpdateSubscriptionResponse4Xx>> accountSubscriptionsUpdateSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Subscription2, AccountSubscriptionsUpdateSubscriptionResponse4xx>> accountSubscriptionsUpdateSubscription({required SchemasIdentifier subscriptionIdentifier, required Identifier accountId, required Request2 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,7 +100,7 @@ return Subscription2.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return AccountSubscriptionsUpdateSubscriptionResponse4Xx.fromJson(json as Map<String, dynamic>);
+return AccountSubscriptionsUpdateSubscriptionResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }

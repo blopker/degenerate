@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_video_body.dart';import '../models/create_video_remix_body.dart';import '../models/deleted_video_resource.dart';import '../models/order_enum.dart';import '../models/video_content_variant.dart';import '../models/video_list_resource.dart';import '../models/video_resource.dart';/// VideosApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_video_body.dart';import '../models/create_video_remix_body.dart';import '../models/deleted_video_resource.dart';import '../models/order_enum.dart';import '../models/retrieve_video_content_success.dart';import '../models/video_content_variant.dart';import '../models/video_list_resource.dart';import '../models/video_resource.dart';/// VideosApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -109,7 +109,7 @@ return DeletedVideoResource.fromJson(json as Map<String, dynamic>);
 /// Streams the rendered video content for the specified video job.
 ///
 /// `GET /videos/{video_id}/content`
-Future<ApiResult<OneOf2<String, Uint8List>, Never>> retrieveVideoContent({required String videoId, VideoContentVariant? variant, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RetrieveVideoContentSuccess, Never>> retrieveVideoContent({required String videoId, VideoContentVariant? variant, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (variant != null) {
   queryParameters['variant'] = variant.toJson();
@@ -128,24 +128,7 @@ final request = ApiRequest(
 
 return await execute(
   request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return OneOf2<String, Uint8List>.a(json as String);
-}
-if (responseMediaTypeMatches(contentType, 'image/webp')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return OneOf2<String, Uint8List>.b(value);
-}
-if (responseMediaTypeMatches(contentType, 'video/mp4')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return OneOf2<String, Uint8List>.b(value);
-}
-final json = jsonDecode(response.body);
-return OneOf2<String, Uint8List>.a(json as String);
-
-  },
+  onSuccess: RetrieveVideoContentSuccess.parse,
 );
  } 
 /// Create a remix of a completed video using a refreshed prompt.

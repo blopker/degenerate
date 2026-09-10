@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/firewall_identifier.dart';import '../models/firewall_rule.dart';import '../models/firewall_rule_identifier.dart';import '../models/firewall_rule_single_id_response_result.dart';import '../models/firewall_schemas_mode.dart';import '../models/ip_access_rules_for_a_zone_create_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_zone_create_an_ip_access_rule_response4_xx.dart';import '../models/ip_access_rules_for_a_zone_delete_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_zone_delete_an_ip_access_rule_response4_xx.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_configuration_target.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_direction.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_match.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_order.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_response4_xx.dart';import '../models/ip_access_rules_for_a_zone_update_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_zone_update_an_ip_access_rule_response4_xx.dart';/// IpAccessRulesForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/firewall_identifier.dart';import '../models/firewall_rule.dart';import '../models/firewall_rule_identifier.dart';import '../models/firewall_rule_single_id_response_result.dart';import '../models/firewall_schemas_mode.dart';import '../models/ip_access_rules_for_a_zone_create_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_zone_create_an_ip_access_rule_response4xx.dart';import '../models/ip_access_rules_for_a_zone_delete_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_zone_delete_an_ip_access_rule_response4xx.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_configuration_target.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_direction.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_match.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_order.dart';import '../models/ip_access_rules_for_a_zone_list_ip_access_rules_response4xx.dart';import '../models/ip_access_rules_for_a_zone_update_an_ip_access_rule_request.dart';import '../models/ip_access_rules_for_a_zone_update_an_ip_access_rule_response4xx.dart';/// IpAccessRulesForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class IpAccessRulesForAZoneApi with ApiExecutor {const IpAccessRulesForAZo
 /// Fetches IP Access rules of a zone. You can filter the results using several optional parameters.
 ///
 /// `GET /zones/{zone_id}/firewall/access_rules/rules`
-Future<ApiResult<List<FirewallRule>, IpAccessRulesForAZoneListIpAccessRulesResponse4Xx>> ipAccessRulesForAZoneListIpAccessRules({required FirewallIdentifier zoneId, FirewallSchemasMode? mode, IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAZoneListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAZoneListIpAccessRulesOrder? order, IpAccessRulesForAZoneListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<FirewallRule>, IpAccessRulesForAZoneListIpAccessRulesResponse4xx>> ipAccessRulesForAZoneListIpAccessRules({required FirewallIdentifier zoneId, FirewallSchemasMode? mode, IpAccessRulesForAZoneListIpAccessRulesConfigurationTarget? configurationTarget, String? configurationValue, String? notes, IpAccessRulesForAZoneListIpAccessRulesMatch? match, double? page, double? perPage, IpAccessRulesForAZoneListIpAccessRulesOrder? order, IpAccessRulesForAZoneListIpAccessRulesDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) {
   queryParameters['mode'] = mode.toJson();
@@ -64,7 +64,7 @@ return (json['result'] as List<dynamic>).map((e) => FirewallRule.fromJson(e as M
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAccessRulesForAZoneListIpAccessRulesResponse4Xx.fromJson(json as Map<String, dynamic>);
+return IpAccessRulesForAZoneListIpAccessRulesResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -79,7 +79,7 @@ return null;
 /// Note: To create an IP Access rule that applies to multiple zones, refer to [IP Access rules for a user](#ip-access-rules-for-a-user) or [IP Access rules for an account](#ip-access-rules-for-an-account) as appropriate.
 ///
 /// `POST /zones/{zone_id}/firewall/access_rules/rules`
-Future<ApiResult<FirewallRule, IpAccessRulesForAZoneCreateAnIpAccessRuleResponse4Xx>> ipAccessRulesForAZoneCreateAnIpAccessRule({required FirewallIdentifier zoneId, required IpAccessRulesForAZoneCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallRule, IpAccessRulesForAZoneCreateAnIpAccessRuleResponse4xx>> ipAccessRulesForAZoneCreateAnIpAccessRule({required FirewallIdentifier zoneId, required IpAccessRulesForAZoneCreateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,7 +100,7 @@ return FirewallRule.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAccessRulesForAZoneCreateAnIpAccessRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return IpAccessRulesForAZoneCreateAnIpAccessRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -113,7 +113,7 @@ return null;
 /// Updates an IP Access rule defined at the zone level. You can only update the rule action (`mode` parameter) and notes.
 ///
 /// `PATCH /zones/{zone_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallRule, IpAccessRulesForAZoneUpdateAnIpAccessRuleResponse4Xx>> ipAccessRulesForAZoneUpdateAnIpAccessRule({required FirewallIdentifier zoneId, required FirewallRuleIdentifier ruleId, required IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallRule, IpAccessRulesForAZoneUpdateAnIpAccessRuleResponse4xx>> ipAccessRulesForAZoneUpdateAnIpAccessRule({required FirewallIdentifier zoneId, required FirewallRuleIdentifier ruleId, required IpAccessRulesForAZoneUpdateAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -134,7 +134,7 @@ return FirewallRule.fromJson(json['result'] as Map<String, dynamic>);
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAccessRulesForAZoneUpdateAnIpAccessRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return IpAccessRulesForAZoneUpdateAnIpAccessRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
@@ -149,7 +149,7 @@ return null;
 /// Optionally, you can use the `cascade` property to specify that you wish to delete similar rules in other zones managed by the same zone owner.
 ///
 /// `DELETE /zones/{zone_id}/firewall/access_rules/rules/{rule_id}`
-Future<ApiResult<FirewallRuleSingleIdResponseResult, IpAccessRulesForAZoneDeleteAnIpAccessRuleResponse4Xx>> ipAccessRulesForAZoneDeleteAnIpAccessRule({required FirewallIdentifier zoneId, required FirewallRuleIdentifier ruleId, required IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FirewallRuleSingleIdResponseResult, IpAccessRulesForAZoneDeleteAnIpAccessRuleResponse4xx>> ipAccessRulesForAZoneDeleteAnIpAccessRule({required FirewallIdentifier zoneId, required FirewallRuleIdentifier ruleId, required IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -170,7 +170,7 @@ return FirewallRuleSingleIdResponseResult.fromJson(json['result'] as Map<String,
 switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAccessRulesForAZoneDeleteAnIpAccessRuleResponse4Xx.fromJson(json as Map<String, dynamic>);
+return IpAccessRulesForAZoneDeleteAnIpAccessRuleResponse4xx.fromJson(json as Map<String, dynamic>);
 default:
 return null;
 }
