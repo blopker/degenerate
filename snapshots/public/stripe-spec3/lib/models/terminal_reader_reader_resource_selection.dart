@@ -1,33 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_choice.dart';/// Information about a selection being collected using a reader
-@immutable final class TerminalReaderReaderResourceSelection {const TerminalReaderReaderResourceSelection({required this.choices, this.id, this.text, });
+@immutable final class TerminalReaderReaderResourceSelection {const TerminalReaderReaderResourceSelection({required this.choices, this.id = const Omittable.absent(), this.text = const Omittable.absent(), });
 
 factory TerminalReaderReaderResourceSelection.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceSelection(
   choices: (json['choices'] as List<dynamic>).map((e) => TerminalReaderReaderResourceChoice.fromJson(e as Map<String, dynamic>)).toList(),
-  id: json['id'] as String?,
-  text: json['text'] as String?,
+  id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
+  text: json.containsKey('text') ? Omittable(json['text'] as String?) : const Omittable.absent(),
 ); }
 
 /// List of possible choices to be selected
 final List<TerminalReaderReaderResourceChoice> choices;
 
 /// The id of the selected choice
-final String? id;
+final Omittable<String?> id;
 
 /// The text of the selected choice
-final String? text;
+final Omittable<String?> text;
 
 Map<String, dynamic> toJson() { return {
   'choices': choices.map((e) => e.toJson()).toList(),
-  'id': ?id,
-  'text': ?text,
+  if (id.isPresent) 'id': id.value,
+  if (text.isPresent) 'text': text.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('choices'); } 
-TerminalReaderReaderResourceSelection copyWith({List<TerminalReaderReaderResourceChoice>? choices, String? Function()? id, String? Function()? text, }) { return TerminalReaderReaderResourceSelection(
+TerminalReaderReaderResourceSelection copyWith({List<TerminalReaderReaderResourceChoice>? choices, Omittable<String?>? id, Omittable<String?>? text, }) { return TerminalReaderReaderResourceSelection(
   choices: choices ?? this.choices,
-  id: id != null ? id() : this.id,
-  text: text != null ? text() : this.text,
+  id: id ?? this.id,
+  text: text ?? this.text,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TerminalReaderReaderResourceSelection &&

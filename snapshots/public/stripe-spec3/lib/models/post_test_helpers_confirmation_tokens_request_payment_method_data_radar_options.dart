@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'session': ?session,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'session'}.contains(key)); } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions copyWith({String Function()? session}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions(
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions copyWith({String? Function()? session}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataRadarOptions(
   session: session != null ? session() : this.session,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

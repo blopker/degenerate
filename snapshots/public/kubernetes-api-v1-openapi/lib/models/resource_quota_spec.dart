@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'scopes': ?scopes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'hard', 'scopeSelector', 'scopes'}.contains(key)); } 
-ResourceQuotaSpec copyWith({Map<String, ResourceQuantity> Function()? hard, ScopeSelector Function()? scopeSelector, List<String> Function()? scopes, }) { return ResourceQuotaSpec(
+ResourceQuotaSpec copyWith({Map<String, ResourceQuantity>? Function()? hard, ScopeSelector? Function()? scopeSelector, List<String>? Function()? scopes, }) { return ResourceQuotaSpec(
   hard: hard != null ? hard() : this.hard,
   scopeSelector: scopeSelector != null ? scopeSelector() : this.scopeSelector,
   scopes: scopes != null ? scopes() : this.scopes,

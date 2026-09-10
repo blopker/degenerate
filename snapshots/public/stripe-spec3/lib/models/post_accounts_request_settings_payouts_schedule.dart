@@ -134,7 +134,7 @@ Map<String, dynamic> toJson() { return {
   if (weeklyPayoutDays != null) 'weekly_payout_days': weeklyPayoutDays?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delay_days', 'interval', 'monthly_anchor', 'monthly_payout_days', 'weekly_anchor', 'weekly_payout_days'}.contains(key)); } 
-PostAccountsRequestSettingsPayoutsSchedule copyWith({PostAccountsRequestSettingsPayoutsScheduleDelayDays Function()? delayDays, PostAccountsRequestSettingsPayoutsScheduleInterval Function()? interval, int Function()? monthlyAnchor, List<int> Function()? monthlyPayoutDays, PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor Function()? weeklyAnchor, List<PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays> Function()? weeklyPayoutDays, }) { return PostAccountsRequestSettingsPayoutsSchedule(
+PostAccountsRequestSettingsPayoutsSchedule copyWith({PostAccountsRequestSettingsPayoutsScheduleDelayDays? Function()? delayDays, PostAccountsRequestSettingsPayoutsScheduleInterval? Function()? interval, int? Function()? monthlyAnchor, List<int>? Function()? monthlyPayoutDays, PostAccountsRequestSettingsPayoutsScheduleWeeklyAnchor? Function()? weeklyAnchor, List<PostAccountsRequestSettingsPayoutsScheduleWeeklyPayoutDays>? Function()? weeklyPayoutDays, }) { return PostAccountsRequestSettingsPayoutsSchedule(
   delayDays: delayDays != null ? delayDays() : this.delayDays,
   interval: interval != null ? interval() : this.interval,
   monthlyAnchor: monthlyAnchor != null ? monthlyAnchor() : this.monthlyAnchor,

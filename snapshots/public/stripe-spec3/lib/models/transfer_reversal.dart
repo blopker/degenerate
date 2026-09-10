@@ -35,18 +35,18 @@ bool get isUnknown { return !values.contains(this); }
 /// reversal.
 /// 
 /// Related guide: [Reverse transfers](https://docs.stripe.com/connect/separate-charges-and-transfers#reverse-transfers)
-@immutable final class TransferReversal {const TransferReversal({required this.amount, required this.created, required this.currency, required this.id, required this.object, required this.transfer, this.balanceTransaction, this.destinationPaymentRefund, this.metadata, this.sourceRefund, });
+@immutable final class TransferReversal {const TransferReversal({required this.amount, required this.created, required this.currency, required this.id, required this.object, required this.transfer, this.balanceTransaction = const Omittable.absent(), this.destinationPaymentRefund = const Omittable.absent(), this.metadata = const Omittable.absent(), this.sourceRefund = const Omittable.absent(), });
 
 factory TransferReversal.fromJson(Map<String, dynamic> json) { return TransferReversal(
   amount: (json['amount'] as num).toInt(),
-  balanceTransaction: json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null,
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  destinationPaymentRefund: json['destination_payment_refund'] != null ? OneOf2.parse(json['destination_payment_refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),) : null,
+  destinationPaymentRefund: json.containsKey('destination_payment_refund') ? Omittable(json['destination_payment_refund'] != null ? OneOf2.parse(json['destination_payment_refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   id: json['id'] as String,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: TransferReversalObject.fromJson(json['object'] as String),
-  sourceRefund: json['source_refund'] != null ? OneOf2.parse(json['source_refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),) : null,
+  sourceRefund: json.containsKey('source_refund') ? Omittable(json['source_refund'] != null ? OneOf2.parse(json['source_refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   transfer: OneOf2.parse(json['transfer'], fromA: (v) => v as String, fromB: (v) => Transfer.fromJson(v as Map<String, dynamic>),),
 ); }
 
@@ -54,7 +54,7 @@ factory TransferReversal.fromJson(Map<String, dynamic> json) { return TransferRe
 final int amount;
 
 /// Balance transaction that describes the impact on your account balance.
-final TransferReversalBalanceTransaction? balanceTransaction;
+final Omittable<TransferReversalBalanceTransaction?> balanceTransaction;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -63,33 +63,33 @@ final int created;
 final String currency;
 
 /// Linked payment refund for the transfer reversal.
-final TransferReversalDestinationPaymentRefund? destinationPaymentRefund;
+final Omittable<TransferReversalDestinationPaymentRefund?> destinationPaymentRefund;
 
 /// Unique identifier for the object.
 final String id;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final TransferReversalObject object;
 
 /// ID of the refund responsible for the transfer reversal.
-final TransferReversalSourceRefund? sourceRefund;
+final Omittable<TransferReversalSourceRefund?> sourceRefund;
 
 /// ID of the transfer that was reversed.
 final TransferReversalTransfer transfer;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
-  if (balanceTransaction != null) 'balance_transaction': balanceTransaction?.toJson(),
+  if (balanceTransaction.isPresent) 'balance_transaction': balanceTransaction.value?.toJson(),
   'created': created,
   'currency': currency,
-  if (destinationPaymentRefund != null) 'destination_payment_refund': destinationPaymentRefund?.toJson(),
+  if (destinationPaymentRefund.isPresent) 'destination_payment_refund': destinationPaymentRefund.value?.toJson(),
   'id': id,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
-  if (sourceRefund != null) 'source_refund': sourceRefund?.toJson(),
+  if (sourceRefund.isPresent) 'source_refund': sourceRefund.value?.toJson(),
   'transfer': transfer.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
@@ -98,16 +98,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('transfer'); } 
-TransferReversal copyWith({int? amount, TransferReversalBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, TransferReversalDestinationPaymentRefund? Function()? destinationPaymentRefund, String? id, Map<String, String>? Function()? metadata, TransferReversalObject? object, TransferReversalSourceRefund? Function()? sourceRefund, TransferReversalTransfer? transfer, }) { return TransferReversal(
+TransferReversal copyWith({int? amount, Omittable<TransferReversalBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<TransferReversalDestinationPaymentRefund?>? destinationPaymentRefund, String? id, Omittable<Map<String,String>?>? metadata, TransferReversalObject? object, Omittable<TransferReversalSourceRefund?>? sourceRefund, TransferReversalTransfer? transfer, }) { return TransferReversal(
   amount: amount ?? this.amount,
-  balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,
+  balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  destinationPaymentRefund: destinationPaymentRefund != null ? destinationPaymentRefund() : this.destinationPaymentRefund,
+  destinationPaymentRefund: destinationPaymentRefund ?? this.destinationPaymentRefund,
   id: id ?? this.id,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-  sourceRefund: sourceRefund != null ? sourceRefund() : this.sourceRefund,
+  sourceRefund: sourceRefund ?? this.sourceRefund,
   transfer: transfer ?? this.transfer,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

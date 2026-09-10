@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'after': ?after,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after'}.contains(key)); } 
-CreateZoneRulesetRuleRequestPositionVariant2 copyWith({String Function()? after}) { return CreateZoneRulesetRuleRequestPositionVariant2(
+CreateZoneRulesetRuleRequestPositionVariant2 copyWith({String? Function()? after}) { return CreateZoneRulesetRuleRequestPositionVariant2(
   after: after != null ? after() : this.after,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

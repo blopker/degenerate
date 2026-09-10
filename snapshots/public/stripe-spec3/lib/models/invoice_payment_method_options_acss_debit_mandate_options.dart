@@ -26,21 +26,21 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType($value)'; } 
  }
 /// 
-@immutable final class InvoicePaymentMethodOptionsAcssDebitMandateOptions {const InvoicePaymentMethodOptionsAcssDebitMandateOptions({this.transactionType});
+@immutable final class InvoicePaymentMethodOptionsAcssDebitMandateOptions {const InvoicePaymentMethodOptionsAcssDebitMandateOptions({this.transactionType = const Omittable.absent()});
 
 factory InvoicePaymentMethodOptionsAcssDebitMandateOptions.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsAcssDebitMandateOptions(
-  transactionType: json['transaction_type'] != null ? InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType.fromJson(json['transaction_type'] as String) : null,
+  transactionType: json.containsKey('transaction_type') ? Omittable(json['transaction_type'] != null ? InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType.fromJson(json['transaction_type'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Transaction type of the mandate.
-final InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType? transactionType;
+final Omittable<InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType?> transactionType;
 
 Map<String, dynamic> toJson() { return {
-  if (transactionType != null) 'transaction_type': transactionType?.toJson(),
+  if (transactionType.isPresent) 'transaction_type': transactionType.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'transaction_type'}.contains(key)); } 
-InvoicePaymentMethodOptionsAcssDebitMandateOptions copyWith({InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType? Function()? transactionType}) { return InvoicePaymentMethodOptionsAcssDebitMandateOptions(
-  transactionType: transactionType != null ? transactionType() : this.transactionType,
+InvoicePaymentMethodOptionsAcssDebitMandateOptions copyWith({Omittable<InvoicePaymentMethodOptionsAcssDebitMandateOptionsTransactionType?>? transactionType}) { return InvoicePaymentMethodOptionsAcssDebitMandateOptions(
+  transactionType: transactionType ?? this.transactionType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InvoicePaymentMethodOptionsAcssDebitMandateOptions &&

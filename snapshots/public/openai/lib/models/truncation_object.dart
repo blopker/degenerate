@@ -26,27 +26,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TruncationObjectType($value)'; } 
  }
 /// Controls for how a thread will be truncated prior to the run. Use this to control the initial context window of the run.
-@immutable final class TruncationObject {const TruncationObject({required this.type, this.lastMessages, });
+@immutable final class TruncationObject {const TruncationObject({required this.type, this.lastMessages = const Omittable.absent(), });
 
 factory TruncationObject.fromJson(Map<String, dynamic> json) { return TruncationObject(
   type: TruncationObjectType.fromJson(json['type'] as String),
-  lastMessages: json['last_messages'] != null ? (json['last_messages'] as num).toInt() : null,
+  lastMessages: json.containsKey('last_messages') ? Omittable(json['last_messages'] != null ? (json['last_messages'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// The truncation strategy to use for the thread. The default is `auto`. If set to `last_messages`, the thread will be truncated to the n most recent messages in the thread. When set to `auto`, messages in the middle of the thread will be dropped to fit the context length of the model, `max_prompt_tokens`.
 final TruncationObjectType type;
 
 /// The number of most recent messages from the thread when constructing the context for the run.
-final int? lastMessages;
+final Omittable<int?> lastMessages;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
-  'last_messages': ?lastMessages,
+  if (lastMessages.isPresent) 'last_messages': lastMessages.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TruncationObject copyWith({TruncationObjectType? type, int? Function()? lastMessages, }) { return TruncationObject(
+TruncationObject copyWith({TruncationObjectType? type, Omittable<int?>? lastMessages, }) { return TruncationObject(
   type: type ?? this.type,
-  lastMessages: lastMessages != null ? lastMessages() : this.lastMessages,
+  lastMessages: lastMessages ?? this.lastMessages,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TruncationObject &&

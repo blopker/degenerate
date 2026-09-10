@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_id') && json['key_id'] is String &&
       json.containsKey('key') && json['key'] is String; } 
-CodespacesPublicKey copyWith({String? keyId, String? key, int Function()? id, String Function()? url, String Function()? title, String Function()? createdAt, }) { return CodespacesPublicKey(
+CodespacesPublicKey copyWith({String? keyId, String? key, int? Function()? id, String? Function()? url, String? Function()? title, String? Function()? createdAt, }) { return CodespacesPublicKey(
   keyId: keyId ?? this.keyId,
   key: key ?? this.key,
   id: id != null ? id() : this.id,

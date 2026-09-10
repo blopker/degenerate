@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'matchLabels': ?matchLabels,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'matchExpressions', 'matchLabels'}.contains(key)); } 
-LabelSelector copyWith({List<LabelSelectorRequirement> Function()? matchExpressions, Map<String, String> Function()? matchLabels, }) { return LabelSelector(
+LabelSelector copyWith({List<LabelSelectorRequirement>? Function()? matchExpressions, Map<String, String>? Function()? matchLabels, }) { return LabelSelector(
   matchExpressions: matchExpressions != null ? matchExpressions() : this.matchExpressions,
   matchLabels: matchLabels != null ? matchLabels() : this.matchLabels,
 ); } 

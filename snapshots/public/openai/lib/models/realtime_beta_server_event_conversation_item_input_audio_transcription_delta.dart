@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Returned when the text value of an input audio transcription content part is updated.
 /// 
-@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta({required this.eventId, required this.type, required this.itemId, this.contentIndex, this.delta, this.logprobs, });
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta({required this.eventId, required this.type, required this.itemId, this.contentIndex, this.delta, this.logprobs = const Omittable.absent(), });
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta(
   eventId: json['event_id'] as String,
@@ -32,7 +32,7 @@ factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta.from
   itemId: json['item_id'] as String,
   contentIndex: json['content_index'] != null ? (json['content_index'] as num).toInt() : null,
   delta: json['delta'] as String?,
-  logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => LogProbProperties.fromJson(e as Map<String, dynamic>)).toList(),
+  logprobs: json.containsKey('logprobs') ? Omittable((json['logprobs'] as List<dynamic>?)?.map((e) => LogProbProperties.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
 ); }
 
 /// The unique ID of the server event.
@@ -51,7 +51,7 @@ final int? contentIndex;
 final String? delta;
 
 /// The log probabilities of the transcription.
-final List<LogProbProperties>? logprobs;
+final Omittable<List<LogProbProperties>?> logprobs;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
@@ -59,18 +59,18 @@ Map<String, dynamic> toJson() { return {
   'item_id': itemId,
   'content_index': ?contentIndex,
   'delta': ?delta,
-  if (logprobs != null) 'logprobs': logprobs?.map((e) => e.toJson()).toList(),
+  if (logprobs.isPresent) 'logprobs': logprobs.value?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('item_id') && json['item_id'] is String; } 
-RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType? type, String? itemId, int Function()? contentIndex, String Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta(
+RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta copyWith({String? eventId, RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType? type, String? itemId, int? Function()? contentIndex, String? Function()? delta, Omittable<List<LogProbProperties>?>? logprobs, }) { return RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
   contentIndex: contentIndex != null ? contentIndex() : this.contentIndex,
   delta: delta != null ? delta() : this.delta,
-  logprobs: logprobs != null ? logprobs() : this.logprobs,
+  logprobs: logprobs ?? this.logprobs,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta &&
@@ -79,7 +79,8 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta copyWith({St
           itemId == other.itemId &&
           contentIndex == other.contentIndex &&
           delta == other.delta &&
-          listEquals(logprobs, other.logprobs); } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, delta, Object.hashAll(logprobs ?? const [])); } 
+          logprobs.isPresent == other.logprobs.isPresent &&
+          listEquals(logprobs.value, other.logprobs.value); } 
+@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, delta, Object.hashAll(logprobs.value ?? const [])); } 
 @override String toString() { return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, delta: $delta, logprobs: $logprobs)'; } 
  }

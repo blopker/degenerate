@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'sso_target_url': ?ssoTargetUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attributes', 'email_attribute_name', 'header_attributes', 'idp_public_certs', 'issuer_url', 'sign_request', 'sso_target_url'}.contains(key)); } 
-AccessSamlConfig copyWith({List<String> Function()? attributes, String Function()? emailAttributeName, List<AccessSamlConfigHeaderAttributes> Function()? headerAttributes, List<String> Function()? idpPublicCerts, String Function()? issuerUrl, bool Function()? signRequest, String Function()? ssoTargetUrl, }) { return AccessSamlConfig(
+AccessSamlConfig copyWith({List<String>? Function()? attributes, String? Function()? emailAttributeName, List<AccessSamlConfigHeaderAttributes>? Function()? headerAttributes, List<String>? Function()? idpPublicCerts, String? Function()? issuerUrl, bool Function()? signRequest, String? Function()? ssoTargetUrl, }) { return AccessSamlConfig(
   attributes: attributes != null ? attributes() : this.attributes,
   emailAttributeName: emailAttributeName != null ? emailAttributeName() : this.emailAttributeName,
   headerAttributes: headerAttributes != null ? headerAttributes() : this.headerAttributes,

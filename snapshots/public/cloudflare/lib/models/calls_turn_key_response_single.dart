@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-CallsTurnKeyResponseSingle copyWith({List<CallsMessages2>? errors, List<CallsMessages2>? messages, bool? success, CallsTurnKeyObject Function()? result, }) { return CallsTurnKeyResponseSingle(
+CallsTurnKeyResponseSingle copyWith({List<CallsMessages2>? errors, List<CallsMessages2>? messages, bool? success, CallsTurnKeyObject? Function()? result, }) { return CallsTurnKeyResponseSingle(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

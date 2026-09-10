@@ -102,7 +102,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('apply
       json.containsKey('plan_progress') &&
       json.containsKey('routes') &&
       json.containsKey('tunnels'); } 
-McnOnrampStatus copyWith({McnApplyProgress? applyProgress, Map<String, McnError> Function()? lifecycleErrors, McnOnrampLifecycleState? lifecycleState, McnPlanProgress? planProgress, List<McnConduitRouteId>? routes, List<McnConduitTunnelId>? tunnels, }) { return McnOnrampStatus(
+McnOnrampStatus copyWith({McnApplyProgress? applyProgress, Map<String, McnError>? Function()? lifecycleErrors, McnOnrampLifecycleState? lifecycleState, McnPlanProgress? planProgress, List<McnConduitRouteId>? routes, List<McnConduitTunnelId>? tunnels, }) { return McnOnrampStatus(
   applyProgress: applyProgress ?? this.applyProgress,
   lifecycleErrors: lifecycleErrors != null ? lifecycleErrors() : this.lifecycleErrors,
   lifecycleState: lifecycleState ?? this.lifecycleState,

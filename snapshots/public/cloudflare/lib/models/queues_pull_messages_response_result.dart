@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message_backlog_count', 'messages'}.contains(key)); } 
-QueuesPullMessagesResponseResult copyWith({double Function()? messageBacklogCount, List<MqQueuePullBatch2> Function()? messages, }) { return QueuesPullMessagesResponseResult(
+QueuesPullMessagesResponseResult copyWith({double? Function()? messageBacklogCount, List<MqQueuePullBatch2>? Function()? messages, }) { return QueuesPullMessagesResponseResult(
   messageBacklogCount: messageBacklogCount != null ? messageBacklogCount() : this.messageBacklogCount,
   messages: messages != null ? messages() : this.messages,
 ); } 

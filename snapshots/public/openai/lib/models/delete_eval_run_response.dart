@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'run_id': ?runId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'object', 'deleted', 'run_id'}.contains(key)); } 
-DeleteEvalRunResponse copyWith({String Function()? object, bool Function()? deleted, String Function()? runId, }) { return DeleteEvalRunResponse(
+DeleteEvalRunResponse copyWith({String? Function()? object, bool? Function()? deleted, String? Function()? runId, }) { return DeleteEvalRunResponse(
   object: object != null ? object() : this.object,
   deleted: deleted != null ? deleted() : this.deleted,
   runId: runId != null ? runId() : this.runId,

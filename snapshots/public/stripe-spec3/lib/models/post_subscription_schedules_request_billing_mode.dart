@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostSubscriptionSchedulesRequestBillingMode copyWith({PostSubscriptionSchedulesRequestBillingModeFlexible Function()? flexible, PostSubscriptionSchedulesRequestBillingModeType? type, }) { return PostSubscriptionSchedulesRequestBillingMode(
+PostSubscriptionSchedulesRequestBillingMode copyWith({PostSubscriptionSchedulesRequestBillingModeFlexible? Function()? flexible, PostSubscriptionSchedulesRequestBillingModeType? type, }) { return PostSubscriptionSchedulesRequestBillingMode(
   flexible: flexible != null ? flexible() : this.flexible,
   type: type ?? this.type,
 ); } 

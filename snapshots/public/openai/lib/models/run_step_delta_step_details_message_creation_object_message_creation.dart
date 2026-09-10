@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'message_id': ?messageId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message_id'}.contains(key)); } 
-RunStepDeltaStepDetailsMessageCreationObjectMessageCreation copyWith({String Function()? messageId}) { return RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(
+RunStepDeltaStepDetailsMessageCreationObjectMessageCreation copyWith({String? Function()? messageId}) { return RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(
   messageId: messageId != null ? messageId() : this.messageId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

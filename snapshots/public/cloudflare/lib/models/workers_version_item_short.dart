@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'number': ?number,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'metadata', 'number'}.contains(key)); } 
-WorkersVersionItemShort copyWith({String Function()? id, WorkersVersionItemShortMetadata Function()? metadata, double Function()? number, }) { return WorkersVersionItemShort(
+WorkersVersionItemShort copyWith({String? Function()? id, WorkersVersionItemShortMetadata? Function()? metadata, double? Function()? number, }) { return WorkersVersionItemShort(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   number: number != null ? number() : this.number,

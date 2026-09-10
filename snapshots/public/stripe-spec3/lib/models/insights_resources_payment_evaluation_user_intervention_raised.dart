@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('type'); } 
-InsightsResourcesPaymentEvaluationUserInterventionRaised copyWith({InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom Function()? custom, String? key, InsightsResourcesPaymentEvaluationUserInterventionRaisedType? type, }) { return InsightsResourcesPaymentEvaluationUserInterventionRaised(
+InsightsResourcesPaymentEvaluationUserInterventionRaised copyWith({InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom? Function()? custom, String? key, InsightsResourcesPaymentEvaluationUserInterventionRaisedType? type, }) { return InsightsResourcesPaymentEvaluationUserInterventionRaised(
   custom: custom != null ? custom() : this.custom,
   key: key ?? this.key,
   type: type ?? this.type,

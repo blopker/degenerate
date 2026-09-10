@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResourceSharingShareRecipientResponseSingle copyWith({List<ResourceSharingV4error>? errors, ResourceSharingShareRecipientObject Function()? result, bool? success, }) { return ResourceSharingShareRecipientResponseSingle(
+ResourceSharingShareRecipientResponseSingle copyWith({List<ResourceSharingV4error>? errors, ResourceSharingShareRecipientObject? Function()? result, bool? success, }) { return ResourceSharingShareRecipientResponseSingle(
   errors: errors ?? this.errors,
   result: result != null ? result() : this.result,
   success: success ?? this.success,

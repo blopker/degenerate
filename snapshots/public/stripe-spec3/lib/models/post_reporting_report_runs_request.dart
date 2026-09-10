@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'report_type': reportType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('report_type') && json['report_type'] is String; } 
-PostReportingReportRunsRequest copyWith({List<String> Function()? expand, PostReportingReportRunsRequestParameters Function()? parameters, String? reportType, }) { return PostReportingReportRunsRequest(
+PostReportingReportRunsRequest copyWith({List<String>? Function()? expand, PostReportingReportRunsRequestParameters? Function()? parameters, String? reportType, }) { return PostReportingReportRunsRequest(
   expand: expand != null ? expand() : this.expand,
   parameters: parameters != null ? parameters() : this.parameters,
   reportType: reportType ?? this.reportType,

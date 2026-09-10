@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('scopes'); } 
-SecretsStoreDuplicateSecretObject copyWith({SecretsStoreComment Function()? comment, SecretsStoreSecretName? name, List<String>? scopes, }) { return SecretsStoreDuplicateSecretObject(
+SecretsStoreDuplicateSecretObject copyWith({SecretsStoreComment? Function()? comment, SecretsStoreSecretName? name, List<String>? scopes, }) { return SecretsStoreDuplicateSecretObject(
   comment: comment != null ? comment() : this.comment,
   name: name ?? this.name,
   scopes: scopes ?? this.scopes,

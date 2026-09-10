@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hosts') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') && json['status'] is String; } 
-TlsCertificatesAndHostnamesCertificatePackCertificate copyWith({String Function()? bundleMethod, DateTime Function()? expiresOn, TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions Function()? geoRestrictions, List<String>? hosts, String? id, String Function()? issuer, DateTime Function()? modifiedOn, double Function()? priority, String Function()? signature, String? status, DateTime Function()? uploadedOn, TlsCertificatesAndHostnamesIdentifier Function()? zoneId, }) { return TlsCertificatesAndHostnamesCertificatePackCertificate(
+TlsCertificatesAndHostnamesCertificatePackCertificate copyWith({String? Function()? bundleMethod, DateTime? Function()? expiresOn, TlsCertificatesAndHostnamesCertificatePackCertificateGeoRestrictions? Function()? geoRestrictions, List<String>? hosts, String? id, String? Function()? issuer, DateTime? Function()? modifiedOn, double? Function()? priority, String? Function()? signature, String? status, DateTime? Function()? uploadedOn, TlsCertificatesAndHostnamesIdentifier? Function()? zoneId, }) { return TlsCertificatesAndHostnamesCertificatePackCertificate(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   geoRestrictions: geoRestrictions != null ? geoRestrictions() : this.geoRestrictions,

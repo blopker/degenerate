@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_max_upload_value.dart';/// Maximum size of an allowable upload.
-@immutable final class ZonesMaxUpload {const ZonesMaxUpload({required this.id, required this.value, this.editable = true, this.modifiedOn, });
+@immutable final class ZonesMaxUpload {const ZonesMaxUpload({required this.id, required this.value, this.editable = true, this.modifiedOn = const Omittable.absent(), });
 
 factory ZonesMaxUpload.fromJson(Map<String, dynamic> json) { return ZonesMaxUpload(
   editable: json.containsKey('editable') ? json['editable'] as bool : true,
   id: json['id'],
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesMaxUploadValue.fromJson((json['value'] as num).toInt()),
 ); }
 
@@ -17,22 +17,22 @@ final bool editable;
 final dynamic id;
 
 /// last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 final ZonesMaxUploadValue value;
 
 Map<String, dynamic> toJson() { return {
   'editable': editable,
-  'id': ?id,
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  'id': id,
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('value'); } 
-ZonesMaxUpload copyWith({bool Function()? editable, dynamic Function()? id, DateTime? Function()? modifiedOn, ZonesMaxUploadValue? value, }) { return ZonesMaxUpload(
+ZonesMaxUpload copyWith({bool Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesMaxUploadValue? value, }) { return ZonesMaxUpload(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

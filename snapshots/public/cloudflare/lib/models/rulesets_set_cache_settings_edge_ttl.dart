@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   if (statusCodeTtl != null) 'status_code_ttl': statusCodeTtl?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'); } 
-RulesetsSetCacheSettingsEdgeTtl copyWith({int Function()? $default, RulesetsSetCacheSettingsEdgeTtlMode? mode, List<RulesetsSetCacheSettingsStatusCodeTtl2> Function()? statusCodeTtl, }) { return RulesetsSetCacheSettingsEdgeTtl(
+RulesetsSetCacheSettingsEdgeTtl copyWith({int? Function()? $default, RulesetsSetCacheSettingsEdgeTtlMode? mode, List<RulesetsSetCacheSettingsStatusCodeTtl2>? Function()? statusCodeTtl, }) { return RulesetsSetCacheSettingsEdgeTtl(
   $default: $default != null ? $default() : this.$default,
   mode: mode ?? this.mode,
   statusCodeTtl: statusCodeTtl != null ? statusCodeTtl() : this.statusCodeTtl,

@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheKeyFields copyWith({ZonesCacheKeyFieldsId Function()? id, ZonesCacheKeyFieldsValue Function()? value, }) { return ZonesCacheKeyFields(
+ZonesCacheKeyFields copyWith({ZonesCacheKeyFieldsId? Function()? id, ZonesCacheKeyFieldsValue? Function()? value, }) { return ZonesCacheKeyFields(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

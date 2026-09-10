@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (renderingOptions != null) 'rendering_options': renderingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_fields', 'default_payment_method', 'footer', 'rendering_options'}.contains(key)); } 
-PostCustomersRequestInvoiceSettings copyWith({PostCustomersRequestInvoiceSettingsCustomFields Function()? customFields, String Function()? defaultPaymentMethod, String Function()? footer, PostCustomersRequestInvoiceSettingsRenderingOptions Function()? renderingOptions, }) { return PostCustomersRequestInvoiceSettings(
+PostCustomersRequestInvoiceSettings copyWith({PostCustomersRequestInvoiceSettingsCustomFields? Function()? customFields, String? Function()? defaultPaymentMethod, String? Function()? footer, PostCustomersRequestInvoiceSettingsRenderingOptions? Function()? renderingOptions, }) { return PostCustomersRequestInvoiceSettings(
   customFields: customFields != null ? customFields() : this.customFields,
   defaultPaymentMethod: defaultPaymentMethod != null ? defaultPaymentMethod() : this.defaultPaymentMethod,
   footer: footer != null ? footer() : this.footer,

@@ -56,22 +56,22 @@ bool get isUnknown { return !values.contains(this); }
 /// To learn more about how to use ConfirmationToken, visit the related guides:
 /// - [Finalize payments on the server](https://docs.stripe.com/payments/finalize-payments-on-the-server)
 /// - [Build two-step confirmation](https://docs.stripe.com/payments/build-a-two-step-confirmation).
-@immutable final class ConfirmationToken {const ConfirmationToken({required this.created, required this.id, required this.livemode, required this.object, required this.useStripeSdk, this.expiresAt, this.mandateData, this.paymentIntent, this.paymentMethodOptions, this.paymentMethodPreview, this.returnUrl, this.setupFutureUsage, this.setupIntent, this.shipping, });
+@immutable final class ConfirmationToken {const ConfirmationToken({required this.created, required this.id, required this.livemode, required this.object, required this.useStripeSdk, this.expiresAt = const Omittable.absent(), this.mandateData = const Omittable.absent(), this.paymentIntent = const Omittable.absent(), this.paymentMethodOptions = const Omittable.absent(), this.paymentMethodPreview = const Omittable.absent(), this.returnUrl = const Omittable.absent(), this.setupFutureUsage = const Omittable.absent(), this.setupIntent = const Omittable.absent(), this.shipping = const Omittable.absent(), });
 
 factory ConfirmationToken.fromJson(Map<String, dynamic> json) { return ConfirmationToken(
   created: (json['created'] as num).toInt(),
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  mandateData: json['mandate_data'] != null ? ConfirmationTokensResourceMandateData.fromJson(json['mandate_data'] as Map<String, dynamic>) : null,
+  mandateData: json.containsKey('mandate_data') ? Omittable(json['mandate_data'] != null ? ConfirmationTokensResourceMandateData.fromJson(json['mandate_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   object: ConfirmationTokenObject.fromJson(json['object'] as String),
-  paymentIntent: json['payment_intent'] as String?,
-  paymentMethodOptions: json['payment_method_options'] != null ? ConfirmationTokensResourcePaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
-  paymentMethodPreview: json['payment_method_preview'] != null ? ConfirmationTokensResourcePaymentMethodPreview.fromJson(json['payment_method_preview'] as Map<String, dynamic>) : null,
-  returnUrl: json['return_url'] as String?,
-  setupFutureUsage: json['setup_future_usage'] != null ? ConfirmationTokenSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  setupIntent: json['setup_intent'] as String?,
-  shipping: json['shipping'] != null ? ConfirmationTokensResourceShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  paymentIntent: json.containsKey('payment_intent') ? Omittable(json['payment_intent'] as String?) : const Omittable.absent(),
+  paymentMethodOptions: json.containsKey('payment_method_options') ? Omittable(json['payment_method_options'] != null ? ConfirmationTokensResourcePaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  paymentMethodPreview: json.containsKey('payment_method_preview') ? Omittable(json['payment_method_preview'] != null ? ConfirmationTokensResourcePaymentMethodPreview.fromJson(json['payment_method_preview'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  returnUrl: json.containsKey('return_url') ? Omittable(json['return_url'] as String?) : const Omittable.absent(),
+  setupFutureUsage: json.containsKey('setup_future_usage') ? Omittable(json['setup_future_usage'] != null ? ConfirmationTokenSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null) : const Omittable.absent(),
+  setupIntent: json.containsKey('setup_intent') ? Omittable(json['setup_intent'] as String?) : const Omittable.absent(),
+  shipping: json.containsKey('shipping') ? Omittable(json['shipping'] != null ? ConfirmationTokensResourceShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   useStripeSdk: json['use_stripe_sdk'] as bool,
 ); }
 
@@ -79,7 +79,7 @@ factory ConfirmationToken.fromJson(Map<String, dynamic> json) { return Confirmat
 final int created;
 
 /// Time at which this ConfirmationToken expires and can no longer be used to confirm a PaymentIntent or SetupIntent.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// Unique identifier for the object.
 final String id;
@@ -88,51 +88,51 @@ final String id;
 final bool livemode;
 
 /// Data used for generating a Mandate.
-final ConfirmationTokensResourceMandateData? mandateData;
+final Omittable<ConfirmationTokensResourceMandateData?> mandateData;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final ConfirmationTokenObject object;
 
 /// ID of the PaymentIntent that this ConfirmationToken was used to confirm, or null if this ConfirmationToken has not yet been used.
-final String? paymentIntent;
+final Omittable<String?> paymentIntent;
 
 /// Payment-method-specific configuration for this ConfirmationToken.
-final ConfirmationTokensResourcePaymentMethodOptions? paymentMethodOptions;
+final Omittable<ConfirmationTokensResourcePaymentMethodOptions?> paymentMethodOptions;
 
 /// Payment details collected by the Payment Element, used to create a PaymentMethod when a PaymentIntent or SetupIntent is confirmed with this ConfirmationToken.
-final ConfirmationTokensResourcePaymentMethodPreview? paymentMethodPreview;
+final Omittable<ConfirmationTokensResourcePaymentMethodPreview?> paymentMethodPreview;
 
 /// Return URL used to confirm the Intent.
-final String? returnUrl;
+final Omittable<String?> returnUrl;
 
 /// Indicates that you intend to make future payments with this ConfirmationToken's payment method.
 /// 
 /// The presence of this property will [attach the payment method](https://docs.stripe.com/payments/save-during-payment) to the PaymentIntent's Customer, if present, after the PaymentIntent is confirmed and any required actions from the user are complete.
-final ConfirmationTokenSetupFutureUsage? setupFutureUsage;
+final Omittable<ConfirmationTokenSetupFutureUsage?> setupFutureUsage;
 
 /// ID of the SetupIntent that this ConfirmationToken was used to confirm, or null if this ConfirmationToken has not yet been used.
-final String? setupIntent;
+final Omittable<String?> setupIntent;
 
 /// Shipping information collected on this ConfirmationToken.
-final ConfirmationTokensResourceShipping? shipping;
+final Omittable<ConfirmationTokensResourceShipping?> shipping;
 
 /// Indicates whether the Stripe SDK is used to handle confirmation flow. Defaults to `true` on ConfirmationToken.
 final bool useStripeSdk;
 
 Map<String, dynamic> toJson() { return {
   'created': created,
-  'expires_at': ?expiresAt,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
   'id': id,
   'livemode': livemode,
-  if (mandateData != null) 'mandate_data': mandateData?.toJson(),
+  if (mandateData.isPresent) 'mandate_data': mandateData.value?.toJson(),
   'object': object.toJson(),
-  'payment_intent': ?paymentIntent,
-  if (paymentMethodOptions != null) 'payment_method_options': paymentMethodOptions?.toJson(),
-  if (paymentMethodPreview != null) 'payment_method_preview': paymentMethodPreview?.toJson(),
-  'return_url': ?returnUrl,
-  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
-  'setup_intent': ?setupIntent,
-  if (shipping != null) 'shipping': shipping?.toJson(),
+  if (paymentIntent.isPresent) 'payment_intent': paymentIntent.value,
+  if (paymentMethodOptions.isPresent) 'payment_method_options': paymentMethodOptions.value?.toJson(),
+  if (paymentMethodPreview.isPresent) 'payment_method_preview': paymentMethodPreview.value?.toJson(),
+  if (returnUrl.isPresent) 'return_url': returnUrl.value,
+  if (setupFutureUsage.isPresent) 'setup_future_usage': setupFutureUsage.value?.toJson(),
+  if (setupIntent.isPresent) 'setup_intent': setupIntent.value,
+  if (shipping.isPresent) 'shipping': shipping.value?.toJson(),
   'use_stripe_sdk': useStripeSdk,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
@@ -140,20 +140,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('use_stripe_sdk') && json['use_stripe_sdk'] is bool; } 
-ConfirmationToken copyWith({int? created, int? Function()? expiresAt, String? id, bool? livemode, ConfirmationTokensResourceMandateData? Function()? mandateData, ConfirmationTokenObject? object, String? Function()? paymentIntent, ConfirmationTokensResourcePaymentMethodOptions? Function()? paymentMethodOptions, ConfirmationTokensResourcePaymentMethodPreview? Function()? paymentMethodPreview, String? Function()? returnUrl, ConfirmationTokenSetupFutureUsage? Function()? setupFutureUsage, String? Function()? setupIntent, ConfirmationTokensResourceShipping? Function()? shipping, bool? useStripeSdk, }) { return ConfirmationToken(
+ConfirmationToken copyWith({int? created, Omittable<int?>? expiresAt, String? id, bool? livemode, Omittable<ConfirmationTokensResourceMandateData?>? mandateData, ConfirmationTokenObject? object, Omittable<String?>? paymentIntent, Omittable<ConfirmationTokensResourcePaymentMethodOptions?>? paymentMethodOptions, Omittable<ConfirmationTokensResourcePaymentMethodPreview?>? paymentMethodPreview, Omittable<String?>? returnUrl, Omittable<ConfirmationTokenSetupFutureUsage?>? setupFutureUsage, Omittable<String?>? setupIntent, Omittable<ConfirmationTokensResourceShipping?>? shipping, bool? useStripeSdk, }) { return ConfirmationToken(
   created: created ?? this.created,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  expiresAt: expiresAt ?? this.expiresAt,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  mandateData: mandateData != null ? mandateData() : this.mandateData,
+  mandateData: mandateData ?? this.mandateData,
   object: object ?? this.object,
-  paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
-  paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
-  paymentMethodPreview: paymentMethodPreview != null ? paymentMethodPreview() : this.paymentMethodPreview,
-  returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
-  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
-  setupIntent: setupIntent != null ? setupIntent() : this.setupIntent,
-  shipping: shipping != null ? shipping() : this.shipping,
+  paymentIntent: paymentIntent ?? this.paymentIntent,
+  paymentMethodOptions: paymentMethodOptions ?? this.paymentMethodOptions,
+  paymentMethodPreview: paymentMethodPreview ?? this.paymentMethodPreview,
+  returnUrl: returnUrl ?? this.returnUrl,
+  setupFutureUsage: setupFutureUsage ?? this.setupFutureUsage,
+  setupIntent: setupIntent ?? this.setupIntent,
+  shipping: shipping ?? this.shipping,
   useStripeSdk: useStripeSdk ?? this.useStripeSdk,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

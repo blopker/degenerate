@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'uncached': ?uncached,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'cached', 'content_type', 'country', 'ssl', 'ssl_protocols', 'uncached'}.contains(key)); } 
-Bandwidth2 copyWith({int Function()? all, int Function()? cached, Map<String, dynamic> Function()? contentType, Map<String, dynamic> Function()? country, Bandwidth2Ssl Function()? ssl, Bandwidth2SslProtocols Function()? sslProtocols, int Function()? uncached, }) { return Bandwidth2(
+Bandwidth2 copyWith({int? Function()? all, int? Function()? cached, Map<String, dynamic>? Function()? contentType, Map<String, dynamic>? Function()? country, Bandwidth2Ssl? Function()? ssl, Bandwidth2SslProtocols? Function()? sslProtocols, int? Function()? uncached, }) { return Bandwidth2(
   all: all != null ? all() : this.all,
   cached: cached != null ? cached() : this.cached,
   contentType: contentType != null ? contentType() : this.contentType,

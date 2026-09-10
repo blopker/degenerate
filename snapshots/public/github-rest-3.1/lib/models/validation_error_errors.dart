@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String; } 
-ValidationErrorErrors copyWith({String Function()? resource, String Function()? field, String Function()? message, String? code, int Function()? index, ValidationErrorErrorsValue Function()? value, }) { return ValidationErrorErrors(
+ValidationErrorErrors copyWith({String? Function()? resource, String? Function()? field, String? Function()? message, String? code, int? Function()? index, ValidationErrorErrorsValue? Function()? value, }) { return ValidationErrorErrors(
   resource: resource != null ? resource() : this.resource,
   field: field != null ? field() : this.field,
   message: message != null ? message() : this.message,

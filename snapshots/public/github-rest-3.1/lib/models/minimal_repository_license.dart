@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MinimalRepositoryLicense {const MinimalRepositoryLicense({this.key, this.name, this.spdxId, this.url, this.nodeId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MinimalRepositoryLicense {const MinimalRepositoryLicense({this.key, this.name, this.spdxId, this.url = const Omittable.absent(), this.nodeId, });
 
 factory MinimalRepositoryLicense.fromJson(Map<String, dynamic> json) { return MinimalRepositoryLicense(
   key: json['key'] as String?,
   name: json['name'] as String?,
   spdxId: json['spdx_id'] as String?,
-  url: json['url'] as String?,
+  url: json.containsKey('url') ? Omittable(json['url'] as String?) : const Omittable.absent(),
   nodeId: json['node_id'] as String?,
 ); }
 
@@ -16,7 +16,7 @@ final String? name;
 
 final String? spdxId;
 
-final String? url;
+final Omittable<String?> url;
 
 final String? nodeId;
 
@@ -24,15 +24,15 @@ Map<String, dynamic> toJson() { return {
   'key': ?key,
   'name': ?name,
   'spdx_id': ?spdxId,
-  'url': ?url,
+  if (url.isPresent) 'url': url.value,
   'node_id': ?nodeId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'key', 'name', 'spdx_id', 'url', 'node_id'}.contains(key)); } 
-MinimalRepositoryLicense copyWith({String Function()? key, String Function()? name, String Function()? spdxId, String? Function()? url, String Function()? nodeId, }) { return MinimalRepositoryLicense(
+MinimalRepositoryLicense copyWith({String? Function()? key, String? Function()? name, String? Function()? spdxId, Omittable<String?>? url, String? Function()? nodeId, }) { return MinimalRepositoryLicense(
   key: key != null ? key() : this.key,
   name: name != null ? name() : this.name,
   spdxId: spdxId != null ? spdxId() : this.spdxId,
-  url: url != null ? url() : this.url,
+  url: url ?? this.url,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

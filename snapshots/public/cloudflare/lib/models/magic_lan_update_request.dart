@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (vlanTag != null) 'vlan_tag': vlanTag?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bond_id', 'is_breakout', 'is_prioritized', 'name', 'nat', 'physport', 'routed_subnets', 'static_addressing', 'vlan_tag'}.contains(key)); } 
-MagicLanUpdateRequest copyWith({MagicBondId Function()? bondId, bool Function()? isBreakout, bool Function()? isPrioritized, String Function()? name, MagicNat Function()? nat, MagicPort Function()? physport, List<MagicRoutedSubnet> Function()? routedSubnets, MagicLanStaticAddressing Function()? staticAddressing, MagicVlanTag Function()? vlanTag, }) { return MagicLanUpdateRequest(
+MagicLanUpdateRequest copyWith({MagicBondId? Function()? bondId, bool? Function()? isBreakout, bool? Function()? isPrioritized, String? Function()? name, MagicNat? Function()? nat, MagicPort? Function()? physport, List<MagicRoutedSubnet>? Function()? routedSubnets, MagicLanStaticAddressing? Function()? staticAddressing, MagicVlanTag? Function()? vlanTag, }) { return MagicLanUpdateRequest(
   bondId: bondId != null ? bondId() : this.bondId,
   isBreakout: isBreakout != null ? isBreakout() : this.isBreakout,
   isPrioritized: isPrioritized != null ? isPrioritized() : this.isPrioritized,

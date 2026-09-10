@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('logical_environment') && json['logical_environment'] is String &&
       json.containsKey('deployments'); } 
-OrgsSetClusterDeploymentRecordsRequest copyWith({String? logicalEnvironment, String Function()? physicalEnvironment, List<OrgsSetClusterDeploymentRecordsRequestDeployments>? deployments, }) { return OrgsSetClusterDeploymentRecordsRequest(
+OrgsSetClusterDeploymentRecordsRequest copyWith({String? logicalEnvironment, String? Function()? physicalEnvironment, List<OrgsSetClusterDeploymentRecordsRequestDeployments>? deployments, }) { return OrgsSetClusterDeploymentRecordsRequest(
   logicalEnvironment: logicalEnvironment ?? this.logicalEnvironment,
   physicalEnvironment: physicalEnvironment != null ? physicalEnvironment() : this.physicalEnvironment,
   deployments: deployments ?? this.deployments,

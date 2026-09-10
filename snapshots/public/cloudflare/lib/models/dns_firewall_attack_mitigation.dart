@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'only_when_upstream_unhealthy': onlyWhenUpstreamUnhealthy,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'only_when_upstream_unhealthy'}.contains(key)); } 
-DnsFirewallAttackMitigation copyWith({bool Function()? enabled, bool Function()? onlyWhenUpstreamUnhealthy, }) { return DnsFirewallAttackMitigation(
+DnsFirewallAttackMitigation copyWith({bool? Function()? enabled, bool Function()? onlyWhenUpstreamUnhealthy, }) { return DnsFirewallAttackMitigation(
   enabled: enabled != null ? enabled() : this.enabled,
   onlyWhenUpstreamUnhealthy: onlyWhenUpstreamUnhealthy != null ? onlyWhenUpstreamUnhealthy() : this.onlyWhenUpstreamUnhealthy,
 ); } 

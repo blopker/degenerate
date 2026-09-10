@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-AlexandriaGetCategoriesResponse copyWith({List<AlexandriaMessages2>? errors, List<AlexandriaMessages2>? messages, bool? success, List<AlexandriaCategory> Function()? result, }) { return AlexandriaGetCategoriesResponse(
+AlexandriaGetCategoriesResponse copyWith({List<AlexandriaMessages2>? errors, List<AlexandriaMessages2>? messages, bool? success, List<AlexandriaCategory>? Function()? result, }) { return AlexandriaGetCategoriesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

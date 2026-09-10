@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'session': ?session,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'session'}.contains(key)); } 
-PostPaymentIntentsIntentConfirmRequestRadarOptions copyWith({String Function()? session}) { return PostPaymentIntentsIntentConfirmRequestRadarOptions(
+PostPaymentIntentsIntentConfirmRequestRadarOptions copyWith({String? Function()? session}) { return PostPaymentIntentsIntentConfirmRequestRadarOptions(
   session: session != null ? session() : this.session,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

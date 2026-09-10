@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'apps_domain': ?appsDomain,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'apps_domain'}.contains(key)); } 
-AccessGoogleAppsConfig copyWith({String Function()? clientId, String Function()? clientSecret, List<String> Function()? claims, String Function()? emailClaimName, String Function()? appsDomain, }) { return AccessGoogleAppsConfig(
+AccessGoogleAppsConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, String? Function()? appsDomain, }) { return AccessGoogleAppsConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   claims: claims != null ? claims() : this.claims,

@@ -135,42 +135,42 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardType($value)'; } 
  }
 /// You can [create physical or virtual cards](https://docs.stripe.com/issuing) that are issued to cardholders.
-@immutable final class IssuingCard {const IssuingCard({required this.brand, required this.cardholder, required this.created, required this.currency, required this.expMonth, required this.expYear, required this.id, required this.last4, required this.livemode, required this.metadata, required this.object, required this.spendingControls, required this.status, required this.type, this.cancellationReason, this.cvc, this.financialAccount, this.latestFraudWarning, this.number, this.personalizationDesign, this.replacedBy, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, this.wallets, });
+@immutable final class IssuingCard {const IssuingCard({required this.brand, required this.cardholder, required this.created, required this.currency, required this.expMonth, required this.expYear, required this.id, required this.last4, required this.livemode, required this.metadata, required this.object, required this.spendingControls, required this.status, required this.type, this.cancellationReason = const Omittable.absent(), this.cvc, this.financialAccount = const Omittable.absent(), this.latestFraudWarning = const Omittable.absent(), this.number, this.personalizationDesign = const Omittable.absent(), this.replacedBy = const Omittable.absent(), this.replacementFor = const Omittable.absent(), this.replacementReason = const Omittable.absent(), this.secondLine = const Omittable.absent(), this.shipping = const Omittable.absent(), this.wallets = const Omittable.absent(), });
 
 factory IssuingCard.fromJson(Map<String, dynamic> json) { return IssuingCard(
   brand: json['brand'] as String,
-  cancellationReason: json['cancellation_reason'] != null ? IssuingCardCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
+  cancellationReason: json.containsKey('cancellation_reason') ? Omittable(json['cancellation_reason'] != null ? IssuingCardCancellationReason.fromJson(json['cancellation_reason'] as String) : null) : const Omittable.absent(),
   cardholder: IssuingCardholder.fromJson(json['cardholder'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   cvc: json['cvc'] as String?,
   expMonth: (json['exp_month'] as num).toInt(),
   expYear: (json['exp_year'] as num).toInt(),
-  financialAccount: json['financial_account'] as String?,
+  financialAccount: json.containsKey('financial_account') ? Omittable(json['financial_account'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   last4: json['last4'] as String,
-  latestFraudWarning: json['latest_fraud_warning'] != null ? IssuingCardFraudWarning.fromJson(json['latest_fraud_warning'] as Map<String, dynamic>) : null,
+  latestFraudWarning: json.containsKey('latest_fraud_warning') ? Omittable(json['latest_fraud_warning'] != null ? IssuingCardFraudWarning.fromJson(json['latest_fraud_warning'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   number: json['number'] as String?,
   object: IssuingCardObject.fromJson(json['object'] as String),
-  personalizationDesign: json['personalization_design'] != null ? OneOf2.parse(json['personalization_design'], fromA: (v) => v as String, fromB: (v) => IssuingPersonalizationDesign.fromJson(v as Map<String, dynamic>),) : null,
-  replacedBy: json['replaced_by'] != null ? OneOf2.parse(json['replaced_by'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),) : null,
-  replacementFor: json['replacement_for'] != null ? OneOf2.parse(json['replacement_for'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),) : null,
-  replacementReason: json['replacement_reason'] != null ? IssuingCardReplacementReason.fromJson(json['replacement_reason'] as String) : null,
-  secondLine: json['second_line'] as String?,
-  shipping: json['shipping'] != null ? IssuingCardShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  personalizationDesign: json.containsKey('personalization_design') ? Omittable(json['personalization_design'] != null ? OneOf2.parse(json['personalization_design'], fromA: (v) => v as String, fromB: (v) => IssuingPersonalizationDesign.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  replacedBy: json.containsKey('replaced_by') ? Omittable(json['replaced_by'] != null ? OneOf2.parse(json['replaced_by'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  replacementFor: json.containsKey('replacement_for') ? Omittable(json['replacement_for'] != null ? OneOf2.parse(json['replacement_for'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  replacementReason: json.containsKey('replacement_reason') ? Omittable(json['replacement_reason'] != null ? IssuingCardReplacementReason.fromJson(json['replacement_reason'] as String) : null) : const Omittable.absent(),
+  secondLine: json.containsKey('second_line') ? Omittable(json['second_line'] as String?) : const Omittable.absent(),
+  shipping: json.containsKey('shipping') ? Omittable(json['shipping'] != null ? IssuingCardShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   spendingControls: IssuingCardAuthorizationControls.fromJson(json['spending_controls'] as Map<String, dynamic>),
   status: IssuingCardStatus.fromJson(json['status'] as String),
   type: IssuingCardType.fromJson(json['type'] as String),
-  wallets: json['wallets'] != null ? IssuingCardWallets.fromJson(json['wallets'] as Map<String, dynamic>) : null,
+  wallets: json.containsKey('wallets') ? Omittable(json['wallets'] != null ? IssuingCardWallets.fromJson(json['wallets'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// The brand of the card.
 final String brand;
 
 /// The reason why the card was canceled.
-final IssuingCardCancellationReason? cancellationReason;
+final Omittable<IssuingCardCancellationReason?> cancellationReason;
 
 final IssuingCardholder cardholder;
 
@@ -190,7 +190,7 @@ final int expMonth;
 final int expYear;
 
 /// The financial account this card is attached to.
-final String? financialAccount;
+final Omittable<String?> financialAccount;
 
 /// Unique identifier for the object.
 final String id;
@@ -199,7 +199,7 @@ final String id;
 final String last4;
 
 /// Stripe’s assessment of whether this card’s details have been compromised. If this property isn't null, cancel and reissue the card to prevent fraudulent activity risk.
-final IssuingCardFraudWarning? latestFraudWarning;
+final Omittable<IssuingCardFraudWarning?> latestFraudWarning;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -214,22 +214,22 @@ final String? number;
 final IssuingCardObject object;
 
 /// The personalization design object belonging to this card.
-final IssuingCardPersonalizationDesign? personalizationDesign;
+final Omittable<IssuingCardPersonalizationDesign?> personalizationDesign;
 
 /// The latest card that replaces this card, if any.
-final IssuingCardReplacedBy? replacedBy;
+final Omittable<IssuingCardReplacedBy?> replacedBy;
 
 /// The card this card replaces, if any.
-final IssuingCardReplacementFor? replacementFor;
+final Omittable<IssuingCardReplacementFor?> replacementFor;
 
 /// The reason why the previous card needed to be replaced.
-final IssuingCardReplacementReason? replacementReason;
+final Omittable<IssuingCardReplacementReason?> replacementReason;
 
 /// Text separate from cardholder name, printed on the card.
-final String? secondLine;
+final Omittable<String?> secondLine;
 
 /// Where and how the card will be shipped.
-final IssuingCardShipping? shipping;
+final Omittable<IssuingCardShipping?> shipping;
 
 final IssuingCardAuthorizationControls spendingControls;
 
@@ -240,35 +240,35 @@ final IssuingCardStatus status;
 final IssuingCardType type;
 
 /// Information relating to digital wallets (like Apple Pay and Google Pay).
-final IssuingCardWallets? wallets;
+final Omittable<IssuingCardWallets?> wallets;
 
 Map<String, dynamic> toJson() { return {
   'brand': brand,
-  if (cancellationReason != null) 'cancellation_reason': cancellationReason?.toJson(),
+  if (cancellationReason.isPresent) 'cancellation_reason': cancellationReason.value?.toJson(),
   'cardholder': cardholder.toJson(),
   'created': created,
   'currency': currency,
   'cvc': ?cvc,
   'exp_month': expMonth,
   'exp_year': expYear,
-  'financial_account': ?financialAccount,
+  if (financialAccount.isPresent) 'financial_account': financialAccount.value,
   'id': id,
   'last4': last4,
-  if (latestFraudWarning != null) 'latest_fraud_warning': latestFraudWarning?.toJson(),
+  if (latestFraudWarning.isPresent) 'latest_fraud_warning': latestFraudWarning.value?.toJson(),
   'livemode': livemode,
   'metadata': metadata,
   'number': ?number,
   'object': object.toJson(),
-  if (personalizationDesign != null) 'personalization_design': personalizationDesign?.toJson(),
-  if (replacedBy != null) 'replaced_by': replacedBy?.toJson(),
-  if (replacementFor != null) 'replacement_for': replacementFor?.toJson(),
-  if (replacementReason != null) 'replacement_reason': replacementReason?.toJson(),
-  'second_line': ?secondLine,
-  if (shipping != null) 'shipping': shipping?.toJson(),
+  if (personalizationDesign.isPresent) 'personalization_design': personalizationDesign.value?.toJson(),
+  if (replacedBy.isPresent) 'replaced_by': replacedBy.value?.toJson(),
+  if (replacementFor.isPresent) 'replacement_for': replacementFor.value?.toJson(),
+  if (replacementReason.isPresent) 'replacement_reason': replacementReason.value?.toJson(),
+  if (secondLine.isPresent) 'second_line': secondLine.value,
+  if (shipping.isPresent) 'shipping': shipping.value?.toJson(),
   'spending_controls': spendingControls.toJson(),
   'status': status.toJson(),
   'type': type.toJson(),
-  if (wallets != null) 'wallets': wallets?.toJson(),
+  if (wallets.isPresent) 'wallets': wallets.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand') && json['brand'] is String &&
       json.containsKey('cardholder') &&
@@ -284,33 +284,33 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('spending_controls') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-IssuingCard copyWith({String? brand, IssuingCardCancellationReason? Function()? cancellationReason, IssuingCardholder? cardholder, int? created, String? currency, String Function()? cvc, int? expMonth, int? expYear, String? Function()? financialAccount, String? id, String? last4, IssuingCardFraudWarning? Function()? latestFraudWarning, bool? livemode, Map<String,String>? metadata, String Function()? number, IssuingCardObject? object, IssuingCardPersonalizationDesign? Function()? personalizationDesign, IssuingCardReplacedBy? Function()? replacedBy, IssuingCardReplacementFor? Function()? replacementFor, IssuingCardReplacementReason? Function()? replacementReason, String? Function()? secondLine, IssuingCardShipping? Function()? shipping, IssuingCardAuthorizationControls? spendingControls, IssuingCardStatus? status, IssuingCardType? type, IssuingCardWallets? Function()? wallets, }) { return IssuingCard(
+IssuingCard copyWith({String? brand, Omittable<IssuingCardCancellationReason?>? cancellationReason, IssuingCardholder? cardholder, int? created, String? currency, String? Function()? cvc, int? expMonth, int? expYear, Omittable<String?>? financialAccount, String? id, String? last4, Omittable<IssuingCardFraudWarning?>? latestFraudWarning, bool? livemode, Map<String,String>? metadata, String? Function()? number, IssuingCardObject? object, Omittable<IssuingCardPersonalizationDesign?>? personalizationDesign, Omittable<IssuingCardReplacedBy?>? replacedBy, Omittable<IssuingCardReplacementFor?>? replacementFor, Omittable<IssuingCardReplacementReason?>? replacementReason, Omittable<String?>? secondLine, Omittable<IssuingCardShipping?>? shipping, IssuingCardAuthorizationControls? spendingControls, IssuingCardStatus? status, IssuingCardType? type, Omittable<IssuingCardWallets?>? wallets, }) { return IssuingCard(
   brand: brand ?? this.brand,
-  cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
+  cancellationReason: cancellationReason ?? this.cancellationReason,
   cardholder: cardholder ?? this.cardholder,
   created: created ?? this.created,
   currency: currency ?? this.currency,
   cvc: cvc != null ? cvc() : this.cvc,
   expMonth: expMonth ?? this.expMonth,
   expYear: expYear ?? this.expYear,
-  financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,
+  financialAccount: financialAccount ?? this.financialAccount,
   id: id ?? this.id,
   last4: last4 ?? this.last4,
-  latestFraudWarning: latestFraudWarning != null ? latestFraudWarning() : this.latestFraudWarning,
+  latestFraudWarning: latestFraudWarning ?? this.latestFraudWarning,
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
   number: number != null ? number() : this.number,
   object: object ?? this.object,
-  personalizationDesign: personalizationDesign != null ? personalizationDesign() : this.personalizationDesign,
-  replacedBy: replacedBy != null ? replacedBy() : this.replacedBy,
-  replacementFor: replacementFor != null ? replacementFor() : this.replacementFor,
-  replacementReason: replacementReason != null ? replacementReason() : this.replacementReason,
-  secondLine: secondLine != null ? secondLine() : this.secondLine,
-  shipping: shipping != null ? shipping() : this.shipping,
+  personalizationDesign: personalizationDesign ?? this.personalizationDesign,
+  replacedBy: replacedBy ?? this.replacedBy,
+  replacementFor: replacementFor ?? this.replacementFor,
+  replacementReason: replacementReason ?? this.replacementReason,
+  secondLine: secondLine ?? this.secondLine,
+  shipping: shipping ?? this.shipping,
   spendingControls: spendingControls ?? this.spendingControls,
   status: status ?? this.status,
   type: type ?? this.type,
-  wallets: wallets != null ? wallets() : this.wallets,
+  wallets: wallets ?? this.wallets,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingCard &&

@@ -38,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey(r'$met
       json.containsKey('dataset') && json['dataset'] is String &&
       json.containsKey('source') &&
       json.containsKey('timestamp') && json['timestamp'] is num; } 
-WorkersObservabilityTelemetryEvent copyWith({Map<String, dynamic> Function()? $containers, WorkersObservabilityTelemetryEvent$metadata? $metadata, WorkersObservabilityTelemetryEvent$workers Function()? $workers, String? dataset, WorkersObservabilityTelemetryEventSource? source, int? timestamp, }) { return WorkersObservabilityTelemetryEvent(
+WorkersObservabilityTelemetryEvent copyWith({Map<String, dynamic>? Function()? $containers, WorkersObservabilityTelemetryEvent$metadata? $metadata, WorkersObservabilityTelemetryEvent$workers? Function()? $workers, String? dataset, WorkersObservabilityTelemetryEventSource? source, int? timestamp, }) { return WorkersObservabilityTelemetryEvent(
   $containers: $containers != null ? $containers() : this.$containers,
   $metadata: $metadata ?? this.$metadata,
   $workers: $workers != null ? $workers() : this.$workers,

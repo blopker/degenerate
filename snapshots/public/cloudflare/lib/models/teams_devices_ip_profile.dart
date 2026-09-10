@@ -62,7 +62,7 @@ final TeamsDevicesIpProfileUpdatedAt updatedAt;
 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toJson(),
-  if (description != null) 'description': description?.toJson(),
+  'description': description?.toJson(),
   'enabled': enabled.toJson(),
   'id': id.toJson(),
   'match': match.toJson(),

@@ -115,14 +115,14 @@ Map<String, dynamic> toJson() { return {
   'slug': slug,
   'students_are_repo_admins': studentsAreRepoAdmins,
   'feedback_pull_requests_enabled': feedbackPullRequestsEnabled,
-  'max_teams': ?maxTeams,
-  'max_members': ?maxMembers,
+  'max_teams': maxTeams,
+  'max_members': maxMembers,
   'editor': editor,
   'accepted': accepted,
   'submitted': submitted,
   'passing': passing,
   'language': language,
-  if (deadline != null) 'deadline': deadline?.toIso8601String(),
+  'deadline': deadline?.toIso8601String(),
   'starter_code_repository': starterCodeRepository.toJson(),
   'classroom': classroom.toJson(),
 }; } 
@@ -135,14 +135,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('students_are_repo_admins') && json['students_are_repo_admins'] is bool &&
       json.containsKey('feedback_pull_requests_enabled') && json['feedback_pull_requests_enabled'] is bool &&
-      json.containsKey('max_teams') && json['max_teams'] is num &&
-      json.containsKey('max_members') && json['max_members'] is num &&
+      json.containsKey('max_teams') && (json['max_teams'] == null || json['max_teams'] is num) &&
+      json.containsKey('max_members') && (json['max_members'] == null || json['max_members'] is num) &&
       json.containsKey('editor') && json['editor'] is String &&
       json.containsKey('accepted') && json['accepted'] is num &&
       json.containsKey('submitted') && json['submitted'] is num &&
       json.containsKey('passing') && json['passing'] is num &&
       json.containsKey('language') && json['language'] is String &&
-      json.containsKey('deadline') && json['deadline'] is String &&
+      json.containsKey('deadline') && (json['deadline'] == null || json['deadline'] is String) &&
       json.containsKey('starter_code_repository') &&
       json.containsKey('classroom'); } 
 ClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, ClassroomAssignmentType? type, String? inviteLink, bool? invitationsEnabled, String? slug, bool? studentsAreRepoAdmins, bool? feedbackPullRequestsEnabled, int? Function()? maxTeams, int? Function()? maxMembers, String? editor, int? accepted, int? submitted, int? passing, String? language, DateTime? Function()? deadline, SimpleClassroomRepository? starterCodeRepository, Classroom? classroom, }) { return ClassroomAssignment(

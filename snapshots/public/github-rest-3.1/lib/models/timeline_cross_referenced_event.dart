@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('source'); } 
-TimelineCrossReferencedEvent copyWith({String? event, SimpleUser Function()? actor, DateTime? createdAt, DateTime? updatedAt, TimelineCrossReferencedEventSource? source, }) { return TimelineCrossReferencedEvent(
+TimelineCrossReferencedEvent copyWith({String? event, SimpleUser? Function()? actor, DateTime? createdAt, DateTime? updatedAt, TimelineCrossReferencedEventSource? source, }) { return TimelineCrossReferencedEvent(
   event: event ?? this.event,
   actor: actor != null ? actor() : this.actor,
   createdAt: createdAt ?? this.createdAt,

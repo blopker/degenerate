@@ -77,7 +77,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('output'); } 
-ComputerToolCallOutputResource copyWith({String? type, String? id, String? callId, List<ComputerCallSafetyCheckParam> Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputResourceStatus Function()? status, }) { return ComputerToolCallOutputResource(
+ComputerToolCallOutputResource copyWith({String? type, String? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputResourceStatus? Function()? status, }) { return ComputerToolCallOutputResource(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,

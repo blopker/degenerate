@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (dob != null) 'dob': dob?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dob'}.contains(key)); } 
-PostPaymentIntentsIntentRequestPaymentMethodDataKlarna copyWith({PostPaymentIntentsIntentRequestPaymentMethodDataKlarnaDob Function()? dob}) { return PostPaymentIntentsIntentRequestPaymentMethodDataKlarna(
+PostPaymentIntentsIntentRequestPaymentMethodDataKlarna copyWith({PostPaymentIntentsIntentRequestPaymentMethodDataKlarnaDob? Function()? dob}) { return PostPaymentIntentsIntentRequestPaymentMethodDataKlarna(
   dob: dob != null ? dob() : this.dob,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

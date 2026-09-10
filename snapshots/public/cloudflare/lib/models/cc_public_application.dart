@@ -109,7 +109,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('updated_at') &&
       json.containsKey('version') && json['version'] is num; } 
-CcPublicApplication copyWith({CcIso8601Timestamp? createdAt, CcDurableObjectsConfigurationNamespaceId Function()? durableObject, CcApplicationHealthInstances? health, CcApplicationId? id, CcImage? image, CcPublicInstanceType? instanceType, int? maxInstances, String? name, CcApplicationNetwork Function()? network, CcObservability Function()? observability, CcApplicationRolloutActiveGracePeriod Function()? rolloutActiveGracePeriod, CcIso8601Timestamp? updatedAt, int? version, }) { return CcPublicApplication(
+CcPublicApplication copyWith({CcIso8601Timestamp? createdAt, CcDurableObjectsConfigurationNamespaceId? Function()? durableObject, CcApplicationHealthInstances? health, CcApplicationId? id, CcImage? image, CcPublicInstanceType? instanceType, int? maxInstances, String? name, CcApplicationNetwork? Function()? network, CcObservability? Function()? observability, CcApplicationRolloutActiveGracePeriod? Function()? rolloutActiveGracePeriod, CcIso8601Timestamp? updatedAt, int? version, }) { return CcPublicApplication(
   createdAt: createdAt ?? this.createdAt,
   durableObject: durableObject != null ? durableObject() : this.durableObject,
   health: health ?? this.health,

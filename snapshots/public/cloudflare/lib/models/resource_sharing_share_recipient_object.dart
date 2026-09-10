@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('created') &&
       json.containsKey('id') &&
       json.containsKey('modified'); } 
-ResourceSharingShareRecipientObject copyWith({ResourceSharingAccountId? accountId, ResourceSharingRecipientAssociationStatus? associationStatus, ResourceSharingCreated? created, ResourceSharingRecipientId? id, ResourceSharingModified? modified, List<ResourceSharingShareRecipientResourceObject> Function()? resources, }) { return ResourceSharingShareRecipientObject(
+ResourceSharingShareRecipientObject copyWith({ResourceSharingAccountId? accountId, ResourceSharingRecipientAssociationStatus? associationStatus, ResourceSharingCreated? created, ResourceSharingRecipientId? id, ResourceSharingModified? modified, List<ResourceSharingShareRecipientResourceObject>? Function()? resources, }) { return ResourceSharingShareRecipientObject(
   accountId: accountId ?? this.accountId,
   associationStatus: associationStatus ?? this.associationStatus,
   created: created ?? this.created,

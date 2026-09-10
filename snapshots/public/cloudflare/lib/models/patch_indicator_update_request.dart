@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'indicatorType', 'relatedEvents', 'tags', 'value'}.contains(key)); } 
-PatchIndicatorUpdateRequest copyWith({String Function()? indicatorType, List<PatchIndicatorUpdateRequestRelatedEvents> Function()? relatedEvents, List<PatchIndicatorUpdateRequestTags> Function()? tags, String Function()? value, }) { return PatchIndicatorUpdateRequest(
+PatchIndicatorUpdateRequest copyWith({String? Function()? indicatorType, List<PatchIndicatorUpdateRequestRelatedEvents>? Function()? relatedEvents, List<PatchIndicatorUpdateRequestTags>? Function()? tags, String? Function()? value, }) { return PatchIndicatorUpdateRequest(
   indicatorType: indicatorType != null ? indicatorType() : this.indicatorType,
   relatedEvents: relatedEvents != null ? relatedEvents() : this.relatedEvents,
   tags: tags != null ? tags() : this.tags,

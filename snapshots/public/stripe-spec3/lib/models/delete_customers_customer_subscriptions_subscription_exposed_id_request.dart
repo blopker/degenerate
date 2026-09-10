@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'prorate': ?prorate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'invoice_now', 'prorate'}.contains(key)); } 
-DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest copyWith({List<String> Function()? expand, bool Function()? invoiceNow, bool Function()? prorate, }) { return DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest(
+DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest copyWith({List<String>? Function()? expand, bool? Function()? invoiceNow, bool? Function()? prorate, }) { return DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest(
   expand: expand != null ? expand() : this.expand,
   invoiceNow: invoiceNow != null ? invoiceNow() : this.invoiceNow,
   prorate: prorate != null ? prorate() : this.prorate,

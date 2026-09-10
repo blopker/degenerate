@@ -14,7 +14,7 @@ factory WaitingroomNextEventStartTime.fromJson(String json) => WaitingroomNextEv
 String toJson() => value;
 
 }
-@immutable final class WaitingroomWaitingroom {const WaitingroomWaitingroom({this.additionalRoutes, this.cookieAttributes, this.cookieSuffix, this.createdOn, this.customPageHtml, this.defaultTemplateLanguage, this.description, this.disableSessionRenewal, this.enabledOriginCommands, this.host, this.id, this.jsonResponseEnabled, this.modifiedOn, this.name, this.newUsersPerMinute, this.nextEventPrequeueStartTime, this.nextEventStartTime, this.path, this.queueAll, this.queueingMethod, this.queueingStatusCode, this.sessionDuration, this.suspended, this.totalActiveUsers, this.turnstileAction, this.turnstileMode, });
+@immutable final class WaitingroomWaitingroom {const WaitingroomWaitingroom({this.additionalRoutes, this.cookieAttributes, this.cookieSuffix, this.createdOn, this.customPageHtml, this.defaultTemplateLanguage, this.description, this.disableSessionRenewal, this.enabledOriginCommands, this.host, this.id, this.jsonResponseEnabled, this.modifiedOn, this.name, this.newUsersPerMinute, this.nextEventPrequeueStartTime = const Omittable.absent(), this.nextEventStartTime = const Omittable.absent(), this.path, this.queueAll, this.queueingMethod, this.queueingStatusCode, this.sessionDuration, this.suspended, this.totalActiveUsers, this.turnstileAction, this.turnstileMode, });
 
 factory WaitingroomWaitingroom.fromJson(Map<String, dynamic> json) { return WaitingroomWaitingroom(
   additionalRoutes: (json['additional_routes'] as List<dynamic>?)?.map((e) => WaitingroomAdditionalRoutes2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -32,8 +32,8 @@ factory WaitingroomWaitingroom.fromJson(Map<String, dynamic> json) { return Wait
   modifiedOn: json['modified_on'] != null ? WaitingroomTimestamp.fromJson(json['modified_on'] as String) : null,
   name: json['name'] != null ? WaitingroomName.fromJson(json['name'] as String) : null,
   newUsersPerMinute: json['new_users_per_minute'] != null ? WaitingroomNewUsersPerMinute.fromJson(json['new_users_per_minute'] as num) : null,
-  nextEventPrequeueStartTime: json['next_event_prequeue_start_time'] != null ? WaitingroomNextEventPrequeueStartTime.fromJson(json['next_event_prequeue_start_time'] as String) : null,
-  nextEventStartTime: json['next_event_start_time'] != null ? WaitingroomNextEventStartTime.fromJson(json['next_event_start_time'] as String) : null,
+  nextEventPrequeueStartTime: json.containsKey('next_event_prequeue_start_time') ? Omittable(json['next_event_prequeue_start_time'] != null ? WaitingroomNextEventPrequeueStartTime.fromJson(json['next_event_prequeue_start_time'] as String) : null) : const Omittable.absent(),
+  nextEventStartTime: json.containsKey('next_event_start_time') ? Omittable(json['next_event_start_time'] != null ? WaitingroomNextEventStartTime.fromJson(json['next_event_start_time'] as String) : null) : const Omittable.absent(),
   path: json['path'] != null ? WaitingroomPath.fromJson(json['path'] as String) : null,
   queueAll: json['queue_all'] != null ? WaitingroomQueueAll.fromJson(json['queue_all'] as bool) : null,
   queueingMethod: json['queueing_method'] != null ? WaitingroomQueueingMethod.fromJson(json['queueing_method'] as String) : null,
@@ -185,10 +185,10 @@ final WaitingroomName? name;
 final WaitingroomNewUsersPerMinute? newUsersPerMinute;
 
 /// An ISO 8601 timestamp that marks when the next event will begin queueing.
-final WaitingroomNextEventPrequeueStartTime? nextEventPrequeueStartTime;
+final Omittable<WaitingroomNextEventPrequeueStartTime?> nextEventPrequeueStartTime;
 
 /// An ISO 8601 timestamp that marks when the next event will start.
-final WaitingroomNextEventStartTime? nextEventStartTime;
+final Omittable<WaitingroomNextEventStartTime?> nextEventStartTime;
 
 /// Sets the path within the host to enable the waiting room on. The waiting room will be enabled for all subpaths as well. If there are two waiting rooms on the same subpath, the waiting room for the most specific path will be chosen. Wildcards and query parameters are not supported.
 final WaitingroomPath? path;
@@ -247,8 +247,8 @@ Map<String, dynamic> toJson() { return {
   if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
   if (name != null) 'name': name?.toJson(),
   if (newUsersPerMinute != null) 'new_users_per_minute': newUsersPerMinute?.toJson(),
-  if (nextEventPrequeueStartTime != null) 'next_event_prequeue_start_time': nextEventPrequeueStartTime?.toJson(),
-  if (nextEventStartTime != null) 'next_event_start_time': nextEventStartTime?.toJson(),
+  if (nextEventPrequeueStartTime.isPresent) 'next_event_prequeue_start_time': nextEventPrequeueStartTime.value?.toJson(),
+  if (nextEventStartTime.isPresent) 'next_event_start_time': nextEventStartTime.value?.toJson(),
   if (path != null) 'path': path?.toJson(),
   if (queueAll != null) 'queue_all': queueAll?.toJson(),
   if (queueingMethod != null) 'queueing_method': queueingMethod?.toJson(),
@@ -260,7 +260,7 @@ Map<String, dynamic> toJson() { return {
   if (turnstileMode != null) 'turnstile_mode': turnstileMode?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_routes', 'cookie_attributes', 'cookie_suffix', 'created_on', 'custom_page_html', 'default_template_language', 'description', 'disable_session_renewal', 'enabled_origin_commands', 'host', 'id', 'json_response_enabled', 'modified_on', 'name', 'new_users_per_minute', 'next_event_prequeue_start_time', 'next_event_start_time', 'path', 'queue_all', 'queueing_method', 'queueing_status_code', 'session_duration', 'suspended', 'total_active_users', 'turnstile_action', 'turnstile_mode'}.contains(key)); } 
-WaitingroomWaitingroom copyWith({List<WaitingroomAdditionalRoutes2> Function()? additionalRoutes, WaitingroomCookieAttributes Function()? cookieAttributes, WaitingroomCookieSuffix Function()? cookieSuffix, WaitingroomTimestamp Function()? createdOn, WaitingroomCustomPageHtml Function()? customPageHtml, WaitingroomDefaultTemplateLanguage Function()? defaultTemplateLanguage, WaitingroomDescription Function()? description, WaitingroomDisableSessionRenewal Function()? disableSessionRenewal, List<WaitingroomEnabledOriginCommands2> Function()? enabledOriginCommands, WaitingroomHost Function()? host, WaitingroomWaitingRoomId Function()? id, WaitingroomJsonResponseEnabled Function()? jsonResponseEnabled, WaitingroomTimestamp Function()? modifiedOn, WaitingroomName Function()? name, WaitingroomNewUsersPerMinute Function()? newUsersPerMinute, WaitingroomNextEventPrequeueStartTime? Function()? nextEventPrequeueStartTime, WaitingroomNextEventStartTime? Function()? nextEventStartTime, WaitingroomPath Function()? path, WaitingroomQueueAll Function()? queueAll, WaitingroomQueueingMethod Function()? queueingMethod, WaitingroomQueueingStatusCode Function()? queueingStatusCode, WaitingroomSessionDuration Function()? sessionDuration, WaitingroomSuspended Function()? suspended, WaitingroomTotalActiveUsers Function()? totalActiveUsers, WaitingroomTurnstileAction Function()? turnstileAction, WaitingroomTurnstileMode Function()? turnstileMode, }) { return WaitingroomWaitingroom(
+WaitingroomWaitingroom copyWith({List<WaitingroomAdditionalRoutes2>? Function()? additionalRoutes, WaitingroomCookieAttributes? Function()? cookieAttributes, WaitingroomCookieSuffix? Function()? cookieSuffix, WaitingroomTimestamp? Function()? createdOn, WaitingroomCustomPageHtml? Function()? customPageHtml, WaitingroomDefaultTemplateLanguage? Function()? defaultTemplateLanguage, WaitingroomDescription? Function()? description, WaitingroomDisableSessionRenewal? Function()? disableSessionRenewal, List<WaitingroomEnabledOriginCommands2>? Function()? enabledOriginCommands, WaitingroomHost? Function()? host, WaitingroomWaitingRoomId? Function()? id, WaitingroomJsonResponseEnabled? Function()? jsonResponseEnabled, WaitingroomTimestamp? Function()? modifiedOn, WaitingroomName? Function()? name, WaitingroomNewUsersPerMinute? Function()? newUsersPerMinute, Omittable<WaitingroomNextEventPrequeueStartTime?>? nextEventPrequeueStartTime, Omittable<WaitingroomNextEventStartTime?>? nextEventStartTime, WaitingroomPath? Function()? path, WaitingroomQueueAll? Function()? queueAll, WaitingroomQueueingMethod? Function()? queueingMethod, WaitingroomQueueingStatusCode? Function()? queueingStatusCode, WaitingroomSessionDuration? Function()? sessionDuration, WaitingroomSuspended? Function()? suspended, WaitingroomTotalActiveUsers? Function()? totalActiveUsers, WaitingroomTurnstileAction? Function()? turnstileAction, WaitingroomTurnstileMode? Function()? turnstileMode, }) { return WaitingroomWaitingroom(
   additionalRoutes: additionalRoutes != null ? additionalRoutes() : this.additionalRoutes,
   cookieAttributes: cookieAttributes != null ? cookieAttributes() : this.cookieAttributes,
   cookieSuffix: cookieSuffix != null ? cookieSuffix() : this.cookieSuffix,
@@ -276,8 +276,8 @@ WaitingroomWaitingroom copyWith({List<WaitingroomAdditionalRoutes2> Function()? 
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   name: name != null ? name() : this.name,
   newUsersPerMinute: newUsersPerMinute != null ? newUsersPerMinute() : this.newUsersPerMinute,
-  nextEventPrequeueStartTime: nextEventPrequeueStartTime != null ? nextEventPrequeueStartTime() : this.nextEventPrequeueStartTime,
-  nextEventStartTime: nextEventStartTime != null ? nextEventStartTime() : this.nextEventStartTime,
+  nextEventPrequeueStartTime: nextEventPrequeueStartTime ?? this.nextEventPrequeueStartTime,
+  nextEventStartTime: nextEventStartTime ?? this.nextEventStartTime,
   path: path != null ? path() : this.path,
   queueAll: queueAll != null ? queueAll() : this.queueAll,
   queueingMethod: queueingMethod != null ? queueingMethod() : this.queueingMethod,

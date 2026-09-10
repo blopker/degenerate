@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_mode'); } 
-PostSubscriptionsSubscriptionMigrateRequest copyWith({PostSubscriptionsSubscriptionMigrateRequestBillingMode? billingMode, List<String> Function()? expand, }) { return PostSubscriptionsSubscriptionMigrateRequest(
+PostSubscriptionsSubscriptionMigrateRequest copyWith({PostSubscriptionsSubscriptionMigrateRequestBillingMode? billingMode, List<String>? Function()? expand, }) { return PostSubscriptionsSubscriptionMigrateRequest(
   billingMode: billingMode ?? this.billingMode,
   expand: expand != null ? expand() : this.expand,
 ); } 

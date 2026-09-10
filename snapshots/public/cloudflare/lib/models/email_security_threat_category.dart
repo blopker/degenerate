@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityThreatCategory {const EmailSecurityThreatCategory({required this.id, this.description, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityThreatCategory {const EmailSecurityThreatCategory({required this.id, this.description = const Omittable.absent(), this.name = const Omittable.absent(), });
 
 factory EmailSecurityThreatCategory.fromJson(Map<String, dynamic> json) { return EmailSecurityThreatCategory(
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   id: (json['id'] as num).toInt(),
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
 ); }
 
-final String? description;
+final Omittable<String?> description;
 
 final int id;
 
-final String? name;
+final Omittable<String?> name;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'id': id,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num; } 
-EmailSecurityThreatCategory copyWith({String? Function()? description, int? id, String? Function()? name, }) { return EmailSecurityThreatCategory(
-  description: description != null ? description() : this.description,
+EmailSecurityThreatCategory copyWith({Omittable<String?>? description, int? id, Omittable<String?>? name, }) { return EmailSecurityThreatCategory(
+  description: description ?? this.description,
   id: id ?? this.id,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EmailSecurityThreatCategory &&

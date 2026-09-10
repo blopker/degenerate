@@ -91,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('query_id') && json['query_id'] is num &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user_email') && json['user_email'] is String; } 
-GetEventQueryAlertListResponse copyWith({int? accountId, String? createdAt, bool? enabled, GetEventQueryAlertListResponseFrequency? frequency, int? id, String Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) { return GetEventQueryAlertListResponse(
+GetEventQueryAlertListResponse copyWith({int? accountId, String? createdAt, bool? enabled, GetEventQueryAlertListResponseFrequency? frequency, int? id, String? Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) { return GetEventQueryAlertListResponse(
   accountId: accountId ?? this.accountId,
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,

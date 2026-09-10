@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (priority != null) 'priority': priority?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'priority'}.contains(key)); } 
-CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates copyWith({TlsCertificatesAndHostnamesIdentifier Function()? id, TlsCertificatesAndHostnamesPriority Function()? priority, }) { return CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates(
+CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates copyWith({TlsCertificatesAndHostnamesIdentifier? Function()? id, TlsCertificatesAndHostnamesPriority? Function()? priority, }) { return CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates(
   id: id != null ? id() : this.id,
   priority: priority != null ? priority() : this.priority,
 ); } 

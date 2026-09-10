@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'created_at', 'description', 'id', 'items', 'name', 'type', 'updated_at'}.contains(key)); } 
-ZeroTrustGatewayLists copyWith({ZeroTrustGatewayCount Function()? count, ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayDescription Function()? description, ZeroTrustGatewaySchemasUuid Function()? id, List<ZeroTrustGatewayItems2> Function()? items, ZeroTrustGatewayName Function()? name, ZeroTrustGatewaySchemasType Function()? type, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, }) { return ZeroTrustGatewayLists(
+ZeroTrustGatewayLists copyWith({ZeroTrustGatewayCount? Function()? count, ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayDescription? Function()? description, ZeroTrustGatewaySchemasUuid? Function()? id, List<ZeroTrustGatewayItems2>? Function()? items, ZeroTrustGatewayName? Function()? name, ZeroTrustGatewaySchemasType? Function()? type, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayLists(
   count: count != null ? count() : this.count,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,

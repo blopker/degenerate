@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status'}.contains(key)); } 
-SecurityAndAnalysisCodeSecurity copyWith({SecurityAndAnalysisCodeSecurityStatus Function()? status}) { return SecurityAndAnalysisCodeSecurity(
+SecurityAndAnalysisCodeSecurity copyWith({SecurityAndAnalysisCodeSecurityStatus? Function()? status}) { return SecurityAndAnalysisCodeSecurity(
   status: status != null ? status() : this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

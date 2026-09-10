@@ -26,13 +26,13 @@ Map<String, dynamic> toJson() { return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-  'result': ?result,
+  'result': result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-WafRuleGroupsListWafRuleGroupsResponse4Xx copyWith({List<WafManagedRulesMessages2>? errors, List<WafManagedRulesMessages2>? messages, bool? success, WafManagedRulesResultInfo Function()? resultInfo, Map<String, dynamic>? Function()? result, }) { return WafRuleGroupsListWafRuleGroupsResponse4Xx(
+WafRuleGroupsListWafRuleGroupsResponse4Xx copyWith({List<WafManagedRulesMessages2>? errors, List<WafManagedRulesMessages2>? messages, bool? success, WafManagedRulesResultInfo? Function()? resultInfo, Map<String, dynamic>? Function()? result, }) { return WafRuleGroupsListWafRuleGroupsResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

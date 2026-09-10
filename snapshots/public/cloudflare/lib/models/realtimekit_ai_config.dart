@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (transcription != null) 'transcription': transcription?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'summarization', 'transcription'}.contains(key)); } 
-RealtimekitAiConfig copyWith({RealtimekitSummarizationConfig Function()? summarization, RealtimekitTranscriptionConfig Function()? transcription, }) { return RealtimekitAiConfig(
+RealtimekitAiConfig copyWith({RealtimekitSummarizationConfig? Function()? summarization, RealtimekitTranscriptionConfig? Function()? transcription, }) { return RealtimekitAiConfig(
   summarization: summarization != null ? summarization() : this.summarization,
   transcription: transcription != null ? transcription() : this.transcription,
 ); } 

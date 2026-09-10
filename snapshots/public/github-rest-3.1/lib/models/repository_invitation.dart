@@ -77,8 +77,8 @@ final String nodeId;
 Map<String, dynamic> toJson() { return {
   'id': id,
   'repository': repository.toJson(),
-  if (invitee != null) 'invitee': invitee?.toJson(),
-  if (inviter != null) 'inviter': inviter?.toJson(),
+  'invitee': invitee?.toJson(),
+  'inviter': inviter?.toJson(),
   'permissions': permissions.toJson(),
   'created_at': createdAt.toIso8601String(),
   'expired': ?expired,
@@ -95,7 +95,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('node_id') && json['node_id'] is String; } 
-RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUser? Function()? invitee, SimpleUser? Function()? inviter, RepositoryInvitationPermissions? permissions, DateTime? createdAt, bool Function()? expired, String? url, String? htmlUrl, String? nodeId, }) { return RepositoryInvitation(
+RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUser? Function()? invitee, SimpleUser? Function()? inviter, RepositoryInvitationPermissions? permissions, DateTime? createdAt, bool? Function()? expired, String? url, String? htmlUrl, String? nodeId, }) { return RepositoryInvitation(
   id: id ?? this.id,
   repository: repository ?? this.repository,
   invitee: invitee != null ? invitee() : this.invitee,

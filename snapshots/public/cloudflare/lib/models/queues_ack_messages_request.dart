@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (retries != null) 'retries': retries?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acks', 'retries'}.contains(key)); } 
-QueuesAckMessagesRequest copyWith({List<QueuesAckMessagesRequestAcks> Function()? acks, List<QueuesAckMessagesRequestRetries> Function()? retries, }) { return QueuesAckMessagesRequest(
+QueuesAckMessagesRequest copyWith({List<QueuesAckMessagesRequestAcks>? Function()? acks, List<QueuesAckMessagesRequestRetries>? Function()? retries, }) { return QueuesAckMessagesRequest(
   acks: acks != null ? acks() : this.acks,
   retries: retries != null ? retries() : this.retries,
 ); } 

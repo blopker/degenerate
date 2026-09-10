@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('commit') &&
       json.containsKey('protected') && json['protected'] is bool; } 
-ShortBranch copyWith({String? name, ShortBranchCommit? commit, bool? protected, BranchProtection Function()? protection, Uri Function()? protectionUrl, }) { return ShortBranch(
+ShortBranch copyWith({String? name, ShortBranchCommit? commit, bool? protected, BranchProtection? Function()? protection, Uri? Function()? protectionUrl, }) { return ShortBranch(
   name: name ?? this.name,
   commit: commit ?? this.commit,
   protected: protected ?? this.protected,

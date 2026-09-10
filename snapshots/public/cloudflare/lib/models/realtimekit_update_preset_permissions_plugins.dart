@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (config != null) 'config': config?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'can_close', 'can_edit_config', 'can_start', 'config'}.contains(key)); } 
-RealtimekitUpdatePresetPermissionsPlugins copyWith({bool Function()? canClose, bool Function()? canEditConfig, bool Function()? canStart, RealtimekitUpdatePresetPermissionsPluginsConfig Function()? config, }) { return RealtimekitUpdatePresetPermissionsPlugins(
+RealtimekitUpdatePresetPermissionsPlugins copyWith({bool? Function()? canClose, bool? Function()? canEditConfig, bool? Function()? canStart, RealtimekitUpdatePresetPermissionsPluginsConfig? Function()? config, }) { return RealtimekitUpdatePresetPermissionsPlugins(
   canClose: canClose != null ? canClose() : this.canClose,
   canEditConfig: canEditConfig != null ? canEditConfig() : this.canEditConfig,
   canStart: canStart != null ? canStart() : this.canStart,

@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'parameters': ?parameters,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-ChatCompletionFunctions copyWith({String Function()? description, String? name, Map<String, dynamic> Function()? parameters, }) { return ChatCompletionFunctions(
+ChatCompletionFunctions copyWith({String? Function()? description, String? name, Map<String, dynamic>? Function()? parameters, }) { return ChatCompletionFunctions(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,

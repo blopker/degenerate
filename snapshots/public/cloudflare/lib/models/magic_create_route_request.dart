@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('nexthop') &&
       json.containsKey('prefix') &&
       json.containsKey('priority'); } 
-MagicCreateRouteRequest copyWith({MagicDescription Function()? description, MagicNexthop? nexthop, MagicPrefix? prefix, MagicPriority? priority, MagicScope Function()? scope, MagicWeight Function()? weight, }) { return MagicCreateRouteRequest(
+MagicCreateRouteRequest copyWith({MagicDescription? Function()? description, MagicNexthop? nexthop, MagicPrefix? prefix, MagicPriority? priority, MagicScope? Function()? scope, MagicWeight? Function()? weight, }) { return MagicCreateRouteRequest(
   description: description != null ? description() : this.description,
   nexthop: nexthop ?? this.nexthop,
   prefix: prefix ?? this.prefix,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An SSH key granting access to a single repository.
-@immutable final class DeployKey {const DeployKey({required this.id, required this.key, required this.url, required this.title, required this.verified, required this.createdAt, required this.readOnly, this.addedBy, this.lastUsed, this.enabled, });
+@immutable final class DeployKey {const DeployKey({required this.id, required this.key, required this.url, required this.title, required this.verified, required this.createdAt, required this.readOnly, this.addedBy = const Omittable.absent(), this.lastUsed = const Omittable.absent(), this.enabled, });
 
 factory DeployKey.fromJson(Map<String, dynamic> json) { return DeployKey(
   id: (json['id'] as num).toInt(),
@@ -11,8 +11,8 @@ factory DeployKey.fromJson(Map<String, dynamic> json) { return DeployKey(
   verified: json['verified'] as bool,
   createdAt: json['created_at'] as String,
   readOnly: json['read_only'] as bool,
-  addedBy: json['added_by'] as String?,
-  lastUsed: json['last_used'] != null ? DateTime.parse(json['last_used'] as String) : null,
+  addedBy: json.containsKey('added_by') ? Omittable(json['added_by'] as String?) : const Omittable.absent(),
+  lastUsed: json.containsKey('last_used') ? Omittable(json['last_used'] != null ? DateTime.parse(json['last_used'] as String) : null) : const Omittable.absent(),
   enabled: json['enabled'] as bool?,
 ); }
 
@@ -30,9 +30,9 @@ final String createdAt;
 
 final bool readOnly;
 
-final String? addedBy;
+final Omittable<String?> addedBy;
 
-final DateTime? lastUsed;
+final Omittable<DateTime?> lastUsed;
 
 final bool? enabled;
 
@@ -44,8 +44,8 @@ Map<String, dynamic> toJson() { return {
   'verified': verified,
   'created_at': createdAt,
   'read_only': readOnly,
-  'added_by': ?addedBy,
-  if (lastUsed != null) 'last_used': lastUsed?.toIso8601String(),
+  if (addedBy.isPresent) 'added_by': addedBy.value,
+  if (lastUsed.isPresent) 'last_used': lastUsed.value?.toIso8601String(),
   'enabled': ?enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
@@ -55,7 +55,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('verified') && json['verified'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('read_only') && json['read_only'] is bool; } 
-DeployKey copyWith({int? id, String? key, String? url, String? title, bool? verified, String? createdAt, bool? readOnly, String? Function()? addedBy, DateTime? Function()? lastUsed, bool Function()? enabled, }) { return DeployKey(
+DeployKey copyWith({int? id, String? key, String? url, String? title, bool? verified, String? createdAt, bool? readOnly, Omittable<String?>? addedBy, Omittable<DateTime?>? lastUsed, bool? Function()? enabled, }) { return DeployKey(
   id: id ?? this.id,
   key: key ?? this.key,
   url: url ?? this.url,
@@ -63,8 +63,8 @@ DeployKey copyWith({int? id, String? key, String? url, String? title, bool? veri
   verified: verified ?? this.verified,
   createdAt: createdAt ?? this.createdAt,
   readOnly: readOnly ?? this.readOnly,
-  addedBy: addedBy != null ? addedBy() : this.addedBy,
-  lastUsed: lastUsed != null ? lastUsed() : this.lastUsed,
+  addedBy: addedBy ?? this.addedBy,
+  lastUsed: lastUsed ?? this.lastUsed,
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

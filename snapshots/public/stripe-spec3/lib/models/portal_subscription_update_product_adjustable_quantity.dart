@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PortalSubscriptionUpdateProductAdjustableQuantity {const PortalSubscriptionUpdateProductAdjustableQuantity({required this.enabled, required this.minimum, this.maximum, });
+@immutable final class PortalSubscriptionUpdateProductAdjustableQuantity {const PortalSubscriptionUpdateProductAdjustableQuantity({required this.enabled, required this.minimum, this.maximum = const Omittable.absent(), });
 
 factory PortalSubscriptionUpdateProductAdjustableQuantity.fromJson(Map<String, dynamic> json) { return PortalSubscriptionUpdateProductAdjustableQuantity(
   enabled: json['enabled'] as bool,
-  maximum: json['maximum'] != null ? (json['maximum'] as num).toInt() : null,
+  maximum: json.containsKey('maximum') ? Omittable(json['maximum'] != null ? (json['maximum'] as num).toInt() : null) : const Omittable.absent(),
   minimum: (json['minimum'] as num).toInt(),
 ); }
 
@@ -13,21 +13,21 @@ factory PortalSubscriptionUpdateProductAdjustableQuantity.fromJson(Map<String, d
 final bool enabled;
 
 /// The maximum quantity that can be set for the product.
-final int? maximum;
+final Omittable<int?> maximum;
 
 /// The minimum quantity that can be set for the product.
 final int minimum;
 
 Map<String, dynamic> toJson() { return {
   'enabled': enabled,
-  'maximum': ?maximum,
+  if (maximum.isPresent) 'maximum': maximum.value,
   'minimum': minimum,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('minimum') && json['minimum'] is num; } 
-PortalSubscriptionUpdateProductAdjustableQuantity copyWith({bool? enabled, int? Function()? maximum, int? minimum, }) { return PortalSubscriptionUpdateProductAdjustableQuantity(
+PortalSubscriptionUpdateProductAdjustableQuantity copyWith({bool? enabled, Omittable<int?>? maximum, int? minimum, }) { return PortalSubscriptionUpdateProductAdjustableQuantity(
   enabled: enabled ?? this.enabled,
-  maximum: maximum != null ? maximum() : this.maximum,
+  maximum: maximum ?? this.maximum,
   minimum: minimum ?? this.minimum,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

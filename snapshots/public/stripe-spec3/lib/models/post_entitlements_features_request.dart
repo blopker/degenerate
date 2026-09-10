@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('lookup_key') && json['lookup_key'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-PostEntitlementsFeaturesRequest copyWith({List<String> Function()? expand, String? lookupKey, Map<String, String> Function()? metadata, String? name, }) { return PostEntitlementsFeaturesRequest(
+PostEntitlementsFeaturesRequest copyWith({List<String>? Function()? expand, String? lookupKey, Map<String, String>? Function()? metadata, String? name, }) { return PostEntitlementsFeaturesRequest(
   expand: expand != null ? expand() : this.expand,
   lookupKey: lookupKey ?? this.lookupKey,
   metadata: metadata != null ? metadata() : this.metadata,

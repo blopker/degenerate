@@ -37,10 +37,10 @@ final class StringModel {
   }
 
   StringModel copyWith({
-    int Function()? length,
+    int? Function()? length,
     String? value,
-    String Function()? charAt,
-    bool Function()? trim,
+    String? Function()? charAt,
+    bool? Function()? trim,
   }) {
     return StringModel(
       length: length != null ? length() : this.length,

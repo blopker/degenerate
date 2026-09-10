@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (transferredClasses != null) 'transferred_classes': transferredClasses?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deleted_classes', 'new_classes', 'new_sqlite_classes', 'renamed_classes', 'transferred_classes'}.contains(key)); } 
-WorkersMigrationStep copyWith({List<String> Function()? deletedClasses, List<String> Function()? newClasses, List<String> Function()? newSqliteClasses, List<WorkersMigrationStepRenamedClasses> Function()? renamedClasses, List<WorkersMigrationStepTransferredClasses> Function()? transferredClasses, }) { return WorkersMigrationStep(
+WorkersMigrationStep copyWith({List<String>? Function()? deletedClasses, List<String>? Function()? newClasses, List<String>? Function()? newSqliteClasses, List<WorkersMigrationStepRenamedClasses>? Function()? renamedClasses, List<WorkersMigrationStepTransferredClasses>? Function()? transferredClasses, }) { return WorkersMigrationStep(
   deletedClasses: deletedClasses != null ? deletedClasses() : this.deletedClasses,
   newClasses: newClasses != null ? newClasses() : this.newClasses,
   newSqliteClasses: newSqliteClasses != null ? newSqliteClasses() : this.newSqliteClasses,

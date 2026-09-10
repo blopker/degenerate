@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'components', 'currency', 'duration', 'frequency', 'id', 'name'}.contains(key)); } 
-RatePlan copyWith({List<ComponentValue> Function()? components, Currency Function()? currency, Duration Function()? duration, SchemasFrequency Function()? frequency, RatePlanComponentsSchemasIdentifier Function()? id, SchemasName Function()? name, }) { return RatePlan(
+RatePlan copyWith({List<ComponentValue>? Function()? components, Currency? Function()? currency, Duration? Function()? duration, SchemasFrequency? Function()? frequency, RatePlanComponentsSchemasIdentifier? Function()? id, SchemasName? Function()? name, }) { return RatePlan(
   components: components != null ? components() : this.components,
   currency: currency != null ? currency() : this.currency,
   duration: duration != null ? duration() : this.duration,

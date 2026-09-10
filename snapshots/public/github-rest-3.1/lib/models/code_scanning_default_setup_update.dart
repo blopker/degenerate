@@ -146,12 +146,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningDefaultSetupUpdateLanguages($value)'; } 
  }
 /// Configuration for code scanning default setup.
-@immutable final class CodeScanningDefaultSetupUpdate {const CodeScanningDefaultSetupUpdate({this.state, this.runnerType, this.runnerLabel, this.querySuite, this.threatModel, this.languages, });
+@immutable final class CodeScanningDefaultSetupUpdate {const CodeScanningDefaultSetupUpdate({this.state, this.runnerType, this.runnerLabel = const Omittable.absent(), this.querySuite, this.threatModel, this.languages, });
 
 factory CodeScanningDefaultSetupUpdate.fromJson(Map<String, dynamic> json) { return CodeScanningDefaultSetupUpdate(
   state: json['state'] != null ? CodeScanningDefaultSetupUpdateState.fromJson(json['state'] as String) : null,
   runnerType: json['runner_type'] != null ? CodeScanningDefaultSetupUpdateRunnerType.fromJson(json['runner_type'] as String) : null,
-  runnerLabel: json['runner_label'] as String?,
+  runnerLabel: json.containsKey('runner_label') ? Omittable(json['runner_label'] as String?) : const Omittable.absent(),
   querySuite: json['query_suite'] != null ? CodeScanningDefaultSetupUpdateQuerySuite.fromJson(json['query_suite'] as String) : null,
   threatModel: json['threat_model'] != null ? CodeScanningDefaultSetupUpdateThreatModel.fromJson(json['threat_model'] as String) : null,
   languages: (json['languages'] as List<dynamic>?)?.map((e) => CodeScanningDefaultSetupUpdateLanguages.fromJson(e as String)).toList(),
@@ -164,7 +164,7 @@ final CodeScanningDefaultSetupUpdateState? state;
 final CodeScanningDefaultSetupUpdateRunnerType? runnerType;
 
 /// Runner label to be used if the runner type is labeled.
-final String? runnerLabel;
+final Omittable<String?> runnerLabel;
 
 /// CodeQL query suite to be used.
 final CodeScanningDefaultSetupUpdateQuerySuite? querySuite;
@@ -178,16 +178,16 @@ final List<CodeScanningDefaultSetupUpdateLanguages>? languages;
 Map<String, dynamic> toJson() { return {
   if (state != null) 'state': state?.toJson(),
   if (runnerType != null) 'runner_type': runnerType?.toJson(),
-  'runner_label': ?runnerLabel,
+  if (runnerLabel.isPresent) 'runner_label': runnerLabel.value,
   if (querySuite != null) 'query_suite': querySuite?.toJson(),
   if (threatModel != null) 'threat_model': threatModel?.toJson(),
   if (languages != null) 'languages': languages?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state', 'runner_type', 'runner_label', 'query_suite', 'threat_model', 'languages'}.contains(key)); } 
-CodeScanningDefaultSetupUpdate copyWith({CodeScanningDefaultSetupUpdateState Function()? state, CodeScanningDefaultSetupUpdateRunnerType Function()? runnerType, String? Function()? runnerLabel, CodeScanningDefaultSetupUpdateQuerySuite Function()? querySuite, CodeScanningDefaultSetupUpdateThreatModel Function()? threatModel, List<CodeScanningDefaultSetupUpdateLanguages> Function()? languages, }) { return CodeScanningDefaultSetupUpdate(
+CodeScanningDefaultSetupUpdate copyWith({CodeScanningDefaultSetupUpdateState? Function()? state, CodeScanningDefaultSetupUpdateRunnerType? Function()? runnerType, Omittable<String?>? runnerLabel, CodeScanningDefaultSetupUpdateQuerySuite? Function()? querySuite, CodeScanningDefaultSetupUpdateThreatModel? Function()? threatModel, List<CodeScanningDefaultSetupUpdateLanguages>? Function()? languages, }) { return CodeScanningDefaultSetupUpdate(
   state: state != null ? state() : this.state,
   runnerType: runnerType != null ? runnerType() : this.runnerType,
-  runnerLabel: runnerLabel != null ? runnerLabel() : this.runnerLabel,
+  runnerLabel: runnerLabel ?? this.runnerLabel,
   querySuite: querySuite != null ? querySuite() : this.querySuite,
   threatModel: threatModel != null ? threatModel() : this.threatModel,
   languages: languages != null ? languages() : this.languages,

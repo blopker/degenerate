@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'sold_by': ?soldBy,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'category', 'description', 'sold_by'}.contains(key)); } 
-PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal copyWith({PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory Function()? category, String Function()? description, String Function()? soldBy, }) { return PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal(
+PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal copyWith({PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypalCategory? Function()? category, String? Function()? description, String? Function()? soldBy, }) { return PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1PaymentMethodOptionsPaypal(
   category: category != null ? category() : this.category,
   description: description != null ? description() : this.description,
   soldBy: soldBy != null ? soldBy() : this.soldBy,

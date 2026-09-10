@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'workflow_name', 'group_id', 'metadata'}.contains(key)); } 
-TracingConfiguration3 copyWith({String Function()? workflowName, String Function()? groupId, Map<String, dynamic> Function()? metadata, }) { return TracingConfiguration3(
+TracingConfiguration3 copyWith({String? Function()? workflowName, String? Function()? groupId, Map<String, dynamic>? Function()? metadata, }) { return TracingConfiguration3(
   workflowName: workflowName != null ? workflowName() : this.workflowName,
   groupId: groupId != null ? groupId() : this.groupId,
   metadata: metadata != null ? metadata() : this.metadata,

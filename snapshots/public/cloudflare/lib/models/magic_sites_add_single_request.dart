@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (secondaryConnectorId != null) 'secondary_connector_id': secondaryConnectorId?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-MagicSitesAddSingleRequest copyWith({MagicConnectorId Function()? connectorId, String Function()? description, bool Function()? haMode, MagicSiteLocation Function()? location, MagicSiteName? name, MagicSecondaryConnectorId Function()? secondaryConnectorId, }) { return MagicSitesAddSingleRequest(
+MagicSitesAddSingleRequest copyWith({MagicConnectorId? Function()? connectorId, String? Function()? description, bool? Function()? haMode, MagicSiteLocation? Function()? location, MagicSiteName? name, MagicSecondaryConnectorId? Function()? secondaryConnectorId, }) { return MagicSitesAddSingleRequest(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   description: description != null ? description() : this.description,
   haMode: haMode != null ? haMode() : this.haMode,

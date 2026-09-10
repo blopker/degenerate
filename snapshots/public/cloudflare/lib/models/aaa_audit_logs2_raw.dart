@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'user_agent': ?userAgent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cf_ray_id', 'method', 'status_code', 'uri', 'user_agent'}.contains(key)); } 
-AaaAuditLogs2Raw copyWith({String Function()? cfRayId, String Function()? method, int Function()? statusCode, String Function()? uri, String Function()? userAgent, }) { return AaaAuditLogs2Raw(
+AaaAuditLogs2Raw copyWith({String? Function()? cfRayId, String? Function()? method, int? Function()? statusCode, String? Function()? uri, String? Function()? userAgent, }) { return AaaAuditLogs2Raw(
   cfRayId: cfRayId != null ? cfRayId() : this.cfRayId,
   method: method != null ? method() : this.method,
   statusCode: statusCode != null ? statusCode() : this.statusCode,

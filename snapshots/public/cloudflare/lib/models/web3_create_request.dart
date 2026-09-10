@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('target'); } 
-Web3CreateRequest copyWith({Web3Description Function()? description, Web3Dnslink Function()? dnslink, Web3Name? name, Web3Target? target, }) { return Web3CreateRequest(
+Web3CreateRequest copyWith({Web3Description? Function()? description, Web3Dnslink? Function()? dnslink, Web3Name? name, Web3Target? target, }) { return Web3CreateRequest(
   description: description != null ? description() : this.description,
   dnslink: dnslink != null ? dnslink() : this.dnslink,
   name: name ?? this.name,

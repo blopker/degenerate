@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'suffix': suffix,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('suffix') && json['suffix'] is String; } 
-TeamsDevicesFallbackDomain copyWith({String Function()? description, List<TeamsDevicesIp> Function()? dnsServer, String? suffix, }) { return TeamsDevicesFallbackDomain(
+TeamsDevicesFallbackDomain copyWith({String? Function()? description, List<TeamsDevicesIp>? Function()? dnsServer, String? suffix, }) { return TeamsDevicesFallbackDomain(
   description: description != null ? description() : this.description,
   dnsServer: dnsServer != null ? dnsServer() : this.dnsServer,
   suffix: suffix ?? this.suffix,

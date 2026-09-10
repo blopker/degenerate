@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'token': ?token,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'token'}.contains(key)); } 
-StreamSignedTokenResponseResult copyWith({String Function()? token}) { return StreamSignedTokenResponseResult(
+StreamSignedTokenResponseResult copyWith({String? Function()? token}) { return StreamSignedTokenResponseResult(
   token: token != null ? token() : this.token,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

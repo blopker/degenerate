@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('maxSkew') && json['maxSkew'] is num &&
       json.containsKey('topologyKey') && json['topologyKey'] is String &&
       json.containsKey('whenUnsatisfiable') && json['whenUnsatisfiable'] is String; } 
-TopologySpreadConstraint copyWith({LabelSelector Function()? labelSelector, List<String> Function()? matchLabelKeys, int? maxSkew, int Function()? minDomains, String Function()? nodeAffinityPolicy, String Function()? nodeTaintsPolicy, String? topologyKey, String? whenUnsatisfiable, }) { return TopologySpreadConstraint(
+TopologySpreadConstraint copyWith({LabelSelector? Function()? labelSelector, List<String>? Function()? matchLabelKeys, int? maxSkew, int? Function()? minDomains, String? Function()? nodeAffinityPolicy, String? Function()? nodeTaintsPolicy, String? topologyKey, String? whenUnsatisfiable, }) { return TopologySpreadConstraint(
   labelSelector: labelSelector != null ? labelSelector() : this.labelSelector,
   matchLabelKeys: matchLabelKeys != null ? matchLabelKeys() : this.matchLabelKeys,
   maxSkew: maxSkew ?? this.maxSkew,

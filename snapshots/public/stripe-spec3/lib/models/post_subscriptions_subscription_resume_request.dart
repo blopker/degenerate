@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'proration_date': ?prorationDate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_cycle_anchor', 'expand', 'proration_behavior', 'proration_date'}.contains(key)); } 
-PostSubscriptionsSubscriptionResumeRequest copyWith({PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor Function()? billingCycleAnchor, List<String> Function()? expand, PostSubscriptionsSubscriptionResumeRequestProrationBehavior Function()? prorationBehavior, int Function()? prorationDate, }) { return PostSubscriptionsSubscriptionResumeRequest(
+PostSubscriptionsSubscriptionResumeRequest copyWith({PostSubscriptionsSubscriptionResumeRequestBillingCycleAnchor? Function()? billingCycleAnchor, List<String>? Function()? expand, PostSubscriptionsSubscriptionResumeRequestProrationBehavior? Function()? prorationBehavior, int? Function()? prorationDate, }) { return PostSubscriptionsSubscriptionResumeRequest(
   billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,
   expand: expand != null ? expand() : this.expand,
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (subscriptionId != null) 'subscription_id': subscriptionId?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'subscription_id'}.contains(key)); } 
-AccountSubscriptionsDeleteSubscriptionResponseResult copyWith({SchemasIdentifier Function()? subscriptionId}) { return AccountSubscriptionsDeleteSubscriptionResponseResult(
+AccountSubscriptionsDeleteSubscriptionResponseResult copyWith({SchemasIdentifier? Function()? subscriptionId}) { return AccountSubscriptionsDeleteSubscriptionResponseResult(
   subscriptionId: subscriptionId != null ? subscriptionId() : this.subscriptionId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

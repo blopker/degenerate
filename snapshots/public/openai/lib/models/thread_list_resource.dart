@@ -51,14 +51,14 @@ final bool hasMore;
 Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'data': data.map((e) => e.toJson()).toList(),
-  'first_id': ?firstId,
-  'last_id': ?lastId,
+  'first_id': firstId,
+  'last_id': lastId,
   'has_more': hasMore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('data') &&
-      json.containsKey('first_id') && json['first_id'] is String &&
-      json.containsKey('last_id') && json['last_id'] is String &&
+      json.containsKey('first_id') && (json['first_id'] == null || json['first_id'] is String) &&
+      json.containsKey('last_id') && (json['last_id'] == null || json['last_id'] is String) &&
       json.containsKey('has_more') && json['has_more'] is bool; } 
 ThreadListResource copyWith({ThreadListResourceObject? object, List<ThreadResource>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, }) { return ThreadListResource(
   object: object ?? this.object,

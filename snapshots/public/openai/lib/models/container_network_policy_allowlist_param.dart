@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('allowed_domains'); } 
-ContainerNetworkPolicyAllowlistParam copyWith({ContainerNetworkPolicyAllowlistParamType? type, List<String>? allowedDomains, List<ContainerNetworkPolicyDomainSecretParam> Function()? domainSecrets, }) { return ContainerNetworkPolicyAllowlistParam(
+ContainerNetworkPolicyAllowlistParam copyWith({ContainerNetworkPolicyAllowlistParamType? type, List<String>? allowedDomains, List<ContainerNetworkPolicyDomainSecretParam>? Function()? domainSecrets, }) { return ContainerNetworkPolicyAllowlistParam(
   type: type ?? this.type,
   allowedDomains: allowedDomains ?? this.allowedDomains,
   domainSecrets: domainSecrets != null ? domainSecrets() : this.domainSecrets,

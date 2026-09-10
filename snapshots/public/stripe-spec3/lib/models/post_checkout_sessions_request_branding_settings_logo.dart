@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostCheckoutSessionsRequestBrandingSettingsLogo copyWith({String Function()? file, PostCheckoutSessionsRequestBrandingSettingsLogoType? type, String Function()? url, }) { return PostCheckoutSessionsRequestBrandingSettingsLogo(
+PostCheckoutSessionsRequestBrandingSettingsLogo copyWith({String? Function()? file, PostCheckoutSessionsRequestBrandingSettingsLogoType? type, String? Function()? url, }) { return PostCheckoutSessionsRequestBrandingSettingsLogo(
   file: file != null ? file() : this.file,
   type: type ?? this.type,
   url: url != null ? url() : this.url,

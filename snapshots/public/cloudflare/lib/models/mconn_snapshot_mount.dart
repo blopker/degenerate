@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_
       json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('mount_point') && json['mount_point'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-MconnSnapshotMount copyWith({double Function()? availableBytes, String Function()? connectorId, String? fileSystem, bool Function()? isReadOnly, bool Function()? isRemovable, String? kind, String? mountPoint, String? name, double Function()? totalBytes, }) { return MconnSnapshotMount(
+MconnSnapshotMount copyWith({double? Function()? availableBytes, String? Function()? connectorId, String? fileSystem, bool? Function()? isReadOnly, bool? Function()? isRemovable, String? kind, String? mountPoint, String? name, double? Function()? totalBytes, }) { return MconnSnapshotMount(
   availableBytes: availableBytes != null ? availableBytes() : this.availableBytes,
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   fileSystem: fileSystem ?? this.fileSystem,

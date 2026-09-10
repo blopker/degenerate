@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'file_id': fileId,
   'filename': filename,
   'score': score,
-  'attributes': ?attributes,
+  'attributes': attributes,
   'content': content.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_id') && json['file_id'] is String &&

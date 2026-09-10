@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Details of the error.
-@immutable final class RealtimeBetaServerEventErrorError {const RealtimeBetaServerEventErrorError({required this.type, required this.message, this.code, this.param, this.eventId, });
+@immutable final class RealtimeBetaServerEventErrorError {const RealtimeBetaServerEventErrorError({required this.type, required this.message, this.code = const Omittable.absent(), this.param = const Omittable.absent(), this.eventId = const Omittable.absent(), });
 
 factory RealtimeBetaServerEventErrorError.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventErrorError(
   type: json['type'] as String,
-  code: json['code'] as String?,
+  code: json.containsKey('code') ? Omittable(json['code'] as String?) : const Omittable.absent(),
   message: json['message'] as String,
-  param: json['param'] as String?,
-  eventId: json['event_id'] as String?,
+  param: json.containsKey('param') ? Omittable(json['param'] as String?) : const Omittable.absent(),
+  eventId: json.containsKey('event_id') ? Omittable(json['event_id'] as String?) : const Omittable.absent(),
 ); }
 
 /// The type of error (e.g., "invalid_request_error", "server_error").
@@ -16,33 +16,33 @@ factory RealtimeBetaServerEventErrorError.fromJson(Map<String, dynamic> json) { 
 final String type;
 
 /// Error code, if any.
-final String? code;
+final Omittable<String?> code;
 
 /// A human-readable error message.
 final String message;
 
 /// Parameter related to the error, if any.
-final String? param;
+final Omittable<String?> param;
 
 /// The event_id of the client event that caused the error, if applicable.
 /// 
-final String? eventId;
+final Omittable<String?> eventId;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
-  'code': ?code,
+  if (code.isPresent) 'code': code.value,
   'message': message,
-  'param': ?param,
-  'event_id': ?eventId,
+  if (param.isPresent) 'param': param.value,
+  if (eventId.isPresent) 'event_id': eventId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('message') && json['message'] is String; } 
-RealtimeBetaServerEventErrorError copyWith({String? type, String? Function()? code, String? message, String? Function()? param, String? Function()? eventId, }) { return RealtimeBetaServerEventErrorError(
+RealtimeBetaServerEventErrorError copyWith({String? type, Omittable<String?>? code, String? message, Omittable<String?>? param, Omittable<String?>? eventId, }) { return RealtimeBetaServerEventErrorError(
   type: type ?? this.type,
-  code: code != null ? code() : this.code,
+  code: code ?? this.code,
   message: message ?? this.message,
-  param: param != null ? param() : this.param,
-  eventId: eventId != null ? eventId() : this.eventId,
+  param: param ?? this.param,
+  eventId: eventId ?? this.eventId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RealtimeBetaServerEventErrorError &&

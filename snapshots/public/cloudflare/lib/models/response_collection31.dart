@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success'); } 
-ResponseCollection31 copyWith({List<ResponseErrors3>? errors, List<ResponseMessages2>? messages, ResponseSuccess? success, ResponseCollection31ResultInfo Function()? resultInfo, }) { return ResponseCollection31(
+ResponseCollection31 copyWith({List<ResponseErrors3>? errors, List<ResponseMessages2>? messages, ResponseSuccess? success, ResponseCollection31ResultInfo? Function()? resultInfo, }) { return ResponseCollection31(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (roleName != null) 'role_name': roleName?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'permission', 'role_name'}.contains(key)); } 
-WebhookMemberAddedChanges copyWith({WebhookMemberAddedChangesPermission Function()? permission, WebhookMemberAddedChangesRoleName Function()? roleName, }) { return WebhookMemberAddedChanges(
+WebhookMemberAddedChanges copyWith({WebhookMemberAddedChangesPermission? Function()? permission, WebhookMemberAddedChangesRoleName? Function()? roleName, }) { return WebhookMemberAddedChanges(
   permission: permission != null ? permission() : this.permission,
   roleName: roleName != null ? roleName() : this.roleName,
 ); } 

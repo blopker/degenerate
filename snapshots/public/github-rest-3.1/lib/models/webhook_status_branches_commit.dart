@@ -12,11 +12,11 @@ final String? sha;
 final Uri? url;
 
 Map<String, dynamic> toJson() { return {
-  'sha': ?sha,
-  if (url != null) 'url': url?.toString(),
+  'sha': sha,
+  'url': url?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
-      json.containsKey('url') && json['url'] is String; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && (json['sha'] == null || json['sha'] is String) &&
+      json.containsKey('url') && (json['url'] == null || json['url'] is String); } 
 WebhookStatusBranchesCommit copyWith({String? Function()? sha, Uri? Function()? url, }) { return WebhookStatusBranchesCommit(
   sha: sha != null ? sha() : this.sha,
   url: url != null ? url() : this.url,

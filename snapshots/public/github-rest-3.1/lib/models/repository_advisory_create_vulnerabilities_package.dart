@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_advisory_ecosystems.dart';/// The name of the package affected by the vulnerability.
-@immutable final class RepositoryAdvisoryCreateVulnerabilitiesPackage {const RepositoryAdvisoryCreateVulnerabilitiesPackage({required this.ecosystem, this.name, });
+@immutable final class RepositoryAdvisoryCreateVulnerabilitiesPackage {const RepositoryAdvisoryCreateVulnerabilitiesPackage({required this.ecosystem, this.name = const Omittable.absent(), });
 
 factory RepositoryAdvisoryCreateVulnerabilitiesPackage.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCreateVulnerabilitiesPackage(
   ecosystem: SecurityAdvisoryEcosystems.fromJson(json['ecosystem'] as String),
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
 ); }
 
 /// The package's language or package management ecosystem.
 final SecurityAdvisoryEcosystems ecosystem;
 
 /// The unique package name within its ecosystem.
-final String? name;
+final Omittable<String?> name;
 
 Map<String, dynamic> toJson() { return {
   'ecosystem': ecosystem.toJson(),
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ecosystem'); } 
-RepositoryAdvisoryCreateVulnerabilitiesPackage copyWith({SecurityAdvisoryEcosystems? ecosystem, String? Function()? name, }) { return RepositoryAdvisoryCreateVulnerabilitiesPackage(
+RepositoryAdvisoryCreateVulnerabilitiesPackage copyWith({SecurityAdvisoryEcosystems? ecosystem, Omittable<String?>? name, }) { return RepositoryAdvisoryCreateVulnerabilitiesPackage(
   ecosystem: ecosystem ?? this.ecosystem,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RepositoryAdvisoryCreateVulnerabilitiesPackage &&

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dos_event_create_bulk_with_relationships_request_data_indicators.dart';import 'post_dos_event_create_bulk_with_relationships_request_data_raw.dart';@immutable final class PostDosEventCreateBulkWithRelationshipsRequestData {const PostDosEventCreateBulkWithRelationshipsRequestData({required this.category, required this.date, required this.event, required this.raw, required this.tlp, this.accountId, this.attacker, this.attackerCountry, this.datasetId, this.indicator, this.indicatorType, this.indicators, this.insight, this.tags, this.targetCountry, this.targetIndustry, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dos_event_create_bulk_with_relationships_request_data_indicators.dart';import 'post_dos_event_create_bulk_with_relationships_request_data_raw.dart';@immutable final class PostDosEventCreateBulkWithRelationshipsRequestData {const PostDosEventCreateBulkWithRelationshipsRequestData({required this.category, required this.date, required this.event, required this.raw, required this.tlp, this.accountId, this.attacker = const Omittable.absent(), this.attackerCountry, this.datasetId, this.indicator, this.indicatorType, this.indicators, this.insight, this.tags, this.targetCountry, this.targetIndustry, });
 
 factory PostDosEventCreateBulkWithRelationshipsRequestData.fromJson(Map<String, dynamic> json) { return PostDosEventCreateBulkWithRelationshipsRequestData(
   accountId: json['accountId'] != null ? (json['accountId'] as num).toDouble() : null,
-  attacker: json['attacker'] as String?,
+  attacker: json.containsKey('attacker') ? Omittable(json['attacker'] as String?) : const Omittable.absent(),
   attackerCountry: json['attackerCountry'] as String?,
   category: json['category'] as String,
   datasetId: json['datasetId'] as String?,
@@ -23,7 +23,7 @@ factory PostDosEventCreateBulkWithRelationshipsRequestData.fromJson(Map<String, 
 
 final double? accountId;
 
-final String? attacker;
+final Omittable<String?> attacker;
 
 final String? attackerCountry;
 
@@ -56,7 +56,7 @@ final String tlp;
 
 Map<String, dynamic> toJson() { return {
   'accountId': ?accountId,
-  'attacker': ?attacker,
+  if (attacker.isPresent) 'attacker': attacker.value,
   'attackerCountry': ?attackerCountry,
   'category': category,
   'datasetId': ?datasetId,
@@ -77,9 +77,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('categ
       json.containsKey('event') && json['event'] is String &&
       json.containsKey('raw') &&
       json.containsKey('tlp') && json['tlp'] is String; } 
-PostDosEventCreateBulkWithRelationshipsRequestData copyWith({double Function()? accountId, String? Function()? attacker, String Function()? attackerCountry, String? category, String Function()? datasetId, DateTime? date, String? event, String Function()? indicator, String Function()? indicatorType, List<PostDosEventCreateBulkWithRelationshipsRequestDataIndicators> Function()? indicators, String Function()? insight, PostDosEventCreateBulkWithRelationshipsRequestDataRaw? raw, List<String> Function()? tags, String Function()? targetCountry, String Function()? targetIndustry, String? tlp, }) { return PostDosEventCreateBulkWithRelationshipsRequestData(
+PostDosEventCreateBulkWithRelationshipsRequestData copyWith({double? Function()? accountId, Omittable<String?>? attacker, String? Function()? attackerCountry, String? category, String? Function()? datasetId, DateTime? date, String? event, String? Function()? indicator, String? Function()? indicatorType, List<PostDosEventCreateBulkWithRelationshipsRequestDataIndicators>? Function()? indicators, String? Function()? insight, PostDosEventCreateBulkWithRelationshipsRequestDataRaw? raw, List<String>? Function()? tags, String? Function()? targetCountry, String? Function()? targetIndustry, String? tlp, }) { return PostDosEventCreateBulkWithRelationshipsRequestData(
   accountId: accountId != null ? accountId() : this.accountId,
-  attacker: attacker != null ? attacker() : this.attacker,
+  attacker: attacker ?? this.attacker,
   attackerCountry: attackerCountry != null ? attackerCountry() : this.attackerCountry,
   category: category ?? this.category,
   datasetId: datasetId != null ? datasetId() : this.datasetId,

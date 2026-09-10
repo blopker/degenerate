@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('categories') &&
       json.containsKey('domain') && json['domain'] is String &&
       json.containsKey('rank') && json['rank'] is num; } 
-RadarGetRankingTopDomainsResponseResultTop0 copyWith({List<RadarGetRankingTopDomainsResponseResultTop0Categories>? categories, String? domain, double Function()? pctRankChange, int? rank, }) { return RadarGetRankingTopDomainsResponseResultTop0(
+RadarGetRankingTopDomainsResponseResultTop0 copyWith({List<RadarGetRankingTopDomainsResponseResultTop0Categories>? categories, String? domain, double? Function()? pctRankChange, int? rank, }) { return RadarGetRankingTopDomainsResponseResultTop0(
   categories: categories ?? this.categories,
   domain: domain ?? this.domain,
   pctRankChange: pctRankChange != null ? pctRankChange() : this.pctRankChange,

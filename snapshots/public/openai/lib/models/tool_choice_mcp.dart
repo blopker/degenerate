@@ -24,12 +24,12 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Use this option to force the model to call a specific tool on a remote MCP server.
 /// 
-@immutable final class ToolChoiceMcp {const ToolChoiceMcp({required this.type, required this.serverLabel, this.name, });
+@immutable final class ToolChoiceMcp {const ToolChoiceMcp({required this.type, required this.serverLabel, this.name = const Omittable.absent(), });
 
 factory ToolChoiceMcp.fromJson(Map<String, dynamic> json) { return ToolChoiceMcp(
   type: ToolChoiceMcpType.fromJson(json['type'] as String),
   serverLabel: json['server_label'] as String,
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
 ); }
 
 /// For MCP tools, the type is always `mcp`.
@@ -41,19 +41,19 @@ final String serverLabel;
 
 /// The name of the tool to call on the server.
 /// 
-final String? name;
+final Omittable<String?> name;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
   'server_label': serverLabel,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('server_label') && json['server_label'] is String; } 
-ToolChoiceMcp copyWith({ToolChoiceMcpType? type, String? serverLabel, String? Function()? name, }) { return ToolChoiceMcp(
+ToolChoiceMcp copyWith({ToolChoiceMcpType? type, String? serverLabel, Omittable<String?>? name, }) { return ToolChoiceMcp(
   type: type ?? this.type,
   serverLabel: serverLabel ?? this.serverLabel,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ToolChoiceMcp &&

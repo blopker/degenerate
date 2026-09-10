@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String; } 
-PostInvoicesInvoiceUpdateLinesRequestLinesPriceData copyWith({String? currency, String Function()? product, PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData Function()? productData, PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataTaxBehavior Function()? taxBehavior, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return PostInvoicesInvoiceUpdateLinesRequestLinesPriceData(
+PostInvoicesInvoiceUpdateLinesRequestLinesPriceData copyWith({String? currency, String? Function()? product, PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData? Function()? productData, PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataTaxBehavior? Function()? taxBehavior, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostInvoicesInvoiceUpdateLinesRequestLinesPriceData(
   currency: currency ?? this.currency,
   product: product != null ? product() : this.product,
   productData: productData != null ? productData() : this.productData,

@@ -161,7 +161,7 @@ Map<String, dynamic> toJson() { return {
   'text': text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-WorkersAiPostRunCfDeepgramAura1Request copyWith({double Function()? bitRate, WorkersAiPostRunCfDeepgramAura1RequestContainer Function()? container, WorkersAiPostRunCfDeepgramAura1RequestEncoding Function()? encoding, double Function()? sampleRate, WorkersAiPostRunCfDeepgramAura1RequestSpeaker Function()? speaker, String? text, }) { return WorkersAiPostRunCfDeepgramAura1Request(
+WorkersAiPostRunCfDeepgramAura1Request copyWith({double? Function()? bitRate, WorkersAiPostRunCfDeepgramAura1RequestContainer? Function()? container, WorkersAiPostRunCfDeepgramAura1RequestEncoding? Function()? encoding, double? Function()? sampleRate, WorkersAiPostRunCfDeepgramAura1RequestSpeaker Function()? speaker, String? text, }) { return WorkersAiPostRunCfDeepgramAura1Request(
   bitRate: bitRate != null ? bitRate() : this.bitRate,
   container: container != null ? container() : this.container,
   encoding: encoding != null ? encoding() : this.encoding,

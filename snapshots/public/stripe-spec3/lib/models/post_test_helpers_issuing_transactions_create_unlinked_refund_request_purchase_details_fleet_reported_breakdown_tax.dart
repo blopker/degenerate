@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'national_amount_decimal': ?nationalAmountDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'local_amount_decimal', 'national_amount_decimal'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownTax copyWith({String Function()? localAmountDecimal, String Function()? nationalAmountDecimal, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownTax(
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownTax copyWith({String? Function()? localAmountDecimal, String? Function()? nationalAmountDecimal, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetailsFleetReportedBreakdownTax(
   localAmountDecimal: localAmountDecimal != null ? localAmountDecimal() : this.localAmountDecimal,
   nationalAmountDecimal: nationalAmountDecimal != null ? nationalAmountDecimal() : this.nationalAmountDecimal,
 ); } 

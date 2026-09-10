@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') && json['image'] is String &&
       json.containsKey('monitors'); } 
-RbdPersistentVolumeSource copyWith({String Function()? fsType, String? image, String Function()? keyring, List<String>? monitors, String Function()? pool, bool Function()? readOnly, SecretReference Function()? secretRef, String Function()? user, }) { return RbdPersistentVolumeSource(
+RbdPersistentVolumeSource copyWith({String? Function()? fsType, String? image, String Function()? keyring, List<String>? monitors, String Function()? pool, bool? Function()? readOnly, SecretReference? Function()? secretRef, String Function()? user, }) { return RbdPersistentVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   image: image ?? this.image,
   keyring: keyring != null ? keyring() : this.keyring,

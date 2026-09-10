@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_shell_tool_param_environment.dart';/// A tool that allows the model to execute shell commands.
-@immutable final class FunctionShellToolParam {const FunctionShellToolParam({this.type = 'shell', this.environment, });
+@immutable final class FunctionShellToolParam {const FunctionShellToolParam({this.type = 'shell', this.environment = const Omittable.absent(), });
 
 factory FunctionShellToolParam.fromJson(Map<String, dynamic> json) { return FunctionShellToolParam(
   type: json['type'] as String,
-  environment: json['environment'] != null ? FunctionShellToolParamEnvironment.fromJson(json['environment'] as Map<String, dynamic>) : null,
+  environment: json.containsKey('environment') ? Omittable(json['environment'] != null ? FunctionShellToolParamEnvironment.fromJson(json['environment'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// The type of the shell tool. Always `shell`.
 final String type;
 
-final FunctionShellToolParamEnvironment? environment;
+final Omittable<FunctionShellToolParamEnvironment?> environment;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
-  if (environment != null) 'environment': environment?.toJson(),
+  if (environment.isPresent) 'environment': environment.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-FunctionShellToolParam copyWith({String? type, FunctionShellToolParamEnvironment? Function()? environment, }) { return FunctionShellToolParam(
+FunctionShellToolParam copyWith({String? type, Omittable<FunctionShellToolParamEnvironment?>? environment, }) { return FunctionShellToolParam(
   type: type ?? this.type,
-  environment: environment != null ? environment() : this.environment,
+  environment: environment ?? this.environment,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is FunctionShellToolParam &&

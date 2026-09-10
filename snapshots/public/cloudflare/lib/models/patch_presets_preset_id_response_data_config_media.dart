@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('screenshare') &&
       json.containsKey('video'); } 
-PatchPresetsPresetIdResponseDataConfigMedia copyWith({PatchPresetsPresetIdResponseDataConfigMediaAudio Function()? audio, PatchPresetsPresetIdResponseDataConfigMediaScreenshare? screenshare, PatchPresetsPresetIdResponseDataConfigMediaVideo? video, }) { return PatchPresetsPresetIdResponseDataConfigMedia(
+PatchPresetsPresetIdResponseDataConfigMedia copyWith({PatchPresetsPresetIdResponseDataConfigMediaAudio? Function()? audio, PatchPresetsPresetIdResponseDataConfigMediaScreenshare? screenshare, PatchPresetsPresetIdResponseDataConfigMediaVideo? video, }) { return PatchPresetsPresetIdResponseDataConfigMedia(
   audio: audio != null ? audio() : this.audio,
   screenshare: screenshare ?? this.screenshare,
   video: video ?? this.video,

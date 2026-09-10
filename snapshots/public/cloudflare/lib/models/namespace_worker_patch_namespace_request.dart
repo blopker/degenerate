@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (trustedWorkers != null) 'trusted_workers': trustedWorkers?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'trusted_workers'}.contains(key)); } 
-NamespaceWorkerPatchNamespaceRequest copyWith({String Function()? name, WorkersTrustedWorkers Function()? trustedWorkers, }) { return NamespaceWorkerPatchNamespaceRequest(
+NamespaceWorkerPatchNamespaceRequest copyWith({String? Function()? name, WorkersTrustedWorkers? Function()? trustedWorkers, }) { return NamespaceWorkerPatchNamespaceRequest(
   name: name != null ? name() : this.name,
   trustedWorkers: trustedWorkers != null ? trustedWorkers() : this.trustedWorkers,
 ); } 

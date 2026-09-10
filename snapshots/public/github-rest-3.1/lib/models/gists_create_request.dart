@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (public != null) 'public': public?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('files'); } 
-GistsCreateRequest copyWith({String Function()? description, Map<String,GistsCreateRequestFilesValue>? files, GistsCreateRequestPublic Function()? public, }) { return GistsCreateRequest(
+GistsCreateRequest copyWith({String? Function()? description, Map<String,GistsCreateRequestFilesValue>? files, GistsCreateRequestPublic? Function()? public, }) { return GistsCreateRequest(
   description: description != null ? description() : this.description,
   files: files ?? this.files,
   public: public != null ? public() : this.public,

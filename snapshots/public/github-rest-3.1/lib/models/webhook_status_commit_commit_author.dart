@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('date') && json['date'] is String &&
       json.containsKey('email') && json['email'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-WebhookStatusCommitCommitAuthor copyWith({String? date, String? email, String? name, String Function()? username, }) { return WebhookStatusCommitCommitAuthor(
+WebhookStatusCommitCommitAuthor copyWith({String? date, String? email, String? name, String? Function()? username, }) { return WebhookStatusCommitCommitAuthor(
   date: date ?? this.date,
   email: email ?? this.email,
   name: name ?? this.name,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'path': path,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
-LocalVolumeSource copyWith({String Function()? fsType, String? path, }) { return LocalVolumeSource(
+LocalVolumeSource copyWith({String? Function()? fsType, String? path, }) { return LocalVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   path: path ?? this.path,
 ); } 

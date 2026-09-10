@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (unidirectional != null) 'unidirectional': unidirectional?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'forward_locally', 'lan_1', 'lan_2', 'name', 'protocols', 'unidirectional'}.contains(key)); } 
-MagicAclUpdateRequest copyWith({String Function()? description, MagicForwardLocally Function()? forwardLocally, MagicLanAclConfiguration Function()? lan1, MagicLanAclConfiguration Function()? lan2, String Function()? name, List<MagicAclUpdateRequestProtocols> Function()? protocols, MagicUnidirectional Function()? unidirectional, }) { return MagicAclUpdateRequest(
+MagicAclUpdateRequest copyWith({String? Function()? description, MagicForwardLocally? Function()? forwardLocally, MagicLanAclConfiguration? Function()? lan1, MagicLanAclConfiguration? Function()? lan2, String? Function()? name, List<MagicAclUpdateRequestProtocols>? Function()? protocols, MagicUnidirectional? Function()? unidirectional, }) { return MagicAclUpdateRequest(
   description: description != null ? description() : this.description,
   forwardLocally: forwardLocally != null ? forwardLocally() : this.forwardLocally,
   lan1: lan1 != null ? lan1() : this.lan1,

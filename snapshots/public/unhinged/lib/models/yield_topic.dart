@@ -25,7 +25,7 @@ final class YieldTopic {
     return json.keys.any((key) => const {'await', 'async'}.contains(key));
   }
 
-  YieldTopic copyWith({String Function()? $await, bool Function()? $async}) {
+  YieldTopic copyWith({String? Function()? $await, bool? Function()? $async}) {
     return YieldTopic(
       $await: $await != null ? $await() : this.$await,
       $async: $async != null ? $async() : this.$async,

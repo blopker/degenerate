@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (rankingOptions != null) 'ranking_options': rankingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('query'); } 
-VectorStoreSearchRequest copyWith({VectorStoreSearchRequestQuery? query, bool Function()? rewriteQuery, int Function()? maxNumResults, VectorStoreSearchRequestFilters Function()? filters, VectorStoreSearchRequestRankingOptions Function()? rankingOptions, }) { return VectorStoreSearchRequest(
+VectorStoreSearchRequest copyWith({VectorStoreSearchRequestQuery? query, bool Function()? rewriteQuery, int Function()? maxNumResults, VectorStoreSearchRequestFilters? Function()? filters, VectorStoreSearchRequestRankingOptions? Function()? rankingOptions, }) { return VectorStoreSearchRequest(
   query: query ?? this.query,
   rewriteQuery: rewriteQuery != null ? rewriteQuery() : this.rewriteQuery,
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,

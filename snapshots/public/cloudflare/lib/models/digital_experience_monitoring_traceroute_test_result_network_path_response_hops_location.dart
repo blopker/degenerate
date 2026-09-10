@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation({this.city, this.state, this.zip, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation {const DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation({this.city = const Omittable.absent(), this.state = const Omittable.absent(), this.zip = const Omittable.absent(), });
 
 factory DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation(
-  city: json['city'] as String?,
-  state: json['state'] as String?,
-  zip: json['zip'] as String?,
+  city: json.containsKey('city') ? Omittable(json['city'] as String?) : const Omittable.absent(),
+  state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
+  zip: json.containsKey('zip') ? Omittable(json['zip'] as String?) : const Omittable.absent(),
 ); }
 
-final String? city;
+final Omittable<String?> city;
 
-final String? state;
+final Omittable<String?> state;
 
-final String? zip;
+final Omittable<String?> zip;
 
 Map<String, dynamic> toJson() { return {
-  'city': ?city,
-  'state': ?state,
-  'zip': ?zip,
+  if (city.isPresent) 'city': city.value,
+  if (state.isPresent) 'state': state.value,
+  if (zip.isPresent) 'zip': zip.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'state', 'zip'}.contains(key)); } 
-DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation copyWith({String? Function()? city, String? Function()? state, String? Function()? zip, }) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation(
-  city: city != null ? city() : this.city,
-  state: state != null ? state() : this.state,
-  zip: zip != null ? zip() : this.zip,
+DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation copyWith({Omittable<String?>? city, Omittable<String?>? state, Omittable<String?>? zip, }) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation(
+  city: city ?? this.city,
+  state: state ?? this.state,
+  zip: zip ?? this.zip,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHopsLocation &&

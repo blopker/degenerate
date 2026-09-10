@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'last_id': ?lastId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'object', 'data', 'has_more', 'first_id', 'last_id'}.contains(key)); } 
-KeyList copyWith({String Function()? object, List<Key> Function()? data, bool Function()? hasMore, String Function()? firstId, String Function()? lastId, }) { return KeyList(
+KeyList copyWith({String? Function()? object, List<Key>? Function()? data, bool? Function()? hasMore, String? Function()? firstId, String? Function()? lastId, }) { return KeyList(
   object: object != null ? object() : this.object,
   data: data != null ? data() : this.data,
   hasMore: hasMore != null ? hasMore() : this.hasMore,

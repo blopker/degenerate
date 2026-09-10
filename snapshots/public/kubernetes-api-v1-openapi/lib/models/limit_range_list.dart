@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
-LimitRangeList copyWith({String Function()? apiVersion, List<LimitRange>? items, String Function()? kind, ListMeta Function()? metadata, }) { return LimitRangeList(
+LimitRangeList copyWith({String? Function()? apiVersion, List<LimitRange>? items, String? Function()? kind, ListMeta? Function()? metadata, }) { return LimitRangeList(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   items: items ?? this.items,
   kind: kind != null ? kind() : this.kind,

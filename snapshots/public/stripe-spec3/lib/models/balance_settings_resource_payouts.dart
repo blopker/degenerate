@@ -26,38 +26,38 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BalanceSettingsResourcePayoutsStatus($value)'; } 
  }
 /// 
-@immutable final class BalanceSettingsResourcePayouts {const BalanceSettingsResourcePayouts({required this.status, this.minimumBalanceByCurrency, this.schedule, this.statementDescriptor, });
+@immutable final class BalanceSettingsResourcePayouts {const BalanceSettingsResourcePayouts({required this.status, this.minimumBalanceByCurrency = const Omittable.absent(), this.schedule = const Omittable.absent(), this.statementDescriptor = const Omittable.absent(), });
 
 factory BalanceSettingsResourcePayouts.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayouts(
-  minimumBalanceByCurrency: (json['minimum_balance_by_currency'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt())),
-  schedule: json['schedule'] != null ? BalanceSettingsResourcePayoutSchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null,
-  statementDescriptor: json['statement_descriptor'] as String?,
+  minimumBalanceByCurrency: json.containsKey('minimum_balance_by_currency') ? Omittable((json['minimum_balance_by_currency'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt()))) : const Omittable.absent(),
+  schedule: json.containsKey('schedule') ? Omittable(json['schedule'] != null ? BalanceSettingsResourcePayoutSchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
   status: BalanceSettingsResourcePayoutsStatus.fromJson(json['status'] as String),
 ); }
 
 /// The minimum balance amount to retain per currency after automatic payouts. Only funds that exceed these amounts are paid out. Learn more about the [minimum balances for automatic payouts](/payouts/minimum-balances-for-automatic-payouts).
-final Map<String,int>? minimumBalanceByCurrency;
+final Omittable<Map<String,int>?> minimumBalanceByCurrency;
 
 /// Details on when funds from charges are available, and when they are paid out to an external account. See our [Setting Bank and Debit Card Payouts](https://docs.stripe.com/connect/bank-transfers#payout-information) documentation for details.
-final BalanceSettingsResourcePayoutSchedule? schedule;
+final Omittable<BalanceSettingsResourcePayoutSchedule?> schedule;
 
 /// The text that appears on the bank account statement for payouts. If not set, this defaults to the platform's bank descriptor as set in the Dashboard.
-final String? statementDescriptor;
+final Omittable<String?> statementDescriptor;
 
 /// Whether the funds in this account can be paid out.
 final BalanceSettingsResourcePayoutsStatus status;
 
 Map<String, dynamic> toJson() { return {
-  'minimum_balance_by_currency': ?minimumBalanceByCurrency,
-  if (schedule != null) 'schedule': schedule?.toJson(),
-  'statement_descriptor': ?statementDescriptor,
+  if (minimumBalanceByCurrency.isPresent) 'minimum_balance_by_currency': minimumBalanceByCurrency.value,
+  if (schedule.isPresent) 'schedule': schedule.value?.toJson(),
+  if (statementDescriptor.isPresent) 'statement_descriptor': statementDescriptor.value,
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-BalanceSettingsResourcePayouts copyWith({Map<String, int>? Function()? minimumBalanceByCurrency, BalanceSettingsResourcePayoutSchedule? Function()? schedule, String? Function()? statementDescriptor, BalanceSettingsResourcePayoutsStatus? status, }) { return BalanceSettingsResourcePayouts(
-  minimumBalanceByCurrency: minimumBalanceByCurrency != null ? minimumBalanceByCurrency() : this.minimumBalanceByCurrency,
-  schedule: schedule != null ? schedule() : this.schedule,
-  statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
+BalanceSettingsResourcePayouts copyWith({Omittable<Map<String,int>?>? minimumBalanceByCurrency, Omittable<BalanceSettingsResourcePayoutSchedule?>? schedule, Omittable<String?>? statementDescriptor, BalanceSettingsResourcePayoutsStatus? status, }) { return BalanceSettingsResourcePayouts(
+  minimumBalanceByCurrency: minimumBalanceByCurrency ?? this.minimumBalanceByCurrency,
+  schedule: schedule ?? this.schedule,
+  statementDescriptor: statementDescriptor ?? this.statementDescriptor,
   status: status ?? this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

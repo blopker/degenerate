@@ -79,7 +79,7 @@ final String? patch;
 final String? previousFilename;
 
 Map<String, dynamic> toJson() { return {
-  'sha': ?sha,
+  'sha': sha,
   'filename': filename,
   'status': status.toJson(),
   'additions': additions,
@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
   'patch': ?patch,
   'previous_filename': ?previousFilename,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && (json['sha'] == null || json['sha'] is String) &&
       json.containsKey('filename') && json['filename'] is String &&
       json.containsKey('status') &&
       json.containsKey('additions') && json['additions'] is num &&
@@ -100,7 +100,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha')
       json.containsKey('blob_url') && json['blob_url'] is String &&
       json.containsKey('raw_url') && json['raw_url'] is String &&
       json.containsKey('contents_url') && json['contents_url'] is String; } 
-DiffEntry copyWith({String? Function()? sha, String? filename, DiffEntryStatus? status, int? additions, int? deletions, int? changes, Uri? blobUrl, Uri? rawUrl, Uri? contentsUrl, String Function()? patch, String Function()? previousFilename, }) { return DiffEntry(
+DiffEntry copyWith({String? Function()? sha, String? filename, DiffEntryStatus? status, int? additions, int? deletions, int? changes, Uri? blobUrl, Uri? rawUrl, Uri? contentsUrl, String? Function()? patch, String? Function()? previousFilename, }) { return DiffEntry(
   sha: sha != null ? sha() : this.sha,
   filename: filename ?? this.filename,
   status: status ?? this.status,

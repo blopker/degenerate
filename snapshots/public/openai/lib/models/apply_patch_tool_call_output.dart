@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_call_output_status.dart';/// The output emitted by an apply patch tool call.
-@immutable final class ApplyPatchToolCallOutput {const ApplyPatchToolCallOutput({required this.id, required this.callId, required this.status, this.type = 'apply_patch_call_output', this.output, this.createdBy, });
+@immutable final class ApplyPatchToolCallOutput {const ApplyPatchToolCallOutput({required this.id, required this.callId, required this.status, this.type = 'apply_patch_call_output', this.output = const Omittable.absent(), this.createdBy, });
 
 factory ApplyPatchToolCallOutput.fromJson(Map<String, dynamic> json) { return ApplyPatchToolCallOutput(
   type: json['type'] as String,
   id: json['id'] as String,
   callId: json['call_id'] as String,
   status: ApplyPatchCallOutputStatus.fromJson(json['status'] as String),
-  output: json['output'] as String?,
+  output: json.containsKey('output') ? Omittable(json['output'] as String?) : const Omittable.absent(),
   createdBy: json['created_by'] as String?,
 ); }
 
@@ -25,7 +25,7 @@ final String callId;
 final ApplyPatchCallOutputStatus status;
 
 /// Optional textual output returned by the apply patch tool.
-final String? output;
+final Omittable<String?> output;
 
 /// The ID of the entity that created this tool call output.
 final String? createdBy;
@@ -35,19 +35,19 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'call_id': callId,
   'status': status.toJson(),
-  'output': ?output,
+  if (output.isPresent) 'output': output.value,
   'created_by': ?createdBy,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('status'); } 
-ApplyPatchToolCallOutput copyWith({String? type, String? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, String Function()? createdBy, }) { return ApplyPatchToolCallOutput(
+ApplyPatchToolCallOutput copyWith({String? type, String? id, String? callId, ApplyPatchCallOutputStatus? status, Omittable<String?>? output, String? Function()? createdBy, }) { return ApplyPatchToolCallOutput(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId ?? this.callId,
   status: status ?? this.status,
-  output: output != null ? output() : this.output,
+  output: output ?? this.output,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

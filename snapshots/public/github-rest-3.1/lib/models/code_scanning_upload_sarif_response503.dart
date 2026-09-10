@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'documentation_url': ?documentationUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'message', 'documentation_url'}.contains(key)); } 
-CodeScanningUploadSarifResponse503 copyWith({String Function()? code, String Function()? message, String Function()? documentationUrl, }) { return CodeScanningUploadSarifResponse503(
+CodeScanningUploadSarifResponse503 copyWith({String? Function()? code, String? Function()? message, String? Function()? documentationUrl, }) { return CodeScanningUploadSarifResponse503(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,

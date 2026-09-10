@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('check_type') &&
       json.containsKey('endpoint') && json['endpoint'] is String &&
       json.containsKey('id'); } 
-MagicTransitEndpointHealthCheckResponse copyWith({MagicTransitCheckType? checkType, String? endpoint, String Function()? name, MagicTransitUuid? id, }) { return MagicTransitEndpointHealthCheckResponse(
+MagicTransitEndpointHealthCheckResponse copyWith({MagicTransitCheckType? checkType, String? endpoint, String? Function()? name, MagicTransitUuid? id, }) { return MagicTransitEndpointHealthCheckResponse(
   checkType: checkType ?? this.checkType,
   endpoint: endpoint ?? this.endpoint,
   name: name != null ? name() : this.name,

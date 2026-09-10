@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'exclude', 'id', 'include', 'name', 'require', 'updated_at'}.contains(key)); } 
-AccessComponentsSchemasGroups copyWith({AccessTimestamp Function()? createdAt, List<AccessRule> Function()? exclude, AccessUuid Function()? id, List<AccessRule> Function()? include, AccessGroupsComponentsSchemasName2 Function()? name, List<AccessRule> Function()? require, AccessTimestamp Function()? updatedAt, }) { return AccessComponentsSchemasGroups(
+AccessComponentsSchemasGroups copyWith({AccessTimestamp? Function()? createdAt, List<AccessRule>? Function()? exclude, AccessUuid? Function()? id, List<AccessRule>? Function()? include, AccessGroupsComponentsSchemasName2? Function()? name, List<AccessRule>? Function()? require, AccessTimestamp? Function()? updatedAt, }) { return AccessComponentsSchemasGroups(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   exclude: exclude != null ? exclude() : this.exclude,
   id: id != null ? id() : this.id,

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (uuid != null) 'uuid': uuid?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'colo_name', 'is_pending_reconnect', 'uuid'}.contains(key)); } 
-TunnelConnection copyWith({TunnelColoName Function()? coloName, TunnelIsPendingReconnect Function()? isPendingReconnect, TunnelConnectionId Function()? uuid, }) { return TunnelConnection(
+TunnelConnection copyWith({TunnelColoName? Function()? coloName, TunnelIsPendingReconnect? Function()? isPendingReconnect, TunnelConnectionId? Function()? uuid, }) { return TunnelConnection(
   coloName: coloName != null ? coloName() : this.coloName,
   isPendingReconnect: isPendingReconnect != null ? isPendingReconnect() : this.isPendingReconnect,
   uuid: uuid != null ? uuid() : this.uuid,

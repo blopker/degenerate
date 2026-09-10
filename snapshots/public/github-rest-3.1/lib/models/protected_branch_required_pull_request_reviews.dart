@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (bypassPullRequestAllowances != null) 'bypass_pull_request_allowances': bypassPullRequestAllowances?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool Function()? dismissStaleReviews, bool Function()? requireCodeOwnerReviews, int Function()? requiredApprovingReviewCount, bool Function()? requireLastPushApproval, ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions Function()? dismissalRestrictions, ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances Function()? bypassPullRequestAllowances, }) { return ProtectedBranchRequiredPullRequestReviews(
+ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool? Function()? dismissStaleReviews, bool? Function()? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool Function()? requireLastPushApproval, ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions? Function()? dismissalRestrictions, ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, }) { return ProtectedBranchRequiredPullRequestReviews(
   url: url ?? this.url,
   dismissStaleReviews: dismissStaleReviews != null ? dismissStaleReviews() : this.dismissStaleReviews,
   requireCodeOwnerReviews: requireCodeOwnerReviews != null ? requireCodeOwnerReviews() : this.requireCodeOwnerReviews,

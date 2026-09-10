@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'token_url': ?tokenUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'auth_url', 'certs_url', 'claims', 'scopes', 'token_url'}.contains(key)); } 
-AccessSchemasOidcConfig copyWith({String Function()? clientId, String Function()? clientSecret, String Function()? authUrl, String Function()? certsUrl, List<String> Function()? claims, List<String> Function()? scopes, String Function()? tokenUrl, }) { return AccessSchemasOidcConfig(
+AccessSchemasOidcConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, String? Function()? authUrl, String? Function()? certsUrl, List<String>? Function()? claims, List<String>? Function()? scopes, String? Function()? tokenUrl, }) { return AccessSchemasOidcConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   authUrl: authUrl != null ? authUrl() : this.authUrl,

@@ -114,46 +114,46 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LegalEntityCompanyStructure($value)'; } 
  }
 /// 
-@immutable final class LegalEntityCompany {const LegalEntityCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.representativeDeclaration, this.structure, this.taxIdProvided, this.taxIdRegistrar, this.vatIdProvided, this.verification, });
+@immutable final class LegalEntityCompany {const LegalEntityCompany({this.address, this.addressKana = const Omittable.absent(), this.addressKanji = const Omittable.absent(), this.directorsProvided, this.directorshipDeclaration = const Omittable.absent(), this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name = const Omittable.absent(), this.nameKana = const Omittable.absent(), this.nameKanji = const Omittable.absent(), this.ownersProvided, this.ownershipDeclaration = const Omittable.absent(), this.ownershipExemptionReason, this.phone = const Omittable.absent(), this.registrationDate, this.representativeDeclaration = const Omittable.absent(), this.structure, this.taxIdProvided, this.taxIdRegistrar, this.vatIdProvided, this.verification = const Omittable.absent(), });
 
 factory LegalEntityCompany.fromJson(Map<String, dynamic> json) { return LegalEntityCompany(
   address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
-  addressKana: json['address_kana'] != null ? LegalEntityJapanAddress.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
-  addressKanji: json['address_kanji'] != null ? LegalEntityJapanAddress.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
+  addressKana: json.containsKey('address_kana') ? Omittable(json['address_kana'] != null ? LegalEntityJapanAddress.fromJson(json['address_kana'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  addressKanji: json.containsKey('address_kanji') ? Omittable(json['address_kanji'] != null ? LegalEntityJapanAddress.fromJson(json['address_kanji'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   directorsProvided: json['directors_provided'] as bool?,
-  directorshipDeclaration: json['directorship_declaration'] != null ? LegalEntityDirectorshipDeclaration.fromJson(json['directorship_declaration'] as Map<String, dynamic>) : null,
+  directorshipDeclaration: json.containsKey('directorship_declaration') ? Omittable(json['directorship_declaration'] != null ? LegalEntityDirectorshipDeclaration.fromJson(json['directorship_declaration'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   executivesProvided: json['executives_provided'] as bool?,
   exportLicenseId: json['export_license_id'] as String?,
   exportPurposeCode: json['export_purpose_code'] as String?,
-  name: json['name'] as String?,
-  nameKana: json['name_kana'] as String?,
-  nameKanji: json['name_kanji'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
+  nameKana: json.containsKey('name_kana') ? Omittable(json['name_kana'] as String?) : const Omittable.absent(),
+  nameKanji: json.containsKey('name_kanji') ? Omittable(json['name_kanji'] as String?) : const Omittable.absent(),
   ownersProvided: json['owners_provided'] as bool?,
-  ownershipDeclaration: json['ownership_declaration'] != null ? LegalEntityUboDeclaration.fromJson(json['ownership_declaration'] as Map<String, dynamic>) : null,
+  ownershipDeclaration: json.containsKey('ownership_declaration') ? Omittable(json['ownership_declaration'] != null ? LegalEntityUboDeclaration.fromJson(json['ownership_declaration'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   ownershipExemptionReason: json['ownership_exemption_reason'] != null ? LegalEntityCompanyOwnershipExemptionReason.fromJson(json['ownership_exemption_reason'] as String) : null,
-  phone: json['phone'] as String?,
+  phone: json.containsKey('phone') ? Omittable(json['phone'] as String?) : const Omittable.absent(),
   registrationDate: json['registration_date'] != null ? LegalEntityRegistrationDate.fromJson(json['registration_date'] as Map<String, dynamic>) : null,
-  representativeDeclaration: json['representative_declaration'] != null ? LegalEntityRepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>) : null,
+  representativeDeclaration: json.containsKey('representative_declaration') ? Omittable(json['representative_declaration'] != null ? LegalEntityRepresentativeDeclaration.fromJson(json['representative_declaration'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   structure: json['structure'] != null ? LegalEntityCompanyStructure.fromJson(json['structure'] as String) : null,
   taxIdProvided: json['tax_id_provided'] as bool?,
   taxIdRegistrar: json['tax_id_registrar'] as String?,
   vatIdProvided: json['vat_id_provided'] as bool?,
-  verification: json['verification'] != null ? LegalEntityCompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
+  verification: json.containsKey('verification') ? Omittable(json['verification'] != null ? LegalEntityCompanyVerification.fromJson(json['verification'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 final Address? address;
 
 /// The Kana variation of the company's primary address (Japan only).
-final LegalEntityJapanAddress? addressKana;
+final Omittable<LegalEntityJapanAddress?> addressKana;
 
 /// The Kanji variation of the company's primary address (Japan only).
-final LegalEntityJapanAddress? addressKanji;
+final Omittable<LegalEntityJapanAddress?> addressKanji;
 
 /// Whether the company's directors have been provided. This Boolean will be `true` if you've manually indicated that all directors are provided via [the `directors_provided` parameter](https://docs.stripe.com/api/accounts/update#update_account-company-directors_provided).
 final bool? directorsProvided;
 
 /// This hash is used to attest that the director information provided to Stripe is both current and correct.
-final LegalEntityDirectorshipDeclaration? directorshipDeclaration;
+final Omittable<LegalEntityDirectorshipDeclaration?> directorshipDeclaration;
 
 /// Whether the company's executives have been provided. This Boolean will be `true` if you've manually indicated that all executives are provided via [the `executives_provided` parameter](https://docs.stripe.com/api/accounts/update#update_account-company-executives_provided), or if Stripe determined that sufficient executives were provided.
 final bool? executivesProvided;
@@ -165,30 +165,30 @@ final String? exportLicenseId;
 final String? exportPurposeCode;
 
 /// The company's legal name. Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`.
-final String? name;
+final Omittable<String?> name;
 
 /// The Kana variation of the company's legal name (Japan only). Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`.
-final String? nameKana;
+final Omittable<String?> nameKana;
 
 /// The Kanji variation of the company's legal name (Japan only). Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`.
-final String? nameKanji;
+final Omittable<String?> nameKanji;
 
 /// Whether the company's owners have been provided. This Boolean will be `true` if you've manually indicated that all owners are provided via [the `owners_provided` parameter](https://docs.stripe.com/api/accounts/update#update_account-company-owners_provided), or if Stripe determined that sufficient owners were provided. Stripe determines ownership requirements using both the number of owners provided and their total percent ownership (calculated by adding the `percent_ownership` of each owner together).
 final bool? ownersProvided;
 
 /// This hash is used to attest that the beneficial owner information provided to Stripe is both current and correct.
-final LegalEntityUboDeclaration? ownershipDeclaration;
+final Omittable<LegalEntityUboDeclaration?> ownershipDeclaration;
 
 /// This value is used to determine if a business is exempt from providing ultimate beneficial owners. See [this support article](https://support.stripe.com/questions/exemption-from-providing-ownership-details) and [changelog](https://docs.stripe.com/changelog/acacia/2025-01-27/ownership-exemption-reason-accounts-api) for more details.
 final LegalEntityCompanyOwnershipExemptionReason? ownershipExemptionReason;
 
 /// The company's phone number (used for verification).
-final String? phone;
+final Omittable<String?> phone;
 
 final LegalEntityRegistrationDate? registrationDate;
 
 /// This hash is used to attest that the representative is authorized to act as the representative of their legal entity.
-final LegalEntityRepresentativeDeclaration? representativeDeclaration;
+final Omittable<LegalEntityRepresentativeDeclaration?> representativeDeclaration;
 
 /// The category identifying the legal structure of the company or legal entity. Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`. See [Business structure](https://docs.stripe.com/connect/identity-verification#business-structure) for more details.
 final LegalEntityCompanyStructure? structure;
@@ -203,56 +203,56 @@ final String? taxIdRegistrar;
 final bool? vatIdProvided;
 
 /// Information on the verification state of the company.
-final LegalEntityCompanyVerification? verification;
+final Omittable<LegalEntityCompanyVerification?> verification;
 
 Map<String, dynamic> toJson() { return {
   if (address != null) 'address': address?.toJson(),
-  if (addressKana != null) 'address_kana': addressKana?.toJson(),
-  if (addressKanji != null) 'address_kanji': addressKanji?.toJson(),
+  if (addressKana.isPresent) 'address_kana': addressKana.value?.toJson(),
+  if (addressKanji.isPresent) 'address_kanji': addressKanji.value?.toJson(),
   'directors_provided': ?directorsProvided,
-  if (directorshipDeclaration != null) 'directorship_declaration': directorshipDeclaration?.toJson(),
+  if (directorshipDeclaration.isPresent) 'directorship_declaration': directorshipDeclaration.value?.toJson(),
   'executives_provided': ?executivesProvided,
   'export_license_id': ?exportLicenseId,
   'export_purpose_code': ?exportPurposeCode,
-  'name': ?name,
-  'name_kana': ?nameKana,
-  'name_kanji': ?nameKanji,
+  if (name.isPresent) 'name': name.value,
+  if (nameKana.isPresent) 'name_kana': nameKana.value,
+  if (nameKanji.isPresent) 'name_kanji': nameKanji.value,
   'owners_provided': ?ownersProvided,
-  if (ownershipDeclaration != null) 'ownership_declaration': ownershipDeclaration?.toJson(),
+  if (ownershipDeclaration.isPresent) 'ownership_declaration': ownershipDeclaration.value?.toJson(),
   if (ownershipExemptionReason != null) 'ownership_exemption_reason': ownershipExemptionReason?.toJson(),
-  'phone': ?phone,
+  if (phone.isPresent) 'phone': phone.value,
   if (registrationDate != null) 'registration_date': registrationDate?.toJson(),
-  if (representativeDeclaration != null) 'representative_declaration': representativeDeclaration?.toJson(),
+  if (representativeDeclaration.isPresent) 'representative_declaration': representativeDeclaration.value?.toJson(),
   if (structure != null) 'structure': structure?.toJson(),
   'tax_id_provided': ?taxIdProvided,
   'tax_id_registrar': ?taxIdRegistrar,
   'vat_id_provided': ?vatIdProvided,
-  if (verification != null) 'verification': verification?.toJson(),
+  if (verification.isPresent) 'verification': verification.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'address_kana', 'address_kanji', 'directors_provided', 'directorship_declaration', 'executives_provided', 'export_license_id', 'export_purpose_code', 'name', 'name_kana', 'name_kanji', 'owners_provided', 'ownership_declaration', 'ownership_exemption_reason', 'phone', 'registration_date', 'representative_declaration', 'structure', 'tax_id_provided', 'tax_id_registrar', 'vat_id_provided', 'verification'}.contains(key)); } 
-LegalEntityCompany copyWith({Address Function()? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, bool Function()? directorsProvided, LegalEntityDirectorshipDeclaration? Function()? directorshipDeclaration, bool Function()? executivesProvided, String Function()? exportLicenseId, String Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool Function()? ownersProvided, LegalEntityUboDeclaration? Function()? ownershipDeclaration, LegalEntityCompanyOwnershipExemptionReason Function()? ownershipExemptionReason, String? Function()? phone, LegalEntityRegistrationDate Function()? registrationDate, LegalEntityRepresentativeDeclaration? Function()? representativeDeclaration, LegalEntityCompanyStructure Function()? structure, bool Function()? taxIdProvided, String Function()? taxIdRegistrar, bool Function()? vatIdProvided, LegalEntityCompanyVerification? Function()? verification, }) { return LegalEntityCompany(
+LegalEntityCompany copyWith({Address? Function()? address, Omittable<LegalEntityJapanAddress?>? addressKana, Omittable<LegalEntityJapanAddress?>? addressKanji, bool? Function()? directorsProvided, Omittable<LegalEntityDirectorshipDeclaration?>? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, Omittable<String?>? name, Omittable<String?>? nameKana, Omittable<String?>? nameKanji, bool? Function()? ownersProvided, Omittable<LegalEntityUboDeclaration?>? ownershipDeclaration, LegalEntityCompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, Omittable<String?>? phone, LegalEntityRegistrationDate? Function()? registrationDate, Omittable<LegalEntityRepresentativeDeclaration?>? representativeDeclaration, LegalEntityCompanyStructure? Function()? structure, bool? Function()? taxIdProvided, String? Function()? taxIdRegistrar, bool? Function()? vatIdProvided, Omittable<LegalEntityCompanyVerification?>? verification, }) { return LegalEntityCompany(
   address: address != null ? address() : this.address,
-  addressKana: addressKana != null ? addressKana() : this.addressKana,
-  addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,
+  addressKana: addressKana ?? this.addressKana,
+  addressKanji: addressKanji ?? this.addressKanji,
   directorsProvided: directorsProvided != null ? directorsProvided() : this.directorsProvided,
-  directorshipDeclaration: directorshipDeclaration != null ? directorshipDeclaration() : this.directorshipDeclaration,
+  directorshipDeclaration: directorshipDeclaration ?? this.directorshipDeclaration,
   executivesProvided: executivesProvided != null ? executivesProvided() : this.executivesProvided,
   exportLicenseId: exportLicenseId != null ? exportLicenseId() : this.exportLicenseId,
   exportPurposeCode: exportPurposeCode != null ? exportPurposeCode() : this.exportPurposeCode,
-  name: name != null ? name() : this.name,
-  nameKana: nameKana != null ? nameKana() : this.nameKana,
-  nameKanji: nameKanji != null ? nameKanji() : this.nameKanji,
+  name: name ?? this.name,
+  nameKana: nameKana ?? this.nameKana,
+  nameKanji: nameKanji ?? this.nameKanji,
   ownersProvided: ownersProvided != null ? ownersProvided() : this.ownersProvided,
-  ownershipDeclaration: ownershipDeclaration != null ? ownershipDeclaration() : this.ownershipDeclaration,
+  ownershipDeclaration: ownershipDeclaration ?? this.ownershipDeclaration,
   ownershipExemptionReason: ownershipExemptionReason != null ? ownershipExemptionReason() : this.ownershipExemptionReason,
-  phone: phone != null ? phone() : this.phone,
+  phone: phone ?? this.phone,
   registrationDate: registrationDate != null ? registrationDate() : this.registrationDate,
-  representativeDeclaration: representativeDeclaration != null ? representativeDeclaration() : this.representativeDeclaration,
+  representativeDeclaration: representativeDeclaration ?? this.representativeDeclaration,
   structure: structure != null ? structure() : this.structure,
   taxIdProvided: taxIdProvided != null ? taxIdProvided() : this.taxIdProvided,
   taxIdRegistrar: taxIdRegistrar != null ? taxIdRegistrar() : this.taxIdRegistrar,
   vatIdProvided: vatIdProvided != null ? vatIdProvided() : this.vatIdProvided,
-  verification: verification != null ? verification() : this.verification,
+  verification: verification ?? this.verification,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is LegalEntityCompany &&

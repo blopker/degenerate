@@ -92,45 +92,45 @@ bool get isUnknown { return !values.contains(this); }
 /// purchase to be completed successfully.
 /// 
 /// Related guide: [Issued card authorizations](https://docs.stripe.com/issuing/purchases/authorizations)
-@immutable final class IssuingAuthorization {const IssuingAuthorization({required this.amount, required this.approved, required this.authorizationMethod, required this.balanceTransactions, required this.card, required this.created, required this.currency, required this.id, required this.livemode, required this.merchantAmount, required this.merchantCurrency, required this.merchantData, required this.metadata, required this.object, required this.requestHistory, required this.status, required this.transactions, required this.verificationData, this.amountDetails, this.cardholder, this.fleet, this.fraudChallenges, this.fuel, this.networkData, this.pendingRequest, this.token, this.treasury, this.verifiedByFraudChallenge, this.wallet, });
+@immutable final class IssuingAuthorization {const IssuingAuthorization({required this.amount, required this.approved, required this.authorizationMethod, required this.balanceTransactions, required this.card, required this.created, required this.currency, required this.id, required this.livemode, required this.merchantAmount, required this.merchantCurrency, required this.merchantData, required this.metadata, required this.object, required this.requestHistory, required this.status, required this.transactions, required this.verificationData, this.amountDetails = const Omittable.absent(), this.cardholder = const Omittable.absent(), this.fleet = const Omittable.absent(), this.fraudChallenges = const Omittable.absent(), this.fuel = const Omittable.absent(), this.networkData = const Omittable.absent(), this.pendingRequest = const Omittable.absent(), this.token = const Omittable.absent(), this.treasury = const Omittable.absent(), this.verifiedByFraudChallenge = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
 factory IssuingAuthorization.fromJson(Map<String, dynamic> json) { return IssuingAuthorization(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
+  amountDetails: json.containsKey('amount_details') ? Omittable(json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   approved: json['approved'] as bool,
   authorizationMethod: IssuingAuthorizationAuthorizationMethod.fromJson(json['authorization_method'] as String),
   balanceTransactions: (json['balance_transactions'] as List<dynamic>).map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
   card: IssuingCard.fromJson(json['card'] as Map<String, dynamic>),
-  cardholder: json['cardholder'] != null ? OneOf2.parse(json['cardholder'], fromA: (v) => v as String, fromB: (v) => IssuingCardholder.fromJson(v as Map<String, dynamic>),) : null,
+  cardholder: json.containsKey('cardholder') ? Omittable(json['cardholder'] != null ? OneOf2.parse(json['cardholder'], fromA: (v) => v as String, fromB: (v) => IssuingCardholder.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  fleet: json['fleet'] != null ? IssuingAuthorizationFleetData.fromJson(json['fleet'] as Map<String, dynamic>) : null,
-  fraudChallenges: (json['fraud_challenges'] as List<dynamic>?)?.map((e) => IssuingAuthorizationFraudChallenge.fromJson(e as Map<String, dynamic>)).toList(),
-  fuel: json['fuel'] != null ? IssuingAuthorizationFuelData.fromJson(json['fuel'] as Map<String, dynamic>) : null,
+  fleet: json.containsKey('fleet') ? Omittable(json['fleet'] != null ? IssuingAuthorizationFleetData.fromJson(json['fleet'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  fraudChallenges: json.containsKey('fraud_challenges') ? Omittable((json['fraud_challenges'] as List<dynamic>?)?.map((e) => IssuingAuthorizationFraudChallenge.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  fuel: json.containsKey('fuel') ? Omittable(json['fuel'] != null ? IssuingAuthorizationFuelData.fromJson(json['fuel'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   merchantAmount: (json['merchant_amount'] as num).toInt(),
   merchantCurrency: json['merchant_currency'] as String,
   merchantData: IssuingAuthorizationMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  networkData: json['network_data'] != null ? IssuingAuthorizationNetworkData.fromJson(json['network_data'] as Map<String, dynamic>) : null,
+  networkData: json.containsKey('network_data') ? Omittable(json['network_data'] != null ? IssuingAuthorizationNetworkData.fromJson(json['network_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   object: IssuingAuthorizationObject.fromJson(json['object'] as String),
-  pendingRequest: json['pending_request'] != null ? IssuingAuthorizationPendingRequest.fromJson(json['pending_request'] as Map<String, dynamic>) : null,
+  pendingRequest: json.containsKey('pending_request') ? Omittable(json['pending_request'] != null ? IssuingAuthorizationPendingRequest.fromJson(json['pending_request'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   requestHistory: (json['request_history'] as List<dynamic>).map((e) => IssuingAuthorizationRequest.fromJson(e as Map<String, dynamic>)).toList(),
   status: IssuingAuthorizationStatus.fromJson(json['status'] as String),
-  token: json['token'] != null ? OneOf2.parse(json['token'], fromA: (v) => v as String, fromB: (v) => IssuingToken.fromJson(v as Map<String, dynamic>),) : null,
+  token: json.containsKey('token') ? Omittable(json['token'] != null ? OneOf2.parse(json['token'], fromA: (v) => v as String, fromB: (v) => IssuingToken.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   transactions: (json['transactions'] as List<dynamic>).map((e) => IssuingTransaction.fromJson(e as Map<String, dynamic>)).toList(),
-  treasury: json['treasury'] != null ? IssuingAuthorizationTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
+  treasury: json.containsKey('treasury') ? Omittable(json['treasury'] != null ? IssuingAuthorizationTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   verificationData: IssuingAuthorizationVerificationData.fromJson(json['verification_data'] as Map<String, dynamic>),
-  verifiedByFraudChallenge: json['verified_by_fraud_challenge'] as bool?,
-  wallet: json['wallet'] as String?,
+  verifiedByFraudChallenge: json.containsKey('verified_by_fraud_challenge') ? Omittable(json['verified_by_fraud_challenge'] as bool?) : const Omittable.absent(),
+  wallet: json.containsKey('wallet') ? Omittable(json['wallet'] as String?) : const Omittable.absent(),
 ); }
 
 /// The total amount that was authorized or rejected. This amount is in `currency` and in the [smallest currency unit](https://stripe.com/docs/currencies#zero-decimal). `amount` should be the same as `merchant_amount`, unless `currency` and `merchant_currency` are different.
 final int amount;
 
 /// Detailed breakdown of amount components. These amounts are denominated in `currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
-final IssuingAuthorizationAmountDetails? amountDetails;
+final Omittable<IssuingAuthorizationAmountDetails?> amountDetails;
 
 /// Whether the authorization has been approved.
 final bool approved;
@@ -144,7 +144,7 @@ final List<BalanceTransaction> balanceTransactions;
 final IssuingCard card;
 
 /// The cardholder to whom this authorization belongs.
-final IssuingAuthorizationCardholder? cardholder;
+final Omittable<IssuingAuthorizationCardholder?> cardholder;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -153,13 +153,13 @@ final int created;
 final String currency;
 
 /// Fleet-specific information for authorizations using Fleet cards.
-final IssuingAuthorizationFleetData? fleet;
+final Omittable<IssuingAuthorizationFleetData?> fleet;
 
 /// Fraud challenges sent to the cardholder, if this authorization was declined for fraud risk reasons.
-final List<IssuingAuthorizationFraudChallenge>? fraudChallenges;
+final Omittable<List<IssuingAuthorizationFraudChallenge>?> fraudChallenges;
 
 /// Information about fuel that was purchased with this transaction. Typically this information is received from the merchant after the authorization has been approved and the fuel dispensed.
-final IssuingAuthorizationFuelData? fuel;
+final Omittable<IssuingAuthorizationFuelData?> fuel;
 
 /// Unique identifier for the object.
 final String id;
@@ -179,13 +179,13 @@ final IssuingAuthorizationMerchantData merchantData;
 final Map<String,String> metadata;
 
 /// Details about the authorization, such as identifiers, set by the card network.
-final IssuingAuthorizationNetworkData? networkData;
+final Omittable<IssuingAuthorizationNetworkData?> networkData;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final IssuingAuthorizationObject object;
 
 /// The pending authorization request. This field will only be non-null during an `issuing_authorization.request` webhook.
-final IssuingAuthorizationPendingRequest? pendingRequest;
+final Omittable<IssuingAuthorizationPendingRequest?> pendingRequest;
 
 /// History of every time a `pending_request` authorization was approved/declined, either by you directly or by Stripe (e.g. based on your spending_controls). If the merchant changes the authorization by performing an incremental authorization, you can look at this field to see the previous requests for the authorization. This field can be helpful in determining why a given authorization was approved/declined.
 final List<IssuingAuthorizationRequest> requestHistory;
@@ -194,52 +194,52 @@ final List<IssuingAuthorizationRequest> requestHistory;
 final IssuingAuthorizationStatus status;
 
 /// [Token](https://docs.stripe.com/api/issuing/tokens/object) object used for this authorization. If a network token was not used for this authorization, this field will be null.
-final IssuingAuthorizationToken? token;
+final Omittable<IssuingAuthorizationToken?> token;
 
 /// List of [transactions](https://docs.stripe.com/api/issuing/transactions) associated with this authorization.
 final List<IssuingTransaction> transactions;
 
 /// [Treasury](https://docs.stripe.com/api/treasury) details related to this authorization if it was created on a [FinancialAccount](https://docs.stripe.com/api/treasury/financial_accounts).
-final IssuingAuthorizationTreasury? treasury;
+final Omittable<IssuingAuthorizationTreasury?> treasury;
 
 final IssuingAuthorizationVerificationData verificationData;
 
 /// Whether the authorization bypassed fraud risk checks because the cardholder has previously completed a fraud challenge on a similar high-risk authorization from the same merchant.
-final bool? verifiedByFraudChallenge;
+final Omittable<bool?> verifiedByFraudChallenge;
 
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`. Will populate as `null` when no digital wallet was utilized.
-final String? wallet;
+final Omittable<String?> wallet;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
-  if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
+  if (amountDetails.isPresent) 'amount_details': amountDetails.value?.toJson(),
   'approved': approved,
   'authorization_method': authorizationMethod.toJson(),
   'balance_transactions': balanceTransactions.map((e) => e.toJson()).toList(),
   'card': card.toJson(),
-  if (cardholder != null) 'cardholder': cardholder?.toJson(),
+  if (cardholder.isPresent) 'cardholder': cardholder.value?.toJson(),
   'created': created,
   'currency': currency,
-  if (fleet != null) 'fleet': fleet?.toJson(),
-  if (fraudChallenges != null) 'fraud_challenges': fraudChallenges?.map((e) => e.toJson()).toList(),
-  if (fuel != null) 'fuel': fuel?.toJson(),
+  if (fleet.isPresent) 'fleet': fleet.value?.toJson(),
+  if (fraudChallenges.isPresent) 'fraud_challenges': fraudChallenges.value?.map((e) => e.toJson()).toList(),
+  if (fuel.isPresent) 'fuel': fuel.value?.toJson(),
   'id': id,
   'livemode': livemode,
   'merchant_amount': merchantAmount,
   'merchant_currency': merchantCurrency,
   'merchant_data': merchantData.toJson(),
   'metadata': metadata,
-  if (networkData != null) 'network_data': networkData?.toJson(),
+  if (networkData.isPresent) 'network_data': networkData.value?.toJson(),
   'object': object.toJson(),
-  if (pendingRequest != null) 'pending_request': pendingRequest?.toJson(),
+  if (pendingRequest.isPresent) 'pending_request': pendingRequest.value?.toJson(),
   'request_history': requestHistory.map((e) => e.toJson()).toList(),
   'status': status.toJson(),
-  if (token != null) 'token': token?.toJson(),
+  if (token.isPresent) 'token': token.value?.toJson(),
   'transactions': transactions.map((e) => e.toJson()).toList(),
-  if (treasury != null) 'treasury': treasury?.toJson(),
+  if (treasury.isPresent) 'treasury': treasury.value?.toJson(),
   'verification_data': verificationData.toJson(),
-  'verified_by_fraud_challenge': ?verifiedByFraudChallenge,
-  'wallet': ?wallet,
+  if (verifiedByFraudChallenge.isPresent) 'verified_by_fraud_challenge': verifiedByFraudChallenge.value,
+  if (wallet.isPresent) 'wallet': wallet.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('approved') && json['approved'] is bool &&
@@ -259,36 +259,36 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('transactions') &&
       json.containsKey('verification_data'); } 
-IssuingAuthorization copyWith({int? amount, IssuingAuthorizationAmountDetails? Function()? amountDetails, bool? approved, IssuingAuthorizationAuthorizationMethod? authorizationMethod, List<BalanceTransaction>? balanceTransactions, IssuingCard? card, IssuingAuthorizationCardholder? Function()? cardholder, int? created, String? currency, IssuingAuthorizationFleetData? Function()? fleet, List<IssuingAuthorizationFraudChallenge>? Function()? fraudChallenges, IssuingAuthorizationFuelData? Function()? fuel, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, IssuingAuthorizationNetworkData? Function()? networkData, IssuingAuthorizationObject? object, IssuingAuthorizationPendingRequest? Function()? pendingRequest, List<IssuingAuthorizationRequest>? requestHistory, IssuingAuthorizationStatus? status, IssuingAuthorizationToken? Function()? token, List<IssuingTransaction>? transactions, IssuingAuthorizationTreasury? Function()? treasury, IssuingAuthorizationVerificationData? verificationData, bool? Function()? verifiedByFraudChallenge, String? Function()? wallet, }) { return IssuingAuthorization(
+IssuingAuthorization copyWith({int? amount, Omittable<IssuingAuthorizationAmountDetails?>? amountDetails, bool? approved, IssuingAuthorizationAuthorizationMethod? authorizationMethod, List<BalanceTransaction>? balanceTransactions, IssuingCard? card, Omittable<IssuingAuthorizationCardholder?>? cardholder, int? created, String? currency, Omittable<IssuingAuthorizationFleetData?>? fleet, Omittable<List<IssuingAuthorizationFraudChallenge>?>? fraudChallenges, Omittable<IssuingAuthorizationFuelData?>? fuel, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, Omittable<IssuingAuthorizationNetworkData?>? networkData, IssuingAuthorizationObject? object, Omittable<IssuingAuthorizationPendingRequest?>? pendingRequest, List<IssuingAuthorizationRequest>? requestHistory, IssuingAuthorizationStatus? status, Omittable<IssuingAuthorizationToken?>? token, List<IssuingTransaction>? transactions, Omittable<IssuingAuthorizationTreasury?>? treasury, IssuingAuthorizationVerificationData? verificationData, Omittable<bool?>? verifiedByFraudChallenge, Omittable<String?>? wallet, }) { return IssuingAuthorization(
   amount: amount ?? this.amount,
-  amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
+  amountDetails: amountDetails ?? this.amountDetails,
   approved: approved ?? this.approved,
   authorizationMethod: authorizationMethod ?? this.authorizationMethod,
   balanceTransactions: balanceTransactions ?? this.balanceTransactions,
   card: card ?? this.card,
-  cardholder: cardholder != null ? cardholder() : this.cardholder,
+  cardholder: cardholder ?? this.cardholder,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  fleet: fleet != null ? fleet() : this.fleet,
-  fraudChallenges: fraudChallenges != null ? fraudChallenges() : this.fraudChallenges,
-  fuel: fuel != null ? fuel() : this.fuel,
+  fleet: fleet ?? this.fleet,
+  fraudChallenges: fraudChallenges ?? this.fraudChallenges,
+  fuel: fuel ?? this.fuel,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   merchantAmount: merchantAmount ?? this.merchantAmount,
   merchantCurrency: merchantCurrency ?? this.merchantCurrency,
   merchantData: merchantData ?? this.merchantData,
   metadata: metadata ?? this.metadata,
-  networkData: networkData != null ? networkData() : this.networkData,
+  networkData: networkData ?? this.networkData,
   object: object ?? this.object,
-  pendingRequest: pendingRequest != null ? pendingRequest() : this.pendingRequest,
+  pendingRequest: pendingRequest ?? this.pendingRequest,
   requestHistory: requestHistory ?? this.requestHistory,
   status: status ?? this.status,
-  token: token != null ? token() : this.token,
+  token: token ?? this.token,
   transactions: transactions ?? this.transactions,
-  treasury: treasury != null ? treasury() : this.treasury,
+  treasury: treasury ?? this.treasury,
   verificationData: verificationData ?? this.verificationData,
-  verifiedByFraudChallenge: verifiedByFraudChallenge != null ? verifiedByFraudChallenge() : this.verifiedByFraudChallenge,
-  wallet: wallet != null ? wallet() : this.wallet,
+  verifiedByFraudChallenge: verifiedByFraudChallenge ?? this.verifiedByFraudChallenge,
+  wallet: wallet ?? this.wallet,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingAuthorization &&
@@ -302,7 +302,8 @@ IssuingAuthorization copyWith({int? amount, IssuingAuthorizationAmountDetails? F
           created == other.created &&
           currency == other.currency &&
           fleet == other.fleet &&
-          listEquals(fraudChallenges, other.fraudChallenges) &&
+          fraudChallenges.isPresent == other.fraudChallenges.isPresent &&
+          listEquals(fraudChallenges.value, other.fraudChallenges.value) &&
           fuel == other.fuel &&
           id == other.id &&
           livemode == other.livemode &&
@@ -321,6 +322,6 @@ IssuingAuthorization copyWith({int? amount, IssuingAuthorizationAmountDetails? F
           verificationData == other.verificationData &&
           verifiedByFraudChallenge == other.verifiedByFraudChallenge &&
           wallet == other.wallet; } 
-@override int get hashCode { return Object.hashAll([amount, amountDetails, approved, authorizationMethod, Object.hashAll(balanceTransactions), card, cardholder, created, currency, fleet, Object.hashAll(fraudChallenges ?? const []), fuel, id, livemode, merchantAmount, merchantCurrency, merchantData, metadata, networkData, object, pendingRequest, Object.hashAll(requestHistory), status, token, Object.hashAll(transactions), treasury, verificationData, verifiedByFraudChallenge, wallet]); } 
+@override int get hashCode { return Object.hashAll([amount, amountDetails, approved, authorizationMethod, Object.hashAll(balanceTransactions), card, cardholder, created, currency, fleet, Object.hashAll(fraudChallenges.value ?? const []), fuel, id, livemode, merchantAmount, merchantCurrency, merchantData, metadata, networkData, object, pendingRequest, Object.hashAll(requestHistory), status, token, Object.hashAll(transactions), treasury, verificationData, verifiedByFraudChallenge, wallet]); } 
 @override String toString() { return 'IssuingAuthorization(amount: $amount, amountDetails: $amountDetails, approved: $approved, authorizationMethod: $authorizationMethod, balanceTransactions: $balanceTransactions, card: $card, cardholder: $cardholder, created: $created, currency: $currency, fleet: $fleet, fraudChallenges: $fraudChallenges, fuel: $fuel, id: $id, livemode: $livemode, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, merchantData: $merchantData, metadata: $metadata, networkData: $networkData, object: $object, pendingRequest: $pendingRequest, requestHistory: $requestHistory, status: $status, token: $token, transactions: $transactions, treasury: $treasury, verificationData: $verificationData, verifiedByFraudChallenge: $verifiedByFraudChallenge, wallet: $wallet)'; } 
  }

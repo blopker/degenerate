@@ -69,14 +69,14 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderReaderResourceReaderActionType($value)'; } 
  }
 /// Represents an action performed by the reader
-@immutable final class TerminalReaderReaderResourceReaderAction {const TerminalReaderReaderResourceReaderAction({required this.status, required this.type, this.collectInputs, this.collectPaymentMethod, this.confirmPaymentIntent, this.failureCode, this.failureMessage, this.processPaymentIntent, this.processSetupIntent, this.refundPayment, this.setReaderDisplay, });
+@immutable final class TerminalReaderReaderResourceReaderAction {const TerminalReaderReaderResourceReaderAction({required this.status, required this.type, this.collectInputs, this.collectPaymentMethod, this.confirmPaymentIntent, this.failureCode = const Omittable.absent(), this.failureMessage = const Omittable.absent(), this.processPaymentIntent, this.processSetupIntent, this.refundPayment, this.setReaderDisplay, });
 
 factory TerminalReaderReaderResourceReaderAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceReaderAction(
   collectInputs: json['collect_inputs'] != null ? TerminalReaderReaderResourceCollectInputsAction.fromJson(json['collect_inputs'] as Map<String, dynamic>) : null,
   collectPaymentMethod: json['collect_payment_method'] != null ? TerminalReaderReaderResourceCollectPaymentMethodAction.fromJson(json['collect_payment_method'] as Map<String, dynamic>) : null,
   confirmPaymentIntent: json['confirm_payment_intent'] != null ? TerminalReaderReaderResourceConfirmPaymentIntentAction.fromJson(json['confirm_payment_intent'] as Map<String, dynamic>) : null,
-  failureCode: json['failure_code'] as String?,
-  failureMessage: json['failure_message'] as String?,
+  failureCode: json.containsKey('failure_code') ? Omittable(json['failure_code'] as String?) : const Omittable.absent(),
+  failureMessage: json.containsKey('failure_message') ? Omittable(json['failure_message'] as String?) : const Omittable.absent(),
   processPaymentIntent: json['process_payment_intent'] != null ? TerminalReaderReaderResourceProcessPaymentIntentAction.fromJson(json['process_payment_intent'] as Map<String, dynamic>) : null,
   processSetupIntent: json['process_setup_intent'] != null ? TerminalReaderReaderResourceProcessSetupIntentAction.fromJson(json['process_setup_intent'] as Map<String, dynamic>) : null,
   refundPayment: json['refund_payment'] != null ? TerminalReaderReaderResourceRefundPaymentAction.fromJson(json['refund_payment'] as Map<String, dynamic>) : null,
@@ -92,10 +92,10 @@ final TerminalReaderReaderResourceCollectPaymentMethodAction? collectPaymentMeth
 final TerminalReaderReaderResourceConfirmPaymentIntentAction? confirmPaymentIntent;
 
 /// Failure code, only set if status is `failed`.
-final String? failureCode;
+final Omittable<String?> failureCode;
 
 /// Detailed failure message, only set if status is `failed`.
-final String? failureMessage;
+final Omittable<String?> failureMessage;
 
 final TerminalReaderReaderResourceProcessPaymentIntentAction? processPaymentIntent;
 
@@ -115,8 +115,8 @@ Map<String, dynamic> toJson() { return {
   if (collectInputs != null) 'collect_inputs': collectInputs?.toJson(),
   if (collectPaymentMethod != null) 'collect_payment_method': collectPaymentMethod?.toJson(),
   if (confirmPaymentIntent != null) 'confirm_payment_intent': confirmPaymentIntent?.toJson(),
-  'failure_code': ?failureCode,
-  'failure_message': ?failureMessage,
+  if (failureCode.isPresent) 'failure_code': failureCode.value,
+  if (failureMessage.isPresent) 'failure_message': failureMessage.value,
   if (processPaymentIntent != null) 'process_payment_intent': processPaymentIntent?.toJson(),
   if (processSetupIntent != null) 'process_setup_intent': processSetupIntent?.toJson(),
   if (refundPayment != null) 'refund_payment': refundPayment?.toJson(),
@@ -126,12 +126,12 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') &&
       json.containsKey('type'); } 
-TerminalReaderReaderResourceReaderAction copyWith({TerminalReaderReaderResourceCollectInputsAction Function()? collectInputs, TerminalReaderReaderResourceCollectPaymentMethodAction Function()? collectPaymentMethod, TerminalReaderReaderResourceConfirmPaymentIntentAction Function()? confirmPaymentIntent, String? Function()? failureCode, String? Function()? failureMessage, TerminalReaderReaderResourceProcessPaymentIntentAction Function()? processPaymentIntent, TerminalReaderReaderResourceProcessSetupIntentAction Function()? processSetupIntent, TerminalReaderReaderResourceRefundPaymentAction Function()? refundPayment, TerminalReaderReaderResourceSetReaderDisplayAction Function()? setReaderDisplay, TerminalReaderReaderResourceReaderActionStatus? status, TerminalReaderReaderResourceReaderActionType? type, }) { return TerminalReaderReaderResourceReaderAction(
+TerminalReaderReaderResourceReaderAction copyWith({TerminalReaderReaderResourceCollectInputsAction? Function()? collectInputs, TerminalReaderReaderResourceCollectPaymentMethodAction? Function()? collectPaymentMethod, TerminalReaderReaderResourceConfirmPaymentIntentAction? Function()? confirmPaymentIntent, Omittable<String?>? failureCode, Omittable<String?>? failureMessage, TerminalReaderReaderResourceProcessPaymentIntentAction? Function()? processPaymentIntent, TerminalReaderReaderResourceProcessSetupIntentAction? Function()? processSetupIntent, TerminalReaderReaderResourceRefundPaymentAction? Function()? refundPayment, TerminalReaderReaderResourceSetReaderDisplayAction? Function()? setReaderDisplay, TerminalReaderReaderResourceReaderActionStatus? status, TerminalReaderReaderResourceReaderActionType? type, }) { return TerminalReaderReaderResourceReaderAction(
   collectInputs: collectInputs != null ? collectInputs() : this.collectInputs,
   collectPaymentMethod: collectPaymentMethod != null ? collectPaymentMethod() : this.collectPaymentMethod,
   confirmPaymentIntent: confirmPaymentIntent != null ? confirmPaymentIntent() : this.confirmPaymentIntent,
-  failureCode: failureCode != null ? failureCode() : this.failureCode,
-  failureMessage: failureMessage != null ? failureMessage() : this.failureMessage,
+  failureCode: failureCode ?? this.failureCode,
+  failureMessage: failureMessage ?? this.failureMessage,
   processPaymentIntent: processPaymentIntent != null ? processPaymentIntent() : this.processPaymentIntent,
   processSetupIntent: processSetupIntent != null ? processSetupIntent() : this.processSetupIntent,
   refundPayment: refundPayment != null ? refundPayment() : this.refundPayment,

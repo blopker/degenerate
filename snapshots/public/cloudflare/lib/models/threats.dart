@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'country', 'type'}.contains(key)); } 
-Threats copyWith({int Function()? all, Map<String, dynamic> Function()? country, Map<String, dynamic> Function()? type, }) { return Threats(
+Threats copyWith({int? Function()? all, Map<String, dynamic>? Function()? country, Map<String, dynamic>? Function()? type, }) { return Threats(
   all: all != null ? all() : this.all,
   country: country != null ? country() : this.country,
   type: type != null ? type() : this.type,

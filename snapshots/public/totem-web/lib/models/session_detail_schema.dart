@@ -96,11 +96,11 @@ Map<String, dynamic> toJson() { return {
   'joinable': joinable,
   'ended': ended,
   'rsvp_url': rsvpUrl,
-  'join_url': ?joinUrl,
+  'join_url': joinUrl,
   'subscribe_url': subscribeUrl,
   'cal_link': calLink,
-  'subscribed': ?subscribed,
-  'user_timezone': ?userTimezone,
+  'subscribed': subscribed,
+  'user_timezone': userTimezone,
   'meeting_provider': meetingProvider.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug') && json['slug'] is String &&
@@ -121,11 +121,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug'
       json.containsKey('joinable') && json['joinable'] is bool &&
       json.containsKey('ended') && json['ended'] is bool &&
       json.containsKey('rsvp_url') && json['rsvp_url'] is String &&
-      json.containsKey('join_url') && json['join_url'] is String &&
+      json.containsKey('join_url') && (json['join_url'] == null || json['join_url'] is String) &&
       json.containsKey('subscribe_url') && json['subscribe_url'] is String &&
       json.containsKey('cal_link') && json['cal_link'] is String &&
-      json.containsKey('subscribed') && json['subscribed'] is bool &&
-      json.containsKey('user_timezone') && json['user_timezone'] is String &&
+      json.containsKey('subscribed') && (json['subscribed'] == null || json['subscribed'] is bool) &&
+      json.containsKey('user_timezone') && (json['user_timezone'] == null || json['user_timezone'] is String) &&
       json.containsKey('meeting_provider'); } 
 SessionDetailSchema copyWith({String? slug, String? title, SessionSpaceSchema? space, String? spaceTitle, String? description, int? price, int? seatsLeft, int? duration, String? recurring, int? subscribers, DateTime? start, bool? attending, bool? open, bool? started, bool? cancelled, bool? joinable, bool? ended, String? rsvpUrl, String? Function()? joinUrl, String? subscribeUrl, String? calLink, bool? Function()? subscribed, String? Function()? userTimezone, MeetingProviderEnum? meetingProvider, }) { return SessionDetailSchema(
   slug: slug ?? this.slug,

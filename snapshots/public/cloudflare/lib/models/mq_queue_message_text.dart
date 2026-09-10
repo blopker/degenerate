@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (contentType != null) 'content_type': contentType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'content_type'}.contains(key)); } 
-MqQueueMessageText copyWith({String Function()? body, MqQueueMessageTextContentType Function()? contentType, }) { return MqQueueMessageText(
+MqQueueMessageText copyWith({String? Function()? body, MqQueueMessageTextContentType? Function()? contentType, }) { return MqQueueMessageText(
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpRegexValidationQuery {const DlpRegexValidationQuery({required this.regex, this.maxMatchBytes, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpRegexValidationQuery {const DlpRegexValidationQuery({required this.regex, this.maxMatchBytes = const Omittable.absent(), });
 
 factory DlpRegexValidationQuery.fromJson(Map<String, dynamic> json) { return DlpRegexValidationQuery(
-  maxMatchBytes: json['max_match_bytes'] != null ? (json['max_match_bytes'] as num).toInt() : null,
+  maxMatchBytes: json.containsKey('max_match_bytes') ? Omittable(json['max_match_bytes'] != null ? (json['max_match_bytes'] as num).toInt() : null) : const Omittable.absent(),
   regex: json['regex'] as String,
 ); }
 
@@ -17,17 +17,17 @@ factory DlpRegexValidationQuery.fromJson(Map<String, dynamic> json) { return Dlp
 /// Note that the length is specified in bytes. Since regular expressions
 /// use UTF-8 the pattern `.` can match up to 4 bytes. Hence `.{1,256}`
 /// has a maximum length of 1024 bytes.
-final int? maxMatchBytes;
+final Omittable<int?> maxMatchBytes;
 
 final String regex;
 
 Map<String, dynamic> toJson() { return {
-  'max_match_bytes': ?maxMatchBytes,
+  if (maxMatchBytes.isPresent) 'max_match_bytes': maxMatchBytes.value,
   'regex': regex,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('regex') && json['regex'] is String; } 
-DlpRegexValidationQuery copyWith({int? Function()? maxMatchBytes, String? regex, }) { return DlpRegexValidationQuery(
-  maxMatchBytes: maxMatchBytes != null ? maxMatchBytes() : this.maxMatchBytes,
+DlpRegexValidationQuery copyWith({Omittable<int?>? maxMatchBytes, String? regex, }) { return DlpRegexValidationQuery(
+  maxMatchBytes: maxMatchBytes ?? this.maxMatchBytes,
   regex: regex ?? this.regex,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

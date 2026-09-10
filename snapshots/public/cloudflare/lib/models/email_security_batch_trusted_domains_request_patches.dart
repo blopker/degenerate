@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-EmailSecurityBatchTrustedDomainsRequestPatches copyWith({String Function()? comments, bool Function()? isRecent, bool Function()? isRegex, bool Function()? isSimilarity, String Function()? pattern, EmailSecurityTrustedDomainId? id, }) { return EmailSecurityBatchTrustedDomainsRequestPatches(
+EmailSecurityBatchTrustedDomainsRequestPatches copyWith({String? Function()? comments, bool? Function()? isRecent, bool? Function()? isRegex, bool? Function()? isSimilarity, String? Function()? pattern, EmailSecurityTrustedDomainId? id, }) { return EmailSecurityBatchTrustedDomainsRequestPatches(
   comments: comments != null ? comments() : this.comments,
   isRecent: isRecent != null ? isRecent() : this.isRecent,
   isRegex: isRegex != null ? isRegex() : this.isRegex,

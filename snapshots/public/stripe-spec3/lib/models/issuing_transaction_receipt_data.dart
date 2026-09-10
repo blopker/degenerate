@@ -1,39 +1,39 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class IssuingTransactionReceiptData {const IssuingTransactionReceiptData({this.description, this.quantity, this.total, this.unitCost, });
+@immutable final class IssuingTransactionReceiptData {const IssuingTransactionReceiptData({this.description = const Omittable.absent(), this.quantity = const Omittable.absent(), this.total = const Omittable.absent(), this.unitCost = const Omittable.absent(), });
 
 factory IssuingTransactionReceiptData.fromJson(Map<String, dynamic> json) { return IssuingTransactionReceiptData(
-  description: json['description'] as String?,
-  quantity: json['quantity'] != null ? (json['quantity'] as num).toDouble() : null,
-  total: json['total'] != null ? (json['total'] as num).toInt() : null,
-  unitCost: json['unit_cost'] != null ? (json['unit_cost'] as num).toInt() : null,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  quantity: json.containsKey('quantity') ? Omittable(json['quantity'] != null ? (json['quantity'] as num).toDouble() : null) : const Omittable.absent(),
+  total: json.containsKey('total') ? Omittable(json['total'] != null ? (json['total'] as num).toInt() : null) : const Omittable.absent(),
+  unitCost: json.containsKey('unit_cost') ? Omittable(json['unit_cost'] != null ? (json['unit_cost'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// The description of the item. The maximum length of this field is 26 characters.
-final String? description;
+final Omittable<String?> description;
 
 /// The quantity of the item.
-final double? quantity;
+final Omittable<double?> quantity;
 
 /// The total for this line item in cents.
-final int? total;
+final Omittable<int?> total;
 
 /// The unit cost of the item in cents.
-final int? unitCost;
+final Omittable<int?> unitCost;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
-  'quantity': ?quantity,
-  'total': ?total,
-  'unit_cost': ?unitCost,
+  if (description.isPresent) 'description': description.value,
+  if (quantity.isPresent) 'quantity': quantity.value,
+  if (total.isPresent) 'total': total.value,
+  if (unitCost.isPresent) 'unit_cost': unitCost.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'quantity', 'total', 'unit_cost'}.contains(key)); } 
-IssuingTransactionReceiptData copyWith({String? Function()? description, double? Function()? quantity, int? Function()? total, int? Function()? unitCost, }) { return IssuingTransactionReceiptData(
-  description: description != null ? description() : this.description,
-  quantity: quantity != null ? quantity() : this.quantity,
-  total: total != null ? total() : this.total,
-  unitCost: unitCost != null ? unitCost() : this.unitCost,
+IssuingTransactionReceiptData copyWith({Omittable<String?>? description, Omittable<double?>? quantity, Omittable<int?>? total, Omittable<int?>? unitCost, }) { return IssuingTransactionReceiptData(
+  description: description ?? this.description,
+  quantity: quantity ?? this.quantity,
+  total: total ?? this.total,
+  unitCost: unitCost ?? this.unitCost,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingTransactionReceiptData &&

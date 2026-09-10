@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (preferredLanguage != null) 'preferred_language': preferredLanguage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred_language'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam24 copyWith({InvoicePaymentMethodOptionsParam24PreferredLanguage Function()? preferredLanguage}) { return InvoicePaymentMethodOptionsParam24(
+InvoicePaymentMethodOptionsParam24 copyWith({InvoicePaymentMethodOptionsParam24PreferredLanguage? Function()? preferredLanguage}) { return InvoicePaymentMethodOptionsParam24(
   preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

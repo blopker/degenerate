@@ -74,20 +74,20 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Shipping rates describe the price of shipping presented to your customers and
 /// applied to a purchase. For more information, see [Charge for shipping](https://docs.stripe.com/payments/during-payment/charge-shipping).
-@immutable final class ShippingRate {const ShippingRate({required this.active, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.type, this.deliveryEstimate, this.displayName, this.fixedAmount, this.taxBehavior, this.taxCode, });
+@immutable final class ShippingRate {const ShippingRate({required this.active, required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.type, this.deliveryEstimate = const Omittable.absent(), this.displayName = const Omittable.absent(), this.fixedAmount, this.taxBehavior = const Omittable.absent(), this.taxCode = const Omittable.absent(), });
 
 factory ShippingRate.fromJson(Map<String, dynamic> json) { return ShippingRate(
   active: json['active'] as bool,
   created: (json['created'] as num).toInt(),
-  deliveryEstimate: json['delivery_estimate'] != null ? ShippingRateDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,
-  displayName: json['display_name'] as String?,
+  deliveryEstimate: json.containsKey('delivery_estimate') ? Omittable(json['delivery_estimate'] != null ? ShippingRateDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  displayName: json.containsKey('display_name') ? Omittable(json['display_name'] as String?) : const Omittable.absent(),
   fixedAmount: json['fixed_amount'] != null ? ShippingRateFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: ShippingRateObject.fromJson(json['object'] as String),
-  taxBehavior: json['tax_behavior'] != null ? ShippingRateTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-  taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => TaxCode.fromJson(v as Map<String, dynamic>),) : null,
+  taxBehavior: json.containsKey('tax_behavior') ? Omittable(json['tax_behavior'] != null ? ShippingRateTaxBehavior.fromJson(json['tax_behavior'] as String) : null) : const Omittable.absent(),
+  taxCode: json.containsKey('tax_code') ? Omittable(json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => TaxCode.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   type: ShippingRateType.fromJson(json['type'] as String),
 ); }
 
@@ -98,10 +98,10 @@ final bool active;
 final int created;
 
 /// The estimated range for how long shipping will take, meant to be displayable to the customer. This will appear on CheckoutSessions.
-final ShippingRateDeliveryEstimate? deliveryEstimate;
+final Omittable<ShippingRateDeliveryEstimate?> deliveryEstimate;
 
 /// The name of the shipping rate, meant to be displayable to the customer. This will appear on CheckoutSessions.
-final String? displayName;
+final Omittable<String?> displayName;
 
 final ShippingRateFixedAmount? fixedAmount;
 
@@ -118,10 +118,10 @@ final Map<String,String> metadata;
 final ShippingRateObject object;
 
 /// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
-final ShippingRateTaxBehavior? taxBehavior;
+final Omittable<ShippingRateTaxBehavior?> taxBehavior;
 
 /// A [tax code](https://docs.stripe.com/tax/tax-categories) ID. The Shipping tax code is `txcd_92010001`.
-final ShippingRateTaxCode? taxCode;
+final Omittable<ShippingRateTaxCode?> taxCode;
 
 /// The type of calculation to use on the shipping rate.
 final ShippingRateType type;
@@ -129,15 +129,15 @@ final ShippingRateType type;
 Map<String, dynamic> toJson() { return {
   'active': active,
   'created': created,
-  if (deliveryEstimate != null) 'delivery_estimate': deliveryEstimate?.toJson(),
-  'display_name': ?displayName,
+  if (deliveryEstimate.isPresent) 'delivery_estimate': deliveryEstimate.value?.toJson(),
+  if (displayName.isPresent) 'display_name': displayName.value,
   if (fixedAmount != null) 'fixed_amount': fixedAmount?.toJson(),
   'id': id,
   'livemode': livemode,
   'metadata': metadata,
   'object': object.toJson(),
-  if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
-  if (taxCode != null) 'tax_code': taxCode?.toJson(),
+  if (taxBehavior.isPresent) 'tax_behavior': taxBehavior.value?.toJson(),
+  if (taxCode.isPresent) 'tax_code': taxCode.value?.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
@@ -147,18 +147,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-ShippingRate copyWith({bool? active, int? created, ShippingRateDeliveryEstimate? Function()? deliveryEstimate, String? Function()? displayName, ShippingRateFixedAmount Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, ShippingRateTaxBehavior? Function()? taxBehavior, ShippingRateTaxCode? Function()? taxCode, ShippingRateType? type, }) { return ShippingRate(
+ShippingRate copyWith({bool? active, int? created, Omittable<ShippingRateDeliveryEstimate?>? deliveryEstimate, Omittable<String?>? displayName, ShippingRateFixedAmount? Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, Omittable<ShippingRateTaxBehavior?>? taxBehavior, Omittable<ShippingRateTaxCode?>? taxCode, ShippingRateType? type, }) { return ShippingRate(
   active: active ?? this.active,
   created: created ?? this.created,
-  deliveryEstimate: deliveryEstimate != null ? deliveryEstimate() : this.deliveryEstimate,
-  displayName: displayName != null ? displayName() : this.displayName,
+  deliveryEstimate: deliveryEstimate ?? this.deliveryEstimate,
+  displayName: displayName ?? this.displayName,
   fixedAmount: fixedAmount != null ? fixedAmount() : this.fixedAmount,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-  taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
-  taxCode: taxCode != null ? taxCode() : this.taxCode,
+  taxBehavior: taxBehavior ?? this.taxBehavior,
+  taxCode: taxCode ?? this.taxCode,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

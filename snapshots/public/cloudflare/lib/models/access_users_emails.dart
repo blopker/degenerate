@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'primary', 'type', 'value'}.contains(key)); } 
-AccessUsersEmails copyWith({bool Function()? primary, String Function()? type, String Function()? value, }) { return AccessUsersEmails(
+AccessUsersEmails copyWith({bool? Function()? primary, String? Function()? type, String? Function()? value, }) { return AccessUsersEmails(
   primary: primary != null ? primary() : this.primary,
   type: type != null ? type() : this.type,
   value: value != null ? value() : this.value,

@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result_info') &&
       json.containsKey('result'); } 
-PageShieldListZonePoliciesResponse copyWith({List<PageShieldMessages2> Function()? errors, List<PageShieldMessages2> Function()? messages, bool? success, PageShieldResultInfo? resultInfo, List<PageShieldPolicyWithId>? result, }) { return PageShieldListZonePoliciesResponse(
+PageShieldListZonePoliciesResponse copyWith({List<PageShieldMessages2>? Function()? errors, List<PageShieldMessages2>? Function()? messages, bool? success, PageShieldResultInfo? resultInfo, List<PageShieldPolicyWithId>? result, }) { return PageShieldListZonePoliciesResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success ?? this.success,

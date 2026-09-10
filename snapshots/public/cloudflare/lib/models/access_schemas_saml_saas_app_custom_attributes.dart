@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'friendly_name', 'name', 'name_format', 'required', 'source'}.contains(key)); } 
-AccessSchemasSamlSaasAppCustomAttributes copyWith({String Function()? friendlyName, String Function()? name, AccessSchemasSamlSaasAppCustomAttributesNameFormat Function()? nameFormat, bool Function()? $required, AccessSchemasSamlSaasAppCustomAttributesSource Function()? source, }) { return AccessSchemasSamlSaasAppCustomAttributes(
+AccessSchemasSamlSaasAppCustomAttributes copyWith({String? Function()? friendlyName, String? Function()? name, AccessSchemasSamlSaasAppCustomAttributesNameFormat? Function()? nameFormat, bool? Function()? $required, AccessSchemasSamlSaasAppCustomAttributesSource? Function()? source, }) { return AccessSchemasSamlSaasAppCustomAttributes(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   name: name != null ? name() : this.name,
   nameFormat: nameFormat != null ? nameFormat() : this.nameFormat,

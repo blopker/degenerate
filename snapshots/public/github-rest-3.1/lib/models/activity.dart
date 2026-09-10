@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   'ref': ref,
   'timestamp': timestamp.toIso8601String(),
   'activity_type': activityType.toJson(),
-  if (actor != null) 'actor': actor?.toJson(),
+  'actor': actor?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&

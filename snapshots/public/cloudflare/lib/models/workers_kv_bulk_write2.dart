@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
       json.containsKey('value') && json['value'] is String; } 
-WorkersKvBulkWrite2 copyWith({bool Function()? base64, WorkersKvExpiration Function()? expiration, WorkersKvExpirationTtl Function()? expirationTtl, WorkersKvKeyNameBulk? key, WorkersKvAny Function()? metadata, String? value, }) { return WorkersKvBulkWrite2(
+WorkersKvBulkWrite2 copyWith({bool Function()? base64, WorkersKvExpiration? Function()? expiration, WorkersKvExpirationTtl? Function()? expirationTtl, WorkersKvKeyNameBulk? key, WorkersKvAny? Function()? metadata, String? value, }) { return WorkersKvBulkWrite2(
   base64: base64 != null ? base64() : this.base64,
   expiration: expiration != null ? expiration() : this.expiration,
   expirationTtl: expirationTtl != null ? expirationTtl() : this.expirationTtl,

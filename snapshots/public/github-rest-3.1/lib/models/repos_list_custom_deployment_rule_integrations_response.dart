@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (availableCustomDeploymentProtectionRuleIntegrations != null) 'available_custom_deployment_protection_rule_integrations': availableCustomDeploymentProtectionRuleIntegrations?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_count', 'available_custom_deployment_protection_rule_integrations'}.contains(key)); } 
-ReposListCustomDeploymentRuleIntegrationsResponse copyWith({int Function()? totalCount, List<CustomDeploymentRuleApp> Function()? availableCustomDeploymentProtectionRuleIntegrations, }) { return ReposListCustomDeploymentRuleIntegrationsResponse(
+ReposListCustomDeploymentRuleIntegrationsResponse copyWith({int? Function()? totalCount, List<CustomDeploymentRuleApp>? Function()? availableCustomDeploymentProtectionRuleIntegrations, }) { return ReposListCustomDeploymentRuleIntegrationsResponse(
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   availableCustomDeploymentProtectionRuleIntegrations: availableCustomDeploymentProtectionRuleIntegrations != null ? availableCustomDeploymentProtectionRuleIntegrations() : this.availableCustomDeploymentProtectionRuleIntegrations,
 ); } 

@@ -33,12 +33,12 @@ Map<String, dynamic> toJson() { return {
   if (managedBy != null) 'managed_by': managedBy?.toJson(),
   'name': name,
   if (settings != null) 'settings': settings?.toJson(),
-  if (type != null) 'type': type?.toJson(),
+  'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
-IamAccount copyWith({DateTime Function()? createdOn, IamCommonComponentsSchemasIdentifier? id, IamAccountManagedBy Function()? managedBy, String? name, IamAccountSettings Function()? settings, IamAccountType? Function()? type, }) { return IamAccount(
+IamAccount copyWith({DateTime? Function()? createdOn, IamCommonComponentsSchemasIdentifier? id, IamAccountManagedBy? Function()? managedBy, String? name, IamAccountSettings? Function()? settings, IamAccountType? Function()? type, }) { return IamAccount(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   id: id ?? this.id,
   managedBy: managedBy != null ? managedBy() : this.managedBy,

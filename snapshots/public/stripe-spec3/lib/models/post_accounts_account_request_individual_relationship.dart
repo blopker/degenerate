@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'title': ?title,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'director', 'executive', 'owner', 'percent_ownership', 'title'}.contains(key)); } 
-PostAccountsAccountRequestIndividualRelationship copyWith({bool Function()? director, bool Function()? executive, bool Function()? owner, PostAccountsAccountRequestIndividualRelationshipPercentOwnership Function()? percentOwnership, String Function()? title, }) { return PostAccountsAccountRequestIndividualRelationship(
+PostAccountsAccountRequestIndividualRelationship copyWith({bool? Function()? director, bool? Function()? executive, bool? Function()? owner, PostAccountsAccountRequestIndividualRelationshipPercentOwnership? Function()? percentOwnership, String? Function()? title, }) { return PostAccountsAccountRequestIndividualRelationship(
   director: director != null ? director() : this.director,
   executive: executive != null ? executive() : this.executive,
   owner: owner != null ? owner() : this.owner,

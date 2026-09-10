@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-PostIssuingTokensTokenRequest copyWith({List<String> Function()? expand, PostIssuingTokensTokenRequestStatus? status, }) { return PostIssuingTokensTokenRequest(
+PostIssuingTokensTokenRequest copyWith({List<String>? Function()? expand, PostIssuingTokensTokenRequestStatus? status, }) { return PostIssuingTokensTokenRequest(
   expand: expand != null ? expand() : this.expand,
   status: status ?? this.status,
 ); } 

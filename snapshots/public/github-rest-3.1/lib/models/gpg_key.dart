@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gpg_key_emails.dart';import 'gpg_key_subkeys.dart';/// A unique encryption key
-@immutable final class GpgKey {const GpgKey({required this.id, required this.primaryKeyId, required this.keyId, required this.publicKey, required this.emails, required this.subkeys, required this.canSign, required this.canEncryptComms, required this.canEncryptStorage, required this.canCertify, required this.createdAt, required this.expiresAt, required this.revoked, required this.rawKey, this.name, });
+@immutable final class GpgKey {const GpgKey({required this.id, required this.primaryKeyId, required this.keyId, required this.publicKey, required this.emails, required this.subkeys, required this.canSign, required this.canEncryptComms, required this.canEncryptStorage, required this.canCertify, required this.createdAt, required this.expiresAt, required this.revoked, required this.rawKey, this.name = const Omittable.absent(), });
 
 factory GpgKey.fromJson(Map<String, dynamic> json) { return GpgKey(
   id: (json['id'] as num).toInt(),
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   primaryKeyId: json['primary_key_id'] != null ? (json['primary_key_id'] as num).toInt() : null,
   keyId: json['key_id'] as String,
   publicKey: json['public_key'] as String,
@@ -23,7 +23,7 @@ factory GpgKey.fromJson(Map<String, dynamic> json) { return GpgKey(
 
 final int id;
 
-final String? name;
+final Omittable<String?> name;
 
 final int? primaryKeyId;
 
@@ -53,8 +53,8 @@ final String? rawKey;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  'name': ?name,
-  'primary_key_id': ?primaryKeyId,
+  if (name.isPresent) 'name': name.value,
+  'primary_key_id': primaryKeyId,
   'key_id': keyId,
   'public_key': publicKey,
   'emails': emails.map((e) => e.toJson()).toList(),
@@ -64,12 +64,12 @@ Map<String, dynamic> toJson() { return {
   'can_encrypt_storage': canEncryptStorage,
   'can_certify': canCertify,
   'created_at': createdAt.toIso8601String(),
-  if (expiresAt != null) 'expires_at': expiresAt?.toIso8601String(),
+  'expires_at': expiresAt?.toIso8601String(),
   'revoked': revoked,
-  'raw_key': ?rawKey,
+  'raw_key': rawKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('primary_key_id') && json['primary_key_id'] is num &&
+      json.containsKey('primary_key_id') && (json['primary_key_id'] == null || json['primary_key_id'] is num) &&
       json.containsKey('key_id') && json['key_id'] is String &&
       json.containsKey('public_key') && json['public_key'] is String &&
       json.containsKey('emails') &&
@@ -79,12 +79,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('can_encrypt_storage') && json['can_encrypt_storage'] is bool &&
       json.containsKey('can_certify') && json['can_certify'] is bool &&
       json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('expires_at') && json['expires_at'] is String &&
+      json.containsKey('expires_at') && (json['expires_at'] == null || json['expires_at'] is String) &&
       json.containsKey('revoked') && json['revoked'] is bool &&
-      json.containsKey('raw_key') && json['raw_key'] is String; } 
-GpgKey copyWith({int? id, String? Function()? name, int? Function()? primaryKeyId, String? keyId, String? publicKey, List<GpgKeyEmails>? emails, List<GpgKeySubkeys>? subkeys, bool? canSign, bool? canEncryptComms, bool? canEncryptStorage, bool? canCertify, DateTime? createdAt, DateTime? Function()? expiresAt, bool? revoked, String? Function()? rawKey, }) { return GpgKey(
+      json.containsKey('raw_key') && (json['raw_key'] == null || json['raw_key'] is String); } 
+GpgKey copyWith({int? id, Omittable<String?>? name, int? Function()? primaryKeyId, String? keyId, String? publicKey, List<GpgKeyEmails>? emails, List<GpgKeySubkeys>? subkeys, bool? canSign, bool? canEncryptComms, bool? canEncryptStorage, bool? canCertify, DateTime? createdAt, DateTime? Function()? expiresAt, bool? revoked, String? Function()? rawKey, }) { return GpgKey(
   id: id ?? this.id,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   primaryKeyId: primaryKeyId != null ? primaryKeyId() : this.primaryKeyId,
   keyId: keyId ?? this.keyId,
   publicKey: publicKey ?? this.publicKey,

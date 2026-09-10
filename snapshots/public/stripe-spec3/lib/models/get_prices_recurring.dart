@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   if (usageType != null) 'usage_type': usageType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interval', 'meter', 'usage_type'}.contains(key)); } 
-GetPricesRecurring copyWith({GetPricesRecurringInterval Function()? interval, String Function()? meter, GetPricesRecurringUsageType Function()? usageType, }) { return GetPricesRecurring(
+GetPricesRecurring copyWith({GetPricesRecurringInterval? Function()? interval, String? Function()? meter, GetPricesRecurringUsageType? Function()? usageType, }) { return GetPricesRecurring(
   interval: interval != null ? interval() : this.interval,
   meter: meter != null ? meter() : this.meter,
   usageType: usageType != null ? usageType() : this.usageType,

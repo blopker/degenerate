@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
       json.containsKey('relationships') &&
       json.containsKey('success') && json['success'] is bool; } 
-PostCreateEventRelationshipResponse copyWith({List<String> Function()? childIds, List<PostCreateEventRelationshipResponseErrors> Function()? errors, String? message, List<PostCreateEventRelationshipResponseRelationships>? relationships, double Function()? relationshipsCreated, bool? success, }) { return PostCreateEventRelationshipResponse(
+PostCreateEventRelationshipResponse copyWith({List<String>? Function()? childIds, List<PostCreateEventRelationshipResponseErrors>? Function()? errors, String? message, List<PostCreateEventRelationshipResponseRelationships>? relationships, double? Function()? relationshipsCreated, bool? success, }) { return PostCreateEventRelationshipResponse(
   childIds: childIds != null ? childIds() : this.childIds,
   errors: errors != null ? errors() : this.errors,
   message: message ?? this.message,

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'deleted': ?deleted,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'deleted'}.contains(key)); } 
-KeysDeleteResponse copyWith({String Function()? id, String Function()? object, bool Function()? deleted, }) { return KeysDeleteResponse(
+KeysDeleteResponse copyWith({String? Function()? id, String? Function()? object, bool? Function()? deleted, }) { return KeysDeleteResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   deleted: deleted != null ? deleted() : this.deleted,

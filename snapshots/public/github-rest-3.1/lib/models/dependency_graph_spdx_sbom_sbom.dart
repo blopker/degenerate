@@ -56,7 +56,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('SPDXI
       json.containsKey('dataLicense') && json['dataLicense'] is String &&
       json.containsKey('documentNamespace') && json['documentNamespace'] is String &&
       json.containsKey('packages'); } 
-DependencyGraphSpdxSbomSbom copyWith({String? spdxid, String? spdxVersion, String Function()? comment, DependencyGraphSpdxSbomSbomCreationInfo? creationInfo, String? name, String? dataLicense, String? documentNamespace, List<DependencyGraphSpdxSbomSbomPackages>? packages, List<DependencyGraphSpdxSbomSbomRelationships> Function()? relationships, }) { return DependencyGraphSpdxSbomSbom(
+DependencyGraphSpdxSbomSbom copyWith({String? spdxid, String? spdxVersion, String? Function()? comment, DependencyGraphSpdxSbomSbomCreationInfo? creationInfo, String? name, String? dataLicense, String? documentNamespace, List<DependencyGraphSpdxSbomSbomPackages>? packages, List<DependencyGraphSpdxSbomSbomRelationships>? Function()? relationships, }) { return DependencyGraphSpdxSbomSbom(
   spdxid: spdxid ?? this.spdxid,
   spdxVersion: spdxVersion ?? this.spdxVersion,
   comment: comment != null ? comment() : this.comment,

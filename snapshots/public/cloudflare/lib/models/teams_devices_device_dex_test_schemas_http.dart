@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('enabled') &&
       json.containsKey('interval') &&
       json.containsKey('name'); } 
-TeamsDevicesDeviceDexTestSchemasHttp copyWith({TeamsDevicesDeviceDexTestSchemasData? data, TeamsDevicesDeviceDexTestSchemasDescription Function()? description, TeamsDevicesDeviceDexTestSchemasEnabled? enabled, TeamsDevicesDeviceDexTestSchemasInterval? interval, TeamsDevicesDeviceDexTestSchemasName? name, List<TeamsDevicesDexTargetPolicy> Function()? targetPolicies, bool Function()? targeted, TeamsDevicesSchemasTestId Function()? testId, }) { return TeamsDevicesDeviceDexTestSchemasHttp(
+TeamsDevicesDeviceDexTestSchemasHttp copyWith({TeamsDevicesDeviceDexTestSchemasData? data, TeamsDevicesDeviceDexTestSchemasDescription? Function()? description, TeamsDevicesDeviceDexTestSchemasEnabled? enabled, TeamsDevicesDeviceDexTestSchemasInterval? interval, TeamsDevicesDeviceDexTestSchemasName? name, List<TeamsDevicesDexTargetPolicy>? Function()? targetPolicies, bool? Function()? targeted, TeamsDevicesSchemasTestId? Function()? testId, }) { return TeamsDevicesDeviceDexTestSchemasHttp(
   data: data ?? this.data,
   description: description != null ? description() : this.description,
   enabled: enabled ?? this.enabled,

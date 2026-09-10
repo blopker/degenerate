@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('added
       json.containsKey('last_seen_at') && json['last_seen_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('url_contains_cdn_cgi_path') && json['url_contains_cdn_cgi_path'] is bool; } 
-PageShieldConnection copyWith({DateTime? addedAt, bool Function()? domainReportedMalicious, String Function()? firstPageUrl, DateTime? firstSeenAt, String? host, PageShieldId? id, DateTime? lastSeenAt, List<String> Function()? maliciousDomainCategories, List<String> Function()? maliciousUrlCategories, List<String> Function()? pageUrls, String? url, bool? urlContainsCdnCgiPath, bool Function()? urlReportedMalicious, }) { return PageShieldConnection(
+PageShieldConnection copyWith({DateTime? addedAt, bool? Function()? domainReportedMalicious, String? Function()? firstPageUrl, DateTime? firstSeenAt, String? host, PageShieldId? id, DateTime? lastSeenAt, List<String>? Function()? maliciousDomainCategories, List<String>? Function()? maliciousUrlCategories, List<String>? Function()? pageUrls, String? url, bool? urlContainsCdnCgiPath, bool? Function()? urlReportedMalicious, }) { return PageShieldConnection(
   addedAt: addedAt ?? this.addedAt,
   domainReportedMalicious: domainReportedMalicious != null ? domainReportedMalicious() : this.domainReportedMalicious,
   firstPageUrl: firstPageUrl != null ? firstPageUrl() : this.firstPageUrl,

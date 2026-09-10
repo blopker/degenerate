@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (overrides != null) 'overrides': overrides?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-RulesetsExecuteRuleActionParameters copyWith({RulesetsRulesetId? id, RulesetsExecuteMatchedData Function()? matchedData, RulesetsExecuteOverrides Function()? overrides, }) { return RulesetsExecuteRuleActionParameters(
+RulesetsExecuteRuleActionParameters copyWith({RulesetsRulesetId? id, RulesetsExecuteMatchedData? Function()? matchedData, RulesetsExecuteOverrides? Function()? overrides, }) { return RulesetsExecuteRuleActionParameters(
   id: id ?? this.id,
   matchedData: matchedData != null ? matchedData() : this.matchedData,
   overrides: overrides != null ? overrides() : this.overrides,

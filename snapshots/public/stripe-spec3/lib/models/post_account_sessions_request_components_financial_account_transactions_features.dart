@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'card_spend_dispute_management': ?cardSpendDisputeManagement,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_spend_dispute_management'}.contains(key)); } 
-PostAccountSessionsRequestComponentsFinancialAccountTransactionsFeatures copyWith({bool Function()? cardSpendDisputeManagement}) { return PostAccountSessionsRequestComponentsFinancialAccountTransactionsFeatures(
+PostAccountSessionsRequestComponentsFinancialAccountTransactionsFeatures copyWith({bool? Function()? cardSpendDisputeManagement}) { return PostAccountSessionsRequestComponentsFinancialAccountTransactionsFeatures(
   cardSpendDisputeManagement: cardSpendDisputeManagement != null ? cardSpendDisputeManagement() : this.cardSpendDisputeManagement,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

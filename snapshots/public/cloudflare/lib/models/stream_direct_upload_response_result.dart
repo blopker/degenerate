@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (watermark != null) 'watermark': watermark?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'scheduledDeletion', 'uid', 'uploadURL', 'watermark'}.contains(key)); } 
-StreamDirectUploadResponseResult copyWith({StreamScheduledDeletion Function()? scheduledDeletion, StreamIdentifier Function()? uid, String Function()? uploadUrl, StreamWatermarks Function()? watermark, }) { return StreamDirectUploadResponseResult(
+StreamDirectUploadResponseResult copyWith({StreamScheduledDeletion? Function()? scheduledDeletion, StreamIdentifier? Function()? uid, String? Function()? uploadUrl, StreamWatermarks? Function()? watermark, }) { return StreamDirectUploadResponseResult(
   scheduledDeletion: scheduledDeletion != null ? scheduledDeletion() : this.scheduledDeletion,
   uid: uid != null ? uid() : this.uid,
   uploadUrl: uploadUrl != null ? uploadUrl() : this.uploadUrl,

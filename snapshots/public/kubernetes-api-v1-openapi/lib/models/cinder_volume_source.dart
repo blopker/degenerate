@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'volumeID': volumeId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('volumeID') && json['volumeID'] is String; } 
-CinderVolumeSource copyWith({String Function()? fsType, bool Function()? readOnly, LocalObjectReference Function()? secretRef, String? volumeId, }) { return CinderVolumeSource(
+CinderVolumeSource copyWith({String? Function()? fsType, bool? Function()? readOnly, LocalObjectReference? Function()? secretRef, String? volumeId, }) { return CinderVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretRef: secretRef != null ? secretRef() : this.secretRef,

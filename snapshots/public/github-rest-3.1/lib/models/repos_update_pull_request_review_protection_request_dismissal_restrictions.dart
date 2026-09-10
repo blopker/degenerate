@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'apps': ?apps,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'users', 'teams', 'apps'}.contains(key)); } 
-ReposUpdatePullRequestReviewProtectionRequestDismissalRestrictions copyWith({List<String> Function()? users, List<String> Function()? teams, List<String> Function()? apps, }) { return ReposUpdatePullRequestReviewProtectionRequestDismissalRestrictions(
+ReposUpdatePullRequestReviewProtectionRequestDismissalRestrictions copyWith({List<String>? Function()? users, List<String>? Function()? teams, List<String>? Function()? apps, }) { return ReposUpdatePullRequestReviewProtectionRequestDismissalRestrictions(
   users: users != null ? users() : this.users,
   teams: teams != null ? teams() : this.teams,
   apps: apps != null ? apps() : this.apps,

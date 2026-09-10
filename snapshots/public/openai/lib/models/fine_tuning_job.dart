@@ -61,7 +61,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The `fine_tuning.job` object represents a fine-tuning job that has been created through the API.
 /// 
-@immutable final class FineTuningJob {const FineTuningJob({required this.id, required this.createdAt, required this.error, required this.fineTunedModel, required this.finishedAt, required this.hyperparameters, required this.model, required this.object, required this.organizationId, required this.resultFiles, required this.status, required this.trainedTokens, required this.trainingFile, required this.validationFile, required this.seed, this.integrations, this.estimatedFinish, this.method, this.metadata, });
+@immutable final class FineTuningJob {const FineTuningJob({required this.id, required this.createdAt, required this.error, required this.fineTunedModel, required this.finishedAt, required this.hyperparameters, required this.model, required this.object, required this.organizationId, required this.resultFiles, required this.status, required this.trainedTokens, required this.trainingFile, required this.validationFile, required this.seed, this.integrations = const Omittable.absent(), this.estimatedFinish = const Omittable.absent(), this.method, this.metadata = const Omittable.absent(), });
 
 factory FineTuningJob.fromJson(Map<String, dynamic> json) { return FineTuningJob(
   id: json['id'] as String,
@@ -78,11 +78,11 @@ factory FineTuningJob.fromJson(Map<String, dynamic> json) { return FineTuningJob
   trainedTokens: json['trained_tokens'] != null ? (json['trained_tokens'] as num).toInt() : null,
   trainingFile: json['training_file'] as String,
   validationFile: json['validation_file'] as String?,
-  integrations: (json['integrations'] as List<dynamic>?)?.map((e) => FineTuningIntegration.fromJson(e as Map<String, dynamic>)).toList(),
+  integrations: json.containsKey('integrations') ? Omittable((json['integrations'] as List<dynamic>?)?.map((e) => FineTuningIntegration.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   seed: (json['seed'] as num).toInt(),
-  estimatedFinish: json['estimated_finish'] != null ? (json['estimated_finish'] as num).toInt() : null,
+  estimatedFinish: json.containsKey('estimated_finish') ? Omittable(json['estimated_finish'] != null ? (json['estimated_finish'] as num).toInt() : null) : const Omittable.absent(),
   method: json['method'] != null ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>) : null,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
 ); }
 
 /// The object identifier, which can be referenced in the API endpoints.
@@ -128,55 +128,55 @@ final String trainingFile;
 final String? validationFile;
 
 /// A list of integrations to enable for this fine-tuning job.
-final List<FineTuningIntegration>? integrations;
+final Omittable<List<FineTuningIntegration>?> integrations;
 
 /// The seed used for the fine-tuning job.
 final int seed;
 
 /// The Unix timestamp (in seconds) for when the fine-tuning job is estimated to finish. The value will be null if the fine-tuning job is not running.
-final int? estimatedFinish;
+final Omittable<int?> estimatedFinish;
 
 final FineTuneMethod? method;
 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
   'created_at': createdAt,
-  if (error != null) 'error': error?.toJson(),
-  'fine_tuned_model': ?fineTunedModel,
-  'finished_at': ?finishedAt,
+  'error': error?.toJson(),
+  'fine_tuned_model': fineTunedModel,
+  'finished_at': finishedAt,
   'hyperparameters': hyperparameters.toJson(),
   'model': model,
   'object': object.toJson(),
   'organization_id': organizationId,
   'result_files': resultFiles,
   'status': status.toJson(),
-  'trained_tokens': ?trainedTokens,
+  'trained_tokens': trainedTokens,
   'training_file': trainingFile,
-  'validation_file': ?validationFile,
-  if (integrations != null) 'integrations': integrations?.map((e) => e.toJson()).toList(),
+  'validation_file': validationFile,
+  if (integrations.isPresent) 'integrations': integrations.value?.map((e) => e.toJson()).toList(),
   'seed': seed,
-  'estimated_finish': ?estimatedFinish,
+  if (estimatedFinish.isPresent) 'estimated_finish': estimatedFinish.value,
   if (method != null) 'method': method?.toJson(),
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('error') &&
-      json.containsKey('fine_tuned_model') && json['fine_tuned_model'] is String &&
-      json.containsKey('finished_at') && json['finished_at'] is num &&
+      json.containsKey('fine_tuned_model') && (json['fine_tuned_model'] == null || json['fine_tuned_model'] is String) &&
+      json.containsKey('finished_at') && (json['finished_at'] == null || json['finished_at'] is num) &&
       json.containsKey('hyperparameters') &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('object') &&
       json.containsKey('organization_id') && json['organization_id'] is String &&
       json.containsKey('result_files') &&
       json.containsKey('status') &&
-      json.containsKey('trained_tokens') && json['trained_tokens'] is num &&
+      json.containsKey('trained_tokens') && (json['trained_tokens'] == null || json['trained_tokens'] is num) &&
       json.containsKey('training_file') && json['training_file'] is String &&
-      json.containsKey('validation_file') && json['validation_file'] is String &&
+      json.containsKey('validation_file') && (json['validation_file'] == null || json['validation_file'] is String) &&
       json.containsKey('seed') && json['seed'] is num; } 
-FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function()? error, String? Function()? fineTunedModel, int? Function()? finishedAt, FineTuningJobHyperparameters? hyperparameters, String? model, FineTuningJobObject? object, String? organizationId, List<String>? resultFiles, FineTuningJobStatus? status, int? Function()? trainedTokens, String? trainingFile, String? Function()? validationFile, List<FineTuningIntegration>? Function()? integrations, int? seed, int? Function()? estimatedFinish, FineTuneMethod Function()? method, Map<String, String>? Function()? metadata, }) { return FineTuningJob(
+FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function()? error, String? Function()? fineTunedModel, int? Function()? finishedAt, FineTuningJobHyperparameters? hyperparameters, String? model, FineTuningJobObject? object, String? organizationId, List<String>? resultFiles, FineTuningJobStatus? status, int? Function()? trainedTokens, String? trainingFile, String? Function()? validationFile, Omittable<List<FineTuningIntegration>?>? integrations, int? seed, Omittable<int?>? estimatedFinish, FineTuneMethod? Function()? method, Omittable<Map<String,String>?>? metadata, }) { return FineTuningJob(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,
   error: error != null ? error() : this.error,
@@ -191,11 +191,11 @@ FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function
   trainedTokens: trainedTokens != null ? trainedTokens() : this.trainedTokens,
   trainingFile: trainingFile ?? this.trainingFile,
   validationFile: validationFile != null ? validationFile() : this.validationFile,
-  integrations: integrations != null ? integrations() : this.integrations,
+  integrations: integrations ?? this.integrations,
   seed: seed ?? this.seed,
-  estimatedFinish: estimatedFinish != null ? estimatedFinish() : this.estimatedFinish,
+  estimatedFinish: estimatedFinish ?? this.estimatedFinish,
   method: method != null ? method() : this.method,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is FineTuningJob &&
@@ -213,11 +213,12 @@ FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function
           trainedTokens == other.trainedTokens &&
           trainingFile == other.trainingFile &&
           validationFile == other.validationFile &&
-          listEquals(integrations, other.integrations) &&
+          integrations.isPresent == other.integrations.isPresent &&
+          listEquals(integrations.value, other.integrations.value) &&
           seed == other.seed &&
           estimatedFinish == other.estimatedFinish &&
           method == other.method &&
           metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(id, createdAt, error, fineTunedModel, finishedAt, hyperparameters, model, object, organizationId, Object.hashAll(resultFiles), status, trainedTokens, trainingFile, validationFile, Object.hashAll(integrations ?? const []), seed, estimatedFinish, method, metadata); } 
+@override int get hashCode { return Object.hash(id, createdAt, error, fineTunedModel, finishedAt, hyperparameters, model, object, organizationId, Object.hashAll(resultFiles), status, trainedTokens, trainingFile, validationFile, Object.hashAll(integrations.value ?? const []), seed, estimatedFinish, method, metadata); } 
 @override String toString() { return 'FineTuningJob(id: $id, createdAt: $createdAt, error: $error, fineTunedModel: $fineTunedModel, finishedAt: $finishedAt, hyperparameters: $hyperparameters, model: $model, object: $object, organizationId: $organizationId, resultFiles: $resultFiles, status: $status, trainedTokens: $trainedTokens, trainingFile: $trainingFile, validationFile: $validationFile, integrations: $integrations, seed: $seed, estimatedFinish: $estimatedFinish, method: $method, metadata: $metadata)'; } 
  }

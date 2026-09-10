@@ -123,7 +123,7 @@ final bool ncseiSubjectRepresentation;
 final AbuseReportsNcseiReportOwnerNotification ownerNotification;
 
 Map<String, dynamic> toJson() { return {
-  'act': ?act,
+  'act': act,
   'comments': ?comments,
   'company': ?company,
   'email': email,
@@ -147,7 +147,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('host_notification') &&
       json.containsKey('ncsei_subject_representation') && json['ncsei_subject_representation'] is bool &&
       json.containsKey('owner_notification'); } 
-AbuseReportsNcseiReport copyWith({dynamic Function()? act, String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, String Function()? country, AbuseReportsNcseiReportHostNotification? hostNotification, bool? ncseiSubjectRepresentation, AbuseReportsNcseiReportOwnerNotification? ownerNotification, }) { return AbuseReportsNcseiReport(
+AbuseReportsNcseiReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? country, AbuseReportsNcseiReportHostNotification? hostNotification, bool? ncseiSubjectRepresentation, AbuseReportsNcseiReportOwnerNotification? ownerNotification, }) { return AbuseReportsNcseiReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,

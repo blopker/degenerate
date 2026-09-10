@@ -29,11 +29,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BankConnectionsResourceBalanceRefreshStatus($value)'; } 
  }
 /// 
-@immutable final class BankConnectionsResourceBalanceRefresh {const BankConnectionsResourceBalanceRefresh({required this.lastAttemptedAt, required this.status, this.nextRefreshAvailableAt, });
+@immutable final class BankConnectionsResourceBalanceRefresh {const BankConnectionsResourceBalanceRefresh({required this.lastAttemptedAt, required this.status, this.nextRefreshAvailableAt = const Omittable.absent(), });
 
 factory BankConnectionsResourceBalanceRefresh.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceBalanceRefresh(
   lastAttemptedAt: (json['last_attempted_at'] as num).toInt(),
-  nextRefreshAvailableAt: json['next_refresh_available_at'] != null ? (json['next_refresh_available_at'] as num).toInt() : null,
+  nextRefreshAvailableAt: json.containsKey('next_refresh_available_at') ? Omittable(json['next_refresh_available_at'] != null ? (json['next_refresh_available_at'] as num).toInt() : null) : const Omittable.absent(),
   status: BankConnectionsResourceBalanceRefreshStatus.fromJson(json['status'] as String),
 ); }
 
@@ -41,21 +41,21 @@ factory BankConnectionsResourceBalanceRefresh.fromJson(Map<String, dynamic> json
 final int lastAttemptedAt;
 
 /// Time at which the next balance refresh can be initiated. This value will be `null` when `status` is `pending`. Measured in seconds since the Unix epoch.
-final int? nextRefreshAvailableAt;
+final Omittable<int?> nextRefreshAvailableAt;
 
 /// The status of the last refresh attempt.
 final BankConnectionsResourceBalanceRefreshStatus status;
 
 Map<String, dynamic> toJson() { return {
   'last_attempted_at': lastAttemptedAt,
-  'next_refresh_available_at': ?nextRefreshAvailableAt,
+  if (nextRefreshAvailableAt.isPresent) 'next_refresh_available_at': nextRefreshAvailableAt.value,
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('last_attempted_at') && json['last_attempted_at'] is num &&
       json.containsKey('status'); } 
-BankConnectionsResourceBalanceRefresh copyWith({int? lastAttemptedAt, int? Function()? nextRefreshAvailableAt, BankConnectionsResourceBalanceRefreshStatus? status, }) { return BankConnectionsResourceBalanceRefresh(
+BankConnectionsResourceBalanceRefresh copyWith({int? lastAttemptedAt, Omittable<int?>? nextRefreshAvailableAt, BankConnectionsResourceBalanceRefreshStatus? status, }) { return BankConnectionsResourceBalanceRefresh(
   lastAttemptedAt: lastAttemptedAt ?? this.lastAttemptedAt,
-  nextRefreshAvailableAt: nextRefreshAvailableAt != null ? nextRefreshAvailableAt() : this.nextRefreshAvailableAt,
+  nextRefreshAvailableAt: nextRefreshAvailableAt ?? this.nextRefreshAvailableAt,
   status: status ?? this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

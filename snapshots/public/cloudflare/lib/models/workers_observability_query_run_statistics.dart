@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bytes_read') && json['bytes_read'] is num &&
       json.containsKey('elapsed') && json['elapsed'] is num &&
       json.containsKey('rows_read') && json['rows_read'] is num; } 
-WorkersObservabilityQueryRunStatistics copyWith({double Function()? abrLevel, double? bytesRead, double? elapsed, double? rowsRead, }) { return WorkersObservabilityQueryRunStatistics(
+WorkersObservabilityQueryRunStatistics copyWith({double? Function()? abrLevel, double? bytesRead, double? elapsed, double? rowsRead, }) { return WorkersObservabilityQueryRunStatistics(
   abrLevel: abrLevel != null ? abrLevel() : this.abrLevel,
   bytesRead: bytesRead ?? this.bytesRead,
   elapsed: elapsed ?? this.elapsed,

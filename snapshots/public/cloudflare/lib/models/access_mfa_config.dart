@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
   'session_duration': ?sessionDuration,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allowed_authenticators', 'mfa_disabled', 'session_duration'}.contains(key)); } 
-AccessMfaConfig copyWith({List<AccessMfaConfigAllowedAuthenticators> Function()? allowedAuthenticators, bool Function()? mfaDisabled, String Function()? sessionDuration, }) { return AccessMfaConfig(
+AccessMfaConfig copyWith({List<AccessMfaConfigAllowedAuthenticators>? Function()? allowedAuthenticators, bool? Function()? mfaDisabled, String? Function()? sessionDuration, }) { return AccessMfaConfig(
   allowedAuthenticators: allowedAuthenticators != null ? allowedAuthenticators() : this.allowedAuthenticators,
   mfaDisabled: mfaDisabled != null ? mfaDisabled() : this.mfaDisabled,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,

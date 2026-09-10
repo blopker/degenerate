@@ -75,16 +75,16 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
       json.containsKey('purpose'); } 
-CreateFileRequest copyWith({Uint8List? file, CreateFileRequestPurpose? purpose, FileExpirationAfter Function()? expiresAfter, }) { return CreateFileRequest(
+CreateFileRequest copyWith({Uint8List? file, CreateFileRequestPurpose? purpose, FileExpirationAfter? Function()? expiresAfter, }) { return CreateFileRequest(
   file: file ?? this.file,
   purpose: purpose ?? this.purpose,
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreateFileRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           purpose == other.purpose &&
           expiresAfter == other.expiresAfter; } 
-@override int get hashCode { return Object.hash(file, purpose, expiresAfter); } 
+@override int get hashCode { return Object.hash(Object.hashAll(file), purpose, expiresAfter); } 
 @override String toString() { return 'CreateFileRequest(file: $file, purpose: $purpose, expiresAfter: $expiresAfter)'; } 
  }

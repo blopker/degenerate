@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'initiator': ?initiator,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle', 'repository_id', 'bundle_url', 'initiator'}.contains(key)); } 
-UsersListAttestationsResponseAttestations copyWith({UsersListAttestationsResponseAttestationsBundle Function()? bundle, int Function()? repositoryId, String Function()? bundleUrl, String Function()? initiator, }) { return UsersListAttestationsResponseAttestations(
+UsersListAttestationsResponseAttestations copyWith({UsersListAttestationsResponseAttestationsBundle? Function()? bundle, int? Function()? repositoryId, String? Function()? bundleUrl, String? Function()? initiator, }) { return UsersListAttestationsResponseAttestations(
   bundle: bundle != null ? bundle() : this.bundle,
   repositoryId: repositoryId != null ? repositoryId() : this.repositoryId,
   bundleUrl: bundleUrl != null ? bundleUrl() : this.bundleUrl,

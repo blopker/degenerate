@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('phoneNumber') && json['phoneNumber'] is String; } 
-SmsDetails copyWith({String? phoneNumber, String Function()? message, }) { return SmsDetails(
+SmsDetails copyWith({String? phoneNumber, String? Function()? message, }) { return SmsDetails(
   phoneNumber: phoneNumber ?? this.phoneNumber,
   message: message != null ? message() : this.message,
 ); } 

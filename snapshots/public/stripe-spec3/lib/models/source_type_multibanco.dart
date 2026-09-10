@@ -1,64 +1,64 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeMultibanco {const SourceTypeMultibanco({this.entity, this.reference, this.refundAccountHolderAddressCity, this.refundAccountHolderAddressCountry, this.refundAccountHolderAddressLine1, this.refundAccountHolderAddressLine2, this.refundAccountHolderAddressPostalCode, this.refundAccountHolderAddressState, this.refundAccountHolderName, this.refundIban, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeMultibanco {const SourceTypeMultibanco({this.entity = const Omittable.absent(), this.reference = const Omittable.absent(), this.refundAccountHolderAddressCity = const Omittable.absent(), this.refundAccountHolderAddressCountry = const Omittable.absent(), this.refundAccountHolderAddressLine1 = const Omittable.absent(), this.refundAccountHolderAddressLine2 = const Omittable.absent(), this.refundAccountHolderAddressPostalCode = const Omittable.absent(), this.refundAccountHolderAddressState = const Omittable.absent(), this.refundAccountHolderName = const Omittable.absent(), this.refundIban = const Omittable.absent(), });
 
 factory SourceTypeMultibanco.fromJson(Map<String, dynamic> json) { return SourceTypeMultibanco(
-  entity: json['entity'] as String?,
-  reference: json['reference'] as String?,
-  refundAccountHolderAddressCity: json['refund_account_holder_address_city'] as String?,
-  refundAccountHolderAddressCountry: json['refund_account_holder_address_country'] as String?,
-  refundAccountHolderAddressLine1: json['refund_account_holder_address_line1'] as String?,
-  refundAccountHolderAddressLine2: json['refund_account_holder_address_line2'] as String?,
-  refundAccountHolderAddressPostalCode: json['refund_account_holder_address_postal_code'] as String?,
-  refundAccountHolderAddressState: json['refund_account_holder_address_state'] as String?,
-  refundAccountHolderName: json['refund_account_holder_name'] as String?,
-  refundIban: json['refund_iban'] as String?,
+  entity: json.containsKey('entity') ? Omittable(json['entity'] as String?) : const Omittable.absent(),
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
+  refundAccountHolderAddressCity: json.containsKey('refund_account_holder_address_city') ? Omittable(json['refund_account_holder_address_city'] as String?) : const Omittable.absent(),
+  refundAccountHolderAddressCountry: json.containsKey('refund_account_holder_address_country') ? Omittable(json['refund_account_holder_address_country'] as String?) : const Omittable.absent(),
+  refundAccountHolderAddressLine1: json.containsKey('refund_account_holder_address_line1') ? Omittable(json['refund_account_holder_address_line1'] as String?) : const Omittable.absent(),
+  refundAccountHolderAddressLine2: json.containsKey('refund_account_holder_address_line2') ? Omittable(json['refund_account_holder_address_line2'] as String?) : const Omittable.absent(),
+  refundAccountHolderAddressPostalCode: json.containsKey('refund_account_holder_address_postal_code') ? Omittable(json['refund_account_holder_address_postal_code'] as String?) : const Omittable.absent(),
+  refundAccountHolderAddressState: json.containsKey('refund_account_holder_address_state') ? Omittable(json['refund_account_holder_address_state'] as String?) : const Omittable.absent(),
+  refundAccountHolderName: json.containsKey('refund_account_holder_name') ? Omittable(json['refund_account_holder_name'] as String?) : const Omittable.absent(),
+  refundIban: json.containsKey('refund_iban') ? Omittable(json['refund_iban'] as String?) : const Omittable.absent(),
 ); }
 
-final String? entity;
+final Omittable<String?> entity;
 
-final String? reference;
+final Omittable<String?> reference;
 
-final String? refundAccountHolderAddressCity;
+final Omittable<String?> refundAccountHolderAddressCity;
 
-final String? refundAccountHolderAddressCountry;
+final Omittable<String?> refundAccountHolderAddressCountry;
 
-final String? refundAccountHolderAddressLine1;
+final Omittable<String?> refundAccountHolderAddressLine1;
 
-final String? refundAccountHolderAddressLine2;
+final Omittable<String?> refundAccountHolderAddressLine2;
 
-final String? refundAccountHolderAddressPostalCode;
+final Omittable<String?> refundAccountHolderAddressPostalCode;
 
-final String? refundAccountHolderAddressState;
+final Omittable<String?> refundAccountHolderAddressState;
 
-final String? refundAccountHolderName;
+final Omittable<String?> refundAccountHolderName;
 
-final String? refundIban;
+final Omittable<String?> refundIban;
 
 Map<String, dynamic> toJson() { return {
-  'entity': ?entity,
-  'reference': ?reference,
-  'refund_account_holder_address_city': ?refundAccountHolderAddressCity,
-  'refund_account_holder_address_country': ?refundAccountHolderAddressCountry,
-  'refund_account_holder_address_line1': ?refundAccountHolderAddressLine1,
-  'refund_account_holder_address_line2': ?refundAccountHolderAddressLine2,
-  'refund_account_holder_address_postal_code': ?refundAccountHolderAddressPostalCode,
-  'refund_account_holder_address_state': ?refundAccountHolderAddressState,
-  'refund_account_holder_name': ?refundAccountHolderName,
-  'refund_iban': ?refundIban,
+  if (entity.isPresent) 'entity': entity.value,
+  if (reference.isPresent) 'reference': reference.value,
+  if (refundAccountHolderAddressCity.isPresent) 'refund_account_holder_address_city': refundAccountHolderAddressCity.value,
+  if (refundAccountHolderAddressCountry.isPresent) 'refund_account_holder_address_country': refundAccountHolderAddressCountry.value,
+  if (refundAccountHolderAddressLine1.isPresent) 'refund_account_holder_address_line1': refundAccountHolderAddressLine1.value,
+  if (refundAccountHolderAddressLine2.isPresent) 'refund_account_holder_address_line2': refundAccountHolderAddressLine2.value,
+  if (refundAccountHolderAddressPostalCode.isPresent) 'refund_account_holder_address_postal_code': refundAccountHolderAddressPostalCode.value,
+  if (refundAccountHolderAddressState.isPresent) 'refund_account_holder_address_state': refundAccountHolderAddressState.value,
+  if (refundAccountHolderName.isPresent) 'refund_account_holder_name': refundAccountHolderName.value,
+  if (refundIban.isPresent) 'refund_iban': refundIban.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'entity', 'reference', 'refund_account_holder_address_city', 'refund_account_holder_address_country', 'refund_account_holder_address_line1', 'refund_account_holder_address_line2', 'refund_account_holder_address_postal_code', 'refund_account_holder_address_state', 'refund_account_holder_name', 'refund_iban'}.contains(key)); } 
-SourceTypeMultibanco copyWith({String? Function()? entity, String? Function()? reference, String? Function()? refundAccountHolderAddressCity, String? Function()? refundAccountHolderAddressCountry, String? Function()? refundAccountHolderAddressLine1, String? Function()? refundAccountHolderAddressLine2, String? Function()? refundAccountHolderAddressPostalCode, String? Function()? refundAccountHolderAddressState, String? Function()? refundAccountHolderName, String? Function()? refundIban, }) { return SourceTypeMultibanco(
-  entity: entity != null ? entity() : this.entity,
-  reference: reference != null ? reference() : this.reference,
-  refundAccountHolderAddressCity: refundAccountHolderAddressCity != null ? refundAccountHolderAddressCity() : this.refundAccountHolderAddressCity,
-  refundAccountHolderAddressCountry: refundAccountHolderAddressCountry != null ? refundAccountHolderAddressCountry() : this.refundAccountHolderAddressCountry,
-  refundAccountHolderAddressLine1: refundAccountHolderAddressLine1 != null ? refundAccountHolderAddressLine1() : this.refundAccountHolderAddressLine1,
-  refundAccountHolderAddressLine2: refundAccountHolderAddressLine2 != null ? refundAccountHolderAddressLine2() : this.refundAccountHolderAddressLine2,
-  refundAccountHolderAddressPostalCode: refundAccountHolderAddressPostalCode != null ? refundAccountHolderAddressPostalCode() : this.refundAccountHolderAddressPostalCode,
-  refundAccountHolderAddressState: refundAccountHolderAddressState != null ? refundAccountHolderAddressState() : this.refundAccountHolderAddressState,
-  refundAccountHolderName: refundAccountHolderName != null ? refundAccountHolderName() : this.refundAccountHolderName,
-  refundIban: refundIban != null ? refundIban() : this.refundIban,
+SourceTypeMultibanco copyWith({Omittable<String?>? entity, Omittable<String?>? reference, Omittable<String?>? refundAccountHolderAddressCity, Omittable<String?>? refundAccountHolderAddressCountry, Omittable<String?>? refundAccountHolderAddressLine1, Omittable<String?>? refundAccountHolderAddressLine2, Omittable<String?>? refundAccountHolderAddressPostalCode, Omittable<String?>? refundAccountHolderAddressState, Omittable<String?>? refundAccountHolderName, Omittable<String?>? refundIban, }) { return SourceTypeMultibanco(
+  entity: entity ?? this.entity,
+  reference: reference ?? this.reference,
+  refundAccountHolderAddressCity: refundAccountHolderAddressCity ?? this.refundAccountHolderAddressCity,
+  refundAccountHolderAddressCountry: refundAccountHolderAddressCountry ?? this.refundAccountHolderAddressCountry,
+  refundAccountHolderAddressLine1: refundAccountHolderAddressLine1 ?? this.refundAccountHolderAddressLine1,
+  refundAccountHolderAddressLine2: refundAccountHolderAddressLine2 ?? this.refundAccountHolderAddressLine2,
+  refundAccountHolderAddressPostalCode: refundAccountHolderAddressPostalCode ?? this.refundAccountHolderAddressPostalCode,
+  refundAccountHolderAddressState: refundAccountHolderAddressState ?? this.refundAccountHolderAddressState,
+  refundAccountHolderName: refundAccountHolderName ?? this.refundAccountHolderName,
+  refundIban: refundIban ?? this.refundIban,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SourceTypeMultibanco &&

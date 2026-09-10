@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'minimum_amount': ?minimumAmount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'minimum_amount'}.contains(key)); } 
-PostPromotionCodesRequestRestrictionsCurrencyOptionsValue copyWith({int Function()? minimumAmount}) { return PostPromotionCodesRequestRestrictionsCurrencyOptionsValue(
+PostPromotionCodesRequestRestrictionsCurrencyOptionsValue copyWith({int? Function()? minimumAmount}) { return PostPromotionCodesRequestRestrictionsCurrencyOptionsValue(
   minimumAmount: minimumAmount != null ? minimumAmount() : this.minimumAmount,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

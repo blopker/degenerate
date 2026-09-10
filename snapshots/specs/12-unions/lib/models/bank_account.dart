@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('routingNumber') && json['routingNumber'] is String &&
       json.containsKey('accountNumber') && json['accountNumber'] is String; } 
-BankAccount copyWith({String? routingNumber, String? accountNumber, String Function()? accountHolderName, }) { return BankAccount(
+BankAccount copyWith({String? routingNumber, String? accountNumber, String? Function()? accountHolderName, }) { return BankAccount(
   routingNumber: routingNumber ?? this.routingNumber,
   accountNumber: accountNumber ?? this.accountNumber,
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,

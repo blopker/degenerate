@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'sha': ?sha,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'url', 'html_url', 'sha'}.contains(key)); } 
-CommitSearchResultItemParents copyWith({String Function()? url, String Function()? htmlUrl, String Function()? sha, }) { return CommitSearchResultItemParents(
+CommitSearchResultItemParents copyWith({String? Function()? url, String? Function()? htmlUrl, String? Function()? sha, }) { return CommitSearchResultItemParents(
   url: url != null ? url() : this.url,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   sha: sha != null ? sha() : this.sha,

@@ -28,92 +28,92 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RecordingTranscriptionEnumStatus($value)'; } 
  }
-@immutable final class AccountRecordingRecordingTranscription {const AccountRecordingRecordingTranscription({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.duration, this.price, this.priceUnit, this.recordingSid, this.sid, this.status, this.transcriptionText, this.type, this.uri, });
+@immutable final class AccountRecordingRecordingTranscription {const AccountRecordingRecordingTranscription({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.duration = const Omittable.absent(), this.price = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.recordingSid = const Omittable.absent(), this.sid = const Omittable.absent(), this.status, this.transcriptionText = const Omittable.absent(), this.type = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
 factory AccountRecordingRecordingTranscription.fromJson(Map<String, dynamic> json) { return AccountRecordingRecordingTranscription(
-  accountSid: json['account_sid'] as String?,
-  apiVersion: json['api_version'] as String?,
-  dateCreated: json['date_created'] as String?,
-  dateUpdated: json['date_updated'] as String?,
-  duration: json['duration'] as String?,
-  price: json['price'] != null ? (json['price'] as num).toDouble() : null,
-  priceUnit: json['price_unit'] as String?,
-  recordingSid: json['recording_sid'] as String?,
-  sid: json['sid'] as String?,
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
+  dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  duration: json.containsKey('duration') ? Omittable(json['duration'] as String?) : const Omittable.absent(),
+  price: json.containsKey('price') ? Omittable(json['price'] != null ? (json['price'] as num).toDouble() : null) : const Omittable.absent(),
+  priceUnit: json.containsKey('price_unit') ? Omittable(json['price_unit'] as String?) : const Omittable.absent(),
+  recordingSid: json.containsKey('recording_sid') ? Omittable(json['recording_sid'] as String?) : const Omittable.absent(),
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? RecordingTranscriptionEnumStatus.fromJson(json['status'] as String) : null,
-  transcriptionText: json['transcription_text'] as String?,
-  type: json['type'] as String?,
-  uri: json['uri'] as String?,
+  transcriptionText: json.containsKey('transcription_text') ? Omittable(json['transcription_text'] as String?) : const Omittable.absent(),
+  type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
 ); }
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Transcription resource.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The API version used to create the transcription.
-final String? apiVersion;
+final Omittable<String?> apiVersion;
 
 /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateCreated;
+final Omittable<String?> dateCreated;
 
 /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// The duration of the transcribed audio in seconds.
-final String? duration;
+final Omittable<String?> duration;
 
 /// The charge for the transcript in the currency associated with the account. This value is populated after the transcript is complete so it may not be available immediately.
-final double? price;
+final Omittable<double?> price;
 
 /// The currency in which `price` is measured, in [ISO 4127](https://www.iso.org/iso/home/standards/currency_codes.htm) format (e.g. `usd`, `eur`, `jpy`).
-final String? priceUnit;
+final Omittable<String?> priceUnit;
 
 /// The SID of the [Recording](https://www.twilio.com/docs/voice/api/recording) from which the transcription was created.
-final String? recordingSid;
+final Omittable<String?> recordingSid;
 
 /// The unique string that that we created to identify the Transcription resource.
-final String? sid;
+final Omittable<String?> sid;
 
 final RecordingTranscriptionEnumStatus? status;
 
 /// The text content of the transcription.
-final String? transcriptionText;
+final Omittable<String?> transcriptionText;
 
 /// The transcription type.
-final String? type;
+final Omittable<String?> type;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 Map<String, dynamic> toJson() { return {
-  'account_sid': ?accountSid,
-  'api_version': ?apiVersion,
-  'date_created': ?dateCreated,
-  'date_updated': ?dateUpdated,
-  'duration': ?duration,
-  'price': ?price,
-  'price_unit': ?priceUnit,
-  'recording_sid': ?recordingSid,
-  'sid': ?sid,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (apiVersion.isPresent) 'api_version': apiVersion.value,
+  if (dateCreated.isPresent) 'date_created': dateCreated.value,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (duration.isPresent) 'duration': duration.value,
+  if (price.isPresent) 'price': price.value,
+  if (priceUnit.isPresent) 'price_unit': priceUnit.value,
+  if (recordingSid.isPresent) 'recording_sid': recordingSid.value,
+  if (sid.isPresent) 'sid': sid.value,
   if (status != null) 'status': status?.toJson(),
-  'transcription_text': ?transcriptionText,
-  'type': ?type,
-  'uri': ?uri,
+  if (transcriptionText.isPresent) 'transcription_text': transcriptionText.value,
+  if (type.isPresent) 'type': type.value,
+  if (uri.isPresent) 'uri': uri.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'date_created', 'date_updated', 'duration', 'price', 'price_unit', 'recording_sid', 'sid', 'status', 'transcription_text', 'type', 'uri'}.contains(key)); } 
-AccountRecordingRecordingTranscription copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? duration, double? Function()? price, String? Function()? priceUnit, String? Function()? recordingSid, String? Function()? sid, RecordingTranscriptionEnumStatus Function()? status, String? Function()? transcriptionText, String? Function()? type, String? Function()? uri, }) { return AccountRecordingRecordingTranscription(
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
-  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  duration: duration != null ? duration() : this.duration,
-  price: price != null ? price() : this.price,
-  priceUnit: priceUnit != null ? priceUnit() : this.priceUnit,
-  recordingSid: recordingSid != null ? recordingSid() : this.recordingSid,
-  sid: sid != null ? sid() : this.sid,
+AccountRecordingRecordingTranscription copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? duration, Omittable<double?>? price, Omittable<String?>? priceUnit, Omittable<String?>? recordingSid, Omittable<String?>? sid, RecordingTranscriptionEnumStatus? Function()? status, Omittable<String?>? transcriptionText, Omittable<String?>? type, Omittable<String?>? uri, }) { return AccountRecordingRecordingTranscription(
+  accountSid: accountSid ?? this.accountSid,
+  apiVersion: apiVersion ?? this.apiVersion,
+  dateCreated: dateCreated ?? this.dateCreated,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  duration: duration ?? this.duration,
+  price: price ?? this.price,
+  priceUnit: priceUnit ?? this.priceUnit,
+  recordingSid: recordingSid ?? this.recordingSid,
+  sid: sid ?? this.sid,
   status: status != null ? status() : this.status,
-  transcriptionText: transcriptionText != null ? transcriptionText() : this.transcriptionText,
-  type: type != null ? type() : this.type,
-  uri: uri != null ? uri() : this.uri,
+  transcriptionText: transcriptionText ?? this.transcriptionText,
+  type: type ?? this.type,
+  uri: uri ?? this.uri,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountRecordingRecordingTranscription &&

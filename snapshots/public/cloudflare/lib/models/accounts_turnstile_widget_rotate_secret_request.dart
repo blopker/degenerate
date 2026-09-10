@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   if (invalidateImmediately != null) 'invalidate_immediately': invalidateImmediately?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'invalidate_immediately'}.contains(key)); } 
-AccountsTurnstileWidgetRotateSecretRequest copyWith({TurnstileInvalidateImmediately Function()? invalidateImmediately}) { return AccountsTurnstileWidgetRotateSecretRequest(
+AccountsTurnstileWidgetRotateSecretRequest copyWith({TurnstileInvalidateImmediately? Function()? invalidateImmediately}) { return AccountsTurnstileWidgetRotateSecretRequest(
   invalidateImmediately: invalidateImmediately != null ? invalidateImmediately() : this.invalidateImmediately,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

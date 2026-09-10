@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
   'per_model_usage': perModelUsage.map((e) => e.toJson()).toList(),
   'per_testing_criteria_results': perTestingCriteriaResults.map((e) => e.toJson()).toList(),
   'data_source': dataSource.toJson(),
-  'metadata': ?metadata,
+  'metadata': metadata,
   'error': error.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&

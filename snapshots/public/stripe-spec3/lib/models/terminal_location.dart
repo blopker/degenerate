@@ -95,7 +95,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('metadata') &&
       json.containsKey('object'); } 
-TerminalLocation copyWith({Address? address, LegalEntityJapanAddress Function()? addressKana, LegalEntityJapanAddress Function()? addressKanji, String Function()? configurationOverrides, String? displayName, String Function()? displayNameKana, String Function()? displayNameKanji, String? id, bool? livemode, Map<String,String>? metadata, TerminalLocationObject? object, String Function()? phone, }) { return TerminalLocation(
+TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, String? Function()? configurationOverrides, String? displayName, String? Function()? displayNameKana, String? Function()? displayNameKanji, String? id, bool? livemode, Map<String,String>? metadata, TerminalLocationObject? object, String? Function()? phone, }) { return TerminalLocation(
   address: address ?? this.address,
   addressKana: addressKana != null ? addressKana() : this.addressKana,
   addressKanji: addressKanji != null ? addressKanji() : this.addressKanji,

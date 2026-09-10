@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookInstallationTargetRenamedAccount {const WebhookInstallationTargetRenamedAccount({required this.nodeId, required this.avatarUrl, required this.htmlUrl, required this.id, this.hasRepositoryProjects, this.followers, this.followersUrl, this.following, this.followingUrl, this.gistsUrl, this.gravatarId, this.hasOrganizationProjects, this.archivedAt, this.hooksUrl, this.createdAt, this.description, this.isVerified, this.issuesUrl, this.login, this.membersUrl, this.name, this.eventsUrl, this.organizationsUrl, this.publicGists, this.userViewType, this.publicRepos, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.slug, this.starredUrl, this.subscriptionsUrl, this.type, this.updatedAt, this.url, this.websiteUrl, this.publicMembersUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookInstallationTargetRenamedAccount {const WebhookInstallationTargetRenamedAccount({required this.nodeId, required this.avatarUrl, required this.htmlUrl, required this.id, this.hasRepositoryProjects, this.followers, this.followersUrl, this.following, this.followingUrl, this.gistsUrl, this.gravatarId, this.hasOrganizationProjects, this.archivedAt = const Omittable.absent(), this.hooksUrl, this.createdAt, this.description = const Omittable.absent(), this.isVerified, this.issuesUrl, this.login, this.membersUrl, this.name, this.eventsUrl, this.organizationsUrl, this.publicGists, this.userViewType, this.publicRepos, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.slug, this.starredUrl, this.subscriptionsUrl, this.type, this.updatedAt, this.url, this.websiteUrl = const Omittable.absent(), this.publicMembersUrl, });
 
 factory WebhookInstallationTargetRenamedAccount.fromJson(Map<String, dynamic> json) { return WebhookInstallationTargetRenamedAccount(
-  archivedAt: json['archived_at'] as String?,
+  archivedAt: json.containsKey('archived_at') ? Omittable(json['archived_at'] as String?) : const Omittable.absent(),
   avatarUrl: json['avatar_url'] as String,
   createdAt: json['created_at'] as String?,
-  description: json['description'],
+  description: json.containsKey('description') ? Omittable(json['description']) : const Omittable.absent(),
   eventsUrl: json['events_url'] as String?,
   followers: json['followers'] != null ? (json['followers'] as num).toInt() : null,
   followersUrl: json['followers_url'] as String?,
@@ -38,17 +38,17 @@ factory WebhookInstallationTargetRenamedAccount.fromJson(Map<String, dynamic> js
   type: json['type'] as String?,
   updatedAt: json['updated_at'] as String?,
   url: json['url'] as String?,
-  websiteUrl: json['website_url'],
+  websiteUrl: json.containsKey('website_url') ? Omittable(json['website_url']) : const Omittable.absent(),
   userViewType: json['user_view_type'] as String?,
 ); }
 
-final String? archivedAt;
+final Omittable<String?> archivedAt;
 
 final String avatarUrl;
 
 final String? createdAt;
 
-final dynamic description;
+final Omittable<dynamic> description;
 
 final String? eventsUrl;
 
@@ -112,15 +112,15 @@ final String? updatedAt;
 
 final String? url;
 
-final dynamic websiteUrl;
+final Omittable<dynamic> websiteUrl;
 
 final String? userViewType;
 
 Map<String, dynamic> toJson() { return {
-  'archived_at': ?archivedAt,
+  if (archivedAt.isPresent) 'archived_at': archivedAt.value,
   'avatar_url': avatarUrl,
   'created_at': ?createdAt,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'events_url': ?eventsUrl,
   'followers': ?followers,
   'followers_url': ?followersUrl,
@@ -152,18 +152,18 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'updated_at': ?updatedAt,
   'url': ?url,
-  'website_url': ?websiteUrl,
+  if (websiteUrl.isPresent) 'website_url': websiteUrl.value,
   'user_view_type': ?userViewType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('avatar_url') && json['avatar_url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String; } 
-WebhookInstallationTargetRenamedAccount copyWith({String? Function()? archivedAt, String? avatarUrl, String Function()? createdAt, dynamic Function()? description, String Function()? eventsUrl, int Function()? followers, String Function()? followersUrl, int Function()? following, String Function()? followingUrl, String Function()? gistsUrl, String Function()? gravatarId, bool Function()? hasOrganizationProjects, bool Function()? hasRepositoryProjects, String Function()? hooksUrl, String? htmlUrl, int? id, bool Function()? isVerified, String Function()? issuesUrl, String Function()? login, String Function()? membersUrl, String Function()? name, String? nodeId, String Function()? organizationsUrl, int Function()? publicGists, String Function()? publicMembersUrl, int Function()? publicRepos, String Function()? receivedEventsUrl, String Function()? reposUrl, bool Function()? siteAdmin, String Function()? slug, String Function()? starredUrl, String Function()? subscriptionsUrl, String Function()? type, String Function()? updatedAt, String Function()? url, dynamic Function()? websiteUrl, String Function()? userViewType, }) { return WebhookInstallationTargetRenamedAccount(
-  archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
+WebhookInstallationTargetRenamedAccount copyWith({Omittable<String?>? archivedAt, String? avatarUrl, String? Function()? createdAt, Omittable<dynamic>? description, String? Function()? eventsUrl, int? Function()? followers, String? Function()? followersUrl, int? Function()? following, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, bool? Function()? hasOrganizationProjects, bool? Function()? hasRepositoryProjects, String? Function()? hooksUrl, String? htmlUrl, int? id, bool? Function()? isVerified, String? Function()? issuesUrl, String? Function()? login, String? Function()? membersUrl, String? Function()? name, String? nodeId, String? Function()? organizationsUrl, int? Function()? publicGists, String? Function()? publicMembersUrl, int? Function()? publicRepos, String? Function()? receivedEventsUrl, String? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? slug, String? Function()? starredUrl, String? Function()? subscriptionsUrl, String? Function()? type, String? Function()? updatedAt, String? Function()? url, Omittable<dynamic>? websiteUrl, String? Function()? userViewType, }) { return WebhookInstallationTargetRenamedAccount(
+  archivedAt: archivedAt ?? this.archivedAt,
   avatarUrl: avatarUrl ?? this.avatarUrl,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   eventsUrl: eventsUrl != null ? eventsUrl() : this.eventsUrl,
   followers: followers != null ? followers() : this.followers,
   followersUrl: followersUrl != null ? followersUrl() : this.followersUrl,
@@ -195,7 +195,7 @@ WebhookInstallationTargetRenamedAccount copyWith({String? Function()? archivedAt
   type: type != null ? type() : this.type,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   url: url != null ? url() : this.url,
-  websiteUrl: websiteUrl != null ? websiteUrl() : this.websiteUrl,
+  websiteUrl: websiteUrl ?? this.websiteUrl,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

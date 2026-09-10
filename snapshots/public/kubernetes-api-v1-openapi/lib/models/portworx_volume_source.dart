@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'volumeID': volumeId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('volumeID') && json['volumeID'] is String; } 
-PortworxVolumeSource copyWith({String Function()? fsType, bool Function()? readOnly, String? volumeId, }) { return PortworxVolumeSource(
+PortworxVolumeSource copyWith({String? Function()? fsType, bool? Function()? readOnly, String? volumeId, }) { return PortworxVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   volumeId: volumeId ?? this.volumeId,

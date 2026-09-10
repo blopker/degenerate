@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor': ?statementDescriptor,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'debit_negative_balances', 'schedule', 'statement_descriptor'}.contains(key)); } 
-PostAccountsRequestSettingsPayouts copyWith({bool Function()? debitNegativeBalances, PostAccountsRequestSettingsPayoutsSchedule Function()? schedule, String Function()? statementDescriptor, }) { return PostAccountsRequestSettingsPayouts(
+PostAccountsRequestSettingsPayouts copyWith({bool? Function()? debitNegativeBalances, PostAccountsRequestSettingsPayoutsSchedule? Function()? schedule, String? Function()? statementDescriptor, }) { return PostAccountsRequestSettingsPayouts(
   debitNegativeBalances: debitNegativeBalances != null ? debitNegativeBalances() : this.debitNegativeBalances,
   schedule: schedule != null ? schedule() : this.schedule,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,

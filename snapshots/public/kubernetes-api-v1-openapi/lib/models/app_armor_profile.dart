@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-AppArmorProfile copyWith({String Function()? localhostProfile, String? type, }) { return AppArmorProfile(
+AppArmorProfile copyWith({String? Function()? localhostProfile, String? type, }) { return AppArmorProfile(
   localhostProfile: localhostProfile != null ? localhostProfile() : this.localhostProfile,
   type: type ?? this.type,
 ); } 

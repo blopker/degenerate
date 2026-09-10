@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MarketplaceAccount {const MarketplaceAccount({required this.url, required this.id, required this.type, required this.login, this.nodeId, this.email, this.organizationBillingEmail, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MarketplaceAccount {const MarketplaceAccount({required this.url, required this.id, required this.type, required this.login, this.nodeId, this.email = const Omittable.absent(), this.organizationBillingEmail = const Omittable.absent(), });
 
 factory MarketplaceAccount.fromJson(Map<String, dynamic> json) { return MarketplaceAccount(
   url: Uri.parse(json['url'] as String),
@@ -8,8 +8,8 @@ factory MarketplaceAccount.fromJson(Map<String, dynamic> json) { return Marketpl
   type: json['type'] as String,
   nodeId: json['node_id'] as String?,
   login: json['login'] as String,
-  email: json['email'] as String?,
-  organizationBillingEmail: json['organization_billing_email'] as String?,
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
+  organizationBillingEmail: json.containsKey('organization_billing_email') ? Omittable(json['organization_billing_email'] as String?) : const Omittable.absent(),
 ); }
 
 final Uri url;
@@ -22,9 +22,9 @@ final String? nodeId;
 
 final String login;
 
-final String? email;
+final Omittable<String?> email;
 
-final String? organizationBillingEmail;
+final Omittable<String?> organizationBillingEmail;
 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
@@ -32,21 +32,21 @@ Map<String, dynamic> toJson() { return {
   'type': type,
   'node_id': ?nodeId,
   'login': login,
-  'email': ?email,
-  'organization_billing_email': ?organizationBillingEmail,
+  if (email.isPresent) 'email': email.value,
+  if (organizationBillingEmail.isPresent) 'organization_billing_email': organizationBillingEmail.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('login') && json['login'] is String; } 
-MarketplaceAccount copyWith({Uri? url, int? id, String? type, String Function()? nodeId, String? login, String? Function()? email, String? Function()? organizationBillingEmail, }) { return MarketplaceAccount(
+MarketplaceAccount copyWith({Uri? url, int? id, String? type, String? Function()? nodeId, String? login, Omittable<String?>? email, Omittable<String?>? organizationBillingEmail, }) { return MarketplaceAccount(
   url: url ?? this.url,
   id: id ?? this.id,
   type: type ?? this.type,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   login: login ?? this.login,
-  email: email != null ? email() : this.email,
-  organizationBillingEmail: organizationBillingEmail != null ? organizationBillingEmail() : this.organizationBillingEmail,
+  email: email ?? this.email,
+  organizationBillingEmail: organizationBillingEmail ?? this.organizationBillingEmail,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is MarketplaceAccount &&

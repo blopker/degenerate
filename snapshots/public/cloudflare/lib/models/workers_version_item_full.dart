@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'resources': resources.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('resources'); } 
-WorkersVersionItemFull copyWith({String Function()? id, WorkersVersionItemFullMetadata Function()? metadata, double Function()? number, WorkersVersionItemFullResources? resources, }) { return WorkersVersionItemFull(
+WorkersVersionItemFull copyWith({String? Function()? id, WorkersVersionItemFullMetadata? Function()? metadata, double? Function()? number, WorkersVersionItemFullResources? resources, }) { return WorkersVersionItemFull(
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,
   number: number != null ? number() : this.number,

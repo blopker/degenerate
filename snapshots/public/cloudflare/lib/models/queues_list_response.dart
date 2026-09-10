@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success', 'result', 'result_info'}.contains(key)); } 
-QueuesListResponse copyWith({List<ErrorModel22> Function()? errors, List<String> Function()? messages, bool Function()? success, List<MqQueue> Function()? result, QueuesListResponseResultInfo Function()? resultInfo, }) { return QueuesListResponse(
+QueuesListResponse copyWith({List<ErrorModel22>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, List<MqQueue>? Function()? result, QueuesListResponseResultInfo? Function()? resultInfo, }) { return QueuesListResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,

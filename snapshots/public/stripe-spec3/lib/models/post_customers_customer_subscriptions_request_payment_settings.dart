@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (saveDefaultPaymentMethod != null) 'save_default_payment_method': saveDefaultPaymentMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_options', 'payment_method_types', 'save_default_payment_method'}.contains(key)); } 
-PostCustomersCustomerSubscriptionsRequestPaymentSettings copyWith({PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptions Function()? paymentMethodOptions, PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypes Function()? paymentMethodTypes, PostCustomersCustomerSubscriptionsRequestPaymentSettingsSaveDefaultPaymentMethod Function()? saveDefaultPaymentMethod, }) { return PostCustomersCustomerSubscriptionsRequestPaymentSettings(
+PostCustomersCustomerSubscriptionsRequestPaymentSettings copyWith({PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptions? Function()? paymentMethodOptions, PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodTypes? Function()? paymentMethodTypes, PostCustomersCustomerSubscriptionsRequestPaymentSettingsSaveDefaultPaymentMethod? Function()? saveDefaultPaymentMethod, }) { return PostCustomersCustomerSubscriptionsRequestPaymentSettings(
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   paymentMethodTypes: paymentMethodTypes != null ? paymentMethodTypes() : this.paymentMethodTypes,
   saveDefaultPaymentMethod: saveDefaultPaymentMethod != null ? saveDefaultPaymentMethod() : this.saveDefaultPaymentMethod,

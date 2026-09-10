@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'last_seen': ?lastSeen,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'first_seen', 'hostname', 'last_seen'}.contains(key)); } 
-IntelPassiveDnsByIpReverseRecords copyWith({String Function()? firstSeen, String Function()? hostname, String Function()? lastSeen, }) { return IntelPassiveDnsByIpReverseRecords(
+IntelPassiveDnsByIpReverseRecords copyWith({String? Function()? firstSeen, String? Function()? hostname, String? Function()? lastSeen, }) { return IntelPassiveDnsByIpReverseRecords(
   firstSeen: firstSeen != null ? firstSeen() : this.firstSeen,
   hostname: hostname != null ? hostname() : this.hostname,
   lastSeen: lastSeen != null ? lastSeen() : this.lastSeen,

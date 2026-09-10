@@ -235,7 +235,7 @@ Map<String, dynamic> toJson() { return {
   if (subscriptions != null) 'subscriptions': subscriptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'on_demand', 'preferred_locale', 'setup_future_usage', 'subscriptions'}.contains(key)); } 
-PaymentMethodOptionsParam91 copyWith({PaymentMethodOptionsParam91CaptureMethod Function()? captureMethod, PaymentMethodOptionsParam91OnDemand Function()? onDemand, PaymentMethodOptionsParam91PreferredLocale Function()? preferredLocale, PaymentMethodOptionsParam91SetupFutureUsage Function()? setupFutureUsage, PaymentMethodOptionsParam91Subscriptions Function()? subscriptions, }) { return PaymentMethodOptionsParam91(
+PaymentMethodOptionsParam91 copyWith({PaymentMethodOptionsParam91CaptureMethod? Function()? captureMethod, PaymentMethodOptionsParam91OnDemand? Function()? onDemand, PaymentMethodOptionsParam91PreferredLocale? Function()? preferredLocale, PaymentMethodOptionsParam91SetupFutureUsage? Function()? setupFutureUsage, PaymentMethodOptionsParam91Subscriptions? Function()? subscriptions, }) { return PaymentMethodOptionsParam91(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   onDemand: onDemand != null ? onDemand() : this.onDemand,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,

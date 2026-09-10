@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'output_format': outputFormat.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('output_format'); } 
-D1ExportDatabaseRequest copyWith({String Function()? currentBookmark, D1ExportDatabaseRequestDumpOptions Function()? dumpOptions, D1ExportDatabaseRequestOutputFormat? outputFormat, }) { return D1ExportDatabaseRequest(
+D1ExportDatabaseRequest copyWith({String? Function()? currentBookmark, D1ExportDatabaseRequestDumpOptions? Function()? dumpOptions, D1ExportDatabaseRequestOutputFormat? outputFormat, }) { return D1ExportDatabaseRequest(
   currentBookmark: currentBookmark != null ? currentBookmark() : this.currentBookmark,
   dumpOptions: dumpOptions != null ? dumpOptions() : this.dumpOptions,
   outputFormat: outputFormat ?? this.outputFormat,

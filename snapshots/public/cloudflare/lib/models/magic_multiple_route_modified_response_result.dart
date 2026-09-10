@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (modifiedRoutes != null) 'modified_routes': modifiedRoutes?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modified', 'modified_routes'}.contains(key)); } 
-MagicMultipleRouteModifiedResponseResult copyWith({bool Function()? modified, List<MagicRoute> Function()? modifiedRoutes, }) { return MagicMultipleRouteModifiedResponseResult(
+MagicMultipleRouteModifiedResponseResult copyWith({bool? Function()? modified, List<MagicRoute>? Function()? modifiedRoutes, }) { return MagicMultipleRouteModifiedResponseResult(
   modified: modified != null ? modified() : this.modified,
   modifiedRoutes: modifiedRoutes != null ? modifiedRoutes() : this.modifiedRoutes,
 ); } 

@@ -9,9 +9,9 @@ factory WebhookProjectCardEditedChangesNote.fromJson(Map<String, dynamic> json) 
 final String? from;
 
 Map<String, dynamic> toJson() { return {
-  'from': ?from,
+  'from': from,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && (json['from'] == null || json['from'] is String); } 
 WebhookProjectCardEditedChangesNote copyWith({String? Function()? from}) { return WebhookProjectCardEditedChangesNote(
   from: from != null ? from() : this.from,
 ); } 

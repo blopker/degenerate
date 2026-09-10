@@ -196,20 +196,20 @@ bool get isUnknown { return !values.contains(this); }
 /// and billing details.
 /// 
 /// Related guide: [Customer management](/customer-management)
-@immutable final class BillingPortalSession {const BillingPortalSession({required this.configuration, required this.created, required this.customer, required this.id, required this.livemode, required this.object, required this.url, this.customerAccount, this.flow, this.locale, this.onBehalfOf, this.returnUrl, });
+@immutable final class BillingPortalSession {const BillingPortalSession({required this.configuration, required this.created, required this.customer, required this.id, required this.livemode, required this.object, required this.url, this.customerAccount = const Omittable.absent(), this.flow = const Omittable.absent(), this.locale = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.returnUrl = const Omittable.absent(), });
 
 factory BillingPortalSession.fromJson(Map<String, dynamic> json) { return BillingPortalSession(
   configuration: OneOf2.parse(json['configuration'], fromA: (v) => v as String, fromB: (v) => BillingPortalConfiguration.fromJson(v as Map<String, dynamic>),),
   created: (json['created'] as num).toInt(),
   customer: json['customer'] as String,
-  customerAccount: json['customer_account'] as String?,
-  flow: json['flow'] != null ? PortalFlowsFlow.fromJson(json['flow'] as Map<String, dynamic>) : null,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
+  flow: json.containsKey('flow') ? Omittable(json['flow'] != null ? PortalFlowsFlow.fromJson(json['flow'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  locale: json['locale'] != null ? BillingPortalSessionLocale.fromJson(json['locale'] as String) : null,
+  locale: json.containsKey('locale') ? Omittable(json['locale'] != null ? BillingPortalSessionLocale.fromJson(json['locale'] as String) : null) : const Omittable.absent(),
   object: BillingPortalSessionObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] as String?,
-  returnUrl: json['return_url'] as String?,
+  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] as String?) : const Omittable.absent(),
+  returnUrl: json.containsKey('return_url') ? Omittable(json['return_url'] as String?) : const Omittable.absent(),
   url: json['url'] as String,
 ); }
 
@@ -223,10 +223,10 @@ final int created;
 final String customer;
 
 /// The ID of the account for this session.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Information about a specific flow for the customer to go through. See the [docs](https://docs.stripe.com/customer-management/portal-deep-links) to learn more about using customer portal deep links and flows.
-final PortalFlowsFlow? flow;
+final Omittable<PortalFlowsFlow?> flow;
 
 /// Unique identifier for the object.
 final String id;
@@ -235,16 +235,16 @@ final String id;
 final bool livemode;
 
 /// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
-final BillingPortalSessionLocale? locale;
+final Omittable<BillingPortalSessionLocale?> locale;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final BillingPortalSessionObject object;
 
 /// The account for which the session was created on behalf of. When specified, only subscriptions and invoices with this `on_behalf_of` account appear in the portal. For more information, see the [docs](https://docs.stripe.com/connect/separate-charges-and-transfers#settlement-merchant). Use the [Accounts API](https://docs.stripe.com/api/accounts/object#account_object-settings-branding) to modify the `on_behalf_of` account's branding settings, which the portal displays.
-final String? onBehalfOf;
+final Omittable<String?> onBehalfOf;
 
 /// The URL to redirect customers to when they click on the portal's link to return to your website.
-final String? returnUrl;
+final Omittable<String?> returnUrl;
 
 /// The short-lived URL of the session that gives customers access to the customer portal.
 final String url;
@@ -253,14 +253,14 @@ Map<String, dynamic> toJson() { return {
   'configuration': configuration.toJson(),
   'created': created,
   'customer': customer,
-  'customer_account': ?customerAccount,
-  if (flow != null) 'flow': flow?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
+  if (flow.isPresent) 'flow': flow.value?.toJson(),
   'id': id,
   'livemode': livemode,
-  if (locale != null) 'locale': locale?.toJson(),
+  if (locale.isPresent) 'locale': locale.value?.toJson(),
   'object': object.toJson(),
-  'on_behalf_of': ?onBehalfOf,
-  'return_url': ?returnUrl,
+  if (onBehalfOf.isPresent) 'on_behalf_of': onBehalfOf.value,
+  if (returnUrl.isPresent) 'return_url': returnUrl.value,
   'url': url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('configuration') &&
@@ -270,18 +270,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-BillingPortalSession copyWith({BillingPortalSessionConfiguration? configuration, int? created, String? customer, String? Function()? customerAccount, PortalFlowsFlow? Function()? flow, String? id, bool? livemode, BillingPortalSessionLocale? Function()? locale, BillingPortalSessionObject? object, String? Function()? onBehalfOf, String? Function()? returnUrl, String? url, }) { return BillingPortalSession(
+BillingPortalSession copyWith({BillingPortalSessionConfiguration? configuration, int? created, String? customer, Omittable<String?>? customerAccount, Omittable<PortalFlowsFlow?>? flow, String? id, bool? livemode, Omittable<BillingPortalSessionLocale?>? locale, BillingPortalSessionObject? object, Omittable<String?>? onBehalfOf, Omittable<String?>? returnUrl, String? url, }) { return BillingPortalSession(
   configuration: configuration ?? this.configuration,
   created: created ?? this.created,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
-  flow: flow != null ? flow() : this.flow,
+  customerAccount: customerAccount ?? this.customerAccount,
+  flow: flow ?? this.flow,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  locale: locale != null ? locale() : this.locale,
+  locale: locale ?? this.locale,
   object: object ?? this.object,
-  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
-  returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
+  onBehalfOf: onBehalfOf ?? this.onBehalfOf,
+  returnUrl: returnUrl ?? this.returnUrl,
   url: url ?? this.url,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

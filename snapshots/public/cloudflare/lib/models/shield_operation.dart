@@ -39,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('endpo
       json.containsKey('method') &&
       json.containsKey('last_updated') &&
       json.containsKey('operation_id'); } 
-ShieldOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, ShieldMethod? method, ShieldTimestamp? lastUpdated, ShieldUuid? operationId, ShieldOperationFeatures Function()? features, }) { return ShieldOperation(
+ShieldOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, ShieldMethod? method, ShieldTimestamp? lastUpdated, ShieldUuid? operationId, ShieldOperationFeatures? Function()? features, }) { return ShieldOperation(
   endpoint: endpoint ?? this.endpoint,
   host: host ?? this.host,
   method: method ?? this.method,

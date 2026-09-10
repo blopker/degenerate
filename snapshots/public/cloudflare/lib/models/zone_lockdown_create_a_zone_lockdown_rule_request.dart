@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('configurations') &&
       json.containsKey('urls'); } 
-ZoneLockdownCreateAZoneLockdownRuleRequest copyWith({List<FirewallConfigurations2>? configurations, FirewallDescription Function()? description, FirewallSchemasPaused Function()? paused, FirewallSchemasPriority Function()? priority, List<String>? urls, }) { return ZoneLockdownCreateAZoneLockdownRuleRequest(
+ZoneLockdownCreateAZoneLockdownRuleRequest copyWith({List<FirewallConfigurations2>? configurations, FirewallDescription? Function()? description, FirewallSchemasPaused? Function()? paused, FirewallSchemasPriority? Function()? priority, List<String>? urls, }) { return ZoneLockdownCreateAZoneLockdownRuleRequest(
   configurations: configurations ?? this.configurations,
   description: description != null ? description() : this.description,
   paused: paused != null ? paused() : this.paused,

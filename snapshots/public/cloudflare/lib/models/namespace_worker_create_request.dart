@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
-NamespaceWorkerCreateRequest copyWith({String Function()? name}) { return NamespaceWorkerCreateRequest(
+NamespaceWorkerCreateRequest copyWith({String? Function()? name}) { return NamespaceWorkerCreateRequest(
   name: name != null ? name() : this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

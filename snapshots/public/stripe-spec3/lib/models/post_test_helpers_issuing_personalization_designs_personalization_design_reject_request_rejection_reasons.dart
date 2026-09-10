@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
   if (carrierText != null) 'carrier_text': carrierText?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_logo', 'carrier_text'}.contains(key)); } 
-PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons copyWith({List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo> Function()? cardLogo, List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText> Function()? carrierText, }) { return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons(
+PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons copyWith({List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo>? Function()? cardLogo, List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText>? Function()? carrierText, }) { return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons(
   cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,
   carrierText: carrierText != null ? carrierText() : this.carrierText,
 ); } 

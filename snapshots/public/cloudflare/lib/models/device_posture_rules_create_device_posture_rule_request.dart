@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('type'); } 
-DevicePostureRulesCreateDevicePostureRuleRequest copyWith({TeamsDevicesDescription Function()? description, TeamsDevicesExpiration Function()? expiration, TeamsDevicesInput Function()? input, List<TeamsDevicesMatchItem> Function()? match, TeamsDevicesName? name, TeamsDevicesSchedule Function()? schedule, TeamsDevicesType? type, }) { return DevicePostureRulesCreateDevicePostureRuleRequest(
+DevicePostureRulesCreateDevicePostureRuleRequest copyWith({TeamsDevicesDescription? Function()? description, TeamsDevicesExpiration? Function()? expiration, TeamsDevicesInput? Function()? input, List<TeamsDevicesMatchItem>? Function()? match, TeamsDevicesName? name, TeamsDevicesSchedule? Function()? schedule, TeamsDevicesType? type, }) { return DevicePostureRulesCreateDevicePostureRuleRequest(
   description: description != null ? description() : this.description,
   expiration: expiration != null ? expiration() : this.expiration,
   input: input != null ? input() : this.input,

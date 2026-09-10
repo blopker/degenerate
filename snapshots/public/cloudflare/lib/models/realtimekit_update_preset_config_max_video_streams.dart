@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'mobile': ?mobile,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'desktop', 'mobile'}.contains(key)); } 
-RealtimekitUpdatePresetConfigMaxVideoStreams copyWith({int Function()? desktop, int Function()? mobile, }) { return RealtimekitUpdatePresetConfigMaxVideoStreams(
+RealtimekitUpdatePresetConfigMaxVideoStreams copyWith({int? Function()? desktop, int? Function()? mobile, }) { return RealtimekitUpdatePresetConfigMaxVideoStreams(
   desktop: desktop != null ? desktop() : this.desktop,
   mobile: mobile != null ? mobile() : this.mobile,
 ); } 

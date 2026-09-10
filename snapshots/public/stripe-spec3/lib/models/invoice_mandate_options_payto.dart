@@ -78,33 +78,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InvoiceMandateOptionsPaytoPurpose($value)'; } 
  }
 /// 
-@immutable final class InvoiceMandateOptionsPayto {const InvoiceMandateOptionsPayto({this.amount, this.amountType, this.purpose, });
+@immutable final class InvoiceMandateOptionsPayto {const InvoiceMandateOptionsPayto({this.amount = const Omittable.absent(), this.amountType = const Omittable.absent(), this.purpose = const Omittable.absent(), });
 
 factory InvoiceMandateOptionsPayto.fromJson(Map<String, dynamic> json) { return InvoiceMandateOptionsPayto(
-  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  amountType: json['amount_type'] != null ? InvoiceMandateOptionsPaytoAmountType.fromJson(json['amount_type'] as String) : null,
-  purpose: json['purpose'] != null ? InvoiceMandateOptionsPaytoPurpose.fromJson(json['purpose'] as String) : null,
+  amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
+  amountType: json.containsKey('amount_type') ? Omittable(json['amount_type'] != null ? InvoiceMandateOptionsPaytoAmountType.fromJson(json['amount_type'] as String) : null) : const Omittable.absent(),
+  purpose: json.containsKey('purpose') ? Omittable(json['purpose'] != null ? InvoiceMandateOptionsPaytoPurpose.fromJson(json['purpose'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The maximum amount that can be collected in a single invoice. If you don't specify a maximum, then there is no limit.
-final int? amount;
+final Omittable<int?> amount;
 
 /// Only `maximum` is supported.
-final InvoiceMandateOptionsPaytoAmountType? amountType;
+final Omittable<InvoiceMandateOptionsPaytoAmountType?> amountType;
 
 /// The purpose for which payments are made. Has a default value based on your merchant category code.
-final InvoiceMandateOptionsPaytoPurpose? purpose;
+final Omittable<InvoiceMandateOptionsPaytoPurpose?> purpose;
 
 Map<String, dynamic> toJson() { return {
-  'amount': ?amount,
-  if (amountType != null) 'amount_type': amountType?.toJson(),
-  if (purpose != null) 'purpose': purpose?.toJson(),
+  if (amount.isPresent) 'amount': amount.value,
+  if (amountType.isPresent) 'amount_type': amountType.value?.toJson(),
+  if (purpose.isPresent) 'purpose': purpose.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'amount_type', 'purpose'}.contains(key)); } 
-InvoiceMandateOptionsPayto copyWith({int? Function()? amount, InvoiceMandateOptionsPaytoAmountType? Function()? amountType, InvoiceMandateOptionsPaytoPurpose? Function()? purpose, }) { return InvoiceMandateOptionsPayto(
-  amount: amount != null ? amount() : this.amount,
-  amountType: amountType != null ? amountType() : this.amountType,
-  purpose: purpose != null ? purpose() : this.purpose,
+InvoiceMandateOptionsPayto copyWith({Omittable<int?>? amount, Omittable<InvoiceMandateOptionsPaytoAmountType?>? amountType, Omittable<InvoiceMandateOptionsPaytoPurpose?>? purpose, }) { return InvoiceMandateOptionsPayto(
+  amount: amount ?? this.amount,
+  amountType: amountType ?? this.amountType,
+  purpose: purpose ?? this.purpose,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InvoiceMandateOptionsPayto &&

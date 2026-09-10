@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'reactivate': ?reactivate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reactivate'}.contains(key)); } 
-ClientCertificateForAZoneEditClientCertificateRequest copyWith({bool Function()? reactivate}) { return ClientCertificateForAZoneEditClientCertificateRequest(
+ClientCertificateForAZoneEditClientCertificateRequest copyWith({bool? Function()? reactivate}) { return ClientCertificateForAZoneEditClientCertificateRequest(
   reactivate: reactivate != null ? reactivate() : this.reactivate,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

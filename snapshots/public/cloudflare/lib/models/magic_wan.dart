@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   if (vlanTag != null) 'vlan_tag': vlanTag?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'health_check_rate', 'id', 'name', 'physport', 'priority', 'site_id', 'static_addressing', 'vlan_tag'}.contains(key)); } 
-MagicWan copyWith({MagicWanHealthCheckRate Function()? healthCheckRate, MagicIdentifier Function()? id, String Function()? name, MagicPort Function()? physport, int Function()? priority, MagicIdentifier Function()? siteId, MagicWanStaticAddressing Function()? staticAddressing, MagicVlanTag Function()? vlanTag, }) { return MagicWan(
+MagicWan copyWith({MagicWanHealthCheckRate Function()? healthCheckRate, MagicIdentifier? Function()? id, String? Function()? name, MagicPort? Function()? physport, int? Function()? priority, MagicIdentifier? Function()? siteId, MagicWanStaticAddressing? Function()? staticAddressing, MagicVlanTag? Function()? vlanTag, }) { return MagicWan(
   healthCheckRate: healthCheckRate != null ? healthCheckRate() : this.healthCheckRate,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

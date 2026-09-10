@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
-WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat copyWith({String Function()? type}) { return WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat(
+WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat copyWith({String? Function()? type}) { return WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat(
   type: type != null ? type() : this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

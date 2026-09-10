@@ -79,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('interrupt_window_hour_of_day') && json['interrupt_window_hour_of_day'] is num &&
       json.containsKey('timezone') && json['timezone'] is String &&
       json.containsKey('upgrade_asap') && json['upgrade_asap'] is bool; } 
-MconnControllerConnector copyWith({MconnAccountId? accountId, bool? activated, String Function()? cloudflaredTunnelToken, String Function()? cohortDesiredVersion, String Function()? desiredVersion, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String Function()? lastHeartbeat, String Function()? lastSeenVersion, String Function()? pinnedVersion, String? timezone, bool? upgradeAsap, }) { return MconnControllerConnector(
+MconnControllerConnector copyWith({MconnAccountId? accountId, bool? activated, String? Function()? cloudflaredTunnelToken, String? Function()? cohortDesiredVersion, String? Function()? desiredVersion, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? Function()? pinnedVersion, String? timezone, bool? upgradeAsap, }) { return MconnControllerConnector(
   accountId: accountId ?? this.accountId,
   activated: activated ?? this.activated,
   cloudflaredTunnelToken: cloudflaredTunnelToken != null ? cloudflaredTunnelToken() : this.cloudflaredTunnelToken,

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Log settings for the Worker.
-@immutable final class WorkersObservabilityLogs {const WorkersObservabilityLogs({required this.enabled, required this.invocationLogs, this.destinations, this.headSamplingRate, this.persist = true, });
+@immutable final class WorkersObservabilityLogs {const WorkersObservabilityLogs({required this.enabled, required this.invocationLogs, this.destinations, this.headSamplingRate = const Omittable.absent(), this.persist = true, });
 
 factory WorkersObservabilityLogs.fromJson(Map<String, dynamic> json) { return WorkersObservabilityLogs(
   destinations: (json['destinations'] as List<dynamic>?)?.map((e) => e as String).toList(),
   enabled: json['enabled'] as bool,
-  headSamplingRate: json['head_sampling_rate'] != null ? (json['head_sampling_rate'] as num).toDouble() : null,
+  headSamplingRate: json.containsKey('head_sampling_rate') ? Omittable(json['head_sampling_rate'] != null ? (json['head_sampling_rate'] as num).toDouble() : null) : const Omittable.absent(),
   invocationLogs: json['invocation_logs'] as bool,
   persist: json.containsKey('persist') ? json['persist'] as bool : true,
 ); }
@@ -18,7 +18,7 @@ final List<String>? destinations;
 final bool enabled;
 
 /// The sampling rate for logs. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
-final double? headSamplingRate;
+final Omittable<double?> headSamplingRate;
 
 /// Whether [invocation logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#invocation-logs) are enabled for the Worker.
 final bool invocationLogs;
@@ -29,16 +29,16 @@ final bool persist;
 Map<String, dynamic> toJson() { return {
   'destinations': ?destinations,
   'enabled': enabled,
-  'head_sampling_rate': ?headSamplingRate,
+  if (headSamplingRate.isPresent) 'head_sampling_rate': headSamplingRate.value,
   'invocation_logs': invocationLogs,
   'persist': persist,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('invocation_logs') && json['invocation_logs'] is bool; } 
-WorkersObservabilityLogs copyWith({List<String> Function()? destinations, bool? enabled, double? Function()? headSamplingRate, bool? invocationLogs, bool Function()? persist, }) { return WorkersObservabilityLogs(
+WorkersObservabilityLogs copyWith({List<String>? Function()? destinations, bool? enabled, Omittable<double?>? headSamplingRate, bool? invocationLogs, bool Function()? persist, }) { return WorkersObservabilityLogs(
   destinations: destinations != null ? destinations() : this.destinations,
   enabled: enabled ?? this.enabled,
-  headSamplingRate: headSamplingRate != null ? headSamplingRate() : this.headSamplingRate,
+  headSamplingRate: headSamplingRate ?? this.headSamplingRate,
   invocationLogs: invocationLogs ?? this.invocationLogs,
   persist: persist != null ? persist() : this.persist,
 ); } 

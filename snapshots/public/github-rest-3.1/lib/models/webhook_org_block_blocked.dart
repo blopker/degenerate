@@ -60,7 +60,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('blocked_user') &&
       json.containsKey('organization') &&
       json.containsKey('sender'); } 
-WebhookOrgBlockBlocked copyWith({WebhookOrgBlockBlockedAction? action, WebhooksUser? blockedUser, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookOrgBlockBlocked(
+WebhookOrgBlockBlocked copyWith({WebhookOrgBlockBlockedAction? action, WebhooksUser? blockedUser, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookOrgBlockBlocked(
   action: action ?? this.action,
   blockedUser: blockedUser ?? this.blockedUser,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

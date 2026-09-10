@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'visible': ?visible,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('selector') && json['selector'] is String; } 
-BrapiPostContentRequestVariant1WaitForSelector copyWith({bool Function()? hidden, String? selector, double Function()? timeout, bool Function()? visible, }) { return BrapiPostContentRequestVariant1WaitForSelector(
+BrapiPostContentRequestVariant1WaitForSelector copyWith({bool? Function()? hidden, String? selector, double? Function()? timeout, bool? Function()? visible, }) { return BrapiPostContentRequestVariant1WaitForSelector(
   hidden: hidden != null ? hidden() : this.hidden,
   selector: selector ?? this.selector,
   timeout: timeout != null ? timeout() : this.timeout,

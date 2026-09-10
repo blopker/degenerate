@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (startedAt != null) 'startedAt': startedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exitCode') && json['exitCode'] is num; } 
-ContainerStateTerminated copyWith({String Function()? containerId, int? exitCode, Time Function()? finishedAt, String Function()? message, String Function()? reason, int Function()? signal, Time Function()? startedAt, }) { return ContainerStateTerminated(
+ContainerStateTerminated copyWith({String? Function()? containerId, int? exitCode, Time? Function()? finishedAt, String? Function()? message, String? Function()? reason, int? Function()? signal, Time? Function()? startedAt, }) { return ContainerStateTerminated(
   containerId: containerId != null ? containerId() : this.containerId,
   exitCode: exitCode ?? this.exitCode,
   finishedAt: finishedAt != null ? finishedAt() : this.finishedAt,

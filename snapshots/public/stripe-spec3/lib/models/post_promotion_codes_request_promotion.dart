@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostPromotionCodesRequestPromotion copyWith({String Function()? coupon, PostPromotionCodesRequestPromotionType? type, }) { return PostPromotionCodesRequestPromotion(
+PostPromotionCodesRequestPromotion copyWith({String? Function()? coupon, PostPromotionCodesRequestPromotionType? type, }) { return PostPromotionCodesRequestPromotion(
   coupon: coupon != null ? coupon() : this.coupon,
   type: type ?? this.type,
 ); } 

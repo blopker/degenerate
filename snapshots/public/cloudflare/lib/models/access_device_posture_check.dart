@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'path': ?path,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exists', 'path'}.contains(key)); } 
-AccessDevicePostureCheck copyWith({bool Function()? exists, String Function()? path, }) { return AccessDevicePostureCheck(
+AccessDevicePostureCheck copyWith({bool? Function()? exists, String? Function()? path, }) { return AccessDevicePostureCheck(
   exists: exists != null ? exists() : this.exists,
   path: path != null ? path() : this.path,
 ); } 

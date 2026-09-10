@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-ReplicationControllerCondition copyWith({Time Function()? lastTransitionTime, String Function()? message, String Function()? reason, String? status, String? type, }) { return ReplicationControllerCondition(
+ReplicationControllerCondition copyWith({Time? Function()? lastTransitionTime, String? Function()? message, String? Function()? reason, String? status, String? type, }) { return ReplicationControllerCondition(
   lastTransitionTime: lastTransitionTime != null ? lastTransitionTime() : this.lastTransitionTime,
   message: message != null ? message() : this.message,
   reason: reason != null ? reason() : this.reason,

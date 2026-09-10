@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'target', 'enforcement', 'bypass_actors', 'conditions', 'rules'}.contains(key)); } 
-ReposUpdateRepoRulesetRequest copyWith({String Function()? name, ReposUpdateRepoRulesetRequestTarget Function()? target, RepositoryRuleEnforcement Function()? enforcement, List<RepositoryRulesetBypassActor> Function()? bypassActors, RepositoryRulesetConditions Function()? conditions, List<RepositoryRule> Function()? rules, }) { return ReposUpdateRepoRulesetRequest(
+ReposUpdateRepoRulesetRequest copyWith({String? Function()? name, ReposUpdateRepoRulesetRequestTarget? Function()? target, RepositoryRuleEnforcement? Function()? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, RepositoryRulesetConditions? Function()? conditions, List<RepositoryRule>? Function()? rules, }) { return ReposUpdateRepoRulesetRequest(
   name: name != null ? name() : this.name,
   target: target != null ? target() : this.target,
   enforcement: enforcement != null ? enforcement() : this.enforcement,

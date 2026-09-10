@@ -26,32 +26,32 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderReaderResourceChoiceStyle($value)'; } 
  }
 /// Choice to be selected on a Reader
-@immutable final class TerminalReaderReaderResourceChoice {const TerminalReaderReaderResourceChoice({required this.text, this.id, this.style, });
+@immutable final class TerminalReaderReaderResourceChoice {const TerminalReaderReaderResourceChoice({required this.text, this.id = const Omittable.absent(), this.style = const Omittable.absent(), });
 
 factory TerminalReaderReaderResourceChoice.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceChoice(
-  id: json['id'] as String?,
-  style: json['style'] != null ? TerminalReaderReaderResourceChoiceStyle.fromJson(json['style'] as String) : null,
+  id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
+  style: json.containsKey('style') ? Omittable(json['style'] != null ? TerminalReaderReaderResourceChoiceStyle.fromJson(json['style'] as String) : null) : const Omittable.absent(),
   text: json['text'] as String,
 ); }
 
 /// The identifier for the selected choice. Maximum 50 characters.
-final String? id;
+final Omittable<String?> id;
 
 /// The button style for the choice. Can be `primary` or `secondary`.
-final TerminalReaderReaderResourceChoiceStyle? style;
+final Omittable<TerminalReaderReaderResourceChoiceStyle?> style;
 
 /// The text to be selected. Maximum 30 characters.
 final String text;
 
 Map<String, dynamic> toJson() { return {
-  'id': ?id,
-  if (style != null) 'style': style?.toJson(),
+  if (id.isPresent) 'id': id.value,
+  if (style.isPresent) 'style': style.value?.toJson(),
   'text': text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-TerminalReaderReaderResourceChoice copyWith({String? Function()? id, TerminalReaderReaderResourceChoiceStyle? Function()? style, String? text, }) { return TerminalReaderReaderResourceChoice(
-  id: id != null ? id() : this.id,
-  style: style != null ? style() : this.style,
+TerminalReaderReaderResourceChoice copyWith({Omittable<String?>? id, Omittable<TerminalReaderReaderResourceChoiceStyle?>? style, String? text, }) { return TerminalReaderReaderResourceChoice(
+  id: id ?? this.id,
+  style: style ?? this.style,
   text: text ?? this.text,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

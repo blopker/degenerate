@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'usage': ?usage,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'certificate', 'matching_type', 'selector', 'usage'}.contains(key)); } 
-DnsRecordsSmimeaRecordData copyWith({String Function()? certificate, double Function()? matchingType, double Function()? selector, double Function()? usage, }) { return DnsRecordsSmimeaRecordData(
+DnsRecordsSmimeaRecordData copyWith({String? Function()? certificate, double? Function()? matchingType, double? Function()? selector, double? Function()? usage, }) { return DnsRecordsSmimeaRecordData(
   certificate: certificate != null ? certificate() : this.certificate,
   matchingType: matchingType != null ? matchingType() : this.matchingType,
   selector: selector != null ? selector() : this.selector,

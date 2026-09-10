@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('project_column') &&
       json.containsKey('sender'); } 
-WebhookProjectColumnMoved copyWith({WebhookProjectColumnMovedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProjectColumn? projectColumn, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookProjectColumnMoved(
+WebhookProjectColumnMoved copyWith({WebhookProjectColumnMovedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksProjectColumn? projectColumn, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookProjectColumnMoved(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

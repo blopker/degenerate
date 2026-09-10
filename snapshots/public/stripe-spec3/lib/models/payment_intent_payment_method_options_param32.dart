@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'setup_future_usage'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam32 copyWith({String Function()? code, PaymentIntentPaymentMethodOptionsParam32SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam32(
+PaymentIntentPaymentMethodOptionsParam32 copyWith({String? Function()? code, PaymentIntentPaymentMethodOptionsParam32SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam32(
   code: code != null ? code() : this.code,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 

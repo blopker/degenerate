@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'protocol': protocol,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('containerPort') && json['containerPort'] is num; } 
-ContainerPort copyWith({int? containerPort, String Function()? hostIp, int Function()? hostPort, String Function()? name, String Function()? protocol, }) { return ContainerPort(
+ContainerPort copyWith({int? containerPort, String? Function()? hostIp, int? Function()? hostPort, String? Function()? name, String Function()? protocol, }) { return ContainerPort(
   containerPort: containerPort ?? this.containerPort,
   hostIp: hostIp != null ? hostIp() : this.hostIp,
   hostPort: hostPort != null ? hostPort() : this.hostPort,

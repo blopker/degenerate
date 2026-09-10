@@ -32,14 +32,14 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssueFieldValueDataType($value)'; } 
  }
 /// A value assigned to an issue field
-@immutable final class IssueFieldValue {const IssueFieldValue({required this.issueFieldId, required this.nodeId, required this.dataType, required this.value, this.singleSelectOption, });
+@immutable final class IssueFieldValue {const IssueFieldValue({required this.issueFieldId, required this.nodeId, required this.dataType, required this.value, this.singleSelectOption = const Omittable.absent(), });
 
 factory IssueFieldValue.fromJson(Map<String, dynamic> json) { return IssueFieldValue(
   issueFieldId: (json['issue_field_id'] as num).toInt(),
   nodeId: json['node_id'] as String,
   dataType: IssueFieldValueDataType.fromJson(json['data_type'] as String),
   value: json['value'],
-  singleSelectOption: json['single_select_option'] != null ? IssueFieldValueSingleSelectOption.fromJson(json['single_select_option'] as Map<String, dynamic>) : null,
+  singleSelectOption: json.containsKey('single_select_option') ? Omittable(json['single_select_option'] != null ? IssueFieldValueSingleSelectOption.fromJson(json['single_select_option'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// Unique identifier for the issue field.
@@ -58,25 +58,25 @@ final IssueFieldValueDataType dataType;
 final dynamic value;
 
 /// Details about the selected option (only present for single_select fields)
-final IssueFieldValueSingleSelectOption? singleSelectOption;
+final Omittable<IssueFieldValueSingleSelectOption?> singleSelectOption;
 
 Map<String, dynamic> toJson() { return {
   'issue_field_id': issueFieldId,
   'node_id': nodeId,
   'data_type': dataType.toJson(),
-  'value': ?value,
-  if (singleSelectOption != null) 'single_select_option': singleSelectOption?.toJson(),
+  'value': value,
+  if (singleSelectOption.isPresent) 'single_select_option': singleSelectOption.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('issue_field_id') && json['issue_field_id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('data_type') &&
       json.containsKey('value'); } 
-IssueFieldValue copyWith({int? issueFieldId, String? nodeId, IssueFieldValueDataType? dataType, dynamic Function()? value, IssueFieldValueSingleSelectOption? Function()? singleSelectOption, }) { return IssueFieldValue(
+IssueFieldValue copyWith({int? issueFieldId, String? nodeId, IssueFieldValueDataType? dataType, dynamic Function()? value, Omittable<IssueFieldValueSingleSelectOption?>? singleSelectOption, }) { return IssueFieldValue(
   issueFieldId: issueFieldId ?? this.issueFieldId,
   nodeId: nodeId ?? this.nodeId,
   dataType: dataType ?? this.dataType,
   value: value != null ? value() : this.value,
-  singleSelectOption: singleSelectOption != null ? singleSelectOption() : this.singleSelectOption,
+  singleSelectOption: singleSelectOption ?? this.singleSelectOption,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssueFieldValue &&

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'tag': ?tag,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'message', 'tag'}.contains(key)); } 
-WorkersObservabilityTelemetryEvent$workersVariant1ScriptVersion copyWith({String Function()? id, String Function()? message, String Function()? tag, }) { return WorkersObservabilityTelemetryEvent$workersVariant1ScriptVersion(
+WorkersObservabilityTelemetryEvent$workersVariant1ScriptVersion copyWith({String? Function()? id, String? Function()? message, String? Function()? tag, }) { return WorkersObservabilityTelemetryEvent$workersVariant1ScriptVersion(
   id: id != null ? id() : this.id,
   message: message != null ? message() : this.message,
   tag: tag != null ? tag() : this.tag,

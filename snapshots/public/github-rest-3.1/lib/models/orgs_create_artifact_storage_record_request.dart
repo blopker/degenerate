@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('digest') && json['digest'] is String &&
       json.containsKey('registry_url') && json['registry_url'] is String; } 
-OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, String Function()? version, Uri Function()? artifactUrl, Uri Function()? path, Uri? registryUrl, String Function()? repository, OrgsCreateArtifactStorageRecordRequestStatus Function()? status, String Function()? githubRepository, }) { return OrgsCreateArtifactStorageRecordRequest(
+OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, String? Function()? version, Uri? Function()? artifactUrl, Uri? Function()? path, Uri? registryUrl, String? Function()? repository, OrgsCreateArtifactStorageRecordRequestStatus Function()? status, String? Function()? githubRepository, }) { return OrgsCreateArtifactStorageRecordRequest(
   name: name ?? this.name,
   digest: digest ?? this.digest,
   version: version != null ? version() : this.version,

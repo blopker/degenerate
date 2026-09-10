@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-DeleteIpProfileResponseResult copyWith({String Function()? id}) { return DeleteIpProfileResponseResult(
+DeleteIpProfileResponseResult copyWith({String? Function()? id}) { return DeleteIpProfileResponseResult(
   id: id != null ? id() : this.id,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

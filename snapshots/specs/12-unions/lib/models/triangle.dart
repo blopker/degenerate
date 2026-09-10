@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('base') && json['base'] is num &&
       json.containsKey('height') && json['height'] is num; } 
-Triangle copyWith({String? type, double? base, double? height, List<double> Function()? angles, }) { return Triangle(
+Triangle copyWith({String? type, double? base, double? height, List<double>? Function()? angles, }) { return Triangle(
   type: type ?? this.type,
   base: base ?? this.base,
   height: height ?? this.height,

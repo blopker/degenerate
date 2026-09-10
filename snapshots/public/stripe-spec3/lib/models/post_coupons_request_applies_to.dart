@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'products': ?products,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'products'}.contains(key)); } 
-PostCouponsRequestAppliesTo copyWith({List<String> Function()? products}) { return PostCouponsRequestAppliesTo(
+PostCouponsRequestAppliesTo copyWith({List<String>? Function()? products}) { return PostCouponsRequestAppliesTo(
   products: products != null ? products() : this.products,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

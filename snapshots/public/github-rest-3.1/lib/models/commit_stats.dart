@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'total': ?total,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additions', 'deletions', 'total'}.contains(key)); } 
-CommitStats copyWith({int Function()? additions, int Function()? deletions, int Function()? total, }) { return CommitStats(
+CommitStats copyWith({int? Function()? additions, int? Function()? deletions, int? Function()? total, }) { return CommitStats(
   additions: additions != null ? additions() : this.additions,
   deletions: deletions != null ? deletions() : this.deletions,
   total: total != null ? total() : this.total,

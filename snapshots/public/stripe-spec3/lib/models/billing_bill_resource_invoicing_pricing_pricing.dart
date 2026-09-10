@@ -23,12 +23,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingBillResourceInvoicingPricingPricingType($value)'; } 
  }
 /// 
-@immutable final class BillingBillResourceInvoicingPricingPricing {const BillingBillResourceInvoicingPricingPricing({required this.type, this.priceDetails, this.unitAmountDecimal, });
+@immutable final class BillingBillResourceInvoicingPricingPricing {const BillingBillResourceInvoicingPricingPricing({required this.type, this.priceDetails, this.unitAmountDecimal = const Omittable.absent(), });
 
 factory BillingBillResourceInvoicingPricingPricing.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingPricingPricing(
   priceDetails: json['price_details'] != null ? BillingBillResourceInvoicingPricingPricingPriceDetails.fromJson(json['price_details'] as Map<String, dynamic>) : null,
   type: BillingBillResourceInvoicingPricingPricingType.fromJson(json['type'] as String),
-  unitAmountDecimal: json['unit_amount_decimal'] as String?,
+  unitAmountDecimal: json.containsKey('unit_amount_decimal') ? Omittable(json['unit_amount_decimal'] as String?) : const Omittable.absent(),
 ); }
 
 final BillingBillResourceInvoicingPricingPricingPriceDetails? priceDetails;
@@ -37,18 +37,18 @@ final BillingBillResourceInvoicingPricingPricingPriceDetails? priceDetails;
 final BillingBillResourceInvoicingPricingPricingType type;
 
 /// The unit amount (in the `currency` specified) of the item which contains a decimal value with at most 12 decimal places.
-final String? unitAmountDecimal;
+final Omittable<String?> unitAmountDecimal;
 
 Map<String, dynamic> toJson() { return {
   if (priceDetails != null) 'price_details': priceDetails?.toJson(),
   'type': type.toJson(),
-  'unit_amount_decimal': ?unitAmountDecimal,
+  if (unitAmountDecimal.isPresent) 'unit_amount_decimal': unitAmountDecimal.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-BillingBillResourceInvoicingPricingPricing copyWith({BillingBillResourceInvoicingPricingPricingPriceDetails Function()? priceDetails, BillingBillResourceInvoicingPricingPricingType? type, String? Function()? unitAmountDecimal, }) { return BillingBillResourceInvoicingPricingPricing(
+BillingBillResourceInvoicingPricingPricing copyWith({BillingBillResourceInvoicingPricingPricingPriceDetails? Function()? priceDetails, BillingBillResourceInvoicingPricingPricingType? type, Omittable<String?>? unitAmountDecimal, }) { return BillingBillResourceInvoicingPricingPricing(
   priceDetails: priceDetails != null ? priceDetails() : this.priceDetails,
   type: type ?? this.type,
-  unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
+  unitAmountDecimal: unitAmountDecimal ?? this.unitAmountDecimal,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is BillingBillResourceInvoicingPricingPricing &&

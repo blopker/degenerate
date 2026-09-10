@@ -117,7 +117,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Errors copyWith({String Function()? adviceCode, String Function()? charge, String Function()? code, String Function()? declineCode, String Function()? docUrl, String Function()? message, String Function()? networkAdviceCode, String Function()? networkDeclineCode, String Function()? param, PaymentIntent Function()? paymentIntent, PaymentMethod Function()? paymentMethod, String Function()? paymentMethodType, String Function()? requestLogUrl, SetupIntent Function()? setupIntent, ErrorsSource Function()? source, ErrorsType? type, }) { return Errors(
+Errors copyWith({String? Function()? adviceCode, String? Function()? charge, String? Function()? code, String? Function()? declineCode, String? Function()? docUrl, String? Function()? message, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, String? Function()? param, PaymentIntent? Function()? paymentIntent, PaymentMethod? Function()? paymentMethod, String? Function()? paymentMethodType, String? Function()? requestLogUrl, SetupIntent? Function()? setupIntent, ErrorsSource? Function()? source, ErrorsType? type, }) { return Errors(
   adviceCode: adviceCode != null ? adviceCode() : this.adviceCode,
   charge: charge != null ? charge() : this.charge,
   code: code != null ? code() : this.code,

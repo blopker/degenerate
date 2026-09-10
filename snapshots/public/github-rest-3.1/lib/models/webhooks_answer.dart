@@ -97,11 +97,11 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl,
   'id': id,
   'node_id': nodeId,
-  'parent_id': ?parentId,
+  'parent_id': parentId,
   if (reactions != null) 'reactions': reactions?.toJson(),
   'repository_url': repositoryUrl,
   'updated_at': updatedAt.toIso8601String(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
       json.containsKey('body') && json['body'] is String &&
@@ -115,7 +115,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('repository_url') && json['repository_url'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user'); } 
-WebhooksAnswer copyWith({WebhooksAnswerAuthorAssociation? authorAssociation, String? body, int? childCommentCount, DateTime? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, dynamic Function()? parentId, WebhooksAnswerReactions Function()? reactions, String? repositoryUrl, DateTime? updatedAt, WebhooksAnswerUser? Function()? user, }) { return WebhooksAnswer(
+WebhooksAnswer copyWith({WebhooksAnswerAuthorAssociation? authorAssociation, String? body, int? childCommentCount, DateTime? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, dynamic Function()? parentId, WebhooksAnswerReactions? Function()? reactions, String? repositoryUrl, DateTime? updatedAt, WebhooksAnswerUser? Function()? user, }) { return WebhooksAnswer(
   authorAssociation: authorAssociation ?? this.authorAssociation,
   body: body ?? this.body,
   childCommentCount: childCommentCount ?? this.childCommentCount,

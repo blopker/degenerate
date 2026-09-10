@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('gateway') && json['gateway'] is String &&
       json.containsKey('secretRef') &&
       json.containsKey('system') && json['system'] is String; } 
-ScaleIoPersistentVolumeSource copyWith({String Function()? fsType, String? gateway, String Function()? protectionDomain, bool Function()? readOnly, SecretReference? secretRef, bool Function()? sslEnabled, String Function()? storageMode, String Function()? storagePool, String? system, String Function()? volumeName, }) { return ScaleIoPersistentVolumeSource(
+ScaleIoPersistentVolumeSource copyWith({String Function()? fsType, String? gateway, String? Function()? protectionDomain, bool? Function()? readOnly, SecretReference? secretRef, bool? Function()? sslEnabled, String Function()? storageMode, String? Function()? storagePool, String? system, String? Function()? volumeName, }) { return ScaleIoPersistentVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   gateway: gateway ?? this.gateway,
   protectionDomain: protectionDomain != null ? protectionDomain() : this.protectionDomain,

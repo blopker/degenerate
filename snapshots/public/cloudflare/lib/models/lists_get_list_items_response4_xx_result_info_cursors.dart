@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'before': ?before,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after', 'before'}.contains(key)); } 
-ListsGetListItemsResponse4XxResultInfoCursors copyWith({String Function()? after, String Function()? before, }) { return ListsGetListItemsResponse4XxResultInfoCursors(
+ListsGetListItemsResponse4XxResultInfoCursors copyWith({String? Function()? after, String? Function()? before, }) { return ListsGetListItemsResponse4XxResultInfoCursors(
   after: after != null ? after() : this.after,
   before: before != null ? before() : this.before,
 ); } 

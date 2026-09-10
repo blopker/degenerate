@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_messages2.dart';@immutable final class AccessDeleteAuthenticatorResponse {const AccessDeleteAuthenticatorResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_messages2.dart';@immutable final class AccessDeleteAuthenticatorResponse {const AccessDeleteAuthenticatorResponse({required this.errors, required this.messages, required this.success, this.result = const Omittable.absent(), });
 
 factory AccessDeleteAuthenticatorResponse.fromJson(Map<String, dynamic> json) { return AccessDeleteAuthenticatorResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] as Map<String, dynamic>?,
+  result: json.containsKey('result') ? Omittable(json['result'] as Map<String, dynamic>?) : const Omittable.absent(),
 ); }
 
 final List<AccessMessages2> errors;
@@ -16,22 +16,22 @@ final List<AccessMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final Map<String,dynamic>? result;
+final Omittable<Map<String,dynamic>?> result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  'result': ?result,
+  if (result.isPresent) 'result': result.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-AccessDeleteAuthenticatorResponse copyWith({List<AccessMessages2>? errors, List<AccessMessages2>? messages, bool? success, Map<String, dynamic>? Function()? result, }) { return AccessDeleteAuthenticatorResponse(
+AccessDeleteAuthenticatorResponse copyWith({List<AccessMessages2>? errors, List<AccessMessages2>? messages, bool? success, Omittable<Map<String,dynamic>?>? result, }) { return AccessDeleteAuthenticatorResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-  result: result != null ? result() : this.result,
+  result: result ?? this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccessDeleteAuthenticatorResponse &&

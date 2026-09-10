@@ -54,12 +54,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CheckoutPaypalPaymentMethodOptionsSetupFutureUsage($value)'; } 
  }
 /// 
-@immutable final class CheckoutPaypalPaymentMethodOptions {const CheckoutPaypalPaymentMethodOptions({this.captureMethod, this.preferredLocale, this.reference, this.setupFutureUsage, });
+@immutable final class CheckoutPaypalPaymentMethodOptions {const CheckoutPaypalPaymentMethodOptions({this.captureMethod, this.preferredLocale = const Omittable.absent(), this.reference = const Omittable.absent(), this.setupFutureUsage, });
 
 factory CheckoutPaypalPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutPaypalPaymentMethodOptions(
   captureMethod: json['capture_method'] != null ? CheckoutPaypalPaymentMethodOptionsCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  preferredLocale: json['preferred_locale'] as String?,
-  reference: json['reference'] as String?,
+  preferredLocale: json.containsKey('preferred_locale') ? Omittable(json['preferred_locale'] as String?) : const Omittable.absent(),
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? CheckoutPaypalPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
@@ -67,10 +67,10 @@ factory CheckoutPaypalPaymentMethodOptions.fromJson(Map<String, dynamic> json) {
 final CheckoutPaypalPaymentMethodOptionsCaptureMethod? captureMethod;
 
 /// Preferred locale of the PayPal checkout page that the customer is redirected to.
-final String? preferredLocale;
+final Omittable<String?> preferredLocale;
 
 /// A reference of the PayPal transaction visible to customer which is mapped to PayPal's invoice ID. This must be a globally unique ID if you have configured in your PayPal settings to block multiple payments per invoice ID.
-final String? reference;
+final Omittable<String?> reference;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -83,15 +83,15 @@ final CheckoutPaypalPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
-  'preferred_locale': ?preferredLocale,
-  'reference': ?reference,
+  if (preferredLocale.isPresent) 'preferred_locale': preferredLocale.value,
+  if (reference.isPresent) 'reference': reference.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'reference', 'setup_future_usage'}.contains(key)); } 
-CheckoutPaypalPaymentMethodOptions copyWith({CheckoutPaypalPaymentMethodOptionsCaptureMethod Function()? captureMethod, String? Function()? preferredLocale, String? Function()? reference, CheckoutPaypalPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return CheckoutPaypalPaymentMethodOptions(
+CheckoutPaypalPaymentMethodOptions copyWith({CheckoutPaypalPaymentMethodOptionsCaptureMethod? Function()? captureMethod, Omittable<String?>? preferredLocale, Omittable<String?>? reference, CheckoutPaypalPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return CheckoutPaypalPaymentMethodOptions(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
-  preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
-  reference: reference != null ? reference() : this.reference,
+  preferredLocale: preferredLocale ?? this.preferredLocale,
+  reference: reference ?? this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -131,7 +131,7 @@ Map<String, dynamic> toJson() { return {
   'username': ?username,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RealtimekitStorageConfig copyWith({String Function()? accessKey, RealtimekitStorageConfigAuthMethod Function()? authMethod, String Function()? bucket, String Function()? host, String Function()? password, String Function()? path, double Function()? port, String Function()? privateKey, String Function()? region, String Function()? secret, RealtimekitStorageConfigType? type, String Function()? username, }) { return RealtimekitStorageConfig(
+RealtimekitStorageConfig copyWith({String? Function()? accessKey, RealtimekitStorageConfigAuthMethod? Function()? authMethod, String? Function()? bucket, String? Function()? host, String? Function()? password, String? Function()? path, double? Function()? port, String? Function()? privateKey, String? Function()? region, String? Function()? secret, RealtimekitStorageConfigType? type, String? Function()? username, }) { return RealtimekitStorageConfig(
   accessKey: accessKey != null ? accessKey() : this.accessKey,
   authMethod: authMethod != null ? authMethod() : this.authMethod,
   bucket: bucket != null ? bucket() : this.bucket,

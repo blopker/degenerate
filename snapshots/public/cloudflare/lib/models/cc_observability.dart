@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (logs != null) 'logs': logs?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'logs'}.contains(key)); } 
-CcObservability copyWith({CcObservabilityLogs Function()? logs}) { return CcObservability(
+CcObservability copyWith({CcObservabilityLogs? Function()? logs}) { return CcObservability(
   logs: logs != null ? logs() : this.logs,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

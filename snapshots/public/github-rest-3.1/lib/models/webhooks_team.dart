@@ -77,17 +77,17 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhooksTeamType($value)'; } 
  }
 /// Groups of organization members that gives permissions on specified repositories.
-@immutable final class WebhooksTeam {const WebhooksTeam({required this.id, required this.name, this.deleted, this.description, this.htmlUrl, this.membersUrl, this.nodeId, this.parent, this.permission, this.privacy, this.notificationSetting, this.repositoriesUrl, this.slug, this.url, this.type, this.organizationId, this.enterpriseId, });
+@immutable final class WebhooksTeam {const WebhooksTeam({required this.id, required this.name, this.deleted, this.description = const Omittable.absent(), this.htmlUrl, this.membersUrl, this.nodeId, this.parent = const Omittable.absent(), this.permission, this.privacy, this.notificationSetting, this.repositoriesUrl, this.slug, this.url, this.type, this.organizationId, this.enterpriseId, });
 
 factory WebhooksTeam.fromJson(Map<String, dynamic> json) { return WebhooksTeam(
   deleted: json['deleted'] as bool?,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
   id: (json['id'] as num).toInt(),
   membersUrl: json['members_url'] as String?,
   name: json['name'] as String,
   nodeId: json['node_id'] as String?,
-  parent: json['parent'] != null ? WebhooksTeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json.containsKey('parent') ? Omittable(json['parent'] != null ? WebhooksTeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   permission: json['permission'] as String?,
   privacy: json['privacy'] != null ? WebhooksTeamPrivacy.fromJson(json['privacy'] as String) : null,
   notificationSetting: json['notification_setting'] != null ? WebhooksTeamNotificationSetting.fromJson(json['notification_setting'] as String) : null,
@@ -102,7 +102,7 @@ factory WebhooksTeam.fromJson(Map<String, dynamic> json) { return WebhooksTeam(
 final bool? deleted;
 
 /// Description of the team
-final String? description;
+final Omittable<String?> description;
 
 final Uri? htmlUrl;
 
@@ -116,7 +116,7 @@ final String name;
 
 final String? nodeId;
 
-final WebhooksTeamParent? parent;
+final Omittable<WebhooksTeamParent?> parent;
 
 /// Permission that the team will have for its repositories
 final String? permission;
@@ -143,13 +143,13 @@ final int? enterpriseId;
 
 Map<String, dynamic> toJson() { return {
   'deleted': ?deleted,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
   'id': id,
   'members_url': ?membersUrl,
   'name': name,
   'node_id': ?nodeId,
-  if (parent != null) 'parent': parent?.toJson(),
+  if (parent.isPresent) 'parent': parent.value?.toJson(),
   'permission': ?permission,
   if (privacy != null) 'privacy': privacy?.toJson(),
   if (notificationSetting != null) 'notification_setting': notificationSetting?.toJson(),
@@ -162,15 +162,15 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-WebhooksTeam copyWith({bool Function()? deleted, String? Function()? description, Uri Function()? htmlUrl, int? id, String Function()? membersUrl, String? name, String Function()? nodeId, WebhooksTeamParent? Function()? parent, String Function()? permission, WebhooksTeamPrivacy Function()? privacy, WebhooksTeamNotificationSetting Function()? notificationSetting, Uri Function()? repositoriesUrl, String Function()? slug, Uri Function()? url, WebhooksTeamType Function()? type, int Function()? organizationId, int Function()? enterpriseId, }) { return WebhooksTeam(
+WebhooksTeam copyWith({bool? Function()? deleted, Omittable<String?>? description, Uri? Function()? htmlUrl, int? id, String? Function()? membersUrl, String? name, String? Function()? nodeId, Omittable<WebhooksTeamParent?>? parent, String? Function()? permission, WebhooksTeamPrivacy? Function()? privacy, WebhooksTeamNotificationSetting? Function()? notificationSetting, Uri? Function()? repositoriesUrl, String? Function()? slug, Uri? Function()? url, WebhooksTeamType? Function()? type, int? Function()? organizationId, int? Function()? enterpriseId, }) { return WebhooksTeam(
   deleted: deleted != null ? deleted() : this.deleted,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   id: id ?? this.id,
   membersUrl: membersUrl != null ? membersUrl() : this.membersUrl,
   name: name ?? this.name,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
-  parent: parent != null ? parent() : this.parent,
+  parent: parent ?? this.parent,
   permission: permission != null ? permission() : this.permission,
   privacy: privacy != null ? privacy() : this.privacy,
   notificationSetting: notificationSetting != null ? notificationSetting() : this.notificationSetting,

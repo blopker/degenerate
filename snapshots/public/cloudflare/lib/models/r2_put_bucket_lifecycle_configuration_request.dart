@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rules'}.contains(key)); } 
-R2PutBucketLifecycleConfigurationRequest copyWith({List<R2LifecycleRule> Function()? rules}) { return R2PutBucketLifecycleConfigurationRequest(
+R2PutBucketLifecycleConfigurationRequest copyWith({List<R2LifecycleRule>? Function()? rules}) { return R2PutBucketLifecycleConfigurationRequest(
   rules: rules != null ? rules() : this.rules,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

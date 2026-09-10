@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesHostHeaderOverride copyWith({ZonesHostHeaderOverrideId Function()? id, String Function()? value, }) { return ZonesHostHeaderOverride(
+ZonesHostHeaderOverride copyWith({ZonesHostHeaderOverrideId? Function()? id, String? Function()? value, }) { return ZonesHostHeaderOverride(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

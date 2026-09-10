@@ -91,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('apexD
       json.containsKey('tlsValidDays') && json['tlsValidDays'] is num &&
       json.containsKey('tlsValidFrom') && json['tlsValidFrom'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-UrlscannerGetScanResponse2Page copyWith({String? apexDomain, String? asn, String? asnname, String? city, String? country, String? domain, String? ip, String? mimeType, UrlscannerGetScanResponse2PageScreenshot Function()? screenshot, String? server, String? status, String? title, double? tlsAgeDays, String? tlsIssuer, double? tlsValidDays, String? tlsValidFrom, String? url, }) { return UrlscannerGetScanResponse2Page(
+UrlscannerGetScanResponse2Page copyWith({String? apexDomain, String? asn, String? asnname, String? city, String? country, String? domain, String? ip, String? mimeType, UrlscannerGetScanResponse2PageScreenshot? Function()? screenshot, String? server, String? status, String? title, double? tlsAgeDays, String? tlsIssuer, double? tlsValidDays, String? tlsValidFrom, String? url, }) { return UrlscannerGetScanResponse2Page(
   apexDomain: apexDomain ?? this.apexDomain,
   asn: asn ?? this.asn,
   asnname: asnname ?? this.asnname,

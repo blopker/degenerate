@@ -15,11 +15,11 @@ final Uri? nextAnalysisUrl;
 final Uri? confirmDeleteUrl;
 
 Map<String, dynamic> toJson() { return {
-  if (nextAnalysisUrl != null) 'next_analysis_url': nextAnalysisUrl?.toString(),
-  if (confirmDeleteUrl != null) 'confirm_delete_url': confirmDeleteUrl?.toString(),
+  'next_analysis_url': nextAnalysisUrl?.toString(),
+  'confirm_delete_url': confirmDeleteUrl?.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('next_analysis_url') && json['next_analysis_url'] is String &&
-      json.containsKey('confirm_delete_url') && json['confirm_delete_url'] is String; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('next_analysis_url') && (json['next_analysis_url'] == null || json['next_analysis_url'] is String) &&
+      json.containsKey('confirm_delete_url') && (json['confirm_delete_url'] == null || json['confirm_delete_url'] is String); } 
 CodeScanningAnalysisDeletion copyWith({Uri? Function()? nextAnalysisUrl, Uri? Function()? confirmDeleteUrl, }) { return CodeScanningAnalysisDeletion(
   nextAnalysisUrl: nextAnalysisUrl != null ? nextAnalysisUrl() : this.nextAnalysisUrl,
   confirmDeleteUrl: confirmDeleteUrl != null ? confirmDeleteUrl() : this.confirmDeleteUrl,

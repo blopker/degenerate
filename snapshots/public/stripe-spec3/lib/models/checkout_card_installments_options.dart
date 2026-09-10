@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
-CheckoutCardInstallmentsOptions copyWith({bool Function()? enabled}) { return CheckoutCardInstallmentsOptions(
+CheckoutCardInstallmentsOptions copyWith({bool? Function()? enabled}) { return CheckoutCardInstallmentsOptions(
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

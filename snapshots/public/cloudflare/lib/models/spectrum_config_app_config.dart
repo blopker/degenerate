@@ -175,7 +175,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('dns') &&
       json.containsKey('protocol') &&
       json.containsKey('traffic_type'); } 
-SpectrumConfigAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumConfigIdentifier? id, SpectrumConfigTimestamp? modifiedOn, SpectrumConfigArgoSmartRouting Function()? argoSmartRouting, SpectrumConfigDns? dns, SpectrumConfigEdgeIps Function()? edgeIps, SpectrumConfigIpFirewall Function()? ipFirewall, List<String> Function()? originDirect, SpectrumConfigOriginDns Function()? originDns, SpectrumConfigOriginPort Function()? originPort, SpectrumConfigProtocol? protocol, SpectrumConfigProxyProtocol Function()? proxyProtocol, SpectrumConfigTls Function()? tls, SpectrumConfigTrafficType? trafficType, }) { return SpectrumConfigAppConfig(
+SpectrumConfigAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumConfigIdentifier? id, SpectrumConfigTimestamp? modifiedOn, SpectrumConfigArgoSmartRouting? Function()? argoSmartRouting, SpectrumConfigDns? dns, SpectrumConfigEdgeIps? Function()? edgeIps, SpectrumConfigIpFirewall? Function()? ipFirewall, List<String>? Function()? originDirect, SpectrumConfigOriginDns? Function()? originDns, SpectrumConfigOriginPort? Function()? originPort, SpectrumConfigProtocol? protocol, SpectrumConfigProxyProtocol? Function()? proxyProtocol, SpectrumConfigTls? Function()? tls, SpectrumConfigTrafficType? trafficType, }) { return SpectrumConfigAppConfig(
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,

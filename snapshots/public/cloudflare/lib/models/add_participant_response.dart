@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-AddParticipantResponse copyWith({AddParticipantResponseData Function()? data, bool? success, }) { return AddParticipantResponse(
+AddParticipantResponse copyWith({AddParticipantResponseData? Function()? data, bool? success, }) { return AddParticipantResponse(
   data: data != null ? data() : this.data,
   success: success ?? this.success,
 ); } 

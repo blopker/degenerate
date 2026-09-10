@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   'vector': vector,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector'); } 
-Request copyWith({Map<String, dynamic> Function()? filter, RequestReturnMetadata Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return Request(
+Request copyWith({Map<String, dynamic>? Function()? filter, RequestReturnMetadata Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return Request(
   filter: filter != null ? filter() : this.filter,
   returnMetadata: returnMetadata != null ? returnMetadata() : this.returnMetadata,
   returnValues: returnValues != null ? returnValues() : this.returnValues,

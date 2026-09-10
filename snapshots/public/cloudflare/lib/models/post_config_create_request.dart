@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'ports': ?ports,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ips'); } 
-PostConfigCreateRequest copyWith({Frequency2 Function()? frequency, List<String>? ips, List<String> Function()? ports, }) { return PostConfigCreateRequest(
+PostConfigCreateRequest copyWith({Frequency2? Function()? frequency, List<String>? ips, List<String>? Function()? ports, }) { return PostConfigCreateRequest(
   frequency: frequency != null ? frequency() : this.frequency,
   ips: ips ?? this.ips,
   ports: ports != null ? ports() : this.ports,

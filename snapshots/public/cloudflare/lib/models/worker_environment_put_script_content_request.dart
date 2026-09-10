@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 
-WorkerEnvironmentPutScriptContentRequest copyWith({List<Uint8List> Function()? files, WorkerEnvironmentPutScriptContentRequestMetadata? metadata, }) { return WorkerEnvironmentPutScriptContentRequest(
+WorkerEnvironmentPutScriptContentRequest copyWith({List<Uint8List>? Function()? files, WorkerEnvironmentPutScriptContentRequestMetadata? metadata, }) { return WorkerEnvironmentPutScriptContentRequest(
   files: files != null ? files() : this.files,
   metadata: metadata ?? this.metadata,
 ); } 

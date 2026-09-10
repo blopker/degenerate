@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'ip': ip,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip') && json['ip'] is String; } 
-HostAlias copyWith({List<String> Function()? hostnames, String? ip, }) { return HostAlias(
+HostAlias copyWith({List<String>? Function()? hostnames, String? ip, }) { return HostAlias(
   hostnames: hostnames != null ? hostnames() : this.hostnames,
   ip: ip ?? this.ip,
 ); } 

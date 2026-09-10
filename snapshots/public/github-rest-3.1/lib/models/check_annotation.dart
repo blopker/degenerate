@@ -40,23 +40,23 @@ Map<String, dynamic> toJson() { return {
   'path': path,
   'start_line': startLine,
   'end_line': endLine,
-  'start_column': ?startColumn,
-  'end_column': ?endColumn,
-  'annotation_level': ?annotationLevel,
-  'title': ?title,
-  'message': ?message,
-  'raw_details': ?rawDetails,
+  'start_column': startColumn,
+  'end_column': endColumn,
+  'annotation_level': annotationLevel,
+  'title': title,
+  'message': message,
+  'raw_details': rawDetails,
   'blob_href': blobHref,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
       json.containsKey('start_line') && json['start_line'] is num &&
       json.containsKey('end_line') && json['end_line'] is num &&
-      json.containsKey('start_column') && json['start_column'] is num &&
-      json.containsKey('end_column') && json['end_column'] is num &&
-      json.containsKey('annotation_level') && json['annotation_level'] is String &&
-      json.containsKey('title') && json['title'] is String &&
-      json.containsKey('message') && json['message'] is String &&
-      json.containsKey('raw_details') && json['raw_details'] is String &&
+      json.containsKey('start_column') && (json['start_column'] == null || json['start_column'] is num) &&
+      json.containsKey('end_column') && (json['end_column'] == null || json['end_column'] is num) &&
+      json.containsKey('annotation_level') && (json['annotation_level'] == null || json['annotation_level'] is String) &&
+      json.containsKey('title') && (json['title'] == null || json['title'] is String) &&
+      json.containsKey('message') && (json['message'] == null || json['message'] is String) &&
+      json.containsKey('raw_details') && (json['raw_details'] == null || json['raw_details'] is String) &&
       json.containsKey('blob_href') && json['blob_href'] is String; } 
 CheckAnnotation copyWith({String? path, int? startLine, int? endLine, int? Function()? startColumn, int? Function()? endColumn, String? Function()? annotationLevel, String? Function()? title, String? Function()? message, String? Function()? rawDetails, String? blobHref, }) { return CheckAnnotation(
   path: path ?? this.path,

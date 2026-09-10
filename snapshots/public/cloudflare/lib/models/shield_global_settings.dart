@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   if (validationOverrideMitigationAction != null) 'validation_override_mitigation_action': validationOverrideMitigationAction?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('validation_default_mitigation_action'); } 
-ShieldGlobalSettings copyWith({ShieldGlobalSettingsValidationDefaultMitigationAction? validationDefaultMitigationAction, ShieldGlobalSettingsValidationOverrideMitigationAction Function()? validationOverrideMitigationAction, }) { return ShieldGlobalSettings(
+ShieldGlobalSettings copyWith({ShieldGlobalSettingsValidationDefaultMitigationAction? validationDefaultMitigationAction, ShieldGlobalSettingsValidationOverrideMitigationAction? Function()? validationOverrideMitigationAction, }) { return ShieldGlobalSettings(
   validationDefaultMitigationAction: validationDefaultMitigationAction ?? this.validationDefaultMitigationAction,
   validationOverrideMitigationAction: validationOverrideMitigationAction != null ? validationOverrideMitigationAction() : this.validationOverrideMitigationAction,
 ); } 

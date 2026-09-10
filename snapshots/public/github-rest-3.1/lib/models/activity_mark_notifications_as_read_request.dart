@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'read': ?read,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'last_read_at', 'read'}.contains(key)); } 
-ActivityMarkNotificationsAsReadRequest copyWith({DateTime Function()? lastReadAt, bool Function()? read, }) { return ActivityMarkNotificationsAsReadRequest(
+ActivityMarkNotificationsAsReadRequest copyWith({DateTime? Function()? lastReadAt, bool? Function()? read, }) { return ActivityMarkNotificationsAsReadRequest(
   lastReadAt: lastReadAt != null ? lastReadAt() : this.lastReadAt,
   read: read != null ? read() : this.read,
 ); } 

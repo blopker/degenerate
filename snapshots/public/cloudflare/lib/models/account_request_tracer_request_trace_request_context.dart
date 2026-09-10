@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'threat_score': ?threatScore,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bot_score', 'geoloc', 'skip_challenge', 'threat_score'}.contains(key)); } 
-AccountRequestTracerRequestTraceRequestContext copyWith({int Function()? botScore, AccountRequestTracerRequestTraceRequestContextGeoloc Function()? geoloc, bool Function()? skipChallenge, int Function()? threatScore, }) { return AccountRequestTracerRequestTraceRequestContext(
+AccountRequestTracerRequestTraceRequestContext copyWith({int? Function()? botScore, AccountRequestTracerRequestTraceRequestContextGeoloc? Function()? geoloc, bool? Function()? skipChallenge, int? Function()? threatScore, }) { return AccountRequestTracerRequestTraceRequestContext(
   botScore: botScore != null ? botScore() : this.botScore,
   geoloc: geoloc != null ? geoloc() : this.geoloc,
   skipChallenge: skipChallenge != null ? skipChallenge() : this.skipChallenge,

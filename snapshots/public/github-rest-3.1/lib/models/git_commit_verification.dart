@@ -23,15 +23,15 @@ final String? verifiedAt;
 Map<String, dynamic> toJson() { return {
   'verified': verified,
   'reason': reason,
-  'signature': ?signature,
-  'payload': ?payload,
-  'verified_at': ?verifiedAt,
+  'signature': signature,
+  'payload': payload,
+  'verified_at': verifiedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('verified') && json['verified'] is bool &&
       json.containsKey('reason') && json['reason'] is String &&
-      json.containsKey('signature') && json['signature'] is String &&
-      json.containsKey('payload') && json['payload'] is String &&
-      json.containsKey('verified_at') && json['verified_at'] is String; } 
+      json.containsKey('signature') && (json['signature'] == null || json['signature'] is String) &&
+      json.containsKey('payload') && (json['payload'] == null || json['payload'] is String) &&
+      json.containsKey('verified_at') && (json['verified_at'] == null || json['verified_at'] is String); } 
 GitCommitVerification copyWith({bool? verified, String? reason, String? Function()? signature, String? Function()? payload, String? Function()? verifiedAt, }) { return GitCommitVerification(
   verified: verified ?? this.verified,
   reason: reason ?? this.reason,

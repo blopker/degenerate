@@ -61,10 +61,10 @@ bool get isUnknown { return !values.contains(this); }
 /// [VerificationSession](https://docs.stripe.com/api/identity/verification_sessions) API.
 /// 
 /// Related guide: [Accessing verification results](https://docs.stripe.com/identity/verification-sessions#results).
-@immutable final class IdentityVerificationReport {const IdentityVerificationReport({required this.created, required this.id, required this.livemode, required this.object, required this.type, this.clientReferenceId, this.document, this.email, this.idNumber, this.options, this.phone, this.selfie, this.verificationFlow, this.verificationSession, });
+@immutable final class IdentityVerificationReport {const IdentityVerificationReport({required this.created, required this.id, required this.livemode, required this.object, required this.type, this.clientReferenceId = const Omittable.absent(), this.document, this.email, this.idNumber, this.options, this.phone, this.selfie, this.verificationFlow, this.verificationSession = const Omittable.absent(), });
 
 factory IdentityVerificationReport.fromJson(Map<String, dynamic> json) { return IdentityVerificationReport(
-  clientReferenceId: json['client_reference_id'] as String?,
+  clientReferenceId: json.containsKey('client_reference_id') ? Omittable(json['client_reference_id'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   document: json['document'] != null ? GelatoDocumentReport.fromJson(json['document'] as Map<String, dynamic>) : null,
   email: json['email'] != null ? GelatoEmailReport.fromJson(json['email'] as Map<String, dynamic>) : null,
@@ -77,11 +77,11 @@ factory IdentityVerificationReport.fromJson(Map<String, dynamic> json) { return 
   selfie: json['selfie'] != null ? GelatoSelfieReport.fromJson(json['selfie'] as Map<String, dynamic>) : null,
   type: IdentityVerificationReportType.fromJson(json['type'] as String),
   verificationFlow: json['verification_flow'] as String?,
-  verificationSession: json['verification_session'] as String?,
+  verificationSession: json.containsKey('verification_session') ? Omittable(json['verification_session'] as String?) : const Omittable.absent(),
 ); }
 
 /// A string to reference this user. This can be a customer ID, a session ID, or similar, and can be used to reconcile this verification with your internal systems.
-final String? clientReferenceId;
+final Omittable<String?> clientReferenceId;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -114,10 +114,10 @@ final IdentityVerificationReportType type;
 final String? verificationFlow;
 
 /// ID of the VerificationSession that created this report.
-final String? verificationSession;
+final Omittable<String?> verificationSession;
 
 Map<String, dynamic> toJson() { return {
-  'client_reference_id': ?clientReferenceId,
+  if (clientReferenceId.isPresent) 'client_reference_id': clientReferenceId.value,
   'created': created,
   if (document != null) 'document': document?.toJson(),
   if (email != null) 'email': email?.toJson(),
@@ -130,15 +130,15 @@ Map<String, dynamic> toJson() { return {
   if (selfie != null) 'selfie': selfie?.toJson(),
   'type': type.toJson(),
   'verification_flow': ?verificationFlow,
-  'verification_session': ?verificationSession,
+  if (verificationSession.isPresent) 'verification_session': verificationSession.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-IdentityVerificationReport copyWith({String? Function()? clientReferenceId, int? created, GelatoDocumentReport Function()? document, GelatoEmailReport Function()? email, String? id, GelatoIdNumberReport Function()? idNumber, bool? livemode, IdentityVerificationReportObject? object, GelatoVerificationReportOptions Function()? options, GelatoPhoneReport Function()? phone, GelatoSelfieReport Function()? selfie, IdentityVerificationReportType? type, String Function()? verificationFlow, String? Function()? verificationSession, }) { return IdentityVerificationReport(
-  clientReferenceId: clientReferenceId != null ? clientReferenceId() : this.clientReferenceId,
+IdentityVerificationReport copyWith({Omittable<String?>? clientReferenceId, int? created, GelatoDocumentReport? Function()? document, GelatoEmailReport? Function()? email, String? id, GelatoIdNumberReport? Function()? idNumber, bool? livemode, IdentityVerificationReportObject? object, GelatoVerificationReportOptions? Function()? options, GelatoPhoneReport? Function()? phone, GelatoSelfieReport? Function()? selfie, IdentityVerificationReportType? type, String? Function()? verificationFlow, Omittable<String?>? verificationSession, }) { return IdentityVerificationReport(
+  clientReferenceId: clientReferenceId ?? this.clientReferenceId,
   created: created ?? this.created,
   document: document != null ? document() : this.document,
   email: email != null ? email() : this.email,
@@ -151,7 +151,7 @@ IdentityVerificationReport copyWith({String? Function()? clientReferenceId, int?
   selfie: selfie != null ? selfie() : this.selfie,
   type: type ?? this.type,
   verificationFlow: verificationFlow != null ? verificationFlow() : this.verificationFlow,
-  verificationSession: verificationSession != null ? verificationSession() : this.verificationSession,
+  verificationSession: verificationSession ?? this.verificationSession,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IdentityVerificationReport &&

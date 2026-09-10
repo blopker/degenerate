@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand'}.contains(key)); } 
-PostQuotesQuoteCancelRequest copyWith({List<String> Function()? expand}) { return PostQuotesQuoteCancelRequest(
+PostQuotesQuoteCancelRequest copyWith({List<String>? Function()? expand}) { return PostQuotesQuoteCancelRequest(
   expand: expand != null ? expand() : this.expand,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

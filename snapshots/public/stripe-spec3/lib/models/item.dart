@@ -23,26 +23,26 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ItemObject($value)'; } 
  }
 /// A line item.
-@immutable final class Item {const Item({required this.amountDiscount, required this.amountSubtotal, required this.amountTax, required this.amountTotal, required this.currency, required this.id, required this.object, this.adjustableQuantity, this.description, this.discounts, this.metadata, this.price, this.quantity, this.taxes, });
+@immutable final class Item {const Item({required this.amountDiscount, required this.amountSubtotal, required this.amountTax, required this.amountTotal, required this.currency, required this.id, required this.object, this.adjustableQuantity = const Omittable.absent(), this.description = const Omittable.absent(), this.discounts, this.metadata = const Omittable.absent(), this.price = const Omittable.absent(), this.quantity = const Omittable.absent(), this.taxes, });
 
 factory Item.fromJson(Map<String, dynamic> json) { return Item(
-  adjustableQuantity: json['adjustable_quantity'] != null ? LineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
+  adjustableQuantity: json.containsKey('adjustable_quantity') ? Omittable(json['adjustable_quantity'] != null ? LineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   amountDiscount: (json['amount_discount'] as num).toInt(),
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
   currency: json['currency'] as String,
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   discounts: (json['discounts'] as List<dynamic>?)?.map((e) => LineItemsDiscountAmount.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] as String,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   object: ItemObject.fromJson(json['object'] as String),
-  price: json['price'] != null ? Price.fromJson(json['price'] as Map<String, dynamic>) : null,
-  quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
+  price: json.containsKey('price') ? Omittable(json['price'] != null ? Price.fromJson(json['price'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  quantity: json.containsKey('quantity') ? Omittable(json['quantity'] != null ? (json['quantity'] as num).toInt() : null) : const Omittable.absent(),
   taxes: (json['taxes'] as List<dynamic>?)?.map((e) => LineItemsTaxAmount.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final LineItemsAdjustableQuantity? adjustableQuantity;
+final Omittable<LineItemsAdjustableQuantity?> adjustableQuantity;
 
 /// Total discount amount applied. If no discounts were applied, defaults to 0.
 final int amountDiscount;
@@ -60,7 +60,7 @@ final int amountTotal;
 final String currency;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users. Defaults to product name.
-final String? description;
+final Omittable<String?> description;
 
 /// The discounts applied to the line item.
 final List<LineItemsDiscountAmount>? discounts;
@@ -69,34 +69,34 @@ final List<LineItemsDiscountAmount>? discounts;
 final String id;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final ItemObject object;
 
 /// The price used to generate the line item.
-final Price? price;
+final Omittable<Price?> price;
 
 /// The quantity of products being purchased.
-final int? quantity;
+final Omittable<int?> quantity;
 
 /// The taxes applied to the line item.
 final List<LineItemsTaxAmount>? taxes;
 
 Map<String, dynamic> toJson() { return {
-  if (adjustableQuantity != null) 'adjustable_quantity': adjustableQuantity?.toJson(),
+  if (adjustableQuantity.isPresent) 'adjustable_quantity': adjustableQuantity.value?.toJson(),
   'amount_discount': amountDiscount,
   'amount_subtotal': amountSubtotal,
   'amount_tax': amountTax,
   'amount_total': amountTotal,
   'currency': currency,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   if (discounts != null) 'discounts': discounts?.map((e) => e.toJson()).toList(),
   'id': id,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'object': object.toJson(),
-  if (price != null) 'price': price?.toJson(),
-  'quantity': ?quantity,
+  if (price.isPresent) 'price': price.value?.toJson(),
+  if (quantity.isPresent) 'quantity': quantity.value,
   if (taxes != null) 'taxes': taxes?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_discount') && json['amount_discount'] is num &&
@@ -106,20 +106,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-Item copyWith({LineItemsAdjustableQuantity? Function()? adjustableQuantity, int? amountDiscount, int? amountSubtotal, int? amountTax, int? amountTotal, String? currency, String? Function()? description, List<LineItemsDiscountAmount> Function()? discounts, String? id, Map<String, String>? Function()? metadata, ItemObject? object, Price? Function()? price, int? Function()? quantity, List<LineItemsTaxAmount> Function()? taxes, }) { return Item(
-  adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
+Item copyWith({Omittable<LineItemsAdjustableQuantity?>? adjustableQuantity, int? amountDiscount, int? amountSubtotal, int? amountTax, int? amountTotal, String? currency, Omittable<String?>? description, List<LineItemsDiscountAmount>? Function()? discounts, String? id, Omittable<Map<String,String>?>? metadata, ItemObject? object, Omittable<Price?>? price, Omittable<int?>? quantity, List<LineItemsTaxAmount>? Function()? taxes, }) { return Item(
+  adjustableQuantity: adjustableQuantity ?? this.adjustableQuantity,
   amountDiscount: amountDiscount ?? this.amountDiscount,
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTax: amountTax ?? this.amountTax,
   amountTotal: amountTotal ?? this.amountTotal,
   currency: currency ?? this.currency,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   discounts: discounts != null ? discounts() : this.discounts,
   id: id ?? this.id,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-  price: price != null ? price() : this.price,
-  quantity: quantity != null ? quantity() : this.quantity,
+  price: price ?? this.price,
+  quantity: quantity ?? this.quantity,
   taxes: taxes != null ? taxes() : this.taxes,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

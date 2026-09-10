@@ -92,7 +92,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentIntentPaymentMethodOptionsParam34BankTransfer copyWith({PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer Function()? euBankTransfer, List<PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes> Function()? requestedAddressTypes, PaymentIntentPaymentMethodOptionsParam34BankTransferType? type, }) { return PaymentIntentPaymentMethodOptionsParam34BankTransfer(
+PaymentIntentPaymentMethodOptionsParam34BankTransfer copyWith({PaymentIntentPaymentMethodOptionsParam34BankTransferEuBankTransfer? Function()? euBankTransfer, List<PaymentIntentPaymentMethodOptionsParam34BankTransferRequestedAddressTypes>? Function()? requestedAddressTypes, PaymentIntentPaymentMethodOptionsParam34BankTransferType? type, }) { return PaymentIntentPaymentMethodOptionsParam34BankTransfer(
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
   requestedAddressTypes: requestedAddressTypes != null ? requestedAddressTypes() : this.requestedAddressTypes,
   type: type ?? this.type,

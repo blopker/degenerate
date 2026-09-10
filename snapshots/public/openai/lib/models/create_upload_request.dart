@@ -81,7 +81,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('filen
       json.containsKey('purpose') &&
       json.containsKey('bytes') && json['bytes'] is num &&
       json.containsKey('mime_type') && json['mime_type'] is String; } 
-CreateUploadRequest copyWith({String? filename, CreateUploadRequestPurpose? purpose, int? bytes, String? mimeType, FileExpirationAfter Function()? expiresAfter, }) { return CreateUploadRequest(
+CreateUploadRequest copyWith({String? filename, CreateUploadRequestPurpose? purpose, int? bytes, String? mimeType, FileExpirationAfter? Function()? expiresAfter, }) { return CreateUploadRequest(
   filename: filename ?? this.filename,
   purpose: purpose ?? this.purpose,
   bytes: bytes ?? this.bytes,

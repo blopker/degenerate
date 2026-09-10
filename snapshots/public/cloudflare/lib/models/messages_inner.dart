@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-MessagesInner copyWith({double Function()? frequencyPenalty, List<MessagesInnerFunctions> Function()? functions, Map<String, dynamic> Function()? guidedJson, int Function()? maxTokens, List<MessagesInnerMessages>? messages, double Function()? presencePenalty, bool Function()? raw, double Function()? repetitionPenalty, MessagesInnerResponseFormat Function()? responseFormat, int Function()? seed, bool Function()? stream, double Function()? temperature, List<MessagesInnerTools> Function()? tools, int Function()? topK, double Function()? topP, }) { return MessagesInner(
+MessagesInner copyWith({double? Function()? frequencyPenalty, List<MessagesInnerFunctions>? Function()? functions, Map<String, dynamic>? Function()? guidedJson, int Function()? maxTokens, List<MessagesInnerMessages>? messages, double? Function()? presencePenalty, bool Function()? raw, double? Function()? repetitionPenalty, MessagesInnerResponseFormat? Function()? responseFormat, int? Function()? seed, bool Function()? stream, double Function()? temperature, List<MessagesInnerTools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) { return MessagesInner(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   functions: functions != null ? functions() : this.functions,
   guidedJson: guidedJson != null ? guidedJson() : this.guidedJson,

@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'revolut_pay_underlying_payment_method_funding_details.dart';/// 
-@immutable final class PaymentMethodDetailsRevolutPay {const PaymentMethodDetailsRevolutPay({this.funding, this.transactionId, });
+@immutable final class PaymentMethodDetailsRevolutPay {const PaymentMethodDetailsRevolutPay({this.funding, this.transactionId = const Omittable.absent(), });
 
 factory PaymentMethodDetailsRevolutPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsRevolutPay(
   funding: json['funding'] != null ? RevolutPayUnderlyingPaymentMethodFundingDetails.fromJson(json['funding'] as Map<String, dynamic>) : null,
-  transactionId: json['transaction_id'] as String?,
+  transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
 ); }
 
 final RevolutPayUnderlyingPaymentMethodFundingDetails? funding;
 
 /// The Revolut Pay transaction ID associated with this payment.
-final String? transactionId;
+final Omittable<String?> transactionId;
 
 Map<String, dynamic> toJson() { return {
   if (funding != null) 'funding': funding?.toJson(),
-  'transaction_id': ?transactionId,
+  if (transactionId.isPresent) 'transaction_id': transactionId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'funding', 'transaction_id'}.contains(key)); } 
-PaymentMethodDetailsRevolutPay copyWith({RevolutPayUnderlyingPaymentMethodFundingDetails Function()? funding, String? Function()? transactionId, }) { return PaymentMethodDetailsRevolutPay(
+PaymentMethodDetailsRevolutPay copyWith({RevolutPayUnderlyingPaymentMethodFundingDetails? Function()? funding, Omittable<String?>? transactionId, }) { return PaymentMethodDetailsRevolutPay(
   funding: funding != null ? funding() : this.funding,
-  transactionId: transactionId != null ? transactionId() : this.transactionId,
+  transactionId: transactionId ?? this.transactionId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodDetailsRevolutPay &&

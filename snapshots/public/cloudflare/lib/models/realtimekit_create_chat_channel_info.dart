@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (visibility != null) 'visibility': visibility?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_participant_ids', 'display_name', 'visibility'}.contains(key)); } 
-RealtimekitCreateChatChannelInfo copyWith({List<String> Function()? customParticipantIds, String Function()? displayName, RealtimekitCreateChatChannelInfoVisibility Function()? visibility, }) { return RealtimekitCreateChatChannelInfo(
+RealtimekitCreateChatChannelInfo copyWith({List<String>? Function()? customParticipantIds, String? Function()? displayName, RealtimekitCreateChatChannelInfoVisibility? Function()? visibility, }) { return RealtimekitCreateChatChannelInfo(
   customParticipantIds: customParticipantIds != null ? customParticipantIds() : this.customParticipantIds,
   displayName: displayName != null ? displayName() : this.displayName,
   visibility: visibility != null ? visibility() : this.visibility,

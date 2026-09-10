@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'events', 'name', 'url'}.contains(key)); } 
-RealtimekitPatchWebhookRequest copyWith({bool Function()? enabled, List<RealtimekitPatchWebhookRequestEvents> Function()? events, String Function()? name, Uri Function()? url, }) { return RealtimekitPatchWebhookRequest(
+RealtimekitPatchWebhookRequest copyWith({bool Function()? enabled, List<RealtimekitPatchWebhookRequestEvents>? Function()? events, String? Function()? name, Uri? Function()? url, }) { return RealtimekitPatchWebhookRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   events: events != null ? events() : this.events,
   name: name != null ? name() : this.name,

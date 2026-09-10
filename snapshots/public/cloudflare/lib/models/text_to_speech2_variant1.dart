@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'audio': ?audio,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audio'}.contains(key)); } 
-TextToSpeech2Variant1 copyWith({String Function()? audio}) { return TextToSpeech2Variant1(
+TextToSpeech2Variant1 copyWith({String? Function()? audio}) { return TextToSpeech2Variant1(
   audio: audio != null ? audio() : this.audio,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -64,7 +64,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
       json.containsKey('type') &&
       json.containsKey('validation_method') &&
       json.containsKey('validity_days'); } 
-CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest copyWith({TlsCertificatesAndHostnamesSchemasCertificateAuthority? certificateAuthority, TlsCertificatesAndHostnamesCloudflareBranding Function()? cloudflareBranding, List<String>? hosts, TlsCertificatesAndHostnamesAdvancedType? type, TlsCertificatesAndHostnamesValidationMethod? validationMethod, TlsCertificatesAndHostnamesValidityDays? validityDays, }) { return CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(
+CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest copyWith({TlsCertificatesAndHostnamesSchemasCertificateAuthority? certificateAuthority, TlsCertificatesAndHostnamesCloudflareBranding? Function()? cloudflareBranding, List<String>? hosts, TlsCertificatesAndHostnamesAdvancedType? type, TlsCertificatesAndHostnamesValidationMethod? validationMethod, TlsCertificatesAndHostnamesValidityDays? validityDays, }) { return CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(
   certificateAuthority: certificateAuthority ?? this.certificateAuthority,
   cloudflareBranding: cloudflareBranding != null ? cloudflareBranding() : this.cloudflareBranding,
   hosts: hosts ?? this.hosts,

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'vnet_id': ?vnetId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip') && json['ip'] is String; } 
-ZeroTrustGatewayDnsResolverSettings copyWith({String? ip, int Function()? port, bool Function()? routeThroughPrivateNetwork, String Function()? vnetId, }) { return ZeroTrustGatewayDnsResolverSettings(
+ZeroTrustGatewayDnsResolverSettings copyWith({String? ip, int? Function()? port, bool? Function()? routeThroughPrivateNetwork, String? Function()? vnetId, }) { return ZeroTrustGatewayDnsResolverSettings(
   ip: ip ?? this.ip,
   port: port != null ? port() : this.port,
   routeThroughPrivateNetwork: routeThroughPrivateNetwork != null ? routeThroughPrivateNetwork() : this.routeThroughPrivateNetwork,

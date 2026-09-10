@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'tax_behavior'}.contains(key)); } 
-PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue copyWith({int Function()? amount, PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior Function()? taxBehavior, }) { return PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue(
+PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue copyWith({int? Function()? amount, PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior? Function()? taxBehavior, }) { return PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue(
   amount: amount != null ? amount() : this.amount,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
 ); } 

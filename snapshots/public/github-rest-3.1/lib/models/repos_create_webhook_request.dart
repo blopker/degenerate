@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'active': active,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'config', 'events', 'active'}.contains(key)); } 
-ReposCreateWebhookRequest copyWith({String Function()? name, ReposCreateWebhookRequestConfig Function()? config, List<String> Function()? events, bool Function()? active, }) { return ReposCreateWebhookRequest(
+ReposCreateWebhookRequest copyWith({String? Function()? name, ReposCreateWebhookRequestConfig? Function()? config, List<String>? Function()? events, bool Function()? active, }) { return ReposCreateWebhookRequest(
   name: name != null ? name() : this.name,
   config: config != null ? config() : this.config,
   events: events != null ? events() : this.events,

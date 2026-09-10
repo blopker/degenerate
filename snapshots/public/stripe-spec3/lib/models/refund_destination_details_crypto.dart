@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class RefundDestinationDetailsCrypto {const RefundDestinationDetailsCrypto({this.reference});
+@immutable final class RefundDestinationDetailsCrypto {const RefundDestinationDetailsCrypto({this.reference = const Omittable.absent()});
 
 factory RefundDestinationDetailsCrypto.fromJson(Map<String, dynamic> json) { return RefundDestinationDetailsCrypto(
-  reference: json['reference'] as String?,
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
 ); }
 
 /// The transaction hash of the refund.
-final String? reference;
+final Omittable<String?> reference;
 
 Map<String, dynamic> toJson() { return {
-  'reference': ?reference,
+  if (reference.isPresent) 'reference': reference.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference'}.contains(key)); } 
-RefundDestinationDetailsCrypto copyWith({String? Function()? reference}) { return RefundDestinationDetailsCrypto(
-  reference: reference != null ? reference() : this.reference,
+RefundDestinationDetailsCrypto copyWith({Omittable<String?>? reference}) { return RefundDestinationDetailsCrypto(
+  reference: reference ?? this.reference,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RefundDestinationDetailsCrypto &&

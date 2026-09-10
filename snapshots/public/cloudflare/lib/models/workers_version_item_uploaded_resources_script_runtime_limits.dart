@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'cpu_ms': ?cpuMs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cpu_ms'}.contains(key)); } 
-WorkersVersionItemUploadedResourcesScriptRuntimeLimits copyWith({int Function()? cpuMs}) { return WorkersVersionItemUploadedResourcesScriptRuntimeLimits(
+WorkersVersionItemUploadedResourcesScriptRuntimeLimits copyWith({int? Function()? cpuMs}) { return WorkersVersionItemUploadedResourcesScriptRuntimeLimits(
   cpuMs: cpuMs != null ? cpuMs() : this.cpuMs,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'expand', 'metadata'}.contains(key)); } 
-PostIssuingAuthorizationsAuthorizationApproveRequest copyWith({int Function()? amount, List<String> Function()? expand, PostIssuingAuthorizationsAuthorizationApproveRequestMetadata Function()? metadata, }) { return PostIssuingAuthorizationsAuthorizationApproveRequest(
+PostIssuingAuthorizationsAuthorizationApproveRequest copyWith({int? Function()? amount, List<String>? Function()? expand, PostIssuingAuthorizationsAuthorizationApproveRequestMetadata? Function()? metadata, }) { return PostIssuingAuthorizationsAuthorizationApproveRequest(
   amount: amount != null ? amount() : this.amount,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,

@@ -27,12 +27,12 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   'name': name.toJson(),
   if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
-  'type': ?type,
+  'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessSchemasOnetimepin copyWith({AccessSchemasOnetimepinConfig? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessSchemasOnetimepinScimConfig Function()? scimConfig, dynamic Function()? type, }) { return AccessSchemasOnetimepin(
+AccessSchemasOnetimepin copyWith({AccessSchemasOnetimepinConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessSchemasOnetimepinScimConfig? Function()? scimConfig, dynamic Function()? type, }) { return AccessSchemasOnetimepin(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('class_name') && json['class_name'] is String &&
       json.containsKey('script_name') && json['script_name'] is String; } 
-WorCreateOrModifyWorkflowRequest copyWith({String? className, WorCreateOrModifyWorkflowRequestLimits Function()? limits, String? scriptName, }) { return WorCreateOrModifyWorkflowRequest(
+WorCreateOrModifyWorkflowRequest copyWith({String? className, WorCreateOrModifyWorkflowRequestLimits? Function()? limits, String? scriptName, }) { return WorCreateOrModifyWorkflowRequest(
   className: className ?? this.className,
   limits: limits != null ? limits() : this.limits,
   scriptName: scriptName ?? this.scriptName,

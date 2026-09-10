@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'message': ?message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message'}.contains(key)); } 
-CopilotSetCopilotContentExclusionForOrganizationResponse copyWith({String Function()? message}) { return CopilotSetCopilotContentExclusionForOrganizationResponse(
+CopilotSetCopilotContentExclusionForOrganizationResponse copyWith({String? Function()? message}) { return CopilotSetCopilotContentExclusionForOrganizationResponse(
   message: message != null ? message() : this.message,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

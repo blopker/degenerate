@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A single grader result for an evaluation run output item.
 /// 
-@immutable final class EvalRunOutputItemResult {const EvalRunOutputItemResult({required this.name, required this.score, required this.passed, this.type, this.sample, this.additionalProperties = const {}, });
+@immutable final class EvalRunOutputItemResult {const EvalRunOutputItemResult({required this.name, required this.score, required this.passed, this.type, this.sample = const Omittable.absent(), this.additionalProperties = const {}, });
 
 factory EvalRunOutputItemResult.fromJson(Map<String, dynamic> json) { return EvalRunOutputItemResult(
   name: json['name'] as String,
   type: json['type'] as String?,
   score: (json['score'] as num).toDouble(),
   passed: json['passed'] as bool,
-  sample: json['sample'] as Map<String, dynamic>?,
+  sample: json.containsKey('sample') ? Omittable(json['sample'] as Map<String, dynamic>?) : const Omittable.absent(),
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'name', 'type', 'score', 'passed', 'sample'}.contains(e.key))),
 ); }
 
@@ -26,7 +26,7 @@ final double score;
 final bool passed;
 
 /// Optional sample or intermediate data produced by the grader.
-final Map<String,dynamic>? sample;
+final Omittable<Map<String,dynamic>?> sample;
 
 final Map<String,dynamic> additionalProperties;
 
@@ -35,18 +35,18 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
   'score': score,
   'passed': passed,
-  'sample': ?sample,
+  if (sample.isPresent) 'sample': sample.value,
   ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('score') && json['score'] is num &&
       json.containsKey('passed') && json['passed'] is bool; } 
-EvalRunOutputItemResult copyWith({String? name, String Function()? type, double? score, bool? passed, Map<String, dynamic>? Function()? sample, Map<String, dynamic>? additionalProperties, }) { return EvalRunOutputItemResult(
+EvalRunOutputItemResult copyWith({String? name, String? Function()? type, double? score, bool? passed, Omittable<Map<String,dynamic>?>? sample, Map<String, dynamic>? additionalProperties, }) { return EvalRunOutputItemResult(
   name: name ?? this.name,
   type: type != null ? type() : this.type,
   score: score ?? this.score,
   passed: passed ?? this.passed,
-  sample: sample != null ? sample() : this.sample,
+  sample: sample ?? this.sample,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

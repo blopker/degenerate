@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'total_engaged_users', 'models'}.contains(key)); } 
-CopilotDotcomChat copyWith({int Function()? totalEngagedUsers, List<CopilotDotcomChatModels> Function()? models, Map<String, dynamic>? additionalProperties, }) { return CopilotDotcomChat(
+CopilotDotcomChat copyWith({int? Function()? totalEngagedUsers, List<CopilotDotcomChatModels>? Function()? models, Map<String, dynamic>? additionalProperties, }) { return CopilotDotcomChat(
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   models: models != null ? models() : this.models,
   additionalProperties: additionalProperties ?? this.additionalProperties,

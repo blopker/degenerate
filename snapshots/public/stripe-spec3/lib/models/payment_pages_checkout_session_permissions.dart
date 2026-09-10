@@ -30,10 +30,10 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails($value)'; } 
  }
 /// 
-@immutable final class PaymentPagesCheckoutSessionPermissions {const PaymentPagesCheckoutSessionPermissions({this.updateShippingDetails});
+@immutable final class PaymentPagesCheckoutSessionPermissions {const PaymentPagesCheckoutSessionPermissions({this.updateShippingDetails = const Omittable.absent()});
 
 factory PaymentPagesCheckoutSessionPermissions.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionPermissions(
-  updateShippingDetails: json['update_shipping_details'] != null ? PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails.fromJson(json['update_shipping_details'] as String) : null,
+  updateShippingDetails: json.containsKey('update_shipping_details') ? Omittable(json['update_shipping_details'] != null ? PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails.fromJson(json['update_shipping_details'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Determines which entity is allowed to update the shipping details.
@@ -41,14 +41,14 @@ factory PaymentPagesCheckoutSessionPermissions.fromJson(Map<String, dynamic> jso
 /// Default is `client_only`. Stripe Checkout client will automatically update the shipping details. If set to `server_only`, only your server is allowed to update the shipping details.
 /// 
 /// When set to `server_only`, you must add the onShippingDetailsChange event handler when initializing the Stripe Checkout client and manually update the shipping details from your server using the Stripe API.
-final PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails? updateShippingDetails;
+final Omittable<PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails?> updateShippingDetails;
 
 Map<String, dynamic> toJson() { return {
-  if (updateShippingDetails != null) 'update_shipping_details': updateShippingDetails?.toJson(),
+  if (updateShippingDetails.isPresent) 'update_shipping_details': updateShippingDetails.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'update_shipping_details'}.contains(key)); } 
-PaymentPagesCheckoutSessionPermissions copyWith({PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails? Function()? updateShippingDetails}) { return PaymentPagesCheckoutSessionPermissions(
-  updateShippingDetails: updateShippingDetails != null ? updateShippingDetails() : this.updateShippingDetails,
+PaymentPagesCheckoutSessionPermissions copyWith({Omittable<PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails?>? updateShippingDetails}) { return PaymentPagesCheckoutSessionPermissions(
+  updateShippingDetails: updateShippingDetails ?? this.updateShippingDetails,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentPagesCheckoutSessionPermissions &&

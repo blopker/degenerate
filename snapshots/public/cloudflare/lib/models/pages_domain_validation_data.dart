@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('method') &&
       json.containsKey('status'); } 
-PagesDomainValidationData copyWith({String Function()? errorMessage, PagesDomainValidationDataMethod? method, PagesDomainValidationDataStatus? status, String Function()? txtName, String Function()? txtValue, }) { return PagesDomainValidationData(
+PagesDomainValidationData copyWith({String? Function()? errorMessage, PagesDomainValidationDataMethod? method, PagesDomainValidationDataStatus? status, String? Function()? txtName, String? Function()? txtValue, }) { return PagesDomainValidationData(
   errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
   method: method ?? this.method,
   status: status ?? this.status,

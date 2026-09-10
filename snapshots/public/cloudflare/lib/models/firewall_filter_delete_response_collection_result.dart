@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-FirewallFilterDeleteResponseCollectionResult copyWith({FirewallFiltersComponentsSchemasId Function()? id}) { return FirewallFilterDeleteResponseCollectionResult(
+FirewallFilterDeleteResponseCollectionResult copyWith({FirewallFiltersComponentsSchemasId? Function()? id}) { return FirewallFilterDeleteResponseCollectionResult(
   id: id != null ? id() : this.id,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
       json.containsKey('repository_id') && json['repository_id'] is num; } 
-RepositoryRuleParamsWorkflowFileReference copyWith({String? path, String Function()? ref, int? repositoryId, String Function()? sha, }) { return RepositoryRuleParamsWorkflowFileReference(
+RepositoryRuleParamsWorkflowFileReference copyWith({String? path, String? Function()? ref, int? repositoryId, String? Function()? sha, }) { return RepositoryRuleParamsWorkflowFileReference(
   path: path ?? this.path,
   ref: ref != null ? ref() : this.ref,
   repositoryId: repositoryId ?? this.repositoryId,

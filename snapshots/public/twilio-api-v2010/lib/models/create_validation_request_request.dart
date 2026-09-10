@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   if (statusCallbackMethod != null) 'StatusCallbackMethod': statusCallbackMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('PhoneNumber') && json['PhoneNumber'] is String; } 
-CreateValidationRequestRequest copyWith({String? phoneNumber, String Function()? friendlyName, int Function()? callDelay, String Function()? $extension, Uri Function()? statusCallback, CreateValidationRequestRequestStatusCallbackMethod Function()? statusCallbackMethod, }) { return CreateValidationRequestRequest(
+CreateValidationRequestRequest copyWith({String? phoneNumber, String? Function()? friendlyName, int? Function()? callDelay, String? Function()? $extension, Uri? Function()? statusCallback, CreateValidationRequestRequestStatusCallbackMethod? Function()? statusCallbackMethod, }) { return CreateValidationRequestRequest(
   phoneNumber: phoneNumber ?? this.phoneNumber,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   callDelay: callDelay != null ? callDelay() : this.callDelay,

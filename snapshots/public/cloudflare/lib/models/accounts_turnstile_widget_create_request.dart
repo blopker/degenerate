@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('domains') &&
       json.containsKey('mode') &&
       json.containsKey('name'); } 
-AccountsTurnstileWidgetCreateRequest copyWith({TurnstileBotFightMode Function()? botFightMode, TurnstileClearanceLevel Function()? clearanceLevel, List<String>? domains, TurnstileEphemeralId Function()? ephemeralId, TurnstileWidgetMode? mode, TurnstileName? name, TurnstileOfflabel Function()? offlabel, TurnstileRegion Function()? region, }) { return AccountsTurnstileWidgetCreateRequest(
+AccountsTurnstileWidgetCreateRequest copyWith({TurnstileBotFightMode? Function()? botFightMode, TurnstileClearanceLevel? Function()? clearanceLevel, List<String>? domains, TurnstileEphemeralId? Function()? ephemeralId, TurnstileWidgetMode? mode, TurnstileName? name, TurnstileOfflabel? Function()? offlabel, TurnstileRegion? Function()? region, }) { return AccountsTurnstileWidgetCreateRequest(
   botFightMode: botFightMode != null ? botFightMode() : this.botFightMode,
   clearanceLevel: clearanceLevel != null ? clearanceLevel() : this.clearanceLevel,
   domains: domains ?? this.domains,

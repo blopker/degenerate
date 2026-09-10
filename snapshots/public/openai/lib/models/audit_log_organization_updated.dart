@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (changesRequested != null) 'changes_requested': changesRequested?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'changes_requested'}.contains(key)); } 
-AuditLogOrganizationUpdated copyWith({String Function()? id, AuditLogOrganizationUpdatedChangesRequested Function()? changesRequested, }) { return AuditLogOrganizationUpdated(
+AuditLogOrganizationUpdated copyWith({String? Function()? id, AuditLogOrganizationUpdatedChangesRequested? Function()? changesRequested, }) { return AuditLogOrganizationUpdated(
   id: id != null ? id() : this.id,
   changesRequested: changesRequested != null ? changesRequested() : this.changesRequested,
 ); } 

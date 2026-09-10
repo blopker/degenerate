@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'sql_duration_ms': ?sqlDurationMs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sql_duration_ms'}.contains(key)); } 
-D1QueryMetaTimings copyWith({double Function()? sqlDurationMs}) { return D1QueryMetaTimings(
+D1QueryMetaTimings copyWith({double? Function()? sqlDurationMs}) { return D1QueryMetaTimings(
   sqlDurationMs: sqlDurationMs != null ? sqlDurationMs() : this.sqlDurationMs,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

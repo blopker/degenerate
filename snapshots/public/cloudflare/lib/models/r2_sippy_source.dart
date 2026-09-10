@@ -28,38 +28,38 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'R2SippySourceProvider($value)'; } 
  }
 /// Details about the configured source bucket.
-@immutable final class R2SippySource {const R2SippySource({this.bucket, this.bucketUrl, this.provider, this.region, });
+@immutable final class R2SippySource {const R2SippySource({this.bucket = const Omittable.absent(), this.bucketUrl = const Omittable.absent(), this.provider, this.region = const Omittable.absent(), });
 
 factory R2SippySource.fromJson(Map<String, dynamic> json) { return R2SippySource(
-  bucket: json['bucket'] as String?,
-  bucketUrl: json['bucketUrl'] as String?,
+  bucket: json.containsKey('bucket') ? Omittable(json['bucket'] as String?) : const Omittable.absent(),
+  bucketUrl: json.containsKey('bucketUrl') ? Omittable(json['bucketUrl'] as String?) : const Omittable.absent(),
   provider: json['provider'] != null ? R2SippySourceProvider.fromJson(json['provider'] as String) : null,
-  region: json['region'] as String?,
+  region: json.containsKey('region') ? Omittable(json['region'] as String?) : const Omittable.absent(),
 ); }
 
 /// Name of the bucket on the provider (AWS, GCS only).
-final String? bucket;
+final Omittable<String?> bucket;
 
 /// S3-compatible URL (Generic S3-compatible providers only).
-final String? bucketUrl;
+final Omittable<String?> bucketUrl;
 
 final R2SippySourceProvider? provider;
 
 /// Region where the bucket resides (AWS only).
-final String? region;
+final Omittable<String?> region;
 
 Map<String, dynamic> toJson() { return {
-  'bucket': ?bucket,
-  'bucketUrl': ?bucketUrl,
+  if (bucket.isPresent) 'bucket': bucket.value,
+  if (bucketUrl.isPresent) 'bucketUrl': bucketUrl.value,
   if (provider != null) 'provider': provider?.toJson(),
-  'region': ?region,
+  if (region.isPresent) 'region': region.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'bucketUrl', 'provider', 'region'}.contains(key)); } 
-R2SippySource copyWith({String? Function()? bucket, String? Function()? bucketUrl, R2SippySourceProvider Function()? provider, String? Function()? region, }) { return R2SippySource(
-  bucket: bucket != null ? bucket() : this.bucket,
-  bucketUrl: bucketUrl != null ? bucketUrl() : this.bucketUrl,
+R2SippySource copyWith({Omittable<String?>? bucket, Omittable<String?>? bucketUrl, R2SippySourceProvider? Function()? provider, Omittable<String?>? region, }) { return R2SippySource(
+  bucket: bucket ?? this.bucket,
+  bucketUrl: bucketUrl ?? this.bucketUrl,
   provider: provider != null ? provider() : this.provider,
-  region: region != null ? region() : this.region,
+  region: region ?? this.region,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is R2SippySource &&

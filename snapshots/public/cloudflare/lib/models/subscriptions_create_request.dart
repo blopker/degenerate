@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'destination', 'enabled', 'events', 'name', 'source'}.contains(key)); } 
-SubscriptionsCreateRequest copyWith({MqEventDestination Function()? destination, bool Function()? enabled, List<String> Function()? events, String Function()? name, MqEventSource Function()? source, }) { return SubscriptionsCreateRequest(
+SubscriptionsCreateRequest copyWith({MqEventDestination? Function()? destination, bool? Function()? enabled, List<String>? Function()? events, String? Function()? name, MqEventSource? Function()? source, }) { return SubscriptionsCreateRequest(
   destination: destination != null ? destination() : this.destination,
   enabled: enabled != null ? enabled() : this.enabled,
   events: events != null ? events() : this.events,

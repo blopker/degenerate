@@ -25,12 +25,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SpeedBaseValue($value)'; } 
  }
-@immutable final class SpeedBase {const SpeedBase({this.editable = true, this.id, this.modifiedOn, this.value, });
+@immutable final class SpeedBase {const SpeedBase({this.editable = true, this.id, this.modifiedOn = const Omittable.absent(), this.value, });
 
 factory SpeedBase.fromJson(Map<String, dynamic> json) { return SpeedBase(
   editable: json.containsKey('editable') ? json['editable'] as bool : true,
   id: json['id'] as String?,
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: json['value'] != null ? SpeedBaseValue.fromJson(json['value'] as String) : null,
 ); }
 
@@ -41,7 +41,7 @@ final bool editable;
 final String? id;
 
 /// last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 /// Current value of the zone setting.
 final SpeedBaseValue? value;
@@ -49,14 +49,14 @@ final SpeedBaseValue? value;
 Map<String, dynamic> toJson() { return {
   'editable': editable,
   'id': ?id,
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key)); } 
-SpeedBase copyWith({bool Function()? editable, String Function()? id, DateTime? Function()? modifiedOn, SpeedBaseValue Function()? value, }) { return SpeedBase(
+SpeedBase copyWith({bool Function()? editable, String? Function()? id, Omittable<DateTime?>? modifiedOn, SpeedBaseValue? Function()? value, }) { return SpeedBase(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value != null ? value() : this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

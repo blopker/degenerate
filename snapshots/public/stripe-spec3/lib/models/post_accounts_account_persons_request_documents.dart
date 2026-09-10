@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (visa != null) 'visa': visa?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'company_authorization', 'passport', 'visa'}.contains(key)); } 
-PostAccountsAccountPersonsRequestDocuments copyWith({PostAccountsAccountPersonsRequestDocumentsCompanyAuthorization Function()? companyAuthorization, PostAccountsAccountPersonsRequestDocumentsPassport Function()? passport, PostAccountsAccountPersonsRequestDocumentsVisa Function()? visa, }) { return PostAccountsAccountPersonsRequestDocuments(
+PostAccountsAccountPersonsRequestDocuments copyWith({PostAccountsAccountPersonsRequestDocumentsCompanyAuthorization? Function()? companyAuthorization, PostAccountsAccountPersonsRequestDocumentsPassport? Function()? passport, PostAccountsAccountPersonsRequestDocumentsVisa? Function()? visa, }) { return PostAccountsAccountPersonsRequestDocuments(
   companyAuthorization: companyAuthorization != null ? companyAuthorization() : this.companyAuthorization,
   passport: passport != null ? passport() : this.passport,
   visa: visa != null ? visa() : this.visa,

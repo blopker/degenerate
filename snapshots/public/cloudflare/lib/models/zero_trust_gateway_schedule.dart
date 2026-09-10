@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'wed': ?wed,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fri', 'mon', 'sat', 'sun', 'thu', 'time_zone', 'tue', 'wed'}.contains(key)); } 
-ZeroTrustGatewaySchedule copyWith({String Function()? fri, String Function()? mon, String Function()? sat, String Function()? sun, String Function()? thu, String Function()? timeZone, String Function()? tue, String Function()? wed, }) { return ZeroTrustGatewaySchedule(
+ZeroTrustGatewaySchedule copyWith({String? Function()? fri, String? Function()? mon, String? Function()? sat, String? Function()? sun, String? Function()? thu, String? Function()? timeZone, String? Function()? tue, String? Function()? wed, }) { return ZeroTrustGatewaySchedule(
   fri: fri != null ? fri() : this.fri,
   mon: mon != null ? mon() : this.mon,
   sat: sat != null ? sat() : this.sat,

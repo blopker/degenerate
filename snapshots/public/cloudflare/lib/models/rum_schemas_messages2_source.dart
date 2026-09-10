@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'pointer': ?pointer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pointer'}.contains(key)); } 
-RumSchemasMessages2Source copyWith({String Function()? pointer}) { return RumSchemasMessages2Source(
+RumSchemasMessages2Source copyWith({String? Function()? pointer}) { return RumSchemasMessages2Source(
   pointer: pointer != null ? pointer() : this.pointer,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('actions') &&
       json.containsKey('matchers'); } 
-EmailUpdateCatchAllRuleProperties copyWith({List<EmailRuleCatchallAction>? actions, EmailRuleEnabled Function()? enabled, List<EmailRuleCatchallMatcher>? matchers, EmailRuleName Function()? name, }) { return EmailUpdateCatchAllRuleProperties(
+EmailUpdateCatchAllRuleProperties copyWith({List<EmailRuleCatchallAction>? actions, EmailRuleEnabled? Function()? enabled, List<EmailRuleCatchallMatcher>? matchers, EmailRuleName? Function()? name, }) { return EmailUpdateCatchAllRuleProperties(
   actions: actions ?? this.actions,
   enabled: enabled != null ? enabled() : this.enabled,
   matchers: matchers ?? this.matchers,

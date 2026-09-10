@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (sbfmLikelyAutomated != null) 'sbfm_likely_automated': sbfmLikelyAutomated?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fight_mode', 'sbfm_likely_automated'}.contains(key)); } 
-BotManagementSbfmDefinitelyConfigStaleZoneConfiguration copyWith({BotManagementFightModeTurnedOn Function()? fightMode, BotManagementSbfmLikelyAutomatedTurnedOn Function()? sbfmLikelyAutomated, }) { return BotManagementSbfmDefinitelyConfigStaleZoneConfiguration(
+BotManagementSbfmDefinitelyConfigStaleZoneConfiguration copyWith({BotManagementFightModeTurnedOn? Function()? fightMode, BotManagementSbfmLikelyAutomatedTurnedOn? Function()? sbfmLikelyAutomated, }) { return BotManagementSbfmDefinitelyConfigStaleZoneConfiguration(
   fightMode: fightMode != null ? fightMode() : this.fightMode,
   sbfmLikelyAutomated: sbfmLikelyAutomated != null ? sbfmLikelyAutomated() : this.sbfmLikelyAutomated,
 ); } 

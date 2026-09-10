@@ -13,7 +13,7 @@ final dynamic unit;
 final int value;
 
 Map<String, dynamic> toJson() { return {
-  'unit': ?unit,
+  'unit': unit,
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit') &&

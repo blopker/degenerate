@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   'volumeName': ?volumeName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessModes', 'dataSource', 'dataSourceRef', 'resources', 'selector', 'storageClassName', 'volumeAttributesClassName', 'volumeMode', 'volumeName'}.contains(key)); } 
-PersistentVolumeClaimSpec copyWith({List<String> Function()? accessModes, TypedLocalObjectReference Function()? dataSource, TypedObjectReference Function()? dataSourceRef, VolumeResourceRequirements Function()? resources, LabelSelector Function()? selector, String Function()? storageClassName, String Function()? volumeAttributesClassName, String Function()? volumeMode, String Function()? volumeName, }) { return PersistentVolumeClaimSpec(
+PersistentVolumeClaimSpec copyWith({List<String>? Function()? accessModes, TypedLocalObjectReference? Function()? dataSource, TypedObjectReference? Function()? dataSourceRef, VolumeResourceRequirements? Function()? resources, LabelSelector? Function()? selector, String? Function()? storageClassName, String? Function()? volumeAttributesClassName, String? Function()? volumeMode, String? Function()? volumeName, }) { return PersistentVolumeClaimSpec(
   accessModes: accessModes != null ? accessModes() : this.accessModes,
   dataSource: dataSource != null ? dataSource() : this.dataSource,
   dataSourceRef: dataSourceRef != null ? dataSourceRef() : this.dataSourceRef,

@@ -112,7 +112,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String; } 
-PostPayoutsRequest copyWith({int? amount, String? currency, String Function()? description, String Function()? destination, List<String> Function()? expand, Map<String, String> Function()? metadata, PostPayoutsRequestMethod Function()? method, String Function()? payoutMethod, PostPayoutsRequestSourceType Function()? sourceType, String Function()? statementDescriptor, }) { return PostPayoutsRequest(
+PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? description, String? Function()? destination, List<String>? Function()? expand, Map<String, String>? Function()? metadata, PostPayoutsRequestMethod? Function()? method, String? Function()? payoutMethod, PostPayoutsRequestSourceType? Function()? sourceType, String? Function()? statementDescriptor, }) { return PostPayoutsRequest(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,

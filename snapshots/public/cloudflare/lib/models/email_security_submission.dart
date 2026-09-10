@@ -27,76 +27,76 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EmailSecuritySubmissionCustomerStatus($value)'; } 
  }
-@immutable final class EmailSecuritySubmission {const EmailSecuritySubmission({required this.requestedTs, required this.submissionId, this.customerStatus, this.originalDisposition, this.originalEdfHash, this.outcome, this.outcomeDisposition, this.requestedBy, this.requestedDisposition, this.status, this.subject, this.type, });
+@immutable final class EmailSecuritySubmission {const EmailSecuritySubmission({required this.requestedTs, required this.submissionId, this.customerStatus, this.originalDisposition = const Omittable.absent(), this.originalEdfHash = const Omittable.absent(), this.outcome = const Omittable.absent(), this.outcomeDisposition = const Omittable.absent(), this.requestedBy = const Omittable.absent(), this.requestedDisposition = const Omittable.absent(), this.status = const Omittable.absent(), this.subject = const Omittable.absent(), this.type = const Omittable.absent(), });
 
 factory EmailSecuritySubmission.fromJson(Map<String, dynamic> json) { return EmailSecuritySubmission(
   customerStatus: json['customer_status'] != null ? EmailSecuritySubmissionCustomerStatus.fromJson(json['customer_status'] as String) : null,
-  originalDisposition: json['original_disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['original_disposition'] as String) : null,
-  originalEdfHash: json['original_edf_hash'] as String?,
-  outcome: json['outcome'] as String?,
-  outcomeDisposition: json['outcome_disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['outcome_disposition'] as String) : null,
-  requestedBy: json['requested_by'] as String?,
-  requestedDisposition: json['requested_disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['requested_disposition'] as String) : null,
+  originalDisposition: json.containsKey('original_disposition') ? Omittable(json['original_disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['original_disposition'] as String) : null) : const Omittable.absent(),
+  originalEdfHash: json.containsKey('original_edf_hash') ? Omittable(json['original_edf_hash'] as String?) : const Omittable.absent(),
+  outcome: json.containsKey('outcome') ? Omittable(json['outcome'] as String?) : const Omittable.absent(),
+  outcomeDisposition: json.containsKey('outcome_disposition') ? Omittable(json['outcome_disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['outcome_disposition'] as String) : null) : const Omittable.absent(),
+  requestedBy: json.containsKey('requested_by') ? Omittable(json['requested_by'] as String?) : const Omittable.absent(),
+  requestedDisposition: json.containsKey('requested_disposition') ? Omittable(json['requested_disposition'] != null ? EmailSecurityDispositionLabel.fromJson(json['requested_disposition'] as String) : null) : const Omittable.absent(),
   requestedTs: DateTime.parse(json['requested_ts'] as String),
-  status: json['status'] as String?,
-  subject: json['subject'] as String?,
+  status: json.containsKey('status') ? Omittable(json['status'] as String?) : const Omittable.absent(),
+  subject: json.containsKey('subject') ? Omittable(json['subject'] as String?) : const Omittable.absent(),
   submissionId: json['submission_id'] as String,
-  type: json['type'] as String?,
+  type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
 ); }
 
 final EmailSecuritySubmissionCustomerStatus? customerStatus;
 
-final EmailSecurityDispositionLabel? originalDisposition;
+final Omittable<EmailSecurityDispositionLabel?> originalDisposition;
 
-final String? originalEdfHash;
+final Omittable<String?> originalEdfHash;
 
-final String? outcome;
+final Omittable<String?> outcome;
 
-final EmailSecurityDispositionLabel? outcomeDisposition;
+final Omittable<EmailSecurityDispositionLabel?> outcomeDisposition;
 
-final String? requestedBy;
+final Omittable<String?> requestedBy;
 
-final EmailSecurityDispositionLabel? requestedDisposition;
+final Omittable<EmailSecurityDispositionLabel?> requestedDisposition;
 
 final DateTime requestedTs;
 
-final String? status;
+final Omittable<String?> status;
 
-final String? subject;
+final Omittable<String?> subject;
 
 final String submissionId;
 
-final String? type;
+final Omittable<String?> type;
 
 Map<String, dynamic> toJson() { return {
   if (customerStatus != null) 'customer_status': customerStatus?.toJson(),
-  if (originalDisposition != null) 'original_disposition': originalDisposition?.toJson(),
-  'original_edf_hash': ?originalEdfHash,
-  'outcome': ?outcome,
-  if (outcomeDisposition != null) 'outcome_disposition': outcomeDisposition?.toJson(),
-  'requested_by': ?requestedBy,
-  if (requestedDisposition != null) 'requested_disposition': requestedDisposition?.toJson(),
+  if (originalDisposition.isPresent) 'original_disposition': originalDisposition.value?.toJson(),
+  if (originalEdfHash.isPresent) 'original_edf_hash': originalEdfHash.value,
+  if (outcome.isPresent) 'outcome': outcome.value,
+  if (outcomeDisposition.isPresent) 'outcome_disposition': outcomeDisposition.value?.toJson(),
+  if (requestedBy.isPresent) 'requested_by': requestedBy.value,
+  if (requestedDisposition.isPresent) 'requested_disposition': requestedDisposition.value?.toJson(),
   'requested_ts': requestedTs.toIso8601String(),
-  'status': ?status,
-  'subject': ?subject,
+  if (status.isPresent) 'status': status.value,
+  if (subject.isPresent) 'subject': subject.value,
   'submission_id': submissionId,
-  'type': ?type,
+  if (type.isPresent) 'type': type.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('requested_ts') && json['requested_ts'] is String &&
       json.containsKey('submission_id') && json['submission_id'] is String; } 
-EmailSecuritySubmission copyWith({EmailSecuritySubmissionCustomerStatus Function()? customerStatus, EmailSecurityDispositionLabel? Function()? originalDisposition, String? Function()? originalEdfHash, String? Function()? outcome, EmailSecurityDispositionLabel? Function()? outcomeDisposition, String? Function()? requestedBy, EmailSecurityDispositionLabel? Function()? requestedDisposition, DateTime? requestedTs, String? Function()? status, String? Function()? subject, String? submissionId, String? Function()? type, }) { return EmailSecuritySubmission(
+EmailSecuritySubmission copyWith({EmailSecuritySubmissionCustomerStatus? Function()? customerStatus, Omittable<EmailSecurityDispositionLabel?>? originalDisposition, Omittable<String?>? originalEdfHash, Omittable<String?>? outcome, Omittable<EmailSecurityDispositionLabel?>? outcomeDisposition, Omittable<String?>? requestedBy, Omittable<EmailSecurityDispositionLabel?>? requestedDisposition, DateTime? requestedTs, Omittable<String?>? status, Omittable<String?>? subject, String? submissionId, Omittable<String?>? type, }) { return EmailSecuritySubmission(
   customerStatus: customerStatus != null ? customerStatus() : this.customerStatus,
-  originalDisposition: originalDisposition != null ? originalDisposition() : this.originalDisposition,
-  originalEdfHash: originalEdfHash != null ? originalEdfHash() : this.originalEdfHash,
-  outcome: outcome != null ? outcome() : this.outcome,
-  outcomeDisposition: outcomeDisposition != null ? outcomeDisposition() : this.outcomeDisposition,
-  requestedBy: requestedBy != null ? requestedBy() : this.requestedBy,
-  requestedDisposition: requestedDisposition != null ? requestedDisposition() : this.requestedDisposition,
+  originalDisposition: originalDisposition ?? this.originalDisposition,
+  originalEdfHash: originalEdfHash ?? this.originalEdfHash,
+  outcome: outcome ?? this.outcome,
+  outcomeDisposition: outcomeDisposition ?? this.outcomeDisposition,
+  requestedBy: requestedBy ?? this.requestedBy,
+  requestedDisposition: requestedDisposition ?? this.requestedDisposition,
   requestedTs: requestedTs ?? this.requestedTs,
-  status: status != null ? status() : this.status,
-  subject: subject != null ? subject() : this.subject,
+  status: status ?? this.status,
+  subject: subject ?? this.subject,
   submissionId: submissionId ?? this.submissionId,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EmailSecuritySubmission &&

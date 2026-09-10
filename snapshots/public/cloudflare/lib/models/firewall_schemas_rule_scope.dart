@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'id', 'type'}.contains(key)); } 
-FirewallSchemasRuleScope copyWith({FirewallEmail Function()? email, FirewallIdentifier Function()? id, FirewallSchemasRuleScopeType Function()? type, }) { return FirewallSchemasRuleScope(
+FirewallSchemasRuleScope copyWith({FirewallEmail? Function()? email, FirewallIdentifier? Function()? id, FirewallSchemasRuleScopeType? Function()? type, }) { return FirewallSchemasRuleScope(
   email: email != null ? email() : this.email,
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,

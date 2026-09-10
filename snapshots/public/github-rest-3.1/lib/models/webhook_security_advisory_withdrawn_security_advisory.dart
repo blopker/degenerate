@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cvss'
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('vulnerabilities') &&
       json.containsKey('withdrawn_at') && json['withdrawn_at'] is String; } 
-WebhookSecurityAdvisoryWithdrawnSecurityAdvisory copyWith({WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss? cvss, CvssSeverities Function()? cvssSeverities, List<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes>? cwes, String? description, String? ghsaId, List<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryIdentifiers>? identifiers, String? publishedAt, List<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferences>? references, String? severity, String? summary, String? updatedAt, List<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilities>? vulnerabilities, String? withdrawnAt, }) { return WebhookSecurityAdvisoryWithdrawnSecurityAdvisory(
+WebhookSecurityAdvisoryWithdrawnSecurityAdvisory copyWith({WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss? cvss, CvssSeverities? Function()? cvssSeverities, List<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes>? cwes, String? description, String? ghsaId, List<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryIdentifiers>? identifiers, String? publishedAt, List<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryReferences>? references, String? severity, String? summary, String? updatedAt, List<WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilities>? vulnerabilities, String? withdrawnAt, }) { return WebhookSecurityAdvisoryWithdrawnSecurityAdvisory(
   cvss: cvss ?? this.cvss,
   cvssSeverities: cvssSeverities != null ? cvssSeverities() : this.cvssSeverities,
   cwes: cwes ?? this.cwes,

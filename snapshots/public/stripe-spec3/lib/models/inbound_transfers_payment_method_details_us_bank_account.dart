@@ -73,33 +73,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InboundTransfersPaymentMethodDetailsUsBankAccountNetwork($value)'; } 
  }
 /// 
-@immutable final class InboundTransfersPaymentMethodDetailsUsBankAccount {const InboundTransfersPaymentMethodDetailsUsBankAccount({required this.network, this.accountHolderType, this.accountType, this.bankName, this.fingerprint, this.last4, this.mandate, this.routingNumber, });
+@immutable final class InboundTransfersPaymentMethodDetailsUsBankAccount {const InboundTransfersPaymentMethodDetailsUsBankAccount({required this.network, this.accountHolderType = const Omittable.absent(), this.accountType = const Omittable.absent(), this.bankName = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandate, this.routingNumber = const Omittable.absent(), });
 
 factory InboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(Map<String, dynamic> json) { return InboundTransfersPaymentMethodDetailsUsBankAccount(
-  accountHolderType: json['account_holder_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
-  accountType: json['account_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
-  bankName: json['bank_name'] as String?,
-  fingerprint: json['fingerprint'] as String?,
-  last4: json['last4'] as String?,
+  accountHolderType: json.containsKey('account_holder_type') ? Omittable(json['account_holder_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null) : const Omittable.absent(),
+  accountType: json.containsKey('account_type') ? Omittable(json['account_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(json['account_type'] as String) : null) : const Omittable.absent(),
+  bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
   mandate: json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null,
   network: InboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(json['network'] as String),
-  routingNumber: json['routing_number'] as String?,
+  routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
 ); }
 
 /// Account holder type: individual or company.
-final InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType? accountHolderType;
+final Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType?> accountHolderType;
 
 /// Account type: checkings or savings. Defaults to checking if omitted.
-final InboundTransfersPaymentMethodDetailsUsBankAccountAccountType? accountType;
+final Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountType?> accountType;
 
 /// Name of the bank associated with the bank account.
-final String? bankName;
+final Omittable<String?> bankName;
 
 /// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
 /// Last four digits of the bank account number.
-final String? last4;
+final Omittable<String?> last4;
 
 /// ID of the mandate used to make this payment.
 final InboundTransfersPaymentMethodDetailsUsBankAccountMandate? mandate;
@@ -108,28 +108,28 @@ final InboundTransfersPaymentMethodDetailsUsBankAccountMandate? mandate;
 final InboundTransfersPaymentMethodDetailsUsBankAccountNetwork network;
 
 /// Routing number of the bank account.
-final String? routingNumber;
+final Omittable<String?> routingNumber;
 
 Map<String, dynamic> toJson() { return {
-  if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
-  if (accountType != null) 'account_type': accountType?.toJson(),
-  'bank_name': ?bankName,
-  'fingerprint': ?fingerprint,
-  'last4': ?last4,
+  if (accountHolderType.isPresent) 'account_holder_type': accountHolderType.value?.toJson(),
+  if (accountType.isPresent) 'account_type': accountType.value?.toJson(),
+  if (bankName.isPresent) 'bank_name': bankName.value,
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
+  if (last4.isPresent) 'last4': last4.value,
   if (mandate != null) 'mandate': mandate?.toJson(),
   'network': network.toJson(),
-  'routing_number': ?routingNumber,
+  if (routingNumber.isPresent) 'routing_number': routingNumber.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('network'); } 
-InboundTransfersPaymentMethodDetailsUsBankAccount copyWith({InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType? Function()? accountHolderType, InboundTransfersPaymentMethodDetailsUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String? Function()? fingerprint, String? Function()? last4, InboundTransfersPaymentMethodDetailsUsBankAccountMandate Function()? mandate, InboundTransfersPaymentMethodDetailsUsBankAccountNetwork? network, String? Function()? routingNumber, }) { return InboundTransfersPaymentMethodDetailsUsBankAccount(
-  accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
-  accountType: accountType != null ? accountType() : this.accountType,
-  bankName: bankName != null ? bankName() : this.bankName,
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  last4: last4 != null ? last4() : this.last4,
+InboundTransfersPaymentMethodDetailsUsBankAccount copyWith({Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType?>? accountHolderType, Omittable<InboundTransfersPaymentMethodDetailsUsBankAccountAccountType?>? accountType, Omittable<String?>? bankName, Omittable<String?>? fingerprint, Omittable<String?>? last4, InboundTransfersPaymentMethodDetailsUsBankAccountMandate? Function()? mandate, InboundTransfersPaymentMethodDetailsUsBankAccountNetwork? network, Omittable<String?>? routingNumber, }) { return InboundTransfersPaymentMethodDetailsUsBankAccount(
+  accountHolderType: accountHolderType ?? this.accountHolderType,
+  accountType: accountType ?? this.accountType,
+  bankName: bankName ?? this.bankName,
+  fingerprint: fingerprint ?? this.fingerprint,
+  last4: last4 ?? this.last4,
   mandate: mandate != null ? mandate() : this.mandate,
   network: network ?? this.network,
-  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
+  routingNumber: routingNumber ?? this.routingNumber,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InboundTransfersPaymentMethodDetailsUsBankAccount &&

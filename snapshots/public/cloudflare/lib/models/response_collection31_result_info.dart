@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'total_count': ?totalCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count'}.contains(key)); } 
-ResponseCollection31ResultInfo copyWith({int Function()? count, int Function()? page, int Function()? perPage, int Function()? totalCount, }) { return ResponseCollection31ResultInfo(
+ResponseCollection31ResultInfo copyWith({int? Function()? count, int? Function()? page, int? Function()? perPage, int? Function()? totalCount, }) { return ResponseCollection31ResultInfo(
   count: count != null ? count() : this.count,
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,

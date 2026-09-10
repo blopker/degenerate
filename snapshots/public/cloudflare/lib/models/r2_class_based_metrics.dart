@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (uploaded != null) 'uploaded': uploaded?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'published', 'uploaded'}.contains(key)); } 
-R2ClassBasedMetrics copyWith({R2ObjectSizeMetrics Function()? published, R2ObjectSizeMetrics Function()? uploaded, }) { return R2ClassBasedMetrics(
+R2ClassBasedMetrics copyWith({R2ObjectSizeMetrics? Function()? published, R2ObjectSizeMetrics? Function()? uploaded, }) { return R2ClassBasedMetrics(
   published: published != null ? published() : this.published,
   uploaded: uploaded != null ? uploaded() : this.uploaded,
 ); } 

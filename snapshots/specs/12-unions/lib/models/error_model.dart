@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
       json.containsKey('message') && json['message'] is String; } 
-ErrorModel copyWith({int? code, String? message, String Function()? details, }) { return ErrorModel(
+ErrorModel copyWith({int? code, String? message, String? Function()? details, }) { return ErrorModel(
   code: code ?? this.code,
   message: message ?? this.message,
   details: details != null ? details() : this.details,

@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'refund_application_fee': ?refundApplicationFee,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'description', 'expand', 'metadata', 'refund_application_fee'}.contains(key)); } 
-PostTransfersIdReversalsRequest copyWith({int Function()? amount, String Function()? description, List<String> Function()? expand, PostTransfersIdReversalsRequestMetadata Function()? metadata, bool Function()? refundApplicationFee, }) { return PostTransfersIdReversalsRequest(
+PostTransfersIdReversalsRequest copyWith({int? Function()? amount, String? Function()? description, List<String>? Function()? expand, PostTransfersIdReversalsRequestMetadata? Function()? metadata, bool? Function()? refundApplicationFee, }) { return PostTransfersIdReversalsRequest(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,
   expand: expand != null ? expand() : this.expand,

@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization_amount_details.dart';/// 
-@immutable final class IssuingAuthorizationPendingRequest {const IssuingAuthorizationPendingRequest({required this.amount, required this.currency, required this.isAmountControllable, required this.merchantAmount, required this.merchantCurrency, this.amountDetails, this.networkRiskScore, });
+@immutable final class IssuingAuthorizationPendingRequest {const IssuingAuthorizationPendingRequest({required this.amount, required this.currency, required this.isAmountControllable, required this.merchantAmount, required this.merchantCurrency, this.amountDetails = const Omittable.absent(), this.networkRiskScore = const Omittable.absent(), });
 
 factory IssuingAuthorizationPendingRequest.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationPendingRequest(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
+  amountDetails: json.containsKey('amount_details') ? Omittable(json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   currency: json['currency'] as String,
   isAmountControllable: json['is_amount_controllable'] as bool,
   merchantAmount: (json['merchant_amount'] as num).toInt(),
   merchantCurrency: json['merchant_currency'] as String,
-  networkRiskScore: json['network_risk_score'] != null ? (json['network_risk_score'] as num).toInt() : null,
+  networkRiskScore: json.containsKey('network_risk_score') ? Omittable(json['network_risk_score'] != null ? (json['network_risk_score'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// The additional amount Stripe will hold if the authorization is approved, in the card's [currency](https://docs.stripe.com/api#issuing_authorization_object-pending-request-currency) and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
 final int amount;
 
 /// Detailed breakdown of amount components. These amounts are denominated in `currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
-final IssuingAuthorizationAmountDetails? amountDetails;
+final Omittable<IssuingAuthorizationAmountDetails?> amountDetails;
 
 /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
 final String currency;
@@ -32,30 +32,30 @@ final int merchantAmount;
 final String merchantCurrency;
 
 /// The card network's estimate of the likelihood that an authorization is fraudulent. Takes on values between 1 and 99.
-final int? networkRiskScore;
+final Omittable<int?> networkRiskScore;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
-  if (amountDetails != null) 'amount_details': amountDetails?.toJson(),
+  if (amountDetails.isPresent) 'amount_details': amountDetails.value?.toJson(),
   'currency': currency,
   'is_amount_controllable': isAmountControllable,
   'merchant_amount': merchantAmount,
   'merchant_currency': merchantCurrency,
-  'network_risk_score': ?networkRiskScore,
+  if (networkRiskScore.isPresent) 'network_risk_score': networkRiskScore.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('is_amount_controllable') && json['is_amount_controllable'] is bool &&
       json.containsKey('merchant_amount') && json['merchant_amount'] is num &&
       json.containsKey('merchant_currency') && json['merchant_currency'] is String; } 
-IssuingAuthorizationPendingRequest copyWith({int? amount, IssuingAuthorizationAmountDetails? Function()? amountDetails, String? currency, bool? isAmountControllable, int? merchantAmount, String? merchantCurrency, int? Function()? networkRiskScore, }) { return IssuingAuthorizationPendingRequest(
+IssuingAuthorizationPendingRequest copyWith({int? amount, Omittable<IssuingAuthorizationAmountDetails?>? amountDetails, String? currency, bool? isAmountControllable, int? merchantAmount, String? merchantCurrency, Omittable<int?>? networkRiskScore, }) { return IssuingAuthorizationPendingRequest(
   amount: amount ?? this.amount,
-  amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
+  amountDetails: amountDetails ?? this.amountDetails,
   currency: currency ?? this.currency,
   isAmountControllable: isAmountControllable ?? this.isAmountControllable,
   merchantAmount: merchantAmount ?? this.merchantAmount,
   merchantCurrency: merchantCurrency ?? this.merchantCurrency,
-  networkRiskScore: networkRiskScore != null ? networkRiskScore() : this.networkRiskScore,
+  networkRiskScore: networkRiskScore ?? this.networkRiskScore,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingAuthorizationPendingRequest &&

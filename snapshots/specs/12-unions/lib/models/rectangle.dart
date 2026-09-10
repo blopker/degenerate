@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('width') && json['width'] is num &&
       json.containsKey('height') && json['height'] is num; } 
-Rectangle copyWith({String? type, double? width, double? height, String Function()? color, }) { return Rectangle(
+Rectangle copyWith({String? type, double? width, double? height, String? Function()? color, }) { return Rectangle(
   type: type ?? this.type,
   width: width ?? this.width,
   height: height ?? this.height,

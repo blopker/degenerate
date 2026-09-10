@@ -24,24 +24,24 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt26ResponseFormatType($value)'; } 
  }
-@immutable final class Prompt26ResponseFormat {const Prompt26ResponseFormat({this.jsonSchema, this.type, });
+@immutable final class Prompt26ResponseFormat {const Prompt26ResponseFormat({this.jsonSchema = const Omittable.absent(), this.type, });
 
 factory Prompt26ResponseFormat.fromJson(Map<String, dynamic> json) { return Prompt26ResponseFormat(
-  jsonSchema: json['json_schema'],
+  jsonSchema: json.containsKey('json_schema') ? Omittable(json['json_schema']) : const Omittable.absent(),
   type: json['type'] != null ? Prompt26ResponseFormatType.fromJson(json['type'] as String) : null,
 ); }
 
-final dynamic jsonSchema;
+final Omittable<dynamic> jsonSchema;
 
 final Prompt26ResponseFormatType? type;
 
 Map<String, dynamic> toJson() { return {
-  'json_schema': ?jsonSchema,
+  if (jsonSchema.isPresent) 'json_schema': jsonSchema.value,
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'json_schema', 'type'}.contains(key)); } 
-Prompt26ResponseFormat copyWith({dynamic Function()? jsonSchema, Prompt26ResponseFormatType Function()? type, }) { return Prompt26ResponseFormat(
-  jsonSchema: jsonSchema != null ? jsonSchema() : this.jsonSchema,
+Prompt26ResponseFormat copyWith({Omittable<dynamic>? jsonSchema, Prompt26ResponseFormatType? Function()? type, }) { return Prompt26ResponseFormat(
+  jsonSchema: jsonSchema ?? this.jsonSchema,
   type: type != null ? type() : this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

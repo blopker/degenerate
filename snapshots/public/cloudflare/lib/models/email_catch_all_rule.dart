@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (tag != null) 'tag': tag?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actions', 'enabled', 'id', 'matchers', 'name', 'tag'}.contains(key)); } 
-EmailCatchAllRule copyWith({List<EmailRuleCatchallAction> Function()? actions, EmailRuleEnabled Function()? enabled, EmailRuleIdentifier Function()? id, List<EmailRuleCatchallMatcher> Function()? matchers, EmailRuleName Function()? name, EmailRuleTag Function()? tag, }) { return EmailCatchAllRule(
+EmailCatchAllRule copyWith({List<EmailRuleCatchallAction>? Function()? actions, EmailRuleEnabled? Function()? enabled, EmailRuleIdentifier? Function()? id, List<EmailRuleCatchallMatcher>? Function()? matchers, EmailRuleName? Function()? name, EmailRuleTag? Function()? tag, }) { return EmailCatchAllRule(
   actions: actions != null ? actions() : this.actions,
   enabled: enabled != null ? enabled() : this.enabled,
   id: id != null ? id() : this.id,

@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('service') && json['service'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindService copyWith({String Function()? entrypoint, String Function()? environment, WorkersBindingName? name, String? service, String? type, }) { return WorkersBindingKindService(
+WorkersBindingKindService copyWith({String? Function()? entrypoint, String Function()? environment, WorkersBindingName? name, String? service, String? type, }) { return WorkersBindingKindService(
   entrypoint: entrypoint != null ? entrypoint() : this.entrypoint,
   environment: environment != null ? environment() : this.environment,
   name: name ?? this.name,

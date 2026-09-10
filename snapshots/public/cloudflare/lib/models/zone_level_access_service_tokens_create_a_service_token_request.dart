@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (previousClientSecretExpiresAt != null) 'previous_client_secret_expires_at': previousClientSecretExpiresAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-ZoneLevelAccessServiceTokensCreateAServiceTokenRequest copyWith({AccessClientSecretVersion Function()? clientSecretVersion, AccessSchemasDuration Function()? duration, AccessServiceTokensComponentsSchemasName? name, AccessPreviousClientSecretExpiresAt Function()? previousClientSecretExpiresAt, }) { return ZoneLevelAccessServiceTokensCreateAServiceTokenRequest(
+ZoneLevelAccessServiceTokensCreateAServiceTokenRequest copyWith({AccessClientSecretVersion? Function()? clientSecretVersion, AccessSchemasDuration? Function()? duration, AccessServiceTokensComponentsSchemasName? name, AccessPreviousClientSecretExpiresAt? Function()? previousClientSecretExpiresAt, }) { return ZoneLevelAccessServiceTokensCreateAServiceTokenRequest(
   clientSecretVersion: clientSecretVersion != null ? clientSecretVersion() : this.clientSecretVersion,
   duration: duration != null ? duration() : this.duration,
   name: name ?? this.name,

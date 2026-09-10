@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'reference', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsParam76 copyWith({PaymentMethodOptionsParam76CaptureMethod Function()? captureMethod, String Function()? reference, PaymentMethodOptionsParam76SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam76(
+PaymentMethodOptionsParam76 copyWith({PaymentMethodOptionsParam76CaptureMethod? Function()? captureMethod, String? Function()? reference, PaymentMethodOptionsParam76SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam76(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   reference: reference != null ? reference() : this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

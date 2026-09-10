@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (onDemand != null) 'on_demand': onDemand?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn_prepend_count', 'auto_advertise_withdraw', 'on_demand'}.contains(key)); } 
-AddressingBgpPrefixUpdateAdvertisement copyWith({AddressingAsnPrependCount Function()? asnPrependCount, AddressingAutoAdvertiseWithdraw Function()? autoAdvertiseWithdraw, AddressingBgpPrefixUpdateAdvertisementOnDemand Function()? onDemand, }) { return AddressingBgpPrefixUpdateAdvertisement(
+AddressingBgpPrefixUpdateAdvertisement copyWith({AddressingAsnPrependCount? Function()? asnPrependCount, AddressingAutoAdvertiseWithdraw? Function()? autoAdvertiseWithdraw, AddressingBgpPrefixUpdateAdvertisementOnDemand? Function()? onDemand, }) { return AddressingBgpPrefixUpdateAdvertisement(
   asnPrependCount: asnPrependCount != null ? asnPrependCount() : this.asnPrependCount,
   autoAdvertiseWithdraw: autoAdvertiseWithdraw != null ? autoAdvertiseWithdraw() : this.autoAdvertiseWithdraw,
   onDemand: onDemand != null ? onDemand() : this.onDemand,

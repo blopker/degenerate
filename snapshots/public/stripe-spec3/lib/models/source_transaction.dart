@@ -174,7 +174,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type'); } 
-SourceTransaction copyWith({SourceTransactionAchCreditTransferData Function()? achCreditTransfer, int? amount, SourceTransactionChfCreditTransferData Function()? chfCreditTransfer, int? created, String? currency, SourceTransactionGbpCreditTransferData Function()? gbpCreditTransfer, String? id, bool? livemode, SourceTransactionObject? object, SourceTransactionPaperCheckData Function()? paperCheck, SourceTransactionSepaCreditTransferData Function()? sepaCreditTransfer, String? source, String? status, SourceTransactionType? type, }) { return SourceTransaction(
+SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? achCreditTransfer, int? amount, SourceTransactionChfCreditTransferData? Function()? chfCreditTransfer, int? created, String? currency, SourceTransactionGbpCreditTransferData? Function()? gbpCreditTransfer, String? id, bool? livemode, SourceTransactionObject? object, SourceTransactionPaperCheckData? Function()? paperCheck, SourceTransactionSepaCreditTransferData? Function()? sepaCreditTransfer, String? source, String? status, SourceTransactionType? type, }) { return SourceTransaction(
   achCreditTransfer: achCreditTransfer != null ? achCreditTransfer() : this.achCreditTransfer,
   amount: amount ?? this.amount,
   chfCreditTransfer: chfCreditTransfer != null ? chfCreditTransfer() : this.chfCreditTransfer,

@@ -22,27 +22,27 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CacheRulesSmartTieredCacheId($value)'; } 
  }
-@immutable final class CacheRulesSmartTieredCache {const CacheRulesSmartTieredCache({required this.id, this.modifiedOn, });
+@immutable final class CacheRulesSmartTieredCache {const CacheRulesSmartTieredCache({required this.id, this.modifiedOn = const Omittable.absent(), });
 
 factory CacheRulesSmartTieredCache.fromJson(Map<String, dynamic> json) { return CacheRulesSmartTieredCache(
   id: CacheRulesSmartTieredCacheId.fromJson(json['id'] as String),
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// ID of the zone setting.
 final CacheRulesSmartTieredCacheId id;
 
 /// Last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-CacheRulesSmartTieredCache copyWith({CacheRulesSmartTieredCacheId? id, DateTime? Function()? modifiedOn, }) { return CacheRulesSmartTieredCache(
+CacheRulesSmartTieredCache copyWith({CacheRulesSmartTieredCacheId? id, Omittable<DateTime?>? modifiedOn, }) { return CacheRulesSmartTieredCache(
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CacheRulesSmartTieredCache &&

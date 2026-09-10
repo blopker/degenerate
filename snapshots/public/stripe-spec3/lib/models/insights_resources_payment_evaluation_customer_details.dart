@@ -1,45 +1,45 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Customer details attached to this payment evaluation.
-@immutable final class InsightsResourcesPaymentEvaluationCustomerDetails {const InsightsResourcesPaymentEvaluationCustomerDetails({this.customer, this.customerAccount, this.email, this.name, this.phone, });
+@immutable final class InsightsResourcesPaymentEvaluationCustomerDetails {const InsightsResourcesPaymentEvaluationCustomerDetails({this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.email = const Omittable.absent(), this.name = const Omittable.absent(), this.phone = const Omittable.absent(), });
 
 factory InsightsResourcesPaymentEvaluationCustomerDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationCustomerDetails(
-  customer: json['customer'] as String?,
-  customerAccount: json['customer_account'] as String?,
-  email: json['email'] as String?,
-  name: json['name'] as String?,
-  phone: json['phone'] as String?,
+  customer: json.containsKey('customer') ? Omittable(json['customer'] as String?) : const Omittable.absent(),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
+  phone: json.containsKey('phone') ? Omittable(json['phone'] as String?) : const Omittable.absent(),
 ); }
 
 /// The ID of the customer associated with the payment evaluation.
-final String? customer;
+final Omittable<String?> customer;
 
 /// The ID of the Account representing the customer associated with the payment evaluation.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// The customer's email address.
-final String? email;
+final Omittable<String?> email;
 
 /// The customer's full name or business name.
-final String? name;
+final Omittable<String?> name;
 
 /// The customer's phone number.
-final String? phone;
+final Omittable<String?> phone;
 
 Map<String, dynamic> toJson() { return {
-  'customer': ?customer,
-  'customer_account': ?customerAccount,
-  'email': ?email,
-  'name': ?name,
-  'phone': ?phone,
+  if (customer.isPresent) 'customer': customer.value,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
+  if (email.isPresent) 'email': email.value,
+  if (name.isPresent) 'name': name.value,
+  if (phone.isPresent) 'phone': phone.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer', 'customer_account', 'email', 'name', 'phone'}.contains(key)); } 
-InsightsResourcesPaymentEvaluationCustomerDetails copyWith({String? Function()? customer, String? Function()? customerAccount, String? Function()? email, String? Function()? name, String? Function()? phone, }) { return InsightsResourcesPaymentEvaluationCustomerDetails(
-  customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
-  email: email != null ? email() : this.email,
-  name: name != null ? name() : this.name,
-  phone: phone != null ? phone() : this.phone,
+InsightsResourcesPaymentEvaluationCustomerDetails copyWith({Omittable<String?>? customer, Omittable<String?>? customerAccount, Omittable<String?>? email, Omittable<String?>? name, Omittable<String?>? phone, }) { return InsightsResourcesPaymentEvaluationCustomerDetails(
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount ?? this.customerAccount,
+  email: email ?? this.email,
+  name: name ?? this.name,
+  phone: phone ?? this.phone,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationCustomerDetails &&

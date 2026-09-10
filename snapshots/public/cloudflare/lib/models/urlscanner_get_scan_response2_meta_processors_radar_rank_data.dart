@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String &&
       json.containsKey('hostname') && json['hostname'] is String; } 
-UrlscannerGetScanResponse2MetaProcessorsRadarRankData copyWith({String? bucket, String? hostname, double Function()? rank, }) { return UrlscannerGetScanResponse2MetaProcessorsRadarRankData(
+UrlscannerGetScanResponse2MetaProcessorsRadarRankData copyWith({String? bucket, String? hostname, double? Function()? rank, }) { return UrlscannerGetScanResponse2MetaProcessorsRadarRankData(
   bucket: bucket ?? this.bucket,
   hostname: hostname ?? this.hostname,
   rank: rank != null ? rank() : this.rank,

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (sessionStats != null) 'session_stats': sessionStats?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'recording_stats', 'session_stats'}.contains(key)); } 
-GetOrgAnalyticsResponseData copyWith({GetOrgAnalyticsResponseDataRecordingStats Function()? recordingStats, GetOrgAnalyticsResponseDataSessionStats Function()? sessionStats, }) { return GetOrgAnalyticsResponseData(
+GetOrgAnalyticsResponseData copyWith({GetOrgAnalyticsResponseDataRecordingStats? Function()? recordingStats, GetOrgAnalyticsResponseDataSessionStats? Function()? sessionStats, }) { return GetOrgAnalyticsResponseData(
   recordingStats: recordingStats != null ? recordingStats() : this.recordingStats,
   sessionStats: sessionStats != null ? sessionStats() : this.sessionStats,
 ); } 

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'armored_public_key': armoredPublicKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('armored_public_key') && json['armored_public_key'] is String; } 
-UsersCreateGpgKeyForAuthenticatedUserRequest copyWith({String Function()? name, String? armoredPublicKey, }) { return UsersCreateGpgKeyForAuthenticatedUserRequest(
+UsersCreateGpgKeyForAuthenticatedUserRequest copyWith({String? Function()? name, String? armoredPublicKey, }) { return UsersCreateGpgKeyForAuthenticatedUserRequest(
   name: name != null ? name() : this.name,
   armoredPublicKey: armoredPublicKey ?? this.armoredPublicKey,
 ); } 

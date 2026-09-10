@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('subnet_id') && json['subnet_id'] is String &&
       json.containsKey('region') && json['region'] is String; } 
-NetworkSettings copyWith({String? id, String Function()? networkConfigurationId, String? name, String? subnetId, String? region, }) { return NetworkSettings(
+NetworkSettings copyWith({String? id, String? Function()? networkConfigurationId, String? name, String? subnetId, String? region, }) { return NetworkSettings(
   id: id ?? this.id,
   networkConfigurationId: networkConfigurationId != null ? networkConfigurationId() : this.networkConfigurationId,
   name: name ?? this.name,

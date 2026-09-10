@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityUpdateDisplayNameRequest {const EmailSecurityUpdateDisplayNameRequest({this.email, this.isEmailRegex, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityUpdateDisplayNameRequest {const EmailSecurityUpdateDisplayNameRequest({this.email = const Omittable.absent(), this.isEmailRegex = const Omittable.absent(), this.name = const Omittable.absent(), });
 
 factory EmailSecurityUpdateDisplayNameRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateDisplayNameRequest(
-  email: json['email'] as String?,
-  isEmailRegex: json['is_email_regex'] as bool?,
-  name: json['name'] as String?,
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
+  isEmailRegex: json.containsKey('is_email_regex') ? Omittable(json['is_email_regex'] as bool?) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
 ); }
 
-final String? email;
+final Omittable<String?> email;
 
-final bool? isEmailRegex;
+final Omittable<bool?> isEmailRegex;
 
-final String? name;
+final Omittable<String?> name;
 
 Map<String, dynamic> toJson() { return {
-  'email': ?email,
-  'is_email_regex': ?isEmailRegex,
-  'name': ?name,
+  if (email.isPresent) 'email': email.value,
+  if (isEmailRegex.isPresent) 'is_email_regex': isEmailRegex.value,
+  if (name.isPresent) 'name': name.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'is_email_regex', 'name'}.contains(key)); } 
-EmailSecurityUpdateDisplayNameRequest copyWith({String? Function()? email, bool? Function()? isEmailRegex, String? Function()? name, }) { return EmailSecurityUpdateDisplayNameRequest(
-  email: email != null ? email() : this.email,
-  isEmailRegex: isEmailRegex != null ? isEmailRegex() : this.isEmailRegex,
-  name: name != null ? name() : this.name,
+EmailSecurityUpdateDisplayNameRequest copyWith({Omittable<String?>? email, Omittable<bool?>? isEmailRegex, Omittable<String?>? name, }) { return EmailSecurityUpdateDisplayNameRequest(
+  email: email ?? this.email,
+  isEmailRegex: isEmailRegex ?? this.isEmailRegex,
+  name: name ?? this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EmailSecurityUpdateDisplayNameRequest &&

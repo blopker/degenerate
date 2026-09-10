@@ -31,13 +31,13 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// The output of a local shell tool call.
 /// 
-@immutable final class LocalShellToolCallOutput {const LocalShellToolCallOutput({required this.type, required this.id, required this.output, this.status, });
+@immutable final class LocalShellToolCallOutput {const LocalShellToolCallOutput({required this.type, required this.id, required this.output, this.status = const Omittable.absent(), });
 
 factory LocalShellToolCallOutput.fromJson(Map<String, dynamic> json) { return LocalShellToolCallOutput(
   type: json['type'] as String,
   id: json['id'] as String,
   output: json['output'] as String,
-  status: json['status'] != null ? LocalShellToolCallOutputStatus.fromJson(json['status'] as String) : null,
+  status: json.containsKey('status') ? Omittable(json['status'] != null ? LocalShellToolCallOutputStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The type of the local shell tool call output. Always `local_shell_call_output`.
@@ -54,22 +54,22 @@ final String output;
 
 /// The status of the item. One of `in_progress`, `completed`, or `incomplete`.
 /// 
-final LocalShellToolCallOutputStatus? status;
+final Omittable<LocalShellToolCallOutputStatus?> status;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
   'id': id,
   'output': output,
-  if (status != null) 'status': status?.toJson(),
+  if (status.isPresent) 'status': status.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('output') && json['output'] is String; } 
-LocalShellToolCallOutput copyWith({String? type, String? id, String? output, LocalShellToolCallOutputStatus? Function()? status, }) { return LocalShellToolCallOutput(
+LocalShellToolCallOutput copyWith({String? type, String? id, String? output, Omittable<LocalShellToolCallOutputStatus?>? status, }) { return LocalShellToolCallOutput(
   type: type ?? this.type,
   id: id ?? this.id,
   output: output ?? this.output,
-  status: status != null ? status() : this.status,
+  status: status ?? this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is LocalShellToolCallOutput &&

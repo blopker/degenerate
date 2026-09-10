@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_thresholds', 'discounts', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
-PostSubscriptionsRequestItems copyWith({PostSubscriptionsRequestItemsBillingThresholds Function()? billingThresholds, PostSubscriptionsRequestItemsDiscounts Function()? discounts, Map<String, String> Function()? metadata, String Function()? price, PostSubscriptionsRequestItemsPriceData Function()? priceData, int Function()? quantity, PostSubscriptionsRequestItemsTaxRates Function()? taxRates, }) { return PostSubscriptionsRequestItems(
+PostSubscriptionsRequestItems copyWith({PostSubscriptionsRequestItemsBillingThresholds? Function()? billingThresholds, PostSubscriptionsRequestItemsDiscounts? Function()? discounts, Map<String, String>? Function()? metadata, String? Function()? price, PostSubscriptionsRequestItemsPriceData? Function()? priceData, int? Function()? quantity, PostSubscriptionsRequestItemsTaxRates? Function()? taxRates, }) { return PostSubscriptionsRequestItems(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   discounts: discounts != null ? discounts() : this.discounts,
   metadata: metadata != null ? metadata() : this.metadata,

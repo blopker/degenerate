@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-WorkersAiListFinetunesResponseResult copyWith({DateTime? createdAt, String Function()? description, String? id, String? model, DateTime? modifiedAt, String? name, }) { return WorkersAiListFinetunesResponseResult(
+WorkersAiListFinetunesResponseResult copyWith({DateTime? createdAt, String? Function()? description, String? id, String? model, DateTime? modifiedAt, String? name, }) { return WorkersAiListFinetunesResponseResult(
   createdAt: createdAt ?? this.createdAt,
   description: description != null ? description() : this.description,
   id: id ?? this.id,

@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('size_gb') && json['size_gb'] is num &&
       json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('source'); } 
-ActionsHostedRunnerPoolImage copyWith({String? id, int? sizeGb, String? displayName, ActionsHostedRunnerPoolImageSource? source, String Function()? version, }) { return ActionsHostedRunnerPoolImage(
+ActionsHostedRunnerPoolImage copyWith({String? id, int? sizeGb, String? displayName, ActionsHostedRunnerPoolImageSource? source, String? Function()? version, }) { return ActionsHostedRunnerPoolImage(
   id: id ?? this.id,
   sizeGb: sizeGb ?? this.sizeGb,
   displayName: displayName ?? this.displayName,

@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'include_obfuscation': ?includeObfuscation,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'include_obfuscation'}.contains(key)); } 
-ResponseStreamOptions copyWith({bool Function()? includeObfuscation}) { return ResponseStreamOptions(
+ResponseStreamOptions copyWith({bool? Function()? includeObfuscation}) { return ResponseStreamOptions(
   includeObfuscation: includeObfuscation != null ? includeObfuscation() : this.includeObfuscation,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

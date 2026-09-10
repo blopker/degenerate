@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'location': ?location,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'location'}.contains(key)); } 
-PostTerminalConnectionTokensRequest copyWith({List<String> Function()? expand, String Function()? location, }) { return PostTerminalConnectionTokensRequest(
+PostTerminalConnectionTokensRequest copyWith({List<String>? Function()? expand, String? Function()? location, }) { return PostTerminalConnectionTokensRequest(
   expand: expand != null ? expand() : this.expand,
   location: location != null ? location() : this.location,
 ); } 

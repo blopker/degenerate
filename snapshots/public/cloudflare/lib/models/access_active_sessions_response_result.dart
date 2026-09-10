@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expiration', 'metadata', 'name'}.contains(key)); } 
-AccessActiveSessionsResponseResult copyWith({int Function()? expiration, AccessActiveSessionsResponseResultMetadata Function()? metadata, String Function()? name, }) { return AccessActiveSessionsResponseResult(
+AccessActiveSessionsResponseResult copyWith({int? Function()? expiration, AccessActiveSessionsResponseResultMetadata? Function()? metadata, String? Function()? name, }) { return AccessActiveSessionsResponseResult(
   expiration: expiration != null ? expiration() : this.expiration,
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,

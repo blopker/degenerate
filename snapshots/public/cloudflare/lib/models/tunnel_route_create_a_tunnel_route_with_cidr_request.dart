@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (virtualNetworkId != null) 'virtual_network_id': virtualNetworkId?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tunnel_id'); } 
-TunnelRouteCreateATunnelRouteWithCidrRequest copyWith({TunnelRouteComment Function()? comment, TunnelTunnelId? tunnelId, TunnelVirtualNetworkId Function()? virtualNetworkId, }) { return TunnelRouteCreateATunnelRouteWithCidrRequest(
+TunnelRouteCreateATunnelRouteWithCidrRequest copyWith({TunnelRouteComment? Function()? comment, TunnelTunnelId? tunnelId, TunnelVirtualNetworkId? Function()? virtualNetworkId, }) { return TunnelRouteCreateATunnelRouteWithCidrRequest(
   comment: comment != null ? comment() : this.comment,
   tunnelId: tunnelId ?? this.tunnelId,
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,

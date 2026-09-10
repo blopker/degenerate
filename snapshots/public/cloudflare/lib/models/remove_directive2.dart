@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'operation': operation.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operation'); } 
-RemoveDirective2 copyWith({RulesetsSetCacheControlCloudflareOnly Function()? cloudflareOnly, RulesetsSetCacheControlOperation? operation, }) { return RemoveDirective2(
+RemoveDirective2 copyWith({RulesetsSetCacheControlCloudflareOnly? Function()? cloudflareOnly, RulesetsSetCacheControlOperation? operation, }) { return RemoveDirective2(
   cloudflareOnly: cloudflareOnly != null ? cloudflareOnly() : this.cloudflareOnly,
   operation: operation ?? this.operation,
 ); } 

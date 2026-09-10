@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';/// 
-@immutable final class ConfirmationTokensResourceShipping {const ConfirmationTokensResourceShipping({required this.address, required this.name, this.phone, });
+@immutable final class ConfirmationTokensResourceShipping {const ConfirmationTokensResourceShipping({required this.address, required this.name, this.phone = const Omittable.absent(), });
 
 factory ConfirmationTokensResourceShipping.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourceShipping(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
-  phone: json['phone'] as String?,
+  phone: json.containsKey('phone') ? Omittable(json['phone'] as String?) : const Omittable.absent(),
 ); }
 
 final Address address;
@@ -15,19 +15,19 @@ final Address address;
 final String name;
 
 /// Recipient phone (including extension).
-final String? phone;
+final Omittable<String?> phone;
 
 Map<String, dynamic> toJson() { return {
   'address': address.toJson(),
   'name': name,
-  'phone': ?phone,
+  if (phone.isPresent) 'phone': phone.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String; } 
-ConfirmationTokensResourceShipping copyWith({Address? address, String? name, String? Function()? phone, }) { return ConfirmationTokensResourceShipping(
+ConfirmationTokensResourceShipping copyWith({Address? address, String? name, Omittable<String?>? phone, }) { return ConfirmationTokensResourceShipping(
   address: address ?? this.address,
   name: name ?? this.name,
-  phone: phone != null ? phone() : this.phone,
+  phone: phone ?? this.phone,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ConfirmationTokensResourceShipping &&

@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'purchase_interval_count': ?purchaseIntervalCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'average_amount', 'maximum_amount', 'minimum_amount', 'purchase_interval', 'purchase_interval_count'}.contains(key)); } 
-PaymentMethodOptionsParam17OnDemand copyWith({int Function()? averageAmount, int Function()? maximumAmount, int Function()? minimumAmount, PaymentMethodOptionsParam17OnDemandPurchaseInterval Function()? purchaseInterval, int Function()? purchaseIntervalCount, }) { return PaymentMethodOptionsParam17OnDemand(
+PaymentMethodOptionsParam17OnDemand copyWith({int? Function()? averageAmount, int? Function()? maximumAmount, int? Function()? minimumAmount, PaymentMethodOptionsParam17OnDemandPurchaseInterval? Function()? purchaseInterval, int? Function()? purchaseIntervalCount, }) { return PaymentMethodOptionsParam17OnDemand(
   averageAmount: averageAmount != null ? averageAmount() : this.averageAmount,
   maximumAmount: maximumAmount != null ? maximumAmount() : this.maximumAmount,
   minimumAmount: minimumAmount != null ? minimumAmount() : this.minimumAmount,

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('secretName') && json['secretName'] is String &&
       json.containsKey('shareName') && json['shareName'] is String; } 
-AzureFileVolumeSource copyWith({bool Function()? readOnly, String? secretName, String? shareName, }) { return AzureFileVolumeSource(
+AzureFileVolumeSource copyWith({bool? Function()? readOnly, String? secretName, String? shareName, }) { return AzureFileVolumeSource(
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretName: secretName ?? this.secretName,
   shareName: shareName ?? this.shareName,

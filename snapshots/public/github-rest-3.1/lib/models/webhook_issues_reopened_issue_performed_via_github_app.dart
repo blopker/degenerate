@@ -207,29 +207,29 @@ final String? slug;
 final DateTime? updatedAt;
 
 Map<String, dynamic> toJson() { return {
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
-  'description': ?description,
+  'created_at': createdAt?.toIso8601String(),
+  'description': description,
   if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
-  if (externalUrl != null) 'external_url': externalUrl?.toString(),
+  'external_url': externalUrl?.toString(),
   'html_url': htmlUrl.toString(),
-  'id': ?id,
+  'id': id,
   'name': name,
   'node_id': nodeId,
-  if (owner != null) 'owner': owner?.toJson(),
+  'owner': owner?.toJson(),
   if (permissions != null) 'permissions': permissions?.toJson(),
   'slug': ?slug,
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('description') && json['description'] is String &&
-      json.containsKey('external_url') && json['external_url'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && (json['created_at'] == null || json['created_at'] is String) &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+      json.containsKey('external_url') && (json['external_url'] == null || json['external_url'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('id') && (json['id'] == null || json['id'] is num) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('owner') &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-WebhookIssuesReopenedIssuePerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookIssuesReopenedIssuePerformedViaGithubAppEvents> Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, WebhookIssuesReopenedIssuePerformedViaGithubAppOwner? Function()? owner, WebhookIssuesReopenedIssuePerformedViaGithubAppPermissions Function()? permissions, String Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookIssuesReopenedIssuePerformedViaGithubApp(
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
+WebhookIssuesReopenedIssuePerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookIssuesReopenedIssuePerformedViaGithubAppEvents>? Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, WebhookIssuesReopenedIssuePerformedViaGithubAppOwner? Function()? owner, WebhookIssuesReopenedIssuePerformedViaGithubAppPermissions? Function()? permissions, String? Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookIssuesReopenedIssuePerformedViaGithubApp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   events: events != null ? events() : this.events,

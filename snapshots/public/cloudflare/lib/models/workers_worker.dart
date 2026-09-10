@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_worker_observability.dart';import 'workers_worker_references.dart';import 'workers_worker_subdomain.dart';import 'workers_worker_tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.name, required this.observability, required this.references, required this.subdomain, required this.updatedOn, this.deployedOn, this.logpush = false, this.tags = const [], this.tailConsumers = const [], });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_worker_observability.dart';import 'workers_worker_references.dart';import 'workers_worker_subdomain.dart';import 'workers_worker_tail_consumers.dart';@immutable final class WorkersWorker {const WorkersWorker({required this.createdOn, required this.id, required this.name, required this.observability, required this.references, required this.subdomain, required this.updatedOn, this.deployedOn = const Omittable.absent(), this.logpush = false, this.tags = const [], this.tailConsumers = const [], });
 
 factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker(
   createdOn: DateTime.parse(json['created_on'] as String),
-  deployedOn: json['deployed_on'] != null ? DateTime.parse(json['deployed_on'] as String) : null,
+  deployedOn: json.containsKey('deployed_on') ? Omittable(json['deployed_on'] != null ? DateTime.parse(json['deployed_on'] as String) : null) : const Omittable.absent(),
   id: json['id'] as String,
   logpush: json['logpush'] as bool,
   name: json['name'] as String,
@@ -20,7 +20,7 @@ factory WorkersWorker.fromJson(Map<String, dynamic> json) { return WorkersWorker
 final DateTime createdOn;
 
 /// When the Worker's most recent deployment was created. `null` if the Worker has never been deployed.
-final DateTime? deployedOn;
+final Omittable<DateTime?> deployedOn;
 
 /// Immutable ID of the Worker.
 final String id;
@@ -51,7 +51,7 @@ final DateTime updatedOn;
 
 Map<String, dynamic> toJson() { return {
   'created_on': createdOn.toIso8601String(),
-  if (deployedOn != null) 'deployed_on': deployedOn?.toIso8601String(),
+  if (deployedOn.isPresent) 'deployed_on': deployedOn.value?.toIso8601String(),
   'id': id,
   'logpush': logpush,
   'name': name,
@@ -72,9 +72,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('tags') &&
       json.containsKey('tail_consumers') &&
       json.containsKey('updated_on') && json['updated_on'] is String; } 
-WorkersWorker copyWith({DateTime? createdOn, DateTime? Function()? deployedOn, String? id, bool? logpush, String? name, WorkersWorkerObservability? observability, WorkersWorkerReferences? references, WorkersWorkerSubdomain? subdomain, List<String>? tags, List<WorkersWorkerTailConsumers>? tailConsumers, DateTime? updatedOn, }) { return WorkersWorker(
+WorkersWorker copyWith({DateTime? createdOn, Omittable<DateTime?>? deployedOn, String? id, bool? logpush, String? name, WorkersWorkerObservability? observability, WorkersWorkerReferences? references, WorkersWorkerSubdomain? subdomain, List<String>? tags, List<WorkersWorkerTailConsumers>? tailConsumers, DateTime? updatedOn, }) { return WorkersWorker(
   createdOn: createdOn ?? this.createdOn,
-  deployedOn: deployedOn != null ? deployedOn() : this.deployedOn,
+  deployedOn: deployedOn ?? this.deployedOn,
   id: id ?? this.id,
   logpush: logpush ?? this.logpush,
   name: name ?? this.name,

@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'base_branch': ?baseBranch,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'merge_type', 'base_branch'}.contains(key)); } 
-MergedUpstream copyWith({String Function()? message, MergedUpstreamMergeType Function()? mergeType, String Function()? baseBranch, }) { return MergedUpstream(
+MergedUpstream copyWith({String? Function()? message, MergedUpstreamMergeType? Function()? mergeType, String? Function()? baseBranch, }) { return MergedUpstream(
   message: message != null ? message() : this.message,
   mergeType: mergeType != null ? mergeType() : this.mergeType,
   baseBranch: baseBranch != null ? baseBranch() : this.baseBranch,

@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'width': ?width,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest copyWith({double Function()? guidance, int Function()? height, List<double> Function()? image, String Function()? imageB64, List<double> Function()? mask, String Function()? negativePrompt, int Function()? numSteps, String? prompt, int Function()? seed, double Function()? strength, int Function()? width, }) { return WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest(
+WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest copyWith({double Function()? guidance, int? Function()? height, List<double>? Function()? image, String? Function()? imageB64, List<double>? Function()? mask, String? Function()? negativePrompt, int Function()? numSteps, String? prompt, int? Function()? seed, double Function()? strength, int? Function()? width, }) { return WorkersAiPostRunCfBytedanceStableDiffusionXlLightningRequest(
   guidance: guidance != null ? guidance() : this.guidance,
   height: height != null ? height() : this.height,
   image: image != null ? image() : this.image,

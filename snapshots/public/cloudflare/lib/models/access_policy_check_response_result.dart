@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (userIdentity != null) 'user_identity': userIdentity?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app_state', 'user_identity'}.contains(key)); } 
-AccessPolicyCheckResponseResult copyWith({AccessPolicyCheckResponseResultAppState Function()? appState, AccessPolicyCheckResponseResultUserIdentity Function()? userIdentity, }) { return AccessPolicyCheckResponseResult(
+AccessPolicyCheckResponseResult copyWith({AccessPolicyCheckResponseResultAppState? Function()? appState, AccessPolicyCheckResponseResultUserIdentity? Function()? userIdentity, }) { return AccessPolicyCheckResponseResult(
   appState: appState != null ? appState() : this.appState,
   userIdentity: userIdentity != null ? userIdentity() : this.userIdentity,
 ); } 

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'redirect_url': ?redirectUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'redirect_url'}.contains(key)); } 
-AccessOnetimepinConfig copyWith({String Function()? redirectUrl}) { return AccessOnetimepinConfig(
+AccessOnetimepinConfig copyWith({String? Function()? redirectUrl}) { return AccessOnetimepinConfig(
   redirectUrl: redirectUrl != null ? redirectUrl() : this.redirectUrl,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (comment != null) 'comment': comment?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment'}.contains(key)); } 
-ListsItemCommentObject copyWith({ListsItemComment Function()? comment}) { return ListsItemCommentObject(
+ListsItemCommentObject copyWith({ListsItemComment? Function()? comment}) { return ListsItemCommentObject(
   comment: comment != null ? comment() : this.comment,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

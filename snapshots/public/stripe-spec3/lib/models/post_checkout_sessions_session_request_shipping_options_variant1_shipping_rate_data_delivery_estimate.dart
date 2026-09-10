@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (minimum != null) 'minimum': minimum?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'maximum', 'minimum'}.contains(key)); } 
-PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimate copyWith({PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximum Function()? maximum, PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimum Function()? minimum, }) { return PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimate(
+PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimate copyWith({PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMaximum? Function()? maximum, PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimum? Function()? minimum, }) { return PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimate(
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,
 ); } 

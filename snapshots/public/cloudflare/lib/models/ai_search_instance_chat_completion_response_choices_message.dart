@@ -48,11 +48,11 @@ final AiSearchInstanceChatCompletionResponseChoicesMessageRole role;
 final Map<String,dynamic> additionalProperties;
 
 Map<String, dynamic> toJson() { return {
-  'content': ?content,
+  'content': content,
   'role': role.toJson(),
   ...additionalProperties,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && (json['content'] == null || json['content'] is String) &&
       json.containsKey('role'); } 
 AiSearchInstanceChatCompletionResponseChoicesMessage copyWith({String? Function()? content, AiSearchInstanceChatCompletionResponseChoicesMessageRole? role, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceChatCompletionResponseChoicesMessage(
   content: content != null ? content() : this.content,

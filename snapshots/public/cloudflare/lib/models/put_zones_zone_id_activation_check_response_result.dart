@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-PutZonesZoneIdActivationCheckResponseResult copyWith({ZoneActivationIdentifier Function()? id}) { return PutZonesZoneIdActivationCheckResponseResult(
+PutZonesZoneIdActivationCheckResponseResult copyWith({ZoneActivationIdentifier? Function()? id}) { return PutZonesZoneIdActivationCheckResponseResult(
   id: id != null ? id() : this.id,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

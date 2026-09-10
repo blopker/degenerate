@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'message': message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-BuildsErrorResponseErrors copyWith({int Function()? code, String? message, }) { return BuildsErrorResponseErrors(
+BuildsErrorResponseErrors copyWith({int? Function()? code, String? message, }) { return BuildsErrorResponseErrors(
   code: code != null ? code() : this.code,
   message: message ?? this.message,
 ); } 

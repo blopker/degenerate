@@ -30,14 +30,14 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataErrMessage($value)'; } 
  }
-@immutable final class LivestreamsessionSessionMeetingIdActiveLivestreamResponseData {const LivestreamsessionSessionMeetingIdActiveLivestreamResponseData({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.paging, this.stoppedTime, this.updatedAt, this.viewerSeconds, });
+@immutable final class LivestreamsessionSessionMeetingIdActiveLivestreamResponseData {const LivestreamsessionSessionMeetingIdActiveLivestreamResponseData({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime = const Omittable.absent(), this.livestreamId, this.paging, this.stoppedTime, this.updatedAt, this.viewerSeconds, });
 
 factory LivestreamsessionSessionMeetingIdActiveLivestreamResponseData.fromJson(Map<String, dynamic> json) { return LivestreamsessionSessionMeetingIdActiveLivestreamResponseData(
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   errMessage: json['err_message'] != null ? LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataErrMessage.fromJson(json['err_message'] as String) : null,
   id: json['id'] as String?,
   ingestSeconds: json['ingest_seconds'] != null ? (json['ingest_seconds'] as num).toDouble() : null,
-  invokedTime: json['invoked_time'] as String?,
+  invokedTime: json.containsKey('invoked_time') ? Omittable(json['invoked_time'] as String?) : const Omittable.absent(),
   livestreamId: json['livestream_id'] as String?,
   paging: json['paging'] != null ? LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging.fromJson(json['paging'] as Map<String, dynamic>) : null,
   stoppedTime: json['stopped_time'] != null ? DateTime.parse(json['stopped_time'] as String) : null,
@@ -57,7 +57,7 @@ final String? id;
 final double? ingestSeconds;
 
 /// Name of the livestream.
-final String? invokedTime;
+final Omittable<String?> invokedTime;
 
 /// The ID of the livestream.
 final String? livestreamId;
@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   if (errMessage != null) 'err_message': errMessage?.toJson(),
   'id': ?id,
   'ingest_seconds': ?ingestSeconds,
-  'invoked_time': ?invokedTime,
+  if (invokedTime.isPresent) 'invoked_time': invokedTime.value,
   'livestream_id': ?livestreamId,
   if (paging != null) 'paging': paging?.toJson(),
   if (stoppedTime != null) 'stopped_time': stoppedTime?.toIso8601String(),
@@ -86,12 +86,12 @@ Map<String, dynamic> toJson() { return {
   'viewer_seconds': ?viewerSeconds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'err_message', 'id', 'ingest_seconds', 'invoked_time', 'livestream_id', 'paging', 'stopped_time', 'updated_at', 'viewer_seconds'}.contains(key)); } 
-LivestreamsessionSessionMeetingIdActiveLivestreamResponseData copyWith({DateTime Function()? createdAt, LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataErrMessage Function()? errMessage, String Function()? id, double Function()? ingestSeconds, String? Function()? invokedTime, String Function()? livestreamId, LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging Function()? paging, DateTime Function()? stoppedTime, DateTime Function()? updatedAt, double Function()? viewerSeconds, }) { return LivestreamsessionSessionMeetingIdActiveLivestreamResponseData(
+LivestreamsessionSessionMeetingIdActiveLivestreamResponseData copyWith({DateTime? Function()? createdAt, LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataErrMessage? Function()? errMessage, String? Function()? id, double? Function()? ingestSeconds, Omittable<String?>? invokedTime, String? Function()? livestreamId, LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging? Function()? paging, DateTime? Function()? stoppedTime, DateTime? Function()? updatedAt, double? Function()? viewerSeconds, }) { return LivestreamsessionSessionMeetingIdActiveLivestreamResponseData(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   errMessage: errMessage != null ? errMessage() : this.errMessage,
   id: id != null ? id() : this.id,
   ingestSeconds: ingestSeconds != null ? ingestSeconds() : this.ingestSeconds,
-  invokedTime: invokedTime != null ? invokedTime() : this.invokedTime,
+  invokedTime: invokedTime ?? this.invokedTime,
   livestreamId: livestreamId != null ? livestreamId() : this.livestreamId,
   paging: paging != null ? paging() : this.paging,
   stoppedTime: stoppedTime != null ? stoppedTime() : this.stoppedTime,

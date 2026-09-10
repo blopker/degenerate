@@ -42,22 +42,22 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'actor': actor.toJson(),
   'event': event,
-  'commit_id': ?commitId,
-  'commit_url': ?commitUrl,
+  'commit_id': commitId,
+  'commit_url': commitUrl,
   'created_at': createdAt,
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
-  'lock_reason': ?lockReason,
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
+  'lock_reason': lockReason,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('commit_url') && json['commit_url'] is String &&
+      json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
+      json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
-      json.containsKey('lock_reason') && json['lock_reason'] is String; } 
+      json.containsKey('lock_reason') && (json['lock_reason'] == null || json['lock_reason'] is String); } 
 LockedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, String? createdAt, Integration? Function()? performedViaGithubApp, String? Function()? lockReason, }) { return LockedIssueEvent(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,

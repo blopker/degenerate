@@ -79,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   if (serviceType != null) 'service_type': serviceType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cardholder_prompt_data', 'purchase_type', 'reported_breakdown', 'service_type'}.contains(key)); } 
-PostTestHelpersIssuingAuthorizationsRequestFleet copyWith({PostTestHelpersIssuingAuthorizationsRequestFleetCardholderPromptData Function()? cardholderPromptData, PostTestHelpersIssuingAuthorizationsRequestFleetPurchaseType Function()? purchaseType, PostTestHelpersIssuingAuthorizationsRequestFleetReportedBreakdown Function()? reportedBreakdown, PostTestHelpersIssuingAuthorizationsRequestFleetServiceType Function()? serviceType, }) { return PostTestHelpersIssuingAuthorizationsRequestFleet(
+PostTestHelpersIssuingAuthorizationsRequestFleet copyWith({PostTestHelpersIssuingAuthorizationsRequestFleetCardholderPromptData? Function()? cardholderPromptData, PostTestHelpersIssuingAuthorizationsRequestFleetPurchaseType? Function()? purchaseType, PostTestHelpersIssuingAuthorizationsRequestFleetReportedBreakdown? Function()? reportedBreakdown, PostTestHelpersIssuingAuthorizationsRequestFleetServiceType? Function()? serviceType, }) { return PostTestHelpersIssuingAuthorizationsRequestFleet(
   cardholderPromptData: cardholderPromptData != null ? cardholderPromptData() : this.cardholderPromptData,
   purchaseType: purchaseType != null ? purchaseType() : this.purchaseType,
   reportedBreakdown: reportedBreakdown != null ? reportedBreakdown() : this.reportedBreakdown,

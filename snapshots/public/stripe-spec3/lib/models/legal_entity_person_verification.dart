@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'legal_entity_person_verification_document.dart';/// 
-@immutable final class LegalEntityPersonVerification {const LegalEntityPersonVerification({required this.status, this.additionalDocument, this.details, this.detailsCode, this.document, });
+@immutable final class LegalEntityPersonVerification {const LegalEntityPersonVerification({required this.status, this.additionalDocument = const Omittable.absent(), this.details = const Omittable.absent(), this.detailsCode = const Omittable.absent(), this.document, });
 
 factory LegalEntityPersonVerification.fromJson(Map<String, dynamic> json) { return LegalEntityPersonVerification(
-  additionalDocument: json['additional_document'] != null ? LegalEntityPersonVerificationDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,
-  details: json['details'] as String?,
-  detailsCode: json['details_code'] as String?,
+  additionalDocument: json.containsKey('additional_document') ? Omittable(json['additional_document'] != null ? LegalEntityPersonVerificationDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  details: json.containsKey('details') ? Omittable(json['details'] as String?) : const Omittable.absent(),
+  detailsCode: json.containsKey('details_code') ? Omittable(json['details_code'] as String?) : const Omittable.absent(),
   document: json['document'] != null ? LegalEntityPersonVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
   status: json['status'] as String,
 ); }
 
 /// A document showing address, either a passport, local ID card, or utility bill from a well-known utility company.
-final LegalEntityPersonVerificationDocument? additionalDocument;
+final Omittable<LegalEntityPersonVerificationDocument?> additionalDocument;
 
 /// A user-displayable string describing the verification state for the person. For example, this may say "Provided identity information could not be verified".
-final String? details;
+final Omittable<String?> details;
 
 /// One of `document_address_mismatch`, `document_dob_mismatch`, `document_duplicate_type`, `document_id_number_mismatch`, `document_name_mismatch`, `document_nationality_mismatch`, `failed_keyed_identity`, or `failed_other`. A machine-readable code specifying the verification state for the person.
-final String? detailsCode;
+final Omittable<String?> detailsCode;
 
 final LegalEntityPersonVerificationDocument? document;
 
@@ -26,17 +26,17 @@ final LegalEntityPersonVerificationDocument? document;
 final String status;
 
 Map<String, dynamic> toJson() { return {
-  if (additionalDocument != null) 'additional_document': additionalDocument?.toJson(),
-  'details': ?details,
-  'details_code': ?detailsCode,
+  if (additionalDocument.isPresent) 'additional_document': additionalDocument.value?.toJson(),
+  if (details.isPresent) 'details': details.value,
+  if (detailsCode.isPresent) 'details_code': detailsCode.value,
   if (document != null) 'document': document?.toJson(),
   'status': status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String; } 
-LegalEntityPersonVerification copyWith({LegalEntityPersonVerificationDocument? Function()? additionalDocument, String? Function()? details, String? Function()? detailsCode, LegalEntityPersonVerificationDocument Function()? document, String? status, }) { return LegalEntityPersonVerification(
-  additionalDocument: additionalDocument != null ? additionalDocument() : this.additionalDocument,
-  details: details != null ? details() : this.details,
-  detailsCode: detailsCode != null ? detailsCode() : this.detailsCode,
+LegalEntityPersonVerification copyWith({Omittable<LegalEntityPersonVerificationDocument?>? additionalDocument, Omittable<String?>? details, Omittable<String?>? detailsCode, LegalEntityPersonVerificationDocument? Function()? document, String? status, }) { return LegalEntityPersonVerification(
+  additionalDocument: additionalDocument ?? this.additionalDocument,
+  details: details ?? this.details,
+  detailsCode: detailsCode ?? this.detailsCode,
   document: document != null ? document() : this.document,
   status: status ?? this.status,
 ); } 

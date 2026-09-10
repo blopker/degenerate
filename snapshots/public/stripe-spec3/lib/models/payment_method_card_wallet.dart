@@ -41,12 +41,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodCardWalletType($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodCardWallet {const PaymentMethodCardWallet({required this.type, this.amexExpressCheckout, this.applePay, this.dynamicLast4, this.googlePay, this.link, this.masterpass, this.samsungPay, this.visaCheckout, });
+@immutable final class PaymentMethodCardWallet {const PaymentMethodCardWallet({required this.type, this.amexExpressCheckout, this.applePay, this.dynamicLast4 = const Omittable.absent(), this.googlePay, this.link, this.masterpass, this.samsungPay, this.visaCheckout, });
 
 factory PaymentMethodCardWallet.fromJson(Map<String, dynamic> json) { return PaymentMethodCardWallet(
   amexExpressCheckout: json['amex_express_checkout'] != null ? PaymentMethodCardWalletAmexExpressCheckout.fromJson(json['amex_express_checkout'] as Map<String, dynamic>) : null,
   applePay: json['apple_pay'] != null ? PaymentMethodCardWalletApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>) : null,
-  dynamicLast4: json['dynamic_last4'] as String?,
+  dynamicLast4: json.containsKey('dynamic_last4') ? Omittable(json['dynamic_last4'] as String?) : const Omittable.absent(),
   googlePay: json['google_pay'] != null ? PaymentMethodCardWalletGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>) : null,
   link: json['link'] != null ? PaymentMethodCardWalletLink.fromJson(json['link'] as Map<String, dynamic>) : null,
   masterpass: json['masterpass'] != null ? PaymentMethodCardWalletMasterpass.fromJson(json['masterpass'] as Map<String, dynamic>) : null,
@@ -60,7 +60,7 @@ final PaymentMethodCardWalletAmexExpressCheckout? amexExpressCheckout;
 final PaymentMethodCardWalletApplePay? applePay;
 
 /// (For tokenized numbers only.) The last four digits of the device account number.
-final String? dynamicLast4;
+final Omittable<String?> dynamicLast4;
 
 final PaymentMethodCardWalletGooglePay? googlePay;
 
@@ -78,7 +78,7 @@ final PaymentMethodCardWalletVisaCheckout? visaCheckout;
 Map<String, dynamic> toJson() { return {
   if (amexExpressCheckout != null) 'amex_express_checkout': amexExpressCheckout?.toJson(),
   if (applePay != null) 'apple_pay': applePay?.toJson(),
-  'dynamic_last4': ?dynamicLast4,
+  if (dynamicLast4.isPresent) 'dynamic_last4': dynamicLast4.value,
   if (googlePay != null) 'google_pay': googlePay?.toJson(),
   if (link != null) 'link': link?.toJson(),
   if (masterpass != null) 'masterpass': masterpass?.toJson(),
@@ -87,10 +87,10 @@ Map<String, dynamic> toJson() { return {
   if (visaCheckout != null) 'visa_checkout': visaCheckout?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentMethodCardWallet copyWith({PaymentMethodCardWalletAmexExpressCheckout Function()? amexExpressCheckout, PaymentMethodCardWalletApplePay Function()? applePay, String? Function()? dynamicLast4, PaymentMethodCardWalletGooglePay Function()? googlePay, PaymentMethodCardWalletLink Function()? link, PaymentMethodCardWalletMasterpass Function()? masterpass, PaymentMethodCardWalletSamsungPay Function()? samsungPay, PaymentMethodCardWalletType? type, PaymentMethodCardWalletVisaCheckout Function()? visaCheckout, }) { return PaymentMethodCardWallet(
+PaymentMethodCardWallet copyWith({PaymentMethodCardWalletAmexExpressCheckout? Function()? amexExpressCheckout, PaymentMethodCardWalletApplePay? Function()? applePay, Omittable<String?>? dynamicLast4, PaymentMethodCardWalletGooglePay? Function()? googlePay, PaymentMethodCardWalletLink? Function()? link, PaymentMethodCardWalletMasterpass? Function()? masterpass, PaymentMethodCardWalletSamsungPay? Function()? samsungPay, PaymentMethodCardWalletType? type, PaymentMethodCardWalletVisaCheckout? Function()? visaCheckout, }) { return PaymentMethodCardWallet(
   amexExpressCheckout: amexExpressCheckout != null ? amexExpressCheckout() : this.amexExpressCheckout,
   applePay: applePay != null ? applePay() : this.applePay,
-  dynamicLast4: dynamicLast4 != null ? dynamicLast4() : this.dynamicLast4,
+  dynamicLast4: dynamicLast4 ?? this.dynamicLast4,
   googlePay: googlePay != null ? googlePay() : this.googlePay,
   link: link != null ? link() : this.link,
   masterpass: masterpass != null ? masterpass() : this.masterpass,

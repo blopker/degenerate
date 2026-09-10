@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('correlator') && json['correlator'] is String; } 
-SnapshotJob copyWith({String? id, String? correlator, String Function()? htmlUrl, }) { return SnapshotJob(
+SnapshotJob copyWith({String? id, String? correlator, String? Function()? htmlUrl, }) { return SnapshotJob(
   id: id ?? this.id,
   correlator: correlator ?? this.correlator,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,

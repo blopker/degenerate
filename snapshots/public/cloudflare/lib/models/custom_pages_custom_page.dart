@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (url != null) 'url': url?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'description', 'id', 'modified_on', 'preview_target', 'required_tokens', 'state', 'url'}.contains(key)); } 
-CustomPagesCustomPage copyWith({CustomPagesTimestamp Function()? createdOn, String Function()? description, String Function()? id, CustomPagesTimestamp Function()? modifiedOn, String Function()? previewTarget, List<String> Function()? requiredTokens, CustomPagesState Function()? state, CustomPagesUrl Function()? url, }) { return CustomPagesCustomPage(
+CustomPagesCustomPage copyWith({CustomPagesTimestamp? Function()? createdOn, String? Function()? description, String? Function()? id, CustomPagesTimestamp? Function()? modifiedOn, String? Function()? previewTarget, List<String>? Function()? requiredTokens, CustomPagesState? Function()? state, CustomPagesUrl? Function()? url, }) { return CustomPagesCustomPage(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

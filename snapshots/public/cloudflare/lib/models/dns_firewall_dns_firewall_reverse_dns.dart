@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'ptr': ?ptr,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ptr'}.contains(key)); } 
-DnsFirewallDnsFirewallReverseDns copyWith({Map<String, String> Function()? ptr}) { return DnsFirewallDnsFirewallReverseDns(
+DnsFirewallDnsFirewallReverseDns copyWith({Map<String, String>? Function()? ptr}) { return DnsFirewallDnsFirewallReverseDns(
   ptr: ptr != null ? ptr() : this.ptr,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

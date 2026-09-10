@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate') && json['certificate'] is String &&
       json.containsKey('name'); } 
-ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest copyWith({List<String> Function()? associatedHostnames, String? certificate, AccessCertificatesComponentsSchemasName2? name, }) { return ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest(
+ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest copyWith({List<String>? Function()? associatedHostnames, String? certificate, AccessCertificatesComponentsSchemasName2? name, }) { return ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest(
   associatedHostnames: associatedHostnames != null ? associatedHostnames() : this.associatedHostnames,
   certificate: certificate ?? this.certificate,
   name: name ?? this.name,

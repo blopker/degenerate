@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_check_regions2.dart';import 'load_balancing_enabled.dart';import 'load_balancing_latitude.dart';import 'load_balancing_load_shedding.dart';import 'load_balancing_longitude.dart';import 'load_balancing_minimum_origins.dart';import 'load_balancing_monitor_group_id.dart';import 'load_balancing_monitor_id.dart';import 'load_balancing_name.dart';import 'load_balancing_notification_email.dart';import 'load_balancing_notification_filter.dart';import 'load_balancing_origin.dart';import 'load_balancing_origin_steering.dart';import 'load_balancing_schemas_description.dart';import 'load_balancing_schemas_disabled_at.dart';@immutable final class AccountLoadBalancerPoolsUpdatePoolRequest {const AccountLoadBalancerPoolsUpdatePoolRequest({required this.name, required this.origins, this.checkRegions, this.description, this.disabledAt, this.enabled, this.latitude, this.loadShedding, this.longitude, this.minimumOrigins, this.monitor, this.monitorGroup, this.notificationEmail, this.notificationFilter, this.originSteering, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_check_regions2.dart';import 'load_balancing_enabled.dart';import 'load_balancing_latitude.dart';import 'load_balancing_load_shedding.dart';import 'load_balancing_longitude.dart';import 'load_balancing_minimum_origins.dart';import 'load_balancing_monitor_group_id.dart';import 'load_balancing_monitor_id.dart';import 'load_balancing_name.dart';import 'load_balancing_notification_email.dart';import 'load_balancing_notification_filter.dart';import 'load_balancing_origin.dart';import 'load_balancing_origin_steering.dart';import 'load_balancing_schemas_description.dart';import 'load_balancing_schemas_disabled_at.dart';@immutable final class AccountLoadBalancerPoolsUpdatePoolRequest {const AccountLoadBalancerPoolsUpdatePoolRequest({required this.name, required this.origins, this.checkRegions = const Omittable.absent(), this.description, this.disabledAt, this.enabled, this.latitude, this.loadShedding, this.longitude, this.minimumOrigins, this.monitor, this.monitorGroup, this.notificationEmail, this.notificationFilter, this.originSteering, });
 
 factory AccountLoadBalancerPoolsUpdatePoolRequest.fromJson(Map<String, dynamic> json) { return AccountLoadBalancerPoolsUpdatePoolRequest(
-  checkRegions: (json['check_regions'] as List<dynamic>?)?.map((e) => LoadBalancingCheckRegions2.fromJson(e as String)).toList(),
+  checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => LoadBalancingCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   description: json['description'] != null ? LoadBalancingSchemasDescription.fromJson(json['description'] as String) : null,
   disabledAt: json['disabled_at'] != null ? LoadBalancingSchemasDisabledAt.fromJson(json['disabled_at'] as String) : null,
   enabled: json['enabled'] != null ? LoadBalancingEnabled.fromJson(json['enabled'] as bool) : null,
@@ -21,7 +21,7 @@ factory AccountLoadBalancerPoolsUpdatePoolRequest.fromJson(Map<String, dynamic> 
 ); }
 
 /// A list of regions from which to run health checks. Null means every Cloudflare data center.
-final List<LoadBalancingCheckRegions2>? checkRegions;
+final Omittable<List<LoadBalancingCheckRegions2>?> checkRegions;
 
 /// A human-readable description of the pool.
 final LoadBalancingSchemasDescription? description;
@@ -63,7 +63,7 @@ final LoadBalancingOriginSteering? originSteering;
 final List<LoadBalancingOrigin> origins;
 
 Map<String, dynamic> toJson() { return {
-  if (checkRegions != null) 'check_regions': checkRegions?.map((e) => e.toJson()).toList(),
+  if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (description != null) 'description': description?.toJson(),
   if (disabledAt != null) 'disabled_at': disabledAt?.toJson(),
   if (enabled != null) 'enabled': enabled?.toJson(),
@@ -81,8 +81,8 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('origins'); } 
-AccountLoadBalancerPoolsUpdatePoolRequest copyWith({List<LoadBalancingCheckRegions2>? Function()? checkRegions, LoadBalancingSchemasDescription Function()? description, LoadBalancingSchemasDisabledAt Function()? disabledAt, LoadBalancingEnabled Function()? enabled, LoadBalancingLatitude Function()? latitude, LoadBalancingLoadShedding Function()? loadShedding, LoadBalancingLongitude Function()? longitude, LoadBalancingMinimumOrigins Function()? minimumOrigins, LoadBalancingMonitorId Function()? monitor, LoadBalancingMonitorGroupId Function()? monitorGroup, LoadBalancingName? name, LoadBalancingNotificationEmail Function()? notificationEmail, LoadBalancingNotificationFilter Function()? notificationFilter, LoadBalancingOriginSteering Function()? originSteering, List<LoadBalancingOrigin>? origins, }) { return AccountLoadBalancerPoolsUpdatePoolRequest(
-  checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,
+AccountLoadBalancerPoolsUpdatePoolRequest copyWith({Omittable<List<LoadBalancingCheckRegions2>?>? checkRegions, LoadBalancingSchemasDescription? Function()? description, LoadBalancingSchemasDisabledAt? Function()? disabledAt, LoadBalancingEnabled? Function()? enabled, LoadBalancingLatitude? Function()? latitude, LoadBalancingLoadShedding? Function()? loadShedding, LoadBalancingLongitude? Function()? longitude, LoadBalancingMinimumOrigins? Function()? minimumOrigins, LoadBalancingMonitorId? Function()? monitor, LoadBalancingMonitorGroupId? Function()? monitorGroup, LoadBalancingName? name, LoadBalancingNotificationEmail? Function()? notificationEmail, LoadBalancingNotificationFilter? Function()? notificationFilter, LoadBalancingOriginSteering? Function()? originSteering, List<LoadBalancingOrigin>? origins, }) { return AccountLoadBalancerPoolsUpdatePoolRequest(
+  checkRegions: checkRegions ?? this.checkRegions,
   description: description != null ? description() : this.description,
   disabledAt: disabledAt != null ? disabledAt() : this.disabledAt,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -100,7 +100,8 @@ AccountLoadBalancerPoolsUpdatePoolRequest copyWith({List<LoadBalancingCheckRegio
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountLoadBalancerPoolsUpdatePoolRequest &&
-          listEquals(checkRegions, other.checkRegions) &&
+          checkRegions.isPresent == other.checkRegions.isPresent &&
+          listEquals(checkRegions.value, other.checkRegions.value) &&
           description == other.description &&
           disabledAt == other.disabledAt &&
           enabled == other.enabled &&
@@ -115,6 +116,6 @@ AccountLoadBalancerPoolsUpdatePoolRequest copyWith({List<LoadBalancingCheckRegio
           notificationFilter == other.notificationFilter &&
           originSteering == other.originSteering &&
           listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hash(Object.hashAll(checkRegions ?? const []), description, disabledAt, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, notificationEmail, notificationFilter, originSteering, Object.hashAll(origins)); } 
+@override int get hashCode { return Object.hash(Object.hashAll(checkRegions.value ?? const []), description, disabledAt, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, notificationEmail, notificationFilter, originSteering, Object.hashAll(origins)); } 
 @override String toString() { return 'AccountLoadBalancerPoolsUpdatePoolRequest(checkRegions: $checkRegions, description: $description, disabledAt: $disabledAt, enabled: $enabled, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)'; } 
  }

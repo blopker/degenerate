@@ -78,45 +78,45 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationFuelDataUnit($value)'; } 
  }
 /// 
-@immutable final class IssuingAuthorizationFuelData {const IssuingAuthorizationFuelData({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
+@immutable final class IssuingAuthorizationFuelData {const IssuingAuthorizationFuelData({this.industryProductCode = const Omittable.absent(), this.quantityDecimal = const Omittable.absent(), this.type = const Omittable.absent(), this.unit = const Omittable.absent(), this.unitCostDecimal = const Omittable.absent(), });
 
 factory IssuingAuthorizationFuelData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFuelData(
-  industryProductCode: json['industry_product_code'] as String?,
-  quantityDecimal: json['quantity_decimal'] as String?,
-  type: json['type'] != null ? IssuingAuthorizationFuelDataType.fromJson(json['type'] as String) : null,
-  unit: json['unit'] != null ? IssuingAuthorizationFuelDataUnit.fromJson(json['unit'] as String) : null,
-  unitCostDecimal: json['unit_cost_decimal'] as String?,
+  industryProductCode: json.containsKey('industry_product_code') ? Omittable(json['industry_product_code'] as String?) : const Omittable.absent(),
+  quantityDecimal: json.containsKey('quantity_decimal') ? Omittable(json['quantity_decimal'] as String?) : const Omittable.absent(),
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? IssuingAuthorizationFuelDataType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
+  unit: json.containsKey('unit') ? Omittable(json['unit'] != null ? IssuingAuthorizationFuelDataUnit.fromJson(json['unit'] as String) : null) : const Omittable.absent(),
+  unitCostDecimal: json.containsKey('unit_cost_decimal') ? Omittable(json['unit_cost_decimal'] as String?) : const Omittable.absent(),
 ); }
 
 /// [Conexxus Payment System Product Code](https://www.conexxus.org/conexxus-payment-system-product-codes) identifying the primary fuel product purchased.
-final String? industryProductCode;
+final Omittable<String?> industryProductCode;
 
 /// The quantity of `unit`s of fuel that was dispensed, represented as a decimal string with at most 12 decimal places.
-final String? quantityDecimal;
+final Omittable<String?> quantityDecimal;
 
 /// The type of fuel that was purchased.
-final IssuingAuthorizationFuelDataType? type;
+final Omittable<IssuingAuthorizationFuelDataType?> type;
 
 /// The units for `quantity_decimal`.
-final IssuingAuthorizationFuelDataUnit? unit;
+final Omittable<IssuingAuthorizationFuelDataUnit?> unit;
 
 /// The cost in cents per each unit of fuel, represented as a decimal string with at most 12 decimal places.
-final String? unitCostDecimal;
+final Omittable<String?> unitCostDecimal;
 
 Map<String, dynamic> toJson() { return {
-  'industry_product_code': ?industryProductCode,
-  'quantity_decimal': ?quantityDecimal,
-  if (type != null) 'type': type?.toJson(),
-  if (unit != null) 'unit': unit?.toJson(),
-  'unit_cost_decimal': ?unitCostDecimal,
+  if (industryProductCode.isPresent) 'industry_product_code': industryProductCode.value,
+  if (quantityDecimal.isPresent) 'quantity_decimal': quantityDecimal.value,
+  if (type.isPresent) 'type': type.value?.toJson(),
+  if (unit.isPresent) 'unit': unit.value?.toJson(),
+  if (unitCostDecimal.isPresent) 'unit_cost_decimal': unitCostDecimal.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'industry_product_code', 'quantity_decimal', 'type', 'unit', 'unit_cost_decimal'}.contains(key)); } 
-IssuingAuthorizationFuelData copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, IssuingAuthorizationFuelDataType? Function()? type, IssuingAuthorizationFuelDataUnit? Function()? unit, String? Function()? unitCostDecimal, }) { return IssuingAuthorizationFuelData(
-  industryProductCode: industryProductCode != null ? industryProductCode() : this.industryProductCode,
-  quantityDecimal: quantityDecimal != null ? quantityDecimal() : this.quantityDecimal,
-  type: type != null ? type() : this.type,
-  unit: unit != null ? unit() : this.unit,
-  unitCostDecimal: unitCostDecimal != null ? unitCostDecimal() : this.unitCostDecimal,
+IssuingAuthorizationFuelData copyWith({Omittable<String?>? industryProductCode, Omittable<String?>? quantityDecimal, Omittable<IssuingAuthorizationFuelDataType?>? type, Omittable<IssuingAuthorizationFuelDataUnit?>? unit, Omittable<String?>? unitCostDecimal, }) { return IssuingAuthorizationFuelData(
+  industryProductCode: industryProductCode ?? this.industryProductCode,
+  quantityDecimal: quantityDecimal ?? this.quantityDecimal,
+  type: type ?? this.type,
+  unit: unit ?? this.unit,
+  unitCostDecimal: unitCostDecimal ?? this.unitCostDecimal,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingAuthorizationFuelData &&

@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-Json2 copyWith({CloudflarePipelinesDecimalEncoding Function()? decimalEncoding, CloudflarePipelinesTimestampFormat Function()? timestampFormat, bool Function()? unstructured, Json2Type? type, }) { return Json2(
+Json2 copyWith({CloudflarePipelinesDecimalEncoding? Function()? decimalEncoding, CloudflarePipelinesTimestampFormat? Function()? timestampFormat, bool? Function()? unstructured, Json2Type? type, }) { return Json2(
   decimalEncoding: decimalEncoding != null ? decimalEncoding() : this.decimalEncoding,
   timestampFormat: timestampFormat != null ? timestampFormat() : this.timestampFormat,
   unstructured: unstructured != null ? unstructured() : this.unstructured,

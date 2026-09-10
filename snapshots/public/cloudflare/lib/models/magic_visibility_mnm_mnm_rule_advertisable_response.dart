@@ -9,7 +9,7 @@ factory MagicVisibilityMnmMnmRuleAdvertisableResponse.fromJson(Map<String, dynam
 final MagicVisibilityMnmMnmRuleAutomaticAdvertisement? automaticAdvertisement;
 
 Map<String, dynamic> toJson() { return {
-  if (automaticAdvertisement != null) 'automatic_advertisement': automaticAdvertisement?.toJson(),
+  'automatic_advertisement': automaticAdvertisement?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_advertisement'); } 
 MagicVisibilityMnmMnmRuleAdvertisableResponse copyWith({MagicVisibilityMnmMnmRuleAutomaticAdvertisement? Function()? automaticAdvertisement}) { return MagicVisibilityMnmMnmRuleAdvertisableResponse(

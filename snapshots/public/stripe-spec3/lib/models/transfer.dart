@@ -32,16 +32,16 @@ bool get isUnknown { return !values.contains(this); }
 /// [transfer/payout split](https://docs.stripe.com/transfer-payout-split).
 /// 
 /// Related guide: [Creating separate charges and transfers](https://docs.stripe.com/connect/separate-charges-and-transfers)
-@immutable final class Transfer {const Transfer({required this.amount, required this.amountReversed, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.object, required this.reversals, required this.reversed, this.balanceTransaction, this.description, this.destination, this.destinationPayment, this.sourceTransaction, this.sourceType, this.transferGroup, });
+@immutable final class Transfer {const Transfer({required this.amount, required this.amountReversed, required this.created, required this.currency, required this.id, required this.livemode, required this.metadata, required this.object, required this.reversals, required this.reversed, this.balanceTransaction = const Omittable.absent(), this.description = const Omittable.absent(), this.destination = const Omittable.absent(), this.destinationPayment, this.sourceTransaction = const Omittable.absent(), this.sourceType, this.transferGroup = const Omittable.absent(), });
 
 factory Transfer.fromJson(Map<String, dynamic> json) { return Transfer(
   amount: (json['amount'] as num).toInt(),
   amountReversed: (json['amount_reversed'] as num).toInt(),
-  balanceTransaction: json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null,
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  description: json['description'] as String?,
-  destination: json['destination'] != null ? OneOf2.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  destination: json.containsKey('destination') ? Omittable(json['destination'] != null ? OneOf2.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   destinationPayment: json['destination_payment'] != null ? OneOf2.parse(json['destination_payment'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -49,9 +49,9 @@ factory Transfer.fromJson(Map<String, dynamic> json) { return Transfer(
   object: TransferObject.fromJson(json['object'] as String),
   reversals: TransferReversals.fromJson(json['reversals'] as Map<String, dynamic>),
   reversed: json['reversed'] as bool,
-  sourceTransaction: json['source_transaction'] != null ? OneOf2.parse(json['source_transaction'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
+  sourceTransaction: json.containsKey('source_transaction') ? Omittable(json['source_transaction'] != null ? OneOf2.parse(json['source_transaction'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   sourceType: json['source_type'] as String?,
-  transferGroup: json['transfer_group'] as String?,
+  transferGroup: json.containsKey('transfer_group') ? Omittable(json['transfer_group'] as String?) : const Omittable.absent(),
 ); }
 
 /// Amount in cents (or local equivalent) to be transferred.
@@ -61,7 +61,7 @@ final int amount;
 final int amountReversed;
 
 /// Balance transaction that describes the impact of this transfer on your account balance.
-final TransferBalanceTransaction? balanceTransaction;
+final Omittable<TransferBalanceTransaction?> balanceTransaction;
 
 /// Time that this record of the transfer was first created.
 final int created;
@@ -70,10 +70,10 @@ final int created;
 final String currency;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
-final String? description;
+final Omittable<String?> description;
 
 /// ID of the Stripe account the transfer was sent to.
-final TransferDestination? destination;
+final Omittable<TransferDestination?> destination;
 
 /// If the destination is a Stripe account, this will be the ID of the payment that the destination account received for the transfer.
 final TransferDestinationPayment? destinationPayment;
@@ -97,22 +97,22 @@ final TransferReversals reversals;
 final bool reversed;
 
 /// ID of the charge that was used to fund the transfer. If null, the transfer was funded from the available balance.
-final TransferSourceTransaction? sourceTransaction;
+final Omittable<TransferSourceTransaction?> sourceTransaction;
 
 /// The source balance this transfer came from. One of `card`, `fpx`, or `bank_account`.
 final String? sourceType;
 
 /// A string that identifies this transaction as part of a group. See the [Connect documentation](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options) for details.
-final String? transferGroup;
+final Omittable<String?> transferGroup;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
   'amount_reversed': amountReversed,
-  if (balanceTransaction != null) 'balance_transaction': balanceTransaction?.toJson(),
+  if (balanceTransaction.isPresent) 'balance_transaction': balanceTransaction.value?.toJson(),
   'created': created,
   'currency': currency,
-  'description': ?description,
-  if (destination != null) 'destination': destination?.toJson(),
+  if (description.isPresent) 'description': description.value,
+  if (destination.isPresent) 'destination': destination.value?.toJson(),
   if (destinationPayment != null) 'destination_payment': destinationPayment?.toJson(),
   'id': id,
   'livemode': livemode,
@@ -120,9 +120,9 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'reversals': reversals.toJson(),
   'reversed': reversed,
-  if (sourceTransaction != null) 'source_transaction': sourceTransaction?.toJson(),
+  if (sourceTransaction.isPresent) 'source_transaction': sourceTransaction.value?.toJson(),
   'source_type': ?sourceType,
-  'transfer_group': ?transferGroup,
+  if (transferGroup.isPresent) 'transfer_group': transferGroup.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('amount_reversed') && json['amount_reversed'] is num &&
@@ -134,14 +134,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('reversals') &&
       json.containsKey('reversed') && json['reversed'] is bool; } 
-Transfer copyWith({int? amount, int? amountReversed, TransferBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, TransferDestination? Function()? destination, TransferDestinationPayment Function()? destinationPayment, String? id, bool? livemode, Map<String,String>? metadata, TransferObject? object, TransferReversals? reversals, bool? reversed, TransferSourceTransaction? Function()? sourceTransaction, String Function()? sourceType, String? Function()? transferGroup, }) { return Transfer(
+Transfer copyWith({int? amount, int? amountReversed, Omittable<TransferBalanceTransaction?>? balanceTransaction, int? created, String? currency, Omittable<String?>? description, Omittable<TransferDestination?>? destination, TransferDestinationPayment? Function()? destinationPayment, String? id, bool? livemode, Map<String,String>? metadata, TransferObject? object, TransferReversals? reversals, bool? reversed, Omittable<TransferSourceTransaction?>? sourceTransaction, String? Function()? sourceType, Omittable<String?>? transferGroup, }) { return Transfer(
   amount: amount ?? this.amount,
   amountReversed: amountReversed ?? this.amountReversed,
-  balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,
+  balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  description: description != null ? description() : this.description,
-  destination: destination != null ? destination() : this.destination,
+  description: description ?? this.description,
+  destination: destination ?? this.destination,
   destinationPayment: destinationPayment != null ? destinationPayment() : this.destinationPayment,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
@@ -149,9 +149,9 @@ Transfer copyWith({int? amount, int? amountReversed, TransferBalanceTransaction?
   object: object ?? this.object,
   reversals: reversals ?? this.reversals,
   reversed: reversed ?? this.reversed,
-  sourceTransaction: sourceTransaction != null ? sourceTransaction() : this.sourceTransaction,
+  sourceTransaction: sourceTransaction ?? this.sourceTransaction,
   sourceType: sourceType != null ? sourceType() : this.sourceType,
-  transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
+  transferGroup: transferGroup ?? this.transferGroup,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Transfer &&

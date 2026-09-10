@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'total': ?total,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'liveInputs', 'range', 'total'}.contains(key)); } 
-StreamLiveInputResponseCollectionResult copyWith({List<StreamLiveInputObjectWithoutUrl> Function()? liveInputs, int Function()? range, int Function()? total, }) { return StreamLiveInputResponseCollectionResult(
+StreamLiveInputResponseCollectionResult copyWith({List<StreamLiveInputObjectWithoutUrl>? Function()? liveInputs, int? Function()? range, int? Function()? total, }) { return StreamLiveInputResponseCollectionResult(
   liveInputs: liveInputs != null ? liveInputs() : this.liveInputs,
   range: range != null ? range() : this.range,
   total: total != null ? total() : this.total,

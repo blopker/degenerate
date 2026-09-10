@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_name2.dart';import 'access_fingerprint.dart';import 'access_timestamp.dart';@immutable final class AccessComponentsSchemasCertificates {const AccessComponentsSchemasCertificates({this.associatedHostnames, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.name, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_name2.dart';import 'access_fingerprint.dart';import 'access_timestamp.dart';@immutable final class AccessComponentsSchemasCertificates {const AccessComponentsSchemasCertificates({this.associatedHostnames, this.createdAt, this.expiresOn, this.fingerprint, this.id = const Omittable.absent(), this.name, this.updatedAt, });
 
 factory AccessComponentsSchemasCertificates.fromJson(Map<String, dynamic> json) { return AccessComponentsSchemasCertificates(
   associatedHostnames: (json['associated_hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),
   createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
   expiresOn: json['expires_on'] != null ? AccessTimestamp.fromJson(json['expires_on'] as String) : null,
   fingerprint: json['fingerprint'] != null ? AccessFingerprint.fromJson(json['fingerprint'] as String) : null,
-  id: json['id'],
+  id: json.containsKey('id') ? Omittable(json['id']) : const Omittable.absent(),
   name: json['name'] != null ? AccessCertificatesComponentsSchemasName2.fromJson(json['name'] as String) : null,
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
 ); }
@@ -21,7 +21,7 @@ final AccessTimestamp? expiresOn;
 final AccessFingerprint? fingerprint;
 
 /// The ID of the application that will use this certificate.
-final dynamic id;
+final Omittable<dynamic> id;
 
 /// The name of the certificate.
 final AccessCertificatesComponentsSchemasName2? name;
@@ -33,17 +33,17 @@ Map<String, dynamic> toJson() { return {
   if (createdAt != null) 'created_at': createdAt?.toJson(),
   if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
   if (fingerprint != null) 'fingerprint': fingerprint?.toJson(),
-  'id': ?id,
+  if (id.isPresent) 'id': id.value,
   if (name != null) 'name': name?.toJson(),
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'associated_hostnames', 'created_at', 'expires_on', 'fingerprint', 'id', 'name', 'updated_at'}.contains(key)); } 
-AccessComponentsSchemasCertificates copyWith({List<String> Function()? associatedHostnames, AccessTimestamp Function()? createdAt, AccessTimestamp Function()? expiresOn, AccessFingerprint Function()? fingerprint, dynamic Function()? id, AccessCertificatesComponentsSchemasName2 Function()? name, AccessTimestamp Function()? updatedAt, }) { return AccessComponentsSchemasCertificates(
+AccessComponentsSchemasCertificates copyWith({List<String>? Function()? associatedHostnames, AccessTimestamp? Function()? createdAt, AccessTimestamp? Function()? expiresOn, AccessFingerprint? Function()? fingerprint, Omittable<dynamic>? id, AccessCertificatesComponentsSchemasName2? Function()? name, AccessTimestamp? Function()? updatedAt, }) { return AccessComponentsSchemasCertificates(
   associatedHostnames: associatedHostnames != null ? associatedHostnames() : this.associatedHostnames,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  id: id != null ? id() : this.id,
+  id: id ?? this.id,
   name: name != null ? name() : this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 

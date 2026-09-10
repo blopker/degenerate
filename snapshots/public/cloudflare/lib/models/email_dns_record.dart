@@ -107,7 +107,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'name', 'priority', 'ttl', 'type'}.contains(key)); } 
-EmailDnsRecord copyWith({String Function()? content, String Function()? name, double Function()? priority, EmailDnsRecordTtl Function()? ttl, EmailDnsRecordType Function()? type, }) { return EmailDnsRecord(
+EmailDnsRecord copyWith({String? Function()? content, String? Function()? name, double? Function()? priority, EmailDnsRecordTtl? Function()? ttl, EmailDnsRecordType? Function()? type, }) { return EmailDnsRecord(
   content: content != null ? content() : this.content,
   name: name != null ? name() : this.name,
   priority: priority != null ? priority() : this.priority,

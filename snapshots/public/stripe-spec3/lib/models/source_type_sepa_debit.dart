@@ -1,49 +1,49 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeSepaDebit {const SourceTypeSepaDebit({this.bankCode, this.branchCode, this.country, this.fingerprint, this.last4, this.mandateReference, this.mandateUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SourceTypeSepaDebit {const SourceTypeSepaDebit({this.bankCode = const Omittable.absent(), this.branchCode = const Omittable.absent(), this.country = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandateReference = const Omittable.absent(), this.mandateUrl = const Omittable.absent(), });
 
 factory SourceTypeSepaDebit.fromJson(Map<String, dynamic> json) { return SourceTypeSepaDebit(
-  bankCode: json['bank_code'] as String?,
-  branchCode: json['branch_code'] as String?,
-  country: json['country'] as String?,
-  fingerprint: json['fingerprint'] as String?,
-  last4: json['last4'] as String?,
-  mandateReference: json['mandate_reference'] as String?,
-  mandateUrl: json['mandate_url'] as String?,
+  bankCode: json.containsKey('bank_code') ? Omittable(json['bank_code'] as String?) : const Omittable.absent(),
+  branchCode: json.containsKey('branch_code') ? Omittable(json['branch_code'] as String?) : const Omittable.absent(),
+  country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
+  mandateReference: json.containsKey('mandate_reference') ? Omittable(json['mandate_reference'] as String?) : const Omittable.absent(),
+  mandateUrl: json.containsKey('mandate_url') ? Omittable(json['mandate_url'] as String?) : const Omittable.absent(),
 ); }
 
-final String? bankCode;
+final Omittable<String?> bankCode;
 
-final String? branchCode;
+final Omittable<String?> branchCode;
 
-final String? country;
+final Omittable<String?> country;
 
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
-final String? last4;
+final Omittable<String?> last4;
 
-final String? mandateReference;
+final Omittable<String?> mandateReference;
 
-final String? mandateUrl;
+final Omittable<String?> mandateUrl;
 
 Map<String, dynamic> toJson() { return {
-  'bank_code': ?bankCode,
-  'branch_code': ?branchCode,
-  'country': ?country,
-  'fingerprint': ?fingerprint,
-  'last4': ?last4,
-  'mandate_reference': ?mandateReference,
-  'mandate_url': ?mandateUrl,
+  if (bankCode.isPresent) 'bank_code': bankCode.value,
+  if (branchCode.isPresent) 'branch_code': branchCode.value,
+  if (country.isPresent) 'country': country.value,
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
+  if (last4.isPresent) 'last4': last4.value,
+  if (mandateReference.isPresent) 'mandate_reference': mandateReference.value,
+  if (mandateUrl.isPresent) 'mandate_url': mandateUrl.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'branch_code', 'country', 'fingerprint', 'last4', 'mandate_reference', 'mandate_url'}.contains(key)); } 
-SourceTypeSepaDebit copyWith({String? Function()? bankCode, String? Function()? branchCode, String? Function()? country, String? Function()? fingerprint, String? Function()? last4, String? Function()? mandateReference, String? Function()? mandateUrl, }) { return SourceTypeSepaDebit(
-  bankCode: bankCode != null ? bankCode() : this.bankCode,
-  branchCode: branchCode != null ? branchCode() : this.branchCode,
-  country: country != null ? country() : this.country,
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
-  last4: last4 != null ? last4() : this.last4,
-  mandateReference: mandateReference != null ? mandateReference() : this.mandateReference,
-  mandateUrl: mandateUrl != null ? mandateUrl() : this.mandateUrl,
+SourceTypeSepaDebit copyWith({Omittable<String?>? bankCode, Omittable<String?>? branchCode, Omittable<String?>? country, Omittable<String?>? fingerprint, Omittable<String?>? last4, Omittable<String?>? mandateReference, Omittable<String?>? mandateUrl, }) { return SourceTypeSepaDebit(
+  bankCode: bankCode ?? this.bankCode,
+  branchCode: branchCode ?? this.branchCode,
+  country: country ?? this.country,
+  fingerprint: fingerprint ?? this.fingerprint,
+  last4: last4 ?? this.last4,
+  mandateReference: mandateReference ?? this.mandateReference,
+  mandateUrl: mandateUrl ?? this.mandateUrl,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SourceTypeSepaDebit &&

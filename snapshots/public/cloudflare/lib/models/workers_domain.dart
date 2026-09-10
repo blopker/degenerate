@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (zoneName != null) 'zone_name': zoneName?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'environment', 'hostname', 'id', 'service', 'zone_id', 'zone_name'}.contains(key)); } 
-WorkersDomain copyWith({WorkersSchemasEnvironment Function()? environment, WorkersHostname Function()? hostname, WorkersDomainIdentifier Function()? id, WorkersSchemasService Function()? service, WorkersZoneIdentifier Function()? zoneId, WorkersZoneName Function()? zoneName, }) { return WorkersDomain(
+WorkersDomain copyWith({WorkersSchemasEnvironment? Function()? environment, WorkersHostname? Function()? hostname, WorkersDomainIdentifier? Function()? id, WorkersSchemasService? Function()? service, WorkersZoneIdentifier? Function()? zoneId, WorkersZoneName? Function()? zoneName, }) { return WorkersDomain(
   environment: environment != null ? environment() : this.environment,
   hostname: hostname != null ? hostname() : this.hostname,
   id: id != null ? id() : this.id,

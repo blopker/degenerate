@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('encrypted_value') && json['encrypted_value'] is String &&
       json.containsKey('key_id') && json['key_id'] is String &&
       json.containsKey('visibility'); } 
-ActionsCreateOrUpdateOrgSecretRequest copyWith({String? encryptedValue, String? keyId, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, List<int> Function()? selectedRepositoryIds, }) { return ActionsCreateOrUpdateOrgSecretRequest(
+ActionsCreateOrUpdateOrgSecretRequest copyWith({String? encryptedValue, String? keyId, ActionsCreateOrUpdateOrgSecretRequestVisibility? visibility, List<int>? Function()? selectedRepositoryIds, }) { return ActionsCreateOrUpdateOrgSecretRequest(
   encryptedValue: encryptedValue ?? this.encryptedValue,
   keyId: keyId ?? this.keyId,
   visibility: visibility ?? this.visibility,

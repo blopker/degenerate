@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'ports': ?ports,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'frequency', 'ips', 'ports'}.contains(key)); } 
-PostConfigUpdateRequest copyWith({Frequency2 Function()? frequency, List<String> Function()? ips, List<String> Function()? ports, }) { return PostConfigUpdateRequest(
+PostConfigUpdateRequest copyWith({Frequency2? Function()? frequency, List<String>? Function()? ips, List<String>? Function()? ports, }) { return PostConfigUpdateRequest(
   frequency: frequency != null ? frequency() : this.frequency,
   ips: ips != null ? ips() : this.ips,
   ports: ports != null ? ports() : this.ports,

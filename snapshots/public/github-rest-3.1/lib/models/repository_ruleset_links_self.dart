@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'href': ?href,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'href'}.contains(key)); } 
-RepositoryRulesetLinksSelf copyWith({String Function()? href}) { return RepositoryRulesetLinksSelf(
+RepositoryRulesetLinksSelf copyWith({String? Function()? href}) { return RepositoryRulesetLinksSelf(
   href: href != null ? href() : this.href,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

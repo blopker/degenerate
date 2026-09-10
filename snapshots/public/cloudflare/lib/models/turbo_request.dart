@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   'vad_filter': vadFilter,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio'); } 
-TurboRequest copyWith({TurboRequestAudio? audio, int Function()? beamSize, double Function()? compressionRatioThreshold, bool Function()? conditionOnPreviousText, double Function()? hallucinationSilenceThreshold, String Function()? initialPrompt, String Function()? language, double Function()? logProbThreshold, double Function()? noSpeechThreshold, String Function()? prefix, String Function()? task, bool Function()? vadFilter, }) { return TurboRequest(
+TurboRequest copyWith({TurboRequestAudio? audio, int Function()? beamSize, double Function()? compressionRatioThreshold, bool Function()? conditionOnPreviousText, double? Function()? hallucinationSilenceThreshold, String? Function()? initialPrompt, String? Function()? language, double Function()? logProbThreshold, double Function()? noSpeechThreshold, String? Function()? prefix, String Function()? task, bool Function()? vadFilter, }) { return TurboRequest(
   audio: audio ?? this.audio,
   beamSize: beamSize != null ? beamSize() : this.beamSize,
   compressionRatioThreshold: compressionRatioThreshold != null ? compressionRatioThreshold() : this.compressionRatioThreshold,

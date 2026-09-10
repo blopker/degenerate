@@ -98,7 +98,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_holder') &&
       json.containsKey('permissions'); } 
-PostLinkAccountSessionsRequest copyWith({PostLinkAccountSessionsRequestAccountHolder? accountHolder, List<String> Function()? expand, PostLinkAccountSessionsRequestFilters Function()? filters, List<PostLinkAccountSessionsRequestPermissions>? permissions, List<PostLinkAccountSessionsRequestPrefetch> Function()? prefetch, String Function()? returnUrl, }) { return PostLinkAccountSessionsRequest(
+PostLinkAccountSessionsRequest copyWith({PostLinkAccountSessionsRequestAccountHolder? accountHolder, List<String>? Function()? expand, PostLinkAccountSessionsRequestFilters? Function()? filters, List<PostLinkAccountSessionsRequestPermissions>? permissions, List<PostLinkAccountSessionsRequestPrefetch>? Function()? prefetch, String? Function()? returnUrl, }) { return PostLinkAccountSessionsRequest(
   accountHolder: accountHolder ?? this.accountHolder,
   expand: expand != null ? expand() : this.expand,
   filters: filters != null ? filters() : this.filters,

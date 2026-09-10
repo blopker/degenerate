@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'number', 'proto', 'status'}.contains(key)); } 
-Port copyWith({double Function()? number, String Function()? proto, String Function()? status, }) { return Port(
+Port copyWith({double? Function()? number, String? Function()? proto, String? Function()? status, }) { return Port(
   number: number != null ? number() : this.number,
   proto: proto != null ? proto() : this.proto,
   status: status != null ? status() : this.status,

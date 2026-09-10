@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayDynamicRoutesResponseDataRoutesDeployment {const AigConfigListGatewayDynamicRoutesResponseDataRoutesDeployment({required this.createdAt, required this.deploymentId, required this.versionId, this.comment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayDynamicRoutesResponseDataRoutesDeployment {const AigConfigListGatewayDynamicRoutesResponseDataRoutesDeployment({required this.createdAt, required this.deploymentId, required this.versionId, this.comment = const Omittable.absent(), });
 
 factory AigConfigListGatewayDynamicRoutesResponseDataRoutesDeployment.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayDynamicRoutesResponseDataRoutesDeployment(
-  comment: json['comment'] as String?,
+  comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
   deploymentId: json['deployment_id'] as String,
   versionId: json['version_id'] as String,
 ); }
 
-final String? comment;
+final Omittable<String?> comment;
 
 final String createdAt;
 
@@ -18,7 +18,7 @@ final String deploymentId;
 final String versionId;
 
 Map<String, dynamic> toJson() { return {
-  'comment': ?comment,
+  if (comment.isPresent) 'comment': comment.value,
   'created_at': createdAt,
   'deployment_id': deploymentId,
   'version_id': versionId,
@@ -26,8 +26,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('deployment_id') && json['deployment_id'] is String &&
       json.containsKey('version_id') && json['version_id'] is String; } 
-AigConfigListGatewayDynamicRoutesResponseDataRoutesDeployment copyWith({String? Function()? comment, String? createdAt, String? deploymentId, String? versionId, }) { return AigConfigListGatewayDynamicRoutesResponseDataRoutesDeployment(
-  comment: comment != null ? comment() : this.comment,
+AigConfigListGatewayDynamicRoutesResponseDataRoutesDeployment copyWith({Omittable<String?>? comment, String? createdAt, String? deploymentId, String? versionId, }) { return AigConfigListGatewayDynamicRoutesResponseDataRoutesDeployment(
+  comment: comment ?? this.comment,
   createdAt: createdAt ?? this.createdAt,
   deploymentId: deploymentId ?? this.deploymentId,
   versionId: versionId ?? this.versionId,

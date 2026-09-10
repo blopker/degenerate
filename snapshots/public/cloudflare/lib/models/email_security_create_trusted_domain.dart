@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityCreateTrustedDomain {const EmailSecurityCreateTrustedDomain({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, this.comments, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityCreateTrustedDomain {const EmailSecurityCreateTrustedDomain({required this.isRecent, required this.isRegex, required this.isSimilarity, required this.pattern, this.comments = const Omittable.absent(), });
 
 factory EmailSecurityCreateTrustedDomain.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateTrustedDomain(
-  comments: json['comments'] as String?,
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRecent: json['is_recent'] as bool,
   isRegex: json['is_regex'] as bool,
   isSimilarity: json['is_similarity'] as bool,
   pattern: json['pattern'] as String,
 ); }
 
-final String? comments;
+final Omittable<String?> comments;
 
 /// Select to prevent recently registered domains from triggering a
 /// Suspicious or Malicious disposition.
@@ -26,7 +26,7 @@ final bool isSimilarity;
 final String pattern;
 
 Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+  if (comments.isPresent) 'comments': comments.value,
   'is_recent': isRecent,
   'is_regex': isRegex,
   'is_similarity': isSimilarity,
@@ -36,8 +36,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_re
       json.containsKey('is_regex') && json['is_regex'] is bool &&
       json.containsKey('is_similarity') && json['is_similarity'] is bool &&
       json.containsKey('pattern') && json['pattern'] is String; } 
-EmailSecurityCreateTrustedDomain copyWith({String? Function()? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, }) { return EmailSecurityCreateTrustedDomain(
-  comments: comments != null ? comments() : this.comments,
+EmailSecurityCreateTrustedDomain copyWith({Omittable<String?>? comments, bool? isRecent, bool? isRegex, bool? isSimilarity, String? pattern, }) { return EmailSecurityCreateTrustedDomain(
+  comments: comments ?? this.comments,
   isRecent: isRecent ?? this.isRecent,
   isRegex: isRegex ?? this.isRegex,
   isSimilarity: isSimilarity ?? this.isSimilarity,

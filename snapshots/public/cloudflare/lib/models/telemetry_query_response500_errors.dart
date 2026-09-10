@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'message': message.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
-TelemetryQueryResponse500Errors copyWith({String Function()? detail, TelemetryQueryResponse500ErrorsMessage? message, }) { return TelemetryQueryResponse500Errors(
+TelemetryQueryResponse500Errors copyWith({String? Function()? detail, TelemetryQueryResponse500ErrorsMessage? message, }) { return TelemetryQueryResponse500Errors(
   detail: detail != null ? detail() : this.detail,
   message: message ?? this.message,
 ); } 

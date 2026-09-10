@@ -9,15 +9,15 @@ factory ImageFile.fromJson(Map<String, dynamic> json) { return ImageFile(
 final Uint8List? image;
 
 Map<String, dynamic> toJson() { return {
-  'image': ?image,
+  if (image != null) 'image': switch (image) { final bytes? => base64Encode(bytes), _ => null },
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image'}.contains(key)); } 
-ImageFile copyWith({Uint8List Function()? image}) { return ImageFile(
+ImageFile copyWith({Uint8List? Function()? image}) { return ImageFile(
   image: image != null ? image() : this.image,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ImageFile &&
-          image == other.image; } 
-@override int get hashCode { return image.hashCode; } 
+          listEquals(image, other.image); } 
+@override int get hashCode { return Object.hashAll(image ?? const []).hashCode; } 
 @override String toString() { return 'ImageFile(image: $image)'; } 
  }

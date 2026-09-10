@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (delayDaysOverride != null) 'delay_days_override': delayDaysOverride?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delay_days_override'}.contains(key)); } 
-PostBalanceSettingsRequestPaymentsSettlementTiming copyWith({PostBalanceSettingsRequestPaymentsSettlementTimingDelayDaysOverride Function()? delayDaysOverride}) { return PostBalanceSettingsRequestPaymentsSettlementTiming(
+PostBalanceSettingsRequestPaymentsSettlementTiming copyWith({PostBalanceSettingsRequestPaymentsSettlementTimingDelayDaysOverride? Function()? delayDaysOverride}) { return PostBalanceSettingsRequestPaymentsSettlementTiming(
   delayDaysOverride: delayDaysOverride != null ? delayDaysOverride() : this.delayDaysOverride,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

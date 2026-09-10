@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'args', 'device_id', 'id', 'registration_id', 'status', 'type'}.contains(key)); } 
-DigitalExperienceMonitoringPostCommandsResponseCommands copyWith({Map<String, String> Function()? args, String Function()? deviceId, String Function()? id, String Function()? registrationId, DigitalExperienceMonitoringPostCommandsResponseCommandsStatus Function()? status, String Function()? type, }) { return DigitalExperienceMonitoringPostCommandsResponseCommands(
+DigitalExperienceMonitoringPostCommandsResponseCommands copyWith({Map<String, String>? Function()? args, String? Function()? deviceId, String? Function()? id, String? Function()? registrationId, DigitalExperienceMonitoringPostCommandsResponseCommandsStatus? Function()? status, String? Function()? type, }) { return DigitalExperienceMonitoringPostCommandsResponseCommands(
   args: args != null ? args() : this.args,
   deviceId: deviceId != null ? deviceId() : this.deviceId,
   id: id != null ? id() : this.id,

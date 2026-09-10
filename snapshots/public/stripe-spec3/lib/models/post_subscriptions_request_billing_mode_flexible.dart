@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (prorationDiscounts != null) 'proration_discounts': prorationDiscounts?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'proration_discounts'}.contains(key)); } 
-PostSubscriptionsRequestBillingModeFlexible copyWith({PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts Function()? prorationDiscounts}) { return PostSubscriptionsRequestBillingModeFlexible(
+PostSubscriptionsRequestBillingModeFlexible copyWith({PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts? Function()? prorationDiscounts}) { return PostSubscriptionsRequestBillingModeFlexible(
   prorationDiscounts: prorationDiscounts != null ? prorationDiscounts() : this.prorationDiscounts,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

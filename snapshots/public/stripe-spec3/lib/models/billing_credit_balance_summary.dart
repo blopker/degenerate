@@ -23,12 +23,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingCreditBalanceSummaryObject($value)'; } 
  }
 /// Indicates the billing credit balance for billing credits granted to a customer.
-@immutable final class BillingCreditBalanceSummary {const BillingCreditBalanceSummary({required this.balances, required this.customer, required this.livemode, required this.object, this.customerAccount, });
+@immutable final class BillingCreditBalanceSummary {const BillingCreditBalanceSummary({required this.balances, required this.customer, required this.livemode, required this.object, this.customerAccount = const Omittable.absent(), });
 
 factory BillingCreditBalanceSummary.fromJson(Map<String, dynamic> json) { return BillingCreditBalanceSummary(
   balances: (json['balances'] as List<dynamic>).map((e) => CreditBalance.fromJson(e as Map<String, dynamic>)).toList(),
   customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
-  customerAccount: json['customer_account'] as String?,
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: BillingCreditBalanceSummaryObject.fromJson(json['object'] as String),
 ); }
@@ -40,7 +40,7 @@ final List<CreditBalance> balances;
 final BillingCreditBalanceSummaryCustomer customer;
 
 /// The account the balance is for.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -51,7 +51,7 @@ final BillingCreditBalanceSummaryObject object;
 Map<String, dynamic> toJson() { return {
   'balances': balances.map((e) => e.toJson()).toList(),
   'customer': customer.toJson(),
-  'customer_account': ?customerAccount,
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'livemode': livemode,
   'object': object.toJson(),
 }; } 
@@ -59,10 +59,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('customer') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-BillingCreditBalanceSummary copyWith({List<CreditBalance>? balances, BillingCreditBalanceSummaryCustomer? customer, String? Function()? customerAccount, bool? livemode, BillingCreditBalanceSummaryObject? object, }) { return BillingCreditBalanceSummary(
+BillingCreditBalanceSummary copyWith({List<CreditBalance>? balances, BillingCreditBalanceSummaryCustomer? customer, Omittable<String?>? customerAccount, bool? livemode, BillingCreditBalanceSummaryObject? object, }) { return BillingCreditBalanceSummary(
   balances: balances ?? this.balances,
   customer: customer ?? this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customerAccount: customerAccount ?? this.customerAccount,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
 ); } 

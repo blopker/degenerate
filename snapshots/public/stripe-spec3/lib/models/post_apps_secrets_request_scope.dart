@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'user': ?user,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostAppsSecretsRequestScope copyWith({PostAppsSecretsRequestScopeType? type, String Function()? user, }) { return PostAppsSecretsRequestScope(
+PostAppsSecretsRequestScope copyWith({PostAppsSecretsRequestScopeType? type, String? Function()? user, }) { return PostAppsSecretsRequestScope(
   type: type ?? this.type,
   user: user != null ? user() : this.user,
 ); } 

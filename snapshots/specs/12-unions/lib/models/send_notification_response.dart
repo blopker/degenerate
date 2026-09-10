@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'status'}.contains(key)); } 
-SendNotificationResponse copyWith({String Function()? id, NotificationStatus Function()? status, }) { return SendNotificationResponse(
+SendNotificationResponse copyWith({String? Function()? id, NotificationStatus? Function()? status, }) { return SendNotificationResponse(
   id: id != null ? id() : this.id,
   status: status != null ? status() : this.status,
 ); } 

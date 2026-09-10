@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (waitUntil != null) 'waitUntil': waitUntil?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'referer', 'referrerPolicy', 'timeout', 'waitUntil'}.contains(key)); } 
-BrapiPostScreenshotRequestVariant2GotoOptions copyWith({String Function()? referer, String Function()? referrerPolicy, double Function()? timeout, BrapiPostScreenshotRequestVariant2GotoOptionsWaitUntil Function()? waitUntil, }) { return BrapiPostScreenshotRequestVariant2GotoOptions(
+BrapiPostScreenshotRequestVariant2GotoOptions copyWith({String? Function()? referer, String? Function()? referrerPolicy, double Function()? timeout, BrapiPostScreenshotRequestVariant2GotoOptionsWaitUntil? Function()? waitUntil, }) { return BrapiPostScreenshotRequestVariant2GotoOptions(
   referer: referer != null ? referer() : this.referer,
   referrerPolicy: referrerPolicy != null ? referrerPolicy() : this.referrerPolicy,
   timeout: timeout != null ? timeout() : this.timeout,

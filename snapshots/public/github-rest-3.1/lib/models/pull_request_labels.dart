@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'url': url,
   'name': name,
-  'description': ?description,
+  'description': description,
   'color': color,
   'default': $default,
 }; } 
@@ -39,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('color') && json['color'] is String &&
       json.containsKey('default') && json['default'] is bool; } 
 PullRequestLabels copyWith({int? id, String? nodeId, String? url, String? name, String? Function()? description, String? color, bool? $default, }) { return PullRequestLabels(

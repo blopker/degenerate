@@ -37,10 +37,10 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShieldPerOperationSettingChangeBaseMitigationAction($value)'; } 
  }
-@immutable final class ShieldPerOperationSettingChangeBase {const ShieldPerOperationSettingChangeBase({this.mitigationAction});
+@immutable final class ShieldPerOperationSettingChangeBase {const ShieldPerOperationSettingChangeBase({this.mitigationAction = const Omittable.absent()});
 
 factory ShieldPerOperationSettingChangeBase.fromJson(Map<String, dynamic> json) { return ShieldPerOperationSettingChangeBase(
-  mitigationAction: json['mitigation_action'] != null ? ShieldPerOperationSettingChangeBaseMitigationAction.fromJson(json['mitigation_action'] as String) : null,
+  mitigationAction: json.containsKey('mitigation_action') ? Omittable(json['mitigation_action'] != null ? ShieldPerOperationSettingChangeBaseMitigationAction.fromJson(json['mitigation_action'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// When set, this applies a mitigation action to this operation
@@ -50,14 +50,14 @@ factory ShieldPerOperationSettingChangeBase.fromJson(Map<String, dynamic> json) 
 ///   - `"none"` - will skip mitigation for this operation
 ///   - `null` - clears any mitigation action
 /// 
-final ShieldPerOperationSettingChangeBaseMitigationAction? mitigationAction;
+final Omittable<ShieldPerOperationSettingChangeBaseMitigationAction?> mitigationAction;
 
 Map<String, dynamic> toJson() { return {
-  if (mitigationAction != null) 'mitigation_action': mitigationAction?.toJson(),
+  if (mitigationAction.isPresent) 'mitigation_action': mitigationAction.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mitigation_action'}.contains(key)); } 
-ShieldPerOperationSettingChangeBase copyWith({ShieldPerOperationSettingChangeBaseMitigationAction? Function()? mitigationAction}) { return ShieldPerOperationSettingChangeBase(
-  mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
+ShieldPerOperationSettingChangeBase copyWith({Omittable<ShieldPerOperationSettingChangeBaseMitigationAction?>? mitigationAction}) { return ShieldPerOperationSettingChangeBase(
+  mitigationAction: mitigationAction ?? this.mitigationAction,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldPerOperationSettingChangeBase &&

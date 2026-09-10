@@ -56,29 +56,29 @@ bool get isUnknown { return !values.contains(this); }
 /// Use [InboundTransfers](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/into/inbound-transfers) to add funds to your [FinancialAccount](https://api.stripe.com#financial_accounts) via a PaymentMethod that is owned by you. The funds will be transferred via an ACH debit.
 /// 
 /// Related guide: [Moving money with Treasury using InboundTransfer objects](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/into/inbound-transfers)
-@immutable final class TreasuryInboundTransfer {const TreasuryInboundTransfer({required this.amount, required this.cancelable, required this.created, required this.currency, required this.financialAccount, required this.id, required this.linkedFlows, required this.livemode, required this.metadata, required this.object, required this.statementDescriptor, required this.status, required this.statusTransitions, this.description, this.failureDetails, this.hostedRegulatoryReceiptUrl, this.originPaymentMethod, this.originPaymentMethodDetails, this.returned, this.transaction, });
+@immutable final class TreasuryInboundTransfer {const TreasuryInboundTransfer({required this.amount, required this.cancelable, required this.created, required this.currency, required this.financialAccount, required this.id, required this.linkedFlows, required this.livemode, required this.metadata, required this.object, required this.statementDescriptor, required this.status, required this.statusTransitions, this.description = const Omittable.absent(), this.failureDetails = const Omittable.absent(), this.hostedRegulatoryReceiptUrl = const Omittable.absent(), this.originPaymentMethod = const Omittable.absent(), this.originPaymentMethodDetails = const Omittable.absent(), this.returned = const Omittable.absent(), this.transaction = const Omittable.absent(), });
 
 factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) { return TreasuryInboundTransfer(
   amount: (json['amount'] as num).toInt(),
   cancelable: json['cancelable'] as bool,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  description: json['description'] as String?,
-  failureDetails: json['failure_details'] != null ? TreasuryInboundTransfersResourceFailureDetails.fromJson(json['failure_details'] as Map<String, dynamic>) : null,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  failureDetails: json.containsKey('failure_details') ? Omittable(json['failure_details'] != null ? TreasuryInboundTransfersResourceFailureDetails.fromJson(json['failure_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   financialAccount: json['financial_account'] as String,
-  hostedRegulatoryReceiptUrl: json['hosted_regulatory_receipt_url'] as String?,
+  hostedRegulatoryReceiptUrl: json.containsKey('hosted_regulatory_receipt_url') ? Omittable(json['hosted_regulatory_receipt_url'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   linkedFlows: TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows.fromJson(json['linked_flows'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TreasuryInboundTransferObject.fromJson(json['object'] as String),
-  originPaymentMethod: json['origin_payment_method'] as String?,
-  originPaymentMethodDetails: json['origin_payment_method_details'] != null ? InboundTransfers.fromJson(json['origin_payment_method_details'] as Map<String, dynamic>) : null,
-  returned: json['returned'] as bool?,
+  originPaymentMethod: json.containsKey('origin_payment_method') ? Omittable(json['origin_payment_method'] as String?) : const Omittable.absent(),
+  originPaymentMethodDetails: json.containsKey('origin_payment_method_details') ? Omittable(json['origin_payment_method_details'] != null ? InboundTransfers.fromJson(json['origin_payment_method_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  returned: json.containsKey('returned') ? Omittable(json['returned'] as bool?) : const Omittable.absent(),
   statementDescriptor: json['statement_descriptor'] as String,
   status: TreasuryInboundTransferStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  transaction: json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null,
+  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
 ); }
 
 /// Amount (in cents) transferred.
@@ -94,16 +94,16 @@ final int created;
 final String currency;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
-final String? description;
+final Omittable<String?> description;
 
 /// Details about this InboundTransfer's failure. Only set when status is `failed`.
-final TreasuryInboundTransfersResourceFailureDetails? failureDetails;
+final Omittable<TreasuryInboundTransfersResourceFailureDetails?> failureDetails;
 
 /// The FinancialAccount that received the funds.
 final String financialAccount;
 
 /// A [hosted transaction receipt](https://docs.stripe.com/treasury/moving-money/regulatory-receipts) URL that is provided when money movement is considered regulated under Stripe's money transmission licenses.
-final String? hostedRegulatoryReceiptUrl;
+final Omittable<String?> hostedRegulatoryReceiptUrl;
 
 /// Unique identifier for the object.
 final String id;
@@ -120,13 +120,13 @@ final Map<String,String> metadata;
 final TreasuryInboundTransferObject object;
 
 /// The origin payment method to be debited for an InboundTransfer.
-final String? originPaymentMethod;
+final Omittable<String?> originPaymentMethod;
 
 /// Details about the PaymentMethod for an InboundTransfer.
-final InboundTransfers? originPaymentMethodDetails;
+final Omittable<InboundTransfers?> originPaymentMethodDetails;
 
 /// Returns `true` if the funds for an InboundTransfer were returned after the InboundTransfer went to the `succeeded` state.
-final bool? returned;
+final Omittable<bool?> returned;
 
 /// Statement descriptor shown when funds are debited from the source. Not all payment networks support `statement_descriptor`.
 final String statementDescriptor;
@@ -137,29 +137,29 @@ final TreasuryInboundTransferStatus status;
 final TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions statusTransitions;
 
 /// The Transaction associated with this object.
-final TreasuryInboundTransferTransaction? transaction;
+final Omittable<TreasuryInboundTransferTransaction?> transaction;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
   'cancelable': cancelable,
   'created': created,
   'currency': currency,
-  'description': ?description,
-  if (failureDetails != null) 'failure_details': failureDetails?.toJson(),
+  if (description.isPresent) 'description': description.value,
+  if (failureDetails.isPresent) 'failure_details': failureDetails.value?.toJson(),
   'financial_account': financialAccount,
-  'hosted_regulatory_receipt_url': ?hostedRegulatoryReceiptUrl,
+  if (hostedRegulatoryReceiptUrl.isPresent) 'hosted_regulatory_receipt_url': hostedRegulatoryReceiptUrl.value,
   'id': id,
   'linked_flows': linkedFlows.toJson(),
   'livemode': livemode,
   'metadata': metadata,
   'object': object.toJson(),
-  'origin_payment_method': ?originPaymentMethod,
-  if (originPaymentMethodDetails != null) 'origin_payment_method_details': originPaymentMethodDetails?.toJson(),
-  'returned': ?returned,
+  if (originPaymentMethod.isPresent) 'origin_payment_method': originPaymentMethod.value,
+  if (originPaymentMethodDetails.isPresent) 'origin_payment_method_details': originPaymentMethodDetails.value?.toJson(),
+  if (returned.isPresent) 'returned': returned.value,
   'statement_descriptor': statementDescriptor,
   'status': status.toJson(),
   'status_transitions': statusTransitions.toJson(),
-  if (transaction != null) 'transaction': transaction?.toJson(),
+  if (transaction.isPresent) 'transaction': transaction.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('cancelable') && json['cancelable'] is bool &&
@@ -174,27 +174,27 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('statement_descriptor') && json['statement_descriptor'] is String &&
       json.containsKey('status') &&
       json.containsKey('status_transitions'); } 
-TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? description, TreasuryInboundTransfersResourceFailureDetails? Function()? failureDetails, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryInboundTransferObject? object, String? Function()? originPaymentMethod, InboundTransfers? Function()? originPaymentMethodDetails, bool? Function()? returned, String? statementDescriptor, TreasuryInboundTransferStatus? status, TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions? statusTransitions, TreasuryInboundTransferTransaction? Function()? transaction, }) { return TreasuryInboundTransfer(
+TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, Omittable<String?>? description, Omittable<TreasuryInboundTransfersResourceFailureDetails?>? failureDetails, String? financialAccount, Omittable<String?>? hostedRegulatoryReceiptUrl, String? id, TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryInboundTransferObject? object, Omittable<String?>? originPaymentMethod, Omittable<InboundTransfers?>? originPaymentMethodDetails, Omittable<bool?>? returned, String? statementDescriptor, TreasuryInboundTransferStatus? status, TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions? statusTransitions, Omittable<TreasuryInboundTransferTransaction?>? transaction, }) { return TreasuryInboundTransfer(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  description: description != null ? description() : this.description,
-  failureDetails: failureDetails != null ? failureDetails() : this.failureDetails,
+  description: description ?? this.description,
+  failureDetails: failureDetails ?? this.failureDetails,
   financialAccount: financialAccount ?? this.financialAccount,
-  hostedRegulatoryReceiptUrl: hostedRegulatoryReceiptUrl != null ? hostedRegulatoryReceiptUrl() : this.hostedRegulatoryReceiptUrl,
+  hostedRegulatoryReceiptUrl: hostedRegulatoryReceiptUrl ?? this.hostedRegulatoryReceiptUrl,
   id: id ?? this.id,
   linkedFlows: linkedFlows ?? this.linkedFlows,
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
   object: object ?? this.object,
-  originPaymentMethod: originPaymentMethod != null ? originPaymentMethod() : this.originPaymentMethod,
-  originPaymentMethodDetails: originPaymentMethodDetails != null ? originPaymentMethodDetails() : this.originPaymentMethodDetails,
-  returned: returned != null ? returned() : this.returned,
+  originPaymentMethod: originPaymentMethod ?? this.originPaymentMethod,
+  originPaymentMethodDetails: originPaymentMethodDetails ?? this.originPaymentMethodDetails,
+  returned: returned ?? this.returned,
   statementDescriptor: statementDescriptor ?? this.statementDescriptor,
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
-  transaction: transaction != null ? transaction() : this.transaction,
+  transaction: transaction ?? this.transaction,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TreasuryInboundTransfer &&

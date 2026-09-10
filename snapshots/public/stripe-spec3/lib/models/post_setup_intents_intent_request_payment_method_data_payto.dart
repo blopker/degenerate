@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'pay_id': ?payId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_number', 'bsb_number', 'pay_id'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodDataPayto copyWith({String Function()? accountNumber, String Function()? bsbNumber, String Function()? payId, }) { return PostSetupIntentsIntentRequestPaymentMethodDataPayto(
+PostSetupIntentsIntentRequestPaymentMethodDataPayto copyWith({String? Function()? accountNumber, String? Function()? bsbNumber, String? Function()? payId, }) { return PostSetupIntentsIntentRequestPaymentMethodDataPayto(
   accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
   bsbNumber: bsbNumber != null ? bsbNumber() : this.bsbNumber,
   payId: payId != null ? payId() : this.payId,

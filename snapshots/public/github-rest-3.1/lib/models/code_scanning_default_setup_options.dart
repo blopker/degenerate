@@ -29,27 +29,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningDefaultSetupOptionsRunnerType($value)'; } 
  }
 /// Feature options for code scanning default setup
-@immutable final class CodeScanningDefaultSetupOptions {const CodeScanningDefaultSetupOptions({this.runnerType, this.runnerLabel, });
+@immutable final class CodeScanningDefaultSetupOptions {const CodeScanningDefaultSetupOptions({this.runnerType, this.runnerLabel = const Omittable.absent(), });
 
 factory CodeScanningDefaultSetupOptions.fromJson(Map<String, dynamic> json) { return CodeScanningDefaultSetupOptions(
   runnerType: json['runner_type'] != null ? CodeScanningDefaultSetupOptionsRunnerType.fromJson(json['runner_type'] as String) : null,
-  runnerLabel: json['runner_label'] as String?,
+  runnerLabel: json.containsKey('runner_label') ? Omittable(json['runner_label'] as String?) : const Omittable.absent(),
 ); }
 
 /// Whether to use labeled runners or standard GitHub runners.
 final CodeScanningDefaultSetupOptionsRunnerType? runnerType;
 
 /// The label of the runner to use for code scanning default setup when runner_type is 'labeled'.
-final String? runnerLabel;
+final Omittable<String?> runnerLabel;
 
 Map<String, dynamic> toJson() { return {
   if (runnerType != null) 'runner_type': runnerType?.toJson(),
-  'runner_label': ?runnerLabel,
+  if (runnerLabel.isPresent) 'runner_label': runnerLabel.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'runner_type', 'runner_label'}.contains(key)); } 
-CodeScanningDefaultSetupOptions copyWith({CodeScanningDefaultSetupOptionsRunnerType Function()? runnerType, String? Function()? runnerLabel, }) { return CodeScanningDefaultSetupOptions(
+CodeScanningDefaultSetupOptions copyWith({CodeScanningDefaultSetupOptionsRunnerType? Function()? runnerType, Omittable<String?>? runnerLabel, }) { return CodeScanningDefaultSetupOptions(
   runnerType: runnerType != null ? runnerType() : this.runnerType,
-  runnerLabel: runnerLabel != null ? runnerLabel() : this.runnerLabel,
+  runnerLabel: runnerLabel ?? this.runnerLabel,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodeScanningDefaultSetupOptions &&

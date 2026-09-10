@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookProjectDeletedAction($value)'; } 
  }
-@immutable final class WebhookProjectDeleted {const WebhookProjectDeleted({required this.action, required this.project, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
+@immutable final class WebhookProjectDeleted {const WebhookProjectDeleted({required this.action, required this.project, this.enterprise, this.installation, this.organization, this.repository = const Omittable.absent(), this.sender, });
 
 factory WebhookProjectDeleted.fromJson(Map<String, dynamic> json) { return WebhookProjectDeleted(
   action: WebhookProjectDeletedAction.fromJson(json['action'] as String),
@@ -29,7 +29,7 @@ factory WebhookProjectDeleted.fromJson(Map<String, dynamic> json) { return Webho
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   project: WebhooksProject.fromJson(json['project'] as Map<String, dynamic>),
-  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  repository: json.containsKey('repository') ? Omittable(json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
 
@@ -43,7 +43,7 @@ final OrganizationSimpleWebhooks? organization;
 
 final WebhooksProject project;
 
-final RepositoryWebhooks? repository;
+final Omittable<RepositoryWebhooks?> repository;
 
 final SimpleUser? sender;
 
@@ -53,18 +53,18 @@ Map<String, dynamic> toJson() { return {
   if (installation != null) 'installation': installation?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'project': project.toJson(),
-  if (repository != null) 'repository': repository?.toJson(),
+  if (repository.isPresent) 'repository': repository.value?.toJson(),
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('project'); } 
-WebhookProjectDeleted copyWith({WebhookProjectDeletedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhooksProject? project, RepositoryWebhooks? Function()? repository, SimpleUser Function()? sender, }) { return WebhookProjectDeleted(
+WebhookProjectDeleted copyWith({WebhookProjectDeletedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhooksProject? project, Omittable<RepositoryWebhooks?>? repository, SimpleUser? Function()? sender, }) { return WebhookProjectDeleted(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   organization: organization != null ? organization() : this.organization,
   project: project ?? this.project,
-  repository: repository != null ? repository() : this.repository,
+  repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -21,14 +21,14 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PredefinedEntryType($value)'; } 
  }
-@immutable final class PredefinedEntry {const PredefinedEntry({required this.confidence, required this.enabled, required this.id, required this.name, required this.type, this.profileId, this.variant, });
+@immutable final class PredefinedEntry {const PredefinedEntry({required this.confidence, required this.enabled, required this.id, required this.name, required this.type, this.profileId = const Omittable.absent(), this.variant, });
 
 factory PredefinedEntry.fromJson(Map<String, dynamic> json) { return PredefinedEntry(
   confidence: DlpEntryConfidence.fromJson(json['confidence'] as Map<String, dynamic>),
   enabled: json['enabled'] as bool,
   id: json['id'] as String,
   name: json['name'] as String,
-  profileId: json['profile_id'] as String?,
+  profileId: json.containsKey('profile_id') ? Omittable(json['profile_id'] as String?) : const Omittable.absent(),
   variant: json['variant'] != null ? DlpPredefinedEntryVariant.fromJson(json['variant'] as Map<String, dynamic>) : null,
   type: PredefinedEntryType.fromJson(json['type'] as String),
 ); }
@@ -41,7 +41,7 @@ final String id;
 
 final String name;
 
-final String? profileId;
+final Omittable<String?> profileId;
 
 final DlpPredefinedEntryVariant? variant;
 
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
   'id': id,
   'name': name,
-  'profile_id': ?profileId,
+  if (profileId.isPresent) 'profile_id': profileId.value,
   if (variant != null) 'variant': variant?.toJson(),
   'type': type.toJson(),
 }; } 
@@ -61,12 +61,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type'); } 
-PredefinedEntry copyWith({DlpEntryConfidence? confidence, bool? enabled, String? id, String? name, String? Function()? profileId, DlpPredefinedEntryVariant Function()? variant, PredefinedEntryType? type, }) { return PredefinedEntry(
+PredefinedEntry copyWith({DlpEntryConfidence? confidence, bool? enabled, String? id, String? name, Omittable<String?>? profileId, DlpPredefinedEntryVariant? Function()? variant, PredefinedEntryType? type, }) { return PredefinedEntry(
   confidence: confidence ?? this.confidence,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
   name: name ?? this.name,
-  profileId: profileId != null ? profileId() : this.profileId,
+  profileId: profileId ?? this.profileId,
   variant: variant != null ? variant() : this.variant,
   type: type ?? this.type,
 ); } 

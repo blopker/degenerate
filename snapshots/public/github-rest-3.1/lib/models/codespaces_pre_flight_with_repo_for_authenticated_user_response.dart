@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (defaults != null) 'defaults': defaults?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billable_owner', 'defaults'}.contains(key)); } 
-CodespacesPreFlightWithRepoForAuthenticatedUserResponse copyWith({SimpleUser Function()? billableOwner, CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults Function()? defaults, }) { return CodespacesPreFlightWithRepoForAuthenticatedUserResponse(
+CodespacesPreFlightWithRepoForAuthenticatedUserResponse copyWith({SimpleUser? Function()? billableOwner, CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults? Function()? defaults, }) { return CodespacesPreFlightWithRepoForAuthenticatedUserResponse(
   billableOwner: billableOwner != null ? billableOwner() : this.billableOwner,
   defaults: defaults != null ? defaults() : this.defaults,
 ); } 

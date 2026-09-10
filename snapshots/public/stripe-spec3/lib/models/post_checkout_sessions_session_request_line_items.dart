@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (taxRates != null) 'tax_rates': taxRates?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'adjustable_quantity', 'id', 'metadata', 'price', 'price_data', 'quantity', 'tax_rates'}.contains(key)); } 
-PostCheckoutSessionsSessionRequestLineItems copyWith({PostCheckoutSessionsSessionRequestLineItemsAdjustableQuantity Function()? adjustableQuantity, String Function()? id, PostCheckoutSessionsSessionRequestLineItemsMetadata Function()? metadata, String Function()? price, PostCheckoutSessionsSessionRequestLineItemsPriceData Function()? priceData, int Function()? quantity, PostCheckoutSessionsSessionRequestLineItemsTaxRates Function()? taxRates, }) { return PostCheckoutSessionsSessionRequestLineItems(
+PostCheckoutSessionsSessionRequestLineItems copyWith({PostCheckoutSessionsSessionRequestLineItemsAdjustableQuantity? Function()? adjustableQuantity, String? Function()? id, PostCheckoutSessionsSessionRequestLineItemsMetadata? Function()? metadata, String? Function()? price, PostCheckoutSessionsSessionRequestLineItemsPriceData? Function()? priceData, int? Function()? quantity, PostCheckoutSessionsSessionRequestLineItemsTaxRates? Function()? taxRates, }) { return PostCheckoutSessionsSessionRequestLineItems(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,

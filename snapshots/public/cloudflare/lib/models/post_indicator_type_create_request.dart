@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'indicatorType': indicatorType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicatorType') && json['indicatorType'] is String; } 
-PostIndicatorTypeCreateRequest copyWith({String Function()? description, String? indicatorType, }) { return PostIndicatorTypeCreateRequest(
+PostIndicatorTypeCreateRequest copyWith({String? Function()? description, String? indicatorType, }) { return PostIndicatorTypeCreateRequest(
   description: description != null ? description() : this.description,
   indicatorType: indicatorType ?? this.indicatorType,
 ); } 

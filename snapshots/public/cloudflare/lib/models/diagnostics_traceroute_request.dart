@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'targets': targets,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('targets'); } 
-DiagnosticsTracerouteRequest copyWith({List<String> Function()? colos, MagicTransitOptions Function()? options, List<String>? targets, }) { return DiagnosticsTracerouteRequest(
+DiagnosticsTracerouteRequest copyWith({List<String>? Function()? colos, MagicTransitOptions? Function()? options, List<String>? targets, }) { return DiagnosticsTracerouteRequest(
   colos: colos != null ? colos() : this.colos,
   options: options != null ? options() : this.options,
   targets: targets ?? this.targets,

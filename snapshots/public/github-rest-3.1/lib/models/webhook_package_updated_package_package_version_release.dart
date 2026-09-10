@@ -39,7 +39,7 @@ final String targetCommitish;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  if (author != null) 'author': author?.toJson(),
+  'author': author?.toJson(),
   'created_at': createdAt,
   'draft': draft,
   'html_url': htmlUrl.toString(),

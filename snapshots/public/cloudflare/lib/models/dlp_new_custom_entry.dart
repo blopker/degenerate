@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_pattern.dart';@immutable final class DlpNewCustomEntry {const DlpNewCustomEntry({required this.enabled, required this.name, required this.pattern, this.description, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_pattern.dart';@immutable final class DlpNewCustomEntry {const DlpNewCustomEntry({required this.enabled, required this.name, required this.pattern, this.description = const Omittable.absent(), });
 
 factory DlpNewCustomEntry.fromJson(Map<String, dynamic> json) { return DlpNewCustomEntry(
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
   pattern: DlpPattern.fromJson(json['pattern'] as Map<String, dynamic>),
 ); }
 
-final String? description;
+final Omittable<String?> description;
 
 final bool enabled;
 
@@ -18,7 +18,7 @@ final String name;
 final DlpPattern pattern;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'enabled': enabled,
   'name': name,
   'pattern': pattern.toJson(),
@@ -26,8 +26,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('pattern'); } 
-DlpNewCustomEntry copyWith({String? Function()? description, bool? enabled, String? name, DlpPattern? pattern, }) { return DlpNewCustomEntry(
-  description: description != null ? description() : this.description,
+DlpNewCustomEntry copyWith({Omittable<String?>? description, bool? enabled, String? name, DlpPattern? pattern, }) { return DlpNewCustomEntry(
+  description: description ?? this.description,
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,
   pattern: pattern ?? this.pattern,

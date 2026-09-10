@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('monthly_price_in_dollars') && json['monthly_price_in_dollars'] is num &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('node_id') && json['node_id'] is String; } 
-WebhooksSponsorshipTier copyWith({String? createdAt, String? description, bool Function()? isCustomAmmount, bool Function()? isCustomAmount, bool? isOneTime, int? monthlyPriceInCents, int? monthlyPriceInDollars, String? name, String? nodeId, }) { return WebhooksSponsorshipTier(
+WebhooksSponsorshipTier copyWith({String? createdAt, String? description, bool? Function()? isCustomAmmount, bool? Function()? isCustomAmount, bool? isOneTime, int? monthlyPriceInCents, int? monthlyPriceInDollars, String? name, String? nodeId, }) { return WebhooksSponsorshipTier(
   createdAt: createdAt ?? this.createdAt,
   description: description ?? this.description,
   isCustomAmmount: isCustomAmmount != null ? isCustomAmmount() : this.isCustomAmmount,

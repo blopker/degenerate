@@ -29,6 +29,7 @@
 - **Forward-compatible**: unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
 - **Lightweight unions**: `oneOf`/`anyOf` schemas emit `typedef` aliases over generic `OneOf` containers with pattern matching support, avoiding heavy sealed class hierarchies
 - **Typed streaming**: SSE (`text/event-stream`) and JSONL (`application/jsonl`) responses with `itemSchema` return `Stream<T>` with typed deserialization
+- **Omittable fields (JSON Merge Patch)**: optional nullable fields generate as `Omittable<T>` so "omitted", "explicit null", and "value" all survive serialization — PATCH endpoints can clear a field with `Omittable(null)`
 - **Response envelope unwrapping**: `--unwrap-fields=result` returns the inner type directly instead of the full envelope, matching how Stainless generates Cloudflare/OpenAI SDKs
 - **Zero analysis issues**: generated code passes default `dart analyze` with no errors, warnings, or hints
 - **Fast**: generates ~14,000 files from the Cloudflare spec in ~6 seconds (AOT compiled)
@@ -113,6 +114,9 @@ Options:
   -v, --verbose            Print IR and diagnostics
       --dry-run            Parse and validate without writing files
       --unwrap-fields      Unwrap response envelopes by extracting named fields (repeatable)
+      --omittable          How optional fields distinguish "omitted" from "set to null":
+                           nullable (default) wraps optional nullable fields in Omittable<T>,
+                           all wraps every optional field, off uses plain T? (null = omitted)
   -h, --help               Show help
       --version            Print the tool version
 ```
@@ -263,10 +267,35 @@ Each schema with `properties` generates a `final class` with:
 - `const` constructor with named parameters
 - `factory fromJson(Map<String, dynamic>)` for deserialization
 - `toJson()` returning `Map<String, dynamic>`
-- `copyWith()` with nullable callbacks for optional fields
+- `copyWith()` with nullable callbacks for optional fields (`Omittable` values for omittable fields)
 - Value equality (`==` and `hashCode`)
 - `toString()` with all fields
 - `additionalProperties` overflow `Map<String, T>` when the schema allows extra keys
+
+### Omittable Fields (JSON Merge Patch)
+
+An optional nullable field has three legal wire states: the key is absent
+("don't touch"), the key is `null` ("clear"), or the key has a value. A plain
+`T?` can't express all three, so fields that are optional **and** nullable
+(`nullable: true` / `type: [T, 'null']`) generate as `Omittable<T?>`:
+
+```dart
+// PATCH /users/{id} with application/merge-patch+json
+await api.patchUser(userId: 'u1', body: UserPatch());                                  // {}
+await api.patchUser(userId: 'u1', body: UserPatch(displayName: Omittable(null)));      // {"display_name": null}
+await api.patchUser(userId: 'u1', body: UserPatch(displayName: Omittable('Bo')));      // {"display_name": "Bo"}
+```
+
+Reading works the same way — `user.displayName.isPresent` tells you whether
+the server sent the key at all, and `fromJson`/`toJson` round-trip all three
+states exactly. Required fields always serialize their key (a required
+nullable field sends an explicit `null`), and optional non-nullable fields
+stay plain `T?` since `null` isn't a legal wire value for them.
+
+Escape hatches for non-conforming servers: `--omittable=all` wraps *every*
+optional field so you can send explicit nulls the spec doesn't declare, and
+`--omittable=off` restores plain `T?` fields where Dart `null` serializes as
+omitted.
 
 ### Enums
 

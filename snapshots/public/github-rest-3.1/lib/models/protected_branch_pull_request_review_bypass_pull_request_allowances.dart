@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (apps != null) 'apps': apps?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'users', 'teams', 'apps'}.contains(key)); } 
-ProtectedBranchPullRequestReviewBypassPullRequestAllowances copyWith({List<SimpleUser> Function()? users, List<Team> Function()? teams, List<Integration> Function()? apps, }) { return ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
+ProtectedBranchPullRequestReviewBypassPullRequestAllowances copyWith({List<SimpleUser>? Function()? users, List<Team>? Function()? teams, List<Integration>? Function()? apps, }) { return ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
   users: users != null ? users() : this.users,
   teams: teams != null ? teams() : this.teams,
   apps: apps != null ? apps() : this.apps,

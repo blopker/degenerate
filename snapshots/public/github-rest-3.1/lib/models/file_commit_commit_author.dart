@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'email': ?email,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'name', 'email'}.contains(key)); } 
-FileCommitCommitAuthor copyWith({String Function()? date, String Function()? name, String Function()? email, }) { return FileCommitCommitAuthor(
+FileCommitCommitAuthor copyWith({String? Function()? date, String? Function()? name, String? Function()? email, }) { return FileCommitCommitAuthor(
   date: date != null ? date() : this.date,
   name: name != null ? name() : this.name,
   email: email != null ? email() : this.email,

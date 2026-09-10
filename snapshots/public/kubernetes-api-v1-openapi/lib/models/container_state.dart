@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (waiting != null) 'waiting': waiting?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'running', 'terminated', 'waiting'}.contains(key)); } 
-ContainerState copyWith({ContainerStateRunning Function()? running, ContainerStateTerminated Function()? terminated, ContainerStateWaiting Function()? waiting, }) { return ContainerState(
+ContainerState copyWith({ContainerStateRunning? Function()? running, ContainerStateTerminated? Function()? terminated, ContainerStateWaiting? Function()? waiting, }) { return ContainerState(
   running: running != null ? running() : this.running,
   terminated: terminated != null ? terminated() : this.terminated,
   waiting: waiting != null ? waiting() : this.waiting,

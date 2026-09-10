@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
       json.containsKey('performance') &&
       json.containsKey('task') &&
       json.containsKey('verdicts'); } 
-UrlscannerGetScanResponseResultScan copyWith({UrlscannerGetScanResponseResultScanAsns Function()? asns, List<UrlscannerGetScanResponseResultScanCertificates>? certificates, UrlscannerGetScanResponseResultScanDomains Function()? domains, UrlscannerGetScanResponseResultScanGeo? geo, UrlscannerGetScanResponseResultScanIps Function()? ips, UrlscannerGetScanResponseResultScanLinks Function()? links, UrlscannerGetScanResponseResultScanMeta? meta, UrlscannerGetScanResponseResultScanPage? page, List<UrlscannerGetScanResponseResultScanPerformance>? performance, UrlscannerGetScanResponseResultScanTask? task, UrlscannerGetScanResponseResultScanVerdicts? verdicts, }) { return UrlscannerGetScanResponseResultScan(
+UrlscannerGetScanResponseResultScan copyWith({UrlscannerGetScanResponseResultScanAsns? Function()? asns, List<UrlscannerGetScanResponseResultScanCertificates>? certificates, UrlscannerGetScanResponseResultScanDomains? Function()? domains, UrlscannerGetScanResponseResultScanGeo? geo, UrlscannerGetScanResponseResultScanIps? Function()? ips, UrlscannerGetScanResponseResultScanLinks? Function()? links, UrlscannerGetScanResponseResultScanMeta? meta, UrlscannerGetScanResponseResultScanPage? page, List<UrlscannerGetScanResponseResultScanPerformance>? performance, UrlscannerGetScanResponseResultScanTask? task, UrlscannerGetScanResponseResultScanVerdicts? verdicts, }) { return UrlscannerGetScanResponseResultScan(
   asns: asns != null ? asns() : this.asns,
   certificates: certificates ?? this.certificates,
   domains: domains != null ? domains() : this.domains,

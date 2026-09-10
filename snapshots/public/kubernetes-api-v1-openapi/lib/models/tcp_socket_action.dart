@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'port': port.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port'); } 
-TcpSocketAction copyWith({String Function()? host, IoK8sApimachineryPkgUtilIntstrIntOrString? port, }) { return TcpSocketAction(
+TcpSocketAction copyWith({String? Function()? host, IoK8sApimachineryPkgUtilIntstrIntOrString? port, }) { return TcpSocketAction(
   host: host != null ? host() : this.host,
   port: port ?? this.port,
 ); } 

@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('source'); } 
-CreateEvalResponsesRunDataSource copyWith({CreateEvalResponsesRunDataSourceType? type, CreateEvalResponsesRunDataSourceInputMessages Function()? inputMessages, CreateEvalResponsesRunDataSourceSamplingParams Function()? samplingParams, String Function()? model, CreateEvalResponsesRunDataSourceSource? source, }) { return CreateEvalResponsesRunDataSource(
+CreateEvalResponsesRunDataSource copyWith({CreateEvalResponsesRunDataSourceType? type, CreateEvalResponsesRunDataSourceInputMessages? Function()? inputMessages, CreateEvalResponsesRunDataSourceSamplingParams? Function()? samplingParams, String? Function()? model, CreateEvalResponsesRunDataSourceSource? source, }) { return CreateEvalResponsesRunDataSource(
   type: type ?? this.type,
   inputMessages: inputMessages != null ? inputMessages() : this.inputMessages,
   samplingParams: samplingParams != null ? samplingParams() : this.samplingParams,

@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'vector': vector,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector'); } 
-VectorizeIndexQueryRequest copyWith({Map<String, dynamic> Function()? filter, bool Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return VectorizeIndexQueryRequest(
+VectorizeIndexQueryRequest copyWith({Map<String, dynamic>? Function()? filter, bool Function()? returnMetadata, bool Function()? returnValues, double Function()? topK, List<double>? vector, }) { return VectorizeIndexQueryRequest(
   filter: filter != null ? filter() : this.filter,
   returnMetadata: returnMetadata != null ? returnMetadata() : this.returnMetadata,
   returnValues: returnValues != null ? returnValues() : this.returnValues,

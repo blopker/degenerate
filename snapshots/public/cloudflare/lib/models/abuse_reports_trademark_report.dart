@@ -122,7 +122,7 @@ final String trademarkOffice;
 final String trademarkSymbol;
 
 Map<String, dynamic> toJson() { return {
-  'act': ?act,
+  'act': act,
   'comments': ?comments,
   'company': ?company,
   'email': email,
@@ -151,7 +151,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('trademark_number') && json['trademark_number'] is String &&
       json.containsKey('trademark_office') && json['trademark_office'] is String &&
       json.containsKey('trademark_symbol') && json['trademark_symbol'] is String; } 
-AbuseReportsTrademarkReport copyWith({dynamic Function()? act, String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, AbuseReportsTrademarkReportHostNotification? hostNotification, String? justification, AbuseReportsTrademarkReportOwnerNotification? ownerNotification, String? trademarkNumber, String? trademarkOffice, String? trademarkSymbol, }) { return AbuseReportsTrademarkReport(
+AbuseReportsTrademarkReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, AbuseReportsTrademarkReportHostNotification? hostNotification, String? justification, AbuseReportsTrademarkReportOwnerNotification? ownerNotification, String? trademarkNumber, String? trademarkOffice, String? trademarkSymbol, }) { return AbuseReportsTrademarkReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,

@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
       json.containsKey('name'); } 
-ZonesPostRequest copyWith({ZonesPostRequestAccount? account, ZonesName? name, ZonesType Function()? type, }) { return ZonesPostRequest(
+ZonesPostRequest copyWith({ZonesPostRequestAccount? account, ZonesName? name, ZonesType? Function()? type, }) { return ZonesPostRequest(
   account: account ?? this.account,
   name: name ?? this.name,
   type: type != null ? type() : this.type,

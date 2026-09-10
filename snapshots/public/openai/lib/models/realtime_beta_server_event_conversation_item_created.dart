@@ -32,12 +32,12 @@ bool get isUnknown { return !values.contains(this); }
 ///   - The client has sent a `conversation.item.create` event to add a new Item
 ///     to the Conversation.
 /// 
-@immutable final class RealtimeBetaServerEventConversationItemCreated {const RealtimeBetaServerEventConversationItemCreated({required this.eventId, required this.type, required this.item, this.previousItemId, });
+@immutable final class RealtimeBetaServerEventConversationItemCreated {const RealtimeBetaServerEventConversationItemCreated({required this.eventId, required this.type, required this.item, this.previousItemId = const Omittable.absent(), });
 
 factory RealtimeBetaServerEventConversationItemCreated.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventConversationItemCreated(
   eventId: json['event_id'] as String,
   type: RealtimeBetaServerEventConversationItemCreatedType.fromJson(json['type'] as String),
-  previousItemId: json['previous_item_id'] as String?,
+  previousItemId: json.containsKey('previous_item_id') ? Omittable(json['previous_item_id'] as String?) : const Omittable.absent(),
   item: RealtimeConversationItem.fromJson(json['item'] as Map<String, dynamic>),
 ); }
 
@@ -51,23 +51,23 @@ final RealtimeBetaServerEventConversationItemCreatedType type;
 /// client to understand the order of the conversation. Can be `null` if the
 /// item has no predecessor.
 /// 
-final String? previousItemId;
+final Omittable<String?> previousItemId;
 
 final RealtimeConversationItem item;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
   'type': type.toJson(),
-  'previous_item_id': ?previousItemId,
+  if (previousItemId.isPresent) 'previous_item_id': previousItemId.value,
   'item': item.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
       json.containsKey('item'); } 
-RealtimeBetaServerEventConversationItemCreated copyWith({String? eventId, RealtimeBetaServerEventConversationItemCreatedType? type, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeBetaServerEventConversationItemCreated(
+RealtimeBetaServerEventConversationItemCreated copyWith({String? eventId, RealtimeBetaServerEventConversationItemCreatedType? type, Omittable<String?>? previousItemId, RealtimeConversationItem? item, }) { return RealtimeBetaServerEventConversationItemCreated(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
-  previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
+  previousItemId: previousItemId ?? this.previousItemId,
   item: item ?? this.item,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

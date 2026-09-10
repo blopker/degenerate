@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('session'); } 
-RealtimeBetaClientEventSessionUpdate copyWith({String Function()? eventId, RealtimeBetaClientEventSessionUpdateType? type, RealtimeSessionCreateRequest? session, }) { return RealtimeBetaClientEventSessionUpdate(
+RealtimeBetaClientEventSessionUpdate copyWith({String? Function()? eventId, RealtimeBetaClientEventSessionUpdateType? type, RealtimeSessionCreateRequest? session, }) { return RealtimeBetaClientEventSessionUpdate(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   session: session ?? this.session,

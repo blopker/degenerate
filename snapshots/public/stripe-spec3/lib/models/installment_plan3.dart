@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InstallmentPlan3 copyWith({int Function()? count, InstallmentPlan3Interval Function()? interval, InstallmentPlan3Type? type, }) { return InstallmentPlan3(
+InstallmentPlan3 copyWith({int? Function()? count, InstallmentPlan3Interval? Function()? interval, InstallmentPlan3Type? type, }) { return InstallmentPlan3(
   count: count != null ? count() : this.count,
   interval: interval != null ? interval() : this.interval,
   type: type ?? this.type,

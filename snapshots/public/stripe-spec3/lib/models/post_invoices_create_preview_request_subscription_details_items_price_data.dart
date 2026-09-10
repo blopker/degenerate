@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('product') && json['product'] is String &&
       json.containsKey('recurring'); } 
-PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData copyWith({String? currency, String? product, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurring? recurring, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataTaxBehavior Function()? taxBehavior, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData(
+PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData copyWith({String? currency, String? product, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataRecurring? recurring, PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceDataTaxBehavior? Function()? taxBehavior, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsPriceData(
   currency: currency ?? this.currency,
   product: product ?? this.product,
   recurring: recurring ?? this.recurring,

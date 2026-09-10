@@ -28,13 +28,13 @@ final List<PendingDeploymentReviewers> reviewers;
 Map<String, dynamic> toJson() { return {
   'environment': environment.toJson(),
   'wait_timer': waitTimer,
-  if (waitTimerStartedAt != null) 'wait_timer_started_at': waitTimerStartedAt?.toIso8601String(),
+  'wait_timer_started_at': waitTimerStartedAt?.toIso8601String(),
   'current_user_can_approve': currentUserCanApprove,
   'reviewers': reviewers.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('environment') &&
       json.containsKey('wait_timer') && json['wait_timer'] is num &&
-      json.containsKey('wait_timer_started_at') && json['wait_timer_started_at'] is String &&
+      json.containsKey('wait_timer_started_at') && (json['wait_timer_started_at'] == null || json['wait_timer_started_at'] is String) &&
       json.containsKey('current_user_can_approve') && json['current_user_can_approve'] is bool &&
       json.containsKey('reviewers'); } 
 PendingDeployment copyWith({PendingDeploymentEnvironment? environment, int? waitTimer, DateTime? Function()? waitTimerStartedAt, bool? currentUserCanApprove, List<PendingDeploymentReviewers>? reviewers, }) { return PendingDeployment(

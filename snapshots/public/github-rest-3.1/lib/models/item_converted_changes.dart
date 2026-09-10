@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (contentType != null) 'content_type': contentType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_type'}.contains(key)); } 
-ItemConvertedChanges copyWith({ItemConvertedChangesContentType Function()? contentType}) { return ItemConvertedChanges(
+ItemConvertedChanges copyWith({ItemConvertedChangesContentType? Function()? contentType}) { return ItemConvertedChanges(
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

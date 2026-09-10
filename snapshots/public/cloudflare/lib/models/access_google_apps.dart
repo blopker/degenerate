@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessGoogleApps copyWith({AccessGoogleAppsConfig? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessGoogleAppsScimConfig Function()? scimConfig, AccessGoogleAppsType? type, }) { return AccessGoogleApps(
+AccessGoogleApps copyWith({AccessGoogleAppsConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessGoogleAppsScimConfig? Function()? scimConfig, AccessGoogleAppsType? type, }) { return AccessGoogleApps(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

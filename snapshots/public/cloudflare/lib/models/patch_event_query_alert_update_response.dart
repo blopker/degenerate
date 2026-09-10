@@ -91,7 +91,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('query_id') && json['query_id'] is num &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user_email') && json['user_email'] is String; } 
-PatchEventQueryAlertUpdateResponse copyWith({int? accountId, String? createdAt, bool? enabled, PatchEventQueryAlertUpdateResponseFrequency? frequency, int? id, String Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) { return PatchEventQueryAlertUpdateResponse(
+PatchEventQueryAlertUpdateResponse copyWith({int? accountId, String? createdAt, bool? enabled, PatchEventQueryAlertUpdateResponseFrequency? frequency, int? id, String? Function()? lastSentAt, String? notificationType, int? queryId, String? updatedAt, String? userEmail, }) { return PatchEventQueryAlertUpdateResponse(
   accountId: accountId ?? this.accountId,
   createdAt: createdAt ?? this.createdAt,
   enabled: enabled ?? this.enabled,

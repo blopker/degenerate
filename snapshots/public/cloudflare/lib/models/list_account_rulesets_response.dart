@@ -23,17 +23,17 @@ final dynamic success;
 final RulesetsResultInfo? resultInfo;
 
 Map<String, dynamic> toJson() { return {
-  'errors': ?errors,
+  'errors': errors,
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.map((e) => e.toJson()).toList(),
-  'success': ?success,
+  'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success'); } 
-ListAccountRulesetsResponse copyWith({dynamic Function()? errors, List<RulesetsMessage>? messages, List<ListAccountRulesetsResponseResult>? result, dynamic Function()? success, RulesetsResultInfo Function()? resultInfo, }) { return ListAccountRulesetsResponse(
+ListAccountRulesetsResponse copyWith({dynamic Function()? errors, List<RulesetsMessage>? messages, List<ListAccountRulesetsResponseResult>? result, dynamic Function()? success, RulesetsResultInfo? Function()? resultInfo, }) { return ListAccountRulesetsResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

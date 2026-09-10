@@ -78,14 +78,14 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'status': status.toJson(),
   'container_id': containerId,
-  'code': ?code,
-  if (outputs != null) 'outputs': outputs?.map((e) => e.toJson()).toList(),
+  'code': code,
+  'outputs': outputs?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') &&
       json.containsKey('container_id') && json['container_id'] is String &&
-      json.containsKey('code') && json['code'] is String &&
+      json.containsKey('code') && (json['code'] == null || json['code'] is String) &&
       json.containsKey('outputs'); } 
 CodeInterpreterToolCall copyWith({String? type, String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs2>? Function()? outputs, }) { return CodeInterpreterToolCall(
   type: type ?? this.type,

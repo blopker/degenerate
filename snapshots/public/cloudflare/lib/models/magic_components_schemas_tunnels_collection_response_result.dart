@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (interconnects != null) 'interconnects': interconnects?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interconnects'}.contains(key)); } 
-MagicComponentsSchemasTunnelsCollectionResponseResult copyWith({List<MagicInterconnect> Function()? interconnects}) { return MagicComponentsSchemasTunnelsCollectionResponseResult(
+MagicComponentsSchemasTunnelsCollectionResponseResult copyWith({List<MagicInterconnect>? Function()? interconnects}) { return MagicComponentsSchemasTunnelsCollectionResponseResult(
   interconnects: interconnects != null ? interconnects() : this.interconnects,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

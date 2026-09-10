@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'rejection_reasons': rejectionReasons.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('rejection_reasons'); } 
-PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest copyWith({List<String> Function()? expand, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons? rejectionReasons, }) { return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest(
+PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest copyWith({List<String>? Function()? expand, PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons? rejectionReasons, }) { return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest(
   expand: expand != null ? expand() : this.expand,
   rejectionReasons: rejectionReasons ?? this.rejectionReasons,
 ); } 

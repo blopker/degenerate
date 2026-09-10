@@ -62,7 +62,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('visibility'); } 
-OrganizationActionsSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, OrganizationActionsSecretVisibility? visibility, Uri Function()? selectedRepositoriesUrl, }) { return OrganizationActionsSecret(
+OrganizationActionsSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedAt, OrganizationActionsSecretVisibility? visibility, Uri? Function()? selectedRepositoriesUrl, }) { return OrganizationActionsSecret(
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,

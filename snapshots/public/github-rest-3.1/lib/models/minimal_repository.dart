@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MinimalRepositoryPullRequestCreationPolicy($value)'; } 
  }
 /// Minimal Repository
-@immutable final class MinimalRepository {const MinimalRepository({required this.issueEventsUrl, required this.nodeId, required this.name, required this.fullName, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.issueCommentUrl, required this.id, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.hooksUrl, required this.treesUrl, this.sshUrl, this.cloneUrl, this.mirrorUrl, this.gitUrl, this.svnUrl, this.homepage, this.language, this.forksCount, this.stargazersCount, this.watchersCount, this.size, this.defaultBranch, this.openIssuesCount, this.customProperties, this.topics, this.hasIssues, this.hasProjects, this.hasWiki, this.hasPages, this.hasDownloads, this.hasDiscussions, this.hasPullRequests, this.pullRequestCreationPolicy, this.archived, this.disabled, this.visibility, this.pushedAt, this.createdAt, this.updatedAt, this.permissions, this.roleName, this.tempCloneToken, this.deleteBranchOnMerge, this.subscribersCount, this.networkCount, this.codeOfConduct, this.license, this.forks, this.openIssues, this.watchers, this.allowForking, this.webCommitSignoffRequired, this.securityAndAnalysis, this.isTemplate, });
+@immutable final class MinimalRepository {const MinimalRepository({required this.issueEventsUrl, required this.nodeId, required this.name, required this.fullName, required this.owner, required this.private, required this.htmlUrl, required this.description, required this.fork, required this.url, required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.downloadsUrl, required this.eventsUrl, required this.forksUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.issueCommentUrl, required this.id, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.notificationsUrl, required this.pullsUrl, required this.releasesUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.hooksUrl, required this.treesUrl, this.sshUrl, this.cloneUrl, this.mirrorUrl = const Omittable.absent(), this.gitUrl, this.svnUrl, this.homepage = const Omittable.absent(), this.language = const Omittable.absent(), this.forksCount, this.stargazersCount, this.watchersCount, this.size, this.defaultBranch, this.openIssuesCount, this.customProperties, this.topics, this.hasIssues, this.hasProjects, this.hasWiki, this.hasPages, this.hasDownloads, this.hasDiscussions, this.hasPullRequests, this.pullRequestCreationPolicy, this.archived, this.disabled, this.visibility, this.pushedAt = const Omittable.absent(), this.createdAt = const Omittable.absent(), this.updatedAt = const Omittable.absent(), this.permissions, this.roleName, this.tempCloneToken, this.deleteBranchOnMerge, this.subscribersCount, this.networkCount, this.codeOfConduct, this.license = const Omittable.absent(), this.forks, this.openIssues, this.watchers, this.allowForking, this.webCommitSignoffRequired, this.securityAndAnalysis, this.isTemplate, });
 
 factory MinimalRepository.fromJson(Map<String, dynamic> json) { return MinimalRepository(
   id: (json['id'] as num).toInt(),
@@ -77,11 +77,11 @@ factory MinimalRepository.fromJson(Map<String, dynamic> json) { return MinimalRe
   teamsUrl: Uri.parse(json['teams_url'] as String),
   treesUrl: json['trees_url'] as String,
   cloneUrl: json['clone_url'] as String?,
-  mirrorUrl: json['mirror_url'] as String?,
+  mirrorUrl: json.containsKey('mirror_url') ? Omittable(json['mirror_url'] as String?) : const Omittable.absent(),
   hooksUrl: Uri.parse(json['hooks_url'] as String),
   svnUrl: json['svn_url'] as String?,
-  homepage: json['homepage'] as String?,
-  language: json['language'] as String?,
+  homepage: json.containsKey('homepage') ? Omittable(json['homepage'] as String?) : const Omittable.absent(),
+  language: json.containsKey('language') ? Omittable(json['language'] as String?) : const Omittable.absent(),
   forksCount: json['forks_count'] != null ? (json['forks_count'] as num).toInt() : null,
   stargazersCount: json['stargazers_count'] != null ? (json['stargazers_count'] as num).toInt() : null,
   watchersCount: json['watchers_count'] != null ? (json['watchers_count'] as num).toInt() : null,
@@ -101,9 +101,9 @@ factory MinimalRepository.fromJson(Map<String, dynamic> json) { return MinimalRe
   archived: json['archived'] as bool?,
   disabled: json['disabled'] as bool?,
   visibility: json['visibility'] as String?,
-  pushedAt: json['pushed_at'] != null ? DateTime.parse(json['pushed_at'] as String) : null,
-  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
-  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+  pushedAt: json.containsKey('pushed_at') ? Omittable(json['pushed_at'] != null ? DateTime.parse(json['pushed_at'] as String) : null) : const Omittable.absent(),
+  createdAt: json.containsKey('created_at') ? Omittable(json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null) : const Omittable.absent(),
+  updatedAt: json.containsKey('updated_at') ? Omittable(json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null) : const Omittable.absent(),
   permissions: json['permissions'] != null ? MinimalRepositoryPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   roleName: json['role_name'] as String?,
   tempCloneToken: json['temp_clone_token'] as String?,
@@ -111,7 +111,7 @@ factory MinimalRepository.fromJson(Map<String, dynamic> json) { return MinimalRe
   subscribersCount: json['subscribers_count'] != null ? (json['subscribers_count'] as num).toInt() : null,
   networkCount: json['network_count'] != null ? (json['network_count'] as num).toInt() : null,
   codeOfConduct: json['code_of_conduct'] != null ? CodeOfConduct.fromJson(json['code_of_conduct'] as Map<String, dynamic>) : null,
-  license: json['license'] != null ? MinimalRepositoryLicense.fromJson(json['license'] as Map<String, dynamic>) : null,
+  license: json.containsKey('license') ? Omittable(json['license'] != null ? MinimalRepositoryLicense.fromJson(json['license'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   forks: json['forks'] != null ? (json['forks'] as num).toInt() : null,
   openIssues: json['open_issues'] != null ? (json['open_issues'] as num).toInt() : null,
   watchers: json['watchers'] != null ? (json['watchers'] as num).toInt() : null,
@@ -217,15 +217,15 @@ final String treesUrl;
 
 final String? cloneUrl;
 
-final String? mirrorUrl;
+final Omittable<String?> mirrorUrl;
 
 final Uri hooksUrl;
 
 final String? svnUrl;
 
-final String? homepage;
+final Omittable<String?> homepage;
 
-final String? language;
+final Omittable<String?> language;
 
 final int? forksCount;
 
@@ -267,11 +267,11 @@ final bool? disabled;
 
 final String? visibility;
 
-final DateTime? pushedAt;
+final Omittable<DateTime?> pushedAt;
 
-final DateTime? createdAt;
+final Omittable<DateTime?> createdAt;
 
-final DateTime? updatedAt;
+final Omittable<DateTime?> updatedAt;
 
 final MinimalRepositoryPermissions? permissions;
 
@@ -287,7 +287,7 @@ final int? networkCount;
 
 final CodeOfConduct? codeOfConduct;
 
-final MinimalRepositoryLicense? license;
+final Omittable<MinimalRepositoryLicense?> license;
 
 final int? forks;
 
@@ -312,7 +312,7 @@ Map<String, dynamic> toJson() { return {
   'owner': owner.toJson(),
   'private': private,
   'html_url': htmlUrl.toString(),
-  'description': ?description,
+  'description': description,
   'fork': fork,
   'url': url.toString(),
   'archive_url': archiveUrl,
@@ -353,11 +353,11 @@ Map<String, dynamic> toJson() { return {
   'teams_url': teamsUrl.toString(),
   'trees_url': treesUrl,
   'clone_url': ?cloneUrl,
-  'mirror_url': ?mirrorUrl,
+  if (mirrorUrl.isPresent) 'mirror_url': mirrorUrl.value,
   'hooks_url': hooksUrl.toString(),
   'svn_url': ?svnUrl,
-  'homepage': ?homepage,
-  'language': ?language,
+  if (homepage.isPresent) 'homepage': homepage.value,
+  if (language.isPresent) 'language': language.value,
   'forks_count': ?forksCount,
   'stargazers_count': ?stargazersCount,
   'watchers_count': ?watchersCount,
@@ -377,9 +377,9 @@ Map<String, dynamic> toJson() { return {
   'archived': ?archived,
   'disabled': ?disabled,
   'visibility': ?visibility,
-  if (pushedAt != null) 'pushed_at': pushedAt?.toIso8601String(),
-  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  if (pushedAt.isPresent) 'pushed_at': pushedAt.value?.toIso8601String(),
+  if (createdAt.isPresent) 'created_at': createdAt.value?.toIso8601String(),
+  if (updatedAt.isPresent) 'updated_at': updatedAt.value?.toIso8601String(),
   if (permissions != null) 'permissions': permissions?.toJson(),
   'role_name': ?roleName,
   'temp_clone_token': ?tempCloneToken,
@@ -387,7 +387,7 @@ Map<String, dynamic> toJson() { return {
   'subscribers_count': ?subscribersCount,
   'network_count': ?networkCount,
   if (codeOfConduct != null) 'code_of_conduct': codeOfConduct?.toJson(),
-  if (license != null) 'license': license?.toJson(),
+  if (license.isPresent) 'license': license.value?.toJson(),
   'forks': ?forks,
   'open_issues': ?openIssues,
   'watchers': ?watchers,
@@ -403,7 +403,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('owner') &&
       json.containsKey('private') && json['private'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('fork') && json['fork'] is bool &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('archive_url') && json['archive_url'] is String &&
@@ -442,7 +442,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('teams_url') && json['teams_url'] is String &&
       json.containsKey('trees_url') && json['trees_url'] is String &&
       json.containsKey('hooks_url') && json['hooks_url'] is String; } 
-MinimalRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String Function()? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String Function()? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String Function()? cloneUrl, String? Function()? mirrorUrl, Uri? hooksUrl, String Function()? svnUrl, String? Function()? homepage, String? Function()? language, int Function()? forksCount, int Function()? stargazersCount, int Function()? watchersCount, int Function()? size, String Function()? defaultBranch, int Function()? openIssuesCount, bool Function()? isTemplate, List<String> Function()? topics, bool Function()? hasIssues, bool Function()? hasProjects, bool Function()? hasWiki, bool Function()? hasPages, bool Function()? hasDownloads, bool Function()? hasDiscussions, bool Function()? hasPullRequests, MinimalRepositoryPullRequestCreationPolicy Function()? pullRequestCreationPolicy, bool Function()? archived, bool Function()? disabled, String Function()? visibility, DateTime? Function()? pushedAt, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, MinimalRepositoryPermissions Function()? permissions, String Function()? roleName, String Function()? tempCloneToken, bool Function()? deleteBranchOnMerge, int Function()? subscribersCount, int Function()? networkCount, CodeOfConduct Function()? codeOfConduct, MinimalRepositoryLicense? Function()? license, int Function()? forks, int Function()? openIssues, int Function()? watchers, bool Function()? allowForking, bool Function()? webCommitSignoffRequired, SecurityAndAnalysis Function()? securityAndAnalysis, Map<String, dynamic> Function()? customProperties, }) { return MinimalRepository(
+MinimalRepository copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, Uri? downloadsUrl, Uri? eventsUrl, Uri? forksUrl, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, String? Function()? gitUrl, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? notificationsUrl, String? pullsUrl, String? releasesUrl, String? Function()? sshUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, String? Function()? cloneUrl, Omittable<String?>? mirrorUrl, Uri? hooksUrl, String? Function()? svnUrl, Omittable<String?>? homepage, Omittable<String?>? language, int? Function()? forksCount, int? Function()? stargazersCount, int? Function()? watchersCount, int? Function()? size, String? Function()? defaultBranch, int? Function()? openIssuesCount, bool? Function()? isTemplate, List<String>? Function()? topics, bool? Function()? hasIssues, bool? Function()? hasProjects, bool? Function()? hasWiki, bool? Function()? hasPages, bool? Function()? hasDownloads, bool? Function()? hasDiscussions, bool? Function()? hasPullRequests, MinimalRepositoryPullRequestCreationPolicy? Function()? pullRequestCreationPolicy, bool? Function()? archived, bool? Function()? disabled, String? Function()? visibility, Omittable<DateTime?>? pushedAt, Omittable<DateTime?>? createdAt, Omittable<DateTime?>? updatedAt, MinimalRepositoryPermissions? Function()? permissions, String? Function()? roleName, String? Function()? tempCloneToken, bool? Function()? deleteBranchOnMerge, int? Function()? subscribersCount, int? Function()? networkCount, CodeOfConduct? Function()? codeOfConduct, Omittable<MinimalRepositoryLicense?>? license, int? Function()? forks, int? Function()? openIssues, int? Function()? watchers, bool? Function()? allowForking, bool? Function()? webCommitSignoffRequired, SecurityAndAnalysis? Function()? securityAndAnalysis, Map<String, dynamic>? Function()? customProperties, }) { return MinimalRepository(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,
@@ -491,11 +491,11 @@ MinimalRepository copyWith({int? id, String? nodeId, String? name, String? fullN
   teamsUrl: teamsUrl ?? this.teamsUrl,
   treesUrl: treesUrl ?? this.treesUrl,
   cloneUrl: cloneUrl != null ? cloneUrl() : this.cloneUrl,
-  mirrorUrl: mirrorUrl != null ? mirrorUrl() : this.mirrorUrl,
+  mirrorUrl: mirrorUrl ?? this.mirrorUrl,
   hooksUrl: hooksUrl ?? this.hooksUrl,
   svnUrl: svnUrl != null ? svnUrl() : this.svnUrl,
-  homepage: homepage != null ? homepage() : this.homepage,
-  language: language != null ? language() : this.language,
+  homepage: homepage ?? this.homepage,
+  language: language ?? this.language,
   forksCount: forksCount != null ? forksCount() : this.forksCount,
   stargazersCount: stargazersCount != null ? stargazersCount() : this.stargazersCount,
   watchersCount: watchersCount != null ? watchersCount() : this.watchersCount,
@@ -515,9 +515,9 @@ MinimalRepository copyWith({int? id, String? nodeId, String? name, String? fullN
   archived: archived != null ? archived() : this.archived,
   disabled: disabled != null ? disabled() : this.disabled,
   visibility: visibility != null ? visibility() : this.visibility,
-  pushedAt: pushedAt != null ? pushedAt() : this.pushedAt,
-  createdAt: createdAt != null ? createdAt() : this.createdAt,
-  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  pushedAt: pushedAt ?? this.pushedAt,
+  createdAt: createdAt ?? this.createdAt,
+  updatedAt: updatedAt ?? this.updatedAt,
   permissions: permissions != null ? permissions() : this.permissions,
   roleName: roleName != null ? roleName() : this.roleName,
   tempCloneToken: tempCloneToken != null ? tempCloneToken() : this.tempCloneToken,
@@ -525,7 +525,7 @@ MinimalRepository copyWith({int? id, String? nodeId, String? name, String? fullN
   subscribersCount: subscribersCount != null ? subscribersCount() : this.subscribersCount,
   networkCount: networkCount != null ? networkCount() : this.networkCount,
   codeOfConduct: codeOfConduct != null ? codeOfConduct() : this.codeOfConduct,
-  license: license != null ? license() : this.license,
+  license: license ?? this.license,
   forks: forks != null ? forks() : this.forks,
   openIssues: openIssues != null ? openIssues() : this.openIssues,
   watchers: watchers != null ? watchers() : this.watchers,

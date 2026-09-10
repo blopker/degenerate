@@ -27,13 +27,13 @@ final CommunityHealthFile? issueTemplate;
 final CommunityHealthFile? pullRequestTemplate;
 
 Map<String, dynamic> toJson() { return {
-  if (codeOfConduct != null) 'code_of_conduct': codeOfConduct?.toJson(),
-  if (codeOfConductFile != null) 'code_of_conduct_file': codeOfConductFile?.toJson(),
-  if (license != null) 'license': license?.toJson(),
-  if (contributing != null) 'contributing': contributing?.toJson(),
-  if (readme != null) 'readme': readme?.toJson(),
-  if (issueTemplate != null) 'issue_template': issueTemplate?.toJson(),
-  if (pullRequestTemplate != null) 'pull_request_template': pullRequestTemplate?.toJson(),
+  'code_of_conduct': codeOfConduct?.toJson(),
+  'code_of_conduct_file': codeOfConductFile?.toJson(),
+  'license': license?.toJson(),
+  'contributing': contributing?.toJson(),
+  'readme': readme?.toJson(),
+  'issue_template': issueTemplate?.toJson(),
+  'pull_request_template': pullRequestTemplate?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code_of_conduct') &&
       json.containsKey('code_of_conduct_file') &&

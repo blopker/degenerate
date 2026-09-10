@@ -82,7 +82,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('batch
       json.containsKey('format') &&
       json.containsKey('path') &&
       json.containsKey('type'); } 
-AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination copyWith({AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch? batch, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression? compression, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCredentials Function()? credentials, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat? format, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath? path, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationType? type, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination(
+AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination copyWith({AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch? batch, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression? compression, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCredentials? Function()? credentials, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationFormat? format, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationPath? path, AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationType? type, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestination(
   batch: batch ?? this.batch,
   compression: compression ?? this.compression,
   credentials: credentials != null ? credentials() : this.credentials,

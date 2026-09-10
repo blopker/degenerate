@@ -73,10 +73,10 @@ final DateTime updatedAt;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  'body': ?body,
+  'body': body,
   'columns_url': columnsUrl.toString(),
   'created_at': createdAt.toIso8601String(),
-  if (creator != null) 'creator': creator?.toJson(),
+  'creator': creator?.toJson(),
   'html_url': htmlUrl.toString(),
   'id': id,
   'name': name,
@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && (json['body'] == null || json['body'] is String) &&
       json.containsKey('columns_url') && json['columns_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('creator') &&

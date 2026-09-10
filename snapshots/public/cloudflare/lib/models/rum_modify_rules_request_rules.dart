@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'paths': ?paths,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host', 'id', 'inclusive', 'is_paused', 'paths'}.contains(key)); } 
-RumModifyRulesRequestRules copyWith({String Function()? host, RumRuleIdentifier Function()? id, bool Function()? inclusive, bool Function()? isPaused, List<String> Function()? paths, }) { return RumModifyRulesRequestRules(
+RumModifyRulesRequestRules copyWith({String? Function()? host, RumRuleIdentifier? Function()? id, bool? Function()? inclusive, bool? Function()? isPaused, List<String>? Function()? paths, }) { return RumModifyRulesRequestRules(
   host: host != null ? host() : this.host,
   id: id != null ? id() : this.id,
   inclusive: inclusive != null ? inclusive() : this.inclusive,

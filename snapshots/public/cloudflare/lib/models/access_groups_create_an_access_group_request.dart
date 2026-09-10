@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('include') &&
       json.containsKey('name'); } 
-AccessGroupsCreateAnAccessGroupRequest copyWith({List<AccessRule> Function()? exclude, List<AccessRule>? include, AccessIsDefault Function()? isDefault, AccessGroupsComponentsSchemasName? name, List<AccessRule> Function()? require, }) { return AccessGroupsCreateAnAccessGroupRequest(
+AccessGroupsCreateAnAccessGroupRequest copyWith({List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessIsDefault? Function()? isDefault, AccessGroupsComponentsSchemasName? name, List<AccessRule>? Function()? require, }) { return AccessGroupsCreateAnAccessGroupRequest(
   exclude: exclude != null ? exclude() : this.exclude,
   include: include ?? this.include,
   isDefault: isDefault != null ? isDefault() : this.isDefault,

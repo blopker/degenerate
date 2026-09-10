@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'fpx': ?fpx,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_account', 'card', 'fpx'}.contains(key)); } 
-BalanceAmountBySourceType copyWith({int Function()? bankAccount, int Function()? card, int Function()? fpx, }) { return BalanceAmountBySourceType(
+BalanceAmountBySourceType copyWith({int? Function()? bankAccount, int? Function()? card, int? Function()? fpx, }) { return BalanceAmountBySourceType(
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   card: card != null ? card() : this.card,
   fpx: fpx != null ? fpx() : this.fpx,

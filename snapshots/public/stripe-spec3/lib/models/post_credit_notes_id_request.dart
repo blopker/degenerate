@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expand', 'memo', 'metadata'}.contains(key)); } 
-PostCreditNotesIdRequest copyWith({List<String> Function()? expand, String Function()? memo, Map<String, String> Function()? metadata, }) { return PostCreditNotesIdRequest(
+PostCreditNotesIdRequest copyWith({List<String>? Function()? expand, String? Function()? memo, Map<String, String>? Function()? metadata, }) { return PostCreditNotesIdRequest(
   expand: expand != null ? expand() : this.expand,
   memo: memo != null ? memo() : this.memo,
   metadata: metadata != null ? metadata() : this.metadata,

@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'verification_method'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam8 copyWith({InvoicePaymentMethodOptionsParam8MandateOptions Function()? mandateOptions, InvoicePaymentMethodOptionsParam8VerificationMethod Function()? verificationMethod, }) { return InvoicePaymentMethodOptionsParam8(
+InvoicePaymentMethodOptionsParam8 copyWith({InvoicePaymentMethodOptionsParam8MandateOptions? Function()? mandateOptions, InvoicePaymentMethodOptionsParam8VerificationMethod? Function()? verificationMethod, }) { return InvoicePaymentMethodOptionsParam8(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 

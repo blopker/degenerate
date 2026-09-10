@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'volumePath': volumePath,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('volumePath') && json['volumePath'] is String; } 
-VsphereVirtualDiskVolumeSource copyWith({String Function()? fsType, String Function()? storagePolicyId, String Function()? storagePolicyName, String? volumePath, }) { return VsphereVirtualDiskVolumeSource(
+VsphereVirtualDiskVolumeSource copyWith({String? Function()? fsType, String? Function()? storagePolicyId, String? Function()? storagePolicyName, String? volumePath, }) { return VsphereVirtualDiskVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   storagePolicyId: storagePolicyId != null ? storagePolicyId() : this.storagePolicyId,
   storagePolicyName: storagePolicyName != null ? storagePolicyName() : this.storagePolicyName,

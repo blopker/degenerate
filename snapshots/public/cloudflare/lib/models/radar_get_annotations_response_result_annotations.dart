@@ -78,7 +78,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asns'
       json.containsKey('originsDetails') &&
       json.containsKey('outage') &&
       json.containsKey('startDate') && json['startDate'] is String; } 
-RadarGetAnnotationsResponseResultAnnotations copyWith({List<int>? asns, List<RadarGetAnnotationsResponseResultAnnotationsAsnsDetails>? asnsDetails, String? dataSource, String Function()? description, String Function()? endDate, String? eventType, String? id, String Function()? linkedUrl, List<String>? locations, List<RadarGetAnnotationsResponseResultAnnotationsLocationsDetails>? locationsDetails, List<String>? origins, List<RadarGetAnnotationsResponseResultAnnotationsOriginsDetails>? originsDetails, RadarGetAnnotationsResponseResultAnnotationsOutage? outage, String Function()? scope, String? startDate, }) { return RadarGetAnnotationsResponseResultAnnotations(
+RadarGetAnnotationsResponseResultAnnotations copyWith({List<int>? asns, List<RadarGetAnnotationsResponseResultAnnotationsAsnsDetails>? asnsDetails, String? dataSource, String? Function()? description, String? Function()? endDate, String? eventType, String? id, String? Function()? linkedUrl, List<String>? locations, List<RadarGetAnnotationsResponseResultAnnotationsLocationsDetails>? locationsDetails, List<String>? origins, List<RadarGetAnnotationsResponseResultAnnotationsOriginsDetails>? originsDetails, RadarGetAnnotationsResponseResultAnnotationsOutage? outage, String? Function()? scope, String? startDate, }) { return RadarGetAnnotationsResponseResultAnnotations(
   asns: asns ?? this.asns,
   asnsDetails: asnsDetails ?? this.asnsDetails,
   dataSource: dataSource ?? this.dataSource,

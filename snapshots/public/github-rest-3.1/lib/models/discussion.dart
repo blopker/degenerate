@@ -194,10 +194,10 @@ final DiscussionUser? user;
 final List<Label>? labels;
 
 Map<String, dynamic> toJson() { return {
-  'active_lock_reason': ?activeLockReason,
-  'answer_chosen_at': ?answerChosenAt,
-  if (answerChosenBy != null) 'answer_chosen_by': answerChosenBy?.toJson(),
-  'answer_html_url': ?answerHtmlUrl,
+  'active_lock_reason': activeLockReason,
+  'answer_chosen_at': answerChosenAt,
+  'answer_chosen_by': answerChosenBy?.toJson(),
+  'answer_html_url': answerHtmlUrl,
   if (authorAssociation != null) 'author_association': authorAssociation?.toJson(),
   'body': body,
   'category': category.toJson(),
@@ -211,17 +211,17 @@ Map<String, dynamic> toJson() { return {
   if (reactions != null) 'reactions': reactions?.toJson(),
   'repository_url': repositoryUrl,
   'state': state.toJson(),
-  if (stateReason != null) 'state_reason': stateReason?.toJson(),
+  'state_reason': stateReason?.toJson(),
   'timeline_url': ?timelineUrl,
   'title': title,
   'updated_at': updatedAt.toIso8601String(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
   if (labels != null) 'labels': labels?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') && json['active_lock_reason'] is String &&
-      json.containsKey('answer_chosen_at') && json['answer_chosen_at'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_lock_reason') && (json['active_lock_reason'] == null || json['active_lock_reason'] is String) &&
+      json.containsKey('answer_chosen_at') && (json['answer_chosen_at'] == null || json['answer_chosen_at'] is String) &&
       json.containsKey('answer_chosen_by') &&
-      json.containsKey('answer_html_url') && json['answer_html_url'] is String &&
+      json.containsKey('answer_html_url') && (json['answer_html_url'] == null || json['answer_html_url'] is String) &&
       json.containsKey('body') && json['body'] is String &&
       json.containsKey('category') &&
       json.containsKey('comments') && json['comments'] is num &&
@@ -237,7 +237,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('user'); } 
-Discussion copyWith({String? Function()? activeLockReason, String? Function()? answerChosenAt, DiscussionAnswerChosenBy? Function()? answerChosenBy, String? Function()? answerHtmlUrl, DiscussionAuthorAssociation Function()? authorAssociation, String? body, DiscussionCategory? category, int? comments, DateTime? createdAt, String? htmlUrl, int? id, bool? locked, String? nodeId, int? number, DiscussionReactions Function()? reactions, String? repositoryUrl, DiscussionState? state, DiscussionStateReason? Function()? stateReason, String Function()? timelineUrl, String? title, DateTime? updatedAt, DiscussionUser? Function()? user, List<Label> Function()? labels, }) { return Discussion(
+Discussion copyWith({String? Function()? activeLockReason, String? Function()? answerChosenAt, DiscussionAnswerChosenBy? Function()? answerChosenBy, String? Function()? answerHtmlUrl, DiscussionAuthorAssociation? Function()? authorAssociation, String? body, DiscussionCategory? category, int? comments, DateTime? createdAt, String? htmlUrl, int? id, bool? locked, String? nodeId, int? number, DiscussionReactions? Function()? reactions, String? repositoryUrl, DiscussionState? state, DiscussionStateReason? Function()? stateReason, String? Function()? timelineUrl, String? title, DateTime? updatedAt, DiscussionUser? Function()? user, List<Label>? Function()? labels, }) { return Discussion(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   answerChosenAt: answerChosenAt != null ? answerChosenAt() : this.answerChosenAt,
   answerChosenBy: answerChosenBy != null ? answerChosenBy() : this.answerChosenBy,

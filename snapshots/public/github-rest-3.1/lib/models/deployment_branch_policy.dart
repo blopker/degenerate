@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'name', 'type'}.contains(key)); } 
-DeploymentBranchPolicy copyWith({int Function()? id, String Function()? nodeId, String Function()? name, DeploymentBranchPolicyType Function()? type, }) { return DeploymentBranchPolicy(
+DeploymentBranchPolicy copyWith({int? Function()? id, String? Function()? nodeId, String? Function()? name, DeploymentBranchPolicyType? Function()? type, }) { return DeploymentBranchPolicy(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   name: name != null ? name() : this.name,

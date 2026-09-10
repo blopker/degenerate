@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'suspected_malware_family': ?suspectedMalwareFamily,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'suspected_malware_family'}.contains(key)); } 
-IntelAdditionalInformation copyWith({String Function()? suspectedMalwareFamily}) { return IntelAdditionalInformation(
+IntelAdditionalInformation copyWith({String? Function()? suspectedMalwareFamily}) { return IntelAdditionalInformation(
   suspectedMalwareFamily: suspectedMalwareFamily != null ? suspectedMalwareFamily() : this.suspectedMalwareFamily,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

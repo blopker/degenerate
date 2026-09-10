@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
   if (transactionType != null) 'transaction_type': transactionType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_mandate_url', 'interval_description', 'payment_schedule', 'transaction_type'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsParam15MandateOptions copyWith({PaymentIntentPaymentMethodOptionsParam15MandateOptionsCustomMandateUrl Function()? customMandateUrl, String Function()? intervalDescription, PaymentIntentPaymentMethodOptionsParam15MandateOptionsPaymentSchedule Function()? paymentSchedule, PaymentIntentPaymentMethodOptionsParam15MandateOptionsTransactionType Function()? transactionType, }) { return PaymentIntentPaymentMethodOptionsParam15MandateOptions(
+PaymentIntentPaymentMethodOptionsParam15MandateOptions copyWith({PaymentIntentPaymentMethodOptionsParam15MandateOptionsCustomMandateUrl? Function()? customMandateUrl, String? Function()? intervalDescription, PaymentIntentPaymentMethodOptionsParam15MandateOptionsPaymentSchedule? Function()? paymentSchedule, PaymentIntentPaymentMethodOptionsParam15MandateOptionsTransactionType? Function()? transactionType, }) { return PaymentIntentPaymentMethodOptionsParam15MandateOptions(
   customMandateUrl: customMandateUrl != null ? customMandateUrl() : this.customMandateUrl,
   intervalDescription: intervalDescription != null ? intervalDescription() : this.intervalDescription,
   paymentSchedule: paymentSchedule != null ? paymentSchedule() : this.paymentSchedule,

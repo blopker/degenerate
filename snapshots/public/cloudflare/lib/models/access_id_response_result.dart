@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-AccessIdResponseResult copyWith({AccessUuid Function()? id}) { return AccessIdResponseResult(
+AccessIdResponseResult copyWith({AccessUuid? Function()? id}) { return AccessIdResponseResult(
   id: id != null ? id() : this.id,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

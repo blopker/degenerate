@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status_code', 'url'}.contains(key)); } 
-ZonesForwardingUrlValue copyWith({ZonesForwardingUrlValueStatusCode Function()? statusCode, String Function()? url, }) { return ZonesForwardingUrlValue(
+ZonesForwardingUrlValue copyWith({ZonesForwardingUrlValueStatusCode? Function()? statusCode, String? Function()? url, }) { return ZonesForwardingUrlValue(
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   url: url != null ? url() : this.url,
 ); } 

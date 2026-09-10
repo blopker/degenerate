@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'preset': ?preset,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount copyWith({bool? enabled, int Function()? maximum, int Function()? minimum, int Function()? preset, }) { return PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount(
+PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount copyWith({bool? enabled, int? Function()? maximum, int? Function()? minimum, int? Function()? preset, }) { return PostPricesPriceRequestCurrencyOptionsVariant1ValueCustomUnitAmount(
   enabled: enabled ?? this.enabled,
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,

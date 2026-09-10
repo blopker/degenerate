@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'healthchecks_address.dart';import 'healthchecks_check_regions2.dart';import 'healthchecks_consecutive_fails.dart';import 'healthchecks_consecutive_successes.dart';import 'healthchecks_description.dart';import 'healthchecks_http_config.dart';import 'healthchecks_interval.dart';import 'healthchecks_name.dart';import 'healthchecks_retries.dart';import 'healthchecks_suspended.dart';import 'healthchecks_tcp_config.dart';import 'healthchecks_timeout.dart';import 'healthchecks_type.dart';@immutable final class HealthchecksQueryHealthcheck {const HealthchecksQueryHealthcheck({required this.address, required this.name, this.checkRegions, this.consecutiveFails, this.consecutiveSuccesses, this.description, this.httpConfig, this.interval, this.retries, this.suspended, this.tcpConfig, this.timeout, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'healthchecks_address.dart';import 'healthchecks_check_regions2.dart';import 'healthchecks_consecutive_fails.dart';import 'healthchecks_consecutive_successes.dart';import 'healthchecks_description.dart';import 'healthchecks_http_config.dart';import 'healthchecks_interval.dart';import 'healthchecks_name.dart';import 'healthchecks_retries.dart';import 'healthchecks_suspended.dart';import 'healthchecks_tcp_config.dart';import 'healthchecks_timeout.dart';import 'healthchecks_type.dart';@immutable final class HealthchecksQueryHealthcheck {const HealthchecksQueryHealthcheck({required this.address, required this.name, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.description, this.httpConfig, this.interval, this.retries, this.suspended, this.tcpConfig, this.timeout, this.type, });
 
 factory HealthchecksQueryHealthcheck.fromJson(Map<String, dynamic> json) { return HealthchecksQueryHealthcheck(
   address: HealthchecksAddress.fromJson(json['address'] as String),
-  checkRegions: (json['check_regions'] as List<dynamic>?)?.map((e) => HealthchecksCheckRegions2.fromJson(e as String)).toList(),
+  checkRegions: json.containsKey('check_regions') ? Omittable((json['check_regions'] as List<dynamic>?)?.map((e) => HealthchecksCheckRegions2.fromJson(e as String)).toList()) : const Omittable.absent(),
   consecutiveFails: json['consecutive_fails'] != null ? HealthchecksConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
   consecutiveSuccesses: json['consecutive_successes'] != null ? HealthchecksConsecutiveSuccesses.fromJson(json['consecutive_successes'] as num) : null,
   description: json['description'] != null ? HealthchecksDescription.fromJson(json['description'] as String) : null,
@@ -22,7 +22,7 @@ factory HealthchecksQueryHealthcheck.fromJson(Map<String, dynamic> json) { retur
 final HealthchecksAddress address;
 
 /// A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
-final List<HealthchecksCheckRegions2>? checkRegions;
+final Omittable<List<HealthchecksCheckRegions2>?> checkRegions;
 
 /// The number of consecutive fails required from a health check before changing the health to unhealthy.
 final HealthchecksConsecutiveFails? consecutiveFails;
@@ -53,7 +53,7 @@ final HealthchecksType? type;
 
 Map<String, dynamic> toJson() { return {
   'address': address.toJson(),
-  if (checkRegions != null) 'check_regions': checkRegions?.map((e) => e.toJson()).toList(),
+  if (checkRegions.isPresent) 'check_regions': checkRegions.value?.map((e) => e.toJson()).toList(),
   if (consecutiveFails != null) 'consecutive_fails': consecutiveFails?.toJson(),
   if (consecutiveSuccesses != null) 'consecutive_successes': consecutiveSuccesses?.toJson(),
   if (description != null) 'description': description?.toJson(),
@@ -68,9 +68,9 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name'); } 
-HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, List<HealthchecksCheckRegions2>? Function()? checkRegions, HealthchecksConsecutiveFails Function()? consecutiveFails, HealthchecksConsecutiveSuccesses Function()? consecutiveSuccesses, HealthchecksDescription Function()? description, HealthchecksHttpConfig Function()? httpConfig, HealthchecksInterval Function()? interval, HealthchecksName? name, HealthchecksRetries Function()? retries, HealthchecksSuspended Function()? suspended, HealthchecksTcpConfig Function()? tcpConfig, HealthchecksTimeout Function()? timeout, HealthchecksType Function()? type, }) { return HealthchecksQueryHealthcheck(
+HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, Omittable<List<HealthchecksCheckRegions2>?>? checkRegions, HealthchecksConsecutiveFails? Function()? consecutiveFails, HealthchecksConsecutiveSuccesses? Function()? consecutiveSuccesses, HealthchecksDescription? Function()? description, HealthchecksHttpConfig? Function()? httpConfig, HealthchecksInterval? Function()? interval, HealthchecksName? name, HealthchecksRetries? Function()? retries, HealthchecksSuspended? Function()? suspended, HealthchecksTcpConfig? Function()? tcpConfig, HealthchecksTimeout? Function()? timeout, HealthchecksType? Function()? type, }) { return HealthchecksQueryHealthcheck(
   address: address ?? this.address,
-  checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,
+  checkRegions: checkRegions ?? this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
   consecutiveSuccesses: consecutiveSuccesses != null ? consecutiveSuccesses() : this.consecutiveSuccesses,
   description: description != null ? description() : this.description,
@@ -86,7 +86,8 @@ HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, List<Health
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is HealthchecksQueryHealthcheck &&
           address == other.address &&
-          listEquals(checkRegions, other.checkRegions) &&
+          checkRegions.isPresent == other.checkRegions.isPresent &&
+          listEquals(checkRegions.value, other.checkRegions.value) &&
           consecutiveFails == other.consecutiveFails &&
           consecutiveSuccesses == other.consecutiveSuccesses &&
           description == other.description &&
@@ -98,6 +99,6 @@ HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, List<Health
           tcpConfig == other.tcpConfig &&
           timeout == other.timeout &&
           type == other.type; } 
-@override int get hashCode { return Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, description, httpConfig, interval, name, retries, suspended, tcpConfig, timeout, type); } 
+@override int get hashCode { return Object.hash(address, Object.hashAll(checkRegions.value ?? const []), consecutiveFails, consecutiveSuccesses, description, httpConfig, interval, name, retries, suspended, tcpConfig, timeout, type); } 
 @override String toString() { return 'HealthchecksQueryHealthcheck(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, description: $description, httpConfig: $httpConfig, interval: $interval, name: $name, retries: $retries, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)'; } 
  }

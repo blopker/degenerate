@@ -41,24 +41,24 @@ final SimpleUser? creator;
 
 Map<String, dynamic> toJson() { return {
   'url': url,
-  'avatar_url': ?avatarUrl,
+  'avatar_url': avatarUrl,
   'id': id,
   'node_id': nodeId,
   'state': state,
-  'description': ?description,
-  'target_url': ?targetUrl,
+  'description': description,
+  'target_url': targetUrl,
   'context': context,
   'created_at': createdAt,
   'updated_at': updatedAt,
-  if (creator != null) 'creator': creator?.toJson(),
+  'creator': creator?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
-      json.containsKey('avatar_url') && json['avatar_url'] is String &&
+      json.containsKey('avatar_url') && (json['avatar_url'] == null || json['avatar_url'] is String) &&
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('state') && json['state'] is String &&
-      json.containsKey('description') && json['description'] is String &&
-      json.containsKey('target_url') && json['target_url'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+      json.containsKey('target_url') && (json['target_url'] == null || json['target_url'] is String) &&
       json.containsKey('context') && json['context'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&

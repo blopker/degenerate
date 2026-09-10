@@ -50,13 +50,13 @@ final WebhookPullRequestDequeuedPullRequestAutoMergeEnabledBy? enabledBy;
 final WebhookPullRequestDequeuedPullRequestAutoMergeMergeMethod mergeMethod;
 
 Map<String, dynamic> toJson() { return {
-  'commit_message': ?commitMessage,
-  'commit_title': ?commitTitle,
-  if (enabledBy != null) 'enabled_by': enabledBy?.toJson(),
+  'commit_message': commitMessage,
+  'commit_title': commitTitle,
+  'enabled_by': enabledBy?.toJson(),
   'merge_method': mergeMethod.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit_message') && json['commit_message'] is String &&
-      json.containsKey('commit_title') && json['commit_title'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit_message') && (json['commit_message'] == null || json['commit_message'] is String) &&
+      json.containsKey('commit_title') && (json['commit_title'] == null || json['commit_title'] is String) &&
       json.containsKey('enabled_by') &&
       json.containsKey('merge_method'); } 
 WebhookPullRequestDequeuedPullRequestAutoMerge copyWith({String? Function()? commitMessage, String? Function()? commitTitle, WebhookPullRequestDequeuedPullRequestAutoMergeEnabledBy? Function()? enabledBy, WebhookPullRequestDequeuedPullRequestAutoMergeMergeMethod? mergeMethod, }) { return WebhookPullRequestDequeuedPullRequestAutoMerge(

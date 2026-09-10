@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   'secretAccessKey': ?secretAccessKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessKeyId', 'provider', 'secretAccessKey'}.contains(key)); } 
-R2EnableSippyS3Destination copyWith({String Function()? accessKeyId, R2EnableSippyS3DestinationProvider Function()? provider, String Function()? secretAccessKey, }) { return R2EnableSippyS3Destination(
+R2EnableSippyS3Destination copyWith({String? Function()? accessKeyId, R2EnableSippyS3DestinationProvider? Function()? provider, String? Function()? secretAccessKey, }) { return R2EnableSippyS3Destination(
   accessKeyId: accessKeyId != null ? accessKeyId() : this.accessKeyId,
   provider: provider != null ? provider() : this.provider,
   secretAccessKey: secretAccessKey != null ? secretAccessKey() : this.secretAccessKey,

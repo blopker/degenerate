@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('items'); } 
-Order copyWith({String? id, OrderStatus Function()? status, List<OrderItem>? items, Address Function()? shippingAddress, Map<String, String> Function()? metadata, NullabilityCombos Function()? nullabilitySample, }) { return Order(
+Order copyWith({String? id, OrderStatus? Function()? status, List<OrderItem>? items, Address? Function()? shippingAddress, Map<String, String>? Function()? metadata, NullabilityCombos? Function()? nullabilitySample, }) { return Order(
   id: id ?? this.id,
   status: status != null ? status() : this.status,
   items: items ?? this.items,

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'include': ?include,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_presence', 'contains', 'exclude_origin', 'include'}.contains(key)); } 
-RulesetsSetCacheSettingsCustomCacheKeyHeader copyWith({List<String> Function()? checkPresence, Map<String, List<String>> Function()? contains, bool Function()? excludeOrigin, List<String> Function()? include, }) { return RulesetsSetCacheSettingsCustomCacheKeyHeader(
+RulesetsSetCacheSettingsCustomCacheKeyHeader copyWith({List<String>? Function()? checkPresence, Map<String, List<String>>? Function()? contains, bool? Function()? excludeOrigin, List<String>? Function()? include, }) { return RulesetsSetCacheSettingsCustomCacheKeyHeader(
   checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
   contains: contains != null ? contains() : this.contains,
   excludeOrigin: excludeOrigin != null ? excludeOrigin() : this.excludeOrigin,

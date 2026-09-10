@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zones_polish_value.dart';/// Removes metadata and compresses your images for faster page load times. Basic (Lossless): Reduce the size of PNG, JPEG, and GIF files - no impact on visual quality. Basic + JPEG (Lossy): Further reduce the size of JPEG files for faster image loading. Larger JPEGs are converted to progressive images, loading a lower-resolution image first and ending in a higher-resolution version. Not recommended for hi-res photography sites.
-@immutable final class ZonesSchemasPolish {const ZonesSchemasPolish({required this.id, required this.value, this.editable = true, this.modifiedOn, });
+@immutable final class ZonesSchemasPolish {const ZonesSchemasPolish({required this.id, required this.value, this.editable = true, this.modifiedOn = const Omittable.absent(), });
 
 factory ZonesSchemasPolish.fromJson(Map<String, dynamic> json) { return ZonesSchemasPolish(
   editable: json.containsKey('editable') ? json['editable'] as bool : true,
   id: json['id'],
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: ZonesPolishValue.fromJson(json['value'] as String),
 ); }
 
@@ -17,23 +17,23 @@ final bool editable;
 final dynamic id;
 
 /// last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 /// Value of the zone setting.
 final ZonesPolishValue value;
 
 Map<String, dynamic> toJson() { return {
   'editable': editable,
-  'id': ?id,
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  'id': id,
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('value'); } 
-ZonesSchemasPolish copyWith({bool Function()? editable, dynamic Function()? id, DateTime? Function()? modifiedOn, ZonesPolishValue? value, }) { return ZonesSchemasPolish(
+ZonesSchemasPolish copyWith({bool Function()? editable, dynamic Function()? id, Omittable<DateTime?>? modifiedOn, ZonesPolishValue? value, }) { return ZonesSchemasPolish(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

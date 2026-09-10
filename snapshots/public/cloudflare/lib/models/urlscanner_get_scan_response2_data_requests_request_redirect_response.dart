@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('chars
       json.containsKey('status') && json['status'] is num &&
       json.containsKey('statusText') && json['statusText'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse copyWith({String? charset, Map<String, dynamic> Function()? headers, String? mimeType, String? protocol, String? remoteIpAddress, double? remotePort, List<UrlscannerGetScanResponse2DataRequestsRequestRedirectResponseSecurityHeaders>? securityHeaders, String? securityState, double? status, String? statusText, String? url, }) { return UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(
+UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse copyWith({String? charset, Map<String, dynamic>? Function()? headers, String? mimeType, String? protocol, String? remoteIpAddress, double? remotePort, List<UrlscannerGetScanResponse2DataRequestsRequestRedirectResponseSecurityHeaders>? securityHeaders, String? securityState, double? status, String? statusText, String? url, }) { return UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse(
   charset: charset ?? this.charset,
   headers: headers != null ? headers() : this.headers,
   mimeType: mimeType ?? this.mimeType,

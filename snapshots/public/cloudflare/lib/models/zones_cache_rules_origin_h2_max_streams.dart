@@ -30,11 +30,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZonesCacheRulesOriginH2MaxStreamsId($value)'; } 
  }
 /// Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
-@immutable final class ZonesCacheRulesOriginH2MaxStreams {const ZonesCacheRulesOriginH2MaxStreams({required this.id, this.modifiedOn, this.value, });
+@immutable final class ZonesCacheRulesOriginH2MaxStreams {const ZonesCacheRulesOriginH2MaxStreams({required this.id, this.modifiedOn = const Omittable.absent(), this.value, });
 
 factory ZonesCacheRulesOriginH2MaxStreams.fromJson(Map<String, dynamic> json) { return ZonesCacheRulesOriginH2MaxStreams(
   id: ZonesCacheRulesOriginH2MaxStreamsId.fromJson(json['id'] as String),
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: json['value'] != null ? ZonesCacheRulesOriginH2MaxStreamsValue.fromJson(json['value'] as num) : null,
 ); }
 
@@ -42,19 +42,19 @@ factory ZonesCacheRulesOriginH2MaxStreams.fromJson(Map<String, dynamic> json) { 
 final ZonesCacheRulesOriginH2MaxStreamsId id;
 
 /// Last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 final ZonesCacheRulesOriginH2MaxStreamsValue? value;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-ZonesCacheRulesOriginH2MaxStreams copyWith({ZonesCacheRulesOriginH2MaxStreamsId? id, DateTime? Function()? modifiedOn, ZonesCacheRulesOriginH2MaxStreamsValue Function()? value, }) { return ZonesCacheRulesOriginH2MaxStreams(
+ZonesCacheRulesOriginH2MaxStreams copyWith({ZonesCacheRulesOriginH2MaxStreamsId? id, Omittable<DateTime?>? modifiedOn, ZonesCacheRulesOriginH2MaxStreamsValue? Function()? value, }) { return ZonesCacheRulesOriginH2MaxStreams(
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value != null ? value() : this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

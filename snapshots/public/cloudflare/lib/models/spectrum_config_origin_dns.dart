@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'ttl', 'type'}.contains(key)); } 
-SpectrumConfigOriginDns copyWith({SpectrumConfigOriginDnsName Function()? name, SpectrumConfigDnsTtl Function()? ttl, SpectrumConfigOriginDnsType Function()? type, }) { return SpectrumConfigOriginDns(
+SpectrumConfigOriginDns copyWith({SpectrumConfigOriginDnsName? Function()? name, SpectrumConfigDnsTtl? Function()? ttl, SpectrumConfigOriginDnsType? Function()? type, }) { return SpectrumConfigOriginDns(
   name: name != null ? name() : this.name,
   ttl: ttl != null ? ttl() : this.ttl,
   type: type != null ? type() : this.type,

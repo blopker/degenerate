@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('api_url') && json['api_url'] is String &&
       json.containsKey('client_secret') && json['client_secret'] is String; } 
-TeamsDevicesTaniumConfigRequest copyWith({String Function()? accessClientId, String Function()? accessClientSecret, String? apiUrl, String? clientSecret, }) { return TeamsDevicesTaniumConfigRequest(
+TeamsDevicesTaniumConfigRequest copyWith({String? Function()? accessClientId, String? Function()? accessClientSecret, String? apiUrl, String? clientSecret, }) { return TeamsDevicesTaniumConfigRequest(
   accessClientId: accessClientId != null ? accessClientId() : this.accessClientId,
   accessClientSecret: accessClientSecret != null ? accessClientSecret() : this.accessClientSecret,
   apiUrl: apiUrl ?? this.apiUrl,

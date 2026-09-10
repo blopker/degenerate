@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain_name') && json['domain_name'] is String; } 
-PostPaymentMethodDomainsRequest copyWith({String? domainName, bool Function()? enabled, List<String> Function()? expand, }) { return PostPaymentMethodDomainsRequest(
+PostPaymentMethodDomainsRequest copyWith({String? domainName, bool? Function()? enabled, List<String>? Function()? expand, }) { return PostPaymentMethodDomainsRequest(
   domainName: domainName ?? this.domainName,
   enabled: enabled != null ? enabled() : this.enabled,
   expand: expand != null ? expand() : this.expand,

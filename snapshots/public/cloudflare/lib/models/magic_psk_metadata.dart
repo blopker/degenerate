@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (lastGeneratedOn != null) 'last_generated_on': lastGeneratedOn?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'last_generated_on'}.contains(key)); } 
-MagicPskMetadata copyWith({MagicSchemasModifiedOn Function()? lastGeneratedOn}) { return MagicPskMetadata(
+MagicPskMetadata copyWith({MagicSchemasModifiedOn? Function()? lastGeneratedOn}) { return MagicPskMetadata(
   lastGeneratedOn: lastGeneratedOn != null ? lastGeneratedOn() : this.lastGeneratedOn,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

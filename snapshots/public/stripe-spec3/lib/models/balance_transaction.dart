@@ -214,7 +214,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Stripe creates them for every type of transaction that enters or leaves your Stripe account balance.
 /// 
 /// Related guide: [Balance transaction types](https://docs.stripe.com/reports/balance-transaction-types)
-@immutable final class BalanceTransaction {const BalanceTransaction({required this.amount, required this.availableOn, required this.balanceType, required this.created, required this.currency, required this.fee, required this.feeDetails, required this.id, required this.net, required this.object, required this.reportingCategory, required this.status, required this.type, this.description, this.exchangeRate, this.source, });
+@immutable final class BalanceTransaction {const BalanceTransaction({required this.amount, required this.availableOn, required this.balanceType, required this.created, required this.currency, required this.fee, required this.feeDetails, required this.id, required this.net, required this.object, required this.reportingCategory, required this.status, required this.type, this.description = const Omittable.absent(), this.exchangeRate = const Omittable.absent(), this.source = const Omittable.absent(), });
 
 factory BalanceTransaction.fromJson(Map<String, dynamic> json) { return BalanceTransaction(
   amount: (json['amount'] as num).toInt(),
@@ -222,15 +222,15 @@ factory BalanceTransaction.fromJson(Map<String, dynamic> json) { return BalanceT
   balanceType: BalanceTransactionBalanceType.fromJson(json['balance_type'] as String),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  description: json['description'] as String?,
-  exchangeRate: json['exchange_rate'] != null ? (json['exchange_rate'] as num).toDouble() : null,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  exchangeRate: json.containsKey('exchange_rate') ? Omittable(json['exchange_rate'] != null ? (json['exchange_rate'] as num).toDouble() : null) : const Omittable.absent(),
   fee: (json['fee'] as num).toInt(),
   feeDetails: (json['fee_details'] as List<dynamic>).map((e) => Fee.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] as String,
   net: (json['net'] as num).toInt(),
   object: BalanceTransactionObject.fromJson(json['object'] as String),
   reportingCategory: json['reporting_category'] as String,
-  source: json['source'] != null ? BalanceTransactionSource.fromJson(json['source'] as Map<String, dynamic>) : null,
+  source: json.containsKey('source') ? Omittable(json['source'] != null ? BalanceTransactionSource.fromJson(json['source'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: json['status'] as String,
   type: BalanceTransactionType.fromJson(json['type'] as String),
 ); }
@@ -251,10 +251,10 @@ final int created;
 final String currency;
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.
-final String? description;
+final Omittable<String?> description;
 
 /// If applicable, this transaction uses an exchange rate. If money converts from currency A to currency B, then the `amount` in currency A, multipled by the `exchange_rate`, equals the `amount` in currency B. For example, if you charge a customer 10.00 EUR, the PaymentIntent's `amount` is `1000` and `currency` is `eur`. If this converts to 12.34 USD in your Stripe account, the BalanceTransaction's `amount` is `1234`, its `currency` is `usd`, and the `exchange_rate` is `1.234`.
-final double? exchangeRate;
+final Omittable<double?> exchangeRate;
 
 /// Fees (in cents (or local equivalent)) paid for this transaction. Represented as a positive integer when assessed.
 final int fee;
@@ -275,7 +275,7 @@ final BalanceTransactionObject object;
 final String reportingCategory;
 
 /// This transaction relates to the Stripe object.
-final BalanceTransactionSource? source;
+final Omittable<BalanceTransactionSource?> source;
 
 /// The transaction's net funds status in the Stripe balance, which are either `available` or `pending`.
 final String status;
@@ -289,15 +289,15 @@ Map<String, dynamic> toJson() { return {
   'balance_type': balanceType.toJson(),
   'created': created,
   'currency': currency,
-  'description': ?description,
-  'exchange_rate': ?exchangeRate,
+  if (description.isPresent) 'description': description.value,
+  if (exchangeRate.isPresent) 'exchange_rate': exchangeRate.value,
   'fee': fee,
   'fee_details': feeDetails.map((e) => e.toJson()).toList(),
   'id': id,
   'net': net,
   'object': object.toJson(),
   'reporting_category': reportingCategory,
-  if (source != null) 'source': source?.toJson(),
+  if (source.isPresent) 'source': source.value?.toJson(),
   'status': status,
   'type': type.toJson(),
 }; } 
@@ -314,21 +314,21 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('reporting_category') && json['reporting_category'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type'); } 
-BalanceTransaction copyWith({int? amount, int? availableOn, BalanceTransactionBalanceType? balanceType, int? created, String? currency, String? Function()? description, double? Function()? exchangeRate, int? fee, List<Fee>? feeDetails, String? id, int? net, BalanceTransactionObject? object, String? reportingCategory, BalanceTransactionSource? Function()? source, String? status, BalanceTransactionType? type, }) { return BalanceTransaction(
+BalanceTransaction copyWith({int? amount, int? availableOn, BalanceTransactionBalanceType? balanceType, int? created, String? currency, Omittable<String?>? description, Omittable<double?>? exchangeRate, int? fee, List<Fee>? feeDetails, String? id, int? net, BalanceTransactionObject? object, String? reportingCategory, Omittable<BalanceTransactionSource?>? source, String? status, BalanceTransactionType? type, }) { return BalanceTransaction(
   amount: amount ?? this.amount,
   availableOn: availableOn ?? this.availableOn,
   balanceType: balanceType ?? this.balanceType,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  description: description != null ? description() : this.description,
-  exchangeRate: exchangeRate != null ? exchangeRate() : this.exchangeRate,
+  description: description ?? this.description,
+  exchangeRate: exchangeRate ?? this.exchangeRate,
   fee: fee ?? this.fee,
   feeDetails: feeDetails ?? this.feeDetails,
   id: id ?? this.id,
   net: net ?? this.net,
   object: object ?? this.object,
   reportingCategory: reportingCategory ?? this.reportingCategory,
-  source: source != null ? source() : this.source,
+  source: source ?? this.source,
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 

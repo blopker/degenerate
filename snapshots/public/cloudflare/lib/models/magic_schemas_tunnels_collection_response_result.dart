@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (ipsecTunnels != null) 'ipsec_tunnels': ipsecTunnels?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ipsec_tunnels'}.contains(key)); } 
-MagicSchemasTunnelsCollectionResponseResult copyWith({List<MagicIpsecTunnel> Function()? ipsecTunnels}) { return MagicSchemasTunnelsCollectionResponseResult(
+MagicSchemasTunnelsCollectionResponseResult copyWith({List<MagicIpsecTunnel>? Function()? ipsecTunnels}) { return MagicSchemasTunnelsCollectionResponseResult(
   ipsecTunnels: ipsecTunnels != null ? ipsecTunnels() : this.ipsecTunnels,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

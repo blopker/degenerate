@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'hostname', 'status', 'updated_at', 'value'}.contains(key)); } 
-TlsCertificatesAndHostnamesSettingObjectDelete copyWith({TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasCreatedAt Function()? createdAt, TlsCertificatesAndHostnamesComponentsSchemasHostname Function()? hostname, TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasStatus Function()? status, TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasUpdatedAt Function()? updatedAt, TlsCertificatesAndHostnamesValue Function()? value, }) { return TlsCertificatesAndHostnamesSettingObjectDelete(
+TlsCertificatesAndHostnamesSettingObjectDelete copyWith({TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasCreatedAt? Function()? createdAt, TlsCertificatesAndHostnamesComponentsSchemasHostname? Function()? hostname, TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasStatus? Function()? status, TlsCertificatesAndHostnamesHostnameTlsSettingsComponentsSchemasUpdatedAt? Function()? updatedAt, TlsCertificatesAndHostnamesValue? Function()? value, }) { return TlsCertificatesAndHostnamesSettingObjectDelete(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   hostname: hostname != null ? hostname() : this.hostname,
   status: status != null ? status() : this.status,

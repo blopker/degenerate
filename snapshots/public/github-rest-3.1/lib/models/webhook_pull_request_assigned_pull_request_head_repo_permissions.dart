@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('admin') && json['admin'] is bool &&
       json.containsKey('pull') && json['pull'] is bool &&
       json.containsKey('push') && json['push'] is bool; } 
-WebhookPullRequestAssignedPullRequestHeadRepoPermissions copyWith({bool? admin, bool Function()? maintain, bool? pull, bool? push, bool Function()? triage, }) { return WebhookPullRequestAssignedPullRequestHeadRepoPermissions(
+WebhookPullRequestAssignedPullRequestHeadRepoPermissions copyWith({bool? admin, bool? Function()? maintain, bool? pull, bool? push, bool? Function()? triage, }) { return WebhookPullRequestAssignedPullRequestHeadRepoPermissions(
   admin: admin ?? this.admin,
   maintain: maintain != null ? maintain() : this.maintain,
   pull: pull ?? this.pull,

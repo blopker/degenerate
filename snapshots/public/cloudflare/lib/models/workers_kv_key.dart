@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'name': name.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-WorkersKvKey copyWith({double Function()? expiration, WorkersKvAny Function()? metadata, WorkersKvKeyName? name, }) { return WorkersKvKey(
+WorkersKvKey copyWith({double? Function()? expiration, WorkersKvAny? Function()? metadata, WorkersKvKeyName? name, }) { return WorkersKvKey(
   expiration: expiration != null ? expiration() : this.expiration,
   metadata: metadata != null ? metadata() : this.metadata,
   name: name ?? this.name,

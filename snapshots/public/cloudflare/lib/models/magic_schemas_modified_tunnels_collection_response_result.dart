@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (modifiedIpsecTunnels != null) 'modified_ipsec_tunnels': modifiedIpsecTunnels?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modified', 'modified_ipsec_tunnels'}.contains(key)); } 
-MagicSchemasModifiedTunnelsCollectionResponseResult copyWith({bool Function()? modified, List<MagicIpsecTunnel> Function()? modifiedIpsecTunnels, }) { return MagicSchemasModifiedTunnelsCollectionResponseResult(
+MagicSchemasModifiedTunnelsCollectionResponseResult copyWith({bool? Function()? modified, List<MagicIpsecTunnel>? Function()? modifiedIpsecTunnels, }) { return MagicSchemasModifiedTunnelsCollectionResponseResult(
   modified: modified != null ? modified() : this.modified,
   modifiedIpsecTunnels: modifiedIpsecTunnels != null ? modifiedIpsecTunnels() : this.modifiedIpsecTunnels,
 ); } 

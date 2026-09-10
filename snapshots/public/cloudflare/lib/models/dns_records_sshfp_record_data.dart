@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'algorithm', 'fingerprint', 'type'}.contains(key)); } 
-DnsRecordsSshfpRecordData copyWith({double Function()? algorithm, String Function()? fingerprint, double Function()? type, }) { return DnsRecordsSshfpRecordData(
+DnsRecordsSshfpRecordData copyWith({double? Function()? algorithm, String? Function()? fingerprint, double? Function()? type, }) { return DnsRecordsSshfpRecordData(
   algorithm: algorithm != null ? algorithm() : this.algorithm,
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
   type: type != null ? type() : this.type,

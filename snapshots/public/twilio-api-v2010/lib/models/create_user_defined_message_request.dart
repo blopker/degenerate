@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'IdempotencyKey': ?idempotencyKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('Content') && json['Content'] is String; } 
-CreateUserDefinedMessageRequest copyWith({String? content, String Function()? idempotencyKey, }) { return CreateUserDefinedMessageRequest(
+CreateUserDefinedMessageRequest copyWith({String? content, String? Function()? idempotencyKey, }) { return CreateUserDefinedMessageRequest(
   content: content ?? this.content,
   idempotencyKey: idempotencyKey != null ? idempotencyKey() : this.idempotencyKey,
 ); } 

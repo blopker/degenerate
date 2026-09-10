@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'url': url.toString(),
   'body': body,
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'author_association': authorAssociation.toJson(),

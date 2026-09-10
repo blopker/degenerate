@@ -25,63 +25,63 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AuthorizedConnectAppEnumPermission($value)'; } 
  }
-@immutable final class AccountAuthorizedConnectApp {const AccountAuthorizedConnectApp({this.accountSid, this.connectAppCompanyName, this.connectAppDescription, this.connectAppFriendlyName, this.connectAppHomepageUrl, this.connectAppSid, this.permissions, this.uri, });
+@immutable final class AccountAuthorizedConnectApp {const AccountAuthorizedConnectApp({this.accountSid = const Omittable.absent(), this.connectAppCompanyName = const Omittable.absent(), this.connectAppDescription = const Omittable.absent(), this.connectAppFriendlyName = const Omittable.absent(), this.connectAppHomepageUrl = const Omittable.absent(), this.connectAppSid = const Omittable.absent(), this.permissions = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
 factory AccountAuthorizedConnectApp.fromJson(Map<String, dynamic> json) { return AccountAuthorizedConnectApp(
-  accountSid: json['account_sid'] as String?,
-  connectAppCompanyName: json['connect_app_company_name'] as String?,
-  connectAppDescription: json['connect_app_description'] as String?,
-  connectAppFriendlyName: json['connect_app_friendly_name'] as String?,
-  connectAppHomepageUrl: json['connect_app_homepage_url'] != null ? Uri.parse(json['connect_app_homepage_url'] as String) : null,
-  connectAppSid: json['connect_app_sid'] as String?,
-  permissions: (json['permissions'] as List<dynamic>?)?.map((e) => AuthorizedConnectAppEnumPermission.fromJson(e as String)).toList(),
-  uri: json['uri'] as String?,
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  connectAppCompanyName: json.containsKey('connect_app_company_name') ? Omittable(json['connect_app_company_name'] as String?) : const Omittable.absent(),
+  connectAppDescription: json.containsKey('connect_app_description') ? Omittable(json['connect_app_description'] as String?) : const Omittable.absent(),
+  connectAppFriendlyName: json.containsKey('connect_app_friendly_name') ? Omittable(json['connect_app_friendly_name'] as String?) : const Omittable.absent(),
+  connectAppHomepageUrl: json.containsKey('connect_app_homepage_url') ? Omittable(json['connect_app_homepage_url'] != null ? Uri.parse(json['connect_app_homepage_url'] as String) : null) : const Omittable.absent(),
+  connectAppSid: json.containsKey('connect_app_sid') ? Omittable(json['connect_app_sid'] as String?) : const Omittable.absent(),
+  permissions: json.containsKey('permissions') ? Omittable((json['permissions'] as List<dynamic>?)?.map((e) => AuthorizedConnectAppEnumPermission.fromJson(e as String)).toList()) : const Omittable.absent(),
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
 ); }
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the AuthorizedConnectApp resource.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The company name set for the Connect App.
-final String? connectAppCompanyName;
+final Omittable<String?> connectAppCompanyName;
 
 /// A detailed description of the Connect App.
-final String? connectAppDescription;
+final Omittable<String?> connectAppDescription;
 
 /// The name of the Connect App.
-final String? connectAppFriendlyName;
+final Omittable<String?> connectAppFriendlyName;
 
 /// The public URL for the Connect App.
-final Uri? connectAppHomepageUrl;
+final Omittable<Uri?> connectAppHomepageUrl;
 
 /// The SID that we assigned to the Connect App.
-final String? connectAppSid;
+final Omittable<String?> connectAppSid;
 
 /// The set of permissions that you authorized for the Connect App.  Can be: `get-all` or `post-all`.
-final List<AuthorizedConnectAppEnumPermission>? permissions;
+final Omittable<List<AuthorizedConnectAppEnumPermission>?> permissions;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 Map<String, dynamic> toJson() { return {
-  'account_sid': ?accountSid,
-  'connect_app_company_name': ?connectAppCompanyName,
-  'connect_app_description': ?connectAppDescription,
-  'connect_app_friendly_name': ?connectAppFriendlyName,
-  if (connectAppHomepageUrl != null) 'connect_app_homepage_url': connectAppHomepageUrl?.toString(),
-  'connect_app_sid': ?connectAppSid,
-  if (permissions != null) 'permissions': permissions?.map((e) => e.toJson()).toList(),
-  'uri': ?uri,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (connectAppCompanyName.isPresent) 'connect_app_company_name': connectAppCompanyName.value,
+  if (connectAppDescription.isPresent) 'connect_app_description': connectAppDescription.value,
+  if (connectAppFriendlyName.isPresent) 'connect_app_friendly_name': connectAppFriendlyName.value,
+  if (connectAppHomepageUrl.isPresent) 'connect_app_homepage_url': connectAppHomepageUrl.value?.toString(),
+  if (connectAppSid.isPresent) 'connect_app_sid': connectAppSid.value,
+  if (permissions.isPresent) 'permissions': permissions.value?.map((e) => e.toJson()).toList(),
+  if (uri.isPresent) 'uri': uri.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'connect_app_company_name', 'connect_app_description', 'connect_app_friendly_name', 'connect_app_homepage_url', 'connect_app_sid', 'permissions', 'uri'}.contains(key)); } 
-AccountAuthorizedConnectApp copyWith({String? Function()? accountSid, String? Function()? connectAppCompanyName, String? Function()? connectAppDescription, String? Function()? connectAppFriendlyName, Uri? Function()? connectAppHomepageUrl, String? Function()? connectAppSid, List<AuthorizedConnectAppEnumPermission>? Function()? permissions, String? Function()? uri, }) { return AccountAuthorizedConnectApp(
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  connectAppCompanyName: connectAppCompanyName != null ? connectAppCompanyName() : this.connectAppCompanyName,
-  connectAppDescription: connectAppDescription != null ? connectAppDescription() : this.connectAppDescription,
-  connectAppFriendlyName: connectAppFriendlyName != null ? connectAppFriendlyName() : this.connectAppFriendlyName,
-  connectAppHomepageUrl: connectAppHomepageUrl != null ? connectAppHomepageUrl() : this.connectAppHomepageUrl,
-  connectAppSid: connectAppSid != null ? connectAppSid() : this.connectAppSid,
-  permissions: permissions != null ? permissions() : this.permissions,
-  uri: uri != null ? uri() : this.uri,
+AccountAuthorizedConnectApp copyWith({Omittable<String?>? accountSid, Omittable<String?>? connectAppCompanyName, Omittable<String?>? connectAppDescription, Omittable<String?>? connectAppFriendlyName, Omittable<Uri?>? connectAppHomepageUrl, Omittable<String?>? connectAppSid, Omittable<List<AuthorizedConnectAppEnumPermission>?>? permissions, Omittable<String?>? uri, }) { return AccountAuthorizedConnectApp(
+  accountSid: accountSid ?? this.accountSid,
+  connectAppCompanyName: connectAppCompanyName ?? this.connectAppCompanyName,
+  connectAppDescription: connectAppDescription ?? this.connectAppDescription,
+  connectAppFriendlyName: connectAppFriendlyName ?? this.connectAppFriendlyName,
+  connectAppHomepageUrl: connectAppHomepageUrl ?? this.connectAppHomepageUrl,
+  connectAppSid: connectAppSid ?? this.connectAppSid,
+  permissions: permissions ?? this.permissions,
+  uri: uri ?? this.uri,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountAuthorizedConnectApp &&
@@ -91,8 +91,9 @@ AccountAuthorizedConnectApp copyWith({String? Function()? accountSid, String? Fu
           connectAppFriendlyName == other.connectAppFriendlyName &&
           connectAppHomepageUrl == other.connectAppHomepageUrl &&
           connectAppSid == other.connectAppSid &&
-          listEquals(permissions, other.permissions) &&
+          permissions.isPresent == other.permissions.isPresent &&
+          listEquals(permissions.value, other.permissions.value) &&
           uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, connectAppCompanyName, connectAppDescription, connectAppFriendlyName, connectAppHomepageUrl, connectAppSid, Object.hashAll(permissions ?? const []), uri); } 
+@override int get hashCode { return Object.hash(accountSid, connectAppCompanyName, connectAppDescription, connectAppFriendlyName, connectAppHomepageUrl, connectAppSid, Object.hashAll(permissions.value ?? const []), uri); } 
 @override String toString() { return 'AccountAuthorizedConnectApp(accountSid: $accountSid, connectAppCompanyName: $connectAppCompanyName, connectAppDescription: $connectAppDescription, connectAppFriendlyName: $connectAppFriendlyName, connectAppHomepageUrl: $connectAppHomepageUrl, connectAppSid: $connectAppSid, permissions: $permissions, uri: $uri)'; } 
  }

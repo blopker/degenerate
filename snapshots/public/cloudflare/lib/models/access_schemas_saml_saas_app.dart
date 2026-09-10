@@ -111,7 +111,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_type', 'consumer_service_url', 'created_at', 'custom_attributes', 'idp_entity_id', 'name_id_format', 'name_id_transform_jsonata', 'public_key', 'sp_entity_id', 'sso_endpoint', 'updated_at'}.contains(key)); } 
-AccessSchemasSamlSaasApp copyWith({AccessSchemasSamlSaasAppAuthType Function()? authType, String Function()? consumerServiceUrl, AccessTimestamp Function()? createdAt, List<AccessSchemasSamlSaasAppCustomAttributes> Function()? customAttributes, String Function()? idpEntityId, AccessSchemasSamlSaasAppNameIdFormat Function()? nameIdFormat, String Function()? nameIdTransformJsonata, String Function()? publicKey, String Function()? spEntityId, String Function()? ssoEndpoint, AccessTimestamp Function()? updatedAt, }) { return AccessSchemasSamlSaasApp(
+AccessSchemasSamlSaasApp copyWith({AccessSchemasSamlSaasAppAuthType? Function()? authType, String? Function()? consumerServiceUrl, AccessTimestamp? Function()? createdAt, List<AccessSchemasSamlSaasAppCustomAttributes>? Function()? customAttributes, String? Function()? idpEntityId, AccessSchemasSamlSaasAppNameIdFormat? Function()? nameIdFormat, String? Function()? nameIdTransformJsonata, String? Function()? publicKey, String? Function()? spEntityId, String? Function()? ssoEndpoint, AccessTimestamp? Function()? updatedAt, }) { return AccessSchemasSamlSaasApp(
   authType: authType != null ? authType() : this.authType,
   consumerServiceUrl: consumerServiceUrl != null ? consumerServiceUrl() : this.consumerServiceUrl,
   createdAt: createdAt != null ? createdAt() : this.createdAt,

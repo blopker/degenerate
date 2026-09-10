@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (greTunnels != null) 'gre_tunnels': greTunnels?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gre_tunnels'}.contains(key)); } 
-MagicTunnelsCollectionResponseResult copyWith({List<MagicGreTunnel> Function()? greTunnels}) { return MagicTunnelsCollectionResponseResult(
+MagicTunnelsCollectionResponseResult copyWith({List<MagicGreTunnel>? Function()? greTunnels}) { return MagicTunnelsCollectionResponseResult(
   greTunnels: greTunnels != null ? greTunnels() : this.greTunnels,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

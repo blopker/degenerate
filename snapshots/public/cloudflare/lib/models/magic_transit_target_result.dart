@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (target != null) 'target': target?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'colos', 'target'}.contains(key)); } 
-MagicTransitTargetResult copyWith({List<MagicTransitColoResult> Function()? colos, MagicTransitTarget Function()? target, }) { return MagicTransitTargetResult(
+MagicTransitTargetResult copyWith({List<MagicTransitColoResult>? Function()? colos, MagicTransitTarget? Function()? target, }) { return MagicTransitTargetResult(
   colos: colos != null ? colos() : this.colos,
   target: target != null ? target() : this.target,
 ); } 

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'md5': ?md5,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('part_ids'); } 
-CompleteUploadRequest copyWith({List<String>? partIds, String Function()? md5, }) { return CompleteUploadRequest(
+CompleteUploadRequest copyWith({List<String>? partIds, String? Function()? md5, }) { return CompleteUploadRequest(
   partIds: partIds ?? this.partIds,
   md5: md5 != null ? md5() : this.md5,
 ); } 

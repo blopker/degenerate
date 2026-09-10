@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'unit_label': ?unitLabel,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-InlineProductParams copyWith({bool Function()? active, String Function()? id, Map<String, String> Function()? metadata, String? name, String Function()? statementDescriptor, String Function()? taxCode, String Function()? unitLabel, }) { return InlineProductParams(
+InlineProductParams copyWith({bool? Function()? active, String? Function()? id, Map<String, String>? Function()? metadata, String? name, String? Function()? statementDescriptor, String? Function()? taxCode, String? Function()? unitLabel, }) { return InlineProductParams(
   active: active != null ? active() : this.active,
   id: id != null ? id() : this.id,
   metadata: metadata != null ? metadata() : this.metadata,

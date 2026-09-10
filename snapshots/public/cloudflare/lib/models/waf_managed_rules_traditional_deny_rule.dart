@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
   'package_id': packageId.toJson(),
   'priority': priority.toJson(),
   'allowed_modes': allowedModes.map((e) => e.toJson()).toList(),
-  if (defaultMode != null) 'default_mode': defaultMode?.toJson(),
+  'default_mode': defaultMode?.toJson(),
   'mode': mode.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') &&

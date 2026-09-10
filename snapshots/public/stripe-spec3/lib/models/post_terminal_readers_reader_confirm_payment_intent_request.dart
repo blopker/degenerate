@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'payment_intent': paymentIntent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent') && json['payment_intent'] is String; } 
-PostTerminalReadersReaderConfirmPaymentIntentRequest copyWith({PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig Function()? confirmConfig, List<String> Function()? expand, String? paymentIntent, }) { return PostTerminalReadersReaderConfirmPaymentIntentRequest(
+PostTerminalReadersReaderConfirmPaymentIntentRequest copyWith({PostTerminalReadersReaderConfirmPaymentIntentRequestConfirmConfig? Function()? confirmConfig, List<String>? Function()? expand, String? paymentIntent, }) { return PostTerminalReadersReaderConfirmPaymentIntentRequest(
   confirmConfig: confirmConfig != null ? confirmConfig() : this.confirmConfig,
   expand: expand != null ? expand() : this.expand,
   paymentIntent: paymentIntent ?? this.paymentIntent,

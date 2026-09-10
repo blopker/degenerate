@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-EnvironmentProtectionRulesVariant2 copyWith({int? id, String? nodeId, bool Function()? preventSelfReview, String? type, List<EnvironmentProtectionRulesVariant2Reviewers> Function()? reviewers, }) { return EnvironmentProtectionRulesVariant2(
+EnvironmentProtectionRulesVariant2 copyWith({int? id, String? nodeId, bool? Function()? preventSelfReview, String? type, List<EnvironmentProtectionRulesVariant2Reviewers>? Function()? reviewers, }) { return EnvironmentProtectionRulesVariant2(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   preventSelfReview: preventSelfReview != null ? preventSelfReview() : this.preventSelfReview,

@@ -202,7 +202,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Stripe Treasury provides users with a container for money called a FinancialAccount that is separate from their Payments balance.
 /// FinancialAccounts serve as the source and destination of Treasury’s money movement APIs.
-@immutable final class TreasuryFinancialAccount {const TreasuryFinancialAccount({required this.balance, required this.country, required this.created, required this.financialAddresses, required this.id, required this.livemode, required this.object, required this.status, required this.statusDetails, required this.supportedCurrencies, this.activeFeatures, this.features, this.isDefault, this.metadata, this.nickname, this.pendingFeatures, this.platformRestrictions, this.restrictedFeatures, });
+@immutable final class TreasuryFinancialAccount {const TreasuryFinancialAccount({required this.balance, required this.country, required this.created, required this.financialAddresses, required this.id, required this.livemode, required this.object, required this.status, required this.statusDetails, required this.supportedCurrencies, this.activeFeatures, this.features, this.isDefault, this.metadata = const Omittable.absent(), this.nickname = const Omittable.absent(), this.pendingFeatures, this.platformRestrictions = const Omittable.absent(), this.restrictedFeatures, });
 
 factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccount(
   activeFeatures: (json['active_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountActiveFeatures.fromJson(e as String)).toList(),
@@ -214,11 +214,11 @@ factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return Tr
   id: json['id'] as String,
   isDefault: json['is_default'] as bool?,
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nickname: json['nickname'] as String?,
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  nickname: json.containsKey('nickname') ? Omittable(json['nickname'] as String?) : const Omittable.absent(),
   object: TreasuryFinancialAccountObject.fromJson(json['object'] as String),
   pendingFeatures: (json['pending_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountPendingFeatures.fromJson(e as String)).toList(),
-  platformRestrictions: json['platform_restrictions'] != null ? TreasuryFinancialAccountsResourcePlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
+  platformRestrictions: json.containsKey('platform_restrictions') ? Omittable(json['platform_restrictions'] != null ? TreasuryFinancialAccountsResourcePlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   restrictedFeatures: (json['restricted_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountRestrictedFeatures.fromJson(e as String)).toList(),
   status: TreasuryFinancialAccountStatus.fromJson(json['status'] as String),
   statusDetails: TreasuryFinancialAccountsResourceStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>),
@@ -250,10 +250,10 @@ final bool? isDefault;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// The nickname for the FinancialAccount.
-final String? nickname;
+final Omittable<String?> nickname;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final TreasuryFinancialAccountObject object;
@@ -262,7 +262,7 @@ final TreasuryFinancialAccountObject object;
 final List<TreasuryFinancialAccountPendingFeatures>? pendingFeatures;
 
 /// The set of functionalities that the platform can restrict on the FinancialAccount.
-final TreasuryFinancialAccountsResourcePlatformRestrictions? platformRestrictions;
+final Omittable<TreasuryFinancialAccountsResourcePlatformRestrictions?> platformRestrictions;
 
 /// The array of paths to restricted Features in the Features hash.
 final List<TreasuryFinancialAccountRestrictedFeatures>? restrictedFeatures;
@@ -285,11 +285,11 @@ Map<String, dynamic> toJson() { return {
   'id': id,
   'is_default': ?isDefault,
   'livemode': livemode,
-  'metadata': ?metadata,
-  'nickname': ?nickname,
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (nickname.isPresent) 'nickname': nickname.value,
   'object': object.toJson(),
   if (pendingFeatures != null) 'pending_features': pendingFeatures?.map((e) => e.toJson()).toList(),
-  if (platformRestrictions != null) 'platform_restrictions': platformRestrictions?.toJson(),
+  if (platformRestrictions.isPresent) 'platform_restrictions': platformRestrictions.value?.toJson(),
   if (restrictedFeatures != null) 'restricted_features': restrictedFeatures?.map((e) => e.toJson()).toList(),
   'status': status.toJson(),
   'status_details': statusDetails.toJson(),
@@ -305,7 +305,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('status') &&
       json.containsKey('status_details') &&
       json.containsKey('supported_currencies'); } 
-TreasuryFinancialAccount copyWith({List<TreasuryFinancialAccountActiveFeatures> Function()? activeFeatures, TreasuryFinancialAccountsResourceBalance? balance, String? country, int? created, TreasuryFinancialAccountFeatures Function()? features, List<TreasuryFinancialAccountsResourceFinancialAddress>? financialAddresses, String? id, bool Function()? isDefault, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? nickname, TreasuryFinancialAccountObject? object, List<TreasuryFinancialAccountPendingFeatures> Function()? pendingFeatures, TreasuryFinancialAccountsResourcePlatformRestrictions? Function()? platformRestrictions, List<TreasuryFinancialAccountRestrictedFeatures> Function()? restrictedFeatures, TreasuryFinancialAccountStatus? status, TreasuryFinancialAccountsResourceStatusDetails? statusDetails, List<String>? supportedCurrencies, }) { return TreasuryFinancialAccount(
+TreasuryFinancialAccount copyWith({List<TreasuryFinancialAccountActiveFeatures>? Function()? activeFeatures, TreasuryFinancialAccountsResourceBalance? balance, String? country, int? created, TreasuryFinancialAccountFeatures? Function()? features, List<TreasuryFinancialAccountsResourceFinancialAddress>? financialAddresses, String? id, bool? Function()? isDefault, bool? livemode, Omittable<Map<String,String>?>? metadata, Omittable<String?>? nickname, TreasuryFinancialAccountObject? object, List<TreasuryFinancialAccountPendingFeatures>? Function()? pendingFeatures, Omittable<TreasuryFinancialAccountsResourcePlatformRestrictions?>? platformRestrictions, List<TreasuryFinancialAccountRestrictedFeatures>? Function()? restrictedFeatures, TreasuryFinancialAccountStatus? status, TreasuryFinancialAccountsResourceStatusDetails? statusDetails, List<String>? supportedCurrencies, }) { return TreasuryFinancialAccount(
   activeFeatures: activeFeatures != null ? activeFeatures() : this.activeFeatures,
   balance: balance ?? this.balance,
   country: country ?? this.country,
@@ -315,11 +315,11 @@ TreasuryFinancialAccount copyWith({List<TreasuryFinancialAccountActiveFeatures> 
   id: id ?? this.id,
   isDefault: isDefault != null ? isDefault() : this.isDefault,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
-  nickname: nickname != null ? nickname() : this.nickname,
+  metadata: metadata ?? this.metadata,
+  nickname: nickname ?? this.nickname,
   object: object ?? this.object,
   pendingFeatures: pendingFeatures != null ? pendingFeatures() : this.pendingFeatures,
-  platformRestrictions: platformRestrictions != null ? platformRestrictions() : this.platformRestrictions,
+  platformRestrictions: platformRestrictions ?? this.platformRestrictions,
   restrictedFeatures: restrictedFeatures != null ? restrictedFeatures() : this.restrictedFeatures,
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,

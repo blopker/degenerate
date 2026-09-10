@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'selected_repository_ids': ?selectedRepositoryIds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_id') && json['key_id'] is String; } 
-CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest copyWith({String Function()? encryptedValue, String? keyId, List<dynamic> Function()? selectedRepositoryIds, }) { return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
+CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest copyWith({String? Function()? encryptedValue, String? keyId, List<dynamic>? Function()? selectedRepositoryIds, }) { return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(
   encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
   keyId: keyId ?? this.keyId,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,

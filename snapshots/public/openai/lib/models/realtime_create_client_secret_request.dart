@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (session != null) 'session': session?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'expires_after', 'session'}.contains(key)); } 
-RealtimeCreateClientSecretRequest copyWith({RealtimeCreateClientSecretRequestExpiresAfter Function()? expiresAfter, RealtimeCreateClientSecretRequestSession Function()? session, }) { return RealtimeCreateClientSecretRequest(
+RealtimeCreateClientSecretRequest copyWith({RealtimeCreateClientSecretRequestExpiresAfter? Function()? expiresAfter, RealtimeCreateClientSecretRequestSession? Function()? session, }) { return RealtimeCreateClientSecretRequest(
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
   session: session != null ? session() : this.session,
 ); } 

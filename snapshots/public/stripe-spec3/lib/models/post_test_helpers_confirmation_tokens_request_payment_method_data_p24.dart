@@ -108,7 +108,7 @@ Map<String, dynamic> toJson() { return {
   if (bank != null) 'bank': bank?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank'}.contains(key)); } 
-PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24 copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank Function()? bank}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24(
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24 copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24Bank? Function()? bank}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataP24(
   bank: bank != null ? bank() : this.bank,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

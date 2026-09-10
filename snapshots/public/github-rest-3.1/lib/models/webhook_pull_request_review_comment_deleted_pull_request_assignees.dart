@@ -27,12 +27,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookPullRequestReviewCommentDeletedPullRequestAssigneesType($value)'; } 
  }
-@immutable final class WebhookPullRequestReviewCommentDeletedPullRequestAssignees {const WebhookPullRequestReviewCommentDeletedPullRequestAssignees({required this.id, required this.login, this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
+@immutable final class WebhookPullRequestReviewCommentDeletedPullRequestAssignees {const WebhookPullRequestReviewCommentDeletedPullRequestAssignees({required this.id, required this.login, this.avatarUrl, this.deleted, this.email = const Omittable.absent(), this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, });
 
 factory WebhookPullRequestReviewCommentDeletedPullRequestAssignees.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentDeletedPullRequestAssignees(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
   deleted: json['deleted'] as bool?,
-  email: json['email'] as String?,
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
   eventsUrl: json['events_url'] as String?,
   followersUrl: json['followers_url'] != null ? Uri.parse(json['followers_url'] as String) : null,
   followingUrl: json['following_url'] as String?,
@@ -57,7 +57,7 @@ final Uri? avatarUrl;
 
 final bool? deleted;
 
-final String? email;
+final Omittable<String?> email;
 
 final String? eventsUrl;
 
@@ -98,7 +98,7 @@ final Uri? url;
 Map<String, dynamic> toJson() { return {
   if (avatarUrl != null) 'avatar_url': avatarUrl?.toString(),
   'deleted': ?deleted,
-  'email': ?email,
+  if (email.isPresent) 'email': email.value,
   'events_url': ?eventsUrl,
   if (followersUrl != null) 'followers_url': followersUrl?.toString(),
   'following_url': ?followingUrl,
@@ -120,10 +120,10 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('login') && json['login'] is String; } 
-WebhookPullRequestReviewCommentDeletedPullRequestAssignees copyWith({Uri Function()? avatarUrl, bool Function()? deleted, String? Function()? email, String Function()? eventsUrl, Uri Function()? followersUrl, String Function()? followingUrl, String Function()? gistsUrl, String Function()? gravatarId, Uri Function()? htmlUrl, int? id, String? login, String Function()? name, String Function()? nodeId, Uri Function()? organizationsUrl, Uri Function()? receivedEventsUrl, Uri Function()? reposUrl, bool Function()? siteAdmin, String Function()? starredUrl, Uri Function()? subscriptionsUrl, WebhookPullRequestReviewCommentDeletedPullRequestAssigneesType Function()? type, Uri Function()? url, }) { return WebhookPullRequestReviewCommentDeletedPullRequestAssignees(
+WebhookPullRequestReviewCommentDeletedPullRequestAssignees copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Omittable<String?>? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? id, String? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, WebhookPullRequestReviewCommentDeletedPullRequestAssigneesType? Function()? type, Uri? Function()? url, }) { return WebhookPullRequestReviewCommentDeletedPullRequestAssignees(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   deleted: deleted != null ? deleted() : this.deleted,
-  email: email != null ? email() : this.email,
+  email: email ?? this.email,
   eventsUrl: eventsUrl != null ? eventsUrl() : this.eventsUrl,
   followersUrl: followersUrl != null ? followersUrl() : this.followersUrl,
   followingUrl: followingUrl != null ? followingUrl() : this.followingUrl,

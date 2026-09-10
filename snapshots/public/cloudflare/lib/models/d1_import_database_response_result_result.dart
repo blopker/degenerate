@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'num_queries': ?numQueries,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'final_bookmark', 'meta', 'num_queries'}.contains(key)); } 
-D1ImportDatabaseResponseResultResult copyWith({String Function()? finalBookmark, D1QueryMeta Function()? meta, double Function()? numQueries, }) { return D1ImportDatabaseResponseResultResult(
+D1ImportDatabaseResponseResultResult copyWith({String? Function()? finalBookmark, D1QueryMeta? Function()? meta, double? Function()? numQueries, }) { return D1ImportDatabaseResponseResultResult(
   finalBookmark: finalBookmark != null ? finalBookmark() : this.finalBookmark,
   meta: meta != null ? meta() : this.meta,
   numQueries: numQueries != null ? numQueries() : this.numQueries,

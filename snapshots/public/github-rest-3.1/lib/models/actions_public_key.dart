@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_id') && json['key_id'] is String &&
       json.containsKey('key') && json['key'] is String; } 
-ActionsPublicKey copyWith({String? keyId, String? key, int Function()? id, String Function()? url, String Function()? title, String Function()? createdAt, }) { return ActionsPublicKey(
+ActionsPublicKey copyWith({String? keyId, String? key, int? Function()? id, String? Function()? url, String? Function()? title, String? Function()? createdAt, }) { return ActionsPublicKey(
   keyId: keyId ?? this.keyId,
   key: key ?? this.key,
   id: id != null ? id() : this.id,

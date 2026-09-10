@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'finish_reason': finishReason.toJson(),
   'index': index,
   'message': message.toJson(),
-  if (logprobs != null) 'logprobs': logprobs?.toJson(),
+  'logprobs': logprobs?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('finish_reason') &&
       json.containsKey('index') && json['index'] is num &&

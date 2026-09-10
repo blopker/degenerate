@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-MagicTransitTracerouteResponseCollection copyWith({List<MagicTransitMessages2>? errors, List<MagicTransitMessages2>? messages, bool? success, List<MagicTransitTargetResult> Function()? result, }) { return MagicTransitTracerouteResponseCollection(
+MagicTransitTracerouteResponseCollection copyWith({List<MagicTransitMessages2>? errors, List<MagicTransitMessages2>? messages, bool? success, List<MagicTransitTargetResult>? Function()? result, }) { return MagicTransitTracerouteResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

@@ -51,11 +51,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsAfterpayClearpaySetupFutureUsage($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodOptionsAfterpayClearpay {const PaymentMethodOptionsAfterpayClearpay({this.captureMethod, this.reference, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsAfterpayClearpay {const PaymentMethodOptionsAfterpayClearpay({this.captureMethod, this.reference = const Omittable.absent(), this.setupFutureUsage, });
 
 factory PaymentMethodOptionsAfterpayClearpay.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsAfterpayClearpay(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsAfterpayClearpayCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  reference: json['reference'] as String?,
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsAfterpayClearpaySetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
@@ -64,7 +64,7 @@ final PaymentMethodOptionsAfterpayClearpayCaptureMethod? captureMethod;
 
 /// An internal identifier or reference that this payment corresponds to. You must limit the identifier to 128 characters, and it can only contain letters, numbers, underscores, backslashes, and dashes.
 /// This field differs from the statement descriptor and item name.
-final String? reference;
+final Omittable<String?> reference;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -77,13 +77,13 @@ final PaymentMethodOptionsAfterpayClearpaySetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
-  'reference': ?reference,
+  if (reference.isPresent) 'reference': reference.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'reference', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsAfterpayClearpay copyWith({PaymentMethodOptionsAfterpayClearpayCaptureMethod Function()? captureMethod, String? Function()? reference, PaymentMethodOptionsAfterpayClearpaySetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsAfterpayClearpay(
+PaymentMethodOptionsAfterpayClearpay copyWith({PaymentMethodOptionsAfterpayClearpayCaptureMethod? Function()? captureMethod, Omittable<String?>? reference, PaymentMethodOptionsAfterpayClearpaySetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsAfterpayClearpay(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
-  reference: reference != null ? reference() : this.reference,
+  reference: reference ?? this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

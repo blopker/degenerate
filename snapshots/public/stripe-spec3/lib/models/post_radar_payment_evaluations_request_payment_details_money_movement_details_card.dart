@@ -70,7 +70,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentType != null) 'payment_type': paymentType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_presence', 'payment_type'}.contains(key)); } 
-PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard copyWith({PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence Function()? customerPresence, PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType Function()? paymentType, }) { return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard(
+PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard copyWith({PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardCustomerPresence? Function()? customerPresence, PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCardPaymentType? Function()? paymentType, }) { return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard(
   customerPresence: customerPresence != null ? customerPresence() : this.customerPresence,
   paymentType: paymentType != null ? paymentType() : this.paymentType,
 ); } 

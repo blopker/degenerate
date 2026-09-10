@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-GetTaxIdsOwner copyWith({String Function()? account, String Function()? customer, String Function()? customerAccount, GetTaxIdsOwnerType? type, }) { return GetTaxIdsOwner(
+GetTaxIdsOwner copyWith({String? Function()? account, String? Function()? customer, String? Function()? customerAccount, GetTaxIdsOwnerType? type, }) { return GetTaxIdsOwner(
   account: account != null ? account() : this.account,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

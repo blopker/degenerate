@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'description', 'id', 'is_attributable', 'is_downloadable', 'is_public', 'modified_on', 'name'}.contains(key)); } 
-CustomIndicatorFeedsIndicatorFeedItem copyWith({DateTime Function()? createdOn, CustomIndicatorFeedsDescription Function()? description, CustomIndicatorFeedsId Function()? id, CustomIndicatorFeedsIsAttributable Function()? isAttributable, CustomIndicatorFeedsIsDownloadable Function()? isDownloadable, CustomIndicatorFeedsIsPublic Function()? isPublic, DateTime Function()? modifiedOn, CustomIndicatorFeedsName Function()? name, }) { return CustomIndicatorFeedsIndicatorFeedItem(
+CustomIndicatorFeedsIndicatorFeedItem copyWith({DateTime? Function()? createdOn, CustomIndicatorFeedsDescription? Function()? description, CustomIndicatorFeedsId? Function()? id, CustomIndicatorFeedsIsAttributable? Function()? isAttributable, CustomIndicatorFeedsIsDownloadable? Function()? isDownloadable, CustomIndicatorFeedsIsPublic? Function()? isPublic, DateTime? Function()? modifiedOn, CustomIndicatorFeedsName? Function()? name, }) { return CustomIndicatorFeedsIndicatorFeedItem(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

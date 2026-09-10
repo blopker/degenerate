@@ -27,6 +27,7 @@ class FileEmitter {
     String? defaultServerUrl,
     List<String>? warnings,
     List<String> unwrapFields = const [],
+    OmittableMode omittable = OmittableMode.nullableOnly,
   }) {
     final files = <String, String>{};
 
@@ -97,10 +98,10 @@ class FileEmitter {
       final children = inlinedChildren[name];
       if (children != null) {
         for (final child in children) {
-          specs.addAll(_emitType(child, typeRegistry));
+          specs.addAll(_emitType(child, typeRegistry, omittable: omittable));
         }
       }
-      specs.addAll(_emitType(type, typeRegistry));
+      specs.addAll(_emitType(type, typeRegistry, omittable: omittable));
       if (specs.isEmpty) continue;
 
       // Single-pass analysis: collect imports and detect special types
@@ -166,6 +167,7 @@ class FileEmitter {
         api,
         typeRegistry: typeRegistry,
         unwrapFields: unwrapFields,
+        omittable: omittable,
       );
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
@@ -250,9 +252,18 @@ class FileEmitter {
     return files;
   }
 
-  List<Spec> _emitType(IrType type, Map<String, IrType> typeRegistry) {
+  List<Spec> _emitType(
+    IrType type,
+    Map<String, IrType> typeRegistry, {
+    OmittableMode omittable = OmittableMode.nullableOnly,
+  }) {
     return switch (type) {
-      IrObject() => ModelEmitter(type, typeRegistry: typeRegistry).emit(),
+      IrObject() =>
+        ModelEmitter(
+          type,
+          typeRegistry: typeRegistry,
+          omittable: omittable,
+        ).emit(),
       IrEnum() => EnumEmitter(type).emit(),
       IrExtensionType() => ExtensionTypeEmitter(type).emit(),
       IrDiscriminatedUnion() => DiscriminatedUnionEmitter(type).emit(),

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String; } 
-BalanceAmount copyWith({int? amount, String? currency, BalanceAmountBySourceType Function()? sourceTypes, }) { return BalanceAmount(
+BalanceAmount copyWith({int? amount, String? currency, BalanceAmountBySourceType? Function()? sourceTypes, }) { return BalanceAmount(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   sourceTypes: sourceTypes != null ? sourceTypes() : this.sourceTypes,

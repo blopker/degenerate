@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostTaxRegistrationsRequestCountryOptionsMt copyWith({PostTaxRegistrationsRequestCountryOptionsMtStandard Function()? standard, PostTaxRegistrationsRequestCountryOptionsMtType? type, }) { return PostTaxRegistrationsRequestCountryOptionsMt(
+PostTaxRegistrationsRequestCountryOptionsMt copyWith({PostTaxRegistrationsRequestCountryOptionsMtStandard? Function()? standard, PostTaxRegistrationsRequestCountryOptionsMtType? type, }) { return PostTaxRegistrationsRequestCountryOptionsMt(
   standard: standard != null ? standard() : this.standard,
   type: type ?? this.type,
 ); } 

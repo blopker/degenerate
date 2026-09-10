@@ -123,7 +123,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('data_type') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-Field copyWith({int? id, String Function()? nodeId, String? projectUrl, String? name, FieldDataType? dataType, List<SingleSelectOptions> Function()? options, FieldConfiguration Function()? configuration, DateTime? createdAt, DateTime? updatedAt, }) { return Field(
+Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String? name, FieldDataType? dataType, List<SingleSelectOptions>? Function()? options, FieldConfiguration? Function()? configuration, DateTime? createdAt, DateTime? updatedAt, }) { return Field(
   id: id ?? this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   projectUrl: projectUrl ?? this.projectUrl,

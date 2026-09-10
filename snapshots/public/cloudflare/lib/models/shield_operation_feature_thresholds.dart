@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (thresholds != null) 'thresholds': thresholds?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'thresholds'}.contains(key)); } 
-ShieldOperationFeatureThresholds copyWith({ShieldOperationFeatureThresholdsThresholds Function()? thresholds}) { return ShieldOperationFeatureThresholds(
+ShieldOperationFeatureThresholds copyWith({ShieldOperationFeatureThresholdsThresholds? Function()? thresholds}) { return ShieldOperationFeatureThresholds(
   thresholds: thresholds != null ? thresholds() : this.thresholds,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

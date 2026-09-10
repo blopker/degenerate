@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   if (zone != null) 'zone': zone?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'app', 'component_values', 'currency', 'current_period_end', 'current_period_start', 'frequency', 'id', 'price', 'rate_plan', 'state', 'zone'}.contains(key)); } 
-SubscriptionResponse copyWith({SubscriptionResponseApp Function()? app, List<ComponentValue2> Function()? componentValues, Currency Function()? currency, CurrentPeriodEnd Function()? currentPeriodEnd, CurrentPeriodStart Function()? currentPeriodStart, Frequency Function()? frequency, SchemasIdentifier Function()? id, Price Function()? price, RatePlan2 Function()? ratePlan, State Function()? state, Zone Function()? zone, }) { return SubscriptionResponse(
+SubscriptionResponse copyWith({SubscriptionResponseApp? Function()? app, List<ComponentValue2>? Function()? componentValues, Currency? Function()? currency, CurrentPeriodEnd? Function()? currentPeriodEnd, CurrentPeriodStart? Function()? currentPeriodStart, Frequency? Function()? frequency, SchemasIdentifier? Function()? id, Price? Function()? price, RatePlan2? Function()? ratePlan, State? Function()? state, Zone? Function()? zone, }) { return SubscriptionResponse(
   app: app != null ? app() : this.app,
   componentValues: componentValues != null ? componentValues() : this.componentValues,
   currency: currency != null ? currency() : this.currency,

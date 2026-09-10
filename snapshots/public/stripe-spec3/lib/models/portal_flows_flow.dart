@@ -32,44 +32,44 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PortalFlowsFlowType($value)'; } 
  }
 /// 
-@immutable final class PortalFlowsFlow {const PortalFlowsFlow({required this.afterCompletion, required this.type, this.subscriptionCancel, this.subscriptionUpdate, this.subscriptionUpdateConfirm, });
+@immutable final class PortalFlowsFlow {const PortalFlowsFlow({required this.afterCompletion, required this.type, this.subscriptionCancel = const Omittable.absent(), this.subscriptionUpdate = const Omittable.absent(), this.subscriptionUpdateConfirm = const Omittable.absent(), });
 
 factory PortalFlowsFlow.fromJson(Map<String, dynamic> json) { return PortalFlowsFlow(
   afterCompletion: PortalFlowsFlowAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>),
-  subscriptionCancel: json['subscription_cancel'] != null ? PortalFlowsFlowSubscriptionCancel.fromJson(json['subscription_cancel'] as Map<String, dynamic>) : null,
-  subscriptionUpdate: json['subscription_update'] != null ? PortalFlowsFlowSubscriptionUpdate.fromJson(json['subscription_update'] as Map<String, dynamic>) : null,
-  subscriptionUpdateConfirm: json['subscription_update_confirm'] != null ? PortalFlowsFlowSubscriptionUpdateConfirm.fromJson(json['subscription_update_confirm'] as Map<String, dynamic>) : null,
+  subscriptionCancel: json.containsKey('subscription_cancel') ? Omittable(json['subscription_cancel'] != null ? PortalFlowsFlowSubscriptionCancel.fromJson(json['subscription_cancel'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  subscriptionUpdate: json.containsKey('subscription_update') ? Omittable(json['subscription_update'] != null ? PortalFlowsFlowSubscriptionUpdate.fromJson(json['subscription_update'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  subscriptionUpdateConfirm: json.containsKey('subscription_update_confirm') ? Omittable(json['subscription_update_confirm'] != null ? PortalFlowsFlowSubscriptionUpdateConfirm.fromJson(json['subscription_update_confirm'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: PortalFlowsFlowType.fromJson(json['type'] as String),
 ); }
 
 final PortalFlowsFlowAfterCompletion afterCompletion;
 
 /// Configuration when `flow.type=subscription_cancel`.
-final PortalFlowsFlowSubscriptionCancel? subscriptionCancel;
+final Omittable<PortalFlowsFlowSubscriptionCancel?> subscriptionCancel;
 
 /// Configuration when `flow.type=subscription_update`.
-final PortalFlowsFlowSubscriptionUpdate? subscriptionUpdate;
+final Omittable<PortalFlowsFlowSubscriptionUpdate?> subscriptionUpdate;
 
 /// Configuration when `flow.type=subscription_update_confirm`.
-final PortalFlowsFlowSubscriptionUpdateConfirm? subscriptionUpdateConfirm;
+final Omittable<PortalFlowsFlowSubscriptionUpdateConfirm?> subscriptionUpdateConfirm;
 
 /// Type of flow that the customer will go through.
 final PortalFlowsFlowType type;
 
 Map<String, dynamic> toJson() { return {
   'after_completion': afterCompletion.toJson(),
-  if (subscriptionCancel != null) 'subscription_cancel': subscriptionCancel?.toJson(),
-  if (subscriptionUpdate != null) 'subscription_update': subscriptionUpdate?.toJson(),
-  if (subscriptionUpdateConfirm != null) 'subscription_update_confirm': subscriptionUpdateConfirm?.toJson(),
+  if (subscriptionCancel.isPresent) 'subscription_cancel': subscriptionCancel.value?.toJson(),
+  if (subscriptionUpdate.isPresent) 'subscription_update': subscriptionUpdate.value?.toJson(),
+  if (subscriptionUpdateConfirm.isPresent) 'subscription_update_confirm': subscriptionUpdateConfirm.value?.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('after_completion') &&
       json.containsKey('type'); } 
-PortalFlowsFlow copyWith({PortalFlowsFlowAfterCompletion? afterCompletion, PortalFlowsFlowSubscriptionCancel? Function()? subscriptionCancel, PortalFlowsFlowSubscriptionUpdate? Function()? subscriptionUpdate, PortalFlowsFlowSubscriptionUpdateConfirm? Function()? subscriptionUpdateConfirm, PortalFlowsFlowType? type, }) { return PortalFlowsFlow(
+PortalFlowsFlow copyWith({PortalFlowsFlowAfterCompletion? afterCompletion, Omittable<PortalFlowsFlowSubscriptionCancel?>? subscriptionCancel, Omittable<PortalFlowsFlowSubscriptionUpdate?>? subscriptionUpdate, Omittable<PortalFlowsFlowSubscriptionUpdateConfirm?>? subscriptionUpdateConfirm, PortalFlowsFlowType? type, }) { return PortalFlowsFlow(
   afterCompletion: afterCompletion ?? this.afterCompletion,
-  subscriptionCancel: subscriptionCancel != null ? subscriptionCancel() : this.subscriptionCancel,
-  subscriptionUpdate: subscriptionUpdate != null ? subscriptionUpdate() : this.subscriptionUpdate,
-  subscriptionUpdateConfirm: subscriptionUpdateConfirm != null ? subscriptionUpdateConfirm() : this.subscriptionUpdateConfirm,
+  subscriptionCancel: subscriptionCancel ?? this.subscriptionCancel,
+  subscriptionUpdate: subscriptionUpdate ?? this.subscriptionUpdate,
+  subscriptionUpdateConfirm: subscriptionUpdateConfirm ?? this.subscriptionUpdateConfirm,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

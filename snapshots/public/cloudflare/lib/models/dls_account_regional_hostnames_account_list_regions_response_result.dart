@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'label': ?label,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'key', 'label'}.contains(key)); } 
-DlsAccountRegionalHostnamesAccountListRegionsResponseResult copyWith({DlsRegionKey Function()? key, String Function()? label, }) { return DlsAccountRegionalHostnamesAccountListRegionsResponseResult(
+DlsAccountRegionalHostnamesAccountListRegionsResponseResult copyWith({DlsRegionKey? Function()? key, String? Function()? label, }) { return DlsAccountRegionalHostnamesAccountListRegionsResponseResult(
   key: key != null ? key() : this.key,
   label: label != null ? label() : this.label,
 ); } 

@@ -54,7 +54,7 @@ final WebhookCodeScanningAlertUpdatedAssignmentAlertRuleSeverity? severity;
 Map<String, dynamic> toJson() { return {
   'description': description,
   'id': id,
-  if (severity != null) 'severity': severity?.toJson(),
+  'severity': severity?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
       json.containsKey('id') && json['id'] is String &&

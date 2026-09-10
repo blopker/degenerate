@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('uuid') && json['uuid'] is String; } 
-GetTagCategoryListResponseCategories copyWith({String Function()? createdAt, String Function()? description, String? name, String Function()? updatedAt, String? uuid, }) { return GetTagCategoryListResponseCategories(
+GetTagCategoryListResponseCategories copyWith({String? Function()? createdAt, String? Function()? description, String? name, String? Function()? updatedAt, String? uuid, }) { return GetTagCategoryListResponseCategories(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description != null ? description() : this.description,
   name: name ?? this.name,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (budget != null) 'budget': budget?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'message', 'budget'}.contains(key)); } 
-BillingUpdateBudgetOrgResponse copyWith({String Function()? message, BillingUpdateBudgetOrgResponseBudget Function()? budget, }) { return BillingUpdateBudgetOrgResponse(
+BillingUpdateBudgetOrgResponse copyWith({String? Function()? message, BillingUpdateBudgetOrgResponseBudget? Function()? budget, }) { return BillingUpdateBudgetOrgResponse(
   message: message != null ? message() : this.message,
   budget: budget != null ? budget() : this.budget,
 ); } 

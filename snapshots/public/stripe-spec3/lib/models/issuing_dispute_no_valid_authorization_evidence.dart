@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_no_valid_authorization_evidence_additional_documentation.dart';/// 
-@immutable final class IssuingDisputeNoValidAuthorizationEvidence {const IssuingDisputeNoValidAuthorizationEvidence({this.additionalDocumentation, this.explanation, });
+@immutable final class IssuingDisputeNoValidAuthorizationEvidence {const IssuingDisputeNoValidAuthorizationEvidence({this.additionalDocumentation = const Omittable.absent(), this.explanation = const Omittable.absent(), });
 
 factory IssuingDisputeNoValidAuthorizationEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeNoValidAuthorizationEvidence(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,
-  explanation: json['explanation'] as String?,
+  additionalDocumentation: json.containsKey('additional_documentation') ? Omittable(json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  explanation: json.containsKey('explanation') ? Omittable(json['explanation'] as String?) : const Omittable.absent(),
 ); }
 
 /// (ID of a [file upload](https://stripe.com/docs/guides/file-upload)) Additional documentation supporting the dispute.
-final IssuingDisputeNoValidAuthorizationEvidenceAdditionalDocumentation? additionalDocumentation;
+final Omittable<IssuingDisputeNoValidAuthorizationEvidenceAdditionalDocumentation?> additionalDocumentation;
 
 /// Explanation of why the cardholder is disputing this transaction.
-final String? explanation;
+final Omittable<String?> explanation;
 
 Map<String, dynamic> toJson() { return {
-  if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
-  'explanation': ?explanation,
+  if (additionalDocumentation.isPresent) 'additional_documentation': additionalDocumentation.value?.toJson(),
+  if (explanation.isPresent) 'explanation': explanation.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation'}.contains(key)); } 
-IssuingDisputeNoValidAuthorizationEvidence copyWith({IssuingDisputeNoValidAuthorizationEvidenceAdditionalDocumentation? Function()? additionalDocumentation, String? Function()? explanation, }) { return IssuingDisputeNoValidAuthorizationEvidence(
-  additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
-  explanation: explanation != null ? explanation() : this.explanation,
+IssuingDisputeNoValidAuthorizationEvidence copyWith({Omittable<IssuingDisputeNoValidAuthorizationEvidenceAdditionalDocumentation?>? additionalDocumentation, Omittable<String?>? explanation, }) { return IssuingDisputeNoValidAuthorizationEvidence(
+  additionalDocumentation: additionalDocumentation ?? this.additionalDocumentation,
+  explanation: explanation ?? this.explanation,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingDisputeNoValidAuthorizationEvidence &&

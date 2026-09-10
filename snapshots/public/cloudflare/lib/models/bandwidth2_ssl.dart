@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'unencrypted': ?unencrypted,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'encrypted', 'unencrypted'}.contains(key)); } 
-Bandwidth2Ssl copyWith({int Function()? encrypted, int Function()? unencrypted, }) { return Bandwidth2Ssl(
+Bandwidth2Ssl copyWith({int? Function()? encrypted, int? Function()? unencrypted, }) { return Bandwidth2Ssl(
   encrypted: encrypted != null ? encrypted() : this.encrypted,
   unencrypted: unencrypted != null ? unencrypted() : this.unencrypted,
 ); } 

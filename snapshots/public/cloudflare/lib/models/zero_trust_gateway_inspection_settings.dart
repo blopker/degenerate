@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   if (mode != null) 'mode': mode?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mode'}.contains(key)); } 
-ZeroTrustGatewayInspectionSettings copyWith({ZeroTrustGatewayInspectionSettingsMode Function()? mode}) { return ZeroTrustGatewayInspectionSettings(
+ZeroTrustGatewayInspectionSettings copyWith({ZeroTrustGatewayInspectionSettingsMode? Function()? mode}) { return ZeroTrustGatewayInspectionSettings(
   mode: mode != null ? mode() : this.mode,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

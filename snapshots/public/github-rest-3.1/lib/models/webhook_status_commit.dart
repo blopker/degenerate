@@ -33,10 +33,10 @@ final String sha;
 final Uri url;
 
 Map<String, dynamic> toJson() { return {
-  if (author != null) 'author': author?.toJson(),
+  'author': author?.toJson(),
   'comments_url': commentsUrl.toString(),
   'commit': commit.toJson(),
-  if (committer != null) 'committer': committer?.toJson(),
+  'committer': committer?.toJson(),
   'html_url': htmlUrl.toString(),
   'node_id': nodeId,
   'parents': parents.map((e) => e.toJson()).toList(),

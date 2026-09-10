@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (title != null) 'title': title?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'due_on', 'title'}.contains(key)); } 
-WebhookMilestoneEditedChanges copyWith({WebhookMilestoneEditedChangesDescription Function()? description, WebhookMilestoneEditedChangesDueOn Function()? dueOn, WebhookMilestoneEditedChangesTitle Function()? title, }) { return WebhookMilestoneEditedChanges(
+WebhookMilestoneEditedChanges copyWith({WebhookMilestoneEditedChangesDescription? Function()? description, WebhookMilestoneEditedChangesDueOn? Function()? dueOn, WebhookMilestoneEditedChangesTitle? Function()? title, }) { return WebhookMilestoneEditedChanges(
   description: description != null ? description() : this.description,
   dueOn: dueOn != null ? dueOn() : this.dueOn,
   title: title != null ? title() : this.title,

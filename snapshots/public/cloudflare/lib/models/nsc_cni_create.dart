@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
       json.containsKey('interconnect') && json['interconnect'] is String &&
       json.containsKey('magic'); } 
-NscCniCreate copyWith({NscAccountTag? account, NscBgpControl Function()? bgp, String? interconnect, NscMagicSettings? magic, }) { return NscCniCreate(
+NscCniCreate copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String? interconnect, NscMagicSettings? magic, }) { return NscCniCreate(
   account: account ?? this.account,
   bgp: bgp != null ? bgp() : this.bgp,
   interconnect: interconnect ?? this.interconnect,

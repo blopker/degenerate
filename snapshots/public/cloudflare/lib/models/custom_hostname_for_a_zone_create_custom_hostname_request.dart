@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (ssl != null) 'ssl': ssl?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname'); } 
-CustomHostnameForAZoneCreateCustomHostnameRequest copyWith({Map<String, String> Function()? customMetadata, TlsCertificatesAndHostnamesHostnamePost? hostname, TlsCertificatesAndHostnamesSslpost Function()? ssl, }) { return CustomHostnameForAZoneCreateCustomHostnameRequest(
+CustomHostnameForAZoneCreateCustomHostnameRequest copyWith({Map<String, String>? Function()? customMetadata, TlsCertificatesAndHostnamesHostnamePost? hostname, TlsCertificatesAndHostnamesSslpost? Function()? ssl, }) { return CustomHostnameForAZoneCreateCustomHostnameRequest(
   customMetadata: customMetadata != null ? customMetadata() : this.customMetadata,
   hostname: hostname ?? this.hostname,
   ssl: ssl != null ? ssl() : this.ssl,

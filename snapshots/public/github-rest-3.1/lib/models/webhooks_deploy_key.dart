@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The [`deploy key`](https://docs.github.com/rest/deploy-keys/deploy-keys#get-a-deploy-key) resource.
-@immutable final class WebhooksDeployKey {const WebhooksDeployKey({required this.createdAt, required this.id, required this.key, required this.readOnly, required this.title, required this.url, required this.verified, this.addedBy, this.lastUsed, this.enabled, });
+@immutable final class WebhooksDeployKey {const WebhooksDeployKey({required this.createdAt, required this.id, required this.key, required this.readOnly, required this.title, required this.url, required this.verified, this.addedBy = const Omittable.absent(), this.lastUsed = const Omittable.absent(), this.enabled, });
 
 factory WebhooksDeployKey.fromJson(Map<String, dynamic> json) { return WebhooksDeployKey(
-  addedBy: json['added_by'] as String?,
+  addedBy: json.containsKey('added_by') ? Omittable(json['added_by'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
   id: (json['id'] as num).toInt(),
   key: json['key'] as String,
-  lastUsed: json['last_used'] as String?,
+  lastUsed: json.containsKey('last_used') ? Omittable(json['last_used'] as String?) : const Omittable.absent(),
   readOnly: json['read_only'] as bool,
   title: json['title'] as String,
   url: Uri.parse(json['url'] as String),
@@ -16,7 +16,7 @@ factory WebhooksDeployKey.fromJson(Map<String, dynamic> json) { return WebhooksD
   enabled: json['enabled'] as bool?,
 ); }
 
-final String? addedBy;
+final Omittable<String?> addedBy;
 
 final String createdAt;
 
@@ -24,7 +24,7 @@ final int id;
 
 final String key;
 
-final String? lastUsed;
+final Omittable<String?> lastUsed;
 
 final bool readOnly;
 
@@ -37,11 +37,11 @@ final bool verified;
 final bool? enabled;
 
 Map<String, dynamic> toJson() { return {
-  'added_by': ?addedBy,
+  if (addedBy.isPresent) 'added_by': addedBy.value,
   'created_at': createdAt,
   'id': id,
   'key': key,
-  'last_used': ?lastUsed,
+  if (lastUsed.isPresent) 'last_used': lastUsed.value,
   'read_only': readOnly,
   'title': title,
   'url': url.toString(),
@@ -55,12 +55,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('title') && json['title'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('verified') && json['verified'] is bool; } 
-WebhooksDeployKey copyWith({String? Function()? addedBy, String? createdAt, int? id, String? key, String? Function()? lastUsed, bool? readOnly, String? title, Uri? url, bool? verified, bool Function()? enabled, }) { return WebhooksDeployKey(
-  addedBy: addedBy != null ? addedBy() : this.addedBy,
+WebhooksDeployKey copyWith({Omittable<String?>? addedBy, String? createdAt, int? id, String? key, Omittable<String?>? lastUsed, bool? readOnly, String? title, Uri? url, bool? verified, bool? Function()? enabled, }) { return WebhooksDeployKey(
+  addedBy: addedBy ?? this.addedBy,
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   key: key ?? this.key,
-  lastUsed: lastUsed != null ? lastUsed() : this.lastUsed,
+  lastUsed: lastUsed ?? this.lastUsed,
   readOnly: readOnly ?? this.readOnly,
   title: title ?? this.title,
   url: url ?? this.url,

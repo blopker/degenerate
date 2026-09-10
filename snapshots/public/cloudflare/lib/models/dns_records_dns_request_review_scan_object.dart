@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (rejects != null) 'rejects': rejects?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accepts', 'rejects'}.contains(key)); } 
-DnsRecordsDnsRequestReviewScanObject copyWith({List<DnsRecordsDnsRecordPatch> Function()? accepts, List<DnsRecordsDnsRecordScanBatchReject> Function()? rejects, }) { return DnsRecordsDnsRequestReviewScanObject(
+DnsRecordsDnsRequestReviewScanObject copyWith({List<DnsRecordsDnsRecordPatch>? Function()? accepts, List<DnsRecordsDnsRecordScanBatchReject>? Function()? rejects, }) { return DnsRecordsDnsRequestReviewScanObject(
   accepts: accepts != null ? accepts() : this.accepts,
   rejects: rejects != null ? rejects() : this.rejects,
 ); } 

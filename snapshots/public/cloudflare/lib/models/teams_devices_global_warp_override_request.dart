@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (justification != null) 'justification': justification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('disconnect'); } 
-TeamsDevicesGlobalWarpOverrideRequest copyWith({TeamsDevicesDisconnect? disconnect, TeamsDevicesJustification Function()? justification, }) { return TeamsDevicesGlobalWarpOverrideRequest(
+TeamsDevicesGlobalWarpOverrideRequest copyWith({TeamsDevicesDisconnect? disconnect, TeamsDevicesJustification? Function()? justification, }) { return TeamsDevicesGlobalWarpOverrideRequest(
   disconnect: disconnect ?? this.disconnect,
   justification: justification != null ? justification() : this.justification,
 ); } 

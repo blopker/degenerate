@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (zoneDefaults != null) 'zone_defaults': zoneDefaults?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'zone_defaults'}.contains(key)); } 
-DnsSettingsAccountSettingsPatch copyWith({DnsSettingsDnsSettingsAccountPatch Function()? zoneDefaults}) { return DnsSettingsAccountSettingsPatch(
+DnsSettingsAccountSettingsPatch copyWith({DnsSettingsDnsSettingsAccountPatch? Function()? zoneDefaults}) { return DnsSettingsAccountSettingsPatch(
   zoneDefaults: zoneDefaults != null ? zoneDefaults() : this.zoneDefaults,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

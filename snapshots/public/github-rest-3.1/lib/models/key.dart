@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Key
-@immutable final class Key {const Key({required this.key, required this.id, required this.url, required this.title, required this.createdAt, required this.verified, required this.readOnly, this.lastUsed, });
+@immutable final class Key {const Key({required this.key, required this.id, required this.url, required this.title, required this.createdAt, required this.verified, required this.readOnly, this.lastUsed = const Omittable.absent(), });
 
 factory Key.fromJson(Map<String, dynamic> json) { return Key(
   key: json['key'] as String,
@@ -11,7 +11,7 @@ factory Key.fromJson(Map<String, dynamic> json) { return Key(
   createdAt: DateTime.parse(json['created_at'] as String),
   verified: json['verified'] as bool,
   readOnly: json['read_only'] as bool,
-  lastUsed: json['last_used'] != null ? DateTime.parse(json['last_used'] as String) : null,
+  lastUsed: json.containsKey('last_used') ? Omittable(json['last_used'] != null ? DateTime.parse(json['last_used'] as String) : null) : const Omittable.absent(),
 ); }
 
 final String key;
@@ -28,7 +28,7 @@ final bool verified;
 
 final bool readOnly;
 
-final DateTime? lastUsed;
+final Omittable<DateTime?> lastUsed;
 
 Map<String, dynamic> toJson() { return {
   'key': key,
@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'verified': verified,
   'read_only': readOnly,
-  if (lastUsed != null) 'last_used': lastUsed?.toIso8601String(),
+  if (lastUsed.isPresent) 'last_used': lastUsed.value?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('id') && json['id'] is num &&
@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key')
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('verified') && json['verified'] is bool &&
       json.containsKey('read_only') && json['read_only'] is bool; } 
-Key copyWith({String? key, int? id, String? url, String? title, DateTime? createdAt, bool? verified, bool? readOnly, DateTime? Function()? lastUsed, }) { return Key(
+Key copyWith({String? key, int? id, String? url, String? title, DateTime? createdAt, bool? verified, bool? readOnly, Omittable<DateTime?>? lastUsed, }) { return Key(
   key: key ?? this.key,
   id: id ?? this.id,
   url: url ?? this.url,
@@ -55,7 +55,7 @@ Key copyWith({String? key, int? id, String? url, String? title, DateTime? create
   createdAt: createdAt ?? this.createdAt,
   verified: verified ?? this.verified,
   readOnly: readOnly ?? this.readOnly,
-  lastUsed: lastUsed != null ? lastUsed() : this.lastUsed,
+  lastUsed: lastUsed ?? this.lastUsed,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Key &&

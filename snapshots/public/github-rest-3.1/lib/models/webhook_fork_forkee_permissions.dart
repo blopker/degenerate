@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('admin') && json['admin'] is bool &&
       json.containsKey('pull') && json['pull'] is bool &&
       json.containsKey('push') && json['push'] is bool; } 
-WebhookForkForkeePermissions copyWith({bool? admin, bool Function()? maintain, bool? pull, bool? push, bool Function()? triage, }) { return WebhookForkForkeePermissions(
+WebhookForkForkeePermissions copyWith({bool? admin, bool? Function()? maintain, bool? pull, bool? push, bool? Function()? triage, }) { return WebhookForkForkeePermissions(
   admin: admin ?? this.admin,
   maintain: maintain != null ? maintain() : this.maintain,
   pull: pull ?? this.pull,

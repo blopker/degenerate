@@ -54,16 +54,16 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodConfigResourceDisplayPreferenceValue($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodConfigResourceDisplayPreference {const PaymentMethodConfigResourceDisplayPreference({required this.preference, required this.value, this.overridable, });
+@immutable final class PaymentMethodConfigResourceDisplayPreference {const PaymentMethodConfigResourceDisplayPreference({required this.preference, required this.value, this.overridable = const Omittable.absent(), });
 
 factory PaymentMethodConfigResourceDisplayPreference.fromJson(Map<String, dynamic> json) { return PaymentMethodConfigResourceDisplayPreference(
-  overridable: json['overridable'] as bool?,
+  overridable: json.containsKey('overridable') ? Omittable(json['overridable'] as bool?) : const Omittable.absent(),
   preference: PaymentMethodConfigResourceDisplayPreferencePreference.fromJson(json['preference'] as String),
   value: PaymentMethodConfigResourceDisplayPreferenceValue.fromJson(json['value'] as String),
 ); }
 
 /// For child configs, whether or not the account's preference will be observed. If `false`, the parent configuration's default is used.
-final bool? overridable;
+final Omittable<bool?> overridable;
 
 /// The account's display preference.
 final PaymentMethodConfigResourceDisplayPreferencePreference preference;
@@ -72,14 +72,14 @@ final PaymentMethodConfigResourceDisplayPreferencePreference preference;
 final PaymentMethodConfigResourceDisplayPreferenceValue value;
 
 Map<String, dynamic> toJson() { return {
-  'overridable': ?overridable,
+  if (overridable.isPresent) 'overridable': overridable.value,
   'preference': preference.toJson(),
   'value': value.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('preference') &&
       json.containsKey('value'); } 
-PaymentMethodConfigResourceDisplayPreference copyWith({bool? Function()? overridable, PaymentMethodConfigResourceDisplayPreferencePreference? preference, PaymentMethodConfigResourceDisplayPreferenceValue? value, }) { return PaymentMethodConfigResourceDisplayPreference(
-  overridable: overridable != null ? overridable() : this.overridable,
+PaymentMethodConfigResourceDisplayPreference copyWith({Omittable<bool?>? overridable, PaymentMethodConfigResourceDisplayPreferencePreference? preference, PaymentMethodConfigResourceDisplayPreferenceValue? value, }) { return PaymentMethodConfigResourceDisplayPreference(
+  overridable: overridable ?? this.overridable,
   preference: preference ?? this.preference,
   value: value ?? this.value,
 ); } 

@@ -106,7 +106,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'mandate_options', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency Function()? currency, PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptions Function()? mandateOptions, PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod Function()? verificationMethod, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit(
+PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency? Function()? currency, PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptions? Function()? mandateOptions, PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod? Function()? verificationMethod, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit(
   currency: currency != null ? currency() : this.currency,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

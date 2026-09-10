@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (deletedRoute != null) 'deleted_route': deletedRoute?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deleted', 'deleted_route'}.contains(key)); } 
-MagicRouteDeletedResponseResult copyWith({bool Function()? deleted, MagicRoute Function()? deletedRoute, }) { return MagicRouteDeletedResponseResult(
+MagicRouteDeletedResponseResult copyWith({bool? Function()? deleted, MagicRoute? Function()? deletedRoute, }) { return MagicRouteDeletedResponseResult(
   deleted: deleted != null ? deleted() : this.deleted,
   deletedRoute: deletedRoute != null ? deletedRoute() : this.deletedRoute,
 ); } 

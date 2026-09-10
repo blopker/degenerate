@@ -96,27 +96,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodUsBankAccountBlockedReason($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodUsBankAccountBlocked {const PaymentMethodUsBankAccountBlocked({this.networkCode, this.reason, });
+@immutable final class PaymentMethodUsBankAccountBlocked {const PaymentMethodUsBankAccountBlocked({this.networkCode = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
 factory PaymentMethodUsBankAccountBlocked.fromJson(Map<String, dynamic> json) { return PaymentMethodUsBankAccountBlocked(
-  networkCode: json['network_code'] != null ? PaymentMethodUsBankAccountBlockedNetworkCode.fromJson(json['network_code'] as String) : null,
-  reason: json['reason'] != null ? PaymentMethodUsBankAccountBlockedReason.fromJson(json['reason'] as String) : null,
+  networkCode: json.containsKey('network_code') ? Omittable(json['network_code'] != null ? PaymentMethodUsBankAccountBlockedNetworkCode.fromJson(json['network_code'] as String) : null) : const Omittable.absent(),
+  reason: json.containsKey('reason') ? Omittable(json['reason'] != null ? PaymentMethodUsBankAccountBlockedReason.fromJson(json['reason'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The ACH network code that resulted in this block.
-final PaymentMethodUsBankAccountBlockedNetworkCode? networkCode;
+final Omittable<PaymentMethodUsBankAccountBlockedNetworkCode?> networkCode;
 
 /// The reason why this PaymentMethod's fingerprint has been blocked
-final PaymentMethodUsBankAccountBlockedReason? reason;
+final Omittable<PaymentMethodUsBankAccountBlockedReason?> reason;
 
 Map<String, dynamic> toJson() { return {
-  if (networkCode != null) 'network_code': networkCode?.toJson(),
-  if (reason != null) 'reason': reason?.toJson(),
+  if (networkCode.isPresent) 'network_code': networkCode.value?.toJson(),
+  if (reason.isPresent) 'reason': reason.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'network_code', 'reason'}.contains(key)); } 
-PaymentMethodUsBankAccountBlocked copyWith({PaymentMethodUsBankAccountBlockedNetworkCode? Function()? networkCode, PaymentMethodUsBankAccountBlockedReason? Function()? reason, }) { return PaymentMethodUsBankAccountBlocked(
-  networkCode: networkCode != null ? networkCode() : this.networkCode,
-  reason: reason != null ? reason() : this.reason,
+PaymentMethodUsBankAccountBlocked copyWith({Omittable<PaymentMethodUsBankAccountBlockedNetworkCode?>? networkCode, Omittable<PaymentMethodUsBankAccountBlockedReason?>? reason, }) { return PaymentMethodUsBankAccountBlocked(
+  networkCode: networkCode ?? this.networkCode,
+  reason: reason ?? this.reason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodUsBankAccountBlocked &&

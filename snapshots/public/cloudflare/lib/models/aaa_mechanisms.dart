@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (webhooks != null) 'webhooks': webhooks?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'pagerduty', 'webhooks'}.contains(key)); } 
-AaaMechanisms copyWith({List<AaaMechanismsEmail> Function()? email, List<AaaMechanismsPagerduty> Function()? pagerduty, List<AaaMechanismsWebhooks> Function()? webhooks, }) { return AaaMechanisms(
+AaaMechanisms copyWith({List<AaaMechanismsEmail>? Function()? email, List<AaaMechanismsPagerduty>? Function()? pagerduty, List<AaaMechanismsWebhooks>? Function()? webhooks, }) { return AaaMechanisms(
   email: email != null ? email() : this.email,
   pagerduty: pagerduty != null ? pagerduty() : this.pagerduty,
   webhooks: webhooks != null ? webhooks() : this.webhooks,

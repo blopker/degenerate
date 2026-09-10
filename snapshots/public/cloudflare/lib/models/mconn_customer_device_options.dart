@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'serial_number': ?serialNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'provision_license', 'serial_number'}.contains(key)); } 
-MconnCustomerDeviceOptions copyWith({String Function()? id, bool Function()? provisionLicense, String Function()? serialNumber, }) { return MconnCustomerDeviceOptions(
+MconnCustomerDeviceOptions copyWith({String? Function()? id, bool? Function()? provisionLicense, String? Function()? serialNumber, }) { return MconnCustomerDeviceOptions(
   id: id != null ? id() : this.id,
   provisionLicense: provisionLicense != null ? provisionLicense() : this.provisionLicense,
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,

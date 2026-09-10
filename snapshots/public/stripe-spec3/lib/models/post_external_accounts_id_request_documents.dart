@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (bankAccountOwnershipVerification != null) 'bank_account_ownership_verification': bankAccountOwnershipVerification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_account_ownership_verification'}.contains(key)); } 
-PostExternalAccountsIdRequestDocuments copyWith({PostExternalAccountsIdRequestDocumentsBankAccountOwnershipVerification Function()? bankAccountOwnershipVerification}) { return PostExternalAccountsIdRequestDocuments(
+PostExternalAccountsIdRequestDocuments copyWith({PostExternalAccountsIdRequestDocumentsBankAccountOwnershipVerification? Function()? bankAccountOwnershipVerification}) { return PostExternalAccountsIdRequestDocuments(
   bankAccountOwnershipVerification: bankAccountOwnershipVerification != null ? bankAccountOwnershipVerification() : this.bankAccountOwnershipVerification,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

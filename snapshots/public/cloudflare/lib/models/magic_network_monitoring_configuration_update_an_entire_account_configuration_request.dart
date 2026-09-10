@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_sampling') &&
       json.containsKey('name'); } 
-MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest copyWith({MagicVisibilityMnmMnmConfigDefaultSampling? defaultSampling, MagicVisibilityMnmMnmConfigName? name, List<MagicVisibilityMnmMnmConfigRouterIp> Function()? routerIps, List<MagicVisibilityMnmMnmConfigWarpDevice> Function()? warpDevices, }) { return MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest(
+MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest copyWith({MagicVisibilityMnmMnmConfigDefaultSampling? defaultSampling, MagicVisibilityMnmMnmConfigName? name, List<MagicVisibilityMnmMnmConfigRouterIp>? Function()? routerIps, List<MagicVisibilityMnmMnmConfigWarpDevice>? Function()? warpDevices, }) { return MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest(
   defaultSampling: defaultSampling ?? this.defaultSampling,
   name: name ?? this.name,
   routerIps: routerIps != null ? routerIps() : this.routerIps,

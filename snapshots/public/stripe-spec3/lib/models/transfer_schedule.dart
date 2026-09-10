@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('delay_days') && json['delay_days'] is num &&
       json.containsKey('interval') && json['interval'] is String; } 
-TransferSchedule copyWith({int? delayDays, String? interval, int Function()? monthlyAnchor, List<int> Function()? monthlyPayoutDays, String Function()? weeklyAnchor, List<TransferScheduleWeeklyPayoutDays> Function()? weeklyPayoutDays, }) { return TransferSchedule(
+TransferSchedule copyWith({int? delayDays, String? interval, int? Function()? monthlyAnchor, List<int>? Function()? monthlyPayoutDays, String? Function()? weeklyAnchor, List<TransferScheduleWeeklyPayoutDays>? Function()? weeklyPayoutDays, }) { return TransferSchedule(
   delayDays: delayDays ?? this.delayDays,
   interval: interval ?? this.interval,
   monthlyAnchor: monthlyAnchor != null ? monthlyAnchor() : this.monthlyAnchor,

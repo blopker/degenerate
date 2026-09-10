@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TreasuryReceivedCreditsResourceSourceFlowsDetails copyWith({TreasuryCreditReversal Function()? creditReversal, TreasuryOutboundPayment Function()? outboundPayment, TreasuryOutboundTransfer Function()? outboundTransfer, Payout Function()? payout, TreasuryReceivedCreditsResourceSourceFlowsDetailsType? type, }) { return TreasuryReceivedCreditsResourceSourceFlowsDetails(
+TreasuryReceivedCreditsResourceSourceFlowsDetails copyWith({TreasuryCreditReversal? Function()? creditReversal, TreasuryOutboundPayment? Function()? outboundPayment, TreasuryOutboundTransfer? Function()? outboundTransfer, Payout? Function()? payout, TreasuryReceivedCreditsResourceSourceFlowsDetailsType? type, }) { return TreasuryReceivedCreditsResourceSourceFlowsDetails(
   creditReversal: creditReversal != null ? creditReversal() : this.creditReversal,
   outboundPayment: outboundPayment != null ? outboundPayment() : this.outboundPayment,
   outboundTransfer: outboundTransfer != null ? outboundTransfer() : this.outboundTransfer,

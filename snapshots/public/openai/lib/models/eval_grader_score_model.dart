@@ -69,7 +69,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('input'); } 
-EvalGraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, String? model, EvalGraderScoreModelSamplingParams Function()? samplingParams, List<EvalItem>? input, List<double> Function()? range, double Function()? passThreshold, }) { return EvalGraderScoreModel(
+EvalGraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, String? model, EvalGraderScoreModelSamplingParams? Function()? samplingParams, List<EvalItem>? input, List<double>? Function()? range, double? Function()? passThreshold, }) { return EvalGraderScoreModel(
   type: type ?? this.type,
   name: name ?? this.name,
   model: model ?? this.model,

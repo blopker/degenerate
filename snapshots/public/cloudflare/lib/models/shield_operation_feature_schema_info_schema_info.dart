@@ -28,12 +28,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction($value)'; } 
  }
-@immutable final class ShieldOperationFeatureSchemaInfoSchemaInfo {const ShieldOperationFeatureSchemaInfoSchemaInfo({this.activeSchema, this.learnedAvailable, this.mitigationAction, });
+@immutable final class ShieldOperationFeatureSchemaInfoSchemaInfo {const ShieldOperationFeatureSchemaInfoSchemaInfo({this.activeSchema, this.learnedAvailable, this.mitigationAction = const Omittable.absent(), });
 
 factory ShieldOperationFeatureSchemaInfoSchemaInfo.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureSchemaInfoSchemaInfo(
   activeSchema: json['active_schema'] != null ? ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema.fromJson(json['active_schema'] as Map<String, dynamic>) : null,
   learnedAvailable: json['learned_available'] as bool?,
-  mitigationAction: json['mitigation_action'] != null ? ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction.fromJson(json['mitigation_action'] as String) : null,
+  mitigationAction: json.containsKey('mitigation_action') ? Omittable(json['mitigation_action'] != null ? ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction.fromJson(json['mitigation_action'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Schema active on endpoint.
@@ -43,18 +43,18 @@ final ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema? activeSchema;
 final bool? learnedAvailable;
 
 /// Action taken on requests failing validation.
-final ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction? mitigationAction;
+final Omittable<ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction?> mitigationAction;
 
 Map<String, dynamic> toJson() { return {
   if (activeSchema != null) 'active_schema': activeSchema?.toJson(),
   'learned_available': ?learnedAvailable,
-  if (mitigationAction != null) 'mitigation_action': mitigationAction?.toJson(),
+  if (mitigationAction.isPresent) 'mitigation_action': mitigationAction.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active_schema', 'learned_available', 'mitigation_action'}.contains(key)); } 
-ShieldOperationFeatureSchemaInfoSchemaInfo copyWith({ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema Function()? activeSchema, bool Function()? learnedAvailable, ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction? Function()? mitigationAction, }) { return ShieldOperationFeatureSchemaInfoSchemaInfo(
+ShieldOperationFeatureSchemaInfoSchemaInfo copyWith({ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema? Function()? activeSchema, bool? Function()? learnedAvailable, Omittable<ShieldOperationFeatureSchemaInfoSchemaInfoMitigationAction?>? mitigationAction, }) { return ShieldOperationFeatureSchemaInfoSchemaInfo(
   activeSchema: activeSchema != null ? activeSchema() : this.activeSchema,
   learnedAvailable: learnedAvailable != null ? learnedAvailable() : this.learnedAvailable,
-  mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
+  mitigationAction: mitigationAction ?? this.mitigationAction,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ShieldOperationFeatureSchemaInfoSchemaInfo &&

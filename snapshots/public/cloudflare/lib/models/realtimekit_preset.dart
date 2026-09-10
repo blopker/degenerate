@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('ui'); } 
-RealtimekitPreset copyWith({RealtimekitPresetConfig? config, String? name, RealtimekitPresetPermissions Function()? permissions, RealtimekitPresetUi? ui, }) { return RealtimekitPreset(
+RealtimekitPreset copyWith({RealtimekitPresetConfig? config, String? name, RealtimekitPresetPermissions? Function()? permissions, RealtimekitPresetUi? ui, }) { return RealtimekitPreset(
   config: config ?? this.config,
   name: name ?? this.name,
   permissions: permissions != null ? permissions() : this.permissions,

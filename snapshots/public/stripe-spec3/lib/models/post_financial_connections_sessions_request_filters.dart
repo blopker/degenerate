@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'countries': ?countries,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_subcategories', 'countries'}.contains(key)); } 
-PostFinancialConnectionsSessionsRequestFilters copyWith({List<PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories> Function()? accountSubcategories, List<String> Function()? countries, }) { return PostFinancialConnectionsSessionsRequestFilters(
+PostFinancialConnectionsSessionsRequestFilters copyWith({List<PostFinancialConnectionsSessionsRequestFiltersAccountSubcategories>? Function()? accountSubcategories, List<String>? Function()? countries, }) { return PostFinancialConnectionsSessionsRequestFilters(
   accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
   countries: countries != null ? countries() : this.countries,
 ); } 

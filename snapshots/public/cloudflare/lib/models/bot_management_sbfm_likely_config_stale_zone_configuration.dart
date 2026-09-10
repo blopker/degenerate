@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (fightMode != null) 'fight_mode': fightMode?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fight_mode'}.contains(key)); } 
-BotManagementSbfmLikelyConfigStaleZoneConfiguration copyWith({BotManagementFightModeTurnedOn Function()? fightMode}) { return BotManagementSbfmLikelyConfigStaleZoneConfiguration(
+BotManagementSbfmLikelyConfigStaleZoneConfiguration copyWith({BotManagementFightModeTurnedOn? Function()? fightMode}) { return BotManagementSbfmLikelyConfigStaleZoneConfiguration(
   fightMode: fightMode != null ? fightMode() : this.fightMode,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

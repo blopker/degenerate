@@ -29,27 +29,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsKonbiniSetupFutureUsage($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodOptionsKonbini {const PaymentMethodOptionsKonbini({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsKonbini {const PaymentMethodOptionsKonbini({this.confirmationNumber = const Omittable.absent(), this.expiresAfterDays = const Omittable.absent(), this.expiresAt = const Omittable.absent(), this.productDescription = const Omittable.absent(), this.setupFutureUsage, });
 
 factory PaymentMethodOptionsKonbini.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsKonbini(
-  confirmationNumber: json['confirmation_number'] as String?,
-  expiresAfterDays: json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null,
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  productDescription: json['product_description'] as String?,
+  confirmationNumber: json.containsKey('confirmation_number') ? Omittable(json['confirmation_number'] as String?) : const Omittable.absent(),
+  expiresAfterDays: json.containsKey('expires_after_days') ? Omittable(json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null) : const Omittable.absent(),
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
+  productDescription: json.containsKey('product_description') ? Omittable(json['product_description'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsKonbiniSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 /// An optional 10 to 11 digit numeric-only string determining the confirmation code at applicable convenience stores.
-final String? confirmationNumber;
+final Omittable<String?> confirmationNumber;
 
 /// The number of calendar days (between 1 and 60) after which Konbini payment instructions will expire. For example, if a PaymentIntent is confirmed with Konbini and `expires_after_days` set to 2 on Monday JST, the instructions will expire on Wednesday 23:59:59 JST.
-final int? expiresAfterDays;
+final Omittable<int?> expiresAfterDays;
 
 /// The timestamp at which the Konbini payment instructions will expire. Only one of `expires_after_days` or `expires_at` may be set.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// A product descriptor of up to 22 characters, which will appear to customers at the convenience store.
-final String? productDescription;
+final Omittable<String?> productDescription;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -61,18 +61,18 @@ final String? productDescription;
 final PaymentMethodOptionsKonbiniSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
-  'confirmation_number': ?confirmationNumber,
-  'expires_after_days': ?expiresAfterDays,
-  'expires_at': ?expiresAt,
-  'product_description': ?productDescription,
+  if (confirmationNumber.isPresent) 'confirmation_number': confirmationNumber.value,
+  if (expiresAfterDays.isPresent) 'expires_after_days': expiresAfterDays.value,
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
+  if (productDescription.isPresent) 'product_description': productDescription.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'confirmation_number', 'expires_after_days', 'expires_at', 'product_description', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsKonbini copyWith({String? Function()? confirmationNumber, int? Function()? expiresAfterDays, int? Function()? expiresAt, String? Function()? productDescription, PaymentMethodOptionsKonbiniSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsKonbini(
-  confirmationNumber: confirmationNumber != null ? confirmationNumber() : this.confirmationNumber,
-  expiresAfterDays: expiresAfterDays != null ? expiresAfterDays() : this.expiresAfterDays,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
-  productDescription: productDescription != null ? productDescription() : this.productDescription,
+PaymentMethodOptionsKonbini copyWith({Omittable<String?>? confirmationNumber, Omittable<int?>? expiresAfterDays, Omittable<int?>? expiresAt, Omittable<String?>? productDescription, PaymentMethodOptionsKonbiniSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsKonbini(
+  confirmationNumber: confirmationNumber ?? this.confirmationNumber,
+  expiresAfterDays: expiresAfterDays ?? this.expiresAfterDays,
+  expiresAt: expiresAt ?? this.expiresAt,
+  productDescription: productDescription ?? this.productDescription,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

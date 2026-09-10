@@ -131,14 +131,14 @@ Map<String, dynamic> toJson() { return {
   'run_attempt': runAttempt,
   'run_id': runId,
   'run_url': runUrl,
-  'runner_group_id': ?runnerGroupId,
-  'runner_group_name': ?runnerGroupName,
-  'runner_id': ?runnerId,
-  'runner_name': ?runnerName,
+  'runner_group_id': runnerGroupId,
+  'runner_group_name': runnerGroupName,
+  'runner_id': runnerId,
+  'runner_name': runnerName,
   'started_at': startedAt,
   'status': status,
-  'head_branch': ?headBranch,
-  'workflow_name': ?workflowName,
+  'head_branch': headBranch,
+  'workflow_name': workflowName,
   'steps': steps.map((e) => e).toList(),
   'url': url,
 }; } 
@@ -155,14 +155,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('check
       json.containsKey('run_attempt') && json['run_attempt'] is num &&
       json.containsKey('run_id') && json['run_id'] is num &&
       json.containsKey('run_url') && json['run_url'] is String &&
-      json.containsKey('runner_group_id') && json['runner_group_id'] is num &&
-      json.containsKey('runner_group_name') && json['runner_group_name'] is String &&
-      json.containsKey('runner_id') && json['runner_id'] is num &&
-      json.containsKey('runner_name') && json['runner_name'] is String &&
+      json.containsKey('runner_group_id') && (json['runner_group_id'] == null || json['runner_group_id'] is num) &&
+      json.containsKey('runner_group_name') && (json['runner_group_name'] == null || json['runner_group_name'] is String) &&
+      json.containsKey('runner_id') && (json['runner_id'] == null || json['runner_id'] is num) &&
+      json.containsKey('runner_name') && (json['runner_name'] == null || json['runner_name'] is String) &&
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') && json['status'] is String &&
-      json.containsKey('head_branch') && json['head_branch'] is String &&
-      json.containsKey('workflow_name') && json['workflow_name'] is String &&
+      json.containsKey('head_branch') && (json['head_branch'] == null || json['head_branch'] is String) &&
+      json.containsKey('workflow_name') && (json['workflow_name'] == null || json['workflow_name'] is String) &&
       json.containsKey('steps') &&
       json.containsKey('url') && json['url'] is String; } 
 WebhookWorkflowJobCompletedWorkflowJob copyWith({String? checkRunUrl, String? completedAt, WebhookWorkflowJobCompletedWorkflowJobConclusion? conclusion, String? createdAt, String? headSha, String? htmlUrl, int? id, List<String?>? labels, String? name, String? nodeId, int? runAttempt, int? runId, String? runUrl, double? Function()? runnerGroupId, String? Function()? runnerGroupName, double? Function()? runnerId, String? Function()? runnerName, String? startedAt, String? status, String? Function()? headBranch, String? Function()? workflowName, List<Map<String,dynamic>?>? steps, String? url, }) { return WebhookWorkflowJobCompletedWorkflowJob(

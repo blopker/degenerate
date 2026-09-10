@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'uid': ?uid,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'name', 'uid'}.contains(key)); } 
-BoundObjectReference copyWith({String Function()? apiVersion, String Function()? kind, String Function()? name, String Function()? uid, }) { return BoundObjectReference(
+BoundObjectReference copyWith({String? Function()? apiVersion, String? Function()? kind, String? Function()? name, String? Function()? uid, }) { return BoundObjectReference(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,
   name: name != null ? name() : this.name,

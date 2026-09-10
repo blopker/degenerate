@@ -68,7 +68,7 @@ final RadarGetHttpTopLocationsByOperatingSystemResponseResultMetaNormalization n
 final List<RadarGetHttpTopLocationsByOperatingSystemResponseResultMetaUnits> units;
 
 Map<String, dynamic> toJson() { return {
-  if (confidenceInfo != null) 'confidenceInfo': confidenceInfo?.toJson(),
+  'confidenceInfo': confidenceInfo?.toJson(),
   'dateRange': dateRange.map((e) => e.toJson()).toList(),
   'lastUpdated': lastUpdated.toIso8601String(),
   'normalization': normalization.toJson(),

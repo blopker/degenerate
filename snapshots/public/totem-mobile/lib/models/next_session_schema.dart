@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 import 'meeting_provider_enum.dart';
 
 @immutable
@@ -68,7 +69,7 @@ final class NextSessionSchema {
       'slug': slug,
       'start': start.toIso8601String(),
       'link': link,
-      'title': ?title,
+      'title': title,
       'seats_left': seatsLeft,
       'duration': duration,
       'meeting_provider': meetingProvider.toJson(),
@@ -88,7 +89,7 @@ final class NextSessionSchema {
         json.containsKey('link') &&
         json['link'] is String &&
         json.containsKey('title') &&
-        json['title'] is String &&
+        (json['title'] == null || json['title'] is String) &&
         json.containsKey('seats_left') &&
         json['seats_left'] is num &&
         json.containsKey('duration') &&

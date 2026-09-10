@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'to': ?to,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from', 'from_script', 'to'}.contains(key)); } 
-WorkersMigrationStepTransferredClasses copyWith({String Function()? from, String Function()? fromScript, String Function()? to, }) { return WorkersMigrationStepTransferredClasses(
+WorkersMigrationStepTransferredClasses copyWith({String? Function()? from, String? Function()? fromScript, String? Function()? to, }) { return WorkersMigrationStepTransferredClasses(
   from: from != null ? from() : this.from,
   fromScript: fromScript != null ? fromScript() : this.fromScript,
   to: to != null ? to() : this.to,

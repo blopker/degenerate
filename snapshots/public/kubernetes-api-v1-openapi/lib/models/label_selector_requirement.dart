@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
       json.containsKey('operator') && json['operator'] is String; } 
-LabelSelectorRequirement copyWith({String? key, String? $operator, List<String> Function()? values, }) { return LabelSelectorRequirement(
+LabelSelectorRequirement copyWith({String? key, String? $operator, List<String>? Function()? values, }) { return LabelSelectorRequirement(
   key: key ?? this.key,
   $operator: $operator ?? this.$operator,
   values: values != null ? values() : this.values,

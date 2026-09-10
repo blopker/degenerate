@@ -112,7 +112,7 @@ Map<String, dynamic> toJson() { return {
   'reverse_transfer': ?reverseTransfer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'customer', 'expand', 'instructions_email', 'metadata', 'origin', 'payment_intent', 'reason', 'refund_application_fee', 'reverse_transfer'}.contains(key)); } 
-PostChargesChargeRefundsRequest copyWith({int Function()? amount, String Function()? currency, String Function()? customer, List<String> Function()? expand, String Function()? instructionsEmail, PostChargesChargeRefundsRequestMetadata Function()? metadata, PostChargesChargeRefundsRequestOrigin Function()? origin, String Function()? paymentIntent, PostChargesChargeRefundsRequestReason Function()? reason, bool Function()? refundApplicationFee, bool Function()? reverseTransfer, }) { return PostChargesChargeRefundsRequest(
+PostChargesChargeRefundsRequest copyWith({int? Function()? amount, String? Function()? currency, String? Function()? customer, List<String>? Function()? expand, String? Function()? instructionsEmail, PostChargesChargeRefundsRequestMetadata? Function()? metadata, PostChargesChargeRefundsRequestOrigin? Function()? origin, String? Function()? paymentIntent, PostChargesChargeRefundsRequestReason? Function()? reason, bool? Function()? refundApplicationFee, bool? Function()? reverseTransfer, }) { return PostChargesChargeRefundsRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   customer: customer != null ? customer() : this.customer,

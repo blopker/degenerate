@@ -47,13 +47,13 @@ final AccountType type;
 Map<String, dynamic> toJson() { return {
   'created_on': createdOn.toIso8601String(),
   'id': id,
-  'name': ?name,
+  'name': name,
   'settings': settings.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
       json.containsKey('settings') &&
       json.containsKey('type'); } 
 Account copyWith({DateTime? createdOn, String? id, String? Function()? name, AccountSettings? settings, AccountType? type, }) { return Account(

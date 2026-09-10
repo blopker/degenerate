@@ -23,17 +23,17 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedCardObject($value)'; } 
  }
 /// 
-@immutable final class DeletedCard {const DeletedCard({required this.deleted, required this.id, required this.object, this.currency, });
+@immutable final class DeletedCard {const DeletedCard({required this.deleted, required this.id, required this.object, this.currency = const Omittable.absent(), });
 
 factory DeletedCard.fromJson(Map<String, dynamic> json) { return DeletedCard(
-  currency: json['currency'] as String?,
+  currency: json.containsKey('currency') ? Omittable(json['currency'] as String?) : const Omittable.absent(),
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
   object: DeletedCardObject.fromJson(json['object'] as String),
 ); }
 
 /// Three-letter [ISO code for the currency](https://stripe.com/docs/payouts) paid out to the bank account.
-final String? currency;
+final Omittable<String?> currency;
 
 /// Always true for a deleted object
 final bool deleted;
@@ -45,7 +45,7 @@ final String id;
 final DeletedCardObject object;
 
 Map<String, dynamic> toJson() { return {
-  'currency': ?currency,
+  if (currency.isPresent) 'currency': currency.value,
   'deleted': deleted,
   'id': id,
   'object': object.toJson(),
@@ -53,8 +53,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-DeletedCard copyWith({String? Function()? currency, bool? deleted, String? id, DeletedCardObject? object, }) { return DeletedCard(
-  currency: currency != null ? currency() : this.currency,
+DeletedCard copyWith({Omittable<String?>? currency, bool? deleted, String? id, DeletedCardObject? object, }) { return DeletedCard(
+  currency: currency ?? this.currency,
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
   object: object ?? this.object,

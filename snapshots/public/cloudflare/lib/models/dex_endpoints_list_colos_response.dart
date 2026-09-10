@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-DexEndpointsListColosResponse copyWith({List<DigitalExperienceMonitoringMessages2>? errors, List<DigitalExperienceMonitoringMessages2>? messages, bool? success, List<DigitalExperienceMonitoringColosResponse2> Function()? result, }) { return DexEndpointsListColosResponse(
+DexEndpointsListColosResponse copyWith({List<DigitalExperienceMonitoringMessages2>? errors, List<DigitalExperienceMonitoringMessages2>? messages, bool? success, List<DigitalExperienceMonitoringColosResponse2>? Function()? result, }) { return DexEndpointsListColosResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

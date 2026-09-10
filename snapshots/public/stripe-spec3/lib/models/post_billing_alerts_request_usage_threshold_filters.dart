@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostBillingAlertsRequestUsageThresholdFilters copyWith({String Function()? customer, PostBillingAlertsRequestUsageThresholdFiltersType? type, }) { return PostBillingAlertsRequestUsageThresholdFilters(
+PostBillingAlertsRequestUsageThresholdFilters copyWith({String? Function()? customer, PostBillingAlertsRequestUsageThresholdFiltersType? type, }) { return PostBillingAlertsRequestUsageThresholdFilters(
   customer: customer != null ? customer() : this.customer,
   type: type ?? this.type,
 ); } 

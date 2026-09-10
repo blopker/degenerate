@@ -133,15 +133,15 @@ bool get isUnknown { return !values.contains(this); }
 /// This newer API provides access to our latest features and payment method types.
 /// 
 /// Related guides: [Sources API](https://docs.stripe.com/sources) and [Sources & Customers](https://docs.stripe.com/sources/customers).
-@immutable final class Source {const Source({required this.id, required this.created, required this.status, required this.livemode, required this.object, required this.flow, required this.type, required this.clientSecret, this.card, this.cardPresent, this.bancontact, this.codeVerification, this.achCreditTransfer, this.currency, this.customer, this.eps, this.amount, this.giropay, this.allowRedisplay, this.ideal, this.klarna, this.alipay, this.metadata, this.multibanco, this.wechat, this.owner, this.p24, this.receiver, this.redirect, this.sepaDebit, this.sofort, this.sourceOrder, this.statementDescriptor, this.acssDebit, this.threeDSecure, this.achDebit, this.usage, this.auBecsDebit, });
+@immutable final class Source {const Source({required this.id, required this.created, required this.status, required this.livemode, required this.object, required this.flow, required this.type, required this.clientSecret, this.card, this.cardPresent, this.bancontact, this.codeVerification, this.achCreditTransfer, this.currency = const Omittable.absent(), this.customer, this.eps, this.amount = const Omittable.absent(), this.giropay, this.allowRedisplay = const Omittable.absent(), this.ideal, this.klarna, this.alipay, this.metadata = const Omittable.absent(), this.multibanco, this.wechat, this.owner = const Omittable.absent(), this.p24, this.receiver, this.redirect, this.sepaDebit, this.sofort, this.sourceOrder, this.statementDescriptor = const Omittable.absent(), this.acssDebit, this.threeDSecure, this.achDebit, this.usage = const Omittable.absent(), this.auBecsDebit, });
 
 factory Source.fromJson(Map<String, dynamic> json) { return Source(
   achCreditTransfer: json['ach_credit_transfer'] != null ? SourceTypeAchCreditTransfer.fromJson(json['ach_credit_transfer'] as Map<String, dynamic>) : null,
   achDebit: json['ach_debit'] != null ? SourceTypeAchDebit.fromJson(json['ach_debit'] as Map<String, dynamic>) : null,
   acssDebit: json['acss_debit'] != null ? SourceTypeAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
   alipay: json['alipay'] != null ? SourceTypeAlipay.fromJson(json['alipay'] as Map<String, dynamic>) : null,
-  allowRedisplay: json['allow_redisplay'] != null ? SourceAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
-  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  allowRedisplay: json.containsKey('allow_redisplay') ? Omittable(json['allow_redisplay'] != null ? SourceAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null) : const Omittable.absent(),
+  amount: json.containsKey('amount') ? Omittable(json['amount'] != null ? (json['amount'] as num).toInt() : null) : const Omittable.absent(),
   auBecsDebit: json['au_becs_debit'] != null ? SourceTypeAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
   bancontact: json['bancontact'] != null ? SourceTypeBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
   card: json['card'] != null ? SourceTypeCard.fromJson(json['card'] as Map<String, dynamic>) : null,
@@ -149,7 +149,7 @@ factory Source.fromJson(Map<String, dynamic> json) { return Source(
   clientSecret: json['client_secret'] as String,
   codeVerification: json['code_verification'] != null ? SourceCodeVerificationFlow.fromJson(json['code_verification'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
-  currency: json['currency'] as String?,
+  currency: json.containsKey('currency') ? Omittable(json['currency'] as String?) : const Omittable.absent(),
   customer: json['customer'] as String?,
   eps: json['eps'] != null ? SourceTypeEps.fromJson(json['eps'] as Map<String, dynamic>) : null,
   flow: json['flow'] as String,
@@ -158,21 +158,21 @@ factory Source.fromJson(Map<String, dynamic> json) { return Source(
   ideal: json['ideal'] != null ? SourceTypeIdeal.fromJson(json['ideal'] as Map<String, dynamic>) : null,
   klarna: json['klarna'] != null ? SourceTypeKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   multibanco: json['multibanco'] != null ? SourceTypeMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
   object: SourceObject.fromJson(json['object'] as String),
-  owner: json['owner'] != null ? SourceOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  owner: json.containsKey('owner') ? Omittable(json['owner'] != null ? SourceOwner.fromJson(json['owner'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   p24: json['p24'] != null ? SourceTypeP24.fromJson(json['p24'] as Map<String, dynamic>) : null,
   receiver: json['receiver'] != null ? SourceReceiverFlow.fromJson(json['receiver'] as Map<String, dynamic>) : null,
   redirect: json['redirect'] != null ? SourceRedirectFlow.fromJson(json['redirect'] as Map<String, dynamic>) : null,
   sepaDebit: json['sepa_debit'] != null ? SourceTypeSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
   sofort: json['sofort'] != null ? SourceTypeSofort.fromJson(json['sofort'] as Map<String, dynamic>) : null,
   sourceOrder: json['source_order'] != null ? SourceOrder.fromJson(json['source_order'] as Map<String, dynamic>) : null,
-  statementDescriptor: json['statement_descriptor'] as String?,
+  statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
   status: json['status'] as String,
   threeDSecure: json['three_d_secure'] != null ? SourceTypeThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
   type: SourceType.fromJson(json['type'] as String),
-  usage: json['usage'] as String?,
+  usage: json.containsKey('usage') ? Omittable(json['usage'] as String?) : const Omittable.absent(),
   wechat: json['wechat'] != null ? SourceTypeWechat.fromJson(json['wechat'] as Map<String, dynamic>) : null,
 ); }
 
@@ -185,10 +185,10 @@ final SourceTypeAcssDebit? acssDebit;
 final SourceTypeAlipay? alipay;
 
 /// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
-final SourceAllowRedisplay? allowRedisplay;
+final Omittable<SourceAllowRedisplay?> allowRedisplay;
 
 /// A positive integer in the smallest currency unit (that is, 100 cents for $1.00, or 1 for ¥1, Japanese Yen being a zero-decimal currency) representing the total amount associated with the source. This is the amount for which the source will be chargeable once ready. Required for `single_use` sources.
-final int? amount;
+final Omittable<int?> amount;
 
 final SourceTypeAuBecsDebit? auBecsDebit;
 
@@ -207,7 +207,7 @@ final SourceCodeVerificationFlow? codeVerification;
 final int created;
 
 /// Three-letter [ISO code for the currency](https://stripe.com/docs/currencies) associated with the source. This is the currency for which the source will be chargeable once ready. Required for `single_use` sources.
-final String? currency;
+final Omittable<String?> currency;
 
 /// The ID of the customer to which this source is attached. This will not be present when the source has not been attached to a customer.
 final String? customer;
@@ -230,7 +230,7 @@ final SourceTypeKlarna? klarna;
 final bool livemode;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 final SourceTypeMultibanco? multibanco;
 
@@ -238,7 +238,7 @@ final SourceTypeMultibanco? multibanco;
 final SourceObject object;
 
 /// Information about the owner of the payment instrument that may be used or required by particular source types.
-final SourceOwner? owner;
+final Omittable<SourceOwner?> owner;
 
 final SourceTypeP24? p24;
 
@@ -253,7 +253,7 @@ final SourceTypeSofort? sofort;
 final SourceOrder? sourceOrder;
 
 /// Extra information about a source. This will appear on your customer's statement every time you charge the source.
-final String? statementDescriptor;
+final Omittable<String?> statementDescriptor;
 
 /// The status of the source, one of `canceled`, `chargeable`, `consumed`, `failed`, or `pending`. Only `chargeable` sources can be used to create a charge.
 final String status;
@@ -264,7 +264,7 @@ final SourceTypeThreeDSecure? threeDSecure;
 final SourceType type;
 
 /// Either `reusable` or `single_use`. Whether this source should be reusable or not. Some source types may or may not be reusable by construction, while others may leave the option at creation. If an incompatible value is passed, an error will be returned.
-final String? usage;
+final Omittable<String?> usage;
 
 final SourceTypeWechat? wechat;
 
@@ -273,8 +273,8 @@ Map<String, dynamic> toJson() { return {
   if (achDebit != null) 'ach_debit': achDebit?.toJson(),
   if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
   if (alipay != null) 'alipay': alipay?.toJson(),
-  if (allowRedisplay != null) 'allow_redisplay': allowRedisplay?.toJson(),
-  'amount': ?amount,
+  if (allowRedisplay.isPresent) 'allow_redisplay': allowRedisplay.value?.toJson(),
+  if (amount.isPresent) 'amount': amount.value,
   if (auBecsDebit != null) 'au_becs_debit': auBecsDebit?.toJson(),
   if (bancontact != null) 'bancontact': bancontact?.toJson(),
   if (card != null) 'card': card?.toJson(),
@@ -282,7 +282,7 @@ Map<String, dynamic> toJson() { return {
   'client_secret': clientSecret,
   if (codeVerification != null) 'code_verification': codeVerification?.toJson(),
   'created': created,
-  'currency': ?currency,
+  if (currency.isPresent) 'currency': currency.value,
   'customer': ?customer,
   if (eps != null) 'eps': eps?.toJson(),
   'flow': flow,
@@ -291,21 +291,21 @@ Map<String, dynamic> toJson() { return {
   if (ideal != null) 'ideal': ideal?.toJson(),
   if (klarna != null) 'klarna': klarna?.toJson(),
   'livemode': livemode,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   if (multibanco != null) 'multibanco': multibanco?.toJson(),
   'object': object.toJson(),
-  if (owner != null) 'owner': owner?.toJson(),
+  if (owner.isPresent) 'owner': owner.value?.toJson(),
   if (p24 != null) 'p24': p24?.toJson(),
   if (receiver != null) 'receiver': receiver?.toJson(),
   if (redirect != null) 'redirect': redirect?.toJson(),
   if (sepaDebit != null) 'sepa_debit': sepaDebit?.toJson(),
   if (sofort != null) 'sofort': sofort?.toJson(),
   if (sourceOrder != null) 'source_order': sourceOrder?.toJson(),
-  'statement_descriptor': ?statementDescriptor,
+  if (statementDescriptor.isPresent) 'statement_descriptor': statementDescriptor.value,
   'status': status,
   if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
   'type': type.toJson(),
-  'usage': ?usage,
+  if (usage.isPresent) 'usage': usage.value,
   if (wechat != null) 'wechat': wechat?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret') && json['client_secret'] is String &&
@@ -316,13 +316,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('object') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type'); } 
-Source copyWith({SourceTypeAchCreditTransfer Function()? achCreditTransfer, SourceTypeAchDebit Function()? achDebit, SourceTypeAcssDebit Function()? acssDebit, SourceTypeAlipay Function()? alipay, SourceAllowRedisplay? Function()? allowRedisplay, int? Function()? amount, SourceTypeAuBecsDebit Function()? auBecsDebit, SourceTypeBancontact Function()? bancontact, SourceTypeCard Function()? card, SourceTypeCardPresent Function()? cardPresent, String? clientSecret, SourceCodeVerificationFlow Function()? codeVerification, int? created, String? Function()? currency, String Function()? customer, SourceTypeEps Function()? eps, String? flow, SourceTypeGiropay Function()? giropay, String? id, SourceTypeIdeal Function()? ideal, SourceTypeKlarna Function()? klarna, bool? livemode, Map<String, String>? Function()? metadata, SourceTypeMultibanco Function()? multibanco, SourceObject? object, SourceOwner? Function()? owner, SourceTypeP24 Function()? p24, SourceReceiverFlow Function()? receiver, SourceRedirectFlow Function()? redirect, SourceTypeSepaDebit Function()? sepaDebit, SourceTypeSofort Function()? sofort, SourceOrder Function()? sourceOrder, String? Function()? statementDescriptor, String? status, SourceTypeThreeDSecure Function()? threeDSecure, SourceType? type, String? Function()? usage, SourceTypeWechat Function()? wechat, }) { return Source(
+Source copyWith({SourceTypeAchCreditTransfer? Function()? achCreditTransfer, SourceTypeAchDebit? Function()? achDebit, SourceTypeAcssDebit? Function()? acssDebit, SourceTypeAlipay? Function()? alipay, Omittable<SourceAllowRedisplay?>? allowRedisplay, Omittable<int?>? amount, SourceTypeAuBecsDebit? Function()? auBecsDebit, SourceTypeBancontact? Function()? bancontact, SourceTypeCard? Function()? card, SourceTypeCardPresent? Function()? cardPresent, String? clientSecret, SourceCodeVerificationFlow? Function()? codeVerification, int? created, Omittable<String?>? currency, String? Function()? customer, SourceTypeEps? Function()? eps, String? flow, SourceTypeGiropay? Function()? giropay, String? id, SourceTypeIdeal? Function()? ideal, SourceTypeKlarna? Function()? klarna, bool? livemode, Omittable<Map<String,String>?>? metadata, SourceTypeMultibanco? Function()? multibanco, SourceObject? object, Omittable<SourceOwner?>? owner, SourceTypeP24? Function()? p24, SourceReceiverFlow? Function()? receiver, SourceRedirectFlow? Function()? redirect, SourceTypeSepaDebit? Function()? sepaDebit, SourceTypeSofort? Function()? sofort, SourceOrder? Function()? sourceOrder, Omittable<String?>? statementDescriptor, String? status, SourceTypeThreeDSecure? Function()? threeDSecure, SourceType? type, Omittable<String?>? usage, SourceTypeWechat? Function()? wechat, }) { return Source(
   achCreditTransfer: achCreditTransfer != null ? achCreditTransfer() : this.achCreditTransfer,
   achDebit: achDebit != null ? achDebit() : this.achDebit,
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
   alipay: alipay != null ? alipay() : this.alipay,
-  allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
-  amount: amount != null ? amount() : this.amount,
+  allowRedisplay: allowRedisplay ?? this.allowRedisplay,
+  amount: amount ?? this.amount,
   auBecsDebit: auBecsDebit != null ? auBecsDebit() : this.auBecsDebit,
   bancontact: bancontact != null ? bancontact() : this.bancontact,
   card: card != null ? card() : this.card,
@@ -330,7 +330,7 @@ Source copyWith({SourceTypeAchCreditTransfer Function()? achCreditTransfer, Sour
   clientSecret: clientSecret ?? this.clientSecret,
   codeVerification: codeVerification != null ? codeVerification() : this.codeVerification,
   created: created ?? this.created,
-  currency: currency != null ? currency() : this.currency,
+  currency: currency ?? this.currency,
   customer: customer != null ? customer() : this.customer,
   eps: eps != null ? eps() : this.eps,
   flow: flow ?? this.flow,
@@ -339,21 +339,21 @@ Source copyWith({SourceTypeAchCreditTransfer Function()? achCreditTransfer, Sour
   ideal: ideal != null ? ideal() : this.ideal,
   klarna: klarna != null ? klarna() : this.klarna,
   livemode: livemode ?? this.livemode,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   multibanco: multibanco != null ? multibanco() : this.multibanco,
   object: object ?? this.object,
-  owner: owner != null ? owner() : this.owner,
+  owner: owner ?? this.owner,
   p24: p24 != null ? p24() : this.p24,
   receiver: receiver != null ? receiver() : this.receiver,
   redirect: redirect != null ? redirect() : this.redirect,
   sepaDebit: sepaDebit != null ? sepaDebit() : this.sepaDebit,
   sofort: sofort != null ? sofort() : this.sofort,
   sourceOrder: sourceOrder != null ? sourceOrder() : this.sourceOrder,
-  statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
+  statementDescriptor: statementDescriptor ?? this.statementDescriptor,
   status: status ?? this.status,
   threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
   type: type ?? this.type,
-  usage: usage != null ? usage() : this.usage,
+  usage: usage ?? this.usage,
   wechat: wechat != null ? wechat() : this.wechat,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

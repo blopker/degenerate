@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'worker_domain': ?workerDomain,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_from_aisearch_wizard', 'worker_domain'}.contains(key)); } 
-AiSearchUpdateInstancesResponseResultMetadata copyWith({bool Function()? createdFromAisearchWizard, String Function()? workerDomain, }) { return AiSearchUpdateInstancesResponseResultMetadata(
+AiSearchUpdateInstancesResponseResultMetadata copyWith({bool? Function()? createdFromAisearchWizard, String? Function()? workerDomain, }) { return AiSearchUpdateInstancesResponseResultMetadata(
   createdFromAisearchWizard: createdFromAisearchWizard != null ? createdFromAisearchWizard() : this.createdFromAisearchWizard,
   workerDomain: workerDomain != null ? workerDomain() : this.workerDomain,
 ); } 

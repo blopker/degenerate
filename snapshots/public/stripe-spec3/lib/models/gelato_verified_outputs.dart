@@ -60,81 +60,81 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoVerifiedOutputsSex($value)'; } 
  }
 /// 
-@immutable final class GelatoVerifiedOutputs {const GelatoVerifiedOutputs({this.address, this.dob, this.email, this.firstName, this.idNumber, this.idNumberType, this.lastName, this.phone, this.sex, this.unparsedPlaceOfBirth, this.unparsedSex, });
+@immutable final class GelatoVerifiedOutputs {const GelatoVerifiedOutputs({this.address = const Omittable.absent(), this.dob = const Omittable.absent(), this.email = const Omittable.absent(), this.firstName = const Omittable.absent(), this.idNumber = const Omittable.absent(), this.idNumberType = const Omittable.absent(), this.lastName = const Omittable.absent(), this.phone = const Omittable.absent(), this.sex = const Omittable.absent(), this.unparsedPlaceOfBirth = const Omittable.absent(), this.unparsedSex = const Omittable.absent(), });
 
 factory GelatoVerifiedOutputs.fromJson(Map<String, dynamic> json) { return GelatoVerifiedOutputs(
-  address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
-  dob: json['dob'] != null ? GelatoDataVerifiedOutputsDate.fromJson(json['dob'] as Map<String, dynamic>) : null,
-  email: json['email'] as String?,
-  firstName: json['first_name'] as String?,
-  idNumber: json['id_number'] as String?,
-  idNumberType: json['id_number_type'] != null ? GelatoVerifiedOutputsIdNumberType.fromJson(json['id_number_type'] as String) : null,
-  lastName: json['last_name'] as String?,
-  phone: json['phone'] as String?,
-  sex: json['sex'] != null ? GelatoVerifiedOutputsSex.fromJson(json['sex'] as String) : null,
-  unparsedPlaceOfBirth: json['unparsed_place_of_birth'] as String?,
-  unparsedSex: json['unparsed_sex'] as String?,
+  address: json.containsKey('address') ? Omittable(json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  dob: json.containsKey('dob') ? Omittable(json['dob'] != null ? GelatoDataVerifiedOutputsDate.fromJson(json['dob'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
+  firstName: json.containsKey('first_name') ? Omittable(json['first_name'] as String?) : const Omittable.absent(),
+  idNumber: json.containsKey('id_number') ? Omittable(json['id_number'] as String?) : const Omittable.absent(),
+  idNumberType: json.containsKey('id_number_type') ? Omittable(json['id_number_type'] != null ? GelatoVerifiedOutputsIdNumberType.fromJson(json['id_number_type'] as String) : null) : const Omittable.absent(),
+  lastName: json.containsKey('last_name') ? Omittable(json['last_name'] as String?) : const Omittable.absent(),
+  phone: json.containsKey('phone') ? Omittable(json['phone'] as String?) : const Omittable.absent(),
+  sex: json.containsKey('sex') ? Omittable(json['sex'] != null ? GelatoVerifiedOutputsSex.fromJson(json['sex'] as String) : null) : const Omittable.absent(),
+  unparsedPlaceOfBirth: json.containsKey('unparsed_place_of_birth') ? Omittable(json['unparsed_place_of_birth'] as String?) : const Omittable.absent(),
+  unparsedSex: json.containsKey('unparsed_sex') ? Omittable(json['unparsed_sex'] as String?) : const Omittable.absent(),
 ); }
 
 /// The user's verified address.
-final Address? address;
+final Omittable<Address?> address;
 
 /// The user’s verified date of birth.
-final GelatoDataVerifiedOutputsDate? dob;
+final Omittable<GelatoDataVerifiedOutputsDate?> dob;
 
 /// The user's verified email address
-final String? email;
+final Omittable<String?> email;
 
 /// The user's verified first name.
-final String? firstName;
+final Omittable<String?> firstName;
 
 /// The user's verified id number.
-final String? idNumber;
+final Omittable<String?> idNumber;
 
 /// The user's verified id number type.
-final GelatoVerifiedOutputsIdNumberType? idNumberType;
+final Omittable<GelatoVerifiedOutputsIdNumberType?> idNumberType;
 
 /// The user's verified last name.
-final String? lastName;
+final Omittable<String?> lastName;
 
 /// The user's verified phone number
-final String? phone;
+final Omittable<String?> phone;
 
 /// The user's verified sex.
-final GelatoVerifiedOutputsSex? sex;
+final Omittable<GelatoVerifiedOutputsSex?> sex;
 
 /// The user's verified place of birth as it appears in the document.
-final String? unparsedPlaceOfBirth;
+final Omittable<String?> unparsedPlaceOfBirth;
 
 /// The user's verified sex as it appears in the document.
-final String? unparsedSex;
+final Omittable<String?> unparsedSex;
 
 Map<String, dynamic> toJson() { return {
-  if (address != null) 'address': address?.toJson(),
-  if (dob != null) 'dob': dob?.toJson(),
-  'email': ?email,
-  'first_name': ?firstName,
-  'id_number': ?idNumber,
-  if (idNumberType != null) 'id_number_type': idNumberType?.toJson(),
-  'last_name': ?lastName,
-  'phone': ?phone,
-  if (sex != null) 'sex': sex?.toJson(),
-  'unparsed_place_of_birth': ?unparsedPlaceOfBirth,
-  'unparsed_sex': ?unparsedSex,
+  if (address.isPresent) 'address': address.value?.toJson(),
+  if (dob.isPresent) 'dob': dob.value?.toJson(),
+  if (email.isPresent) 'email': email.value,
+  if (firstName.isPresent) 'first_name': firstName.value,
+  if (idNumber.isPresent) 'id_number': idNumber.value,
+  if (idNumberType.isPresent) 'id_number_type': idNumberType.value?.toJson(),
+  if (lastName.isPresent) 'last_name': lastName.value,
+  if (phone.isPresent) 'phone': phone.value,
+  if (sex.isPresent) 'sex': sex.value?.toJson(),
+  if (unparsedPlaceOfBirth.isPresent) 'unparsed_place_of_birth': unparsedPlaceOfBirth.value,
+  if (unparsedSex.isPresent) 'unparsed_sex': unparsedSex.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'dob', 'email', 'first_name', 'id_number', 'id_number_type', 'last_name', 'phone', 'sex', 'unparsed_place_of_birth', 'unparsed_sex'}.contains(key)); } 
-GelatoVerifiedOutputs copyWith({Address? Function()? address, GelatoDataVerifiedOutputsDate? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? idNumber, GelatoVerifiedOutputsIdNumberType? Function()? idNumberType, String? Function()? lastName, String? Function()? phone, GelatoVerifiedOutputsSex? Function()? sex, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoVerifiedOutputs(
-  address: address != null ? address() : this.address,
-  dob: dob != null ? dob() : this.dob,
-  email: email != null ? email() : this.email,
-  firstName: firstName != null ? firstName() : this.firstName,
-  idNumber: idNumber != null ? idNumber() : this.idNumber,
-  idNumberType: idNumberType != null ? idNumberType() : this.idNumberType,
-  lastName: lastName != null ? lastName() : this.lastName,
-  phone: phone != null ? phone() : this.phone,
-  sex: sex != null ? sex() : this.sex,
-  unparsedPlaceOfBirth: unparsedPlaceOfBirth != null ? unparsedPlaceOfBirth() : this.unparsedPlaceOfBirth,
-  unparsedSex: unparsedSex != null ? unparsedSex() : this.unparsedSex,
+GelatoVerifiedOutputs copyWith({Omittable<Address?>? address, Omittable<GelatoDataVerifiedOutputsDate?>? dob, Omittable<String?>? email, Omittable<String?>? firstName, Omittable<String?>? idNumber, Omittable<GelatoVerifiedOutputsIdNumberType?>? idNumberType, Omittable<String?>? lastName, Omittable<String?>? phone, Omittable<GelatoVerifiedOutputsSex?>? sex, Omittable<String?>? unparsedPlaceOfBirth, Omittable<String?>? unparsedSex, }) { return GelatoVerifiedOutputs(
+  address: address ?? this.address,
+  dob: dob ?? this.dob,
+  email: email ?? this.email,
+  firstName: firstName ?? this.firstName,
+  idNumber: idNumber ?? this.idNumber,
+  idNumberType: idNumberType ?? this.idNumberType,
+  lastName: lastName ?? this.lastName,
+  phone: phone ?? this.phone,
+  sex: sex ?? this.sex,
+  unparsedPlaceOfBirth: unparsedPlaceOfBirth ?? this.unparsedPlaceOfBirth,
+  unparsedSex: unparsedSex ?? this.unparsedSex,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is GelatoVerifiedOutputs &&

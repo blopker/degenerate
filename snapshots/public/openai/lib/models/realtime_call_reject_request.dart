@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
   'status_code': ?statusCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status_code'}.contains(key)); } 
-RealtimeCallRejectRequest copyWith({int Function()? statusCode}) { return RealtimeCallRejectRequest(
+RealtimeCallRejectRequest copyWith({int? Function()? statusCode}) { return RealtimeCallRejectRequest(
   statusCode: statusCode != null ? statusCode() : this.statusCode,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

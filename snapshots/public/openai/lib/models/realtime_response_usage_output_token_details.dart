@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'audio_tokens': ?audioTokens,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'text_tokens', 'audio_tokens'}.contains(key)); } 
-RealtimeResponseUsageOutputTokenDetails copyWith({int Function()? textTokens, int Function()? audioTokens, }) { return RealtimeResponseUsageOutputTokenDetails(
+RealtimeResponseUsageOutputTokenDetails copyWith({int? Function()? textTokens, int? Function()? audioTokens, }) { return RealtimeResponseUsageOutputTokenDetails(
   textTokens: textTokens != null ? textTokens() : this.textTokens,
   audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
 ); } 

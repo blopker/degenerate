@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('csr') &&
       json.containsKey('hostnames') &&
       json.containsKey('request_type'); } 
-OriginCaCreateCertificateRequest copyWith({TlsCertificatesAndHostnamesCsr? csr, List<String>? hostnames, TlsCertificatesAndHostnamesRequestType? requestType, TlsCertificatesAndHostnamesRequestedValidity Function()? requestedValidity, }) { return OriginCaCreateCertificateRequest(
+OriginCaCreateCertificateRequest copyWith({TlsCertificatesAndHostnamesCsr? csr, List<String>? hostnames, TlsCertificatesAndHostnamesRequestType? requestType, TlsCertificatesAndHostnamesRequestedValidity? Function()? requestedValidity, }) { return OriginCaCreateCertificateRequest(
   csr: csr ?? this.csr,
   hostnames: hostnames ?? this.hostnames,
   requestType: requestType ?? this.requestType,

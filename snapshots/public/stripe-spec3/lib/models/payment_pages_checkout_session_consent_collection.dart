@@ -53,35 +53,35 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentPagesCheckoutSessionConsentCollectionTermsOfService($value)'; } 
  }
 /// 
-@immutable final class PaymentPagesCheckoutSessionConsentCollection {const PaymentPagesCheckoutSessionConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
+@immutable final class PaymentPagesCheckoutSessionConsentCollection {const PaymentPagesCheckoutSessionConsentCollection({this.paymentMethodReuseAgreement = const Omittable.absent(), this.promotions = const Omittable.absent(), this.termsOfService = const Omittable.absent(), });
 
 factory PaymentPagesCheckoutSessionConsentCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionConsentCollection(
-  paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PaymentPagesCheckoutSessionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,
-  promotions: json['promotions'] != null ? PaymentPagesCheckoutSessionConsentCollectionPromotions.fromJson(json['promotions'] as String) : null,
-  termsOfService: json['terms_of_service'] != null ? PaymentPagesCheckoutSessionConsentCollectionTermsOfService.fromJson(json['terms_of_service'] as String) : null,
+  paymentMethodReuseAgreement: json.containsKey('payment_method_reuse_agreement') ? Omittable(json['payment_method_reuse_agreement'] != null ? PaymentPagesCheckoutSessionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  promotions: json.containsKey('promotions') ? Omittable(json['promotions'] != null ? PaymentPagesCheckoutSessionConsentCollectionPromotions.fromJson(json['promotions'] as String) : null) : const Omittable.absent(),
+  termsOfService: json.containsKey('terms_of_service') ? Omittable(json['terms_of_service'] != null ? PaymentPagesCheckoutSessionConsentCollectionTermsOfService.fromJson(json['terms_of_service'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// If set to `hidden`, it will hide legal text related to the reuse of a payment method.
-final PaymentPagesCheckoutSessionPaymentMethodReuseAgreement? paymentMethodReuseAgreement;
+final Omittable<PaymentPagesCheckoutSessionPaymentMethodReuseAgreement?> paymentMethodReuseAgreement;
 
 /// If set to `auto`, enables the collection of customer consent for promotional communications. The Checkout
 /// Session will determine whether to display an option to opt into promotional communication
 /// from the merchant depending on the customer's locale. Only available to US merchants.
-final PaymentPagesCheckoutSessionConsentCollectionPromotions? promotions;
+final Omittable<PaymentPagesCheckoutSessionConsentCollectionPromotions?> promotions;
 
 /// If set to `required`, it requires customers to accept the terms of service before being able to pay.
-final PaymentPagesCheckoutSessionConsentCollectionTermsOfService? termsOfService;
+final Omittable<PaymentPagesCheckoutSessionConsentCollectionTermsOfService?> termsOfService;
 
 Map<String, dynamic> toJson() { return {
-  if (paymentMethodReuseAgreement != null) 'payment_method_reuse_agreement': paymentMethodReuseAgreement?.toJson(),
-  if (promotions != null) 'promotions': promotions?.toJson(),
-  if (termsOfService != null) 'terms_of_service': termsOfService?.toJson(),
+  if (paymentMethodReuseAgreement.isPresent) 'payment_method_reuse_agreement': paymentMethodReuseAgreement.value?.toJson(),
+  if (promotions.isPresent) 'promotions': promotions.value?.toJson(),
+  if (termsOfService.isPresent) 'terms_of_service': termsOfService.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_reuse_agreement', 'promotions', 'terms_of_service'}.contains(key)); } 
-PaymentPagesCheckoutSessionConsentCollection copyWith({PaymentPagesCheckoutSessionPaymentMethodReuseAgreement? Function()? paymentMethodReuseAgreement, PaymentPagesCheckoutSessionConsentCollectionPromotions? Function()? promotions, PaymentPagesCheckoutSessionConsentCollectionTermsOfService? Function()? termsOfService, }) { return PaymentPagesCheckoutSessionConsentCollection(
-  paymentMethodReuseAgreement: paymentMethodReuseAgreement != null ? paymentMethodReuseAgreement() : this.paymentMethodReuseAgreement,
-  promotions: promotions != null ? promotions() : this.promotions,
-  termsOfService: termsOfService != null ? termsOfService() : this.termsOfService,
+PaymentPagesCheckoutSessionConsentCollection copyWith({Omittable<PaymentPagesCheckoutSessionPaymentMethodReuseAgreement?>? paymentMethodReuseAgreement, Omittable<PaymentPagesCheckoutSessionConsentCollectionPromotions?>? promotions, Omittable<PaymentPagesCheckoutSessionConsentCollectionTermsOfService?>? termsOfService, }) { return PaymentPagesCheckoutSessionConsentCollection(
+  paymentMethodReuseAgreement: paymentMethodReuseAgreement ?? this.paymentMethodReuseAgreement,
+  promotions: promotions ?? this.promotions,
+  termsOfService: termsOfService ?? this.termsOfService,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentPagesCheckoutSessionConsentCollection &&

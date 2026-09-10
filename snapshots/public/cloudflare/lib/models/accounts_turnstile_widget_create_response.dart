@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-AccountsTurnstileWidgetCreateResponse copyWith({List<TurnstileMessages2>? errors, List<TurnstileMessages2>? messages, bool? success, TurnstileResultInfo Function()? resultInfo, TurnstileWidgetDetail Function()? result, }) { return AccountsTurnstileWidgetCreateResponse(
+AccountsTurnstileWidgetCreateResponse copyWith({List<TurnstileMessages2>? errors, List<TurnstileMessages2>? messages, bool? success, TurnstileResultInfo? Function()? resultInfo, TurnstileWidgetDetail? Function()? result, }) { return AccountsTurnstileWidgetCreateResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

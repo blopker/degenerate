@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'host': ?host,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'host'}.contains(key)); } 
-CloudConnectorRuleParameters copyWith({String Function()? host}) { return CloudConnectorRuleParameters(
+CloudConnectorRuleParameters copyWith({String? Function()? host}) { return CloudConnectorRuleParameters(
   host: host != null ? host() : this.host,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

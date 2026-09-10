@@ -31,27 +31,27 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ResponsePropertiesTruncation($value)'; } 
  }
-@immutable final class ResponseProperties {const ResponseProperties({this.previousResponseId, this.model, this.reasoning, this.background, this.maxOutputTokens, this.maxToolCalls, this.text, this.tools, this.toolChoice, this.prompt, this.truncation, });
+@immutable final class ResponseProperties {const ResponseProperties({this.previousResponseId = const Omittable.absent(), this.model, this.reasoning = const Omittable.absent(), this.background = const Omittable.absent(), this.maxOutputTokens = const Omittable.absent(), this.maxToolCalls = const Omittable.absent(), this.text, this.tools, this.toolChoice, this.prompt, this.truncation = const Omittable.absent(), });
 
 factory ResponseProperties.fromJson(Map<String, dynamic> json) { return ResponseProperties(
-  previousResponseId: json['previous_response_id'] as String?,
+  previousResponseId: json.containsKey('previous_response_id') ? Omittable(json['previous_response_id'] as String?) : const Omittable.absent(),
   model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),), fromB: (v) => ResponsesOnlyModel.fromJson(v as String),) : null,
-  reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
-  background: json['background'] as bool?,
-  maxOutputTokens: json['max_output_tokens'] != null ? (json['max_output_tokens'] as num).toInt() : null,
-  maxToolCalls: json['max_tool_calls'] != null ? (json['max_tool_calls'] as num).toInt() : null,
+  reasoning: json.containsKey('reasoning') ? Omittable(json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  background: json.containsKey('background') ? Omittable(json['background'] as bool?) : const Omittable.absent(),
+  maxOutputTokens: json.containsKey('max_output_tokens') ? Omittable(json['max_output_tokens'] != null ? (json['max_output_tokens'] as num).toInt() : null) : const Omittable.absent(),
+  maxToolCalls: json.containsKey('max_tool_calls') ? Omittable(json['max_tool_calls'] != null ? (json['max_tool_calls'] as num).toInt() : null) : const Omittable.absent(),
   text: json['text'] != null ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json['tool_choice'] != null ? OneOf8.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceAllowed.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceTypes.fromJson(v as Map<String, dynamic>), fromD: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromE: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>), fromF: (v) => ToolChoiceCustom.fromJson(v as Map<String, dynamic>), fromG: (v) => SpecificApplyPatchParam.fromJson(v as Map<String, dynamic>), fromH: (v) => SpecificFunctionShellParam.fromJson(v as Map<String, dynamic>),) : null,
   prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
-  truncation: json['truncation'] != null ? ResponsePropertiesTruncation.fromJson(json['truncation'] as String) : null,
+  truncation: json.containsKey('truncation') ? Omittable(json['truncation'] != null ? ResponsePropertiesTruncation.fromJson(json['truncation'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The unique ID of the previous response to the model. Use this to
 /// create multi-turn conversations. Learn more about
 /// [conversation state](/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
 /// 
-final String? previousResponseId;
+final Omittable<String?> previousResponseId;
 
 /// Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI
 /// offers a wide range of models with different capabilities, performance
@@ -60,20 +60,20 @@ final String? previousResponseId;
 /// 
 final ModelIdsResponses? model;
 
-final Reasoning? reasoning;
+final Omittable<Reasoning?> reasoning;
 
 /// Whether to run the model response in the background.
 /// [Learn more](/docs/guides/background).
 /// 
-final bool? background;
+final Omittable<bool?> background;
 
 /// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
 /// 
-final int? maxOutputTokens;
+final Omittable<int?> maxOutputTokens;
 
 /// The maximum number of total calls to built-in tools that can be processed in a response. This maximum number applies across all built-in tool calls, not per individual tool. Any further attempts to call a tool by the model will be ignored.
 /// 
-final int? maxToolCalls;
+final Omittable<int?> maxToolCalls;
 
 final ResponseTextParam? text;
 
@@ -90,34 +90,34 @@ final Prompt? prompt;
 /// - `disabled` (default): If the input size will exceed the context window
 ///   size for a model, the request will fail with a 400 error.
 /// 
-final ResponsePropertiesTruncation? truncation;
+final Omittable<ResponsePropertiesTruncation?> truncation;
 
 Map<String, dynamic> toJson() { return {
-  'previous_response_id': ?previousResponseId,
+  if (previousResponseId.isPresent) 'previous_response_id': previousResponseId.value,
   if (model != null) 'model': model?.toJson(),
-  if (reasoning != null) 'reasoning': reasoning?.toJson(),
-  'background': ?background,
-  'max_output_tokens': ?maxOutputTokens,
-  'max_tool_calls': ?maxToolCalls,
+  if (reasoning.isPresent) 'reasoning': reasoning.value?.toJson(),
+  if (background.isPresent) 'background': background.value,
+  if (maxOutputTokens.isPresent) 'max_output_tokens': maxOutputTokens.value,
+  if (maxToolCalls.isPresent) 'max_tool_calls': maxToolCalls.value,
   if (text != null) 'text': text?.toJson(),
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
   if (prompt != null) 'prompt': prompt?.toJson(),
-  if (truncation != null) 'truncation': truncation?.toJson(),
+  if (truncation.isPresent) 'truncation': truncation.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'previous_response_id', 'model', 'reasoning', 'background', 'max_output_tokens', 'max_tool_calls', 'text', 'tools', 'tool_choice', 'prompt', 'truncation'}.contains(key)); } 
-ResponseProperties copyWith({String? Function()? previousResponseId, ModelIdsResponses Function()? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam Function()? text, List<Tool> Function()? tools, ToolChoiceParam Function()? toolChoice, Prompt Function()? prompt, ResponsePropertiesTruncation? Function()? truncation, }) { return ResponseProperties(
-  previousResponseId: previousResponseId != null ? previousResponseId() : this.previousResponseId,
+ResponseProperties copyWith({Omittable<String?>? previousResponseId, ModelIdsResponses? Function()? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? Function()? tools, ToolChoiceParam? Function()? toolChoice, Prompt? Function()? prompt, Omittable<ResponsePropertiesTruncation?>? truncation, }) { return ResponseProperties(
+  previousResponseId: previousResponseId ?? this.previousResponseId,
   model: model != null ? model() : this.model,
-  reasoning: reasoning != null ? reasoning() : this.reasoning,
-  background: background != null ? background() : this.background,
-  maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
-  maxToolCalls: maxToolCalls != null ? maxToolCalls() : this.maxToolCalls,
+  reasoning: reasoning ?? this.reasoning,
+  background: background ?? this.background,
+  maxOutputTokens: maxOutputTokens ?? this.maxOutputTokens,
+  maxToolCalls: maxToolCalls ?? this.maxToolCalls,
   text: text != null ? text() : this.text,
   tools: tools != null ? tools() : this.tools,
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   prompt: prompt != null ? prompt() : this.prompt,
-  truncation: truncation != null ? truncation() : this.truncation,
+  truncation: truncation ?? this.truncation,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ResponseProperties &&

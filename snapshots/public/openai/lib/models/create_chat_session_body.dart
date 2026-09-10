@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('workflow') &&
       json.containsKey('user') && json['user'] is String; } 
-CreateChatSessionBody copyWith({WorkflowParam? workflow, String? user, ExpiresAfterParam Function()? expiresAfter, RateLimitsParam Function()? rateLimits, ChatkitConfigurationParam Function()? chatkitConfiguration, }) { return CreateChatSessionBody(
+CreateChatSessionBody copyWith({WorkflowParam? workflow, String? user, ExpiresAfterParam? Function()? expiresAfter, RateLimitsParam? Function()? rateLimits, ChatkitConfigurationParam? Function()? chatkitConfiguration, }) { return CreateChatSessionBody(
   workflow: workflow ?? this.workflow,
   user: user ?? this.user,
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,

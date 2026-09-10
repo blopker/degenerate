@@ -50,13 +50,13 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AccountCapabilityRequirementsDisabledReason($value)'; } 
  }
 /// 
-@immutable final class AccountCapabilityRequirements {const AccountCapabilityRequirements({required this.currentlyDue, required this.errors, required this.eventuallyDue, required this.pastDue, required this.pendingVerification, this.alternatives, this.currentDeadline, this.disabledReason, });
+@immutable final class AccountCapabilityRequirements {const AccountCapabilityRequirements({required this.currentlyDue, required this.errors, required this.eventuallyDue, required this.pastDue, required this.pendingVerification, this.alternatives = const Omittable.absent(), this.currentDeadline = const Omittable.absent(), this.disabledReason = const Omittable.absent(), });
 
 factory AccountCapabilityRequirements.fromJson(Map<String, dynamic> json) { return AccountCapabilityRequirements(
-  alternatives: (json['alternatives'] as List<dynamic>?)?.map((e) => AccountRequirementsAlternative.fromJson(e as Map<String, dynamic>)).toList(),
-  currentDeadline: json['current_deadline'] != null ? (json['current_deadline'] as num).toInt() : null,
+  alternatives: json.containsKey('alternatives') ? Omittable((json['alternatives'] as List<dynamic>?)?.map((e) => AccountRequirementsAlternative.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  currentDeadline: json.containsKey('current_deadline') ? Omittable(json['current_deadline'] != null ? (json['current_deadline'] as num).toInt() : null) : const Omittable.absent(),
   currentlyDue: (json['currently_due'] as List<dynamic>).map((e) => e as String).toList(),
-  disabledReason: json['disabled_reason'] != null ? AccountCapabilityRequirementsDisabledReason.fromJson(json['disabled_reason'] as String) : null,
+  disabledReason: json.containsKey('disabled_reason') ? Omittable(json['disabled_reason'] != null ? AccountCapabilityRequirementsDisabledReason.fromJson(json['disabled_reason'] as String) : null) : const Omittable.absent(),
   errors: (json['errors'] as List<dynamic>).map((e) => AccountRequirementsError.fromJson(e as Map<String, dynamic>)).toList(),
   eventuallyDue: (json['eventually_due'] as List<dynamic>).map((e) => e as String).toList(),
   pastDue: (json['past_due'] as List<dynamic>).map((e) => e as String).toList(),
@@ -64,16 +64,16 @@ factory AccountCapabilityRequirements.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// Fields that are due and can be resolved by providing the corresponding alternative fields instead. Multiple alternatives can reference the same `original_fields_due`. When this happens, any of these alternatives can serve as a pathway for attempting to resolve the fields. Additionally, providing `original_fields_due` again also serves as a pathway for attempting to resolve the fields.
-final List<AccountRequirementsAlternative>? alternatives;
+final Omittable<List<AccountRequirementsAlternative>?> alternatives;
 
 /// The date by which all required account information must be both submitted and verified. This includes fields listed in `currently_due` as well as those in `pending_verification`. If any required information is missing or unverified by this date, the account may be disabled. Note that `current_deadline` may change if additional `currently_due` requirements are requested.
-final int? currentDeadline;
+final Omittable<int?> currentDeadline;
 
 /// Fields that need to be resolved to keep the capability enabled. If not resolved by `current_deadline`, these fields will appear in `past_due` as well, and the capability is disabled.
 final List<String> currentlyDue;
 
 /// Description of why the capability is disabled. [Learn more about handling verification issues](https://docs.stripe.com/connect/handling-api-verification).
-final AccountCapabilityRequirementsDisabledReason? disabledReason;
+final Omittable<AccountCapabilityRequirementsDisabledReason?> disabledReason;
 
 /// Details about validation and verification failures for `due` requirements that must be resolved.
 final List<AccountRequirementsError> errors;
@@ -88,10 +88,10 @@ final List<String> pastDue;
 final List<String> pendingVerification;
 
 Map<String, dynamic> toJson() { return {
-  if (alternatives != null) 'alternatives': alternatives?.map((e) => e.toJson()).toList(),
-  'current_deadline': ?currentDeadline,
+  if (alternatives.isPresent) 'alternatives': alternatives.value?.map((e) => e.toJson()).toList(),
+  if (currentDeadline.isPresent) 'current_deadline': currentDeadline.value,
   'currently_due': currentlyDue,
-  if (disabledReason != null) 'disabled_reason': disabledReason?.toJson(),
+  if (disabledReason.isPresent) 'disabled_reason': disabledReason.value?.toJson(),
   'errors': errors.map((e) => e.toJson()).toList(),
   'eventually_due': eventuallyDue,
   'past_due': pastDue,
@@ -102,11 +102,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('curre
       json.containsKey('eventually_due') &&
       json.containsKey('past_due') &&
       json.containsKey('pending_verification'); } 
-AccountCapabilityRequirements copyWith({List<AccountRequirementsAlternative>? Function()? alternatives, int? Function()? currentDeadline, List<String>? currentlyDue, AccountCapabilityRequirementsDisabledReason? Function()? disabledReason, List<AccountRequirementsError>? errors, List<String>? eventuallyDue, List<String>? pastDue, List<String>? pendingVerification, }) { return AccountCapabilityRequirements(
-  alternatives: alternatives != null ? alternatives() : this.alternatives,
-  currentDeadline: currentDeadline != null ? currentDeadline() : this.currentDeadline,
+AccountCapabilityRequirements copyWith({Omittable<List<AccountRequirementsAlternative>?>? alternatives, Omittable<int?>? currentDeadline, List<String>? currentlyDue, Omittable<AccountCapabilityRequirementsDisabledReason?>? disabledReason, List<AccountRequirementsError>? errors, List<String>? eventuallyDue, List<String>? pastDue, List<String>? pendingVerification, }) { return AccountCapabilityRequirements(
+  alternatives: alternatives ?? this.alternatives,
+  currentDeadline: currentDeadline ?? this.currentDeadline,
   currentlyDue: currentlyDue ?? this.currentlyDue,
-  disabledReason: disabledReason != null ? disabledReason() : this.disabledReason,
+  disabledReason: disabledReason ?? this.disabledReason,
   errors: errors ?? this.errors,
   eventuallyDue: eventuallyDue ?? this.eventuallyDue,
   pastDue: pastDue ?? this.pastDue,
@@ -114,7 +114,8 @@ AccountCapabilityRequirements copyWith({List<AccountRequirementsAlternative>? Fu
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountCapabilityRequirements &&
-          listEquals(alternatives, other.alternatives) &&
+          alternatives.isPresent == other.alternatives.isPresent &&
+          listEquals(alternatives.value, other.alternatives.value) &&
           currentDeadline == other.currentDeadline &&
           listEquals(currentlyDue, other.currentlyDue) &&
           disabledReason == other.disabledReason &&
@@ -122,6 +123,6 @@ AccountCapabilityRequirements copyWith({List<AccountRequirementsAlternative>? Fu
           listEquals(eventuallyDue, other.eventuallyDue) &&
           listEquals(pastDue, other.pastDue) &&
           listEquals(pendingVerification, other.pendingVerification); } 
-@override int get hashCode { return Object.hash(Object.hashAll(alternatives ?? const []), currentDeadline, Object.hashAll(currentlyDue), disabledReason, Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification)); } 
+@override int get hashCode { return Object.hash(Object.hashAll(alternatives.value ?? const []), currentDeadline, Object.hashAll(currentlyDue), disabledReason, Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification)); } 
 @override String toString() { return 'AccountCapabilityRequirements(alternatives: $alternatives, currentDeadline: $currentDeadline, currentlyDue: $currentlyDue, disabledReason: $disabledReason, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)'; } 
  }

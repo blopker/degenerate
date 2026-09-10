@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'status'}.contains(key)); } 
-AccessPolicyInitRespResult copyWith({AccessPolicyTestId Function()? id, AccessStatus Function()? status, }) { return AccessPolicyInitRespResult(
+AccessPolicyInitRespResult copyWith({AccessPolicyTestId? Function()? id, AccessStatus? Function()? status, }) { return AccessPolicyInitRespResult(
   id: id != null ? id() : this.id,
   status: status != null ? status() : this.status,
 ); } 

@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessSchemasGithub copyWith({AccessSchemasGenericOauthConfig? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessSchemasGithubScimConfig Function()? scimConfig, AccessSchemasGithubType? type, }) { return AccessSchemasGithub(
+AccessSchemasGithub copyWith({AccessSchemasGenericOauthConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessSchemasGithubScimConfig? Function()? scimConfig, AccessSchemasGithubType? type, }) { return AccessSchemasGithub(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

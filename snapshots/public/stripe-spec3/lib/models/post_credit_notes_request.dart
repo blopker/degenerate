@@ -134,7 +134,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingCost != null) 'shipping_cost': shippingCost?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoice') && json['invoice'] is String; } 
-PostCreditNotesRequest copyWith({int Function()? amount, int Function()? creditAmount, int Function()? effectiveAt, PostCreditNotesRequestEmailType Function()? emailType, List<String> Function()? expand, String? invoice, List<PostCreditNotesRequestLines> Function()? lines, String Function()? memo, Map<String, String> Function()? metadata, int Function()? outOfBandAmount, PostCreditNotesRequestReason Function()? reason, int Function()? refundAmount, List<PostCreditNotesRequestRefunds> Function()? refunds, PostCreditNotesRequestShippingCost Function()? shippingCost, }) { return PostCreditNotesRequest(
+PostCreditNotesRequest copyWith({int? Function()? amount, int? Function()? creditAmount, int? Function()? effectiveAt, PostCreditNotesRequestEmailType? Function()? emailType, List<String>? Function()? expand, String? invoice, List<PostCreditNotesRequestLines>? Function()? lines, String? Function()? memo, Map<String, String>? Function()? metadata, int? Function()? outOfBandAmount, PostCreditNotesRequestReason? Function()? reason, int? Function()? refundAmount, List<PostCreditNotesRequestRefunds>? Function()? refunds, PostCreditNotesRequestShippingCost? Function()? shippingCost, }) { return PostCreditNotesRequest(
   amount: amount != null ? amount() : this.amount,
   creditAmount: creditAmount != null ? creditAmount() : this.creditAmount,
   effectiveAt: effectiveAt != null ? effectiveAt() : this.effectiveAt,

@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'result', 'success'}.contains(key)); } 
-AaaAuditLogsResponseCollectionVariant1 copyWith({List<AaaMessages2> Function()? errors, List<AaaMessages2> Function()? messages, List<AaaAuditLogs> Function()? result, bool Function()? success, }) { return AaaAuditLogsResponseCollectionVariant1(
+AaaAuditLogsResponseCollectionVariant1 copyWith({List<AaaMessages2>? Function()? errors, List<AaaMessages2>? Function()? messages, List<AaaAuditLogs>? Function()? result, bool? Function()? success, }) { return AaaAuditLogsResponseCollectionVariant1(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   result: result != null ? result() : this.result,

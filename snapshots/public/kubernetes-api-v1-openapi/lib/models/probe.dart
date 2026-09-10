@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   'timeoutSeconds': ?timeoutSeconds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'exec', 'failureThreshold', 'grpc', 'httpGet', 'initialDelaySeconds', 'periodSeconds', 'successThreshold', 'tcpSocket', 'terminationGracePeriodSeconds', 'timeoutSeconds'}.contains(key)); } 
-Probe copyWith({ExecAction Function()? exec, int Function()? failureThreshold, GrpcAction Function()? grpc, HttpGetAction Function()? httpGet, int Function()? initialDelaySeconds, int Function()? periodSeconds, int Function()? successThreshold, TcpSocketAction Function()? tcpSocket, int Function()? terminationGracePeriodSeconds, int Function()? timeoutSeconds, }) { return Probe(
+Probe copyWith({ExecAction? Function()? exec, int? Function()? failureThreshold, GrpcAction? Function()? grpc, HttpGetAction? Function()? httpGet, int? Function()? initialDelaySeconds, int? Function()? periodSeconds, int? Function()? successThreshold, TcpSocketAction? Function()? tcpSocket, int? Function()? terminationGracePeriodSeconds, int? Function()? timeoutSeconds, }) { return Probe(
   exec: exec != null ? exec() : this.exec,
   failureThreshold: failureThreshold != null ? failureThreshold() : this.failureThreshold,
   grpc: grpc != null ? grpc() : this.grpc,

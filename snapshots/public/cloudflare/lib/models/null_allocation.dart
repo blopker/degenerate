@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-NullAllocation copyWith({NullAllocationType? type, Map<String, dynamic> Function()? value, }) { return NullAllocation(
+NullAllocation copyWith({NullAllocationType? type, Map<String, dynamic>? Function()? value, }) { return NullAllocation(
   type: type ?? this.type,
   value: value != null ? value() : this.value,
 ); } 

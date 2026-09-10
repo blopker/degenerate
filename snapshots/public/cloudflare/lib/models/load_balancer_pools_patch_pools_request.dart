@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (notificationEmail != null) 'notification_email': notificationEmail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'notification_email'}.contains(key)); } 
-LoadBalancerPoolsPatchPoolsRequest copyWith({LoadBalancingPatchPoolsNotificationEmail Function()? notificationEmail}) { return LoadBalancerPoolsPatchPoolsRequest(
+LoadBalancerPoolsPatchPoolsRequest copyWith({LoadBalancingPatchPoolsNotificationEmail? Function()? notificationEmail}) { return LoadBalancerPoolsPatchPoolsRequest(
   notificationEmail: notificationEmail != null ? notificationEmail() : this.notificationEmail,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

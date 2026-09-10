@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 import 'next_session_schema.dart';
 import 'public_user_schema.dart';
 
@@ -64,13 +65,13 @@ final class MobileSpaceDetailSchema {
     return {
       'slug': slug,
       'title': title,
-      'image_link': ?imageLink,
+      'image_link': imageLink,
       'short_description': shortDescription,
       'content': content,
       'author': author.toJson(),
-      'category': ?category,
+      'category': category,
       'subscribers': subscribers,
-      'recurring': ?recurring,
+      'recurring': recurring,
       'price': price,
       'next_events': nextEvents.map((e) => e.toJson()).toList(),
     };
@@ -82,18 +83,18 @@ final class MobileSpaceDetailSchema {
         json.containsKey('title') &&
         json['title'] is String &&
         json.containsKey('image_link') &&
-        json['image_link'] is String &&
+        (json['image_link'] == null || json['image_link'] is String) &&
         json.containsKey('short_description') &&
         json['short_description'] is String &&
         json.containsKey('content') &&
         json['content'] is String &&
         json.containsKey('author') &&
         json.containsKey('category') &&
-        json['category'] is String &&
+        (json['category'] == null || json['category'] is String) &&
         json.containsKey('subscribers') &&
         json['subscribers'] is num &&
         json.containsKey('recurring') &&
-        json['recurring'] is String &&
+        (json['recurring'] == null || json['recurring'] is String) &&
         json.containsKey('price') &&
         json['price'] is num &&
         json.containsKey('next_events');

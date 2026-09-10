@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_published_registry_package_package_version_author.dart';import 'webhook_registry_package_published_registry_package_package_version_body.dart';import 'webhook_registry_package_published_registry_package_package_version_container_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_docker_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_npm_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_package_files.dart';import 'webhook_registry_package_published_registry_package_package_version_release.dart';import 'webhook_rubygems_metadata.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersion {const WebhookRegistryPackagePublishedRegistryPackagePackageVersion({required this.description, required this.htmlUrl, required this.id, required this.installationCommand, required this.metadata, required this.name, required this.packageFiles, required this.packageUrl, required this.summary, required this.version, this.author, this.body, this.bodyHtml, this.containerMetadata, this.createdAt, this.dockerMetadata, this.draft, this.manifest, this.npmMetadata, this.nugetMetadata, this.prerelease, this.release, this.rubygemsMetadata, this.tagName, this.targetCommitish, this.targetOid, this.updatedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_published_registry_package_package_version_author.dart';import 'webhook_registry_package_published_registry_package_package_version_body.dart';import 'webhook_registry_package_published_registry_package_package_version_container_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_docker_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_npm_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata.dart';import 'webhook_registry_package_published_registry_package_package_version_package_files.dart';import 'webhook_registry_package_published_registry_package_package_version_release.dart';import 'webhook_rubygems_metadata.dart';@immutable final class WebhookRegistryPackagePublishedRegistryPackagePackageVersion {const WebhookRegistryPackagePublishedRegistryPackagePackageVersion({required this.description, required this.htmlUrl, required this.id, required this.installationCommand, required this.metadata, required this.name, required this.packageFiles, required this.packageUrl, required this.summary, required this.version, this.author, this.body, this.bodyHtml, this.containerMetadata, this.createdAt, this.dockerMetadata, this.draft, this.manifest, this.npmMetadata = const Omittable.absent(), this.nugetMetadata = const Omittable.absent(), this.prerelease, this.release, this.rubygemsMetadata, this.tagName, this.targetCommitish, this.targetOid, this.updatedAt, });
 
 factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
   author: json['author'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor.fromJson(json['author'] as Map<String, dynamic>) : null,
@@ -17,8 +17,8 @@ factory WebhookRegistryPackagePublishedRegistryPackagePackageVersion.fromJson(Ma
   manifest: json['manifest'] as String?,
   metadata: (json['metadata'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(),
   name: json['name'] as String,
-  npmMetadata: json['npm_metadata'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.fromJson(json['npm_metadata'] as Map<String, dynamic>) : null,
-  nugetMetadata: (json['nuget_metadata'] as List<dynamic>?)?.map((e) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata.fromJson(e as Map<String, dynamic>)).toList(),
+  npmMetadata: json.containsKey('npm_metadata') ? Omittable(json['npm_metadata'] != null ? WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata.fromJson(json['npm_metadata'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  nugetMetadata: json.containsKey('nuget_metadata') ? Omittable((json['nuget_metadata'] as List<dynamic>?)?.map((e) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   packageFiles: (json['package_files'] as List<dynamic>).map((e) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles.fromJson(e as Map<String, dynamic>)).toList(),
   packageUrl: json['package_url'] as String,
   prerelease: json['prerelease'] as bool?,
@@ -60,9 +60,9 @@ final List<Map<String,dynamic>> metadata;
 
 final String name;
 
-final WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata? npmMetadata;
+final Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata?> npmMetadata;
 
-final List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata>? nugetMetadata;
+final Omittable<List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata>?> nugetMetadata;
 
 final List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles> packageFiles;
 
@@ -101,8 +101,8 @@ Map<String, dynamic> toJson() { return {
   'manifest': ?manifest,
   'metadata': metadata.map((e) => e).toList(),
   'name': name,
-  if (npmMetadata != null) 'npm_metadata': npmMetadata?.toJson(),
-  if (nugetMetadata != null) 'nuget_metadata': nugetMetadata?.map((e) => e.toJson()).toList(),
+  if (npmMetadata.isPresent) 'npm_metadata': npmMetadata.value?.toJson(),
+  if (nugetMetadata.isPresent) 'nuget_metadata': nugetMetadata.value?.map((e) => e.toJson()).toList(),
   'package_files': packageFiles.map((e) => e.toJson()).toList(),
   'package_url': packageUrl,
   'prerelease': ?prerelease,
@@ -125,7 +125,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('package_url') && json['package_url'] is String &&
       json.containsKey('summary') && json['summary'] is String &&
       json.containsKey('version') && json['version'] is String; } 
-WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor Function()? author, WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody Function()? body, String Function()? bodyHtml, WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata Function()? containerMetadata, String Function()? createdAt, String? description, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata> Function()? dockerMetadata, bool Function()? draft, String? htmlUrl, int? id, String? installationCommand, String Function()? manifest, List<Map<String,dynamic>>? metadata, String? name, WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata? Function()? npmMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata>? Function()? nugetMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool Function()? prerelease, WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease Function()? release, List<WebhookRubygemsMetadata> Function()? rubygemsMetadata, String? summary, String Function()? tagName, String Function()? targetCommitish, String Function()? targetOid, String Function()? updatedAt, String? version, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
+WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({WebhookRegistryPackagePublishedRegistryPackagePackageVersionAuthor? Function()? author, WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody? Function()? body, String? Function()? bodyHtml, WebhookRegistryPackagePublishedRegistryPackagePackageVersionContainerMetadata? Function()? containerMetadata, String? Function()? createdAt, String? description, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionDockerMetadata>? Function()? dockerMetadata, bool? Function()? draft, String? htmlUrl, int? id, String? installationCommand, String? Function()? manifest, List<Map<String,dynamic>>? metadata, String? name, Omittable<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata?>? npmMetadata, Omittable<List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata>?>? nugetMetadata, List<WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles>? packageFiles, String? packageUrl, bool? Function()? prerelease, WebhookRegistryPackagePublishedRegistryPackagePackageVersionRelease? Function()? release, List<WebhookRubygemsMetadata>? Function()? rubygemsMetadata, String? summary, String? Function()? tagName, String? Function()? targetCommitish, String? Function()? targetOid, String? Function()? updatedAt, String? version, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersion(
   author: author != null ? author() : this.author,
   body: body != null ? body() : this.body,
   bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,
@@ -140,8 +140,8 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({WebhookRe
   manifest: manifest != null ? manifest() : this.manifest,
   metadata: metadata ?? this.metadata,
   name: name ?? this.name,
-  npmMetadata: npmMetadata != null ? npmMetadata() : this.npmMetadata,
-  nugetMetadata: nugetMetadata != null ? nugetMetadata() : this.nugetMetadata,
+  npmMetadata: npmMetadata ?? this.npmMetadata,
+  nugetMetadata: nugetMetadata ?? this.nugetMetadata,
   packageFiles: packageFiles ?? this.packageFiles,
   packageUrl: packageUrl ?? this.packageUrl,
   prerelease: prerelease != null ? prerelease() : this.prerelease,
@@ -171,7 +171,8 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({WebhookRe
           listEquals(metadata, other.metadata) &&
           name == other.name &&
           npmMetadata == other.npmMetadata &&
-          listEquals(nugetMetadata, other.nugetMetadata) &&
+          nugetMetadata.isPresent == other.nugetMetadata.isPresent &&
+          listEquals(nugetMetadata.value, other.nugetMetadata.value) &&
           listEquals(packageFiles, other.packageFiles) &&
           packageUrl == other.packageUrl &&
           prerelease == other.prerelease &&
@@ -183,6 +184,6 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersion copyWith({WebhookRe
           targetOid == other.targetOid &&
           updatedAt == other.updatedAt &&
           version == other.version; } 
-@override int get hashCode { return Object.hashAll([author, body, bodyHtml, containerMetadata, createdAt, description, Object.hashAll(dockerMetadata ?? const []), draft, htmlUrl, id, installationCommand, manifest, Object.hashAll(metadata), name, npmMetadata, Object.hashAll(nugetMetadata ?? const []), Object.hashAll(packageFiles), packageUrl, prerelease, release, Object.hashAll(rubygemsMetadata ?? const []), summary, tagName, targetCommitish, targetOid, updatedAt, version]); } 
+@override int get hashCode { return Object.hashAll([author, body, bodyHtml, containerMetadata, createdAt, description, Object.hashAll(dockerMetadata ?? const []), draft, htmlUrl, id, installationCommand, manifest, Object.hashAll(metadata), name, npmMetadata, Object.hashAll(nugetMetadata.value ?? const []), Object.hashAll(packageFiles), packageUrl, prerelease, release, Object.hashAll(rubygemsMetadata ?? const []), summary, tagName, targetCommitish, targetOid, updatedAt, version]); } 
 @override String toString() { return 'WebhookRegistryPackagePublishedRegistryPackagePackageVersion(author: $author, body: $body, bodyHtml: $bodyHtml, containerMetadata: $containerMetadata, createdAt: $createdAt, description: $description, dockerMetadata: $dockerMetadata, draft: $draft, htmlUrl: $htmlUrl, id: $id, installationCommand: $installationCommand, manifest: $manifest, metadata: $metadata, name: $name, npmMetadata: $npmMetadata, nugetMetadata: $nugetMetadata, packageFiles: $packageFiles, packageUrl: $packageUrl, prerelease: $prerelease, release: $release, rubygemsMetadata: $rubygemsMetadata, summary: $summary, tagName: $tagName, targetCommitish: $targetCommitish, targetOid: $targetOid, updatedAt: $updatedAt, version: $version)'; } 
  }

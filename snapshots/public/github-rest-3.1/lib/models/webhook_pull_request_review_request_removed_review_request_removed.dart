@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'pull_request': pullRequest.toJson(),
   'repository': repository.toJson(),
-  if (requestedReviewer != null) 'requested_reviewer': requestedReviewer?.toJson(),
+  'requested_reviewer': requestedReviewer?.toJson(),
   'sender': sender.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('repository') &&
       json.containsKey('requested_reviewer') &&
       json.containsKey('sender'); } 
-WebhookPullRequestReviewRequestRemovedReviewRequestRemoved copyWith({WebhookPullRequestReviewRequestRemovedReviewRequestRemovedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, int? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequest? pullRequest, RepositoryWebhooks? repository, WebhookPullRequestReviewRequestRemovedReviewRequestRemovedRequestedReviewer? Function()? requestedReviewer, SimpleUser? sender, }) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved(
+WebhookPullRequestReviewRequestRemovedReviewRequestRemoved copyWith({WebhookPullRequestReviewRequestRemovedReviewRequestRemovedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, int? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestReviewRequestRemovedReviewRequestRemovedPullRequest? pullRequest, RepositoryWebhooks? repository, WebhookPullRequestReviewRequestRemovedReviewRequestRemovedRequestedReviewer? Function()? requestedReviewer, SimpleUser? sender, }) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

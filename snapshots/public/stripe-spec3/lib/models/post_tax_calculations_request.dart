@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('line_items'); } 
-PostTaxCalculationsRequest copyWith({String? currency, String Function()? customer, PostTaxCalculationsRequestCustomerDetails Function()? customerDetails, List<String> Function()? expand, List<PostTaxCalculationsRequestLineItems>? lineItems, PostTaxCalculationsRequestShipFromDetails Function()? shipFromDetails, PostTaxCalculationsRequestShippingCost Function()? shippingCost, int Function()? taxDate, }) { return PostTaxCalculationsRequest(
+PostTaxCalculationsRequest copyWith({String? currency, String? Function()? customer, PostTaxCalculationsRequestCustomerDetails? Function()? customerDetails, List<String>? Function()? expand, List<PostTaxCalculationsRequestLineItems>? lineItems, PostTaxCalculationsRequestShipFromDetails? Function()? shipFromDetails, PostTaxCalculationsRequestShippingCost? Function()? shippingCost, int? Function()? taxDate, }) { return PostTaxCalculationsRequest(
   currency: currency ?? this.currency,
   customer: customer != null ? customer() : this.customer,
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,

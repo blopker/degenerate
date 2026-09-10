@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'user_agent': ?userAgent,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'date', 'ip', 'user_agent'}.contains(key)); } 
-PostAccountsRequestCompanyDirectorshipDeclaration copyWith({int Function()? date, String Function()? ip, String Function()? userAgent, }) { return PostAccountsRequestCompanyDirectorshipDeclaration(
+PostAccountsRequestCompanyDirectorshipDeclaration copyWith({int? Function()? date, String? Function()? ip, String? Function()? userAgent, }) { return PostAccountsRequestCompanyDirectorshipDeclaration(
   date: date != null ? date() : this.date,
   ip: ip != null ? ip() : this.ip,
   userAgent: userAgent != null ? userAgent() : this.userAgent,

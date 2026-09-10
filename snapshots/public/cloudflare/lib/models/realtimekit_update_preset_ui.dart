@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (designTokens != null) 'design_tokens': designTokens?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config_diff', 'design_tokens'}.contains(key)); } 
-RealtimekitUpdatePresetUi copyWith({Map<String, dynamic> Function()? configDiff, RealtimekitUpdatePresetUiDesignTokens Function()? designTokens, }) { return RealtimekitUpdatePresetUi(
+RealtimekitUpdatePresetUi copyWith({Map<String, dynamic>? Function()? configDiff, RealtimekitUpdatePresetUiDesignTokens? Function()? designTokens, }) { return RealtimekitUpdatePresetUi(
   configDiff: configDiff != null ? configDiff() : this.configDiff,
   designTokens: designTokens != null ? designTokens() : this.designTokens,
 ); } 

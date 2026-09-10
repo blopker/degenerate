@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'id': ?id,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id'}.contains(key)); } 
-AuditLogExternalKeyRemoved copyWith({String Function()? id}) { return AuditLogExternalKeyRemoved(
+AuditLogExternalKeyRemoved copyWith({String? Function()? id}) { return AuditLogExternalKeyRemoved(
   id: id != null ? id() : this.id,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

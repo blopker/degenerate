@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostCheckoutSessionsRequestAfterExpirationRecovery copyWith({bool Function()? allowPromotionCodes, bool? enabled, }) { return PostCheckoutSessionsRequestAfterExpirationRecovery(
+PostCheckoutSessionsRequestAfterExpirationRecovery copyWith({bool? Function()? allowPromotionCodes, bool? enabled, }) { return PostCheckoutSessionsRequestAfterExpirationRecovery(
   allowPromotionCodes: allowPromotionCodes != null ? allowPromotionCodes() : this.allowPromotionCodes,
   enabled: enabled ?? this.enabled,
 ); } 

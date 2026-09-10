@@ -24,50 +24,50 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A StoredCompletionsRunDataSource configuration describing a set of filters
 /// 
-@immutable final class EvalStoredCompletionsSource {const EvalStoredCompletionsSource({this.type = EvalStoredCompletionsSourceType.storedCompletions, this.metadata, this.model, this.createdAfter, this.createdBefore, this.limit, });
+@immutable final class EvalStoredCompletionsSource {const EvalStoredCompletionsSource({this.type = EvalStoredCompletionsSourceType.storedCompletions, this.metadata = const Omittable.absent(), this.model = const Omittable.absent(), this.createdAfter = const Omittable.absent(), this.createdBefore = const Omittable.absent(), this.limit = const Omittable.absent(), });
 
 factory EvalStoredCompletionsSource.fromJson(Map<String, dynamic> json) { return EvalStoredCompletionsSource(
   type: EvalStoredCompletionsSourceType.fromJson(json['type'] as String),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  model: json['model'] as String?,
-  createdAfter: json['created_after'] != null ? (json['created_after'] as num).toInt() : null,
-  createdBefore: json['created_before'] != null ? (json['created_before'] as num).toInt() : null,
-  limit: json['limit'] != null ? (json['limit'] as num).toInt() : null,
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  model: json.containsKey('model') ? Omittable(json['model'] as String?) : const Omittable.absent(),
+  createdAfter: json.containsKey('created_after') ? Omittable(json['created_after'] != null ? (json['created_after'] as num).toInt() : null) : const Omittable.absent(),
+  createdBefore: json.containsKey('created_before') ? Omittable(json['created_before'] != null ? (json['created_before'] as num).toInt() : null) : const Omittable.absent(),
+  limit: json.containsKey('limit') ? Omittable(json['limit'] != null ? (json['limit'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// The type of source. Always `stored_completions`.
 final EvalStoredCompletionsSourceType type;
 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// An optional model to filter by (e.g., 'gpt-4o').
-final String? model;
+final Omittable<String?> model;
 
 /// An optional Unix timestamp to filter items created after this time.
-final int? createdAfter;
+final Omittable<int?> createdAfter;
 
 /// An optional Unix timestamp to filter items created before this time.
-final int? createdBefore;
+final Omittable<int?> createdBefore;
 
 /// An optional maximum number of items to return.
-final int? limit;
+final Omittable<int?> limit;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
-  'metadata': ?metadata,
-  'model': ?model,
-  'created_after': ?createdAfter,
-  'created_before': ?createdBefore,
-  'limit': ?limit,
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (model.isPresent) 'model': model.value,
+  if (createdAfter.isPresent) 'created_after': createdAfter.value,
+  if (createdBefore.isPresent) 'created_before': createdBefore.value,
+  if (limit.isPresent) 'limit': limit.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-EvalStoredCompletionsSource copyWith({EvalStoredCompletionsSourceType? type, Map<String, String>? Function()? metadata, String? Function()? model, int? Function()? createdAfter, int? Function()? createdBefore, int? Function()? limit, }) { return EvalStoredCompletionsSource(
+EvalStoredCompletionsSource copyWith({EvalStoredCompletionsSourceType? type, Omittable<Map<String,String>?>? metadata, Omittable<String?>? model, Omittable<int?>? createdAfter, Omittable<int?>? createdBefore, Omittable<int?>? limit, }) { return EvalStoredCompletionsSource(
   type: type ?? this.type,
-  metadata: metadata != null ? metadata() : this.metadata,
-  model: model != null ? model() : this.model,
-  createdAfter: createdAfter != null ? createdAfter() : this.createdAfter,
-  createdBefore: createdBefore != null ? createdBefore() : this.createdBefore,
-  limit: limit != null ? limit() : this.limit,
+  metadata: metadata ?? this.metadata,
+  model: model ?? this.model,
+  createdAfter: createdAfter ?? this.createdAfter,
+  createdBefore: createdBefore ?? this.createdBefore,
+  limit: limit ?? this.limit,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EvalStoredCompletionsSource &&

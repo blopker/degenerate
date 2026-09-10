@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('date') && json['date'] is String &&
       json.containsKey('total') && json['total'] is num; } 
-RadarGetAsBotnetThreatFeedResponseResultMeta copyWith({String Function()? compareDate, String? date, int? total, }) { return RadarGetAsBotnetThreatFeedResponseResultMeta(
+RadarGetAsBotnetThreatFeedResponseResultMeta copyWith({String? Function()? compareDate, String? date, int? total, }) { return RadarGetAsBotnetThreatFeedResponseResultMeta(
   compareDate: compareDate != null ? compareDate() : this.compareDate,
   date: date ?? this.date,
   total: total ?? this.total,

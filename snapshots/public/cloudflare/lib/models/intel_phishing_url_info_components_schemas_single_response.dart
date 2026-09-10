@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-IntelPhishingUrlInfoComponentsSchemasSingleResponse copyWith({List<IntelSchemasMessages2>? errors, List<IntelSchemasMessages2>? messages, bool? success, IntelPhishingUrlInfo Function()? result, }) { return IntelPhishingUrlInfoComponentsSchemasSingleResponse(
+IntelPhishingUrlInfoComponentsSchemasSingleResponse copyWith({List<IntelSchemasMessages2>? errors, List<IntelSchemasMessages2>? messages, bool? success, IntelPhishingUrlInfo? Function()? result, }) { return IntelPhishingUrlInfoComponentsSchemasSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (trace != null) 'trace': trace?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'status_code', 'trace'}.contains(key)); } 
-AccountRequestTracerRequestTraceResponseResult copyWith({int Function()? statusCode, List<RequestTracerTrace2> Function()? trace, }) { return AccountRequestTracerRequestTraceResponseResult(
+AccountRequestTracerRequestTraceResponseResult copyWith({int? Function()? statusCode, List<RequestTracerTrace2>? Function()? trace, }) { return AccountRequestTracerRequestTraceResponseResult(
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   trace: trace != null ? trace() : this.trace,
 ); } 

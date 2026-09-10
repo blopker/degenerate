@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_list_item.dart';@immutable final class VectorizeIndexListVectorsResponse {const VectorizeIndexListVectorsResponse({required this.count, required this.isTruncated, required this.totalCount, required this.vectors, this.cursorExpirationTimestamp, this.nextCursor, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_list_item.dart';@immutable final class VectorizeIndexListVectorsResponse {const VectorizeIndexListVectorsResponse({required this.count, required this.isTruncated, required this.totalCount, required this.vectors, this.cursorExpirationTimestamp = const Omittable.absent(), this.nextCursor = const Omittable.absent(), });
 
 factory VectorizeIndexListVectorsResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexListVectorsResponse(
   count: (json['count'] as num).toInt(),
-  cursorExpirationTimestamp: json['cursorExpirationTimestamp'] != null ? DateTime.parse(json['cursorExpirationTimestamp'] as String) : null,
+  cursorExpirationTimestamp: json.containsKey('cursorExpirationTimestamp') ? Omittable(json['cursorExpirationTimestamp'] != null ? DateTime.parse(json['cursorExpirationTimestamp'] as String) : null) : const Omittable.absent(),
   isTruncated: json['isTruncated'] as bool,
-  nextCursor: json['nextCursor'] as String?,
+  nextCursor: json.containsKey('nextCursor') ? Omittable(json['nextCursor'] as String?) : const Omittable.absent(),
   totalCount: (json['totalCount'] as num).toInt(),
   vectors: (json['vectors'] as List<dynamic>).map((e) => VectorizeVectorListItem.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
@@ -15,13 +15,13 @@ factory VectorizeIndexListVectorsResponse.fromJson(Map<String, dynamic> json) { 
 final int count;
 
 /// When the cursor expires as an ISO8601 string
-final DateTime? cursorExpirationTimestamp;
+final Omittable<DateTime?> cursorExpirationTimestamp;
 
 /// Whether there are more vectors available beyond this response
 final bool isTruncated;
 
 /// Cursor for the next page of results
-final String? nextCursor;
+final Omittable<String?> nextCursor;
 
 /// Total number of vectors in the index
 final int totalCount;
@@ -31,9 +31,9 @@ final List<VectorizeVectorListItem> vectors;
 
 Map<String, dynamic> toJson() { return {
   'count': count,
-  if (cursorExpirationTimestamp != null) 'cursorExpirationTimestamp': cursorExpirationTimestamp?.toIso8601String(),
+  if (cursorExpirationTimestamp.isPresent) 'cursorExpirationTimestamp': cursorExpirationTimestamp.value?.toIso8601String(),
   'isTruncated': isTruncated,
-  'nextCursor': ?nextCursor,
+  if (nextCursor.isPresent) 'nextCursor': nextCursor.value,
   'totalCount': totalCount,
   'vectors': vectors.map((e) => e.toJson()).toList(),
 }; } 
@@ -41,11 +41,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('isTruncated') && json['isTruncated'] is bool &&
       json.containsKey('totalCount') && json['totalCount'] is num &&
       json.containsKey('vectors'); } 
-VectorizeIndexListVectorsResponse copyWith({int? count, DateTime? Function()? cursorExpirationTimestamp, bool? isTruncated, String? Function()? nextCursor, int? totalCount, List<VectorizeVectorListItem>? vectors, }) { return VectorizeIndexListVectorsResponse(
+VectorizeIndexListVectorsResponse copyWith({int? count, Omittable<DateTime?>? cursorExpirationTimestamp, bool? isTruncated, Omittable<String?>? nextCursor, int? totalCount, List<VectorizeVectorListItem>? vectors, }) { return VectorizeIndexListVectorsResponse(
   count: count ?? this.count,
-  cursorExpirationTimestamp: cursorExpirationTimestamp != null ? cursorExpirationTimestamp() : this.cursorExpirationTimestamp,
+  cursorExpirationTimestamp: cursorExpirationTimestamp ?? this.cursorExpirationTimestamp,
   isTruncated: isTruncated ?? this.isTruncated,
-  nextCursor: nextCursor != null ? nextCursor() : this.nextCursor,
+  nextCursor: nextCursor ?? this.nextCursor,
   totalCount: totalCount ?? this.totalCount,
   vectors: vectors ?? this.vectors,
 ); } 

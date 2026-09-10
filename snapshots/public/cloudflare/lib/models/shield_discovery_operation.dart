@@ -52,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('endpo
       json.containsKey('last_updated') &&
       json.containsKey('origin') &&
       json.containsKey('state'); } 
-ShieldDiscoveryOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, ShieldMethod? method, ShieldTrafficStats Function()? features, ShieldUuid? id, ShieldTimestamp? lastUpdated, List<DiscoveryOrigin>? origin, DiscoveryState? state, }) { return ShieldDiscoveryOperation(
+ShieldDiscoveryOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, ShieldMethod? method, ShieldTrafficStats? Function()? features, ShieldUuid? id, ShieldTimestamp? lastUpdated, List<DiscoveryOrigin>? origin, DiscoveryState? state, }) { return ShieldDiscoveryOperation(
   endpoint: endpoint ?? this.endpoint,
   host: host ?? this.host,
   method: method ?? this.method,

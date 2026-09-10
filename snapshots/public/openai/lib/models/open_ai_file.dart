@@ -153,7 +153,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('object') &&
       json.containsKey('purpose') &&
       json.containsKey('status'); } 
-OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int Function()? expiresAt, String? filename, OpenAiFileObject? object, OpenAiFilePurpose? purpose, OpenAiFileStatus? status, String Function()? statusDetails, }) { return OpenAiFile(
+OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? expiresAt, String? filename, OpenAiFileObject? object, OpenAiFilePurpose? purpose, OpenAiFileStatus? status, String? Function()? statusDetails, }) { return OpenAiFile(
   id: id ?? this.id,
   bytes: bytes ?? this.bytes,
   createdAt: createdAt ?? this.createdAt,

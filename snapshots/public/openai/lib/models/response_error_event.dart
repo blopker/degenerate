@@ -32,15 +32,15 @@ final int sequenceNumber;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
-  'code': ?code,
+  'code': code,
   'message': message,
-  'param': ?param,
+  'param': param,
   'sequence_number': sequenceNumber,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
-      json.containsKey('code') && json['code'] is String &&
+      json.containsKey('code') && (json['code'] == null || json['code'] is String) &&
       json.containsKey('message') && json['message'] is String &&
-      json.containsKey('param') && json['param'] is String &&
+      json.containsKey('param') && (json['param'] == null || json['param'] is String) &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
 ResponseErrorEvent copyWith({String? type, String? Function()? code, String? message, String? Function()? param, int? sequenceNumber, }) { return ResponseErrorEvent(
   type: type ?? this.type,

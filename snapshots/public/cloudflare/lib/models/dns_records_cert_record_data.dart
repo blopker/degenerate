@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'algorithm', 'certificate', 'key_tag', 'type'}.contains(key)); } 
-DnsRecordsCertRecordData copyWith({double Function()? algorithm, String Function()? certificate, double Function()? keyTag, double Function()? type, }) { return DnsRecordsCertRecordData(
+DnsRecordsCertRecordData copyWith({double? Function()? algorithm, String? Function()? certificate, double? Function()? keyTag, double? Function()? type, }) { return DnsRecordsCertRecordData(
   algorithm: algorithm != null ? algorithm() : this.algorithm,
   certificate: certificate != null ? certificate() : this.certificate,
   keyTag: keyTag != null ? keyTag() : this.keyTag,

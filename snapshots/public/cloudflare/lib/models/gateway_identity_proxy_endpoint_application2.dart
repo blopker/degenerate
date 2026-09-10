@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_policy_response.dart';import 'access_custom_deny_url.dart';import 'access_custom_non_identity_deny_url.dart';import 'access_schemas_aud.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_session_duration.dart';import 'access_timestamp.dart';import 'access_type.dart';import 'access_uuid.dart';/// The policies that Access applies to the application.
-@immutable final class GatewayIdentityProxyEndpointApplication2 {const GatewayIdentityProxyEndpointApplication2({required this.type, this.aud, this.createdAt, this.id, this.updatedAt, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain, this.name, this.sessionDuration, this.policies, });
+@immutable final class GatewayIdentityProxyEndpointApplication2 {const GatewayIdentityProxyEndpointApplication2({required this.type, this.aud, this.createdAt, this.id, this.updatedAt, this.allowedIdps, this.autoRedirectToIdentity, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.domain = const Omittable.absent(), this.name = const Omittable.absent(), this.sessionDuration, this.policies, });
 
 factory GatewayIdentityProxyEndpointApplication2.fromJson(Map<String, dynamic> json) { return GatewayIdentityProxyEndpointApplication2(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
@@ -13,8 +13,8 @@ factory GatewayIdentityProxyEndpointApplication2.fromJson(Map<String, dynamic> j
   customDenyUrl: json['custom_deny_url'] != null ? AccessCustomDenyUrl.fromJson(json['custom_deny_url'] as String) : null,
   customNonIdentityDenyUrl: json['custom_non_identity_deny_url'] != null ? AccessCustomNonIdentityDenyUrl.fromJson(json['custom_non_identity_deny_url'] as String) : null,
   customPages: (json['custom_pages'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  domain: json['domain'],
-  name: json['name'],
+  domain: json.containsKey('domain') ? Omittable(json['domain']) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name']) : const Omittable.absent(),
   sessionDuration: json['session_duration'] != null ? AccessSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   type: AccessType.fromJson(json['type'] as String),
   policies: (json['policies'] as List<dynamic>?)?.map((e) => AccessAppPolicyResponse.fromJson(e as Map<String, dynamic>)).toList(),
@@ -40,9 +40,9 @@ final AccessCustomNonIdentityDenyUrl? customNonIdentityDenyUrl;
 final List<String>? customPages;
 
 /// The proxy endpoint domain in the format: 10 alphanumeric characters followed by .proxy.cloudflare-gateway.com
-final dynamic domain;
+final Omittable<dynamic> domain;
 
-final dynamic name;
+final Omittable<dynamic> name;
 
 final AccessSchemasSessionDuration? sessionDuration;
 
@@ -60,14 +60,14 @@ Map<String, dynamic> toJson() { return {
   if (customDenyUrl != null) 'custom_deny_url': customDenyUrl?.toJson(),
   if (customNonIdentityDenyUrl != null) 'custom_non_identity_deny_url': customNonIdentityDenyUrl?.toJson(),
   'custom_pages': ?customPages,
-  'domain': ?domain,
-  'name': ?name,
+  if (domain.isPresent) 'domain': domain.value,
+  if (name.isPresent) 'name': name.value,
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   'type': type.toJson(),
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-GatewayIdentityProxyEndpointApplication2 copyWith({AccessSchemasAud Function()? aud, AccessTimestamp Function()? createdAt, AccessUuid Function()? id, AccessTimestamp Function()? updatedAt, List<String> Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity Function()? autoRedirectToIdentity, AccessCustomDenyUrl Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl Function()? customNonIdentityDenyUrl, List<String> Function()? customPages, dynamic Function()? domain, dynamic Function()? name, AccessSchemasSessionDuration Function()? sessionDuration, AccessType? type, List<AccessAppPolicyResponse> Function()? policies, }) { return GatewayIdentityProxyEndpointApplication2(
+GatewayIdentityProxyEndpointApplication2 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, AccessCustomDenyUrl? Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl? Function()? customNonIdentityDenyUrl, List<String>? Function()? customPages, Omittable<dynamic>? domain, Omittable<dynamic>? name, AccessSchemasSessionDuration? Function()? sessionDuration, AccessType? type, List<AccessAppPolicyResponse>? Function()? policies, }) { return GatewayIdentityProxyEndpointApplication2(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
@@ -77,8 +77,8 @@ GatewayIdentityProxyEndpointApplication2 copyWith({AccessSchemasAud Function()? 
   customDenyUrl: customDenyUrl != null ? customDenyUrl() : this.customDenyUrl,
   customNonIdentityDenyUrl: customNonIdentityDenyUrl != null ? customNonIdentityDenyUrl() : this.customNonIdentityDenyUrl,
   customPages: customPages != null ? customPages() : this.customPages,
-  domain: domain != null ? domain() : this.domain,
-  name: name != null ? name() : this.name,
+  domain: domain ?? this.domain,
+  name: name ?? this.name,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
   policies: policies != null ? policies() : this.policies,

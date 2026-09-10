@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'sizeBytes': ?sizeBytes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'names', 'sizeBytes'}.contains(key)); } 
-ContainerImage copyWith({List<String> Function()? names, int Function()? sizeBytes, }) { return ContainerImage(
+ContainerImage copyWith({List<String>? Function()? names, int? Function()? sizeBytes, }) { return ContainerImage(
   names: names != null ? names() : this.names,
   sizeBytes: sizeBytes != null ? sizeBytes() : this.sizeBytes,
 ); } 

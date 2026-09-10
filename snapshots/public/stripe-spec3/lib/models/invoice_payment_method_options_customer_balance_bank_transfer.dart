@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_customer_balance_bank_transfer_eu_bank_transfer.dart';/// 
-@immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransfer {const InvoicePaymentMethodOptionsCustomerBalanceBankTransfer({this.euBankTransfer, this.type, });
+@immutable final class InvoicePaymentMethodOptionsCustomerBalanceBankTransfer {const InvoicePaymentMethodOptionsCustomerBalanceBankTransfer({this.euBankTransfer, this.type = const Omittable.absent(), });
 
 factory InvoicePaymentMethodOptionsCustomerBalanceBankTransfer.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsCustomerBalanceBankTransfer(
   euBankTransfer: json['eu_bank_transfer'] != null ? InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,
-  type: json['type'] as String?,
+  type: json.containsKey('type') ? Omittable(json['type'] as String?) : const Omittable.absent(),
 ); }
 
 final InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer? euBankTransfer;
 
 /// The bank transfer type that can be used for funding. Permitted values include: `eu_bank_transfer`, `gb_bank_transfer`, `jp_bank_transfer`, `mx_bank_transfer`, or `us_bank_transfer`.
-final String? type;
+final Omittable<String?> type;
 
 Map<String, dynamic> toJson() { return {
   if (euBankTransfer != null) 'eu_bank_transfer': euBankTransfer?.toJson(),
-  'type': ?type,
+  if (type.isPresent) 'type': type.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'eu_bank_transfer', 'type'}.contains(key)); } 
-InvoicePaymentMethodOptionsCustomerBalanceBankTransfer copyWith({InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer Function()? euBankTransfer, String? Function()? type, }) { return InvoicePaymentMethodOptionsCustomerBalanceBankTransfer(
+InvoicePaymentMethodOptionsCustomerBalanceBankTransfer copyWith({InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer? Function()? euBankTransfer, Omittable<String?>? type, }) { return InvoicePaymentMethodOptionsCustomerBalanceBankTransfer(
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is InvoicePaymentMethodOptionsCustomerBalanceBankTransfer &&

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (ui != null) 'ui': ui?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'name', 'permissions', 'ui'}.contains(key)); } 
-RealtimekitUpdatePreset copyWith({RealtimekitUpdatePresetConfig Function()? config, String Function()? name, RealtimekitUpdatePresetPermissions Function()? permissions, RealtimekitUpdatePresetUi Function()? ui, }) { return RealtimekitUpdatePreset(
+RealtimekitUpdatePreset copyWith({RealtimekitUpdatePresetConfig? Function()? config, String? Function()? name, RealtimekitUpdatePresetPermissions? Function()? permissions, RealtimekitUpdatePresetUi? Function()? ui, }) { return RealtimekitUpdatePreset(
   config: config != null ? config() : this.config,
   name: name != null ? name() : this.name,
   permissions: permissions != null ? permissions() : this.permissions,

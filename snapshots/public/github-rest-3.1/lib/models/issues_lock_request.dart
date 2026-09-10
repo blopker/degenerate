@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (lockReason != null) 'lock_reason': lockReason?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'lock_reason'}.contains(key)); } 
-IssuesLockRequest copyWith({IssuesLockRequestLockReason Function()? lockReason}) { return IssuesLockRequest(
+IssuesLockRequest copyWith({IssuesLockRequestLockReason? Function()? lockReason}) { return IssuesLockRequest(
   lockReason: lockReason != null ? lockReason() : this.lockReason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

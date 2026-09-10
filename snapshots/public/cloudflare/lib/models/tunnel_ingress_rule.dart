@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('service') && json['service'] is String; } 
-TunnelIngressRule copyWith({String? hostname, TunnelOriginRequest Function()? originRequest, String Function()? path, String? service, }) { return TunnelIngressRule(
+TunnelIngressRule copyWith({String? hostname, TunnelOriginRequest? Function()? originRequest, String? Function()? path, String? service, }) { return TunnelIngressRule(
   hostname: hostname ?? this.hostname,
   originRequest: originRequest != null ? originRequest() : this.originRequest,
   path: path != null ? path() : this.path,

@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
       json.containsKey('StatusCallback') && json['StatusCallback'] is String; } 
-UpdatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumCapture Function()? capture, PaymentsEnumStatus Function()? status, }) { return UpdatePaymentsRequest(
+UpdatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumCapture? Function()? capture, PaymentsEnumStatus? Function()? status, }) { return UpdatePaymentsRequest(
   idempotencyKey: idempotencyKey ?? this.idempotencyKey,
   statusCallback: statusCallback ?? this.statusCallback,
   capture: capture != null ? capture() : this.capture,

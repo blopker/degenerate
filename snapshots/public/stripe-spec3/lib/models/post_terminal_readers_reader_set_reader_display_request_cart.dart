@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('line_items') &&
       json.containsKey('total') && json['total'] is num; } 
-PostTerminalReadersReaderSetReaderDisplayRequestCart copyWith({String? currency, List<PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems>? lineItems, int Function()? tax, int? total, }) { return PostTerminalReadersReaderSetReaderDisplayRequestCart(
+PostTerminalReadersReaderSetReaderDisplayRequestCart copyWith({String? currency, List<PostTerminalReadersReaderSetReaderDisplayRequestCartLineItems>? lineItems, int? Function()? tax, int? total, }) { return PostTerminalReadersReaderSetReaderDisplayRequestCart(
   currency: currency ?? this.currency,
   lineItems: lineItems ?? this.lineItems,
   tax: tax != null ? tax() : this.tax,

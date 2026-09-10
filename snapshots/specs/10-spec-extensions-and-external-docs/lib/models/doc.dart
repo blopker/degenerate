@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'title': ?title,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'title'}.contains(key)); } 
-Doc copyWith({String Function()? id, String Function()? title, }) { return Doc(
+Doc copyWith({String? Function()? id, String? Function()? title, }) { return Doc(
   id: id != null ? id() : this.id,
   title: title != null ? title() : this.title,
 ); } 

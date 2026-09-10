@@ -1,36 +1,36 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_test_stat_over_time_slots.dart';@immutable final class DigitalExperienceMonitoringTestStatOverTime {const DigitalExperienceMonitoringTestStatOverTime({required this.slots, this.avg, this.max, this.min, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_test_stat_over_time_slots.dart';@immutable final class DigitalExperienceMonitoringTestStatOverTime {const DigitalExperienceMonitoringTestStatOverTime({required this.slots, this.avg = const Omittable.absent(), this.max = const Omittable.absent(), this.min = const Omittable.absent(), });
 
 factory DigitalExperienceMonitoringTestStatOverTime.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTestStatOverTime(
-  avg: json['avg'] != null ? (json['avg'] as num).toInt() : null,
-  max: json['max'] != null ? (json['max'] as num).toInt() : null,
-  min: json['min'] != null ? (json['min'] as num).toInt() : null,
+  avg: json.containsKey('avg') ? Omittable(json['avg'] != null ? (json['avg'] as num).toInt() : null) : const Omittable.absent(),
+  max: json.containsKey('max') ? Omittable(json['max'] != null ? (json['max'] as num).toInt() : null) : const Omittable.absent(),
+  min: json.containsKey('min') ? Omittable(json['min'] != null ? (json['min'] as num).toInt() : null) : const Omittable.absent(),
   slots: (json['slots'] as List<dynamic>).map((e) => DigitalExperienceMonitoringTestStatOverTimeSlots.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// average observed in the time period
-final int? avg;
+final Omittable<int?> avg;
 
 /// highest observed in the time period
-final int? max;
+final Omittable<int?> max;
 
 /// lowest observed in the time period
-final int? min;
+final Omittable<int?> min;
 
 final List<DigitalExperienceMonitoringTestStatOverTimeSlots> slots;
 
 Map<String, dynamic> toJson() { return {
-  'avg': ?avg,
-  'max': ?max,
-  'min': ?min,
+  if (avg.isPresent) 'avg': avg.value,
+  if (max.isPresent) 'max': max.value,
+  if (min.isPresent) 'min': min.value,
   'slots': slots.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('slots'); } 
-DigitalExperienceMonitoringTestStatOverTime copyWith({int? Function()? avg, int? Function()? max, int? Function()? min, List<DigitalExperienceMonitoringTestStatOverTimeSlots>? slots, }) { return DigitalExperienceMonitoringTestStatOverTime(
-  avg: avg != null ? avg() : this.avg,
-  max: max != null ? max() : this.max,
-  min: min != null ? min() : this.min,
+DigitalExperienceMonitoringTestStatOverTime copyWith({Omittable<int?>? avg, Omittable<int?>? max, Omittable<int?>? min, List<DigitalExperienceMonitoringTestStatOverTimeSlots>? slots, }) { return DigitalExperienceMonitoringTestStatOverTime(
+  avg: avg ?? this.avg,
+  max: max ?? this.max,
+  min: min ?? this.min,
   slots: slots ?? this.slots,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

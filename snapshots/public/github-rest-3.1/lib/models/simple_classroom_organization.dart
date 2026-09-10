@@ -29,14 +29,14 @@ Map<String, dynamic> toJson() { return {
   'login': login,
   'node_id': nodeId,
   'html_url': htmlUrl.toString(),
-  'name': ?name,
+  'name': name,
   'avatar_url': avatarUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('login') && json['login'] is String &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
       json.containsKey('avatar_url') && json['avatar_url'] is String; } 
 SimpleClassroomOrganization copyWith({int? id, String? login, String? nodeId, Uri? htmlUrl, String? Function()? name, String? avatarUrl, }) { return SimpleClassroomOrganization(
   id: id ?? this.id,

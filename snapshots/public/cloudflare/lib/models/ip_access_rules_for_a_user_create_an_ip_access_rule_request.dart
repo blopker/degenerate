@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('configuration') &&
       json.containsKey('mode'); } 
-IpAccessRulesForAUserCreateAnIpAccessRuleRequest copyWith({FirewallConfiguration? configuration, FirewallSchemasMode? mode, FirewallNotes Function()? notes, }) { return IpAccessRulesForAUserCreateAnIpAccessRuleRequest(
+IpAccessRulesForAUserCreateAnIpAccessRuleRequest copyWith({FirewallConfiguration? configuration, FirewallSchemasMode? mode, FirewallNotes? Function()? notes, }) { return IpAccessRulesForAUserCreateAnIpAccessRuleRequest(
   configuration: configuration ?? this.configuration,
   mode: mode ?? this.mode,
   notes: notes != null ? notes() : this.notes,

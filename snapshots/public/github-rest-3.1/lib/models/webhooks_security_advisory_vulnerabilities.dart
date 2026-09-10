@@ -18,7 +18,7 @@ final String severity;
 final String vulnerableVersionRange;
 
 Map<String, dynamic> toJson() { return {
-  if (firstPatchedVersion != null) 'first_patched_version': firstPatchedVersion?.toJson(),
+  'first_patched_version': firstPatchedVersion?.toJson(),
   'package': package.toJson(),
   'severity': severity,
   'vulnerable_version_range': vulnerableVersionRange,

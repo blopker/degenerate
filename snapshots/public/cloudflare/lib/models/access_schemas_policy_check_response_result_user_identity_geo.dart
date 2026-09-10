@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'country': ?country,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country'}.contains(key)); } 
-AccessSchemasPolicyCheckResponseResultUserIdentityGeo copyWith({String Function()? country}) { return AccessSchemasPolicyCheckResponseResultUserIdentityGeo(
+AccessSchemasPolicyCheckResponseResultUserIdentityGeo copyWith({String? Function()? country}) { return AccessSchemasPolicyCheckResponseResultUserIdentityGeo(
   country: country != null ? country() : this.country,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

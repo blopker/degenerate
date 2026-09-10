@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (spec != null) 'spec': spec?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'spec'}.contains(key)); } 
-PodTemplateSpec copyWith({ObjectMeta Function()? metadata, PodSpec Function()? spec, }) { return PodTemplateSpec(
+PodTemplateSpec copyWith({ObjectMeta? Function()? metadata, PodSpec? Function()? spec, }) { return PodTemplateSpec(
   metadata: metadata != null ? metadata() : this.metadata,
   spec: spec != null ? spec() : this.spec,
 ); } 

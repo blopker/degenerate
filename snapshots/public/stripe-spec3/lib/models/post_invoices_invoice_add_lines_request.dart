@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'lines': lines.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('lines'); } 
-PostInvoicesInvoiceAddLinesRequest copyWith({List<String> Function()? expand, PostInvoicesInvoiceAddLinesRequestInvoiceMetadata Function()? invoiceMetadata, List<PostInvoicesInvoiceAddLinesRequestLines>? lines, }) { return PostInvoicesInvoiceAddLinesRequest(
+PostInvoicesInvoiceAddLinesRequest copyWith({List<String>? Function()? expand, PostInvoicesInvoiceAddLinesRequestInvoiceMetadata? Function()? invoiceMetadata, List<PostInvoicesInvoiceAddLinesRequestLines>? lines, }) { return PostInvoicesInvoiceAddLinesRequest(
   expand: expand != null ? expand() : this.expand,
   invoiceMetadata: invoiceMetadata != null ? invoiceMetadata() : this.invoiceMetadata,
   lines: lines ?? this.lines,

@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('account') &&
       json.containsKey('requester') &&
       json.containsKey('created_at') && json['created_at'] is String; } 
-IntegrationInstallationRequest copyWith({int? id, String Function()? nodeId, IntegrationInstallationRequestAccount? account, SimpleUser? requester, DateTime? createdAt, }) { return IntegrationInstallationRequest(
+IntegrationInstallationRequest copyWith({int? id, String? Function()? nodeId, IntegrationInstallationRequestAccount? account, SimpleUser? requester, DateTime? createdAt, }) { return IntegrationInstallationRequest(
   id: id ?? this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   account: account ?? this.account,

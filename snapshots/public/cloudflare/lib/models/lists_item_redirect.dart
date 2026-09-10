@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('source_url') && json['source_url'] is String &&
       json.containsKey('target_url') && json['target_url'] is String; } 
-ListsItemRedirect copyWith({bool Function()? includeSubdomains, bool Function()? preservePathSuffix, bool Function()? preserveQueryString, String? sourceUrl, ListsItemRedirectStatusCode Function()? statusCode, bool Function()? subpathMatching, String? targetUrl, }) { return ListsItemRedirect(
+ListsItemRedirect copyWith({bool Function()? includeSubdomains, bool Function()? preservePathSuffix, bool Function()? preserveQueryString, String? sourceUrl, ListsItemRedirectStatusCode? Function()? statusCode, bool Function()? subpathMatching, String? targetUrl, }) { return ListsItemRedirect(
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
   preservePathSuffix: preservePathSuffix != null ? preservePathSuffix() : this.preservePathSuffix,
   preserveQueryString: preserveQueryString != null ? preserveQueryString() : this.preserveQueryString,

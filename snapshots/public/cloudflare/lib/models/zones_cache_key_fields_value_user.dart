@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'lang': ?lang,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'device_type', 'geo', 'lang'}.contains(key)); } 
-ZonesCacheKeyFieldsValueUser copyWith({bool Function()? deviceType, bool Function()? geo, bool Function()? lang, }) { return ZonesCacheKeyFieldsValueUser(
+ZonesCacheKeyFieldsValueUser copyWith({bool? Function()? deviceType, bool? Function()? geo, bool? Function()? lang, }) { return ZonesCacheKeyFieldsValueUser(
   deviceType: deviceType != null ? deviceType() : this.deviceType,
   geo: geo != null ? geo() : this.geo,
   lang: lang != null ? lang() : this.lang,

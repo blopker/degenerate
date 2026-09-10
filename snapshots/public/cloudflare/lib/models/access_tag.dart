@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-AccessTag copyWith({int Function()? appCount, AccessTimestamp Function()? createdAt, AccessTagsComponentsSchemasName? name, AccessTimestamp Function()? updatedAt, }) { return AccessTag(
+AccessTag copyWith({int? Function()? appCount, AccessTimestamp? Function()? createdAt, AccessTagsComponentsSchemasName? name, AccessTimestamp? Function()? updatedAt, }) { return AccessTag(
   appCount: appCount != null ? appCount() : this.appCount,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   name: name ?? this.name,

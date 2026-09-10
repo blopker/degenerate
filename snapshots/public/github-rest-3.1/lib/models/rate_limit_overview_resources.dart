@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('core') &&
       json.containsKey('search'); } 
-RateLimitOverviewResources copyWith({RateLimit? core, RateLimit Function()? graphql, RateLimit? search, RateLimit Function()? codeSearch, RateLimit Function()? sourceImport, RateLimit Function()? integrationManifest, RateLimit Function()? codeScanningUpload, RateLimit Function()? actionsRunnerRegistration, RateLimit Function()? scim, RateLimit Function()? dependencySnapshots, RateLimit Function()? dependencySbom, RateLimit Function()? codeScanningAutofix, }) { return RateLimitOverviewResources(
+RateLimitOverviewResources copyWith({RateLimit? core, RateLimit? Function()? graphql, RateLimit? search, RateLimit? Function()? codeSearch, RateLimit? Function()? sourceImport, RateLimit? Function()? integrationManifest, RateLimit? Function()? codeScanningUpload, RateLimit? Function()? actionsRunnerRegistration, RateLimit? Function()? scim, RateLimit? Function()? dependencySnapshots, RateLimit? Function()? dependencySbom, RateLimit? Function()? codeScanningAutofix, }) { return RateLimitOverviewResources(
   core: core ?? this.core,
   graphql: graphql != null ? graphql() : this.graphql,
   search: search ?? this.search,

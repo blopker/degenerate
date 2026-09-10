@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('pages_build_version') && json['pages_build_version'] is String &&
       json.containsKey('oidc_token') && json['oidc_token'] is String; } 
-ReposCreatePagesDeploymentRequest copyWith({double Function()? artifactId, String Function()? artifactUrl, String Function()? environment, String? pagesBuildVersion, String? oidcToken, }) { return ReposCreatePagesDeploymentRequest(
+ReposCreatePagesDeploymentRequest copyWith({double? Function()? artifactId, String? Function()? artifactUrl, String Function()? environment, String? pagesBuildVersion, String? oidcToken, }) { return ReposCreatePagesDeploymentRequest(
   artifactId: artifactId != null ? artifactId() : this.artifactId,
   artifactUrl: artifactUrl != null ? artifactUrl() : this.artifactUrl,
   environment: environment != null ? environment() : this.environment,

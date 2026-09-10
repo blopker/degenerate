@@ -23,12 +23,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedApplicationObject($value)'; } 
  }
 /// 
-@immutable final class DeletedApplication {const DeletedApplication({required this.deleted, required this.id, required this.object, this.name, });
+@immutable final class DeletedApplication {const DeletedApplication({required this.deleted, required this.id, required this.object, this.name = const Omittable.absent(), });
 
 factory DeletedApplication.fromJson(Map<String, dynamic> json) { return DeletedApplication(
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: DeletedApplicationObject.fromJson(json['object'] as String),
 ); }
 
@@ -39,7 +39,7 @@ final bool deleted;
 final String id;
 
 /// The name of the application.
-final String? name;
+final Omittable<String?> name;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final DeletedApplicationObject object;
@@ -47,16 +47,16 @@ final DeletedApplicationObject object;
 Map<String, dynamic> toJson() { return {
   'deleted': deleted,
   'id': id,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'object': object.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-DeletedApplication copyWith({bool? deleted, String? id, String? Function()? name, DeletedApplicationObject? object, }) { return DeletedApplication(
+DeletedApplication copyWith({bool? deleted, String? id, Omittable<String?>? name, DeletedApplicationObject? object, }) { return DeletedApplication(
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   object: object ?? this.object,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

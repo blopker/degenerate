@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'StreamLiveInputStatus($value)'; } 
  }
 /// Details about a live input.
-@immutable final class StreamLiveInput {const StreamLiveInput({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.recording, this.rtmps, this.rtmpsPlayback, this.srt, this.srtPlayback, this.status, this.uid, this.webRtc, this.webRtcPlayback, });
+@immutable final class StreamLiveInput {const StreamLiveInput({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.recording, this.rtmps, this.rtmpsPlayback, this.srt, this.srtPlayback, this.status = const Omittable.absent(), this.uid, this.webRtc, this.webRtcPlayback, });
 
 factory StreamLiveInput.fromJson(Map<String, dynamic> json) { return StreamLiveInput(
   created: json['created'] != null ? StreamLiveInputCreated.fromJson(json['created'] as String) : null,
@@ -60,7 +60,7 @@ factory StreamLiveInput.fromJson(Map<String, dynamic> json) { return StreamLiveI
   rtmpsPlayback: json['rtmpsPlayback'] != null ? StreamPlaybackRtmps.fromJson(json['rtmpsPlayback'] as Map<String, dynamic>) : null,
   srt: json['srt'] != null ? StreamInputSrt.fromJson(json['srt'] as Map<String, dynamic>) : null,
   srtPlayback: json['srtPlayback'] != null ? StreamPlaybackSrt.fromJson(json['srtPlayback'] as Map<String, dynamic>) : null,
-  status: json['status'] != null ? StreamLiveInputStatus.fromJson(json['status'] as String) : null,
+  status: json.containsKey('status') ? Omittable(json['status'] != null ? StreamLiveInputStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
   uid: json['uid'] != null ? StreamLiveInputIdentifier.fromJson(json['uid'] as String) : null,
   webRtc: json['webRTC'] != null ? StreamInputWebrtc.fromJson(json['webRTC'] as Map<String, dynamic>) : null,
   webRtcPlayback: json['webRTCPlayback'] != null ? StreamPlaybackWebrtc.fromJson(json['webRTCPlayback'] as Map<String, dynamic>) : null,
@@ -86,7 +86,7 @@ final StreamInputSrt? srt;
 
 final StreamPlaybackSrt? srtPlayback;
 
-final StreamLiveInputStatus? status;
+final Omittable<StreamLiveInputStatus?> status;
 
 final StreamLiveInputIdentifier? uid;
 
@@ -105,13 +105,13 @@ Map<String, dynamic> toJson() { return {
   if (rtmpsPlayback != null) 'rtmpsPlayback': rtmpsPlayback?.toJson(),
   if (srt != null) 'srt': srt?.toJson(),
   if (srtPlayback != null) 'srtPlayback': srtPlayback?.toJson(),
-  if (status != null) 'status': status?.toJson(),
+  if (status.isPresent) 'status': status.value?.toJson(),
   if (uid != null) 'uid': uid?.toJson(),
   if (webRtc != null) 'webRTC': webRtc?.toJson(),
   if (webRtcPlayback != null) 'webRTCPlayback': webRtcPlayback?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created', 'deleteRecordingAfterDays', 'enabled', 'meta', 'modified', 'recording', 'rtmps', 'rtmpsPlayback', 'srt', 'srtPlayback', 'status', 'uid', 'webRTC', 'webRTCPlayback'}.contains(key)); } 
-StreamLiveInput copyWith({StreamLiveInputCreated Function()? created, StreamLiveInputRecordingDeletion Function()? deleteRecordingAfterDays, StreamLiveInputEnabled Function()? enabled, Map<String, dynamic> Function()? meta, StreamLiveInputModified Function()? modified, StreamLiveInputRecordingSettings Function()? recording, StreamInputRtmps Function()? rtmps, StreamPlaybackRtmps Function()? rtmpsPlayback, StreamInputSrt Function()? srt, StreamPlaybackSrt Function()? srtPlayback, StreamLiveInputStatus? Function()? status, StreamLiveInputIdentifier Function()? uid, StreamInputWebrtc Function()? webRtc, StreamPlaybackWebrtc Function()? webRtcPlayback, }) { return StreamLiveInput(
+StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiveInputRecordingDeletion? Function()? deleteRecordingAfterDays, StreamLiveInputEnabled? Function()? enabled, Map<String, dynamic>? Function()? meta, StreamLiveInputModified? Function()? modified, StreamLiveInputRecordingSettings? Function()? recording, StreamInputRtmps? Function()? rtmps, StreamPlaybackRtmps? Function()? rtmpsPlayback, StreamInputSrt? Function()? srt, StreamPlaybackSrt? Function()? srtPlayback, Omittable<StreamLiveInputStatus?>? status, StreamLiveInputIdentifier? Function()? uid, StreamInputWebrtc? Function()? webRtc, StreamPlaybackWebrtc? Function()? webRtcPlayback, }) { return StreamLiveInput(
   created: created != null ? created() : this.created,
   deleteRecordingAfterDays: deleteRecordingAfterDays != null ? deleteRecordingAfterDays() : this.deleteRecordingAfterDays,
   enabled: enabled != null ? enabled() : this.enabled,
@@ -122,7 +122,7 @@ StreamLiveInput copyWith({StreamLiveInputCreated Function()? created, StreamLive
   rtmpsPlayback: rtmpsPlayback != null ? rtmpsPlayback() : this.rtmpsPlayback,
   srt: srt != null ? srt() : this.srt,
   srtPlayback: srtPlayback != null ? srtPlayback() : this.srtPlayback,
-  status: status != null ? status() : this.status,
+  status: status ?? this.status,
   uid: uid != null ? uid() : this.uid,
   webRtc: webRtc != null ? webRtc() : this.webRtc,
   webRtcPlayback: webRtcPlayback != null ? webRtcPlayback() : this.webRtcPlayback,

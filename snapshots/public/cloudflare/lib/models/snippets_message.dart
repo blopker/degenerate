@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'message': message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-SnippetsMessage copyWith({int Function()? code, String? message, }) { return SnippetsMessage(
+SnippetsMessage copyWith({int? Function()? code, String? message, }) { return SnippetsMessage(
   code: code != null ? code() : this.code,
   message: message ?? this.message,
 ); } 

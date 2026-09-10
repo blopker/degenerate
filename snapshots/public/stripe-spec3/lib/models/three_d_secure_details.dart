@@ -174,55 +174,55 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThreeDSecureDetailsVersion($value)'; } 
  }
 /// 
-@immutable final class ThreeDSecureDetails {const ThreeDSecureDetails({this.authenticationFlow, this.electronicCommerceIndicator, this.result, this.resultReason, this.transactionId, this.version, });
+@immutable final class ThreeDSecureDetails {const ThreeDSecureDetails({this.authenticationFlow = const Omittable.absent(), this.electronicCommerceIndicator = const Omittable.absent(), this.result = const Omittable.absent(), this.resultReason = const Omittable.absent(), this.transactionId = const Omittable.absent(), this.version = const Omittable.absent(), });
 
 factory ThreeDSecureDetails.fromJson(Map<String, dynamic> json) { return ThreeDSecureDetails(
-  authenticationFlow: json['authentication_flow'] != null ? ThreeDSecureDetailsAuthenticationFlow.fromJson(json['authentication_flow'] as String) : null,
-  electronicCommerceIndicator: json['electronic_commerce_indicator'] != null ? ThreeDSecureDetailsElectronicCommerceIndicator.fromJson(json['electronic_commerce_indicator'] as String) : null,
-  result: json['result'] != null ? ThreeDSecureDetailsResult.fromJson(json['result'] as String) : null,
-  resultReason: json['result_reason'] != null ? ThreeDSecureDetailsResultReason.fromJson(json['result_reason'] as String) : null,
-  transactionId: json['transaction_id'] as String?,
-  version: json['version'] != null ? ThreeDSecureDetailsVersion.fromJson(json['version'] as String) : null,
+  authenticationFlow: json.containsKey('authentication_flow') ? Omittable(json['authentication_flow'] != null ? ThreeDSecureDetailsAuthenticationFlow.fromJson(json['authentication_flow'] as String) : null) : const Omittable.absent(),
+  electronicCommerceIndicator: json.containsKey('electronic_commerce_indicator') ? Omittable(json['electronic_commerce_indicator'] != null ? ThreeDSecureDetailsElectronicCommerceIndicator.fromJson(json['electronic_commerce_indicator'] as String) : null) : const Omittable.absent(),
+  result: json.containsKey('result') ? Omittable(json['result'] != null ? ThreeDSecureDetailsResult.fromJson(json['result'] as String) : null) : const Omittable.absent(),
+  resultReason: json.containsKey('result_reason') ? Omittable(json['result_reason'] != null ? ThreeDSecureDetailsResultReason.fromJson(json['result_reason'] as String) : null) : const Omittable.absent(),
+  transactionId: json.containsKey('transaction_id') ? Omittable(json['transaction_id'] as String?) : const Omittable.absent(),
+  version: json.containsKey('version') ? Omittable(json['version'] != null ? ThreeDSecureDetailsVersion.fromJson(json['version'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// For authenticated transactions: how the customer was authenticated by
 /// the issuing bank.
-final ThreeDSecureDetailsAuthenticationFlow? authenticationFlow;
+final Omittable<ThreeDSecureDetailsAuthenticationFlow?> authenticationFlow;
 
 /// The Electronic Commerce Indicator (ECI). A protocol-level field
 /// indicating what degree of authentication was performed.
-final ThreeDSecureDetailsElectronicCommerceIndicator? electronicCommerceIndicator;
+final Omittable<ThreeDSecureDetailsElectronicCommerceIndicator?> electronicCommerceIndicator;
 
 /// Indicates the outcome of 3D Secure authentication.
-final ThreeDSecureDetailsResult? result;
+final Omittable<ThreeDSecureDetailsResult?> result;
 
 /// Additional information about why 3D Secure succeeded or failed based
 /// on the `result`.
-final ThreeDSecureDetailsResultReason? resultReason;
+final Omittable<ThreeDSecureDetailsResultReason?> resultReason;
 
 /// The 3D Secure 1 XID or 3D Secure 2 Directory Server Transaction ID
 /// (dsTransId) for this payment.
-final String? transactionId;
+final Omittable<String?> transactionId;
 
 /// The version of 3D Secure that was used.
-final ThreeDSecureDetailsVersion? version;
+final Omittable<ThreeDSecureDetailsVersion?> version;
 
 Map<String, dynamic> toJson() { return {
-  if (authenticationFlow != null) 'authentication_flow': authenticationFlow?.toJson(),
-  if (electronicCommerceIndicator != null) 'electronic_commerce_indicator': electronicCommerceIndicator?.toJson(),
-  if (result != null) 'result': result?.toJson(),
-  if (resultReason != null) 'result_reason': resultReason?.toJson(),
-  'transaction_id': ?transactionId,
-  if (version != null) 'version': version?.toJson(),
+  if (authenticationFlow.isPresent) 'authentication_flow': authenticationFlow.value?.toJson(),
+  if (electronicCommerceIndicator.isPresent) 'electronic_commerce_indicator': electronicCommerceIndicator.value?.toJson(),
+  if (result.isPresent) 'result': result.value?.toJson(),
+  if (resultReason.isPresent) 'result_reason': resultReason.value?.toJson(),
+  if (transactionId.isPresent) 'transaction_id': transactionId.value,
+  if (version.isPresent) 'version': version.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authentication_flow', 'electronic_commerce_indicator', 'result', 'result_reason', 'transaction_id', 'version'}.contains(key)); } 
-ThreeDSecureDetails copyWith({ThreeDSecureDetailsAuthenticationFlow? Function()? authenticationFlow, ThreeDSecureDetailsElectronicCommerceIndicator? Function()? electronicCommerceIndicator, ThreeDSecureDetailsResult? Function()? result, ThreeDSecureDetailsResultReason? Function()? resultReason, String? Function()? transactionId, ThreeDSecureDetailsVersion? Function()? version, }) { return ThreeDSecureDetails(
-  authenticationFlow: authenticationFlow != null ? authenticationFlow() : this.authenticationFlow,
-  electronicCommerceIndicator: electronicCommerceIndicator != null ? electronicCommerceIndicator() : this.electronicCommerceIndicator,
-  result: result != null ? result() : this.result,
-  resultReason: resultReason != null ? resultReason() : this.resultReason,
-  transactionId: transactionId != null ? transactionId() : this.transactionId,
-  version: version != null ? version() : this.version,
+ThreeDSecureDetails copyWith({Omittable<ThreeDSecureDetailsAuthenticationFlow?>? authenticationFlow, Omittable<ThreeDSecureDetailsElectronicCommerceIndicator?>? electronicCommerceIndicator, Omittable<ThreeDSecureDetailsResult?>? result, Omittable<ThreeDSecureDetailsResultReason?>? resultReason, Omittable<String?>? transactionId, Omittable<ThreeDSecureDetailsVersion?>? version, }) { return ThreeDSecureDetails(
+  authenticationFlow: authenticationFlow ?? this.authenticationFlow,
+  electronicCommerceIndicator: electronicCommerceIndicator ?? this.electronicCommerceIndicator,
+  result: result ?? this.result,
+  resultReason: resultReason ?? this.resultReason,
+  transactionId: transactionId ?? this.transactionId,
+  version: version ?? this.version,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ThreeDSecureDetails &&

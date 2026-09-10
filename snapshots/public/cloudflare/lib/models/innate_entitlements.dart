@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'allow_add_subdomain': allowAddSubdomain.toJson(),
   'allow_auto_accept_invites': allowAutoAcceptInvites.toJson(),
   'cname_setup_allowed': cnameSetupAllowed.toJson(),
-  if (customEntitlements != null) 'custom_entitlements': customEntitlements?.map((e) => e.toJson()).toList(),
+  'custom_entitlements': customEntitlements?.map((e) => e.toJson()).toList(),
   'mhs_certificate_count': mhsCertificateCount.toJson(),
   'partial_setup_allowed': partialSetupAllowed.toJson(),
 }; } 

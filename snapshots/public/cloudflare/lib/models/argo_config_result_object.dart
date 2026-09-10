@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('editable') &&
       json.containsKey('id') &&
       json.containsKey('value'); } 
-ArgoConfigResultObject copyWith({ArgoConfigEditable? editable, ArgoConfigSettingId? id, ArgoConfigModifiedOn Function()? modifiedOn, ArgoConfigSettingValue? value, }) { return ArgoConfigResultObject(
+ArgoConfigResultObject copyWith({ArgoConfigEditable? editable, ArgoConfigSettingId? id, ArgoConfigModifiedOn? Function()? modifiedOn, ArgoConfigSettingValue? value, }) { return ArgoConfigResultObject(
   editable: editable ?? this.editable,
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

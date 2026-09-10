@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-SetupAttemptPaymentMethodDetailsCardWallet copyWith({PaymentMethodDetailsCardWalletApplePay Function()? applePay, PaymentMethodDetailsCardWalletGooglePay Function()? googlePay, SetupAttemptPaymentMethodDetailsCardWalletType? type, }) { return SetupAttemptPaymentMethodDetailsCardWallet(
+SetupAttemptPaymentMethodDetailsCardWallet copyWith({PaymentMethodDetailsCardWalletApplePay? Function()? applePay, PaymentMethodDetailsCardWalletGooglePay? Function()? googlePay, SetupAttemptPaymentMethodDetailsCardWalletType? type, }) { return SetupAttemptPaymentMethodDetailsCardWallet(
   applePay: applePay != null ? applePay() : this.applePay,
   googlePay: googlePay != null ? googlePay() : this.googlePay,
   type: type ?? this.type,

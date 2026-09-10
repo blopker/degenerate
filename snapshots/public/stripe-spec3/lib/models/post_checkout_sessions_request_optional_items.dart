@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('price') && json['price'] is String &&
       json.containsKey('quantity') && json['quantity'] is num; } 
-PostCheckoutSessionsRequestOptionalItems copyWith({PostCheckoutSessionsRequestOptionalItemsAdjustableQuantity Function()? adjustableQuantity, String? price, int? quantity, }) { return PostCheckoutSessionsRequestOptionalItems(
+PostCheckoutSessionsRequestOptionalItems copyWith({PostCheckoutSessionsRequestOptionalItemsAdjustableQuantity? Function()? adjustableQuantity, String? price, int? quantity, }) { return PostCheckoutSessionsRequestOptionalItems(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   price: price ?? this.price,
   quantity: quantity ?? this.quantity,

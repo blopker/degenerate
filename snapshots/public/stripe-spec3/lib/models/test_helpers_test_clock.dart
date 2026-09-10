@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 /// A test clock enables deterministic control over objects in testmode. With a test clock, you can create
 /// objects at a frozen time in the past or future, and advance to a specific future time to observe webhooks and state changes. After the clock advances,
 /// you can either validate the current state of your scenario (and test your assumptions), change the current state of your scenario (and test more complex scenarios), or keep advancing forward in time.
-@immutable final class TestHelpersTestClock {const TestHelpersTestClock({required this.created, required this.deletesAfter, required this.frozenTime, required this.id, required this.livemode, required this.object, required this.status, required this.statusDetails, this.name, });
+@immutable final class TestHelpersTestClock {const TestHelpersTestClock({required this.created, required this.deletesAfter, required this.frozenTime, required this.id, required this.livemode, required this.object, required this.status, required this.statusDetails, this.name = const Omittable.absent(), });
 
 factory TestHelpersTestClock.fromJson(Map<String, dynamic> json) { return TestHelpersTestClock(
   created: (json['created'] as num).toInt(),
@@ -61,7 +61,7 @@ factory TestHelpersTestClock.fromJson(Map<String, dynamic> json) { return TestHe
   frozenTime: (json['frozen_time'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  name: json['name'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: TestHelpersTestClockObject.fromJson(json['object'] as String),
   status: TestHelpersTestClockStatus.fromJson(json['status'] as String),
   statusDetails: BillingClocksResourceStatusDetailsStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>),
@@ -83,7 +83,7 @@ final String id;
 final bool livemode;
 
 /// The custom name supplied at creation.
-final String? name;
+final Omittable<String?> name;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final TestHelpersTestClockObject object;
@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   'frozen_time': frozenTime,
   'id': id,
   'livemode': livemode,
-  'name': ?name,
+  if (name.isPresent) 'name': name.value,
   'object': object.toJson(),
   'status': status.toJson(),
   'status_details': statusDetails.toJson(),
@@ -112,13 +112,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('status_details'); } 
-TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime, String? id, bool? livemode, String? Function()? name, TestHelpersTestClockObject? object, TestHelpersTestClockStatus? status, BillingClocksResourceStatusDetailsStatusDetails? statusDetails, }) { return TestHelpersTestClock(
+TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime, String? id, bool? livemode, Omittable<String?>? name, TestHelpersTestClockObject? object, TestHelpersTestClockStatus? status, BillingClocksResourceStatusDetailsStatusDetails? statusDetails, }) { return TestHelpersTestClock(
   created: created ?? this.created,
   deletesAfter: deletesAfter ?? this.deletesAfter,
   frozenTime: frozenTime ?? this.frozenTime,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
-  name: name != null ? name() : this.name,
+  name: name ?? this.name,
   object: object ?? this.object,
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,

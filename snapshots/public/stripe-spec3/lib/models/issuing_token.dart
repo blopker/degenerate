@@ -107,12 +107,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingTokenWalletProvider($value)'; } 
  }
 /// An issuing token object is created when an issued card is added to a digital wallet. As a [card issuer](https://docs.stripe.com/issuing), you can [view and manage these tokens](https://docs.stripe.com/issuing/controls/token-management) through Stripe.
-@immutable final class IssuingToken {const IssuingToken({required this.card, required this.created, required this.id, required this.livemode, required this.network, required this.networkUpdatedAt, required this.object, required this.status, this.deviceFingerprint, this.last4, this.networkData, this.walletProvider, });
+@immutable final class IssuingToken {const IssuingToken({required this.card, required this.created, required this.id, required this.livemode, required this.network, required this.networkUpdatedAt, required this.object, required this.status, this.deviceFingerprint = const Omittable.absent(), this.last4, this.networkData, this.walletProvider, });
 
 factory IssuingToken.fromJson(Map<String, dynamic> json) { return IssuingToken(
   card: OneOf2.parse(json['card'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),),
   created: (json['created'] as num).toInt(),
-  deviceFingerprint: json['device_fingerprint'] as String?,
+  deviceFingerprint: json.containsKey('device_fingerprint') ? Omittable(json['device_fingerprint'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   last4: json['last4'] as String?,
   livemode: json['livemode'] as bool,
@@ -131,7 +131,7 @@ final IssuingTokenCard card;
 final int created;
 
 /// The hashed ID derived from the device ID from the card network associated with the token.
-final String? deviceFingerprint;
+final Omittable<String?> deviceFingerprint;
 
 /// Unique identifier for the object.
 final String id;
@@ -162,7 +162,7 @@ final IssuingTokenWalletProvider? walletProvider;
 Map<String, dynamic> toJson() { return {
   'card': card.toJson(),
   'created': created,
-  'device_fingerprint': ?deviceFingerprint,
+  if (deviceFingerprint.isPresent) 'device_fingerprint': deviceFingerprint.value,
   'id': id,
   'last4': ?last4,
   'livemode': livemode,
@@ -181,10 +181,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('card'
       json.containsKey('network_updated_at') && json['network_updated_at'] is num &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-IssuingToken copyWith({IssuingTokenCard? card, int? created, String? Function()? deviceFingerprint, String? id, String Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, IssuingTokenWalletProvider Function()? walletProvider, }) { return IssuingToken(
+IssuingToken copyWith({IssuingTokenCard? card, int? created, Omittable<String?>? deviceFingerprint, String? id, String? Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData? Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, IssuingTokenWalletProvider? Function()? walletProvider, }) { return IssuingToken(
   card: card ?? this.card,
   created: created ?? this.created,
-  deviceFingerprint: deviceFingerprint != null ? deviceFingerprint() : this.deviceFingerprint,
+  deviceFingerprint: deviceFingerprint ?? this.deviceFingerprint,
   id: id ?? this.id,
   last4: last4 != null ? last4() : this.last4,
   livemode: livemode ?? this.livemode,

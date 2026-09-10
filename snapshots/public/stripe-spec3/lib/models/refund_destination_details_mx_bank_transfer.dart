@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class RefundDestinationDetailsMxBankTransfer {const RefundDestinationDetailsMxBankTransfer({this.reference, this.referenceStatus, });
+@immutable final class RefundDestinationDetailsMxBankTransfer {const RefundDestinationDetailsMxBankTransfer({this.reference = const Omittable.absent(), this.referenceStatus = const Omittable.absent(), });
 
 factory RefundDestinationDetailsMxBankTransfer.fromJson(Map<String, dynamic> json) { return RefundDestinationDetailsMxBankTransfer(
-  reference: json['reference'] as String?,
-  referenceStatus: json['reference_status'] as String?,
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
+  referenceStatus: json.containsKey('reference_status') ? Omittable(json['reference_status'] as String?) : const Omittable.absent(),
 ); }
 
 /// The reference assigned to the refund.
-final String? reference;
+final Omittable<String?> reference;
 
 /// Status of the reference on the refund. This can be `pending`, `available` or `unavailable`.
-final String? referenceStatus;
+final Omittable<String?> referenceStatus;
 
 Map<String, dynamic> toJson() { return {
-  'reference': ?reference,
-  'reference_status': ?referenceStatus,
+  if (reference.isPresent) 'reference': reference.value,
+  if (referenceStatus.isPresent) 'reference_status': referenceStatus.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'reference_status'}.contains(key)); } 
-RefundDestinationDetailsMxBankTransfer copyWith({String? Function()? reference, String? Function()? referenceStatus, }) { return RefundDestinationDetailsMxBankTransfer(
-  reference: reference != null ? reference() : this.reference,
-  referenceStatus: referenceStatus != null ? referenceStatus() : this.referenceStatus,
+RefundDestinationDetailsMxBankTransfer copyWith({Omittable<String?>? reference, Omittable<String?>? referenceStatus, }) { return RefundDestinationDetailsMxBankTransfer(
+  reference: reference ?? this.reference,
+  referenceStatus: referenceStatus ?? this.referenceStatus,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RefundDestinationDetailsMxBankTransfer &&

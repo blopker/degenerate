@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'data_source_config': dataSourceConfig.toJson(),
   'testing_criteria': testingCriteria.map((e) => e.toJson()).toList(),
   'created_at': createdAt,
-  'metadata': ?metadata,
+  'metadata': metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('id') && json['id'] is String &&

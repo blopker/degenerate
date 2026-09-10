@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'FriendlyName': ?friendlyName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName'}.contains(key)); } 
-CreateNewSigningKeyRequest copyWith({String Function()? friendlyName}) { return CreateNewSigningKeyRequest(
+CreateNewSigningKeyRequest copyWith({String? Function()? friendlyName}) { return CreateNewSigningKeyRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

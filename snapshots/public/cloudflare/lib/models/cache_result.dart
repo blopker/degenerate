@@ -25,13 +25,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CacheResultValue($value)'; } 
  }
-@immutable final class CacheResult {const CacheResult({required this.editable, required this.id, required this.modifiedOn, required this.value, this.nextScheduledScan, });
+@immutable final class CacheResult {const CacheResult({required this.editable, required this.id, required this.modifiedOn, required this.value, this.nextScheduledScan = const Omittable.absent(), });
 
 factory CacheResult.fromJson(Map<String, dynamic> json) { return CacheResult(
   editable: json['editable'] as bool,
   id: json['id'] as String,
   modifiedOn: DateTime.parse(json['modified_on'] as String),
-  nextScheduledScan: json['next_scheduled_scan'] != null ? DateTime.parse(json['next_scheduled_scan'] as String) : null,
+  nextScheduledScan: json.containsKey('next_scheduled_scan') ? Omittable(json['next_scheduled_scan'] != null ? DateTime.parse(json['next_scheduled_scan'] as String) : null) : const Omittable.absent(),
   value: CacheResultValue.fromJson(json['value'] as String),
 ); }
 
@@ -44,7 +44,7 @@ final String id;
 final DateTime modifiedOn;
 
 /// Next time this zone will be scanned by the Automatic SSL/TLS.
-final DateTime? nextScheduledScan;
+final Omittable<DateTime?> nextScheduledScan;
 
 /// Current setting of the automatic SSL/TLS.
 final CacheResultValue value;
@@ -53,18 +53,18 @@ Map<String, dynamic> toJson() { return {
   'editable': editable,
   'id': id,
   'modified_on': modifiedOn.toIso8601String(),
-  if (nextScheduledScan != null) 'next_scheduled_scan': nextScheduledScan?.toIso8601String(),
+  if (nextScheduledScan.isPresent) 'next_scheduled_scan': nextScheduledScan.value?.toIso8601String(),
   'value': value.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('editable') && json['editable'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('modified_on') && json['modified_on'] is String &&
       json.containsKey('value'); } 
-CacheResult copyWith({bool? editable, String? id, DateTime? modifiedOn, DateTime? Function()? nextScheduledScan, CacheResultValue? value, }) { return CacheResult(
+CacheResult copyWith({bool? editable, String? id, DateTime? modifiedOn, Omittable<DateTime?>? nextScheduledScan, CacheResultValue? value, }) { return CacheResult(
   editable: editable ?? this.editable,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
-  nextScheduledScan: nextScheduledScan != null ? nextScheduledScan() : this.nextScheduledScan,
+  nextScheduledScan: nextScheduledScan ?? this.nextScheduledScan,
   value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

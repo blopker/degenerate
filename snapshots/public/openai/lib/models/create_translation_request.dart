@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
       json.containsKey('model'); } 
-CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestModel? model, String Function()? prompt, CreateTranslationRequestResponseFormat Function()? responseFormat, double Function()? temperature, }) { return CreateTranslationRequest(
+CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestModel? model, String? Function()? prompt, CreateTranslationRequestResponseFormat Function()? responseFormat, double Function()? temperature, }) { return CreateTranslationRequest(
   file: file ?? this.file,
   model: model ?? this.model,
   prompt: prompt != null ? prompt() : this.prompt,
@@ -83,11 +83,11 @@ CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestMode
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreateTranslationRequest &&
-          file == other.file &&
+          listEquals(file, other.file) &&
           model == other.model &&
           prompt == other.prompt &&
           responseFormat == other.responseFormat &&
           temperature == other.temperature; } 
-@override int get hashCode { return Object.hash(file, model, prompt, responseFormat, temperature); } 
+@override int get hashCode { return Object.hash(Object.hashAll(file), model, prompt, responseFormat, temperature); } 
 @override String toString() { return 'CreateTranslationRequest(file: $file, model: $model, prompt: $prompt, responseFormat: $responseFormat, temperature: $temperature)'; } 
  }

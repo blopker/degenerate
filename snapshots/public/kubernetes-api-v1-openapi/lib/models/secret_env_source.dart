@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'optional': ?optional,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'optional'}.contains(key)); } 
-SecretEnvSource copyWith({String Function()? name, bool Function()? optional, }) { return SecretEnvSource(
+SecretEnvSource copyWith({String Function()? name, bool? Function()? optional, }) { return SecretEnvSource(
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,
 ); } 

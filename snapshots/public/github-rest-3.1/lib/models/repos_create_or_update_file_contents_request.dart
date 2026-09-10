@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
       json.containsKey('content') && json['content'] is String; } 
-ReposCreateOrUpdateFileContentsRequest copyWith({String? message, String? content, String Function()? sha, String Function()? branch, ReposCreateOrUpdateFileContentsRequestCommitter Function()? committer, ReposCreateOrUpdateFileContentsRequestAuthor Function()? author, }) { return ReposCreateOrUpdateFileContentsRequest(
+ReposCreateOrUpdateFileContentsRequest copyWith({String? message, String? content, String? Function()? sha, String? Function()? branch, ReposCreateOrUpdateFileContentsRequestCommitter? Function()? committer, ReposCreateOrUpdateFileContentsRequestAuthor? Function()? author, }) { return ReposCreateOrUpdateFileContentsRequest(
   message: message ?? this.message,
   content: content ?? this.content,
   sha: sha != null ? sha() : this.sha,

@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_blocked_sender_id.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityCreateBlockedSenderResponseResult {const EmailSecurityCreateBlockedSenderResponseResult({required this.isRegex, required this.pattern, required this.patternType, required this.createdAt, required this.id, required this.lastModified, this.comments, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_blocked_sender_id.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityCreateBlockedSenderResponseResult {const EmailSecurityCreateBlockedSenderResponseResult({required this.isRegex, required this.pattern, required this.patternType, required this.createdAt, required this.id, required this.lastModified, this.comments = const Omittable.absent(), });
 
 factory EmailSecurityCreateBlockedSenderResponseResult.fromJson(Map<String, dynamic> json) { return EmailSecurityCreateBlockedSenderResponseResult(
-  comments: json['comments'] as String?,
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isRegex: json['is_regex'] as bool,
   pattern: json['pattern'] as String,
   patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
@@ -12,7 +12,7 @@ factory EmailSecurityCreateBlockedSenderResponseResult.fromJson(Map<String, dyna
   lastModified: DateTime.parse(json['last_modified'] as String),
 ); }
 
-final String? comments;
+final Omittable<String?> comments;
 
 final bool isRegex;
 
@@ -28,10 +28,10 @@ final EmailSecurityBlockedSenderId id;
 final DateTime lastModified;
 
 Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+  if (comments.isPresent) 'comments': comments.value,
   'is_regex': isRegex,
   'pattern': pattern,
-  if (patternType != null) 'pattern_type': patternType?.toJson(),
+  'pattern_type': patternType?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'id': id.toJson(),
   'last_modified': lastModified.toIso8601String(),
@@ -42,8 +42,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_re
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') &&
       json.containsKey('last_modified') && json['last_modified'] is String; } 
-EmailSecurityCreateBlockedSenderResponseResult copyWith({String? Function()? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, DateTime? createdAt, EmailSecurityBlockedSenderId? id, DateTime? lastModified, }) { return EmailSecurityCreateBlockedSenderResponseResult(
-  comments: comments != null ? comments() : this.comments,
+EmailSecurityCreateBlockedSenderResponseResult copyWith({Omittable<String?>? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, DateTime? createdAt, EmailSecurityBlockedSenderId? id, DateTime? lastModified, }) { return EmailSecurityCreateBlockedSenderResponseResult(
+  comments: comments ?? this.comments,
   isRegex: isRegex ?? this.isRegex,
   pattern: pattern ?? this.pattern,
   patternType: patternType != null ? patternType() : this.patternType,

@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'scheme': ?scheme,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port'); } 
-HttpGetAction copyWith({String Function()? host, List<HttpHeader> Function()? httpHeaders, String Function()? path, IoK8sApimachineryPkgUtilIntstrIntOrString? port, String Function()? scheme, }) { return HttpGetAction(
+HttpGetAction copyWith({String? Function()? host, List<HttpHeader>? Function()? httpHeaders, String? Function()? path, IoK8sApimachineryPkgUtilIntstrIntOrString? port, String? Function()? scheme, }) { return HttpGetAction(
   host: host != null ? host() : this.host,
   httpHeaders: httpHeaders != null ? httpHeaders() : this.httpHeaders,
   path: path != null ? path() : this.path,

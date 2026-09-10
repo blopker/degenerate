@@ -18,14 +18,14 @@ final String? param;
 final String type;
 
 Map<String, dynamic> toJson() { return {
-  'code': ?code,
+  'code': code,
   'message': message,
-  'param': ?param,
+  'param': param,
   'type': type,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && (json['code'] == null || json['code'] is String) &&
       json.containsKey('message') && json['message'] is String &&
-      json.containsKey('param') && json['param'] is String &&
+      json.containsKey('param') && (json['param'] == null || json['param'] is String) &&
       json.containsKey('type') && json['type'] is String; } 
 ErrorModel copyWith({String? Function()? code, String? message, String? Function()? param, String? type, }) { return ErrorModel(
   code: code != null ? code() : this.code,

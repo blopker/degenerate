@@ -108,7 +108,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('model') &&
       json.containsKey('input') && json['input'] is String &&
       json.containsKey('voice'); } 
-CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, String Function()? instructions, VoiceIdsOrCustomVoice? voice, CreateSpeechRequestResponseFormat Function()? responseFormat, double Function()? speed, CreateSpeechRequestStreamFormat Function()? streamFormat, }) { return CreateSpeechRequest(
+CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, String? Function()? instructions, VoiceIdsOrCustomVoice? voice, CreateSpeechRequestResponseFormat Function()? responseFormat, double Function()? speed, CreateSpeechRequestStreamFormat Function()? streamFormat, }) { return CreateSpeechRequest(
   model: model ?? this.model,
   input: input ?? this.input,
   instructions: instructions != null ? instructions() : this.instructions,

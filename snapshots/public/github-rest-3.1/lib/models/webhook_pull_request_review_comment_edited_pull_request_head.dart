@@ -24,9 +24,9 @@ final WebhookPullRequestReviewCommentEditedPullRequestHeadUser? user;
 Map<String, dynamic> toJson() { return {
   'label': label,
   'ref': ref,
-  if (repo != null) 'repo': repo?.toJson(),
+  'repo': repo?.toJson(),
   'sha': sha,
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String &&
       json.containsKey('ref') && json['ref'] is String &&

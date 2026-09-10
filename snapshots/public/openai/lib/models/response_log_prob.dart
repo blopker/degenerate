@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String &&
       json.containsKey('logprob') && json['logprob'] is num; } 
-ResponseLogProb copyWith({String? token, double? logprob, List<ResponseLogProbTopLogprobs> Function()? topLogprobs, }) { return ResponseLogProb(
+ResponseLogProb copyWith({String? token, double? logprob, List<ResponseLogProbTopLogprobs>? Function()? topLogprobs, }) { return ResponseLogProb(
   token: token ?? this.token,
   logprob: logprob ?? this.logprob,
   topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,

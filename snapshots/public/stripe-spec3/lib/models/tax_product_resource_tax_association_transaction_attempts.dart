@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('source') && json['source'] is String &&
       json.containsKey('status') && json['status'] is String; } 
-TaxProductResourceTaxAssociationTransactionAttempts copyWith({TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted Function()? committed, TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored Function()? errored, String? source, String? status, }) { return TaxProductResourceTaxAssociationTransactionAttempts(
+TaxProductResourceTaxAssociationTransactionAttempts copyWith({TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted? Function()? committed, TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored? Function()? errored, String? source, String? status, }) { return TaxProductResourceTaxAssociationTransactionAttempts(
   committed: committed != null ? committed() : this.committed,
   errored: errored != null ? errored() : this.errored,
   source: source ?? this.source,

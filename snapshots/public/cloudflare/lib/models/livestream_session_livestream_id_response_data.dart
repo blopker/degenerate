@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (session != null) 'session': session?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'livestream', 'paging', 'session'}.contains(key)); } 
-LivestreamSessionLivestreamIdResponseData copyWith({LivestreamSessionLivestreamIdResponseDataLivestream Function()? livestream, LivestreamSessionLivestreamIdResponseDataPaging Function()? paging, LivestreamSessionLivestreamIdResponseDataSession Function()? session, }) { return LivestreamSessionLivestreamIdResponseData(
+LivestreamSessionLivestreamIdResponseData copyWith({LivestreamSessionLivestreamIdResponseDataLivestream? Function()? livestream, LivestreamSessionLivestreamIdResponseDataPaging? Function()? paging, LivestreamSessionLivestreamIdResponseDataSession? Function()? session, }) { return LivestreamSessionLivestreamIdResponseData(
   livestream: livestream != null ? livestream() : this.livestream,
   paging: paging != null ? paging() : this.paging,
   session: session != null ? session() : this.session,

@@ -71,15 +71,15 @@ bool get isUnknown { return !values.contains(this); }
 /// Configuration options for
 /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
 /// 
-@immutable final class Reasoning {const Reasoning({this.effort, this.summary, this.generateSummary, });
+@immutable final class Reasoning {const Reasoning({this.effort = const Omittable.absent(), this.summary = const Omittable.absent(), this.generateSummary = const Omittable.absent(), });
 
 factory Reasoning.fromJson(Map<String, dynamic> json) { return Reasoning(
-  effort: json['effort'] != null ? ReasoningEffort.fromJson(json['effort'] as String) : null,
-  summary: json['summary'] != null ? ReasoningSummary.fromJson(json['summary'] as String) : null,
-  generateSummary: json['generate_summary'] != null ? ReasoningGenerateSummary.fromJson(json['generate_summary'] as String) : null,
+  effort: json.containsKey('effort') ? Omittable(json['effort'] != null ? ReasoningEffort.fromJson(json['effort'] as String) : null) : const Omittable.absent(),
+  summary: json.containsKey('summary') ? Omittable(json['summary'] != null ? ReasoningSummary.fromJson(json['summary'] as String) : null) : const Omittable.absent(),
+  generateSummary: json.containsKey('generate_summary') ? Omittable(json['generate_summary'] != null ? ReasoningGenerateSummary.fromJson(json['generate_summary'] as String) : null) : const Omittable.absent(),
 ); }
 
-final ReasoningEffort? effort;
+final Omittable<ReasoningEffort?> effort;
 
 /// A summary of the reasoning performed by the model. This can be
 /// useful for debugging and understanding the model's reasoning process.
@@ -87,7 +87,7 @@ final ReasoningEffort? effort;
 /// 
 /// `concise` is supported for `computer-use-preview` models and all reasoning models after `gpt-5`.
 /// 
-final ReasoningSummary? summary;
+final Omittable<ReasoningSummary?> summary;
 
 /// **Deprecated:** use `summary` instead.
 /// 
@@ -95,18 +95,18 @@ final ReasoningSummary? summary;
 /// useful for debugging and understanding the model's reasoning process.
 /// One of `auto`, `concise`, or `detailed`.
 /// 
-final ReasoningGenerateSummary? generateSummary;
+final Omittable<ReasoningGenerateSummary?> generateSummary;
 
 Map<String, dynamic> toJson() { return {
-  if (effort != null) 'effort': effort?.toJson(),
-  if (summary != null) 'summary': summary?.toJson(),
-  if (generateSummary != null) 'generate_summary': generateSummary?.toJson(),
+  if (effort.isPresent) 'effort': effort.value?.toJson(),
+  if (summary.isPresent) 'summary': summary.value?.toJson(),
+  if (generateSummary.isPresent) 'generate_summary': generateSummary.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effort', 'summary', 'generate_summary'}.contains(key)); } 
-Reasoning copyWith({ReasoningEffort? Function()? effort, ReasoningSummary? Function()? summary, ReasoningGenerateSummary? Function()? generateSummary, }) { return Reasoning(
-  effort: effort != null ? effort() : this.effort,
-  summary: summary != null ? summary() : this.summary,
-  generateSummary: generateSummary != null ? generateSummary() : this.generateSummary,
+Reasoning copyWith({Omittable<ReasoningEffort?>? effort, Omittable<ReasoningSummary?>? summary, Omittable<ReasoningGenerateSummary?>? generateSummary, }) { return Reasoning(
+  effort: effort ?? this.effort,
+  summary: summary ?? this.summary,
+  generateSummary: generateSummary ?? this.generateSummary,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Reasoning &&

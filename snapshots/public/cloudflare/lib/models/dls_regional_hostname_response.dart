@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') &&
       json.containsKey('hostname') &&
       json.containsKey('region_key'); } 
-DlsRegionalHostnameResponse copyWith({DlsTimestamp? createdOn, DlsHostname? hostname, DlsRegionKey? regionKey, DlsRouting Function()? routing, }) { return DlsRegionalHostnameResponse(
+DlsRegionalHostnameResponse copyWith({DlsTimestamp? createdOn, DlsHostname? hostname, DlsRegionKey? regionKey, DlsRouting? Function()? routing, }) { return DlsRegionalHostnameResponse(
   createdOn: createdOn ?? this.createdOn,
   hostname: hostname ?? this.hostname,
   regionKey: regionKey ?? this.regionKey,

@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ca') &&
       json.containsKey('certificates'); } 
-MTlsCertificateManagementUploadMTlsCertificateRequest copyWith({TlsCertificatesAndHostnamesCa? ca, TlsCertificatesAndHostnamesSchemasCertificates? certificates, TlsCertificatesAndHostnamesSchemasName Function()? name, TlsCertificatesAndHostnamesComponentsSchemasPrivateKey Function()? privateKey, }) { return MTlsCertificateManagementUploadMTlsCertificateRequest(
+MTlsCertificateManagementUploadMTlsCertificateRequest copyWith({TlsCertificatesAndHostnamesCa? ca, TlsCertificatesAndHostnamesSchemasCertificates? certificates, TlsCertificatesAndHostnamesSchemasName? Function()? name, TlsCertificatesAndHostnamesComponentsSchemasPrivateKey? Function()? privateKey, }) { return MTlsCertificateManagementUploadMTlsCertificateRequest(
   ca: ca ?? this.ca,
   certificates: certificates ?? this.certificates,
   name: name != null ? name() : this.name,

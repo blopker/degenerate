@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'tag': ?tag,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'tag'}.contains(key)); } 
-PackageVersionMetadataDocker copyWith({List<String> Function()? tag}) { return PackageVersionMetadataDocker(
+PackageVersionMetadataDocker copyWith({List<String>? Function()? tag}) { return PackageVersionMetadataDocker(
   tag: tag != null ? tag() : this.tag,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

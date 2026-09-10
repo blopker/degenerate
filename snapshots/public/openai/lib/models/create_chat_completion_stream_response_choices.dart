@@ -38,11 +38,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateChatCompletionStreamResponseChoicesFinishReason($value)'; } 
  }
-@immutable final class CreateChatCompletionStreamResponseChoices {const CreateChatCompletionStreamResponseChoices({required this.delta, required this.finishReason, required this.index, this.logprobs, });
+@immutable final class CreateChatCompletionStreamResponseChoices {const CreateChatCompletionStreamResponseChoices({required this.delta, required this.finishReason, required this.index, this.logprobs = const Omittable.absent(), });
 
 factory CreateChatCompletionStreamResponseChoices.fromJson(Map<String, dynamic> json) { return CreateChatCompletionStreamResponseChoices(
   delta: ChatCompletionStreamResponseDelta.fromJson(json['delta'] as Map<String, dynamic>),
-  logprobs: json['logprobs'] != null ? CreateChatCompletionStreamResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>) : null,
+  logprobs: json.containsKey('logprobs') ? Omittable(json['logprobs'] != null ? CreateChatCompletionStreamResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   finishReason: json['finish_reason'] != null ? CreateChatCompletionStreamResponseChoicesFinishReason.fromJson(json['finish_reason'] as String) : null,
   index: (json['index'] as num).toInt(),
 ); }
@@ -50,7 +50,7 @@ factory CreateChatCompletionStreamResponseChoices.fromJson(Map<String, dynamic> 
 final ChatCompletionStreamResponseDelta delta;
 
 /// Log probability information for the choice.
-final CreateChatCompletionStreamResponseChoicesLogprobs? logprobs;
+final Omittable<CreateChatCompletionStreamResponseChoicesLogprobs?> logprobs;
 
 /// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
 /// `length` if the maximum number of tokens specified in the request was reached,
@@ -64,16 +64,16 @@ final int index;
 
 Map<String, dynamic> toJson() { return {
   'delta': delta.toJson(),
-  if (logprobs != null) 'logprobs': logprobs?.toJson(),
-  if (finishReason != null) 'finish_reason': finishReason?.toJson(),
+  if (logprobs.isPresent) 'logprobs': logprobs.value?.toJson(),
+  'finish_reason': finishReason?.toJson(),
   'index': index,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('delta') &&
       json.containsKey('finish_reason') &&
       json.containsKey('index') && json['index'] is num; } 
-CreateChatCompletionStreamResponseChoices copyWith({ChatCompletionStreamResponseDelta? delta, CreateChatCompletionStreamResponseChoicesLogprobs? Function()? logprobs, CreateChatCompletionStreamResponseChoicesFinishReason? Function()? finishReason, int? index, }) { return CreateChatCompletionStreamResponseChoices(
+CreateChatCompletionStreamResponseChoices copyWith({ChatCompletionStreamResponseDelta? delta, Omittable<CreateChatCompletionStreamResponseChoicesLogprobs?>? logprobs, CreateChatCompletionStreamResponseChoicesFinishReason? Function()? finishReason, int? index, }) { return CreateChatCompletionStreamResponseChoices(
   delta: delta ?? this.delta,
-  logprobs: logprobs != null ? logprobs() : this.logprobs,
+  logprobs: logprobs ?? this.logprobs,
   finishReason: finishReason != null ? finishReason() : this.finishReason,
   index: index ?? this.index,
 ); } 

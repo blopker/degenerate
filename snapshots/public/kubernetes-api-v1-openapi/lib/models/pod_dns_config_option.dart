@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'value'}.contains(key)); } 
-PodDnsConfigOption copyWith({String Function()? name, String Function()? value, }) { return PodDnsConfigOption(
+PodDnsConfigOption copyWith({String? Function()? name, String? Function()? value, }) { return PodDnsConfigOption(
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
 ); } 

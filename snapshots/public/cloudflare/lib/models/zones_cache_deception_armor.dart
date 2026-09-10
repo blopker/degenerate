@@ -73,7 +73,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesCacheDeceptionArmor copyWith({ZonesCacheDeceptionArmorId Function()? id, ZonesCacheDeceptionArmorValue Function()? value, }) { return ZonesCacheDeceptionArmor(
+ZonesCacheDeceptionArmor copyWith({ZonesCacheDeceptionArmorId? Function()? id, ZonesCacheDeceptionArmorValue? Function()? value, }) { return ZonesCacheDeceptionArmor(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

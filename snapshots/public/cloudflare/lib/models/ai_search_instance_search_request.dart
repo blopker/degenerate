@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'messages': messages.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-AiSearchInstanceSearchRequest copyWith({AiSearchInstanceSearchRequestAiSearchOptions Function()? aiSearchOptions, List<AiSearchInstanceSearchRequestMessages>? messages, }) { return AiSearchInstanceSearchRequest(
+AiSearchInstanceSearchRequest copyWith({AiSearchInstanceSearchRequestAiSearchOptions? Function()? aiSearchOptions, List<AiSearchInstanceSearchRequestMessages>? messages, }) { return AiSearchInstanceSearchRequest(
   aiSearchOptions: aiSearchOptions != null ? aiSearchOptions() : this.aiSearchOptions,
   messages: messages ?? this.messages,
 ); } 

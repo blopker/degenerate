@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
-ResourceQuotaList copyWith({String Function()? apiVersion, List<ResourceQuota>? items, String Function()? kind, ListMeta Function()? metadata, }) { return ResourceQuotaList(
+ResourceQuotaList copyWith({String? Function()? apiVersion, List<ResourceQuota>? items, String? Function()? kind, ListMeta? Function()? metadata, }) { return ResourceQuotaList(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   items: items ?? this.items,
   kind: kind != null ? kind() : this.kind,

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_enabled.dart';import 'iam_account.dart';import 'iam_list_member_policy.dart';import 'iam_membership_components_schemas_identifier.dart';import 'iam_permissions.dart';import 'iam_schemas_status.dart';@immutable final class IamMembershipWithPolicies {const IamMembershipWithPolicies({this.account, this.apiAccessEnabled, this.id, this.permissions, this.policies, this.roles, this.status, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_enabled.dart';import 'iam_account.dart';import 'iam_list_member_policy.dart';import 'iam_membership_components_schemas_identifier.dart';import 'iam_permissions.dart';import 'iam_schemas_status.dart';@immutable final class IamMembershipWithPolicies {const IamMembershipWithPolicies({this.account, this.apiAccessEnabled = const Omittable.absent(), this.id, this.permissions, this.policies, this.roles, this.status, });
 
 factory IamMembershipWithPolicies.fromJson(Map<String, dynamic> json) { return IamMembershipWithPolicies(
   account: json['account'] != null ? IamAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
-  apiAccessEnabled: json['api_access_enabled'] != null ? AccessEnabled.fromJson(json['api_access_enabled'] as bool) : null,
+  apiAccessEnabled: json.containsKey('api_access_enabled') ? Omittable(json['api_access_enabled'] != null ? AccessEnabled.fromJson(json['api_access_enabled'] as bool) : null) : const Omittable.absent(),
   id: json['id'] != null ? IamMembershipComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
   permissions: json['permissions'] != null ? IamPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   policies: (json['policies'] as List<dynamic>?)?.map((e) => IamListMemberPolicy.fromJson(e as Map<String, dynamic>)).toList(),
@@ -15,7 +15,7 @@ factory IamMembershipWithPolicies.fromJson(Map<String, dynamic> json) { return I
 final IamAccount? account;
 
 /// Enterprise only. Indicates whether or not API access is enabled specifically for this user on a given account.
-final AccessEnabled? apiAccessEnabled;
+final Omittable<AccessEnabled?> apiAccessEnabled;
 
 final IamMembershipComponentsSchemasIdentifier? id;
 
@@ -31,7 +31,7 @@ final IamSchemasStatus? status;
 
 Map<String, dynamic> toJson() { return {
   if (account != null) 'account': account?.toJson(),
-  if (apiAccessEnabled != null) 'api_access_enabled': apiAccessEnabled?.toJson(),
+  if (apiAccessEnabled.isPresent) 'api_access_enabled': apiAccessEnabled.value?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (permissions != null) 'permissions': permissions?.toJson(),
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
@@ -39,9 +39,9 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account', 'api_access_enabled', 'id', 'permissions', 'policies', 'roles', 'status'}.contains(key)); } 
-IamMembershipWithPolicies copyWith({IamAccount Function()? account, AccessEnabled? Function()? apiAccessEnabled, IamMembershipComponentsSchemasIdentifier Function()? id, IamPermissions Function()? permissions, List<IamListMemberPolicy> Function()? policies, List<String> Function()? roles, IamSchemasStatus Function()? status, }) { return IamMembershipWithPolicies(
+IamMembershipWithPolicies copyWith({IamAccount? Function()? account, Omittable<AccessEnabled?>? apiAccessEnabled, IamMembershipComponentsSchemasIdentifier? Function()? id, IamPermissions? Function()? permissions, List<IamListMemberPolicy>? Function()? policies, List<String>? Function()? roles, IamSchemasStatus? Function()? status, }) { return IamMembershipWithPolicies(
   account: account != null ? account() : this.account,
-  apiAccessEnabled: apiAccessEnabled != null ? apiAccessEnabled() : this.apiAccessEnabled,
+  apiAccessEnabled: apiAccessEnabled ?? this.apiAccessEnabled,
   id: id != null ? id() : this.id,
   permissions: permissions != null ? permissions() : this.permissions,
   policies: policies != null ? policies() : this.policies,

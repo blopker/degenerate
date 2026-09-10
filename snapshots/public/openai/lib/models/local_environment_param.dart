@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (skills != null) 'skills': skills?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-LocalEnvironmentParam copyWith({LocalEnvironmentParamType? type, List<LocalSkillParam> Function()? skills, }) { return LocalEnvironmentParam(
+LocalEnvironmentParam copyWith({LocalEnvironmentParamType? type, List<LocalSkillParam>? Function()? skills, }) { return LocalEnvironmentParam(
   type: type ?? this.type,
   skills: skills != null ? skills() : this.skills,
 ); } 

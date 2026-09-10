@@ -131,39 +131,39 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion($value)'; } 
  }
 /// 
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure({this.authenticationFlow, this.result, this.resultReason, this.version, });
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure({this.authenticationFlow = const Omittable.absent(), this.result = const Omittable.absent(), this.resultReason = const Omittable.absent(), this.version = const Omittable.absent(), });
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure(
-  authenticationFlow: json['authentication_flow'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureAuthenticationFlow.fromJson(json['authentication_flow'] as String) : null,
-  result: json['result'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult.fromJson(json['result'] as String) : null,
-  resultReason: json['result_reason'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResultReason.fromJson(json['result_reason'] as String) : null,
-  version: json['version'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion.fromJson(json['version'] as String) : null,
+  authenticationFlow: json.containsKey('authentication_flow') ? Omittable(json['authentication_flow'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureAuthenticationFlow.fromJson(json['authentication_flow'] as String) : null) : const Omittable.absent(),
+  result: json.containsKey('result') ? Omittable(json['result'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult.fromJson(json['result'] as String) : null) : const Omittable.absent(),
+  resultReason: json.containsKey('result_reason') ? Omittable(json['result_reason'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResultReason.fromJson(json['result_reason'] as String) : null) : const Omittable.absent(),
+  version: json.containsKey('version') ? Omittable(json['version'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion.fromJson(json['version'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// For authenticated transactions: Indicates how the issuing bank authenticated the customer.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureAuthenticationFlow? authenticationFlow;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureAuthenticationFlow?> authenticationFlow;
 
 /// Indicates the outcome of 3D Secure authentication.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult? result;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult?> result;
 
 /// Additional information about why 3D Secure succeeded or failed, based on the `result`.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResultReason? resultReason;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResultReason?> resultReason;
 
 /// The version of 3D Secure that was used.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion? version;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion?> version;
 
 Map<String, dynamic> toJson() { return {
-  if (authenticationFlow != null) 'authentication_flow': authenticationFlow?.toJson(),
-  if (result != null) 'result': result?.toJson(),
-  if (resultReason != null) 'result_reason': resultReason?.toJson(),
-  if (version != null) 'version': version?.toJson(),
+  if (authenticationFlow.isPresent) 'authentication_flow': authenticationFlow.value?.toJson(),
+  if (result.isPresent) 'result': result.value?.toJson(),
+  if (resultReason.isPresent) 'result_reason': resultReason.value?.toJson(),
+  if (version.isPresent) 'version': version.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'authentication_flow', 'result', 'result_reason', 'version'}.contains(key)); } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure copyWith({PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureAuthenticationFlow? Function()? authenticationFlow, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult? Function()? result, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResultReason? Function()? resultReason, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion? Function()? version, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure(
-  authenticationFlow: authenticationFlow != null ? authenticationFlow() : this.authenticationFlow,
-  result: result != null ? result() : this.result,
-  resultReason: resultReason != null ? resultReason() : this.resultReason,
-  version: version != null ? version() : this.version,
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure copyWith({Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureAuthenticationFlow?>? authenticationFlow, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResult?>? result, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureResultReason?>? resultReason, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion?>? version, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure(
+  authenticationFlow: authenticationFlow ?? this.authenticationFlow,
+  result: result ?? this.result,
+  resultReason: resultReason ?? this.resultReason,
+  version: version ?? this.version,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure &&

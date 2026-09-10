@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'okta_account': ?oktaAccount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'authorization_server_id', 'okta_account'}.contains(key)); } 
-AccessOktaConfig copyWith({String Function()? clientId, String Function()? clientSecret, List<String> Function()? claims, String Function()? emailClaimName, String Function()? authorizationServerId, String Function()? oktaAccount, }) { return AccessOktaConfig(
+AccessOktaConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, String? Function()? authorizationServerId, String? Function()? oktaAccount, }) { return AccessOktaConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   claims: claims != null ? claims() : this.claims,

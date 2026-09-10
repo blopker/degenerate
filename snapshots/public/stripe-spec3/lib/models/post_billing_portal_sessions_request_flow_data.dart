@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostBillingPortalSessionsRequestFlowData copyWith({PostBillingPortalSessionsRequestFlowDataAfterCompletion Function()? afterCompletion, PostBillingPortalSessionsRequestFlowDataSubscriptionCancel Function()? subscriptionCancel, PostBillingPortalSessionsRequestFlowDataSubscriptionUpdate Function()? subscriptionUpdate, PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm Function()? subscriptionUpdateConfirm, PostBillingPortalSessionsRequestFlowDataType? type, }) { return PostBillingPortalSessionsRequestFlowData(
+PostBillingPortalSessionsRequestFlowData copyWith({PostBillingPortalSessionsRequestFlowDataAfterCompletion? Function()? afterCompletion, PostBillingPortalSessionsRequestFlowDataSubscriptionCancel? Function()? subscriptionCancel, PostBillingPortalSessionsRequestFlowDataSubscriptionUpdate? Function()? subscriptionUpdate, PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm? Function()? subscriptionUpdateConfirm, PostBillingPortalSessionsRequestFlowDataType? type, }) { return PostBillingPortalSessionsRequestFlowData(
   afterCompletion: afterCompletion != null ? afterCompletion() : this.afterCompletion,
   subscriptionCancel: subscriptionCancel != null ? subscriptionCancel() : this.subscriptionCancel,
   subscriptionUpdate: subscriptionUpdate != null ? subscriptionUpdate() : this.subscriptionUpdate,

@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-SecretKeyParam4CustomerAcceptance copyWith({int Function()? acceptedAt, SecretKeyParam4CustomerAcceptanceOffline Function()? offline, SecretKeyParam4CustomerAcceptanceOnline Function()? online, SecretKeyParam4CustomerAcceptanceType? type, }) { return SecretKeyParam4CustomerAcceptance(
+SecretKeyParam4CustomerAcceptance copyWith({int? Function()? acceptedAt, SecretKeyParam4CustomerAcceptanceOffline? Function()? offline, SecretKeyParam4CustomerAcceptanceOnline? Function()? online, SecretKeyParam4CustomerAcceptanceType? type, }) { return SecretKeyParam4CustomerAcceptance(
   acceptedAt: acceptedAt != null ? acceptedAt() : this.acceptedAt,
   offline: offline != null ? offline() : this.offline,
   online: online != null ? online() : this.online,

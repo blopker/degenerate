@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   if (provider != null) 'provider': provider?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'clientEmail', 'privateKey', 'provider'}.contains(key)); } 
-R2EnableSippyGcsSource copyWith({String Function()? bucket, String Function()? clientEmail, String Function()? privateKey, R2EnableSippyGcsSourceProvider Function()? provider, }) { return R2EnableSippyGcsSource(
+R2EnableSippyGcsSource copyWith({String? Function()? bucket, String? Function()? clientEmail, String? Function()? privateKey, R2EnableSippyGcsSourceProvider? Function()? provider, }) { return R2EnableSippyGcsSource(
   bucket: bucket != null ? bucket() : this.bucket,
   clientEmail: clientEmail != null ? clientEmail() : this.clientEmail,
   privateKey: privateKey != null ? privateKey() : this.privateKey,

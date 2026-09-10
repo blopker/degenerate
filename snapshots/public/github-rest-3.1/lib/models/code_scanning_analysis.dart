@@ -115,7 +115,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref')
       json.containsKey('tool') &&
       json.containsKey('deletable') && json['deletable'] is bool &&
       json.containsKey('warning') && json['warning'] is String; } 
-CodeScanningAnalysis copyWith({CodeScanningRef? ref, CodeScanningAnalysisCommitSha? commitSha, CodeScanningAnalysisAnalysisKey? analysisKey, CodeScanningAnalysisEnvironment? environment, CodeScanningAnalysisCategory Function()? category, String? error, CodeScanningAnalysisCreatedAt? createdAt, int? resultsCount, int? rulesCount, int? id, CodeScanningAnalysisUrl? url, CodeScanningAnalysisSarifId? sarifId, CodeScanningAnalysisTool? tool, bool? deletable, String? warning, }) { return CodeScanningAnalysis(
+CodeScanningAnalysis copyWith({CodeScanningRef? ref, CodeScanningAnalysisCommitSha? commitSha, CodeScanningAnalysisAnalysisKey? analysisKey, CodeScanningAnalysisEnvironment? environment, CodeScanningAnalysisCategory? Function()? category, String? error, CodeScanningAnalysisCreatedAt? createdAt, int? resultsCount, int? rulesCount, int? id, CodeScanningAnalysisUrl? url, CodeScanningAnalysisSarifId? sarifId, CodeScanningAnalysisTool? tool, bool? deletable, String? warning, }) { return CodeScanningAnalysis(
   ref: ref ?? this.ref,
   commitSha: commitSha ?? this.commitSha,
   analysisKey: analysisKey ?? this.analysisKey,

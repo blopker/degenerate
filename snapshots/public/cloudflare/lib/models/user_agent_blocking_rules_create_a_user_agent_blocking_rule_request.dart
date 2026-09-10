@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('configuration') &&
       json.containsKey('mode'); } 
-UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest copyWith({FirewallUaConfiguration? configuration, FirewallDescription Function()? description, FirewallSchemasMode? mode, FirewallSchemasPaused Function()? paused, }) { return UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest(
+UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest copyWith({FirewallUaConfiguration? configuration, FirewallDescription? Function()? description, FirewallSchemasMode? mode, FirewallSchemasPaused? Function()? paused, }) { return UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest(
   configuration: configuration ?? this.configuration,
   description: description != null ? description() : this.description,
   mode: mode ?? this.mode,

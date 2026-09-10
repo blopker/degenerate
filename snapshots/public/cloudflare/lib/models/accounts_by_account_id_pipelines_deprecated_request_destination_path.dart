@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'prefix': ?prefix,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String; } 
-AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath copyWith({String? bucket, String Function()? filename, String Function()? filepath, String Function()? prefix, }) { return AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath(
+AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath copyWith({String? bucket, String? Function()? filename, String? Function()? filepath, String? Function()? prefix, }) { return AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath(
   bucket: bucket ?? this.bucket,
   filename: filename != null ? filename() : this.filename,
   filepath: filepath != null ? filepath() : this.filepath,

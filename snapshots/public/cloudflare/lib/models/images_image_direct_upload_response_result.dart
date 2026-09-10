@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'uploadURL': ?uploadUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'uploadURL'}.contains(key)); } 
-ImagesImageDirectUploadResponseResult copyWith({String Function()? id, String Function()? uploadUrl, }) { return ImagesImageDirectUploadResponseResult(
+ImagesImageDirectUploadResponseResult copyWith({String? Function()? id, String? Function()? uploadUrl, }) { return ImagesImageDirectUploadResponseResult(
   id: id != null ? id() : this.id,
   uploadUrl: uploadUrl != null ? uploadUrl() : this.uploadUrl,
 ); } 

@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'centrify_app_id': ?centrifyAppId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'claims', 'email_claim_name', 'centrify_account', 'centrify_app_id'}.contains(key)); } 
-AccessCentrifyConfig copyWith({String Function()? clientId, String Function()? clientSecret, List<String> Function()? claims, String Function()? emailClaimName, String Function()? centrifyAccount, String Function()? centrifyAppId, }) { return AccessCentrifyConfig(
+AccessCentrifyConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, List<String>? Function()? claims, String? Function()? emailClaimName, String? Function()? centrifyAccount, String? Function()? centrifyAppId, }) { return AccessCentrifyConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   claims: claims != null ? claims() : this.claims,

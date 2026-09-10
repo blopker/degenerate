@@ -75,7 +75,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') &&
       json.containsKey('original_transaction') && json['original_transaction'] is String &&
       json.containsKey('reference') && json['reference'] is String; } 
-PostTaxTransactionsCreateReversalRequest copyWith({List<String> Function()? expand, int Function()? flatAmount, List<PostTaxTransactionsCreateReversalRequestLineItems> Function()? lineItems, Map<String, String> Function()? metadata, PostTaxTransactionsCreateReversalRequestMode? mode, String? originalTransaction, String? reference, PostTaxTransactionsCreateReversalRequestShippingCost Function()? shippingCost, }) { return PostTaxTransactionsCreateReversalRequest(
+PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? expand, int? Function()? flatAmount, List<PostTaxTransactionsCreateReversalRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostTaxTransactionsCreateReversalRequestMode? mode, String? originalTransaction, String? reference, PostTaxTransactionsCreateReversalRequestShippingCost? Function()? shippingCost, }) { return PostTaxTransactionsCreateReversalRequest(
   expand: expand != null ? expand() : this.expand,
   flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,
   lineItems: lineItems != null ? lineItems() : this.lineItems,

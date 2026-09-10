@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_pattern.dart';@immutable final class DlpNewEntry {const DlpNewEntry({required this.enabled, required this.name, required this.pattern, this.description, this.profileId, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_pattern.dart';@immutable final class DlpNewEntry {const DlpNewEntry({required this.enabled, required this.name, required this.pattern, this.description = const Omittable.absent(), this.profileId, });
 
 factory DlpNewEntry.fromJson(Map<String, dynamic> json) { return DlpNewEntry(
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   enabled: json['enabled'] as bool,
   name: json['name'] as String,
   pattern: DlpPattern.fromJson(json['pattern'] as Map<String, dynamic>),
   profileId: json['profile_id'] as String?,
 ); }
 
-final String? description;
+final Omittable<String?> description;
 
 final bool enabled;
 
@@ -21,7 +21,7 @@ final DlpPattern pattern;
 final String? profileId;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'enabled': enabled,
   'name': name,
   'pattern': pattern.toJson(),
@@ -30,8 +30,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('pattern'); } 
-DlpNewEntry copyWith({String? Function()? description, bool? enabled, String? name, DlpPattern? pattern, String Function()? profileId, }) { return DlpNewEntry(
-  description: description != null ? description() : this.description,
+DlpNewEntry copyWith({Omittable<String?>? description, bool? enabled, String? name, DlpPattern? pattern, String? Function()? profileId, }) { return DlpNewEntry(
+  description: description ?? this.description,
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,
   pattern: pattern ?? this.pattern,

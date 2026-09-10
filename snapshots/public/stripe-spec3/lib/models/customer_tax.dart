@@ -63,12 +63,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerTaxProvider($value)'; } 
  }
 /// 
-@immutable final class CustomerTax {const CustomerTax({required this.automaticTax, required this.provider, this.ipAddress, this.location, });
+@immutable final class CustomerTax {const CustomerTax({required this.automaticTax, required this.provider, this.ipAddress = const Omittable.absent(), this.location = const Omittable.absent(), });
 
 factory CustomerTax.fromJson(Map<String, dynamic> json) { return CustomerTax(
   automaticTax: CustomerTaxAutomaticTax.fromJson(json['automatic_tax'] as String),
-  ipAddress: json['ip_address'] as String?,
-  location: json['location'] != null ? CustomerTaxLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
+  ipAddress: json.containsKey('ip_address') ? Omittable(json['ip_address'] as String?) : const Omittable.absent(),
+  location: json.containsKey('location') ? Omittable(json['location'] != null ? CustomerTaxLocation.fromJson(json['location'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   provider: CustomerTaxProvider.fromJson(json['provider'] as String),
 ); }
 
@@ -76,26 +76,26 @@ factory CustomerTax.fromJson(Map<String, dynamic> json) { return CustomerTax(
 final CustomerTaxAutomaticTax automaticTax;
 
 /// A recent IP address of the customer used for tax reporting and tax location inference.
-final String? ipAddress;
+final Omittable<String?> ipAddress;
 
 /// The identified tax location of the customer.
-final CustomerTaxLocation? location;
+final Omittable<CustomerTaxLocation?> location;
 
 /// The tax calculation provider used for location resolution. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
 final CustomerTaxProvider provider;
 
 Map<String, dynamic> toJson() { return {
   'automatic_tax': automaticTax.toJson(),
-  'ip_address': ?ipAddress,
-  if (location != null) 'location': location?.toJson(),
+  if (ipAddress.isPresent) 'ip_address': ipAddress.value,
+  if (location.isPresent) 'location': location.value?.toJson(),
   'provider': provider.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_tax') &&
       json.containsKey('provider'); } 
-CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, String? Function()? ipAddress, CustomerTaxLocation? Function()? location, CustomerTaxProvider? provider, }) { return CustomerTax(
+CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, Omittable<String?>? ipAddress, Omittable<CustomerTaxLocation?>? location, CustomerTaxProvider? provider, }) { return CustomerTax(
   automaticTax: automaticTax ?? this.automaticTax,
-  ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
-  location: location != null ? location() : this.location,
+  ipAddress: ipAddress ?? this.ipAddress,
+  location: location ?? this.location,
   provider: provider ?? this.provider,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

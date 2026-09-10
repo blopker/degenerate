@@ -13,6 +13,7 @@ export 'src/jsonl.dart';
 export 'src/list_equals.dart';
 export 'src/map_equals.dart';
 export 'src/multipart.dart';
+export 'src/omittable.dart';
 export 'src/one_of.dart';
 export 'src/request_options.dart';
 export 'src/security.dart';

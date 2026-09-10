@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') && json['port'] is num &&
       json.containsKey('protocol') && json['protocol'] is String; } 
-PortStatus copyWith({String Function()? error, int? port, String? protocol, }) { return PortStatus(
+PortStatus copyWith({String? Function()? error, int? port, String? protocol, }) { return PortStatus(
   error: error != null ? error() : this.error,
   port: port ?? this.port,
   protocol: protocol ?? this.protocol,

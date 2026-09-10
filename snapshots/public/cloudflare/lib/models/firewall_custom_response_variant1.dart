@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (contentType != null) 'content_type': contentType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'content_type'}.contains(key)); } 
-FirewallCustomResponseVariant1 copyWith({FirewallBody Function()? body, FirewallContentType Function()? contentType, }) { return FirewallCustomResponseVariant1(
+FirewallCustomResponseVariant1 copyWith({FirewallBody? Function()? body, FirewallContentType? Function()? contentType, }) { return FirewallCustomResponseVariant1(
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 

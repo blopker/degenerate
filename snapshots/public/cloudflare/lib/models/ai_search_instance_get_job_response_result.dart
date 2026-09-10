@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('source'); } 
-AiSearchInstanceGetJobResponseResult copyWith({String Function()? description, String Function()? endReason, String Function()? endedAt, String? id, String Function()? lastSeenAt, AiSearchInstanceGetJobResponseResultSource? source, String Function()? startedAt, }) { return AiSearchInstanceGetJobResponseResult(
+AiSearchInstanceGetJobResponseResult copyWith({String? Function()? description, String? Function()? endReason, String? Function()? endedAt, String? id, String? Function()? lastSeenAt, AiSearchInstanceGetJobResponseResultSource? source, String? Function()? startedAt, }) { return AiSearchInstanceGetJobResponseResult(
   description: description != null ? description() : this.description,
   endReason: endReason != null ? endReason() : this.endReason,
   endedAt: endedAt != null ? endedAt() : this.endedAt,

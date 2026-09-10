@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (session != null) 'session': session?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('sdp') && json['sdp'] is String; } 
-RealtimeCallCreateRequest copyWith({String? sdp, RealtimeSessionCreateRequestGa Function()? session, }) { return RealtimeCallCreateRequest(
+RealtimeCallCreateRequest copyWith({String? sdp, RealtimeSessionCreateRequestGa? Function()? session, }) { return RealtimeCallCreateRequest(
   sdp: sdp ?? this.sdp,
   session: session != null ? session() : this.session,
 ); } 

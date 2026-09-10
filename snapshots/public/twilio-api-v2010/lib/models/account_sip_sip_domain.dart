@@ -75,141 +75,141 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountSipSipDomainVoiceStatusCallbackMethod($value)'; } 
  }
-@immutable final class AccountSipSipDomain {const AccountSipSipDomain({this.accountSid, this.apiVersion, this.authType, this.dateCreated, this.dateUpdated, this.domainName, this.friendlyName, this.sid, this.uri, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceStatusCallbackMethod, this.voiceStatusCallbackUrl, this.voiceUrl, this.subresourceUris, this.sipRegistration, this.emergencyCallingEnabled, this.secure, this.byocTrunkSid, this.emergencyCallerSid, });
+@immutable final class AccountSipSipDomain {const AccountSipSipDomain({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.authType = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.domainName = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.sid = const Omittable.absent(), this.uri = const Omittable.absent(), this.voiceFallbackMethod = const Omittable.absent(), this.voiceFallbackUrl = const Omittable.absent(), this.voiceMethod = const Omittable.absent(), this.voiceStatusCallbackMethod = const Omittable.absent(), this.voiceStatusCallbackUrl = const Omittable.absent(), this.voiceUrl = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), this.sipRegistration = const Omittable.absent(), this.emergencyCallingEnabled = const Omittable.absent(), this.secure = const Omittable.absent(), this.byocTrunkSid = const Omittable.absent(), this.emergencyCallerSid = const Omittable.absent(), });
 
 factory AccountSipSipDomain.fromJson(Map<String, dynamic> json) { return AccountSipSipDomain(
-  accountSid: json['account_sid'] as String?,
-  apiVersion: json['api_version'] as String?,
-  authType: json['auth_type'] as String?,
-  dateCreated: json['date_created'] as String?,
-  dateUpdated: json['date_updated'] as String?,
-  domainName: json['domain_name'] as String?,
-  friendlyName: json['friendly_name'] as String?,
-  sid: json['sid'] as String?,
-  uri: json['uri'] as String?,
-  voiceFallbackMethod: json['voice_fallback_method'] != null ? AccountSipSipDomainVoiceFallbackMethod.fromJson(json['voice_fallback_method'] as String) : null,
-  voiceFallbackUrl: json['voice_fallback_url'] != null ? Uri.parse(json['voice_fallback_url'] as String) : null,
-  voiceMethod: json['voice_method'] != null ? AccountSipSipDomainVoiceMethod.fromJson(json['voice_method'] as String) : null,
-  voiceStatusCallbackMethod: json['voice_status_callback_method'] != null ? AccountSipSipDomainVoiceStatusCallbackMethod.fromJson(json['voice_status_callback_method'] as String) : null,
-  voiceStatusCallbackUrl: json['voice_status_callback_url'] != null ? Uri.parse(json['voice_status_callback_url'] as String) : null,
-  voiceUrl: json['voice_url'] != null ? Uri.parse(json['voice_url'] as String) : null,
-  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
-  sipRegistration: json['sip_registration'] as bool?,
-  emergencyCallingEnabled: json['emergency_calling_enabled'] as bool?,
-  secure: json['secure'] as bool?,
-  byocTrunkSid: json['byoc_trunk_sid'] as String?,
-  emergencyCallerSid: json['emergency_caller_sid'] as String?,
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
+  authType: json.containsKey('auth_type') ? Omittable(json['auth_type'] as String?) : const Omittable.absent(),
+  dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  domainName: json.containsKey('domain_name') ? Omittable(json['domain_name'] as String?) : const Omittable.absent(),
+  friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
+  voiceFallbackMethod: json.containsKey('voice_fallback_method') ? Omittable(json['voice_fallback_method'] != null ? AccountSipSipDomainVoiceFallbackMethod.fromJson(json['voice_fallback_method'] as String) : null) : const Omittable.absent(),
+  voiceFallbackUrl: json.containsKey('voice_fallback_url') ? Omittable(json['voice_fallback_url'] != null ? Uri.parse(json['voice_fallback_url'] as String) : null) : const Omittable.absent(),
+  voiceMethod: json.containsKey('voice_method') ? Omittable(json['voice_method'] != null ? AccountSipSipDomainVoiceMethod.fromJson(json['voice_method'] as String) : null) : const Omittable.absent(),
+  voiceStatusCallbackMethod: json.containsKey('voice_status_callback_method') ? Omittable(json['voice_status_callback_method'] != null ? AccountSipSipDomainVoiceStatusCallbackMethod.fromJson(json['voice_status_callback_method'] as String) : null) : const Omittable.absent(),
+  voiceStatusCallbackUrl: json.containsKey('voice_status_callback_url') ? Omittable(json['voice_status_callback_url'] != null ? Uri.parse(json['voice_status_callback_url'] as String) : null) : const Omittable.absent(),
+  voiceUrl: json.containsKey('voice_url') ? Omittable(json['voice_url'] != null ? Uri.parse(json['voice_url'] as String) : null) : const Omittable.absent(),
+  subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
+  sipRegistration: json.containsKey('sip_registration') ? Omittable(json['sip_registration'] as bool?) : const Omittable.absent(),
+  emergencyCallingEnabled: json.containsKey('emergency_calling_enabled') ? Omittable(json['emergency_calling_enabled'] as bool?) : const Omittable.absent(),
+  secure: json.containsKey('secure') ? Omittable(json['secure'] as bool?) : const Omittable.absent(),
+  byocTrunkSid: json.containsKey('byoc_trunk_sid') ? Omittable(json['byoc_trunk_sid'] as String?) : const Omittable.absent(),
+  emergencyCallerSid: json.containsKey('emergency_caller_sid') ? Omittable(json['emergency_caller_sid'] as String?) : const Omittable.absent(),
 ); }
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the SipDomain resource.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The API version used to process the call.
-final String? apiVersion;
+final Omittable<String?> apiVersion;
 
 /// The types of authentication you have mapped to your domain. Can be: `IP_ACL` and `CREDENTIAL_LIST`. If you have both defined for your domain, both will be returned in a comma delimited string. If `auth_type` is not defined, the domain will not be able to receive any traffic.
-final String? authType;
+final Omittable<String?> authType;
 
 /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateCreated;
+final Omittable<String?> dateCreated;
 
 /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// The unique address you reserve on Twilio to which you route your SIP traffic. Domain names can contain letters, digits, and "-" and must end with `sip.twilio.com`.
-final String? domainName;
+final Omittable<String?> domainName;
 
 /// The string that you assigned to describe the resource.
-final String? friendlyName;
+final Omittable<String?> friendlyName;
 
 /// The unique string that that we created to identify the SipDomain resource.
-final String? sid;
+final Omittable<String?> sid;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 /// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-final AccountSipSipDomainVoiceFallbackMethod? voiceFallbackMethod;
+final Omittable<AccountSipSipDomainVoiceFallbackMethod?> voiceFallbackMethod;
 
 /// The URL that we call when an error occurs while retrieving or executing the TwiML requested from `voice_url`.
-final Uri? voiceFallbackUrl;
+final Omittable<Uri?> voiceFallbackUrl;
 
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-final AccountSipSipDomainVoiceMethod? voiceMethod;
+final Omittable<AccountSipSipDomainVoiceMethod?> voiceMethod;
 
 /// The HTTP method we use to call `voice_status_callback_url`. Either `GET` or `POST`.
-final AccountSipSipDomainVoiceStatusCallbackMethod? voiceStatusCallbackMethod;
+final Omittable<AccountSipSipDomainVoiceStatusCallbackMethod?> voiceStatusCallbackMethod;
 
 /// The URL that we call to pass status parameters (such as call ended) to your application.
-final Uri? voiceStatusCallbackUrl;
+final Omittable<Uri?> voiceStatusCallbackUrl;
 
 /// The URL we call using the `voice_method` when the domain receives a call.
-final Uri? voiceUrl;
+final Omittable<Uri?> voiceUrl;
 
 /// A list of mapping resources associated with the SIP Domain resource identified by their relative URIs.
-final Map<String,dynamic>? subresourceUris;
+final Omittable<Map<String,dynamic>?> subresourceUris;
 
 /// Whether to allow SIP Endpoints to register with the domain to receive calls.
-final bool? sipRegistration;
+final Omittable<bool?> sipRegistration;
 
 /// Whether emergency calling is enabled for the domain. If enabled, allows emergency calls on the domain from phone numbers with validated addresses.
-final bool? emergencyCallingEnabled;
+final Omittable<bool?> emergencyCallingEnabled;
 
 /// Whether secure SIP is enabled for the domain. If enabled, TLS will be enforced and SRTP will be negotiated on all incoming calls to this sip domain.
-final bool? secure;
+final Omittable<bool?> secure;
 
 /// The SID of the BYOC Trunk(Bring Your Own Carrier) resource that the Sip Domain will be associated with.
-final String? byocTrunkSid;
+final Omittable<String?> byocTrunkSid;
 
 /// Whether an emergency caller sid is configured for the domain. If present, this phone number will be used as the callback for the emergency call.
-final String? emergencyCallerSid;
+final Omittable<String?> emergencyCallerSid;
 
 Map<String, dynamic> toJson() { return {
-  'account_sid': ?accountSid,
-  'api_version': ?apiVersion,
-  'auth_type': ?authType,
-  'date_created': ?dateCreated,
-  'date_updated': ?dateUpdated,
-  'domain_name': ?domainName,
-  'friendly_name': ?friendlyName,
-  'sid': ?sid,
-  'uri': ?uri,
-  if (voiceFallbackMethod != null) 'voice_fallback_method': voiceFallbackMethod?.toJson(),
-  if (voiceFallbackUrl != null) 'voice_fallback_url': voiceFallbackUrl?.toString(),
-  if (voiceMethod != null) 'voice_method': voiceMethod?.toJson(),
-  if (voiceStatusCallbackMethod != null) 'voice_status_callback_method': voiceStatusCallbackMethod?.toJson(),
-  if (voiceStatusCallbackUrl != null) 'voice_status_callback_url': voiceStatusCallbackUrl?.toString(),
-  if (voiceUrl != null) 'voice_url': voiceUrl?.toString(),
-  'subresource_uris': ?subresourceUris,
-  'sip_registration': ?sipRegistration,
-  'emergency_calling_enabled': ?emergencyCallingEnabled,
-  'secure': ?secure,
-  'byoc_trunk_sid': ?byocTrunkSid,
-  'emergency_caller_sid': ?emergencyCallerSid,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (apiVersion.isPresent) 'api_version': apiVersion.value,
+  if (authType.isPresent) 'auth_type': authType.value,
+  if (dateCreated.isPresent) 'date_created': dateCreated.value,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (domainName.isPresent) 'domain_name': domainName.value,
+  if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
+  if (sid.isPresent) 'sid': sid.value,
+  if (uri.isPresent) 'uri': uri.value,
+  if (voiceFallbackMethod.isPresent) 'voice_fallback_method': voiceFallbackMethod.value?.toJson(),
+  if (voiceFallbackUrl.isPresent) 'voice_fallback_url': voiceFallbackUrl.value?.toString(),
+  if (voiceMethod.isPresent) 'voice_method': voiceMethod.value?.toJson(),
+  if (voiceStatusCallbackMethod.isPresent) 'voice_status_callback_method': voiceStatusCallbackMethod.value?.toJson(),
+  if (voiceStatusCallbackUrl.isPresent) 'voice_status_callback_url': voiceStatusCallbackUrl.value?.toString(),
+  if (voiceUrl.isPresent) 'voice_url': voiceUrl.value?.toString(),
+  if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
+  if (sipRegistration.isPresent) 'sip_registration': sipRegistration.value,
+  if (emergencyCallingEnabled.isPresent) 'emergency_calling_enabled': emergencyCallingEnabled.value,
+  if (secure.isPresent) 'secure': secure.value,
+  if (byocTrunkSid.isPresent) 'byoc_trunk_sid': byocTrunkSid.value,
+  if (emergencyCallerSid.isPresent) 'emergency_caller_sid': emergencyCallerSid.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'auth_type', 'date_created', 'date_updated', 'domain_name', 'friendly_name', 'sid', 'uri', 'voice_fallback_method', 'voice_fallback_url', 'voice_method', 'voice_status_callback_method', 'voice_status_callback_url', 'voice_url', 'subresource_uris', 'sip_registration', 'emergency_calling_enabled', 'secure', 'byoc_trunk_sid', 'emergency_caller_sid'}.contains(key)); } 
-AccountSipSipDomain copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? authType, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? domainName, String? Function()? friendlyName, String? Function()? sid, String? Function()? uri, AccountSipSipDomainVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, AccountSipSipDomainVoiceMethod? Function()? voiceMethod, AccountSipSipDomainVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, Uri? Function()? voiceStatusCallbackUrl, Uri? Function()? voiceUrl, Map<String, dynamic>? Function()? subresourceUris, bool? Function()? sipRegistration, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return AccountSipSipDomain(
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
-  authType: authType != null ? authType() : this.authType,
-  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  domainName: domainName != null ? domainName() : this.domainName,
-  friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
-  sid: sid != null ? sid() : this.sid,
-  uri: uri != null ? uri() : this.uri,
-  voiceFallbackMethod: voiceFallbackMethod != null ? voiceFallbackMethod() : this.voiceFallbackMethod,
-  voiceFallbackUrl: voiceFallbackUrl != null ? voiceFallbackUrl() : this.voiceFallbackUrl,
-  voiceMethod: voiceMethod != null ? voiceMethod() : this.voiceMethod,
-  voiceStatusCallbackMethod: voiceStatusCallbackMethod != null ? voiceStatusCallbackMethod() : this.voiceStatusCallbackMethod,
-  voiceStatusCallbackUrl: voiceStatusCallbackUrl != null ? voiceStatusCallbackUrl() : this.voiceStatusCallbackUrl,
-  voiceUrl: voiceUrl != null ? voiceUrl() : this.voiceUrl,
-  subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
-  sipRegistration: sipRegistration != null ? sipRegistration() : this.sipRegistration,
-  emergencyCallingEnabled: emergencyCallingEnabled != null ? emergencyCallingEnabled() : this.emergencyCallingEnabled,
-  secure: secure != null ? secure() : this.secure,
-  byocTrunkSid: byocTrunkSid != null ? byocTrunkSid() : this.byocTrunkSid,
-  emergencyCallerSid: emergencyCallerSid != null ? emergencyCallerSid() : this.emergencyCallerSid,
+AccountSipSipDomain copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? authType, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? domainName, Omittable<String?>? friendlyName, Omittable<String?>? sid, Omittable<String?>? uri, Omittable<AccountSipSipDomainVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<AccountSipSipDomainVoiceMethod?>? voiceMethod, Omittable<AccountSipSipDomainVoiceStatusCallbackMethod?>? voiceStatusCallbackMethod, Omittable<Uri?>? voiceStatusCallbackUrl, Omittable<Uri?>? voiceUrl, Omittable<Map<String,dynamic>?>? subresourceUris, Omittable<bool?>? sipRegistration, Omittable<bool?>? emergencyCallingEnabled, Omittable<bool?>? secure, Omittable<String?>? byocTrunkSid, Omittable<String?>? emergencyCallerSid, }) { return AccountSipSipDomain(
+  accountSid: accountSid ?? this.accountSid,
+  apiVersion: apiVersion ?? this.apiVersion,
+  authType: authType ?? this.authType,
+  dateCreated: dateCreated ?? this.dateCreated,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  domainName: domainName ?? this.domainName,
+  friendlyName: friendlyName ?? this.friendlyName,
+  sid: sid ?? this.sid,
+  uri: uri ?? this.uri,
+  voiceFallbackMethod: voiceFallbackMethod ?? this.voiceFallbackMethod,
+  voiceFallbackUrl: voiceFallbackUrl ?? this.voiceFallbackUrl,
+  voiceMethod: voiceMethod ?? this.voiceMethod,
+  voiceStatusCallbackMethod: voiceStatusCallbackMethod ?? this.voiceStatusCallbackMethod,
+  voiceStatusCallbackUrl: voiceStatusCallbackUrl ?? this.voiceStatusCallbackUrl,
+  voiceUrl: voiceUrl ?? this.voiceUrl,
+  subresourceUris: subresourceUris ?? this.subresourceUris,
+  sipRegistration: sipRegistration ?? this.sipRegistration,
+  emergencyCallingEnabled: emergencyCallingEnabled ?? this.emergencyCallingEnabled,
+  secure: secure ?? this.secure,
+  byocTrunkSid: byocTrunkSid ?? this.byocTrunkSid,
+  emergencyCallerSid: emergencyCallerSid ?? this.emergencyCallerSid,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountSipSipDomain &&

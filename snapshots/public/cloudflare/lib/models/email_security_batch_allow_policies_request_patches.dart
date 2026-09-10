@@ -1,65 +1,65 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_allow_policy_id.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityBatchAllowPoliciesRequestPatches {const EmailSecurityBatchAllowPoliciesRequestPatches({required this.id, this.comments, this.isAcceptableSender, this.isExemptRecipient, this.isRegex, this.isTrustedSender, this.pattern, this.patternType, this.verifySender, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_allow_policy_id.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityBatchAllowPoliciesRequestPatches {const EmailSecurityBatchAllowPoliciesRequestPatches({required this.id, this.comments = const Omittable.absent(), this.isAcceptableSender = const Omittable.absent(), this.isExemptRecipient = const Omittable.absent(), this.isRegex = const Omittable.absent(), this.isTrustedSender = const Omittable.absent(), this.pattern = const Omittable.absent(), this.patternType = const Omittable.absent(), this.verifySender = const Omittable.absent(), });
 
 factory EmailSecurityBatchAllowPoliciesRequestPatches.fromJson(Map<String, dynamic> json) { return EmailSecurityBatchAllowPoliciesRequestPatches(
-  comments: json['comments'] as String?,
-  isAcceptableSender: json['is_acceptable_sender'] as bool?,
-  isExemptRecipient: json['is_exempt_recipient'] as bool?,
-  isRegex: json['is_regex'] as bool?,
-  isTrustedSender: json['is_trusted_sender'] as bool?,
-  pattern: json['pattern'] as String?,
-  patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
-  verifySender: json['verify_sender'] as bool?,
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
+  isAcceptableSender: json.containsKey('is_acceptable_sender') ? Omittable(json['is_acceptable_sender'] as bool?) : const Omittable.absent(),
+  isExemptRecipient: json.containsKey('is_exempt_recipient') ? Omittable(json['is_exempt_recipient'] as bool?) : const Omittable.absent(),
+  isRegex: json.containsKey('is_regex') ? Omittable(json['is_regex'] as bool?) : const Omittable.absent(),
+  isTrustedSender: json.containsKey('is_trusted_sender') ? Omittable(json['is_trusted_sender'] as bool?) : const Omittable.absent(),
+  pattern: json.containsKey('pattern') ? Omittable(json['pattern'] as String?) : const Omittable.absent(),
+  patternType: json.containsKey('pattern_type') ? Omittable(json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null) : const Omittable.absent(),
+  verifySender: json.containsKey('verify_sender') ? Omittable(json['verify_sender'] as bool?) : const Omittable.absent(),
   id: EmailSecurityAllowPolicyId.fromJson(json['id'] as num),
 ); }
 
-final String? comments;
+final Omittable<String?> comments;
 
 /// Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions.
 /// Note: This will not exempt messages with Malicious or Suspicious dispositions.
-final bool? isAcceptableSender;
+final Omittable<bool?> isAcceptableSender;
 
 /// Messages to this recipient will bypass all detections.
-final bool? isExemptRecipient;
+final Omittable<bool?> isExemptRecipient;
 
-final bool? isRegex;
+final Omittable<bool?> isRegex;
 
 /// Messages from this sender will bypass all detections and link following.
-final bool? isTrustedSender;
+final Omittable<bool?> isTrustedSender;
 
-final String? pattern;
+final Omittable<String?> pattern;
 
-final EmailSecurityPatternType? patternType;
+final Omittable<EmailSecurityPatternType?> patternType;
 
 /// Enforce DMARC, SPF or DKIM authentication.
 /// When on, Email Security only honors policies that pass authentication.
-final bool? verifySender;
+final Omittable<bool?> verifySender;
 
 /// The unique identifier for the allow policy.
 final EmailSecurityAllowPolicyId id;
 
 Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
-  'is_acceptable_sender': ?isAcceptableSender,
-  'is_exempt_recipient': ?isExemptRecipient,
-  'is_regex': ?isRegex,
-  'is_trusted_sender': ?isTrustedSender,
-  'pattern': ?pattern,
-  if (patternType != null) 'pattern_type': patternType?.toJson(),
-  'verify_sender': ?verifySender,
+  if (comments.isPresent) 'comments': comments.value,
+  if (isAcceptableSender.isPresent) 'is_acceptable_sender': isAcceptableSender.value,
+  if (isExemptRecipient.isPresent) 'is_exempt_recipient': isExemptRecipient.value,
+  if (isRegex.isPresent) 'is_regex': isRegex.value,
+  if (isTrustedSender.isPresent) 'is_trusted_sender': isTrustedSender.value,
+  if (pattern.isPresent) 'pattern': pattern.value,
+  if (patternType.isPresent) 'pattern_type': patternType.value?.toJson(),
+  if (verifySender.isPresent) 'verify_sender': verifySender.value,
   'id': id.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-EmailSecurityBatchAllowPoliciesRequestPatches copyWith({String? Function()? comments, bool? Function()? isAcceptableSender, bool? Function()? isExemptRecipient, bool? Function()? isRegex, bool? Function()? isTrustedSender, String? Function()? pattern, EmailSecurityPatternType? Function()? patternType, bool? Function()? verifySender, EmailSecurityAllowPolicyId? id, }) { return EmailSecurityBatchAllowPoliciesRequestPatches(
-  comments: comments != null ? comments() : this.comments,
-  isAcceptableSender: isAcceptableSender != null ? isAcceptableSender() : this.isAcceptableSender,
-  isExemptRecipient: isExemptRecipient != null ? isExemptRecipient() : this.isExemptRecipient,
-  isRegex: isRegex != null ? isRegex() : this.isRegex,
-  isTrustedSender: isTrustedSender != null ? isTrustedSender() : this.isTrustedSender,
-  pattern: pattern != null ? pattern() : this.pattern,
-  patternType: patternType != null ? patternType() : this.patternType,
-  verifySender: verifySender != null ? verifySender() : this.verifySender,
+EmailSecurityBatchAllowPoliciesRequestPatches copyWith({Omittable<String?>? comments, Omittable<bool?>? isAcceptableSender, Omittable<bool?>? isExemptRecipient, Omittable<bool?>? isRegex, Omittable<bool?>? isTrustedSender, Omittable<String?>? pattern, Omittable<EmailSecurityPatternType?>? patternType, Omittable<bool?>? verifySender, EmailSecurityAllowPolicyId? id, }) { return EmailSecurityBatchAllowPoliciesRequestPatches(
+  comments: comments ?? this.comments,
+  isAcceptableSender: isAcceptableSender ?? this.isAcceptableSender,
+  isExemptRecipient: isExemptRecipient ?? this.isExemptRecipient,
+  isRegex: isRegex ?? this.isRegex,
+  isTrustedSender: isTrustedSender ?? this.isTrustedSender,
+  pattern: pattern ?? this.pattern,
+  patternType: patternType ?? this.patternType,
+  verifySender: verifySender ?? this.verifySender,
   id: id ?? this.id,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

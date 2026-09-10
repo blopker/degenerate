@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'selected_repositories_url': ?selectedRepositoriesUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enforced_repositories'); } 
-ImmutableReleasesOrganizationSettings copyWith({ImmutableReleasesOrganizationSettingsEnforcedRepositories? enforcedRepositories, String Function()? selectedRepositoriesUrl, }) { return ImmutableReleasesOrganizationSettings(
+ImmutableReleasesOrganizationSettings copyWith({ImmutableReleasesOrganizationSettingsEnforcedRepositories? enforcedRepositories, String? Function()? selectedRepositoriesUrl, }) { return ImmutableReleasesOrganizationSettings(
   enforcedRepositories: enforcedRepositories ?? this.enforcedRepositories,
   selectedRepositoriesUrl: selectedRepositoriesUrl != null ? selectedRepositoriesUrl() : this.selectedRepositoriesUrl,
 ); } 

@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('card_reference_id') && json['card_reference_id'] is String &&
       json.containsKey('token_reference_id') && json['token_reference_id'] is String &&
       json.containsKey('token_requestor_id') && json['token_requestor_id'] is String; } 
-IssuingNetworkTokenVisa copyWith({String? cardReferenceId, String? tokenReferenceId, String? tokenRequestorId, String Function()? tokenRiskScore, }) { return IssuingNetworkTokenVisa(
+IssuingNetworkTokenVisa copyWith({String? cardReferenceId, String? tokenReferenceId, String? tokenRequestorId, String? Function()? tokenRiskScore, }) { return IssuingNetworkTokenVisa(
   cardReferenceId: cardReferenceId ?? this.cardReferenceId,
   tokenReferenceId: tokenReferenceId ?? this.tokenReferenceId,
   tokenRequestorId: tokenRequestorId ?? this.tokenRequestorId,

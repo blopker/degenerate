@@ -8,40 +8,40 @@ dynamic toJson() => value;
 
 }
 /// Specifies that, when a WAF rule matches, its configured action will be replaced by the action configured in this object.
-@immutable final class FirewallRewriteAction {const FirewallRewriteAction({this.block, this.challenge, this.$default, this.disable, this.simulate, });
+@immutable final class FirewallRewriteAction {const FirewallRewriteAction({this.block = const Omittable.absent(), this.challenge = const Omittable.absent(), this.$default = const Omittable.absent(), this.disable = const Omittable.absent(), this.simulate = const Omittable.absent(), });
 
 factory FirewallRewriteAction.fromJson(Map<String, dynamic> json) { return FirewallRewriteAction(
-  block: json['block'] != null ? FirewallWafRewriteAction.fromJson(json['block'] as dynamic) : null,
-  challenge: json['challenge'] != null ? FirewallWafRewriteAction.fromJson(json['challenge'] as dynamic) : null,
-  $default: json['default'] != null ? FirewallWafRewriteAction.fromJson(json['default'] as dynamic) : null,
-  disable: json['disable'] != null ? FirewallWafRewriteAction.fromJson(json['disable'] as dynamic) : null,
-  simulate: json['simulate'] != null ? FirewallWafRewriteAction.fromJson(json['simulate'] as dynamic) : null,
+  block: json.containsKey('block') ? Omittable(json['block'] != null ? FirewallWafRewriteAction.fromJson(json['block'] as dynamic) : null) : const Omittable.absent(),
+  challenge: json.containsKey('challenge') ? Omittable(json['challenge'] != null ? FirewallWafRewriteAction.fromJson(json['challenge'] as dynamic) : null) : const Omittable.absent(),
+  $default: json.containsKey('default') ? Omittable(json['default'] != null ? FirewallWafRewriteAction.fromJson(json['default'] as dynamic) : null) : const Omittable.absent(),
+  disable: json.containsKey('disable') ? Omittable(json['disable'] != null ? FirewallWafRewriteAction.fromJson(json['disable'] as dynamic) : null) : const Omittable.absent(),
+  simulate: json.containsKey('simulate') ? Omittable(json['simulate'] != null ? FirewallWafRewriteAction.fromJson(json['simulate'] as dynamic) : null) : const Omittable.absent(),
 ); }
 
-final FirewallWafRewriteAction? block;
+final Omittable<FirewallWafRewriteAction?> block;
 
-final FirewallWafRewriteAction? challenge;
+final Omittable<FirewallWafRewriteAction?> challenge;
 
-final FirewallWafRewriteAction? $default;
+final Omittable<FirewallWafRewriteAction?> $default;
 
-final FirewallWafRewriteAction? disable;
+final Omittable<FirewallWafRewriteAction?> disable;
 
-final FirewallWafRewriteAction? simulate;
+final Omittable<FirewallWafRewriteAction?> simulate;
 
 Map<String, dynamic> toJson() { return {
-  if (block != null) 'block': block?.toJson(),
-  if (challenge != null) 'challenge': challenge?.toJson(),
-  if ($default != null) 'default': $default?.toJson(),
-  if (disable != null) 'disable': disable?.toJson(),
-  if (simulate != null) 'simulate': simulate?.toJson(),
+  if (block.isPresent) 'block': block.value?.toJson(),
+  if (challenge.isPresent) 'challenge': challenge.value?.toJson(),
+  if ($default.isPresent) 'default': $default.value?.toJson(),
+  if (disable.isPresent) 'disable': disable.value?.toJson(),
+  if (simulate.isPresent) 'simulate': simulate.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'block', 'challenge', 'default', 'disable', 'simulate'}.contains(key)); } 
-FirewallRewriteAction copyWith({FirewallWafRewriteAction? Function()? block, FirewallWafRewriteAction? Function()? challenge, FirewallWafRewriteAction? Function()? $default, FirewallWafRewriteAction? Function()? disable, FirewallWafRewriteAction? Function()? simulate, }) { return FirewallRewriteAction(
-  block: block != null ? block() : this.block,
-  challenge: challenge != null ? challenge() : this.challenge,
-  $default: $default != null ? $default() : this.$default,
-  disable: disable != null ? disable() : this.disable,
-  simulate: simulate != null ? simulate() : this.simulate,
+FirewallRewriteAction copyWith({Omittable<FirewallWafRewriteAction?>? block, Omittable<FirewallWafRewriteAction?>? challenge, Omittable<FirewallWafRewriteAction?>? $default, Omittable<FirewallWafRewriteAction?>? disable, Omittable<FirewallWafRewriteAction?>? simulate, }) { return FirewallRewriteAction(
+  block: block ?? this.block,
+  challenge: challenge ?? this.challenge,
+  $default: $default ?? this.$default,
+  disable: disable ?? this.disable,
+  simulate: simulate ?? this.simulate,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is FirewallRewriteAction &&

@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (clientIp != null) 'clientIP': clientIp?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'clientIP'}.contains(key)); } 
-SessionAffinityConfig copyWith({ClientIpConfig Function()? clientIp}) { return SessionAffinityConfig(
+SessionAffinityConfig copyWith({ClientIpConfig? Function()? clientIp}) { return SessionAffinityConfig(
   clientIp: clientIp != null ? clientIp() : this.clientIp,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

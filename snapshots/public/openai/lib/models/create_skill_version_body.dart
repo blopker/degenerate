@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'default': ?$default,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('files'); } 
-CreateSkillVersionBody copyWith({CreateSkillVersionBodyFiles? files, bool Function()? $default, }) { return CreateSkillVersionBody(
+CreateSkillVersionBody copyWith({CreateSkillVersionBodyFiles? files, bool? Function()? $default, }) { return CreateSkillVersionBody(
   files: files ?? this.files,
   $default: $default != null ? $default() : this.$default,
 ); } 

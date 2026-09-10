@@ -46,13 +46,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrganizationCreateIssueTypeColor($value)'; } 
  }
-@immutable final class OrganizationCreateIssueType {const OrganizationCreateIssueType({required this.name, required this.isEnabled, this.description, this.color, });
+@immutable final class OrganizationCreateIssueType {const OrganizationCreateIssueType({required this.name, required this.isEnabled, this.description = const Omittable.absent(), this.color = const Omittable.absent(), });
 
 factory OrganizationCreateIssueType.fromJson(Map<String, dynamic> json) { return OrganizationCreateIssueType(
   name: json['name'] as String,
   isEnabled: json['is_enabled'] as bool,
-  description: json['description'] as String?,
-  color: json['color'] != null ? OrganizationCreateIssueTypeColor.fromJson(json['color'] as String) : null,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  color: json.containsKey('color') ? Omittable(json['color'] != null ? OrganizationCreateIssueTypeColor.fromJson(json['color'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Name of the issue type.
@@ -62,24 +62,24 @@ final String name;
 final bool isEnabled;
 
 /// Description of the issue type.
-final String? description;
+final Omittable<String?> description;
 
 /// Color for the issue type.
-final OrganizationCreateIssueTypeColor? color;
+final Omittable<OrganizationCreateIssueTypeColor?> color;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
   'is_enabled': isEnabled,
-  'description': ?description,
-  if (color != null) 'color': color?.toJson(),
+  if (description.isPresent) 'description': description.value,
+  if (color.isPresent) 'color': color.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('is_enabled') && json['is_enabled'] is bool; } 
-OrganizationCreateIssueType copyWith({String? name, bool? isEnabled, String? Function()? description, OrganizationCreateIssueTypeColor? Function()? color, }) { return OrganizationCreateIssueType(
+OrganizationCreateIssueType copyWith({String? name, bool? isEnabled, Omittable<String?>? description, Omittable<OrganizationCreateIssueTypeColor?>? color, }) { return OrganizationCreateIssueType(
   name: name ?? this.name,
   isEnabled: isEnabled ?? this.isEnabled,
-  description: description != null ? description() : this.description,
-  color: color != null ? color() : this.color,
+  description: description ?? this.description,
+  color: color ?? this.color,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is OrganizationCreateIssueType &&

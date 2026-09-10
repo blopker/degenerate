@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ListEnvironmentVariablesResponse copyWith({List<ListEnvironmentVariablesResponseErrors>? errors, List<String>? messages, Map<String,BuildsEnvironmentVariablesResponseValue>? result, BuildsPaginationInfo Function()? resultInfo, bool? success, }) { return ListEnvironmentVariablesResponse(
+ListEnvironmentVariablesResponse copyWith({List<ListEnvironmentVariablesResponseErrors>? errors, List<String>? messages, Map<String,BuildsEnvironmentVariablesResponseValue>? result, BuildsPaginationInfo? Function()? resultInfo, bool? success, }) { return ListEnvironmentVariablesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

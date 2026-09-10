@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'pinned_issue_comment.dart';import 'reaction_rollup.dart';import 'simple_user.dart';/// Comments provide a way for people to collaborate on an issue.
-@immutable final class IssueComment {const IssueComment({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, this.body, this.bodyText, this.bodyHtml, this.authorAssociation, this.performedViaGithubApp, this.reactions, this.pin, });
+@immutable final class IssueComment {const IssueComment({required this.id, required this.nodeId, required this.url, required this.htmlUrl, required this.user, required this.createdAt, required this.updatedAt, required this.issueUrl, this.body, this.bodyText, this.bodyHtml, this.authorAssociation, this.performedViaGithubApp = const Omittable.absent(), this.reactions, this.pin = const Omittable.absent(), });
 
 factory IssueComment.fromJson(Map<String, dynamic> json) { return IssueComment(
   id: (json['id'] as num).toInt(),
@@ -16,9 +16,9 @@ factory IssueComment.fromJson(Map<String, dynamic> json) { return IssueComment(
   updatedAt: DateTime.parse(json['updated_at'] as String),
   issueUrl: Uri.parse(json['issue_url'] as String),
   authorAssociation: json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null,
-  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+  performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
-  pin: json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null,
+  pin: json.containsKey('pin') ? Omittable(json['pin'] != null ? PinnedIssueComment.fromJson(json['pin'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// Unique identifier of the issue comment
@@ -49,11 +49,11 @@ final Uri issueUrl;
 /// How the author is associated with the repository.
 final AuthorAssociation? authorAssociation;
 
-final Integration? performedViaGithubApp;
+final Omittable<Integration?> performedViaGithubApp;
 
 final ReactionRollup? reactions;
 
-final PinnedIssueComment? pin;
+final Omittable<PinnedIssueComment?> pin;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -63,14 +63,14 @@ Map<String, dynamic> toJson() { return {
   'body_text': ?bodyText,
   'body_html': ?bodyHtml,
   'html_url': htmlUrl.toString(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'issue_url': issueUrl.toString(),
   if (authorAssociation != null) 'author_association': authorAssociation?.toJson(),
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+  if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
   if (reactions != null) 'reactions': reactions?.toJson(),
-  if (pin != null) 'pin': pin?.toJson(),
+  if (pin.isPresent) 'pin': pin.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('issue_url') && json['issue_url'] is String; } 
-IssueComment copyWith({int? id, String? nodeId, Uri? url, String Function()? body, String Function()? bodyText, String Function()? bodyHtml, Uri? htmlUrl, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation Function()? authorAssociation, Integration? Function()? performedViaGithubApp, ReactionRollup Function()? reactions, PinnedIssueComment? Function()? pin, }) { return IssueComment(
+IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? body, String? Function()? bodyText, String? Function()? bodyHtml, Uri? htmlUrl, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, Uri? issueUrl, AuthorAssociation? Function()? authorAssociation, Omittable<Integration?>? performedViaGithubApp, ReactionRollup? Function()? reactions, Omittable<PinnedIssueComment?>? pin, }) { return IssueComment(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
@@ -93,9 +93,9 @@ IssueComment copyWith({int? id, String? nodeId, Uri? url, String Function()? bod
   updatedAt: updatedAt ?? this.updatedAt,
   issueUrl: issueUrl ?? this.issueUrl,
   authorAssociation: authorAssociation != null ? authorAssociation() : this.authorAssociation,
-  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
+  performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   reactions: reactions != null ? reactions() : this.reactions,
-  pin: pin != null ? pin() : this.pin,
+  pin: pin ?? this.pin,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssueComment &&

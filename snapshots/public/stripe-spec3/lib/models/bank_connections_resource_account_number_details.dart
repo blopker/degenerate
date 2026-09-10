@@ -72,17 +72,17 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BankConnectionsResourceAccountNumberDetailsSupportedNetworks($value)'; } 
  }
 /// 
-@immutable final class BankConnectionsResourceAccountNumberDetails {const BankConnectionsResourceAccountNumberDetails({required this.identifierType, required this.status, required this.supportedNetworks, this.expectedExpiryDate, });
+@immutable final class BankConnectionsResourceAccountNumberDetails {const BankConnectionsResourceAccountNumberDetails({required this.identifierType, required this.status, required this.supportedNetworks, this.expectedExpiryDate = const Omittable.absent(), });
 
 factory BankConnectionsResourceAccountNumberDetails.fromJson(Map<String, dynamic> json) { return BankConnectionsResourceAccountNumberDetails(
-  expectedExpiryDate: json['expected_expiry_date'] != null ? (json['expected_expiry_date'] as num).toInt() : null,
+  expectedExpiryDate: json.containsKey('expected_expiry_date') ? Omittable(json['expected_expiry_date'] != null ? (json['expected_expiry_date'] as num).toInt() : null) : const Omittable.absent(),
   identifierType: BankConnectionsResourceAccountNumberDetailsIdentifierType.fromJson(json['identifier_type'] as String),
   status: BankConnectionsResourceAccountNumberDetailsStatus.fromJson(json['status'] as String),
   supportedNetworks: (json['supported_networks'] as List<dynamic>).map((e) => BankConnectionsResourceAccountNumberDetailsSupportedNetworks.fromJson(e as String)).toList(),
 ); }
 
 /// When the account number is expected to expire, if applicable.
-final int? expectedExpiryDate;
+final Omittable<int?> expectedExpiryDate;
 
 /// The type of account number associated with the account.
 final BankConnectionsResourceAccountNumberDetailsIdentifierType identifierType;
@@ -94,7 +94,7 @@ final BankConnectionsResourceAccountNumberDetailsStatus status;
 final List<BankConnectionsResourceAccountNumberDetailsSupportedNetworks> supportedNetworks;
 
 Map<String, dynamic> toJson() { return {
-  'expected_expiry_date': ?expectedExpiryDate,
+  if (expectedExpiryDate.isPresent) 'expected_expiry_date': expectedExpiryDate.value,
   'identifier_type': identifierType.toJson(),
   'status': status.toJson(),
   'supported_networks': supportedNetworks.map((e) => e.toJson()).toList(),
@@ -102,8 +102,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('identifier_type') &&
       json.containsKey('status') &&
       json.containsKey('supported_networks'); } 
-BankConnectionsResourceAccountNumberDetails copyWith({int? Function()? expectedExpiryDate, BankConnectionsResourceAccountNumberDetailsIdentifierType? identifierType, BankConnectionsResourceAccountNumberDetailsStatus? status, List<BankConnectionsResourceAccountNumberDetailsSupportedNetworks>? supportedNetworks, }) { return BankConnectionsResourceAccountNumberDetails(
-  expectedExpiryDate: expectedExpiryDate != null ? expectedExpiryDate() : this.expectedExpiryDate,
+BankConnectionsResourceAccountNumberDetails copyWith({Omittable<int?>? expectedExpiryDate, BankConnectionsResourceAccountNumberDetailsIdentifierType? identifierType, BankConnectionsResourceAccountNumberDetailsStatus? status, List<BankConnectionsResourceAccountNumberDetailsSupportedNetworks>? supportedNetworks, }) { return BankConnectionsResourceAccountNumberDetails(
+  expectedExpiryDate: expectedExpiryDate ?? this.expectedExpiryDate,
   identifierType: identifierType ?? this.identifierType,
   status: status ?? this.status,
   supportedNetworks: supportedNetworks ?? this.supportedNetworks,

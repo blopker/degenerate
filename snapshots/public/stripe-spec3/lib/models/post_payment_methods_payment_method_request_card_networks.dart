@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (preferred != null) 'preferred': preferred?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'preferred'}.contains(key)); } 
-PostPaymentMethodsPaymentMethodRequestCardNetworks copyWith({PostPaymentMethodsPaymentMethodRequestCardNetworksPreferred Function()? preferred}) { return PostPaymentMethodsPaymentMethodRequestCardNetworks(
+PostPaymentMethodsPaymentMethodRequestCardNetworks copyWith({PostPaymentMethodsPaymentMethodRequestCardNetworksPreferred? Function()? preferred}) { return PostPaymentMethodsPaymentMethodRequestCardNetworks(
   preferred: preferred != null ? preferred() : this.preferred,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

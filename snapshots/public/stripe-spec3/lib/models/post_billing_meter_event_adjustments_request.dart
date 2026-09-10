@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_name') && json['event_name'] is String &&
       json.containsKey('type'); } 
-PostBillingMeterEventAdjustmentsRequest copyWith({PostBillingMeterEventAdjustmentsRequestCancel Function()? cancel, String? eventName, List<String> Function()? expand, PostBillingMeterEventAdjustmentsRequestType? type, }) { return PostBillingMeterEventAdjustmentsRequest(
+PostBillingMeterEventAdjustmentsRequest copyWith({PostBillingMeterEventAdjustmentsRequestCancel? Function()? cancel, String? eventName, List<String>? Function()? expand, PostBillingMeterEventAdjustmentsRequestType? type, }) { return PostBillingMeterEventAdjustmentsRequest(
   cancel: cancel != null ? cancel() : this.cancel,
   eventName: eventName ?? this.eventName,
   expand: expand != null ? expand() : this.expand,

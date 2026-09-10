@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (confidenceIntervals != null) 'confidence_intervals': confidenceIntervals?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'confidence_intervals'}.contains(key)); } 
-ShieldOperationFeatureConfidenceIntervals copyWith({ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals Function()? confidenceIntervals}) { return ShieldOperationFeatureConfidenceIntervals(
+ShieldOperationFeatureConfidenceIntervals copyWith({ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals? Function()? confidenceIntervals}) { return ShieldOperationFeatureConfidenceIntervals(
   confidenceIntervals: confidenceIntervals != null ? confidenceIntervals() : this.confidenceIntervals,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

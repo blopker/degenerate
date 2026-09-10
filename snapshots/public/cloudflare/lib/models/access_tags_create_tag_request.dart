@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
-AccessTagsCreateTagRequest copyWith({AccessTagsComponentsSchemasName Function()? name}) { return AccessTagsCreateTagRequest(
+AccessTagsCreateTagRequest copyWith({AccessTagsComponentsSchemasName? Function()? name}) { return AccessTagsCreateTagRequest(
   name: name != null ? name() : this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

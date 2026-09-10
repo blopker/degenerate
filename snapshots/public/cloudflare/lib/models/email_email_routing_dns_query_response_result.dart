@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (record != null) 'record': record?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'record'}.contains(key)); } 
-EmailEmailRoutingDnsQueryResponseResult copyWith({List<EmailEmailRoutingGetResponseDnsError> Function()? errors, List<EmailDnsRecord> Function()? record, }) { return EmailEmailRoutingDnsQueryResponseResult(
+EmailEmailRoutingDnsQueryResponseResult copyWith({List<EmailEmailRoutingGetResponseDnsError>? Function()? errors, List<EmailDnsRecord>? Function()? record, }) { return EmailEmailRoutingDnsQueryResponseResult(
   errors: errors != null ? errors() : this.errors,
   record: record != null ? record() : this.record,
 ); } 

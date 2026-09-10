@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (function != null) 'function': function?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-AssistantsNamedToolChoice copyWith({AssistantsNamedToolChoiceType? type, AssistantsNamedToolChoiceFunction Function()? function, }) { return AssistantsNamedToolChoice(
+AssistantsNamedToolChoice copyWith({AssistantsNamedToolChoiceType? type, AssistantsNamedToolChoiceFunction? Function()? function, }) { return AssistantsNamedToolChoice(
   type: type ?? this.type,
   function: function != null ? function() : this.function,
 ); } 

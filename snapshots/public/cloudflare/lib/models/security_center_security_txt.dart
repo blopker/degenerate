@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'preferred_languages': ?preferredLanguages,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'acknowledgments', 'canonical', 'contact', 'enabled', 'encryption', 'expires', 'hiring', 'policy', 'preferred_languages'}.contains(key)); } 
-SecurityCenterSecurityTxt copyWith({List<Uri> Function()? acknowledgments, List<Uri> Function()? canonical, List<Uri> Function()? contact, bool Function()? enabled, List<Uri> Function()? encryption, DateTime Function()? expires, List<Uri> Function()? hiring, List<Uri> Function()? policy, String Function()? preferredLanguages, }) { return SecurityCenterSecurityTxt(
+SecurityCenterSecurityTxt copyWith({List<Uri>? Function()? acknowledgments, List<Uri>? Function()? canonical, List<Uri>? Function()? contact, bool? Function()? enabled, List<Uri>? Function()? encryption, DateTime? Function()? expires, List<Uri>? Function()? hiring, List<Uri>? Function()? policy, String? Function()? preferredLanguages, }) { return SecurityCenterSecurityTxt(
   acknowledgments: acknowledgments != null ? acknowledgments() : this.acknowledgments,
   canonical: canonical != null ? canonical() : this.canonical,
   contact: contact != null ? contact() : this.contact,

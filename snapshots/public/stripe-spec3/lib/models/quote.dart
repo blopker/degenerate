@@ -80,45 +80,45 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A Quote is a way to model prices that you'd like to provide to a customer.
 /// Once accepted, it will automatically create an invoice, subscription or subscription schedule.
-@immutable final class Quote {const Quote({required this.statusTransitions, required this.amountTotal, required this.automaticTax, required this.collectionMethod, required this.computed, required this.created, required this.amountSubtotal, required this.discounts, required this.expiresAt, required this.object, required this.metadata, required this.subscriptionData, required this.invoiceSettings, required this.id, required this.status, required this.totalDetails, required this.livemode, this.footer, this.header, this.description, this.invoice, this.defaultTaxRates, this.lineItems, this.transferData, this.customer, this.number, this.currency, this.onBehalfOf, this.applicationFeePercent, this.customerAccount, this.subscription, this.applicationFeeAmount, this.subscriptionSchedule, this.testClock, this.application, this.fromQuote, });
+@immutable final class Quote {const Quote({required this.statusTransitions, required this.amountTotal, required this.automaticTax, required this.collectionMethod, required this.computed, required this.created, required this.amountSubtotal, required this.discounts, required this.expiresAt, required this.object, required this.metadata, required this.subscriptionData, required this.invoiceSettings, required this.id, required this.status, required this.totalDetails, required this.livemode, this.footer = const Omittable.absent(), this.header = const Omittable.absent(), this.description = const Omittable.absent(), this.invoice = const Omittable.absent(), this.defaultTaxRates, this.lineItems, this.transferData = const Omittable.absent(), this.customer = const Omittable.absent(), this.number = const Omittable.absent(), this.currency = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.applicationFeePercent = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.subscription = const Omittable.absent(), this.applicationFeeAmount = const Omittable.absent(), this.subscriptionSchedule = const Omittable.absent(), this.testClock = const Omittable.absent(), this.application = const Omittable.absent(), this.fromQuote = const Omittable.absent(), });
 
 factory Quote.fromJson(Map<String, dynamic> json) { return Quote(
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
-  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null,
-  applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
-  applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  applicationFeeAmount: json.containsKey('application_fee_amount') ? Omittable(json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null) : const Omittable.absent(),
+  applicationFeePercent: json.containsKey('application_fee_percent') ? Omittable(json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null) : const Omittable.absent(),
   automaticTax: QuotesResourceAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
   collectionMethod: QuoteCollectionMethod.fromJson(json['collection_method'] as String),
   computed: QuotesResourceComputed.fromJson(json['computed'] as Map<String, dynamic>),
   created: (json['created'] as num).toInt(),
-  currency: json['currency'] as String?,
-  customer: json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
+  currency: json.containsKey('currency') ? Omittable(json['currency'] as String?) : const Omittable.absent(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => TaxRate.fromJson(v as Map<String, dynamic>),)).toList(),
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   discounts: (json['discounts'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>),)).toList(),
   expiresAt: (json['expires_at'] as num).toInt(),
-  footer: json['footer'] as String?,
-  fromQuote: json['from_quote'] != null ? QuotesResourceFromQuote.fromJson(json['from_quote'] as Map<String, dynamic>) : null,
-  header: json['header'] as String?,
+  footer: json.containsKey('footer') ? Omittable(json['footer'] as String?) : const Omittable.absent(),
+  fromQuote: json.containsKey('from_quote') ? Omittable(json['from_quote'] != null ? QuotesResourceFromQuote.fromJson(json['from_quote'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  header: json.containsKey('header') ? Omittable(json['header'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
-  invoice: json['invoice'] != null ? OneOf3.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedInvoice.fromJson(v as Map<String, dynamic>),) : null,
+  invoice: json.containsKey('invoice') ? Omittable(json['invoice'] != null ? OneOf3.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedInvoice.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   invoiceSettings: InvoiceSettingQuoteSetting.fromJson(json['invoice_settings'] as Map<String, dynamic>),
   lineItems: json['line_items'] != null ? QuoteLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  number: json['number'] as String?,
+  number: json.containsKey('number') ? Omittable(json['number'] as String?) : const Omittable.absent(),
   object: QuoteObject.fromJson(json['object'] as String),
-  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
+  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   status: QuoteStatus.fromJson(json['status'] as String),
   statusTransitions: QuotesResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  subscription: json['subscription'] != null ? OneOf2.parse(json['subscription'], fromA: (v) => v as String, fromB: (v) => Subscription.fromJson(v as Map<String, dynamic>),) : null,
+  subscription: json.containsKey('subscription') ? Omittable(json['subscription'] != null ? OneOf2.parse(json['subscription'], fromA: (v) => v as String, fromB: (v) => Subscription.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   subscriptionData: QuotesResourceSubscriptionDataSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>),
-  subscriptionSchedule: json['subscription_schedule'] != null ? OneOf2.parse(json['subscription_schedule'], fromA: (v) => v as String, fromB: (v) => SubscriptionSchedule.fromJson(v as Map<String, dynamic>),) : null,
-  testClock: json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null,
+  subscriptionSchedule: json.containsKey('subscription_schedule') ? Omittable(json['subscription_schedule'] != null ? OneOf2.parse(json['subscription_schedule'], fromA: (v) => v as String, fromB: (v) => SubscriptionSchedule.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   totalDetails: QuotesResourceTotalDetails.fromJson(json['total_details'] as Map<String, dynamic>),
-  transferData: json['transfer_data'] != null ? QuotesResourceTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
+  transferData: json.containsKey('transfer_data') ? Omittable(json['transfer_data'] != null ? QuotesResourceTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// Total before any discounts or taxes are applied.
@@ -128,13 +128,13 @@ final int amountSubtotal;
 final int amountTotal;
 
 /// ID of the Connect Application that created the quote.
-final QuoteApplication? application;
+final Omittable<QuoteApplication?> application;
 
 /// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account. Only applicable if there are no line items with recurring prices on the quote.
-final int? applicationFeeAmount;
+final Omittable<int?> applicationFeeAmount;
 
 /// A non-negative decimal between 0 and 100, with at most two decimal places. This represents the percentage of the subscription invoice total that will be transferred to the application owner's Stripe account. Only applicable if there are line items with recurring prices on the quote.
-final double? applicationFeePercent;
+final Omittable<double?> applicationFeePercent;
 
 final QuotesResourceAutomaticTax automaticTax;
 
@@ -147,19 +147,19 @@ final QuotesResourceComputed computed;
 final int created;
 
 /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
-final String? currency;
+final Omittable<String?> currency;
 
 /// The customer who received this quote. A customer is required to finalize the quote. Once specified, you can't change it.
-final QuoteCustomer? customer;
+final Omittable<QuoteCustomer?> customer;
 
 /// The account representing the customer who received this quote. A customer or account is required to finalize the quote. Once specified, you can't change it.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// The tax rates applied to this quote.
 final List<QuoteDefaultTaxRates>? defaultTaxRates;
 
 /// A description that will be displayed on the quote PDF.
-final String? description;
+final Omittable<String?> description;
 
 /// The discounts applied to this quote.
 final List<QuoteDiscounts> discounts;
@@ -168,19 +168,19 @@ final List<QuoteDiscounts> discounts;
 final int expiresAt;
 
 /// A footer that will be displayed on the quote PDF.
-final String? footer;
+final Omittable<String?> footer;
 
 /// Details of the quote that was cloned. See the [cloning documentation](https://docs.stripe.com/quotes/clone) for more details.
-final QuotesResourceFromQuote? fromQuote;
+final Omittable<QuotesResourceFromQuote?> fromQuote;
 
 /// A header that will be displayed on the quote PDF.
-final String? header;
+final Omittable<String?> header;
 
 /// Unique identifier for the object.
 final String id;
 
 /// The invoice that was created from this quote.
-final QuoteInvoice? invoice;
+final Omittable<QuoteInvoice?> invoice;
 
 final InvoiceSettingQuoteSetting invoiceSettings;
 
@@ -194,13 +194,13 @@ final bool livemode;
 final Map<String,String> metadata;
 
 /// A unique number that identifies this particular quote. This number is assigned once the quote is [finalized](https://docs.stripe.com/quotes/overview#finalize).
-final String? number;
+final Omittable<String?> number;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final QuoteObject object;
 
 /// The account on behalf of which to charge. See the [Connect documentation](https://support.stripe.com/questions/sending-invoices-on-behalf-of-connected-accounts) for details.
-final QuoteOnBehalfOf? onBehalfOf;
+final Omittable<QuoteOnBehalfOf?> onBehalfOf;
 
 /// The status of the quote.
 final QuoteStatus status;
@@ -208,58 +208,58 @@ final QuoteStatus status;
 final QuotesResourceStatusTransitions statusTransitions;
 
 /// The subscription that was created or updated from this quote.
-final QuoteSubscription? subscription;
+final Omittable<QuoteSubscription?> subscription;
 
 final QuotesResourceSubscriptionDataSubscriptionData subscriptionData;
 
 /// The subscription schedule that was created or updated from this quote.
-final QuoteSubscriptionSchedule? subscriptionSchedule;
+final Omittable<QuoteSubscriptionSchedule?> subscriptionSchedule;
 
 /// ID of the test clock this quote belongs to.
-final QuoteTestClock? testClock;
+final Omittable<QuoteTestClock?> testClock;
 
 final QuotesResourceTotalDetails totalDetails;
 
 /// The account (if any) the payments will be attributed to for tax reporting, and where funds from each payment will be transferred to for each of the invoices.
-final QuotesResourceTransferData? transferData;
+final Omittable<QuotesResourceTransferData?> transferData;
 
 Map<String, dynamic> toJson() { return {
   'amount_subtotal': amountSubtotal,
   'amount_total': amountTotal,
-  if (application != null) 'application': application?.toJson(),
-  'application_fee_amount': ?applicationFeeAmount,
-  'application_fee_percent': ?applicationFeePercent,
+  if (application.isPresent) 'application': application.value?.toJson(),
+  if (applicationFeeAmount.isPresent) 'application_fee_amount': applicationFeeAmount.value,
+  if (applicationFeePercent.isPresent) 'application_fee_percent': applicationFeePercent.value,
   'automatic_tax': automaticTax.toJson(),
   'collection_method': collectionMethod.toJson(),
   'computed': computed.toJson(),
   'created': created,
-  'currency': ?currency,
-  if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
+  if (currency.isPresent) 'currency': currency.value,
+  if (customer.isPresent) 'customer': customer.value?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   if (defaultTaxRates != null) 'default_tax_rates': defaultTaxRates?.map((e) => e.toJson()).toList(),
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'discounts': discounts.map((e) => e.toJson()).toList(),
   'expires_at': expiresAt,
-  'footer': ?footer,
-  if (fromQuote != null) 'from_quote': fromQuote?.toJson(),
-  'header': ?header,
+  if (footer.isPresent) 'footer': footer.value,
+  if (fromQuote.isPresent) 'from_quote': fromQuote.value?.toJson(),
+  if (header.isPresent) 'header': header.value,
   'id': id,
-  if (invoice != null) 'invoice': invoice?.toJson(),
+  if (invoice.isPresent) 'invoice': invoice.value?.toJson(),
   'invoice_settings': invoiceSettings.toJson(),
   if (lineItems != null) 'line_items': lineItems?.toJson(),
   'livemode': livemode,
   'metadata': metadata,
-  'number': ?number,
+  if (number.isPresent) 'number': number.value,
   'object': object.toJson(),
-  if (onBehalfOf != null) 'on_behalf_of': onBehalfOf?.toJson(),
+  if (onBehalfOf.isPresent) 'on_behalf_of': onBehalfOf.value?.toJson(),
   'status': status.toJson(),
   'status_transitions': statusTransitions.toJson(),
-  if (subscription != null) 'subscription': subscription?.toJson(),
+  if (subscription.isPresent) 'subscription': subscription.value?.toJson(),
   'subscription_data': subscriptionData.toJson(),
-  if (subscriptionSchedule != null) 'subscription_schedule': subscriptionSchedule?.toJson(),
-  if (testClock != null) 'test_clock': testClock?.toJson(),
+  if (subscriptionSchedule.isPresent) 'subscription_schedule': subscriptionSchedule.value?.toJson(),
+  if (testClock.isPresent) 'test_clock': testClock.value?.toJson(),
   'total_details': totalDetails.toJson(),
-  if (transferData != null) 'transfer_data': transferData?.toJson(),
+  if (transferData.isPresent) 'transfer_data': transferData.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_subtotal') && json['amount_subtotal'] is num &&
       json.containsKey('amount_total') && json['amount_total'] is num &&
@@ -278,43 +278,43 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status_transitions') &&
       json.containsKey('subscription_data') &&
       json.containsKey('total_details'); } 
-Quote copyWith({int? amountSubtotal, int? amountTotal, QuoteApplication? Function()? application, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, QuotesResourceAutomaticTax? automaticTax, QuoteCollectionMethod? collectionMethod, QuotesResourceComputed? computed, int? created, String? Function()? currency, QuoteCustomer? Function()? customer, String? Function()? customerAccount, List<QuoteDefaultTaxRates> Function()? defaultTaxRates, String? Function()? description, List<QuoteDiscounts>? discounts, int? expiresAt, String? Function()? footer, QuotesResourceFromQuote? Function()? fromQuote, String? Function()? header, String? id, QuoteInvoice? Function()? invoice, InvoiceSettingQuoteSetting? invoiceSettings, QuoteLineItems Function()? lineItems, bool? livemode, Map<String,String>? metadata, String? Function()? number, QuoteObject? object, QuoteOnBehalfOf? Function()? onBehalfOf, QuoteStatus? status, QuotesResourceStatusTransitions? statusTransitions, QuoteSubscription? Function()? subscription, QuotesResourceSubscriptionDataSubscriptionData? subscriptionData, QuoteSubscriptionSchedule? Function()? subscriptionSchedule, QuoteTestClock? Function()? testClock, QuotesResourceTotalDetails? totalDetails, QuotesResourceTransferData? Function()? transferData, }) { return Quote(
+Quote copyWith({int? amountSubtotal, int? amountTotal, Omittable<QuoteApplication?>? application, Omittable<int?>? applicationFeeAmount, Omittable<double?>? applicationFeePercent, QuotesResourceAutomaticTax? automaticTax, QuoteCollectionMethod? collectionMethod, QuotesResourceComputed? computed, int? created, Omittable<String?>? currency, Omittable<QuoteCustomer?>? customer, Omittable<String?>? customerAccount, List<QuoteDefaultTaxRates>? Function()? defaultTaxRates, Omittable<String?>? description, List<QuoteDiscounts>? discounts, int? expiresAt, Omittable<String?>? footer, Omittable<QuotesResourceFromQuote?>? fromQuote, Omittable<String?>? header, String? id, Omittable<QuoteInvoice?>? invoice, InvoiceSettingQuoteSetting? invoiceSettings, QuoteLineItems? Function()? lineItems, bool? livemode, Map<String,String>? metadata, Omittable<String?>? number, QuoteObject? object, Omittable<QuoteOnBehalfOf?>? onBehalfOf, QuoteStatus? status, QuotesResourceStatusTransitions? statusTransitions, Omittable<QuoteSubscription?>? subscription, QuotesResourceSubscriptionDataSubscriptionData? subscriptionData, Omittable<QuoteSubscriptionSchedule?>? subscriptionSchedule, Omittable<QuoteTestClock?>? testClock, QuotesResourceTotalDetails? totalDetails, Omittable<QuotesResourceTransferData?>? transferData, }) { return Quote(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
-  application: application != null ? application() : this.application,
-  applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
-  applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
+  application: application ?? this.application,
+  applicationFeeAmount: applicationFeeAmount ?? this.applicationFeeAmount,
+  applicationFeePercent: applicationFeePercent ?? this.applicationFeePercent,
   automaticTax: automaticTax ?? this.automaticTax,
   collectionMethod: collectionMethod ?? this.collectionMethod,
   computed: computed ?? this.computed,
   created: created ?? this.created,
-  currency: currency != null ? currency() : this.currency,
-  customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  currency: currency ?? this.currency,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount ?? this.customerAccount,
   defaultTaxRates: defaultTaxRates != null ? defaultTaxRates() : this.defaultTaxRates,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   discounts: discounts ?? this.discounts,
   expiresAt: expiresAt ?? this.expiresAt,
-  footer: footer != null ? footer() : this.footer,
-  fromQuote: fromQuote != null ? fromQuote() : this.fromQuote,
-  header: header != null ? header() : this.header,
+  footer: footer ?? this.footer,
+  fromQuote: fromQuote ?? this.fromQuote,
+  header: header ?? this.header,
   id: id ?? this.id,
-  invoice: invoice != null ? invoice() : this.invoice,
+  invoice: invoice ?? this.invoice,
   invoiceSettings: invoiceSettings ?? this.invoiceSettings,
   lineItems: lineItems != null ? lineItems() : this.lineItems,
   livemode: livemode ?? this.livemode,
   metadata: metadata ?? this.metadata,
-  number: number != null ? number() : this.number,
+  number: number ?? this.number,
   object: object ?? this.object,
-  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
+  onBehalfOf: onBehalfOf ?? this.onBehalfOf,
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
-  subscription: subscription != null ? subscription() : this.subscription,
+  subscription: subscription ?? this.subscription,
   subscriptionData: subscriptionData ?? this.subscriptionData,
-  subscriptionSchedule: subscriptionSchedule != null ? subscriptionSchedule() : this.subscriptionSchedule,
-  testClock: testClock != null ? testClock() : this.testClock,
+  subscriptionSchedule: subscriptionSchedule ?? this.subscriptionSchedule,
+  testClock: testClock ?? this.testClock,
   totalDetails: totalDetails ?? this.totalDetails,
-  transferData: transferData != null ? transferData() : this.transferData,
+  transferData: transferData ?? this.transferData,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Quote &&

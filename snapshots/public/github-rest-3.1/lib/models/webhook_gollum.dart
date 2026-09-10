@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('pages') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookGollum copyWith({EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, List<WebhookGollumPages>? pages, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookGollum(
+WebhookGollum copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, List<WebhookGollumPages>? pages, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookGollum(
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   organization: organization != null ? organization() : this.organization,

@@ -29,15 +29,15 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage($value)'; } 
  }
 /// 
-@immutable final class PaymentIntentPaymentMethodOptionsSwish {const PaymentIntentPaymentMethodOptionsSwish({this.reference, this.setupFutureUsage, });
+@immutable final class PaymentIntentPaymentMethodOptionsSwish {const PaymentIntentPaymentMethodOptionsSwish({this.reference = const Omittable.absent(), this.setupFutureUsage, });
 
 factory PaymentIntentPaymentMethodOptionsSwish.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsSwish(
-  reference: json['reference'] as String?,
+  reference: json.containsKey('reference') ? Omittable(json['reference'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
 /// A reference for this payment to be displayed in the Swish app.
-final String? reference;
+final Omittable<String?> reference;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -49,12 +49,12 @@ final String? reference;
 final PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
-  'reference': ?reference,
+  if (reference.isPresent) 'reference': reference.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference', 'setup_future_usage'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsSwish copyWith({String? Function()? reference, PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsSwish(
-  reference: reference != null ? reference() : this.reference,
+PaymentIntentPaymentMethodOptionsSwish copyWith({Omittable<String?>? reference, PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsSwish(
+  reference: reference ?? this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

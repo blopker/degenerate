@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
   'auto_inactive': ?autoInactive,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
-ReposCreateDeploymentStatusRequest copyWith({ReposCreateDeploymentStatusRequestState? state, String Function()? targetUrl, String Function()? logUrl, String Function()? description, String Function()? environment, String Function()? environmentUrl, bool Function()? autoInactive, }) { return ReposCreateDeploymentStatusRequest(
+ReposCreateDeploymentStatusRequest copyWith({ReposCreateDeploymentStatusRequestState? state, String Function()? targetUrl, String Function()? logUrl, String Function()? description, String? Function()? environment, String Function()? environmentUrl, bool? Function()? autoInactive, }) { return ReposCreateDeploymentStatusRequest(
   state: state ?? this.state,
   targetUrl: targetUrl != null ? targetUrl() : this.targetUrl,
   logUrl: logUrl != null ? logUrl() : this.logUrl,

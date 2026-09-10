@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_ai_config.dart';import 'realtimekit_recording_config.dart';@immutable final class ReplaceMeetingRequest {const ReplaceMeetingRequest({this.aiConfig, this.liveStreamOnStart = false, this.persistChat = false, this.recordOnStart = false, this.recordingConfig, this.sessionKeepAliveTimeInSecs = 60.0, this.summarizeOnEnd = false, this.title, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_ai_config.dart';import 'realtimekit_recording_config.dart';@immutable final class ReplaceMeetingRequest {const ReplaceMeetingRequest({this.aiConfig, this.liveStreamOnStart = false, this.persistChat = false, this.recordOnStart = false, this.recordingConfig, this.sessionKeepAliveTimeInSecs = 60.0, this.summarizeOnEnd = false, this.title = const Omittable.absent(), });
 
 factory ReplaceMeetingRequest.fromJson(Map<String, dynamic> json) { return ReplaceMeetingRequest(
   aiConfig: json['ai_config'] != null ? RealtimekitAiConfig.fromJson(json['ai_config'] as Map<String, dynamic>) : null,
@@ -10,7 +10,7 @@ factory ReplaceMeetingRequest.fromJson(Map<String, dynamic> json) { return Repla
   recordingConfig: json['recording_config'] != null ? RealtimekitRecordingConfig.fromJson(json['recording_config'] as Map<String, dynamic>) : null,
   sessionKeepAliveTimeInSecs: json.containsKey('session_keep_alive_time_in_secs') ? (json['session_keep_alive_time_in_secs'] as num).toDouble() : 60.0,
   summarizeOnEnd: json.containsKey('summarize_on_end') ? json['summarize_on_end'] as bool : false,
-  title: json['title'] as String?,
+  title: json.containsKey('title') ? Omittable(json['title'] as String?) : const Omittable.absent(),
 ); }
 
 final RealtimekitAiConfig? aiConfig;
@@ -33,7 +33,7 @@ final double sessionKeepAliveTimeInSecs;
 final bool summarizeOnEnd;
 
 /// Title of the meeting
-final String? title;
+final Omittable<String?> title;
 
 Map<String, dynamic> toJson() { return {
   if (aiConfig != null) 'ai_config': aiConfig?.toJson(),
@@ -43,10 +43,10 @@ Map<String, dynamic> toJson() { return {
   if (recordingConfig != null) 'recording_config': recordingConfig?.toJson(),
   'session_keep_alive_time_in_secs': sessionKeepAliveTimeInSecs,
   'summarize_on_end': summarizeOnEnd,
-  'title': ?title,
+  if (title.isPresent) 'title': title.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_config', 'live_stream_on_start', 'persist_chat', 'record_on_start', 'recording_config', 'session_keep_alive_time_in_secs', 'summarize_on_end', 'title'}.contains(key)); } 
-ReplaceMeetingRequest copyWith({RealtimekitAiConfig Function()? aiConfig, bool? Function()? liveStreamOnStart, bool Function()? persistChat, bool? Function()? recordOnStart, RealtimekitRecordingConfig Function()? recordingConfig, double Function()? sessionKeepAliveTimeInSecs, bool Function()? summarizeOnEnd, String? Function()? title, }) { return ReplaceMeetingRequest(
+ReplaceMeetingRequest copyWith({RealtimekitAiConfig? Function()? aiConfig, bool? Function()? liveStreamOnStart, bool Function()? persistChat, bool? Function()? recordOnStart, RealtimekitRecordingConfig? Function()? recordingConfig, double Function()? sessionKeepAliveTimeInSecs, bool Function()? summarizeOnEnd, Omittable<String?>? title, }) { return ReplaceMeetingRequest(
   aiConfig: aiConfig != null ? aiConfig() : this.aiConfig,
   liveStreamOnStart: liveStreamOnStart != null ? liveStreamOnStart() : this.liveStreamOnStart,
   persistChat: persistChat != null ? persistChat() : this.persistChat,
@@ -54,7 +54,7 @@ ReplaceMeetingRequest copyWith({RealtimekitAiConfig Function()? aiConfig, bool? 
   recordingConfig: recordingConfig != null ? recordingConfig() : this.recordingConfig,
   sessionKeepAliveTimeInSecs: sessionKeepAliveTimeInSecs != null ? sessionKeepAliveTimeInSecs() : this.sessionKeepAliveTimeInSecs,
   summarizeOnEnd: summarizeOnEnd != null ? summarizeOnEnd() : this.summarizeOnEnd,
-  title: title != null ? title() : this.title,
+  title: title ?? this.title,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ReplaceMeetingRequest &&

@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'op', 'value'}.contains(key)); } 
-FirewallMatchVariant1Headers copyWith({FirewallHeaderName Function()? name, FirewallHeaderOp Function()? op, FirewallHeaderValue Function()? value, }) { return FirewallMatchVariant1Headers(
+FirewallMatchVariant1Headers copyWith({FirewallHeaderName? Function()? name, FirewallHeaderOp? Function()? op, FirewallHeaderValue? Function()? value, }) { return FirewallMatchVariant1Headers(
   name: name != null ? name() : this.name,
   op: op != null ? op() : this.op,
   value: value != null ? value() : this.value,

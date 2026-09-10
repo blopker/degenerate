@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'command_logging': ?commandLogging,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'command_logging'}.contains(key)); } 
-ZeroTrustGatewayRuleSettingsAuditSsh copyWith({bool Function()? commandLogging}) { return ZeroTrustGatewayRuleSettingsAuditSsh(
+ZeroTrustGatewayRuleSettingsAuditSsh copyWith({bool? Function()? commandLogging}) { return ZeroTrustGatewayRuleSettingsAuditSsh(
   commandLogging: commandLogging != null ? commandLogging() : this.commandLogging,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

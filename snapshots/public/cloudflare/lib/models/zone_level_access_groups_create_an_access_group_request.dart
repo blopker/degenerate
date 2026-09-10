@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('include') &&
       json.containsKey('name'); } 
-ZoneLevelAccessGroupsCreateAnAccessGroupRequest copyWith({List<AccessRule> Function()? exclude, List<AccessRule>? include, AccessGroupsComponentsSchemasName2? name, List<AccessRule> Function()? require, }) { return ZoneLevelAccessGroupsCreateAnAccessGroupRequest(
+ZoneLevelAccessGroupsCreateAnAccessGroupRequest copyWith({List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessGroupsComponentsSchemasName2? name, List<AccessRule>? Function()? require, }) { return ZoneLevelAccessGroupsCreateAnAccessGroupRequest(
   exclude: exclude != null ? exclude() : this.exclude,
   include: include ?? this.include,
   name: name ?? this.name,

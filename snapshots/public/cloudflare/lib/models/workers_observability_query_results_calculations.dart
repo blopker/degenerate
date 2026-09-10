@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggregates') &&
       json.containsKey('calculation') && json['calculation'] is String &&
       json.containsKey('series'); } 
-WorkersObservabilityQueryResultsCalculations copyWith({List<WorkersObservabilityQueryResultsCalculationsAggregates>? aggregates, String Function()? alias, String? calculation, List<WorkersObservabilityQueryResultsCalculationsSeries>? series, }) { return WorkersObservabilityQueryResultsCalculations(
+WorkersObservabilityQueryResultsCalculations copyWith({List<WorkersObservabilityQueryResultsCalculationsAggregates>? aggregates, String? Function()? alias, String? calculation, List<WorkersObservabilityQueryResultsCalculationsSeries>? series, }) { return WorkersObservabilityQueryResultsCalculations(
   aggregates: aggregates ?? this.aggregates,
   alias: alias != null ? alias() : this.alias,
   calculation: calculation ?? this.calculation,

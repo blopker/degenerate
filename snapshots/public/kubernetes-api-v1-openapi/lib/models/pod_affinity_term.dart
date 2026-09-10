@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'topologyKey': topologyKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('topologyKey') && json['topologyKey'] is String; } 
-PodAffinityTerm copyWith({LabelSelector Function()? labelSelector, List<String> Function()? matchLabelKeys, List<String> Function()? mismatchLabelKeys, LabelSelector Function()? namespaceSelector, List<String> Function()? namespaces, String? topologyKey, }) { return PodAffinityTerm(
+PodAffinityTerm copyWith({LabelSelector? Function()? labelSelector, List<String>? Function()? matchLabelKeys, List<String>? Function()? mismatchLabelKeys, LabelSelector? Function()? namespaceSelector, List<String>? Function()? namespaces, String? topologyKey, }) { return PodAffinityTerm(
   labelSelector: labelSelector != null ? labelSelector() : this.labelSelector,
   matchLabelKeys: matchLabelKeys != null ? matchLabelKeys() : this.matchLabelKeys,
   mismatchLabelKeys: mismatchLabelKeys != null ? mismatchLabelKeys() : this.mismatchLabelKeys,

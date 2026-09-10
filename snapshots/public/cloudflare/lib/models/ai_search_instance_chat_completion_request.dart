@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-AiSearchInstanceChatCompletionRequest copyWith({AiSearchInstanceChatCompletionRequestAiSearchOptions Function()? aiSearchOptions, List<AiSearchInstanceChatCompletionRequestMessages>? messages, AiSearchInstanceChatCompletionRequestModel Function()? model, bool Function()? stream, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceChatCompletionRequest(
+AiSearchInstanceChatCompletionRequest copyWith({AiSearchInstanceChatCompletionRequestAiSearchOptions? Function()? aiSearchOptions, List<AiSearchInstanceChatCompletionRequestMessages>? messages, AiSearchInstanceChatCompletionRequestModel? Function()? model, bool? Function()? stream, Map<String, dynamic>? additionalProperties, }) { return AiSearchInstanceChatCompletionRequest(
   aiSearchOptions: aiSearchOptions != null ? aiSearchOptions() : this.aiSearchOptions,
   messages: messages ?? this.messages,
   model: model != null ? model() : this.model,

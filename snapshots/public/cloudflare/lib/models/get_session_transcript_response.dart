@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
-GetSessionTranscriptResponse copyWith({RealtimekitTranscript Function()? data, bool Function()? success, }) { return GetSessionTranscriptResponse(
+GetSessionTranscriptResponse copyWith({RealtimekitTranscript? Function()? data, bool? Function()? success, }) { return GetSessionTranscriptResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
 ); } 

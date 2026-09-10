@@ -95,7 +95,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('timeframe') &&
       json.containsKey('userId') && json['userId'] is String &&
       json.containsKey('workspaceId') && json['workspaceId'] is String; } 
-WorkersObservabilityQueryRun copyWith({String? accountId, String Function()? created, bool? dry, String? environmentId, double? granularity, String? id, WorkersObservabilityQuery? query, WorkersObservabilityQueryRunStatistics Function()? statistics, WorkersObservabilityQueryRunStatus? status, WorkersObservabilityQueryRunTimeframe? timeframe, String Function()? updated, String? userId, String? workspaceId, }) { return WorkersObservabilityQueryRun(
+WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? created, bool? dry, String? environmentId, double? granularity, String? id, WorkersObservabilityQuery? query, WorkersObservabilityQueryRunStatistics? Function()? statistics, WorkersObservabilityQueryRunStatus? status, WorkersObservabilityQueryRunTimeframe? timeframe, String? Function()? updated, String? userId, String? workspaceId, }) { return WorkersObservabilityQueryRun(
   accountId: accountId ?? this.accountId,
   created: created != null ? created() : this.created,
   dry: dry ?? this.dry,

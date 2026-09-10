@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'author_association.dart';import 'integration.dart';import 'issue_comment.dart';import 'issue_dependencies_summary.dart';import 'issue_field_value.dart';import 'issue_search_result_item_labels.dart';import 'issue_search_result_item_pull_request.dart';import 'issue_type.dart';import 'milestone.dart';import 'reaction_rollup.dart';import 'repository.dart';import 'search_result_text_matches2.dart';import 'simple_user.dart';import 'sub_issues_summary.dart';/// Issue Search Result Item
-@immutable final class IssueSearchResultItem {const IssueSearchResultItem({required this.user, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.id, required this.nodeId, required this.number, required this.title, required this.locked, required this.url, required this.labels, required this.state, required this.closedAt, required this.assignee, required this.milestone, required this.comments, required this.authorAssociation, required this.score, required this.updatedAt, required this.createdAt, this.issueFieldValues, this.issueDependenciesSummary, this.subIssuesSummary, this.reactions, this.textMatches, this.pullRequest, this.body, this.assignees, this.activeLockReason, this.draft, this.repository, this.bodyHtml, this.bodyText, this.timelineUrl, this.type, this.performedViaGithubApp, this.pinnedComment, this.stateReason, });
+@immutable final class IssueSearchResultItem {const IssueSearchResultItem({required this.user, required this.repositoryUrl, required this.labelsUrl, required this.commentsUrl, required this.eventsUrl, required this.htmlUrl, required this.id, required this.nodeId, required this.number, required this.title, required this.locked, required this.url, required this.labels, required this.state, required this.closedAt, required this.assignee, required this.milestone, required this.comments, required this.authorAssociation, required this.score, required this.updatedAt, required this.createdAt, this.issueFieldValues, this.issueDependenciesSummary, this.subIssuesSummary, this.reactions, this.textMatches, this.pullRequest, this.body, this.assignees = const Omittable.absent(), this.activeLockReason = const Omittable.absent(), this.draft, this.repository, this.bodyHtml, this.bodyText, this.timelineUrl, this.type, this.performedViaGithubApp = const Omittable.absent(), this.pinnedComment = const Omittable.absent(), this.stateReason = const Omittable.absent(), });
 
 factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) { return IssueSearchResultItem(
   url: Uri.parse(json['url'] as String),
@@ -15,15 +15,15 @@ factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) { return Issue
   number: (json['number'] as num).toInt(),
   title: json['title'] as String,
   locked: json['locked'] as bool,
-  activeLockReason: json['active_lock_reason'] as String?,
-  assignees: (json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
+  activeLockReason: json.containsKey('active_lock_reason') ? Omittable(json['active_lock_reason'] as String?) : const Omittable.absent(),
+  assignees: json.containsKey('assignees') ? Omittable((json['assignees'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
   labels: (json['labels'] as List<dynamic>).map((e) => IssueSearchResultItemLabels.fromJson(e as Map<String, dynamic>)).toList(),
   subIssuesSummary: json['sub_issues_summary'] != null ? SubIssuesSummary.fromJson(json['sub_issues_summary'] as Map<String, dynamic>) : null,
   issueDependenciesSummary: json['issue_dependencies_summary'] != null ? IssueDependenciesSummary.fromJson(json['issue_dependencies_summary'] as Map<String, dynamic>) : null,
   issueFieldValues: (json['issue_field_values'] as List<dynamic>?)?.map((e) => IssueFieldValue.fromJson(e as Map<String, dynamic>)).toList(),
   state: json['state'] as String,
-  stateReason: json['state_reason'] as String?,
+  stateReason: json.containsKey('state_reason') ? Omittable(json['state_reason'] as String?) : const Omittable.absent(),
   assignee: json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
   milestone: json['milestone'] != null ? Milestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
   comments: (json['comments'] as num).toInt(),
@@ -41,8 +41,8 @@ factory IssueSearchResultItem.fromJson(Map<String, dynamic> json) { return Issue
   bodyText: json['body_text'] as String?,
   timelineUrl: json['timeline_url'] != null ? Uri.parse(json['timeline_url'] as String) : null,
   type: json['type'] != null ? IssueType.fromJson(json['type'] as Map<String, dynamic>) : null,
-  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
-  pinnedComment: json['pinned_comment'] != null ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null,
+  performedViaGithubApp: json.containsKey('performed_via_github_app') ? Omittable(json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  pinnedComment: json.containsKey('pinned_comment') ? Omittable(json['pinned_comment'] != null ? IssueComment.fromJson(json['pinned_comment'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   reactions: json['reactions'] != null ? ReactionRollup.fromJson(json['reactions'] as Map<String, dynamic>) : null,
 ); }
 
@@ -68,9 +68,9 @@ final String title;
 
 final bool locked;
 
-final String? activeLockReason;
+final Omittable<String?> activeLockReason;
 
-final List<SimpleUser>? assignees;
+final Omittable<List<SimpleUser>?> assignees;
 
 final SimpleUser? user;
 
@@ -84,7 +84,7 @@ final List<IssueFieldValue>? issueFieldValues;
 
 final String state;
 
-final String? stateReason;
+final Omittable<String?> stateReason;
 
 final SimpleUser? assignee;
 
@@ -121,9 +121,9 @@ final Uri? timelineUrl;
 
 final IssueType? type;
 
-final Integration? performedViaGithubApp;
+final Omittable<Integration?> performedViaGithubApp;
 
-final IssueComment? pinnedComment;
+final Omittable<IssueComment?> pinnedComment;
 
 final ReactionRollup? reactions;
 
@@ -139,21 +139,21 @@ Map<String, dynamic> toJson() { return {
   'number': number,
   'title': title,
   'locked': locked,
-  'active_lock_reason': ?activeLockReason,
-  if (assignees != null) 'assignees': assignees?.map((e) => e.toJson()).toList(),
-  if (user != null) 'user': user?.toJson(),
+  if (activeLockReason.isPresent) 'active_lock_reason': activeLockReason.value,
+  if (assignees.isPresent) 'assignees': assignees.value?.map((e) => e.toJson()).toList(),
+  'user': user?.toJson(),
   'labels': labels.map((e) => e.toJson()).toList(),
   if (subIssuesSummary != null) 'sub_issues_summary': subIssuesSummary?.toJson(),
   if (issueDependenciesSummary != null) 'issue_dependencies_summary': issueDependenciesSummary?.toJson(),
   if (issueFieldValues != null) 'issue_field_values': issueFieldValues?.map((e) => e.toJson()).toList(),
   'state': state,
-  'state_reason': ?stateReason,
-  if (assignee != null) 'assignee': assignee?.toJson(),
-  if (milestone != null) 'milestone': milestone?.toJson(),
+  if (stateReason.isPresent) 'state_reason': stateReason.value,
+  'assignee': assignee?.toJson(),
+  'milestone': milestone?.toJson(),
   'comments': comments,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (closedAt != null) 'closed_at': closedAt?.toIso8601String(),
+  'closed_at': closedAt?.toIso8601String(),
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
   if (pullRequest != null) 'pull_request': pullRequest?.toJson(),
   'body': ?body,
@@ -165,8 +165,8 @@ Map<String, dynamic> toJson() { return {
   'body_text': ?bodyText,
   if (timelineUrl != null) 'timeline_url': timelineUrl?.toString(),
   if (type != null) 'type': type?.toJson(),
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
-  if (pinnedComment != null) 'pinned_comment': pinnedComment?.toJson(),
+  if (performedViaGithubApp.isPresent) 'performed_via_github_app': performedViaGithubApp.value?.toJson(),
+  if (pinnedComment.isPresent) 'pinned_comment': pinnedComment.value?.toJson(),
   if (reactions != null) 'reactions': reactions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
@@ -188,10 +188,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('comments') && json['comments'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
       json.containsKey('score') && json['score'] is num &&
       json.containsKey('author_association'); } 
-IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? id, String? nodeId, int? number, String? title, bool? locked, String? Function()? activeLockReason, List<SimpleUser>? Function()? assignees, SimpleUser? Function()? user, List<IssueSearchResultItemLabels>? labels, SubIssuesSummary Function()? subIssuesSummary, IssueDependenciesSummary Function()? issueDependenciesSummary, List<IssueFieldValue> Function()? issueFieldValues, String? state, String? Function()? stateReason, SimpleUser? Function()? assignee, Milestone? Function()? milestone, int? comments, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, List<SearchResultTextMatches2> Function()? textMatches, IssueSearchResultItemPullRequest Function()? pullRequest, String Function()? body, double? score, AuthorAssociation? authorAssociation, bool Function()? draft, Repository Function()? repository, String Function()? bodyHtml, String Function()? bodyText, Uri Function()? timelineUrl, IssueType Function()? type, Integration? Function()? performedViaGithubApp, IssueComment? Function()? pinnedComment, ReactionRollup Function()? reactions, }) { return IssueSearchResultItem(
+IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl, Uri? commentsUrl, Uri? eventsUrl, Uri? htmlUrl, int? id, String? nodeId, int? number, String? title, bool? locked, Omittable<String?>? activeLockReason, Omittable<List<SimpleUser>?>? assignees, SimpleUser? Function()? user, List<IssueSearchResultItemLabels>? labels, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, String? state, Omittable<String?>? stateReason, SimpleUser? Function()? assignee, Milestone? Function()? milestone, int? comments, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, List<SearchResultTextMatches2>? Function()? textMatches, IssueSearchResultItemPullRequest? Function()? pullRequest, String? Function()? body, double? score, AuthorAssociation? authorAssociation, bool? Function()? draft, Repository? Function()? repository, String? Function()? bodyHtml, String? Function()? bodyText, Uri? Function()? timelineUrl, IssueType? Function()? type, Omittable<Integration?>? performedViaGithubApp, Omittable<IssueComment?>? pinnedComment, ReactionRollup? Function()? reactions, }) { return IssueSearchResultItem(
   url: url ?? this.url,
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
   labelsUrl: labelsUrl ?? this.labelsUrl,
@@ -203,15 +203,15 @@ IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl,
   number: number ?? this.number,
   title: title ?? this.title,
   locked: locked ?? this.locked,
-  activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
-  assignees: assignees != null ? assignees() : this.assignees,
+  activeLockReason: activeLockReason ?? this.activeLockReason,
+  assignees: assignees ?? this.assignees,
   user: user != null ? user() : this.user,
   labels: labels ?? this.labels,
   subIssuesSummary: subIssuesSummary != null ? subIssuesSummary() : this.subIssuesSummary,
   issueDependenciesSummary: issueDependenciesSummary != null ? issueDependenciesSummary() : this.issueDependenciesSummary,
   issueFieldValues: issueFieldValues != null ? issueFieldValues() : this.issueFieldValues,
   state: state ?? this.state,
-  stateReason: stateReason != null ? stateReason() : this.stateReason,
+  stateReason: stateReason ?? this.stateReason,
   assignee: assignee != null ? assignee() : this.assignee,
   milestone: milestone != null ? milestone() : this.milestone,
   comments: comments ?? this.comments,
@@ -229,8 +229,8 @@ IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl,
   bodyText: bodyText != null ? bodyText() : this.bodyText,
   timelineUrl: timelineUrl != null ? timelineUrl() : this.timelineUrl,
   type: type != null ? type() : this.type,
-  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
-  pinnedComment: pinnedComment != null ? pinnedComment() : this.pinnedComment,
+  performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
+  pinnedComment: pinnedComment ?? this.pinnedComment,
   reactions: reactions != null ? reactions() : this.reactions,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -247,7 +247,8 @@ IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl,
           title == other.title &&
           locked == other.locked &&
           activeLockReason == other.activeLockReason &&
-          listEquals(assignees, other.assignees) &&
+          assignees.isPresent == other.assignees.isPresent &&
+          listEquals(assignees.value, other.assignees.value) &&
           user == other.user &&
           listEquals(labels, other.labels) &&
           subIssuesSummary == other.subIssuesSummary &&
@@ -275,6 +276,6 @@ IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl,
           performedViaGithubApp == other.performedViaGithubApp &&
           pinnedComment == other.pinnedComment &&
           reactions == other.reactions; } 
-@override int get hashCode { return Object.hashAll([url, repositoryUrl, labelsUrl, commentsUrl, eventsUrl, htmlUrl, id, nodeId, number, title, locked, activeLockReason, Object.hashAll(assignees ?? const []), user, Object.hashAll(labels), subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, assignee, milestone, comments, createdAt, updatedAt, closedAt, Object.hashAll(textMatches ?? const []), pullRequest, body, score, authorAssociation, draft, repository, bodyHtml, bodyText, timelineUrl, type, performedViaGithubApp, pinnedComment, reactions]); } 
+@override int get hashCode { return Object.hashAll([url, repositoryUrl, labelsUrl, commentsUrl, eventsUrl, htmlUrl, id, nodeId, number, title, locked, activeLockReason, Object.hashAll(assignees.value ?? const []), user, Object.hashAll(labels), subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, assignee, milestone, comments, createdAt, updatedAt, closedAt, Object.hashAll(textMatches ?? const []), pullRequest, body, score, authorAssociation, draft, repository, bodyHtml, bodyText, timelineUrl, type, performedViaGithubApp, pinnedComment, reactions]); } 
 @override String toString() { return 'IssueSearchResultItem(url: $url, repositoryUrl: $repositoryUrl, labelsUrl: $labelsUrl, commentsUrl: $commentsUrl, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, number: $number, title: $title, locked: $locked, activeLockReason: $activeLockReason, assignees: $assignees, user: $user, labels: $labels, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, assignee: $assignee, milestone: $milestone, comments: $comments, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, textMatches: $textMatches, pullRequest: $pullRequest, body: $body, score: $score, authorAssociation: $authorAssociation, draft: $draft, repository: $repository, bodyHtml: $bodyHtml, bodyText: $bodyText, timelineUrl: $timelineUrl, type: $type, performedViaGithubApp: $performedViaGithubApp, pinnedComment: $pinnedComment, reactions: $reactions)'; } 
  }

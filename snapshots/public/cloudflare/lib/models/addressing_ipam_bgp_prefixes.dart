@@ -7,10 +7,10 @@ factory AddressingSchemasAsn.fromJson(num json) => AddressingSchemasAsn(json.toI
 num toJson() => value;
 
 }
-@immutable final class AddressingIpamBgpPrefixes {const AddressingIpamBgpPrefixes({this.asn, this.asnPrependCount, this.autoAdvertiseWithdraw, this.bgpSignalOpts, this.cidr, this.createdAt, this.id, this.modifiedAt, this.onDemand, });
+@immutable final class AddressingIpamBgpPrefixes {const AddressingIpamBgpPrefixes({this.asn = const Omittable.absent(), this.asnPrependCount, this.autoAdvertiseWithdraw, this.bgpSignalOpts, this.cidr, this.createdAt, this.id, this.modifiedAt, this.onDemand, });
 
 factory AddressingIpamBgpPrefixes.fromJson(Map<String, dynamic> json) { return AddressingIpamBgpPrefixes(
-  asn: json['asn'] != null ? AddressingSchemasAsn.fromJson(json['asn'] as num) : null,
+  asn: json.containsKey('asn') ? Omittable(json['asn'] != null ? AddressingSchemasAsn.fromJson(json['asn'] as num) : null) : const Omittable.absent(),
   asnPrependCount: json['asn_prepend_count'] != null ? AddressingAsnPrependCount.fromJson(json['asn_prepend_count'] as num) : null,
   autoAdvertiseWithdraw: json['auto_advertise_withdraw'] != null ? AddressingAutoAdvertiseWithdraw.fromJson(json['auto_advertise_withdraw'] as bool) : null,
   bgpSignalOpts: json['bgp_signal_opts'] != null ? AddressingBgpSignalOpts.fromJson(json['bgp_signal_opts'] as Map<String, dynamic>) : null,
@@ -21,7 +21,7 @@ factory AddressingIpamBgpPrefixes.fromJson(Map<String, dynamic> json) { return A
   onDemand: json['on_demand'] != null ? AddressingBgpOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
 ); }
 
-final AddressingSchemasAsn? asn;
+final Omittable<AddressingSchemasAsn?> asn;
 
 /// Number of times to prepend the Cloudflare ASN to the BGP AS-Path attribute
 final AddressingAsnPrependCount? asnPrependCount;
@@ -44,7 +44,7 @@ final AddressingTimestamp? modifiedAt;
 final AddressingBgpOnDemand? onDemand;
 
 Map<String, dynamic> toJson() { return {
-  if (asn != null) 'asn': asn?.toJson(),
+  if (asn.isPresent) 'asn': asn.value?.toJson(),
   if (asnPrependCount != null) 'asn_prepend_count': asnPrependCount?.toJson(),
   if (autoAdvertiseWithdraw != null) 'auto_advertise_withdraw': autoAdvertiseWithdraw?.toJson(),
   if (bgpSignalOpts != null) 'bgp_signal_opts': bgpSignalOpts?.toJson(),
@@ -55,8 +55,8 @@ Map<String, dynamic> toJson() { return {
   if (onDemand != null) 'on_demand': onDemand?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn', 'asn_prepend_count', 'auto_advertise_withdraw', 'bgp_signal_opts', 'cidr', 'created_at', 'id', 'modified_at', 'on_demand'}.contains(key)); } 
-AddressingIpamBgpPrefixes copyWith({AddressingSchemasAsn? Function()? asn, AddressingAsnPrependCount Function()? asnPrependCount, AddressingAutoAdvertiseWithdraw Function()? autoAdvertiseWithdraw, AddressingBgpSignalOpts Function()? bgpSignalOpts, AddressingCidr Function()? cidr, AddressingTimestamp Function()? createdAt, AddressingBgpPrefixIdentifier Function()? id, AddressingTimestamp Function()? modifiedAt, AddressingBgpOnDemand Function()? onDemand, }) { return AddressingIpamBgpPrefixes(
-  asn: asn != null ? asn() : this.asn,
+AddressingIpamBgpPrefixes copyWith({Omittable<AddressingSchemasAsn?>? asn, AddressingAsnPrependCount? Function()? asnPrependCount, AddressingAutoAdvertiseWithdraw? Function()? autoAdvertiseWithdraw, AddressingBgpSignalOpts? Function()? bgpSignalOpts, AddressingCidr? Function()? cidr, AddressingTimestamp? Function()? createdAt, AddressingBgpPrefixIdentifier? Function()? id, AddressingTimestamp? Function()? modifiedAt, AddressingBgpOnDemand? Function()? onDemand, }) { return AddressingIpamBgpPrefixes(
+  asn: asn ?? this.asn,
   asnPrependCount: asnPrependCount != null ? asnPrependCount() : this.asnPrependCount,
   autoAdvertiseWithdraw: autoAdvertiseWithdraw != null ? autoAdvertiseWithdraw() : this.autoAdvertiseWithdraw,
   bgpSignalOpts: bgpSignalOpts != null ? bgpSignalOpts() : this.bgpSignalOpts,

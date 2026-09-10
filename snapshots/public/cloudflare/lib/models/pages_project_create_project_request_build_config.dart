@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configs for the project build process.
-@immutable final class PagesProjectCreateProjectRequestBuildConfig {const PagesProjectCreateProjectRequestBuildConfig({this.buildCaching, this.buildCommand, this.destinationDir, this.rootDir, this.webAnalyticsTag, this.webAnalyticsToken, });
+@immutable final class PagesProjectCreateProjectRequestBuildConfig {const PagesProjectCreateProjectRequestBuildConfig({this.buildCaching, this.buildCommand, this.destinationDir, this.rootDir, this.webAnalyticsTag = const Omittable.absent(), this.webAnalyticsToken = const Omittable.absent(), });
 
 factory PagesProjectCreateProjectRequestBuildConfig.fromJson(Map<String, dynamic> json) { return PagesProjectCreateProjectRequestBuildConfig(
   buildCaching: json['build_caching'] as bool?,
   buildCommand: json['build_command'] as String?,
   destinationDir: json['destination_dir'] as String?,
   rootDir: json['root_dir'] as String?,
-  webAnalyticsTag: json['web_analytics_tag'] as String?,
-  webAnalyticsToken: json['web_analytics_token'] as String?,
+  webAnalyticsTag: json.containsKey('web_analytics_tag') ? Omittable(json['web_analytics_tag'] as String?) : const Omittable.absent(),
+  webAnalyticsToken: json.containsKey('web_analytics_token') ? Omittable(json['web_analytics_token'] as String?) : const Omittable.absent(),
 ); }
 
 /// Enable build caching for the project.
@@ -25,27 +25,27 @@ final String? destinationDir;
 final String? rootDir;
 
 /// The classifying tag for analytics.
-final String? webAnalyticsTag;
+final Omittable<String?> webAnalyticsTag;
 
 /// The auth token for analytics.
-final String? webAnalyticsToken;
+final Omittable<String?> webAnalyticsToken;
 
 Map<String, dynamic> toJson() { return {
   'build_caching': ?buildCaching,
   'build_command': ?buildCommand,
   'destination_dir': ?destinationDir,
   'root_dir': ?rootDir,
-  'web_analytics_tag': ?webAnalyticsTag,
-  'web_analytics_token': ?webAnalyticsToken,
+  if (webAnalyticsTag.isPresent) 'web_analytics_tag': webAnalyticsTag.value,
+  if (webAnalyticsToken.isPresent) 'web_analytics_token': webAnalyticsToken.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'build_caching', 'build_command', 'destination_dir', 'root_dir', 'web_analytics_tag', 'web_analytics_token'}.contains(key)); } 
-PagesProjectCreateProjectRequestBuildConfig copyWith({bool Function()? buildCaching, String Function()? buildCommand, String Function()? destinationDir, String Function()? rootDir, String? Function()? webAnalyticsTag, String? Function()? webAnalyticsToken, }) { return PagesProjectCreateProjectRequestBuildConfig(
+PagesProjectCreateProjectRequestBuildConfig copyWith({bool? Function()? buildCaching, String? Function()? buildCommand, String? Function()? destinationDir, String? Function()? rootDir, Omittable<String?>? webAnalyticsTag, Omittable<String?>? webAnalyticsToken, }) { return PagesProjectCreateProjectRequestBuildConfig(
   buildCaching: buildCaching != null ? buildCaching() : this.buildCaching,
   buildCommand: buildCommand != null ? buildCommand() : this.buildCommand,
   destinationDir: destinationDir != null ? destinationDir() : this.destinationDir,
   rootDir: rootDir != null ? rootDir() : this.rootDir,
-  webAnalyticsTag: webAnalyticsTag != null ? webAnalyticsTag() : this.webAnalyticsTag,
-  webAnalyticsToken: webAnalyticsToken != null ? webAnalyticsToken() : this.webAnalyticsToken,
+  webAnalyticsTag: webAnalyticsTag ?? this.webAnalyticsTag,
+  webAnalyticsToken: webAnalyticsToken ?? this.webAnalyticsToken,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PagesProjectCreateProjectRequestBuildConfig &&

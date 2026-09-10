@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('managed_app_id'); } 
-MagicManagedApp copyWith({List<String> Function()? hostnames, List<MagicCidr> Function()? ipSubnets, MagicManagedAppId? managedAppId, MagicAppName Function()? name, List<MagicCidr> Function()? sourceSubnets, MagicAppType Function()? type, }) { return MagicManagedApp(
+MagicManagedApp copyWith({List<String>? Function()? hostnames, List<MagicCidr>? Function()? ipSubnets, MagicManagedAppId? managedAppId, MagicAppName? Function()? name, List<MagicCidr>? Function()? sourceSubnets, MagicAppType? Function()? type, }) { return MagicManagedApp(
   hostnames: hostnames != null ? hostnames() : this.hostnames,
   ipSubnets: ipSubnets != null ? ipSubnets() : this.ipSubnets,
   managedAppId: managedAppId ?? this.managedAppId,

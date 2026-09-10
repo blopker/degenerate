@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (usDomesticWire != null) 'us_domestic_wire': usDomesticWire?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails copyWith({TreasuryOutboundPaymentsResourceAchTrackingDetails Function()? ach, TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType? type, TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails Function()? usDomesticWire, }) { return TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails(
+TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails copyWith({TreasuryOutboundPaymentsResourceAchTrackingDetails? Function()? ach, TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType? type, TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails? Function()? usDomesticWire, }) { return TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails(
   ach: ach != null ? ach() : this.ach,
   type: type ?? this.type,
   usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,

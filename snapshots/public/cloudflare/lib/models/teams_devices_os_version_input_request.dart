@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operating_system') &&
       json.containsKey('operator') &&
       json.containsKey('version') && json['version'] is String; } 
-TeamsDevicesOsVersionInputRequest copyWith({TeamsDevicesOsVersionInputRequestOperatingSystem? operatingSystem, TeamsDevicesOsVersionInputRequestOperator? $operator, String Function()? osDistroName, String Function()? osDistroRevision, String Function()? osVersionExtra, String? version, }) { return TeamsDevicesOsVersionInputRequest(
+TeamsDevicesOsVersionInputRequest copyWith({TeamsDevicesOsVersionInputRequestOperatingSystem? operatingSystem, TeamsDevicesOsVersionInputRequestOperator? $operator, String? Function()? osDistroName, String? Function()? osDistroRevision, String? Function()? osVersionExtra, String? version, }) { return TeamsDevicesOsVersionInputRequest(
   operatingSystem: operatingSystem ?? this.operatingSystem,
   $operator: $operator ?? this.$operator,
   osDistroName: osDistroName != null ? osDistroName() : this.osDistroName,

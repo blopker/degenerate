@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'turn_connectivity': ?turnConnectivity,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effective_network_type', 'reflexive_connectivity', 'relay_connectivity', 'timestamp', 'turn_connectivity'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata copyWith({String Function()? effectiveNetworkType, bool Function()? reflexiveConnectivity, bool Function()? relayConnectivity, String Function()? timestamp, bool Function()? turnConnectivity, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata(
+GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata copyWith({String? Function()? effectiveNetworkType, bool? Function()? reflexiveConnectivity, bool? Function()? relayConnectivity, String? Function()? timestamp, bool? Function()? turnConnectivity, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataPcMetadata(
   effectiveNetworkType: effectiveNetworkType != null ? effectiveNetworkType() : this.effectiveNetworkType,
   reflexiveConnectivity: reflexiveConnectivity != null ? reflexiveConnectivity() : this.reflexiveConnectivity,
   relayConnectivity: relayConnectivity != null ? relayConnectivity() : this.relayConnectivity,

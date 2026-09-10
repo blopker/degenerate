@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-DeletePortalsResponseResult copyWith({DateTime Function()? createdAt, String Function()? createdBy, String Function()? description, String? hostname, String? id, DateTime Function()? modifiedAt, String Function()? modifiedBy, String? name, bool Function()? secureWebGateway, }) { return DeletePortalsResponseResult(
+DeletePortalsResponseResult copyWith({DateTime? Function()? createdAt, String? Function()? createdBy, String? Function()? description, String? hostname, String? id, DateTime? Function()? modifiedAt, String? Function()? modifiedBy, String? name, bool? Function()? secureWebGateway, }) { return DeletePortalsResponseResult(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   description: description != null ? description() : this.description,

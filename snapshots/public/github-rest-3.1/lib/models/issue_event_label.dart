@@ -13,11 +13,11 @@ final String? name;
 final String? color;
 
 Map<String, dynamic> toJson() { return {
-  'name': ?name,
-  'color': ?color,
+  'name': name,
+  'color': color,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('color') && json['color'] is String; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
+      json.containsKey('color') && (json['color'] == null || json['color'] is String); } 
 IssueEventLabel copyWith({String? Function()? name, String? Function()? color, }) { return IssueEventLabel(
   name: name != null ? name() : this.name,
   color: color != null ? color() : this.color,

@@ -167,35 +167,35 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage($value)'; } 
  }
 /// Details of the card used for this payment attempt.
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.last4, this.authorizationCode, this.captureBefore, this.checks, this.country, this.description, this.fingerprint, this.iin, this.installments, this.issuer, this.network, this.networkAdviceCode, this.networkDeclineCode, this.networkToken, this.networkTransactionId, this.storedCredentialUsage, this.threeDSecure, this.wallet, });
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.last4, this.authorizationCode = const Omittable.absent(), this.captureBefore, this.checks = const Omittable.absent(), this.country = const Omittable.absent(), this.description = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.iin = const Omittable.absent(), this.installments = const Omittable.absent(), this.issuer = const Omittable.absent(), this.network = const Omittable.absent(), this.networkAdviceCode = const Omittable.absent(), this.networkDeclineCode = const Omittable.absent(), this.networkToken = const Omittable.absent(), this.networkTransactionId = const Omittable.absent(), this.storedCredentialUsage = const Omittable.absent(), this.threeDSecure = const Omittable.absent(), this.wallet = const Omittable.absent(), });
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
-  authorizationCode: json['authorization_code'] as String?,
+  authorizationCode: json.containsKey('authorization_code') ? Omittable(json['authorization_code'] as String?) : const Omittable.absent(),
   brand: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(json['brand'] as String),
   captureBefore: json['capture_before'] != null ? (json['capture_before'] as num).toInt() : null,
-  checks: json['checks'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks.fromJson(json['checks'] as Map<String, dynamic>) : null,
-  country: json['country'] as String?,
-  description: json['description'] as String?,
+  checks: json.containsKey('checks') ? Omittable(json['checks'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks.fromJson(json['checks'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   expMonth: (json['exp_month'] as num).toInt(),
   expYear: (json['exp_year'] as num).toInt(),
-  fingerprint: json['fingerprint'] as String?,
+  fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
   funding: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding.fromJson(json['funding'] as String),
-  iin: json['iin'] as String?,
-  installments: json['installments'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
-  issuer: json['issuer'] as String?,
+  iin: json.containsKey('iin') ? Omittable(json['iin'] as String?) : const Omittable.absent(),
+  installments: json.containsKey('installments') ? Omittable(json['installments'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  issuer: json.containsKey('issuer') ? Omittable(json['issuer'] as String?) : const Omittable.absent(),
   last4: json['last4'] as String,
-  network: json['network'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.fromJson(json['network'] as String) : null,
-  networkAdviceCode: json['network_advice_code'] as String?,
-  networkDeclineCode: json['network_decline_code'] as String?,
-  networkToken: json['network_token'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken.fromJson(json['network_token'] as Map<String, dynamic>) : null,
-  networkTransactionId: json['network_transaction_id'] as String?,
-  storedCredentialUsage: json['stored_credential_usage'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage.fromJson(json['stored_credential_usage'] as String) : null,
-  threeDSecure: json['three_d_secure'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
-  wallet: json['wallet'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
+  network: json.containsKey('network') ? Omittable(json['network'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.fromJson(json['network'] as String) : null) : const Omittable.absent(),
+  networkAdviceCode: json.containsKey('network_advice_code') ? Omittable(json['network_advice_code'] as String?) : const Omittable.absent(),
+  networkDeclineCode: json.containsKey('network_decline_code') ? Omittable(json['network_decline_code'] as String?) : const Omittable.absent(),
+  networkToken: json.containsKey('network_token') ? Omittable(json['network_token'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken.fromJson(json['network_token'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  networkTransactionId: json.containsKey('network_transaction_id') ? Omittable(json['network_transaction_id'] as String?) : const Omittable.absent(),
+  storedCredentialUsage: json.containsKey('stored_credential_usage') ? Omittable(json['stored_credential_usage'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage.fromJson(json['stored_credential_usage'] as String) : null) : const Omittable.absent(),
+  threeDSecure: json.containsKey('three_d_secure') ? Omittable(json['three_d_secure'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  wallet: json.containsKey('wallet') ? Omittable(json['wallet'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// The authorization code of the payment.
-final String? authorizationCode;
+final Omittable<String?> authorizationCode;
 
 /// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
 final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand brand;
@@ -204,13 +204,13 @@ final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand bran
 final int? captureBefore;
 
 /// Check results by Card networks on Card address and CVC at time of payment.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks? checks;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks?> checks;
 
 /// Two-letter ISO code representing the country of the card. You could use this attribute to get a sense of the international breakdown of cards you've collected.
-final String? country;
+final Omittable<String?> country;
 
 /// A high-level description of the type of cards issued in this range.
-final String? description;
+final Omittable<String?> description;
 
 /// Two-digit number representing the card's expiration month.
 final int expMonth;
@@ -221,99 +221,99 @@ final int expYear;
 /// Uniquely identifies this particular card number. You can use this attribute to check whether two customers who’ve signed up with you are using the same card number, for example. For payment methods that tokenize card information (Apple Pay, Google Pay), the tokenized number might be provided instead of the underlying card number.
 /// 
 /// *As of May 1, 2021, card fingerprint in India for Connect changed to allow two fingerprints for the same card---one for India and one for the rest of the world.*
-final String? fingerprint;
+final Omittable<String?> fingerprint;
 
 /// Card funding type. Can be `credit`, `debit`, `prepaid`, or `unknown`.
 final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding funding;
 
 /// Issuer identification number of the card.
-final String? iin;
+final Omittable<String?> iin;
 
 /// Installment details for this payment.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments? installments;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments?> installments;
 
 /// The name of the card's issuing bank.
-final String? issuer;
+final Omittable<String?> issuer;
 
 /// The last four digits of the card.
 final String last4;
 
 /// Identifies which network this charge was processed on. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `interac`, `jcb`, `link`, `mastercard`, `unionpay`, `visa`, or `unknown`.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork? network;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork?> network;
 
 /// Advice code from the card network for the failed payment.
-final String? networkAdviceCode;
+final Omittable<String?> networkAdviceCode;
 
 /// Decline code from the card network for the failed payment.
-final String? networkDeclineCode;
+final Omittable<String?> networkDeclineCode;
 
 /// If this card has network token credentials, this contains the details of the network token credentials.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken? networkToken;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken?> networkToken;
 
 /// This is used by the financial networks to identify a transaction. Visa calls this the Transaction ID, Mastercard calls this the Trace ID, and American Express calls this the Acquirer Reference Data. This value will be present if it is returned by the financial network in the authorization response, and null otherwise.
-final String? networkTransactionId;
+final Omittable<String?> networkTransactionId;
 
 /// The transaction type that was passed for an off-session, Merchant-Initiated transaction, one of `recurring` or `unscheduled`.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage? storedCredentialUsage;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage?> storedCredentialUsage;
 
 /// Populated if this transaction used 3D Secure authentication.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure? threeDSecure;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure?> threeDSecure;
 
 /// If this Card is part of a card wallet, this contains the details of the card wallet.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet? wallet;
+final Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet?> wallet;
 
 Map<String, dynamic> toJson() { return {
-  'authorization_code': ?authorizationCode,
+  if (authorizationCode.isPresent) 'authorization_code': authorizationCode.value,
   'brand': brand.toJson(),
   'capture_before': ?captureBefore,
-  if (checks != null) 'checks': checks?.toJson(),
-  'country': ?country,
-  'description': ?description,
+  if (checks.isPresent) 'checks': checks.value?.toJson(),
+  if (country.isPresent) 'country': country.value,
+  if (description.isPresent) 'description': description.value,
   'exp_month': expMonth,
   'exp_year': expYear,
-  'fingerprint': ?fingerprint,
+  if (fingerprint.isPresent) 'fingerprint': fingerprint.value,
   'funding': funding.toJson(),
-  'iin': ?iin,
-  if (installments != null) 'installments': installments?.toJson(),
-  'issuer': ?issuer,
+  if (iin.isPresent) 'iin': iin.value,
+  if (installments.isPresent) 'installments': installments.value?.toJson(),
+  if (issuer.isPresent) 'issuer': issuer.value,
   'last4': last4,
-  if (network != null) 'network': network?.toJson(),
-  'network_advice_code': ?networkAdviceCode,
-  'network_decline_code': ?networkDeclineCode,
-  if (networkToken != null) 'network_token': networkToken?.toJson(),
-  'network_transaction_id': ?networkTransactionId,
-  if (storedCredentialUsage != null) 'stored_credential_usage': storedCredentialUsage?.toJson(),
-  if (threeDSecure != null) 'three_d_secure': threeDSecure?.toJson(),
-  if (wallet != null) 'wallet': wallet?.toJson(),
+  if (network.isPresent) 'network': network.value?.toJson(),
+  if (networkAdviceCode.isPresent) 'network_advice_code': networkAdviceCode.value,
+  if (networkDeclineCode.isPresent) 'network_decline_code': networkDeclineCode.value,
+  if (networkToken.isPresent) 'network_token': networkToken.value?.toJson(),
+  if (networkTransactionId.isPresent) 'network_transaction_id': networkTransactionId.value,
+  if (storedCredentialUsage.isPresent) 'stored_credential_usage': storedCredentialUsage.value?.toJson(),
+  if (threeDSecure.isPresent) 'three_d_secure': threeDSecure.value?.toJson(),
+  if (wallet.isPresent) 'wallet': wallet.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand') &&
       json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') &&
       json.containsKey('last4') && json['last4'] is String; } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({String? Function()? authorizationCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand? brand, int Function()? captureBefore, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks? Function()? checks, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding? funding, String? Function()? iin, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments? Function()? installments, String? Function()? issuer, String? last4, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork? Function()? network, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken? Function()? networkToken, String? Function()? networkTransactionId, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage? Function()? storedCredentialUsage, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure? Function()? threeDSecure, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet? Function()? wallet, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
-  authorizationCode: authorizationCode != null ? authorizationCode() : this.authorizationCode,
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({Omittable<String?>? authorizationCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand? brand, int? Function()? captureBefore, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks?>? checks, Omittable<String?>? country, Omittable<String?>? description, int? expMonth, int? expYear, Omittable<String?>? fingerprint, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding? funding, Omittable<String?>? iin, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments?>? installments, Omittable<String?>? issuer, String? last4, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork?>? network, Omittable<String?>? networkAdviceCode, Omittable<String?>? networkDeclineCode, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken?>? networkToken, Omittable<String?>? networkTransactionId, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage?>? storedCredentialUsage, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure?>? threeDSecure, Omittable<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet?>? wallet, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
+  authorizationCode: authorizationCode ?? this.authorizationCode,
   brand: brand ?? this.brand,
   captureBefore: captureBefore != null ? captureBefore() : this.captureBefore,
-  checks: checks != null ? checks() : this.checks,
-  country: country != null ? country() : this.country,
-  description: description != null ? description() : this.description,
+  checks: checks ?? this.checks,
+  country: country ?? this.country,
+  description: description ?? this.description,
   expMonth: expMonth ?? this.expMonth,
   expYear: expYear ?? this.expYear,
-  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
+  fingerprint: fingerprint ?? this.fingerprint,
   funding: funding ?? this.funding,
-  iin: iin != null ? iin() : this.iin,
-  installments: installments != null ? installments() : this.installments,
-  issuer: issuer != null ? issuer() : this.issuer,
+  iin: iin ?? this.iin,
+  installments: installments ?? this.installments,
+  issuer: issuer ?? this.issuer,
   last4: last4 ?? this.last4,
-  network: network != null ? network() : this.network,
-  networkAdviceCode: networkAdviceCode != null ? networkAdviceCode() : this.networkAdviceCode,
-  networkDeclineCode: networkDeclineCode != null ? networkDeclineCode() : this.networkDeclineCode,
-  networkToken: networkToken != null ? networkToken() : this.networkToken,
-  networkTransactionId: networkTransactionId != null ? networkTransactionId() : this.networkTransactionId,
-  storedCredentialUsage: storedCredentialUsage != null ? storedCredentialUsage() : this.storedCredentialUsage,
-  threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
-  wallet: wallet != null ? wallet() : this.wallet,
+  network: network ?? this.network,
+  networkAdviceCode: networkAdviceCode ?? this.networkAdviceCode,
+  networkDeclineCode: networkDeclineCode ?? this.networkDeclineCode,
+  networkToken: networkToken ?? this.networkToken,
+  networkTransactionId: networkTransactionId ?? this.networkTransactionId,
+  storedCredentialUsage: storedCredentialUsage ?? this.storedCredentialUsage,
+  threeDSecure: threeDSecure ?? this.threeDSecure,
+  wallet: wallet ?? this.wallet,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails &&

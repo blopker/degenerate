@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (display != null) 'display': display?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display'}.contains(key)); } 
-PostCheckoutSessionsRequestWalletOptionsLink copyWith({PostCheckoutSessionsRequestWalletOptionsLinkDisplay Function()? display}) { return PostCheckoutSessionsRequestWalletOptionsLink(
+PostCheckoutSessionsRequestWalletOptionsLink copyWith({PostCheckoutSessionsRequestWalletOptionsLinkDisplay? Function()? display}) { return PostCheckoutSessionsRequestWalletOptionsLink(
   display: display != null ? display() : this.display,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

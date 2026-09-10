@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'created_on', 'description', 'id', 'modified_on', 'type'}.contains(key)); } 
-Web3ContentListEntry copyWith({Web3ContentListEntryContent Function()? content, Web3Timestamp Function()? createdOn, Web3ContentListEntryDescription Function()? description, Web3Identifier Function()? id, Web3Timestamp Function()? modifiedOn, Web3ContentListEntryType Function()? type, }) { return Web3ContentListEntry(
+Web3ContentListEntry copyWith({Web3ContentListEntryContent? Function()? content, Web3Timestamp? Function()? createdOn, Web3ContentListEntryDescription? Function()? description, Web3Identifier? Function()? id, Web3Timestamp? Function()? modifiedOn, Web3ContentListEntryType? Function()? type, }) { return Web3ContentListEntry(
   content: content != null ? content() : this.content,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,

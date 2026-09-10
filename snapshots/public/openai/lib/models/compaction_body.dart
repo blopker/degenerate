@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('encrypted_content') && json['encrypted_content'] is String; } 
-CompactionBody copyWith({String? type, String? id, String? encryptedContent, String Function()? createdBy, }) { return CompactionBody(
+CompactionBody copyWith({String? type, String? id, String? encryptedContent, String? Function()? createdBy, }) { return CompactionBody(
   type: type ?? this.type,
   id: id ?? this.id,
   encryptedContent: encryptedContent ?? this.encryptedContent,

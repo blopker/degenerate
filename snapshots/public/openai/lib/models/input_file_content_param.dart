@@ -47,14 +47,14 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InputFileContentParamType($value)'; } 
  }
 /// A file input to the model.
-@immutable final class InputFileContentParam {const InputFileContentParam({this.type = InputFileContentParamType.inputFile, this.fileId, this.filename, this.fileData, this.fileUrl, this.detail, });
+@immutable final class InputFileContentParam {const InputFileContentParam({this.type = InputFileContentParamType.inputFile, this.fileId = const Omittable.absent(), this.filename = const Omittable.absent(), this.fileData = const Omittable.absent(), this.fileUrl = const Omittable.absent(), this.detail, });
 
 factory InputFileContentParam.fromJson(Map<String, dynamic> json) { return InputFileContentParam(
   type: InputFileContentParamType.fromJson(json['type'] as String),
-  fileId: json['file_id'] as String?,
-  filename: json['filename'] as String?,
-  fileData: json['file_data'] as String?,
-  fileUrl: json['file_url'] as String?,
+  fileId: json.containsKey('file_id') ? Omittable(json['file_id'] as String?) : const Omittable.absent(),
+  filename: json.containsKey('filename') ? Omittable(json['filename'] as String?) : const Omittable.absent(),
+  fileData: json.containsKey('file_data') ? Omittable(json['file_data'] as String?) : const Omittable.absent(),
+  fileUrl: json.containsKey('file_url') ? Omittable(json['file_url'] as String?) : const Omittable.absent(),
   detail: json['detail'] != null ? FileDetailEnum.fromJson(json['detail'] as String) : null,
 ); }
 
@@ -62,35 +62,35 @@ factory InputFileContentParam.fromJson(Map<String, dynamic> json) { return Input
 final InputFileContentParamType type;
 
 /// The ID of the file to be sent to the model.
-final String? fileId;
+final Omittable<String?> fileId;
 
 /// The name of the file to be sent to the model.
-final String? filename;
+final Omittable<String?> filename;
 
 /// The base64-encoded data of the file to be sent to the model.
-final String? fileData;
+final Omittable<String?> fileData;
 
 /// The URL of the file to be sent to the model.
-final String? fileUrl;
+final Omittable<String?> fileUrl;
 
 /// The detail level of the file to be sent to the model. One of `high` or `low`. Defaults to `high`.
 final FileDetailEnum? detail;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
-  'file_id': ?fileId,
-  'filename': ?filename,
-  'file_data': ?fileData,
-  'file_url': ?fileUrl,
+  if (fileId.isPresent) 'file_id': fileId.value,
+  if (filename.isPresent) 'filename': filename.value,
+  if (fileData.isPresent) 'file_data': fileData.value,
+  if (fileUrl.isPresent) 'file_url': fileUrl.value,
   if (detail != null) 'detail': detail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-InputFileContentParam copyWith({InputFileContentParamType? type, String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileDetailEnum Function()? detail, }) { return InputFileContentParam(
+InputFileContentParam copyWith({InputFileContentParamType? type, Omittable<String?>? fileId, Omittable<String?>? filename, Omittable<String?>? fileData, Omittable<String?>? fileUrl, FileDetailEnum? Function()? detail, }) { return InputFileContentParam(
   type: type ?? this.type,
-  fileId: fileId != null ? fileId() : this.fileId,
-  filename: filename != null ? filename() : this.filename,
-  fileData: fileData != null ? fileData() : this.fileData,
-  fileUrl: fileUrl != null ? fileUrl() : this.fileUrl,
+  fileId: fileId ?? this.fileId,
+  filename: filename ?? this.filename,
+  fileData: fileData ?? this.fileData,
+  fileUrl: fileUrl ?? this.fileUrl,
   detail: detail != null ? detail() : this.detail,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

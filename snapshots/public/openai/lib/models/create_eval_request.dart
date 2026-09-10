@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_custom_data_source_config.dart';import 'create_eval_label_model_grader.dart';import 'create_eval_logs_data_source_config.dart';import 'create_eval_request_data_source_config.dart';import 'create_eval_request_testing_criteria.dart';import 'create_eval_stored_completions_data_source_config.dart';import 'eval_grader_python.dart';import 'eval_grader_score_model.dart';import 'eval_grader_text_similarity.dart';import 'grader_string_check.dart';@immutable final class CreateEvalRequest {const CreateEvalRequest({required this.dataSourceConfig, required this.testingCriteria, this.name, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_custom_data_source_config.dart';import 'create_eval_label_model_grader.dart';import 'create_eval_logs_data_source_config.dart';import 'create_eval_request_data_source_config.dart';import 'create_eval_request_testing_criteria.dart';import 'create_eval_stored_completions_data_source_config.dart';import 'eval_grader_python.dart';import 'eval_grader_score_model.dart';import 'eval_grader_text_similarity.dart';import 'grader_string_check.dart';@immutable final class CreateEvalRequest {const CreateEvalRequest({required this.dataSourceConfig, required this.testingCriteria, this.name, this.metadata = const Omittable.absent(), });
 
 factory CreateEvalRequest.fromJson(Map<String, dynamic> json) { return CreateEvalRequest(
   name: json['name'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   dataSourceConfig: OneOf3.parse(json['data_source_config'], fromA: (v) => CreateEvalCustomDataSourceConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalLogsDataSourceConfig.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalStoredCompletionsDataSourceConfig.fromJson(v as Map<String, dynamic>),),
   testingCriteria: (json['testing_criteria'] as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => CreateEvalLabelModelGrader.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalGraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalGraderPython.fromJson(v as Map<String, dynamic>), fromE: (v) => EvalGraderScoreModel.fromJson(v as Map<String, dynamic>),)).toList(),
 ); }
@@ -12,7 +12,7 @@ factory CreateEvalRequest.fromJson(Map<String, dynamic> json) { return CreateEva
 /// The name of the evaluation.
 final String? name;
 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// The configuration for the data source used for the evaluation runs. Dictates the schema of the data used in the evaluation.
 final CreateEvalRequestDataSourceConfig dataSourceConfig;
@@ -22,15 +22,15 @@ final List<CreateEvalRequestTestingCriteria> testingCriteria;
 
 Map<String, dynamic> toJson() { return {
   'name': ?name,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'data_source_config': dataSourceConfig.toJson(),
   'testing_criteria': testingCriteria.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_source_config') &&
       json.containsKey('testing_criteria'); } 
-CreateEvalRequest copyWith({String Function()? name, Map<String, String>? Function()? metadata, CreateEvalRequestDataSourceConfig? dataSourceConfig, List<CreateEvalRequestTestingCriteria>? testingCriteria, }) { return CreateEvalRequest(
+CreateEvalRequest copyWith({String? Function()? name, Omittable<Map<String,String>?>? metadata, CreateEvalRequestDataSourceConfig? dataSourceConfig, List<CreateEvalRequestTestingCriteria>? testingCriteria, }) { return CreateEvalRequest(
   name: name != null ? name() : this.name,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   dataSourceConfig: dataSourceConfig ?? this.dataSourceConfig,
   testingCriteria: testingCriteria ?? this.testingCriteria,
 ); } 

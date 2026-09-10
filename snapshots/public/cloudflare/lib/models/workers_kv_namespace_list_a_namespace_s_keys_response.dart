@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-WorkersKvNamespaceListANamespaceSKeysResponse copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessages2>? messages, bool? success, List<WorkersKvKey> Function()? result, WorkersKvCursorResultInfo Function()? resultInfo, }) { return WorkersKvNamespaceListANamespaceSKeysResponse(
+WorkersKvNamespaceListANamespaceSKeysResponse copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessages2>? messages, bool? success, List<WorkersKvKey>? Function()? result, WorkersKvCursorResultInfo? Function()? resultInfo, }) { return WorkersKvNamespaceListANamespaceSKeysResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

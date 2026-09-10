@@ -62,7 +62,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('related') &&
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('website') && json['website'] is String; } 
-RadarGetEntitiesAsnByIdResponseResultAsn copyWith({String Function()? aka, int? asn, int? confidenceLevel, String? country, String? countryName, RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers? estimatedUsers, String? name, String? orgName, List<RadarGetEntitiesAsnByIdResponseResultAsnRelated>? related, String? source, String? website, }) { return RadarGetEntitiesAsnByIdResponseResultAsn(
+RadarGetEntitiesAsnByIdResponseResultAsn copyWith({String? Function()? aka, int? asn, int? confidenceLevel, String? country, String? countryName, RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers? estimatedUsers, String? name, String? orgName, List<RadarGetEntitiesAsnByIdResponseResultAsnRelated>? related, String? source, String? website, }) { return RadarGetEntitiesAsnByIdResponseResultAsn(
   aka: aka != null ? aka() : this.aka,
   asn: asn ?? this.asn,
   confidenceLevel: confidenceLevel ?? this.confidenceLevel,

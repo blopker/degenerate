@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'node_id', 'name', 'url', 'html_url', 'created_at', 'updated_at'}.contains(key)); } 
-EnvironmentApprovalsEnvironments copyWith({int Function()? id, String Function()? nodeId, String Function()? name, String Function()? url, String Function()? htmlUrl, DateTime Function()? createdAt, DateTime Function()? updatedAt, }) { return EnvironmentApprovalsEnvironments(
+EnvironmentApprovalsEnvironments copyWith({int? Function()? id, String? Function()? nodeId, String? Function()? name, String? Function()? url, String? Function()? htmlUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return EnvironmentApprovalsEnvironments(
   id: id != null ? id() : this.id,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   name: name != null ? name() : this.name,

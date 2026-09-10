@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'pointer': ?pointer,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pointer'}.contains(key)); } 
-TunnelSchemasMessages2Source copyWith({String Function()? pointer}) { return TunnelSchemasMessages2Source(
+TunnelSchemasMessages2Source copyWith({String? Function()? pointer}) { return TunnelSchemasMessages2Source(
   pointer: pointer != null ? pointer() : this.pointer,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

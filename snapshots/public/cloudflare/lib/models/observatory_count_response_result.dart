@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'count': ?count,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count'}.contains(key)); } 
-ObservatoryCountResponseResult copyWith({double Function()? count}) { return ObservatoryCountResponseResult(
+ObservatoryCountResponseResult copyWith({double? Function()? count}) { return ObservatoryCountResponseResult(
   count: count != null ? count() : this.count,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

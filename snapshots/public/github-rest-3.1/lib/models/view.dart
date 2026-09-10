@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ViewLayout($value)'; } 
  }
 /// A view inside a projects v2 project
-@immutable final class View {const View({required this.id, required this.number, required this.name, required this.layout, required this.nodeId, required this.projectUrl, required this.htmlUrl, required this.creator, required this.createdAt, required this.updatedAt, required this.visibleFields, required this.sortBy, required this.groupBy, required this.verticalGroupBy, this.filter, });
+@immutable final class View {const View({required this.id, required this.number, required this.name, required this.layout, required this.nodeId, required this.projectUrl, required this.htmlUrl, required this.creator, required this.createdAt, required this.updatedAt, required this.visibleFields, required this.sortBy, required this.groupBy, required this.verticalGroupBy, this.filter = const Omittable.absent(), });
 
 factory View.fromJson(Map<String, dynamic> json) { return View(
   id: (json['id'] as num).toInt(),
@@ -42,7 +42,7 @@ factory View.fromJson(Map<String, dynamic> json) { return View(
   creator: SimpleUser.fromJson(json['creator'] as Map<String, dynamic>),
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  filter: json['filter'] as String?,
+  filter: json.containsKey('filter') ? Omittable(json['filter'] as String?) : const Omittable.absent(),
   visibleFields: (json['visible_fields'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
   sortBy: (json['sort_by'] as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => e).toList()).toList(),
   groupBy: (json['group_by'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
@@ -79,7 +79,7 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 /// The filter query for the view.
-final String? filter;
+final Omittable<String?> filter;
 
 /// The list of field IDs that are visible in the view.
 final List<int> visibleFields;
@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   'creator': creator.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  'filter': ?filter,
+  if (filter.isPresent) 'filter': filter.value,
   'visible_fields': visibleFields,
   'sort_by': sortBy.map((e) => e).toList(),
   'group_by': groupBy,
@@ -124,7 +124,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('sort_by') &&
       json.containsKey('group_by') &&
       json.containsKey('vertical_group_by'); } 
-View copyWith({int? id, int? number, String? name, ViewLayout? layout, String? nodeId, String? projectUrl, Uri? htmlUrl, SimpleUser? creator, DateTime? createdAt, DateTime? updatedAt, String? Function()? filter, List<int>? visibleFields, List<List<dynamic>>? sortBy, List<int>? groupBy, List<int>? verticalGroupBy, }) { return View(
+View copyWith({int? id, int? number, String? name, ViewLayout? layout, String? nodeId, String? projectUrl, Uri? htmlUrl, SimpleUser? creator, DateTime? createdAt, DateTime? updatedAt, Omittable<String?>? filter, List<int>? visibleFields, List<List<dynamic>>? sortBy, List<int>? groupBy, List<int>? verticalGroupBy, }) { return View(
   id: id ?? this.id,
   number: number ?? this.number,
   name: name ?? this.name,
@@ -135,7 +135,7 @@ View copyWith({int? id, int? number, String? name, ViewLayout? layout, String? n
   creator: creator ?? this.creator,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-  filter: filter != null ? filter() : this.filter,
+  filter: filter ?? this.filter,
   visibleFields: visibleFields ?? this.visibleFields,
   sortBy: sortBy ?? this.sortBy,
   groupBy: groupBy ?? this.groupBy,

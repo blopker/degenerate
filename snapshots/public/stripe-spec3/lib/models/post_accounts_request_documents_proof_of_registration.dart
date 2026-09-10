@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (signer != null) 'signer': signer?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'files', 'signer'}.contains(key)); } 
-PostAccountsRequestDocumentsProofOfRegistration copyWith({List<String> Function()? files, PostAccountsRequestDocumentsProofOfRegistrationSigner Function()? signer, }) { return PostAccountsRequestDocumentsProofOfRegistration(
+PostAccountsRequestDocumentsProofOfRegistration copyWith({List<String>? Function()? files, PostAccountsRequestDocumentsProofOfRegistrationSigner? Function()? signer, }) { return PostAccountsRequestDocumentsProofOfRegistration(
   files: files != null ? files() : this.files,
   signer: signer != null ? signer() : this.signer,
 ); } 

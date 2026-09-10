@@ -1,104 +1,104 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountUsageUsageRecordUsageRecordLastMonth {const AccountUsageUsageRecordUsageRecordLastMonth({this.accountSid, this.apiVersion, this.asOf, this.category, this.count, this.countUnit, this.description, this.endDate, this.price, this.priceUnit, this.startDate, this.subresourceUris, this.uri, this.usage, this.usageUnit, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountUsageUsageRecordUsageRecordLastMonth {const AccountUsageUsageRecordUsageRecordLastMonth({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.asOf = const Omittable.absent(), this.category = const Omittable.absent(), this.count = const Omittable.absent(), this.countUnit = const Omittable.absent(), this.description = const Omittable.absent(), this.endDate = const Omittable.absent(), this.price = const Omittable.absent(), this.priceUnit = const Omittable.absent(), this.startDate = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), this.uri = const Omittable.absent(), this.usage = const Omittable.absent(), this.usageUnit = const Omittable.absent(), });
 
 factory AccountUsageUsageRecordUsageRecordLastMonth.fromJson(Map<String, dynamic> json) { return AccountUsageUsageRecordUsageRecordLastMonth(
-  accountSid: json['account_sid'] as String?,
-  apiVersion: json['api_version'] as String?,
-  asOf: json['as_of'] as String?,
-  category: json['category'] as String?,
-  count: json['count'] as String?,
-  countUnit: json['count_unit'] as String?,
-  description: json['description'] as String?,
-  endDate: json['end_date'] as String?,
-  price: json['price'] != null ? (json['price'] as num).toDouble() : null,
-  priceUnit: json['price_unit'] as String?,
-  startDate: json['start_date'] as String?,
-  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
-  uri: json['uri'] as String?,
-  usage: json['usage'] as String?,
-  usageUnit: json['usage_unit'] as String?,
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
+  asOf: json.containsKey('as_of') ? Omittable(json['as_of'] as String?) : const Omittable.absent(),
+  category: json.containsKey('category') ? Omittable(json['category'] as String?) : const Omittable.absent(),
+  count: json.containsKey('count') ? Omittable(json['count'] as String?) : const Omittable.absent(),
+  countUnit: json.containsKey('count_unit') ? Omittable(json['count_unit'] as String?) : const Omittable.absent(),
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  endDate: json.containsKey('end_date') ? Omittable(json['end_date'] as String?) : const Omittable.absent(),
+  price: json.containsKey('price') ? Omittable(json['price'] != null ? (json['price'] as num).toDouble() : null) : const Omittable.absent(),
+  priceUnit: json.containsKey('price_unit') ? Omittable(json['price_unit'] as String?) : const Omittable.absent(),
+  startDate: json.containsKey('start_date') ? Omittable(json['start_date'] as String?) : const Omittable.absent(),
+  subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
+  usage: json.containsKey('usage') ? Omittable(json['usage'] as String?) : const Omittable.absent(),
+  usageUnit: json.containsKey('usage_unit') ? Omittable(json['usage_unit'] as String?) : const Omittable.absent(),
 ); }
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that accrued the usage.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The API version used to create the resource.
-final String? apiVersion;
+final Omittable<String?> apiVersion;
 
 /// Usage records up to date as of this timestamp, formatted as YYYY-MM-DDTHH:MM:SS+00:00. All timestamps are in GMT
-final String? asOf;
+final Omittable<String?> asOf;
 
 /// The category of usage. For more information, see [Usage Categories](https://www.twilio.com/docs/usage/api/usage-record#usage-categories).
-final String? category;
+final Omittable<String?> category;
 
 /// The number of usage events, such as the number of calls.
-final String? count;
+final Omittable<String?> count;
 
 /// The units in which `count` is measured, such as `calls` for calls or `messages` for SMS.
-final String? countUnit;
+final Omittable<String?> countUnit;
 
 /// A plain-language description of the usage category.
-final String? description;
+final Omittable<String?> description;
 
 /// The last date for which usage is included in the UsageRecord. The date is specified in GMT and formatted as `YYYY-MM-DD`.
-final String? endDate;
+final Omittable<String?> endDate;
 
 /// The total price of the usage in the currency specified in `price_unit` and associated with the account.
-final double? price;
+final Omittable<double?> price;
 
 /// The currency in which `price` is measured, in [ISO 4127](https://www.iso.org/iso/home/standards/currency_codes.htm) format, such as `usd`, `eur`, and `jpy`.
-final String? priceUnit;
+final Omittable<String?> priceUnit;
 
 /// The first date for which usage is included in this UsageRecord. The date is specified in GMT and formatted as `YYYY-MM-DD`.
-final String? startDate;
+final Omittable<String?> startDate;
 
 /// A list of related resources identified by their URIs. For more information, see [List Subresources](https://www.twilio.com/docs/usage/api/usage-record#list-subresources).
-final Map<String,dynamic>? subresourceUris;
+final Omittable<Map<String,dynamic>?> subresourceUris;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 /// The amount used to bill usage and measured in units described in `usage_unit`.
-final String? usage;
+final Omittable<String?> usage;
 
 /// The units in which `usage` is measured, such as `minutes` for calls or `messages` for SMS.
-final String? usageUnit;
+final Omittable<String?> usageUnit;
 
 Map<String, dynamic> toJson() { return {
-  'account_sid': ?accountSid,
-  'api_version': ?apiVersion,
-  'as_of': ?asOf,
-  'category': ?category,
-  'count': ?count,
-  'count_unit': ?countUnit,
-  'description': ?description,
-  'end_date': ?endDate,
-  'price': ?price,
-  'price_unit': ?priceUnit,
-  'start_date': ?startDate,
-  'subresource_uris': ?subresourceUris,
-  'uri': ?uri,
-  'usage': ?usage,
-  'usage_unit': ?usageUnit,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (apiVersion.isPresent) 'api_version': apiVersion.value,
+  if (asOf.isPresent) 'as_of': asOf.value,
+  if (category.isPresent) 'category': category.value,
+  if (count.isPresent) 'count': count.value,
+  if (countUnit.isPresent) 'count_unit': countUnit.value,
+  if (description.isPresent) 'description': description.value,
+  if (endDate.isPresent) 'end_date': endDate.value,
+  if (price.isPresent) 'price': price.value,
+  if (priceUnit.isPresent) 'price_unit': priceUnit.value,
+  if (startDate.isPresent) 'start_date': startDate.value,
+  if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
+  if (uri.isPresent) 'uri': uri.value,
+  if (usage.isPresent) 'usage': usage.value,
+  if (usageUnit.isPresent) 'usage_unit': usageUnit.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'as_of', 'category', 'count', 'count_unit', 'description', 'end_date', 'price', 'price_unit', 'start_date', 'subresource_uris', 'uri', 'usage', 'usage_unit'}.contains(key)); } 
-AccountUsageUsageRecordUsageRecordLastMonth copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? asOf, String? Function()? category, String? Function()? count, String? Function()? countUnit, String? Function()? description, String? Function()? endDate, double? Function()? price, String? Function()? priceUnit, String? Function()? startDate, Map<String, dynamic>? Function()? subresourceUris, String? Function()? uri, String? Function()? usage, String? Function()? usageUnit, }) { return AccountUsageUsageRecordUsageRecordLastMonth(
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
-  asOf: asOf != null ? asOf() : this.asOf,
-  category: category != null ? category() : this.category,
-  count: count != null ? count() : this.count,
-  countUnit: countUnit != null ? countUnit() : this.countUnit,
-  description: description != null ? description() : this.description,
-  endDate: endDate != null ? endDate() : this.endDate,
-  price: price != null ? price() : this.price,
-  priceUnit: priceUnit != null ? priceUnit() : this.priceUnit,
-  startDate: startDate != null ? startDate() : this.startDate,
-  subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
-  uri: uri != null ? uri() : this.uri,
-  usage: usage != null ? usage() : this.usage,
-  usageUnit: usageUnit != null ? usageUnit() : this.usageUnit,
+AccountUsageUsageRecordUsageRecordLastMonth copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? asOf, Omittable<String?>? category, Omittable<String?>? count, Omittable<String?>? countUnit, Omittable<String?>? description, Omittable<String?>? endDate, Omittable<double?>? price, Omittable<String?>? priceUnit, Omittable<String?>? startDate, Omittable<Map<String,dynamic>?>? subresourceUris, Omittable<String?>? uri, Omittable<String?>? usage, Omittable<String?>? usageUnit, }) { return AccountUsageUsageRecordUsageRecordLastMonth(
+  accountSid: accountSid ?? this.accountSid,
+  apiVersion: apiVersion ?? this.apiVersion,
+  asOf: asOf ?? this.asOf,
+  category: category ?? this.category,
+  count: count ?? this.count,
+  countUnit: countUnit ?? this.countUnit,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  price: price ?? this.price,
+  priceUnit: priceUnit ?? this.priceUnit,
+  startDate: startDate ?? this.startDate,
+  subresourceUris: subresourceUris ?? this.subresourceUris,
+  uri: uri ?? this.uri,
+  usage: usage ?? this.usage,
+  usageUnit: usageUnit ?? this.usageUnit,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountUsageUsageRecordUsageRecordLastMonth &&

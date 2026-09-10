@@ -29,16 +29,16 @@ final int unitCount;
 Map<String, dynamic> toJson() { return {
   'account': account.toJson(),
   'billing_cycle': billingCycle,
-  'free_trial_ends_on': ?freeTrialEndsOn,
-  'next_billing_date': ?nextBillingDate,
+  'free_trial_ends_on': freeTrialEndsOn,
+  'next_billing_date': nextBillingDate,
   'on_free_trial': onFreeTrial,
   'plan': plan.toJson(),
   'unit_count': unitCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
       json.containsKey('billing_cycle') && json['billing_cycle'] is String &&
-      json.containsKey('free_trial_ends_on') && json['free_trial_ends_on'] is String &&
-      json.containsKey('next_billing_date') && json['next_billing_date'] is String &&
+      json.containsKey('free_trial_ends_on') && (json['free_trial_ends_on'] == null || json['free_trial_ends_on'] is String) &&
+      json.containsKey('next_billing_date') && (json['next_billing_date'] == null || json['next_billing_date'] is String) &&
       json.containsKey('on_free_trial') && json['on_free_trial'] is bool &&
       json.containsKey('plan') &&
       json.containsKey('unit_count') && json['unit_count'] is num; } 

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (skipInterstitial != null) 'skip_interstitial': skipInterstitial?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_iframe', 'skip_interstitial'}.contains(key)); } 
-AccessAppSettingsResponse copyWith({AccessAllowIframe Function()? allowIframe, AccessSkipInterstitial Function()? skipInterstitial, }) { return AccessAppSettingsResponse(
+AccessAppSettingsResponse copyWith({AccessAllowIframe? Function()? allowIframe, AccessSkipInterstitial? Function()? skipInterstitial, }) { return AccessAppSettingsResponse(
   allowIframe: allowIframe != null ? allowIframe() : this.allowIframe,
   skipInterstitial: skipInterstitial != null ? skipInterstitial() : this.skipInterstitial,
 ); } 

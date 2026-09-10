@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessSchemasFacebook copyWith({AccessSchemasGenericOauthConfig? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessSchemasFacebookScimConfig Function()? scimConfig, AccessSchemasFacebookType? type, }) { return AccessSchemasFacebook(
+AccessSchemasFacebook copyWith({AccessSchemasGenericOauthConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessSchemasFacebookScimConfig? Function()? scimConfig, AccessSchemasFacebookType? type, }) { return AccessSchemasFacebook(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_details') &&
       json.containsKey('type'); } 
-TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails copyWith({TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance Function()? balance, TreasurySharedResourceBillingDetails? billingDetails, ReceivedPaymentMethodDetailsFinancialAccount Function()? financialAccount, String Function()? issuingCard, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType? type, TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount Function()? usBankAccount, }) { return TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails(
+TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails copyWith({TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance? Function()? balance, TreasurySharedResourceBillingDetails? billingDetails, ReceivedPaymentMethodDetailsFinancialAccount? Function()? financialAccount, String? Function()? issuingCard, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType? type, TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) { return TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails(
   balance: balance != null ? balance() : this.balance,
   billingDetails: billingDetails ?? this.billingDetails,
   financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,

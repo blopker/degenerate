@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('strict') && json['strict'] is bool &&
       json.containsKey('contexts'); } 
-ReposUpdateBranchProtectionRequestRequiredStatusChecks copyWith({bool? strict, List<String>? contexts, List<ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks> Function()? checks, }) { return ReposUpdateBranchProtectionRequestRequiredStatusChecks(
+ReposUpdateBranchProtectionRequestRequiredStatusChecks copyWith({bool? strict, List<String>? contexts, List<ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks>? Function()? checks, }) { return ReposUpdateBranchProtectionRequestRequiredStatusChecks(
   strict: strict ?? this.strict,
   contexts: contexts ?? this.contexts,
   checks: checks != null ? checks() : this.checks,

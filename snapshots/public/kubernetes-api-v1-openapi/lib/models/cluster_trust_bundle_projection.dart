@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'signerName': ?signerName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
-ClusterTrustBundleProjection copyWith({LabelSelector Function()? labelSelector, String Function()? name, bool Function()? optional, String? path, String Function()? signerName, }) { return ClusterTrustBundleProjection(
+ClusterTrustBundleProjection copyWith({LabelSelector? Function()? labelSelector, String? Function()? name, bool? Function()? optional, String? path, String? Function()? signerName, }) { return ClusterTrustBundleProjection(
   labelSelector: labelSelector != null ? labelSelector() : this.labelSelector,
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,

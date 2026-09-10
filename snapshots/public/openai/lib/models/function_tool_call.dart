@@ -87,7 +87,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String; } 
-FunctionToolCall copyWith({String Function()? id, String? type, String? callId, String Function()? namespace, String? name, String? arguments, FunctionToolCallStatus Function()? status, }) { return FunctionToolCall(
+FunctionToolCall copyWith({String? Function()? id, String? type, String? callId, String? Function()? namespace, String? name, String? arguments, FunctionToolCallStatus? Function()? status, }) { return FunctionToolCall(
   id: id != null ? id() : this.id,
   type: type ?? this.type,
   callId: callId ?? this.callId,

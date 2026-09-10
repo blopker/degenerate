@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInheritedContent copyWith({int? id, String? name, int Function()? superCategoryId, }) { return UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInheritedContent(
+UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInheritedContent copyWith({int? id, String? name, int? Function()? superCategoryId, }) { return UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInheritedContent(
   id: id ?? this.id,
   name: name ?? this.name,
   superCategoryId: superCategoryId != null ? superCategoryId() : this.superCategoryId,

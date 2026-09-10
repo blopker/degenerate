@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class TaxProductResourceTaxTransactionResourceReversal {const TaxProductResourceTaxTransactionResourceReversal({this.originalTransaction});
+@immutable final class TaxProductResourceTaxTransactionResourceReversal {const TaxProductResourceTaxTransactionResourceReversal({this.originalTransaction = const Omittable.absent()});
 
 factory TaxProductResourceTaxTransactionResourceReversal.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxTransactionResourceReversal(
-  originalTransaction: json['original_transaction'] as String?,
+  originalTransaction: json.containsKey('original_transaction') ? Omittable(json['original_transaction'] as String?) : const Omittable.absent(),
 ); }
 
 /// The `id` of the reversed `Transaction` object.
-final String? originalTransaction;
+final Omittable<String?> originalTransaction;
 
 Map<String, dynamic> toJson() { return {
-  'original_transaction': ?originalTransaction,
+  if (originalTransaction.isPresent) 'original_transaction': originalTransaction.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'original_transaction'}.contains(key)); } 
-TaxProductResourceTaxTransactionResourceReversal copyWith({String? Function()? originalTransaction}) { return TaxProductResourceTaxTransactionResourceReversal(
-  originalTransaction: originalTransaction != null ? originalTransaction() : this.originalTransaction,
+TaxProductResourceTaxTransactionResourceReversal copyWith({Omittable<String?>? originalTransaction}) { return TaxProductResourceTaxTransactionResourceReversal(
+  originalTransaction: originalTransaction ?? this.originalTransaction,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TaxProductResourceTaxTransactionResourceReversal &&

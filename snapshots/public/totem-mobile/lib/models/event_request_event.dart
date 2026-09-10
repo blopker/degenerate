@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 import 'accept_stick_event.dart';
 import 'ban_participant_event.dart';
 import 'end_room_event.dart';

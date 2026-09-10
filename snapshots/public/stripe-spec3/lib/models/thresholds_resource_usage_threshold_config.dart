@@ -23,17 +23,17 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ThresholdsResourceUsageThresholdConfigRecurrence($value)'; } 
  }
 /// The usage threshold alert configuration enables setting up alerts for when a certain usage threshold on a specific meter is crossed.
-@immutable final class ThresholdsResourceUsageThresholdConfig {const ThresholdsResourceUsageThresholdConfig({required this.gte, required this.meter, required this.recurrence, this.filters, });
+@immutable final class ThresholdsResourceUsageThresholdConfig {const ThresholdsResourceUsageThresholdConfig({required this.gte, required this.meter, required this.recurrence, this.filters = const Omittable.absent(), });
 
 factory ThresholdsResourceUsageThresholdConfig.fromJson(Map<String, dynamic> json) { return ThresholdsResourceUsageThresholdConfig(
-  filters: (json['filters'] as List<dynamic>?)?.map((e) => ThresholdsResourceUsageAlertFilter.fromJson(e as Map<String, dynamic>)).toList(),
+  filters: json.containsKey('filters') ? Omittable((json['filters'] as List<dynamic>?)?.map((e) => ThresholdsResourceUsageAlertFilter.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   gte: (json['gte'] as num).toInt(),
   meter: OneOf2.parse(json['meter'], fromA: (v) => v as String, fromB: (v) => BillingMeter.fromJson(v as Map<String, dynamic>),),
   recurrence: ThresholdsResourceUsageThresholdConfigRecurrence.fromJson(json['recurrence'] as String),
 ); }
 
 /// The filters allow limiting the scope of this usage alert. You can only specify up to one filter at this time.
-final List<ThresholdsResourceUsageAlertFilter>? filters;
+final Omittable<List<ThresholdsResourceUsageAlertFilter>?> filters;
 
 /// The value at which this alert will trigger.
 final int gte;
@@ -45,7 +45,7 @@ final ThresholdsResourceUsageThresholdConfigMeter meter;
 final ThresholdsResourceUsageThresholdConfigRecurrence recurrence;
 
 Map<String, dynamic> toJson() { return {
-  if (filters != null) 'filters': filters?.map((e) => e.toJson()).toList(),
+  if (filters.isPresent) 'filters': filters.value?.map((e) => e.toJson()).toList(),
   'gte': gte,
   'meter': meter.toJson(),
   'recurrence': recurrence.toJson(),
@@ -53,18 +53,19 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('gte') && json['gte'] is num &&
       json.containsKey('meter') &&
       json.containsKey('recurrence'); } 
-ThresholdsResourceUsageThresholdConfig copyWith({List<ThresholdsResourceUsageAlertFilter>? Function()? filters, int? gte, ThresholdsResourceUsageThresholdConfigMeter? meter, ThresholdsResourceUsageThresholdConfigRecurrence? recurrence, }) { return ThresholdsResourceUsageThresholdConfig(
-  filters: filters != null ? filters() : this.filters,
+ThresholdsResourceUsageThresholdConfig copyWith({Omittable<List<ThresholdsResourceUsageAlertFilter>?>? filters, int? gte, ThresholdsResourceUsageThresholdConfigMeter? meter, ThresholdsResourceUsageThresholdConfigRecurrence? recurrence, }) { return ThresholdsResourceUsageThresholdConfig(
+  filters: filters ?? this.filters,
   gte: gte ?? this.gte,
   meter: meter ?? this.meter,
   recurrence: recurrence ?? this.recurrence,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ThresholdsResourceUsageThresholdConfig &&
-          listEquals(filters, other.filters) &&
+          filters.isPresent == other.filters.isPresent &&
+          listEquals(filters.value, other.filters.value) &&
           gte == other.gte &&
           meter == other.meter &&
           recurrence == other.recurrence; } 
-@override int get hashCode { return Object.hash(Object.hashAll(filters ?? const []), gte, meter, recurrence); } 
+@override int get hashCode { return Object.hash(Object.hashAll(filters.value ?? const []), gte, meter, recurrence); } 
 @override String toString() { return 'ThresholdsResourceUsageThresholdConfig(filters: $filters, gte: $gte, meter: $meter, recurrence: $recurrence)'; } 
  }

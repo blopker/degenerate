@@ -22,11 +22,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResultId($value)'; } 
  }
-@immutable final class ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult {const ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult({required this.id, required this.value, this.modifiedOn, });
+@immutable final class ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult {const ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult({required this.id, required this.value, this.modifiedOn = const Omittable.absent(), });
 
 factory ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult(
   id: ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResultId.fromJson(json['id'] as String),
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: CacheRulesOriginPostQuantumEncryptionValue.fromJson(json['value'] as String),
 ); }
 
@@ -34,21 +34,21 @@ factory ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult.fro
 final ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResultId id;
 
 /// Last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 /// Value of the Origin Post Quantum Encryption Setting.
 final CacheRulesOriginPostQuantumEncryptionValue value;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('value'); } 
-ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult copyWith({ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResultId? id, DateTime? Function()? modifiedOn, CacheRulesOriginPostQuantumEncryptionValue? value, }) { return ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult(
+ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult copyWith({ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResultId? id, Omittable<DateTime?>? modifiedOn, CacheRulesOriginPostQuantumEncryptionValue? value, }) { return ZoneCacheSettingsGetOriginPostQuantumEncryptionSettingResponseResult(
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

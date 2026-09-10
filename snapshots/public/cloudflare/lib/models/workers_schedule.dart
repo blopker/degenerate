@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'modified_on': ?modifiedOn,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cron') && json['cron'] is String; } 
-WorkersSchedule copyWith({String Function()? createdOn, String? cron, String Function()? modifiedOn, }) { return WorkersSchedule(
+WorkersSchedule copyWith({String? Function()? createdOn, String? cron, String? Function()? modifiedOn, }) { return WorkersSchedule(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   cron: cron ?? this.cron,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,

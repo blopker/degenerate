@@ -57,39 +57,39 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingAuthorizationFleetDataServiceType($value)'; } 
  }
 /// 
-@immutable final class IssuingAuthorizationFleetData {const IssuingAuthorizationFleetData({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
+@immutable final class IssuingAuthorizationFleetData {const IssuingAuthorizationFleetData({this.cardholderPromptData = const Omittable.absent(), this.purchaseType = const Omittable.absent(), this.reportedBreakdown = const Omittable.absent(), this.serviceType = const Omittable.absent(), });
 
 factory IssuingAuthorizationFleetData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetData(
-  cardholderPromptData: json['cardholder_prompt_data'] != null ? IssuingAuthorizationFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,
-  purchaseType: json['purchase_type'] != null ? IssuingAuthorizationFleetDataPurchaseType.fromJson(json['purchase_type'] as String) : null,
-  reportedBreakdown: json['reported_breakdown'] != null ? IssuingAuthorizationFleetReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null,
-  serviceType: json['service_type'] != null ? IssuingAuthorizationFleetDataServiceType.fromJson(json['service_type'] as String) : null,
+  cardholderPromptData: json.containsKey('cardholder_prompt_data') ? Omittable(json['cardholder_prompt_data'] != null ? IssuingAuthorizationFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  purchaseType: json.containsKey('purchase_type') ? Omittable(json['purchase_type'] != null ? IssuingAuthorizationFleetDataPurchaseType.fromJson(json['purchase_type'] as String) : null) : const Omittable.absent(),
+  reportedBreakdown: json.containsKey('reported_breakdown') ? Omittable(json['reported_breakdown'] != null ? IssuingAuthorizationFleetReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  serviceType: json.containsKey('service_type') ? Omittable(json['service_type'] != null ? IssuingAuthorizationFleetDataServiceType.fromJson(json['service_type'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Answers to prompts presented to the cardholder at the point of sale. Prompted fields vary depending on the configuration of your physical fleet cards. Typical points of sale support only numeric entry.
-final IssuingAuthorizationFleetCardholderPromptData? cardholderPromptData;
+final Omittable<IssuingAuthorizationFleetCardholderPromptData?> cardholderPromptData;
 
 /// The type of purchase.
-final IssuingAuthorizationFleetDataPurchaseType? purchaseType;
+final Omittable<IssuingAuthorizationFleetDataPurchaseType?> purchaseType;
 
 /// More information about the total amount. Typically this information is received from the merchant after the authorization has been approved and the fuel dispensed. This information is not guaranteed to be accurate as some merchants may provide unreliable data.
-final IssuingAuthorizationFleetReportedBreakdown? reportedBreakdown;
+final Omittable<IssuingAuthorizationFleetReportedBreakdown?> reportedBreakdown;
 
 /// The type of fuel service.
-final IssuingAuthorizationFleetDataServiceType? serviceType;
+final Omittable<IssuingAuthorizationFleetDataServiceType?> serviceType;
 
 Map<String, dynamic> toJson() { return {
-  if (cardholderPromptData != null) 'cardholder_prompt_data': cardholderPromptData?.toJson(),
-  if (purchaseType != null) 'purchase_type': purchaseType?.toJson(),
-  if (reportedBreakdown != null) 'reported_breakdown': reportedBreakdown?.toJson(),
-  if (serviceType != null) 'service_type': serviceType?.toJson(),
+  if (cardholderPromptData.isPresent) 'cardholder_prompt_data': cardholderPromptData.value?.toJson(),
+  if (purchaseType.isPresent) 'purchase_type': purchaseType.value?.toJson(),
+  if (reportedBreakdown.isPresent) 'reported_breakdown': reportedBreakdown.value?.toJson(),
+  if (serviceType.isPresent) 'service_type': serviceType.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cardholder_prompt_data', 'purchase_type', 'reported_breakdown', 'service_type'}.contains(key)); } 
-IssuingAuthorizationFleetData copyWith({IssuingAuthorizationFleetCardholderPromptData? Function()? cardholderPromptData, IssuingAuthorizationFleetDataPurchaseType? Function()? purchaseType, IssuingAuthorizationFleetReportedBreakdown? Function()? reportedBreakdown, IssuingAuthorizationFleetDataServiceType? Function()? serviceType, }) { return IssuingAuthorizationFleetData(
-  cardholderPromptData: cardholderPromptData != null ? cardholderPromptData() : this.cardholderPromptData,
-  purchaseType: purchaseType != null ? purchaseType() : this.purchaseType,
-  reportedBreakdown: reportedBreakdown != null ? reportedBreakdown() : this.reportedBreakdown,
-  serviceType: serviceType != null ? serviceType() : this.serviceType,
+IssuingAuthorizationFleetData copyWith({Omittable<IssuingAuthorizationFleetCardholderPromptData?>? cardholderPromptData, Omittable<IssuingAuthorizationFleetDataPurchaseType?>? purchaseType, Omittable<IssuingAuthorizationFleetReportedBreakdown?>? reportedBreakdown, Omittable<IssuingAuthorizationFleetDataServiceType?>? serviceType, }) { return IssuingAuthorizationFleetData(
+  cardholderPromptData: cardholderPromptData ?? this.cardholderPromptData,
+  purchaseType: purchaseType ?? this.purchaseType,
+  reportedBreakdown: reportedBreakdown ?? this.reportedBreakdown,
+  serviceType: serviceType ?? this.serviceType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingAuthorizationFleetData &&

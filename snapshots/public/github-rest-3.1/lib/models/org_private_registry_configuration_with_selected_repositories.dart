@@ -148,7 +148,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('visibility') &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-OrgPrivateRegistryConfigurationWithSelectedRepositories copyWith({String? name, OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType? registryType, Uri Function()? url, String Function()? username, bool Function()? replacesBase, OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility? visibility, List<int> Function()? selectedRepositoryIds, DateTime? createdAt, DateTime? updatedAt, }) { return OrgPrivateRegistryConfigurationWithSelectedRepositories(
+OrgPrivateRegistryConfigurationWithSelectedRepositories copyWith({String? name, OrgPrivateRegistryConfigurationWithSelectedRepositoriesRegistryType? registryType, Uri? Function()? url, String? Function()? username, bool Function()? replacesBase, OrgPrivateRegistryConfigurationWithSelectedRepositoriesVisibility? visibility, List<int>? Function()? selectedRepositoryIds, DateTime? createdAt, DateTime? updatedAt, }) { return OrgPrivateRegistryConfigurationWithSelectedRepositories(
   name: name ?? this.name,
   registryType: registryType ?? this.registryType,
   url: url != null ? url() : this.url,

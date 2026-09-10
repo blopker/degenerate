@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'second': ?second,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('day_of_month') && json['day_of_month'] is num; } 
-PostSubscriptionsRequestBillingCycleAnchorConfig copyWith({int? dayOfMonth, int Function()? hour, int Function()? minute, int Function()? month, int Function()? second, }) { return PostSubscriptionsRequestBillingCycleAnchorConfig(
+PostSubscriptionsRequestBillingCycleAnchorConfig copyWith({int? dayOfMonth, int? Function()? hour, int? Function()? minute, int? Function()? month, int? Function()? second, }) { return PostSubscriptionsRequestBillingCycleAnchorConfig(
   dayOfMonth: dayOfMonth ?? this.dayOfMonth,
   hour: hour != null ? hour() : this.hour,
   minute: minute != null ? minute() : this.minute,

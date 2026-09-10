@@ -40,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('modified_on') &&
       json.containsKey('dns') &&
       json.containsKey('protocol'); } 
-SpectrumConfigPaygoAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumConfigIdentifier? id, SpectrumConfigTimestamp? modifiedOn, SpectrumConfigDns? dns, List<String> Function()? originDirect, SpectrumConfigProtocol? protocol, }) { return SpectrumConfigPaygoAppConfig(
+SpectrumConfigPaygoAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumConfigIdentifier? id, SpectrumConfigTimestamp? modifiedOn, SpectrumConfigDns? dns, List<String>? Function()? originDirect, SpectrumConfigProtocol? protocol, }) { return SpectrumConfigPaygoAppConfig(
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,

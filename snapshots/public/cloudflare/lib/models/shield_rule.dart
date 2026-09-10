@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('expression') &&
       json.containsKey('selector') &&
       json.containsKey('title'); } 
-ShieldRule copyWith({ShieldAction? action, ShieldTimestamp Function()? createdAt, ShieldSchemasDescription? description, ShieldEnabled? enabled, ShieldExpression? expression, ShieldUuid Function()? id, ShieldTimestamp Function()? lastUpdated, ShieldSelector? selector, ShieldSchemasTitle? title, }) { return ShieldRule(
+ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdAt, ShieldSchemasDescription? description, ShieldEnabled? enabled, ShieldExpression? expression, ShieldUuid? Function()? id, ShieldTimestamp? Function()? lastUpdated, ShieldSelector? selector, ShieldSchemasTitle? title, }) { return ShieldRule(
   action: action ?? this.action,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description ?? this.description,

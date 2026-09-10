@@ -25,27 +25,27 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsReviewPatGrantRequestRequestAction($value)'; } 
  }
-@immutable final class OrgsReviewPatGrantRequestRequest {const OrgsReviewPatGrantRequestRequest({required this.action, this.reason, });
+@immutable final class OrgsReviewPatGrantRequestRequest {const OrgsReviewPatGrantRequestRequest({required this.action, this.reason = const Omittable.absent(), });
 
 factory OrgsReviewPatGrantRequestRequest.fromJson(Map<String, dynamic> json) { return OrgsReviewPatGrantRequestRequest(
   action: OrgsReviewPatGrantRequestRequestAction.fromJson(json['action'] as String),
-  reason: json['reason'] as String?,
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
 ); }
 
 /// Action to apply to the request.
 final OrgsReviewPatGrantRequestRequestAction action;
 
 /// Reason for approving or denying the request. Max 1024 characters.
-final String? reason;
+final Omittable<String?> reason;
 
 Map<String, dynamic> toJson() { return {
   'action': action.toJson(),
-  'reason': ?reason,
+  if (reason.isPresent) 'reason': reason.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
-OrgsReviewPatGrantRequestRequest copyWith({OrgsReviewPatGrantRequestRequestAction? action, String? Function()? reason, }) { return OrgsReviewPatGrantRequestRequest(
+OrgsReviewPatGrantRequestRequest copyWith({OrgsReviewPatGrantRequestRequestAction? action, Omittable<String?>? reason, }) { return OrgsReviewPatGrantRequestRequest(
   action: action ?? this.action,
-  reason: reason != null ? reason() : this.reason,
+  reason: reason ?? this.reason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is OrgsReviewPatGrantRequestRequest &&

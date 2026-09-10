@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   'readOnly': ?readOnly,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('pdName') && json['pdName'] is String; } 
-GcePersistentDiskVolumeSource copyWith({String Function()? fsType, int Function()? partition, String? pdName, bool Function()? readOnly, }) { return GcePersistentDiskVolumeSource(
+GcePersistentDiskVolumeSource copyWith({String? Function()? fsType, int? Function()? partition, String? pdName, bool? Function()? readOnly, }) { return GcePersistentDiskVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   partition: partition != null ? partition() : this.partition,
   pdName: pdName ?? this.pdName,

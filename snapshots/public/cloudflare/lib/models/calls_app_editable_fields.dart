@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
-CallsAppEditableFields copyWith({CallsName Function()? name}) { return CallsAppEditableFields(
+CallsAppEditableFields copyWith({CallsName? Function()? name}) { return CallsAppEditableFields(
   name: name != null ? name() : this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (popHealth != null) 'pop_health': popHealth?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pool_id', 'pop_health'}.contains(key)); } 
-LoadBalancingHealthDetailsResult copyWith({String Function()? poolId, LoadBalancingHealthDetailsResultPopHealth Function()? popHealth, }) { return LoadBalancingHealthDetailsResult(
+LoadBalancingHealthDetailsResult copyWith({String? Function()? poolId, LoadBalancingHealthDetailsResultPopHealth? Function()? popHealth, }) { return LoadBalancingHealthDetailsResult(
   poolId: poolId != null ? poolId() : this.poolId,
   popHealth: popHealth != null ? popHealth() : this.popHealth,
 ); } 

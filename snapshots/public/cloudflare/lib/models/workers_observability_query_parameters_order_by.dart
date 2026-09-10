@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('value') && json['value'] is String; } 
-WorkersObservabilityQueryParametersOrderBy copyWith({WorkersObservabilityQueryParametersOrderByOrder Function()? order, String? value, }) { return WorkersObservabilityQueryParametersOrderBy(
+WorkersObservabilityQueryParametersOrderBy copyWith({WorkersObservabilityQueryParametersOrderByOrder? Function()? order, String? value, }) { return WorkersObservabilityQueryParametersOrderBy(
   order: order != null ? order() : this.order,
   value: value ?? this.value,
 ); } 

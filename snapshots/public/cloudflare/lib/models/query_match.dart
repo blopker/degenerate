@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'total': ?total,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'matches', 'total'}.contains(key)); } 
-QueryMatch copyWith({List<Map<String, dynamic>> Function()? matches, int Function()? total, }) { return QueryMatch(
+QueryMatch copyWith({List<Map<String, dynamic>>? Function()? matches, int? Function()? total, }) { return QueryMatch(
   matches: matches != null ? matches() : this.matches,
   total: total != null ? total() : this.total,
 ); } 

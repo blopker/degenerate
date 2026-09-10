@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
       json.containsKey('repositories'); } 
-AppsListReposAccessibleToInstallationResponse copyWith({int? totalCount, List<Repository>? repositories, String Function()? repositorySelection, }) { return AppsListReposAccessibleToInstallationResponse(
+AppsListReposAccessibleToInstallationResponse copyWith({int? totalCount, List<Repository>? repositories, String? Function()? repositorySelection, }) { return AppsListReposAccessibleToInstallationResponse(
   totalCount: totalCount ?? this.totalCount,
   repositories: repositories ?? this.repositories,
   repositorySelection: repositorySelection != null ? repositorySelection() : this.repositorySelection,

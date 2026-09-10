@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') &&
       json.containsKey('service') &&
       json.containsKey('zone_id'); } 
-WorkerDomainAttachToDomainRequest copyWith({WorkersSchemasEnvironment Function()? environment, WorkersHostname? hostname, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, }) { return WorkerDomainAttachToDomainRequest(
+WorkerDomainAttachToDomainRequest copyWith({WorkersSchemasEnvironment? Function()? environment, WorkersHostname? hostname, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, }) { return WorkerDomainAttachToDomainRequest(
   environment: environment != null ? environment() : this.environment,
   hostname: hostname ?? this.hostname,
   service: service ?? this.service,

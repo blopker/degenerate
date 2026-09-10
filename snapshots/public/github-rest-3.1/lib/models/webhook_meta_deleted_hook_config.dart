@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content_type') &&
       json.containsKey('insecure_ssl') && json['insecure_ssl'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookMetaDeletedHookConfig copyWith({WebhookMetaDeletedHookConfigContentType? contentType, String? insecureSsl, String Function()? secret, Uri? url, }) { return WebhookMetaDeletedHookConfig(
+WebhookMetaDeletedHookConfig copyWith({WebhookMetaDeletedHookConfigContentType? contentType, String? insecureSsl, String? Function()? secret, Uri? url, }) { return WebhookMetaDeletedHookConfig(
   contentType: contentType ?? this.contentType,
   insecureSsl: insecureSsl ?? this.insecureSsl,
   secret: secret != null ? secret() : this.secret,

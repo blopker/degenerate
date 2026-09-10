@@ -1,0 +1,123 @@
+# Omittable fields (JSON Merge Patch, RFC 7396): optional nullable fields
+# have three wire states — absent ("don't touch"), null ("clear"), value
+# ("update") — and generate as Omittable<T>. Covers: wrapped primitives,
+# lists, $ref objects; optional non-nullable (unwrapped); required nullable
+# (always serialized, never wrapped); a schema shared by request and
+# response (Address); and a multipart body with a wrapped text field.
+openapi: 3.1.0
+info:
+  title: Merge Patch API
+  version: 1.0.0
+paths:
+  /users/{userId}:
+    get:
+      operationId: getUser
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    patch:
+      operationId: patchUser
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/UserPatch'
+      responses:
+        '200':
+          description: The updated user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /users/{userId}/avatar:
+    put:
+      operationId: uploadAvatar
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+                caption:
+                  type: ['string', 'null']
+              required:
+                - image
+      responses:
+        '204':
+          description: Uploaded
+components:
+  schemas:
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+        city:
+          type: ['string', 'null']
+      required:
+        - street
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        display_name:
+          type: ['string', 'null']
+        tags:
+          type: ['array', 'null']
+          items:
+            type: string
+        address:
+          anyOf:
+            - $ref: '#/components/schemas/Address'
+            - type: 'null'
+        email:
+          type: string
+      required:
+        - id
+    UserPatch:
+      type: object
+      properties:
+        display_name:
+          type: ['string', 'null']
+        tags:
+          type: ['array', 'null']
+          items:
+            type: string
+        address:
+          anyOf:
+            - $ref: '#/components/schemas/Address'
+            - type: 'null'
+        email:
+          type: string
+        mode:
+          type: ['string', 'null']
+      required:
+        - mode

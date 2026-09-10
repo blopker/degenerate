@@ -63,14 +63,14 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'R2SlurperJobLogResponseLogType($value)'; } 
  }
-@immutable final class R2SlurperJobLogResponse {const R2SlurperJobLogResponse({this.createdAt, this.job, this.logType, this.message, this.objectKey, });
+@immutable final class R2SlurperJobLogResponse {const R2SlurperJobLogResponse({this.createdAt, this.job, this.logType, this.message = const Omittable.absent(), this.objectKey = const Omittable.absent(), });
 
 factory R2SlurperJobLogResponse.fromJson(Map<String, dynamic> json) { return R2SlurperJobLogResponse(
   createdAt: json['createdAt'] as String?,
   job: json['job'] as String?,
   logType: json['logType'] != null ? R2SlurperJobLogResponseLogType.fromJson(json['logType'] as String) : null,
-  message: json['message'] as String?,
-  objectKey: json['objectKey'] as String?,
+  message: json.containsKey('message') ? Omittable(json['message'] as String?) : const Omittable.absent(),
+  objectKey: json.containsKey('objectKey') ? Omittable(json['objectKey'] as String?) : const Omittable.absent(),
 ); }
 
 final String? createdAt;
@@ -79,24 +79,24 @@ final String? job;
 
 final R2SlurperJobLogResponseLogType? logType;
 
-final String? message;
+final Omittable<String?> message;
 
-final String? objectKey;
+final Omittable<String?> objectKey;
 
 Map<String, dynamic> toJson() { return {
   'createdAt': ?createdAt,
   'job': ?job,
   if (logType != null) 'logType': logType?.toJson(),
-  'message': ?message,
-  'objectKey': ?objectKey,
+  if (message.isPresent) 'message': message.value,
+  if (objectKey.isPresent) 'objectKey': objectKey.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'createdAt', 'job', 'logType', 'message', 'objectKey'}.contains(key)); } 
-R2SlurperJobLogResponse copyWith({String Function()? createdAt, String Function()? job, R2SlurperJobLogResponseLogType Function()? logType, String? Function()? message, String? Function()? objectKey, }) { return R2SlurperJobLogResponse(
+R2SlurperJobLogResponse copyWith({String? Function()? createdAt, String? Function()? job, R2SlurperJobLogResponseLogType? Function()? logType, Omittable<String?>? message, Omittable<String?>? objectKey, }) { return R2SlurperJobLogResponse(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   job: job != null ? job() : this.job,
   logType: logType != null ? logType() : this.logType,
-  message: message != null ? message() : this.message,
-  objectKey: objectKey != null ? objectKey() : this.objectKey,
+  message: message ?? this.message,
+  objectKey: objectKey ?? this.objectKey,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is R2SlurperJobLogResponse &&

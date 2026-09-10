@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('email') && json['email'] is String; } 
-GitCreateCommitRequestAuthor copyWith({String? name, String? email, DateTime Function()? date, }) { return GitCreateCommitRequestAuthor(
+GitCreateCommitRequestAuthor copyWith({String? name, String? email, DateTime? Function()? date, }) { return GitCreateCommitRequestAuthor(
   name: name ?? this.name,
   email: email ?? this.email,
   date: date != null ? date() : this.date,

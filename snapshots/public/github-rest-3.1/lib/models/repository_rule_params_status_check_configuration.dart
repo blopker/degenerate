@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'integration_id': ?integrationId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('context') && json['context'] is String; } 
-RepositoryRuleParamsStatusCheckConfiguration copyWith({String? context, int Function()? integrationId, }) { return RepositoryRuleParamsStatusCheckConfiguration(
+RepositoryRuleParamsStatusCheckConfiguration copyWith({String? context, int? Function()? integrationId, }) { return RepositoryRuleParamsStatusCheckConfiguration(
   context: context ?? this.context,
   integrationId: integrationId != null ? integrationId() : this.integrationId,
 ); } 

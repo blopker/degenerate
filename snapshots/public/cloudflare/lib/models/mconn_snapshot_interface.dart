@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('operstate') && json['operstate'] is String; } 
-MconnSnapshotInterface copyWith({String Function()? connectorId, List<MconnSnapshotInterfaceAddress> Function()? ipAddresses, String? name, String? operstate, double Function()? speed, }) { return MconnSnapshotInterface(
+MconnSnapshotInterface copyWith({String? Function()? connectorId, List<MconnSnapshotInterfaceAddress>? Function()? ipAddresses, String? name, String? operstate, double? Function()? speed, }) { return MconnSnapshotInterface(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   ipAddresses: ipAddresses != null ? ipAddresses() : this.ipAddresses,
   name: name ?? this.name,

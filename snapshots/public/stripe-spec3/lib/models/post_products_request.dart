@@ -86,7 +86,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PostProductsRequest copyWith({bool Function()? active, PostProductsRequestDefaultPriceData Function()? defaultPriceData, String Function()? description, List<String> Function()? expand, String Function()? id, List<String> Function()? images, List<PostProductsRequestMarketingFeatures> Function()? marketingFeatures, Map<String, String> Function()? metadata, String? name, PostProductsRequestPackageDimensions Function()? packageDimensions, bool Function()? shippable, String Function()? statementDescriptor, String Function()? taxCode, String Function()? unitLabel, String Function()? url, }) { return PostProductsRequest(
+PostProductsRequest copyWith({bool? Function()? active, PostProductsRequestDefaultPriceData? Function()? defaultPriceData, String? Function()? description, List<String>? Function()? expand, String? Function()? id, List<String>? Function()? images, List<PostProductsRequestMarketingFeatures>? Function()? marketingFeatures, Map<String, String>? Function()? metadata, String? name, PostProductsRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, String? Function()? taxCode, String? Function()? unitLabel, String? Function()? url, }) { return PostProductsRequest(
   active: active != null ? active() : this.active,
   defaultPriceData: defaultPriceData != null ? defaultPriceData() : this.defaultPriceData,
   description: description != null ? description() : this.description,

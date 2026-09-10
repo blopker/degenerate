@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'expirationSeconds': ?expirationSeconds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'audiences', 'boundObjectRef', 'expirationSeconds'}.contains(key)); } 
-TokenRequestSpec copyWith({List<String> Function()? audiences, BoundObjectReference Function()? boundObjectRef, int Function()? expirationSeconds, }) { return TokenRequestSpec(
+TokenRequestSpec copyWith({List<String>? Function()? audiences, BoundObjectReference? Function()? boundObjectRef, int? Function()? expirationSeconds, }) { return TokenRequestSpec(
   audiences: audiences != null ? audiences() : this.audiences,
   boundObjectRef: boundObjectRef != null ? boundObjectRef() : this.boundObjectRef,
   expirationSeconds: expirationSeconds != null ? expirationSeconds() : this.expirationSeconds,

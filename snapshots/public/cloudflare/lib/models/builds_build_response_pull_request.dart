@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (pullRequestUrl != null) 'pull_request_url': pullRequestUrl?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_on', 'pull_request_url'}.contains(key)); } 
-BuildsBuildResponsePullRequest copyWith({BuildsCreatedOn Function()? createdOn, Uri Function()? pullRequestUrl, }) { return BuildsBuildResponsePullRequest(
+BuildsBuildResponsePullRequest copyWith({BuildsCreatedOn? Function()? createdOn, Uri? Function()? pullRequestUrl, }) { return BuildsBuildResponsePullRequest(
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   pullRequestUrl: pullRequestUrl != null ? pullRequestUrl() : this.pullRequestUrl,
 ); } 

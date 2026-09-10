@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'total_records_parsed': ?totalRecordsParsed,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'recs_added', 'total_records_parsed'}.contains(key)); } 
-DnsRecordsDnsResponseImportScanResult copyWith({double Function()? recsAdded, double Function()? totalRecordsParsed, }) { return DnsRecordsDnsResponseImportScanResult(
+DnsRecordsDnsResponseImportScanResult copyWith({double? Function()? recsAdded, double? Function()? totalRecordsParsed, }) { return DnsRecordsDnsResponseImportScanResult(
   recsAdded: recsAdded != null ? recsAdded() : this.recsAdded,
   totalRecordsParsed: totalRecordsParsed != null ? totalRecordsParsed() : this.totalRecordsParsed,
 ); } 

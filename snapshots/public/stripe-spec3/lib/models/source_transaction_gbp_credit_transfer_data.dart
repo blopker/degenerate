@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'sender_sort_code': ?senderSortCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fingerprint', 'funding_method', 'last4', 'reference', 'sender_account_number', 'sender_name', 'sender_sort_code'}.contains(key)); } 
-SourceTransactionGbpCreditTransferData copyWith({String Function()? fingerprint, String Function()? fundingMethod, String Function()? last4, String Function()? reference, String Function()? senderAccountNumber, String Function()? senderName, String Function()? senderSortCode, }) { return SourceTransactionGbpCreditTransferData(
+SourceTransactionGbpCreditTransferData copyWith({String? Function()? fingerprint, String? Function()? fundingMethod, String? Function()? last4, String? Function()? reference, String? Function()? senderAccountNumber, String? Function()? senderName, String? Function()? senderSortCode, }) { return SourceTransactionGbpCreditTransferData(
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
   fundingMethod: fundingMethod != null ? fundingMethod() : this.fundingMethod,
   last4: last4 != null ? last4() : this.last4,

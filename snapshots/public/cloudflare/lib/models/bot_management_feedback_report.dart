@@ -86,7 +86,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('requests_by_score') &&
       json.containsKey('requests_by_score_src') &&
       json.containsKey('type'); } 
-BotManagementFeedbackReport copyWith({DateTime Function()? createdAt, String? description, String? expression, DateTime? firstRequestSeenAt, DateTime? lastRequestSeenAt, int? requests, Map<String,List<BotManagementMetricRequests>>? requestsByAttribute, Map<String,int>? requestsByScore, Map<String,int>? requestsByScoreSrc, String Function()? subtype, BotManagementFeedbackType? type, }) { return BotManagementFeedbackReport(
+BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? description, String? expression, DateTime? firstRequestSeenAt, DateTime? lastRequestSeenAt, int? requests, Map<String,List<BotManagementMetricRequests>>? requestsByAttribute, Map<String,int>? requestsByScore, Map<String,int>? requestsByScoreSrc, String? Function()? subtype, BotManagementFeedbackType? type, }) { return BotManagementFeedbackReport(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   description: description ?? this.description,
   expression: expression ?? this.expression,

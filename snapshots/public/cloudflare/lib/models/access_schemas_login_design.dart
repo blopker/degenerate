@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'text_color': ?textColor,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'background_color', 'footer_text', 'header_text', 'logo_path', 'text_color'}.contains(key)); } 
-AccessSchemasLoginDesign copyWith({String Function()? backgroundColor, String Function()? footerText, String Function()? headerText, String Function()? logoPath, String Function()? textColor, }) { return AccessSchemasLoginDesign(
+AccessSchemasLoginDesign copyWith({String? Function()? backgroundColor, String? Function()? footerText, String? Function()? headerText, String? Function()? logoPath, String? Function()? textColor, }) { return AccessSchemasLoginDesign(
   backgroundColor: backgroundColor != null ? backgroundColor() : this.backgroundColor,
   footerText: footerText != null ? footerText() : this.footerText,
   headerText: headerText != null ? headerText() : this.headerText,

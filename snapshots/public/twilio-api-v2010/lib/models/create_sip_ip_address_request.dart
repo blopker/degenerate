@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('FriendlyName') && json['FriendlyName'] is String &&
       json.containsKey('IpAddress') && json['IpAddress'] is String; } 
-CreateSipIpAddressRequest copyWith({String? friendlyName, String? ipAddress, int Function()? cidrPrefixLength, }) { return CreateSipIpAddressRequest(
+CreateSipIpAddressRequest copyWith({String? friendlyName, String? ipAddress, int? Function()? cidrPrefixLength, }) { return CreateSipIpAddressRequest(
   friendlyName: friendlyName ?? this.friendlyName,
   ipAddress: ipAddress ?? this.ipAddress,
   cidrPrefixLength: cidrPrefixLength != null ? cidrPrefixLength() : this.cidrPrefixLength,

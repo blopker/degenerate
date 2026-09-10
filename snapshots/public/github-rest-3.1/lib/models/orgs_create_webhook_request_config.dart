@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'password': ?password,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url'); } 
-OrgsCreateWebhookRequestConfig copyWith({WebhookConfigUrl? url, WebhookConfigContentType Function()? contentType, WebhookConfigSecret Function()? secret, WebhookConfigInsecureSsl Function()? insecureSsl, String Function()? username, String Function()? password, }) { return OrgsCreateWebhookRequestConfig(
+OrgsCreateWebhookRequestConfig copyWith({WebhookConfigUrl? url, WebhookConfigContentType? Function()? contentType, WebhookConfigSecret? Function()? secret, WebhookConfigInsecureSsl? Function()? insecureSsl, String? Function()? username, String? Function()? password, }) { return OrgsCreateWebhookRequestConfig(
   url: url ?? this.url,
   contentType: contentType != null ? contentType() : this.contentType,
   secret: secret != null ? secret() : this.secret,

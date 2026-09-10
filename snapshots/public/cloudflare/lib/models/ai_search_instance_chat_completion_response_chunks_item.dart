@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'timestamp': ?timestamp,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-AiSearchInstanceChatCompletionResponseChunksItem copyWith({String? key, Map<String, dynamic> Function()? metadata, double Function()? timestamp, }) { return AiSearchInstanceChatCompletionResponseChunksItem(
+AiSearchInstanceChatCompletionResponseChunksItem copyWith({String? key, Map<String, dynamic>? Function()? metadata, double? Function()? timestamp, }) { return AiSearchInstanceChatCompletionResponseChunksItem(
   key: key ?? this.key,
   metadata: metadata != null ? metadata() : this.metadata,
   timestamp: timestamp != null ? timestamp() : this.timestamp,

@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'system_prompt': ?systemPrompt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('query') && json['query'] is String; } 
-AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters Function()? filters, int Function()? maxNumResults, AutoragConfigAiSearchRequestModel Function()? model, String? query, AutoragConfigAiSearchRequestRankingOptions Function()? rankingOptions, AutoragConfigAiSearchRequestReranking Function()? reranking, bool Function()? rewriteQuery, bool Function()? stream, String Function()? systemPrompt, }) { return AutoragConfigAiSearchRequest(
+AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Function()? filters, int Function()? maxNumResults, AutoragConfigAiSearchRequestModel? Function()? model, String? query, AutoragConfigAiSearchRequestRankingOptions? Function()? rankingOptions, AutoragConfigAiSearchRequestReranking? Function()? reranking, bool Function()? rewriteQuery, bool Function()? stream, String? Function()? systemPrompt, }) { return AutoragConfigAiSearchRequest(
   filters: filters != null ? filters() : this.filters,
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   model: model != null ? model() : this.model,

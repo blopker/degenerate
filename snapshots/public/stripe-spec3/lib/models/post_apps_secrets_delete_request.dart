@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('scope'); } 
-PostAppsSecretsDeleteRequest copyWith({List<String> Function()? expand, String? name, PostAppsSecretsDeleteRequestScope? scope, }) { return PostAppsSecretsDeleteRequest(
+PostAppsSecretsDeleteRequest copyWith({List<String>? Function()? expand, String? name, PostAppsSecretsDeleteRequestScope? scope, }) { return PostAppsSecretsDeleteRequest(
   expand: expand != null ? expand() : this.expand,
   name: name ?? this.name,
   scope: scope ?? this.scope,

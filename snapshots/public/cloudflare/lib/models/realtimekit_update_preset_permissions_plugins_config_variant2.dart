@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'handles_view_only': ?handlesViewOnly,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access_control', 'handles_view_only'}.contains(key)); } 
-RealtimekitUpdatePresetPermissionsPluginsConfigVariant2 copyWith({RealtimekitUpdatePresetPermissionsPluginsConfigVariant2AccessControl Function()? accessControl, bool Function()? handlesViewOnly, }) { return RealtimekitUpdatePresetPermissionsPluginsConfigVariant2(
+RealtimekitUpdatePresetPermissionsPluginsConfigVariant2 copyWith({RealtimekitUpdatePresetPermissionsPluginsConfigVariant2AccessControl? Function()? accessControl, bool? Function()? handlesViewOnly, }) { return RealtimekitUpdatePresetPermissionsPluginsConfigVariant2(
   accessControl: accessControl != null ? accessControl() : this.accessControl,
   handlesViewOnly: handlesViewOnly != null ? handlesViewOnly() : this.handlesViewOnly,
 ); } 

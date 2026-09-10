@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
       json.containsKey('message') && json['message'] is String; } 
-DnsAnalyticsMessages2 copyWith({int? code, String Function()? documentationUrl, String? message, DnsAnalyticsMessages2Source Function()? source, }) { return DnsAnalyticsMessages2(
+DnsAnalyticsMessages2 copyWith({int? code, String? Function()? documentationUrl, String? message, DnsAnalyticsMessages2Source? Function()? source, }) { return DnsAnalyticsMessages2(
   code: code ?? this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   message: message ?? this.message,

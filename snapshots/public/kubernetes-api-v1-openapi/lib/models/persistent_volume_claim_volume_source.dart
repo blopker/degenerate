@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'readOnly': ?readOnly,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('claimName') && json['claimName'] is String; } 
-PersistentVolumeClaimVolumeSource copyWith({String? claimName, bool Function()? readOnly, }) { return PersistentVolumeClaimVolumeSource(
+PersistentVolumeClaimVolumeSource copyWith({String? claimName, bool? Function()? readOnly, }) { return PersistentVolumeClaimVolumeSource(
   claimName: claimName ?? this.claimName,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
 ); } 

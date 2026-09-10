@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('calculation') && json['calculation'] is String &&
       json.containsKey('reference') && json['reference'] is String; } 
-PostTaxTransactionsCreateFromCalculationRequest copyWith({String? calculation, List<String> Function()? expand, Map<String, String> Function()? metadata, int Function()? postedAt, String? reference, }) { return PostTaxTransactionsCreateFromCalculationRequest(
+PostTaxTransactionsCreateFromCalculationRequest copyWith({String? calculation, List<String>? Function()? expand, Map<String, String>? Function()? metadata, int? Function()? postedAt, String? reference, }) { return PostTaxTransactionsCreateFromCalculationRequest(
   calculation: calculation ?? this.calculation,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,

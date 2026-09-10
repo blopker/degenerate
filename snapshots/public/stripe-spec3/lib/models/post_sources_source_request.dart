@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (sourceOrder != null) 'source_order': sourceOrder?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'expand', 'mandate', 'metadata', 'owner', 'source_order'}.contains(key)); } 
-PostSourcesSourceRequest copyWith({int Function()? amount, List<String> Function()? expand, PostSourcesSourceRequestMandate Function()? mandate, PostSourcesSourceRequestMetadata Function()? metadata, PostSourcesSourceRequestOwner Function()? owner, PostSourcesSourceRequestSourceOrder Function()? sourceOrder, }) { return PostSourcesSourceRequest(
+PostSourcesSourceRequest copyWith({int? Function()? amount, List<String>? Function()? expand, PostSourcesSourceRequestMandate? Function()? mandate, PostSourcesSourceRequestMetadata? Function()? metadata, PostSourcesSourceRequestOwner? Function()? owner, PostSourcesSourceRequestSourceOrder? Function()? sourceOrder, }) { return PostSourcesSourceRequest(
   amount: amount != null ? amount() : this.amount,
   expand: expand != null ? expand() : this.expand,
   mandate: mandate != null ? mandate() : this.mandate,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_created_on.dart';import 'workers_etag.dart';import 'workers_has_assets.dart';import 'workers_has_modules.dart';import 'workers_logpush.dart';import 'workers_modified_on.dart';import 'workers_observability.dart';import 'workers_placement_info.dart';import 'workers_placement_info_smart.dart';import 'workers_placement_info_targeted.dart';import 'workers_placement_info_targeted2.dart';import 'workers_placement_info_targeted3.dart';import 'workers_placement_info_targeted4.dart';import 'workers_placement_info_variant2.dart';import 'workers_placement_info_variant3.dart';import 'workers_placement_info_variant4.dart';import 'workers_placement_mode.dart';import 'workers_placement_status.dart';import 'workers_script_response_named_handlers.dart';import 'workers_tag.dart';import 'workers_tail_consumers_script.dart';import 'workers_usage_model.dart';@immutable final class WorkersScriptResponse {const WorkersScriptResponse({this.compatibilityDate, this.compatibilityFlags, this.createdOn, this.etag, this.handlers, this.hasAssets, this.hasModules, this.id, this.lastDeployedFrom, this.logpush, this.migrationTag, this.modifiedOn, this.namedHandlers, this.observability, this.placement, this.placementMode, this.placementStatus, this.tag, this.tags, this.tailConsumers, this.usageModel, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_compatibility_date.dart';import 'workers_compatibility_flag.dart';import 'workers_created_on.dart';import 'workers_etag.dart';import 'workers_has_assets.dart';import 'workers_has_modules.dart';import 'workers_logpush.dart';import 'workers_modified_on.dart';import 'workers_observability.dart';import 'workers_placement_info.dart';import 'workers_placement_info_smart.dart';import 'workers_placement_info_targeted.dart';import 'workers_placement_info_targeted2.dart';import 'workers_placement_info_targeted3.dart';import 'workers_placement_info_targeted4.dart';import 'workers_placement_info_variant2.dart';import 'workers_placement_info_variant3.dart';import 'workers_placement_info_variant4.dart';import 'workers_placement_mode.dart';import 'workers_placement_status.dart';import 'workers_script_response_named_handlers.dart';import 'workers_tag.dart';import 'workers_tail_consumers_script.dart';import 'workers_usage_model.dart';@immutable final class WorkersScriptResponse {const WorkersScriptResponse({this.compatibilityDate, this.compatibilityFlags, this.createdOn, this.etag, this.handlers, this.hasAssets, this.hasModules, this.id, this.lastDeployedFrom, this.logpush, this.migrationTag, this.modifiedOn, this.namedHandlers, this.observability, this.placement, this.placementMode, this.placementStatus, this.tag, this.tags = const Omittable.absent(), this.tailConsumers = const Omittable.absent(), this.usageModel, });
 
 factory WorkersScriptResponse.fromJson(Map<String, dynamic> json) { return WorkersScriptResponse(
   compatibilityDate: json['compatibility_date'] != null ? WorkersCompatibilityDate.fromJson(json['compatibility_date'] as String) : null,
@@ -21,8 +21,8 @@ factory WorkersScriptResponse.fromJson(Map<String, dynamic> json) { return Worke
   placementMode: json['placement_mode'] != null ? WorkersPlacementMode.fromJson(json['placement_mode'] as String) : null,
   placementStatus: json['placement_status'] != null ? WorkersPlacementStatus.fromJson(json['placement_status'] as String) : null,
   tag: json['tag'] as String?,
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => WorkersTag.fromJson(e as String)).toList(),
-  tailConsumers: (json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList(),
+  tags: json.containsKey('tags') ? Omittable((json['tags'] as List<dynamic>?)?.map((e) => WorkersTag.fromJson(e as String)).toList()) : const Omittable.absent(),
+  tailConsumers: json.containsKey('tail_consumers') ? Omittable((json['tail_consumers'] as List<dynamic>?)?.map((e) => WorkersTailConsumersScript.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   usageModel: json['usage_model'] != null ? WorkersUsageModel.fromJson(json['usage_model'] as String) : null,
 ); }
 
@@ -78,9 +78,9 @@ final WorkersPlacementStatus? placementStatus;
 /// The immutable ID of the script.
 final String? tag;
 
-final List<WorkersTag>? tags;
+final Omittable<List<WorkersTag>?> tags;
 
-final List<WorkersTailConsumersScript>? tailConsumers;
+final Omittable<List<WorkersTailConsumersScript>?> tailConsumers;
 
 final WorkersUsageModel? usageModel;
 
@@ -103,12 +103,12 @@ Map<String, dynamic> toJson() { return {
   if (placementMode != null) 'placement_mode': placementMode?.toJson(),
   if (placementStatus != null) 'placement_status': placementStatus?.toJson(),
   'tag': ?tag,
-  if (tags != null) 'tags': tags?.map((e) => e.toJson()).toList(),
-  if (tailConsumers != null) 'tail_consumers': tailConsumers?.map((e) => e.toJson()).toList(),
+  if (tags.isPresent) 'tags': tags.value?.map((e) => e.toJson()).toList(),
+  if (tailConsumers.isPresent) 'tail_consumers': tailConsumers.value?.map((e) => e.toJson()).toList(),
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'compatibility_date', 'compatibility_flags', 'created_on', 'etag', 'handlers', 'has_assets', 'has_modules', 'id', 'last_deployed_from', 'logpush', 'migration_tag', 'modified_on', 'named_handlers', 'observability', 'placement', 'placement_mode', 'placement_status', 'tag', 'tags', 'tail_consumers', 'usage_model'}.contains(key)); } 
-WorkersScriptResponse copyWith({WorkersCompatibilityDate Function()? compatibilityDate, List<WorkersCompatibilityFlag> Function()? compatibilityFlags, WorkersCreatedOn Function()? createdOn, WorkersEtag Function()? etag, List<String> Function()? handlers, WorkersHasAssets Function()? hasAssets, WorkersHasModules Function()? hasModules, String Function()? id, String Function()? lastDeployedFrom, WorkersLogpush Function()? logpush, String Function()? migrationTag, WorkersModifiedOn Function()? modifiedOn, List<WorkersScriptResponseNamedHandlers> Function()? namedHandlers, WorkersObservability Function()? observability, WorkersPlacementInfo Function()? placement, WorkersPlacementMode Function()? placementMode, WorkersPlacementStatus Function()? placementStatus, String Function()? tag, List<WorkersTag>? Function()? tags, List<WorkersTailConsumersScript>? Function()? tailConsumers, WorkersUsageModel Function()? usageModel, }) { return WorkersScriptResponse(
+WorkersScriptResponse copyWith({WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersCreatedOn? Function()? createdOn, WorkersEtag? Function()? etag, List<String>? Function()? handlers, WorkersHasAssets? Function()? hasAssets, WorkersHasModules? Function()? hasModules, String? Function()? id, String? Function()? lastDeployedFrom, WorkersLogpush? Function()? logpush, String? Function()? migrationTag, WorkersModifiedOn? Function()? modifiedOn, List<WorkersScriptResponseNamedHandlers>? Function()? namedHandlers, WorkersObservability? Function()? observability, WorkersPlacementInfo? Function()? placement, WorkersPlacementMode? Function()? placementMode, WorkersPlacementStatus? Function()? placementStatus, String? Function()? tag, Omittable<List<WorkersTag>?>? tags, Omittable<List<WorkersTailConsumersScript>?>? tailConsumers, WorkersUsageModel? Function()? usageModel, }) { return WorkersScriptResponse(
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,
   compatibilityFlags: compatibilityFlags != null ? compatibilityFlags() : this.compatibilityFlags,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
@@ -127,8 +127,8 @@ WorkersScriptResponse copyWith({WorkersCompatibilityDate Function()? compatibili
   placementMode: placementMode != null ? placementMode() : this.placementMode,
   placementStatus: placementStatus != null ? placementStatus() : this.placementStatus,
   tag: tag != null ? tag() : this.tag,
-  tags: tags != null ? tags() : this.tags,
-  tailConsumers: tailConsumers != null ? tailConsumers() : this.tailConsumers,
+  tags: tags ?? this.tags,
+  tailConsumers: tailConsumers ?? this.tailConsumers,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
@@ -151,9 +151,11 @@ WorkersScriptResponse copyWith({WorkersCompatibilityDate Function()? compatibili
           placementMode == other.placementMode &&
           placementStatus == other.placementStatus &&
           tag == other.tag &&
-          listEquals(tags, other.tags) &&
-          listEquals(tailConsumers, other.tailConsumers) &&
+          tags.isPresent == other.tags.isPresent &&
+          listEquals(tags.value, other.tags.value) &&
+          tailConsumers.isPresent == other.tailConsumers.isPresent &&
+          listEquals(tailConsumers.value, other.tailConsumers.value) &&
           usageModel == other.usageModel; } 
-@override int get hashCode { return Object.hashAll([compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), createdOn, etag, Object.hashAll(handlers ?? const []), hasAssets, hasModules, id, lastDeployedFrom, logpush, migrationTag, modifiedOn, Object.hashAll(namedHandlers ?? const []), observability, placement, placementMode, placementStatus, tag, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const []), usageModel]); } 
+@override int get hashCode { return Object.hashAll([compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), createdOn, etag, Object.hashAll(handlers ?? const []), hasAssets, hasModules, id, lastDeployedFrom, logpush, migrationTag, modifiedOn, Object.hashAll(namedHandlers ?? const []), observability, placement, placementMode, placementStatus, tag, Object.hashAll(tags.value ?? const []), Object.hashAll(tailConsumers.value ?? const []), usageModel]); } 
 @override String toString() { return 'WorkersScriptResponse(compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, createdOn: $createdOn, etag: $etag, handlers: $handlers, hasAssets: $hasAssets, hasModules: $hasModules, id: $id, lastDeployedFrom: $lastDeployedFrom, logpush: $logpush, migrationTag: $migrationTag, modifiedOn: $modifiedOn, namedHandlers: $namedHandlers, observability: $observability, placement: $placement, placementMode: $placementMode, placementStatus: $placementStatus, tag: $tag, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)'; } 
  }

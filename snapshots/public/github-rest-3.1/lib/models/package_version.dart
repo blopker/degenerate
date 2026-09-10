@@ -60,7 +60,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('package_html_url') && json['package_html_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-PackageVersion copyWith({int? id, String? name, String? url, String? packageHtmlUrl, String Function()? htmlUrl, String Function()? license, String Function()? description, DateTime? createdAt, DateTime? updatedAt, DateTime Function()? deletedAt, PackageVersionMetadata Function()? metadata, }) { return PackageVersion(
+PackageVersion copyWith({int? id, String? name, String? url, String? packageHtmlUrl, String? Function()? htmlUrl, String? Function()? license, String? Function()? description, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? deletedAt, PackageVersionMetadata? Function()? metadata, }) { return PackageVersion(
   id: id ?? this.id,
   name: name ?? this.name,
   url: url ?? this.url,

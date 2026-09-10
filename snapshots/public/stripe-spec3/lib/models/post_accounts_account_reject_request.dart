@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'reason': reason,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('reason') && json['reason'] is String; } 
-PostAccountsAccountRejectRequest copyWith({List<String> Function()? expand, String? reason, }) { return PostAccountsAccountRejectRequest(
+PostAccountsAccountRejectRequest copyWith({List<String>? Function()? expand, String? reason, }) { return PostAccountsAccountRejectRequest(
   expand: expand != null ? expand() : this.expand,
   reason: reason ?? this.reason,
 ); } 

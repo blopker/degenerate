@@ -81,7 +81,7 @@ Map<String, dynamic> toJson() { return {
   'make_latest': makeLatest.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tag_name') && json['tag_name'] is String; } 
-ReposCreateReleaseRequest copyWith({String? tagName, String Function()? targetCommitish, String Function()? name, String Function()? body, bool Function()? draft, bool Function()? prerelease, String Function()? discussionCategoryName, bool Function()? generateReleaseNotes, ReposCreateReleaseRequestMakeLatest Function()? makeLatest, }) { return ReposCreateReleaseRequest(
+ReposCreateReleaseRequest copyWith({String? tagName, String? Function()? targetCommitish, String? Function()? name, String? Function()? body, bool Function()? draft, bool Function()? prerelease, String? Function()? discussionCategoryName, bool Function()? generateReleaseNotes, ReposCreateReleaseRequestMakeLatest Function()? makeLatest, }) { return ReposCreateReleaseRequest(
   tagName: tagName ?? this.tagName,
   targetCommitish: targetCommitish != null ? targetCommitish() : this.targetCommitish,
   name: name != null ? name() : this.name,

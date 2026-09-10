@@ -120,7 +120,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_number') && json['account_number'] is String &&
       json.containsKey('country') && json['country'] is String; } 
-ExternalAccountPayoutBankAccount3 copyWith({String Function()? accountHolderName, ExternalAccountPayoutBankAccount3AccountHolderType Function()? accountHolderType, String? accountNumber, ExternalAccountPayoutBankAccount3AccountType Function()? accountType, String? country, String Function()? currency, ExternalAccountPayoutBankAccount3Documents Function()? documents, ExternalAccountPayoutBankAccount3Object Function()? object, String Function()? routingNumber, }) { return ExternalAccountPayoutBankAccount3(
+ExternalAccountPayoutBankAccount3 copyWith({String? Function()? accountHolderName, ExternalAccountPayoutBankAccount3AccountHolderType? Function()? accountHolderType, String? accountNumber, ExternalAccountPayoutBankAccount3AccountType? Function()? accountType, String? country, String? Function()? currency, ExternalAccountPayoutBankAccount3Documents? Function()? documents, ExternalAccountPayoutBankAccount3Object? Function()? object, String? Function()? routingNumber, }) { return ExternalAccountPayoutBankAccount3(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountNumber: accountNumber ?? this.accountNumber,

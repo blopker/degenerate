@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (comment != null) 'comment': comment?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname'); } 
-ListsListItemHostnameComment copyWith({ListsItemHostname? hostname, ListsItemComment Function()? comment, }) { return ListsListItemHostnameComment(
+ListsListItemHostnameComment copyWith({ListsItemHostname? hostname, ListsItemComment? Function()? comment, }) { return ListsListItemHostnameComment(
   hostname: hostname ?? this.hostname,
   comment: comment != null ? comment() : this.comment,
 ); } 

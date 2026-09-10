@@ -43,74 +43,74 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RecordingAddOnResultEnumStatus($value)'; } 
  }
-@immutable final class AccountRecordingRecordingAddOnResult {const AccountRecordingRecordingAddOnResult({this.sid, this.accountSid, this.status, this.addOnSid, this.addOnConfigurationSid, this.dateCreated, this.dateUpdated, this.dateCompleted, this.referenceSid, this.subresourceUris, });
+@immutable final class AccountRecordingRecordingAddOnResult {const AccountRecordingRecordingAddOnResult({this.sid = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.status, this.addOnSid = const Omittable.absent(), this.addOnConfigurationSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.dateCompleted = const Omittable.absent(), this.referenceSid = const Omittable.absent(), this.subresourceUris = const Omittable.absent(), });
 
 factory AccountRecordingRecordingAddOnResult.fromJson(Map<String, dynamic> json) { return AccountRecordingRecordingAddOnResult(
-  sid: json['sid'] as String?,
-  accountSid: json['account_sid'] as String?,
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? RecordingAddOnResultEnumStatus.fromJson(json['status'] as String) : null,
-  addOnSid: json['add_on_sid'] as String?,
-  addOnConfigurationSid: json['add_on_configuration_sid'] as String?,
-  dateCreated: json['date_created'] as String?,
-  dateUpdated: json['date_updated'] as String?,
-  dateCompleted: json['date_completed'] as String?,
-  referenceSid: json['reference_sid'] as String?,
-  subresourceUris: json['subresource_uris'] as Map<String, dynamic>?,
+  addOnSid: json.containsKey('add_on_sid') ? Omittable(json['add_on_sid'] as String?) : const Omittable.absent(),
+  addOnConfigurationSid: json.containsKey('add_on_configuration_sid') ? Omittable(json['add_on_configuration_sid'] as String?) : const Omittable.absent(),
+  dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  dateCompleted: json.containsKey('date_completed') ? Omittable(json['date_completed'] as String?) : const Omittable.absent(),
+  referenceSid: json.containsKey('reference_sid') ? Omittable(json['reference_sid'] as String?) : const Omittable.absent(),
+  subresourceUris: json.containsKey('subresource_uris') ? Omittable(json['subresource_uris'] as Map<String, dynamic>?) : const Omittable.absent(),
 ); }
 
 /// The unique string that that we created to identify the Recording AddOnResult resource.
-final String? sid;
+final Omittable<String?> sid;
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Recording AddOnResult resource.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 final RecordingAddOnResultEnumStatus? status;
 
 /// The SID of the Add-on to which the result belongs.
-final String? addOnSid;
+final Omittable<String?> addOnSid;
 
 /// The SID of the Add-on configuration.
-final String? addOnConfigurationSid;
+final Omittable<String?> addOnConfigurationSid;
 
 /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateCreated;
+final Omittable<String?> dateCreated;
 
 /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// The date and time in GMT that the result was completed specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateCompleted;
+final Omittable<String?> dateCompleted;
 
 /// The SID of the recording to which the AddOnResult resource belongs.
-final String? referenceSid;
+final Omittable<String?> referenceSid;
 
 /// A list of related resources identified by their relative URIs.
-final Map<String,dynamic>? subresourceUris;
+final Omittable<Map<String,dynamic>?> subresourceUris;
 
 Map<String, dynamic> toJson() { return {
-  'sid': ?sid,
-  'account_sid': ?accountSid,
+  if (sid.isPresent) 'sid': sid.value,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
   if (status != null) 'status': status?.toJson(),
-  'add_on_sid': ?addOnSid,
-  'add_on_configuration_sid': ?addOnConfigurationSid,
-  'date_created': ?dateCreated,
-  'date_updated': ?dateUpdated,
-  'date_completed': ?dateCompleted,
-  'reference_sid': ?referenceSid,
-  'subresource_uris': ?subresourceUris,
+  if (addOnSid.isPresent) 'add_on_sid': addOnSid.value,
+  if (addOnConfigurationSid.isPresent) 'add_on_configuration_sid': addOnConfigurationSid.value,
+  if (dateCreated.isPresent) 'date_created': dateCreated.value,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (dateCompleted.isPresent) 'date_completed': dateCompleted.value,
+  if (referenceSid.isPresent) 'reference_sid': referenceSid.value,
+  if (subresourceUris.isPresent) 'subresource_uris': subresourceUris.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'status', 'add_on_sid', 'add_on_configuration_sid', 'date_created', 'date_updated', 'date_completed', 'reference_sid', 'subresource_uris'}.contains(key)); } 
-AccountRecordingRecordingAddOnResult copyWith({String? Function()? sid, String? Function()? accountSid, RecordingAddOnResultEnumStatus Function()? status, String? Function()? addOnSid, String? Function()? addOnConfigurationSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? dateCompleted, String? Function()? referenceSid, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountRecordingRecordingAddOnResult(
-  sid: sid != null ? sid() : this.sid,
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
+AccountRecordingRecordingAddOnResult copyWith({Omittable<String?>? sid, Omittable<String?>? accountSid, RecordingAddOnResultEnumStatus? Function()? status, Omittable<String?>? addOnSid, Omittable<String?>? addOnConfigurationSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? dateCompleted, Omittable<String?>? referenceSid, Omittable<Map<String,dynamic>?>? subresourceUris, }) { return AccountRecordingRecordingAddOnResult(
+  sid: sid ?? this.sid,
+  accountSid: accountSid ?? this.accountSid,
   status: status != null ? status() : this.status,
-  addOnSid: addOnSid != null ? addOnSid() : this.addOnSid,
-  addOnConfigurationSid: addOnConfigurationSid != null ? addOnConfigurationSid() : this.addOnConfigurationSid,
-  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  dateCompleted: dateCompleted != null ? dateCompleted() : this.dateCompleted,
-  referenceSid: referenceSid != null ? referenceSid() : this.referenceSid,
-  subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
+  addOnSid: addOnSid ?? this.addOnSid,
+  addOnConfigurationSid: addOnConfigurationSid ?? this.addOnConfigurationSid,
+  dateCreated: dateCreated ?? this.dateCreated,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  dateCompleted: dateCompleted ?? this.dateCompleted,
+  referenceSid: referenceSid ?? this.referenceSid,
+  subresourceUris: subresourceUris ?? this.subresourceUris,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountRecordingRecordingAddOnResult &&

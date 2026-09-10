@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connectivity', 'type'}.contains(key)); } 
-SpectrumConfigEdgeIpsDynamic copyWith({SpectrumConfigEdgeIpsDynamicConnectivity Function()? connectivity, SpectrumConfigEdgeIpsDynamicType Function()? type, }) { return SpectrumConfigEdgeIpsDynamic(
+SpectrumConfigEdgeIpsDynamic copyWith({SpectrumConfigEdgeIpsDynamicConnectivity? Function()? connectivity, SpectrumConfigEdgeIpsDynamicType? Function()? type, }) { return SpectrumConfigEdgeIpsDynamic(
   connectivity: connectivity != null ? connectivity() : this.connectivity,
   type: type != null ? type() : this.type,
 ); } 

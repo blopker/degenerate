@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPatchGatewayLogRequest {const AigConfigPatchGatewayLogRequest({this.feedback, this.metadata, this.score, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigPatchGatewayLogRequest {const AigConfigPatchGatewayLogRequest({this.feedback = const Omittable.absent(), this.metadata = const Omittable.absent(), this.score = const Omittable.absent(), });
 
 factory AigConfigPatchGatewayLogRequest.fromJson(Map<String, dynamic> json) { return AigConfigPatchGatewayLogRequest(
-  feedback: json['feedback'] != null ? (json['feedback'] as num).toDouble() : null,
-  metadata: json['metadata'] as Map<String, dynamic>?,
-  score: json['score'] != null ? (json['score'] as num).toDouble() : null,
+  feedback: json.containsKey('feedback') ? Omittable(json['feedback'] != null ? (json['feedback'] as num).toDouble() : null) : const Omittable.absent(),
+  metadata: json.containsKey('metadata') ? Omittable(json['metadata'] as Map<String, dynamic>?) : const Omittable.absent(),
+  score: json.containsKey('score') ? Omittable(json['score'] != null ? (json['score'] as num).toDouble() : null) : const Omittable.absent(),
 ); }
 
-final double? feedback;
+final Omittable<double?> feedback;
 
-final Map<String,dynamic>? metadata;
+final Omittable<Map<String,dynamic>?> metadata;
 
-final double? score;
+final Omittable<double?> score;
 
 Map<String, dynamic> toJson() { return {
-  'feedback': ?feedback,
-  'metadata': ?metadata,
-  'score': ?score,
+  if (feedback.isPresent) 'feedback': feedback.value,
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (score.isPresent) 'score': score.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'feedback', 'metadata', 'score'}.contains(key)); } 
-AigConfigPatchGatewayLogRequest copyWith({double? Function()? feedback, Map<String, dynamic>? Function()? metadata, double? Function()? score, }) { return AigConfigPatchGatewayLogRequest(
-  feedback: feedback != null ? feedback() : this.feedback,
-  metadata: metadata != null ? metadata() : this.metadata,
-  score: score != null ? score() : this.score,
+AigConfigPatchGatewayLogRequest copyWith({Omittable<double?>? feedback, Omittable<Map<String,dynamic>?>? metadata, Omittable<double?>? score, }) { return AigConfigPatchGatewayLogRequest(
+  feedback: feedback ?? this.feedback,
+  metadata: metadata ?? this.metadata,
+  score: score ?? this.score,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AigConfigPatchGatewayLogRequest &&

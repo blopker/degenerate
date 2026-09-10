@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (filter != null) 'filter': filter?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'description', 'id', 'paused', 'priority', 'products', 'ref', 'filter'}.contains(key)); } 
-FirewallFilterRuleResponse copyWith({FirewallSchemasAction Function()? action, FirewallFirewallRulesComponentsSchemasDescription Function()? description, FirewallFirewallRulesComponentsSchemasId Function()? id, FirewallComponentsSchemasPaused Function()? paused, FirewallComponentsSchemasPriority Function()? priority, List<FirewallProducts2> Function()? products, FirewallRef Function()? ref, FirewallFilterRuleResponseFilter Function()? filter, }) { return FirewallFilterRuleResponse(
+FirewallFilterRuleResponse copyWith({FirewallSchemasAction? Function()? action, FirewallFirewallRulesComponentsSchemasDescription? Function()? description, FirewallFirewallRulesComponentsSchemasId? Function()? id, FirewallComponentsSchemasPaused? Function()? paused, FirewallComponentsSchemasPriority? Function()? priority, List<FirewallProducts2>? Function()? products, FirewallRef? Function()? ref, FirewallFilterRuleResponseFilter? Function()? filter, }) { return FirewallFilterRuleResponse(
   action: action != null ? action() : this.action,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

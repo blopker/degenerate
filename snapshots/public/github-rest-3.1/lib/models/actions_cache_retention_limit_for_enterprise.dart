@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'max_cache_retention_days': ?maxCacheRetentionDays,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_cache_retention_days'}.contains(key)); } 
-ActionsCacheRetentionLimitForEnterprise copyWith({int Function()? maxCacheRetentionDays}) { return ActionsCacheRetentionLimitForEnterprise(
+ActionsCacheRetentionLimitForEnterprise copyWith({int? Function()? maxCacheRetentionDays}) { return ActionsCacheRetentionLimitForEnterprise(
   maxCacheRetentionDays: maxCacheRetentionDays != null ? maxCacheRetentionDays() : this.maxCacheRetentionDays,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

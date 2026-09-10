@@ -26,32 +26,32 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingCreditGrantsResourceBalanceCreditType($value)'; } 
  }
 /// 
-@immutable final class BillingCreditGrantsResourceBalanceCredit {const BillingCreditGrantsResourceBalanceCredit({required this.amount, required this.type, this.creditsApplicationInvoiceVoided, });
+@immutable final class BillingCreditGrantsResourceBalanceCredit {const BillingCreditGrantsResourceBalanceCredit({required this.amount, required this.type, this.creditsApplicationInvoiceVoided = const Omittable.absent(), });
 
 factory BillingCreditGrantsResourceBalanceCredit.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceCredit(
   amount: BillingCreditGrantsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),
-  creditsApplicationInvoiceVoided: json['credits_application_invoice_voided'] != null ? BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided.fromJson(json['credits_application_invoice_voided'] as Map<String, dynamic>) : null,
+  creditsApplicationInvoiceVoided: json.containsKey('credits_application_invoice_voided') ? Omittable(json['credits_application_invoice_voided'] != null ? BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided.fromJson(json['credits_application_invoice_voided'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: BillingCreditGrantsResourceBalanceCreditType.fromJson(json['type'] as String),
 ); }
 
 final BillingCreditGrantsResourceAmount amount;
 
 /// Details of the invoice to which the reinstated credits were originally applied. Only present if `type` is `credits_application_invoice_voided`.
-final BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided? creditsApplicationInvoiceVoided;
+final Omittable<BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided?> creditsApplicationInvoiceVoided;
 
 /// The type of credit transaction.
 final BillingCreditGrantsResourceBalanceCreditType type;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount.toJson(),
-  if (creditsApplicationInvoiceVoided != null) 'credits_application_invoice_voided': creditsApplicationInvoiceVoided?.toJson(),
+  if (creditsApplicationInvoiceVoided.isPresent) 'credits_application_invoice_voided': creditsApplicationInvoiceVoided.value?.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') &&
       json.containsKey('type'); } 
-BillingCreditGrantsResourceBalanceCredit copyWith({BillingCreditGrantsResourceAmount? amount, BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided? Function()? creditsApplicationInvoiceVoided, BillingCreditGrantsResourceBalanceCreditType? type, }) { return BillingCreditGrantsResourceBalanceCredit(
+BillingCreditGrantsResourceBalanceCredit copyWith({BillingCreditGrantsResourceAmount? amount, Omittable<BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided?>? creditsApplicationInvoiceVoided, BillingCreditGrantsResourceBalanceCreditType? type, }) { return BillingCreditGrantsResourceBalanceCredit(
   amount: amount ?? this.amount,
-  creditsApplicationInvoiceVoided: creditsApplicationInvoiceVoided != null ? creditsApplicationInvoiceVoided() : this.creditsApplicationInvoiceVoided,
+  creditsApplicationInvoiceVoided: creditsApplicationInvoiceVoided ?? this.creditsApplicationInvoiceVoided,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

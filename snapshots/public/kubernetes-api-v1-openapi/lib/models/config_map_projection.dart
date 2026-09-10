@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'optional': ?optional,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'items', 'name', 'optional'}.contains(key)); } 
-ConfigMapProjection copyWith({List<KeyToPath> Function()? items, String Function()? name, bool Function()? optional, }) { return ConfigMapProjection(
+ConfigMapProjection copyWith({List<KeyToPath>? Function()? items, String Function()? name, bool? Function()? optional, }) { return ConfigMapProjection(
   items: items != null ? items() : this.items,
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,

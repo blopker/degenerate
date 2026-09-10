@@ -146,7 +146,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('value') && json['value'] is String; } 
-BrapiPostMarkdownRequestVariant2Cookies copyWith({String Function()? domain, double Function()? expires, bool Function()? httpOnly, String? name, String Function()? partitionKey, String Function()? path, BrapiPostMarkdownRequestVariant2CookiesPriority Function()? priority, bool Function()? sameParty, BrapiPostMarkdownRequestVariant2CookiesSameSite Function()? sameSite, bool Function()? secure, double Function()? sourcePort, BrapiPostMarkdownRequestVariant2CookiesSourceScheme Function()? sourceScheme, String Function()? url, String? value, }) { return BrapiPostMarkdownRequestVariant2Cookies(
+BrapiPostMarkdownRequestVariant2Cookies copyWith({String? Function()? domain, double? Function()? expires, bool? Function()? httpOnly, String? name, String? Function()? partitionKey, String? Function()? path, BrapiPostMarkdownRequestVariant2CookiesPriority? Function()? priority, bool? Function()? sameParty, BrapiPostMarkdownRequestVariant2CookiesSameSite? Function()? sameSite, bool? Function()? secure, double? Function()? sourcePort, BrapiPostMarkdownRequestVariant2CookiesSourceScheme? Function()? sourceScheme, String? Function()? url, String? value, }) { return BrapiPostMarkdownRequestVariant2Cookies(
   domain: domain != null ? domain() : this.domain,
   expires: expires != null ? expires() : this.expires,
   httpOnly: httpOnly != null ? httpOnly() : this.httpOnly,

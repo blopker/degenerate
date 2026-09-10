@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'subscription_item': ?subscriptionItem,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscription') && json['subscription'] is String; } 
-BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent copyWith({String? subscription, String Function()? subscriptionItem, }) { return BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent(
+BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent copyWith({String? subscription, String? Function()? subscriptionItem, }) { return BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent(
   subscription: subscription ?? this.subscription,
   subscriptionItem: subscriptionItem != null ? subscriptionItem() : this.subscriptionItem,
 ); } 

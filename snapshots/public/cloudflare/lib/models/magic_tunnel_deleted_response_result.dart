@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (deletedGreTunnel != null) 'deleted_gre_tunnel': deletedGreTunnel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deleted', 'deleted_gre_tunnel'}.contains(key)); } 
-MagicTunnelDeletedResponseResult copyWith({bool Function()? deleted, MagicGreTunnel Function()? deletedGreTunnel, }) { return MagicTunnelDeletedResponseResult(
+MagicTunnelDeletedResponseResult copyWith({bool? Function()? deleted, MagicGreTunnel? Function()? deletedGreTunnel, }) { return MagicTunnelDeletedResponseResult(
   deleted: deleted != null ? deleted() : this.deleted,
   deletedGreTunnel: deletedGreTunnel != null ? deletedGreTunnel() : this.deletedGreTunnel,
 ); } 

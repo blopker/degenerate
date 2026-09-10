@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostPaymentLinksPaymentLinkRequestAfterCompletion copyWith({PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation Function()? hostedConfirmation, PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect Function()? redirect, PostPaymentLinksPaymentLinkRequestAfterCompletionType? type, }) { return PostPaymentLinksPaymentLinkRequestAfterCompletion(
+PostPaymentLinksPaymentLinkRequestAfterCompletion copyWith({PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation? Function()? hostedConfirmation, PostPaymentLinksPaymentLinkRequestAfterCompletionRedirect? Function()? redirect, PostPaymentLinksPaymentLinkRequestAfterCompletionType? type, }) { return PostPaymentLinksPaymentLinkRequestAfterCompletion(
   hostedConfirmation: hostedConfirmation != null ? hostedConfirmation() : this.hostedConfirmation,
   redirect: redirect != null ? redirect() : this.redirect,
   type: type ?? this.type,

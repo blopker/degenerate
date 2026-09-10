@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('versi
       json.containsKey('ref') && json['ref'] is String &&
       json.containsKey('detector') &&
       json.containsKey('scanned') && json['scanned'] is String; } 
-Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, SnapshotDetector? detector, Map<String, dynamic> Function()? metadata, Map<String, Manifest> Function()? manifests, DateTime? scanned, }) { return Snapshot(
+Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, SnapshotDetector? detector, Map<String, dynamic>? Function()? metadata, Map<String, Manifest>? Function()? manifests, DateTime? scanned, }) { return Snapshot(
   version: version ?? this.version,
   job: job ?? this.job,
   sha: sha ?? this.sha,

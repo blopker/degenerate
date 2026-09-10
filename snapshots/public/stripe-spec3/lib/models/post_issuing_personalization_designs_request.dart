@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'transfer_lookup_key': ?transferLookupKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('physical_bundle') && json['physical_bundle'] is String; } 
-PostIssuingPersonalizationDesignsRequest copyWith({String Function()? cardLogo, PostIssuingPersonalizationDesignsRequestCarrierText Function()? carrierText, List<String> Function()? expand, String Function()? lookupKey, Map<String, String> Function()? metadata, String Function()? name, String? physicalBundle, PostIssuingPersonalizationDesignsRequestPreferences Function()? preferences, bool Function()? transferLookupKey, }) { return PostIssuingPersonalizationDesignsRequest(
+PostIssuingPersonalizationDesignsRequest copyWith({String? Function()? cardLogo, PostIssuingPersonalizationDesignsRequestCarrierText? Function()? carrierText, List<String>? Function()? expand, String? Function()? lookupKey, Map<String, String>? Function()? metadata, String? Function()? name, String? physicalBundle, PostIssuingPersonalizationDesignsRequestPreferences? Function()? preferences, bool? Function()? transferLookupKey, }) { return PostIssuingPersonalizationDesignsRequest(
   cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,
   carrierText: carrierText != null ? carrierText() : this.carrierText,
   expand: expand != null ? expand() : this.expand,

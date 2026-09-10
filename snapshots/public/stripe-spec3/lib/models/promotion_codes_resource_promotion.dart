@@ -23,26 +23,26 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PromotionCodesResourcePromotionType($value)'; } 
  }
 /// 
-@immutable final class PromotionCodesResourcePromotion {const PromotionCodesResourcePromotion({required this.type, this.coupon, });
+@immutable final class PromotionCodesResourcePromotion {const PromotionCodesResourcePromotion({required this.type, this.coupon = const Omittable.absent(), });
 
 factory PromotionCodesResourcePromotion.fromJson(Map<String, dynamic> json) { return PromotionCodesResourcePromotion(
-  coupon: json['coupon'] != null ? OneOf2.parse(json['coupon'], fromA: (v) => v as String, fromB: (v) => Coupon.fromJson(v as Map<String, dynamic>),) : null,
+  coupon: json.containsKey('coupon') ? Omittable(json['coupon'] != null ? OneOf2.parse(json['coupon'], fromA: (v) => v as String, fromB: (v) => Coupon.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   type: PromotionCodesResourcePromotionType.fromJson(json['type'] as String),
 ); }
 
 /// If promotion `type` is `coupon`, the coupon for this promotion.
-final PromotionCodesResourcePromotionCoupon? coupon;
+final Omittable<PromotionCodesResourcePromotionCoupon?> coupon;
 
 /// The type of promotion.
 final PromotionCodesResourcePromotionType type;
 
 Map<String, dynamic> toJson() { return {
-  if (coupon != null) 'coupon': coupon?.toJson(),
+  if (coupon.isPresent) 'coupon': coupon.value?.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PromotionCodesResourcePromotion copyWith({PromotionCodesResourcePromotionCoupon? Function()? coupon, PromotionCodesResourcePromotionType? type, }) { return PromotionCodesResourcePromotion(
-  coupon: coupon != null ? coupon() : this.coupon,
+PromotionCodesResourcePromotion copyWith({Omittable<PromotionCodesResourcePromotionCoupon?>? coupon, PromotionCodesResourcePromotionType? type, }) { return PromotionCodesResourcePromotion(
+  coupon: coupon ?? this.coupon,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (site != null) 'site': site?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connector', 'device', 'site'}.contains(key)); } 
-MconnSupportMacrosDiagnoseConnectorResult copyWith({MconnSupportConnector Function()? connector, MconnSupportDevice Function()? device, MconnSupportSite Function()? site, }) { return MconnSupportMacrosDiagnoseConnectorResult(
+MconnSupportMacrosDiagnoseConnectorResult copyWith({MconnSupportConnector? Function()? connector, MconnSupportDevice? Function()? device, MconnSupportSite? Function()? site, }) { return MconnSupportMacrosDiagnoseConnectorResult(
   connector: connector != null ? connector() : this.connector,
   device: device != null ? device() : this.device,
   site: site != null ? site() : this.site,

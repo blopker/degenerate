@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'id', 'name'}.contains(key)); } 
-IntelIpList copyWith({String Function()? description, int Function()? id, String Function()? name, }) { return IntelIpList(
+IntelIpList copyWith({String? Function()? description, int? Function()? id, String? Function()? name, }) { return IntelIpList(
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

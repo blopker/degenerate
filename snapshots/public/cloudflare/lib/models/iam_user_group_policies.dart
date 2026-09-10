@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (resourceGroups != null) 'resource_groups': resourceGroups?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access', 'id', 'permission_groups', 'resource_groups'}.contains(key)); } 
-IamUserGroupPolicies copyWith({IamAccess Function()? access, IamPolicyIdentifier Function()? id, List<IamPermissionGroup> Function()? permissionGroups, List<IamResourceGroup> Function()? resourceGroups, }) { return IamUserGroupPolicies(
+IamUserGroupPolicies copyWith({IamAccess? Function()? access, IamPolicyIdentifier? Function()? id, List<IamPermissionGroup>? Function()? permissionGroups, List<IamResourceGroup>? Function()? resourceGroups, }) { return IamUserGroupPolicies(
   access: access != null ? access() : this.access,
   id: id != null ? id() : this.id,
   permissionGroups: permissionGroups != null ? permissionGroups() : this.permissionGroups,

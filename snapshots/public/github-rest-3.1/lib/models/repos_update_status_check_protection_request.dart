@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (checks != null) 'checks': checks?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'strict', 'contexts', 'checks'}.contains(key)); } 
-ReposUpdateStatusCheckProtectionRequest copyWith({bool Function()? strict, List<String> Function()? contexts, List<ReposUpdateStatusCheckProtectionRequestChecks> Function()? checks, }) { return ReposUpdateStatusCheckProtectionRequest(
+ReposUpdateStatusCheckProtectionRequest copyWith({bool? Function()? strict, List<String>? Function()? contexts, List<ReposUpdateStatusCheckProtectionRequestChecks>? Function()? checks, }) { return ReposUpdateStatusCheckProtectionRequest(
   strict: strict != null ? strict() : this.strict,
   contexts: contexts != null ? contexts() : this.contexts,
   checks: checks != null ? checks() : this.checks,

@@ -1,39 +1,39 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class PaymentMethodDetailsPayto {const PaymentMethodDetailsPayto({this.bsbNumber, this.last4, this.mandate, this.payId, });
+@immutable final class PaymentMethodDetailsPayto {const PaymentMethodDetailsPayto({this.bsbNumber = const Omittable.absent(), this.last4 = const Omittable.absent(), this.mandate, this.payId = const Omittable.absent(), });
 
 factory PaymentMethodDetailsPayto.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPayto(
-  bsbNumber: json['bsb_number'] as String?,
-  last4: json['last4'] as String?,
+  bsbNumber: json.containsKey('bsb_number') ? Omittable(json['bsb_number'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
   mandate: json['mandate'] as String?,
-  payId: json['pay_id'] as String?,
+  payId: json.containsKey('pay_id') ? Omittable(json['pay_id'] as String?) : const Omittable.absent(),
 ); }
 
 /// Bank-State-Branch number of the bank account.
-final String? bsbNumber;
+final Omittable<String?> bsbNumber;
 
 /// Last four digits of the bank account number.
-final String? last4;
+final Omittable<String?> last4;
 
 /// ID of the mandate used to make this payment.
 final String? mandate;
 
 /// The PayID alias for the bank account.
-final String? payId;
+final Omittable<String?> payId;
 
 Map<String, dynamic> toJson() { return {
-  'bsb_number': ?bsbNumber,
-  'last4': ?last4,
+  if (bsbNumber.isPresent) 'bsb_number': bsbNumber.value,
+  if (last4.isPresent) 'last4': last4.value,
   'mandate': ?mandate,
-  'pay_id': ?payId,
+  if (payId.isPresent) 'pay_id': payId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bsb_number', 'last4', 'mandate', 'pay_id'}.contains(key)); } 
-PaymentMethodDetailsPayto copyWith({String? Function()? bsbNumber, String? Function()? last4, String Function()? mandate, String? Function()? payId, }) { return PaymentMethodDetailsPayto(
-  bsbNumber: bsbNumber != null ? bsbNumber() : this.bsbNumber,
-  last4: last4 != null ? last4() : this.last4,
+PaymentMethodDetailsPayto copyWith({Omittable<String?>? bsbNumber, Omittable<String?>? last4, String? Function()? mandate, Omittable<String?>? payId, }) { return PaymentMethodDetailsPayto(
+  bsbNumber: bsbNumber ?? this.bsbNumber,
+  last4: last4 ?? this.last4,
   mandate: mandate != null ? mandate() : this.mandate,
-  payId: payId != null ? payId() : this.payId,
+  payId: payId ?? this.payId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodDetailsPayto &&

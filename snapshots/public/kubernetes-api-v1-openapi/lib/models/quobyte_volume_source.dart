@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('registry') && json['registry'] is String &&
       json.containsKey('volume') && json['volume'] is String; } 
-QuobyteVolumeSource copyWith({String Function()? group, bool Function()? readOnly, String? registry, String Function()? tenant, String Function()? user, String? volume, }) { return QuobyteVolumeSource(
+QuobyteVolumeSource copyWith({String? Function()? group, bool? Function()? readOnly, String? registry, String? Function()? tenant, String? Function()? user, String? volume, }) { return QuobyteVolumeSource(
   group: group != null ? group() : this.group,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   registry: registry ?? this.registry,

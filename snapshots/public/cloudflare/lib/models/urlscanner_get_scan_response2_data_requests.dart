@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('request') &&
       json.containsKey('response'); } 
-UrlscannerGetScanResponse2DataRequests copyWith({UrlscannerGetScanResponse2DataRequestsRequest? request, List<UrlscannerGetScanResponse2DataRequestsRequests> Function()? requests, UrlscannerGetScanResponse2DataRequestsResponse? response, }) { return UrlscannerGetScanResponse2DataRequests(
+UrlscannerGetScanResponse2DataRequests copyWith({UrlscannerGetScanResponse2DataRequestsRequest? request, List<UrlscannerGetScanResponse2DataRequestsRequests>? Function()? requests, UrlscannerGetScanResponse2DataRequestsResponse? response, }) { return UrlscannerGetScanResponse2DataRequests(
   request: request ?? this.request,
   requests: requests != null ? requests() : this.requests,
   response: response ?? this.response,

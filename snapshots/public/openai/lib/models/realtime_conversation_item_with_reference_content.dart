@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'transcript': ?transcript,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'text', 'id', 'audio', 'transcript'}.contains(key)); } 
-RealtimeConversationItemWithReferenceContent copyWith({RealtimeConversationItemWithReferenceContentType Function()? type, String Function()? text, String Function()? id, String Function()? audio, String Function()? transcript, }) { return RealtimeConversationItemWithReferenceContent(
+RealtimeConversationItemWithReferenceContent copyWith({RealtimeConversationItemWithReferenceContentType? Function()? type, String? Function()? text, String? Function()? id, String? Function()? audio, String? Function()? transcript, }) { return RealtimeConversationItemWithReferenceContent(
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,
   id: id != null ? id() : this.id,

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (public != null) 'public': public?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'private', 'public'}.contains(key)); } 
-RealtimekitUpdatePresetPermissionsChat copyWith({RealtimekitUpdatePresetPermissionsChatPrivate Function()? private, RealtimekitUpdatePresetPermissionsChatPublic Function()? public, }) { return RealtimekitUpdatePresetPermissionsChat(
+RealtimekitUpdatePresetPermissionsChat copyWith({RealtimekitUpdatePresetPermissionsChatPrivate? Function()? private, RealtimekitUpdatePresetPermissionsChatPublic? Function()? public, }) { return RealtimekitUpdatePresetPermissionsChat(
   private: private != null ? private() : this.private,
   public: public != null ? public() : this.public,
 ); } 

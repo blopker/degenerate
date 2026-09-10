@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (coloRegions != null) 'colo_regions': coloRegions?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'colo_names', 'colo_regions'}.contains(key)); } 
-MagicScope copyWith({List<MagicColoName> Function()? coloNames, List<MagicColoRegion> Function()? coloRegions, }) { return MagicScope(
+MagicScope copyWith({List<MagicColoName>? Function()? coloNames, List<MagicColoRegion>? Function()? coloRegions, }) { return MagicScope(
   coloNames: coloNames != null ? coloNames() : this.coloNames,
   coloRegions: coloRegions != null ? coloRegions() : this.coloRegions,
 ); } 

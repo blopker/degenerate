@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersUpdateAuthenticatedRequest {const UsersUpdateAuthenticatedRequest({this.name, this.email, this.blog, this.twitterUsername, this.company, this.location, this.hireable, this.bio, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsersUpdateAuthenticatedRequest {const UsersUpdateAuthenticatedRequest({this.name, this.email, this.blog, this.twitterUsername = const Omittable.absent(), this.company, this.location, this.hireable, this.bio, });
 
 factory UsersUpdateAuthenticatedRequest.fromJson(Map<String, dynamic> json) { return UsersUpdateAuthenticatedRequest(
   name: json['name'] as String?,
   email: json['email'] as String?,
   blog: json['blog'] as String?,
-  twitterUsername: json['twitter_username'] as String?,
+  twitterUsername: json.containsKey('twitter_username') ? Omittable(json['twitter_username'] as String?) : const Omittable.absent(),
   company: json['company'] as String?,
   location: json['location'] as String?,
   hireable: json['hireable'] as bool?,
@@ -23,7 +23,7 @@ final String? email;
 final String? blog;
 
 /// The new Twitter username of the user.
-final String? twitterUsername;
+final Omittable<String?> twitterUsername;
 
 /// The new company of the user.
 final String? company;
@@ -41,18 +41,18 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
   'email': ?email,
   'blog': ?blog,
-  'twitter_username': ?twitterUsername,
+  if (twitterUsername.isPresent) 'twitter_username': twitterUsername.value,
   'company': ?company,
   'location': ?location,
   'hireable': ?hireable,
   'bio': ?bio,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'email', 'blog', 'twitter_username', 'company', 'location', 'hireable', 'bio'}.contains(key)); } 
-UsersUpdateAuthenticatedRequest copyWith({String Function()? name, String Function()? email, String Function()? blog, String? Function()? twitterUsername, String Function()? company, String Function()? location, bool Function()? hireable, String Function()? bio, }) { return UsersUpdateAuthenticatedRequest(
+UsersUpdateAuthenticatedRequest copyWith({String? Function()? name, String? Function()? email, String? Function()? blog, Omittable<String?>? twitterUsername, String? Function()? company, String? Function()? location, bool? Function()? hireable, String? Function()? bio, }) { return UsersUpdateAuthenticatedRequest(
   name: name != null ? name() : this.name,
   email: email != null ? email() : this.email,
   blog: blog != null ? blog() : this.blog,
-  twitterUsername: twitterUsername != null ? twitterUsername() : this.twitterUsername,
+  twitterUsername: twitterUsername ?? this.twitterUsername,
   company: company != null ? company() : this.company,
   location: location != null ? location() : this.location,
   hireable: hireable != null ? hireable() : this.hireable,

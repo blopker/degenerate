@@ -1,50 +1,50 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountQueueMember {const AccountQueueMember({this.callSid, this.dateEnqueued, this.position = 0, this.uri, this.waitTime = 0, this.queueSid, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccountQueueMember {const AccountQueueMember({this.callSid = const Omittable.absent(), this.dateEnqueued = const Omittable.absent(), this.position = 0, this.uri = const Omittable.absent(), this.waitTime = 0, this.queueSid = const Omittable.absent(), });
 
 factory AccountQueueMember.fromJson(Map<String, dynamic> json) { return AccountQueueMember(
-  callSid: json['call_sid'] as String?,
-  dateEnqueued: json['date_enqueued'] as String?,
+  callSid: json.containsKey('call_sid') ? Omittable(json['call_sid'] as String?) : const Omittable.absent(),
+  dateEnqueued: json.containsKey('date_enqueued') ? Omittable(json['date_enqueued'] as String?) : const Omittable.absent(),
   position: json.containsKey('position') ? (json['position'] as num).toInt() : 0,
-  uri: json['uri'] as String?,
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
   waitTime: json.containsKey('wait_time') ? (json['wait_time'] as num).toInt() : 0,
-  queueSid: json['queue_sid'] as String?,
+  queueSid: json.containsKey('queue_sid') ? Omittable(json['queue_sid'] as String?) : const Omittable.absent(),
 ); }
 
 /// The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the Member resource is associated with.
-final String? callSid;
+final Omittable<String?> callSid;
 
 /// The date that the member was enqueued, given in RFC 2822 format.
-final String? dateEnqueued;
+final Omittable<String?> dateEnqueued;
 
 /// This member's current position in the queue.
 final int position;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 /// The number of seconds the member has been in the queue.
 final int waitTime;
 
 /// The SID of the Queue the member is in.
-final String? queueSid;
+final Omittable<String?> queueSid;
 
 Map<String, dynamic> toJson() { return {
-  'call_sid': ?callSid,
-  'date_enqueued': ?dateEnqueued,
+  if (callSid.isPresent) 'call_sid': callSid.value,
+  if (dateEnqueued.isPresent) 'date_enqueued': dateEnqueued.value,
   'position': position,
-  'uri': ?uri,
+  if (uri.isPresent) 'uri': uri.value,
   'wait_time': waitTime,
-  'queue_sid': ?queueSid,
+  if (queueSid.isPresent) 'queue_sid': queueSid.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'call_sid', 'date_enqueued', 'position', 'uri', 'wait_time', 'queue_sid'}.contains(key)); } 
-AccountQueueMember copyWith({String? Function()? callSid, String? Function()? dateEnqueued, int Function()? position, String? Function()? uri, int Function()? waitTime, String? Function()? queueSid, }) { return AccountQueueMember(
-  callSid: callSid != null ? callSid() : this.callSid,
-  dateEnqueued: dateEnqueued != null ? dateEnqueued() : this.dateEnqueued,
+AccountQueueMember copyWith({Omittable<String?>? callSid, Omittable<String?>? dateEnqueued, int Function()? position, Omittable<String?>? uri, int Function()? waitTime, Omittable<String?>? queueSid, }) { return AccountQueueMember(
+  callSid: callSid ?? this.callSid,
+  dateEnqueued: dateEnqueued ?? this.dateEnqueued,
   position: position != null ? position() : this.position,
-  uri: uri != null ? uri() : this.uri,
+  uri: uri ?? this.uri,
   waitTime: waitTime != null ? waitTime() : this.waitTime,
-  queueSid: queueSid != null ? queueSid() : this.queueSid,
+  queueSid: queueSid ?? this.queueSid,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountQueueMember &&

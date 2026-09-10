@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') && json['kind'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-TypedObjectReference copyWith({String Function()? apiGroup, String? kind, String? name, String Function()? namespace, }) { return TypedObjectReference(
+TypedObjectReference copyWith({String? Function()? apiGroup, String? kind, String? name, String? Function()? namespace, }) { return TypedObjectReference(
   apiGroup: apiGroup != null ? apiGroup() : this.apiGroup,
   kind: kind ?? this.kind,
   name: name ?? this.name,

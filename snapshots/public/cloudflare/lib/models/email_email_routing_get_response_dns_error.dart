@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (missing != null) 'missing': missing?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'missing'}.contains(key)); } 
-EmailEmailRoutingGetResponseDnsError copyWith({String Function()? code, EmailDnsRecord Function()? missing, }) { return EmailEmailRoutingGetResponseDnsError(
+EmailEmailRoutingGetResponseDnsError copyWith({String? Function()? code, EmailDnsRecord? Function()? missing, }) { return EmailEmailRoutingGetResponseDnsError(
   code: code != null ? code() : this.code,
   missing: missing != null ? missing() : this.missing,
 ); } 

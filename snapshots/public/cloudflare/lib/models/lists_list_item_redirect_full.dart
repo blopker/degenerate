@@ -34,7 +34,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('redir
       json.containsKey('created_on') &&
       json.containsKey('id') &&
       json.containsKey('modified_on'); } 
-ListsListItemRedirectFull copyWith({ListsItemRedirect? redirect, ListsItemComment Function()? comment, ListsCreatedOn? createdOn, ListsItemId? id, ListsModifiedOn? modifiedOn, }) { return ListsListItemRedirectFull(
+ListsListItemRedirectFull copyWith({ListsItemRedirect? redirect, ListsItemComment? Function()? comment, ListsCreatedOn? createdOn, ListsItemId? id, ListsModifiedOn? modifiedOn, }) { return ListsListItemRedirectFull(
   redirect: redirect ?? this.redirect,
   comment: comment != null ? comment() : this.comment,
   createdOn: createdOn ?? this.createdOn,

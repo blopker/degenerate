@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (options != null) 'options': options?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason copyWith({bool? enabled, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReasonOptions Function()? options, }) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason(
+PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason copyWith({bool? enabled, PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReasonOptions? Function()? options, }) { return PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason(
   enabled: enabled ?? this.enabled,
   options: options != null ? options() : this.options,
 ); } 

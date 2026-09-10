@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('crypt_key') && json['crypt_key'] is String &&
       json.containsKey('id'); } 
-MconnControllerDevice copyWith({String? cryptKey, String Function()? cryptKeyRotationFinishedAt, MconnUuid? id, String Function()? imagedAt, String Function()? lastCryptKey, String Function()? serialNumber, }) { return MconnControllerDevice(
+MconnControllerDevice copyWith({String? cryptKey, String? Function()? cryptKeyRotationFinishedAt, MconnUuid? id, String? Function()? imagedAt, String? Function()? lastCryptKey, String? Function()? serialNumber, }) { return MconnControllerDevice(
   cryptKey: cryptKey ?? this.cryptKey,
   cryptKeyRotationFinishedAt: cryptKeyRotationFinishedAt != null ? cryptKeyRotationFinishedAt() : this.cryptKeyRotationFinishedAt,
   id: id ?? this.id,

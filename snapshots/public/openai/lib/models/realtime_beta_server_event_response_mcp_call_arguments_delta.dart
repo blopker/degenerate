@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType($value)'; } 
  }
 /// Returned when MCP tool call arguments are updated during response generation.
-@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDelta {const RealtimeBetaServerEventResponseMcpCallArgumentsDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.delta, this.obfuscation, });
+@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDelta {const RealtimeBetaServerEventResponseMcpCallArgumentsDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.delta, this.obfuscation = const Omittable.absent(), });
 
 factory RealtimeBetaServerEventResponseMcpCallArgumentsDelta.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseMcpCallArgumentsDelta(
   eventId: json['event_id'] as String,
@@ -32,7 +32,7 @@ factory RealtimeBetaServerEventResponseMcpCallArgumentsDelta.fromJson(Map<String
   itemId: json['item_id'] as String,
   outputIndex: (json['output_index'] as num).toInt(),
   delta: json['delta'] as String,
-  obfuscation: json['obfuscation'] as String?,
+  obfuscation: json.containsKey('obfuscation') ? Omittable(json['obfuscation'] as String?) : const Omittable.absent(),
 ); }
 
 /// The unique ID of the server event.
@@ -54,7 +54,7 @@ final int outputIndex;
 final String delta;
 
 /// If present, indicates the delta text was obfuscated.
-final String? obfuscation;
+final Omittable<String?> obfuscation;
 
 Map<String, dynamic> toJson() { return {
   'event_id': eventId,
@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'item_id': itemId,
   'output_index': outputIndex,
   'delta': delta,
-  'obfuscation': ?obfuscation,
+  if (obfuscation.isPresent) 'obfuscation': obfuscation.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
       json.containsKey('type') &&
@@ -71,14 +71,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('item_id') && json['item_id'] is String &&
       json.containsKey('output_index') && json['output_index'] is num &&
       json.containsKey('delta') && json['delta'] is String; } 
-RealtimeBetaServerEventResponseMcpCallArgumentsDelta copyWith({String? eventId, RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType? type, String? responseId, String? itemId, int? outputIndex, String? delta, String? Function()? obfuscation, }) { return RealtimeBetaServerEventResponseMcpCallArgumentsDelta(
+RealtimeBetaServerEventResponseMcpCallArgumentsDelta copyWith({String? eventId, RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType? type, String? responseId, String? itemId, int? outputIndex, String? delta, Omittable<String?>? obfuscation, }) { return RealtimeBetaServerEventResponseMcpCallArgumentsDelta(
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
   responseId: responseId ?? this.responseId,
   itemId: itemId ?? this.itemId,
   outputIndex: outputIndex ?? this.outputIndex,
   delta: delta ?? this.delta,
-  obfuscation: obfuscation != null ? obfuscation() : this.obfuscation,
+  obfuscation: obfuscation ?? this.obfuscation,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RealtimeBetaServerEventResponseMcpCallArgumentsDelta &&

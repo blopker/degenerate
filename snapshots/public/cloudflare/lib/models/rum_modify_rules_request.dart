@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'delete_rules', 'rules'}.contains(key)); } 
-RumModifyRulesRequest copyWith({List<RumRuleIdentifier> Function()? deleteRules, List<RumModifyRulesRequestRules> Function()? rules, }) { return RumModifyRulesRequest(
+RumModifyRulesRequest copyWith({List<RumRuleIdentifier>? Function()? deleteRules, List<RumModifyRulesRequestRules>? Function()? rules, }) { return RumModifyRulesRequest(
   deleteRules: deleteRules != null ? deleteRules() : this.deleteRules,
   rules: rules != null ? rules() : this.rules,
 ); } 

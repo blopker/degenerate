@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_account', 'default_for_currency', 'expand', 'external_account', 'metadata'}.contains(key)); } 
-PostAccountsAccountExternalAccountsRequest copyWith({PostAccountsAccountExternalAccountsRequestBankAccount Function()? bankAccount, bool Function()? defaultForCurrency, List<String> Function()? expand, String Function()? externalAccount, Map<String, String> Function()? metadata, }) { return PostAccountsAccountExternalAccountsRequest(
+PostAccountsAccountExternalAccountsRequest copyWith({PostAccountsAccountExternalAccountsRequestBankAccount? Function()? bankAccount, bool? Function()? defaultForCurrency, List<String>? Function()? expand, String? Function()? externalAccount, Map<String, String>? Function()? metadata, }) { return PostAccountsAccountExternalAccountsRequest(
   bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
   defaultForCurrency: defaultForCurrency != null ? defaultForCurrency() : this.defaultForCurrency,
   expand: expand != null ? expand() : this.expand,

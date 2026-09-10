@@ -52,33 +52,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodDetailsCardInstallmentsPlanType($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodDetailsCardInstallmentsPlan {const PaymentMethodDetailsCardInstallmentsPlan({required this.type, this.count, this.interval, });
+@immutable final class PaymentMethodDetailsCardInstallmentsPlan {const PaymentMethodDetailsCardInstallmentsPlan({required this.type, this.count = const Omittable.absent(), this.interval = const Omittable.absent(), });
 
 factory PaymentMethodDetailsCardInstallmentsPlan.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardInstallmentsPlan(
-  count: json['count'] != null ? (json['count'] as num).toInt() : null,
-  interval: json['interval'] != null ? PaymentMethodDetailsCardInstallmentsPlanInterval.fromJson(json['interval'] as String) : null,
+  count: json.containsKey('count') ? Omittable(json['count'] != null ? (json['count'] as num).toInt() : null) : const Omittable.absent(),
+  interval: json.containsKey('interval') ? Omittable(json['interval'] != null ? PaymentMethodDetailsCardInstallmentsPlanInterval.fromJson(json['interval'] as String) : null) : const Omittable.absent(),
   type: PaymentMethodDetailsCardInstallmentsPlanType.fromJson(json['type'] as String),
 ); }
 
 /// For `fixed_count` installment plans, this is the number of installment payments your customer will make to their credit card.
-final int? count;
+final Omittable<int?> count;
 
 /// For `fixed_count` installment plans, this is the interval between installment payments your customer will make to their credit card.
 /// One of `month`.
-final PaymentMethodDetailsCardInstallmentsPlanInterval? interval;
+final Omittable<PaymentMethodDetailsCardInstallmentsPlanInterval?> interval;
 
 /// Type of installment plan, one of `fixed_count`, `bonus`, or `revolving`.
 final PaymentMethodDetailsCardInstallmentsPlanType type;
 
 Map<String, dynamic> toJson() { return {
-  'count': ?count,
-  if (interval != null) 'interval': interval?.toJson(),
+  if (count.isPresent) 'count': count.value,
+  if (interval.isPresent) 'interval': interval.value?.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentMethodDetailsCardInstallmentsPlan copyWith({int? Function()? count, PaymentMethodDetailsCardInstallmentsPlanInterval? Function()? interval, PaymentMethodDetailsCardInstallmentsPlanType? type, }) { return PaymentMethodDetailsCardInstallmentsPlan(
-  count: count != null ? count() : this.count,
-  interval: interval != null ? interval() : this.interval,
+PaymentMethodDetailsCardInstallmentsPlan copyWith({Omittable<int?>? count, Omittable<PaymentMethodDetailsCardInstallmentsPlanInterval?>? interval, PaymentMethodDetailsCardInstallmentsPlanType? type, }) { return PaymentMethodDetailsCardInstallmentsPlan(
+  count: count ?? this.count,
+  interval: interval ?? this.interval,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

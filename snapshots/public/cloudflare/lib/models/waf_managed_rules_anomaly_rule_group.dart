@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name'}.contains(key)); } 
-WafManagedRulesAnomalyRuleGroup copyWith({WafManagedRulesComponentsSchemasIdentifier Function()? id, WafManagedRulesName Function()? name, }) { return WafManagedRulesAnomalyRuleGroup(
+WafManagedRulesAnomalyRuleGroup copyWith({WafManagedRulesComponentsSchemasIdentifier? Function()? id, WafManagedRulesName? Function()? name, }) { return WafManagedRulesAnomalyRuleGroup(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 

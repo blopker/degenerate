@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'payment_code': paymentCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_code') && json['payment_code'] is String; } 
-PaymentIntentNextActionKonbiniSeicomart copyWith({String Function()? confirmationNumber, String? paymentCode, }) { return PaymentIntentNextActionKonbiniSeicomart(
+PaymentIntentNextActionKonbiniSeicomart copyWith({String? Function()? confirmationNumber, String? paymentCode, }) { return PaymentIntentNextActionKonbiniSeicomart(
   confirmationNumber: confirmationNumber != null ? confirmationNumber() : this.confirmationNumber,
   paymentCode: paymentCode ?? this.paymentCode,
 ); } 

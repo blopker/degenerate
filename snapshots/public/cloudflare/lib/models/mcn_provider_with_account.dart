@@ -75,7 +75,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud
       json.containsKey('state') &&
       json.containsKey('state_v2') &&
       json.containsKey('account_id'); } 
-McnProviderWithAccount copyWith({String Function()? awsArn, String Function()? azureSubscriptionId, String Function()? azureTenantId, McnCloudType? cloudType, String Function()? description, String? friendlyName, String Function()? gcpProjectId, String Function()? gcpServiceAccountEmail, McnProviderId? id, String? lastUpdated, McnProviderLifecycleState? lifecycleState, McnProviderDiscoveryStatus? state, McnProviderDiscoveryStatus? stateV2, McnProviderStatus Function()? status, McnAccountId? accountId, }) { return McnProviderWithAccount(
+McnProviderWithAccount copyWith({String? Function()? awsArn, String? Function()? azureSubscriptionId, String? Function()? azureTenantId, McnCloudType? cloudType, String? Function()? description, String? friendlyName, String? Function()? gcpProjectId, String? Function()? gcpServiceAccountEmail, McnProviderId? id, String? lastUpdated, McnProviderLifecycleState? lifecycleState, McnProviderDiscoveryStatus? state, McnProviderDiscoveryStatus? stateV2, McnProviderStatus? Function()? status, McnAccountId? accountId, }) { return McnProviderWithAccount(
   awsArn: awsArn != null ? awsArn() : this.awsArn,
   azureSubscriptionId: azureSubscriptionId != null ? azureSubscriptionId() : this.azureSubscriptionId,
   azureTenantId: azureTenantId != null ? azureTenantId() : this.azureTenantId,

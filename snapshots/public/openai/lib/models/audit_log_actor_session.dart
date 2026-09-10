@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'ip_address': ?ipAddress,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user', 'ip_address'}.contains(key)); } 
-AuditLogActorSession copyWith({AuditLogActorUser Function()? user, String Function()? ipAddress, }) { return AuditLogActorSession(
+AuditLogActorSession copyWith({AuditLogActorUser? Function()? user, String? Function()? ipAddress, }) { return AuditLogActorSession(
   user: user != null ? user() : this.user,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
 ); } 

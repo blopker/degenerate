@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'target_uri': targetUri.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_uri') && json['target_uri'] is String; } 
-ZeroTrustGatewayRuleSettingsRedirect copyWith({bool Function()? includeContext, bool Function()? preservePathAndQuery, Uri? targetUri, }) { return ZeroTrustGatewayRuleSettingsRedirect(
+ZeroTrustGatewayRuleSettingsRedirect copyWith({bool? Function()? includeContext, bool? Function()? preservePathAndQuery, Uri? targetUri, }) { return ZeroTrustGatewayRuleSettingsRedirect(
   includeContext: includeContext != null ? includeContext() : this.includeContext,
   preservePathAndQuery: preservePathAndQuery != null ? preservePathAndQuery() : this.preservePathAndQuery,
   targetUri: targetUri ?? this.targetUri,

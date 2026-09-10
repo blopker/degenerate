@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An export of a codespace. Also, latest export details for a codespace can be fetched with id = latest
-@immutable final class CodespaceExportDetails {const CodespaceExportDetails({this.state, this.completedAt, this.branch, this.sha, this.id, this.exportUrl, this.htmlUrl, });
+@immutable final class CodespaceExportDetails {const CodespaceExportDetails({this.state = const Omittable.absent(), this.completedAt = const Omittable.absent(), this.branch = const Omittable.absent(), this.sha = const Omittable.absent(), this.id, this.exportUrl, this.htmlUrl = const Omittable.absent(), });
 
 factory CodespaceExportDetails.fromJson(Map<String, dynamic> json) { return CodespaceExportDetails(
-  state: json['state'] as String?,
-  completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
-  branch: json['branch'] as String?,
-  sha: json['sha'] as String?,
+  state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
+  completedAt: json.containsKey('completed_at') ? Omittable(json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null) : const Omittable.absent(),
+  branch: json.containsKey('branch') ? Omittable(json['branch'] as String?) : const Omittable.absent(),
+  sha: json.containsKey('sha') ? Omittable(json['sha'] as String?) : const Omittable.absent(),
   id: json['id'] as String?,
   exportUrl: json['export_url'] as String?,
-  htmlUrl: json['html_url'] as String?,
+  htmlUrl: json.containsKey('html_url') ? Omittable(json['html_url'] as String?) : const Omittable.absent(),
 ); }
 
 /// State of the latest export
-final String? state;
+final Omittable<String?> state;
 
 /// Completion time of the last export operation
-final DateTime? completedAt;
+final Omittable<DateTime?> completedAt;
 
 /// Name of the exported branch
-final String? branch;
+final Omittable<String?> branch;
 
 /// Git commit SHA of the exported branch
-final String? sha;
+final Omittable<String?> sha;
 
 /// Id for the export details
 final String? id;
@@ -32,26 +32,26 @@ final String? id;
 final String? exportUrl;
 
 /// Web url for the exported branch
-final String? htmlUrl;
+final Omittable<String?> htmlUrl;
 
 Map<String, dynamic> toJson() { return {
-  'state': ?state,
-  if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
-  'branch': ?branch,
-  'sha': ?sha,
+  if (state.isPresent) 'state': state.value,
+  if (completedAt.isPresent) 'completed_at': completedAt.value?.toIso8601String(),
+  if (branch.isPresent) 'branch': branch.value,
+  if (sha.isPresent) 'sha': sha.value,
   'id': ?id,
   'export_url': ?exportUrl,
-  'html_url': ?htmlUrl,
+  if (htmlUrl.isPresent) 'html_url': htmlUrl.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'state', 'completed_at', 'branch', 'sha', 'id', 'export_url', 'html_url'}.contains(key)); } 
-CodespaceExportDetails copyWith({String? Function()? state, DateTime? Function()? completedAt, String? Function()? branch, String? Function()? sha, String Function()? id, String Function()? exportUrl, String? Function()? htmlUrl, }) { return CodespaceExportDetails(
-  state: state != null ? state() : this.state,
-  completedAt: completedAt != null ? completedAt() : this.completedAt,
-  branch: branch != null ? branch() : this.branch,
-  sha: sha != null ? sha() : this.sha,
+CodespaceExportDetails copyWith({Omittable<String?>? state, Omittable<DateTime?>? completedAt, Omittable<String?>? branch, Omittable<String?>? sha, String? Function()? id, String? Function()? exportUrl, Omittable<String?>? htmlUrl, }) { return CodespaceExportDetails(
+  state: state ?? this.state,
+  completedAt: completedAt ?? this.completedAt,
+  branch: branch ?? this.branch,
+  sha: sha ?? this.sha,
   id: id != null ? id() : this.id,
   exportUrl: exportUrl != null ? exportUrl() : this.exportUrl,
-  htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodespaceExportDetails &&

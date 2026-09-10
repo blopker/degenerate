@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'url_hostname': urlHostname,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url_hostname') && json['url_hostname'] is String; } 
-ListsItemHostname copyWith({bool Function()? excludeExactHostname, String? urlHostname, }) { return ListsItemHostname(
+ListsItemHostname copyWith({bool? Function()? excludeExactHostname, String? urlHostname, }) { return ListsItemHostname(
   excludeExactHostname: excludeExactHostname != null ? excludeExactHostname() : this.excludeExactHostname,
   urlHostname: urlHostname ?? this.urlHostname,
 ); } 

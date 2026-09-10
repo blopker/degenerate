@@ -40,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabl
       json.containsKey('monitor_id') &&
       json.containsKey('monitoring_only') && json['monitoring_only'] is bool &&
       json.containsKey('must_be_healthy') && json['must_be_healthy'] is bool; } 
-LoadBalancingMonitorGroupMember copyWith({DateTime Function()? createdAt, bool? enabled, LoadBalancingMonitorId? monitorId, bool? monitoringOnly, bool? mustBeHealthy, DateTime Function()? updatedAt, }) { return LoadBalancingMonitorGroupMember(
+LoadBalancingMonitorGroupMember copyWith({DateTime? Function()? createdAt, bool? enabled, LoadBalancingMonitorId? monitorId, bool? monitoringOnly, bool? mustBeHealthy, DateTime? Function()? updatedAt, }) { return LoadBalancingMonitorGroupMember(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   enabled: enabled ?? this.enabled,
   monitorId: monitorId ?? this.monitorId,

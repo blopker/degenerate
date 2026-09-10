@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (processConfig != null) 'process_config': processConfig?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_intent') && json['payment_intent'] is String; } 
-PostTerminalReadersReaderProcessPaymentIntentRequest copyWith({List<String> Function()? expand, String? paymentIntent, PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig Function()? processConfig, }) { return PostTerminalReadersReaderProcessPaymentIntentRequest(
+PostTerminalReadersReaderProcessPaymentIntentRequest copyWith({List<String>? Function()? expand, String? paymentIntent, PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig? Function()? processConfig, }) { return PostTerminalReadersReaderProcessPaymentIntentRequest(
   expand: expand != null ? expand() : this.expand,
   paymentIntent: paymentIntent ?? this.paymentIntent,
   processConfig: processConfig != null ? processConfig() : this.processConfig,

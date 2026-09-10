@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('createdIndicatorsCount') && json['createdIndicatorsCount'] is num &&
       json.containsKey('createdRelationshipsCount') && json['createdRelationshipsCount'] is num &&
       json.containsKey('errorCount') && json['errorCount'] is num; } 
-PostDosEventCreateBulkWithRelationshipsResponse copyWith({double? createdEventsCount, double? createdIndicatorsCount, double? createdRelationshipsCount, double? errorCount, List<PostDosEventCreateBulkWithRelationshipsResponseErrors> Function()? errors, }) { return PostDosEventCreateBulkWithRelationshipsResponse(
+PostDosEventCreateBulkWithRelationshipsResponse copyWith({double? createdEventsCount, double? createdIndicatorsCount, double? createdRelationshipsCount, double? errorCount, List<PostDosEventCreateBulkWithRelationshipsResponseErrors>? Function()? errors, }) { return PostDosEventCreateBulkWithRelationshipsResponse(
   createdEventsCount: createdEventsCount ?? this.createdEventsCount,
   createdIndicatorsCount: createdIndicatorsCount ?? this.createdIndicatorsCount,
   createdRelationshipsCount: createdRelationshipsCount ?? this.createdRelationshipsCount,

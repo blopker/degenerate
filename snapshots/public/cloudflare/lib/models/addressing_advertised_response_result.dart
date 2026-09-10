@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_components_schemas_advertised.dart';import 'addressing_modified_at_nullable.dart';@immutable final class AddressingAdvertisedResponseResult {const AddressingAdvertisedResponseResult({this.advertised, this.advertisedModifiedAt, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'addressing_components_schemas_advertised.dart';import 'addressing_modified_at_nullable.dart';@immutable final class AddressingAdvertisedResponseResult {const AddressingAdvertisedResponseResult({this.advertised, this.advertisedModifiedAt = const Omittable.absent(), });
 
 factory AddressingAdvertisedResponseResult.fromJson(Map<String, dynamic> json) { return AddressingAdvertisedResponseResult(
   advertised: json['advertised'] != null ? AddressingComponentsSchemasAdvertised.fromJson(json['advertised'] as bool) : null,
-  advertisedModifiedAt: json['advertised_modified_at'] != null ? AddressingModifiedAtNullable.fromJson(json['advertised_modified_at'] as String) : null,
+  advertisedModifiedAt: json.containsKey('advertised_modified_at') ? Omittable(json['advertised_modified_at'] != null ? AddressingModifiedAtNullable.fromJson(json['advertised_modified_at'] as String) : null) : const Omittable.absent(),
 ); }
 
 final AddressingComponentsSchemasAdvertised? advertised;
 
-final AddressingModifiedAtNullable? advertisedModifiedAt;
+final Omittable<AddressingModifiedAtNullable?> advertisedModifiedAt;
 
 Map<String, dynamic> toJson() { return {
   if (advertised != null) 'advertised': advertised?.toJson(),
-  if (advertisedModifiedAt != null) 'advertised_modified_at': advertisedModifiedAt?.toJson(),
+  if (advertisedModifiedAt.isPresent) 'advertised_modified_at': advertisedModifiedAt.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advertised', 'advertised_modified_at'}.contains(key)); } 
-AddressingAdvertisedResponseResult copyWith({AddressingComponentsSchemasAdvertised Function()? advertised, AddressingModifiedAtNullable? Function()? advertisedModifiedAt, }) { return AddressingAdvertisedResponseResult(
+AddressingAdvertisedResponseResult copyWith({AddressingComponentsSchemasAdvertised? Function()? advertised, Omittable<AddressingModifiedAtNullable?>? advertisedModifiedAt, }) { return AddressingAdvertisedResponseResult(
   advertised: advertised != null ? advertised() : this.advertised,
-  advertisedModifiedAt: advertisedModifiedAt != null ? advertisedModifiedAt() : this.advertisedModifiedAt,
+  advertisedModifiedAt: advertisedModifiedAt ?? this.advertisedModifiedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AddressingAdvertisedResponseResult &&

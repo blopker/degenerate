@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('idp_uid') && json['idp_uid'] is String &&
       json.containsKey('remote_uri') && json['remote_uri'] is String; } 
-AccessSchemasScimConfig copyWith({AccessSchemasScimConfigAuthentication Function()? authentication, bool Function()? deactivateOnDelete, bool Function()? enabled, String? idpUid, List<AccessScimConfigMapping> Function()? mappings, String? remoteUri, }) { return AccessSchemasScimConfig(
+AccessSchemasScimConfig copyWith({AccessSchemasScimConfigAuthentication? Function()? authentication, bool? Function()? deactivateOnDelete, bool? Function()? enabled, String? idpUid, List<AccessScimConfigMapping>? Function()? mappings, String? remoteUri, }) { return AccessSchemasScimConfig(
   authentication: authentication != null ? authentication() : this.authentication,
   deactivateOnDelete: deactivateOnDelete != null ? deactivateOnDelete() : this.deactivateOnDelete,
   enabled: enabled != null ? enabled() : this.enabled,

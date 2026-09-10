@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('interconnect') && json['interconnect'] is String &&
       json.containsKey('magic') &&
       json.containsKey('p2p_ip') && json['p2p_ip'] is String; } 
-NscCni copyWith({NscAccountTag? account, NscBgpControl Function()? bgp, String? custIp, String? id, String? interconnect, NscMagicSettings? magic, String? p2pIp, }) { return NscCni(
+NscCni copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String? custIp, String? id, String? interconnect, NscMagicSettings? magic, String? p2pIp, }) { return NscCni(
   account: account ?? this.account,
   bgp: bgp != null ? bgp() : this.bgp,
   custIp: custIp ?? this.custIp,

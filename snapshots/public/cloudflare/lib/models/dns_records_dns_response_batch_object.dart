@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (puts != null) 'puts': puts?.map((e) => e).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deletes', 'patches', 'posts', 'puts'}.contains(key)); } 
-DnsRecordsDnsResponseBatchObject copyWith({List<Map<String, dynamic>> Function()? deletes, List<Map<String, dynamic>> Function()? patches, List<Map<String, dynamic>> Function()? posts, List<Map<String, dynamic>> Function()? puts, }) { return DnsRecordsDnsResponseBatchObject(
+DnsRecordsDnsResponseBatchObject copyWith({List<Map<String, dynamic>>? Function()? deletes, List<Map<String, dynamic>>? Function()? patches, List<Map<String, dynamic>>? Function()? posts, List<Map<String, dynamic>>? Function()? puts, }) { return DnsRecordsDnsResponseBatchObject(
   deletes: deletes != null ? deletes() : this.deletes,
   patches: patches != null ? patches() : this.patches,
   posts: posts != null ? posts() : this.posts,

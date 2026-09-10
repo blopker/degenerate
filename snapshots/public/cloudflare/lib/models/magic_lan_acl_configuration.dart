@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (subnets != null) 'subnets': subnets?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('lan_id') && json['lan_id'] is String; } 
-MagicLanAclConfiguration copyWith({String? lanId, String Function()? lanName, List<MagicAclPortRange> Function()? portRanges, List<MagicPort> Function()? ports, List<MagicAclSubnet> Function()? subnets, }) { return MagicLanAclConfiguration(
+MagicLanAclConfiguration copyWith({String? lanId, String? Function()? lanName, List<MagicAclPortRange>? Function()? portRanges, List<MagicPort>? Function()? ports, List<MagicAclSubnet>? Function()? subnets, }) { return MagicLanAclConfiguration(
   lanId: lanId ?? this.lanId,
   lanName: lanName != null ? lanName() : this.lanName,
   portRanges: portRanges != null ? portRanges() : this.portRanges,

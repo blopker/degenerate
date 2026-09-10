@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (serverAddresses != null) 'server_addresses': serverAddresses?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'server_addresses'}.contains(key)); } 
-MagicLanDhcpRelay copyWith({List<MagicIpAddress> Function()? serverAddresses}) { return MagicLanDhcpRelay(
+MagicLanDhcpRelay copyWith({List<MagicIpAddress>? Function()? serverAddresses}) { return MagicLanDhcpRelay(
   serverAddresses: serverAddresses != null ? serverAddresses() : this.serverAddresses,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

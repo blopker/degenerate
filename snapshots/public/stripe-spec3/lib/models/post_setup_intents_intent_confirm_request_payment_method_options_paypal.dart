@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'billing_agreement_id': ?billingAgreementId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_agreement_id'}.contains(key)); } 
-PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaypal copyWith({String Function()? billingAgreementId}) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaypal(
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaypal copyWith({String? Function()? billingAgreementId}) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaypal(
   billingAgreementId: billingAgreementId != null ? billingAgreementId() : this.billingAgreementId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RealtimeBetaClientEventInputAudioBufferClear copyWith({String Function()? eventId, RealtimeBetaClientEventInputAudioBufferClearType? type, }) { return RealtimeBetaClientEventInputAudioBufferClear(
+RealtimeBetaClientEventInputAudioBufferClear copyWith({String? Function()? eventId, RealtimeBetaClientEventInputAudioBufferClearType? type, }) { return RealtimeBetaClientEventInputAudioBufferClear(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
 ); } 

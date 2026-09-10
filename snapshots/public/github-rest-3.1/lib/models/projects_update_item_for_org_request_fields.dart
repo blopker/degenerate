@@ -25,7 +25,7 @@ final dynamic value;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  'value': ?value,
+  'value': value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('value'); } 

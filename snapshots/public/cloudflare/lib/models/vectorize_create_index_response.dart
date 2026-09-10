@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'created_on', 'description', 'modified_on', 'name'}.contains(key)); } 
-VectorizeCreateIndexResponse copyWith({VectorizeIndexDimensionConfiguration Function()? config, DateTime Function()? createdOn, VectorizeIndexDescription Function()? description, DateTime Function()? modifiedOn, VectorizeIndexName Function()? name, }) { return VectorizeCreateIndexResponse(
+VectorizeCreateIndexResponse copyWith({VectorizeIndexDimensionConfiguration? Function()? config, DateTime? Function()? createdOn, VectorizeIndexDescription? Function()? description, DateTime? Function()? modifiedOn, VectorizeIndexName? Function()? name, }) { return VectorizeCreateIndexResponse(
   config: config != null ? config() : this.config,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   description: description != null ? description() : this.description,

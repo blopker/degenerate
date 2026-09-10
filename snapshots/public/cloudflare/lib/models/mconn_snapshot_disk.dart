@@ -127,7 +127,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('in_pr
       json.containsKey('weighted_time_in_progress_ms') && json['weighted_time_in_progress_ms'] is num &&
       json.containsKey('writes') && json['writes'] is num &&
       json.containsKey('writes_merged') && json['writes_merged'] is num; } 
-MconnSnapshotDisk copyWith({String Function()? connectorId, double Function()? discards, double Function()? discardsMerged, double Function()? flushes, double? inProgress, double? major, double? merged, double? minor, String? name, double? reads, double Function()? sectorsDiscarded, double? sectorsRead, double? sectorsWritten, double Function()? timeDiscardingMs, double Function()? timeFlushingMs, double? timeInProgressMs, double? timeReadingMs, double? timeWritingMs, double? weightedTimeInProgressMs, double? writes, double? writesMerged, }) { return MconnSnapshotDisk(
+MconnSnapshotDisk copyWith({String? Function()? connectorId, double? Function()? discards, double? Function()? discardsMerged, double? Function()? flushes, double? inProgress, double? major, double? merged, double? minor, String? name, double? reads, double? Function()? sectorsDiscarded, double? sectorsRead, double? sectorsWritten, double? Function()? timeDiscardingMs, double? Function()? timeFlushingMs, double? timeInProgressMs, double? timeReadingMs, double? timeWritingMs, double? weightedTimeInProgressMs, double? writes, double? writesMerged, }) { return MconnSnapshotDisk(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   discards: discards != null ? discards() : this.discards,
   discardsMerged: discardsMerged != null ? discardsMerged() : this.discardsMerged,

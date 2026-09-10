@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('audTag') &&
       json.containsKey('teamName') && json['teamName'] is String; } 
-TunnelOriginRequestAccess copyWith({List<String>? audTag, bool Function()? $required, String? teamName, }) { return TunnelOriginRequestAccess(
+TunnelOriginRequestAccess copyWith({List<String>? audTag, bool? Function()? $required, String? teamName, }) { return TunnelOriginRequestAccess(
   audTag: audTag ?? this.audTag,
   $required: $required != null ? $required() : this.$required,
   teamName: teamName ?? this.teamName,

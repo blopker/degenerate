@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
       json.containsKey('message') && json['message'] is String; } 
-AddressingMessages2 copyWith({int? code, String Function()? documentationUrl, String? message, AddressingMessages2Source Function()? source, }) { return AddressingMessages2(
+AddressingMessages2 copyWith({int? code, String? Function()? documentationUrl, String? message, AddressingMessages2Source? Function()? source, }) { return AddressingMessages2(
   code: code ?? this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   message: message ?? this.message,

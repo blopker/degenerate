@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (targets != null) 'targets': targets?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'actions', 'priority', 'status', 'targets'}.contains(key)); } 
-PageRulesEditAPageRuleRequest copyWith({List<ZonesActions2> Function()? actions, ZonesPriority Function()? priority, ZonesStatus Function()? status, List<ZonesTarget> Function()? targets, }) { return PageRulesEditAPageRuleRequest(
+PageRulesEditAPageRuleRequest copyWith({List<ZonesActions2>? Function()? actions, ZonesPriority? Function()? priority, ZonesStatus? Function()? status, List<ZonesTarget>? Function()? targets, }) { return PageRulesEditAPageRuleRequest(
   actions: actions != null ? actions() : this.actions,
   priority: priority != null ? priority() : this.priority,
   status: status != null ? status() : this.status,

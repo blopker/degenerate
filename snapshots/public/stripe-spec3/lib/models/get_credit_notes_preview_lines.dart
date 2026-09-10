@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-GetCreditNotesPreviewLines copyWith({int Function()? amount, String Function()? description, String Function()? invoiceLineItem, int Function()? quantity, GetCreditNotesPreviewLinesTaxAmounts Function()? taxAmounts, GetCreditNotesPreviewLinesTaxRates Function()? taxRates, GetCreditNotesPreviewLinesType? type, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return GetCreditNotesPreviewLines(
+GetCreditNotesPreviewLines copyWith({int? Function()? amount, String? Function()? description, String? Function()? invoiceLineItem, int? Function()? quantity, GetCreditNotesPreviewLinesTaxAmounts? Function()? taxAmounts, GetCreditNotesPreviewLinesTaxRates? Function()? taxRates, GetCreditNotesPreviewLinesType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return GetCreditNotesPreviewLines(
   amount: amount != null ? amount() : this.amount,
   description: description != null ? description() : this.description,
   invoiceLineItem: invoiceLineItem != null ? invoiceLineItem() : this.invoiceLineItem,

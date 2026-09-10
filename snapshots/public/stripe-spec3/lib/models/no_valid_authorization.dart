@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (explanation != null) 'explanation': explanation?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation'}.contains(key)); } 
-NoValidAuthorization copyWith({NoValidAuthorizationAdditionalDocumentation Function()? additionalDocumentation, NoValidAuthorizationExplanation Function()? explanation, }) { return NoValidAuthorization(
+NoValidAuthorization copyWith({NoValidAuthorizationAdditionalDocumentation? Function()? additionalDocumentation, NoValidAuthorizationExplanation? Function()? explanation, }) { return NoValidAuthorization(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,
 ); } 

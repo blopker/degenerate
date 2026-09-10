@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'ref': ref,
   'repo': repo.toJson(),
   'sha': sha,
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String &&
       json.containsKey('ref') && json['ref'] is String &&

@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection copyWith({String Function()? jurisdiction, TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType? type, }) { return TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection(
+TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection copyWith({String? Function()? jurisdiction, TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType? type, }) { return TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection(
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   type: type ?? this.type,
 ); } 

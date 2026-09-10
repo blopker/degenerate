@@ -56,7 +56,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-Environment copyWith({int? id, String? nodeId, String? name, String? url, String? htmlUrl, DateTime? createdAt, DateTime? updatedAt, List<EnvironmentProtectionRules> Function()? protectionRules, DeploymentBranchPolicySettings Function()? deploymentBranchPolicy, }) { return Environment(
+Environment copyWith({int? id, String? nodeId, String? name, String? url, String? htmlUrl, DateTime? createdAt, DateTime? updatedAt, List<EnvironmentProtectionRules>? Function()? protectionRules, DeploymentBranchPolicySettings? Function()? deploymentBranchPolicy, }) { return Environment(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

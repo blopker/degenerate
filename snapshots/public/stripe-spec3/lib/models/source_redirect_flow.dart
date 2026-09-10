@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class SourceRedirectFlow {const SourceRedirectFlow({required this.returnUrl, required this.status, required this.url, this.failureReason, });
+@immutable final class SourceRedirectFlow {const SourceRedirectFlow({required this.returnUrl, required this.status, required this.url, this.failureReason = const Omittable.absent(), });
 
 factory SourceRedirectFlow.fromJson(Map<String, dynamic> json) { return SourceRedirectFlow(
-  failureReason: json['failure_reason'] as String?,
+  failureReason: json.containsKey('failure_reason') ? Omittable(json['failure_reason'] as String?) : const Omittable.absent(),
   returnUrl: json['return_url'] as String,
   status: json['status'] as String,
   url: json['url'] as String,
 ); }
 
 /// The failure reason for the redirect, either `user_abort` (the customer aborted or dropped out of the redirect flow), `declined` (the authentication failed or the transaction was declined), or `processing_error` (the redirect failed due to a technical error). Present only if the redirect status is `failed`.
-final String? failureReason;
+final Omittable<String?> failureReason;
 
 /// The URL you provide to redirect the customer to after they authenticated their payment.
 final String returnUrl;
@@ -23,7 +23,7 @@ final String status;
 final String url;
 
 Map<String, dynamic> toJson() { return {
-  'failure_reason': ?failureReason,
+  if (failureReason.isPresent) 'failure_reason': failureReason.value,
   'return_url': returnUrl,
   'status': status,
   'url': url,
@@ -31,8 +31,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('return_url') && json['return_url'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-SourceRedirectFlow copyWith({String? Function()? failureReason, String? returnUrl, String? status, String? url, }) { return SourceRedirectFlow(
-  failureReason: failureReason != null ? failureReason() : this.failureReason,
+SourceRedirectFlow copyWith({Omittable<String?>? failureReason, String? returnUrl, String? status, String? url, }) { return SourceRedirectFlow(
+  failureReason: failureReason ?? this.failureReason,
   returnUrl: returnUrl ?? this.returnUrl,
   status: status ?? this.status,
   url: url ?? this.url,

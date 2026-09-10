@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'scim_config'}.contains(key)); } 
-AccessAppReqEmbeddedScimConfig copyWith({AccessScimConfig Function()? scimConfig}) { return AccessAppReqEmbeddedScimConfig(
+AccessAppReqEmbeddedScimConfig copyWith({AccessScimConfig? Function()? scimConfig}) { return AccessAppReqEmbeddedScimConfig(
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (resourceFieldRef != null) 'resourceFieldRef': resourceFieldRef?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
-VolumeFile copyWith({ObjectFieldSelector Function()? fieldRef, int Function()? mode, String? path, ResourceFieldSelector Function()? resourceFieldRef, }) { return VolumeFile(
+VolumeFile copyWith({ObjectFieldSelector? Function()? fieldRef, int? Function()? mode, String? path, ResourceFieldSelector? Function()? resourceFieldRef, }) { return VolumeFile(
   fieldRef: fieldRef != null ? fieldRef() : this.fieldRef,
   mode: mode != null ? mode() : this.mode,
   path: path ?? this.path,

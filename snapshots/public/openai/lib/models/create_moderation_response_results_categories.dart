@@ -63,8 +63,8 @@ Map<String, dynamic> toJson() { return {
   'hate/threatening': hateThreatening,
   'harassment': harassment,
   'harassment/threatening': harassmentThreatening,
-  'illicit': ?illicit,
-  'illicit/violent': ?illicitViolent,
+  'illicit': illicit,
+  'illicit/violent': illicitViolent,
   'self-harm': selfHarm,
   'self-harm/intent': selfHarmIntent,
   'self-harm/instructions': selfHarmInstructions,
@@ -77,8 +77,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate'
       json.containsKey('hate/threatening') && json['hate/threatening'] is bool &&
       json.containsKey('harassment') && json['harassment'] is bool &&
       json.containsKey('harassment/threatening') && json['harassment/threatening'] is bool &&
-      json.containsKey('illicit') && json['illicit'] is bool &&
-      json.containsKey('illicit/violent') && json['illicit/violent'] is bool &&
+      json.containsKey('illicit') && (json['illicit'] == null || json['illicit'] is bool) &&
+      json.containsKey('illicit/violent') && (json['illicit/violent'] == null || json['illicit/violent'] is bool) &&
       json.containsKey('self-harm') && json['self-harm'] is bool &&
       json.containsKey('self-harm/intent') && json['self-harm/intent'] is bool &&
       json.containsKey('self-harm/instructions') && json['self-harm/instructions'] is bool &&

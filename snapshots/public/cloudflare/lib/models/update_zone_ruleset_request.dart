@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('version'); } 
-UpdateZoneRulesetRequest copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String Function()? name, RulesetsRulesetVersion? version, RulesetsRulesetKind Function()? kind, RulesetsRulesetPhase Function()? phase, List<RulesetsRequestRule> Function()? rules, }) { return UpdateZoneRulesetRequest(
+UpdateZoneRulesetRequest copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? Function()? name, RulesetsRulesetVersion? version, RulesetsRulesetKind? Function()? kind, RulesetsRulesetPhase? Function()? phase, List<RulesetsRequestRule>? Function()? rules, }) { return UpdateZoneRulesetRequest(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   lastUpdated: lastUpdated ?? this.lastUpdated,

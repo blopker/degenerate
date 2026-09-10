@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   'interval_count': ?intervalCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval'); } 
-PostSubscriptionItemsItemRequestPriceDataRecurring copyWith({PostSubscriptionItemsItemRequestPriceDataRecurringInterval? interval, int Function()? intervalCount, }) { return PostSubscriptionItemsItemRequestPriceDataRecurring(
+PostSubscriptionItemsItemRequestPriceDataRecurring copyWith({PostSubscriptionItemsItemRequestPriceDataRecurringInterval? interval, int? Function()? intervalCount, }) { return PostSubscriptionItemsItemRequestPriceDataRecurring(
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
 ); } 

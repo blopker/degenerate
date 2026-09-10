@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'travel_agency': ?travelAgency,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'departure_at', 'passenger_name', 'refundable', 'segments', 'travel_agency'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight copyWith({int Function()? departureAt, String Function()? passengerName, bool Function()? refundable, List<PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments> Function()? segments, String Function()? travelAgency, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight(
+PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight copyWith({int? Function()? departureAt, String? Function()? passengerName, bool? Function()? refundable, List<PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments>? Function()? segments, String? Function()? travelAgency, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlight(
   departureAt: departureAt != null ? departureAt() : this.departureAt,
   passengerName: passengerName != null ? passengerName() : this.passengerName,
   refundable: refundable != null ? refundable() : this.refundable,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (producingTransport != null) 'producing_transport': producingTransport?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'consuming_transport', 'producing_transport'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs copyWith({List<Map<String, dynamic>> Function()? consumingTransport, List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport> Function()? producingTransport, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs(
+GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs copyWith({List<Map<String, dynamic>>? Function()? consumingTransport, List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport>? Function()? producingTransport, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs(
   consumingTransport: consumingTransport != null ? consumingTransport() : this.consumingTransport,
   producingTransport: producingTransport != null ? producingTransport() : this.producingTransport,
 ); } 

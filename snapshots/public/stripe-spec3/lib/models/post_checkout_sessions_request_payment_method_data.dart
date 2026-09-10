@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (allowRedisplay != null) 'allow_redisplay': allowRedisplay?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodData copyWith({PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay Function()? allowRedisplay}) { return PostCheckoutSessionsRequestPaymentMethodData(
+PostCheckoutSessionsRequestPaymentMethodData copyWith({PostCheckoutSessionsRequestPaymentMethodDataAllowRedisplay? Function()? allowRedisplay}) { return PostCheckoutSessionsRequestPaymentMethodData(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

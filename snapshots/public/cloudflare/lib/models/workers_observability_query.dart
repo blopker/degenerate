@@ -42,22 +42,22 @@ final String workspaceId;
 
 Map<String, dynamic> toJson() { return {
   'created': created,
-  'description': ?description,
+  'description': description,
   'environmentId': environmentId,
-  'generated': ?generated,
+  'generated': generated,
   'id': id,
-  'name': ?name,
+  'name': name,
   'parameters': parameters.toJson(),
   'updated': updated,
   'userId': userId,
   'workspaceId': workspaceId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('environmentId') && json['environmentId'] is String &&
-      json.containsKey('generated') && json['generated'] is bool &&
+      json.containsKey('generated') && (json['generated'] == null || json['generated'] is bool) &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
       json.containsKey('parameters') &&
       json.containsKey('updated') && json['updated'] is String &&
       json.containsKey('userId') && json['userId'] is String &&

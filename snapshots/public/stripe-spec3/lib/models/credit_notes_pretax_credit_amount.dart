@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('type'); } 
-CreditNotesPretaxCreditAmount copyWith({int? amount, CreditNotesPretaxCreditAmountCreditBalanceTransaction Function()? creditBalanceTransaction, CreditNotesPretaxCreditAmountDiscount Function()? discount, CreditNotesPretaxCreditAmountType? type, }) { return CreditNotesPretaxCreditAmount(
+CreditNotesPretaxCreditAmount copyWith({int? amount, CreditNotesPretaxCreditAmountCreditBalanceTransaction? Function()? creditBalanceTransaction, CreditNotesPretaxCreditAmountDiscount? Function()? discount, CreditNotesPretaxCreditAmountType? type, }) { return CreditNotesPretaxCreditAmount(
   amount: amount ?? this.amount,
   creditBalanceTransaction: creditBalanceTransaction != null ? creditBalanceTransaction() : this.creditBalanceTransaction,
   discount: discount != null ? discount() : this.discount,

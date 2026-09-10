@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'app_id': ?appId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('context') && json['context'] is String; } 
-ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks copyWith({String? context, int Function()? appId, }) { return ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks(
+ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks copyWith({String? context, int? Function()? appId, }) { return ReposUpdateBranchProtectionRequestRequiredStatusChecksChecks(
   context: context ?? this.context,
   appId: appId != null ? appId() : this.appId,
 ); } 

@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_after_expiration_recovery.dart';/// 
-@immutable final class PaymentPagesCheckoutSessionAfterExpiration {const PaymentPagesCheckoutSessionAfterExpiration({this.recovery});
+@immutable final class PaymentPagesCheckoutSessionAfterExpiration {const PaymentPagesCheckoutSessionAfterExpiration({this.recovery = const Omittable.absent()});
 
 factory PaymentPagesCheckoutSessionAfterExpiration.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionAfterExpiration(
-  recovery: json['recovery'] != null ? PaymentPagesCheckoutSessionAfterExpirationRecovery.fromJson(json['recovery'] as Map<String, dynamic>) : null,
+  recovery: json.containsKey('recovery') ? Omittable(json['recovery'] != null ? PaymentPagesCheckoutSessionAfterExpirationRecovery.fromJson(json['recovery'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// When set, configuration used to recover the Checkout Session on expiry.
-final PaymentPagesCheckoutSessionAfterExpirationRecovery? recovery;
+final Omittable<PaymentPagesCheckoutSessionAfterExpirationRecovery?> recovery;
 
 Map<String, dynamic> toJson() { return {
-  if (recovery != null) 'recovery': recovery?.toJson(),
+  if (recovery.isPresent) 'recovery': recovery.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'recovery'}.contains(key)); } 
-PaymentPagesCheckoutSessionAfterExpiration copyWith({PaymentPagesCheckoutSessionAfterExpirationRecovery? Function()? recovery}) { return PaymentPagesCheckoutSessionAfterExpiration(
-  recovery: recovery != null ? recovery() : this.recovery,
+PaymentPagesCheckoutSessionAfterExpiration copyWith({Omittable<PaymentPagesCheckoutSessionAfterExpirationRecovery?>? recovery}) { return PaymentPagesCheckoutSessionAfterExpiration(
+  recovery: recovery ?? this.recovery,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentPagesCheckoutSessionAfterExpiration &&

@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   if (tipping != null) 'tipping': tipping?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay', 'enable_customer_cancellation', 'return_url', 'skip_tipping', 'tipping'}.contains(key)); } 
-PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig copyWith({PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay Function()? allowRedisplay, bool Function()? enableCustomerCancellation, String Function()? returnUrl, bool Function()? skipTipping, PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigTipping Function()? tipping, }) { return PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig(
+PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig copyWith({PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigAllowRedisplay? Function()? allowRedisplay, bool? Function()? enableCustomerCancellation, String? Function()? returnUrl, bool? Function()? skipTipping, PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfigTipping? Function()? tipping, }) { return PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,

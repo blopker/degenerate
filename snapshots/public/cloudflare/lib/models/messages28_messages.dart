@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'tool_call_id': ?toolCallId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content', 'role', 'tool_call_id'}.contains(key)); } 
-Messages28Messages copyWith({Messages28MessagesContent Function()? content, String Function()? role, String Function()? toolCallId, }) { return Messages28Messages(
+Messages28Messages copyWith({Messages28MessagesContent? Function()? content, String? Function()? role, String? Function()? toolCallId, }) { return Messages28Messages(
   content: content != null ? content() : this.content,
   role: role != null ? role() : this.role,
   toolCallId: toolCallId != null ? toolCallId() : this.toolCallId,

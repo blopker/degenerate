@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'shipping_rate': ?shippingRate,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'shipping_rate'}.contains(key)); } 
-GetCreditNotesPreviewLinesShippingCost copyWith({String Function()? shippingRate}) { return GetCreditNotesPreviewLinesShippingCost(
+GetCreditNotesPreviewLinesShippingCost copyWith({String? Function()? shippingRate}) { return GetCreditNotesPreviewLinesShippingCost(
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

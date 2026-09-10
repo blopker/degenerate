@@ -208,7 +208,7 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'configuration', 'customer', 'customer_account', 'expand', 'flow_data', 'locale', 'on_behalf_of', 'return_url'}.contains(key)); } 
-PostBillingPortalSessionsRequest copyWith({String Function()? configuration, String Function()? customer, String Function()? customerAccount, List<String> Function()? expand, PostBillingPortalSessionsRequestFlowData Function()? flowData, PostBillingPortalSessionsRequestLocale Function()? locale, String Function()? onBehalfOf, String Function()? returnUrl, }) { return PostBillingPortalSessionsRequest(
+PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, PostBillingPortalSessionsRequestFlowData? Function()? flowData, PostBillingPortalSessionsRequestLocale? Function()? locale, String? Function()? onBehalfOf, String? Function()? returnUrl, }) { return PostBillingPortalSessionsRequest(
   configuration: configuration != null ? configuration() : this.configuration,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   if (primaryLocationHint != null) 'primary_location_hint': primaryLocationHint?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
-D1CreateDatabaseRequest copyWith({D1Jurisdiction Function()? jurisdiction, D1DatabaseName? name, D1PrimaryLocationHint Function()? primaryLocationHint, }) { return D1CreateDatabaseRequest(
+D1CreateDatabaseRequest copyWith({D1Jurisdiction? Function()? jurisdiction, D1DatabaseName? name, D1PrimaryLocationHint? Function()? primaryLocationHint, }) { return D1CreateDatabaseRequest(
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   name: name ?? this.name,
   primaryLocationHint: primaryLocationHint != null ? primaryLocationHint() : this.primaryLocationHint,

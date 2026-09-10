@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (peerStats != null) 'peer_stats': peerStats?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'peer_stats'}.contains(key)); } 
-RealtimekitParticipantPeerStats copyWith({RealtimekitParticipantPeerStatsPeerStats Function()? peerStats}) { return RealtimekitParticipantPeerStats(
+RealtimekitParticipantPeerStats copyWith({RealtimekitParticipantPeerStatsPeerStats? Function()? peerStats}) { return RealtimekitParticipantPeerStats(
   peerStats: peerStats != null ? peerStats() : this.peerStats,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

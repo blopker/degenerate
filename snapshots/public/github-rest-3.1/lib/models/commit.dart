@@ -46,8 +46,8 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'comments_url': commentsUrl.toString(),
   'commit': commit.toJson(),
-  if (author != null) 'author': author?.toJson(),
-  if (committer != null) 'committer': committer?.toJson(),
+  'author': author?.toJson(),
+  'committer': committer?.toJson(),
   'parents': parents.map((e) => e.toJson()).toList(),
   if (stats != null) 'stats': stats?.toJson(),
   if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('author') &&
       json.containsKey('committer') &&
       json.containsKey('parents'); } 
-Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? commentsUrl, CommitCommit? commit, CommitAuthor? Function()? author, CommitCommitter? Function()? committer, List<CommitParents>? parents, CommitStats Function()? stats, List<DiffEntry> Function()? files, }) { return Commit(
+Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? commentsUrl, CommitCommit? commit, CommitAuthor? Function()? author, CommitCommitter? Function()? committer, List<CommitParents>? parents, CommitStats? Function()? stats, List<DiffEntry>? Function()? files, }) { return Commit(
   url: url ?? this.url,
   sha: sha ?? this.sha,
   nodeId: nodeId ?? this.nodeId,

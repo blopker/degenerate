@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   if (configuration != null) 'configuration': configuration?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_for_new_repos', 'configuration'}.contains(key)); } 
-CodeSecuritySetConfigurationAsDefaultResponse copyWith({CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos Function()? defaultForNewRepos, CodeSecurityConfiguration Function()? configuration, }) { return CodeSecuritySetConfigurationAsDefaultResponse(
+CodeSecuritySetConfigurationAsDefaultResponse copyWith({CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos? Function()? defaultForNewRepos, CodeSecurityConfiguration? Function()? configuration, }) { return CodeSecuritySetConfigurationAsDefaultResponse(
   defaultForNewRepos: defaultForNewRepos != null ? defaultForNewRepos() : this.defaultForNewRepos,
   configuration: configuration != null ? configuration() : this.configuration,
 ); } 

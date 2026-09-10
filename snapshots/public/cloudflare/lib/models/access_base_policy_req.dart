@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('decision') &&
       json.containsKey('include') &&
       json.containsKey('name'); } 
-AccessBasePolicyReq copyWith({AccessDecision? decision, List<AccessRule> Function()? exclude, List<AccessRule>? include, AccessPolicyComponentsSchemasName? name, List<AccessRule> Function()? require, }) { return AccessBasePolicyReq(
+AccessBasePolicyReq copyWith({AccessDecision? decision, List<AccessRule>? Function()? exclude, List<AccessRule>? include, AccessPolicyComponentsSchemasName? name, List<AccessRule>? Function()? require, }) { return AccessBasePolicyReq(
   decision: decision ?? this.decision,
   exclude: exclude != null ? exclude() : this.exclude,
   include: include ?? this.include,

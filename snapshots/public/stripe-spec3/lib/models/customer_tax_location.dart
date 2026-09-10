@@ -32,12 +32,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerTaxLocationSource($value)'; } 
  }
 /// 
-@immutable final class CustomerTaxLocation {const CustomerTaxLocation({required this.country, required this.source, this.state, });
+@immutable final class CustomerTaxLocation {const CustomerTaxLocation({required this.country, required this.source, this.state = const Omittable.absent(), });
 
 factory CustomerTaxLocation.fromJson(Map<String, dynamic> json) { return CustomerTaxLocation(
   country: json['country'] as String,
   source: CustomerTaxLocationSource.fromJson(json['source'] as String),
-  state: json['state'] as String?,
+  state: json.containsKey('state') ? Omittable(json['state'] as String?) : const Omittable.absent(),
 ); }
 
 /// The identified tax country of the customer.
@@ -47,19 +47,19 @@ final String country;
 final CustomerTaxLocationSource source;
 
 /// The identified tax state, county, province, or region of the customer.
-final String? state;
+final Omittable<String?> state;
 
 Map<String, dynamic> toJson() { return {
   'country': country,
   'source': source.toJson(),
-  'state': ?state,
+  if (state.isPresent) 'state': state.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String &&
       json.containsKey('source'); } 
-CustomerTaxLocation copyWith({String? country, CustomerTaxLocationSource? source, String? Function()? state, }) { return CustomerTaxLocation(
+CustomerTaxLocation copyWith({String? country, CustomerTaxLocationSource? source, Omittable<String?>? state, }) { return CustomerTaxLocation(
   country: country ?? this.country,
   source: source ?? this.source,
-  state: state != null ? state() : this.state,
+  state: state ?? this.state,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CustomerTaxLocation &&

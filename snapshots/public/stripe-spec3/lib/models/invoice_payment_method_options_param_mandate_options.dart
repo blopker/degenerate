@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (transactionType != null) 'transaction_type': transactionType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'transaction_type'}.contains(key)); } 
-InvoicePaymentMethodOptionsParamMandateOptions copyWith({InvoicePaymentMethodOptionsParamMandateOptionsTransactionType Function()? transactionType}) { return InvoicePaymentMethodOptionsParamMandateOptions(
+InvoicePaymentMethodOptionsParamMandateOptions copyWith({InvoicePaymentMethodOptionsParamMandateOptionsTransactionType? Function()? transactionType}) { return InvoicePaymentMethodOptionsParamMandateOptions(
   transactionType: transactionType != null ? transactionType() : this.transactionType,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

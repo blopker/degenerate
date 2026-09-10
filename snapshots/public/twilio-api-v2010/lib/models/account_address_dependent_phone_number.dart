@@ -181,169 +181,169 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountAddressDependentPhoneNumberStatusCallbackMethod($value)'; } 
  }
-@immutable final class AccountAddressDependentPhoneNumber {const AccountAddressDependentPhoneNumber({this.sid, this.accountSid, this.friendlyName, this.phoneNumber, this.voiceUrl, this.voiceMethod, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceCallerIdLookup, this.dateCreated, this.dateUpdated, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.addressRequirements, this.capabilities, this.statusCallback, this.statusCallbackMethod, this.apiVersion, this.smsApplicationSid, this.voiceApplicationSid, this.trunkSid, this.emergencyStatus, this.emergencyAddressSid, this.uri, });
+@immutable final class AccountAddressDependentPhoneNumber {const AccountAddressDependentPhoneNumber({this.sid = const Omittable.absent(), this.accountSid = const Omittable.absent(), this.friendlyName = const Omittable.absent(), this.phoneNumber = const Omittable.absent(), this.voiceUrl = const Omittable.absent(), this.voiceMethod = const Omittable.absent(), this.voiceFallbackMethod = const Omittable.absent(), this.voiceFallbackUrl = const Omittable.absent(), this.voiceCallerIdLookup = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.smsFallbackMethod = const Omittable.absent(), this.smsFallbackUrl = const Omittable.absent(), this.smsMethod = const Omittable.absent(), this.smsUrl = const Omittable.absent(), this.addressRequirements, this.capabilities = const Omittable.absent(), this.statusCallback = const Omittable.absent(), this.statusCallbackMethod = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.smsApplicationSid = const Omittable.absent(), this.voiceApplicationSid = const Omittable.absent(), this.trunkSid = const Omittable.absent(), this.emergencyStatus, this.emergencyAddressSid = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
 factory AccountAddressDependentPhoneNumber.fromJson(Map<String, dynamic> json) { return AccountAddressDependentPhoneNumber(
-  sid: json['sid'] as String?,
-  accountSid: json['account_sid'] as String?,
-  friendlyName: json['friendly_name'] as String?,
-  phoneNumber: json['phone_number'] as String?,
-  voiceUrl: json['voice_url'] != null ? Uri.parse(json['voice_url'] as String) : null,
-  voiceMethod: json['voice_method'] != null ? AccountAddressDependentPhoneNumberVoiceMethod.fromJson(json['voice_method'] as String) : null,
-  voiceFallbackMethod: json['voice_fallback_method'] != null ? AccountAddressDependentPhoneNumberVoiceFallbackMethod.fromJson(json['voice_fallback_method'] as String) : null,
-  voiceFallbackUrl: json['voice_fallback_url'] != null ? Uri.parse(json['voice_fallback_url'] as String) : null,
-  voiceCallerIdLookup: json['voice_caller_id_lookup'] as bool?,
-  dateCreated: json['date_created'] as String?,
-  dateUpdated: json['date_updated'] as String?,
-  smsFallbackMethod: json['sms_fallback_method'] != null ? AccountAddressDependentPhoneNumberSmsFallbackMethod.fromJson(json['sms_fallback_method'] as String) : null,
-  smsFallbackUrl: json['sms_fallback_url'] != null ? Uri.parse(json['sms_fallback_url'] as String) : null,
-  smsMethod: json['sms_method'] != null ? AccountAddressDependentPhoneNumberSmsMethod.fromJson(json['sms_method'] as String) : null,
-  smsUrl: json['sms_url'] != null ? Uri.parse(json['sms_url'] as String) : null,
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  friendlyName: json.containsKey('friendly_name') ? Omittable(json['friendly_name'] as String?) : const Omittable.absent(),
+  phoneNumber: json.containsKey('phone_number') ? Omittable(json['phone_number'] as String?) : const Omittable.absent(),
+  voiceUrl: json.containsKey('voice_url') ? Omittable(json['voice_url'] != null ? Uri.parse(json['voice_url'] as String) : null) : const Omittable.absent(),
+  voiceMethod: json.containsKey('voice_method') ? Omittable(json['voice_method'] != null ? AccountAddressDependentPhoneNumberVoiceMethod.fromJson(json['voice_method'] as String) : null) : const Omittable.absent(),
+  voiceFallbackMethod: json.containsKey('voice_fallback_method') ? Omittable(json['voice_fallback_method'] != null ? AccountAddressDependentPhoneNumberVoiceFallbackMethod.fromJson(json['voice_fallback_method'] as String) : null) : const Omittable.absent(),
+  voiceFallbackUrl: json.containsKey('voice_fallback_url') ? Omittable(json['voice_fallback_url'] != null ? Uri.parse(json['voice_fallback_url'] as String) : null) : const Omittable.absent(),
+  voiceCallerIdLookup: json.containsKey('voice_caller_id_lookup') ? Omittable(json['voice_caller_id_lookup'] as bool?) : const Omittable.absent(),
+  dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  smsFallbackMethod: json.containsKey('sms_fallback_method') ? Omittable(json['sms_fallback_method'] != null ? AccountAddressDependentPhoneNumberSmsFallbackMethod.fromJson(json['sms_fallback_method'] as String) : null) : const Omittable.absent(),
+  smsFallbackUrl: json.containsKey('sms_fallback_url') ? Omittable(json['sms_fallback_url'] != null ? Uri.parse(json['sms_fallback_url'] as String) : null) : const Omittable.absent(),
+  smsMethod: json.containsKey('sms_method') ? Omittable(json['sms_method'] != null ? AccountAddressDependentPhoneNumberSmsMethod.fromJson(json['sms_method'] as String) : null) : const Omittable.absent(),
+  smsUrl: json.containsKey('sms_url') ? Omittable(json['sms_url'] != null ? Uri.parse(json['sms_url'] as String) : null) : const Omittable.absent(),
   addressRequirements: json['address_requirements'] != null ? DependentPhoneNumberEnumAddressRequirement.fromJson(json['address_requirements'] as String) : null,
-  capabilities: json['capabilities'],
-  statusCallback: json['status_callback'] != null ? Uri.parse(json['status_callback'] as String) : null,
-  statusCallbackMethod: json['status_callback_method'] != null ? AccountAddressDependentPhoneNumberStatusCallbackMethod.fromJson(json['status_callback_method'] as String) : null,
-  apiVersion: json['api_version'] as String?,
-  smsApplicationSid: json['sms_application_sid'] as String?,
-  voiceApplicationSid: json['voice_application_sid'] as String?,
-  trunkSid: json['trunk_sid'] as String?,
+  capabilities: json.containsKey('capabilities') ? Omittable(json['capabilities']) : const Omittable.absent(),
+  statusCallback: json.containsKey('status_callback') ? Omittable(json['status_callback'] != null ? Uri.parse(json['status_callback'] as String) : null) : const Omittable.absent(),
+  statusCallbackMethod: json.containsKey('status_callback_method') ? Omittable(json['status_callback_method'] != null ? AccountAddressDependentPhoneNumberStatusCallbackMethod.fromJson(json['status_callback_method'] as String) : null) : const Omittable.absent(),
+  apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
+  smsApplicationSid: json.containsKey('sms_application_sid') ? Omittable(json['sms_application_sid'] as String?) : const Omittable.absent(),
+  voiceApplicationSid: json.containsKey('voice_application_sid') ? Omittable(json['voice_application_sid'] as String?) : const Omittable.absent(),
+  trunkSid: json.containsKey('trunk_sid') ? Omittable(json['trunk_sid'] as String?) : const Omittable.absent(),
   emergencyStatus: json['emergency_status'] != null ? DependentPhoneNumberEnumEmergencyStatus.fromJson(json['emergency_status'] as String) : null,
-  emergencyAddressSid: json['emergency_address_sid'] as String?,
-  uri: json['uri'] as String?,
+  emergencyAddressSid: json.containsKey('emergency_address_sid') ? Omittable(json['emergency_address_sid'] as String?) : const Omittable.absent(),
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
 ); }
 
 /// The unique string that that we created to identify the DependentPhoneNumber resource.
-final String? sid;
+final Omittable<String?> sid;
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the DependentPhoneNumber resource.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The string that you assigned to describe the resource.
-final String? friendlyName;
+final Omittable<String?> friendlyName;
 
 /// The phone number in [E.164](https://www.twilio.com/docs/glossary/what-e164) format, which consists of a + followed by the country code and subscriber number.
-final String? phoneNumber;
+final Omittable<String?> phoneNumber;
 
 /// The URL we call when the phone number receives a call. The `voice_url` will not be used if a `voice_application_sid` or a `trunk_sid` is set.
-final Uri? voiceUrl;
+final Omittable<Uri?> voiceUrl;
 
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-final AccountAddressDependentPhoneNumberVoiceMethod? voiceMethod;
+final Omittable<AccountAddressDependentPhoneNumberVoiceMethod?> voiceMethod;
 
 /// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-final AccountAddressDependentPhoneNumberVoiceFallbackMethod? voiceFallbackMethod;
+final Omittable<AccountAddressDependentPhoneNumberVoiceFallbackMethod?> voiceFallbackMethod;
 
 /// The URL that we call when an error occurs retrieving or executing the TwiML requested by `url`.
-final Uri? voiceFallbackUrl;
+final Omittable<Uri?> voiceFallbackUrl;
 
 /// Whether we look up the caller's caller-ID name from the CNAM database. Can be: `true` or `false`. Caller ID lookups can cost $0.01 each.
-final bool? voiceCallerIdLookup;
+final Omittable<bool?> voiceCallerIdLookup;
 
 /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateCreated;
+final Omittable<String?> dateCreated;
 
 /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
-final AccountAddressDependentPhoneNumberSmsFallbackMethod? smsFallbackMethod;
+final Omittable<AccountAddressDependentPhoneNumberSmsFallbackMethod?> smsFallbackMethod;
 
 /// The URL that we call when an error occurs while retrieving or executing the TwiML from `sms_url`.
-final Uri? smsFallbackUrl;
+final Omittable<Uri?> smsFallbackUrl;
 
 /// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
-final AccountAddressDependentPhoneNumberSmsMethod? smsMethod;
+final Omittable<AccountAddressDependentPhoneNumberSmsMethod?> smsMethod;
 
 /// The URL we call when the phone number receives an incoming SMS message.
-final Uri? smsUrl;
+final Omittable<Uri?> smsUrl;
 
 final DependentPhoneNumberEnumAddressRequirement? addressRequirements;
 
 /// The set of Boolean properties that indicates whether a phone number can receive calls or messages.  Capabilities are  `Voice`, `SMS`, and `MMS` and each capability can be: `true` or `false`.
-final dynamic capabilities;
+final Omittable<dynamic> capabilities;
 
 /// The URL we call using the `status_callback_method` to send status information to your application.
-final Uri? statusCallback;
+final Omittable<Uri?> statusCallback;
 
 /// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
-final AccountAddressDependentPhoneNumberStatusCallbackMethod? statusCallbackMethod;
+final Omittable<AccountAddressDependentPhoneNumberStatusCallbackMethod?> statusCallbackMethod;
 
 /// The API version used to start a new TwiML session.
-final String? apiVersion;
+final Omittable<String?> apiVersion;
 
 /// The SID of the application that handles SMS messages sent to the phone number. If an `sms_application_sid` is present, we ignore all `sms_*_url` values and use those of the application.
-final String? smsApplicationSid;
+final Omittable<String?> smsApplicationSid;
 
 /// The SID of the application that handles calls to the phone number. If a `voice_application_sid` is present, we ignore all of the voice urls and use those set on the application. Setting a `voice_application_sid` will automatically delete your `trunk_sid` and vice versa.
-final String? voiceApplicationSid;
+final Omittable<String?> voiceApplicationSid;
 
 /// The SID of the Trunk that handles calls to the phone number. If a `trunk_sid` is present, we ignore all of the voice urls and voice applications and use those set on the Trunk. Setting a `trunk_sid` will automatically delete your `voice_application_sid` and vice versa.
-final String? trunkSid;
+final Omittable<String?> trunkSid;
 
 final DependentPhoneNumberEnumEmergencyStatus? emergencyStatus;
 
 /// The SID of the emergency address configuration that we use for emergency calling from the phone number.
-final String? emergencyAddressSid;
+final Omittable<String?> emergencyAddressSid;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 Map<String, dynamic> toJson() { return {
-  'sid': ?sid,
-  'account_sid': ?accountSid,
-  'friendly_name': ?friendlyName,
-  'phone_number': ?phoneNumber,
-  if (voiceUrl != null) 'voice_url': voiceUrl?.toString(),
-  if (voiceMethod != null) 'voice_method': voiceMethod?.toJson(),
-  if (voiceFallbackMethod != null) 'voice_fallback_method': voiceFallbackMethod?.toJson(),
-  if (voiceFallbackUrl != null) 'voice_fallback_url': voiceFallbackUrl?.toString(),
-  'voice_caller_id_lookup': ?voiceCallerIdLookup,
-  'date_created': ?dateCreated,
-  'date_updated': ?dateUpdated,
-  if (smsFallbackMethod != null) 'sms_fallback_method': smsFallbackMethod?.toJson(),
-  if (smsFallbackUrl != null) 'sms_fallback_url': smsFallbackUrl?.toString(),
-  if (smsMethod != null) 'sms_method': smsMethod?.toJson(),
-  if (smsUrl != null) 'sms_url': smsUrl?.toString(),
+  if (sid.isPresent) 'sid': sid.value,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (friendlyName.isPresent) 'friendly_name': friendlyName.value,
+  if (phoneNumber.isPresent) 'phone_number': phoneNumber.value,
+  if (voiceUrl.isPresent) 'voice_url': voiceUrl.value?.toString(),
+  if (voiceMethod.isPresent) 'voice_method': voiceMethod.value?.toJson(),
+  if (voiceFallbackMethod.isPresent) 'voice_fallback_method': voiceFallbackMethod.value?.toJson(),
+  if (voiceFallbackUrl.isPresent) 'voice_fallback_url': voiceFallbackUrl.value?.toString(),
+  if (voiceCallerIdLookup.isPresent) 'voice_caller_id_lookup': voiceCallerIdLookup.value,
+  if (dateCreated.isPresent) 'date_created': dateCreated.value,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (smsFallbackMethod.isPresent) 'sms_fallback_method': smsFallbackMethod.value?.toJson(),
+  if (smsFallbackUrl.isPresent) 'sms_fallback_url': smsFallbackUrl.value?.toString(),
+  if (smsMethod.isPresent) 'sms_method': smsMethod.value?.toJson(),
+  if (smsUrl.isPresent) 'sms_url': smsUrl.value?.toString(),
   if (addressRequirements != null) 'address_requirements': addressRequirements?.toJson(),
-  'capabilities': ?capabilities,
-  if (statusCallback != null) 'status_callback': statusCallback?.toString(),
-  if (statusCallbackMethod != null) 'status_callback_method': statusCallbackMethod?.toJson(),
-  'api_version': ?apiVersion,
-  'sms_application_sid': ?smsApplicationSid,
-  'voice_application_sid': ?voiceApplicationSid,
-  'trunk_sid': ?trunkSid,
+  if (capabilities.isPresent) 'capabilities': capabilities.value,
+  if (statusCallback.isPresent) 'status_callback': statusCallback.value?.toString(),
+  if (statusCallbackMethod.isPresent) 'status_callback_method': statusCallbackMethod.value?.toJson(),
+  if (apiVersion.isPresent) 'api_version': apiVersion.value,
+  if (smsApplicationSid.isPresent) 'sms_application_sid': smsApplicationSid.value,
+  if (voiceApplicationSid.isPresent) 'voice_application_sid': voiceApplicationSid.value,
+  if (trunkSid.isPresent) 'trunk_sid': trunkSid.value,
   if (emergencyStatus != null) 'emergency_status': emergencyStatus?.toJson(),
-  'emergency_address_sid': ?emergencyAddressSid,
-  'uri': ?uri,
+  if (emergencyAddressSid.isPresent) 'emergency_address_sid': emergencyAddressSid.value,
+  if (uri.isPresent) 'uri': uri.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'sid', 'account_sid', 'friendly_name', 'phone_number', 'voice_url', 'voice_method', 'voice_fallback_method', 'voice_fallback_url', 'voice_caller_id_lookup', 'date_created', 'date_updated', 'sms_fallback_method', 'sms_fallback_url', 'sms_method', 'sms_url', 'address_requirements', 'capabilities', 'status_callback', 'status_callback_method', 'api_version', 'sms_application_sid', 'voice_application_sid', 'trunk_sid', 'emergency_status', 'emergency_address_sid', 'uri'}.contains(key)); } 
-AccountAddressDependentPhoneNumber copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? friendlyName, String? Function()? phoneNumber, Uri? Function()? voiceUrl, AccountAddressDependentPhoneNumberVoiceMethod? Function()? voiceMethod, AccountAddressDependentPhoneNumberVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, bool? Function()? voiceCallerIdLookup, String? Function()? dateCreated, String? Function()? dateUpdated, AccountAddressDependentPhoneNumberSmsFallbackMethod? Function()? smsFallbackMethod, Uri? Function()? smsFallbackUrl, AccountAddressDependentPhoneNumberSmsMethod? Function()? smsMethod, Uri? Function()? smsUrl, DependentPhoneNumberEnumAddressRequirement Function()? addressRequirements, dynamic Function()? capabilities, Uri? Function()? statusCallback, AccountAddressDependentPhoneNumberStatusCallbackMethod? Function()? statusCallbackMethod, String? Function()? apiVersion, String? Function()? smsApplicationSid, String? Function()? voiceApplicationSid, String? Function()? trunkSid, DependentPhoneNumberEnumEmergencyStatus Function()? emergencyStatus, String? Function()? emergencyAddressSid, String? Function()? uri, }) { return AccountAddressDependentPhoneNumber(
-  sid: sid != null ? sid() : this.sid,
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
-  phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
-  voiceUrl: voiceUrl != null ? voiceUrl() : this.voiceUrl,
-  voiceMethod: voiceMethod != null ? voiceMethod() : this.voiceMethod,
-  voiceFallbackMethod: voiceFallbackMethod != null ? voiceFallbackMethod() : this.voiceFallbackMethod,
-  voiceFallbackUrl: voiceFallbackUrl != null ? voiceFallbackUrl() : this.voiceFallbackUrl,
-  voiceCallerIdLookup: voiceCallerIdLookup != null ? voiceCallerIdLookup() : this.voiceCallerIdLookup,
-  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  smsFallbackMethod: smsFallbackMethod != null ? smsFallbackMethod() : this.smsFallbackMethod,
-  smsFallbackUrl: smsFallbackUrl != null ? smsFallbackUrl() : this.smsFallbackUrl,
-  smsMethod: smsMethod != null ? smsMethod() : this.smsMethod,
-  smsUrl: smsUrl != null ? smsUrl() : this.smsUrl,
+AccountAddressDependentPhoneNumber copyWith({Omittable<String?>? sid, Omittable<String?>? accountSid, Omittable<String?>? friendlyName, Omittable<String?>? phoneNumber, Omittable<Uri?>? voiceUrl, Omittable<AccountAddressDependentPhoneNumberVoiceMethod?>? voiceMethod, Omittable<AccountAddressDependentPhoneNumberVoiceFallbackMethod?>? voiceFallbackMethod, Omittable<Uri?>? voiceFallbackUrl, Omittable<bool?>? voiceCallerIdLookup, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<AccountAddressDependentPhoneNumberSmsFallbackMethod?>? smsFallbackMethod, Omittable<Uri?>? smsFallbackUrl, Omittable<AccountAddressDependentPhoneNumberSmsMethod?>? smsMethod, Omittable<Uri?>? smsUrl, DependentPhoneNumberEnumAddressRequirement? Function()? addressRequirements, Omittable<dynamic>? capabilities, Omittable<Uri?>? statusCallback, Omittable<AccountAddressDependentPhoneNumberStatusCallbackMethod?>? statusCallbackMethod, Omittable<String?>? apiVersion, Omittable<String?>? smsApplicationSid, Omittable<String?>? voiceApplicationSid, Omittable<String?>? trunkSid, DependentPhoneNumberEnumEmergencyStatus? Function()? emergencyStatus, Omittable<String?>? emergencyAddressSid, Omittable<String?>? uri, }) { return AccountAddressDependentPhoneNumber(
+  sid: sid ?? this.sid,
+  accountSid: accountSid ?? this.accountSid,
+  friendlyName: friendlyName ?? this.friendlyName,
+  phoneNumber: phoneNumber ?? this.phoneNumber,
+  voiceUrl: voiceUrl ?? this.voiceUrl,
+  voiceMethod: voiceMethod ?? this.voiceMethod,
+  voiceFallbackMethod: voiceFallbackMethod ?? this.voiceFallbackMethod,
+  voiceFallbackUrl: voiceFallbackUrl ?? this.voiceFallbackUrl,
+  voiceCallerIdLookup: voiceCallerIdLookup ?? this.voiceCallerIdLookup,
+  dateCreated: dateCreated ?? this.dateCreated,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  smsFallbackMethod: smsFallbackMethod ?? this.smsFallbackMethod,
+  smsFallbackUrl: smsFallbackUrl ?? this.smsFallbackUrl,
+  smsMethod: smsMethod ?? this.smsMethod,
+  smsUrl: smsUrl ?? this.smsUrl,
   addressRequirements: addressRequirements != null ? addressRequirements() : this.addressRequirements,
-  capabilities: capabilities != null ? capabilities() : this.capabilities,
-  statusCallback: statusCallback != null ? statusCallback() : this.statusCallback,
-  statusCallbackMethod: statusCallbackMethod != null ? statusCallbackMethod() : this.statusCallbackMethod,
-  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
-  smsApplicationSid: smsApplicationSid != null ? smsApplicationSid() : this.smsApplicationSid,
-  voiceApplicationSid: voiceApplicationSid != null ? voiceApplicationSid() : this.voiceApplicationSid,
-  trunkSid: trunkSid != null ? trunkSid() : this.trunkSid,
+  capabilities: capabilities ?? this.capabilities,
+  statusCallback: statusCallback ?? this.statusCallback,
+  statusCallbackMethod: statusCallbackMethod ?? this.statusCallbackMethod,
+  apiVersion: apiVersion ?? this.apiVersion,
+  smsApplicationSid: smsApplicationSid ?? this.smsApplicationSid,
+  voiceApplicationSid: voiceApplicationSid ?? this.voiceApplicationSid,
+  trunkSid: trunkSid ?? this.trunkSid,
   emergencyStatus: emergencyStatus != null ? emergencyStatus() : this.emergencyStatus,
-  emergencyAddressSid: emergencyAddressSid != null ? emergencyAddressSid() : this.emergencyAddressSid,
-  uri: uri != null ? uri() : this.uri,
+  emergencyAddressSid: emergencyAddressSid ?? this.emergencyAddressSid,
+  uri: uri ?? this.uri,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountAddressDependentPhoneNumber &&

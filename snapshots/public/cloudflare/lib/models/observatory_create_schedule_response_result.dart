@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (test != null) 'test': test?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'schedule', 'test'}.contains(key)); } 
-ObservatoryCreateScheduleResponseResult copyWith({ObservatorySchedule Function()? schedule, ObservatoryPageTest Function()? test, }) { return ObservatoryCreateScheduleResponseResult(
+ObservatoryCreateScheduleResponseResult copyWith({ObservatorySchedule? Function()? schedule, ObservatoryPageTest? Function()? test, }) { return ObservatoryCreateScheduleResponseResult(
   schedule: schedule != null ? schedule() : this.schedule,
   test: test != null ? test() : this.test,
 ); } 

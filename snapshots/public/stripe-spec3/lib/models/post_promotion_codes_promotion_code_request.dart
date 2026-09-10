@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (restrictions != null) 'restrictions': restrictions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'expand', 'metadata', 'restrictions'}.contains(key)); } 
-PostPromotionCodesPromotionCodeRequest copyWith({bool Function()? active, List<String> Function()? expand, PostPromotionCodesPromotionCodeRequestMetadata Function()? metadata, PostPromotionCodesPromotionCodeRequestRestrictions Function()? restrictions, }) { return PostPromotionCodesPromotionCodeRequest(
+PostPromotionCodesPromotionCodeRequest copyWith({bool? Function()? active, List<String>? Function()? expand, PostPromotionCodesPromotionCodeRequestMetadata? Function()? metadata, PostPromotionCodesPromotionCodeRequestRestrictions? Function()? restrictions, }) { return PostPromotionCodesPromotionCodeRequest(
   active: active != null ? active() : this.active,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,

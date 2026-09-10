@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('secretName') && json['secretName'] is String &&
       json.containsKey('shareName') && json['shareName'] is String; } 
-AzureFilePersistentVolumeSource copyWith({bool Function()? readOnly, String? secretName, String Function()? secretNamespace, String? shareName, }) { return AzureFilePersistentVolumeSource(
+AzureFilePersistentVolumeSource copyWith({bool? Function()? readOnly, String? secretName, String? Function()? secretNamespace, String? shareName, }) { return AzureFilePersistentVolumeSource(
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretName: secretName ?? this.secretName,
   secretNamespace: secretNamespace != null ? secretNamespace() : this.secretNamespace,

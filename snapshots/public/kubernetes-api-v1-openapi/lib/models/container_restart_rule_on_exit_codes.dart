@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'values': ?values,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') && json['operator'] is String; } 
-ContainerRestartRuleOnExitCodes copyWith({String? $operator, List<int> Function()? values, }) { return ContainerRestartRuleOnExitCodes(
+ContainerRestartRuleOnExitCodes copyWith({String? $operator, List<int>? Function()? values, }) { return ContainerRestartRuleOnExitCodes(
   $operator: $operator ?? this.$operator,
   values: values != null ? values() : this.values,
 ); } 

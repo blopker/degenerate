@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (tracing != null) 'tracing': tracing?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-WorkflowParam copyWith({String? id, String Function()? version, Map<String, dynamic> Function()? stateVariables, WorkflowTracingParam Function()? tracing, }) { return WorkflowParam(
+WorkflowParam copyWith({String? id, String? Function()? version, Map<String, dynamic>? Function()? stateVariables, WorkflowTracingParam? Function()? tracing, }) { return WorkflowParam(
   id: id ?? this.id,
   version: version != null ? version() : this.version,
   stateVariables: stateVariables != null ? stateVariables() : this.stateVariables,

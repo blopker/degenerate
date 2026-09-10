@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   'slug': slug,
   'start': start.toIso8601String(),
   'link': link,
-  'title': ?title,
+  'title': title,
   'seats_left': seatsLeft,
   'duration': duration,
   'meeting_provider': meetingProvider.toJson(),
@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('start') && json['start'] is String &&
       json.containsKey('link') && json['link'] is String &&
-      json.containsKey('title') && json['title'] is String &&
+      json.containsKey('title') && (json['title'] == null || json['title'] is String) &&
       json.containsKey('seats_left') && json['seats_left'] is num &&
       json.containsKey('duration') && json['duration'] is num &&
       json.containsKey('meeting_provider') &&

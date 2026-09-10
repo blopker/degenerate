@@ -199,6 +199,62 @@ void main() {
       });
     });
 
+    group('required nullable fields always emit their key in toJson', () {
+      late String source;
+
+      setUp(() {
+        const model = IrObject(
+          'Account',
+          [
+            IrField(
+              'gravatarId',
+              SpecString('gravatar_id'),
+              IrPrimitive(PrimitiveKind.string, isNullable: true),
+              isRequired: true,
+            ),
+            IrField(
+              'ts',
+              SpecString('ts'),
+              IrPrimitive(PrimitiveKind.dateTime, isNullable: true),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['gravatar_id', 'ts'],
+        );
+        final specs = const ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        source = emitRaw(library);
+      });
+
+      test('identity value emits key unconditionally with explicit null', () {
+        expect(source, contains("'gravatar_id': gravatarId,"));
+        expect(source, isNot(contains('?gravatarId')));
+      });
+
+      test('transformed value emits key unconditionally via null-aware call', () {
+        expect(source, contains("'ts': ts?.toIso8601String(),"));
+        expect(source, isNot(contains('if (ts != null)')));
+      });
+
+      test('canParse accepts explicit null for nullable required fields', () {
+        expect(
+          source,
+          contains(
+            "json.containsKey('gravatar_id') && "
+            "(json['gravatar_id'] == null || json['gravatar_id'] is String)",
+          ),
+        );
+        expect(
+          source,
+          contains("(json['ts'] == null || json['ts'] is String)"),
+        );
+      });
+
+      test('is valid Dart', () {
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
     group('canParse checks known keys when no required fields', () {
       late String source;
 
@@ -4242,6 +4298,286 @@ void main() {
         ),
       );
       expect(() => emitRaw(library), returnsNormally);
+    });
+  });
+
+  group('ModelEmitter - omittable fields', () {
+    // Optional+nullable (wrapped), optional non-nullable (mode-dependent),
+    // required nullable (never wrapped), optional with default (never
+    // wrapped).
+    const model = IrObject(
+      'UserPatch',
+      [
+        IrField(
+          'displayName',
+          SpecString('display_name'),
+          IrPrimitive(PrimitiveKind.string, isNullable: true),
+        ),
+        IrField(
+          'tags',
+          SpecString('tags'),
+          IrList(IrPrimitive(PrimitiveKind.string), isNullable: true),
+        ),
+        IrField(
+          'address',
+          SpecString('address'),
+          IrTypeRef('Address', isNullable: true),
+        ),
+        IrField('email', SpecString('email'), IrPrimitive(PrimitiveKind.string)),
+        IrField(
+          'mode',
+          SpecString('mode'),
+          IrPrimitive(PrimitiveKind.string, isNullable: true),
+          isRequired: true,
+        ),
+        IrField(
+          'role',
+          SpecString('role'),
+          IrPrimitive(PrimitiveKind.string),
+          defaultValue: 'user',
+        ),
+      ],
+      requiredFields: ['mode'],
+    );
+
+    String emitWith(OmittableMode mode) {
+      final specs = ModelEmitter(model, omittable: mode).emit();
+      return emitRaw(Library((b) => b..body.addAll(specs)));
+    }
+
+    group('nullable mode (default)', () {
+      late String source;
+
+      setUpAll(() => source = emitWith(OmittableMode.nullableOnly));
+
+      test('optional nullable fields are Omittable', () {
+        expect(source, contains('final Omittable<String?> displayName;'));
+        expect(source, contains('final Omittable<List<String>?> tags;'));
+        expect(source, contains('final Omittable<Address?> address;'));
+      });
+
+      test('constructor defaults wrapped fields to absent', () {
+        expect(
+          source,
+          contains('this.displayName = const Omittable.absent()'),
+        );
+      });
+
+      test('toJson emits wrapped fields only when present', () {
+        expect(
+          source,
+          contains("if (displayName.isPresent) 'display_name': displayName.value,"),
+        );
+        expect(source, contains("if (tags.isPresent) 'tags': tags.value,"));
+        expect(
+          source,
+          contains("if (address.isPresent) 'address': address.value?.toJson(),"),
+        );
+      });
+
+      test('fromJson gates on key presence', () {
+        expect(
+          source,
+          contains(
+            "displayName: json.containsKey('display_name') ? "
+            "Omittable(json['display_name'] as String?) : "
+            'const Omittable.absent(),',
+          ),
+        );
+      });
+
+      test('copyWith takes the wrapper instead of a thunk', () {
+        expect(source, contains('Omittable<String?>? displayName'));
+        expect(source, contains('displayName ?? this.displayName'));
+        expect(source, isNot(contains('String? Function()? displayName')));
+      });
+
+      test('equality and hashCode handle wrapped collections', () {
+        expect(source, contains('tags.isPresent == other.tags.isPresent'));
+        expect(source, contains('listEquals(tags.value, other.tags.value)'));
+        expect(source, contains('Object.hashAll(tags.value ?? const [])'));
+      });
+
+      test('optional non-nullable field stays plain', () {
+        expect(source, contains('final String? email;'));
+        expect(source, contains("'email': ?email,"));
+      });
+
+      test('copyWith thunk for optional field can return null to unset it', () {
+        // email is Dart-nullable (String?) because it's optional, so the
+        // thunk must be able to return null even though the spec type is
+        // non-nullable.
+        expect(source, contains('String? Function()? email'));
+      });
+
+      test('copyWith thunk for defaulted field stays non-nullable', () {
+        expect(source, contains('String Function()? role'));
+        expect(source, isNot(contains('String? Function()? role')));
+      });
+
+      test('required nullable field stays plain and always serializes', () {
+        expect(source, contains('final String? mode;'));
+        expect(source, contains("'mode': mode,"));
+      });
+
+      test('defaulted field stays plain', () {
+        expect(source, contains('final String role;'));
+        expect(source, isNot(contains('Omittable<String?> role')));
+      });
+
+      test('is valid Dart', () {
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
+    group('all mode', () {
+      late String source;
+
+      setUpAll(() => source = emitWith(OmittableMode.all));
+
+      test('optional non-nullable field is wrapped with nullable inner type', () {
+        expect(source, contains('final Omittable<String?> email;'));
+        expect(source, contains("if (email.isPresent) 'email': email.value,"));
+      });
+
+      test('required and defaulted fields still stay plain', () {
+        expect(source, contains('final String? mode;'));
+        expect(source, contains('final String role;'));
+      });
+
+      test('is valid Dart', () {
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+
+    group('off mode', () {
+      late String source;
+
+      setUpAll(() => source = emitWith(OmittableMode.off));
+
+      test('no Omittable anywhere; nulls serialize as omitted', () {
+        expect(source, isNot(contains('Omittable')));
+        expect(source, contains('final String? displayName;'));
+        expect(source, contains("'display_name': ?displayName,"));
+      });
+
+      test('is valid Dart', () {
+        expect(() => _formatOrFail(source), returnsNormally);
+      });
+    });
+  });
+
+  group('ModelEmitter - bytes value equality', () {
+    late String source;
+
+    setUpAll(() {
+      const model = IrObject(
+        'Blob',
+        [
+          IrField(
+            'image',
+            SpecString('image'),
+            IrPrimitive(PrimitiveKind.bytes),
+            isRequired: true,
+          ),
+          IrField(
+            'thumb',
+            SpecString('thumb'),
+            IrPrimitive(PrimitiveKind.bytes, isNullable: true),
+          ),
+        ],
+        requiredFields: ['image'],
+      );
+      final specs = const ModelEmitter(model).emit();
+      source = emitRaw(Library((b) => b..body.addAll(specs)));
+    });
+
+    test('bytes compared by content, not identity', () {
+      expect(source, contains('listEquals(image, other.image)'));
+      expect(source, isNot(contains('image == other.image')));
+    });
+
+    test('wrapped bytes compared through presence and content', () {
+      expect(source, contains('thumb.isPresent == other.thumb.isPresent'));
+      expect(source, contains('listEquals(thumb.value, other.thumb.value)'));
+    });
+
+    test('hashCode hashes content', () {
+      expect(source, contains('Object.hashAll(image)'));
+      expect(source, contains('Object.hashAll(thumb.value ?? const [])'));
+    });
+
+    test('is valid Dart', () {
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+  });
+
+  group('ApiEmitter - omittable body fields', () {
+    // Optional+nullable text field: the model wraps it in Omittable, so
+    // multipart/form emission must read `.value`. Absent and explicit null
+    // are both skipped — these encodings cannot represent null.
+    const bodySchema = IrObject(
+      'UploadRequest',
+      [
+        IrField(
+          'file',
+          SpecString('file'),
+          IrPrimitive(PrimitiveKind.bytes),
+          isRequired: true,
+        ),
+        IrField(
+          'caption',
+          SpecString('caption'),
+          IrPrimitive(PrimitiveKind.string, isNullable: true),
+        ),
+      ],
+      requiredFields: ['file'],
+    );
+
+    IrApi apiWith(String mediaType) => IrApi('TestApi', [
+      IrOperation(
+        'upload',
+        'upload',
+        HttpMethod.post,
+        const SpecString('/upload'),
+        requestBody: IrRequestBody({
+          SpecString(mediaType): const IrMediaType(bodySchema),
+        }, isRequired: true),
+        responses: {200: const IrResponse()},
+      ),
+    ]);
+
+    test('multipart reads wrapped fields through .value', () {
+      final specs = ApiEmitter(apiWith('multipart/form-data')).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains(r'if (body.caption.value case final caption$?)'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('form-urlencoded reads wrapped fields through .value', () {
+      final specs = ApiEmitter(
+        apiWith('application/x-www-form-urlencoded'),
+      ).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+
+      expect(source, contains(r'if (body.caption.value case final caption$?)'));
+      expect(() => _formatOrFail(source), returnsNormally);
+    });
+
+    test('off mode keeps direct field access', () {
+      final specs = ApiEmitter(
+        apiWith('multipart/form-data'),
+        omittable: OmittableMode.off,
+      ).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains(r'if (body.caption case final caption$?)'));
     });
   });
 }

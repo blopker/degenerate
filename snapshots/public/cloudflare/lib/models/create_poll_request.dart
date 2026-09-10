@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('options') &&
       json.containsKey('question') && json['question'] is String; } 
-CreatePollRequest copyWith({bool Function()? anonymous, bool Function()? hideVotes, List<String>? options, String? question, }) { return CreatePollRequest(
+CreatePollRequest copyWith({bool? Function()? anonymous, bool? Function()? hideVotes, List<String>? options, String? question, }) { return CreatePollRequest(
   anonymous: anonymous != null ? anonymous() : this.anonymous,
   hideVotes: hideVotes != null ? hideVotes() : this.hideVotes,
   options: options ?? this.options,

@@ -58,7 +58,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country', 'description', 'id', 'type', 'value'}.contains(key)); } 
-IntelSchemasIpBelongsToRef copyWith({String Function()? country, String Function()? description, String Function()? id, IntelSchemasIpBelongsToRefType Function()? type, String Function()? value, }) { return IntelSchemasIpBelongsToRef(
+IntelSchemasIpBelongsToRef copyWith({String? Function()? country, String? Function()? description, String? Function()? id, IntelSchemasIpBelongsToRefType? Function()? type, String? Function()? value, }) { return IntelSchemasIpBelongsToRef(
   country: country != null ? country() : this.country,
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,

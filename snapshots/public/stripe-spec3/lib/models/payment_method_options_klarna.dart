@@ -57,11 +57,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodOptionsKlarnaSetupFutureUsage($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodOptionsKlarna {const PaymentMethodOptionsKlarna({this.captureMethod, this.preferredLocale, this.setupFutureUsage, });
+@immutable final class PaymentMethodOptionsKlarna {const PaymentMethodOptionsKlarna({this.captureMethod, this.preferredLocale = const Omittable.absent(), this.setupFutureUsage, });
 
 factory PaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsKlarna(
   captureMethod: json['capture_method'] != null ? PaymentMethodOptionsKlarnaCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  preferredLocale: json['preferred_locale'] as String?,
+  preferredLocale: json.containsKey('preferred_locale') ? Omittable(json['preferred_locale'] as String?) : const Omittable.absent(),
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsKlarnaSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 
@@ -69,7 +69,7 @@ factory PaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return 
 final PaymentMethodOptionsKlarnaCaptureMethod? captureMethod;
 
 /// Preferred locale of the Klarna checkout page that the customer is redirected to.
-final String? preferredLocale;
+final Omittable<String?> preferredLocale;
 
 /// Indicates that you intend to make future payments with this PaymentIntent's payment method.
 /// 
@@ -82,13 +82,13 @@ final PaymentMethodOptionsKlarnaSetupFutureUsage? setupFutureUsage;
 
 Map<String, dynamic> toJson() { return {
   if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
-  'preferred_locale': ?preferredLocale,
+  if (preferredLocale.isPresent) 'preferred_locale': preferredLocale.value,
   if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'preferred_locale', 'setup_future_usage'}.contains(key)); } 
-PaymentMethodOptionsKlarna copyWith({PaymentMethodOptionsKlarnaCaptureMethod Function()? captureMethod, String? Function()? preferredLocale, PaymentMethodOptionsKlarnaSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsKlarna(
+PaymentMethodOptionsKlarna copyWith({PaymentMethodOptionsKlarnaCaptureMethod? Function()? captureMethod, Omittable<String?>? preferredLocale, PaymentMethodOptionsKlarnaSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsKlarna(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
-  preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
+  preferredLocale: preferredLocale ?? this.preferredLocale,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

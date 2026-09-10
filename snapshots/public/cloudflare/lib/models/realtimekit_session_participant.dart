@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-RealtimekitSessionParticipant copyWith({String? createdAt, String Function()? email, String? id, String Function()? name, String Function()? picture, String? updatedAt, }) { return RealtimekitSessionParticipant(
+RealtimekitSessionParticipant copyWith({String? createdAt, String? Function()? email, String? id, String? Function()? name, String? Function()? picture, String? updatedAt, }) { return RealtimekitSessionParticipant(
   createdAt: createdAt ?? this.createdAt,
   email: email != null ? email() : this.email,
   id: id ?? this.id,

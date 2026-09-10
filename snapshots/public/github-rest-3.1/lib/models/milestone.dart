@@ -91,14 +91,14 @@ Map<String, dynamic> toJson() { return {
   'number': number,
   'state': state.toJson(),
   'title': title,
-  'description': ?description,
-  if (creator != null) 'creator': creator?.toJson(),
+  'description': description,
+  'creator': creator?.toJson(),
   'open_issues': openIssues,
   'closed_issues': closedIssues,
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (closedAt != null) 'closed_at': closedAt?.toIso8601String(),
-  if (dueOn != null) 'due_on': dueOn?.toIso8601String(),
+  'closed_at': closedAt?.toIso8601String(),
+  'due_on': dueOn?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
@@ -108,14 +108,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('state') &&
       json.containsKey('title') && json['title'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('creator') &&
       json.containsKey('open_issues') && json['open_issues'] is num &&
       json.containsKey('closed_issues') && json['closed_issues'] is num &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
-      json.containsKey('closed_at') && json['closed_at'] is String &&
-      json.containsKey('due_on') && json['due_on'] is String; } 
+      json.containsKey('closed_at') && (json['closed_at'] == null || json['closed_at'] is String) &&
+      json.containsKey('due_on') && (json['due_on'] == null || json['due_on'] is String); } 
 Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nodeId, int? number, MilestoneState? state, String? title, String? Function()? description, SimpleUser? Function()? creator, int? openIssues, int? closedIssues, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? closedAt, DateTime? Function()? dueOn, }) { return Milestone(
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (from != null) 'from': from?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'from'}.contains(key)); } 
-WebhookSecurityAndAnalysisChanges copyWith({WebhookSecurityAndAnalysisChangesFrom Function()? from}) { return WebhookSecurityAndAnalysisChanges(
+WebhookSecurityAndAnalysisChanges copyWith({WebhookSecurityAndAnalysisChangesFrom? Function()? from}) { return WebhookSecurityAndAnalysisChanges(
   from: from != null ? from() : this.from,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

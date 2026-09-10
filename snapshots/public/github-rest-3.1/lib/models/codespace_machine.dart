@@ -72,7 +72,7 @@ Map<String, dynamic> toJson() { return {
   'storage_in_bytes': storageInBytes,
   'memory_in_bytes': memoryInBytes,
   'cpus': cpus,
-  if (prebuildAvailability != null) 'prebuild_availability': prebuildAvailability?.toJson(),
+  'prebuild_availability': prebuildAvailability?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('display_name') && json['display_name'] is String &&

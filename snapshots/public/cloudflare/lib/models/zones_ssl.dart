@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesSsl copyWith({ZonesSslId Function()? id, ZonesSslValue2 Function()? value, }) { return ZonesSsl(
+ZonesSsl copyWith({ZonesSslId? Function()? id, ZonesSslValue2? Function()? value, }) { return ZonesSsl(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

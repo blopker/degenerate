@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-LoadBalancingMonitorGroupResponseCollection copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, List<LoadBalancingMonitorGroup>? result, LoadBalancingResultInfo Function()? resultInfo, }) { return LoadBalancingMonitorGroupResponseCollection(
+LoadBalancingMonitorGroupResponseCollection copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, List<LoadBalancingMonitorGroup>? result, LoadBalancingResultInfo? Function()? resultInfo, }) { return LoadBalancingMonitorGroupResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

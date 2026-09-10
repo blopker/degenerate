@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (dohJwtDuration != null) 'doh_jwt_duration': dohJwtDuration?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'doh_jwt_duration'}.contains(key)); } 
-ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult copyWith({AccessDohJwtDuration Function()? dohJwtDuration}) { return ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult(
+ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult copyWith({AccessDohJwtDuration? Function()? dohJwtDuration}) { return ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponseResult(
   dohJwtDuration: dohJwtDuration != null ? dohJwtDuration() : this.dohJwtDuration,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

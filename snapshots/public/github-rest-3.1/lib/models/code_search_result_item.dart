@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';import 'search_result_text_matches2.dart';/// Code Search Result Item
-@immutable final class CodeSearchResultItem {const CodeSearchResultItem({required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.repository, required this.score, this.fileSize, this.language, this.lastModifiedAt, this.lineNumbers, this.textMatches, });
+@immutable final class CodeSearchResultItem {const CodeSearchResultItem({required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.repository, required this.score, this.fileSize, this.language = const Omittable.absent(), this.lastModifiedAt, this.lineNumbers, this.textMatches, });
 
 factory CodeSearchResultItem.fromJson(Map<String, dynamic> json) { return CodeSearchResultItem(
   name: json['name'] as String,
@@ -13,7 +13,7 @@ factory CodeSearchResultItem.fromJson(Map<String, dynamic> json) { return CodeSe
   repository: MinimalRepository.fromJson(json['repository'] as Map<String, dynamic>),
   score: (json['score'] as num).toDouble(),
   fileSize: json['file_size'] != null ? (json['file_size'] as num).toInt() : null,
-  language: json['language'] as String?,
+  language: json.containsKey('language') ? Omittable(json['language'] as String?) : const Omittable.absent(),
   lastModifiedAt: json['last_modified_at'] != null ? DateTime.parse(json['last_modified_at'] as String) : null,
   lineNumbers: (json['line_numbers'] as List<dynamic>?)?.map((e) => e as String).toList(),
   textMatches: (json['text_matches'] as List<dynamic>?)?.map((e) => SearchResultTextMatches2.fromJson(e as Map<String, dynamic>)).toList(),
@@ -37,7 +37,7 @@ final double score;
 
 final int? fileSize;
 
-final String? language;
+final Omittable<String?> language;
 
 final DateTime? lastModifiedAt;
 
@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'score': score,
   'file_size': ?fileSize,
-  'language': ?language,
+  if (language.isPresent) 'language': language.value,
   if (lastModifiedAt != null) 'last_modified_at': lastModifiedAt?.toIso8601String(),
   'line_numbers': ?lineNumbers,
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
@@ -68,7 +68,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('repository') &&
       json.containsKey('score') && json['score'] is num; } 
-CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url, Uri? gitUrl, Uri? htmlUrl, MinimalRepository? repository, double? score, int Function()? fileSize, String? Function()? language, DateTime Function()? lastModifiedAt, List<String> Function()? lineNumbers, List<SearchResultTextMatches2> Function()? textMatches, }) { return CodeSearchResultItem(
+CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url, Uri? gitUrl, Uri? htmlUrl, MinimalRepository? repository, double? score, int? Function()? fileSize, Omittable<String?>? language, DateTime? Function()? lastModifiedAt, List<String>? Function()? lineNumbers, List<SearchResultTextMatches2>? Function()? textMatches, }) { return CodeSearchResultItem(
   name: name ?? this.name,
   path: path ?? this.path,
   sha: sha ?? this.sha,
@@ -78,7 +78,7 @@ CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url
   repository: repository ?? this.repository,
   score: score ?? this.score,
   fileSize: fileSize != null ? fileSize() : this.fileSize,
-  language: language != null ? language() : this.language,
+  language: language ?? this.language,
   lastModifiedAt: lastModifiedAt != null ? lastModifiedAt() : this.lastModifiedAt,
   lineNumbers: lineNumbers != null ? lineNumbers() : this.lineNumbers,
   textMatches: textMatches != null ? textMatches() : this.textMatches,

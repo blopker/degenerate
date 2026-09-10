@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('options') &&
       json.containsKey('question') && json['question'] is String; } 
-RealtimekitPoll copyWith({bool Function()? anonymous, String Function()? createdBy, bool Function()? hideVotes, String? id, List<RealtimekitPollOptions>? options, String? question, List<String> Function()? voted, }) { return RealtimekitPoll(
+RealtimekitPoll copyWith({bool? Function()? anonymous, String? Function()? createdBy, bool? Function()? hideVotes, String? id, List<RealtimekitPollOptions>? options, String? question, List<String>? Function()? voted, }) { return RealtimekitPoll(
   anonymous: anonymous != null ? anonymous() : this.anonymous,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
   hideVotes: hideVotes != null ? hideVotes() : this.hideVotes,

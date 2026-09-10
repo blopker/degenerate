@@ -63,7 +63,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('docum
       json.containsKey('requestId') && json['requestId'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('wallTime') && json['wallTime'] is num; } 
-UrlscannerGetScanResponse2DataRequestsRequest copyWith({String? documentUrl, String Function()? frameId, bool? hasUserGesture, UrlscannerGetScanResponse2DataRequestsRequestInitiator? initiator, String Function()? loaderId, bool Function()? primaryRequest, bool? redirectHasExtraInfo, UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse Function()? redirectResponse, UrlscannerGetScanResponse2DataRequestsRequestRequest? request, String? requestId, String? type, double? wallTime, }) { return UrlscannerGetScanResponse2DataRequestsRequest(
+UrlscannerGetScanResponse2DataRequestsRequest copyWith({String? documentUrl, String? Function()? frameId, bool? hasUserGesture, UrlscannerGetScanResponse2DataRequestsRequestInitiator? initiator, String? Function()? loaderId, bool? Function()? primaryRequest, bool? redirectHasExtraInfo, UrlscannerGetScanResponse2DataRequestsRequestRedirectResponse? Function()? redirectResponse, UrlscannerGetScanResponse2DataRequestsRequestRequest? request, String? requestId, String? type, double? wallTime, }) { return UrlscannerGetScanResponse2DataRequestsRequest(
   documentUrl: documentUrl ?? this.documentUrl,
   frameId: frameId != null ? frameId() : this.frameId,
   hasUserGesture: hasUserGesture ?? this.hasUserGesture,

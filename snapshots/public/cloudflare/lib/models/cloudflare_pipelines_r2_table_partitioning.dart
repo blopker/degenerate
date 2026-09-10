@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'time_pattern': ?timePattern,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'time_pattern'}.contains(key)); } 
-CloudflarePipelinesR2TablePartitioning copyWith({String Function()? timePattern}) { return CloudflarePipelinesR2TablePartitioning(
+CloudflarePipelinesR2TablePartitioning copyWith({String? Function()? timePattern}) { return CloudflarePipelinesR2TablePartitioning(
   timePattern: timePattern != null ? timePattern() : this.timePattern,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

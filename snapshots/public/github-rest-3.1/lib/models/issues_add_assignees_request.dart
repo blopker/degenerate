@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'assignees': ?assignees,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'assignees'}.contains(key)); } 
-IssuesAddAssigneesRequest copyWith({List<String> Function()? assignees}) { return IssuesAddAssigneesRequest(
+IssuesAddAssigneesRequest copyWith({List<String>? Function()? assignees}) { return IssuesAddAssigneesRequest(
   assignees: assignees != null ? assignees() : this.assignees,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

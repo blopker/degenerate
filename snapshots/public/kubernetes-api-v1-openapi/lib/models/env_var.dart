@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (valueFrom != null) 'valueFrom': valueFrom?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-EnvVar copyWith({String? name, String Function()? value, EnvVarSource Function()? valueFrom, }) { return EnvVar(
+EnvVar copyWith({String? name, String? Function()? value, EnvVarSource? Function()? valueFrom, }) { return EnvVar(
   name: name ?? this.name,
   value: value != null ? value() : this.value,
   valueFrom: valueFrom != null ? valueFrom() : this.valueFrom,

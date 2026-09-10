@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'data', 'success'}.contains(key)); } 
-FetchAllLivestreamsResponse copyWith({FetchAllLivestreamsResponseData Function()? data, bool Function()? success, }) { return FetchAllLivestreamsResponse(
+FetchAllLivestreamsResponse copyWith({FetchAllLivestreamsResponseData? Function()? data, bool? Function()? success, }) { return FetchAllLivestreamsResponse(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
 ); } 

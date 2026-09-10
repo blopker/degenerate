@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('query_json') && json['query_json'] is String &&
       json.containsKey('rule_enabled') && json['rule_enabled'] is bool; } 
-PostEventQueryCreateRequest copyWith({bool? alertEnabled, bool? alertRollupEnabled, String? name, String? queryJson, bool? ruleEnabled, String Function()? ruleScope, }) { return PostEventQueryCreateRequest(
+PostEventQueryCreateRequest copyWith({bool? alertEnabled, bool? alertRollupEnabled, String? name, String? queryJson, bool? ruleEnabled, String? Function()? ruleScope, }) { return PostEventQueryCreateRequest(
   alertEnabled: alertEnabled ?? this.alertEnabled,
   alertRollupEnabled: alertRollupEnabled ?? this.alertRollupEnabled,
   name: name ?? this.name,

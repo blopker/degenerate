@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('users') &&
       json.containsKey('teams'); } 
-ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances copyWith({List<SimpleUser>? users, List<Team>? teams, List<Integration> Function()? apps, }) { return ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances(
+ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances copyWith({List<SimpleUser>? users, List<Team>? teams, List<Integration>? Function()? apps, }) { return ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances(
   users: users ?? this.users,
   teams: teams ?? this.teams,
   apps: apps != null ? apps() : this.apps,

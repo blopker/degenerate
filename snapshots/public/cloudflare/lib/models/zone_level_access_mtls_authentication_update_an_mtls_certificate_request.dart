@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('associated_hostnames'); } 
-ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest copyWith({List<String>? associatedHostnames, AccessCertificatesComponentsSchemasName2 Function()? name, }) { return ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest(
+ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest copyWith({List<String>? associatedHostnames, AccessCertificatesComponentsSchemasName2? Function()? name, }) { return ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest(
   associatedHostnames: associatedHostnames ?? this.associatedHostnames,
   name: name != null ? name() : this.name,
 ); } 

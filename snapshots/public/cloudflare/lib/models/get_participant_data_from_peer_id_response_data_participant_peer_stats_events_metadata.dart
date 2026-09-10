@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (connectionInfo != null) 'connection_info': connectionInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'connection_info'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadata copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfo Function()? connectionInfo}) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadata(
+GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadata copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfo? Function()? connectionInfo}) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadata(
   connectionInfo: connectionInfo != null ? connectionInfo() : this.connectionInfo,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

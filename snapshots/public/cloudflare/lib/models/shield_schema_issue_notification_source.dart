@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'locations': ?locations,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'locations'}.contains(key)); } 
-ShieldSchemaIssueNotificationSource copyWith({List<String> Function()? locations}) { return ShieldSchemaIssueNotificationSource(
+ShieldSchemaIssueNotificationSource copyWith({List<String>? Function()? locations}) { return ShieldSchemaIssueNotificationSource(
   locations: locations != null ? locations() : this.locations,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

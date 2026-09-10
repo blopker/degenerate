@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('server_label') && json['server_label'] is String &&
       json.containsKey('tools'); } 
-RealtimeMcpListTools copyWith({String? type, String Function()? id, String? serverLabel, List<McpListToolsTool>? tools, }) { return RealtimeMcpListTools(
+RealtimeMcpListTools copyWith({String? type, String? Function()? id, String? serverLabel, List<McpListToolsTool>? tools, }) { return RealtimeMcpListTools(
   type: type ?? this.type,
   id: id != null ? id() : this.id,
   serverLabel: serverLabel ?? this.serverLabel,

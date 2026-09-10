@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   if (grant != null) 'grant': grant?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'dynamic_client_registration', 'enabled', 'grant'}.contains(key)); } 
-AccessOauthConfiguration copyWith({AccessOauthConfigurationDynamicClientRegistration Function()? dynamicClientRegistration, bool Function()? enabled, AccessOauthConfigurationGrant Function()? grant, }) { return AccessOauthConfiguration(
+AccessOauthConfiguration copyWith({AccessOauthConfigurationDynamicClientRegistration? Function()? dynamicClientRegistration, bool Function()? enabled, AccessOauthConfigurationGrant? Function()? grant, }) { return AccessOauthConfiguration(
   dynamicClientRegistration: dynamicClientRegistration != null ? dynamicClientRegistration() : this.dynamicClientRegistration,
   enabled: enabled != null ? enabled() : this.enabled,
   grant: grant != null ? grant() : this.grant,

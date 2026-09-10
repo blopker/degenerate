@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'lte': ?lte,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'gt', 'gte', 'lt', 'lte'}.contains(key)); } 
-RangeQuerySpecs33 copyWith({int Function()? gt, int Function()? gte, int Function()? lt, int Function()? lte, }) { return RangeQuerySpecs33(
+RangeQuerySpecs33 copyWith({int? Function()? gt, int? Function()? gte, int? Function()? lt, int? Function()? lte, }) { return RangeQuerySpecs33(
   gt: gt != null ? gt() : this.gt,
   gte: gte != null ? gte() : this.gte,
   lt: lt != null ? lt() : this.lt,

@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
   if (waitTime != null) 'wait_time': waitTime?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_ttl', 'packet_type', 'packets_per_ttl', 'port', 'wait_time'}.contains(key)); } 
-MagicTransitOptions copyWith({MagicTransitMaxTtl Function()? maxTtl, MagicTransitPacketType Function()? packetType, MagicTransitPacketsPerTtl Function()? packetsPerTtl, MagicTransitPort Function()? port, MagicTransitWaitTime Function()? waitTime, }) { return MagicTransitOptions(
+MagicTransitOptions copyWith({MagicTransitMaxTtl? Function()? maxTtl, MagicTransitPacketType? Function()? packetType, MagicTransitPacketsPerTtl? Function()? packetsPerTtl, MagicTransitPort? Function()? port, MagicTransitWaitTime? Function()? waitTime, }) { return MagicTransitOptions(
   maxTtl: maxTtl != null ? maxTtl() : this.maxTtl,
   packetType: packetType != null ? packetType() : this.packetType,
   packetsPerTtl: packetsPerTtl != null ? packetsPerTtl() : this.packetsPerTtl,

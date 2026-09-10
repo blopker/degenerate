@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (builds != null) 'builds': builds?.map((k, v) => MapEntry(k, v.toJson())),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'builds'}.contains(key)); } 
-BuildsBuildsByVersionResponse copyWith({Map<String, BuildsBuildResponse> Function()? builds}) { return BuildsBuildsByVersionResponse(
+BuildsBuildsByVersionResponse copyWith({Map<String, BuildsBuildResponse>? Function()? builds}) { return BuildsBuildsByVersionResponse(
   builds: builds != null ? builds() : this.builds,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

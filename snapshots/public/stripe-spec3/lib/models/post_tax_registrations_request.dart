@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('active_from') &&
       json.containsKey('country') && json['country'] is String &&
       json.containsKey('country_options'); } 
-PostTaxRegistrationsRequest copyWith({PostTaxRegistrationsRequestActiveFrom? activeFrom, String? country, PostTaxRegistrationsRequestCountryOptions? countryOptions, List<String> Function()? expand, int Function()? expiresAt, }) { return PostTaxRegistrationsRequest(
+PostTaxRegistrationsRequest copyWith({PostTaxRegistrationsRequestActiveFrom? activeFrom, String? country, PostTaxRegistrationsRequestCountryOptions? countryOptions, List<String>? Function()? expand, int? Function()? expiresAt, }) { return PostTaxRegistrationsRequest(
   activeFrom: activeFrom ?? this.activeFrom,
   country: country ?? this.country,
   countryOptions: countryOptions ?? this.countryOptions,

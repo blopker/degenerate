@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'promotion_code': ?promotionCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'coupon', 'promotion_code'}.contains(key)); } 
-PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts copyWith({String Function()? coupon, String Function()? promotionCode, }) { return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts(
+PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts copyWith({String? Function()? coupon, String? Function()? promotionCode, }) { return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts(
   coupon: coupon != null ? coupon() : this.coupon,
   promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,
 ); } 

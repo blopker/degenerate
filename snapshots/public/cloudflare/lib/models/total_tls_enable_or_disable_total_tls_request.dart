@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled'); } 
-TotalTlsEnableOrDisableTotalTlsRequest copyWith({TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority Function()? certificateAuthority, TlsCertificatesAndHostnamesComponentsSchemasEnabled? enabled, }) { return TotalTlsEnableOrDisableTotalTlsRequest(
+TotalTlsEnableOrDisableTotalTlsRequest copyWith({TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority? Function()? certificateAuthority, TlsCertificatesAndHostnamesComponentsSchemasEnabled? enabled, }) { return TotalTlsEnableOrDisableTotalTlsRequest(
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   enabled: enabled ?? this.enabled,
 ); } 

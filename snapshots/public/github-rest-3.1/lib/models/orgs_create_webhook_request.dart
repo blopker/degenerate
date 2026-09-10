@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('config'); } 
-OrgsCreateWebhookRequest copyWith({String? name, OrgsCreateWebhookRequestConfig? config, List<String> Function()? events, bool Function()? active, }) { return OrgsCreateWebhookRequest(
+OrgsCreateWebhookRequest copyWith({String? name, OrgsCreateWebhookRequestConfig? config, List<String>? Function()? events, bool Function()? active, }) { return OrgsCreateWebhookRequest(
   name: name ?? this.name,
   config: config ?? this.config,
   events: events != null ? events() : this.events,

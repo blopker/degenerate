@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (template != null) 'template': template?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'minReadySeconds', 'replicas', 'selector', 'template'}.contains(key)); } 
-ReplicationControllerSpec copyWith({int Function()? minReadySeconds, int Function()? replicas, Map<String, String> Function()? selector, PodTemplateSpec Function()? template, }) { return ReplicationControllerSpec(
+ReplicationControllerSpec copyWith({int Function()? minReadySeconds, int Function()? replicas, Map<String, String>? Function()? selector, PodTemplateSpec? Function()? template, }) { return ReplicationControllerSpec(
   minReadySeconds: minReadySeconds != null ? minReadySeconds() : this.minReadySeconds,
   replicas: replicas != null ? replicas() : this.replicas,
   selector: selector != null ? selector() : this.selector,

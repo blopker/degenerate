@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prices') &&
       json.containsKey('product') && json['product'] is String; } 
-PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1 copyWith({PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity Function()? adjustableQuantity, List<String>? prices, String? product, }) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1(
+PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1 copyWith({PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1AdjustableQuantity? Function()? adjustableQuantity, List<String>? prices, String? product, }) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateProductsVariant1(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   prices: prices ?? this.prices,
   product: product ?? this.product,

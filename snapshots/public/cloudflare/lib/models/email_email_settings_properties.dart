@@ -126,7 +126,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') &&
       json.containsKey('id') &&
       json.containsKey('name'); } 
-EmailEmailSettingsProperties copyWith({EmailEmailSettingCreated Function()? created, EmailEmailSettingEnabled? enabled, EmailEmailSettingIdentifier? id, EmailEmailSettingModified Function()? modified, EmailEmailSettingName? name, EmailEmailSettingSkipWizard Function()? skipWizard, EmailEmailSettingStatus Function()? status, EmailEmailSettingTag Function()? tag, }) { return EmailEmailSettingsProperties(
+EmailEmailSettingsProperties copyWith({EmailEmailSettingCreated? Function()? created, EmailEmailSettingEnabled? enabled, EmailEmailSettingIdentifier? id, EmailEmailSettingModified? Function()? modified, EmailEmailSettingName? name, EmailEmailSettingSkipWizard? Function()? skipWizard, EmailEmailSettingStatus? Function()? status, EmailEmailSettingTag? Function()? tag, }) { return EmailEmailSettingsProperties(
   created: created != null ? created() : this.created,
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,

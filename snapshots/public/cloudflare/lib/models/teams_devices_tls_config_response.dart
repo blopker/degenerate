@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'tls_sockaddr': tlsSockaddr,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tls_sockaddr') && json['tls_sockaddr'] is String; } 
-TeamsDevicesTlsConfigResponse copyWith({String Function()? sha256, String? tlsSockaddr, }) { return TeamsDevicesTlsConfigResponse(
+TeamsDevicesTlsConfigResponse copyWith({String? Function()? sha256, String? tlsSockaddr, }) { return TeamsDevicesTlsConfigResponse(
   sha256: sha256 != null ? sha256() : this.sha256,
   tlsSockaddr: tlsSockaddr ?? this.tlsSockaddr,
 ); } 

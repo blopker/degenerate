@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'reference_prefix': ?referencePrefix,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_prefix'}.contains(key)); } 
-CheckoutPaymentMethodOptionsMandateOptionsBacsDebit copyWith({String Function()? referencePrefix}) { return CheckoutPaymentMethodOptionsMandateOptionsBacsDebit(
+CheckoutPaymentMethodOptionsMandateOptionsBacsDebit copyWith({String? Function()? referencePrefix}) { return CheckoutPaymentMethodOptionsMandateOptionsBacsDebit(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

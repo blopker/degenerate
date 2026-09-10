@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'uncached': ?uncached,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'all', 'cached', 'country', 'http_status', 'uncached'}.contains(key)); } 
-RequestsByColo copyWith({int Function()? all, int Function()? cached, Map<String, dynamic> Function()? country, Map<String, dynamic> Function()? httpStatus, int Function()? uncached, }) { return RequestsByColo(
+RequestsByColo copyWith({int? Function()? all, int? Function()? cached, Map<String, dynamic>? Function()? country, Map<String, dynamic>? Function()? httpStatus, int? Function()? uncached, }) { return RequestsByColo(
   all: all != null ? all() : this.all,
   cached: cached != null ? cached() : this.cached,
   country: country != null ? country() : this.country,

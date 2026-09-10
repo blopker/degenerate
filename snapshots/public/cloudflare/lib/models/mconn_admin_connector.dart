@@ -93,7 +93,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('notes') && json['notes'] is String &&
       json.containsKey('timezone') && json['timezone'] is String &&
       json.containsKey('upgrade_asap') && json['upgrade_asap'] is bool; } 
-MconnAdminConnector copyWith({MconnAccountId? accountId, bool? activated, String Function()? cloudflaredTunnelId, String Function()? cloudflaredTunnelToken, MconnUuid Function()? cohortId, String Function()? desiredVersion, MconnUuid Function()? deviceId, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String Function()? lastHeartbeat, String Function()? lastSeenVersion, String? lastUpdated, String? notes, String? timezone, bool? upgradeAsap, }) { return MconnAdminConnector(
+MconnAdminConnector copyWith({MconnAccountId? accountId, bool? activated, String? Function()? cloudflaredTunnelId, String? Function()? cloudflaredTunnelToken, MconnUuid? Function()? cohortId, String? Function()? desiredVersion, MconnUuid? Function()? deviceId, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? lastUpdated, String? notes, String? timezone, bool? upgradeAsap, }) { return MconnAdminConnector(
   accountId: accountId ?? this.accountId,
   activated: activated ?? this.activated,
   cloudflaredTunnelId: cloudflaredTunnelId != null ? cloudflaredTunnelId() : this.cloudflaredTunnelId,

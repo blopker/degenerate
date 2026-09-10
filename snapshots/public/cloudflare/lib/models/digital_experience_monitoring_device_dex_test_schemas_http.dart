@@ -73,7 +73,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('enabled') &&
       json.containsKey('interval') &&
       json.containsKey('name'); } 
-DigitalExperienceMonitoringDeviceDexTestSchemasHttp copyWith({DigitalExperienceMonitoringDeviceDexTestSchemasData? data, DigitalExperienceMonitoringDeviceDexTestSchemasDescription Function()? description, DigitalExperienceMonitoringDeviceDexTestSchemasEnabled? enabled, DigitalExperienceMonitoringDeviceDexTestSchemasInterval? interval, DigitalExperienceMonitoringDeviceDexTestSchemasName? name, List<DigitalExperienceMonitoringDexTargetPolicy> Function()? targetPolicies, bool Function()? targeted, DigitalExperienceMonitoringSchemasTestId Function()? testId, }) { return DigitalExperienceMonitoringDeviceDexTestSchemasHttp(
+DigitalExperienceMonitoringDeviceDexTestSchemasHttp copyWith({DigitalExperienceMonitoringDeviceDexTestSchemasData? data, DigitalExperienceMonitoringDeviceDexTestSchemasDescription? Function()? description, DigitalExperienceMonitoringDeviceDexTestSchemasEnabled? enabled, DigitalExperienceMonitoringDeviceDexTestSchemasInterval? interval, DigitalExperienceMonitoringDeviceDexTestSchemasName? name, List<DigitalExperienceMonitoringDexTargetPolicy>? Function()? targetPolicies, bool? Function()? targeted, DigitalExperienceMonitoringSchemasTestId? Function()? testId, }) { return DigitalExperienceMonitoringDeviceDexTestSchemasHttp(
   data: data ?? this.data,
   description: description != null ? description() : this.description,
   enabled: enabled ?? this.enabled,

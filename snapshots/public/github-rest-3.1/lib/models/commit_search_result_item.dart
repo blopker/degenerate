@@ -48,8 +48,8 @@ Map<String, dynamic> toJson() { return {
   'html_url': htmlUrl.toString(),
   'comments_url': commentsUrl.toString(),
   'commit': commit.toJson(),
-  if (author != null) 'author': author?.toJson(),
-  if (committer != null) 'committer': committer?.toJson(),
+  'author': author?.toJson(),
+  'committer': committer?.toJson(),
   'parents': parents.map((e) => e.toJson()).toList(),
   'repository': repository.toJson(),
   'score': score,
@@ -67,7 +67,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('repository') &&
       json.containsKey('score') && json['score'] is num &&
       json.containsKey('node_id') && json['node_id'] is String; } 
-CommitSearchResultItem copyWith({Uri? url, String? sha, Uri? htmlUrl, Uri? commentsUrl, CommitSearchResultItemCommit? commit, SimpleUser? Function()? author, GitUser? Function()? committer, List<CommitSearchResultItemParents>? parents, MinimalRepository? repository, double? score, String? nodeId, List<SearchResultTextMatches2> Function()? textMatches, }) { return CommitSearchResultItem(
+CommitSearchResultItem copyWith({Uri? url, String? sha, Uri? htmlUrl, Uri? commentsUrl, CommitSearchResultItemCommit? commit, SimpleUser? Function()? author, GitUser? Function()? committer, List<CommitSearchResultItemParents>? parents, MinimalRepository? repository, double? score, String? nodeId, List<SearchResultTextMatches2>? Function()? textMatches, }) { return CommitSearchResultItem(
   url: url ?? this.url,
   sha: sha ?? this.sha,
   htmlUrl: htmlUrl ?? this.htmlUrl,

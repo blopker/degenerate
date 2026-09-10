@@ -83,7 +83,7 @@ final String? tokenLastUsedAt;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
-  'reason': ?reason,
+  'reason': reason,
   'owner': owner.toJson(),
   'repository_selection': repositorySelection.toJson(),
   'repositories_url': repositoriesUrl,
@@ -92,11 +92,11 @@ Map<String, dynamic> toJson() { return {
   'token_id': tokenId,
   'token_name': tokenName,
   'token_expired': tokenExpired,
-  'token_expires_at': ?tokenExpiresAt,
-  'token_last_used_at': ?tokenLastUsedAt,
+  'token_expires_at': tokenExpiresAt,
+  'token_last_used_at': tokenLastUsedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
-      json.containsKey('reason') && json['reason'] is String &&
+      json.containsKey('reason') && (json['reason'] == null || json['reason'] is String) &&
       json.containsKey('owner') &&
       json.containsKey('repository_selection') &&
       json.containsKey('repositories_url') && json['repositories_url'] is String &&
@@ -105,8 +105,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('token_id') && json['token_id'] is num &&
       json.containsKey('token_name') && json['token_name'] is String &&
       json.containsKey('token_expired') && json['token_expired'] is bool &&
-      json.containsKey('token_expires_at') && json['token_expires_at'] is String &&
-      json.containsKey('token_last_used_at') && json['token_last_used_at'] is String; } 
+      json.containsKey('token_expires_at') && (json['token_expires_at'] == null || json['token_expires_at'] is String) &&
+      json.containsKey('token_last_used_at') && (json['token_last_used_at'] == null || json['token_last_used_at'] is String); } 
 OrganizationProgrammaticAccessGrantRequest copyWith({int? id, String? Function()? reason, SimpleUser? owner, OrganizationProgrammaticAccessGrantRequestRepositorySelection? repositorySelection, String? repositoriesUrl, OrganizationProgrammaticAccessGrantRequestPermissions? permissions, String? createdAt, int? tokenId, String? tokenName, bool? tokenExpired, String? Function()? tokenExpiresAt, String? Function()? tokenLastUsedAt, }) { return OrganizationProgrammaticAccessGrantRequest(
   id: id ?? this.id,
   reason: reason != null ? reason() : this.reason,

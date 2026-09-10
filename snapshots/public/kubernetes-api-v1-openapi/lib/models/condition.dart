@@ -43,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('lastT
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-Condition copyWith({Time? lastTransitionTime, String? message, int Function()? observedGeneration, String? reason, String? status, String? type, }) { return Condition(
+Condition copyWith({Time? lastTransitionTime, String? message, int? Function()? observedGeneration, String? reason, String? status, String? type, }) { return Condition(
   lastTransitionTime: lastTransitionTime ?? this.lastTransitionTime,
   message: message ?? this.message,
   observedGeneration: observedGeneration != null ? observedGeneration() : this.observedGeneration,

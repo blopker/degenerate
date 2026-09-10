@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'ping_env_id': ?pingEnvId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'ping_env_id'}.contains(key)); } 
-AccessSchemasPingoneConfig copyWith({String Function()? clientId, String Function()? clientSecret, String Function()? pingEnvId, }) { return AccessSchemasPingoneConfig(
+AccessSchemasPingoneConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, String? Function()? pingEnvId, }) { return AccessSchemasPingoneConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   pingEnvId: pingEnvId != null ? pingEnvId() : this.pingEnvId,

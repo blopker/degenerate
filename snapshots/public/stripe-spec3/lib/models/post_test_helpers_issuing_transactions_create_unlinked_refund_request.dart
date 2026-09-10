@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('card') && json['card'] is String; } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest copyWith({int? amount, String? card, String Function()? currency, List<String> Function()? expand, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData Function()? merchantData, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetails Function()? purchaseDetails, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest(
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest copyWith({int? amount, String? card, String? Function()? currency, List<String>? Function()? expand, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData? Function()? merchantData, PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestPurchaseDetails? Function()? purchaseDetails, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest(
   amount: amount ?? this.amount,
   card: card ?? this.card,
   currency: currency != null ? currency() : this.currency,

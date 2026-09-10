@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'include_claim_keys': ?includeClaimKeys,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('use_default') && json['use_default'] is bool; } 
-OidcCustomSubRepo copyWith({bool? useDefault, List<String> Function()? includeClaimKeys, }) { return OidcCustomSubRepo(
+OidcCustomSubRepo copyWith({bool? useDefault, List<String>? Function()? includeClaimKeys, }) { return OidcCustomSubRepo(
   useDefault: useDefault ?? this.useDefault,
   includeClaimKeys: includeClaimKeys != null ? includeClaimKeys() : this.includeClaimKeys,
 ); } 

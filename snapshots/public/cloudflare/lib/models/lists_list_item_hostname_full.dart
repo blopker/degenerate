@@ -34,7 +34,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostn
       json.containsKey('created_on') &&
       json.containsKey('id') &&
       json.containsKey('modified_on'); } 
-ListsListItemHostnameFull copyWith({ListsItemHostname? hostname, ListsItemComment Function()? comment, ListsCreatedOn? createdOn, ListsItemId? id, ListsModifiedOn? modifiedOn, }) { return ListsListItemHostnameFull(
+ListsListItemHostnameFull copyWith({ListsItemHostname? hostname, ListsItemComment? Function()? comment, ListsCreatedOn? createdOn, ListsItemId? id, ListsModifiedOn? modifiedOn, }) { return ListsListItemHostnameFull(
   hostname: hostname ?? this.hostname,
   comment: comment != null ? comment() : this.comment,
   createdOn: createdOn ?? this.createdOn,

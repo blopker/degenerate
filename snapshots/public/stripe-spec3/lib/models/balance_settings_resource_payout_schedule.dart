@@ -65,16 +65,16 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays($value)'; } 
  }
 /// 
-@immutable final class BalanceSettingsResourcePayoutSchedule {const BalanceSettingsResourcePayoutSchedule({this.interval, this.monthlyPayoutDays, this.weeklyPayoutDays, });
+@immutable final class BalanceSettingsResourcePayoutSchedule {const BalanceSettingsResourcePayoutSchedule({this.interval = const Omittable.absent(), this.monthlyPayoutDays, this.weeklyPayoutDays, });
 
 factory BalanceSettingsResourcePayoutSchedule.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayoutSchedule(
-  interval: json['interval'] != null ? BalanceSettingsResourcePayoutScheduleInterval.fromJson(json['interval'] as String) : null,
+  interval: json.containsKey('interval') ? Omittable(json['interval'] != null ? BalanceSettingsResourcePayoutScheduleInterval.fromJson(json['interval'] as String) : null) : const Omittable.absent(),
   monthlyPayoutDays: (json['monthly_payout_days'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   weeklyPayoutDays: (json['weekly_payout_days'] as List<dynamic>?)?.map((e) => BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays.fromJson(e as String)).toList(),
 ); }
 
 /// How frequently funds will be paid out. One of `manual` (payouts only created via API call), `daily`, `weekly`, or `monthly`.
-final BalanceSettingsResourcePayoutScheduleInterval? interval;
+final Omittable<BalanceSettingsResourcePayoutScheduleInterval?> interval;
 
 /// The day of the month funds will be paid out. Only shown if `interval` is monthly. Payouts scheduled between the 29th and 31st of the month are sent on the last day of shorter months.
 final List<int>? monthlyPayoutDays;
@@ -83,13 +83,13 @@ final List<int>? monthlyPayoutDays;
 final List<BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays>? weeklyPayoutDays;
 
 Map<String, dynamic> toJson() { return {
-  if (interval != null) 'interval': interval?.toJson(),
+  if (interval.isPresent) 'interval': interval.value?.toJson(),
   'monthly_payout_days': ?monthlyPayoutDays,
   if (weeklyPayoutDays != null) 'weekly_payout_days': weeklyPayoutDays?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interval', 'monthly_payout_days', 'weekly_payout_days'}.contains(key)); } 
-BalanceSettingsResourcePayoutSchedule copyWith({BalanceSettingsResourcePayoutScheduleInterval? Function()? interval, List<int> Function()? monthlyPayoutDays, List<BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays> Function()? weeklyPayoutDays, }) { return BalanceSettingsResourcePayoutSchedule(
-  interval: interval != null ? interval() : this.interval,
+BalanceSettingsResourcePayoutSchedule copyWith({Omittable<BalanceSettingsResourcePayoutScheduleInterval?>? interval, List<int>? Function()? monthlyPayoutDays, List<BalanceSettingsResourcePayoutScheduleWeeklyPayoutDays>? Function()? weeklyPayoutDays, }) { return BalanceSettingsResourcePayoutSchedule(
+  interval: interval ?? this.interval,
   monthlyPayoutDays: monthlyPayoutDays != null ? monthlyPayoutDays() : this.monthlyPayoutDays,
   weeklyPayoutDays: weeklyPayoutDays != null ? weeklyPayoutDays() : this.weeklyPayoutDays,
 ); } 

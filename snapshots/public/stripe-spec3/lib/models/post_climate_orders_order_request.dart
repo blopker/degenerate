@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'beneficiary', 'expand', 'metadata'}.contains(key)); } 
-PostClimateOrdersOrderRequest copyWith({PostClimateOrdersOrderRequestBeneficiary Function()? beneficiary, List<String> Function()? expand, Map<String, String> Function()? metadata, }) { return PostClimateOrdersOrderRequest(
+PostClimateOrdersOrderRequest copyWith({PostClimateOrdersOrderRequestBeneficiary? Function()? beneficiary, List<String>? Function()? expand, Map<String, String>? Function()? metadata, }) { return PostClimateOrdersOrderRequest(
   beneficiary: beneficiary != null ? beneficiary() : this.beneficiary,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,

@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-DnsFirewallDnsFirewallSingleResponse copyWith({List<DnsFirewallMessages2>? errors, List<DnsFirewallMessages2>? messages, bool? success, DnsFirewallDnsFirewallClusterResponse Function()? result, }) { return DnsFirewallDnsFirewallSingleResponse(
+DnsFirewallDnsFirewallSingleResponse copyWith({List<DnsFirewallMessages2>? errors, List<DnsFirewallMessages2>? messages, bool? success, DnsFirewallDnsFirewallClusterResponse? Function()? result, }) { return DnsFirewallDnsFirewallSingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

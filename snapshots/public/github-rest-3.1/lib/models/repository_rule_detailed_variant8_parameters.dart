@@ -77,7 +77,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dismi
       json.containsKey('require_last_push_approval') && json['require_last_push_approval'] is bool &&
       json.containsKey('required_approving_review_count') && json['required_approving_review_count'] is num &&
       json.containsKey('required_review_thread_resolution') && json['required_review_thread_resolution'] is bool; } 
-RepositoryRuleDetailedVariant8Parameters copyWith({List<RepositoryRuleDetailedVariant8ParametersAllowedMergeMethods> Function()? allowedMergeMethods, bool? dismissStaleReviewsOnPush, bool? requireCodeOwnerReview, bool? requireLastPushApproval, int? requiredApprovingReviewCount, bool? requiredReviewThreadResolution, List<RepositoryRuleParamsRequiredReviewerConfiguration> Function()? requiredReviewers, }) { return RepositoryRuleDetailedVariant8Parameters(
+RepositoryRuleDetailedVariant8Parameters copyWith({List<RepositoryRuleDetailedVariant8ParametersAllowedMergeMethods>? Function()? allowedMergeMethods, bool? dismissStaleReviewsOnPush, bool? requireCodeOwnerReview, bool? requireLastPushApproval, int? requiredApprovingReviewCount, bool? requiredReviewThreadResolution, List<RepositoryRuleParamsRequiredReviewerConfiguration>? Function()? requiredReviewers, }) { return RepositoryRuleDetailedVariant8Parameters(
   allowedMergeMethods: allowedMergeMethods != null ? allowedMergeMethods() : this.allowedMergeMethods,
   dismissStaleReviewsOnPush: dismissStaleReviewsOnPush ?? this.dismissStaleReviewsOnPush,
   requireCodeOwnerReview: requireCodeOwnerReview ?? this.requireCodeOwnerReview,

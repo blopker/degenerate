@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (enabled != null) 'enabled': enabled?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
-TlsCertificatesAndHostnamesEnabledResponseResult copyWith({TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled Function()? enabled}) { return TlsCertificatesAndHostnamesEnabledResponseResult(
+TlsCertificatesAndHostnamesEnabledResponseResult copyWith({TlsCertificatesAndHostnamesZoneAuthenticatedOriginPullComponentsSchemasEnabled? Function()? enabled}) { return TlsCertificatesAndHostnamesEnabledResponseResult(
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

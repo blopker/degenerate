@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'us_bank_account'}.contains(key)); } 
-PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptions copyWith({PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptionsUsBankAccount Function()? usBankAccount}) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptions(
+PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptions copyWith({PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptionsUsBankAccount? Function()? usBankAccount}) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodOptions(
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

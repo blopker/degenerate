@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'unstructured': ?unstructured,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'decimal_encoding', 'timestamp_format', 'unstructured'}.contains(key)); } 
-CloudflarePipelinesJsonFormat copyWith({CloudflarePipelinesDecimalEncoding Function()? decimalEncoding, CloudflarePipelinesTimestampFormat Function()? timestampFormat, bool Function()? unstructured, }) { return CloudflarePipelinesJsonFormat(
+CloudflarePipelinesJsonFormat copyWith({CloudflarePipelinesDecimalEncoding? Function()? decimalEncoding, CloudflarePipelinesTimestampFormat? Function()? timestampFormat, bool? Function()? unstructured, }) { return CloudflarePipelinesJsonFormat(
   decimalEncoding: decimalEncoding != null ? decimalEncoding() : this.decimalEncoding,
   timestampFormat: timestampFormat != null ? timestampFormat() : this.timestampFormat,
   unstructured: unstructured != null ? unstructured() : this.unstructured,

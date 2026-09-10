@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'result': ?result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
-PageShieldZoneSettingsResponseSingle copyWith({List<PageShieldMessages2> Function()? errors, List<PageShieldMessages2> Function()? messages, bool? success, Map<String, dynamic> Function()? result, }) { return PageShieldZoneSettingsResponseSingle(
+PageShieldZoneSettingsResponseSingle copyWith({List<PageShieldMessages2>? Function()? errors, List<PageShieldMessages2>? Function()? messages, bool? success, Map<String, dynamic>? Function()? result, }) { return PageShieldZoneSettingsResponseSingle(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success ?? this.success,

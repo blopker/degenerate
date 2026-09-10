@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('reason') && json['reason'] is String &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookPullRequestAutoMergeDisabled copyWith({WebhookPullRequestAutoMergeDisabledAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, int? number, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestAutoMergeDisabledPullRequest? pullRequest, String? reason, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestAutoMergeDisabled(
+WebhookPullRequestAutoMergeDisabled copyWith({WebhookPullRequestAutoMergeDisabledAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, int? number, OrganizationSimpleWebhooks? Function()? organization, WebhookPullRequestAutoMergeDisabledPullRequest? pullRequest, String? reason, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestAutoMergeDisabled(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

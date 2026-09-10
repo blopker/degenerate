@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_allow_policy_id.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityAllowPolicy {const EmailSecurityAllowPolicy({required this.isAcceptableSender, required this.isExemptRecipient, required this.isRegex, required this.isTrustedSender, required this.pattern, required this.patternType, required this.verifySender, required this.createdAt, required this.id, required this.lastModified, this.comments, this.isRecipient, this.isSender, this.isSpoof, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_allow_policy_id.dart';import 'email_security_pattern_type.dart';@immutable final class EmailSecurityAllowPolicy {const EmailSecurityAllowPolicy({required this.isAcceptableSender, required this.isExemptRecipient, required this.isRegex, required this.isTrustedSender, required this.pattern, required this.patternType, required this.verifySender, required this.createdAt, required this.id, required this.lastModified, this.comments = const Omittable.absent(), this.isRecipient, this.isSender, this.isSpoof, });
 
 factory EmailSecurityAllowPolicy.fromJson(Map<String, dynamic> json) { return EmailSecurityAllowPolicy(
-  comments: json['comments'] as String?,
+  comments: json.containsKey('comments') ? Omittable(json['comments'] as String?) : const Omittable.absent(),
   isAcceptableSender: json['is_acceptable_sender'] as bool,
   isExemptRecipient: json['is_exempt_recipient'] as bool,
   isRecipient: json['is_recipient'] as bool?,
@@ -19,7 +19,7 @@ factory EmailSecurityAllowPolicy.fromJson(Map<String, dynamic> json) { return Em
   lastModified: DateTime.parse(json['last_modified'] as String),
 ); }
 
-final String? comments;
+final Omittable<String?> comments;
 
 /// Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions.
 /// Note: This will not exempt messages with Malicious or Suspicious dispositions.
@@ -54,7 +54,7 @@ final EmailSecurityAllowPolicyId id;
 final DateTime lastModified;
 
 Map<String, dynamic> toJson() { return {
-  'comments': ?comments,
+  if (comments.isPresent) 'comments': comments.value,
   'is_acceptable_sender': isAcceptableSender,
   'is_exempt_recipient': isExemptRecipient,
   'is_recipient': ?isRecipient,
@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'is_spoof': ?isSpoof,
   'is_trusted_sender': isTrustedSender,
   'pattern': pattern,
-  if (patternType != null) 'pattern_type': patternType?.toJson(),
+  'pattern_type': patternType?.toJson(),
   'verify_sender': verifySender,
   'created_at': createdAt.toIso8601String(),
   'id': id.toJson(),
@@ -79,8 +79,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_ac
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') &&
       json.containsKey('last_modified') && json['last_modified'] is String; } 
-EmailSecurityAllowPolicy copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool Function()? isRecipient, bool? isRegex, bool Function()? isSender, bool Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, DateTime? createdAt, EmailSecurityAllowPolicyId? id, DateTime? lastModified, }) { return EmailSecurityAllowPolicy(
-  comments: comments != null ? comments() : this.comments,
+EmailSecurityAllowPolicy copyWith({Omittable<String?>? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, DateTime? createdAt, EmailSecurityAllowPolicyId? id, DateTime? lastModified, }) { return EmailSecurityAllowPolicy(
+  comments: comments ?? this.comments,
   isAcceptableSender: isAcceptableSender ?? this.isAcceptableSender,
   isExemptRecipient: isExemptRecipient ?? this.isExemptRecipient,
   isRecipient: isRecipient != null ? isRecipient() : this.isRecipient,

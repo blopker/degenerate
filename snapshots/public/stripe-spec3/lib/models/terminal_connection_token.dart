@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
       json.containsKey('secret') && json['secret'] is String; } 
-TerminalConnectionToken copyWith({String Function()? location, TerminalConnectionTokenObject? object, String? secret, }) { return TerminalConnectionToken(
+TerminalConnectionToken copyWith({String? Function()? location, TerminalConnectionTokenObject? object, String? secret, }) { return TerminalConnectionToken(
   location: location != null ? location() : this.location,
   object: object ?? this.object,
   secret: secret ?? this.secret,

@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessSchemasSaml copyWith({AccessSchemasSamlConfig? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessSchemasSamlScimConfig Function()? scimConfig, AccessSchemasSamlType? type, }) { return AccessSchemasSaml(
+AccessSchemasSaml copyWith({AccessSchemasSamlConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessSchemasSamlScimConfig? Function()? scimConfig, AccessSchemasSamlType? type, }) { return AccessSchemasSaml(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'volumeNamespace': ?volumeNamespace,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fsType', 'readOnly', 'secretRef', 'volumeName', 'volumeNamespace'}.contains(key)); } 
-StorageOsPersistentVolumeSource copyWith({String Function()? fsType, bool Function()? readOnly, ObjectReference Function()? secretRef, String Function()? volumeName, String Function()? volumeNamespace, }) { return StorageOsPersistentVolumeSource(
+StorageOsPersistentVolumeSource copyWith({String? Function()? fsType, bool? Function()? readOnly, ObjectReference? Function()? secretRef, String? Function()? volumeName, String? Function()? volumeNamespace, }) { return StorageOsPersistentVolumeSource(
   fsType: fsType != null ? fsType() : this.fsType,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretRef: secretRef != null ? secretRef() : this.secretRef,

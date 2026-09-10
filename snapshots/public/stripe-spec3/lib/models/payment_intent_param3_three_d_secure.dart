@@ -171,7 +171,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cryptogram') && json['cryptogram'] is String &&
       json.containsKey('transaction_id') && json['transaction_id'] is String &&
       json.containsKey('version'); } 
-PaymentIntentParam3ThreeDSecure copyWith({PaymentIntentParam3ThreeDSecureAresTransStatus Function()? aresTransStatus, String? cryptogram, PaymentIntentParam3ThreeDSecureElectronicCommerceIndicator Function()? electronicCommerceIndicator, PaymentIntentParam3ThreeDSecureExemptionIndicator Function()? exemptionIndicator, PaymentIntentParam3ThreeDSecureNetworkOptions Function()? networkOptions, String Function()? requestorChallengeIndicator, String? transactionId, PaymentIntentParam3ThreeDSecureVersion? version, }) { return PaymentIntentParam3ThreeDSecure(
+PaymentIntentParam3ThreeDSecure copyWith({PaymentIntentParam3ThreeDSecureAresTransStatus? Function()? aresTransStatus, String? cryptogram, PaymentIntentParam3ThreeDSecureElectronicCommerceIndicator? Function()? electronicCommerceIndicator, PaymentIntentParam3ThreeDSecureExemptionIndicator? Function()? exemptionIndicator, PaymentIntentParam3ThreeDSecureNetworkOptions? Function()? networkOptions, String? Function()? requestorChallengeIndicator, String? transactionId, PaymentIntentParam3ThreeDSecureVersion? version, }) { return PaymentIntentParam3ThreeDSecure(
   aresTransStatus: aresTransStatus != null ? aresTransStatus() : this.aresTransStatus,
   cryptogram: cryptogram ?? this.cryptogram,
   electronicCommerceIndicator: electronicCommerceIndicator != null ? electronicCommerceIndicator() : this.electronicCommerceIndicator,

@@ -28,7 +28,7 @@ final Verification? verification;
 
 Map<String, dynamic> toJson() { return {
   'author': author.toJson(),
-  if (committer != null) 'committer': committer?.toJson(),
+  'committer': committer?.toJson(),
   'comment_count': commentCount,
   'message': message,
   'tree': tree.toJson(),
@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('tree') &&
       json.containsKey('url') && json['url'] is String; } 
-CommitSearchResultItemCommit copyWith({CommitSearchResultItemCommitAuthor? author, GitUser? Function()? committer, int? commentCount, String? message, CommitSearchResultItemCommitTree? tree, Uri? url, Verification Function()? verification, }) { return CommitSearchResultItemCommit(
+CommitSearchResultItemCommit copyWith({CommitSearchResultItemCommitAuthor? author, GitUser? Function()? committer, int? commentCount, String? message, CommitSearchResultItemCommitTree? tree, Uri? url, Verification? Function()? verification, }) { return CommitSearchResultItemCommit(
   author: author ?? this.author,
   committer: committer != null ? committer() : this.committer,
   commentCount: commentCount ?? this.commentCount,

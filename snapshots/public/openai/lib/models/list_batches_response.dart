@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('has_more') && json['has_more'] is bool &&
       json.containsKey('object'); } 
-ListBatchesResponse copyWith({List<Batch>? data, String Function()? firstId, String Function()? lastId, bool? hasMore, ListBatchesResponseObject? object, }) { return ListBatchesResponse(
+ListBatchesResponse copyWith({List<Batch>? data, String? Function()? firstId, String? Function()? lastId, bool? hasMore, ListBatchesResponseObject? object, }) { return ListBatchesResponse(
   data: data ?? this.data,
   firstId: firstId != null ? firstId() : this.firstId,
   lastId: lastId != null ? lastId() : this.lastId,

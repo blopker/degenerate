@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   if (reason != null) 'reason': reason?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reason'}.contains(key)); } 
-ResponseIncompleteDetails copyWith({ResponseIncompleteDetailsReason Function()? reason}) { return ResponseIncompleteDetails(
+ResponseIncompleteDetails copyWith({ResponseIncompleteDetailsReason? Function()? reason}) { return ResponseIncompleteDetails(
   reason: reason != null ? reason() : this.reason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

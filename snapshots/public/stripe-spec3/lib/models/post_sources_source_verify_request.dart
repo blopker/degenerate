@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'values': values,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('values'); } 
-PostSourcesSourceVerifyRequest copyWith({List<String> Function()? expand, List<String>? values, }) { return PostSourcesSourceVerifyRequest(
+PostSourcesSourceVerifyRequest copyWith({List<String>? Function()? expand, List<String>? values, }) { return PostSourcesSourceVerifyRequest(
   expand: expand != null ? expand() : this.expand,
   values: values ?? this.values,
 ); } 

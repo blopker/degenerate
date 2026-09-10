@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (userTermsAcceptance != null) 'user_terms_acceptance': userTermsAcceptance?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'user_terms_acceptance'}.contains(key)); } 
-PostIssuingCardholdersCardholderRequestIndividualCardIssuing copyWith({PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptance Function()? userTermsAcceptance}) { return PostIssuingCardholdersCardholderRequestIndividualCardIssuing(
+PostIssuingCardholdersCardholderRequestIndividualCardIssuing copyWith({PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptance? Function()? userTermsAcceptance}) { return PostIssuingCardholdersCardholderRequestIndividualCardIssuing(
   userTermsAcceptance: userTermsAcceptance != null ? userTermsAcceptance() : this.userTermsAcceptance,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

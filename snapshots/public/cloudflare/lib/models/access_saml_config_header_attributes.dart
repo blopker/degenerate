@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'header_name': ?headerName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attribute_name', 'header_name'}.contains(key)); } 
-AccessSamlConfigHeaderAttributes copyWith({String Function()? attributeName, String Function()? headerName, }) { return AccessSamlConfigHeaderAttributes(
+AccessSamlConfigHeaderAttributes copyWith({String? Function()? attributeName, String? Function()? headerName, }) { return AccessSamlConfigHeaderAttributes(
   attributeName: attributeName != null ? attributeName() : this.attributeName,
   headerName: headerName != null ? headerName() : this.headerName,
 ); } 

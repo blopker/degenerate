@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('method') && json['method'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-AccountRequestTracerRequestTraceRequest copyWith({AccountRequestTracerRequestTraceRequestBody Function()? body, AccountRequestTracerRequestTraceRequestContext Function()? context, Map<String, String> Function()? cookies, Map<String, String> Function()? headers, String? method, String Function()? protocol, bool Function()? skipResponse, String? url, }) { return AccountRequestTracerRequestTraceRequest(
+AccountRequestTracerRequestTraceRequest copyWith({AccountRequestTracerRequestTraceRequestBody? Function()? body, AccountRequestTracerRequestTraceRequestContext? Function()? context, Map<String, String>? Function()? cookies, Map<String, String>? Function()? headers, String? method, String? Function()? protocol, bool? Function()? skipResponse, String? url, }) { return AccountRequestTracerRequestTraceRequest(
   body: body != null ? body() : this.body,
   context: context != null ? context() : this.context,
   cookies: cookies != null ? cookies() : this.cookies,

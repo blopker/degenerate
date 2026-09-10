@@ -90,13 +90,13 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaxProductResourceLineItemTaxBreakdownTaxabilityReason($value)'; } 
  }
 /// 
-@immutable final class TaxProductResourceLineItemTaxBreakdown {const TaxProductResourceLineItemTaxBreakdown({required this.amount, required this.jurisdiction, required this.sourcing, required this.taxabilityReason, required this.taxableAmount, this.taxRateDetails, });
+@immutable final class TaxProductResourceLineItemTaxBreakdown {const TaxProductResourceLineItemTaxBreakdown({required this.amount, required this.jurisdiction, required this.sourcing, required this.taxabilityReason, required this.taxableAmount, this.taxRateDetails = const Omittable.absent(), });
 
 factory TaxProductResourceLineItemTaxBreakdown.fromJson(Map<String, dynamic> json) { return TaxProductResourceLineItemTaxBreakdown(
   amount: (json['amount'] as num).toInt(),
   jurisdiction: TaxProductResourceJurisdiction.fromJson(json['jurisdiction'] as Map<String, dynamic>),
   sourcing: TaxProductResourceLineItemTaxBreakdownSourcing.fromJson(json['sourcing'] as String),
-  taxRateDetails: json['tax_rate_details'] != null ? TaxProductResourceLineItemTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>) : null,
+  taxRateDetails: json.containsKey('tax_rate_details') ? Omittable(json['tax_rate_details'] != null ? TaxProductResourceLineItemTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   taxabilityReason: TaxProductResourceLineItemTaxBreakdownTaxabilityReason.fromJson(json['taxability_reason'] as String),
   taxableAmount: (json['taxable_amount'] as num).toInt(),
 ); }
@@ -110,7 +110,7 @@ final TaxProductResourceJurisdiction jurisdiction;
 final TaxProductResourceLineItemTaxBreakdownSourcing sourcing;
 
 /// Details regarding the rate for this tax. This field will be `null` when the tax is not imposed, for example if the product is exempt from tax.
-final TaxProductResourceLineItemTaxRateDetails? taxRateDetails;
+final Omittable<TaxProductResourceLineItemTaxRateDetails?> taxRateDetails;
 
 /// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
 final TaxProductResourceLineItemTaxBreakdownTaxabilityReason taxabilityReason;
@@ -122,7 +122,7 @@ Map<String, dynamic> toJson() { return {
   'amount': amount,
   'jurisdiction': jurisdiction.toJson(),
   'sourcing': sourcing.toJson(),
-  if (taxRateDetails != null) 'tax_rate_details': taxRateDetails?.toJson(),
+  if (taxRateDetails.isPresent) 'tax_rate_details': taxRateDetails.value?.toJson(),
   'taxability_reason': taxabilityReason.toJson(),
   'taxable_amount': taxableAmount,
 }; } 
@@ -131,11 +131,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('sourcing') &&
       json.containsKey('taxability_reason') &&
       json.containsKey('taxable_amount') && json['taxable_amount'] is num; } 
-TaxProductResourceLineItemTaxBreakdown copyWith({int? amount, TaxProductResourceJurisdiction? jurisdiction, TaxProductResourceLineItemTaxBreakdownSourcing? sourcing, TaxProductResourceLineItemTaxRateDetails? Function()? taxRateDetails, TaxProductResourceLineItemTaxBreakdownTaxabilityReason? taxabilityReason, int? taxableAmount, }) { return TaxProductResourceLineItemTaxBreakdown(
+TaxProductResourceLineItemTaxBreakdown copyWith({int? amount, TaxProductResourceJurisdiction? jurisdiction, TaxProductResourceLineItemTaxBreakdownSourcing? sourcing, Omittable<TaxProductResourceLineItemTaxRateDetails?>? taxRateDetails, TaxProductResourceLineItemTaxBreakdownTaxabilityReason? taxabilityReason, int? taxableAmount, }) { return TaxProductResourceLineItemTaxBreakdown(
   amount: amount ?? this.amount,
   jurisdiction: jurisdiction ?? this.jurisdiction,
   sourcing: sourcing ?? this.sourcing,
-  taxRateDetails: taxRateDetails != null ? taxRateDetails() : this.taxRateDetails,
+  taxRateDetails: taxRateDetails ?? this.taxRateDetails,
   taxabilityReason: taxabilityReason ?? this.taxabilityReason,
   taxableAmount: taxableAmount ?? this.taxableAmount,
 ); } 

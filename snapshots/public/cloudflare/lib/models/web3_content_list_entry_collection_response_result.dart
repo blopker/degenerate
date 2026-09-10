@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (entries != null) 'entries': entries?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'entries'}.contains(key)); } 
-Web3ContentListEntryCollectionResponseResult copyWith({List<Web3ContentListEntry> Function()? entries}) { return Web3ContentListEntryCollectionResponseResult(
+Web3ContentListEntryCollectionResponseResult copyWith({List<Web3ContentListEntry>? Function()? entries}) { return Web3ContentListEntryCollectionResponseResult(
   entries: entries != null ? entries() : this.entries,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

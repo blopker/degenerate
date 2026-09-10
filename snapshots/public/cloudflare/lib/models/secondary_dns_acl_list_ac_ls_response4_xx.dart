@@ -26,13 +26,13 @@ Map<String, dynamic> toJson() { return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-  'result': ?result,
+  'result': result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-SecondaryDnsAclListAcLsResponse4Xx copyWith({List<SecondaryDnsMessages2>? errors, List<SecondaryDnsMessages2>? messages, bool? success, SecondaryDnsAclListAcLsResponse4XxResultInfo Function()? resultInfo, Map<String, dynamic>? Function()? result, }) { return SecondaryDnsAclListAcLsResponse4Xx(
+SecondaryDnsAclListAcLsResponse4Xx copyWith({List<SecondaryDnsMessages2>? errors, List<SecondaryDnsMessages2>? messages, bool? success, SecondaryDnsAclListAcLsResponse4XxResultInfo? Function()? resultInfo, Map<String, dynamic>? Function()? result, }) { return SecondaryDnsAclListAcLsResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

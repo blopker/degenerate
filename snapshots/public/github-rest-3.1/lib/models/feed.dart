@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('timeline_url') && json['timeline_url'] is String &&
       json.containsKey('user_url') && json['user_url'] is String &&
       json.containsKey('_links'); } 
-Feed copyWith({String? timelineUrl, String? userUrl, String Function()? currentUserPublicUrl, String Function()? currentUserUrl, String Function()? currentUserActorUrl, String Function()? currentUserOrganizationUrl, List<Uri> Function()? currentUserOrganizationUrls, String Function()? securityAdvisoriesUrl, String Function()? repositoryDiscussionsUrl, String Function()? repositoryDiscussionsCategoryUrl, FeedLinks? links, }) { return Feed(
+Feed copyWith({String? timelineUrl, String? userUrl, String? Function()? currentUserPublicUrl, String? Function()? currentUserUrl, String? Function()? currentUserActorUrl, String? Function()? currentUserOrganizationUrl, List<Uri>? Function()? currentUserOrganizationUrls, String? Function()? securityAdvisoriesUrl, String? Function()? repositoryDiscussionsUrl, String? Function()? repositoryDiscussionsCategoryUrl, FeedLinks? links, }) { return Feed(
   timelineUrl: timelineUrl ?? this.timelineUrl,
   userUrl: userUrl ?? this.userUrl,
   currentUserPublicUrl: currentUserPublicUrl != null ? currentUserPublicUrl() : this.currentUserPublicUrl,

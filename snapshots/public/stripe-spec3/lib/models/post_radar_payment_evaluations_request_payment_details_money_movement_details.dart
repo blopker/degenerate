@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'money_movement_type': moneyMovementType.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('money_movement_type'); } 
-PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails copyWith({PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard Function()? card, PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType? moneyMovementType, }) { return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails(
+PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails copyWith({PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsCard? Function()? card, PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetailsMoneyMovementType? moneyMovementType, }) { return PostRadarPaymentEvaluationsRequestPaymentDetailsMoneyMovementDetails(
   card: card != null ? card() : this.card,
   moneyMovementType: moneyMovementType ?? this.moneyMovementType,
 ); } 

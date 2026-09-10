@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('endpoints') && json['endpoints'] is String &&
       json.containsKey('path') && json['path'] is String; } 
-GlusterfsVolumeSource copyWith({String? endpoints, String? path, bool Function()? readOnly, }) { return GlusterfsVolumeSource(
+GlusterfsVolumeSource copyWith({String? endpoints, String? path, bool? Function()? readOnly, }) { return GlusterfsVolumeSource(
   endpoints: endpoints ?? this.endpoints,
   path: path ?? this.path,
   readOnly: readOnly != null ? readOnly() : this.readOnly,

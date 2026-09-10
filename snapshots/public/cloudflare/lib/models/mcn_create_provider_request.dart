@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud_type') &&
       json.containsKey('friendly_name') && json['friendly_name'] is String; } 
-McnCreateProviderRequest copyWith({McnCloudType? cloudType, String Function()? description, String? friendlyName, }) { return McnCreateProviderRequest(
+McnCreateProviderRequest copyWith({McnCloudType? cloudType, String? Function()? description, String? friendlyName, }) { return McnCreateProviderRequest(
   cloudType: cloudType ?? this.cloudType,
   description: description != null ? description() : this.description,
   friendlyName: friendlyName ?? this.friendlyName,

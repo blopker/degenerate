@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A Realtime item responding to an MCP approval request.
 /// 
-@immutable final class RealtimeMcpApprovalResponse {const RealtimeMcpApprovalResponse({required this.type, required this.id, required this.approvalRequestId, required this.approve, this.reason, });
+@immutable final class RealtimeMcpApprovalResponse {const RealtimeMcpApprovalResponse({required this.type, required this.id, required this.approvalRequestId, required this.approve, this.reason = const Omittable.absent(), });
 
 factory RealtimeMcpApprovalResponse.fromJson(Map<String, dynamic> json) { return RealtimeMcpApprovalResponse(
   type: json['type'] as String,
   id: json['id'] as String,
   approvalRequestId: json['approval_request_id'] as String,
   approve: json['approve'] as bool,
-  reason: json['reason'] as String?,
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
 ); }
 
 /// The type of the item. Always `mcp_approval_response`.
@@ -25,25 +25,25 @@ final String approvalRequestId;
 final bool approve;
 
 /// Optional reason for the decision.
-final String? reason;
+final Omittable<String?> reason;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
   'id': id,
   'approval_request_id': approvalRequestId,
   'approve': approve,
-  'reason': ?reason,
+  if (reason.isPresent) 'reason': reason.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('approval_request_id') && json['approval_request_id'] is String &&
       json.containsKey('approve') && json['approve'] is bool; } 
-RealtimeMcpApprovalResponse copyWith({String? type, String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return RealtimeMcpApprovalResponse(
+RealtimeMcpApprovalResponse copyWith({String? type, String? id, String? approvalRequestId, bool? approve, Omittable<String?>? reason, }) { return RealtimeMcpApprovalResponse(
   type: type ?? this.type,
   id: id ?? this.id,
   approvalRequestId: approvalRequestId ?? this.approvalRequestId,
   approve: approve ?? this.approve,
-  reason: reason != null ? reason() : this.reason,
+  reason: reason ?? this.reason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RealtimeMcpApprovalResponse &&

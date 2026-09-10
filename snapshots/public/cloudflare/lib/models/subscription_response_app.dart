@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (installId != null) 'install_id': installId?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'install_id'}.contains(key)); } 
-SubscriptionResponseApp copyWith({InstallId Function()? installId}) { return SubscriptionResponseApp(
+SubscriptionResponseApp copyWith({InstallId? Function()? installId}) { return SubscriptionResponseApp(
   installId: installId != null ? installId() : this.installId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

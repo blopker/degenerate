@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
       json.containsKey('role'); } 
-Messages51MessagesUser copyWith({Messages51MessagesUserContent? content, String Function()? name, Messages51MessagesUserRole? role, }) { return Messages51MessagesUser(
+Messages51MessagesUser copyWith({Messages51MessagesUserContent? content, String? Function()? name, Messages51MessagesUserRole? role, }) { return Messages51MessagesUser(
   content: content ?? this.content,
   name: name != null ? name() : this.name,
   role: role ?? this.role,

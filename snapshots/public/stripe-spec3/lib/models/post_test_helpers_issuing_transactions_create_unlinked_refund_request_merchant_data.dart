@@ -945,7 +945,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'category', 'city', 'country', 'name', 'network_id', 'postal_code', 'state', 'terminal_id', 'url'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData copyWith({PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory Function()? category, String Function()? city, String Function()? country, String Function()? name, String Function()? networkId, String Function()? postalCode, String Function()? state, String Function()? terminalId, String Function()? url, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData(
+PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData copyWith({PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantDataCategory? Function()? category, String? Function()? city, String? Function()? country, String? Function()? name, String? Function()? networkId, String? Function()? postalCode, String? Function()? state, String? Function()? terminalId, String? Function()? url, }) { return PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequestMerchantData(
   category: category != null ? category() : this.category,
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,

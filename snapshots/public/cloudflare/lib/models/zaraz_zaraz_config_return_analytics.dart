@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'sessionExpTime': ?sessionExpTime,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaultPurpose', 'enabled', 'sessionExpTime'}.contains(key)); } 
-ZarazZarazConfigReturnAnalytics copyWith({String Function()? defaultPurpose, bool Function()? enabled, int Function()? sessionExpTime, }) { return ZarazZarazConfigReturnAnalytics(
+ZarazZarazConfigReturnAnalytics copyWith({String? Function()? defaultPurpose, bool? Function()? enabled, int? Function()? sessionExpTime, }) { return ZarazZarazConfigReturnAnalytics(
   defaultPurpose: defaultPurpose != null ? defaultPurpose() : this.defaultPurpose,
   enabled: enabled != null ? enabled() : this.enabled,
   sessionExpTime: sessionExpTime != null ? sessionExpTime() : this.sessionExpTime,

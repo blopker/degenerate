@@ -13,6 +13,7 @@ class ApiEmitter {
     this.api, {
     this.typeRegistry = const {},
     this.unwrapFields = const [],
+    this.omittable = OmittableMode.nullableOnly,
   });
 
   /// The API group to emit.
@@ -23,6 +24,9 @@ class ApiEmitter {
 
   /// Fields to unwrap from response envelopes.
   final List<String> unwrapFields;
+
+  /// How optional model fields represent "omitted" vs "set to null".
+  final OmittableMode omittable;
 
   /// Wrapper around [buildFromJsonCode] that passes the type registry.
   String _fromJson(
@@ -364,12 +368,13 @@ class ApiEmitter {
         IrObject(:final fields) => () {
           final parts = <String>[];
           for (final f in fields) {
-            final nullable = !f.isRequired || f.type.isNullable;
-            final accessor = '${p.dartName}.${f.name}${nullable ? '!' : ''}';
+            final nullable = _objectFieldIsNullable(f);
+            final fieldAccessor = _objectFieldAccessor(f, p.dartName);
+            final accessor = '$fieldAccessor${nullable ? '!' : ''}';
             final value =
                 'Uri.encodeComponent(${_queryScalarExpr(f.type, accessor)})';
             final guard = nullable
-                ? 'if (${p.dartName}.${f.name} != null) '
+                ? 'if ($fieldAccessor != null) '
                 : '';
             if (explode) {
               parts.add("$guard'${f.originalName.escaped}=\${$value}'");
@@ -403,6 +408,17 @@ class ApiEmitter {
   /// Resolve a type ref through the registry (identity for everything else).
   IrType _resolveType(IrType type) =>
       type is IrTypeRef ? (typeRegistry[type.name] ?? type) : type;
+
+  /// Scalar access for object parameters and form bodies. Both absent and
+  /// explicit null are omitted by these encodings.
+  String _objectFieldAccessor(IrField field, String object) =>
+      '$object.${field.name}${isOmittableField(field, omittable) ? '.value' : ''}';
+
+  /// Nullability of the scalar after removing any presence wrapper.
+  bool _objectFieldIsNullable(IrField field) =>
+      isOmittableField(field, omittable) ||
+      (!field.isRequired && !hasUsableDartDefault(field)) ||
+      field.type.isNullable;
 
   /// The explode=false pair/item join delimiter for a query style.
   String _joinDelimiter(String style) => switch (style) {
@@ -770,23 +786,20 @@ class ApiEmitter {
     bool explode,
   ) {
     final name = _sanitizeParameterName(p.name);
-    // A field is nullable in the generated model when it's optional OR its
-    // type is nullable (required-but-nullable) — mirror that here or the
-    // typed conversions dereference a nullable and don't compile.
-    bool fieldNullable(IrField f) => !f.isRequired || f.type.isNullable;
     if (style == 'deepObject') {
       for (final field in fields) {
         final key = '$name[${field.originalName.escaped}]';
-        if (fieldNullable(field)) {
+        final fieldAccessor = _objectFieldAccessor(field, accessor);
+        if (_objectFieldIsNullable(field)) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) { queryParameters['$key'] = $valueExpr; }",
+            "if ($fieldAccessor case final $localVar?) { queryParameters['$key'] = $valueExpr; }",
           );
         } else {
           final valueExpr = _queryScalarExpr(
             field.type,
-            '$accessor.${field.name}',
+            fieldAccessor,
           );
           buf.writeln("queryParameters['$key'] = $valueExpr;");
         }
@@ -797,16 +810,17 @@ class ApiEmitter {
     if (style == 'form' && explode) {
       for (final field in fields) {
         final fieldNameLiteral = field.originalName.literal;
-        if (fieldNullable(field)) {
+        final fieldAccessor = _objectFieldAccessor(field, accessor);
+        if (_objectFieldIsNullable(field)) {
           final localVar = '${field.name}\$';
           final valueExpr = _queryScalarExpr(field.type, localVar);
           buf.writeln(
-            "if ($accessor.${field.name} case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: $fieldNameLiteral, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''})); }",
+            "if ($fieldAccessor case final $localVar?) { queryParametersList.add(ApiQueryParameter(name: $fieldNameLiteral, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''})); }",
           );
         } else {
           final valueExpr = _queryScalarExpr(
             field.type,
-            '$accessor.${field.name}',
+            fieldAccessor,
           );
           buf.writeln(
             "queryParametersList.add(ApiQueryParameter(name: $fieldNameLiteral, value: $valueExpr${p.allowReserved ? ', allowReserved: true' : ''}));",
@@ -818,12 +832,15 @@ class ApiEmitter {
 
     final parts = <String>[];
     for (final field in fields) {
-      final nullable = fieldNullable(field);
-      final fieldAccessor = '$accessor.${field.name}${nullable ? '!' : ''}';
-      final valueExpr = _queryScalarExpr(field.type, fieldAccessor);
+      final nullable = _objectFieldIsNullable(field);
+      final fieldAccessor = _objectFieldAccessor(field, accessor);
+      final valueExpr = _queryScalarExpr(
+        field.type,
+        '$fieldAccessor${nullable ? '!' : ''}',
+      );
       if (nullable) {
         parts.add(
-          'if ($accessor.${field.name} != null) '
+          'if ($fieldAccessor != null) '
           "...['${field.originalName.escaped}', $valueExpr]",
         );
       } else {
@@ -1472,17 +1489,12 @@ class ApiEmitter {
       buf.writeln('  body: [');
     }
     for (final f in fields) {
-      final fieldAccessor = 'body.${f.name}';
+      final fieldAccessor = _objectFieldAccessor(f, 'body');
       final isBytes =
           f.type is IrPrimitive &&
           (f.type as IrPrimitive).kind == PrimitiveKind.bytes;
       // Emit null guard only when the Dart field type is actually nullable.
-      // Fields with defaults are non-nullable even if not required,
-      // but only if the default can be represented as a Dart constant.
-      final isNullable =
-          (!f.isRequired && !_hasUsableDartDefault(f)) || f.type.isNullable;
-
-      if (isNullable) {
+      if (_objectFieldIsNullable(f)) {
         // Use a case-pattern variable to enable type promotion on nullable
         // public fields.
         final localVar = '${f.name}\$';
@@ -1511,14 +1523,12 @@ class ApiEmitter {
       buf.writeln('  body: <String>[');
     }
     for (final f in fields) {
-      final fieldAccessor = 'body.${f.name}';
-      final isNullable =
-          (!f.isRequired && !_hasUsableDartDefault(f)) || f.type.isNullable;
+      final fieldAccessor = _objectFieldAccessor(f, 'body');
       final valueExpr = _formFieldValueExpr(f.type, fieldAccessor);
       final encoded =
           "'${f.originalName.escaped}=\${Uri.encodeQueryComponent($valueExpr)}'";
 
-      if (isNullable) {
+      if (_objectFieldIsNullable(f)) {
         final localVar = '${f.name}\$';
         final localValueExpr = _formFieldValueExpr(f.type, localVar);
         final localEncoded =
@@ -1557,29 +1567,6 @@ class ApiEmitter {
         '    ApiMultipartField.text(${f.originalName.literal}, $valueExpr),',
       );
     }
-  }
-
-  /// Whether a field has a default value that the model emitter can represent
-  /// as a Dart compile-time constant. Only these defaults produce non-nullable
-  /// fields in the generated model class.
-  static bool _hasUsableDartDefault(IrField f) {
-    if (f.defaultValue == null) return false;
-    final v = f.defaultValue;
-    return switch (f.type) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.bool => v is bool,
-        PrimitiveKind.int ||
-        PrimitiveKind.double ||
-        PrimitiveKind.num => v is num,
-        PrimitiveKind.string => v is String,
-        _ => false,
-      },
-      IrEnum(:final valueKind) => switch (valueKind) {
-        PrimitiveKind.int || PrimitiveKind.double => v is num,
-        _ => v is String,
-      },
-      _ => false,
-    };
   }
 
   /// Get the string expression for a multipart text field value.

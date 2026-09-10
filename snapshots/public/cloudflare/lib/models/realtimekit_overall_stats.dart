@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'sessions_minutes_consumed': ?sessionsMinutesConsumed,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'recordings_minutes_consumed', 'sessions_count', 'sessions_minutes_consumed'}.contains(key)); } 
-RealtimekitOverallStats copyWith({double Function()? recordingsMinutesConsumed, double Function()? sessionsCount, double Function()? sessionsMinutesConsumed, }) { return RealtimekitOverallStats(
+RealtimekitOverallStats copyWith({double? Function()? recordingsMinutesConsumed, double? Function()? sessionsCount, double? Function()? sessionsMinutesConsumed, }) { return RealtimekitOverallStats(
   recordingsMinutesConsumed: recordingsMinutesConsumed != null ? recordingsMinutesConsumed() : this.recordingsMinutesConsumed,
   sessionsCount: sessionsCount != null ? sessionsCount() : this.sessionsCount,
   sessionsMinutesConsumed: sessionsMinutesConsumed != null ? sessionsMinutesConsumed() : this.sessionsMinutesConsumed,

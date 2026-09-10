@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'private_user_plan.dart';/// Private User
-@immutable final class PrivateUser {const PrivateUser({required this.reposUrl, required this.id, required this.twoFactorAuthentication, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.login, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, required this.name, required this.company, required this.blog, required this.location, required this.email, required this.collaborators, required this.hireable, required this.bio, required this.diskUsage, required this.ownedPrivateRepos, required this.publicGists, required this.followers, required this.following, required this.createdAt, required this.updatedAt, required this.privateGists, required this.totalPrivateRepos, required this.publicRepos, this.twitterUsername, this.notificationEmail, this.userViewType, this.plan, this.businessPlus, this.ldapDn, });
+@immutable final class PrivateUser {const PrivateUser({required this.reposUrl, required this.id, required this.twoFactorAuthentication, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.login, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, required this.name, required this.company, required this.blog, required this.location, required this.email, required this.collaborators, required this.hireable, required this.bio, required this.diskUsage, required this.ownedPrivateRepos, required this.publicGists, required this.followers, required this.following, required this.createdAt, required this.updatedAt, required this.privateGists, required this.totalPrivateRepos, required this.publicRepos, this.twitterUsername = const Omittable.absent(), this.notificationEmail = const Omittable.absent(), this.userViewType, this.plan, this.businessPlus, this.ldapDn, });
 
 factory PrivateUser.fromJson(Map<String, dynamic> json) { return PrivateUser(
   login: json['login'] as String,
@@ -28,10 +28,10 @@ factory PrivateUser.fromJson(Map<String, dynamic> json) { return PrivateUser(
   blog: json['blog'] as String?,
   location: json['location'] as String?,
   email: json['email'] as String?,
-  notificationEmail: json['notification_email'] as String?,
+  notificationEmail: json.containsKey('notification_email') ? Omittable(json['notification_email'] as String?) : const Omittable.absent(),
   hireable: json['hireable'] as bool?,
   bio: json['bio'] as String?,
-  twitterUsername: json['twitter_username'] as String?,
+  twitterUsername: json.containsKey('twitter_username') ? Omittable(json['twitter_username'] as String?) : const Omittable.absent(),
   publicRepos: (json['public_repos'] as num).toInt(),
   publicGists: (json['public_gists'] as num).toInt(),
   followers: (json['followers'] as num).toInt(),
@@ -97,13 +97,13 @@ final String? location;
 
 final String? email;
 
-final String? notificationEmail;
+final Omittable<String?> notificationEmail;
 
 final bool? hireable;
 
 final String? bio;
 
-final String? twitterUsername;
+final Omittable<String?> twitterUsername;
 
 final int publicRepos;
 
@@ -141,7 +141,7 @@ Map<String, dynamic> toJson() { return {
   'user_view_type': ?userViewType,
   'node_id': nodeId,
   'avatar_url': avatarUrl.toString(),
-  'gravatar_id': ?gravatarId,
+  'gravatar_id': gravatarId,
   'url': url.toString(),
   'html_url': htmlUrl.toString(),
   'followers_url': followersUrl.toString(),
@@ -155,15 +155,15 @@ Map<String, dynamic> toJson() { return {
   'received_events_url': receivedEventsUrl.toString(),
   'type': type,
   'site_admin': siteAdmin,
-  'name': ?name,
-  'company': ?company,
-  'blog': ?blog,
-  'location': ?location,
-  'email': ?email,
-  'notification_email': ?notificationEmail,
-  'hireable': ?hireable,
-  'bio': ?bio,
-  'twitter_username': ?twitterUsername,
+  'name': name,
+  'company': company,
+  'blog': blog,
+  'location': location,
+  'email': email,
+  if (notificationEmail.isPresent) 'notification_email': notificationEmail.value,
+  'hireable': hireable,
+  'bio': bio,
+  if (twitterUsername.isPresent) 'twitter_username': twitterUsername.value,
   'public_repos': publicRepos,
   'public_gists': publicGists,
   'followers': followers,
@@ -184,7 +184,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('avatar_url') && json['avatar_url'] is String &&
-      json.containsKey('gravatar_id') && json['gravatar_id'] is String &&
+      json.containsKey('gravatar_id') && (json['gravatar_id'] == null || json['gravatar_id'] is String) &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('followers_url') && json['followers_url'] is String &&
@@ -198,13 +198,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('received_events_url') && json['received_events_url'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('site_admin') && json['site_admin'] is bool &&
-      json.containsKey('name') && json['name'] is String &&
-      json.containsKey('company') && json['company'] is String &&
-      json.containsKey('blog') && json['blog'] is String &&
-      json.containsKey('location') && json['location'] is String &&
-      json.containsKey('email') && json['email'] is String &&
-      json.containsKey('hireable') && json['hireable'] is bool &&
-      json.containsKey('bio') && json['bio'] is String &&
+      json.containsKey('name') && (json['name'] == null || json['name'] is String) &&
+      json.containsKey('company') && (json['company'] == null || json['company'] is String) &&
+      json.containsKey('blog') && (json['blog'] == null || json['blog'] is String) &&
+      json.containsKey('location') && (json['location'] == null || json['location'] is String) &&
+      json.containsKey('email') && (json['email'] == null || json['email'] is String) &&
+      json.containsKey('hireable') && (json['hireable'] == null || json['hireable'] is bool) &&
+      json.containsKey('bio') && (json['bio'] == null || json['bio'] is String) &&
       json.containsKey('public_repos') && json['public_repos'] is num &&
       json.containsKey('public_gists') && json['public_gists'] is num &&
       json.containsKey('followers') && json['followers'] is num &&
@@ -217,7 +217,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('login
       json.containsKey('disk_usage') && json['disk_usage'] is num &&
       json.containsKey('collaborators') && json['collaborators'] is num &&
       json.containsKey('two_factor_authentication') && json['two_factor_authentication'] is bool; } 
-PrivateUser copyWith({String? login, int? id, String Function()? userViewType, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan Function()? plan, bool Function()? businessPlus, String Function()? ldapDn, }) { return PrivateUser(
+PrivateUser copyWith({String? login, int? id, String? Function()? userViewType, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, Omittable<String?>? notificationEmail, bool? Function()? hireable, String? Function()? bio, Omittable<String?>? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan? Function()? plan, bool? Function()? businessPlus, String? Function()? ldapDn, }) { return PrivateUser(
   login: login ?? this.login,
   id: id ?? this.id,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
@@ -242,10 +242,10 @@ PrivateUser copyWith({String? login, int? id, String Function()? userViewType, S
   blog: blog != null ? blog() : this.blog,
   location: location != null ? location() : this.location,
   email: email != null ? email() : this.email,
-  notificationEmail: notificationEmail != null ? notificationEmail() : this.notificationEmail,
+  notificationEmail: notificationEmail ?? this.notificationEmail,
   hireable: hireable != null ? hireable() : this.hireable,
   bio: bio != null ? bio() : this.bio,
-  twitterUsername: twitterUsername != null ? twitterUsername() : this.twitterUsername,
+  twitterUsername: twitterUsername ?? this.twitterUsername,
   publicRepos: publicRepos ?? this.publicRepos,
   publicGists: publicGists ?? this.publicGists,
   followers: followers ?? this.followers,

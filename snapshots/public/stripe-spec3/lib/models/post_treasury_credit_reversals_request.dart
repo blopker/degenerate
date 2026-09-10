@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'received_credit': receivedCredit,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('received_credit') && json['received_credit'] is String; } 
-PostTreasuryCreditReversalsRequest copyWith({List<String> Function()? expand, Map<String, String> Function()? metadata, String? receivedCredit, }) { return PostTreasuryCreditReversalsRequest(
+PostTreasuryCreditReversalsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? receivedCredit, }) { return PostTreasuryCreditReversalsRequest(
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
   receivedCredit: receivedCredit ?? this.receivedCredit,

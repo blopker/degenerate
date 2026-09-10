@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-ExtendedPet copyWith({int? id, String? name, PetStatus Function()? status, String Function()? breed, bool Function()? vaccinated, double Function()? weight, Owner Function()? owner, }) { return ExtendedPet(
+ExtendedPet copyWith({int? id, String? name, PetStatus? Function()? status, String? Function()? breed, bool? Function()? vaccinated, double? Function()? weight, Owner? Function()? owner, }) { return ExtendedPet(
   id: id ?? this.id,
   name: name ?? this.name,
   status: status != null ? status() : this.status,

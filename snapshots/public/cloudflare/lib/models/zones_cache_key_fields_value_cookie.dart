@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'include': ?include,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'check_presence', 'include'}.contains(key)); } 
-ZonesCacheKeyFieldsValueCookie copyWith({List<String> Function()? checkPresence, List<String> Function()? include, }) { return ZonesCacheKeyFieldsValueCookie(
+ZonesCacheKeyFieldsValueCookie copyWith({List<String>? Function()? checkPresence, List<String>? Function()? include, }) { return ZonesCacheKeyFieldsValueCookie(
   checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
   include: include != null ? include() : this.include,
 ); } 

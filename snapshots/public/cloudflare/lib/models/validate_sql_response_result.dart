@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'tables': tables.map((k, v) => MapEntry(k, v.toJson())),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tables'); } 
-ValidateSqlResponseResult copyWith({CloudflarePipelinesPipelineGraph Function()? graph, Map<String,ValidateSqlResponseResultTablesValue>? tables, }) { return ValidateSqlResponseResult(
+ValidateSqlResponseResult copyWith({CloudflarePipelinesPipelineGraph? Function()? graph, Map<String,ValidateSqlResponseResultTablesValue>? tables, }) { return ValidateSqlResponseResult(
   graph: graph != null ? graph() : this.graph,
   tables: tables ?? this.tables,
 ); } 

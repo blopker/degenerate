@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('package') &&
       json.containsKey('sender'); } 
-WebhookPackagePublished copyWith({WebhookPackagePublishedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookPackagePublishedPackage? package, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookPackagePublished(
+WebhookPackagePublished copyWith({WebhookPackagePublishedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, WebhookPackagePublishedPackage? package, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookPackagePublished(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,

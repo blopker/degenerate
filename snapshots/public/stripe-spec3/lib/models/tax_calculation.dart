@@ -25,20 +25,20 @@ bool get isUnknown { return !values.contains(this); }
 /// A Tax Calculation allows you to calculate the tax to collect from your customer.
 /// 
 /// Related guide: [Calculate tax in your custom payment flow](https://docs.stripe.com/tax/custom)
-@immutable final class TaxCalculation {const TaxCalculation({required this.amountTotal, required this.currency, required this.customerDetails, required this.livemode, required this.object, required this.taxAmountExclusive, required this.taxAmountInclusive, required this.taxBreakdown, required this.taxDate, this.customer, this.expiresAt, this.id, this.lineItems, this.shipFromDetails, this.shippingCost, });
+@immutable final class TaxCalculation {const TaxCalculation({required this.amountTotal, required this.currency, required this.customerDetails, required this.livemode, required this.object, required this.taxAmountExclusive, required this.taxAmountInclusive, required this.taxBreakdown, required this.taxDate, this.customer = const Omittable.absent(), this.expiresAt = const Omittable.absent(), this.id = const Omittable.absent(), this.lineItems = const Omittable.absent(), this.shipFromDetails = const Omittable.absent(), this.shippingCost = const Omittable.absent(), });
 
 factory TaxCalculation.fromJson(Map<String, dynamic> json) { return TaxCalculation(
   amountTotal: (json['amount_total'] as num).toInt(),
   currency: json['currency'] as String,
-  customer: json['customer'] as String?,
+  customer: json.containsKey('customer') ? Omittable(json['customer'] as String?) : const Omittable.absent(),
   customerDetails: TaxProductResourceCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>),
-  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
-  id: json['id'] as String?,
-  lineItems: json['line_items'] != null ? TaxCalculationLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
+  expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
+  id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
+  lineItems: json.containsKey('line_items') ? Omittable(json['line_items'] != null ? TaxCalculationLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: TaxCalculationObject.fromJson(json['object'] as String),
-  shipFromDetails: json['ship_from_details'] != null ? TaxProductResourceShipFromDetails.fromJson(json['ship_from_details'] as Map<String, dynamic>) : null,
-  shippingCost: json['shipping_cost'] != null ? TaxProductResourceTaxCalculationShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
+  shipFromDetails: json.containsKey('ship_from_details') ? Omittable(json['ship_from_details'] != null ? TaxProductResourceShipFromDetails.fromJson(json['ship_from_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  shippingCost: json.containsKey('shipping_cost') ? Omittable(json['shipping_cost'] != null ? TaxProductResourceTaxCalculationShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   taxAmountExclusive: (json['tax_amount_exclusive'] as num).toInt(),
   taxAmountInclusive: (json['tax_amount_inclusive'] as num).toInt(),
   taxBreakdown: (json['tax_breakdown'] as List<dynamic>).map((e) => TaxProductResourceTaxBreakdown.fromJson(e as Map<String, dynamic>)).toList(),
@@ -52,18 +52,18 @@ final int amountTotal;
 final String currency;
 
 /// The ID of an existing [Customer](https://docs.stripe.com/api/customers/object) used for the resource.
-final String? customer;
+final Omittable<String?> customer;
 
 final TaxProductResourceCustomerDetails customerDetails;
 
 /// Timestamp of date at which the tax calculation will expire.
-final int? expiresAt;
+final Omittable<int?> expiresAt;
 
 /// Unique identifier for the calculation.
-final String? id;
+final Omittable<String?> id;
 
 /// The list of items the customer is purchasing.
-final TaxCalculationLineItems? lineItems;
+final Omittable<TaxCalculationLineItems?> lineItems;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -72,10 +72,10 @@ final bool livemode;
 final TaxCalculationObject object;
 
 /// The details of the ship from location, such as the address.
-final TaxProductResourceShipFromDetails? shipFromDetails;
+final Omittable<TaxProductResourceShipFromDetails?> shipFromDetails;
 
 /// The shipping cost details for the calculation.
-final TaxProductResourceTaxCalculationShippingCost? shippingCost;
+final Omittable<TaxProductResourceTaxCalculationShippingCost?> shippingCost;
 
 /// The amount of tax to be collected on top of the line item prices.
 final int taxAmountExclusive;
@@ -92,15 +92,15 @@ final int taxDate;
 Map<String, dynamic> toJson() { return {
   'amount_total': amountTotal,
   'currency': currency,
-  'customer': ?customer,
+  if (customer.isPresent) 'customer': customer.value,
   'customer_details': customerDetails.toJson(),
-  'expires_at': ?expiresAt,
-  'id': ?id,
-  if (lineItems != null) 'line_items': lineItems?.toJson(),
+  if (expiresAt.isPresent) 'expires_at': expiresAt.value,
+  if (id.isPresent) 'id': id.value,
+  if (lineItems.isPresent) 'line_items': lineItems.value?.toJson(),
   'livemode': livemode,
   'object': object.toJson(),
-  if (shipFromDetails != null) 'ship_from_details': shipFromDetails?.toJson(),
-  if (shippingCost != null) 'shipping_cost': shippingCost?.toJson(),
+  if (shipFromDetails.isPresent) 'ship_from_details': shipFromDetails.value?.toJson(),
+  if (shippingCost.isPresent) 'shipping_cost': shippingCost.value?.toJson(),
   'tax_amount_exclusive': taxAmountExclusive,
   'tax_amount_inclusive': taxAmountInclusive,
   'tax_breakdown': taxBreakdown.map((e) => e.toJson()).toList(),
@@ -115,18 +115,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('tax_amount_inclusive') && json['tax_amount_inclusive'] is num &&
       json.containsKey('tax_breakdown') &&
       json.containsKey('tax_date') && json['tax_date'] is num; } 
-TaxCalculation copyWith({int? amountTotal, String? currency, String? Function()? customer, TaxProductResourceCustomerDetails? customerDetails, int? Function()? expiresAt, String? Function()? id, TaxCalculationLineItems? Function()? lineItems, bool? livemode, TaxCalculationObject? object, TaxProductResourceShipFromDetails? Function()? shipFromDetails, TaxProductResourceTaxCalculationShippingCost? Function()? shippingCost, int? taxAmountExclusive, int? taxAmountInclusive, List<TaxProductResourceTaxBreakdown>? taxBreakdown, int? taxDate, }) { return TaxCalculation(
+TaxCalculation copyWith({int? amountTotal, String? currency, Omittable<String?>? customer, TaxProductResourceCustomerDetails? customerDetails, Omittable<int?>? expiresAt, Omittable<String?>? id, Omittable<TaxCalculationLineItems?>? lineItems, bool? livemode, TaxCalculationObject? object, Omittable<TaxProductResourceShipFromDetails?>? shipFromDetails, Omittable<TaxProductResourceTaxCalculationShippingCost?>? shippingCost, int? taxAmountExclusive, int? taxAmountInclusive, List<TaxProductResourceTaxBreakdown>? taxBreakdown, int? taxDate, }) { return TaxCalculation(
   amountTotal: amountTotal ?? this.amountTotal,
   currency: currency ?? this.currency,
-  customer: customer != null ? customer() : this.customer,
+  customer: customer ?? this.customer,
   customerDetails: customerDetails ?? this.customerDetails,
-  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
-  id: id != null ? id() : this.id,
-  lineItems: lineItems != null ? lineItems() : this.lineItems,
+  expiresAt: expiresAt ?? this.expiresAt,
+  id: id ?? this.id,
+  lineItems: lineItems ?? this.lineItems,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-  shipFromDetails: shipFromDetails != null ? shipFromDetails() : this.shipFromDetails,
-  shippingCost: shippingCost != null ? shippingCost() : this.shippingCost,
+  shipFromDetails: shipFromDetails ?? this.shipFromDetails,
+  shippingCost: shippingCost ?? this.shippingCost,
   taxAmountExclusive: taxAmountExclusive ?? this.taxAmountExclusive,
   taxAmountInclusive: taxAmountInclusive ?? this.taxAmountInclusive,
   taxBreakdown: taxBreakdown ?? this.taxBreakdown,

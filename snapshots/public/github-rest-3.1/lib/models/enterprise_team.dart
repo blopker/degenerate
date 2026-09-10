@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Group of enterprise owners and/or members
-@immutable final class EnterpriseTeam {const EnterpriseTeam({required this.id, required this.name, required this.slug, required this.url, required this.groupId, required this.htmlUrl, required this.membersUrl, required this.createdAt, required this.updatedAt, this.description, this.syncToOrganizations, this.organizationSelectionType, this.groupName, });
+@immutable final class EnterpriseTeam {const EnterpriseTeam({required this.id, required this.name, required this.slug, required this.url, required this.groupId, required this.htmlUrl, required this.membersUrl, required this.createdAt, required this.updatedAt, this.description, this.syncToOrganizations, this.organizationSelectionType, this.groupName = const Omittable.absent(), });
 
 factory EnterpriseTeam.fromJson(Map<String, dynamic> json) { return EnterpriseTeam(
   id: (json['id'] as num).toInt(),
@@ -12,7 +12,7 @@ factory EnterpriseTeam.fromJson(Map<String, dynamic> json) { return EnterpriseTe
   syncToOrganizations: json['sync_to_organizations'] as String?,
   organizationSelectionType: json['organization_selection_type'] as String?,
   groupId: json['group_id'] as String?,
-  groupName: json['group_name'] as String?,
+  groupName: json.containsKey('group_name') ? Omittable(json['group_name'] as String?) : const Omittable.absent(),
   htmlUrl: Uri.parse(json['html_url'] as String),
   membersUrl: json['members_url'] as String,
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -37,7 +37,7 @@ final String? organizationSelectionType;
 final String? groupId;
 
 /// Retired: this field will not be returned with GHEC enterprise teams.
-final String? groupName;
+final Omittable<String?> groupName;
 
 final Uri htmlUrl;
 
@@ -55,8 +55,8 @@ Map<String, dynamic> toJson() { return {
   'url': url.toString(),
   'sync_to_organizations': ?syncToOrganizations,
   'organization_selection_type': ?organizationSelectionType,
-  'group_id': ?groupId,
-  'group_name': ?groupName,
+  'group_id': groupId,
+  if (groupName.isPresent) 'group_name': groupName.value,
   'html_url': htmlUrl.toString(),
   'members_url': membersUrl,
   'created_at': createdAt.toIso8601String(),
@@ -66,12 +66,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('slug') && json['slug'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('group_id') && json['group_id'] is String &&
+      json.containsKey('group_id') && (json['group_id'] == null || json['group_id'] is String) &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('members_url') && json['members_url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-EnterpriseTeam copyWith({int? id, String? name, String Function()? description, String? slug, Uri? url, String Function()? syncToOrganizations, String Function()? organizationSelectionType, String? Function()? groupId, String? Function()? groupName, Uri? htmlUrl, String? membersUrl, DateTime? createdAt, DateTime? updatedAt, }) { return EnterpriseTeam(
+EnterpriseTeam copyWith({int? id, String? name, String? Function()? description, String? slug, Uri? url, String? Function()? syncToOrganizations, String? Function()? organizationSelectionType, String? Function()? groupId, Omittable<String?>? groupName, Uri? htmlUrl, String? membersUrl, DateTime? createdAt, DateTime? updatedAt, }) { return EnterpriseTeam(
   id: id ?? this.id,
   name: name ?? this.name,
   description: description != null ? description() : this.description,
@@ -80,7 +80,7 @@ EnterpriseTeam copyWith({int? id, String? name, String Function()? description, 
   syncToOrganizations: syncToOrganizations != null ? syncToOrganizations() : this.syncToOrganizations,
   organizationSelectionType: organizationSelectionType != null ? organizationSelectionType() : this.organizationSelectionType,
   groupId: groupId != null ? groupId() : this.groupId,
-  groupName: groupName != null ? groupName() : this.groupName,
+  groupName: groupName ?? this.groupName,
   htmlUrl: htmlUrl ?? this.htmlUrl,
   membersUrl: membersUrl ?? this.membersUrl,
   createdAt: createdAt ?? this.createdAt,

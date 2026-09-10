@@ -115,14 +115,14 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BillingBillResourceInvoicingTaxesTaxType($value)'; } 
  }
 /// 
-@immutable final class BillingBillResourceInvoicingTaxesTax {const BillingBillResourceInvoicingTaxesTax({required this.amount, required this.taxBehavior, required this.taxabilityReason, required this.type, this.taxRateDetails, this.taxableAmount, });
+@immutable final class BillingBillResourceInvoicingTaxesTax {const BillingBillResourceInvoicingTaxesTax({required this.amount, required this.taxBehavior, required this.taxabilityReason, required this.type, this.taxRateDetails = const Omittable.absent(), this.taxableAmount = const Omittable.absent(), });
 
 factory BillingBillResourceInvoicingTaxesTax.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingTaxesTax(
   amount: (json['amount'] as num).toInt(),
   taxBehavior: BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(json['tax_behavior'] as String),
-  taxRateDetails: json['tax_rate_details'] != null ? BillingBillResourceInvoicingTaxesTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>) : null,
+  taxRateDetails: json.containsKey('tax_rate_details') ? Omittable(json['tax_rate_details'] != null ? BillingBillResourceInvoicingTaxesTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   taxabilityReason: BillingBillResourceInvoicingTaxesTaxTaxabilityReason.fromJson(json['taxability_reason'] as String),
-  taxableAmount: json['taxable_amount'] != null ? (json['taxable_amount'] as num).toInt() : null,
+  taxableAmount: json.containsKey('taxable_amount') ? Omittable(json['taxable_amount'] != null ? (json['taxable_amount'] as num).toInt() : null) : const Omittable.absent(),
   type: BillingBillResourceInvoicingTaxesTaxType.fromJson(json['type'] as String),
 ); }
 
@@ -133,13 +133,13 @@ final int amount;
 final BillingBillResourceInvoicingTaxesTaxTaxBehavior taxBehavior;
 
 /// Additional details about the tax rate. Only present when `type` is `tax_rate_details`.
-final BillingBillResourceInvoicingTaxesTaxRateDetails? taxRateDetails;
+final Omittable<BillingBillResourceInvoicingTaxesTaxRateDetails?> taxRateDetails;
 
 /// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
 final BillingBillResourceInvoicingTaxesTaxTaxabilityReason taxabilityReason;
 
 /// The amount on which tax is calculated, in cents (or local equivalent).
-final int? taxableAmount;
+final Omittable<int?> taxableAmount;
 
 /// The type of tax information.
 final BillingBillResourceInvoicingTaxesTaxType type;
@@ -147,21 +147,21 @@ final BillingBillResourceInvoicingTaxesTaxType type;
 Map<String, dynamic> toJson() { return {
   'amount': amount,
   'tax_behavior': taxBehavior.toJson(),
-  if (taxRateDetails != null) 'tax_rate_details': taxRateDetails?.toJson(),
+  if (taxRateDetails.isPresent) 'tax_rate_details': taxRateDetails.value?.toJson(),
   'taxability_reason': taxabilityReason.toJson(),
-  'taxable_amount': ?taxableAmount,
+  if (taxableAmount.isPresent) 'taxable_amount': taxableAmount.value,
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('tax_behavior') &&
       json.containsKey('taxability_reason') &&
       json.containsKey('type'); } 
-BillingBillResourceInvoicingTaxesTax copyWith({int? amount, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, BillingBillResourceInvoicingTaxesTaxRateDetails? Function()? taxRateDetails, BillingBillResourceInvoicingTaxesTaxTaxabilityReason? taxabilityReason, int? Function()? taxableAmount, BillingBillResourceInvoicingTaxesTaxType? type, }) { return BillingBillResourceInvoicingTaxesTax(
+BillingBillResourceInvoicingTaxesTax copyWith({int? amount, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, Omittable<BillingBillResourceInvoicingTaxesTaxRateDetails?>? taxRateDetails, BillingBillResourceInvoicingTaxesTaxTaxabilityReason? taxabilityReason, Omittable<int?>? taxableAmount, BillingBillResourceInvoicingTaxesTaxType? type, }) { return BillingBillResourceInvoicingTaxesTax(
   amount: amount ?? this.amount,
   taxBehavior: taxBehavior ?? this.taxBehavior,
-  taxRateDetails: taxRateDetails != null ? taxRateDetails() : this.taxRateDetails,
+  taxRateDetails: taxRateDetails ?? this.taxRateDetails,
   taxabilityReason: taxabilityReason ?? this.taxabilityReason,
-  taxableAmount: taxableAmount != null ? taxableAmount() : this.taxableAmount,
+  taxableAmount: taxableAmount ?? this.taxableAmount,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

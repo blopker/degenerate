@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessSchemasOnelogin copyWith({AccessSchemasOneloginConfig? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessSchemasOneloginScimConfig Function()? scimConfig, AccessSchemasOneloginType? type, }) { return AccessSchemasOnelogin(
+AccessSchemasOnelogin copyWith({AccessSchemasOneloginConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessSchemasOneloginScimConfig? Function()? scimConfig, AccessSchemasOneloginType? type, }) { return AccessSchemasOnelogin(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

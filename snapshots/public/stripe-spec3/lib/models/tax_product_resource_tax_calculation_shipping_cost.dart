@@ -67,7 +67,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
       json.containsKey('tax_behavior') &&
       json.containsKey('tax_code') && json['tax_code'] is String; } 
-TaxProductResourceTaxCalculationShippingCost copyWith({int? amount, int? amountTax, String Function()? shippingRate, TaxProductResourceTaxCalculationShippingCostTaxBehavior? taxBehavior, List<TaxProductResourceLineItemTaxBreakdown> Function()? taxBreakdown, String? taxCode, }) { return TaxProductResourceTaxCalculationShippingCost(
+TaxProductResourceTaxCalculationShippingCost copyWith({int? amount, int? amountTax, String? Function()? shippingRate, TaxProductResourceTaxCalculationShippingCostTaxBehavior? taxBehavior, List<TaxProductResourceLineItemTaxBreakdown>? Function()? taxBreakdown, String? taxCode, }) { return TaxProductResourceTaxCalculationShippingCost(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,

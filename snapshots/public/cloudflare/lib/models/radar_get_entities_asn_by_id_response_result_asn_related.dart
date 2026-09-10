@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-RadarGetEntitiesAsnByIdResponseResultAsnRelated copyWith({String Function()? aka, int? asn, int Function()? estimatedUsers, String? name, }) { return RadarGetEntitiesAsnByIdResponseResultAsnRelated(
+RadarGetEntitiesAsnByIdResponseResultAsnRelated copyWith({String? Function()? aka, int? asn, int? Function()? estimatedUsers, String? name, }) { return RadarGetEntitiesAsnByIdResponseResultAsnRelated(
   aka: aka != null ? aka() : this.aka,
   asn: asn ?? this.asn,
   estimatedUsers: estimatedUsers != null ? estimatedUsers() : this.estimatedUsers,

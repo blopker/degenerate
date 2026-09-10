@@ -67,7 +67,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('datas
       json.containsKey('key') && json['key'] is String &&
       json.containsKey('timeframe') &&
       json.containsKey('type'); } 
-TelemetryValuesListRequest copyWith({List<String>? datasets, List<TelemetryValuesListRequestFilters> Function()? filters, String? key, double Function()? limit, TelemetryValuesListRequestNeedle Function()? needle, TelemetryValuesListRequestTimeframe? timeframe, TelemetryValuesListRequestType? type, }) { return TelemetryValuesListRequest(
+TelemetryValuesListRequest copyWith({List<String>? datasets, List<TelemetryValuesListRequestFilters> Function()? filters, String? key, double Function()? limit, TelemetryValuesListRequestNeedle? Function()? needle, TelemetryValuesListRequestTimeframe? timeframe, TelemetryValuesListRequestType? type, }) { return TelemetryValuesListRequest(
   datasets: datasets ?? this.datasets,
   filters: filters != null ? filters() : this.filters,
   key: key ?? this.key,

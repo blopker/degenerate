@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (remove != null) 'remove': remove?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'append', 'remove'}.contains(key)); } 
-ZeroTrustListsPatchZeroTrustListRequest copyWith({List<ZeroTrustGatewayItemsInput2> Function()? append, List<ZeroTrustGatewayValue> Function()? remove, }) { return ZeroTrustListsPatchZeroTrustListRequest(
+ZeroTrustListsPatchZeroTrustListRequest copyWith({List<ZeroTrustGatewayItemsInput2>? Function()? append, List<ZeroTrustGatewayValue>? Function()? remove, }) { return ZeroTrustListsPatchZeroTrustListRequest(
   append: append != null ? append() : this.append,
   remove: remove != null ? remove() : this.remove,
 ); } 

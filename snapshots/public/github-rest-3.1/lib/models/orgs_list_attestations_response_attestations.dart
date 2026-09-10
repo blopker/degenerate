@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_list_attestations_response_attestations_bundle.dart';@immutable final class OrgsListAttestationsResponseAttestations {const OrgsListAttestationsResponseAttestations({this.bundle, this.repositoryId, this.bundleUrl, this.initiator, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_list_attestations_response_attestations_bundle.dart';@immutable final class OrgsListAttestationsResponseAttestations {const OrgsListAttestationsResponseAttestations({this.bundle = const Omittable.absent(), this.repositoryId, this.bundleUrl, this.initiator, });
 
 factory OrgsListAttestationsResponseAttestations.fromJson(Map<String, dynamic> json) { return OrgsListAttestationsResponseAttestations(
-  bundle: json['bundle'] != null ? OrgsListAttestationsResponseAttestationsBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null,
+  bundle: json.containsKey('bundle') ? Omittable(json['bundle'] != null ? OrgsListAttestationsResponseAttestationsBundle.fromJson(json['bundle'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   repositoryId: json['repository_id'] != null ? (json['repository_id'] as num).toInt() : null,
   bundleUrl: json['bundle_url'] as String?,
   initiator: json['initiator'] as String?,
@@ -11,7 +11,7 @@ factory OrgsListAttestationsResponseAttestations.fromJson(Map<String, dynamic> j
 
 /// The attestation's Sigstore Bundle.
 /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
-final OrgsListAttestationsResponseAttestationsBundle? bundle;
+final Omittable<OrgsListAttestationsResponseAttestationsBundle?> bundle;
 
 final int? repositoryId;
 
@@ -20,14 +20,14 @@ final String? bundleUrl;
 final String? initiator;
 
 Map<String, dynamic> toJson() { return {
-  if (bundle != null) 'bundle': bundle?.toJson(),
+  if (bundle.isPresent) 'bundle': bundle.value?.toJson(),
   'repository_id': ?repositoryId,
   'bundle_url': ?bundleUrl,
   'initiator': ?initiator,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle', 'repository_id', 'bundle_url', 'initiator'}.contains(key)); } 
-OrgsListAttestationsResponseAttestations copyWith({OrgsListAttestationsResponseAttestationsBundle? Function()? bundle, int Function()? repositoryId, String Function()? bundleUrl, String Function()? initiator, }) { return OrgsListAttestationsResponseAttestations(
-  bundle: bundle != null ? bundle() : this.bundle,
+OrgsListAttestationsResponseAttestations copyWith({Omittable<OrgsListAttestationsResponseAttestationsBundle?>? bundle, int? Function()? repositoryId, String? Function()? bundleUrl, String? Function()? initiator, }) { return OrgsListAttestationsResponseAttestations(
+  bundle: bundle ?? this.bundle,
   repositoryId: repositoryId != null ? repositoryId() : this.repositoryId,
   bundleUrl: bundleUrl != null ? bundleUrl() : this.bundleUrl,
   initiator: initiator != null ? initiator() : this.initiator,

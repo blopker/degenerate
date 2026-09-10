@@ -20,12 +20,12 @@ final String? summary;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
-  'heading': ?heading,
-  'summary': ?summary,
+  'heading': heading,
+  'summary': summary,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
-      json.containsKey('heading') && json['heading'] is String &&
-      json.containsKey('summary') && json['summary'] is String; } 
+      json.containsKey('heading') && (json['heading'] == null || json['heading'] is String) &&
+      json.containsKey('summary') && (json['summary'] == null || json['summary'] is String); } 
 TaskGroupTask copyWith({TaskType? type, String? Function()? heading, String? Function()? summary, }) { return TaskGroupTask(
   type: type ?? this.type,
   heading: heading != null ? heading() : this.heading,

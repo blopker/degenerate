@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_allow_insecure.dart';import 'load_balancing_consecutive_down.dart';import 'load_balancing_consecutive_up.dart';import 'load_balancing_description.dart';import 'load_balancing_expected_body.dart';import 'load_balancing_expected_codes.dart';import 'load_balancing_follow_redirects.dart';import 'load_balancing_interval.dart';import 'load_balancing_method.dart';import 'load_balancing_path.dart';import 'load_balancing_port.dart';import 'load_balancing_probe_zone.dart';import 'load_balancing_retries.dart';import 'load_balancing_timeout.dart';import 'load_balancing_type.dart';@immutable final class LoadBalancingMonitorEditable {const LoadBalancingMonitorEditable({this.allowInsecure, this.consecutiveDown, this.consecutiveUp, this.description, this.expectedBody, this.expectedCodes, this.followRedirects, this.header, this.interval, this.method, this.path, this.port, this.probeZone, this.retries, this.timeout, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_allow_insecure.dart';import 'load_balancing_consecutive_down.dart';import 'load_balancing_consecutive_up.dart';import 'load_balancing_description.dart';import 'load_balancing_expected_body.dart';import 'load_balancing_expected_codes.dart';import 'load_balancing_follow_redirects.dart';import 'load_balancing_interval.dart';import 'load_balancing_method.dart';import 'load_balancing_path.dart';import 'load_balancing_port.dart';import 'load_balancing_probe_zone.dart';import 'load_balancing_retries.dart';import 'load_balancing_timeout.dart';import 'load_balancing_type.dart';@immutable final class LoadBalancingMonitorEditable {const LoadBalancingMonitorEditable({this.allowInsecure, this.consecutiveDown, this.consecutiveUp, this.description, this.expectedBody, this.expectedCodes, this.followRedirects, this.header, this.interval, this.method, this.path, this.port = const Omittable.absent(), this.probeZone, this.retries, this.timeout, this.type, });
 
 factory LoadBalancingMonitorEditable.fromJson(Map<String, dynamic> json) { return LoadBalancingMonitorEditable(
   allowInsecure: json['allow_insecure'] != null ? LoadBalancingAllowInsecure.fromJson(json['allow_insecure'] as bool) : null,
@@ -14,7 +14,7 @@ factory LoadBalancingMonitorEditable.fromJson(Map<String, dynamic> json) { retur
   interval: json['interval'] != null ? LoadBalancingInterval.fromJson(json['interval'] as num) : null,
   method: json['method'] != null ? LoadBalancingMethod.fromJson(json['method'] as String) : null,
   path: json['path'] != null ? LoadBalancingPath.fromJson(json['path'] as String) : null,
-  port: json['port'] != null ? LoadBalancingPort.fromJson(json['port'] as num) : null,
+  port: json.containsKey('port') ? Omittable(json['port'] != null ? LoadBalancingPort.fromJson(json['port'] as num) : null) : const Omittable.absent(),
   probeZone: json['probe_zone'] != null ? LoadBalancingProbeZone.fromJson(json['probe_zone'] as String) : null,
   retries: json['retries'] != null ? LoadBalancingRetries.fromJson(json['retries'] as num) : null,
   timeout: json['timeout'] != null ? LoadBalancingTimeout.fromJson(json['timeout'] as num) : null,
@@ -53,7 +53,7 @@ final LoadBalancingMethod? method;
 
 final LoadBalancingPath? path;
 
-final LoadBalancingPort? port;
+final Omittable<LoadBalancingPort?> port;
 
 final LoadBalancingProbeZone? probeZone;
 
@@ -75,14 +75,14 @@ Map<String, dynamic> toJson() { return {
   if (interval != null) 'interval': interval?.toJson(),
   if (method != null) 'method': method?.toJson(),
   if (path != null) 'path': path?.toJson(),
-  if (port != null) 'port': port?.toJson(),
+  if (port.isPresent) 'port': port.value?.toJson(),
   if (probeZone != null) 'probe_zone': probeZone?.toJson(),
   if (retries != null) 'retries': retries?.toJson(),
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_insecure', 'consecutive_down', 'consecutive_up', 'description', 'expected_body', 'expected_codes', 'follow_redirects', 'header', 'interval', 'method', 'path', 'port', 'probe_zone', 'retries', 'timeout', 'type'}.contains(key)); } 
-LoadBalancingMonitorEditable copyWith({LoadBalancingAllowInsecure Function()? allowInsecure, LoadBalancingConsecutiveDown Function()? consecutiveDown, LoadBalancingConsecutiveUp Function()? consecutiveUp, LoadBalancingDescription Function()? description, LoadBalancingExpectedBody Function()? expectedBody, LoadBalancingExpectedCodes Function()? expectedCodes, LoadBalancingFollowRedirects Function()? followRedirects, Map<String, List<String>> Function()? header, LoadBalancingInterval Function()? interval, LoadBalancingMethod Function()? method, LoadBalancingPath Function()? path, LoadBalancingPort? Function()? port, LoadBalancingProbeZone Function()? probeZone, LoadBalancingRetries Function()? retries, LoadBalancingTimeout Function()? timeout, LoadBalancingType Function()? type, }) { return LoadBalancingMonitorEditable(
+LoadBalancingMonitorEditable copyWith({LoadBalancingAllowInsecure? Function()? allowInsecure, LoadBalancingConsecutiveDown? Function()? consecutiveDown, LoadBalancingConsecutiveUp? Function()? consecutiveUp, LoadBalancingDescription? Function()? description, LoadBalancingExpectedBody? Function()? expectedBody, LoadBalancingExpectedCodes? Function()? expectedCodes, LoadBalancingFollowRedirects? Function()? followRedirects, Map<String, List<String>>? Function()? header, LoadBalancingInterval? Function()? interval, LoadBalancingMethod? Function()? method, LoadBalancingPath? Function()? path, Omittable<LoadBalancingPort?>? port, LoadBalancingProbeZone? Function()? probeZone, LoadBalancingRetries? Function()? retries, LoadBalancingTimeout? Function()? timeout, LoadBalancingType? Function()? type, }) { return LoadBalancingMonitorEditable(
   allowInsecure: allowInsecure != null ? allowInsecure() : this.allowInsecure,
   consecutiveDown: consecutiveDown != null ? consecutiveDown() : this.consecutiveDown,
   consecutiveUp: consecutiveUp != null ? consecutiveUp() : this.consecutiveUp,
@@ -94,7 +94,7 @@ LoadBalancingMonitorEditable copyWith({LoadBalancingAllowInsecure Function()? al
   interval: interval != null ? interval() : this.interval,
   method: method != null ? method() : this.method,
   path: path != null ? path() : this.path,
-  port: port != null ? port() : this.port,
+  port: port ?? this.port,
   probeZone: probeZone != null ? probeZone() : this.probeZone,
   retries: retries != null ? retries() : this.retries,
   timeout: timeout != null ? timeout() : this.timeout,

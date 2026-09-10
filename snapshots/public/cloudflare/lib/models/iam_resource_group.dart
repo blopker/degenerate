@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('scope'); } 
-IamResourceGroup copyWith({String? id, IamResourceGroupMeta Function()? meta, String Function()? name, List<IamScope>? scope, }) { return IamResourceGroup(
+IamResourceGroup copyWith({String? id, IamResourceGroupMeta? Function()? meta, String? Function()? name, List<IamScope>? scope, }) { return IamResourceGroup(
   id: id ?? this.id,
   meta: meta != null ? meta() : this.meta,
   name: name != null ? name() : this.name,

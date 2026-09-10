@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key')
       json.containsKey('label') &&
       json.containsKey('optional') && json['optional'] is bool &&
       json.containsKey('type'); } 
-PaymentPagesCheckoutSessionCustomFields copyWith({PaymentPagesCheckoutSessionCustomFieldsDropdown Function()? dropdown, String? key, PaymentPagesCheckoutSessionCustomFieldsLabel? label, PaymentPagesCheckoutSessionCustomFieldsNumeric Function()? numeric, bool? optional, PaymentPagesCheckoutSessionCustomFieldsText Function()? text, PaymentPagesCheckoutSessionCustomFieldsType? type, }) { return PaymentPagesCheckoutSessionCustomFields(
+PaymentPagesCheckoutSessionCustomFields copyWith({PaymentPagesCheckoutSessionCustomFieldsDropdown? Function()? dropdown, String? key, PaymentPagesCheckoutSessionCustomFieldsLabel? label, PaymentPagesCheckoutSessionCustomFieldsNumeric? Function()? numeric, bool? optional, PaymentPagesCheckoutSessionCustomFieldsText? Function()? text, PaymentPagesCheckoutSessionCustomFieldsType? type, }) { return PaymentPagesCheckoutSessionCustomFields(
   dropdown: dropdown != null ? dropdown() : this.dropdown,
   key: key ?? this.key,
   label: label ?? this.label,

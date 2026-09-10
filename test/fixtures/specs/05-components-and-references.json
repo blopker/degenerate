@@ -47,11 +47,15 @@
           "email": {
             "type": "string",
             "format": "email"
+          },
+          "nickname": {
+            "type": ["string", "null"]
           }
         },
         "required": [
           "id",
-          "email"
+          "email",
+          "nickname"
         ]
       },
       "Error": {

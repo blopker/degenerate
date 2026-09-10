@@ -39,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('comme
       json.containsKey('id') &&
       json.containsKey('is_default_network') &&
       json.containsKey('name'); } 
-TunnelVirtualNetwork copyWith({TunnelVirtualNetworkComment? comment, TunnelCreatedAt? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelVirtualNetworkId? id, TunnelIsDefaultNetwork? isDefaultNetwork, TunnelVirtualNetworkName? name, }) { return TunnelVirtualNetwork(
+TunnelVirtualNetwork copyWith({TunnelVirtualNetworkComment? comment, TunnelCreatedAt? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelVirtualNetworkId? id, TunnelIsDefaultNetwork? isDefaultNetwork, TunnelVirtualNetworkName? name, }) { return TunnelVirtualNetwork(
   comment: comment ?? this.comment,
   createdAt: createdAt ?? this.createdAt,
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,

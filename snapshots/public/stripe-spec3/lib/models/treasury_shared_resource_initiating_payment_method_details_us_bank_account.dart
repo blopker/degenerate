@@ -1,33 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
-@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount {const TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount({this.bankName, this.last4, this.routingNumber, });
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount {const TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount({this.bankName = const Omittable.absent(), this.last4 = const Omittable.absent(), this.routingNumber = const Omittable.absent(), });
 
 factory TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount.fromJson(Map<String, dynamic> json) { return TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount(
-  bankName: json['bank_name'] as String?,
-  last4: json['last4'] as String?,
-  routingNumber: json['routing_number'] as String?,
+  bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
+  routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
 ); }
 
 /// Bank name.
-final String? bankName;
+final Omittable<String?> bankName;
 
 /// The last four digits of the bank account number.
-final String? last4;
+final Omittable<String?> last4;
 
 /// The routing number for the bank account.
-final String? routingNumber;
+final Omittable<String?> routingNumber;
 
 Map<String, dynamic> toJson() { return {
-  'bank_name': ?bankName,
-  'last4': ?last4,
-  'routing_number': ?routingNumber,
+  if (bankName.isPresent) 'bank_name': bankName.value,
+  if (last4.isPresent) 'last4': last4.value,
+  if (routingNumber.isPresent) 'routing_number': routingNumber.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_name', 'last4', 'routing_number'}.contains(key)); } 
-TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount copyWith({String? Function()? bankName, String? Function()? last4, String? Function()? routingNumber, }) { return TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount(
-  bankName: bankName != null ? bankName() : this.bankName,
-  last4: last4 != null ? last4() : this.last4,
-  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
+TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount copyWith({Omittable<String?>? bankName, Omittable<String?>? last4, Omittable<String?>? routingNumber, }) { return TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount(
+  bankName: bankName ?? this.bankName,
+  last4: last4 ?? this.last4,
+  routingNumber: routingNumber ?? this.routingNumber,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount &&

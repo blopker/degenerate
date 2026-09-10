@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('configuration') &&
       json.containsKey('enabled') && json['enabled'] is bool &&
       json.containsKey('name') && json['name'] is String; } 
-DestinationCreateRequest copyWith({DestinationCreateRequestConfiguration? configuration, bool? enabled, String? name, bool Function()? skipPreflightCheck, }) { return DestinationCreateRequest(
+DestinationCreateRequest copyWith({DestinationCreateRequestConfiguration? configuration, bool? enabled, String? name, bool? Function()? skipPreflightCheck, }) { return DestinationCreateRequest(
   configuration: configuration ?? this.configuration,
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,

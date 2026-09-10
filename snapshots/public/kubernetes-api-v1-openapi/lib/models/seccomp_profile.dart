@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-SeccompProfile copyWith({String Function()? localhostProfile, String? type, }) { return SeccompProfile(
+SeccompProfile copyWith({String? Function()? localhostProfile, String? type, }) { return SeccompProfile(
   localhostProfile: localhostProfile != null ? localhostProfile() : this.localhostProfile,
   type: type ?? this.type,
 ); } 

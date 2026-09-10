@@ -23,26 +23,26 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TerminalReaderReaderResourceSetReaderDisplayActionType($value)'; } 
  }
 /// Represents a reader action to set the reader display
-@immutable final class TerminalReaderReaderResourceSetReaderDisplayAction {const TerminalReaderReaderResourceSetReaderDisplayAction({required this.type, this.cart, });
+@immutable final class TerminalReaderReaderResourceSetReaderDisplayAction {const TerminalReaderReaderResourceSetReaderDisplayAction({required this.type, this.cart = const Omittable.absent(), });
 
 factory TerminalReaderReaderResourceSetReaderDisplayAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceSetReaderDisplayAction(
-  cart: json['cart'] != null ? TerminalReaderReaderResourceCart.fromJson(json['cart'] as Map<String, dynamic>) : null,
+  cart: json.containsKey('cart') ? Omittable(json['cart'] != null ? TerminalReaderReaderResourceCart.fromJson(json['cart'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: TerminalReaderReaderResourceSetReaderDisplayActionType.fromJson(json['type'] as String),
 ); }
 
 /// Cart object to be displayed by the reader, including line items, amounts, and currency.
-final TerminalReaderReaderResourceCart? cart;
+final Omittable<TerminalReaderReaderResourceCart?> cart;
 
 /// Type of information to be displayed by the reader. Only `cart` is currently supported.
 final TerminalReaderReaderResourceSetReaderDisplayActionType type;
 
 Map<String, dynamic> toJson() { return {
-  if (cart != null) 'cart': cart?.toJson(),
+  if (cart.isPresent) 'cart': cart.value?.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TerminalReaderReaderResourceSetReaderDisplayAction copyWith({TerminalReaderReaderResourceCart? Function()? cart, TerminalReaderReaderResourceSetReaderDisplayActionType? type, }) { return TerminalReaderReaderResourceSetReaderDisplayAction(
-  cart: cart != null ? cart() : this.cart,
+TerminalReaderReaderResourceSetReaderDisplayAction copyWith({Omittable<TerminalReaderReaderResourceCart?>? cart, TerminalReaderReaderResourceSetReaderDisplayActionType? type, }) { return TerminalReaderReaderResourceSetReaderDisplayAction(
+  cart: cart ?? this.cart,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

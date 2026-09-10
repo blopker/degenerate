@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'pool_weights': ?poolWeights,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_weight', 'pool_weights'}.contains(key)); } 
-LoadBalancingRandomSteering copyWith({double Function()? defaultWeight, Map<String, double> Function()? poolWeights, }) { return LoadBalancingRandomSteering(
+LoadBalancingRandomSteering copyWith({double Function()? defaultWeight, Map<String, double>? Function()? poolWeights, }) { return LoadBalancingRandomSteering(
   defaultWeight: defaultWeight != null ? defaultWeight() : this.defaultWeight,
   poolWeights: poolWeights != null ? poolWeights() : this.poolWeights,
 ); } 

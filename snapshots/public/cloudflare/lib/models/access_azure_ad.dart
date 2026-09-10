@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessAzureAd copyWith({AccessAzureAdConfig? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessAzureAdScimConfig Function()? scimConfig, AccessAzureAdType? type, }) { return AccessAzureAd(
+AccessAzureAd copyWith({AccessAzureAdConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessAzureAdScimConfig? Function()? scimConfig, AccessAzureAdType? type, }) { return AccessAzureAd(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

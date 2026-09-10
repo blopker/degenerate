@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   'tlsTimeout': ?tlsTimeout,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'access', 'caPool', 'connectTimeout', 'disableChunkedEncoding', 'http2Origin', 'httpHostHeader', 'keepAliveConnections', 'keepAliveTimeout', 'matchSNItoHost', 'noHappyEyeballs', 'noTLSVerify', 'originServerName', 'proxyType', 'tcpKeepAlive', 'tlsTimeout'}.contains(key)); } 
-TunnelOriginRequest copyWith({TunnelOriginRequestAccess Function()? access, String Function()? caPool, int Function()? connectTimeout, bool Function()? disableChunkedEncoding, bool Function()? http2Origin, String Function()? httpHostHeader, int Function()? keepAliveConnections, int Function()? keepAliveTimeout, bool Function()? matchSnItoHost, bool Function()? noHappyEyeballs, bool Function()? noTlsVerify, String Function()? originServerName, String Function()? proxyType, int Function()? tcpKeepAlive, int Function()? tlsTimeout, }) { return TunnelOriginRequest(
+TunnelOriginRequest copyWith({TunnelOriginRequestAccess? Function()? access, String? Function()? caPool, int? Function()? connectTimeout, bool? Function()? disableChunkedEncoding, bool? Function()? http2Origin, String? Function()? httpHostHeader, int? Function()? keepAliveConnections, int? Function()? keepAliveTimeout, bool? Function()? matchSnItoHost, bool? Function()? noHappyEyeballs, bool? Function()? noTlsVerify, String? Function()? originServerName, String? Function()? proxyType, int? Function()? tcpKeepAlive, int? Function()? tlsTimeout, }) { return TunnelOriginRequest(
   access: access != null ? access() : this.access,
   caPool: caPool != null ? caPool() : this.caPool,
   connectTimeout: connectTimeout != null ? connectTimeout() : this.connectTimeout,

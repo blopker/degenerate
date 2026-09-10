@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'usernames': usernames,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('usernames'); } 
-AccessConnectionRulesSsh copyWith({AccessAllowEmailAlias Function()? allowEmailAlias, List<String>? usernames, }) { return AccessConnectionRulesSsh(
+AccessConnectionRulesSsh copyWith({AccessAllowEmailAlias? Function()? allowEmailAlias, List<String>? usernames, }) { return AccessConnectionRulesSsh(
   allowEmailAlias: allowEmailAlias != null ? allowEmailAlias() : this.allowEmailAlias,
   usernames: usernames ?? this.usernames,
 ); } 

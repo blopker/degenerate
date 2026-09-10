@@ -35,7 +35,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// An invocation of a tool on an MCP server.
 /// 
-@immutable final class McpToolCall {const McpToolCall({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, this.output, this.error, this.status, this.approvalRequestId, });
+@immutable final class McpToolCall {const McpToolCall({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, this.output = const Omittable.absent(), this.error = const Omittable.absent(), this.status, this.approvalRequestId = const Omittable.absent(), });
 
 factory McpToolCall.fromJson(Map<String, dynamic> json) { return McpToolCall(
   type: json['type'] as String,
@@ -43,10 +43,10 @@ factory McpToolCall.fromJson(Map<String, dynamic> json) { return McpToolCall(
   serverLabel: json['server_label'] as String,
   name: json['name'] as String,
   arguments: json['arguments'] as String,
-  output: json['output'] as String?,
-  error: json['error'] as String?,
+  output: json.containsKey('output') ? Omittable(json['output'] as String?) : const Omittable.absent(),
+  error: json.containsKey('error') ? Omittable(json['error'] as String?) : const Omittable.absent(),
   status: json['status'] != null ? McpToolCallStatus.fromJson(json['status'] as String) : null,
-  approvalRequestId: json['approval_request_id'] as String?,
+  approvalRequestId: json.containsKey('approval_request_id') ? Omittable(json['approval_request_id'] as String?) : const Omittable.absent(),
 ); }
 
 /// The type of the item. Always `mcp_call`.
@@ -71,11 +71,11 @@ final String arguments;
 
 /// The output from the tool call.
 /// 
-final String? output;
+final Omittable<String?> output;
 
 /// The error from the tool call, if any.
 /// 
-final String? error;
+final Omittable<String?> error;
 
 /// The status of the tool call. One of `in_progress`, `completed`, `incomplete`, `calling`, or `failed`.
 /// 
@@ -84,7 +84,7 @@ final McpToolCallStatus? status;
 /// Unique identifier for the MCP tool call approval request.
 /// Include this value in a subsequent `mcp_approval_response` input to approve or reject the corresponding tool call.
 /// 
-final String? approvalRequestId;
+final Omittable<String?> approvalRequestId;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
@@ -92,26 +92,26 @@ Map<String, dynamic> toJson() { return {
   'server_label': serverLabel,
   'name': name,
   'arguments': arguments,
-  'output': ?output,
-  'error': ?error,
+  if (output.isPresent) 'output': output.value,
+  if (error.isPresent) 'error': error.value,
   if (status != null) 'status': status?.toJson(),
-  'approval_request_id': ?approvalRequestId,
+  if (approvalRequestId.isPresent) 'approval_request_id': approvalRequestId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('server_label') && json['server_label'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('arguments') && json['arguments'] is String; } 
-McpToolCall copyWith({String? type, String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus Function()? status, String? Function()? approvalRequestId, }) { return McpToolCall(
+McpToolCall copyWith({String? type, String? id, String? serverLabel, String? name, String? arguments, Omittable<String?>? output, Omittable<String?>? error, McpToolCallStatus? Function()? status, Omittable<String?>? approvalRequestId, }) { return McpToolCall(
   type: type ?? this.type,
   id: id ?? this.id,
   serverLabel: serverLabel ?? this.serverLabel,
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
-  output: output != null ? output() : this.output,
-  error: error != null ? error() : this.error,
+  output: output ?? this.output,
+  error: error ?? this.error,
   status: status != null ? status() : this.status,
-  approvalRequestId: approvalRequestId != null ? approvalRequestId() : this.approvalRequestId,
+  approvalRequestId: approvalRequestId ?? this.approvalRequestId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is McpToolCall &&

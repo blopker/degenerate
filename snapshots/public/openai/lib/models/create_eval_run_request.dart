@@ -1,30 +1,30 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_completions_run_data_source.dart';import 'create_eval_jsonl_run_data_source.dart';import 'create_eval_responses_run_data_source.dart';import 'create_eval_run_request_data_source.dart';@immutable final class CreateEvalRunRequest {const CreateEvalRunRequest({required this.dataSource, this.name, this.metadata, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_completions_run_data_source.dart';import 'create_eval_jsonl_run_data_source.dart';import 'create_eval_responses_run_data_source.dart';import 'create_eval_run_request_data_source.dart';@immutable final class CreateEvalRunRequest {const CreateEvalRunRequest({required this.dataSource, this.name, this.metadata = const Omittable.absent(), });
 
 factory CreateEvalRunRequest.fromJson(Map<String, dynamic> json) { return CreateEvalRunRequest(
   name: json['name'] as String?,
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   dataSource: OneOf3.parse(json['data_source'], fromA: (v) => CreateEvalJsonlRunDataSource.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalCompletionsRunDataSource.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalResponsesRunDataSource.fromJson(v as Map<String, dynamic>),),
 ); }
 
 /// The name of the run.
 final String? name;
 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// Details about the run's data source.
 final CreateEvalRunRequestDataSource dataSource;
 
 Map<String, dynamic> toJson() { return {
   'name': ?name,
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   'data_source': dataSource.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_source'); } 
-CreateEvalRunRequest copyWith({String Function()? name, Map<String, String>? Function()? metadata, CreateEvalRunRequestDataSource? dataSource, }) { return CreateEvalRunRequest(
+CreateEvalRunRequest copyWith({String? Function()? name, Omittable<Map<String,String>?>? metadata, CreateEvalRunRequestDataSource? dataSource, }) { return CreateEvalRunRequest(
   name: name != null ? name() : this.name,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   dataSource: dataSource ?? this.dataSource,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

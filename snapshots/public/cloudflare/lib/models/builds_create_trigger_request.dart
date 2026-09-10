@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('branc
       json.containsKey('repo_connection_uuid') &&
       json.containsKey('root_directory') &&
       json.containsKey('trigger_name'); } 
-BuildsCreateTriggerRequest copyWith({List<String>? branchExcludes, List<String>? branchIncludes, BuildsBuildCachingEnabled Function()? buildCachingEnabled, BuildsBuildCommand? buildCommand, BuildsBuildTokenUuid? buildTokenUuid, BuildsDeployCommand? deployCommand, BuildsExternalScriptId? externalScriptId, List<String>? pathExcludes, List<String>? pathIncludes, BuildsRepoConnectionUuid? repoConnectionUuid, BuildsRootDirectory? rootDirectory, BuildsTriggerName? triggerName, }) { return BuildsCreateTriggerRequest(
+BuildsCreateTriggerRequest copyWith({List<String>? branchExcludes, List<String>? branchIncludes, BuildsBuildCachingEnabled? Function()? buildCachingEnabled, BuildsBuildCommand? buildCommand, BuildsBuildTokenUuid? buildTokenUuid, BuildsDeployCommand? deployCommand, BuildsExternalScriptId? externalScriptId, List<String>? pathExcludes, List<String>? pathIncludes, BuildsRepoConnectionUuid? repoConnectionUuid, BuildsRootDirectory? rootDirectory, BuildsTriggerName? triggerName, }) { return BuildsCreateTriggerRequest(
   branchExcludes: branchExcludes ?? this.branchExcludes,
   branchIncludes: branchIncludes ?? this.branchIncludes,
   buildCachingEnabled: buildCachingEnabled != null ? buildCachingEnabled() : this.buildCachingEnabled,

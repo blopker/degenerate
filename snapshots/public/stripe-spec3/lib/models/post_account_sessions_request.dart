@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
       json.containsKey('components'); } 
-PostAccountSessionsRequest copyWith({String? account, PostAccountSessionsRequestComponents? components, List<String> Function()? expand, }) { return PostAccountSessionsRequest(
+PostAccountSessionsRequest copyWith({String? account, PostAccountSessionsRequestComponents? components, List<String>? Function()? expand, }) { return PostAccountSessionsRequest(
   account: account ?? this.account,
   components: components ?? this.components,
   expand: expand != null ? expand() : this.expand,

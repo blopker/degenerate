@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'source_name': ?sourceName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'idp_id', 'source_name'}.contains(key)); } 
-AccessSamlSaasAppCustomAttributesSourceNameByIdp copyWith({String Function()? idpId, String Function()? sourceName, }) { return AccessSamlSaasAppCustomAttributesSourceNameByIdp(
+AccessSamlSaasAppCustomAttributesSourceNameByIdp copyWith({String? Function()? idpId, String? Function()? sourceName, }) { return AccessSamlSaasAppCustomAttributesSourceNameByIdp(
   idpId: idpId != null ? idpId() : this.idpId,
   sourceName: sourceName != null ? sourceName() : this.sourceName,
 ); } 

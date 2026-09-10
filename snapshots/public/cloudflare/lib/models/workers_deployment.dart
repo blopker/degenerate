@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('source') && json['source'] is String &&
       json.containsKey('strategy') &&
       json.containsKey('versions'); } 
-WorkersDeployment copyWith({WorkersDeploymentAnnotations Function()? annotations, String Function()? authorEmail, DateTime? createdOn, String? id, String? source, WorkersDeploymentStrategy? strategy, List<WorkersDeploymentVersions>? versions, }) { return WorkersDeployment(
+WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotations, String? Function()? authorEmail, DateTime? createdOn, String? id, String? source, WorkersDeploymentStrategy? strategy, List<WorkersDeploymentVersions>? versions, }) { return WorkersDeployment(
   annotations: annotations != null ? annotations() : this.annotations,
   authorEmail: authorEmail != null ? authorEmail() : this.authorEmail,
   createdOn: createdOn ?? this.createdOn,

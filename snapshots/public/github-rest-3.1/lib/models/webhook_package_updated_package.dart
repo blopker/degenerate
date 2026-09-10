@@ -44,20 +44,20 @@ final String updatedAt;
 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
-  'description': ?description,
+  'description': description,
   'ecosystem': ecosystem,
   'html_url': htmlUrl.toString(),
   'id': id,
   'name': name,
   'namespace': namespace,
-  if (owner != null) 'owner': owner?.toJson(),
+  'owner': owner?.toJson(),
   'package_type': packageType,
   'package_version': packageVersion.toJson(),
-  if (registry != null) 'registry': registry?.toJson(),
+  'registry': registry?.toJson(),
   'updated_at': updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('ecosystem') && json['ecosystem'] is String &&
       json.containsKey('html_url') && json['html_url'] is String &&
       json.containsKey('id') && json['id'] is num &&

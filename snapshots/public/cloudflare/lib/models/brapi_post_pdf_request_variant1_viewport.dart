@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('height') && json['height'] is num &&
       json.containsKey('width') && json['width'] is num; } 
-BrapiPostPdfRequestVariant1Viewport copyWith({double Function()? deviceScaleFactor, bool Function()? hasTouch, double? height, bool Function()? isLandscape, bool Function()? isMobile, double? width, }) { return BrapiPostPdfRequestVariant1Viewport(
+BrapiPostPdfRequestVariant1Viewport copyWith({double? Function()? deviceScaleFactor, bool? Function()? hasTouch, double? height, bool? Function()? isLandscape, bool? Function()? isMobile, double? width, }) { return BrapiPostPdfRequestVariant1Viewport(
   deviceScaleFactor: deviceScaleFactor != null ? deviceScaleFactor() : this.deviceScaleFactor,
   hasTouch: hasTouch != null ? hasTouch() : this.hasTouch,
   height: height ?? this.height,

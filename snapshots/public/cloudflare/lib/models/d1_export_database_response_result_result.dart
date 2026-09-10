@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'signed_url': ?signedUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filename', 'signed_url'}.contains(key)); } 
-D1ExportDatabaseResponseResultResult copyWith({String Function()? filename, String Function()? signedUrl, }) { return D1ExportDatabaseResponseResultResult(
+D1ExportDatabaseResponseResultResult copyWith({String? Function()? filename, String? Function()? signedUrl, }) { return D1ExportDatabaseResponseResultResult(
   filename: filename != null ? filename() : this.filename,
   signedUrl: signedUrl != null ? signedUrl() : this.signedUrl,
 ); } 

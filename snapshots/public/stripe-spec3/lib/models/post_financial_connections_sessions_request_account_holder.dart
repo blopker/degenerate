@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PostFinancialConnectionsSessionsRequestAccountHolder copyWith({String Function()? account, String Function()? customer, String Function()? customerAccount, PostFinancialConnectionsSessionsRequestAccountHolderType? type, }) { return PostFinancialConnectionsSessionsRequestAccountHolder(
+PostFinancialConnectionsSessionsRequestAccountHolder copyWith({String? Function()? account, String? Function()? customer, String? Function()? customerAccount, PostFinancialConnectionsSessionsRequestAccountHolderType? type, }) { return PostFinancialConnectionsSessionsRequestAccountHolder(
   account: account != null ? account() : this.account,
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,

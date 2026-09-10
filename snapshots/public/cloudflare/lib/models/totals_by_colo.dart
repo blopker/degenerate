@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (until != null) 'until': until?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bandwidth', 'requests', 'since', 'threats', 'until'}.contains(key)); } 
-TotalsByColo copyWith({BandwidthByColo Function()? bandwidth, RequestsByColo Function()? requests, Since Function()? since, Threats Function()? threats, Until Function()? until, }) { return TotalsByColo(
+TotalsByColo copyWith({BandwidthByColo? Function()? bandwidth, RequestsByColo? Function()? requests, Since? Function()? since, Threats? Function()? threats, Until? Function()? until, }) { return TotalsByColo(
   bandwidth: bandwidth != null ? bandwidth() : this.bandwidth,
   requests: requests != null ? requests() : this.requests,
   since: since != null ? since() : this.since,

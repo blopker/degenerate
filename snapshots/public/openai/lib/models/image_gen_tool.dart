@@ -181,7 +181,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A tool that generates images using the GPT image models.
 /// 
-@immutable final class ImageGenTool {const ImageGenTool({required this.type, this.model, this.quality = ImageGenToolQuality.auto, this.size = ImageGenToolSize.auto, this.outputFormat = ImageGenToolOutputFormat.png, this.outputCompression = 100, this.moderation = ImageGenToolModeration.auto, this.background = ImageGenToolBackground.auto, this.inputFidelity, this.inputImageMask, this.partialImages = 0, this.action, });
+@immutable final class ImageGenTool {const ImageGenTool({required this.type, this.model, this.quality = ImageGenToolQuality.auto, this.size = ImageGenToolSize.auto, this.outputFormat = ImageGenToolOutputFormat.png, this.outputCompression = 100, this.moderation = ImageGenToolModeration.auto, this.background = ImageGenToolBackground.auto, this.inputFidelity = const Omittable.absent(), this.inputImageMask, this.partialImages = 0, this.action, });
 
 factory ImageGenTool.fromJson(Map<String, dynamic> json) { return ImageGenTool(
   type: json['type'] as String,
@@ -192,7 +192,7 @@ factory ImageGenTool.fromJson(Map<String, dynamic> json) { return ImageGenTool(
   outputCompression: json.containsKey('output_compression') ? (json['output_compression'] as num).toInt() : 100,
   moderation: json.containsKey('moderation') ? ImageGenToolModeration.fromJson(json['moderation'] as String) : ImageGenToolModeration.auto,
   background: json.containsKey('background') ? ImageGenToolBackground.fromJson(json['background'] as String) : ImageGenToolBackground.auto,
-  inputFidelity: json['input_fidelity'] != null ? InputFidelity.fromJson(json['input_fidelity'] as String) : null,
+  inputFidelity: json.containsKey('input_fidelity') ? Omittable(json['input_fidelity'] != null ? InputFidelity.fromJson(json['input_fidelity'] as String) : null) : const Omittable.absent(),
   inputImageMask: json['input_image_mask'] != null ? ImageGenToolInputImageMask.fromJson(json['input_image_mask'] as Map<String, dynamic>) : null,
   partialImages: json.containsKey('partial_images') ? (json['partial_images'] as num).toInt() : 0,
   action: json['action'] != null ? ImageGenActionEnum.fromJson(json['action'] as String) : null,
@@ -232,7 +232,7 @@ final ImageGenToolModeration moderation;
 /// 
 final ImageGenToolBackground background;
 
-final InputFidelity? inputFidelity;
+final Omittable<InputFidelity?> inputFidelity;
 
 /// Optional mask for inpainting. Contains `image_url`
 /// (string, optional) and `file_id` (string, optional).
@@ -256,13 +256,13 @@ Map<String, dynamic> toJson() { return {
   'output_compression': outputCompression,
   'moderation': moderation.toJson(),
   'background': background.toJson(),
-  if (inputFidelity != null) 'input_fidelity': inputFidelity?.toJson(),
+  if (inputFidelity.isPresent) 'input_fidelity': inputFidelity.value?.toJson(),
   if (inputImageMask != null) 'input_image_mask': inputImageMask?.toJson(),
   'partial_images': partialImages,
   if (action != null) 'action': action?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-ImageGenTool copyWith({String? type, ImageGenToolModel Function()? model, ImageGenToolQuality Function()? quality, ImageGenToolSize Function()? size, ImageGenToolOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageGenToolBackground Function()? background, InputFidelity? Function()? inputFidelity, ImageGenToolInputImageMask Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum Function()? action, }) { return ImageGenTool(
+ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, ImageGenToolQuality Function()? quality, ImageGenToolSize Function()? size, ImageGenToolOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageGenToolBackground Function()? background, Omittable<InputFidelity?>? inputFidelity, ImageGenToolInputImageMask? Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ImageGenTool(
   type: type ?? this.type,
   model: model != null ? model() : this.model,
   quality: quality != null ? quality() : this.quality,
@@ -271,7 +271,7 @@ ImageGenTool copyWith({String? type, ImageGenToolModel Function()? model, ImageG
   outputCompression: outputCompression != null ? outputCompression() : this.outputCompression,
   moderation: moderation != null ? moderation() : this.moderation,
   background: background != null ? background() : this.background,
-  inputFidelity: inputFidelity != null ? inputFidelity() : this.inputFidelity,
+  inputFidelity: inputFidelity ?? this.inputFidelity,
   inputImageMask: inputImageMask != null ? inputImageMask() : this.inputImageMask,
   partialImages: partialImages != null ? partialImages() : this.partialImages,
   action: action != null ? action() : this.action,

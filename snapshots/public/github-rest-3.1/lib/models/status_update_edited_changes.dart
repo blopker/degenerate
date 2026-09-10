@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (targetDate != null) 'target_date': targetDate?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'body', 'status', 'start_date', 'target_date'}.contains(key)); } 
-StatusUpdateEditedChanges copyWith({StatusUpdateEditedChangesBody Function()? body, StatusUpdateEditedChangesStatus Function()? status, StatusUpdateEditedChangesStartDate Function()? startDate, StatusUpdateEditedChangesTargetDate Function()? targetDate, }) { return StatusUpdateEditedChanges(
+StatusUpdateEditedChanges copyWith({StatusUpdateEditedChangesBody? Function()? body, StatusUpdateEditedChangesStatus? Function()? status, StatusUpdateEditedChangesStartDate? Function()? startDate, StatusUpdateEditedChangesTargetDate? Function()? targetDate, }) { return StatusUpdateEditedChanges(
   body: body != null ? body() : this.body,
   status: status != null ? status() : this.status,
   startDate: startDate != null ? startDate() : this.startDate,

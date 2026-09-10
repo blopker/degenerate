@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
   if (regions != null) 'regions': regions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_out_of_region_access', 'regions'}.contains(key)); } 
-LogcontrolCmbConfig copyWith({LogcontrolAllowOutOfRegionAccess Function()? allowOutOfRegionAccess, LogcontrolRegions Function()? regions, }) { return LogcontrolCmbConfig(
+LogcontrolCmbConfig copyWith({LogcontrolAllowOutOfRegionAccess? Function()? allowOutOfRegionAccess, LogcontrolRegions? Function()? regions, }) { return LogcontrolCmbConfig(
   allowOutOfRegionAccess: allowOutOfRegionAccess != null ? allowOutOfRegionAccess() : this.allowOutOfRegionAccess,
   regions: regions != null ? regions() : this.regions,
 ); } 

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options'}.contains(key)); } 
-PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebit copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions Function()? mandateOptions}) { return PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebit(
+PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebit copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebitMandateOptions? Function()? mandateOptions}) { return PostSetupIntentsIntentRequestPaymentMethodOptionsSepaDebit(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

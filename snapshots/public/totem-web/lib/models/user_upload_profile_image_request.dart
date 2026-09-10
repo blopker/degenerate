@@ -17,7 +17,7 @@ UserUploadProfileImageRequest copyWith({Uint8List? file}) { return UserUploadPro
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is UserUploadProfileImageRequest &&
-          file == other.file; } 
-@override int get hashCode { return file.hashCode; } 
+          listEquals(file, other.file); } 
+@override int get hashCode { return Object.hashAll(file).hashCode; } 
 @override String toString() { return 'UserUploadProfileImageRequest(file: $file)'; } 
  }

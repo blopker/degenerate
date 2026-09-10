@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   'subnets': ?subnets,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn', 'count', 'ip_count_total', 'page', 'per_page', 'subnets'}.contains(key)); } 
-AsnIntelligenceGetAsnSubnetsResponse copyWith({IntelAsn Function()? asn, IntelCount Function()? count, int Function()? ipCountTotal, IntelPage Function()? page, IntelPerPage Function()? perPage, List<String> Function()? subnets, }) { return AsnIntelligenceGetAsnSubnetsResponse(
+AsnIntelligenceGetAsnSubnetsResponse copyWith({IntelAsn? Function()? asn, IntelCount? Function()? count, int? Function()? ipCountTotal, IntelPage? Function()? page, IntelPerPage? Function()? perPage, List<String>? Function()? subnets, }) { return AsnIntelligenceGetAsnSubnetsResponse(
   asn: asn != null ? asn() : this.asn,
   count: count != null ? count() : this.count,
   ipCountTotal: ipCountTotal != null ? ipCountTotal() : this.ipCountTotal,

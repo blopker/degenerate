@@ -49,12 +49,12 @@ factory AddressingValidationState.fromJson(String json) => AddressingValidationS
 String toJson() => value;
 
 }
-@immutable final class AddressingIpamPrefixes {const AddressingIpamPrefixes({this.accountId, this.advertised, this.advertisedModifiedAt, this.approved, this.asn, this.cidr, this.createdAt, this.delegateLoaCreation, this.description, this.id, this.irrValidationState, this.loaDocumentId, this.modifiedAt, this.onDemandEnabled, this.onDemandLocked, this.ownershipValidationState, this.ownershipValidationToken, this.rpkiValidationState, });
+@immutable final class AddressingIpamPrefixes {const AddressingIpamPrefixes({this.accountId, this.advertised = const Omittable.absent(), this.advertisedModifiedAt = const Omittable.absent(), this.approved, this.asn, this.cidr, this.createdAt, this.delegateLoaCreation, this.description, this.id, this.irrValidationState, this.loaDocumentId = const Omittable.absent(), this.modifiedAt, this.onDemandEnabled, this.onDemandLocked, this.ownershipValidationState, this.ownershipValidationToken, this.rpkiValidationState, });
 
 factory AddressingIpamPrefixes.fromJson(Map<String, dynamic> json) { return AddressingIpamPrefixes(
   accountId: json['account_id'] != null ? AddressingAccountIdentifier.fromJson(json['account_id'] as String) : null,
-  advertised: json['advertised'] != null ? AddressingAdvertised.fromJson(json['advertised'] as bool) : null,
-  advertisedModifiedAt: json['advertised_modified_at'] != null ? AddressingAdvertisedModifiedAtNullable.fromJson(json['advertised_modified_at'] as String) : null,
+  advertised: json.containsKey('advertised') ? Omittable(json['advertised'] != null ? AddressingAdvertised.fromJson(json['advertised'] as bool) : null) : const Omittable.absent(),
+  advertisedModifiedAt: json.containsKey('advertised_modified_at') ? Omittable(json['advertised_modified_at'] != null ? AddressingAdvertisedModifiedAtNullable.fromJson(json['advertised_modified_at'] as String) : null) : const Omittable.absent(),
   approved: json['approved'] != null ? AddressingApproved.fromJson(json['approved'] as String) : null,
   asn: json['asn'] != null ? AddressingAsn.fromJson(json['asn'] as num) : null,
   cidr: json['cidr'] != null ? AddressingCidr.fromJson(json['cidr'] as String) : null,
@@ -63,7 +63,7 @@ factory AddressingIpamPrefixes.fromJson(Map<String, dynamic> json) { return Addr
   description: json['description'] != null ? AddressingDescription.fromJson(json['description'] as String) : null,
   id: json['id'] != null ? AddressingPrefixIdentifier.fromJson(json['id'] as String) : null,
   irrValidationState: json['irr_validation_state'] != null ? AddressingValidationState.fromJson(json['irr_validation_state'] as String) : null,
-  loaDocumentId: json['loa_document_id'] != null ? AddressingLoaDocumentIdentifier.fromJson(json['loa_document_id'] as String) : null,
+  loaDocumentId: json.containsKey('loa_document_id') ? Omittable(json['loa_document_id'] != null ? AddressingLoaDocumentIdentifier.fromJson(json['loa_document_id'] as String) : null) : const Omittable.absent(),
   modifiedAt: json['modified_at'] != null ? AddressingTimestamp.fromJson(json['modified_at'] as String) : null,
   onDemandEnabled: json['on_demand_enabled'] != null ? AddressingOnDemandEnabled.fromJson(json['on_demand_enabled'] as bool) : null,
   onDemandLocked: json['on_demand_locked'] != null ? AddressingOnDemandLocked.fromJson(json['on_demand_locked'] as bool) : null,
@@ -76,10 +76,10 @@ factory AddressingIpamPrefixes.fromJson(Map<String, dynamic> json) { return Addr
 final AddressingAccountIdentifier? accountId;
 
 /// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
-final AddressingAdvertised? advertised;
+final Omittable<AddressingAdvertised?> advertised;
 
 /// Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
-final AddressingAdvertisedModifiedAtNullable? advertisedModifiedAt;
+final Omittable<AddressingAdvertisedModifiedAtNullable?> advertisedModifiedAt;
 
 /// Approval state of the prefix (P = pending, V = active).
 final AddressingApproved? approved;
@@ -102,7 +102,7 @@ final AddressingPrefixIdentifier? id;
 
 final AddressingValidationState? irrValidationState;
 
-final AddressingLoaDocumentIdentifier? loaDocumentId;
+final Omittable<AddressingLoaDocumentIdentifier?> loaDocumentId;
 
 final AddressingTimestamp? modifiedAt;
 
@@ -118,8 +118,8 @@ final AddressingValidationState? rpkiValidationState;
 
 Map<String, dynamic> toJson() { return {
   if (accountId != null) 'account_id': accountId?.toJson(),
-  if (advertised != null) 'advertised': advertised?.toJson(),
-  if (advertisedModifiedAt != null) 'advertised_modified_at': advertisedModifiedAt?.toJson(),
+  if (advertised.isPresent) 'advertised': advertised.value?.toJson(),
+  if (advertisedModifiedAt.isPresent) 'advertised_modified_at': advertisedModifiedAt.value?.toJson(),
   if (approved != null) 'approved': approved?.toJson(),
   if (asn != null) 'asn': asn?.toJson(),
   if (cidr != null) 'cidr': cidr?.toJson(),
@@ -128,7 +128,7 @@ Map<String, dynamic> toJson() { return {
   if (description != null) 'description': description?.toJson(),
   if (id != null) 'id': id?.toJson(),
   if (irrValidationState != null) 'irr_validation_state': irrValidationState?.toJson(),
-  if (loaDocumentId != null) 'loa_document_id': loaDocumentId?.toJson(),
+  if (loaDocumentId.isPresent) 'loa_document_id': loaDocumentId.value?.toJson(),
   if (modifiedAt != null) 'modified_at': modifiedAt?.toJson(),
   if (onDemandEnabled != null) 'on_demand_enabled': onDemandEnabled?.toJson(),
   if (onDemandLocked != null) 'on_demand_locked': onDemandLocked?.toJson(),
@@ -137,10 +137,10 @@ Map<String, dynamic> toJson() { return {
   if (rpkiValidationState != null) 'rpki_validation_state': rpkiValidationState?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_id', 'advertised', 'advertised_modified_at', 'approved', 'asn', 'cidr', 'created_at', 'delegate_loa_creation', 'description', 'id', 'irr_validation_state', 'loa_document_id', 'modified_at', 'on_demand_enabled', 'on_demand_locked', 'ownership_validation_state', 'ownership_validation_token', 'rpki_validation_state'}.contains(key)); } 
-AddressingIpamPrefixes copyWith({AddressingAccountIdentifier Function()? accountId, AddressingAdvertised? Function()? advertised, AddressingAdvertisedModifiedAtNullable? Function()? advertisedModifiedAt, AddressingApproved Function()? approved, AddressingAsn Function()? asn, AddressingCidr Function()? cidr, AddressingTimestamp Function()? createdAt, AddressingDelegateLoaCreation Function()? delegateLoaCreation, AddressingDescription Function()? description, AddressingPrefixIdentifier Function()? id, AddressingValidationState Function()? irrValidationState, AddressingLoaDocumentIdentifier? Function()? loaDocumentId, AddressingTimestamp Function()? modifiedAt, AddressingOnDemandEnabled Function()? onDemandEnabled, AddressingOnDemandLocked Function()? onDemandLocked, AddressingValidationState Function()? ownershipValidationState, AddressingOwnershipValidationToken Function()? ownershipValidationToken, AddressingValidationState Function()? rpkiValidationState, }) { return AddressingIpamPrefixes(
+AddressingIpamPrefixes copyWith({AddressingAccountIdentifier? Function()? accountId, Omittable<AddressingAdvertised?>? advertised, Omittable<AddressingAdvertisedModifiedAtNullable?>? advertisedModifiedAt, AddressingApproved? Function()? approved, AddressingAsn? Function()? asn, AddressingCidr? Function()? cidr, AddressingTimestamp? Function()? createdAt, AddressingDelegateLoaCreation? Function()? delegateLoaCreation, AddressingDescription? Function()? description, AddressingPrefixIdentifier? Function()? id, AddressingValidationState? Function()? irrValidationState, Omittable<AddressingLoaDocumentIdentifier?>? loaDocumentId, AddressingTimestamp? Function()? modifiedAt, AddressingOnDemandEnabled? Function()? onDemandEnabled, AddressingOnDemandLocked? Function()? onDemandLocked, AddressingValidationState? Function()? ownershipValidationState, AddressingOwnershipValidationToken? Function()? ownershipValidationToken, AddressingValidationState? Function()? rpkiValidationState, }) { return AddressingIpamPrefixes(
   accountId: accountId != null ? accountId() : this.accountId,
-  advertised: advertised != null ? advertised() : this.advertised,
-  advertisedModifiedAt: advertisedModifiedAt != null ? advertisedModifiedAt() : this.advertisedModifiedAt,
+  advertised: advertised ?? this.advertised,
+  advertisedModifiedAt: advertisedModifiedAt ?? this.advertisedModifiedAt,
   approved: approved != null ? approved() : this.approved,
   asn: asn != null ? asn() : this.asn,
   cidr: cidr != null ? cidr() : this.cidr,
@@ -149,7 +149,7 @@ AddressingIpamPrefixes copyWith({AddressingAccountIdentifier Function()? account
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
   irrValidationState: irrValidationState != null ? irrValidationState() : this.irrValidationState,
-  loaDocumentId: loaDocumentId != null ? loaDocumentId() : this.loaDocumentId,
+  loaDocumentId: loaDocumentId ?? this.loaDocumentId,
   modifiedAt: modifiedAt != null ? modifiedAt() : this.modifiedAt,
   onDemandEnabled: onDemandEnabled != null ? onDemandEnabled() : this.onDemandEnabled,
   onDemandLocked: onDemandLocked != null ? onDemandLocked() : this.onDemandLocked,

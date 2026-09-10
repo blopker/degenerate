@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'conditions': ?conditions,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'conditions'}.contains(key)); } 
-AigConfigPostGatewayDynamicRouteRequestElementsConditionalProperties copyWith({Map<String, dynamic> Function()? conditions}) { return AigConfigPostGatewayDynamicRouteRequestElementsConditionalProperties(
+AigConfigPostGatewayDynamicRouteRequestElementsConditionalProperties copyWith({Map<String, dynamic>? Function()? conditions}) { return AigConfigPostGatewayDynamicRouteRequestElementsConditionalProperties(
   conditions: conditions != null ? conditions() : this.conditions,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

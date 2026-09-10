@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   if (tipping != null) 'tipping': tipping?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'allow_redisplay', 'enable_customer_cancellation', 'skip_tipping', 'tipping'}.contains(key)); } 
-PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig copyWith({PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay Function()? allowRedisplay, bool Function()? enableCustomerCancellation, bool Function()? skipTipping, PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping Function()? tipping, }) { return PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig(
+PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig copyWith({PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigAllowRedisplay? Function()? allowRedisplay, bool? Function()? enableCustomerCancellation, bool? Function()? skipTipping, PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfigTipping? Function()? tipping, }) { return PostTerminalReadersReaderCollectPaymentMethodRequestCollectConfig(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
   skipTipping: skipTipping != null ? skipTipping() : this.skipTipping,

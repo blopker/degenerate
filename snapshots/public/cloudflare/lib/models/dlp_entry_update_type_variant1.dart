@@ -21,16 +21,16 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpEntryUpdateTypeVariant1Type($value)'; } 
  }
-@immutable final class DlpEntryUpdateTypeVariant1 {const DlpEntryUpdateTypeVariant1({required this.name, required this.pattern, required this.type, this.description, });
+@immutable final class DlpEntryUpdateTypeVariant1 {const DlpEntryUpdateTypeVariant1({required this.name, required this.pattern, required this.type, this.description = const Omittable.absent(), });
 
 factory DlpEntryUpdateTypeVariant1.fromJson(Map<String, dynamic> json) { return DlpEntryUpdateTypeVariant1(
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   name: json['name'] as String,
   pattern: DlpPattern.fromJson(json['pattern'] as Map<String, dynamic>),
   type: DlpEntryUpdateTypeVariant1Type.fromJson(json['type'] as String),
 ); }
 
-final String? description;
+final Omittable<String?> description;
 
 final String name;
 
@@ -39,7 +39,7 @@ final DlpPattern pattern;
 final DlpEntryUpdateTypeVariant1Type type;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'name': name,
   'pattern': pattern.toJson(),
   'type': type.toJson(),
@@ -47,8 +47,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('pattern') &&
       json.containsKey('type'); } 
-DlpEntryUpdateTypeVariant1 copyWith({String? Function()? description, String? name, DlpPattern? pattern, DlpEntryUpdateTypeVariant1Type? type, }) { return DlpEntryUpdateTypeVariant1(
-  description: description != null ? description() : this.description,
+DlpEntryUpdateTypeVariant1 copyWith({Omittable<String?>? description, String? name, DlpPattern? pattern, DlpEntryUpdateTypeVariant1Type? type, }) { return DlpEntryUpdateTypeVariant1(
+  description: description ?? this.description,
   name: name ?? this.name,
   pattern: pattern ?? this.pattern,
   type: type ?? this.type,

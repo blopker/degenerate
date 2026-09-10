@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'state': ?state,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String; } 
-PostTerminalLocationsRequestAddress copyWith({String Function()? city, String? country, String Function()? line1, String Function()? line2, String Function()? postalCode, String Function()? state, }) { return PostTerminalLocationsRequestAddress(
+PostTerminalLocationsRequestAddress copyWith({String? Function()? city, String? country, String? Function()? line1, String? Function()? line2, String? Function()? postalCode, String? Function()? state, }) { return PostTerminalLocationsRequestAddress(
   city: city != null ? city() : this.city,
   country: country ?? this.country,
   line1: line1 != null ? line1() : this.line1,

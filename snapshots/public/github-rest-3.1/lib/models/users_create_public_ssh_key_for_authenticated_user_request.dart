@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'key': key,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
-UsersCreatePublicSshKeyForAuthenticatedUserRequest copyWith({String Function()? title, String? key, }) { return UsersCreatePublicSshKeyForAuthenticatedUserRequest(
+UsersCreatePublicSshKeyForAuthenticatedUserRequest copyWith({String? Function()? title, String? key, }) { return UsersCreatePublicSshKeyForAuthenticatedUserRequest(
   title: title != null ? title() : this.title,
   key: key ?? this.key,
 ); } 

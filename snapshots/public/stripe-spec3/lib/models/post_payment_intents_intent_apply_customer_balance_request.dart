@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount', 'currency', 'expand'}.contains(key)); } 
-PostPaymentIntentsIntentApplyCustomerBalanceRequest copyWith({int Function()? amount, String Function()? currency, List<String> Function()? expand, }) { return PostPaymentIntentsIntentApplyCustomerBalanceRequest(
+PostPaymentIntentsIntentApplyCustomerBalanceRequest copyWith({int? Function()? amount, String? Function()? currency, List<String>? Function()? expand, }) { return PostPaymentIntentsIntentApplyCustomerBalanceRequest(
   amount: amount != null ? amount() : this.amount,
   currency: currency != null ? currency() : this.currency,
   expand: expand != null ? expand() : this.expand,

@@ -48,11 +48,11 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreditNoteLineItemType($value)'; } 
  }
 /// The credit note line item object
-@immutable final class CreditNoteLineItem {const CreditNoteLineItem({required this.amount, required this.discountAmount, required this.discountAmounts, required this.id, required this.livemode, required this.object, required this.pretaxCreditAmounts, required this.taxRates, required this.type, this.description, this.invoiceLineItem, this.quantity, this.taxes, this.unitAmount, this.unitAmountDecimal, });
+@immutable final class CreditNoteLineItem {const CreditNoteLineItem({required this.amount, required this.discountAmount, required this.discountAmounts, required this.id, required this.livemode, required this.object, required this.pretaxCreditAmounts, required this.taxRates, required this.type, this.description = const Omittable.absent(), this.invoiceLineItem, this.quantity = const Omittable.absent(), this.taxes = const Omittable.absent(), this.unitAmount = const Omittable.absent(), this.unitAmountDecimal = const Omittable.absent(), });
 
 factory CreditNoteLineItem.fromJson(Map<String, dynamic> json) { return CreditNoteLineItem(
   amount: (json['amount'] as num).toInt(),
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   discountAmount: (json['discount_amount'] as num).toInt(),
   discountAmounts: (json['discount_amounts'] as List<dynamic>).map((e) => DiscountsResourceDiscountAmount.fromJson(e as Map<String, dynamic>)).toList(),
   id: json['id'] as String,
@@ -60,19 +60,19 @@ factory CreditNoteLineItem.fromJson(Map<String, dynamic> json) { return CreditNo
   livemode: json['livemode'] as bool,
   object: CreditNoteLineItemObject.fromJson(json['object'] as String),
   pretaxCreditAmounts: (json['pretax_credit_amounts'] as List<dynamic>).map((e) => CreditNotesPretaxCreditAmount.fromJson(e as Map<String, dynamic>)).toList(),
-  quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
+  quantity: json.containsKey('quantity') ? Omittable(json['quantity'] != null ? (json['quantity'] as num).toInt() : null) : const Omittable.absent(),
   taxRates: (json['tax_rates'] as List<dynamic>).map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList(),
-  taxes: (json['taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList(),
+  taxes: json.containsKey('taxes') ? Omittable((json['taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   type: CreditNoteLineItemType.fromJson(json['type'] as String),
-  unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
-  unitAmountDecimal: json['unit_amount_decimal'] as String?,
+  unitAmount: json.containsKey('unit_amount') ? Omittable(json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null) : const Omittable.absent(),
+  unitAmountDecimal: json.containsKey('unit_amount_decimal') ? Omittable(json['unit_amount_decimal'] as String?) : const Omittable.absent(),
 ); }
 
 /// The integer amount in cents (or local equivalent) representing the gross amount being credited for this line item, excluding (exclusive) tax and discounts.
 final int amount;
 
 /// Description of the item being credited.
-final String? description;
+final Omittable<String?> description;
 
 /// The integer amount in cents (or local equivalent) representing the discount being credited for this line item.
 final int discountAmount;
@@ -96,26 +96,26 @@ final CreditNoteLineItemObject object;
 final List<CreditNotesPretaxCreditAmount> pretaxCreditAmounts;
 
 /// The number of units of product being credited.
-final int? quantity;
+final Omittable<int?> quantity;
 
 /// The tax rates which apply to the line item.
 final List<TaxRate> taxRates;
 
 /// The tax information of the line item.
-final List<BillingBillResourceInvoicingTaxesTax>? taxes;
+final Omittable<List<BillingBillResourceInvoicingTaxesTax>?> taxes;
 
 /// The type of the credit note line item, one of `invoice_line_item` or `custom_line_item`. When the type is `invoice_line_item` there is an additional `invoice_line_item` property on the resource the value of which is the id of the credited line item on the invoice.
 final CreditNoteLineItemType type;
 
 /// The cost of each unit of product being credited.
-final int? unitAmount;
+final Omittable<int?> unitAmount;
 
 /// Same as `unit_amount`, but contains a decimal value with at most 12 decimal places.
-final String? unitAmountDecimal;
+final Omittable<String?> unitAmountDecimal;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'discount_amount': discountAmount,
   'discount_amounts': discountAmounts.map((e) => e.toJson()).toList(),
   'id': id,
@@ -123,12 +123,12 @@ Map<String, dynamic> toJson() { return {
   'livemode': livemode,
   'object': object.toJson(),
   'pretax_credit_amounts': pretaxCreditAmounts.map((e) => e.toJson()).toList(),
-  'quantity': ?quantity,
+  if (quantity.isPresent) 'quantity': quantity.value,
   'tax_rates': taxRates.map((e) => e.toJson()).toList(),
-  if (taxes != null) 'taxes': taxes?.map((e) => e.toJson()).toList(),
+  if (taxes.isPresent) 'taxes': taxes.value?.map((e) => e.toJson()).toList(),
   'type': type.toJson(),
-  'unit_amount': ?unitAmount,
-  'unit_amount_decimal': ?unitAmountDecimal,
+  if (unitAmount.isPresent) 'unit_amount': unitAmount.value,
+  if (unitAmountDecimal.isPresent) 'unit_amount_decimal': unitAmountDecimal.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('discount_amount') && json['discount_amount'] is num &&
@@ -139,9 +139,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('pretax_credit_amounts') &&
       json.containsKey('tax_rates') &&
       json.containsKey('type'); } 
-CreditNoteLineItem copyWith({int? amount, String? Function()? description, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, String? id, String Function()? invoiceLineItem, bool? livemode, CreditNoteLineItemObject? object, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, int? Function()? quantity, List<TaxRate>? taxRates, List<BillingBillResourceInvoicingTaxesTax>? Function()? taxes, CreditNoteLineItemType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return CreditNoteLineItem(
+CreditNoteLineItem copyWith({int? amount, Omittable<String?>? description, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, String? id, String? Function()? invoiceLineItem, bool? livemode, CreditNoteLineItemObject? object, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, Omittable<int?>? quantity, List<TaxRate>? taxRates, Omittable<List<BillingBillResourceInvoicingTaxesTax>?>? taxes, CreditNoteLineItemType? type, Omittable<int?>? unitAmount, Omittable<String?>? unitAmountDecimal, }) { return CreditNoteLineItem(
   amount: amount ?? this.amount,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   discountAmount: discountAmount ?? this.discountAmount,
   discountAmounts: discountAmounts ?? this.discountAmounts,
   id: id ?? this.id,
@@ -149,12 +149,12 @@ CreditNoteLineItem copyWith({int? amount, String? Function()? description, int? 
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   pretaxCreditAmounts: pretaxCreditAmounts ?? this.pretaxCreditAmounts,
-  quantity: quantity != null ? quantity() : this.quantity,
+  quantity: quantity ?? this.quantity,
   taxRates: taxRates ?? this.taxRates,
-  taxes: taxes != null ? taxes() : this.taxes,
+  taxes: taxes ?? this.taxes,
   type: type ?? this.type,
-  unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
-  unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
+  unitAmount: unitAmount ?? this.unitAmount,
+  unitAmountDecimal: unitAmountDecimal ?? this.unitAmountDecimal,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreditNoteLineItem &&
@@ -169,10 +169,11 @@ CreditNoteLineItem copyWith({int? amount, String? Function()? description, int? 
           listEquals(pretaxCreditAmounts, other.pretaxCreditAmounts) &&
           quantity == other.quantity &&
           listEquals(taxRates, other.taxRates) &&
-          listEquals(taxes, other.taxes) &&
+          taxes.isPresent == other.taxes.isPresent &&
+          listEquals(taxes.value, other.taxes.value) &&
           type == other.type &&
           unitAmount == other.unitAmount &&
           unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(amount, description, discountAmount, Object.hashAll(discountAmounts), id, invoiceLineItem, livemode, object, Object.hashAll(pretaxCreditAmounts), quantity, Object.hashAll(taxRates), Object.hashAll(taxes ?? const []), type, unitAmount, unitAmountDecimal); } 
+@override int get hashCode { return Object.hash(amount, description, discountAmount, Object.hashAll(discountAmounts), id, invoiceLineItem, livemode, object, Object.hashAll(pretaxCreditAmounts), quantity, Object.hashAll(taxRates), Object.hashAll(taxes.value ?? const []), type, unitAmount, unitAmountDecimal); } 
 @override String toString() { return 'CreditNoteLineItem(amount: $amount, description: $description, discountAmount: $discountAmount, discountAmounts: $discountAmounts, id: $id, invoiceLineItem: $invoiceLineItem, livemode: $livemode, object: $object, pretaxCreditAmounts: $pretaxCreditAmounts, quantity: $quantity, taxRates: $taxRates, taxes: $taxes, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
  }

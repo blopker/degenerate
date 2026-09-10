@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'http_url': ?httpUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'http_body', 'http_url'}.contains(key)); } 
-TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 copyWith({String Function()? httpBody, String Function()? httpUrl, }) { return TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(
+TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 copyWith({String? Function()? httpBody, String? Function()? httpUrl, }) { return TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(
   httpBody: httpBody != null ? httpBody() : this.httpBody,
   httpUrl: httpUrl != null ? httpUrl() : this.httpUrl,
 ); } 

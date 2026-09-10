@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('inputs'); } 
-PostTerminalReadersReaderCollectInputsRequest copyWith({List<String> Function()? expand, List<PostTerminalReadersReaderCollectInputsRequestInputs>? inputs, Map<String, String> Function()? metadata, }) { return PostTerminalReadersReaderCollectInputsRequest(
+PostTerminalReadersReaderCollectInputsRequest copyWith({List<String>? Function()? expand, List<PostTerminalReadersReaderCollectInputsRequestInputs>? inputs, Map<String, String>? Function()? metadata, }) { return PostTerminalReadersReaderCollectInputsRequest(
   expand: expand != null ? expand() : this.expand,
   inputs: inputs ?? this.inputs,
   metadata: metadata != null ? metadata() : this.metadata,

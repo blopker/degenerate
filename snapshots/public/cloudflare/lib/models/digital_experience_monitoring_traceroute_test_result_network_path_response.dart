@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hops') &&
       json.containsKey('resultId'); } 
-DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse copyWith({String Function()? deviceName, List<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops>? hops, DigitalExperienceMonitoringUuid? resultId, DigitalExperienceMonitoringUuid Function()? testId, String Function()? testName, }) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse(
+DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse copyWith({String? Function()? deviceName, List<DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponseHops>? hops, DigitalExperienceMonitoringUuid? resultId, DigitalExperienceMonitoringUuid? Function()? testId, String? Function()? testName, }) { return DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse(
   deviceName: deviceName != null ? deviceName() : this.deviceName,
   hops: hops ?? this.hops,
   resultId: resultId ?? this.resultId,

@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('environment_name') && json['environment_name'] is String &&
       json.containsKey('state'); } 
-ReviewCustomGatesStateRequired copyWith({String? environmentName, ReviewCustomGatesStateRequiredState? state, String Function()? comment, }) { return ReviewCustomGatesStateRequired(
+ReviewCustomGatesStateRequired copyWith({String? environmentName, ReviewCustomGatesStateRequiredState? state, String? Function()? comment, }) { return ReviewCustomGatesStateRequired(
   environmentName: environmentName ?? this.environmentName,
   state: state ?? this.state,
   comment: comment != null ? comment() : this.comment,

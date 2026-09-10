@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'town': ?town,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'city', 'country', 'line1', 'line2', 'postal_code', 'state', 'town'}.contains(key)); } 
-PostTokensRequestPersonAddressKanji copyWith({String Function()? city, String Function()? country, String Function()? line1, String Function()? line2, String Function()? postalCode, String Function()? state, String Function()? town, }) { return PostTokensRequestPersonAddressKanji(
+PostTokensRequestPersonAddressKanji copyWith({String? Function()? city, String? Function()? country, String? Function()? line1, String? Function()? line2, String? Function()? postalCode, String? Function()? state, String? Function()? town, }) { return PostTokensRequestPersonAddressKanji(
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,
   line1: line1 != null ? line1() : this.line1,

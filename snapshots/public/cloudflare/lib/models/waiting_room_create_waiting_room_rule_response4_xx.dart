@@ -26,13 +26,13 @@ Map<String, dynamic> toJson() { return {
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-  'result': ?result,
+  'result': result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-WaitingRoomCreateWaitingRoomRuleResponse4Xx copyWith({List<WaitingroomMessages2>? errors, List<WaitingroomMessages2>? messages, bool? success, WaitingRoomCreateWaitingRoomRuleResponse4XxResultInfo Function()? resultInfo, Map<String, dynamic>? Function()? result, }) { return WaitingRoomCreateWaitingRoomRuleResponse4Xx(
+WaitingRoomCreateWaitingRoomRuleResponse4Xx copyWith({List<WaitingroomMessages2>? errors, List<WaitingroomMessages2>? messages, bool? success, WaitingRoomCreateWaitingRoomRuleResponse4XxResultInfo? Function()? resultInfo, Map<String, dynamic>? Function()? result, }) { return WaitingRoomCreateWaitingRoomRuleResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

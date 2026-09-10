@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (ref != null) 'ref': ref?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'expression', 'id', 'paused', 'ref'}.contains(key)); } 
-FirewallFilter copyWith({FirewallFiltersComponentsSchemasDescription Function()? description, FirewallExpression Function()? expression, FirewallFiltersComponentsSchemasId Function()? id, FirewallFiltersComponentsSchemasPaused Function()? paused, FirewallSchemasRef Function()? ref, }) { return FirewallFilter(
+FirewallFilter copyWith({FirewallFiltersComponentsSchemasDescription? Function()? description, FirewallExpression? Function()? expression, FirewallFiltersComponentsSchemasId? Function()? id, FirewallFiltersComponentsSchemasPaused? Function()? paused, FirewallSchemasRef? Function()? ref, }) { return FirewallFilter(
   description: description != null ? description() : this.description,
   expression: expression != null ? expression() : this.expression,
   id: id != null ? id() : this.id,

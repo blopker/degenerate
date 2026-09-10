@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'max_celcius': ?maxCelcius,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String; } 
-MconnSnapshotThermal copyWith({String Function()? connectorId, double Function()? criticalCelcius, double Function()? currentCelcius, String? label, double Function()? maxCelcius, }) { return MconnSnapshotThermal(
+MconnSnapshotThermal copyWith({String? Function()? connectorId, double? Function()? criticalCelcius, double? Function()? currentCelcius, String? label, double? Function()? maxCelcius, }) { return MconnSnapshotThermal(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   criticalCelcius: criticalCelcius != null ? criticalCelcius() : this.criticalCelcius,
   currentCelcius: currentCelcius != null ? currentCelcius() : this.currentCelcius,

@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'self_identified_gender': ?selfIdentifiedGender,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ethnicity_details', 'race_details', 'self_identified_gender'}.contains(key)); } 
-PostAccountsAccountPersonsRequestUsCfpbData copyWith({PostAccountsAccountPersonsRequestUsCfpbDataEthnicityDetails Function()? ethnicityDetails, PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails Function()? raceDetails, String Function()? selfIdentifiedGender, }) { return PostAccountsAccountPersonsRequestUsCfpbData(
+PostAccountsAccountPersonsRequestUsCfpbData copyWith({PostAccountsAccountPersonsRequestUsCfpbDataEthnicityDetails? Function()? ethnicityDetails, PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails? Function()? raceDetails, String? Function()? selfIdentifiedGender, }) { return PostAccountsAccountPersonsRequestUsCfpbData(
   ethnicityDetails: ethnicityDetails != null ? ethnicityDetails() : this.ethnicityDetails,
   raceDetails: raceDetails != null ? raceDetails() : this.raceDetails,
   selfIdentifiedGender: selfIdentifiedGender != null ? selfIdentifiedGender() : this.selfIdentifiedGender,

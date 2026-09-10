@@ -35,10 +35,10 @@ factory ImagesImageUploaded.fromJson(String json) => ImagesImageUploaded(DateTim
 String toJson() => value.toIso8601String();
 
 }
-@immutable final class ImagesImage {const ImagesImage({this.creator, this.filename, this.id, this.meta, this.requireSignedUrLs, this.uploaded, this.variants, });
+@immutable final class ImagesImage {const ImagesImage({this.creator = const Omittable.absent(), this.filename, this.id, this.meta, this.requireSignedUrLs, this.uploaded, this.variants, });
 
 factory ImagesImage.fromJson(Map<String, dynamic> json) { return ImagesImage(
-  creator: json['creator'] != null ? ImagesImageCreator.fromJson(json['creator'] as String) : null,
+  creator: json.containsKey('creator') ? Omittable(json['creator'] != null ? ImagesImageCreator.fromJson(json['creator'] as String) : null) : const Omittable.absent(),
   filename: json['filename'] != null ? ImagesImageFilename.fromJson(json['filename'] as String) : null,
   id: json['id'] != null ? ImagesImageIdentifier.fromJson(json['id'] as String) : null,
   meta: json['meta'] as Map<String, dynamic>?,
@@ -47,7 +47,7 @@ factory ImagesImage.fromJson(Map<String, dynamic> json) { return ImagesImage(
   variants: (json['variants'] as List<dynamic>?)?.map((e) => ImagesImageThumbnailUrl.fromJson(e as String)).toList(),
 ); }
 
-final ImagesImageCreator? creator;
+final Omittable<ImagesImageCreator?> creator;
 
 final ImagesImageFilename? filename;
 
@@ -62,7 +62,7 @@ final ImagesImageUploaded? uploaded;
 final List<ImagesImageThumbnailUrl>? variants;
 
 Map<String, dynamic> toJson() { return {
-  if (creator != null) 'creator': creator?.toJson(),
+  if (creator.isPresent) 'creator': creator.value?.toJson(),
   if (filename != null) 'filename': filename?.toJson(),
   if (id != null) 'id': id?.toJson(),
   'meta': ?meta,
@@ -71,8 +71,8 @@ Map<String, dynamic> toJson() { return {
   if (variants != null) 'variants': variants?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'filename', 'id', 'meta', 'requireSignedURLs', 'uploaded', 'variants'}.contains(key)); } 
-ImagesImage copyWith({ImagesImageCreator? Function()? creator, ImagesImageFilename Function()? filename, ImagesImageIdentifier Function()? id, Map<String, dynamic> Function()? meta, ImagesImageRequireSignedUrLs Function()? requireSignedUrLs, ImagesImageUploaded Function()? uploaded, List<ImagesImageThumbnailUrl> Function()? variants, }) { return ImagesImage(
-  creator: creator != null ? creator() : this.creator,
+ImagesImage copyWith({Omittable<ImagesImageCreator?>? creator, ImagesImageFilename? Function()? filename, ImagesImageIdentifier? Function()? id, Map<String, dynamic>? Function()? meta, ImagesImageRequireSignedUrLs? Function()? requireSignedUrLs, ImagesImageUploaded? Function()? uploaded, List<ImagesImageThumbnailUrl>? Function()? variants, }) { return ImagesImage(
+  creator: creator ?? this.creator,
   filename: filename != null ? filename() : this.filename,
   id: id != null ? id() : this.id,
   meta: meta != null ? meta() : this.meta,

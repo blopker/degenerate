@@ -39,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('facil
       json.containsKey('occupied') && json['occupied'] is bool &&
       json.containsKey('site') && json['site'] is String &&
       json.containsKey('speed') && json['speed'] is String; } 
-NscSlotInfo copyWith({NscAccountTag Function()? account, NscFacilityInfo? facility, String? id, bool? occupied, String? site, String? speed, }) { return NscSlotInfo(
+NscSlotInfo copyWith({NscAccountTag? Function()? account, NscFacilityInfo? facility, String? id, bool? occupied, String? site, String? speed, }) { return NscSlotInfo(
   account: account != null ? account() : this.account,
   facility: facility ?? this.facility,
   id: id ?? this.id,

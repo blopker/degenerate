@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
       json.containsKey('subscription') && json['subscription'] is String; } 
-PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm copyWith({List<PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts> Function()? discounts, List<PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems>? items, String? subscription, }) { return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm(
+PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm copyWith({List<PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmDiscounts>? Function()? discounts, List<PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirmItems>? items, String? subscription, }) { return PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm(
   discounts: discounts != null ? discounts() : this.discounts,
   items: items ?? this.items,
   subscription: subscription ?? this.subscription,

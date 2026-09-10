@@ -23,27 +23,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CacheRulesRegionalTieredCacheId($value)'; } 
  }
 /// Instructs Cloudflare to check a regional hub data center on the way to your upper tier. This can help improve performance for smart and custom tiered cache topologies.
-@immutable final class CacheRulesRegionalTieredCache {const CacheRulesRegionalTieredCache({required this.id, this.modifiedOn, });
+@immutable final class CacheRulesRegionalTieredCache {const CacheRulesRegionalTieredCache({required this.id, this.modifiedOn = const Omittable.absent(), });
 
 factory CacheRulesRegionalTieredCache.fromJson(Map<String, dynamic> json) { return CacheRulesRegionalTieredCache(
   id: CacheRulesRegionalTieredCacheId.fromJson(json['id'] as String),
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// ID of the zone setting.
 final CacheRulesRegionalTieredCacheId id;
 
 /// Last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
-CacheRulesRegionalTieredCache copyWith({CacheRulesRegionalTieredCacheId? id, DateTime? Function()? modifiedOn, }) { return CacheRulesRegionalTieredCache(
+CacheRulesRegionalTieredCache copyWith({CacheRulesRegionalTieredCacheId? id, Omittable<DateTime?>? modifiedOn, }) { return CacheRulesRegionalTieredCache(
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CacheRulesRegionalTieredCache &&

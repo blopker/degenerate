@@ -43,24 +43,24 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'download_url': downloadUrl.toString(),
   'id': id,
-  'md5': ?md5,
+  'md5': md5,
   'name': name,
-  'sha1': ?sha1,
-  'sha256': ?sha256,
+  'sha1': sha1,
+  'sha256': sha256,
   'size': size,
-  'state': ?state,
+  'state': state,
   'updated_at': updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content_type') && json['content_type'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('md5') && json['md5'] is String &&
+      json.containsKey('md5') && (json['md5'] == null || json['md5'] is String) &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('sha1') && json['sha1'] is String &&
-      json.containsKey('sha256') && json['sha256'] is String &&
+      json.containsKey('sha1') && (json['sha1'] == null || json['sha1'] is String) &&
+      json.containsKey('sha256') && (json['sha256'] == null || json['sha256'] is String) &&
       json.containsKey('size') && json['size'] is num &&
-      json.containsKey('state') && json['state'] is String &&
+      json.containsKey('state') && (json['state'] == null || json['state'] is String) &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
 WebhookPackagePublishedPackagePackageVersionPackageFiles copyWith({String? contentType, String? createdAt, Uri? downloadUrl, int? id, String? Function()? md5, String? name, String? Function()? sha1, String? Function()? sha256, int? size, String? Function()? state, String? updatedAt, }) { return WebhookPackagePublishedPackagePackageVersionPackageFiles(
   contentType: contentType ?? this.contentType,

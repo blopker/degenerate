@@ -20,7 +20,7 @@ final List<int>? bytes;
 Map<String, dynamic> toJson() { return {
   'token': token,
   'logprob': logprob,
-  'bytes': ?bytes,
+  'bytes': bytes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String &&
       json.containsKey('logprob') && json['logprob'] is num &&

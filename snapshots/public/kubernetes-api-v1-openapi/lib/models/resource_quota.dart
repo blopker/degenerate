@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec', 'status'}.contains(key)); } 
-ResourceQuota copyWith({String Function()? apiVersion, String Function()? kind, ObjectMeta Function()? metadata, ResourceQuotaSpec Function()? spec, ResourceQuotaStatus Function()? status, }) { return ResourceQuota(
+ResourceQuota copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, ResourceQuotaSpec? Function()? spec, ResourceQuotaStatus? Function()? status, }) { return ResourceQuota(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,

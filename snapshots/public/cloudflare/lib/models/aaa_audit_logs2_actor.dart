@@ -107,7 +107,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'context', 'email', 'id', 'ip_address', 'token_id', 'token_name', 'type'}.contains(key)); } 
-AaaAuditLogs2Actor copyWith({AaaAuditLogs2ActorContext Function()? context, String Function()? email, String Function()? id, String Function()? ipAddress, String Function()? tokenId, String Function()? tokenName, AaaAuditLogs2ActorType Function()? type, }) { return AaaAuditLogs2Actor(
+AaaAuditLogs2Actor copyWith({AaaAuditLogs2ActorContext? Function()? context, String? Function()? email, String? Function()? id, String? Function()? ipAddress, String? Function()? tokenId, String? Function()? tokenName, AaaAuditLogs2ActorType? Function()? type, }) { return AaaAuditLogs2Actor(
   context: context != null ? context() : this.context,
   email: email != null ? email() : this.email,
   id: id != null ? id() : this.id,

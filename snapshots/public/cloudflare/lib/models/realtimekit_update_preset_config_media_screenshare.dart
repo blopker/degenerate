@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (quality != null) 'quality': quality?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'frame_rate', 'quality'}.contains(key)); } 
-RealtimekitUpdatePresetConfigMediaScreenshare copyWith({int Function()? frameRate, RealtimekitUpdatePresetConfigMediaScreenshareQuality Function()? quality, }) { return RealtimekitUpdatePresetConfigMediaScreenshare(
+RealtimekitUpdatePresetConfigMediaScreenshare copyWith({int? Function()? frameRate, RealtimekitUpdatePresetConfigMediaScreenshareQuality? Function()? quality, }) { return RealtimekitUpdatePresetConfigMediaScreenshare(
   frameRate: frameRate != null ? frameRate() : this.frameRate,
   quality: quality != null ? quality() : this.quality,
 ); } 

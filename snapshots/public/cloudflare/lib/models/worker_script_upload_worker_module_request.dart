@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 
-WorkerScriptUploadWorkerModuleRequest copyWith({List<Uint8List> Function()? files, WorkerScriptUploadWorkerModuleRequestMetadata? metadata, }) { return WorkerScriptUploadWorkerModuleRequest(
+WorkerScriptUploadWorkerModuleRequest copyWith({List<Uint8List>? Function()? files, WorkerScriptUploadWorkerModuleRequestMetadata? metadata, }) { return WorkerScriptUploadWorkerModuleRequest(
   files: files != null ? files() : this.files,
   metadata: metadata ?? this.metadata,
 ); } 

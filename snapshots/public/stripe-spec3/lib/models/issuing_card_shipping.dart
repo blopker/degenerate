@@ -125,94 +125,94 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardShippingType($value)'; } 
  }
 /// 
-@immutable final class IssuingCardShipping {const IssuingCardShipping({required this.address, required this.name, required this.service, required this.type, this.addressValidation, this.carrier, this.customs, this.eta, this.phoneNumber, this.requireSignature, this.status, this.trackingNumber, this.trackingUrl, });
+@immutable final class IssuingCardShipping {const IssuingCardShipping({required this.address, required this.name, required this.service, required this.type, this.addressValidation = const Omittable.absent(), this.carrier = const Omittable.absent(), this.customs = const Omittable.absent(), this.eta = const Omittable.absent(), this.phoneNumber = const Omittable.absent(), this.requireSignature = const Omittable.absent(), this.status = const Omittable.absent(), this.trackingNumber = const Omittable.absent(), this.trackingUrl = const Omittable.absent(), });
 
 factory IssuingCardShipping.fromJson(Map<String, dynamic> json) { return IssuingCardShipping(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
-  addressValidation: json['address_validation'] != null ? IssuingCardShippingAddressValidation.fromJson(json['address_validation'] as Map<String, dynamic>) : null,
-  carrier: json['carrier'] != null ? IssuingCardShippingCarrier.fromJson(json['carrier'] as String) : null,
-  customs: json['customs'] != null ? IssuingCardShippingCustoms.fromJson(json['customs'] as Map<String, dynamic>) : null,
-  eta: json['eta'] != null ? (json['eta'] as num).toInt() : null,
+  addressValidation: json.containsKey('address_validation') ? Omittable(json['address_validation'] != null ? IssuingCardShippingAddressValidation.fromJson(json['address_validation'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  carrier: json.containsKey('carrier') ? Omittable(json['carrier'] != null ? IssuingCardShippingCarrier.fromJson(json['carrier'] as String) : null) : const Omittable.absent(),
+  customs: json.containsKey('customs') ? Omittable(json['customs'] != null ? IssuingCardShippingCustoms.fromJson(json['customs'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  eta: json.containsKey('eta') ? Omittable(json['eta'] != null ? (json['eta'] as num).toInt() : null) : const Omittable.absent(),
   name: json['name'] as String,
-  phoneNumber: json['phone_number'] as String?,
-  requireSignature: json['require_signature'] as bool?,
+  phoneNumber: json.containsKey('phone_number') ? Omittable(json['phone_number'] as String?) : const Omittable.absent(),
+  requireSignature: json.containsKey('require_signature') ? Omittable(json['require_signature'] as bool?) : const Omittable.absent(),
   service: IssuingCardShippingService.fromJson(json['service'] as String),
-  status: json['status'] != null ? IssuingCardShippingStatus.fromJson(json['status'] as String) : null,
-  trackingNumber: json['tracking_number'] as String?,
-  trackingUrl: json['tracking_url'] as String?,
+  status: json.containsKey('status') ? Omittable(json['status'] != null ? IssuingCardShippingStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
+  trackingNumber: json.containsKey('tracking_number') ? Omittable(json['tracking_number'] as String?) : const Omittable.absent(),
+  trackingUrl: json.containsKey('tracking_url') ? Omittable(json['tracking_url'] as String?) : const Omittable.absent(),
   type: IssuingCardShippingType.fromJson(json['type'] as String),
 ); }
 
 final Address address;
 
 /// Address validation details for the shipment.
-final IssuingCardShippingAddressValidation? addressValidation;
+final Omittable<IssuingCardShippingAddressValidation?> addressValidation;
 
 /// The delivery company that shipped a card.
-final IssuingCardShippingCarrier? carrier;
+final Omittable<IssuingCardShippingCarrier?> carrier;
 
 /// Additional information that may be required for clearing customs.
-final IssuingCardShippingCustoms? customs;
+final Omittable<IssuingCardShippingCustoms?> customs;
 
 /// A unix timestamp representing a best estimate of when the card will be delivered.
-final int? eta;
+final Omittable<int?> eta;
 
 /// Recipient name.
 final String name;
 
 /// The phone number of the receiver of the shipment. Our courier partners will use this number to contact you in the event of card delivery issues. For individual shipments to the EU/UK, if this field is empty, we will provide them with the phone number provided when the cardholder was initially created.
-final String? phoneNumber;
+final Omittable<String?> phoneNumber;
 
 /// Whether a signature is required for card delivery. This feature is only supported for US users. Standard shipping service does not support signature on delivery. The default value for standard shipping service is false and for express and priority services is true.
-final bool? requireSignature;
+final Omittable<bool?> requireSignature;
 
 /// Shipment service, such as `standard` or `express`.
 final IssuingCardShippingService service;
 
 /// The delivery status of the card.
-final IssuingCardShippingStatus? status;
+final Omittable<IssuingCardShippingStatus?> status;
 
 /// A tracking number for a card shipment.
-final String? trackingNumber;
+final Omittable<String?> trackingNumber;
 
 /// A link to the shipping carrier's site where you can view detailed information about a card shipment.
-final String? trackingUrl;
+final Omittable<String?> trackingUrl;
 
 /// Packaging options.
 final IssuingCardShippingType type;
 
 Map<String, dynamic> toJson() { return {
   'address': address.toJson(),
-  if (addressValidation != null) 'address_validation': addressValidation?.toJson(),
-  if (carrier != null) 'carrier': carrier?.toJson(),
-  if (customs != null) 'customs': customs?.toJson(),
-  'eta': ?eta,
+  if (addressValidation.isPresent) 'address_validation': addressValidation.value?.toJson(),
+  if (carrier.isPresent) 'carrier': carrier.value?.toJson(),
+  if (customs.isPresent) 'customs': customs.value?.toJson(),
+  if (eta.isPresent) 'eta': eta.value,
   'name': name,
-  'phone_number': ?phoneNumber,
-  'require_signature': ?requireSignature,
+  if (phoneNumber.isPresent) 'phone_number': phoneNumber.value,
+  if (requireSignature.isPresent) 'require_signature': requireSignature.value,
   'service': service.toJson(),
-  if (status != null) 'status': status?.toJson(),
-  'tracking_number': ?trackingNumber,
-  'tracking_url': ?trackingUrl,
+  if (status.isPresent) 'status': status.value?.toJson(),
+  if (trackingNumber.isPresent) 'tracking_number': trackingNumber.value,
+  if (trackingUrl.isPresent) 'tracking_url': trackingUrl.value,
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('service') &&
       json.containsKey('type'); } 
-IssuingCardShipping copyWith({Address? address, IssuingCardShippingAddressValidation? Function()? addressValidation, IssuingCardShippingCarrier? Function()? carrier, IssuingCardShippingCustoms? Function()? customs, int? Function()? eta, String? name, String? Function()? phoneNumber, bool? Function()? requireSignature, IssuingCardShippingService? service, IssuingCardShippingStatus? Function()? status, String? Function()? trackingNumber, String? Function()? trackingUrl, IssuingCardShippingType? type, }) { return IssuingCardShipping(
+IssuingCardShipping copyWith({Address? address, Omittable<IssuingCardShippingAddressValidation?>? addressValidation, Omittable<IssuingCardShippingCarrier?>? carrier, Omittable<IssuingCardShippingCustoms?>? customs, Omittable<int?>? eta, String? name, Omittable<String?>? phoneNumber, Omittable<bool?>? requireSignature, IssuingCardShippingService? service, Omittable<IssuingCardShippingStatus?>? status, Omittable<String?>? trackingNumber, Omittable<String?>? trackingUrl, IssuingCardShippingType? type, }) { return IssuingCardShipping(
   address: address ?? this.address,
-  addressValidation: addressValidation != null ? addressValidation() : this.addressValidation,
-  carrier: carrier != null ? carrier() : this.carrier,
-  customs: customs != null ? customs() : this.customs,
-  eta: eta != null ? eta() : this.eta,
+  addressValidation: addressValidation ?? this.addressValidation,
+  carrier: carrier ?? this.carrier,
+  customs: customs ?? this.customs,
+  eta: eta ?? this.eta,
   name: name ?? this.name,
-  phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
-  requireSignature: requireSignature != null ? requireSignature() : this.requireSignature,
+  phoneNumber: phoneNumber ?? this.phoneNumber,
+  requireSignature: requireSignature ?? this.requireSignature,
   service: service ?? this.service,
-  status: status != null ? status() : this.status,
-  trackingNumber: trackingNumber != null ? trackingNumber() : this.trackingNumber,
-  trackingUrl: trackingUrl != null ? trackingUrl() : this.trackingUrl,
+  status: status ?? this.status,
+  trackingNumber: trackingNumber ?? this.trackingNumber,
+  trackingUrl: trackingUrl ?? this.trackingUrl,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

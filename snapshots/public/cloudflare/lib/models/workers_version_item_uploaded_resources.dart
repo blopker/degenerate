@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   if (scriptRuntime != null) 'script_runtime': scriptRuntime?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bindings', 'script', 'script_runtime'}.contains(key)); } 
-WorkersVersionItemUploadedResources copyWith({List<WorkersBindingItem> Function()? bindings, WorkersVersionItemUploadedResourcesScript Function()? script, WorkersVersionItemUploadedResourcesScriptRuntime Function()? scriptRuntime, }) { return WorkersVersionItemUploadedResources(
+WorkersVersionItemUploadedResources copyWith({List<WorkersBindingItem>? Function()? bindings, WorkersVersionItemUploadedResourcesScript? Function()? script, WorkersVersionItemUploadedResourcesScriptRuntime? Function()? scriptRuntime, }) { return WorkersVersionItemUploadedResources(
   bindings: bindings != null ? bindings() : this.bindings,
   script: script != null ? script() : this.script,
   scriptRuntime: scriptRuntime != null ? scriptRuntime() : this.scriptRuntime,

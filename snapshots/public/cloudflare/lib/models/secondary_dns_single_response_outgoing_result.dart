@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (soaSerial != null) 'soa_serial': soaSerial?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'checked_time', 'created_time', 'id', 'last_transferred_time', 'name', 'peers', 'soa_serial'}.contains(key)); } 
-SecondaryDnsSingleResponseOutgoingResult copyWith({SecondaryDnsTime Function()? checkedTime, SecondaryDnsTime Function()? createdTime, SecondaryDnsIdentifier Function()? id, SecondaryDnsTime Function()? lastTransferredTime, SecondaryDnsName Function()? name, List<SecondaryDnsIdentifier> Function()? peers, SecondaryDnsSoaSerial Function()? soaSerial, }) { return SecondaryDnsSingleResponseOutgoingResult(
+SecondaryDnsSingleResponseOutgoingResult copyWith({SecondaryDnsTime? Function()? checkedTime, SecondaryDnsTime? Function()? createdTime, SecondaryDnsIdentifier? Function()? id, SecondaryDnsTime? Function()? lastTransferredTime, SecondaryDnsName? Function()? name, List<SecondaryDnsIdentifier>? Function()? peers, SecondaryDnsSoaSerial? Function()? soaSerial, }) { return SecondaryDnsSingleResponseOutgoingResult(
   checkedTime: checkedTime != null ? checkedTime() : this.checkedTime,
   createdTime: createdTime != null ? createdTime() : this.createdTime,
   id: id != null ? id() : this.id,

@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
       json.containsKey('namespace') && json['namespace'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-WorkersBindingKindDispatchNamespace copyWith({WorkersBindingName? name, String? namespace, WorkersBindingKindDispatchNamespaceOutbound Function()? outbound, String? type, }) { return WorkersBindingKindDispatchNamespace(
+WorkersBindingKindDispatchNamespace copyWith({WorkersBindingName? name, String? namespace, WorkersBindingKindDispatchNamespaceOutbound? Function()? outbound, String? type, }) { return WorkersBindingKindDispatchNamespace(
   name: name ?? this.name,
   namespace: namespace ?? this.namespace,
   outbound: outbound != null ? outbound() : this.outbound,

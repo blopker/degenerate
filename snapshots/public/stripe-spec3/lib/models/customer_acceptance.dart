@@ -26,17 +26,17 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomerAcceptanceType($value)'; } 
  }
 /// 
-@immutable final class CustomerAcceptance {const CustomerAcceptance({required this.type, this.acceptedAt, this.offline, this.online, });
+@immutable final class CustomerAcceptance {const CustomerAcceptance({required this.type, this.acceptedAt = const Omittable.absent(), this.offline, this.online, });
 
 factory CustomerAcceptance.fromJson(Map<String, dynamic> json) { return CustomerAcceptance(
-  acceptedAt: json['accepted_at'] != null ? (json['accepted_at'] as num).toInt() : null,
+  acceptedAt: json.containsKey('accepted_at') ? Omittable(json['accepted_at'] != null ? (json['accepted_at'] as num).toInt() : null) : const Omittable.absent(),
   offline: json['offline'] != null ? OfflineAcceptance.fromJson(json['offline'] as Map<String, dynamic>) : null,
   online: json['online'] != null ? OnlineAcceptance.fromJson(json['online'] as Map<String, dynamic>) : null,
   type: CustomerAcceptanceType.fromJson(json['type'] as String),
 ); }
 
 /// The time that the customer accepts the mandate.
-final int? acceptedAt;
+final Omittable<int?> acceptedAt;
 
 final OfflineAcceptance? offline;
 
@@ -46,14 +46,14 @@ final OnlineAcceptance? online;
 final CustomerAcceptanceType type;
 
 Map<String, dynamic> toJson() { return {
-  'accepted_at': ?acceptedAt,
+  if (acceptedAt.isPresent) 'accepted_at': acceptedAt.value,
   if (offline != null) 'offline': offline?.toJson(),
   if (online != null) 'online': online?.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-CustomerAcceptance copyWith({int? Function()? acceptedAt, OfflineAcceptance Function()? offline, OnlineAcceptance Function()? online, CustomerAcceptanceType? type, }) { return CustomerAcceptance(
-  acceptedAt: acceptedAt != null ? acceptedAt() : this.acceptedAt,
+CustomerAcceptance copyWith({Omittable<int?>? acceptedAt, OfflineAcceptance? Function()? offline, OnlineAcceptance? Function()? online, CustomerAcceptanceType? type, }) { return CustomerAcceptance(
+  acceptedAt: acceptedAt ?? this.acceptedAt,
   offline: offline != null ? offline() : this.offline,
   online: online != null ? online() : this.online,
   type: type ?? this.type,

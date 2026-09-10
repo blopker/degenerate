@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow') &&
       json.containsKey('disallow'); } 
-UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2 copyWith({List<String>? allow, UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal Function()? contentSignal, double Function()? crawlDelay, List<String>? disallow, }) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2(
+UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2 copyWith({List<String>? allow, UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal? Function()? contentSignal, double? Function()? crawlDelay, List<String>? disallow, }) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2(
   allow: allow ?? this.allow,
   contentSignal: contentSignal != null ? contentSignal() : this.contentSignal,
   crawlDelay: crawlDelay != null ? crawlDelay() : this.crawlDelay,

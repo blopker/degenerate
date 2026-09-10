@@ -31,7 +31,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ZeroTrustGatewayListItemResponseCollection copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewayListItemResponseCollectionResultInfo Function()? resultInfo, List<List<ZeroTrustGatewayItems2>> Function()? result, }) { return ZeroTrustGatewayListItemResponseCollection(
+ZeroTrustGatewayListItemResponseCollection copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewayListItemResponseCollectionResultInfo? Function()? resultInfo, List<List<ZeroTrustGatewayItems2>>? Function()? result, }) { return ZeroTrustGatewayListItemResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

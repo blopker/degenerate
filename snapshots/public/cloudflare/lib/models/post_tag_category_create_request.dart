@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'name': name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-PostTagCategoryCreateRequest copyWith({String Function()? description, String? name, }) { return PostTagCategoryCreateRequest(
+PostTagCategoryCreateRequest copyWith({String? Function()? description, String? name, }) { return PostTagCategoryCreateRequest(
   description: description != null ? description() : this.description,
   name: name ?? this.name,
 ); } 

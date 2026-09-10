@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
   'repository': repository.toJson(),
   'sender': sender.toJson(),
   'workflow': workflow.toJson(),
-  if (workflowRun != null) 'workflow_run': workflowRun?.toJson(),
+  'workflow_run': workflowRun?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
       json.containsKey('deployment') &&
@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('sender') &&
       json.containsKey('workflow') &&
       json.containsKey('workflow_run'); } 
-WebhookDeploymentCreated copyWith({WebhookDeploymentCreatedAction? action, WebhookDeploymentCreatedDeployment? deployment, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? workflow, WebhookDeploymentCreatedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentCreated(
+WebhookDeploymentCreated copyWith({WebhookDeploymentCreatedAction? action, WebhookDeploymentCreatedDeployment? deployment, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? workflow, WebhookDeploymentCreatedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentCreated(
   action: action ?? this.action,
   deployment: deployment ?? this.deployment,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

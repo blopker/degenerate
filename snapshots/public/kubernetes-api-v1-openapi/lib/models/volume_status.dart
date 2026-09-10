@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (image != null) 'image': image?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image'}.contains(key)); } 
-VolumeStatus copyWith({ImageVolumeStatus Function()? image}) { return VolumeStatus(
+VolumeStatus copyWith({ImageVolumeStatus? Function()? image}) { return VolumeStatus(
   image: image != null ? image() : this.image,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

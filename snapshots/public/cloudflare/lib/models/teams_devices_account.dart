@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_type', 'id', 'name'}.contains(key)); } 
-TeamsDevicesAccount copyWith({String Function()? accountType, String Function()? id, String Function()? name, }) { return TeamsDevicesAccount(
+TeamsDevicesAccount copyWith({String? Function()? accountType, String? Function()? id, String? Function()? name, }) { return TeamsDevicesAccount(
   accountType: accountType != null ? accountType() : this.accountType,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,

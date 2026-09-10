@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'files': ?files,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'files'}.contains(key)); } 
-PostAccountsRequestDocumentsCompanyMinisterialDecree copyWith({List<String> Function()? files}) { return PostAccountsRequestDocumentsCompanyMinisterialDecree(
+PostAccountsRequestDocumentsCompanyMinisterialDecree copyWith({List<String>? Function()? files}) { return PostAccountsRequestDocumentsCompanyMinisterialDecree(
   files: files != null ? files() : this.files,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

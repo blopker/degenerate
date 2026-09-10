@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'content': ?content,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'role', 'content'}.contains(key)); } 
-EvalRunOutputItemSampleOutput copyWith({String Function()? role, String Function()? content, }) { return EvalRunOutputItemSampleOutput(
+EvalRunOutputItemSampleOutput copyWith({String? Function()? role, String? Function()? content, }) { return EvalRunOutputItemSampleOutput(
   role: role != null ? role() : this.role,
   content: content != null ? content() : this.content,
 ); } 

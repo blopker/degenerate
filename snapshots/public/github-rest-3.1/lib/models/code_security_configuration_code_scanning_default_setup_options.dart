@@ -32,27 +32,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType($value)'; } 
  }
 /// Feature options for code scanning default setup
-@immutable final class CodeSecurityConfigurationCodeScanningDefaultSetupOptions {const CodeSecurityConfigurationCodeScanningDefaultSetupOptions({this.runnerType, this.runnerLabel, });
+@immutable final class CodeSecurityConfigurationCodeScanningDefaultSetupOptions {const CodeSecurityConfigurationCodeScanningDefaultSetupOptions({this.runnerType = const Omittable.absent(), this.runnerLabel = const Omittable.absent(), });
 
 factory CodeSecurityConfigurationCodeScanningDefaultSetupOptions.fromJson(Map<String, dynamic> json) { return CodeSecurityConfigurationCodeScanningDefaultSetupOptions(
-  runnerType: json['runner_type'] != null ? CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType.fromJson(json['runner_type'] as String) : null,
-  runnerLabel: json['runner_label'] as String?,
+  runnerType: json.containsKey('runner_type') ? Omittable(json['runner_type'] != null ? CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType.fromJson(json['runner_type'] as String) : null) : const Omittable.absent(),
+  runnerLabel: json.containsKey('runner_label') ? Omittable(json['runner_label'] as String?) : const Omittable.absent(),
 ); }
 
 /// Whether to use labeled runners or standard GitHub runners.
-final CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType? runnerType;
+final Omittable<CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType?> runnerType;
 
 /// The label of the runner to use for code scanning when runner_type is 'labeled'.
-final String? runnerLabel;
+final Omittable<String?> runnerLabel;
 
 Map<String, dynamic> toJson() { return {
-  if (runnerType != null) 'runner_type': runnerType?.toJson(),
-  'runner_label': ?runnerLabel,
+  if (runnerType.isPresent) 'runner_type': runnerType.value?.toJson(),
+  if (runnerLabel.isPresent) 'runner_label': runnerLabel.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'runner_type', 'runner_label'}.contains(key)); } 
-CodeSecurityConfigurationCodeScanningDefaultSetupOptions copyWith({CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType? Function()? runnerType, String? Function()? runnerLabel, }) { return CodeSecurityConfigurationCodeScanningDefaultSetupOptions(
-  runnerType: runnerType != null ? runnerType() : this.runnerType,
-  runnerLabel: runnerLabel != null ? runnerLabel() : this.runnerLabel,
+CodeSecurityConfigurationCodeScanningDefaultSetupOptions copyWith({Omittable<CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType?>? runnerType, Omittable<String?>? runnerLabel, }) { return CodeSecurityConfigurationCodeScanningDefaultSetupOptions(
+  runnerType: runnerType ?? this.runnerType,
+  runnerLabel: runnerLabel ?? this.runnerLabel,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CodeSecurityConfigurationCodeScanningDefaultSetupOptions &&

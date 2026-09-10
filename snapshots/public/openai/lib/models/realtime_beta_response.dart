@@ -112,7 +112,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeBetaResponseOutputAudioFormat($value)'; } 
  }
 /// The response resource.
-@immutable final class RealtimeBetaResponse {const RealtimeBetaResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata, this.usage, this.conversationId, this.voice, this.modalities, this.outputAudioFormat, this.temperature, this.maxOutputTokens, });
+@immutable final class RealtimeBetaResponse {const RealtimeBetaResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata = const Omittable.absent(), this.usage, this.conversationId, this.voice, this.modalities, this.outputAudioFormat, this.temperature, this.maxOutputTokens, });
 
 factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) { return RealtimeBetaResponse(
   id: json['id'] as String?,
@@ -120,7 +120,7 @@ factory RealtimeBetaResponse.fromJson(Map<String, dynamic> json) { return Realti
   status: json['status'] != null ? RealtimeBetaResponseStatus.fromJson(json['status'] as String) : null,
   statusDetails: json['status_details'] != null ? RealtimeBetaResponseStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
   output: (json['output'] as List<dynamic>?)?.map((e) => RealtimeConversationItem.fromJson(e as Map<String, dynamic>)).toList(),
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   usage: json['usage'] != null ? RealtimeBetaResponseUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
   conversationId: json['conversation_id'] as String?,
   voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),) : null,
@@ -154,7 +154,7 @@ final List<RealtimeConversationItem>? output;
 /// Keys are strings with a maximum length of 64 characters. Values are strings
 /// with a maximum length of 512 characters.
 /// 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// Usage statistics for the Response, this will correspond to billing. A
 /// Realtime API session will maintain a conversation context and append new
@@ -204,7 +204,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
   if (statusDetails != null) 'status_details': statusDetails?.toJson(),
   if (output != null) 'output': output?.map((e) => e.toJson()).toList(),
-  'metadata': ?metadata,
+  if (metadata.isPresent) 'metadata': metadata.value,
   if (usage != null) 'usage': usage?.toJson(),
   'conversation_id': ?conversationId,
   if (voice != null) 'voice': voice?.toJson(),
@@ -214,13 +214,13 @@ Map<String, dynamic> toJson() { return {
   if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'object', 'status', 'status_details', 'output', 'metadata', 'usage', 'conversation_id', 'voice', 'modalities', 'output_audio_format', 'temperature', 'max_output_tokens'}.contains(key)); } 
-RealtimeBetaResponse copyWith({String Function()? id, RealtimeBetaResponseObject Function()? object, RealtimeBetaResponseStatus Function()? status, RealtimeBetaResponseStatusDetails Function()? statusDetails, List<RealtimeConversationItem> Function()? output, Map<String, String>? Function()? metadata, RealtimeBetaResponseUsage Function()? usage, String Function()? conversationId, VoiceIdsShared Function()? voice, List<RealtimeBetaResponseModalities> Function()? modalities, RealtimeBetaResponseOutputAudioFormat Function()? outputAudioFormat, double Function()? temperature, RealtimeBetaResponseMaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeBetaResponse(
+RealtimeBetaResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? Function()? object, RealtimeBetaResponseStatus? Function()? status, RealtimeBetaResponseStatusDetails? Function()? statusDetails, List<RealtimeConversationItem>? Function()? output, Omittable<Map<String,String>?>? metadata, RealtimeBetaResponseUsage? Function()? usage, String? Function()? conversationId, VoiceIdsShared? Function()? voice, List<RealtimeBetaResponseModalities>? Function()? modalities, RealtimeBetaResponseOutputAudioFormat? Function()? outputAudioFormat, double? Function()? temperature, RealtimeBetaResponseMaxOutputTokens? Function()? maxOutputTokens, }) { return RealtimeBetaResponse(
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
   status: status != null ? status() : this.status,
   statusDetails: statusDetails != null ? statusDetails() : this.statusDetails,
   output: output != null ? output() : this.output,
-  metadata: metadata != null ? metadata() : this.metadata,
+  metadata: metadata ?? this.metadata,
   usage: usage != null ? usage() : this.usage,
   conversationId: conversationId != null ? conversationId() : this.conversationId,
   voice: voice != null ? voice() : this.voice,

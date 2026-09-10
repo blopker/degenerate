@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name') && json['name'] is String; } 
-PostIssuingCardsCardRequestShipping copyWith({PostIssuingCardsCardRequestShippingAddress? address, PostIssuingCardsCardRequestShippingAddressValidation Function()? addressValidation, PostIssuingCardsCardRequestShippingCustoms Function()? customs, String? name, String Function()? phoneNumber, bool Function()? requireSignature, PostIssuingCardsCardRequestShippingService Function()? service, PostIssuingCardsCardRequestShippingType Function()? type, }) { return PostIssuingCardsCardRequestShipping(
+PostIssuingCardsCardRequestShipping copyWith({PostIssuingCardsCardRequestShippingAddress? address, PostIssuingCardsCardRequestShippingAddressValidation? Function()? addressValidation, PostIssuingCardsCardRequestShippingCustoms? Function()? customs, String? name, String? Function()? phoneNumber, bool? Function()? requireSignature, PostIssuingCardsCardRequestShippingService? Function()? service, PostIssuingCardsCardRequestShippingType? Function()? type, }) { return PostIssuingCardsCardRequestShipping(
   address: address ?? this.address,
   addressValidation: addressValidation != null ? addressValidation() : this.addressValidation,
   customs: customs != null ? customs() : this.customs,

@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'id': id,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
-TokenValidationRulesBulkEditRequest copyWith({ShieldAction Function()? action, ShieldSchemasDescription Function()? description, ShieldEnabled Function()? enabled, ShieldExpression Function()? expression, ShieldSelector Function()? selector, ShieldSchemasTitle Function()? title, ShieldPosition Function()? position, String? id, }) { return TokenValidationRulesBulkEditRequest(
+TokenValidationRulesBulkEditRequest copyWith({ShieldAction? Function()? action, ShieldSchemasDescription? Function()? description, ShieldEnabled? Function()? enabled, ShieldExpression? Function()? expression, ShieldSelector? Function()? selector, ShieldSchemasTitle? Function()? title, ShieldPosition? Function()? position, String? id, }) { return TokenValidationRulesBulkEditRequest(
   action: action != null ? action() : this.action,
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,

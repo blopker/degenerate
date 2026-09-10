@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 import 'public_user_schema.dart';
 
 @immutable
@@ -9,16 +10,16 @@ final class KeeperProfileSchema {
     required this.user,
     required this.circleCount,
     required this.monthJoined,
-    this.bioHtml,
-    this.username,
+    this.bioHtml = const Omittable.absent(),
+    this.username = const Omittable.absent(),
     this.title = 'Keeper',
-    this.bio,
+    this.bio = const Omittable.absent(),
     this.location = 'Earth',
     this.languages = 'English',
-    this.instagramUsername,
-    this.website,
-    this.xUsername,
-    this.blueskyUsername,
+    this.instagramUsername = const Omittable.absent(),
+    this.website = const Omittable.absent(),
+    this.xUsername = const Omittable.absent(),
+    this.blueskyUsername = const Omittable.absent(),
   });
 
   factory KeeperProfileSchema.fromJson(Map<String, dynamic> json) {
@@ -26,20 +27,34 @@ final class KeeperProfileSchema {
       user: PublicUserSchema.fromJson(json['user'] as Map<String, dynamic>),
       circleCount: (json['circle_count'] as num).toInt(),
       monthJoined: json['month_joined'] as String,
-      bioHtml: json['bio_html'] as String?,
-      username: json['username'] as String?,
+      bioHtml: json.containsKey('bio_html')
+          ? Omittable(json['bio_html'] as String?)
+          : const Omittable.absent(),
+      username: json.containsKey('username')
+          ? Omittable(json['username'] as String?)
+          : const Omittable.absent(),
       title: json.containsKey('title') ? json['title'] as String : 'Keeper',
-      bio: json['bio'] as String?,
+      bio: json.containsKey('bio')
+          ? Omittable(json['bio'] as String?)
+          : const Omittable.absent(),
       location: json.containsKey('location')
           ? json['location'] as String
           : 'Earth',
       languages: json.containsKey('languages')
           ? json['languages'] as String
           : 'English',
-      instagramUsername: json['instagram_username'] as String?,
-      website: json['website'] as String?,
-      xUsername: json['x_username'] as String?,
-      blueskyUsername: json['bluesky_username'] as String?,
+      instagramUsername: json.containsKey('instagram_username')
+          ? Omittable(json['instagram_username'] as String?)
+          : const Omittable.absent(),
+      website: json.containsKey('website')
+          ? Omittable(json['website'] as String?)
+          : const Omittable.absent(),
+      xUsername: json.containsKey('x_username')
+          ? Omittable(json['x_username'] as String?)
+          : const Omittable.absent(),
+      blueskyUsername: json.containsKey('bluesky_username')
+          ? Omittable(json['bluesky_username'] as String?)
+          : const Omittable.absent(),
     );
   }
 
@@ -49,14 +64,14 @@ final class KeeperProfileSchema {
 
   final String monthJoined;
 
-  final String? bioHtml;
+  final Omittable<String?> bioHtml;
 
   /// Your unique username.
-  final String? username;
+  final Omittable<String?> username;
 
   final String title;
 
-  final String? bio;
+  final Omittable<String?> bio;
 
   /// Where are you located? (City, State, Country)
   final String location;
@@ -65,32 +80,33 @@ final class KeeperProfileSchema {
   final String languages;
 
   /// Your Instagram username, no @ symbol
-  final String? instagramUsername;
+  final Omittable<String?> instagramUsername;
 
   /// Your personal website.
-  final String? website;
+  final Omittable<String?> website;
 
   /// Your X username, no @ symbol
-  final String? xUsername;
+  final Omittable<String?> xUsername;
 
   /// Your Bluesky username, no @ symbol
-  final String? blueskyUsername;
+  final Omittable<String?> blueskyUsername;
 
   Map<String, dynamic> toJson() {
     return {
       'user': user.toJson(),
       'circle_count': circleCount,
       'month_joined': monthJoined,
-      'bio_html': ?bioHtml,
-      'username': ?username,
+      if (bioHtml.isPresent) 'bio_html': bioHtml.value,
+      if (username.isPresent) 'username': username.value,
       'title': title,
-      'bio': ?bio,
+      if (bio.isPresent) 'bio': bio.value,
       'location': location,
       'languages': languages,
-      'instagram_username': ?instagramUsername,
-      'website': ?website,
-      'x_username': ?xUsername,
-      'bluesky_username': ?blueskyUsername,
+      if (instagramUsername.isPresent)
+        'instagram_username': instagramUsername.value,
+      if (website.isPresent) 'website': website.value,
+      if (xUsername.isPresent) 'x_username': xUsername.value,
+      if (blueskyUsername.isPresent) 'bluesky_username': blueskyUsername.value,
     };
   }
 
@@ -106,35 +122,31 @@ final class KeeperProfileSchema {
     PublicUserSchema? user,
     int? circleCount,
     String? monthJoined,
-    String? Function()? bioHtml,
-    String? Function()? username,
+    Omittable<String?>? bioHtml,
+    Omittable<String?>? username,
     String Function()? title,
-    String? Function()? bio,
+    Omittable<String?>? bio,
     String Function()? location,
     String Function()? languages,
-    String? Function()? instagramUsername,
-    String? Function()? website,
-    String? Function()? xUsername,
-    String? Function()? blueskyUsername,
+    Omittable<String?>? instagramUsername,
+    Omittable<String?>? website,
+    Omittable<String?>? xUsername,
+    Omittable<String?>? blueskyUsername,
   }) {
     return KeeperProfileSchema(
       user: user ?? this.user,
       circleCount: circleCount ?? this.circleCount,
       monthJoined: monthJoined ?? this.monthJoined,
-      bioHtml: bioHtml != null ? bioHtml() : this.bioHtml,
-      username: username != null ? username() : this.username,
+      bioHtml: bioHtml ?? this.bioHtml,
+      username: username ?? this.username,
       title: title != null ? title() : this.title,
-      bio: bio != null ? bio() : this.bio,
+      bio: bio ?? this.bio,
       location: location != null ? location() : this.location,
       languages: languages != null ? languages() : this.languages,
-      instagramUsername: instagramUsername != null
-          ? instagramUsername()
-          : this.instagramUsername,
-      website: website != null ? website() : this.website,
-      xUsername: xUsername != null ? xUsername() : this.xUsername,
-      blueskyUsername: blueskyUsername != null
-          ? blueskyUsername()
-          : this.blueskyUsername,
+      instagramUsername: instagramUsername ?? this.instagramUsername,
+      website: website ?? this.website,
+      xUsername: xUsername ?? this.xUsername,
+      blueskyUsername: blueskyUsername ?? this.blueskyUsername,
     );
   }
 

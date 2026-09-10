@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (searchEngineCrawlerBypass != null) 'search_engine_crawler_bypass': searchEngineCrawlerBypass?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'search_engine_crawler_bypass'}.contains(key)); } 
-WaitingroomZoneSettings copyWith({WaitingroomSearchEngineCrawlerBypass Function()? searchEngineCrawlerBypass}) { return WaitingroomZoneSettings(
+WaitingroomZoneSettings copyWith({WaitingroomSearchEngineCrawlerBypass? Function()? searchEngineCrawlerBypass}) { return WaitingroomZoneSettings(
   searchEngineCrawlerBypass: searchEngineCrawlerBypass != null ? searchEngineCrawlerBypass() : this.searchEngineCrawlerBypass,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

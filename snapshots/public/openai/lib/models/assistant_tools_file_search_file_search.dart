@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   if (rankingOptions != null) 'ranking_options': rankingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'max_num_results', 'ranking_options'}.contains(key)); } 
-AssistantToolsFileSearchFileSearch copyWith({int Function()? maxNumResults, FileSearchRankingOptions Function()? rankingOptions, }) { return AssistantToolsFileSearchFileSearch(
+AssistantToolsFileSearchFileSearch copyWith({int? Function()? maxNumResults, FileSearchRankingOptions? Function()? rankingOptions, }) { return AssistantToolsFileSearchFileSearch(
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   rankingOptions: rankingOptions != null ? rankingOptions() : this.rankingOptions,
 ); } 

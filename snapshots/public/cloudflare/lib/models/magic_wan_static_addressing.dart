@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('gateway_address'); } 
-MagicWanStaticAddressing copyWith({MagicCidr? address, MagicIpAddress? gatewayAddress, MagicCidr Function()? secondaryAddress, }) { return MagicWanStaticAddressing(
+MagicWanStaticAddressing copyWith({MagicCidr? address, MagicIpAddress? gatewayAddress, MagicCidr? Function()? secondaryAddress, }) { return MagicWanStaticAddressing(
   address: address ?? this.address,
   gatewayAddress: gatewayAddress ?? this.gatewayAddress,
   secondaryAddress: secondaryAddress != null ? secondaryAddress() : this.secondaryAddress,

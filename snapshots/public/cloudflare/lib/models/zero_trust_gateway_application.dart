@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (name != null) 'name': name?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'application_type_id', 'created_at', 'id', 'name'}.contains(key)); } 
-ZeroTrustGatewayApplication copyWith({ZeroTrustGatewayAppTypeId Function()? applicationTypeId, ZeroTrustGatewayTimestamp Function()? createdAt, ZeroTrustGatewayAppId Function()? id, ZeroTrustGatewayAppTypesComponentsSchemasName Function()? name, }) { return ZeroTrustGatewayApplication(
+ZeroTrustGatewayApplication copyWith({ZeroTrustGatewayAppTypeId? Function()? applicationTypeId, ZeroTrustGatewayTimestamp? Function()? createdAt, ZeroTrustGatewayAppId? Function()? id, ZeroTrustGatewayAppTypesComponentsSchemasName? Function()? name, }) { return ZeroTrustGatewayApplication(
   applicationTypeId: applicationTypeId != null ? applicationTypeId() : this.applicationTypeId,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,

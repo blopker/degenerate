@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('timePeriod') &&
       json.containsKey('organization') && json['organization'] is String &&
       json.containsKey('usageItems'); } 
-BillingUsageSummaryReportOrg copyWith({BillingUsageSummaryReportOrgTimePeriod? timePeriod, String? organization, String Function()? repository, String Function()? product, String Function()? sku, List<BillingUsageSummaryReportOrgUsageItems>? usageItems, }) { return BillingUsageSummaryReportOrg(
+BillingUsageSummaryReportOrg copyWith({BillingUsageSummaryReportOrgTimePeriod? timePeriod, String? organization, String? Function()? repository, String? Function()? product, String? Function()? sku, List<BillingUsageSummaryReportOrgUsageItems>? usageItems, }) { return BillingUsageSummaryReportOrg(
   timePeriod: timePeriod ?? this.timePeriod,
   organization: organization ?? this.organization,
   repository: repository != null ? repository() : this.repository,

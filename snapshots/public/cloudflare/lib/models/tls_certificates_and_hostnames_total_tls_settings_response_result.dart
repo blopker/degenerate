@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (validityPeriod != null) 'validity_period': validityPeriod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'certificate_authority', 'enabled', 'validity_period'}.contains(key)); } 
-TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult copyWith({TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority Function()? certificateAuthority, TlsCertificatesAndHostnamesComponentsSchemasEnabled Function()? enabled, TlsCertificatesAndHostnamesValidityPeriod Function()? validityPeriod, }) { return TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult(
+TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult copyWith({TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority? Function()? certificateAuthority, TlsCertificatesAndHostnamesComponentsSchemasEnabled? Function()? enabled, TlsCertificatesAndHostnamesValidityPeriod? Function()? validityPeriod, }) { return TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult(
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   enabled: enabled != null ? enabled() : this.enabled,
   validityPeriod: validityPeriod != null ? validityPeriod() : this.validityPeriod,

@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
       json.containsKey('datasetId') && json['datasetId'] is String; } 
-PostEventCreateBulkRequest copyWith({List<PostEventCreateBulkRequestData>? data, String? datasetId, bool Function()? includeCreatedEvents, }) { return PostEventCreateBulkRequest(
+PostEventCreateBulkRequest copyWith({List<PostEventCreateBulkRequestData>? data, String? datasetId, bool? Function()? includeCreatedEvents, }) { return PostEventCreateBulkRequest(
   data: data ?? this.data,
   datasetId: datasetId ?? this.datasetId,
   includeCreatedEvents: includeCreatedEvents != null ? includeCreatedEvents() : this.includeCreatedEvents,

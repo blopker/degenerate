@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') &&
       json.containsKey('policies'); } 
-IamCreateMemberWithPolicies copyWith({IamEmail? email, List<IamCreateMemberPolicy>? policies, IamMemberInvitationStatus Function()? status, }) { return IamCreateMemberWithPolicies(
+IamCreateMemberWithPolicies copyWith({IamEmail? email, List<IamCreateMemberPolicy>? policies, IamMemberInvitationStatus? Function()? status, }) { return IamCreateMemberWithPolicies(
   email: email ?? this.email,
   policies: policies ?? this.policies,
   status: status != null ? status() : this.status,

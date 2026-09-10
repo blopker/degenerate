@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (ip != null) 'ip': ip?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'created_at', 'ip'}.contains(key)); } 
-AddressingAddressMapsIp copyWith({AddressingTimestamp Function()? createdAt, AddressingIp Function()? ip, }) { return AddressingAddressMapsIp(
+AddressingAddressMapsIp copyWith({AddressingTimestamp? Function()? createdAt, AddressingIp? Function()? ip, }) { return AddressingAddressMapsIp(
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   ip: ip != null ? ip() : this.ip,
 ); } 

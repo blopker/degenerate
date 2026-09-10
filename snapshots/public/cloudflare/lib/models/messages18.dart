@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-Messages18 copyWith({double Function()? frequencyPenalty, List<Messages18Functions> Function()? functions, int Function()? maxTokens, List<Messages18Messages>? messages, double Function()? presencePenalty, bool Function()? raw, double Function()? repetitionPenalty, Messages18ResponseFormat Function()? responseFormat, int Function()? seed, bool Function()? stream, double Function()? temperature, List<Messages18Tools> Function()? tools, int Function()? topK, double Function()? topP, }) { return Messages18(
+Messages18 copyWith({double? Function()? frequencyPenalty, List<Messages18Functions>? Function()? functions, int Function()? maxTokens, List<Messages18Messages>? messages, double? Function()? presencePenalty, bool Function()? raw, double? Function()? repetitionPenalty, Messages18ResponseFormat? Function()? responseFormat, int? Function()? seed, bool Function()? stream, double Function()? temperature, List<Messages18Tools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) { return Messages18(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   functions: functions != null ? functions() : this.functions,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,

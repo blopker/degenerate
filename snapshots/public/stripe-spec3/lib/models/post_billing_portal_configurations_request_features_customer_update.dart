@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'enabled': enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate copyWith({PostBillingPortalConfigurationsRequestFeaturesCustomerUpdateAllowedUpdates Function()? allowedUpdates, bool? enabled, }) { return PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate(
+PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate copyWith({PostBillingPortalConfigurationsRequestFeaturesCustomerUpdateAllowedUpdates? Function()? allowedUpdates, bool? enabled, }) { return PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate(
   allowedUpdates: allowedUpdates != null ? allowedUpdates() : this.allowedUpdates,
   enabled: enabled ?? this.enabled,
 ); } 

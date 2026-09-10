@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'display_preference'}.contains(key)); } 
-PostPaymentMethodConfigurationsRequestNzBankAccount copyWith({PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestNzBankAccount(
+PostPaymentMethodConfigurationsRequestNzBankAccount copyWith({PostPaymentMethodConfigurationsRequestNzBankAccountDisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestNzBankAccount(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

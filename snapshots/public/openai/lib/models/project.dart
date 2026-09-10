@@ -48,14 +48,14 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ProjectStatus($value)'; } 
  }
 /// Represents an individual project.
-@immutable final class Project {const Project({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.archivedAt, });
+@immutable final class Project {const Project({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.archivedAt = const Omittable.absent(), });
 
 factory Project.fromJson(Map<String, dynamic> json) { return Project(
   id: json['id'] as String,
   object: ProjectObject.fromJson(json['object'] as String),
   name: json['name'] as String,
   createdAt: (json['created_at'] as num).toInt(),
-  archivedAt: json['archived_at'] != null ? (json['archived_at'] as num).toInt() : null,
+  archivedAt: json.containsKey('archived_at') ? Omittable(json['archived_at'] != null ? (json['archived_at'] as num).toInt() : null) : const Omittable.absent(),
   status: ProjectStatus.fromJson(json['status'] as String),
 ); }
 
@@ -72,7 +72,7 @@ final String name;
 final int createdAt;
 
 /// The Unix timestamp (in seconds) of when the project was archived or `null`.
-final int? archivedAt;
+final Omittable<int?> archivedAt;
 
 /// `active` or `archived`
 final ProjectStatus status;
@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   'object': object.toJson(),
   'name': name,
   'created_at': createdAt,
-  'archived_at': ?archivedAt,
+  if (archivedAt.isPresent) 'archived_at': archivedAt.value,
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
@@ -90,12 +90,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('created_at') && json['created_at'] is num &&
       json.containsKey('status'); } 
-Project copyWith({String? id, ProjectObject? object, String? name, int? createdAt, int? Function()? archivedAt, ProjectStatus? status, }) { return Project(
+Project copyWith({String? id, ProjectObject? object, String? name, int? createdAt, Omittable<int?>? archivedAt, ProjectStatus? status, }) { return Project(
   id: id ?? this.id,
   object: object ?? this.object,
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
-  archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
+  archivedAt: archivedAt ?? this.archivedAt,
   status: status ?? this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

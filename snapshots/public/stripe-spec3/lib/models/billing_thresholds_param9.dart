@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'reset_billing_cycle_anchor': ?resetBillingCycleAnchor,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_gte', 'reset_billing_cycle_anchor'}.contains(key)); } 
-BillingThresholdsParam9 copyWith({int Function()? amountGte, bool Function()? resetBillingCycleAnchor, }) { return BillingThresholdsParam9(
+BillingThresholdsParam9 copyWith({int? Function()? amountGte, bool? Function()? resetBillingCycleAnchor, }) { return BillingThresholdsParam9(
   amountGte: amountGte != null ? amountGte() : this.amountGte,
   resetBillingCycleAnchor: resetBillingCycleAnchor != null ? resetBillingCycleAnchor() : this.resetBillingCycleAnchor,
 ); } 

@@ -60,7 +60,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('response') &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('type') && json['type'] is String; } 
-UrlscannerGetScanResponse2DataRequestsResponse copyWith({UrlscannerGetScanResponse2DataRequestsResponseAsn? asn, bool Function()? contentAvailable, double? dataLength, double? encodedDataLength, UrlscannerGetScanResponse2DataRequestsResponseGeoip? geoip, bool? hasExtraInfo, String Function()? hash, String? requestId, UrlscannerGetScanResponse2DataRequestsResponseResponse? response, double? size, String? type, }) { return UrlscannerGetScanResponse2DataRequestsResponse(
+UrlscannerGetScanResponse2DataRequestsResponse copyWith({UrlscannerGetScanResponse2DataRequestsResponseAsn? asn, bool? Function()? contentAvailable, double? dataLength, double? encodedDataLength, UrlscannerGetScanResponse2DataRequestsResponseGeoip? geoip, bool? hasExtraInfo, String? Function()? hash, String? requestId, UrlscannerGetScanResponse2DataRequestsResponseResponse? response, double? size, String? type, }) { return UrlscannerGetScanResponse2DataRequestsResponse(
   asn: asn ?? this.asn,
   contentAvailable: contentAvailable != null ? contentAvailable() : this.contentAvailable,
   dataLength: dataLength ?? this.dataLength,

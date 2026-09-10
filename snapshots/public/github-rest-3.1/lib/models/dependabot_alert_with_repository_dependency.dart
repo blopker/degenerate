@@ -64,13 +64,13 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DependabotAlertWithRepositoryDependencyRelationship($value)'; } 
  }
 /// Details for the vulnerable dependency.
-@immutable final class DependabotAlertWithRepositoryDependency {const DependabotAlertWithRepositoryDependency({this.package, this.manifestPath, this.scope, this.relationship, });
+@immutable final class DependabotAlertWithRepositoryDependency {const DependabotAlertWithRepositoryDependency({this.package, this.manifestPath, this.scope = const Omittable.absent(), this.relationship = const Omittable.absent(), });
 
 factory DependabotAlertWithRepositoryDependency.fromJson(Map<String, dynamic> json) { return DependabotAlertWithRepositoryDependency(
   package: json['package'] != null ? DependabotAlertPackage.fromJson(json['package'] as Map<String, dynamic>) : null,
   manifestPath: json['manifest_path'] as String?,
-  scope: json['scope'] != null ? DependabotAlertWithRepositoryDependencyScope.fromJson(json['scope'] as String) : null,
-  relationship: json['relationship'] != null ? DependabotAlertWithRepositoryDependencyRelationship.fromJson(json['relationship'] as String) : null,
+  scope: json.containsKey('scope') ? Omittable(json['scope'] != null ? DependabotAlertWithRepositoryDependencyScope.fromJson(json['scope'] as String) : null) : const Omittable.absent(),
+  relationship: json.containsKey('relationship') ? Omittable(json['relationship'] != null ? DependabotAlertWithRepositoryDependencyRelationship.fromJson(json['relationship'] as String) : null) : const Omittable.absent(),
 ); }
 
 final DependabotAlertPackage? package;
@@ -79,27 +79,27 @@ final DependabotAlertPackage? package;
 final String? manifestPath;
 
 /// The execution scope of the vulnerable dependency.
-final DependabotAlertWithRepositoryDependencyScope? scope;
+final Omittable<DependabotAlertWithRepositoryDependencyScope?> scope;
 
 /// The vulnerable dependency's relationship to your project.
 /// 
 /// > `[!NOTE]`
 /// > We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 /// 
-final DependabotAlertWithRepositoryDependencyRelationship? relationship;
+final Omittable<DependabotAlertWithRepositoryDependencyRelationship?> relationship;
 
 Map<String, dynamic> toJson() { return {
   if (package != null) 'package': package?.toJson(),
   'manifest_path': ?manifestPath,
-  if (scope != null) 'scope': scope?.toJson(),
-  if (relationship != null) 'relationship': relationship?.toJson(),
+  if (scope.isPresent) 'scope': scope.value?.toJson(),
+  if (relationship.isPresent) 'relationship': relationship.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'package', 'manifest_path', 'scope', 'relationship'}.contains(key)); } 
-DependabotAlertWithRepositoryDependency copyWith({DependabotAlertPackage Function()? package, String Function()? manifestPath, DependabotAlertWithRepositoryDependencyScope? Function()? scope, DependabotAlertWithRepositoryDependencyRelationship? Function()? relationship, }) { return DependabotAlertWithRepositoryDependency(
+DependabotAlertWithRepositoryDependency copyWith({DependabotAlertPackage? Function()? package, String? Function()? manifestPath, Omittable<DependabotAlertWithRepositoryDependencyScope?>? scope, Omittable<DependabotAlertWithRepositoryDependencyRelationship?>? relationship, }) { return DependabotAlertWithRepositoryDependency(
   package: package != null ? package() : this.package,
   manifestPath: manifestPath != null ? manifestPath() : this.manifestPath,
-  scope: scope != null ? scope() : this.scope,
-  relationship: relationship != null ? relationship() : this.relationship,
+  scope: scope ?? this.scope,
+  relationship: relationship ?? this.relationship,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DependabotAlertWithRepositoryDependency &&

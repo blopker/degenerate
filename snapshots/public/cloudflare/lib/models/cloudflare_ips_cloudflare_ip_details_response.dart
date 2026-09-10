@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-CloudflareIpsCloudflareIpDetailsResponse copyWith({List<PublicIpMessages2>? errors, List<PublicIpMessages2>? messages, bool? success, CloudflareIpsCloudflareIpDetailsResponseResult Function()? result, }) { return CloudflareIpsCloudflareIpDetailsResponse(
+CloudflareIpsCloudflareIpDetailsResponse copyWith({List<PublicIpMessages2>? errors, List<PublicIpMessages2>? messages, bool? success, CloudflareIpsCloudflareIpDetailsResponseResult? Function()? result, }) { return CloudflareIpsCloudflareIpDetailsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

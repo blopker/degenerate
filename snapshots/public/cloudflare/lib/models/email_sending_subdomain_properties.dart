@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email_sending_enabled') && json['email_sending_enabled'] is bool &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('tag'); } 
-EmailSendingSubdomainProperties copyWith({EmailCreated Function()? created, String Function()? emailSendingDkimSelector, bool? emailSendingEnabled, String Function()? emailSendingReturnPathDomain, bool Function()? enabled, EmailModified Function()? modified, String? name, EmailSendingSubdomainIdentifier? tag, }) { return EmailSendingSubdomainProperties(
+EmailSendingSubdomainProperties copyWith({EmailCreated? Function()? created, String? Function()? emailSendingDkimSelector, bool? emailSendingEnabled, String? Function()? emailSendingReturnPathDomain, bool? Function()? enabled, EmailModified? Function()? modified, String? name, EmailSendingSubdomainIdentifier? tag, }) { return EmailSendingSubdomainProperties(
   created: created != null ? created() : this.created,
   emailSendingDkimSelector: emailSendingDkimSelector != null ? emailSendingDkimSelector() : this.emailSendingDkimSelector,
   emailSendingEnabled: emailSendingEnabled ?? this.emailSendingEnabled,

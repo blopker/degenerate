@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-ComponentCondition copyWith({String Function()? error, String Function()? message, String? status, String? type, }) { return ComponentCondition(
+ComponentCondition copyWith({String? Function()? error, String? Function()? message, String? status, String? type, }) { return ComponentCondition(
   error: error != null ? error() : this.error,
   message: message != null ? message() : this.message,
   status: status ?? this.status,

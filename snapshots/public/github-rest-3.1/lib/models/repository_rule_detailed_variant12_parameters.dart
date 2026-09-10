@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') &&
       json.containsKey('pattern') && json['pattern'] is String; } 
-RepositoryRuleDetailedVariant12Parameters copyWith({String Function()? name, bool Function()? negate, RepositoryRuleDetailedVariant12ParametersOperator? $operator, String? pattern, }) { return RepositoryRuleDetailedVariant12Parameters(
+RepositoryRuleDetailedVariant12Parameters copyWith({String? Function()? name, bool? Function()? negate, RepositoryRuleDetailedVariant12ParametersOperator? $operator, String? pattern, }) { return RepositoryRuleDetailedVariant12Parameters(
   name: name != null ? name() : this.name,
   negate: negate != null ? negate() : this.negate,
   $operator: $operator ?? this.$operator,

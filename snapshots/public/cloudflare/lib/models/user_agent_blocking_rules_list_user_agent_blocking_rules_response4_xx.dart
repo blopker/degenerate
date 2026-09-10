@@ -22,7 +22,7 @@ final bool success;
 final FirewallResultInfo? resultInfo;
 
 Map<String, dynamic> toJson() { return {
-  'result': ?result,
+  'result': result,
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('resul
       json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-UserAgentBlockingRulesListUserAgentBlockingRulesResponse4Xx copyWith({Map<String, dynamic>? Function()? result, List<FirewallMessages2>? errors, List<FirewallMessages2>? messages, bool? success, FirewallResultInfo Function()? resultInfo, }) { return UserAgentBlockingRulesListUserAgentBlockingRulesResponse4Xx(
+UserAgentBlockingRulesListUserAgentBlockingRulesResponse4Xx copyWith({Map<String, dynamic>? Function()? result, List<FirewallMessages2>? errors, List<FirewallMessages2>? messages, bool? success, FirewallResultInfo? Function()? resultInfo, }) { return UserAgentBlockingRulesListUserAgentBlockingRulesResponse4Xx(
   result: result != null ? result() : this.result,
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,

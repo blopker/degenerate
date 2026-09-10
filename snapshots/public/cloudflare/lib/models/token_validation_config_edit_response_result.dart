@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (tokenSources != null) 'token_sources': tokenSources?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'id', 'title', 'token_sources'}.contains(key)); } 
-TokenValidationConfigEditResponseResult copyWith({ShieldDescription Function()? description, ShieldUuid Function()? id, ShieldTitle Function()? title, List<ShieldHeader> Function()? tokenSources, }) { return TokenValidationConfigEditResponseResult(
+TokenValidationConfigEditResponseResult copyWith({ShieldDescription? Function()? description, ShieldUuid? Function()? id, ShieldTitle? Function()? title, List<ShieldHeader>? Function()? tokenSources, }) { return TokenValidationConfigEditResponseResult(
   description: description != null ? description() : this.description,
   id: id != null ? id() : this.id,
   title: title != null ? title() : this.title,

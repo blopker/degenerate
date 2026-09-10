@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String; } 
-PostProductsRequestDefaultPriceData copyWith({String? currency, Map<String, PostProductsRequestDefaultPriceDataCurrencyOptionsValue> Function()? currencyOptions, PostProductsRequestDefaultPriceDataCustomUnitAmount Function()? customUnitAmount, Map<String, String> Function()? metadata, PostProductsRequestDefaultPriceDataRecurring Function()? recurring, PostProductsRequestDefaultPriceDataTaxBehavior Function()? taxBehavior, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return PostProductsRequestDefaultPriceData(
+PostProductsRequestDefaultPriceData copyWith({String? currency, Map<String, PostProductsRequestDefaultPriceDataCurrencyOptionsValue>? Function()? currencyOptions, PostProductsRequestDefaultPriceDataCustomUnitAmount? Function()? customUnitAmount, Map<String, String>? Function()? metadata, PostProductsRequestDefaultPriceDataRecurring? Function()? recurring, PostProductsRequestDefaultPriceDataTaxBehavior? Function()? taxBehavior, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostProductsRequestDefaultPriceData(
   currency: currency ?? this.currency,
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
   customUnitAmount: customUnitAmount != null ? customUnitAmount() : this.customUnitAmount,

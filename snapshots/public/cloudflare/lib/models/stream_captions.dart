@@ -67,7 +67,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'generated', 'label', 'language', 'status'}.contains(key)); } 
-StreamCaptions copyWith({StreamGeneratedCaption Function()? generated, StreamLabel Function()? label, StreamLanguage Function()? language, StreamCaptionStatus Function()? status, }) { return StreamCaptions(
+StreamCaptions copyWith({StreamGeneratedCaption? Function()? generated, StreamLabel? Function()? label, StreamLanguage? Function()? language, StreamCaptionStatus? Function()? status, }) { return StreamCaptions(
   generated: generated != null ? generated() : this.generated,
   label: label != null ? label() : this.label,
   language: language != null ? language() : this.language,

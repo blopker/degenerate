@@ -91,7 +91,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') && json['object'] is String; } 
-RealtimeTranscriptionSessionCreateResponseGa copyWith({RealtimeTranscriptionSessionCreateResponseGaType? type, String? id, String? object, int Function()? expiresAt, List<RealtimeTranscriptionSessionCreateResponseGaInclude> Function()? include, RealtimeTranscriptionSessionCreateResponseGaAudio Function()? audio, }) { return RealtimeTranscriptionSessionCreateResponseGa(
+RealtimeTranscriptionSessionCreateResponseGa copyWith({RealtimeTranscriptionSessionCreateResponseGaType? type, String? id, String? object, int? Function()? expiresAt, List<RealtimeTranscriptionSessionCreateResponseGaInclude>? Function()? include, RealtimeTranscriptionSessionCreateResponseGaAudio? Function()? audio, }) { return RealtimeTranscriptionSessionCreateResponseGa(
   type: type ?? this.type,
   id: id ?? this.id,
   object: object ?? this.object,

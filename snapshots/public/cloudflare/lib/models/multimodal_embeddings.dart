@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'text': ?text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image', 'text'}.contains(key)); } 
-MultimodalEmbeddings copyWith({String Function()? image, List<String> Function()? text, }) { return MultimodalEmbeddings(
+MultimodalEmbeddings copyWith({String? Function()? image, List<String>? Function()? text, }) { return MultimodalEmbeddings(
   image: image != null ? image() : this.image,
   text: text != null ? text() : this.text,
 ); } 

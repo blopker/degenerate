@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
       json.containsKey('id') &&
       json.containsKey('mode') &&
       json.containsKey('scope'); } 
-FirewallSchemasRule copyWith({List<FirewallSchemasMode>? allowedModes, FirewallConfiguration? configuration, DateTime Function()? createdOn, FirewallSchemasIdentifier? id, FirewallSchemasMode? mode, DateTime Function()? modifiedOn, FirewallNotes Function()? notes, FirewallSchemasRuleScope? scope, }) { return FirewallSchemasRule(
+FirewallSchemasRule copyWith({List<FirewallSchemasMode>? allowedModes, FirewallConfiguration? configuration, DateTime? Function()? createdOn, FirewallSchemasIdentifier? id, FirewallSchemasMode? mode, DateTime? Function()? modifiedOn, FirewallNotes? Function()? notes, FirewallSchemasRuleScope? scope, }) { return FirewallSchemasRule(
   allowedModes: allowedModes ?? this.allowedModes,
   configuration: configuration ?? this.configuration,
   createdOn: createdOn != null ? createdOn() : this.createdOn,

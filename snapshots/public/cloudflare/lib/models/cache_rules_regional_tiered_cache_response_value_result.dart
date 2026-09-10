@@ -22,11 +22,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CacheRulesRegionalTieredCacheResponseValueResultId($value)'; } 
  }
-@immutable final class CacheRulesRegionalTieredCacheResponseValueResult {const CacheRulesRegionalTieredCacheResponseValueResult({required this.id, required this.value, this.modifiedOn, });
+@immutable final class CacheRulesRegionalTieredCacheResponseValueResult {const CacheRulesRegionalTieredCacheResponseValueResult({required this.id, required this.value, this.modifiedOn = const Omittable.absent(), });
 
 factory CacheRulesRegionalTieredCacheResponseValueResult.fromJson(Map<String, dynamic> json) { return CacheRulesRegionalTieredCacheResponseValueResult(
   id: CacheRulesRegionalTieredCacheResponseValueResultId.fromJson(json['id'] as String),
-  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: CacheRulesRegionalTieredCacheValue.fromJson(json['value'] as String),
 ); }
 
@@ -34,20 +34,20 @@ factory CacheRulesRegionalTieredCacheResponseValueResult.fromJson(Map<String, dy
 final CacheRulesRegionalTieredCacheResponseValueResultId id;
 
 /// Last time this setting was modified.
-final DateTime? modifiedOn;
+final Omittable<DateTime?> modifiedOn;
 
 final CacheRulesRegionalTieredCacheValue value;
 
 Map<String, dynamic> toJson() { return {
   'id': id.toJson(),
-  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   'value': value.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('value'); } 
-CacheRulesRegionalTieredCacheResponseValueResult copyWith({CacheRulesRegionalTieredCacheResponseValueResultId? id, DateTime? Function()? modifiedOn, CacheRulesRegionalTieredCacheValue? value, }) { return CacheRulesRegionalTieredCacheResponseValueResult(
+CacheRulesRegionalTieredCacheResponseValueResult copyWith({CacheRulesRegionalTieredCacheResponseValueResultId? id, Omittable<DateTime?>? modifiedOn, CacheRulesRegionalTieredCacheValue? value, }) { return CacheRulesRegionalTieredCacheResponseValueResult(
   id: id ?? this.id,
-  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
   value: value ?? this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

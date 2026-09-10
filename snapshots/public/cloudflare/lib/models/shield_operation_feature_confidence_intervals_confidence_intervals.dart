@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (suggestedThreshold != null) 'suggested_threshold': suggestedThreshold?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'last_updated', 'suggested_threshold'}.contains(key)); } 
-ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals copyWith({ShieldTimestamp Function()? lastUpdated, ShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThreshold Function()? suggestedThreshold, }) { return ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals(
+ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals copyWith({ShieldTimestamp? Function()? lastUpdated, ShieldOperationFeatureConfidenceIntervalsConfidenceIntervalsSuggestedThreshold? Function()? suggestedThreshold, }) { return ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals(
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   suggestedThreshold: suggestedThreshold != null ? suggestedThreshold() : this.suggestedThreshold,
 ); } 

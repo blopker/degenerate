@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-ConnectivityServicesGetResponse copyWith({List<InfraMessages2>? errors, List<InfraMessages2>? messages, bool? success, InfraServiceConfig Function()? result, }) { return ConnectivityServicesGetResponse(
+ConnectivityServicesGetResponse copyWith({List<InfraMessages2>? errors, List<InfraMessages2>? messages, bool? success, InfraServiceConfig? Function()? result, }) { return ConnectivityServicesGetResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

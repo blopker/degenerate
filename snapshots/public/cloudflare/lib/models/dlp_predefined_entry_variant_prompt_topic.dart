@@ -45,29 +45,29 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DlpPredefinedEntryVariantPromptTopicType($value)'; } 
  }
-@immutable final class DlpPredefinedEntryVariantPromptTopic {const DlpPredefinedEntryVariantPromptTopic({required this.topicType, required this.type, this.description, });
+@immutable final class DlpPredefinedEntryVariantPromptTopic {const DlpPredefinedEntryVariantPromptTopic({required this.topicType, required this.type, this.description = const Omittable.absent(), });
 
 factory DlpPredefinedEntryVariantPromptTopic.fromJson(Map<String, dynamic> json) { return DlpPredefinedEntryVariantPromptTopic(
-  description: json['description'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   topicType: DlpPromptTopicType.fromJson(json['topic_type'] as String),
   type: DlpPredefinedEntryVariantPromptTopicType.fromJson(json['type'] as String),
 ); }
 
-final String? description;
+final Omittable<String?> description;
 
 final DlpPromptTopicType topicType;
 
 final DlpPredefinedEntryVariantPromptTopicType type;
 
 Map<String, dynamic> toJson() { return {
-  'description': ?description,
+  if (description.isPresent) 'description': description.value,
   'topic_type': topicType.toJson(),
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('topic_type') &&
       json.containsKey('type'); } 
-DlpPredefinedEntryVariantPromptTopic copyWith({String? Function()? description, DlpPromptTopicType? topicType, DlpPredefinedEntryVariantPromptTopicType? type, }) { return DlpPredefinedEntryVariantPromptTopic(
-  description: description != null ? description() : this.description,
+DlpPredefinedEntryVariantPromptTopic copyWith({Omittable<String?>? description, DlpPromptTopicType? topicType, DlpPredefinedEntryVariantPromptTopicType? type, }) { return DlpPredefinedEntryVariantPromptTopic(
+  description: description ?? this.description,
   topicType: topicType ?? this.topicType,
   type: type ?? this.type,
 ); } 

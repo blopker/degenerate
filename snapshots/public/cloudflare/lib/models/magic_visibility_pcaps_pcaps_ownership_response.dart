@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('desti
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('status') &&
       json.containsKey('submitted') && json['submitted'] is String; } 
-MagicVisibilityPcapsPcapsOwnershipResponse copyWith({MagicVisibilityPcapsPcapsDestinationConf? destinationConf, MagicVisibilityPcapsPcapsOwnershipChallenge? filename, String? id, MagicVisibilityPcapsPcapsOwnershipResponseStatus? status, String? submitted, String Function()? validated, }) { return MagicVisibilityPcapsPcapsOwnershipResponse(
+MagicVisibilityPcapsPcapsOwnershipResponse copyWith({MagicVisibilityPcapsPcapsDestinationConf? destinationConf, MagicVisibilityPcapsPcapsOwnershipChallenge? filename, String? id, MagicVisibilityPcapsPcapsOwnershipResponseStatus? status, String? submitted, String? Function()? validated, }) { return MagicVisibilityPcapsPcapsOwnershipResponse(
   destinationConf: destinationConf ?? this.destinationConf,
   filename: filename ?? this.filename,
   id: id ?? this.id,

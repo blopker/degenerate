@@ -2,14 +2,14 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A response to an MCP approval request.
 /// 
-@immutable final class McpApprovalResponse {const McpApprovalResponse({required this.type, required this.approvalRequestId, required this.approve, this.id, this.reason, });
+@immutable final class McpApprovalResponse {const McpApprovalResponse({required this.type, required this.approvalRequestId, required this.approve, this.id = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
 factory McpApprovalResponse.fromJson(Map<String, dynamic> json) { return McpApprovalResponse(
   type: json['type'] as String,
-  id: json['id'] as String?,
+  id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),
   approvalRequestId: json['approval_request_id'] as String,
   approve: json['approve'] as bool,
-  reason: json['reason'] as String?,
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
 ); }
 
 /// The type of the item. Always `mcp_approval_response`.
@@ -18,7 +18,7 @@ final String type;
 
 /// The unique ID of the approval response
 /// 
-final String? id;
+final Omittable<String?> id;
 
 /// The ID of the approval request being answered.
 /// 
@@ -30,24 +30,24 @@ final bool approve;
 
 /// Optional reason for the decision.
 /// 
-final String? reason;
+final Omittable<String?> reason;
 
 Map<String, dynamic> toJson() { return {
   'type': type,
-  'id': ?id,
+  if (id.isPresent) 'id': id.value,
   'approval_request_id': approvalRequestId,
   'approve': approve,
-  'reason': ?reason,
+  if (reason.isPresent) 'reason': reason.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('approval_request_id') && json['approval_request_id'] is String &&
       json.containsKey('approve') && json['approve'] is bool; } 
-McpApprovalResponse copyWith({String? type, String? Function()? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return McpApprovalResponse(
+McpApprovalResponse copyWith({String? type, Omittable<String?>? id, String? approvalRequestId, bool? approve, Omittable<String?>? reason, }) { return McpApprovalResponse(
   type: type ?? this.type,
-  id: id != null ? id() : this.id,
+  id: id ?? this.id,
   approvalRequestId: approvalRequestId ?? this.approvalRequestId,
   approve: approve ?? this.approve,
-  reason: reason != null ? reason() : this.reason,
+  reason: reason ?? this.reason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is McpApprovalResponse &&

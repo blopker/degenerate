@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ListHyperdriveResponse copyWith({List<HyperdriveMessages2>? errors, List<HyperdriveMessages2>? messages, List<HyperdriveHyperdriveConfig>? result, bool? success, HyperdriveResultInfo Function()? resultInfo, }) { return ListHyperdriveResponse(
+ListHyperdriveResponse copyWith({List<HyperdriveMessages2>? errors, List<HyperdriveMessages2>? messages, List<HyperdriveHyperdriveConfig>? result, bool? success, HyperdriveResultInfo? Function()? resultInfo, }) { return ListHyperdriveResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

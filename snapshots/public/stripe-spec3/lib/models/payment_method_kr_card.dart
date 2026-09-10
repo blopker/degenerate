@@ -86,27 +86,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentMethodKrCardBrand($value)'; } 
  }
 /// 
-@immutable final class PaymentMethodKrCard {const PaymentMethodKrCard({this.brand, this.last4, });
+@immutable final class PaymentMethodKrCard {const PaymentMethodKrCard({this.brand = const Omittable.absent(), this.last4 = const Omittable.absent(), });
 
 factory PaymentMethodKrCard.fromJson(Map<String, dynamic> json) { return PaymentMethodKrCard(
-  brand: json['brand'] != null ? PaymentMethodKrCardBrand.fromJson(json['brand'] as String) : null,
-  last4: json['last4'] as String?,
+  brand: json.containsKey('brand') ? Omittable(json['brand'] != null ? PaymentMethodKrCardBrand.fromJson(json['brand'] as String) : null) : const Omittable.absent(),
+  last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
 ); }
 
 /// The local credit or debit card brand.
-final PaymentMethodKrCardBrand? brand;
+final Omittable<PaymentMethodKrCardBrand?> brand;
 
 /// The last four digits of the card. This may not be present for American Express cards.
-final String? last4;
+final Omittable<String?> last4;
 
 Map<String, dynamic> toJson() { return {
-  if (brand != null) 'brand': brand?.toJson(),
-  'last4': ?last4,
+  if (brand.isPresent) 'brand': brand.value?.toJson(),
+  if (last4.isPresent) 'last4': last4.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brand', 'last4'}.contains(key)); } 
-PaymentMethodKrCard copyWith({PaymentMethodKrCardBrand? Function()? brand, String? Function()? last4, }) { return PaymentMethodKrCard(
-  brand: brand != null ? brand() : this.brand,
-  last4: last4 != null ? last4() : this.last4,
+PaymentMethodKrCard copyWith({Omittable<PaymentMethodKrCardBrand?>? brand, Omittable<String?>? last4, }) { return PaymentMethodKrCard(
+  brand: brand ?? this.brand,
+  last4: last4 ?? this.last4,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is PaymentMethodKrCard &&

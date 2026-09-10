@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   if (accountSubcategories != null) 'account_subcategories': accountSubcategories?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_subcategories'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam22FinancialConnectionsFilters copyWith({List<InvoicePaymentMethodOptionsParam22FinancialConnectionsFiltersAccountSubcategories> Function()? accountSubcategories}) { return InvoicePaymentMethodOptionsParam22FinancialConnectionsFilters(
+InvoicePaymentMethodOptionsParam22FinancialConnectionsFilters copyWith({List<InvoicePaymentMethodOptionsParam22FinancialConnectionsFiltersAccountSubcategories>? Function()? accountSubcategories}) { return InvoicePaymentMethodOptionsParam22FinancialConnectionsFilters(
   accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

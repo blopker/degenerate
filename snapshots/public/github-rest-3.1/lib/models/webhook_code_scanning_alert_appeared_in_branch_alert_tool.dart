@@ -15,10 +15,10 @@ final String? version;
 
 Map<String, dynamic> toJson() { return {
   'name': name,
-  'version': ?version,
+  'version': version,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
-      json.containsKey('version') && json['version'] is String; } 
+      json.containsKey('version') && (json['version'] == null || json['version'] is String); } 
 WebhookCodeScanningAlertAppearedInBranchAlertTool copyWith({String? name, String? Function()? version, }) { return WebhookCodeScanningAlertAppearedInBranchAlertTool(
   name: name ?? this.name,
   version: version != null ? version() : this.version,

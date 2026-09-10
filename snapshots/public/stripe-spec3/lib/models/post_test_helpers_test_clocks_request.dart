@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('frozen_time') && json['frozen_time'] is num; } 
-PostTestHelpersTestClocksRequest copyWith({List<String> Function()? expand, int? frozenTime, String Function()? name, }) { return PostTestHelpersTestClocksRequest(
+PostTestHelpersTestClocksRequest copyWith({List<String>? Function()? expand, int? frozenTime, String? Function()? name, }) { return PostTestHelpersTestClocksRequest(
   expand: expand != null ? expand() : this.expand,
   frozenTime: frozenTime ?? this.frozenTime,
   name: name != null ? name() : this.name,

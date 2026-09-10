@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('type') && json['type'] is String &&
       json.containsKey('region') && json['region'] is String; } 
-NscInterconnectGcpPartnerBody copyWith({String? account, String? name, String Function()? owner, String? type, String? region, Bandwidth Function()? speed, }) { return NscInterconnectGcpPartnerBody(
+NscInterconnectGcpPartnerBody copyWith({String? account, String? name, String? Function()? owner, String? type, String? region, Bandwidth? Function()? speed, }) { return NscInterconnectGcpPartnerBody(
   account: account ?? this.account,
   name: name ?? this.name,
   owner: owner != null ? owner() : this.owner,

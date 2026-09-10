@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'external_reference', 'frequency_penalty', 'max_tokens', 'presence_penalty', 'prompt', 'repetition_penalty', 'response_format', 'seed', 'stream', 'temperature', 'top_p'}.contains(key)); } 
-AsyncBatch2Requests copyWith({String Function()? externalReference, double Function()? frequencyPenalty, int Function()? maxTokens, double Function()? presencePenalty, String Function()? prompt, double Function()? repetitionPenalty, AsyncBatch2RequestsResponseFormat Function()? responseFormat, int Function()? seed, bool Function()? stream, double Function()? temperature, double Function()? topP, }) { return AsyncBatch2Requests(
+AsyncBatch2Requests copyWith({String? Function()? externalReference, double? Function()? frequencyPenalty, int Function()? maxTokens, double? Function()? presencePenalty, String? Function()? prompt, double? Function()? repetitionPenalty, AsyncBatch2RequestsResponseFormat? Function()? responseFormat, int? Function()? seed, bool Function()? stream, double Function()? temperature, double? Function()? topP, }) { return AsyncBatch2Requests(
   externalReference: externalReference != null ? externalReference() : this.externalReference,
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,

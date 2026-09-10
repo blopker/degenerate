@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('branc
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('provider') &&
       json.containsKey('repository') && json['repository'] is String; } 
-BuildsBuildSeedRepoInput copyWith({BuildsBranch? branch, List<BuildsBuildSeedRepoInputFile> Function()? files, String? owner, String? path, BuildsScmProviderType? provider, String? repository, }) { return BuildsBuildSeedRepoInput(
+BuildsBuildSeedRepoInput copyWith({BuildsBranch? branch, List<BuildsBuildSeedRepoInputFile>? Function()? files, String? owner, String? path, BuildsScmProviderType? provider, String? repository, }) { return BuildsBuildSeedRepoInput(
   branch: branch ?? this.branch,
   files: files != null ? files() : this.files,
   owner: owner ?? this.owner,

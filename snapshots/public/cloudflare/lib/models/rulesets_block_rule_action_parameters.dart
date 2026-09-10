@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (response != null) 'response': response?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'response'}.contains(key)); } 
-RulesetsBlockRuleActionParameters copyWith({RulesetsBlockRuleActionParametersResponse Function()? response}) { return RulesetsBlockRuleActionParameters(
+RulesetsBlockRuleActionParameters copyWith({RulesetsBlockRuleActionParametersResponse? Function()? response}) { return RulesetsBlockRuleActionParameters(
   response: response != null ? response() : this.response,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (kind != null) 'kind': kind?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'identifier', 'kind'}.contains(key)); } 
-AddressingAddressMapsMembershipRequest copyWith({AddressingIdentifier Function()? identifier, AddressingKind Function()? kind, }) { return AddressingAddressMapsMembershipRequest(
+AddressingAddressMapsMembershipRequest copyWith({AddressingIdentifier? Function()? identifier, AddressingKind? Function()? kind, }) { return AddressingAddressMapsMembershipRequest(
   identifier: identifier != null ? identifier() : this.identifier,
   kind: kind != null ? kind() : this.kind,
 ); } 

@@ -26,40 +26,40 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CreditNoteRefundType($value)'; } 
  }
 /// 
-@immutable final class CreditNoteRefund {const CreditNoteRefund({required this.amountRefunded, required this.refund, this.paymentRecordRefund, this.type, });
+@immutable final class CreditNoteRefund {const CreditNoteRefund({required this.amountRefunded, required this.refund, this.paymentRecordRefund = const Omittable.absent(), this.type = const Omittable.absent(), });
 
 factory CreditNoteRefund.fromJson(Map<String, dynamic> json) { return CreditNoteRefund(
   amountRefunded: (json['amount_refunded'] as num).toInt(),
-  paymentRecordRefund: json['payment_record_refund'] != null ? CreditNotesPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null,
+  paymentRecordRefund: json.containsKey('payment_record_refund') ? Omittable(json['payment_record_refund'] != null ? CreditNotesPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   refund: OneOf2.parse(json['refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),),
-  type: json['type'] != null ? CreditNoteRefundType.fromJson(json['type'] as String) : null,
+  type: json.containsKey('type') ? Omittable(json['type'] != null ? CreditNoteRefundType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Amount of the refund that applies to this credit note, in cents (or local equivalent).
 final int amountRefunded;
 
 /// The PaymentRecord refund details associated with this credit note refund.
-final CreditNotesPaymentRecordRefund? paymentRecordRefund;
+final Omittable<CreditNotesPaymentRecordRefund?> paymentRecordRefund;
 
 /// ID of the refund.
 final CreditNoteRefundRefund refund;
 
 /// Type of the refund, one of `refund` or `payment_record_refund`.
-final CreditNoteRefundType? type;
+final Omittable<CreditNoteRefundType?> type;
 
 Map<String, dynamic> toJson() { return {
   'amount_refunded': amountRefunded,
-  if (paymentRecordRefund != null) 'payment_record_refund': paymentRecordRefund?.toJson(),
+  if (paymentRecordRefund.isPresent) 'payment_record_refund': paymentRecordRefund.value?.toJson(),
   'refund': refund.toJson(),
-  if (type != null) 'type': type?.toJson(),
+  if (type.isPresent) 'type': type.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_refunded') && json['amount_refunded'] is num &&
       json.containsKey('refund'); } 
-CreditNoteRefund copyWith({int? amountRefunded, CreditNotesPaymentRecordRefund? Function()? paymentRecordRefund, CreditNoteRefundRefund? refund, CreditNoteRefundType? Function()? type, }) { return CreditNoteRefund(
+CreditNoteRefund copyWith({int? amountRefunded, Omittable<CreditNotesPaymentRecordRefund?>? paymentRecordRefund, CreditNoteRefundRefund? refund, Omittable<CreditNoteRefundType?>? type, }) { return CreditNoteRefund(
   amountRefunded: amountRefunded ?? this.amountRefunded,
-  paymentRecordRefund: paymentRecordRefund != null ? paymentRecordRefund() : this.paymentRecordRefund,
+  paymentRecordRefund: paymentRecordRefund ?? this.paymentRecordRefund,
   refund: refund ?? this.refund,
-  type: type != null ? type() : this.type,
+  type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreditNoteRefund &&

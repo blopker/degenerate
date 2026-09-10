@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'total_pages': ?totalPages,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'count', 'page', 'per_page', 'total_count', 'total_pages'}.contains(key)); } 
-ResourceSharingResultInfo copyWith({double Function()? count, double Function()? page, double Function()? perPage, double Function()? totalCount, double Function()? totalPages, }) { return ResourceSharingResultInfo(
+ResourceSharingResultInfo copyWith({double? Function()? count, double? Function()? page, double? Function()? perPage, double? Function()? totalCount, double? Function()? totalPages, }) { return ResourceSharingResultInfo(
   count: count != null ? count() : this.count,
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,

@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'selector': ?selector,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('replicas') && json['replicas'] is num; } 
-ScaleStatus copyWith({int? replicas, String Function()? selector, }) { return ScaleStatus(
+ScaleStatus copyWith({int? replicas, String? Function()? selector, }) { return ScaleStatus(
   replicas: replicas ?? this.replicas,
   selector: selector != null ? selector() : this.selector,
 ); } 

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (config != null) 'config': config?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config'}.contains(key)); } 
-CloudflareTunnelConfigurationPutConfigurationRequest copyWith({TunnelConfig Function()? config}) { return CloudflareTunnelConfigurationPutConfigurationRequest(
+CloudflareTunnelConfigurationPutConfigurationRequest copyWith({TunnelConfig? Function()? config}) { return CloudflareTunnelConfigurationPutConfigurationRequest(
   config: config != null ? config() : this.config,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

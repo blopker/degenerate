@@ -23,32 +23,32 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'DeletedDiscountObject($value)'; } 
  }
 /// 
-@immutable final class DeletedDiscount {const DeletedDiscount({required this.deleted, required this.id, required this.object, required this.source, required this.start, this.checkoutSession, this.customer, this.customerAccount, this.invoice, this.invoiceItem, this.promotionCode, this.subscription, this.subscriptionItem, });
+@immutable final class DeletedDiscount {const DeletedDiscount({required this.deleted, required this.id, required this.object, required this.source, required this.start, this.checkoutSession = const Omittable.absent(), this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.invoice = const Omittable.absent(), this.invoiceItem = const Omittable.absent(), this.promotionCode = const Omittable.absent(), this.subscription = const Omittable.absent(), this.subscriptionItem = const Omittable.absent(), });
 
 factory DeletedDiscount.fromJson(Map<String, dynamic> json) { return DeletedDiscount(
-  checkoutSession: json['checkout_session'] as String?,
-  customer: json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
+  checkoutSession: json.containsKey('checkout_session') ? Omittable(json['checkout_session'] as String?) : const Omittable.absent(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   deleted: json['deleted'] as bool,
   id: json['id'] as String,
-  invoice: json['invoice'] as String?,
-  invoiceItem: json['invoice_item'] as String?,
+  invoice: json.containsKey('invoice') ? Omittable(json['invoice'] as String?) : const Omittable.absent(),
+  invoiceItem: json.containsKey('invoice_item') ? Omittable(json['invoice_item'] as String?) : const Omittable.absent(),
   object: DeletedDiscountObject.fromJson(json['object'] as String),
-  promotionCode: json['promotion_code'] != null ? OneOf2.parse(json['promotion_code'], fromA: (v) => v as String, fromB: (v) => PromotionCode.fromJson(v as Map<String, dynamic>),) : null,
+  promotionCode: json.containsKey('promotion_code') ? Omittable(json['promotion_code'] != null ? OneOf2.parse(json['promotion_code'], fromA: (v) => v as String, fromB: (v) => PromotionCode.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
   source: DiscountSource.fromJson(json['source'] as Map<String, dynamic>),
   start: (json['start'] as num).toInt(),
-  subscription: json['subscription'] as String?,
-  subscriptionItem: json['subscription_item'] as String?,
+  subscription: json.containsKey('subscription') ? Omittable(json['subscription'] as String?) : const Omittable.absent(),
+  subscriptionItem: json.containsKey('subscription_item') ? Omittable(json['subscription_item'] as String?) : const Omittable.absent(),
 ); }
 
 /// The Checkout session that this coupon is applied to, if it is applied to a particular session in payment mode. Will not be present for subscription mode.
-final String? checkoutSession;
+final Omittable<String?> checkoutSession;
 
 /// The ID of the customer associated with this discount.
-final DeletedDiscountCustomer? customer;
+final Omittable<DeletedDiscountCustomer?> customer;
 
 /// The ID of the account representing the customer associated with this discount.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Always true for a deleted object
 final bool deleted;
@@ -57,16 +57,16 @@ final bool deleted;
 final String id;
 
 /// The invoice that the discount's coupon was applied to, if it was applied directly to a particular invoice.
-final String? invoice;
+final Omittable<String?> invoice;
 
 /// The invoice item `id` (or invoice line item `id` for invoice line items of type='subscription') that the discount's coupon was applied to, if it was applied directly to a particular invoice item or invoice line item.
-final String? invoiceItem;
+final Omittable<String?> invoiceItem;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final DeletedDiscountObject object;
 
 /// The promotion code applied to create this discount.
-final DeletedDiscountPromotionCode? promotionCode;
+final Omittable<DeletedDiscountPromotionCode?> promotionCode;
 
 final DiscountSource source;
 
@@ -74,45 +74,45 @@ final DiscountSource source;
 final int start;
 
 /// The subscription that this coupon is applied to, if it is applied to a particular subscription.
-final String? subscription;
+final Omittable<String?> subscription;
 
 /// The subscription item that this coupon is applied to, if it is applied to a particular subscription item.
-final String? subscriptionItem;
+final Omittable<String?> subscriptionItem;
 
 Map<String, dynamic> toJson() { return {
-  'checkout_session': ?checkoutSession,
-  if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
+  if (checkoutSession.isPresent) 'checkout_session': checkoutSession.value,
+  if (customer.isPresent) 'customer': customer.value?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'deleted': deleted,
   'id': id,
-  'invoice': ?invoice,
-  'invoice_item': ?invoiceItem,
+  if (invoice.isPresent) 'invoice': invoice.value,
+  if (invoiceItem.isPresent) 'invoice_item': invoiceItem.value,
   'object': object.toJson(),
-  if (promotionCode != null) 'promotion_code': promotionCode?.toJson(),
+  if (promotionCode.isPresent) 'promotion_code': promotionCode.value?.toJson(),
   'source': source.toJson(),
   'start': start,
-  'subscription': ?subscription,
-  'subscription_item': ?subscriptionItem,
+  if (subscription.isPresent) 'subscription': subscription.value,
+  if (subscriptionItem.isPresent) 'subscription_item': subscriptionItem.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
       json.containsKey('source') &&
       json.containsKey('start') && json['start'] is num; } 
-DeletedDiscount copyWith({String? Function()? checkoutSession, DeletedDiscountCustomer? Function()? customer, String? Function()? customerAccount, bool? deleted, String? id, String? Function()? invoice, String? Function()? invoiceItem, DeletedDiscountObject? object, DeletedDiscountPromotionCode? Function()? promotionCode, DiscountSource? source, int? start, String? Function()? subscription, String? Function()? subscriptionItem, }) { return DeletedDiscount(
-  checkoutSession: checkoutSession != null ? checkoutSession() : this.checkoutSession,
-  customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+DeletedDiscount copyWith({Omittable<String?>? checkoutSession, Omittable<DeletedDiscountCustomer?>? customer, Omittable<String?>? customerAccount, bool? deleted, String? id, Omittable<String?>? invoice, Omittable<String?>? invoiceItem, DeletedDiscountObject? object, Omittable<DeletedDiscountPromotionCode?>? promotionCode, DiscountSource? source, int? start, Omittable<String?>? subscription, Omittable<String?>? subscriptionItem, }) { return DeletedDiscount(
+  checkoutSession: checkoutSession ?? this.checkoutSession,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount ?? this.customerAccount,
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
-  invoice: invoice != null ? invoice() : this.invoice,
-  invoiceItem: invoiceItem != null ? invoiceItem() : this.invoiceItem,
+  invoice: invoice ?? this.invoice,
+  invoiceItem: invoiceItem ?? this.invoiceItem,
   object: object ?? this.object,
-  promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,
+  promotionCode: promotionCode ?? this.promotionCode,
   source: source ?? this.source,
   start: start ?? this.start,
-  subscription: subscription != null ? subscription() : this.subscription,
-  subscriptionItem: subscriptionItem != null ? subscriptionItem() : this.subscriptionItem,
+  subscription: subscription ?? this.subscription,
+  subscriptionItem: subscriptionItem ?? this.subscriptionItem,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DeletedDiscount &&

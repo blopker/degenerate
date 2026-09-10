@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   'status': ?status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'device_info', 'events', 'ip_information', 'precall_network_information', 'status'}.contains(key)); } 
-GetParticipantDetailsResponseDataParticipantPeerStats copyWith({String Function()? config, GetParticipantDetailsResponseDataParticipantPeerStatsDeviceInfo Function()? deviceInfo, List<GetParticipantDetailsResponseDataParticipantPeerStatsEvents> Function()? events, GetParticipantDetailsResponseDataParticipantPeerStatsIpInformation Function()? ipInformation, GetParticipantDetailsResponseDataParticipantPeerStatsPrecallNetworkInformation Function()? precallNetworkInformation, String Function()? status, }) { return GetParticipantDetailsResponseDataParticipantPeerStats(
+GetParticipantDetailsResponseDataParticipantPeerStats copyWith({String? Function()? config, GetParticipantDetailsResponseDataParticipantPeerStatsDeviceInfo? Function()? deviceInfo, List<GetParticipantDetailsResponseDataParticipantPeerStatsEvents>? Function()? events, GetParticipantDetailsResponseDataParticipantPeerStatsIpInformation? Function()? ipInformation, GetParticipantDetailsResponseDataParticipantPeerStatsPrecallNetworkInformation? Function()? precallNetworkInformation, String? Function()? status, }) { return GetParticipantDetailsResponseDataParticipantPeerStats(
   config: config != null ? config() : this.config,
   deviceInfo: deviceInfo != null ? deviceInfo() : this.deviceInfo,
   events: events != null ? events() : this.events,

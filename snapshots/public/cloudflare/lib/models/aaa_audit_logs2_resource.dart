@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'product', 'request', 'response', 'scope', 'type'}.contains(key)); } 
-AaaAuditLogs2Resource copyWith({String Function()? id, String Function()? product, Map<String, dynamic> Function()? request, Map<String, dynamic> Function()? response, Map<String, dynamic> Function()? scope, String Function()? type, }) { return AaaAuditLogs2Resource(
+AaaAuditLogs2Resource copyWith({String? Function()? id, String? Function()? product, Map<String, dynamic>? Function()? request, Map<String, dynamic>? Function()? response, Map<String, dynamic>? Function()? scope, String? Function()? type, }) { return AaaAuditLogs2Resource(
   id: id != null ? id() : this.id,
   product: product != null ? product() : this.product,
   request: request != null ? request() : this.request,

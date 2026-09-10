@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (steps != null) 'steps': steps?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'new_tag', 'old_tag', 'steps'}.contains(key)); } 
-WorkersMultipleStepMigrations copyWith({String Function()? newTag, String Function()? oldTag, List<WorkersMigrationStep> Function()? steps, }) { return WorkersMultipleStepMigrations(
+WorkersMultipleStepMigrations copyWith({String? Function()? newTag, String? Function()? oldTag, List<WorkersMigrationStep>? Function()? steps, }) { return WorkersMultipleStepMigrations(
   newTag: newTag != null ? newTag() : this.newTag,
   oldTag: oldTag != null ? oldTag() : this.oldTag,
   steps: steps != null ? steps() : this.steps,

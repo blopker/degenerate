@@ -146,7 +146,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('assoc
       json.containsKey('status') &&
       json.containsKey('type') &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveSession> Function()? breakoutRooms, String? createdAt, String Function()? endedAt, String? id, double? liveParticipants, double? maxConcurrentParticipants, String? meetingDisplayName, Map<String, dynamic> Function()? meta, double? minutesConsumed, String? organizationId, String? startedAt, RealtimekitActiveSessionStatus? status, RealtimekitActiveSessionType? type, String? updatedAt, }) { return RealtimekitActiveSession(
+RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveSession>? Function()? breakoutRooms, String? createdAt, String? Function()? endedAt, String? id, double? liveParticipants, double? maxConcurrentParticipants, String? meetingDisplayName, Map<String, dynamic>? Function()? meta, double? minutesConsumed, String? organizationId, String? startedAt, RealtimekitActiveSessionStatus? status, RealtimekitActiveSessionType? type, String? updatedAt, }) { return RealtimekitActiveSession(
   associatedId: associatedId ?? this.associatedId,
   breakoutRooms: breakoutRooms != null ? breakoutRooms() : this.breakoutRooms,
   createdAt: createdAt ?? this.createdAt,

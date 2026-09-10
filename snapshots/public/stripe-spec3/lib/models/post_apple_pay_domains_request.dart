@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain_name') && json['domain_name'] is String; } 
-PostApplePayDomainsRequest copyWith({String? domainName, List<String> Function()? expand, }) { return PostApplePayDomainsRequest(
+PostApplePayDomainsRequest copyWith({String? domainName, List<String>? Function()? expand, }) { return PostApplePayDomainsRequest(
   domainName: domainName ?? this.domainName,
   expand: expand != null ? expand() : this.expand,
 ); } 

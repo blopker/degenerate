@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (modifiedInterconnect != null) 'modified_interconnect': modifiedInterconnect?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'modified', 'modified_interconnect'}.contains(key)); } 
-MagicComponentsSchemasTunnelModifiedResponseResult copyWith({bool Function()? modified, MagicInterconnect Function()? modifiedInterconnect, }) { return MagicComponentsSchemasTunnelModifiedResponseResult(
+MagicComponentsSchemasTunnelModifiedResponseResult copyWith({bool? Function()? modified, MagicInterconnect? Function()? modifiedInterconnect, }) { return MagicComponentsSchemasTunnelModifiedResponseResult(
   modified: modified != null ? modified() : this.modified,
   modifiedInterconnect: modifiedInterconnect != null ? modifiedInterconnect() : this.modifiedInterconnect,
 ); } 

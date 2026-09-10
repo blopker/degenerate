@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('page') && json['page'] is num &&
       json.containsKey('per_page') && json['per_page'] is num; } 
-CloudforceOneRequestsRequestList copyWith({CloudforceOneRequestsTime Function()? completedAfter, CloudforceOneRequestsTime Function()? completedBefore, CloudforceOneRequestsTime Function()? createdAfter, CloudforceOneRequestsTime Function()? createdBefore, int? page, int? perPage, CloudforceOneRequestsRequestType Function()? requestType, String Function()? sortBy, CloudforceOneRequestsRequestListSortOrder Function()? sortOrder, CloudforceOneRequestsRequestStatus Function()? status, }) { return CloudforceOneRequestsRequestList(
+CloudforceOneRequestsRequestList copyWith({CloudforceOneRequestsTime? Function()? completedAfter, CloudforceOneRequestsTime? Function()? completedBefore, CloudforceOneRequestsTime? Function()? createdAfter, CloudforceOneRequestsTime? Function()? createdBefore, int? page, int? perPage, CloudforceOneRequestsRequestType? Function()? requestType, String? Function()? sortBy, CloudforceOneRequestsRequestListSortOrder? Function()? sortOrder, CloudforceOneRequestsRequestStatus? Function()? status, }) { return CloudforceOneRequestsRequestList(
   completedAfter: completedAfter != null ? completedAfter() : this.completedAfter,
   completedBefore: completedBefore != null ? completedBefore() : this.completedBefore,
   createdAfter: createdAfter != null ? createdAfter() : this.createdAfter,

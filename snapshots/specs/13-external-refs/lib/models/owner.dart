@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (pets != null) 'pets': pets?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-Owner copyWith({String? name, String Function()? email, List<Pet> Function()? pets, }) { return Owner(
+Owner copyWith({String? name, String? Function()? email, List<Pet>? Function()? pets, }) { return Owner(
   name: name ?? this.name,
   email: email != null ? email() : this.email,
   pets: pets != null ? pets() : this.pets,

@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   if (validation != null) 'validation': validation?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('regex') && json['regex'] is String; } 
-DlpPattern copyWith({String? regex, DlpValidation Function()? validation, }) { return DlpPattern(
+DlpPattern copyWith({String? regex, DlpValidation? Function()? validation, }) { return DlpPattern(
   regex: regex ?? this.regex,
   validation: validation != null ? validation() : this.validation,
 ); } 

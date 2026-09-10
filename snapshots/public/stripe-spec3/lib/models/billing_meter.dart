@@ -75,7 +75,7 @@ bool get isUnknown { return !values.contains(this); }
 /// Meters specify how to aggregate meter events over a billing period. Meter events represent the actions that customers take in your system. Meters attach to prices and form the basis of the bill.
 /// 
 /// Related guide: [Usage based billing](https://docs.stripe.com/billing/subscriptions/usage-based)
-@immutable final class BillingMeter {const BillingMeter({required this.created, required this.customerMapping, required this.defaultAggregation, required this.displayName, required this.eventName, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.updated, required this.valueSettings, this.eventTimeWindow, });
+@immutable final class BillingMeter {const BillingMeter({required this.created, required this.customerMapping, required this.defaultAggregation, required this.displayName, required this.eventName, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.updated, required this.valueSettings, this.eventTimeWindow = const Omittable.absent(), });
 
 factory BillingMeter.fromJson(Map<String, dynamic> json) { return BillingMeter(
   created: (json['created'] as num).toInt(),
@@ -83,7 +83,7 @@ factory BillingMeter.fromJson(Map<String, dynamic> json) { return BillingMeter(
   defaultAggregation: BillingMeterResourceAggregationSettings.fromJson(json['default_aggregation'] as Map<String, dynamic>),
   displayName: json['display_name'] as String,
   eventName: json['event_name'] as String,
-  eventTimeWindow: json['event_time_window'] != null ? BillingMeterEventTimeWindow.fromJson(json['event_time_window'] as String) : null,
+  eventTimeWindow: json.containsKey('event_time_window') ? Omittable(json['event_time_window'] != null ? BillingMeterEventTimeWindow.fromJson(json['event_time_window'] as String) : null) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: BillingMeterObject.fromJson(json['object'] as String),
@@ -107,7 +107,7 @@ final String displayName;
 final String eventName;
 
 /// The time window which meter events have been pre-aggregated for, if any.
-final BillingMeterEventTimeWindow? eventTimeWindow;
+final Omittable<BillingMeterEventTimeWindow?> eventTimeWindow;
 
 /// Unique identifier for the object.
 final String id;
@@ -134,7 +134,7 @@ Map<String, dynamic> toJson() { return {
   'default_aggregation': defaultAggregation.toJson(),
   'display_name': displayName,
   'event_name': eventName,
-  if (eventTimeWindow != null) 'event_time_window': eventTimeWindow?.toJson(),
+  if (eventTimeWindow.isPresent) 'event_time_window': eventTimeWindow.value?.toJson(),
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
@@ -155,13 +155,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('status_transitions') &&
       json.containsKey('updated') && json['updated'] is num &&
       json.containsKey('value_settings'); } 
-BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings? customerMapping, BillingMeterResourceAggregationSettings? defaultAggregation, String? displayName, String? eventName, BillingMeterEventTimeWindow? Function()? eventTimeWindow, String? id, bool? livemode, BillingMeterObject? object, BillingMeterStatus? status, BillingMeterResourceBillingMeterStatusTransitions? statusTransitions, int? updated, BillingMeterResourceBillingMeterValue? valueSettings, }) { return BillingMeter(
+BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings? customerMapping, BillingMeterResourceAggregationSettings? defaultAggregation, String? displayName, String? eventName, Omittable<BillingMeterEventTimeWindow?>? eventTimeWindow, String? id, bool? livemode, BillingMeterObject? object, BillingMeterStatus? status, BillingMeterResourceBillingMeterStatusTransitions? statusTransitions, int? updated, BillingMeterResourceBillingMeterValue? valueSettings, }) { return BillingMeter(
   created: created ?? this.created,
   customerMapping: customerMapping ?? this.customerMapping,
   defaultAggregation: defaultAggregation ?? this.defaultAggregation,
   displayName: displayName ?? this.displayName,
   eventName: eventName ?? this.eventName,
-  eventTimeWindow: eventTimeWindow != null ? eventTimeWindow() : this.eventTimeWindow,
+  eventTimeWindow: eventTimeWindow ?? this.eventTimeWindow,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,

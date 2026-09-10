@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('forkee') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookFork copyWith({EnterpriseWebhooks Function()? enterprise, WebhookForkForkee? forkee, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookFork(
+WebhookFork copyWith({EnterpriseWebhooks? Function()? enterprise, WebhookForkForkee? forkee, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookFork(
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   forkee: forkee ?? this.forkee,
   installation: installation != null ? installation() : this.installation,

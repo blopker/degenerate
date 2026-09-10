@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conte
       json.containsKey('summary') &&
       json.containsKey('tlp') &&
       json.containsKey('updated'); } 
-CloudforceOneRequestsRequestItem copyWith({CloudforceOneRequestsTime Function()? completed, CloudforceOneRequestsRequestContent? content, CloudforceOneRequestsTime? created, CloudforceOneRequestsUuid? id, int Function()? messageTokens, CloudforceOneRequestsTime? priority, CloudforceOneRequestsRequestReadableId Function()? readableId, CloudforceOneRequestsRequestType? request, CloudforceOneRequestsRequestStatus Function()? status, CloudforceOneRequestsRequestSummary? summary, CloudforceOneRequestsTlp? tlp, int Function()? tokens, CloudforceOneRequestsTime? updated, }) { return CloudforceOneRequestsRequestItem(
+CloudforceOneRequestsRequestItem copyWith({CloudforceOneRequestsTime? Function()? completed, CloudforceOneRequestsRequestContent? content, CloudforceOneRequestsTime? created, CloudforceOneRequestsUuid? id, int? Function()? messageTokens, CloudforceOneRequestsTime? priority, CloudforceOneRequestsRequestReadableId? Function()? readableId, CloudforceOneRequestsRequestType? request, CloudforceOneRequestsRequestStatus? Function()? status, CloudforceOneRequestsRequestSummary? summary, CloudforceOneRequestsTlp? tlp, int? Function()? tokens, CloudforceOneRequestsTime? updated, }) { return CloudforceOneRequestsRequestItem(
   completed: completed != null ? completed() : this.completed,
   content: content ?? this.content,
   created: created ?? this.created,

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (topLocations != null) 'top_locations': topLocations?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('categories'); } 
-RadarGetRankingDomainDetailsResponseResultDetails0 copyWith({String Function()? bucket, List<RadarGetRankingDomainDetailsResponseResultDetails0Categories>? categories, int Function()? rank, List<RadarGetRankingDomainDetailsResponseResultDetails0TopLocations> Function()? topLocations, }) { return RadarGetRankingDomainDetailsResponseResultDetails0(
+RadarGetRankingDomainDetailsResponseResultDetails0 copyWith({String? Function()? bucket, List<RadarGetRankingDomainDetailsResponseResultDetails0Categories>? categories, int? Function()? rank, List<RadarGetRankingDomainDetailsResponseResultDetails0TopLocations>? Function()? topLocations, }) { return RadarGetRankingDomainDetailsResponseResultDetails0(
   bucket: bucket != null ? bucket() : this.bucket,
   categories: categories ?? this.categories,
   rank: rank != null ? rank() : this.rank,

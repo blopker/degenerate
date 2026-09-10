@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps_components_schemas_session_duration.dart';import 'access_schemas_aud.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_scim_config.dart';import 'access_timestamp.dart';import 'access_uuid.dart';@immutable final class AppLauncherApplication3 {const AppLauncherApplication3({required this.type, this.aud, this.createdAt, this.id, this.scimConfig, this.updatedAt, this.allowedIdps, this.autoRedirectToIdentity, this.domain, this.name, this.sessionDuration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps_components_schemas_session_duration.dart';import 'access_schemas_aud.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_scim_config.dart';import 'access_timestamp.dart';import 'access_uuid.dart';@immutable final class AppLauncherApplication3 {const AppLauncherApplication3({required this.type, this.aud, this.createdAt, this.id, this.scimConfig, this.updatedAt, this.allowedIdps, this.autoRedirectToIdentity, this.domain = const Omittable.absent(), this.name = const Omittable.absent(), this.sessionDuration, });
 
 factory AppLauncherApplication3.fromJson(Map<String, dynamic> json) { return AppLauncherApplication3(
   aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
@@ -10,8 +10,8 @@ factory AppLauncherApplication3.fromJson(Map<String, dynamic> json) { return App
   updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
   allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
   autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
-  domain: json['domain'],
-  name: json['name'],
+  domain: json.containsKey('domain') ? Omittable(json['domain']) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name']) : const Omittable.absent(),
   sessionDuration: json['session_duration'] != null ? AccessAppsComponentsSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
   type: json['type'] as String,
 ); }
@@ -31,9 +31,9 @@ final List<String>? allowedIdps;
 
 final AccessSchemasAutoRedirectToIdentity? autoRedirectToIdentity;
 
-final dynamic domain;
+final Omittable<dynamic> domain;
 
-final dynamic name;
+final Omittable<dynamic> name;
 
 final AccessAppsComponentsSchemasSessionDuration? sessionDuration;
 
@@ -48,13 +48,13 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
   'allowed_idps': ?allowedIdps,
   if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
-  'domain': ?domain,
-  'name': ?name,
+  if (domain.isPresent) 'domain': domain.value,
+  if (name.isPresent) 'name': name.value,
   if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-AppLauncherApplication3 copyWith({AccessSchemasAud Function()? aud, AccessTimestamp Function()? createdAt, AccessUuid Function()? id, AccessSchemasScimConfig Function()? scimConfig, AccessTimestamp Function()? updatedAt, List<String> Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity Function()? autoRedirectToIdentity, dynamic Function()? domain, dynamic Function()? name, AccessAppsComponentsSchemasSessionDuration Function()? sessionDuration, String? type, }) { return AppLauncherApplication3(
+AppLauncherApplication3 copyWith({AccessSchemasAud? Function()? aud, AccessTimestamp? Function()? createdAt, AccessUuid? Function()? id, AccessSchemasScimConfig? Function()? scimConfig, AccessTimestamp? Function()? updatedAt, List<String>? Function()? allowedIdps, AccessSchemasAutoRedirectToIdentity? Function()? autoRedirectToIdentity, Omittable<dynamic>? domain, Omittable<dynamic>? name, AccessAppsComponentsSchemasSessionDuration? Function()? sessionDuration, String? type, }) { return AppLauncherApplication3(
   aud: aud != null ? aud() : this.aud,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   id: id != null ? id() : this.id,
@@ -62,8 +62,8 @@ AppLauncherApplication3 copyWith({AccessSchemasAud Function()? aud, AccessTimest
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
   autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
-  domain: domain != null ? domain() : this.domain,
-  name: name != null ? name() : this.name,
+  domain: domain ?? this.domain,
+  name: name ?? this.name,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
 ); } 

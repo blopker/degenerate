@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'onelogin_account': ?oneloginAccount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'client_id', 'client_secret', 'onelogin_account'}.contains(key)); } 
-AccessSchemasOneloginConfig copyWith({String Function()? clientId, String Function()? clientSecret, String Function()? oneloginAccount, }) { return AccessSchemasOneloginConfig(
+AccessSchemasOneloginConfig copyWith({String? Function()? clientId, String? Function()? clientSecret, String? Function()? oneloginAccount, }) { return AccessSchemasOneloginConfig(
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   oneloginAccount: oneloginAccount != null ? oneloginAccount() : this.oneloginAccount,

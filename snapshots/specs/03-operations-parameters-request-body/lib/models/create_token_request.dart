@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'timeout': ?timeout,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('grant_type') && json['grant_type'] is String; } 
-CreateTokenRequest copyWith({String? grantType, String Function()? scope, int Function()? timeout, }) { return CreateTokenRequest(
+CreateTokenRequest copyWith({String? grantType, String? Function()? scope, int? Function()? timeout, }) { return CreateTokenRequest(
   grantType: grantType ?? this.grantType,
   scope: scope != null ? scope() : this.scope,
   timeout: timeout != null ? timeout() : this.timeout,

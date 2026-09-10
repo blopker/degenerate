@@ -36,7 +36,7 @@ Map<String, dynamic> toJson() { return {
   'timezone': ?timezone,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'country', 'region', 'city', 'timezone'}.contains(key)); } 
-WebSearchLocation copyWith({String Function()? country, String Function()? region, String Function()? city, String Function()? timezone, }) { return WebSearchLocation(
+WebSearchLocation copyWith({String? Function()? country, String? Function()? region, String? Function()? city, String? Function()? timezone, }) { return WebSearchLocation(
   country: country != null ? country() : this.country,
   region: region != null ? region() : this.region,
   city: city != null ? city() : this.city,

@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'fqdn_id': ?fqdnId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fqdn_id'}.contains(key)); } 
-MagicCustomRemoteIdentities copyWith({String Function()? fqdnId}) { return MagicCustomRemoteIdentities(
+MagicCustomRemoteIdentities copyWith({String? Function()? fqdnId}) { return MagicCustomRemoteIdentities(
   fqdnId: fqdnId != null ? fqdnId() : this.fqdnId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

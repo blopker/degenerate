@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
   'use_browser_rendering': useBrowserRendering,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_selector', 'include_headers', 'include_images', 'specific_sitemaps', 'use_browser_rendering'}.contains(key)); } 
-AiSearchCreateInstancesRequestSourceParamsWebCrawlerParseOptions copyWith({List<AiSearchCreateInstancesRequestSourceParamsWebCrawlerParseOptionsContentSelector> Function()? contentSelector, Map<String, String> Function()? includeHeaders, bool Function()? includeImages, List<Uri> Function()? specificSitemaps, bool Function()? useBrowserRendering, }) { return AiSearchCreateInstancesRequestSourceParamsWebCrawlerParseOptions(
+AiSearchCreateInstancesRequestSourceParamsWebCrawlerParseOptions copyWith({List<AiSearchCreateInstancesRequestSourceParamsWebCrawlerParseOptionsContentSelector>? Function()? contentSelector, Map<String, String>? Function()? includeHeaders, bool Function()? includeImages, List<Uri>? Function()? specificSitemaps, bool Function()? useBrowserRendering, }) { return AiSearchCreateInstancesRequestSourceParamsWebCrawlerParseOptions(
   contentSelector: contentSelector != null ? contentSelector() : this.contentSelector,
   includeHeaders: includeHeaders != null ? includeHeaders() : this.includeHeaders,
   includeImages: includeImages != null ? includeImages() : this.includeImages,

@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'webgl_support': ?webglSupport,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'browser', 'browser_version', 'engine', 'user_agent', 'webgl_support'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata copyWith({String Function()? browser, String Function()? browserVersion, String Function()? engine, String Function()? userAgent, String Function()? webglSupport, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata(
+GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata copyWith({String? Function()? browser, String? Function()? browserVersion, String? Function()? engine, String? Function()? userAgent, String? Function()? webglSupport, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataBrowserMetadata(
   browser: browser != null ? browser() : this.browser,
   browserVersion: browserVersion != null ? browserVersion() : this.browserVersion,
   engine: engine != null ? engine() : this.engine,

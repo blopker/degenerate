@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('os') 
       json.containsKey('architecture') && json['architecture'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
       json.containsKey('filename') && json['filename'] is String; } 
-RunnerApplication copyWith({String? os, String? architecture, String? downloadUrl, String? filename, String Function()? tempDownloadToken, String Function()? sha256Checksum, }) { return RunnerApplication(
+RunnerApplication copyWith({String? os, String? architecture, String? downloadUrl, String? filename, String? Function()? tempDownloadToken, String? Function()? sha256Checksum, }) { return RunnerApplication(
   os: os ?? this.os,
   architecture: architecture ?? this.architecture,
   downloadUrl: downloadUrl ?? this.downloadUrl,

@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'provision_license': ?provisionLicense,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'activated', 'interrupt_window_days_of_week', 'interrupt_window_duration_hours', 'interrupt_window_embargo_dates', 'interrupt_window_hour_of_day', 'notes', 'timezone', 'provision_license'}.contains(key)); } 
-MconnCustomerConnectorUpdateRequest copyWith({bool Function()? activated, List<MconnDayOfWeek> Function()? interruptWindowDaysOfWeek, double Function()? interruptWindowDurationHours, List<MconnEmbargoDate> Function()? interruptWindowEmbargoDates, double Function()? interruptWindowHourOfDay, String Function()? notes, String Function()? timezone, bool Function()? provisionLicense, }) { return MconnCustomerConnectorUpdateRequest(
+MconnCustomerConnectorUpdateRequest copyWith({bool? Function()? activated, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? notes, String? Function()? timezone, bool? Function()? provisionLicense, }) { return MconnCustomerConnectorUpdateRequest(
   activated: activated != null ? activated() : this.activated,
   interruptWindowDaysOfWeek: interruptWindowDaysOfWeek != null ? interruptWindowDaysOfWeek() : this.interruptWindowDaysOfWeek,
   interruptWindowDurationHours: interruptWindowDurationHours != null ? interruptWindowDurationHours() : this.interruptWindowDurationHours,

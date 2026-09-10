@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'ruleId': ?ruleId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('actions'); } 
-R2QueuesConfigRules copyWith({List<R2R2Action>? actions, String Function()? description, String Function()? prefix, String Function()? suffix, String Function()? createdAt, String Function()? ruleId, }) { return R2QueuesConfigRules(
+R2QueuesConfigRules copyWith({List<R2R2Action>? actions, String? Function()? description, String? Function()? prefix, String? Function()? suffix, String? Function()? createdAt, String? Function()? ruleId, }) { return R2QueuesConfigRules(
   actions: actions ?? this.actions,
   description: description != null ? description() : this.description,
   prefix: prefix != null ? prefix() : this.prefix,

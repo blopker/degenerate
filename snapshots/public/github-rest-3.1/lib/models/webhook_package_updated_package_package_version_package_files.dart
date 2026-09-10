@@ -43,9 +43,9 @@ Map<String, dynamic> toJson() { return {
   'created_at': createdAt,
   'download_url': downloadUrl.toString(),
   'id': id,
-  'md5': ?md5,
+  'md5': md5,
   'name': name,
-  'sha1': ?sha1,
+  'sha1': sha1,
   'sha256': sha256,
   'size': size,
   'state': state,
@@ -55,9 +55,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conte
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('download_url') && json['download_url'] is String &&
       json.containsKey('id') && json['id'] is num &&
-      json.containsKey('md5') && json['md5'] is String &&
+      json.containsKey('md5') && (json['md5'] == null || json['md5'] is String) &&
       json.containsKey('name') && json['name'] is String &&
-      json.containsKey('sha1') && json['sha1'] is String &&
+      json.containsKey('sha1') && (json['sha1'] == null || json['sha1'] is String) &&
       json.containsKey('sha256') && json['sha256'] is String &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('state') && json['state'] is String &&

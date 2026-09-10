@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TreasuryFinancialAccountsResourceFinancialAddress copyWith({TreasuryFinancialAccountsResourceAbaRecord Function()? aba, List<TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks> Function()? supportedNetworks, TreasuryFinancialAccountsResourceFinancialAddressType? type, }) { return TreasuryFinancialAccountsResourceFinancialAddress(
+TreasuryFinancialAccountsResourceFinancialAddress copyWith({TreasuryFinancialAccountsResourceAbaRecord? Function()? aba, List<TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks>? Function()? supportedNetworks, TreasuryFinancialAccountsResourceFinancialAddressType? type, }) { return TreasuryFinancialAccountsResourceFinancialAddress(
   aba: aba != null ? aba() : this.aba,
   supportedNetworks: supportedNetworks != null ? supportedNetworks() : this.supportedNetworks,
   type: type ?? this.type,

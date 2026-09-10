@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') &&
       json.containsKey('registry_host') && json['registry_host'] is String &&
       json.containsKey('username') && json['username'] is String; } 
-CcAccountRegistryToken copyWith({CcAccountId? accountId, String Function()? password, String? registryHost, String? username, }) { return CcAccountRegistryToken(
+CcAccountRegistryToken copyWith({CcAccountId? accountId, String? Function()? password, String? registryHost, String? username, }) { return CcAccountRegistryToken(
   accountId: accountId ?? this.accountId,
   password: password != null ? password() : this.password,
   registryHost: registryHost ?? this.registryHost,

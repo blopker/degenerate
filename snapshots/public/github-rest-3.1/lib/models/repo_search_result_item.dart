@@ -312,20 +312,20 @@ Map<String, dynamic> toJson() { return {
   'node_id': nodeId,
   'name': name,
   'full_name': fullName,
-  if (owner != null) 'owner': owner?.toJson(),
+  'owner': owner?.toJson(),
   'private': private,
   'html_url': htmlUrl.toString(),
-  'description': ?description,
+  'description': description,
   'fork': fork,
   'url': url.toString(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
   'pushed_at': pushedAt.toIso8601String(),
-  if (homepage != null) 'homepage': homepage?.toString(),
+  'homepage': homepage?.toString(),
   'size': size,
   'stargazers_count': stargazersCount,
   'watchers_count': watchersCount,
-  'language': ?language,
+  'language': language,
   'forks_count': forksCount,
   'open_issues_count': openIssuesCount,
   'master_branch': ?masterBranch,
@@ -375,7 +375,7 @@ Map<String, dynamic> toJson() { return {
   'open_issues': openIssues,
   'watchers': watchers,
   'topics': ?topics,
-  if (mirrorUrl != null) 'mirror_url': mirrorUrl?.toString(),
+  'mirror_url': mirrorUrl?.toString(),
   'has_issues': hasIssues,
   'has_projects': hasProjects,
   'has_pages': hasPages,
@@ -387,7 +387,7 @@ Map<String, dynamic> toJson() { return {
   'archived': archived,
   'disabled': disabled,
   'visibility': ?visibility,
-  if (license != null) 'license': license?.toJson(),
+  'license': license?.toJson(),
   if (permissions != null) 'permissions': permissions?.toJson(),
   if (textMatches != null) 'text_matches': textMatches?.map((e) => e.toJson()).toList(),
   'temp_clone_token': ?tempCloneToken,
@@ -407,17 +407,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('owner') &&
       json.containsKey('private') && json['private'] is bool &&
       json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
       json.containsKey('fork') && json['fork'] is bool &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('pushed_at') && json['pushed_at'] is String &&
-      json.containsKey('homepage') && json['homepage'] is String &&
+      json.containsKey('homepage') && (json['homepage'] == null || json['homepage'] is String) &&
       json.containsKey('size') && json['size'] is num &&
       json.containsKey('stargazers_count') && json['stargazers_count'] is num &&
       json.containsKey('watchers_count') && json['watchers_count'] is num &&
-      json.containsKey('language') && json['language'] is String &&
+      json.containsKey('language') && (json['language'] == null || json['language'] is String) &&
       json.containsKey('forks_count') && json['forks_count'] is num &&
       json.containsKey('open_issues_count') && json['open_issues_count'] is num &&
       json.containsKey('default_branch') && json['default_branch'] is String &&
@@ -465,7 +465,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('forks') && json['forks'] is num &&
       json.containsKey('open_issues') && json['open_issues'] is num &&
       json.containsKey('watchers') && json['watchers'] is num &&
-      json.containsKey('mirror_url') && json['mirror_url'] is String &&
+      json.containsKey('mirror_url') && (json['mirror_url'] == null || json['mirror_url'] is String) &&
       json.containsKey('has_issues') && json['has_issues'] is bool &&
       json.containsKey('has_projects') && json['has_projects'] is bool &&
       json.containsKey('has_pages') && json['has_pages'] is bool &&
@@ -474,7 +474,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('archived') && json['archived'] is bool &&
       json.containsKey('disabled') && json['disabled'] is bool &&
       json.containsKey('license'); } 
-RepoSearchResultItem copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? Function()? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, DateTime? createdAt, DateTime? updatedAt, DateTime? pushedAt, Uri? Function()? homepage, int? size, int? stargazersCount, int? watchersCount, String? Function()? language, int? forksCount, int? openIssuesCount, String Function()? masterBranch, String? defaultBranch, double? score, Uri? forksUrl, String? keysUrl, String? collaboratorsUrl, Uri? teamsUrl, Uri? hooksUrl, String? issueEventsUrl, Uri? eventsUrl, String? assigneesUrl, String? branchesUrl, Uri? tagsUrl, String? blobsUrl, String? gitTagsUrl, String? gitRefsUrl, String? treesUrl, String? statusesUrl, Uri? languagesUrl, Uri? stargazersUrl, Uri? contributorsUrl, Uri? subscribersUrl, Uri? subscriptionUrl, String? commitsUrl, String? gitCommitsUrl, String? commentsUrl, String? issueCommentUrl, String? contentsUrl, String? compareUrl, Uri? mergesUrl, String? archiveUrl, Uri? downloadsUrl, String? issuesUrl, String? pullsUrl, String? milestonesUrl, String? notificationsUrl, String? labelsUrl, String? releasesUrl, Uri? deploymentsUrl, String? gitUrl, String? sshUrl, String? cloneUrl, Uri? svnUrl, int? forks, int? openIssues, int? watchers, List<String> Function()? topics, Uri? Function()? mirrorUrl, bool? hasIssues, bool? hasProjects, bool? hasPages, bool? hasWiki, bool? hasDownloads, bool Function()? hasDiscussions, bool Function()? hasPullRequests, RepoSearchResultItemPullRequestCreationPolicy Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String Function()? visibility, LicenseSimple? Function()? license, RepoSearchResultItemPermissions Function()? permissions, List<SearchResultTextMatches2> Function()? textMatches, String Function()? tempCloneToken, bool Function()? allowMergeCommit, bool Function()? allowSquashMerge, bool Function()? allowRebaseMerge, bool Function()? allowAutoMerge, bool Function()? deleteBranchOnMerge, bool Function()? allowForking, bool Function()? isTemplate, bool Function()? webCommitSignoffRequired, }) { return RepoSearchResultItem(
+RepoSearchResultItem copyWith({int? id, String? nodeId, String? name, String? fullName, SimpleUser? Function()? owner, bool? private, Uri? htmlUrl, String? Function()? description, bool? fork, Uri? url, DateTime? createdAt, DateTime? updatedAt, DateTime? pushedAt, Uri? Function()? homepage, int? size, int? stargazersCount, int? watchersCount, String? Function()? language, int? forksCount, int? openIssuesCount, String? Function()? masterBranch, String? defaultBranch, double? score, Uri? forksUrl, String? keysUrl, String? collaboratorsUrl, Uri? teamsUrl, Uri? hooksUrl, String? issueEventsUrl, Uri? eventsUrl, String? assigneesUrl, String? branchesUrl, Uri? tagsUrl, String? blobsUrl, String? gitTagsUrl, String? gitRefsUrl, String? treesUrl, String? statusesUrl, Uri? languagesUrl, Uri? stargazersUrl, Uri? contributorsUrl, Uri? subscribersUrl, Uri? subscriptionUrl, String? commitsUrl, String? gitCommitsUrl, String? commentsUrl, String? issueCommentUrl, String? contentsUrl, String? compareUrl, Uri? mergesUrl, String? archiveUrl, Uri? downloadsUrl, String? issuesUrl, String? pullsUrl, String? milestonesUrl, String? notificationsUrl, String? labelsUrl, String? releasesUrl, Uri? deploymentsUrl, String? gitUrl, String? sshUrl, String? cloneUrl, Uri? svnUrl, int? forks, int? openIssues, int? watchers, List<String>? Function()? topics, Uri? Function()? mirrorUrl, bool? hasIssues, bool? hasProjects, bool? hasPages, bool? hasWiki, bool? hasDownloads, bool? Function()? hasDiscussions, bool? Function()? hasPullRequests, RepoSearchResultItemPullRequestCreationPolicy? Function()? pullRequestCreationPolicy, bool? archived, bool? disabled, String? Function()? visibility, LicenseSimple? Function()? license, RepoSearchResultItemPermissions? Function()? permissions, List<SearchResultTextMatches2>? Function()? textMatches, String? Function()? tempCloneToken, bool? Function()? allowMergeCommit, bool? Function()? allowSquashMerge, bool? Function()? allowRebaseMerge, bool? Function()? allowAutoMerge, bool? Function()? deleteBranchOnMerge, bool? Function()? allowForking, bool? Function()? isTemplate, bool? Function()? webCommitSignoffRequired, }) { return RepoSearchResultItem(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   name: name ?? this.name,

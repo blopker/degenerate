@@ -63,19 +63,19 @@ final String? createdBy;
 Map<String, dynamic> toJson() { return {
   'type': type,
   'id': id,
-  'call_id': ?callId,
+  'call_id': callId,
   'execution': execution.toJson(),
-  'arguments': ?arguments,
+  'arguments': arguments,
   'status': status.toJson(),
   'created_by': ?createdBy,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('id') && json['id'] is String &&
-      json.containsKey('call_id') && json['call_id'] is String &&
+      json.containsKey('call_id') && (json['call_id'] == null || json['call_id'] is String) &&
       json.containsKey('execution') &&
       json.containsKey('arguments') &&
       json.containsKey('status'); } 
-ToolSearchCall copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String Function()? createdBy, }) { return ToolSearchCall(
+ToolSearchCall copyWith({String? type, String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String? Function()? createdBy, }) { return ToolSearchCall(
   type: type ?? this.type,
   id: id ?? this.id,
   callId: callId != null ? callId() : this.callId,

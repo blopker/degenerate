@@ -90,7 +90,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('image
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('ready') && json['ready'] is bool &&
       json.containsKey('restartCount') && json['restartCount'] is num; } 
-ContainerStatus copyWith({Map<String, ResourceQuantity> Function()? allocatedResources, List<ResourceStatus> Function()? allocatedResourcesStatus, String Function()? containerId, String? image, String? imageId, ContainerState Function()? lastState, String? name, bool? ready, ResourceRequirements Function()? resources, int? restartCount, bool Function()? started, ContainerState Function()? state, String Function()? stopSignal, ContainerUser Function()? user, List<VolumeMountStatus> Function()? volumeMounts, }) { return ContainerStatus(
+ContainerStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedResources, List<ResourceStatus>? Function()? allocatedResourcesStatus, String? Function()? containerId, String? image, String? imageId, ContainerState? Function()? lastState, String? name, bool? ready, ResourceRequirements? Function()? resources, int? restartCount, bool? Function()? started, ContainerState? Function()? state, String? Function()? stopSignal, ContainerUser? Function()? user, List<VolumeMountStatus>? Function()? volumeMounts, }) { return ContainerStatus(
   allocatedResources: allocatedResources != null ? allocatedResources() : this.allocatedResources,
   allocatedResourcesStatus: allocatedResourcesStatus != null ? allocatedResourcesStatus() : this.allocatedResourcesStatus,
   containerId: containerId != null ? containerId() : this.containerId,

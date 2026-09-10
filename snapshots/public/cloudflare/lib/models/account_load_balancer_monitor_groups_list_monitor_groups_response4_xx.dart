@@ -25,14 +25,14 @@ Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  'result': ?result,
+  'result': result,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-AccountLoadBalancerMonitorGroupsListMonitorGroupsResponse4Xx copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, Map<String, dynamic>? Function()? result, LoadBalancingResultInfo Function()? resultInfo, }) { return AccountLoadBalancerMonitorGroupsListMonitorGroupsResponse4Xx(
+AccountLoadBalancerMonitorGroupsListMonitorGroupsResponse4Xx copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, Map<String, dynamic>? Function()? result, LoadBalancingResultInfo? Function()? resultInfo, }) { return AccountLoadBalancerMonitorGroupsListMonitorGroupsResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

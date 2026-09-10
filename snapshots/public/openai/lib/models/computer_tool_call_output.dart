@@ -101,7 +101,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('call_id') && json['call_id'] is String &&
       json.containsKey('output'); } 
-ComputerToolCallOutput copyWith({ComputerToolCallOutputType? type, String Function()? id, String? callId, List<ComputerCallSafetyCheckParam> Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus Function()? status, }) { return ComputerToolCallOutput(
+ComputerToolCallOutput copyWith({ComputerToolCallOutputType? type, String? Function()? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus? Function()? status, }) { return ComputerToolCallOutput(
   type: type ?? this.type,
   id: id != null ? id() : this.id,
   callId: callId ?? this.callId,

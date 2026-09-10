@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('locationAlpha2') && json['locationAlpha2'] is String &&
       json.containsKey('locationName') && json['locationName'] is String; } 
-RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations copyWith({int Function()? estimatedUsers, String? locationAlpha2, String? locationName, }) { return RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations(
+RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations copyWith({int? Function()? estimatedUsers, String? locationAlpha2, String? locationName, }) { return RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations(
   estimatedUsers: estimatedUsers != null ? estimatedUsers() : this.estimatedUsers,
   locationAlpha2: locationAlpha2 ?? this.locationAlpha2,
   locationName: locationName ?? this.locationName,

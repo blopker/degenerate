@@ -60,21 +60,21 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EnterpriseTeamsUpdateRequestOrganizationSelectionType($value)'; } 
  }
-@immutable final class EnterpriseTeamsUpdateRequest {const EnterpriseTeamsUpdateRequest({this.name, this.description, this.syncToOrganizations = EnterpriseTeamsUpdateRequestSyncToOrganizations.disabled, this.organizationSelectionType = EnterpriseTeamsUpdateRequestOrganizationSelectionType.disabled, this.groupId, });
+@immutable final class EnterpriseTeamsUpdateRequest {const EnterpriseTeamsUpdateRequest({this.name = const Omittable.absent(), this.description = const Omittable.absent(), this.syncToOrganizations = EnterpriseTeamsUpdateRequestSyncToOrganizations.disabled, this.organizationSelectionType = EnterpriseTeamsUpdateRequestOrganizationSelectionType.disabled, this.groupId = const Omittable.absent(), });
 
 factory EnterpriseTeamsUpdateRequest.fromJson(Map<String, dynamic> json) { return EnterpriseTeamsUpdateRequest(
-  name: json['name'] as String?,
-  description: json['description'] as String?,
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   syncToOrganizations: json.containsKey('sync_to_organizations') ? EnterpriseTeamsUpdateRequestSyncToOrganizations.fromJson(json['sync_to_organizations'] as String) : EnterpriseTeamsUpdateRequestSyncToOrganizations.disabled,
   organizationSelectionType: json.containsKey('organization_selection_type') ? EnterpriseTeamsUpdateRequestOrganizationSelectionType.fromJson(json['organization_selection_type'] as String) : EnterpriseTeamsUpdateRequestOrganizationSelectionType.disabled,
-  groupId: json['group_id'] as String?,
+  groupId: json.containsKey('group_id') ? Omittable(json['group_id'] as String?) : const Omittable.absent(),
 ); }
 
 /// A new name for the team.
-final String? name;
+final Omittable<String?> name;
 
 /// A new description for the team.
-final String? description;
+final Omittable<String?> description;
 
 /// Retired: this field is no longer supported.
 /// Whether the enterprise team should be reflected in each organization.
@@ -90,22 +90,22 @@ final EnterpriseTeamsUpdateRequestSyncToOrganizations syncToOrganizations;
 final EnterpriseTeamsUpdateRequestOrganizationSelectionType organizationSelectionType;
 
 /// The ID of the IdP group to assign team membership with. The new IdP group will replace the existing one, or replace existing direct members if the team isn't currently linked to an IdP group.
-final String? groupId;
+final Omittable<String?> groupId;
 
 Map<String, dynamic> toJson() { return {
-  'name': ?name,
-  'description': ?description,
+  if (name.isPresent) 'name': name.value,
+  if (description.isPresent) 'description': description.value,
   'sync_to_organizations': syncToOrganizations.toJson(),
   'organization_selection_type': organizationSelectionType.toJson(),
-  'group_id': ?groupId,
+  if (groupId.isPresent) 'group_id': groupId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'sync_to_organizations', 'organization_selection_type', 'group_id'}.contains(key)); } 
-EnterpriseTeamsUpdateRequest copyWith({String? Function()? name, String? Function()? description, EnterpriseTeamsUpdateRequestSyncToOrganizations Function()? syncToOrganizations, EnterpriseTeamsUpdateRequestOrganizationSelectionType Function()? organizationSelectionType, String? Function()? groupId, }) { return EnterpriseTeamsUpdateRequest(
-  name: name != null ? name() : this.name,
-  description: description != null ? description() : this.description,
+EnterpriseTeamsUpdateRequest copyWith({Omittable<String?>? name, Omittable<String?>? description, EnterpriseTeamsUpdateRequestSyncToOrganizations Function()? syncToOrganizations, EnterpriseTeamsUpdateRequestOrganizationSelectionType Function()? organizationSelectionType, Omittable<String?>? groupId, }) { return EnterpriseTeamsUpdateRequest(
+  name: name ?? this.name,
+  description: description ?? this.description,
   syncToOrganizations: syncToOrganizations != null ? syncToOrganizations() : this.syncToOrganizations,
   organizationSelectionType: organizationSelectionType != null ? organizationSelectionType() : this.organizationSelectionType,
-  groupId: groupId != null ? groupId() : this.groupId,
+  groupId: groupId ?? this.groupId,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EnterpriseTeamsUpdateRequest &&

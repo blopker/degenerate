@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   'allowed_domains': ?allowedDomains,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-ContainerResourceNetworkPolicy copyWith({ContainerResourceNetworkPolicyType? type, List<String> Function()? allowedDomains, }) { return ContainerResourceNetworkPolicy(
+ContainerResourceNetworkPolicy copyWith({ContainerResourceNetworkPolicyType? type, List<String>? Function()? allowedDomains, }) { return ContainerResourceNetworkPolicy(
   type: type ?? this.type,
   allowedDomains: allowedDomains != null ? allowedDomains() : this.allowedDomains,
 ); } 

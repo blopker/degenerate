@@ -68,7 +68,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autho
       json.containsKey('timestamp') && json['timestamp'] is String &&
       json.containsKey('tree_id') && json['tree_id'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-WebhookPushCommits copyWith({List<String> Function()? added, WebhookPushCommitsAuthor? author, WebhookPushCommitsCommitter? committer, bool? distinct, String? id, String? message, List<String> Function()? modified, List<String> Function()? removed, DateTime? timestamp, String? treeId, Uri? url, }) { return WebhookPushCommits(
+WebhookPushCommits copyWith({List<String>? Function()? added, WebhookPushCommitsAuthor? author, WebhookPushCommitsCommitter? committer, bool? distinct, String? id, String? message, List<String>? Function()? modified, List<String>? Function()? removed, DateTime? timestamp, String? treeId, Uri? url, }) { return WebhookPushCommits(
   added: added != null ? added() : this.added,
   author: author ?? this.author,
   committer: committer ?? this.committer,

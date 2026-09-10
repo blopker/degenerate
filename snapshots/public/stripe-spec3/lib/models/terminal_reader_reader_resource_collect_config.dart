@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (tipping != null) 'tipping': tipping?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enable_customer_cancellation', 'skip_tipping', 'tipping'}.contains(key)); } 
-TerminalReaderReaderResourceCollectConfig copyWith({bool Function()? enableCustomerCancellation, bool Function()? skipTipping, TerminalReaderReaderResourceTippingConfig Function()? tipping, }) { return TerminalReaderReaderResourceCollectConfig(
+TerminalReaderReaderResourceCollectConfig copyWith({bool? Function()? enableCustomerCancellation, bool? Function()? skipTipping, TerminalReaderReaderResourceTippingConfig? Function()? tipping, }) { return TerminalReaderReaderResourceCollectConfig(
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
   skipTipping: skipTipping != null ? skipTipping() : this.skipTipping,
   tipping: tipping != null ? tipping() : this.tipping,

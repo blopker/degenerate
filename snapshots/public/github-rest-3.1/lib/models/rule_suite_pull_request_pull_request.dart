@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (reviews != null) 'reviews': reviews?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'number', 'user', 'reviews'}.contains(key)); } 
-RuleSuitePullRequestPullRequest copyWith({int Function()? id, int Function()? number, RuleSuitePullRequestPullRequestUser Function()? user, List<RuleSuitePullRequestPullRequestReviews> Function()? reviews, }) { return RuleSuitePullRequestPullRequest(
+RuleSuitePullRequestPullRequest copyWith({int? Function()? id, int? Function()? number, RuleSuitePullRequestPullRequestUser? Function()? user, List<RuleSuitePullRequestPullRequestReviews>? Function()? reviews, }) { return RuleSuitePullRequestPullRequest(
   id: id != null ? id() : this.id,
   number: number != null ? number() : this.number,
   user: user != null ? user() : this.user,

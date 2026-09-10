@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'allowed_ips': ?allowedIps,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'allowed_ips'}.contains(key)); } 
-AuditLogIpAllowlistCreated copyWith({String Function()? id, String Function()? name, List<String> Function()? allowedIps, }) { return AuditLogIpAllowlistCreated(
+AuditLogIpAllowlistCreated copyWith({String? Function()? id, String? Function()? name, List<String>? Function()? allowedIps, }) { return AuditLogIpAllowlistCreated(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   allowedIps: allowedIps != null ? allowedIps() : this.allowedIps,

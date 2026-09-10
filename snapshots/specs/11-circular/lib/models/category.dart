@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-Category copyWith({int? id, String? name, Category Function()? parent, List<Category> Function()? children, }) { return Category(
+Category copyWith({int? id, String? name, Category? Function()? parent, List<Category>? Function()? children, }) { return Category(
   id: id ?? this.id,
   name: name ?? this.name,
   parent: parent != null ? parent() : this.parent,

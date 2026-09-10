@@ -19,7 +19,7 @@ final List<ListsMessages2> messages;
 final bool success;
 
 Map<String, dynamic> toJson() { return {
-  'result': ?result,
+  'result': result,
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,

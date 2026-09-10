@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_aggregate_stat.dart';import 'digital_experience_monitoring_timing_aggregates_over_time.dart';@immutable final class DigitalExperienceMonitoringTimingAggregates {const DigitalExperienceMonitoringTimingAggregates({required this.history, this.avgMs, this.overTime, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_aggregate_stat.dart';import 'digital_experience_monitoring_timing_aggregates_over_time.dart';@immutable final class DigitalExperienceMonitoringTimingAggregates {const DigitalExperienceMonitoringTimingAggregates({required this.history, this.avgMs = const Omittable.absent(), this.overTime = const Omittable.absent(), });
 
 factory DigitalExperienceMonitoringTimingAggregates.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTimingAggregates(
-  avgMs: json['avgMs'] != null ? (json['avgMs'] as num).toInt() : null,
+  avgMs: json.containsKey('avgMs') ? Omittable(json['avgMs'] != null ? (json['avgMs'] as num).toInt() : null) : const Omittable.absent(),
   history: (json['history'] as List<dynamic>).map((e) => DigitalExperienceMonitoringAggregateStat.fromJson(e as Map<String, dynamic>)).toList(),
-  overTime: json['overTime'] != null ? DigitalExperienceMonitoringTimingAggregatesOverTime.fromJson(json['overTime'] as Map<String, dynamic>) : null,
+  overTime: json.containsKey('overTime') ? Omittable(json['overTime'] != null ? DigitalExperienceMonitoringTimingAggregatesOverTime.fromJson(json['overTime'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
-final int? avgMs;
+final Omittable<int?> avgMs;
 
 final List<DigitalExperienceMonitoringAggregateStat> history;
 
-final DigitalExperienceMonitoringTimingAggregatesOverTime? overTime;
+final Omittable<DigitalExperienceMonitoringTimingAggregatesOverTime?> overTime;
 
 Map<String, dynamic> toJson() { return {
-  'avgMs': ?avgMs,
+  if (avgMs.isPresent) 'avgMs': avgMs.value,
   'history': history.map((e) => e.toJson()).toList(),
-  if (overTime != null) 'overTime': overTime?.toJson(),
+  if (overTime.isPresent) 'overTime': overTime.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('history'); } 
-DigitalExperienceMonitoringTimingAggregates copyWith({int? Function()? avgMs, List<DigitalExperienceMonitoringAggregateStat>? history, DigitalExperienceMonitoringTimingAggregatesOverTime? Function()? overTime, }) { return DigitalExperienceMonitoringTimingAggregates(
-  avgMs: avgMs != null ? avgMs() : this.avgMs,
+DigitalExperienceMonitoringTimingAggregates copyWith({Omittable<int?>? avgMs, List<DigitalExperienceMonitoringAggregateStat>? history, Omittable<DigitalExperienceMonitoringTimingAggregatesOverTime?>? overTime, }) { return DigitalExperienceMonitoringTimingAggregates(
+  avgMs: avgMs ?? this.avgMs,
   history: history ?? this.history,
-  overTime: overTime != null ? overTime() : this.overTime,
+  overTime: overTime ?? this.overTime,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is DigitalExperienceMonitoringTimingAggregates &&

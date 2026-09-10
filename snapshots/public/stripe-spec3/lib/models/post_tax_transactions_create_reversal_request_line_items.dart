@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('amount_tax') && json['amount_tax'] is num &&
       json.containsKey('original_line_item') && json['original_line_item'] is String &&
       json.containsKey('reference') && json['reference'] is String; } 
-PostTaxTransactionsCreateReversalRequestLineItems copyWith({int? amount, int? amountTax, Map<String, String> Function()? metadata, String? originalLineItem, int Function()? quantity, String? reference, }) { return PostTaxTransactionsCreateReversalRequestLineItems(
+PostTaxTransactionsCreateReversalRequestLineItems copyWith({int? amount, int? amountTax, Map<String, String>? Function()? metadata, String? originalLineItem, int? Function()? quantity, String? reference, }) { return PostTaxTransactionsCreateReversalRequestLineItems(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
   metadata: metadata != null ? metadata() : this.metadata,

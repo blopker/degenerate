@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentProtectionRuleRequestedAction($value)'; } 
  }
-@immutable final class WebhookDeploymentProtectionRuleRequested {const WebhookDeploymentProtectionRuleRequested({this.action, this.environment, this.event, this.sha, this.ref, this.deploymentCallbackUrl, this.deployment, this.pullRequests, this.repository, this.organization, this.installation, this.sender, });
+@immutable final class WebhookDeploymentProtectionRuleRequested {const WebhookDeploymentProtectionRuleRequested({this.action, this.environment, this.event, this.sha, this.ref, this.deploymentCallbackUrl, this.deployment = const Omittable.absent(), this.pullRequests, this.repository, this.organization, this.installation, this.sender, });
 
 factory WebhookDeploymentProtectionRuleRequested.fromJson(Map<String, dynamic> json) { return WebhookDeploymentProtectionRuleRequested(
   action: json['action'] != null ? WebhookDeploymentProtectionRuleRequestedAction.fromJson(json['action'] as String) : null,
@@ -30,7 +30,7 @@ factory WebhookDeploymentProtectionRuleRequested.fromJson(Map<String, dynamic> j
   sha: json['sha'] as String?,
   ref: json['ref'] as String?,
   deploymentCallbackUrl: json['deployment_callback_url'] != null ? Uri.parse(json['deployment_callback_url'] as String) : null,
-  deployment: json['deployment'] != null ? Deployment.fromJson(json['deployment'] as Map<String, dynamic>) : null,
+  deployment: json.containsKey('deployment') ? Omittable(json['deployment'] != null ? Deployment.fromJson(json['deployment'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   pullRequests: (json['pull_requests'] as List<dynamic>?)?.map((e) => PullRequest.fromJson(e as Map<String, dynamic>)).toList(),
   repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
@@ -55,7 +55,7 @@ final String? ref;
 /// The URL to review the deployment protection rule.
 final Uri? deploymentCallbackUrl;
 
-final Deployment? deployment;
+final Omittable<Deployment?> deployment;
 
 final List<PullRequest>? pullRequests;
 
@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   'sha': ?sha,
   'ref': ?ref,
   if (deploymentCallbackUrl != null) 'deployment_callback_url': deploymentCallbackUrl?.toString(),
-  if (deployment != null) 'deployment': deployment?.toJson(),
+  if (deployment.isPresent) 'deployment': deployment.value?.toJson(),
   if (pullRequests != null) 'pull_requests': pullRequests?.map((e) => e.toJson()).toList(),
   if (repository != null) 'repository': repository?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
@@ -82,14 +82,14 @@ Map<String, dynamic> toJson() { return {
   if (sender != null) 'sender': sender?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'action', 'environment', 'event', 'sha', 'ref', 'deployment_callback_url', 'deployment', 'pull_requests', 'repository', 'organization', 'installation', 'sender'}.contains(key)); } 
-WebhookDeploymentProtectionRuleRequested copyWith({WebhookDeploymentProtectionRuleRequestedAction Function()? action, String Function()? environment, String Function()? event, String Function()? sha, String Function()? ref, Uri Function()? deploymentCallbackUrl, Deployment? Function()? deployment, List<PullRequest> Function()? pullRequests, RepositoryWebhooks Function()? repository, OrganizationSimpleWebhooks Function()? organization, SimpleInstallation Function()? installation, SimpleUser Function()? sender, }) { return WebhookDeploymentProtectionRuleRequested(
+WebhookDeploymentProtectionRuleRequested copyWith({WebhookDeploymentProtectionRuleRequestedAction? Function()? action, String? Function()? environment, String? Function()? event, String? Function()? sha, String? Function()? ref, Uri? Function()? deploymentCallbackUrl, Omittable<Deployment?>? deployment, List<PullRequest>? Function()? pullRequests, RepositoryWebhooks? Function()? repository, OrganizationSimpleWebhooks? Function()? organization, SimpleInstallation? Function()? installation, SimpleUser? Function()? sender, }) { return WebhookDeploymentProtectionRuleRequested(
   action: action != null ? action() : this.action,
   environment: environment != null ? environment() : this.environment,
   event: event != null ? event() : this.event,
   sha: sha != null ? sha() : this.sha,
   ref: ref != null ? ref() : this.ref,
   deploymentCallbackUrl: deploymentCallbackUrl != null ? deploymentCallbackUrl() : this.deploymentCallbackUrl,
-  deployment: deployment != null ? deployment() : this.deployment,
+  deployment: deployment ?? this.deployment,
   pullRequests: pullRequests != null ? pullRequests() : this.pullRequests,
   repository: repository != null ? repository() : this.repository,
   organization: organization != null ? organization() : this.organization,

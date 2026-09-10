@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'total_count': ?totalCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('budgets'); } 
-GetAllBudgets copyWith({List<Budget>? budgets, bool Function()? hasNextPage, int Function()? totalCount, }) { return GetAllBudgets(
+GetAllBudgets copyWith({List<Budget>? budgets, bool? Function()? hasNextPage, int? Function()? totalCount, }) { return GetAllBudgets(
   budgets: budgets ?? this.budgets,
   hasNextPage: hasNextPage != null ? hasNextPage() : this.hasNextPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,

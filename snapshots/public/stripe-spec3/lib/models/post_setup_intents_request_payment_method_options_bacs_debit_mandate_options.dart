@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (referencePrefix != null) 'reference_prefix': referencePrefix?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference_prefix'}.contains(key)); } 
-PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions copyWith({PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix Function()? referencePrefix}) { return PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions(
+PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions copyWith({PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix? Function()? referencePrefix}) { return PostSetupIntentsRequestPaymentMethodOptionsBacsDebitMandateOptions(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

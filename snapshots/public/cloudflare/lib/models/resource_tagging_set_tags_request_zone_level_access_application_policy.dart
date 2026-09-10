@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('resource_id') &&
       json.containsKey('resource_type') &&
       json.containsKey('access_application_id'); } 
-ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum? resourceType, ResourceTaggingAccessApplicationId? accessApplicationId, Map<String, String> Function()? tags, }) { return ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy(
+ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingZoneResourceTypeAccessApplicationPolicyEnum? resourceType, ResourceTaggingAccessApplicationId? accessApplicationId, Map<String, String>? Function()? tags, }) { return ResourceTaggingSetTagsRequestZoneLevelAccessApplicationPolicy(
   resourceId: resourceId ?? this.resourceId,
   resourceType: resourceType ?? this.resourceType,
   accessApplicationId: accessApplicationId ?? this.accessApplicationId,

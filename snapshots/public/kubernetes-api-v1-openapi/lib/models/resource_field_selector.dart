@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'resource': resource,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('resource') && json['resource'] is String; } 
-ResourceFieldSelector copyWith({String Function()? containerName, ResourceQuantity Function()? divisor, String? resource, }) { return ResourceFieldSelector(
+ResourceFieldSelector copyWith({String? Function()? containerName, ResourceQuantity? Function()? divisor, String? resource, }) { return ResourceFieldSelector(
   containerName: containerName != null ? containerName() : this.containerName,
   divisor: divisor != null ? divisor() : this.divisor,
   resource: resource ?? this.resource,

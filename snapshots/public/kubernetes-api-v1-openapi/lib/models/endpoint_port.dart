@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'protocol': ?protocol,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') && json['port'] is num; } 
-EndpointPort copyWith({String Function()? appProtocol, String Function()? name, int? port, String Function()? protocol, }) { return EndpointPort(
+EndpointPort copyWith({String? Function()? appProtocol, String? Function()? name, int? port, String? Function()? protocol, }) { return EndpointPort(
   appProtocol: appProtocol != null ? appProtocol() : this.appProtocol,
   name: name != null ? name() : this.name,
   port: port ?? this.port,

@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'uri': ?uri,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'uri'}.contains(key)); } 
-PublicDestination copyWith({PublicDestinationType Function()? type, String Function()? uri, }) { return PublicDestination(
+PublicDestination copyWith({PublicDestinationType? Function()? type, String? Function()? uri, }) { return PublicDestination(
   type: type != null ? type() : this.type,
   uri: uri != null ? uri() : this.uri,
 ); } 

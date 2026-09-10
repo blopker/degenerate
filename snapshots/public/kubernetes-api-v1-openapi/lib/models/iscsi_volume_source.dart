@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('iqn') && json['iqn'] is String &&
       json.containsKey('lun') && json['lun'] is num &&
       json.containsKey('targetPortal') && json['targetPortal'] is String; } 
-IscsiVolumeSource copyWith({bool Function()? chapAuthDiscovery, bool Function()? chapAuthSession, String Function()? fsType, String Function()? initiatorName, String? iqn, String Function()? iscsiInterface, int? lun, List<String> Function()? portals, bool Function()? readOnly, LocalObjectReference Function()? secretRef, String? targetPortal, }) { return IscsiVolumeSource(
+IscsiVolumeSource copyWith({bool? Function()? chapAuthDiscovery, bool? Function()? chapAuthSession, String? Function()? fsType, String? Function()? initiatorName, String? iqn, String Function()? iscsiInterface, int? lun, List<String>? Function()? portals, bool? Function()? readOnly, LocalObjectReference? Function()? secretRef, String? targetPortal, }) { return IscsiVolumeSource(
   chapAuthDiscovery: chapAuthDiscovery != null ? chapAuthDiscovery() : this.chapAuthDiscovery,
   chapAuthSession: chapAuthSession != null ? chapAuthSession() : this.chapAuthSession,
   fsType: fsType != null ? fsType() : this.fsType,

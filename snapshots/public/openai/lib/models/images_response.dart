@@ -152,7 +152,7 @@ Map<String, dynamic> toJson() { return {
   if (usage != null) 'usage': usage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num; } 
-ImagesResponse copyWith({int? created, List<Image> Function()? data, ImagesResponseBackground Function()? background, ImagesResponseOutputFormat Function()? outputFormat, ImagesResponseSize Function()? size, ImagesResponseQuality Function()? quality, ImageGenUsage Function()? usage, }) { return ImagesResponse(
+ImagesResponse copyWith({int? created, List<Image>? Function()? data, ImagesResponseBackground? Function()? background, ImagesResponseOutputFormat? Function()? outputFormat, ImagesResponseSize? Function()? size, ImagesResponseQuality? Function()? quality, ImageGenUsage? Function()? usage, }) { return ImagesResponse(
   created: created ?? this.created,
   data: data != null ? data() : this.data,
   background: background != null ? background() : this.background,

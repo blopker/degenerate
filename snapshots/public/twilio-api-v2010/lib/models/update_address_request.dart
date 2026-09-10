@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   'StreetSecondary': ?streetSecondary,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'FriendlyName', 'CustomerName', 'Street', 'City', 'Region', 'PostalCode', 'EmergencyEnabled', 'AutoCorrectAddress', 'StreetSecondary'}.contains(key)); } 
-UpdateAddressRequest copyWith({String Function()? friendlyName, String Function()? customerName, String Function()? street, String Function()? city, String Function()? region, String Function()? postalCode, bool Function()? emergencyEnabled, bool Function()? autoCorrectAddress, String Function()? streetSecondary, }) { return UpdateAddressRequest(
+UpdateAddressRequest copyWith({String? Function()? friendlyName, String? Function()? customerName, String? Function()? street, String? Function()? city, String? Function()? region, String? Function()? postalCode, bool? Function()? emergencyEnabled, bool? Function()? autoCorrectAddress, String? Function()? streetSecondary, }) { return UpdateAddressRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   customerName: customerName != null ? customerName() : this.customerName,
   street: street != null ? street() : this.street,

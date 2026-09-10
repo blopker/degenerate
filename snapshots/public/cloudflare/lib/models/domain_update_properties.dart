@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
   if (privacy != null) 'privacy': privacy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auto_renew', 'locked', 'privacy'}.contains(key)); } 
-DomainUpdateProperties copyWith({AutoRenew Function()? autoRenew, Locked Function()? locked, Privacy Function()? privacy, }) { return DomainUpdateProperties(
+DomainUpdateProperties copyWith({AutoRenew? Function()? autoRenew, Locked? Function()? locked, Privacy? Function()? privacy, }) { return DomainUpdateProperties(
   autoRenew: autoRenew != null ? autoRenew() : this.autoRenew,
   locked: locked != null ? locked() : this.locked,
   privacy: privacy != null ? privacy() : this.privacy,

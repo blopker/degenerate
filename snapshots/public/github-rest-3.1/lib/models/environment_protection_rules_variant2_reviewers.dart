@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (reviewer != null) 'reviewer': reviewer?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type', 'reviewer'}.contains(key)); } 
-EnvironmentProtectionRulesVariant2Reviewers copyWith({DeploymentReviewerType Function()? type, EnvironmentProtectionRulesVariant2ReviewersReviewer Function()? reviewer, }) { return EnvironmentProtectionRulesVariant2Reviewers(
+EnvironmentProtectionRulesVariant2Reviewers copyWith({DeploymentReviewerType? Function()? type, EnvironmentProtectionRulesVariant2ReviewersReviewer? Function()? reviewer, }) { return EnvironmentProtectionRulesVariant2Reviewers(
   type: type != null ? type() : this.type,
   reviewer: reviewer != null ? reviewer() : this.reviewer,
 ); } 

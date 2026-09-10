@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   if (shaPinningRequired != null) 'sha_pinning_required': shaPinningRequired?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled_repositories'); } 
-ActionsOrganizationPermissions copyWith({EnabledRepositories? enabledRepositories, String Function()? selectedRepositoriesUrl, AllowedActions Function()? allowedActions, SelectedActionsUrl Function()? selectedActionsUrl, ShaPinningRequired Function()? shaPinningRequired, }) { return ActionsOrganizationPermissions(
+ActionsOrganizationPermissions copyWith({EnabledRepositories? enabledRepositories, String? Function()? selectedRepositoriesUrl, AllowedActions? Function()? allowedActions, SelectedActionsUrl? Function()? selectedActionsUrl, ShaPinningRequired? Function()? shaPinningRequired, }) { return ActionsOrganizationPermissions(
   enabledRepositories: enabledRepositories ?? this.enabledRepositories,
   selectedRepositoriesUrl: selectedRepositoriesUrl != null ? selectedRepositoriesUrl() : this.selectedRepositoriesUrl,
   allowedActions: allowedActions != null ? allowedActions() : this.allowedActions,

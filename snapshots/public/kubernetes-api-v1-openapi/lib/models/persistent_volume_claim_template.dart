@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'spec': spec.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('spec'); } 
-PersistentVolumeClaimTemplate copyWith({ObjectMeta Function()? metadata, PersistentVolumeClaimSpec? spec, }) { return PersistentVolumeClaimTemplate(
+PersistentVolumeClaimTemplate copyWith({ObjectMeta? Function()? metadata, PersistentVolumeClaimSpec? spec, }) { return PersistentVolumeClaimTemplate(
   metadata: metadata != null ? metadata() : this.metadata,
   spec: spec ?? this.spec,
 ); } 

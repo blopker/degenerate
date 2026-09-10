@@ -94,7 +94,7 @@ Map<String, dynamic> toJson() { return {
   'retention_period_minutes': ?retentionPeriodMinutes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ref', 'location', 'geo', 'client_ip', 'machine', 'devcontainer_path', 'multi_repo_permissions_opt_out', 'working_directory', 'idle_timeout_minutes', 'display_name', 'retention_period_minutes'}.contains(key)); } 
-CodespacesCreateWithRepoForAuthenticatedUserRequest copyWith({String Function()? ref, String Function()? location, CodespacesCreateWithRepoForAuthenticatedUserRequestGeo Function()? geo, String Function()? clientIp, String Function()? machine, String Function()? devcontainerPath, bool Function()? multiRepoPermissionsOptOut, String Function()? workingDirectory, int Function()? idleTimeoutMinutes, String Function()? displayName, int Function()? retentionPeriodMinutes, }) { return CodespacesCreateWithRepoForAuthenticatedUserRequest(
+CodespacesCreateWithRepoForAuthenticatedUserRequest copyWith({String? Function()? ref, String? Function()? location, CodespacesCreateWithRepoForAuthenticatedUserRequestGeo? Function()? geo, String? Function()? clientIp, String? Function()? machine, String? Function()? devcontainerPath, bool? Function()? multiRepoPermissionsOptOut, String? Function()? workingDirectory, int? Function()? idleTimeoutMinutes, String? Function()? displayName, int? Function()? retentionPeriodMinutes, }) { return CodespacesCreateWithRepoForAuthenticatedUserRequest(
   ref: ref != null ? ref() : this.ref,
   location: location != null ? location() : this.location,
   geo: geo != null ? geo() : this.geo,

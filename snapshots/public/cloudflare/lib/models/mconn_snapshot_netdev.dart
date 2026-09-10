@@ -115,7 +115,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('sent_errs') && json['sent_errs'] is num &&
       json.containsKey('sent_fifo') && json['sent_fifo'] is num &&
       json.containsKey('sent_packets') && json['sent_packets'] is num; } 
-MconnSnapshotNetdev copyWith({String Function()? connectorId, String? name, double? recvBytes, double? recvCompressed, double? recvDrop, double? recvErrs, double? recvFifo, double? recvFrame, double? recvMulticast, double? recvPackets, double? sentBytes, double? sentCarrier, double? sentColls, double? sentCompressed, double? sentDrop, double? sentErrs, double? sentFifo, double? sentPackets, }) { return MconnSnapshotNetdev(
+MconnSnapshotNetdev copyWith({String? Function()? connectorId, String? name, double? recvBytes, double? recvCompressed, double? recvDrop, double? recvErrs, double? recvFifo, double? recvFrame, double? recvMulticast, double? recvPackets, double? sentBytes, double? sentCarrier, double? sentColls, double? sentCompressed, double? sentDrop, double? sentErrs, double? sentFifo, double? sentPackets, }) { return MconnSnapshotNetdev(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   name: name ?? this.name,
   recvBytes: recvBytes ?? this.recvBytes,

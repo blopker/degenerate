@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'command': ?command,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'command'}.contains(key)); } 
-ExecAction copyWith({List<String> Function()? command}) { return ExecAction(
+ExecAction copyWith({List<String>? Function()? command}) { return ExecAction(
   command: command != null ? command() : this.command,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

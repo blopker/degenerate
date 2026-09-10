@@ -27,12 +27,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PullRequestReviewCommentEventCommentUserType($value)'; } 
  }
-@immutable final class PullRequestReviewCommentEventCommentUser {const PullRequestReviewCommentEventCommentUser({this.avatarUrl, this.deleted, this.email, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+@immutable final class PullRequestReviewCommentEventCommentUser {const PullRequestReviewCommentEventCommentUser({this.avatarUrl, this.deleted, this.email = const Omittable.absent(), this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.name, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
 
 factory PullRequestReviewCommentEventCommentUser.fromJson(Map<String, dynamic> json) { return PullRequestReviewCommentEventCommentUser(
   avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
   deleted: json['deleted'] as bool?,
-  email: json['email'] as String?,
+  email: json.containsKey('email') ? Omittable(json['email'] as String?) : const Omittable.absent(),
   eventsUrl: json['events_url'] as String?,
   followersUrl: json['followers_url'] != null ? Uri.parse(json['followers_url'] as String) : null,
   followingUrl: json['following_url'] as String?,
@@ -58,7 +58,7 @@ final Uri? avatarUrl;
 
 final bool? deleted;
 
-final String? email;
+final Omittable<String?> email;
 
 final String? eventsUrl;
 
@@ -101,7 +101,7 @@ final String? userViewType;
 Map<String, dynamic> toJson() { return {
   if (avatarUrl != null) 'avatar_url': avatarUrl?.toString(),
   'deleted': ?deleted,
-  'email': ?email,
+  if (email.isPresent) 'email': email.value,
   'events_url': ?eventsUrl,
   if (followersUrl != null) 'followers_url': followersUrl?.toString(),
   'following_url': ?followingUrl,
@@ -123,10 +123,10 @@ Map<String, dynamic> toJson() { return {
   'user_view_type': ?userViewType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'avatar_url', 'deleted', 'email', 'events_url', 'followers_url', 'following_url', 'gists_url', 'gravatar_id', 'html_url', 'id', 'login', 'name', 'node_id', 'organizations_url', 'received_events_url', 'repos_url', 'site_admin', 'starred_url', 'subscriptions_url', 'type', 'url', 'user_view_type'}.contains(key)); } 
-PullRequestReviewCommentEventCommentUser copyWith({Uri Function()? avatarUrl, bool Function()? deleted, String? Function()? email, String Function()? eventsUrl, Uri Function()? followersUrl, String Function()? followingUrl, String Function()? gistsUrl, String Function()? gravatarId, Uri Function()? htmlUrl, int Function()? id, String Function()? login, String Function()? name, String Function()? nodeId, Uri Function()? organizationsUrl, Uri Function()? receivedEventsUrl, Uri Function()? reposUrl, bool Function()? siteAdmin, String Function()? starredUrl, Uri Function()? subscriptionsUrl, PullRequestReviewCommentEventCommentUserType Function()? type, Uri Function()? url, String Function()? userViewType, }) { return PullRequestReviewCommentEventCommentUser(
+PullRequestReviewCommentEventCommentUser copyWith({Uri? Function()? avatarUrl, bool? Function()? deleted, Omittable<String?>? email, String? Function()? eventsUrl, Uri? Function()? followersUrl, String? Function()? followingUrl, String? Function()? gistsUrl, String? Function()? gravatarId, Uri? Function()? htmlUrl, int? Function()? id, String? Function()? login, String? Function()? name, String? Function()? nodeId, Uri? Function()? organizationsUrl, Uri? Function()? receivedEventsUrl, Uri? Function()? reposUrl, bool? Function()? siteAdmin, String? Function()? starredUrl, Uri? Function()? subscriptionsUrl, PullRequestReviewCommentEventCommentUserType? Function()? type, Uri? Function()? url, String? Function()? userViewType, }) { return PullRequestReviewCommentEventCommentUser(
   avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
   deleted: deleted != null ? deleted() : this.deleted,
-  email: email != null ? email() : this.email,
+  email: email ?? this.email,
   eventsUrl: eventsUrl != null ? eventsUrl() : this.eventsUrl,
   followersUrl: followersUrl != null ? followersUrl() : this.followersUrl,
   followingUrl: followingUrl != null ? followingUrl() : this.followingUrl,

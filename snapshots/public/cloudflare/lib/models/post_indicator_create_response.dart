@@ -45,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('updatedAt') && json['updatedAt'] is String &&
       json.containsKey('uuid') && json['uuid'] is String &&
       json.containsKey('value') && json['value'] is String; } 
-PostIndicatorCreateResponse copyWith({DateTime? createdAt, String Function()? datasetId, String? indicatorType, List<PostIndicatorCreateResponseRelatedEvents> Function()? relatedEvents, List<PostIndicatorCreateResponseTags> Function()? tags, DateTime? updatedAt, String? uuid, String? value, }) { return PostIndicatorCreateResponse(
+PostIndicatorCreateResponse copyWith({DateTime? createdAt, String? Function()? datasetId, String? indicatorType, List<PostIndicatorCreateResponseRelatedEvents>? Function()? relatedEvents, List<PostIndicatorCreateResponseTags>? Function()? tags, DateTime? updatedAt, String? uuid, String? value, }) { return PostIndicatorCreateResponse(
   createdAt: createdAt ?? this.createdAt,
   datasetId: datasetId != null ? datasetId() : this.datasetId,
   indicatorType: indicatorType ?? this.indicatorType,

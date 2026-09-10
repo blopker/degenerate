@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if ($required != null) 'required': $required?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'required'}.contains(key)); } 
-VolumeNodeAffinity copyWith({NodeSelector Function()? $required}) { return VolumeNodeAffinity(
+VolumeNodeAffinity copyWith({NodeSelector? Function()? $required}) { return VolumeNodeAffinity(
   $required: $required != null ? $required() : this.$required,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

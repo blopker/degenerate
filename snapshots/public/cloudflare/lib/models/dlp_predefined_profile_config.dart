@@ -40,7 +40,7 @@ final bool? openAccess;
 Map<String, dynamic> toJson() { return {
   'ai_context_enabled': aiContextEnabled,
   'allowed_match_count': allowedMatchCount,
-  'confidence_threshold': ?confidenceThreshold,
+  'confidence_threshold': confidenceThreshold,
   'enabled_entries': enabledEntries,
   'entries': entries.map((e) => e.toJson()).toList(),
   'id': id,
@@ -49,12 +49,12 @@ Map<String, dynamic> toJson() { return {
   'open_access': ?openAccess,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_match_count') && json['allowed_match_count'] is num &&
-      json.containsKey('confidence_threshold') && json['confidence_threshold'] is String &&
+      json.containsKey('confidence_threshold') && (json['confidence_threshold'] == null || json['confidence_threshold'] is String) &&
       json.containsKey('enabled_entries') &&
       json.containsKey('entries') &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-DlpPredefinedProfileConfig copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, String? Function()? confidenceThreshold, List<String>? enabledEntries, List<DlpEntry>? entries, String? id, String? name, bool Function()? ocrEnabled, bool Function()? openAccess, }) { return DlpPredefinedProfileConfig(
+DlpPredefinedProfileConfig copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, String? Function()? confidenceThreshold, List<String>? enabledEntries, List<DlpEntry>? entries, String? id, String? name, bool Function()? ocrEnabled, bool? Function()? openAccess, }) { return DlpPredefinedProfileConfig(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,

@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   if (taxIds != null) 'tax_ids': taxIds?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'shipping', 'tax', 'tax_exempt', 'tax_ids'}.contains(key)); } 
-PostInvoicesCreatePreviewRequestCustomerDetails copyWith({PostInvoicesCreatePreviewRequestCustomerDetailsAddress Function()? address, PostInvoicesCreatePreviewRequestCustomerDetailsShipping Function()? shipping, PostInvoicesCreatePreviewRequestCustomerDetailsTax Function()? tax, PostInvoicesCreatePreviewRequestCustomerDetailsTaxExempt Function()? taxExempt, List<PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds> Function()? taxIds, }) { return PostInvoicesCreatePreviewRequestCustomerDetails(
+PostInvoicesCreatePreviewRequestCustomerDetails copyWith({PostInvoicesCreatePreviewRequestCustomerDetailsAddress? Function()? address, PostInvoicesCreatePreviewRequestCustomerDetailsShipping? Function()? shipping, PostInvoicesCreatePreviewRequestCustomerDetailsTax? Function()? tax, PostInvoicesCreatePreviewRequestCustomerDetailsTaxExempt? Function()? taxExempt, List<PostInvoicesCreatePreviewRequestCustomerDetailsTaxIds>? Function()? taxIds, }) { return PostInvoicesCreatePreviewRequestCustomerDetails(
   address: address != null ? address() : this.address,
   shipping: shipping != null ? shipping() : this.shipping,
   tax: tax != null ? tax() : this.tax,

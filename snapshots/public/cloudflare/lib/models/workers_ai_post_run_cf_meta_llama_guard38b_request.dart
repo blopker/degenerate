@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'temperature': temperature,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-WorkersAiPostRunCfMetaLlamaGuard38bRequest copyWith({int Function()? maxTokens, List<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages>? messages, WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat Function()? responseFormat, double Function()? temperature, }) { return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
+WorkersAiPostRunCfMetaLlamaGuard38bRequest copyWith({int Function()? maxTokens, List<WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages>? messages, WorkersAiPostRunCfMetaLlamaGuard38bRequestResponseFormat? Function()? responseFormat, double Function()? temperature, }) { return WorkersAiPostRunCfMetaLlamaGuard38bRequest(
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
   messages: messages ?? this.messages,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (uri != null) 'uri': uri?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'headers', 'uri'}.contains(key)); } 
-RulesetsRewriteRuleActionParameters copyWith({Map<String, RulesetsRewriteHeadersValue> Function()? headers, RulesetsRewriteUri Function()? uri, }) { return RulesetsRewriteRuleActionParameters(
+RulesetsRewriteRuleActionParameters copyWith({Map<String, RulesetsRewriteHeadersValue>? Function()? headers, RulesetsRewriteUri? Function()? uri, }) { return RulesetsRewriteRuleActionParameters(
   headers: headers != null ? headers() : this.headers,
   uri: uri != null ? uri() : this.uri,
 ); } 

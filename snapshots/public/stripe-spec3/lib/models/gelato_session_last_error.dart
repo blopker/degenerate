@@ -77,27 +77,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GelatoSessionLastErrorCode($value)'; } 
  }
 /// Shows last VerificationSession error
-@immutable final class GelatoSessionLastError {const GelatoSessionLastError({this.code, this.reason, });
+@immutable final class GelatoSessionLastError {const GelatoSessionLastError({this.code = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
 factory GelatoSessionLastError.fromJson(Map<String, dynamic> json) { return GelatoSessionLastError(
-  code: json['code'] != null ? GelatoSessionLastErrorCode.fromJson(json['code'] as String) : null,
-  reason: json['reason'] as String?,
+  code: json.containsKey('code') ? Omittable(json['code'] != null ? GelatoSessionLastErrorCode.fromJson(json['code'] as String) : null) : const Omittable.absent(),
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
 ); }
 
 /// A short machine-readable string giving the reason for the verification or user-session failure.
-final GelatoSessionLastErrorCode? code;
+final Omittable<GelatoSessionLastErrorCode?> code;
 
 /// A message that explains the reason for verification or user-session failure.
-final String? reason;
+final Omittable<String?> reason;
 
 Map<String, dynamic> toJson() { return {
-  if (code != null) 'code': code?.toJson(),
-  'reason': ?reason,
+  if (code.isPresent) 'code': code.value?.toJson(),
+  if (reason.isPresent) 'reason': reason.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'reason'}.contains(key)); } 
-GelatoSessionLastError copyWith({GelatoSessionLastErrorCode? Function()? code, String? Function()? reason, }) { return GelatoSessionLastError(
-  code: code != null ? code() : this.code,
-  reason: reason != null ? reason() : this.reason,
+GelatoSessionLastError copyWith({Omittable<GelatoSessionLastErrorCode?>? code, Omittable<String?>? reason, }) { return GelatoSessionLastError(
+  code: code ?? this.code,
+  reason: reason ?? this.reason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is GelatoSessionLastError &&

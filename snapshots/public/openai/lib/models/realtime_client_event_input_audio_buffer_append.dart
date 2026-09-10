@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
       json.containsKey('audio') && json['audio'] is String; } 
-RealtimeClientEventInputAudioBufferAppend copyWith({String Function()? eventId, String? type, String? audio, }) { return RealtimeClientEventInputAudioBufferAppend(
+RealtimeClientEventInputAudioBufferAppend copyWith({String? Function()? eventId, String? type, String? audio, }) { return RealtimeClientEventInputAudioBufferAppend(
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
   audio: audio ?? this.audio,

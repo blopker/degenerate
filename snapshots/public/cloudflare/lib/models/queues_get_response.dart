@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success', 'result'}.contains(key)); } 
-QueuesGetResponse copyWith({List<ErrorModel22> Function()? errors, List<String> Function()? messages, bool Function()? success, MqQueue Function()? result, }) { return QueuesGetResponse(
+QueuesGetResponse copyWith({List<ErrorModel22>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, MqQueue? Function()? result, }) { return QueuesGetResponse(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,

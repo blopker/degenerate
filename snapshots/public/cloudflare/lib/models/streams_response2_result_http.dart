@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('authentication') && json['authentication'] is bool &&
       json.containsKey('enabled') && json['enabled'] is bool; } 
-StreamsResponse2ResultHttp copyWith({bool? authentication, StreamsResponse2ResultHttpCors Function()? cors, bool? enabled, }) { return StreamsResponse2ResultHttp(
+StreamsResponse2ResultHttp copyWith({bool? authentication, StreamsResponse2ResultHttpCors? Function()? cors, bool? enabled, }) { return StreamsResponse2ResultHttp(
   authentication: authentication ?? this.authentication,
   cors: cors != null ? cors() : this.cors,
   enabled: enabled ?? this.enabled,

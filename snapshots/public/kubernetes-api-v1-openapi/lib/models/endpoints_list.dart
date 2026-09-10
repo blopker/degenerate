@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
-EndpointsList copyWith({String Function()? apiVersion, List<Endpoints>? items, String Function()? kind, ListMeta Function()? metadata, }) { return EndpointsList(
+EndpointsList copyWith({String? Function()? apiVersion, List<Endpoints>? items, String? Function()? kind, ListMeta? Function()? metadata, }) { return EndpointsList(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   items: items ?? this.items,
   kind: kind != null ? kind() : this.kind,

@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (interconnect != null) 'interconnect': interconnect?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interconnect'}.contains(key)); } 
-MagicComponentsSchemasTunnelSingleResponseResult copyWith({MagicInterconnect Function()? interconnect}) { return MagicComponentsSchemasTunnelSingleResponseResult(
+MagicComponentsSchemasTunnelSingleResponseResult copyWith({MagicInterconnect? Function()? interconnect}) { return MagicComponentsSchemasTunnelSingleResponseResult(
   interconnect: interconnect != null ? interconnect() : this.interconnect,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

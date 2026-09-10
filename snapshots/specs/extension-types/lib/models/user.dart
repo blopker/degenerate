@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('createdAt'); } 
-User copyWith({UserId? id, String? name, Timestamp? createdAt, Score Function()? score, Ratio Function()? ratio, Active Function()? active, }) { return User(
+User copyWith({UserId? id, String? name, Timestamp? createdAt, Score? Function()? score, Ratio? Function()? ratio, Active? Function()? active, }) { return User(
   id: id ?? this.id,
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,

@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggregateBy') && json['aggregateBy'] is String &&
       json.containsKey('aggregations') &&
       json.containsKey('total') && json['total'] is num; } 
-GetEventAggregateResponse copyWith({String? aggregateBy, List<GetEventAggregateResponseAggregations>? aggregations, GetEventAggregateResponseDateRange Function()? dateRange, double? total, }) { return GetEventAggregateResponse(
+GetEventAggregateResponse copyWith({String? aggregateBy, List<GetEventAggregateResponseAggregations>? aggregations, GetEventAggregateResponseDateRange? Function()? dateRange, double? total, }) { return GetEventAggregateResponse(
   aggregateBy: aggregateBy ?? this.aggregateBy,
   aggregations: aggregations ?? this.aggregations,
   dateRange: dateRange != null ? dateRange() : this.dateRange,

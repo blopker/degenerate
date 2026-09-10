@@ -93,7 +93,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessCentrify copyWith({AccessCentrifyConfig? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessCentrifyScimConfig Function()? scimConfig, AccessCentrifyType? type, }) { return AccessCentrify(
+AccessCentrify copyWith({AccessCentrifyConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessCentrifyScimConfig? Function()? scimConfig, AccessCentrifyType? type, }) { return AccessCentrify(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

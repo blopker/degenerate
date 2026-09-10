@@ -17,7 +17,7 @@ final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
-  'results': ?results,
+  'results': results,
   'success': success.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&

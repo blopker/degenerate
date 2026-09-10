@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   'score_threshold': scoreThreshold,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('score_threshold') && json['score_threshold'] is num; } 
-FileSearchRankingOptions copyWith({FileSearchRanker Function()? ranker, double? scoreThreshold, }) { return FileSearchRankingOptions(
+FileSearchRankingOptions copyWith({FileSearchRanker? Function()? ranker, double? scoreThreshold, }) { return FileSearchRankingOptions(
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold ?? this.scoreThreshold,
 ); } 

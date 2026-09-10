@@ -26,18 +26,18 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ModelResponsePropertiesPromptCacheRetention($value)'; } 
  }
-@immutable final class ModelResponseProperties {const ModelResponseProperties({this.metadata, this.topLogprobs, this.temperature, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, });
+@immutable final class ModelResponseProperties {const ModelResponseProperties({this.metadata = const Omittable.absent(), this.topLogprobs = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier = const Omittable.absent(), this.promptCacheRetention = const Omittable.absent(), });
 
 factory ModelResponseProperties.fromJson(Map<String, dynamic> json) { return ModelResponseProperties(
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
-  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  topLogprobs: json.containsKey('top_logprobs') ? Omittable(json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null) : const Omittable.absent(),
+  temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
+  topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   user: json['user'] as String?,
   safetyIdentifier: json['safety_identifier'] as String?,
   promptCacheKey: json['prompt_cache_key'] as String?,
-  serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
-  promptCacheRetention: json['prompt_cache_retention'] != null ? ModelResponsePropertiesPromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null,
+  serviceTier: json.containsKey('service_tier') ? Omittable(json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null) : const Omittable.absent(),
+  promptCacheRetention: json.containsKey('prompt_cache_retention') ? Omittable(json['prompt_cache_retention'] != null ? ModelResponsePropertiesPromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Set of 16 key-value pairs that can be attached to an object. This can be
@@ -47,17 +47,17 @@ factory ModelResponseProperties.fromJson(Map<String, dynamic> json) { return Mod
 /// Keys are strings with a maximum length of 64 characters. Values are strings
 /// with a maximum length of 512 characters.
 /// 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// An integer between 0 and 20 specifying the number of most likely tokens to
 /// return at each token position, each with an associated log probability.
 /// 
-final int? topLogprobs;
+final Omittable<int?> topLogprobs;
 
 /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
 /// We generally recommend altering this or `top_p` but not both.
 /// 
-final double? temperature;
+final Omittable<double?> temperature;
 
 /// An alternative to sampling with temperature, called nucleus sampling,
 /// where the model considers the results of the tokens with top_p probability
@@ -66,7 +66,7 @@ final double? temperature;
 /// 
 /// We generally recommend altering this or `temperature` but not both.
 /// 
-final double? topP;
+final Omittable<double?> topP;
 
 /// This field is being replaced by `safety_identifier` and `prompt_cache_key`. Use `prompt_cache_key` instead to maintain caching optimizations.
 /// A stable identifier for your end-users.
@@ -83,34 +83,34 @@ final String? safetyIdentifier;
 /// 
 final String? promptCacheKey;
 
-final ServiceTier? serviceTier;
+final Omittable<ServiceTier?> serviceTier;
 
 /// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
 /// 
-final ModelResponsePropertiesPromptCacheRetention? promptCacheRetention;
+final Omittable<ModelResponsePropertiesPromptCacheRetention?> promptCacheRetention;
 
 Map<String, dynamic> toJson() { return {
-  'metadata': ?metadata,
-  'top_logprobs': ?topLogprobs,
-  'temperature': ?temperature,
-  'top_p': ?topP,
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (topLogprobs.isPresent) 'top_logprobs': topLogprobs.value,
+  if (temperature.isPresent) 'temperature': temperature.value,
+  if (topP.isPresent) 'top_p': topP.value,
   'user': ?user,
   'safety_identifier': ?safetyIdentifier,
   'prompt_cache_key': ?promptCacheKey,
-  if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
-  if (promptCacheRetention != null) 'prompt_cache_retention': promptCacheRetention?.toJson(),
+  if (serviceTier.isPresent) 'service_tier': serviceTier.value?.toJson(),
+  if (promptCacheRetention.isPresent) 'prompt_cache_retention': promptCacheRetention.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention'}.contains(key)); } 
-ModelResponseProperties copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String Function()? user, String Function()? safetyIdentifier, String Function()? promptCacheKey, ServiceTier? Function()? serviceTier, ModelResponsePropertiesPromptCacheRetention? Function()? promptCacheRetention, }) { return ModelResponseProperties(
-  metadata: metadata != null ? metadata() : this.metadata,
-  topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
-  temperature: temperature != null ? temperature() : this.temperature,
-  topP: topP != null ? topP() : this.topP,
+ModelResponseProperties copyWith({Omittable<Map<String,String>?>? metadata, Omittable<int?>? topLogprobs, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<ModelResponsePropertiesPromptCacheRetention?>? promptCacheRetention, }) { return ModelResponseProperties(
+  metadata: metadata ?? this.metadata,
+  topLogprobs: topLogprobs ?? this.topLogprobs,
+  temperature: temperature ?? this.temperature,
+  topP: topP ?? this.topP,
   user: user != null ? user() : this.user,
   safetyIdentifier: safetyIdentifier != null ? safetyIdentifier() : this.safetyIdentifier,
   promptCacheKey: promptCacheKey != null ? promptCacheKey() : this.promptCacheKey,
-  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
-  promptCacheRetention: promptCacheRetention != null ? promptCacheRetention() : this.promptCacheRetention,
+  serviceTier: serviceTier ?? this.serviceTier,
+  promptCacheRetention: promptCacheRetention ?? this.promptCacheRetention,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ModelResponseProperties &&

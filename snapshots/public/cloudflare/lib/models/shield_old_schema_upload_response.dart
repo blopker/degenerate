@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (uploadDetails != null) 'upload_details': uploadDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('schema'); } 
-ShieldOldSchemaUploadResponse copyWith({ShieldOldPublicSchema? schema, ShieldOldSchemaUploadDetailsWarningsOnly Function()? uploadDetails, }) { return ShieldOldSchemaUploadResponse(
+ShieldOldSchemaUploadResponse copyWith({ShieldOldPublicSchema? schema, ShieldOldSchemaUploadDetailsWarningsOnly? Function()? uploadDetails, }) { return ShieldOldSchemaUploadResponse(
   schema: schema ?? this.schema,
   uploadDetails: uploadDetails != null ? uploadDetails() : this.uploadDetails,
 ); } 

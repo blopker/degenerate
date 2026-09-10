@@ -23,26 +23,26 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'PaymentLinksResourceCustomFieldsLabelType($value)'; } 
  }
 /// 
-@immutable final class PaymentLinksResourceCustomFieldsLabel {const PaymentLinksResourceCustomFieldsLabel({required this.type, this.custom, });
+@immutable final class PaymentLinksResourceCustomFieldsLabel {const PaymentLinksResourceCustomFieldsLabel({required this.type, this.custom = const Omittable.absent(), });
 
 factory PaymentLinksResourceCustomFieldsLabel.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomFieldsLabel(
-  custom: json['custom'] as String?,
+  custom: json.containsKey('custom') ? Omittable(json['custom'] as String?) : const Omittable.absent(),
   type: PaymentLinksResourceCustomFieldsLabelType.fromJson(json['type'] as String),
 ); }
 
 /// Custom text for the label, displayed to the customer. Up to 50 characters.
-final String? custom;
+final Omittable<String?> custom;
 
 /// The type of the label.
 final PaymentLinksResourceCustomFieldsLabelType type;
 
 Map<String, dynamic> toJson() { return {
-  'custom': ?custom,
+  if (custom.isPresent) 'custom': custom.value,
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PaymentLinksResourceCustomFieldsLabel copyWith({String? Function()? custom, PaymentLinksResourceCustomFieldsLabelType? type, }) { return PaymentLinksResourceCustomFieldsLabel(
-  custom: custom != null ? custom() : this.custom,
+PaymentLinksResourceCustomFieldsLabel copyWith({Omittable<String?>? custom, PaymentLinksResourceCustomFieldsLabelType? type, }) { return PaymentLinksResourceCustomFieldsLabel(
+  custom: custom ?? this.custom,
   type: type ?? this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

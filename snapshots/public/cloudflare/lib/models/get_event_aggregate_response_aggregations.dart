@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
   ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num; } 
-GetEventAggregateResponseAggregations copyWith({double? count, String Function()? date, Map<String, String>? additionalProperties, }) { return GetEventAggregateResponseAggregations(
+GetEventAggregateResponseAggregations copyWith({double? count, String? Function()? date, Map<String, String>? additionalProperties, }) { return GetEventAggregateResponseAggregations(
   count: count ?? this.count,
   date: date != null ? date() : this.date,
   additionalProperties: additionalProperties ?? this.additionalProperties,

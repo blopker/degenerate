@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('encoding_version') && json['encoding_version'] is num &&
       json.containsKey('max_cells') && json['max_cells'] is num &&
       json.containsKey('version') && json['version'] is num; } 
-DlpDatasetNewVersion copyWith({bool Function()? caseSensitive, List<DlpDatasetColumn> Function()? columns, int? encodingVersion, int? maxCells, String Function()? secret, int? version, }) { return DlpDatasetNewVersion(
+DlpDatasetNewVersion copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? Function()? columns, int? encodingVersion, int? maxCells, String? Function()? secret, int? version, }) { return DlpDatasetNewVersion(
   caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,
   columns: columns != null ? columns() : this.columns,
   encodingVersion: encodingVersion ?? this.encodingVersion,

@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('organization') &&
       json.containsKey('sender') &&
       json.containsKey('installation'); } 
-WebhookPersonalAccessTokenRequestCancelled copyWith({WebhookPersonalAccessTokenRequestCancelledAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, EnterpriseWebhooks Function()? enterprise, OrganizationSimpleWebhooks? organization, SimpleUser? sender, SimpleInstallation? installation, }) { return WebhookPersonalAccessTokenRequestCancelled(
+WebhookPersonalAccessTokenRequestCancelled copyWith({WebhookPersonalAccessTokenRequestCancelledAction? action, PersonalAccessTokenRequest? personalAccessTokenRequest, EnterpriseWebhooks? Function()? enterprise, OrganizationSimpleWebhooks? organization, SimpleUser? sender, SimpleInstallation? installation, }) { return WebhookPersonalAccessTokenRequestCancelled(
   action: action ?? this.action,
   personalAccessTokenRequest: personalAccessTokenRequest ?? this.personalAccessTokenRequest,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

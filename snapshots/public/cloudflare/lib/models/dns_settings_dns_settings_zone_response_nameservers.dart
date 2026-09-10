@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-DnsSettingsDnsSettingsZoneResponseNameservers copyWith({int Function()? nsSet, DnsSettingsDnsSettingsZoneResponseNameserversType? type, }) { return DnsSettingsDnsSettingsZoneResponseNameservers(
+DnsSettingsDnsSettingsZoneResponseNameservers copyWith({int? Function()? nsSet, DnsSettingsDnsSettingsZoneResponseNameserversType? type, }) { return DnsSettingsDnsSettingsZoneResponseNameservers(
   nsSet: nsSet != null ? nsSet() : this.nsSet,
   type: type ?? this.type,
 ); } 

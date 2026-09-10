@@ -27,12 +27,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FileSystemNodeKind($value)'; } 
  }
-@immutable final class FileSystemNode {const FileSystemNode({required this.name, required this.kind, this.sizeBytes, this.children, this.symlinkTarget, this.metadata, });
+@immutable final class FileSystemNode {const FileSystemNode({required this.name, required this.kind, this.sizeBytes = const Omittable.absent(), this.children, this.symlinkTarget, this.metadata, });
 
 factory FileSystemNode.fromJson(Map<String, dynamic> json) { return FileSystemNode(
   name: json['name'] as String,
   kind: FileSystemNodeKind.fromJson(json['kind'] as String),
-  sizeBytes: json['sizeBytes'] != null ? (json['sizeBytes'] as num).toInt() : null,
+  sizeBytes: json.containsKey('sizeBytes') ? Omittable(json['sizeBytes'] != null ? (json['sizeBytes'] as num).toInt() : null) : const Omittable.absent(),
   children: (json['children'] as List<dynamic>?)?.map((e) => FileSystemNode.fromJson(e as Map<String, dynamic>)).toList(),
   symlinkTarget: json['symlinkTarget'] != null ? FileSystemNode.fromJson(json['symlinkTarget'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
@@ -42,7 +42,7 @@ final String name;
 
 final FileSystemNodeKind kind;
 
-final int? sizeBytes;
+final Omittable<int?> sizeBytes;
 
 final List<FileSystemNode>? children;
 
@@ -53,17 +53,17 @@ final Map<String,String>? metadata;
 Map<String, dynamic> toJson() { return {
   'name': name,
   'kind': kind.toJson(),
-  'sizeBytes': ?sizeBytes,
+  if (sizeBytes.isPresent) 'sizeBytes': sizeBytes.value,
   if (children != null) 'children': children?.map((e) => e.toJson()).toList(),
   if (symlinkTarget != null) 'symlinkTarget': symlinkTarget?.toJson(),
   'metadata': ?metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('kind'); } 
-FileSystemNode copyWith({String? name, FileSystemNodeKind? kind, int? Function()? sizeBytes, List<FileSystemNode> Function()? children, FileSystemNode Function()? symlinkTarget, Map<String, String> Function()? metadata, }) { return FileSystemNode(
+FileSystemNode copyWith({String? name, FileSystemNodeKind? kind, Omittable<int?>? sizeBytes, List<FileSystemNode>? Function()? children, FileSystemNode? Function()? symlinkTarget, Map<String, String>? Function()? metadata, }) { return FileSystemNode(
   name: name ?? this.name,
   kind: kind ?? this.kind,
-  sizeBytes: sizeBytes != null ? sizeBytes() : this.sizeBytes,
+  sizeBytes: sizeBytes ?? this.sizeBytes,
   children: children != null ? children() : this.children,
   symlinkTarget: symlinkTarget != null ? symlinkTarget() : this.symlinkTarget,
   metadata: metadata != null ? metadata() : this.metadata,

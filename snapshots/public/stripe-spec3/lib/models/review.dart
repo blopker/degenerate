@@ -94,33 +94,33 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// Learn more about [Radar](/radar) and reviewing payments
 /// [here](https://docs.stripe.com/radar/reviews).
-@immutable final class Review {const Review({required this.created, required this.id, required this.livemode, required this.object, required this.open, required this.openedReason, required this.reason, this.billingZip, this.charge, this.closedReason, this.ipAddress, this.ipAddressLocation, this.paymentIntent, this.session, });
+@immutable final class Review {const Review({required this.created, required this.id, required this.livemode, required this.object, required this.open, required this.openedReason, required this.reason, this.billingZip = const Omittable.absent(), this.charge = const Omittable.absent(), this.closedReason = const Omittable.absent(), this.ipAddress = const Omittable.absent(), this.ipAddressLocation = const Omittable.absent(), this.paymentIntent, this.session = const Omittable.absent(), });
 
 factory Review.fromJson(Map<String, dynamic> json) { return Review(
-  billingZip: json['billing_zip'] as String?,
-  charge: json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
-  closedReason: json['closed_reason'] != null ? ReviewClosedReason.fromJson(json['closed_reason'] as String) : null,
+  billingZip: json.containsKey('billing_zip') ? Omittable(json['billing_zip'] as String?) : const Omittable.absent(),
+  charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  closedReason: json.containsKey('closed_reason') ? Omittable(json['closed_reason'] != null ? ReviewClosedReason.fromJson(json['closed_reason'] as String) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
-  ipAddress: json['ip_address'] as String?,
-  ipAddressLocation: json['ip_address_location'] != null ? RadarReviewResourceLocation.fromJson(json['ip_address_location'] as Map<String, dynamic>) : null,
+  ipAddress: json.containsKey('ip_address') ? Omittable(json['ip_address'] as String?) : const Omittable.absent(),
+  ipAddressLocation: json.containsKey('ip_address_location') ? Omittable(json['ip_address_location'] != null ? RadarReviewResourceLocation.fromJson(json['ip_address_location'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: ReviewObject.fromJson(json['object'] as String),
   open: json['open'] as bool,
   openedReason: ReviewOpenedReason.fromJson(json['opened_reason'] as String),
   paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
   reason: json['reason'] as String,
-  session: json['session'] != null ? RadarReviewResourceSession.fromJson(json['session'] as Map<String, dynamic>) : null,
+  session: json.containsKey('session') ? Omittable(json['session'] != null ? RadarReviewResourceSession.fromJson(json['session'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// The ZIP or postal code of the card used, if applicable.
-final String? billingZip;
+final Omittable<String?> billingZip;
 
 /// The charge associated with this review.
-final ReviewCharge? charge;
+final Omittable<ReviewCharge?> charge;
 
 /// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
-final ReviewClosedReason? closedReason;
+final Omittable<ReviewClosedReason?> closedReason;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -129,10 +129,10 @@ final int created;
 final String id;
 
 /// The IP address where the payment originated.
-final String? ipAddress;
+final Omittable<String?> ipAddress;
 
 /// Information related to the location of the payment. Note that this information is an approximation and attempts to locate the nearest population center - it should not be used to determine a specific address.
-final RadarReviewResourceLocation? ipAddressLocation;
+final Omittable<RadarReviewResourceLocation?> ipAddressLocation;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -153,23 +153,23 @@ final ReviewPaymentIntent? paymentIntent;
 final String reason;
 
 /// Information related to the browsing session of the user who initiated the payment.
-final RadarReviewResourceSession? session;
+final Omittable<RadarReviewResourceSession?> session;
 
 Map<String, dynamic> toJson() { return {
-  'billing_zip': ?billingZip,
-  if (charge != null) 'charge': charge?.toJson(),
-  if (closedReason != null) 'closed_reason': closedReason?.toJson(),
+  if (billingZip.isPresent) 'billing_zip': billingZip.value,
+  if (charge.isPresent) 'charge': charge.value?.toJson(),
+  if (closedReason.isPresent) 'closed_reason': closedReason.value?.toJson(),
   'created': created,
   'id': id,
-  'ip_address': ?ipAddress,
-  if (ipAddressLocation != null) 'ip_address_location': ipAddressLocation?.toJson(),
+  if (ipAddress.isPresent) 'ip_address': ipAddress.value,
+  if (ipAddressLocation.isPresent) 'ip_address_location': ipAddressLocation.value?.toJson(),
   'livemode': livemode,
   'object': object.toJson(),
   'open': open,
   'opened_reason': openedReason.toJson(),
   if (paymentIntent != null) 'payment_intent': paymentIntent?.toJson(),
   'reason': reason,
-  if (session != null) 'session': session?.toJson(),
+  if (session.isPresent) 'session': session.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
@@ -178,21 +178,21 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('open') && json['open'] is bool &&
       json.containsKey('opened_reason') &&
       json.containsKey('reason') && json['reason'] is String; } 
-Review copyWith({String? Function()? billingZip, ReviewCharge? Function()? charge, ReviewClosedReason? Function()? closedReason, int? created, String? id, String? Function()? ipAddress, RadarReviewResourceLocation? Function()? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, ReviewOpenedReason? openedReason, ReviewPaymentIntent Function()? paymentIntent, String? reason, RadarReviewResourceSession? Function()? session, }) { return Review(
-  billingZip: billingZip != null ? billingZip() : this.billingZip,
-  charge: charge != null ? charge() : this.charge,
-  closedReason: closedReason != null ? closedReason() : this.closedReason,
+Review copyWith({Omittable<String?>? billingZip, Omittable<ReviewCharge?>? charge, Omittable<ReviewClosedReason?>? closedReason, int? created, String? id, Omittable<String?>? ipAddress, Omittable<RadarReviewResourceLocation?>? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, ReviewOpenedReason? openedReason, ReviewPaymentIntent? Function()? paymentIntent, String? reason, Omittable<RadarReviewResourceSession?>? session, }) { return Review(
+  billingZip: billingZip ?? this.billingZip,
+  charge: charge ?? this.charge,
+  closedReason: closedReason ?? this.closedReason,
   created: created ?? this.created,
   id: id ?? this.id,
-  ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
-  ipAddressLocation: ipAddressLocation != null ? ipAddressLocation() : this.ipAddressLocation,
+  ipAddress: ipAddress ?? this.ipAddress,
+  ipAddressLocation: ipAddressLocation ?? this.ipAddressLocation,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
   open: open ?? this.open,
   openedReason: openedReason ?? this.openedReason,
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
   reason: reason ?? this.reason,
-  session: session != null ? session() : this.session,
+  session: session ?? this.session,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Review &&

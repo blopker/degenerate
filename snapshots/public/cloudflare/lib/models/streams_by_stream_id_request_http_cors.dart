@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'origins': ?origins,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'origins'}.contains(key)); } 
-StreamsByStreamIdRequestHttpCors copyWith({List<String> Function()? origins}) { return StreamsByStreamIdRequestHttpCors(
+StreamsByStreamIdRequestHttpCors copyWith({List<String>? Function()? origins}) { return StreamsByStreamIdRequestHttpCors(
   origins: origins != null ? origins() : this.origins,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -32,7 +32,7 @@ Map<String, dynamic> toJson() { return {
   if (transformedRequestFields != null) 'transformed_request_fields': transformedRequestFields?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cookie_fields', 'raw_response_fields', 'request_fields', 'response_fields', 'transformed_request_fields'}.contains(key)); } 
-RulesetsLogCustomFieldRuleActionParameters copyWith({List<RulesetsLogCustomFieldCookieFields2> Function()? cookieFields, List<RulesetsLogCustomFieldRawResponseFields2> Function()? rawResponseFields, List<RulesetsLogCustomFieldRequestFields2> Function()? requestFields, List<RulesetsLogCustomFieldResponseFields2> Function()? responseFields, List<RulesetsLogCustomFieldTransformedRequestFields2> Function()? transformedRequestFields, }) { return RulesetsLogCustomFieldRuleActionParameters(
+RulesetsLogCustomFieldRuleActionParameters copyWith({List<RulesetsLogCustomFieldCookieFields2>? Function()? cookieFields, List<RulesetsLogCustomFieldRawResponseFields2>? Function()? rawResponseFields, List<RulesetsLogCustomFieldRequestFields2>? Function()? requestFields, List<RulesetsLogCustomFieldResponseFields2>? Function()? responseFields, List<RulesetsLogCustomFieldTransformedRequestFields2>? Function()? transformedRequestFields, }) { return RulesetsLogCustomFieldRuleActionParameters(
   cookieFields: cookieFields != null ? cookieFields() : this.cookieFields,
   rawResponseFields: rawResponseFields != null ? rawResponseFields() : this.rawResponseFields,
   requestFields: requestFields != null ? requestFields() : this.requestFields,

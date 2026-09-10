@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'timezone': ?timezone,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'asn', 'city', 'country', 'ip', 'loc', 'postal', 'region', 'timezone'}.contains(key)); } 
-GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetailsAsn Function()? asn, String Function()? city, String Function()? country, String Function()? ip, String Function()? loc, String Function()? postal, String Function()? region, String Function()? timezone, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails(
+GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails copyWith({GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetailsAsn? Function()? asn, String? Function()? city, String? Function()? country, String? Function()? ip, String? Function()? loc, String? Function()? postal, String? Function()? region, String? Function()? timezone, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerStatsEventsMetadataConnectionInfoIpDetails(
   asn: asn != null ? asn() : this.asn,
   city: city != null ? city() : this.city,
   country: country != null ? country() : this.country,

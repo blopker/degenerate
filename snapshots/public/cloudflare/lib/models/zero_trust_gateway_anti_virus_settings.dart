@@ -22,34 +22,34 @@ bool toJson() => value;
 
 }
 /// Specify anti-virus settings.
-@immutable final class ZeroTrustGatewayAntiVirusSettings {const ZeroTrustGatewayAntiVirusSettings({this.enabledDownloadPhase, this.enabledUploadPhase, this.failClosed, this.notificationSettings, });
+@immutable final class ZeroTrustGatewayAntiVirusSettings {const ZeroTrustGatewayAntiVirusSettings({this.enabledDownloadPhase = const Omittable.absent(), this.enabledUploadPhase = const Omittable.absent(), this.failClosed = const Omittable.absent(), this.notificationSettings, });
 
 factory ZeroTrustGatewayAntiVirusSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayAntiVirusSettings(
-  enabledDownloadPhase: json['enabled_download_phase'] != null ? ZeroTrustGatewayEnabledDownloadPhase.fromJson(json['enabled_download_phase'] as bool) : null,
-  enabledUploadPhase: json['enabled_upload_phase'] != null ? ZeroTrustGatewayEnabledUploadPhase.fromJson(json['enabled_upload_phase'] as bool) : null,
-  failClosed: json['fail_closed'] != null ? ZeroTrustGatewayFailClosed.fromJson(json['fail_closed'] as bool) : null,
+  enabledDownloadPhase: json.containsKey('enabled_download_phase') ? Omittable(json['enabled_download_phase'] != null ? ZeroTrustGatewayEnabledDownloadPhase.fromJson(json['enabled_download_phase'] as bool) : null) : const Omittable.absent(),
+  enabledUploadPhase: json.containsKey('enabled_upload_phase') ? Omittable(json['enabled_upload_phase'] != null ? ZeroTrustGatewayEnabledUploadPhase.fromJson(json['enabled_upload_phase'] as bool) : null) : const Omittable.absent(),
+  failClosed: json.containsKey('fail_closed') ? Omittable(json['fail_closed'] != null ? ZeroTrustGatewayFailClosed.fromJson(json['fail_closed'] as bool) : null) : const Omittable.absent(),
   notificationSettings: json['notification_settings'] != null ? ZeroTrustGatewayNotificationSettings.fromJson(json['notification_settings'] as Map<String, dynamic>) : null,
 ); }
 
-final ZeroTrustGatewayEnabledDownloadPhase? enabledDownloadPhase;
+final Omittable<ZeroTrustGatewayEnabledDownloadPhase?> enabledDownloadPhase;
 
-final ZeroTrustGatewayEnabledUploadPhase? enabledUploadPhase;
+final Omittable<ZeroTrustGatewayEnabledUploadPhase?> enabledUploadPhase;
 
-final ZeroTrustGatewayFailClosed? failClosed;
+final Omittable<ZeroTrustGatewayFailClosed?> failClosed;
 
 final ZeroTrustGatewayNotificationSettings? notificationSettings;
 
 Map<String, dynamic> toJson() { return {
-  if (enabledDownloadPhase != null) 'enabled_download_phase': enabledDownloadPhase?.toJson(),
-  if (enabledUploadPhase != null) 'enabled_upload_phase': enabledUploadPhase?.toJson(),
-  if (failClosed != null) 'fail_closed': failClosed?.toJson(),
+  if (enabledDownloadPhase.isPresent) 'enabled_download_phase': enabledDownloadPhase.value?.toJson(),
+  if (enabledUploadPhase.isPresent) 'enabled_upload_phase': enabledUploadPhase.value?.toJson(),
+  if (failClosed.isPresent) 'fail_closed': failClosed.value?.toJson(),
   if (notificationSettings != null) 'notification_settings': notificationSettings?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled_download_phase', 'enabled_upload_phase', 'fail_closed', 'notification_settings'}.contains(key)); } 
-ZeroTrustGatewayAntiVirusSettings copyWith({ZeroTrustGatewayEnabledDownloadPhase? Function()? enabledDownloadPhase, ZeroTrustGatewayEnabledUploadPhase? Function()? enabledUploadPhase, ZeroTrustGatewayFailClosed? Function()? failClosed, ZeroTrustGatewayNotificationSettings Function()? notificationSettings, }) { return ZeroTrustGatewayAntiVirusSettings(
-  enabledDownloadPhase: enabledDownloadPhase != null ? enabledDownloadPhase() : this.enabledDownloadPhase,
-  enabledUploadPhase: enabledUploadPhase != null ? enabledUploadPhase() : this.enabledUploadPhase,
-  failClosed: failClosed != null ? failClosed() : this.failClosed,
+ZeroTrustGatewayAntiVirusSettings copyWith({Omittable<ZeroTrustGatewayEnabledDownloadPhase?>? enabledDownloadPhase, Omittable<ZeroTrustGatewayEnabledUploadPhase?>? enabledUploadPhase, Omittable<ZeroTrustGatewayFailClosed?>? failClosed, ZeroTrustGatewayNotificationSettings? Function()? notificationSettings, }) { return ZeroTrustGatewayAntiVirusSettings(
+  enabledDownloadPhase: enabledDownloadPhase ?? this.enabledDownloadPhase,
+  enabledUploadPhase: enabledUploadPhase ?? this.enabledUploadPhase,
+  failClosed: failClosed ?? this.failClosed,
   notificationSettings: notificationSettings != null ? notificationSettings() : this.notificationSettings,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

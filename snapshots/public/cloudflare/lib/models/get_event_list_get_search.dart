@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'field', 'op', 'value'}.contains(key)); } 
-GetEventListGetSearch copyWith({String Function()? field, GetEventListGetSearchOp Function()? op, GetEventListGetSearchValue Function()? value, }) { return GetEventListGetSearch(
+GetEventListGetSearch copyWith({String? Function()? field, GetEventListGetSearchOp? Function()? op, GetEventListGetSearchValue? Function()? value, }) { return GetEventListGetSearch(
   field: field != null ? field() : this.field,
   op: op != null ? op() : this.op,
   value: value != null ? value() : this.value,

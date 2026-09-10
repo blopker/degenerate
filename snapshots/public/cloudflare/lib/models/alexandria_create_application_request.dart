@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('application_type_id') && json['application_type_id'] is String &&
       json.containsKey('human_id') &&
       json.containsKey('name'); } 
-AlexandriaCreateApplicationRequest copyWith({String? applicationTypeId, List<String> Function()? hostnames, AlexandriaApplicationHumanId? humanId, List<String> Function()? ipSubnets, AlexandriaApplicationName? name, List<String> Function()? portProtocols, List<String> Function()? supportDomains, }) { return AlexandriaCreateApplicationRequest(
+AlexandriaCreateApplicationRequest copyWith({String? applicationTypeId, List<String>? Function()? hostnames, AlexandriaApplicationHumanId? humanId, List<String>? Function()? ipSubnets, AlexandriaApplicationName? name, List<String>? Function()? portProtocols, List<String>? Function()? supportDomains, }) { return AlexandriaCreateApplicationRequest(
   applicationTypeId: applicationTypeId ?? this.applicationTypeId,
   hostnames: hostnames != null ? hostnames() : this.hostnames,
   humanId: humanId ?? this.humanId,

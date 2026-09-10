@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'amount': ?amount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String; } 
-DestinationSpecs copyWith({String? account, int Function()? amount, }) { return DestinationSpecs(
+DestinationSpecs copyWith({String? account, int? Function()? amount, }) { return DestinationSpecs(
   account: account ?? this.account,
   amount: amount != null ? amount() : this.amount,
 ); } 

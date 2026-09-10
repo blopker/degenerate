@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify whether to detect protocols from the initial bytes of client traffic.
-@immutable final class ZeroTrustGatewayProtocolDetection {const ZeroTrustGatewayProtocolDetection({this.enabled});
+@immutable final class ZeroTrustGatewayProtocolDetection {const ZeroTrustGatewayProtocolDetection({this.enabled = const Omittable.absent()});
 
 factory ZeroTrustGatewayProtocolDetection.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayProtocolDetection(
-  enabled: json['enabled'] as bool?,
+  enabled: json.containsKey('enabled') ? Omittable(json['enabled'] as bool?) : const Omittable.absent(),
 ); }
 
 /// Specify whether to detect protocols from the initial bytes of client traffic.
-final bool? enabled;
+final Omittable<bool?> enabled;
 
 Map<String, dynamic> toJson() { return {
-  'enabled': ?enabled,
+  if (enabled.isPresent) 'enabled': enabled.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
-ZeroTrustGatewayProtocolDetection copyWith({bool? Function()? enabled}) { return ZeroTrustGatewayProtocolDetection(
-  enabled: enabled != null ? enabled() : this.enabled,
+ZeroTrustGatewayProtocolDetection copyWith({Omittable<bool?>? enabled}) { return ZeroTrustGatewayProtocolDetection(
+  enabled: enabled ?? this.enabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ZeroTrustGatewayProtocolDetection &&

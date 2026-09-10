@@ -98,6 +98,10 @@ const dartCoreTypeNames = <String>{
   'Never',
 };
 
+/// Runtime types referenced by generated code and exported by client barrels.
+/// Schema names must not shadow these identifiers.
+const runtimeTypeNames = <String>{'Omittable'};
+
 /// Names that would shadow identifiers used inside generated enum/class bodies.
 ///
 /// These include constructor parameters (`json`, `value`), static members

@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('title'); } 
-WorkersKvNamespace copyWith({WorkersKvNamespaceIdentifier? id, bool Function()? supportsUrlEncoding, WorkersKvNamespaceTitle? title, }) { return WorkersKvNamespace(
+WorkersKvNamespace copyWith({WorkersKvNamespaceIdentifier? id, bool? Function()? supportsUrlEncoding, WorkersKvNamespaceTitle? title, }) { return WorkersKvNamespace(
   id: id ?? this.id,
   supportsUrlEncoding: supportsUrlEncoding != null ? supportsUrlEncoding() : this.supportsUrlEncoding,
   title: title ?? this.title,

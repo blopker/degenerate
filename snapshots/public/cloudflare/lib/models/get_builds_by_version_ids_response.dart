@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetBuildsByVersionIdsResponse copyWith({List<GetBuildsByVersionIdsResponseErrors>? errors, List<String>? messages, BuildsBuildsByVersionResponse? result, BuildsPaginationInfo Function()? resultInfo, bool? success, }) { return GetBuildsByVersionIdsResponse(
+GetBuildsByVersionIdsResponse copyWith({List<GetBuildsByVersionIdsResponseErrors>? errors, List<String>? messages, BuildsBuildsByVersionResponse? result, BuildsPaginationInfo? Function()? resultInfo, bool? success, }) { return GetBuildsByVersionIdsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

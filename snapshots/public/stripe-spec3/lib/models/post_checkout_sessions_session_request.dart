@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingOptions != null) 'shipping_options': shippingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'collected_information', 'expand', 'line_items', 'metadata', 'shipping_options'}.contains(key)); } 
-PostCheckoutSessionsSessionRequest copyWith({PostCheckoutSessionsSessionRequestCollectedInformation Function()? collectedInformation, List<String> Function()? expand, List<PostCheckoutSessionsSessionRequestLineItems> Function()? lineItems, PostCheckoutSessionsSessionRequestMetadata Function()? metadata, PostCheckoutSessionsSessionRequestShippingOptions Function()? shippingOptions, }) { return PostCheckoutSessionsSessionRequest(
+PostCheckoutSessionsSessionRequest copyWith({PostCheckoutSessionsSessionRequestCollectedInformation? Function()? collectedInformation, List<String>? Function()? expand, List<PostCheckoutSessionsSessionRequestLineItems>? Function()? lineItems, PostCheckoutSessionsSessionRequestMetadata? Function()? metadata, PostCheckoutSessionsSessionRequestShippingOptions? Function()? shippingOptions, }) { return PostCheckoutSessionsSessionRequest(
   collectedInformation: collectedInformation != null ? collectedInformation() : this.collectedInformation,
   expand: expand != null ? expand() : this.expand,
   lineItems: lineItems != null ? lineItems() : this.lineItems,

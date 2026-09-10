@@ -14,25 +14,25 @@ factory AddressingBgpSignalingModifiedAt.fromJson(String json) => AddressingBgpS
 String toJson() => value.toIso8601String();
 
 }
-@immutable final class AddressingBgpSignalOpts {const AddressingBgpSignalOpts({this.enabled, this.modifiedAt, });
+@immutable final class AddressingBgpSignalOpts {const AddressingBgpSignalOpts({this.enabled, this.modifiedAt = const Omittable.absent(), });
 
 factory AddressingBgpSignalOpts.fromJson(Map<String, dynamic> json) { return AddressingBgpSignalOpts(
   enabled: json['enabled'] != null ? AddressingBgpSignalingEnabled.fromJson(json['enabled'] as bool) : null,
-  modifiedAt: json['modified_at'] != null ? AddressingBgpSignalingModifiedAt.fromJson(json['modified_at'] as String) : null,
+  modifiedAt: json.containsKey('modified_at') ? Omittable(json['modified_at'] != null ? AddressingBgpSignalingModifiedAt.fromJson(json['modified_at'] as String) : null) : const Omittable.absent(),
 ); }
 
 final AddressingBgpSignalingEnabled? enabled;
 
-final AddressingBgpSignalingModifiedAt? modifiedAt;
+final Omittable<AddressingBgpSignalingModifiedAt?> modifiedAt;
 
 Map<String, dynamic> toJson() { return {
   if (enabled != null) 'enabled': enabled?.toJson(),
-  if (modifiedAt != null) 'modified_at': modifiedAt?.toJson(),
+  if (modifiedAt.isPresent) 'modified_at': modifiedAt.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'modified_at'}.contains(key)); } 
-AddressingBgpSignalOpts copyWith({AddressingBgpSignalingEnabled Function()? enabled, AddressingBgpSignalingModifiedAt? Function()? modifiedAt, }) { return AddressingBgpSignalOpts(
+AddressingBgpSignalOpts copyWith({AddressingBgpSignalingEnabled? Function()? enabled, Omittable<AddressingBgpSignalingModifiedAt?>? modifiedAt, }) { return AddressingBgpSignalOpts(
   enabled: enabled != null ? enabled() : this.enabled,
-  modifiedAt: modifiedAt != null ? modifiedAt() : this.modifiedAt,
+  modifiedAt: modifiedAt ?? this.modifiedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AddressingBgpSignalOpts &&

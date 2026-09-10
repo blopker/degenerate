@@ -1,33 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Point in Time
-@immutable final class GelatoDataDocumentReportDateOfBirth {const GelatoDataDocumentReportDateOfBirth({this.day, this.month, this.year, });
+@immutable final class GelatoDataDocumentReportDateOfBirth {const GelatoDataDocumentReportDateOfBirth({this.day = const Omittable.absent(), this.month = const Omittable.absent(), this.year = const Omittable.absent(), });
 
 factory GelatoDataDocumentReportDateOfBirth.fromJson(Map<String, dynamic> json) { return GelatoDataDocumentReportDateOfBirth(
-  day: json['day'] != null ? (json['day'] as num).toInt() : null,
-  month: json['month'] != null ? (json['month'] as num).toInt() : null,
-  year: json['year'] != null ? (json['year'] as num).toInt() : null,
+  day: json.containsKey('day') ? Omittable(json['day'] != null ? (json['day'] as num).toInt() : null) : const Omittable.absent(),
+  month: json.containsKey('month') ? Omittable(json['month'] != null ? (json['month'] as num).toInt() : null) : const Omittable.absent(),
+  year: json.containsKey('year') ? Omittable(json['year'] != null ? (json['year'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
 /// Numerical day between 1 and 31.
-final int? day;
+final Omittable<int?> day;
 
 /// Numerical month between 1 and 12.
-final int? month;
+final Omittable<int?> month;
 
 /// The four-digit year.
-final int? year;
+final Omittable<int?> year;
 
 Map<String, dynamic> toJson() { return {
-  'day': ?day,
-  'month': ?month,
-  'year': ?year,
+  if (day.isPresent) 'day': day.value,
+  if (month.isPresent) 'month': month.value,
+  if (year.isPresent) 'year': year.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'day', 'month', 'year'}.contains(key)); } 
-GelatoDataDocumentReportDateOfBirth copyWith({int? Function()? day, int? Function()? month, int? Function()? year, }) { return GelatoDataDocumentReportDateOfBirth(
-  day: day != null ? day() : this.day,
-  month: month != null ? month() : this.month,
-  year: year != null ? year() : this.year,
+GelatoDataDocumentReportDateOfBirth copyWith({Omittable<int?>? day, Omittable<int?>? month, Omittable<int?>? year, }) { return GelatoDataDocumentReportDateOfBirth(
+  day: day ?? this.day,
+  month: month ?? this.month,
+  year: year ?? this.year,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is GelatoDataDocumentReportDateOfBirth &&

@@ -24,11 +24,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigGetGatewayDynamicRouteVersionResponseResultActive($value)'; } 
  }
-@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResult {const AigConfigGetGatewayDynamicRouteVersionResponseResult({required this.active, required this.createdAt, required this.data, required this.elements, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, required this.versionId, this.comment, });
+@immutable final class AigConfigGetGatewayDynamicRouteVersionResponseResult {const AigConfigGetGatewayDynamicRouteVersionResponseResult({required this.active, required this.createdAt, required this.data, required this.elements, required this.gatewayId, required this.id, required this.modifiedAt, required this.name, required this.versionId, this.comment = const Omittable.absent(), });
 
 factory AigConfigGetGatewayDynamicRouteVersionResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteVersionResponseResult(
   active: AigConfigGetGatewayDynamicRouteVersionResponseResultActive.fromJson(json['active'] as String),
-  comment: json['comment'] as String?,
+  comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
   createdAt: json['created_at'] as String,
   data: json['data'] as String,
   elements: (json['elements'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => AigConfigGetGatewayDynamicRouteVersionResponseResultElementsStart.fromJson(v as Map<String, dynamic>), fromB: (v) => AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditional.fromJson(v as Map<String, dynamic>), fromC: (v) => AigConfigGetGatewayDynamicRouteVersionResponseResultElementsPercentage.fromJson(v as Map<String, dynamic>), fromD: (v) => AigConfigGetGatewayDynamicRouteVersionResponseResultElementsRate.fromJson(v as Map<String, dynamic>), fromE: (v) => AigConfigGetGatewayDynamicRouteVersionResponseResultElementsModel.fromJson(v as Map<String, dynamic>), fromF: (v) => AigConfigGetGatewayDynamicRouteVersionResponseResultElementsEnd.fromJson(v as Map<String, dynamic>),)).toList(),
@@ -41,7 +41,7 @@ factory AigConfigGetGatewayDynamicRouteVersionResponseResult.fromJson(Map<String
 
 final AigConfigGetGatewayDynamicRouteVersionResponseResultActive active;
 
-final String? comment;
+final Omittable<String?> comment;
 
 final String createdAt;
 
@@ -61,7 +61,7 @@ final String versionId;
 
 Map<String, dynamic> toJson() { return {
   'active': active.toJson(),
-  'comment': ?comment,
+  if (comment.isPresent) 'comment': comment.value,
   'created_at': createdAt,
   'data': data,
   'elements': elements.map((e) => e.toJson()).toList(),
@@ -80,9 +80,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('modified_at') && json['modified_at'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('version_id') && json['version_id'] is String; } 
-AigConfigGetGatewayDynamicRouteVersionResponseResult copyWith({AigConfigGetGatewayDynamicRouteVersionResponseResultActive? active, String? Function()? comment, String? createdAt, String? data, List<AigConfigGetGatewayDynamicRouteVersionResponseResultElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, String? versionId, }) { return AigConfigGetGatewayDynamicRouteVersionResponseResult(
+AigConfigGetGatewayDynamicRouteVersionResponseResult copyWith({AigConfigGetGatewayDynamicRouteVersionResponseResultActive? active, Omittable<String?>? comment, String? createdAt, String? data, List<AigConfigGetGatewayDynamicRouteVersionResponseResultElements>? elements, String? gatewayId, String? id, DateTime? modifiedAt, String? name, String? versionId, }) { return AigConfigGetGatewayDynamicRouteVersionResponseResult(
   active: active ?? this.active,
-  comment: comment != null ? comment() : this.comment,
+  comment: comment ?? this.comment,
   createdAt: createdAt ?? this.createdAt,
   data: data ?? this.data,
   elements: elements ?? this.elements,

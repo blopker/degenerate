@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   if (networkPolicy != null) 'network_policy': networkPolicy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-CreateContainerBody copyWith({String? name, List<String> Function()? fileIds, CreateContainerBodyExpiresAfter Function()? expiresAfter, List<CreateContainerBodySkills> Function()? skills, CreateContainerBodyMemoryLimit Function()? memoryLimit, CreateContainerBodyNetworkPolicy Function()? networkPolicy, }) { return CreateContainerBody(
+CreateContainerBody copyWith({String? name, List<String>? Function()? fileIds, CreateContainerBodyExpiresAfter? Function()? expiresAfter, List<CreateContainerBodySkills>? Function()? skills, CreateContainerBodyMemoryLimit? Function()? memoryLimit, CreateContainerBodyNetworkPolicy? Function()? networkPolicy, }) { return CreateContainerBody(
   name: name ?? this.name,
   fileIds: fileIds != null ? fileIds() : this.fileIds,
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,

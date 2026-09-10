@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('page') && json['page'] is num &&
       json.containsKey('per_page') && json['per_page'] is num &&
       json.containsKey('total_count') && json['total_count'] is num; } 
-TeamsDevicesPaginationInfo copyWith({int? count, int? page, int? perPage, int? totalCount, int Function()? totalPages, }) { return TeamsDevicesPaginationInfo(
+TeamsDevicesPaginationInfo copyWith({int? count, int? page, int? perPage, int? totalCount, int? Function()? totalPages, }) { return TeamsDevicesPaginationInfo(
   count: count ?? this.count,
   page: page ?? this.page,
   perPage: perPage ?? this.perPage,

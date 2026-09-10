@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesResolveOverride copyWith({ZonesResolveOverrideId Function()? id, String Function()? value, }) { return ZonesResolveOverride(
+ZonesResolveOverride copyWith({ZonesResolveOverrideId? Function()? id, String? Function()? value, }) { return ZonesResolveOverride(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

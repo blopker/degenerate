@@ -75,7 +75,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('runners_url') && json['runners_url'] is String &&
       json.containsKey('inherited') && json['inherited'] is bool &&
       json.containsKey('allows_public_repositories') && json['allows_public_repositories'] is bool; } 
-RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $default, String Function()? selectedRepositoriesUrl, String? runnersUrl, String Function()? hostedRunnersUrl, String Function()? networkConfigurationId, bool? inherited, bool Function()? inheritedAllowsPublicRepositories, bool? allowsPublicRepositories, bool Function()? workflowRestrictionsReadOnly, bool Function()? restrictedToWorkflows, List<String> Function()? selectedWorkflows, }) { return RunnerGroupsOrg(
+RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $default, String? Function()? selectedRepositoriesUrl, String? runnersUrl, String? Function()? hostedRunnersUrl, String? Function()? networkConfigurationId, bool? inherited, bool? Function()? inheritedAllowsPublicRepositories, bool? allowsPublicRepositories, bool Function()? workflowRestrictionsReadOnly, bool Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, }) { return RunnerGroupsOrg(
   id: id ?? this.id,
   name: name ?? this.name,
   visibility: visibility ?? this.visibility,

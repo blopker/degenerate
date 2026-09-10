@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secret_scanning_pattern_override.dart';import 'secret_scanning_row_version.dart';/// A collection of secret scanning patterns and their settings related to push protection.
-@immutable final class SecretScanningPatternConfiguration {const SecretScanningPatternConfiguration({this.patternConfigVersion, this.providerPatternOverrides, this.customPatternOverrides, });
+@immutable final class SecretScanningPatternConfiguration {const SecretScanningPatternConfiguration({this.patternConfigVersion = const Omittable.absent(), this.providerPatternOverrides, this.customPatternOverrides, });
 
 factory SecretScanningPatternConfiguration.fromJson(Map<String, dynamic> json) { return SecretScanningPatternConfiguration(
-  patternConfigVersion: json['pattern_config_version'] != null ? SecretScanningRowVersion.fromJson(json['pattern_config_version'] as String) : null,
+  patternConfigVersion: json.containsKey('pattern_config_version') ? Omittable(json['pattern_config_version'] != null ? SecretScanningRowVersion.fromJson(json['pattern_config_version'] as String) : null) : const Omittable.absent(),
   providerPatternOverrides: (json['provider_pattern_overrides'] as List<dynamic>?)?.map((e) => SecretScanningPatternOverride.fromJson(e as Map<String, dynamic>)).toList(),
   customPatternOverrides: (json['custom_pattern_overrides'] as List<dynamic>?)?.map((e) => SecretScanningPatternOverride.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The version of the entity. This is used to confirm you're updating the current version of the entity and mitigate unintentionally overriding someone else's update.
-final SecretScanningRowVersion? patternConfigVersion;
+final Omittable<SecretScanningRowVersion?> patternConfigVersion;
 
 /// Overrides for partner patterns.
 final List<SecretScanningPatternOverride>? providerPatternOverrides;
@@ -19,13 +19,13 @@ final List<SecretScanningPatternOverride>? providerPatternOverrides;
 final List<SecretScanningPatternOverride>? customPatternOverrides;
 
 Map<String, dynamic> toJson() { return {
-  if (patternConfigVersion != null) 'pattern_config_version': patternConfigVersion?.toJson(),
+  if (patternConfigVersion.isPresent) 'pattern_config_version': patternConfigVersion.value?.toJson(),
   if (providerPatternOverrides != null) 'provider_pattern_overrides': providerPatternOverrides?.map((e) => e.toJson()).toList(),
   if (customPatternOverrides != null) 'custom_pattern_overrides': customPatternOverrides?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'pattern_config_version', 'provider_pattern_overrides', 'custom_pattern_overrides'}.contains(key)); } 
-SecretScanningPatternConfiguration copyWith({SecretScanningRowVersion? Function()? patternConfigVersion, List<SecretScanningPatternOverride> Function()? providerPatternOverrides, List<SecretScanningPatternOverride> Function()? customPatternOverrides, }) { return SecretScanningPatternConfiguration(
-  patternConfigVersion: patternConfigVersion != null ? patternConfigVersion() : this.patternConfigVersion,
+SecretScanningPatternConfiguration copyWith({Omittable<SecretScanningRowVersion?>? patternConfigVersion, List<SecretScanningPatternOverride>? Function()? providerPatternOverrides, List<SecretScanningPatternOverride>? Function()? customPatternOverrides, }) { return SecretScanningPatternConfiguration(
+  patternConfigVersion: patternConfigVersion ?? this.patternConfigVersion,
   providerPatternOverrides: providerPatternOverrides != null ? providerPatternOverrides() : this.providerPatternOverrides,
   customPatternOverrides: customPatternOverrides != null ? customPatternOverrides() : this.customPatternOverrides,
 ); } 

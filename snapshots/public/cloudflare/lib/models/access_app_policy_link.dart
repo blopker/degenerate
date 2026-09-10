@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (precedence != null) 'precedence': precedence?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'precedence'}.contains(key)); } 
-AccessAppPolicyLink copyWith({AccessSchemasUuid Function()? id, AccessPrecedence Function()? precedence, }) { return AccessAppPolicyLink(
+AccessAppPolicyLink copyWith({AccessSchemasUuid? Function()? id, AccessPrecedence? Function()? precedence, }) { return AccessAppPolicyLink(
   id: id != null ? id() : this.id,
   precedence: precedence != null ? precedence() : this.precedence,
 ); } 

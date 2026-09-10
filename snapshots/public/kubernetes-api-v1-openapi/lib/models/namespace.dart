@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'apiVersion', 'kind', 'metadata', 'spec', 'status'}.contains(key)); } 
-Namespace copyWith({String Function()? apiVersion, String Function()? kind, ObjectMeta Function()? metadata, NamespaceSpec Function()? spec, NamespaceStatus Function()? status, }) { return Namespace(
+Namespace copyWith({String? Function()? apiVersion, String? Function()? kind, ObjectMeta? Function()? metadata, NamespaceSpec? Function()? spec, NamespaceStatus? Function()? status, }) { return Namespace(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,

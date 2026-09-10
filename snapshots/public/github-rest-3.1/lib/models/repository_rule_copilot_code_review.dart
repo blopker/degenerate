@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   if (parameters != null) 'parameters': parameters?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RepositoryRuleCopilotCodeReview copyWith({RepositoryRuleCopilotCodeReviewType? type, RepositoryRuleCopilotCodeReviewParameters Function()? parameters, }) { return RepositoryRuleCopilotCodeReview(
+RepositoryRuleCopilotCodeReview copyWith({RepositoryRuleCopilotCodeReviewType? type, RepositoryRuleCopilotCodeReviewParameters? Function()? parameters, }) { return RepositoryRuleCopilotCodeReview(
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 

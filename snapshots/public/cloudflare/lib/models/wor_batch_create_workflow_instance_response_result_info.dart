@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
       json.containsKey('per_page') && json['per_page'] is num &&
       json.containsKey('total_count') && json['total_count'] is num; } 
-WorBatchCreateWorkflowInstanceResponseResultInfo copyWith({double? count, String Function()? cursor, double Function()? page, double? perPage, double? totalCount, }) { return WorBatchCreateWorkflowInstanceResponseResultInfo(
+WorBatchCreateWorkflowInstanceResponseResultInfo copyWith({double? count, String? Function()? cursor, double? Function()? page, double? perPage, double? totalCount, }) { return WorBatchCreateWorkflowInstanceResponseResultInfo(
   count: count ?? this.count,
   cursor: cursor != null ? cursor() : this.cursor,
   page: page != null ? page() : this.page,

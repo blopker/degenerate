@@ -135,7 +135,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('objec
       json.containsKey('status') &&
       json.containsKey('invited_at') && json['invited_at'] is num &&
       json.containsKey('expires_at') && json['expires_at'] is num; } 
-Invite copyWith({InviteObject? object, String? id, String? email, InviteRole? role, InviteStatus? status, int? invitedAt, int? expiresAt, int Function()? acceptedAt, List<InviteProjects> Function()? projects, }) { return Invite(
+Invite copyWith({InviteObject? object, String? id, String? email, InviteRole? role, InviteStatus? status, int? invitedAt, int? expiresAt, int? Function()? acceptedAt, List<InviteProjects>? Function()? projects, }) { return Invite(
   object: object ?? this.object,
   id: id ?? this.id,
   email: email ?? this.email,

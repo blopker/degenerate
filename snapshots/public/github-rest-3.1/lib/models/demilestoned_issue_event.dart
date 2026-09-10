@@ -42,10 +42,10 @@ Map<String, dynamic> toJson() { return {
   'url': url,
   'actor': actor.toJson(),
   'event': event,
-  'commit_id': ?commitId,
-  'commit_url': ?commitUrl,
+  'commit_id': commitId,
+  'commit_url': commitUrl,
   'created_at': createdAt,
-  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+  'performed_via_github_app': performedViaGithubApp?.toJson(),
   'milestone': milestone.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
@@ -53,8 +53,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('actor') &&
       json.containsKey('event') && json['event'] is String &&
-      json.containsKey('commit_id') && json['commit_id'] is String &&
-      json.containsKey('commit_url') && json['commit_url'] is String &&
+      json.containsKey('commit_id') && (json['commit_id'] == null || json['commit_id'] is String) &&
+      json.containsKey('commit_url') && (json['commit_url'] == null || json['commit_url'] is String) &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('performed_via_github_app') &&
       json.containsKey('milestone'); } 

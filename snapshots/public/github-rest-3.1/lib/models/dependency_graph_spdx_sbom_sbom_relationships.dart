@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'relatedSpdxElement': ?relatedSpdxElement,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'relationshipType', 'spdxElementId', 'relatedSpdxElement'}.contains(key)); } 
-DependencyGraphSpdxSbomSbomRelationships copyWith({String Function()? relationshipType, String Function()? spdxElementId, String Function()? relatedSpdxElement, }) { return DependencyGraphSpdxSbomSbomRelationships(
+DependencyGraphSpdxSbomSbomRelationships copyWith({String? Function()? relationshipType, String? Function()? spdxElementId, String? Function()? relatedSpdxElement, }) { return DependencyGraphSpdxSbomSbomRelationships(
   relationshipType: relationshipType != null ? relationshipType() : this.relationshipType,
   spdxElementId: spdxElementId != null ? spdxElementId() : this.spdxElementId,
   relatedSpdxElement: relatedSpdxElement != null ? relatedSpdxElement() : this.relatedSpdxElement,

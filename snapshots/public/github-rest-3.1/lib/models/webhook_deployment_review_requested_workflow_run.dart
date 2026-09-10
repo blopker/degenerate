@@ -78,7 +78,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'WebhookDeploymentReviewRequestedWorkflowRunStatus($value)'; } 
  }
-@immutable final class WebhookDeploymentReviewRequestedWorkflowRun {const WebhookDeploymentReviewRequestedWorkflowRun({required this.name, required this.checkSuiteId, required this.checkSuiteNodeId, required this.headSha, required this.conclusion, required this.createdAt, required this.event, required this.headBranch, required this.actor, required this.htmlUrl, required this.id, required this.triggeringActor, required this.nodeId, required this.path, required this.pullRequests, required this.displayTitle, required this.runNumber, required this.status, required this.url, required this.workflowId, required this.runAttempt, required this.updatedAt, required this.runStartedAt, this.repository, this.rerunUrl, this.previousAttemptUrl, this.logsUrl, this.jobsUrl, this.headRepository, this.referencedWorkflows, this.headCommit, this.cancelUrl, this.artifactsUrl, this.workflowUrl, this.checkSuiteUrl, });
+@immutable final class WebhookDeploymentReviewRequestedWorkflowRun {const WebhookDeploymentReviewRequestedWorkflowRun({required this.name, required this.checkSuiteId, required this.checkSuiteNodeId, required this.headSha, required this.conclusion, required this.createdAt, required this.event, required this.headBranch, required this.actor, required this.htmlUrl, required this.id, required this.triggeringActor, required this.nodeId, required this.path, required this.pullRequests, required this.displayTitle, required this.runNumber, required this.status, required this.url, required this.workflowId, required this.runAttempt, required this.updatedAt, required this.runStartedAt, this.repository, this.rerunUrl, this.previousAttemptUrl = const Omittable.absent(), this.logsUrl, this.jobsUrl, this.headRepository, this.referencedWorkflows = const Omittable.absent(), this.headCommit = const Omittable.absent(), this.cancelUrl, this.artifactsUrl, this.workflowUrl, this.checkSuiteUrl, });
 
 factory WebhookDeploymentReviewRequestedWorkflowRun.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRequestedWorkflowRun(
   actor: json['actor'] != null ? WebhookDeploymentReviewRequestedWorkflowRunActor.fromJson(json['actor'] as Map<String, dynamic>) : null,
@@ -91,7 +91,7 @@ factory WebhookDeploymentReviewRequestedWorkflowRun.fromJson(Map<String, dynamic
   createdAt: DateTime.parse(json['created_at'] as String),
   event: json['event'] as String,
   headBranch: json['head_branch'] as String,
-  headCommit: json['head_commit'] as Map<String, dynamic>?,
+  headCommit: json.containsKey('head_commit') ? Omittable(json['head_commit'] as Map<String, dynamic>?) : const Omittable.absent(),
   headRepository: json['head_repository'] != null ? WebhookDeploymentReviewRequestedWorkflowRunHeadRepository.fromJson(json['head_repository'] as Map<String, dynamic>) : null,
   headSha: json['head_sha'] as String,
   htmlUrl: Uri.parse(json['html_url'] as String),
@@ -101,9 +101,9 @@ factory WebhookDeploymentReviewRequestedWorkflowRun.fromJson(Map<String, dynamic
   name: json['name'] as String,
   nodeId: json['node_id'] as String,
   path: json['path'] as String,
-  previousAttemptUrl: json['previous_attempt_url'] as String?,
+  previousAttemptUrl: json.containsKey('previous_attempt_url') ? Omittable(json['previous_attempt_url'] as String?) : const Omittable.absent(),
   pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => WebhookDeploymentReviewRequestedWorkflowRunPullRequests.fromJson(e as Map<String, dynamic>)).toList(),
-  referencedWorkflows: (json['referenced_workflows'] as List<dynamic>?)?.map((e) => WebhookDeploymentReviewRequestedWorkflowRunReferencedWorkflows.fromJson(e as Map<String, dynamic>)).toList(),
+  referencedWorkflows: json.containsKey('referenced_workflows') ? Omittable((json['referenced_workflows'] as List<dynamic>?)?.map((e) => WebhookDeploymentReviewRequestedWorkflowRunReferencedWorkflows.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   repository: json['repository'] != null ? WebhookDeploymentReviewRequestedWorkflowRunRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
   rerunUrl: json['rerun_url'] as String?,
   runAttempt: (json['run_attempt'] as num).toInt(),
@@ -138,7 +138,7 @@ final String event;
 
 final String headBranch;
 
-final Map<String,dynamic>? headCommit;
+final Omittable<Map<String,dynamic>?> headCommit;
 
 final WebhookDeploymentReviewRequestedWorkflowRunHeadRepository? headRepository;
 
@@ -158,11 +158,11 @@ final String nodeId;
 
 final String path;
 
-final String? previousAttemptUrl;
+final Omittable<String?> previousAttemptUrl;
 
 final List<WebhookDeploymentReviewRequestedWorkflowRunPullRequests> pullRequests;
 
-final List<WebhookDeploymentReviewRequestedWorkflowRunReferencedWorkflows>? referencedWorkflows;
+final Omittable<List<WebhookDeploymentReviewRequestedWorkflowRunReferencedWorkflows>?> referencedWorkflows;
 
 final WebhookDeploymentReviewRequestedWorkflowRunRepository? repository;
 
@@ -189,17 +189,17 @@ final String? workflowUrl;
 final String displayTitle;
 
 Map<String, dynamic> toJson() { return {
-  if (actor != null) 'actor': actor?.toJson(),
+  'actor': actor?.toJson(),
   'artifacts_url': ?artifactsUrl,
   'cancel_url': ?cancelUrl,
   'check_suite_id': checkSuiteId,
   'check_suite_node_id': checkSuiteNodeId,
   'check_suite_url': ?checkSuiteUrl,
-  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'conclusion': conclusion?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'event': event,
   'head_branch': headBranch,
-  'head_commit': ?headCommit,
+  if (headCommit.isPresent) 'head_commit': headCommit.value,
   if (headRepository != null) 'head_repository': headRepository?.toJson(),
   'head_sha': headSha,
   'html_url': htmlUrl.toString(),
@@ -209,16 +209,16 @@ Map<String, dynamic> toJson() { return {
   'name': name,
   'node_id': nodeId,
   'path': path,
-  'previous_attempt_url': ?previousAttemptUrl,
+  if (previousAttemptUrl.isPresent) 'previous_attempt_url': previousAttemptUrl.value,
   'pull_requests': pullRequests.map((e) => e.toJson()).toList(),
-  if (referencedWorkflows != null) 'referenced_workflows': referencedWorkflows?.map((e) => e.toJson()).toList(),
+  if (referencedWorkflows.isPresent) 'referenced_workflows': referencedWorkflows.value?.map((e) => e.toJson()).toList(),
   if (repository != null) 'repository': repository?.toJson(),
   'rerun_url': ?rerunUrl,
   'run_attempt': runAttempt,
   'run_number': runNumber,
   'run_started_at': runStartedAt.toIso8601String(),
   'status': status.toJson(),
-  if (triggeringActor != null) 'triggering_actor': triggeringActor?.toJson(),
+  'triggering_actor': triggeringActor?.toJson(),
   'updated_at': updatedAt.toIso8601String(),
   'url': url.toString(),
   'workflow_id': workflowId,
@@ -248,7 +248,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('workflow_id') && json['workflow_id'] is num &&
       json.containsKey('display_title') && json['display_title'] is String; } 
-WebhookDeploymentReviewRequestedWorkflowRun copyWith({WebhookDeploymentReviewRequestedWorkflowRunActor? Function()? actor, String Function()? artifactsUrl, String Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String Function()? checkSuiteUrl, WebhookDeploymentReviewRequestedWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? event, String? headBranch, Map<String, dynamic>? Function()? headCommit, WebhookDeploymentReviewRequestedWorkflowRunHeadRepository Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String Function()? jobsUrl, String Function()? logsUrl, String? name, String? nodeId, String? path, String? Function()? previousAttemptUrl, List<WebhookDeploymentReviewRequestedWorkflowRunPullRequests>? pullRequests, List<WebhookDeploymentReviewRequestedWorkflowRunReferencedWorkflows>? Function()? referencedWorkflows, WebhookDeploymentReviewRequestedWorkflowRunRepository Function()? repository, String Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentReviewRequestedWorkflowRunStatus? status, WebhookDeploymentReviewRequestedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String Function()? workflowUrl, String? displayTitle, }) { return WebhookDeploymentReviewRequestedWorkflowRun(
+WebhookDeploymentReviewRequestedWorkflowRun copyWith({WebhookDeploymentReviewRequestedWorkflowRunActor? Function()? actor, String? Function()? artifactsUrl, String? Function()? cancelUrl, int? checkSuiteId, String? checkSuiteNodeId, String? Function()? checkSuiteUrl, WebhookDeploymentReviewRequestedWorkflowRunConclusion? Function()? conclusion, DateTime? createdAt, String? event, String? headBranch, Omittable<Map<String,dynamic>?>? headCommit, WebhookDeploymentReviewRequestedWorkflowRunHeadRepository? Function()? headRepository, String? headSha, Uri? htmlUrl, int? id, String? Function()? jobsUrl, String? Function()? logsUrl, String? name, String? nodeId, String? path, Omittable<String?>? previousAttemptUrl, List<WebhookDeploymentReviewRequestedWorkflowRunPullRequests>? pullRequests, Omittable<List<WebhookDeploymentReviewRequestedWorkflowRunReferencedWorkflows>?>? referencedWorkflows, WebhookDeploymentReviewRequestedWorkflowRunRepository? Function()? repository, String? Function()? rerunUrl, int? runAttempt, int? runNumber, DateTime? runStartedAt, WebhookDeploymentReviewRequestedWorkflowRunStatus? status, WebhookDeploymentReviewRequestedWorkflowRunTriggeringActor? Function()? triggeringActor, DateTime? updatedAt, Uri? url, int? workflowId, String? Function()? workflowUrl, String? displayTitle, }) { return WebhookDeploymentReviewRequestedWorkflowRun(
   actor: actor != null ? actor() : this.actor,
   artifactsUrl: artifactsUrl != null ? artifactsUrl() : this.artifactsUrl,
   cancelUrl: cancelUrl != null ? cancelUrl() : this.cancelUrl,
@@ -259,7 +259,7 @@ WebhookDeploymentReviewRequestedWorkflowRun copyWith({WebhookDeploymentReviewReq
   createdAt: createdAt ?? this.createdAt,
   event: event ?? this.event,
   headBranch: headBranch ?? this.headBranch,
-  headCommit: headCommit != null ? headCommit() : this.headCommit,
+  headCommit: headCommit ?? this.headCommit,
   headRepository: headRepository != null ? headRepository() : this.headRepository,
   headSha: headSha ?? this.headSha,
   htmlUrl: htmlUrl ?? this.htmlUrl,
@@ -269,9 +269,9 @@ WebhookDeploymentReviewRequestedWorkflowRun copyWith({WebhookDeploymentReviewReq
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
   path: path ?? this.path,
-  previousAttemptUrl: previousAttemptUrl != null ? previousAttemptUrl() : this.previousAttemptUrl,
+  previousAttemptUrl: previousAttemptUrl ?? this.previousAttemptUrl,
   pullRequests: pullRequests ?? this.pullRequests,
-  referencedWorkflows: referencedWorkflows != null ? referencedWorkflows() : this.referencedWorkflows,
+  referencedWorkflows: referencedWorkflows ?? this.referencedWorkflows,
   repository: repository != null ? repository() : this.repository,
   rerunUrl: rerunUrl != null ? rerunUrl() : this.rerunUrl,
   runAttempt: runAttempt ?? this.runAttempt,
@@ -309,7 +309,8 @@ WebhookDeploymentReviewRequestedWorkflowRun copyWith({WebhookDeploymentReviewReq
           path == other.path &&
           previousAttemptUrl == other.previousAttemptUrl &&
           listEquals(pullRequests, other.pullRequests) &&
-          listEquals(referencedWorkflows, other.referencedWorkflows) &&
+          referencedWorkflows.isPresent == other.referencedWorkflows.isPresent &&
+          listEquals(referencedWorkflows.value, other.referencedWorkflows.value) &&
           repository == other.repository &&
           rerunUrl == other.rerunUrl &&
           runAttempt == other.runAttempt &&
@@ -322,6 +323,6 @@ WebhookDeploymentReviewRequestedWorkflowRun copyWith({WebhookDeploymentReviewReq
           workflowId == other.workflowId &&
           workflowUrl == other.workflowUrl &&
           displayTitle == other.displayTitle; } 
-@override int get hashCode { return Object.hashAll([actor, artifactsUrl, cancelUrl, checkSuiteId, checkSuiteNodeId, checkSuiteUrl, conclusion, createdAt, event, headBranch, headCommit, headRepository, headSha, htmlUrl, id, jobsUrl, logsUrl, name, nodeId, path, previousAttemptUrl, Object.hashAll(pullRequests), Object.hashAll(referencedWorkflows ?? const []), repository, rerunUrl, runAttempt, runNumber, runStartedAt, status, triggeringActor, updatedAt, url, workflowId, workflowUrl, displayTitle]); } 
+@override int get hashCode { return Object.hashAll([actor, artifactsUrl, cancelUrl, checkSuiteId, checkSuiteNodeId, checkSuiteUrl, conclusion, createdAt, event, headBranch, headCommit, headRepository, headSha, htmlUrl, id, jobsUrl, logsUrl, name, nodeId, path, previousAttemptUrl, Object.hashAll(pullRequests), Object.hashAll(referencedWorkflows.value ?? const []), repository, rerunUrl, runAttempt, runNumber, runStartedAt, status, triggeringActor, updatedAt, url, workflowId, workflowUrl, displayTitle]); } 
 @override String toString() { return 'WebhookDeploymentReviewRequestedWorkflowRun(actor: $actor, artifactsUrl: $artifactsUrl, cancelUrl: $cancelUrl, checkSuiteId: $checkSuiteId, checkSuiteNodeId: $checkSuiteNodeId, checkSuiteUrl: $checkSuiteUrl, conclusion: $conclusion, createdAt: $createdAt, event: $event, headBranch: $headBranch, headCommit: $headCommit, headRepository: $headRepository, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, jobsUrl: $jobsUrl, logsUrl: $logsUrl, name: $name, nodeId: $nodeId, path: $path, previousAttemptUrl: $previousAttemptUrl, pullRequests: $pullRequests, referencedWorkflows: $referencedWorkflows, repository: $repository, rerunUrl: $rerunUrl, runAttempt: $runAttempt, runNumber: $runNumber, runStartedAt: $runStartedAt, status: $status, triggeringActor: $triggeringActor, updatedAt: $updatedAt, url: $url, workflowId: $workflowId, workflowUrl: $workflowUrl, displayTitle: $displayTitle)'; } 
  }

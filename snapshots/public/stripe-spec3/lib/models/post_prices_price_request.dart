@@ -76,7 +76,7 @@ Map<String, dynamic> toJson() { return {
   'transfer_lookup_key': ?transferLookupKey,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'active', 'currency_options', 'expand', 'lookup_key', 'metadata', 'nickname', 'tax_behavior', 'transfer_lookup_key'}.contains(key)); } 
-PostPricesPriceRequest copyWith({bool Function()? active, PostPricesPriceRequestCurrencyOptions Function()? currencyOptions, List<String> Function()? expand, String Function()? lookupKey, PostPricesPriceRequestMetadata Function()? metadata, String Function()? nickname, PostPricesPriceRequestTaxBehavior Function()? taxBehavior, bool Function()? transferLookupKey, }) { return PostPricesPriceRequest(
+PostPricesPriceRequest copyWith({bool? Function()? active, PostPricesPriceRequestCurrencyOptions? Function()? currencyOptions, List<String>? Function()? expand, String? Function()? lookupKey, PostPricesPriceRequestMetadata? Function()? metadata, String? Function()? nickname, PostPricesPriceRequestTaxBehavior? Function()? taxBehavior, bool? Function()? transferLookupKey, }) { return PostPricesPriceRequest(
   active: active != null ? active() : this.active,
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
   expand: expand != null ? expand() : this.expand,

@@ -29,12 +29,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ActionsCreateHostedRunnerForOrgRequestImageSource($value)'; } 
  }
 /// The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.
-@immutable final class ActionsCreateHostedRunnerForOrgRequestImage {const ActionsCreateHostedRunnerForOrgRequestImage({this.id, this.source, this.version, });
+@immutable final class ActionsCreateHostedRunnerForOrgRequestImage {const ActionsCreateHostedRunnerForOrgRequestImage({this.id, this.source, this.version = const Omittable.absent(), });
 
 factory ActionsCreateHostedRunnerForOrgRequestImage.fromJson(Map<String, dynamic> json) { return ActionsCreateHostedRunnerForOrgRequestImage(
   id: json['id'] as String?,
   source: json['source'] != null ? ActionsCreateHostedRunnerForOrgRequestImageSource.fromJson(json['source'] as String) : null,
-  version: json['version'] as String?,
+  version: json.containsKey('version') ? Omittable(json['version'] as String?) : const Omittable.absent(),
 ); }
 
 /// The unique identifier of the runner image.
@@ -44,18 +44,18 @@ final String? id;
 final ActionsCreateHostedRunnerForOrgRequestImageSource? source;
 
 /// The version of the runner image to deploy. This is relevant only for runners using custom images.
-final String? version;
+final Omittable<String?> version;
 
 Map<String, dynamic> toJson() { return {
   'id': ?id,
   if (source != null) 'source': source?.toJson(),
-  'version': ?version,
+  if (version.isPresent) 'version': version.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'source', 'version'}.contains(key)); } 
-ActionsCreateHostedRunnerForOrgRequestImage copyWith({String Function()? id, ActionsCreateHostedRunnerForOrgRequestImageSource Function()? source, String? Function()? version, }) { return ActionsCreateHostedRunnerForOrgRequestImage(
+ActionsCreateHostedRunnerForOrgRequestImage copyWith({String? Function()? id, ActionsCreateHostedRunnerForOrgRequestImageSource? Function()? source, Omittable<String?>? version, }) { return ActionsCreateHostedRunnerForOrgRequestImage(
   id: id != null ? id() : this.id,
   source: source != null ? source() : this.source,
-  version: version != null ? version() : this.version,
+  version: version ?? this.version,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ActionsCreateHostedRunnerForOrgRequestImage &&

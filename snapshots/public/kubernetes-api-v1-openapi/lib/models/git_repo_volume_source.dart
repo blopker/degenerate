@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'revision': ?revision,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository') && json['repository'] is String; } 
-GitRepoVolumeSource copyWith({String Function()? directory, String? repository, String Function()? revision, }) { return GitRepoVolumeSource(
+GitRepoVolumeSource copyWith({String? Function()? directory, String? repository, String? Function()? revision, }) { return GitRepoVolumeSource(
   directory: directory != null ? directory() : this.directory,
   repository: repository ?? this.repository,
   revision: revision != null ? revision() : this.revision,

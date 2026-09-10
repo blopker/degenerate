@@ -1,38 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';@immutable final class EmailSecurityAttachment {const EmailSecurityAttachment({required this.size, this.contentType, this.detection, this.encrypted, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_disposition_label.dart';@immutable final class EmailSecurityAttachment {const EmailSecurityAttachment({required this.size, this.contentType = const Omittable.absent(), this.detection = const Omittable.absent(), this.encrypted = const Omittable.absent(), this.name = const Omittable.absent(), });
 
 factory EmailSecurityAttachment.fromJson(Map<String, dynamic> json) { return EmailSecurityAttachment(
-  contentType: json['content_type'] as String?,
-  detection: json['detection'] != null ? EmailSecurityDispositionLabel.fromJson(json['detection'] as String) : null,
-  encrypted: json['encrypted'] as bool?,
-  name: json['name'] as String?,
+  contentType: json.containsKey('content_type') ? Omittable(json['content_type'] as String?) : const Omittable.absent(),
+  detection: json.containsKey('detection') ? Omittable(json['detection'] != null ? EmailSecurityDispositionLabel.fromJson(json['detection'] as String) : null) : const Omittable.absent(),
+  encrypted: json.containsKey('encrypted') ? Omittable(json['encrypted'] as bool?) : const Omittable.absent(),
+  name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   size: (json['size'] as num).toInt(),
 ); }
 
-final String? contentType;
+final Omittable<String?> contentType;
 
-final EmailSecurityDispositionLabel? detection;
+final Omittable<EmailSecurityDispositionLabel?> detection;
 
-final bool? encrypted;
+final Omittable<bool?> encrypted;
 
-final String? name;
+final Omittable<String?> name;
 
 final int size;
 
 Map<String, dynamic> toJson() { return {
-  'content_type': ?contentType,
-  if (detection != null) 'detection': detection?.toJson(),
-  'encrypted': ?encrypted,
-  'name': ?name,
+  if (contentType.isPresent) 'content_type': contentType.value,
+  if (detection.isPresent) 'detection': detection.value?.toJson(),
+  if (encrypted.isPresent) 'encrypted': encrypted.value,
+  if (name.isPresent) 'name': name.value,
   'size': size,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('size') && json['size'] is num; } 
-EmailSecurityAttachment copyWith({String? Function()? contentType, EmailSecurityDispositionLabel? Function()? detection, bool? Function()? encrypted, String? Function()? name, int? size, }) { return EmailSecurityAttachment(
-  contentType: contentType != null ? contentType() : this.contentType,
-  detection: detection != null ? detection() : this.detection,
-  encrypted: encrypted != null ? encrypted() : this.encrypted,
-  name: name != null ? name() : this.name,
+EmailSecurityAttachment copyWith({Omittable<String?>? contentType, Omittable<EmailSecurityDispositionLabel?>? detection, Omittable<bool?>? encrypted, Omittable<String?>? name, int? size, }) { return EmailSecurityAttachment(
+  contentType: contentType ?? this.contentType,
+  detection: detection ?? this.detection,
+  encrypted: encrypted ?? this.encrypted,
+  name: name ?? this.name,
   size: size ?? this.size,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

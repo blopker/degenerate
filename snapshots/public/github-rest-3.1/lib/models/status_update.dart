@@ -38,7 +38,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'StatusUpdateStatus($value)'; } 
  }
 /// An status update belonging to a project
-@immutable final class StatusUpdate {const StatusUpdate({required this.id, required this.nodeId, required this.createdAt, required this.updatedAt, this.projectNodeId, this.creator, this.status, this.startDate, this.targetDate, this.body, });
+@immutable final class StatusUpdate {const StatusUpdate({required this.id, required this.nodeId, required this.createdAt, required this.updatedAt, this.projectNodeId, this.creator, this.status = const Omittable.absent(), this.startDate, this.targetDate, this.body = const Omittable.absent(), });
 
 factory StatusUpdate.fromJson(Map<String, dynamic> json) { return StatusUpdate(
   id: (json['id'] as num).toDouble(),
@@ -47,10 +47,10 @@ factory StatusUpdate.fromJson(Map<String, dynamic> json) { return StatusUpdate(
   creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   updatedAt: DateTime.parse(json['updated_at'] as String),
-  status: json['status'] != null ? StatusUpdateStatus.fromJson(json['status'] as String) : null,
+  status: json.containsKey('status') ? Omittable(json['status'] != null ? StatusUpdateStatus.fromJson(json['status'] as String) : null) : const Omittable.absent(),
   startDate: json['start_date'] as String?,
   targetDate: json['target_date'] as String?,
-  body: json['body'] as String?,
+  body: json.containsKey('body') ? Omittable(json['body'] as String?) : const Omittable.absent(),
 ); }
 
 /// The unique identifier of the status update.
@@ -71,7 +71,7 @@ final DateTime createdAt;
 final DateTime updatedAt;
 
 /// The current status.
-final StatusUpdateStatus? status;
+final Omittable<StatusUpdateStatus?> status;
 
 /// The start date of the period covered by the update.
 final String? startDate;
@@ -80,7 +80,7 @@ final String? startDate;
 final String? targetDate;
 
 /// Body of the status update
-final String? body;
+final Omittable<String?> body;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -89,26 +89,26 @@ Map<String, dynamic> toJson() { return {
   if (creator != null) 'creator': creator?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'updated_at': updatedAt.toIso8601String(),
-  if (status != null) 'status': status?.toJson(),
+  if (status.isPresent) 'status': status.value?.toJson(),
   'start_date': ?startDate,
   'target_date': ?targetDate,
-  'body': ?body,
+  if (body.isPresent) 'body': body.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('node_id') && json['node_id'] is String &&
       json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-StatusUpdate copyWith({double? id, String? nodeId, String Function()? projectNodeId, SimpleUser Function()? creator, DateTime? createdAt, DateTime? updatedAt, StatusUpdateStatus? Function()? status, String Function()? startDate, String Function()? targetDate, String? Function()? body, }) { return StatusUpdate(
+StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNodeId, SimpleUser? Function()? creator, DateTime? createdAt, DateTime? updatedAt, Omittable<StatusUpdateStatus?>? status, String? Function()? startDate, String? Function()? targetDate, Omittable<String?>? body, }) { return StatusUpdate(
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
   projectNodeId: projectNodeId != null ? projectNodeId() : this.projectNodeId,
   creator: creator != null ? creator() : this.creator,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
-  status: status != null ? status() : this.status,
+  status: status ?? this.status,
   startDate: startDate != null ? startDate() : this.startDate,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
-  body: body != null ? body() : this.body,
+  body: body ?? this.body,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is StatusUpdate &&

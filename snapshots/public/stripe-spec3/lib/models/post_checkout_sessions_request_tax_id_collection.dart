@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if ($required != null) 'required': $required?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostCheckoutSessionsRequestTaxIdCollection copyWith({bool? enabled, PostCheckoutSessionsRequestTaxIdCollectionRequired Function()? $required, }) { return PostCheckoutSessionsRequestTaxIdCollection(
+PostCheckoutSessionsRequestTaxIdCollection copyWith({bool? enabled, PostCheckoutSessionsRequestTaxIdCollectionRequired? Function()? $required, }) { return PostCheckoutSessionsRequestTaxIdCollection(
   enabled: enabled ?? this.enabled,
   $required: $required != null ? $required() : this.$required,
 ); } 

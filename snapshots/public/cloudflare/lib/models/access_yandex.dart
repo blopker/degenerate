@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('config') &&
       json.containsKey('name') &&
       json.containsKey('type'); } 
-AccessYandex copyWith({AccessGenericOauthConfig? config, AccessUuid Function()? id, AccessComponentsSchemasName? name, AccessYandexScimConfig Function()? scimConfig, AccessYandexType? type, }) { return AccessYandex(
+AccessYandex copyWith({AccessGenericOauthConfig? config, AccessUuid? Function()? id, AccessComponentsSchemasName? name, AccessYandexScimConfig? Function()? scimConfig, AccessYandexType? type, }) { return AccessYandex(
   config: config ?? this.config,
   id: id != null ? id() : this.id,
   name: name ?? this.name,

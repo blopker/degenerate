@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'body': ?body,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('title') && json['title'] is String; } 
-ProjectsCreateDraftItemForOrgRequest copyWith({String? title, String Function()? body, }) { return ProjectsCreateDraftItemForOrgRequest(
+ProjectsCreateDraftItemForOrgRequest copyWith({String? title, String? Function()? body, }) { return ProjectsCreateDraftItemForOrgRequest(
   title: title ?? this.title,
   body: body != null ? body() : this.body,
 ); } 

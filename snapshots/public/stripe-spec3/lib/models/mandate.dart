@@ -142,7 +142,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('custo
       json.containsKey('payment_method_details') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-Mandate copyWith({CustomerAcceptance? customerAcceptance, String? id, bool? livemode, MandateMultiUse Function()? multiUse, MandateObject? object, String Function()? onBehalfOf, MandatePaymentMethod? paymentMethod, MandatePaymentMethodDetails? paymentMethodDetails, MandateSingleUse Function()? singleUse, MandateStatus? status, MandateType? type, }) { return Mandate(
+Mandate copyWith({CustomerAcceptance? customerAcceptance, String? id, bool? livemode, MandateMultiUse? Function()? multiUse, MandateObject? object, String? Function()? onBehalfOf, MandatePaymentMethod? paymentMethod, MandatePaymentMethodDetails? paymentMethodDetails, MandateSingleUse? Function()? singleUse, MandateStatus? status, MandateType? type, }) { return Mandate(
   customerAcceptance: customerAcceptance ?? this.customerAcceptance,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,

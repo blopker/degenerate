@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'host': host.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('host'); } 
-TeamsDevicesIncludeSplitTunnelWithHost copyWith({TeamsDevicesIncludeSplitTunnelDescription Function()? description, TeamsDevicesIncludeSplitTunnelHost? host, }) { return TeamsDevicesIncludeSplitTunnelWithHost(
+TeamsDevicesIncludeSplitTunnelWithHost copyWith({TeamsDevicesIncludeSplitTunnelDescription? Function()? description, TeamsDevicesIncludeSplitTunnelHost? host, }) { return TeamsDevicesIncludeSplitTunnelWithHost(
   description: description != null ? description() : this.description,
   host: host ?? this.host,
 ); } 

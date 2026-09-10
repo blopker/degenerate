@@ -94,9 +94,9 @@ Map<String, dynamic> toJson() { return {
   'ecosystem': ecosystem,
   'name': name,
   'version': version,
-  'package_url': ?packageUrl,
-  'license': ?license,
-  'source_repository_url': ?sourceRepositoryUrl,
+  'package_url': packageUrl,
+  'license': license,
+  'source_repository_url': sourceRepositoryUrl,
   'vulnerabilities': vulnerabilities.map((e) => e.toJson()).toList(),
   'scope': scope.toJson(),
 }; } 
@@ -105,9 +105,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('chang
       json.containsKey('ecosystem') && json['ecosystem'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('version') && json['version'] is String &&
-      json.containsKey('package_url') && json['package_url'] is String &&
-      json.containsKey('license') && json['license'] is String &&
-      json.containsKey('source_repository_url') && json['source_repository_url'] is String &&
+      json.containsKey('package_url') && (json['package_url'] == null || json['package_url'] is String) &&
+      json.containsKey('license') && (json['license'] == null || json['license'] is String) &&
+      json.containsKey('source_repository_url') && (json['source_repository_url'] == null || json['source_repository_url'] is String) &&
       json.containsKey('vulnerabilities') &&
       json.containsKey('scope'); } 
 DependencyGraphDiff2 copyWith({DependencyGraphDiff2ChangeType? changeType, String? manifest, String? ecosystem, String? name, String? version, String? Function()? packageUrl, String? Function()? license, String? Function()? sourceRepositoryUrl, List<DependencyGraphDiff2Vulnerabilities>? vulnerabilities, DependencyGraphDiff2Scope? scope, }) { return DependencyGraphDiff2(

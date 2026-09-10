@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   if (ruleset != null) 'ruleset': ruleset?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'rules', 'ruleset'}.contains(key)); } 
-RumRulesResponseCollectionResult copyWith({List<RumRule> Function()? rules, RumRuleset Function()? ruleset, }) { return RumRulesResponseCollectionResult(
+RumRulesResponseCollectionResult copyWith({List<RumRule>? Function()? rules, RumRuleset? Function()? ruleset, }) { return RumRulesResponseCollectionResult(
   rules: rules != null ? rules() : this.rules,
   ruleset: ruleset != null ? ruleset() : this.ruleset,
 ); } 

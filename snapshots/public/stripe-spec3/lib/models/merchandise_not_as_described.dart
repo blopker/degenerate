@@ -59,7 +59,7 @@ Map<String, dynamic> toJson() { return {
   if (returnedAt != null) 'returned_at': returnedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'additional_documentation', 'explanation', 'received_at', 'return_description', 'return_status', 'returned_at'}.contains(key)); } 
-MerchandiseNotAsDescribed copyWith({MerchandiseNotAsDescribedAdditionalDocumentation Function()? additionalDocumentation, MerchandiseNotAsDescribedExplanation Function()? explanation, MerchandiseNotAsDescribedReceivedAt Function()? receivedAt, MerchandiseNotAsDescribedReturnDescription Function()? returnDescription, MerchandiseNotAsDescribedReturnStatus Function()? returnStatus, MerchandiseNotAsDescribedReturnedAt Function()? returnedAt, }) { return MerchandiseNotAsDescribed(
+MerchandiseNotAsDescribed copyWith({MerchandiseNotAsDescribedAdditionalDocumentation? Function()? additionalDocumentation, MerchandiseNotAsDescribedExplanation? Function()? explanation, MerchandiseNotAsDescribedReceivedAt? Function()? receivedAt, MerchandiseNotAsDescribedReturnDescription? Function()? returnDescription, MerchandiseNotAsDescribedReturnStatus? Function()? returnStatus, MerchandiseNotAsDescribedReturnedAt? Function()? returnedAt, }) { return MerchandiseNotAsDescribed(
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,
   receivedAt: receivedAt != null ? receivedAt() : this.receivedAt,

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (previousClientSecretExpiresAt != null) 'previous_client_secret_expires_at': previousClientSecretExpiresAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'previous_client_secret_expires_at'}.contains(key)); } 
-AccessServiceTokensRotateAServiceTokenRequest copyWith({DateTime Function()? previousClientSecretExpiresAt}) { return AccessServiceTokensRotateAServiceTokenRequest(
+AccessServiceTokensRotateAServiceTokenRequest copyWith({DateTime? Function()? previousClientSecretExpiresAt}) { return AccessServiceTokensRotateAServiceTokenRequest(
   previousClientSecretExpiresAt: previousClientSecretExpiresAt != null ? previousClientSecretExpiresAt() : this.previousClientSecretExpiresAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

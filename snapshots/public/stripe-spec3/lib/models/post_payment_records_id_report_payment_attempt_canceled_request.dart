@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   if (metadata != null) 'metadata': metadata?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('canceled_at') && json['canceled_at'] is num; } 
-PostPaymentRecordsIdReportPaymentAttemptCanceledRequest copyWith({int? canceledAt, List<String> Function()? expand, PostPaymentRecordsIdReportPaymentAttemptCanceledRequestMetadata Function()? metadata, }) { return PostPaymentRecordsIdReportPaymentAttemptCanceledRequest(
+PostPaymentRecordsIdReportPaymentAttemptCanceledRequest copyWith({int? canceledAt, List<String>? Function()? expand, PostPaymentRecordsIdReportPaymentAttemptCanceledRequestMetadata? Function()? metadata, }) { return PostPaymentRecordsIdReportPaymentAttemptCanceledRequest(
   canceledAt: canceledAt ?? this.canceledAt,
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,

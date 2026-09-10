@@ -72,33 +72,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CancellationDetailsReason($value)'; } 
  }
 /// 
-@immutable final class CancellationDetails {const CancellationDetails({this.comment, this.feedback, this.reason, });
+@immutable final class CancellationDetails {const CancellationDetails({this.comment = const Omittable.absent(), this.feedback = const Omittable.absent(), this.reason = const Omittable.absent(), });
 
 factory CancellationDetails.fromJson(Map<String, dynamic> json) { return CancellationDetails(
-  comment: json['comment'] as String?,
-  feedback: json['feedback'] != null ? CancellationDetailsFeedback.fromJson(json['feedback'] as String) : null,
-  reason: json['reason'] != null ? CancellationDetailsReason.fromJson(json['reason'] as String) : null,
+  comment: json.containsKey('comment') ? Omittable(json['comment'] as String?) : const Omittable.absent(),
+  feedback: json.containsKey('feedback') ? Omittable(json['feedback'] != null ? CancellationDetailsFeedback.fromJson(json['feedback'] as String) : null) : const Omittable.absent(),
+  reason: json.containsKey('reason') ? Omittable(json['reason'] != null ? CancellationDetailsReason.fromJson(json['reason'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Additional comments about why the user canceled the subscription, if the subscription was canceled explicitly by the user.
-final String? comment;
+final Omittable<String?> comment;
 
 /// The customer submitted reason for why they canceled, if the subscription was canceled explicitly by the user.
-final CancellationDetailsFeedback? feedback;
+final Omittable<CancellationDetailsFeedback?> feedback;
 
 /// Why this subscription was canceled.
-final CancellationDetailsReason? reason;
+final Omittable<CancellationDetailsReason?> reason;
 
 Map<String, dynamic> toJson() { return {
-  'comment': ?comment,
-  if (feedback != null) 'feedback': feedback?.toJson(),
-  if (reason != null) 'reason': reason?.toJson(),
+  if (comment.isPresent) 'comment': comment.value,
+  if (feedback.isPresent) 'feedback': feedback.value?.toJson(),
+  if (reason.isPresent) 'reason': reason.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'feedback', 'reason'}.contains(key)); } 
-CancellationDetails copyWith({String? Function()? comment, CancellationDetailsFeedback? Function()? feedback, CancellationDetailsReason? Function()? reason, }) { return CancellationDetails(
-  comment: comment != null ? comment() : this.comment,
-  feedback: feedback != null ? feedback() : this.feedback,
-  reason: reason != null ? reason() : this.reason,
+CancellationDetails copyWith({Omittable<String?>? comment, Omittable<CancellationDetailsFeedback?>? feedback, Omittable<CancellationDetailsReason?>? reason, }) { return CancellationDetails(
+  comment: comment ?? this.comment,
+  feedback: feedback ?? this.feedback,
+  reason: reason ?? this.reason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CancellationDetails &&

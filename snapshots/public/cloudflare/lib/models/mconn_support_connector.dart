@@ -83,7 +83,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('notes') && json['notes'] is String &&
       json.containsKey('timezone') && json['timezone'] is String &&
       json.containsKey('upgrade_asap') && json['upgrade_asap'] is bool; } 
-MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, MconnUuid Function()? cohortId, String Function()? desiredVersion, MconnUuid Function()? deviceId, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String Function()? lastHeartbeat, String Function()? lastSeenVersion, String? lastUpdated, String? notes, String? timezone, bool? upgradeAsap, }) { return MconnSupportConnector(
+MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, MconnUuid? Function()? cohortId, String? Function()? desiredVersion, MconnUuid? Function()? deviceId, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? lastUpdated, String? notes, String? timezone, bool? upgradeAsap, }) { return MconnSupportConnector(
   accountId: accountId ?? this.accountId,
   activated: activated ?? this.activated,
   cohortId: cohortId != null ? cohortId() : this.cohortId,

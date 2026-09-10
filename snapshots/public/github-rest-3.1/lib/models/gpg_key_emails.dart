@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'verified': ?verified,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'email', 'verified'}.contains(key)); } 
-GpgKeyEmails copyWith({String Function()? email, bool Function()? verified, }) { return GpgKeyEmails(
+GpgKeyEmails copyWith({String? Function()? email, bool? Function()? verified, }) { return GpgKeyEmails(
   email: email != null ? email() : this.email,
   verified: verified != null ? verified() : this.verified,
 ); } 

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('interface_name') && json['interface_name'] is String &&
       json.containsKey('ip_address') && json['ip_address'] is String; } 
-MconnSnapshotInterfaceAddress copyWith({String Function()? connectorId, String? interfaceName, String? ipAddress, }) { return MconnSnapshotInterfaceAddress(
+MconnSnapshotInterfaceAddress copyWith({String? Function()? connectorId, String? interfaceName, String? ipAddress, }) { return MconnSnapshotInterfaceAddress(
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   interfaceName: interfaceName ?? this.interfaceName,
   ipAddress: ipAddress ?? this.ipAddress,

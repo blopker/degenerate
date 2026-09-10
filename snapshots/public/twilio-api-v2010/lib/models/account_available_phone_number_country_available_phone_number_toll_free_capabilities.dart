@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
   'fax': ?fax,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mms', 'sms', 'voice', 'fax'}.contains(key)); } 
-AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFreeCapabilities copyWith({bool Function()? mms, bool Function()? sms, bool Function()? voice, bool Function()? fax, }) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFreeCapabilities(
+AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFreeCapabilities copyWith({bool? Function()? mms, bool? Function()? sms, bool? Function()? voice, bool? Function()? fax, }) { return AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFreeCapabilities(
   mms: mms != null ? mms() : this.mms,
   sms: sms != null ? sms() : this.sms,
   voice: voice != null ? voice() : this.voice,

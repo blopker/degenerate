@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'user': user.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('user'); } 
-CreateSingleMember copyWith({CreateSingleMemberStatus Function()? status, CreateSingleMemberUser? user, }) { return CreateSingleMember(
+CreateSingleMember copyWith({CreateSingleMemberStatus? Function()? status, CreateSingleMemberUser? user, }) { return CreateSingleMember(
   status: status != null ? status() : this.status,
   user: user ?? this.user,
 ); } 

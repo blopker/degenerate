@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'saved': ?saved,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'effective', 'saved'}.contains(key)); } 
-MagicHealthCheckTarget copyWith({String Function()? effective, String Function()? saved, }) { return MagicHealthCheckTarget(
+MagicHealthCheckTarget copyWith({String? Function()? effective, String? Function()? saved, }) { return MagicHealthCheckTarget(
   effective: effective != null ? effective() : this.effective,
   saved: saved != null ? saved() : this.saved,
 ); } 

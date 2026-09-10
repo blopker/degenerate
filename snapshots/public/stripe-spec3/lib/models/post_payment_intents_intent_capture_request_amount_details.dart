@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (tax != null) 'tax': tax?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'discount_amount', 'enforce_arithmetic_validation', 'line_items', 'shipping', 'tax'}.contains(key)); } 
-PostPaymentIntentsIntentCaptureRequestAmountDetails copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmount Function()? discountAmount, bool Function()? enforceArithmeticValidation, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItems Function()? lineItems, PostPaymentIntentsIntentCaptureRequestAmountDetailsShipping Function()? shipping, PostPaymentIntentsIntentCaptureRequestAmountDetailsTax Function()? tax, }) { return PostPaymentIntentsIntentCaptureRequestAmountDetails(
+PostPaymentIntentsIntentCaptureRequestAmountDetails copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmount? Function()? discountAmount, bool? Function()? enforceArithmeticValidation, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItems? Function()? lineItems, PostPaymentIntentsIntentCaptureRequestAmountDetailsShipping? Function()? shipping, PostPaymentIntentsIntentCaptureRequestAmountDetailsTax? Function()? tax, }) { return PostPaymentIntentsIntentCaptureRequestAmountDetails(
   discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
   enforceArithmeticValidation: enforceArithmeticValidation != null ? enforceArithmeticValidation() : this.enforceArithmeticValidation,
   lineItems: lineItems != null ? lineItems() : this.lineItems,

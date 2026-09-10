@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (features != null) 'features': features?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PostCustomerSessionsRequestComponentsPaymentElement copyWith({bool? enabled, PostCustomerSessionsRequestComponentsPaymentElementFeatures Function()? features, }) { return PostCustomerSessionsRequestComponentsPaymentElement(
+PostCustomerSessionsRequestComponentsPaymentElement copyWith({bool? enabled, PostCustomerSessionsRequestComponentsPaymentElementFeatures? Function()? features, }) { return PostCustomerSessionsRequestComponentsPaymentElement(
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
 ); } 

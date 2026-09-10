@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-RadarGetAnnotationsResponseResultAnnotationsAsnsDetails copyWith({String? asn, RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations Function()? locations, String? name, }) { return RadarGetAnnotationsResponseResultAnnotationsAsnsDetails(
+RadarGetAnnotationsResponseResultAnnotationsAsnsDetails copyWith({String? asn, RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations? Function()? locations, String? name, }) { return RadarGetAnnotationsResponseResultAnnotationsAsnsDetails(
   asn: asn ?? this.asn,
   locations: locations != null ? locations() : this.locations,
   name: name ?? this.name,

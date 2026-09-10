@@ -57,33 +57,33 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'IssuingCardShippingAddressValidationResult($value)'; } 
  }
 /// 
-@immutable final class IssuingCardShippingAddressValidation {const IssuingCardShippingAddressValidation({required this.mode, this.normalizedAddress, this.result, });
+@immutable final class IssuingCardShippingAddressValidation {const IssuingCardShippingAddressValidation({required this.mode, this.normalizedAddress = const Omittable.absent(), this.result = const Omittable.absent(), });
 
 factory IssuingCardShippingAddressValidation.fromJson(Map<String, dynamic> json) { return IssuingCardShippingAddressValidation(
   mode: IssuingCardShippingAddressValidationMode.fromJson(json['mode'] as String),
-  normalizedAddress: json['normalized_address'] != null ? Address.fromJson(json['normalized_address'] as Map<String, dynamic>) : null,
-  result: json['result'] != null ? IssuingCardShippingAddressValidationResult.fromJson(json['result'] as String) : null,
+  normalizedAddress: json.containsKey('normalized_address') ? Omittable(json['normalized_address'] != null ? Address.fromJson(json['normalized_address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  result: json.containsKey('result') ? Omittable(json['result'] != null ? IssuingCardShippingAddressValidationResult.fromJson(json['result'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The address validation capabilities to use.
 final IssuingCardShippingAddressValidationMode mode;
 
 /// The normalized shipping address.
-final Address? normalizedAddress;
+final Omittable<Address?> normalizedAddress;
 
 /// The validation result for the shipping address.
-final IssuingCardShippingAddressValidationResult? result;
+final Omittable<IssuingCardShippingAddressValidationResult?> result;
 
 Map<String, dynamic> toJson() { return {
   'mode': mode.toJson(),
-  if (normalizedAddress != null) 'normalized_address': normalizedAddress?.toJson(),
-  if (result != null) 'result': result?.toJson(),
+  if (normalizedAddress.isPresent) 'normalized_address': normalizedAddress.value?.toJson(),
+  if (result.isPresent) 'result': result.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'); } 
-IssuingCardShippingAddressValidation copyWith({IssuingCardShippingAddressValidationMode? mode, Address? Function()? normalizedAddress, IssuingCardShippingAddressValidationResult? Function()? result, }) { return IssuingCardShippingAddressValidation(
+IssuingCardShippingAddressValidation copyWith({IssuingCardShippingAddressValidationMode? mode, Omittable<Address?>? normalizedAddress, Omittable<IssuingCardShippingAddressValidationResult?>? result, }) { return IssuingCardShippingAddressValidation(
   mode: mode ?? this.mode,
-  normalizedAddress: normalizedAddress != null ? normalizedAddress() : this.normalizedAddress,
-  result: result != null ? result() : this.result,
+  normalizedAddress: normalizedAddress ?? this.normalizedAddress,
+  result: result ?? this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is IssuingCardShippingAddressValidation &&

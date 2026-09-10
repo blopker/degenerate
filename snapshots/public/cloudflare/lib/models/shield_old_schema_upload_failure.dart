@@ -24,7 +24,7 @@ final ShieldOldSchemaUploadDetailsErrorsCritical? uploadDetails;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': ?result,
+  'result': result,
   'success': success,
   if (uploadDetails != null) 'upload_details': uploadDetails?.toJson(),
 }; } 
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ShieldOldSchemaUploadFailure copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, ShieldOldSchemaUploadDetailsErrorsCritical Function()? uploadDetails, }) { return ShieldOldSchemaUploadFailure(
+ShieldOldSchemaUploadFailure copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, ShieldOldSchemaUploadDetailsErrorsCritical? Function()? uploadDetails, }) { return ShieldOldSchemaUploadFailure(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result != null ? result() : this.result,

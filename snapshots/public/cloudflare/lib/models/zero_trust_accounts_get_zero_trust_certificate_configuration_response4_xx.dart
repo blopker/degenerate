@@ -36,20 +36,20 @@ final bool success;
 
 Map<String, dynamic> toJson() { return {
   'binding_status': ?bindingStatus,
-  'enabled': ?enabled,
+  'enabled': enabled,
   'id': ?id,
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': ?result,
+  'result': result,
   'success': success,
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && (json['enabled'] == null || json['enabled'] is bool) &&
       json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4Xx copyWith({String Function()? bindingStatus, bool? Function()? enabled, String Function()? id, DateTime Function()? updatedAt, List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4Xx(
+ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4Xx copyWith({String? Function()? bindingStatus, bool? Function()? enabled, String? Function()? id, DateTime? Function()? updatedAt, List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ZeroTrustAccountsGetZeroTrustCertificateConfigurationResponse4Xx(
   bindingStatus: bindingStatus != null ? bindingStatus() : this.bindingStatus,
   enabled: enabled != null ? enabled() : this.enabled,
   id: id != null ? id() : this.id,

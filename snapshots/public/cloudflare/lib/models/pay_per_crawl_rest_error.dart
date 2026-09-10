@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (source != null) 'source': source?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'code', 'documentation_url', 'error', 'source'}.contains(key)); } 
-PayPerCrawlRestError copyWith({int Function()? code, String Function()? documentationUrl, String Function()? error, PayPerCrawlErrorSource Function()? source, }) { return PayPerCrawlRestError(
+PayPerCrawlRestError copyWith({int? Function()? code, String? Function()? documentationUrl, String? Function()? error, PayPerCrawlErrorSource? Function()? source, }) { return PayPerCrawlRestError(
   code: code != null ? code() : this.code,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
   error: error != null ? error() : this.error,

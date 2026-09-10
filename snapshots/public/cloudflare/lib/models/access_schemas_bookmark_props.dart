@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';@immutable final class AccessSchemasBookmarkProps {const AccessSchemasBookmarkProps({required this.domain, required this.type, this.appLauncherVisible, this.logoUrl, this.name, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';@immutable final class AccessSchemasBookmarkProps {const AccessSchemasBookmarkProps({required this.domain, required this.type, this.appLauncherVisible = const Omittable.absent(), this.logoUrl, this.name, });
 
 factory AccessSchemasBookmarkProps.fromJson(Map<String, dynamic> json) { return AccessSchemasBookmarkProps(
-  appLauncherVisible: json['app_launcher_visible'],
+  appLauncherVisible: json.containsKey('app_launcher_visible') ? Omittable(json['app_launcher_visible']) : const Omittable.absent(),
   domain: json['domain'],
   logoUrl: json['logo_url'] != null ? AccessLogoUrl.fromJson(json['logo_url'] as String) : null,
   name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
   type: json['type'] as String,
 ); }
 
-final dynamic appLauncherVisible;
+final Omittable<dynamic> appLauncherVisible;
 
 /// The URL or domain of the bookmark.
 final dynamic domain;
@@ -25,16 +25,16 @@ final AccessAppsComponentsSchemasName? name;
 final String type;
 
 Map<String, dynamic> toJson() { return {
-  'app_launcher_visible': ?appLauncherVisible,
-  'domain': ?domain,
+  if (appLauncherVisible.isPresent) 'app_launcher_visible': appLauncherVisible.value,
+  'domain': domain,
   if (logoUrl != null) 'logo_url': logoUrl?.toJson(),
   if (name != null) 'name': name?.toJson(),
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') &&
       json.containsKey('type') && json['type'] is String; } 
-AccessSchemasBookmarkProps copyWith({dynamic Function()? appLauncherVisible, dynamic Function()? domain, AccessLogoUrl Function()? logoUrl, AccessAppsComponentsSchemasName Function()? name, String? type, }) { return AccessSchemasBookmarkProps(
-  appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,
+AccessSchemasBookmarkProps copyWith({Omittable<dynamic>? appLauncherVisible, dynamic Function()? domain, AccessLogoUrl? Function()? logoUrl, AccessAppsComponentsSchemasName? Function()? name, String? type, }) { return AccessSchemasBookmarkProps(
+  appLauncherVisible: appLauncherVisible ?? this.appLauncherVisible,
   domain: domain != null ? domain() : this.domain,
   logoUrl: logoUrl != null ? logoUrl() : this.logoUrl,
   name: name != null ? name() : this.name,

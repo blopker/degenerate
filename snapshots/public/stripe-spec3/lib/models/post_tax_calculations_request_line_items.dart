@@ -60,7 +60,7 @@ Map<String, dynamic> toJson() { return {
   'tax_code': ?taxCode,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num; } 
-PostTaxCalculationsRequestLineItems copyWith({int? amount, Map<String, String> Function()? metadata, String Function()? product, int Function()? quantity, String Function()? reference, PostTaxCalculationsRequestLineItemsTaxBehavior Function()? taxBehavior, String Function()? taxCode, }) { return PostTaxCalculationsRequestLineItems(
+PostTaxCalculationsRequestLineItems copyWith({int? amount, Map<String, String>? Function()? metadata, String? Function()? product, int? Function()? quantity, String? Function()? reference, PostTaxCalculationsRequestLineItemsTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, }) { return PostTaxCalculationsRequestLineItems(
   amount: amount ?? this.amount,
   metadata: metadata != null ? metadata() : this.metadata,
   product: product != null ? product() : this.product,

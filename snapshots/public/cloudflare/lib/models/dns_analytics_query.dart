@@ -45,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dimen
       json.containsKey('metrics') &&
       json.containsKey('since') &&
       json.containsKey('until'); } 
-DnsAnalyticsQuery copyWith({List<String>? dimensions, DnsAnalyticsFilters Function()? filters, DnsAnalyticsLimit? limit, List<String>? metrics, DnsAnalyticsSince? since, List<String> Function()? sort, DnsAnalyticsUntil? until, }) { return DnsAnalyticsQuery(
+DnsAnalyticsQuery copyWith({List<String>? dimensions, DnsAnalyticsFilters? Function()? filters, DnsAnalyticsLimit? limit, List<String>? metrics, DnsAnalyticsSince? since, List<String>? Function()? sort, DnsAnalyticsUntil? until, }) { return DnsAnalyticsQuery(
   dimensions: dimensions ?? this.dimensions,
   filters: filters != null ? filters() : this.filters,
   limit: limit ?? this.limit,

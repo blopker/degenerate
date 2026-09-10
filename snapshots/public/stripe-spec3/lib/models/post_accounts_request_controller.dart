@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   if (stripeDashboard != null) 'stripe_dashboard': stripeDashboard?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fees', 'losses', 'requirement_collection', 'stripe_dashboard'}.contains(key)); } 
-PostAccountsRequestController copyWith({PostAccountsRequestControllerFees Function()? fees, PostAccountsRequestControllerLosses Function()? losses, PostAccountsRequestControllerRequirementCollection Function()? requirementCollection, PostAccountsRequestControllerStripeDashboard Function()? stripeDashboard, }) { return PostAccountsRequestController(
+PostAccountsRequestController copyWith({PostAccountsRequestControllerFees? Function()? fees, PostAccountsRequestControllerLosses? Function()? losses, PostAccountsRequestControllerRequirementCollection? Function()? requirementCollection, PostAccountsRequestControllerStripeDashboard? Function()? stripeDashboard, }) { return PostAccountsRequestController(
   fees: fees != null ? fees() : this.fees,
   losses: losses != null ? losses() : this.losses,
   requirementCollection: requirementCollection != null ? requirementCollection() : this.requirementCollection,

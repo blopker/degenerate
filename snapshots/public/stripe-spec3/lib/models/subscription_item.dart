@@ -24,10 +24,10 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Subscription items allow you to create customer subscriptions with more than
 /// one plan, making it easy to represent complex billing relationships.
-@immutable final class SubscriptionItem {const SubscriptionItem({required this.created, required this.currentPeriodEnd, required this.currentPeriodStart, required this.discounts, required this.id, required this.metadata, required this.object, required this.price, required this.subscription, this.billingThresholds, this.quantity, this.taxRates, });
+@immutable final class SubscriptionItem {const SubscriptionItem({required this.created, required this.currentPeriodEnd, required this.currentPeriodStart, required this.discounts, required this.id, required this.metadata, required this.object, required this.price, required this.subscription, this.billingThresholds = const Omittable.absent(), this.quantity, this.taxRates = const Omittable.absent(), });
 
 factory SubscriptionItem.fromJson(Map<String, dynamic> json) { return SubscriptionItem(
-  billingThresholds: json['billing_thresholds'] != null ? SubscriptionItemBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
+  billingThresholds: json.containsKey('billing_thresholds') ? Omittable(json['billing_thresholds'] != null ? SubscriptionItemBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currentPeriodEnd: (json['current_period_end'] as num).toInt(),
   currentPeriodStart: (json['current_period_start'] as num).toInt(),
@@ -38,11 +38,11 @@ factory SubscriptionItem.fromJson(Map<String, dynamic> json) { return Subscripti
   price: Price.fromJson(json['price'] as Map<String, dynamic>),
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   subscription: json['subscription'] as String,
-  taxRates: (json['tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList(),
+  taxRates: json.containsKey('tax_rates') ? Omittable((json['tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
 ); }
 
 /// Define thresholds at which an invoice will be sent, and the related subscription advanced to a new billing period
-final SubscriptionItemBillingThresholds? billingThresholds;
+final Omittable<SubscriptionItemBillingThresholds?> billingThresholds;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -74,10 +74,10 @@ final int? quantity;
 final String subscription;
 
 /// The tax rates which apply to this `subscription_item`. When set, the `default_tax_rates` on the subscription do not apply to this `subscription_item`.
-final List<TaxRate>? taxRates;
+final Omittable<List<TaxRate>?> taxRates;
 
 Map<String, dynamic> toJson() { return {
-  if (billingThresholds != null) 'billing_thresholds': billingThresholds?.toJson(),
+  if (billingThresholds.isPresent) 'billing_thresholds': billingThresholds.value?.toJson(),
   'created': created,
   'current_period_end': currentPeriodEnd,
   'current_period_start': currentPeriodStart,
@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
   'price': price.toJson(),
   'quantity': ?quantity,
   'subscription': subscription,
-  if (taxRates != null) 'tax_rates': taxRates?.map((e) => e.toJson()).toList(),
+  if (taxRates.isPresent) 'tax_rates': taxRates.value?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
       json.containsKey('current_period_end') && json['current_period_end'] is num &&
@@ -99,8 +99,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('price') &&
       json.containsKey('subscription') && json['subscription'] is String; } 
-SubscriptionItem copyWith({SubscriptionItemBillingThresholds? Function()? billingThresholds, int? created, int? currentPeriodEnd, int? currentPeriodStart, List<SubscriptionItemDiscounts>? discounts, String? id, Map<String,String>? metadata, SubscriptionItemObject? object, Price? price, int Function()? quantity, String? subscription, List<TaxRate>? Function()? taxRates, }) { return SubscriptionItem(
-  billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
+SubscriptionItem copyWith({Omittable<SubscriptionItemBillingThresholds?>? billingThresholds, int? created, int? currentPeriodEnd, int? currentPeriodStart, List<SubscriptionItemDiscounts>? discounts, String? id, Map<String,String>? metadata, SubscriptionItemObject? object, Price? price, int? Function()? quantity, String? subscription, Omittable<List<TaxRate>?>? taxRates, }) { return SubscriptionItem(
+  billingThresholds: billingThresholds ?? this.billingThresholds,
   created: created ?? this.created,
   currentPeriodEnd: currentPeriodEnd ?? this.currentPeriodEnd,
   currentPeriodStart: currentPeriodStart ?? this.currentPeriodStart,
@@ -111,7 +111,7 @@ SubscriptionItem copyWith({SubscriptionItemBillingThresholds? Function()? billin
   price: price ?? this.price,
   quantity: quantity != null ? quantity() : this.quantity,
   subscription: subscription ?? this.subscription,
-  taxRates: taxRates != null ? taxRates() : this.taxRates,
+  taxRates: taxRates ?? this.taxRates,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is SubscriptionItem &&
@@ -126,7 +126,8 @@ SubscriptionItem copyWith({SubscriptionItemBillingThresholds? Function()? billin
           price == other.price &&
           quantity == other.quantity &&
           subscription == other.subscription &&
-          listEquals(taxRates, other.taxRates); } 
-@override int get hashCode { return Object.hash(billingThresholds, created, currentPeriodEnd, currentPeriodStart, Object.hashAll(discounts), id, metadata, object, price, quantity, subscription, Object.hashAll(taxRates ?? const [])); } 
+          taxRates.isPresent == other.taxRates.isPresent &&
+          listEquals(taxRates.value, other.taxRates.value); } 
+@override int get hashCode { return Object.hash(billingThresholds, created, currentPeriodEnd, currentPeriodStart, Object.hashAll(discounts), id, metadata, object, price, quantity, subscription, Object.hashAll(taxRates.value ?? const [])); } 
 @override String toString() { return 'SubscriptionItem(billingThresholds: $billingThresholds, created: $created, currentPeriodEnd: $currentPeriodEnd, currentPeriodStart: $currentPeriodStart, discounts: $discounts, id: $id, metadata: $metadata, object: $object, price: $price, quantity: $quantity, subscription: $subscription, taxRates: $taxRates)'; } 
  }

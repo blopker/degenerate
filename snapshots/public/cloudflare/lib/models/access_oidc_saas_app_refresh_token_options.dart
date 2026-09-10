@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'lifetime': ?lifetime,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'lifetime'}.contains(key)); } 
-AccessOidcSaasAppRefreshTokenOptions copyWith({String Function()? lifetime}) { return AccessOidcSaasAppRefreshTokenOptions(
+AccessOidcSaasAppRefreshTokenOptions copyWith({String? Function()? lifetime}) { return AccessOidcSaasAppRefreshTokenOptions(
   lifetime: lifetime != null ? lifetime() : this.lifetime,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -19,7 +19,7 @@ factory UpdateConversationBody.fromJson(Map<String, dynamic> json) { return Upda
 final Map<String,String>? metadata;
 
 Map<String, dynamic> toJson() { return {
-  'metadata': ?metadata,
+  'metadata': metadata,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata'); } 
 UpdateConversationBody copyWith({Map<String, String>? Function()? metadata}) { return UpdateConversationBody(

@@ -49,7 +49,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('interface_name') && json['interface_name'] is String &&
       json.containsKey('ip_address') && json['ip_address'] is String &&
       json.containsKey('mac_address') && json['mac_address'] is String; } 
-MconnSnapshotDhcpLease copyWith({String? clientId, String Function()? connectorId, double? expiryTime, String? hostname, String? interfaceName, String? ipAddress, String? macAddress, }) { return MconnSnapshotDhcpLease(
+MconnSnapshotDhcpLease copyWith({String? clientId, String? Function()? connectorId, double? expiryTime, String? hostname, String? interfaceName, String? ipAddress, String? macAddress, }) { return MconnSnapshotDhcpLease(
   clientId: clientId ?? this.clientId,
   connectorId: connectorId != null ? connectorId() : this.connectorId,
   expiryTime: expiryTime ?? this.expiryTime,

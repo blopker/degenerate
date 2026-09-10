@@ -39,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') &&
       json.containsKey('match') && json['match'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-DigitalExperienceMonitoringDexRule copyWith({String? createdAt, String Function()? description, DigitalExperienceMonitoringUuid? id, String? match, String? name, List<DigitalExperienceMonitoringDexTargetedTest> Function()? targetedTests, String Function()? updatedAt, }) { return DigitalExperienceMonitoringDexRule(
+DigitalExperienceMonitoringDexRule copyWith({String? createdAt, String? Function()? description, DigitalExperienceMonitoringUuid? id, String? match, String? name, List<DigitalExperienceMonitoringDexTargetedTest>? Function()? targetedTests, String? Function()? updatedAt, }) { return DigitalExperienceMonitoringDexRule(
   createdAt: createdAt ?? this.createdAt,
   description: description != null ? description() : this.description,
   id: id ?? this.id,

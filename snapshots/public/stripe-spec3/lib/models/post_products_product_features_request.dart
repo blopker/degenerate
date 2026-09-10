@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'expand': ?expand,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('entitlement_feature') && json['entitlement_feature'] is String; } 
-PostProductsProductFeaturesRequest copyWith({String? entitlementFeature, List<String> Function()? expand, }) { return PostProductsProductFeaturesRequest(
+PostProductsProductFeaturesRequest copyWith({String? entitlementFeature, List<String>? Function()? expand, }) { return PostProductsProductFeaturesRequest(
   entitlementFeature: entitlementFeature ?? this.entitlementFeature,
   expand: expand != null ? expand() : this.expand,
 ); } 

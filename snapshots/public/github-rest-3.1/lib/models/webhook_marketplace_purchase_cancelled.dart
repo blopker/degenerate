@@ -68,7 +68,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('effective_date') && json['effective_date'] is String &&
       json.containsKey('marketplace_purchase') &&
       json.containsKey('sender'); } 
-WebhookMarketplacePurchaseCancelled copyWith({WebhookMarketplacePurchaseCancelledAction? action, String? effectiveDate, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksMarketplacePurchase? marketplacePurchase, OrganizationSimpleWebhooks Function()? organization, WebhooksPreviousMarketplacePurchase Function()? previousMarketplacePurchase, RepositoryWebhooks Function()? repository, SimpleUser? sender, }) { return WebhookMarketplacePurchaseCancelled(
+WebhookMarketplacePurchaseCancelled copyWith({WebhookMarketplacePurchaseCancelledAction? action, String? effectiveDate, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksMarketplacePurchase? marketplacePurchase, OrganizationSimpleWebhooks? Function()? organization, WebhooksPreviousMarketplacePurchase? Function()? previousMarketplacePurchase, RepositoryWebhooks? Function()? repository, SimpleUser? sender, }) { return WebhookMarketplacePurchaseCancelled(
   action: action ?? this.action,
   effectiveDate: effectiveDate ?? this.effectiveDate,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

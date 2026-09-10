@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'url', 'user', 'created_at', 'updated_at'}.contains(key)); } 
-GistSimpleForks copyWith({String Function()? id, Uri Function()? url, PublicUser Function()? user, DateTime Function()? createdAt, DateTime Function()? updatedAt, }) { return GistSimpleForks(
+GistSimpleForks copyWith({String? Function()? id, Uri? Function()? url, PublicUser? Function()? user, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, }) { return GistSimpleForks(
   id: id != null ? id() : this.id,
   url: url != null ? url() : this.url,
   user: user != null ? user() : this.user,

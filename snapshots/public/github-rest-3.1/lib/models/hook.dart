@@ -76,7 +76,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('test_url') && json['test_url'] is String &&
       json.containsKey('ping_url') && json['ping_url'] is String &&
       json.containsKey('last_response'); } 
-Hook copyWith({String? type, int? id, String? name, bool? active, List<String>? events, WebhookConfig? config, DateTime? updatedAt, DateTime? createdAt, Uri? url, Uri? testUrl, Uri? pingUrl, Uri Function()? deliveriesUrl, HookResponse? lastResponse, }) { return Hook(
+Hook copyWith({String? type, int? id, String? name, bool? active, List<String>? events, WebhookConfig? config, DateTime? updatedAt, DateTime? createdAt, Uri? url, Uri? testUrl, Uri? pingUrl, Uri? Function()? deliveriesUrl, HookResponse? lastResponse, }) { return Hook(
   type: type ?? this.type,
   id: id ?? this.id,
   name: name ?? this.name,

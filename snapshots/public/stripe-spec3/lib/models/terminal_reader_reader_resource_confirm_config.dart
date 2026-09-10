@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   'return_url': ?returnUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'return_url'}.contains(key)); } 
-TerminalReaderReaderResourceConfirmConfig copyWith({String Function()? returnUrl}) { return TerminalReaderReaderResourceConfirmConfig(
+TerminalReaderReaderResourceConfirmConfig copyWith({String? Function()? returnUrl}) { return TerminalReaderReaderResourceConfirmConfig(
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -25,117 +25,117 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AccountNotificationInstanceRequestMethod($value)'; } 
  }
-@immutable final class AccountNotificationInstance {const AccountNotificationInstance({this.accountSid, this.apiVersion, this.callSid, this.dateCreated, this.dateUpdated, this.errorCode, this.log, this.messageDate, this.messageText, this.moreInfo, this.requestMethod, this.requestUrl, this.requestVariables, this.responseBody, this.responseHeaders, this.sid, this.uri, });
+@immutable final class AccountNotificationInstance {const AccountNotificationInstance({this.accountSid = const Omittable.absent(), this.apiVersion = const Omittable.absent(), this.callSid = const Omittable.absent(), this.dateCreated = const Omittable.absent(), this.dateUpdated = const Omittable.absent(), this.errorCode = const Omittable.absent(), this.log = const Omittable.absent(), this.messageDate = const Omittable.absent(), this.messageText = const Omittable.absent(), this.moreInfo = const Omittable.absent(), this.requestMethod = const Omittable.absent(), this.requestUrl = const Omittable.absent(), this.requestVariables = const Omittable.absent(), this.responseBody = const Omittable.absent(), this.responseHeaders = const Omittable.absent(), this.sid = const Omittable.absent(), this.uri = const Omittable.absent(), });
 
 factory AccountNotificationInstance.fromJson(Map<String, dynamic> json) { return AccountNotificationInstance(
-  accountSid: json['account_sid'] as String?,
-  apiVersion: json['api_version'] as String?,
-  callSid: json['call_sid'] as String?,
-  dateCreated: json['date_created'] as String?,
-  dateUpdated: json['date_updated'] as String?,
-  errorCode: json['error_code'] as String?,
-  log: json['log'] as String?,
-  messageDate: json['message_date'] as String?,
-  messageText: json['message_text'] as String?,
-  moreInfo: json['more_info'] != null ? Uri.parse(json['more_info'] as String) : null,
-  requestMethod: json['request_method'] != null ? AccountNotificationInstanceRequestMethod.fromJson(json['request_method'] as String) : null,
-  requestUrl: json['request_url'] != null ? Uri.parse(json['request_url'] as String) : null,
-  requestVariables: json['request_variables'] as String?,
-  responseBody: json['response_body'] as String?,
-  responseHeaders: json['response_headers'] as String?,
-  sid: json['sid'] as String?,
-  uri: json['uri'] as String?,
+  accountSid: json.containsKey('account_sid') ? Omittable(json['account_sid'] as String?) : const Omittable.absent(),
+  apiVersion: json.containsKey('api_version') ? Omittable(json['api_version'] as String?) : const Omittable.absent(),
+  callSid: json.containsKey('call_sid') ? Omittable(json['call_sid'] as String?) : const Omittable.absent(),
+  dateCreated: json.containsKey('date_created') ? Omittable(json['date_created'] as String?) : const Omittable.absent(),
+  dateUpdated: json.containsKey('date_updated') ? Omittable(json['date_updated'] as String?) : const Omittable.absent(),
+  errorCode: json.containsKey('error_code') ? Omittable(json['error_code'] as String?) : const Omittable.absent(),
+  log: json.containsKey('log') ? Omittable(json['log'] as String?) : const Omittable.absent(),
+  messageDate: json.containsKey('message_date') ? Omittable(json['message_date'] as String?) : const Omittable.absent(),
+  messageText: json.containsKey('message_text') ? Omittable(json['message_text'] as String?) : const Omittable.absent(),
+  moreInfo: json.containsKey('more_info') ? Omittable(json['more_info'] != null ? Uri.parse(json['more_info'] as String) : null) : const Omittable.absent(),
+  requestMethod: json.containsKey('request_method') ? Omittable(json['request_method'] != null ? AccountNotificationInstanceRequestMethod.fromJson(json['request_method'] as String) : null) : const Omittable.absent(),
+  requestUrl: json.containsKey('request_url') ? Omittable(json['request_url'] != null ? Uri.parse(json['request_url'] as String) : null) : const Omittable.absent(),
+  requestVariables: json.containsKey('request_variables') ? Omittable(json['request_variables'] as String?) : const Omittable.absent(),
+  responseBody: json.containsKey('response_body') ? Omittable(json['response_body'] as String?) : const Omittable.absent(),
+  responseHeaders: json.containsKey('response_headers') ? Omittable(json['response_headers'] as String?) : const Omittable.absent(),
+  sid: json.containsKey('sid') ? Omittable(json['sid'] as String?) : const Omittable.absent(),
+  uri: json.containsKey('uri') ? Omittable(json['uri'] as String?) : const Omittable.absent(),
 ); }
 
 /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Notification resource.
-final String? accountSid;
+final Omittable<String?> accountSid;
 
 /// The API version used to generate the notification. Can be empty for events that don't have a specific API version, such as incoming phone calls.
-final String? apiVersion;
+final Omittable<String?> apiVersion;
 
 /// The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the Notification resource is associated with.
-final String? callSid;
+final Omittable<String?> callSid;
 
 /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateCreated;
+final Omittable<String?> dateCreated;
 
 /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
-final String? dateUpdated;
+final Omittable<String?> dateUpdated;
 
 /// A unique error code for the error condition that is described in our [Error Dictionary](https://www.twilio.com/docs/api/errors).
-final String? errorCode;
+final Omittable<String?> errorCode;
 
 /// An integer log level that corresponds to the type of notification: `0` is ERROR, `1` is WARNING.
-final String? log;
+final Omittable<String?> log;
 
 /// The date the notification was actually generated in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format. Message buffering can cause this value to differ from `date_created`.
-final String? messageDate;
+final Omittable<String?> messageDate;
 
 /// The text of the notification.
-final String? messageText;
+final Omittable<String?> messageText;
 
 /// The URL for more information about the error condition. This value is a page in our [Error Dictionary](https://www.twilio.com/docs/api/errors).
-final Uri? moreInfo;
+final Omittable<Uri?> moreInfo;
 
 /// The HTTP method used to generate the notification. If the notification was generated during a phone call, this is the HTTP Method used to request the resource on your server. If the notification was generated by your use of our REST API, this is the HTTP method used to call the resource on our servers.
-final AccountNotificationInstanceRequestMethod? requestMethod;
+final Omittable<AccountNotificationInstanceRequestMethod?> requestMethod;
 
 /// The URL of the resource that generated the notification. If the notification was generated during a phone call, this is the URL of the resource on your server that caused the notification. If the notification was generated by your use of our REST API, this is the URL of the resource you called.
-final Uri? requestUrl;
+final Omittable<Uri?> requestUrl;
 
 /// The HTTP GET or POST variables we sent to your server. However, if the notification was generated by our REST API, this contains the HTTP POST or PUT variables you sent to our API.
-final String? requestVariables;
+final Omittable<String?> requestVariables;
 
 /// The HTTP body returned by your server.
-final String? responseBody;
+final Omittable<String?> responseBody;
 
 /// The HTTP headers returned by your server.
-final String? responseHeaders;
+final Omittable<String?> responseHeaders;
 
 /// The unique string that that we created to identify the Notification resource.
-final String? sid;
+final Omittable<String?> sid;
 
 /// The URI of the resource, relative to `https://api.twilio.com`.
-final String? uri;
+final Omittable<String?> uri;
 
 Map<String, dynamic> toJson() { return {
-  'account_sid': ?accountSid,
-  'api_version': ?apiVersion,
-  'call_sid': ?callSid,
-  'date_created': ?dateCreated,
-  'date_updated': ?dateUpdated,
-  'error_code': ?errorCode,
-  'log': ?log,
-  'message_date': ?messageDate,
-  'message_text': ?messageText,
-  if (moreInfo != null) 'more_info': moreInfo?.toString(),
-  if (requestMethod != null) 'request_method': requestMethod?.toJson(),
-  if (requestUrl != null) 'request_url': requestUrl?.toString(),
-  'request_variables': ?requestVariables,
-  'response_body': ?responseBody,
-  'response_headers': ?responseHeaders,
-  'sid': ?sid,
-  'uri': ?uri,
+  if (accountSid.isPresent) 'account_sid': accountSid.value,
+  if (apiVersion.isPresent) 'api_version': apiVersion.value,
+  if (callSid.isPresent) 'call_sid': callSid.value,
+  if (dateCreated.isPresent) 'date_created': dateCreated.value,
+  if (dateUpdated.isPresent) 'date_updated': dateUpdated.value,
+  if (errorCode.isPresent) 'error_code': errorCode.value,
+  if (log.isPresent) 'log': log.value,
+  if (messageDate.isPresent) 'message_date': messageDate.value,
+  if (messageText.isPresent) 'message_text': messageText.value,
+  if (moreInfo.isPresent) 'more_info': moreInfo.value?.toString(),
+  if (requestMethod.isPresent) 'request_method': requestMethod.value?.toJson(),
+  if (requestUrl.isPresent) 'request_url': requestUrl.value?.toString(),
+  if (requestVariables.isPresent) 'request_variables': requestVariables.value,
+  if (responseBody.isPresent) 'response_body': responseBody.value,
+  if (responseHeaders.isPresent) 'response_headers': responseHeaders.value,
+  if (sid.isPresent) 'sid': sid.value,
+  if (uri.isPresent) 'uri': uri.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_sid', 'api_version', 'call_sid', 'date_created', 'date_updated', 'error_code', 'log', 'message_date', 'message_text', 'more_info', 'request_method', 'request_url', 'request_variables', 'response_body', 'response_headers', 'sid', 'uri'}.contains(key)); } 
-AccountNotificationInstance copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? errorCode, String? Function()? log, String? Function()? messageDate, String? Function()? messageText, Uri? Function()? moreInfo, AccountNotificationInstanceRequestMethod? Function()? requestMethod, Uri? Function()? requestUrl, String? Function()? requestVariables, String? Function()? responseBody, String? Function()? responseHeaders, String? Function()? sid, String? Function()? uri, }) { return AccountNotificationInstance(
-  accountSid: accountSid != null ? accountSid() : this.accountSid,
-  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
-  callSid: callSid != null ? callSid() : this.callSid,
-  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
-  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
-  errorCode: errorCode != null ? errorCode() : this.errorCode,
-  log: log != null ? log() : this.log,
-  messageDate: messageDate != null ? messageDate() : this.messageDate,
-  messageText: messageText != null ? messageText() : this.messageText,
-  moreInfo: moreInfo != null ? moreInfo() : this.moreInfo,
-  requestMethod: requestMethod != null ? requestMethod() : this.requestMethod,
-  requestUrl: requestUrl != null ? requestUrl() : this.requestUrl,
-  requestVariables: requestVariables != null ? requestVariables() : this.requestVariables,
-  responseBody: responseBody != null ? responseBody() : this.responseBody,
-  responseHeaders: responseHeaders != null ? responseHeaders() : this.responseHeaders,
-  sid: sid != null ? sid() : this.sid,
-  uri: uri != null ? uri() : this.uri,
+AccountNotificationInstance copyWith({Omittable<String?>? accountSid, Omittable<String?>? apiVersion, Omittable<String?>? callSid, Omittable<String?>? dateCreated, Omittable<String?>? dateUpdated, Omittable<String?>? errorCode, Omittable<String?>? log, Omittable<String?>? messageDate, Omittable<String?>? messageText, Omittable<Uri?>? moreInfo, Omittable<AccountNotificationInstanceRequestMethod?>? requestMethod, Omittable<Uri?>? requestUrl, Omittable<String?>? requestVariables, Omittable<String?>? responseBody, Omittable<String?>? responseHeaders, Omittable<String?>? sid, Omittable<String?>? uri, }) { return AccountNotificationInstance(
+  accountSid: accountSid ?? this.accountSid,
+  apiVersion: apiVersion ?? this.apiVersion,
+  callSid: callSid ?? this.callSid,
+  dateCreated: dateCreated ?? this.dateCreated,
+  dateUpdated: dateUpdated ?? this.dateUpdated,
+  errorCode: errorCode ?? this.errorCode,
+  log: log ?? this.log,
+  messageDate: messageDate ?? this.messageDate,
+  messageText: messageText ?? this.messageText,
+  moreInfo: moreInfo ?? this.moreInfo,
+  requestMethod: requestMethod ?? this.requestMethod,
+  requestUrl: requestUrl ?? this.requestUrl,
+  requestVariables: requestVariables ?? this.requestVariables,
+  responseBody: responseBody ?? this.responseBody,
+  responseHeaders: responseHeaders ?? this.responseHeaders,
+  sid: sid ?? this.sid,
+  uri: uri ?? this.uri,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is AccountNotificationInstance &&

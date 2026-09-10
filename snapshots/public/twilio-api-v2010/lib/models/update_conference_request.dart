@@ -68,7 +68,7 @@ Map<String, dynamic> toJson() { return {
   if (announceMethod != null) 'AnnounceMethod': announceMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'Status', 'AnnounceUrl', 'AnnounceMethod'}.contains(key)); } 
-UpdateConferenceRequest copyWith({ConferenceEnumUpdateStatus Function()? status, Uri Function()? announceUrl, UpdateConferenceRequestAnnounceMethod Function()? announceMethod, }) { return UpdateConferenceRequest(
+UpdateConferenceRequest copyWith({ConferenceEnumUpdateStatus? Function()? status, Uri? Function()? announceUrl, UpdateConferenceRequestAnnounceMethod? Function()? announceMethod, }) { return UpdateConferenceRequest(
   status: status != null ? status() : this.status,
   announceUrl: announceUrl != null ? announceUrl() : this.announceUrl,
   announceMethod: announceMethod != null ? announceMethod() : this.announceMethod,

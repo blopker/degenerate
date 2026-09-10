@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') &&
       json.containsKey('content'); } 
-InputMessage copyWith({String Function()? type, InputMessageRole? role, InputMessageStatus Function()? status, List<InputContent>? content, }) { return InputMessage(
+InputMessage copyWith({String? Function()? type, InputMessageRole? role, InputMessageStatus? Function()? status, List<InputContent>? content, }) { return InputMessage(
   type: type != null ? type() : this.type,
   role: role ?? this.role,
   status: status != null ? status() : this.status,

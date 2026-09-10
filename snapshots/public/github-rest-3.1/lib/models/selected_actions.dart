@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'patterns_allowed': ?patternsAllowed,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'github_owned_allowed', 'verified_allowed', 'patterns_allowed'}.contains(key)); } 
-SelectedActions copyWith({bool Function()? githubOwnedAllowed, bool Function()? verifiedAllowed, List<String> Function()? patternsAllowed, }) { return SelectedActions(
+SelectedActions copyWith({bool? Function()? githubOwnedAllowed, bool? Function()? verifiedAllowed, List<String>? Function()? patternsAllowed, }) { return SelectedActions(
   githubOwnedAllowed: githubOwnedAllowed != null ? githubOwnedAllowed() : this.githubOwnedAllowed,
   verifiedAllowed: verifiedAllowed != null ? verifiedAllowed() : this.verifiedAllowed,
   patternsAllowed: patternsAllowed != null ? patternsAllowed() : this.patternsAllowed,

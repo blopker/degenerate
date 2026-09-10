@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target', 'value'}.contains(key)); } 
-FirewallSchemasCidrConfiguration copyWith({FirewallSchemasCidrConfigurationTarget Function()? target, String Function()? value, }) { return FirewallSchemasCidrConfiguration(
+FirewallSchemasCidrConfiguration copyWith({FirewallSchemasCidrConfigurationTarget? Function()? target, String? Function()? value, }) { return FirewallSchemasCidrConfiguration(
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
 ); } 

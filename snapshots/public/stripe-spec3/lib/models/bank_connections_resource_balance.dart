@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('as_of') && json['as_of'] is num &&
       json.containsKey('current') &&
       json.containsKey('type'); } 
-BankConnectionsResourceBalance copyWith({int? asOf, ResourceCashBalance Function()? cash, ResourceCreditBalance Function()? credit, Map<String,int>? current, BankConnectionsResourceBalanceType? type, }) { return BankConnectionsResourceBalance(
+BankConnectionsResourceBalance copyWith({int? asOf, ResourceCashBalance? Function()? cash, ResourceCreditBalance? Function()? credit, Map<String,int>? current, BankConnectionsResourceBalanceType? type, }) { return BankConnectionsResourceBalance(
   asOf: asOf ?? this.asOf,
   cash: cash != null ? cash() : this.cash,
   credit: credit != null ? credit() : this.credit,

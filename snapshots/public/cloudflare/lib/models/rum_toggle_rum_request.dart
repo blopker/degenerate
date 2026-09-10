@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'value'}.contains(key)); } 
-RumToggleRumRequest copyWith({String Function()? value}) { return RumToggleRumRequest(
+RumToggleRumRequest copyWith({String? Function()? value}) { return RumToggleRumRequest(
   value: value != null ? value() : this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'uniqueDevicesTotal', 'value'}.contains(key)); } 
-DigitalExperienceMonitoringLiveStat copyWith({DigitalExperienceMonitoringUniqueDevicesTotal Function()? uniqueDevicesTotal, String Function()? value, }) { return DigitalExperienceMonitoringLiveStat(
+DigitalExperienceMonitoringLiveStat copyWith({DigitalExperienceMonitoringUniqueDevicesTotal? Function()? uniqueDevicesTotal, String? Function()? value, }) { return DigitalExperienceMonitoringLiveStat(
   uniqueDevicesTotal: uniqueDevicesTotal != null ? uniqueDevicesTotal() : this.uniqueDevicesTotal,
   value: value != null ? value() : this.value,
 ); } 

@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'plain_text': ?plainText,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'base64', 'json', 'plain_text'}.contains(key)); } 
-AccountRequestTracerRequestTraceRequestBody copyWith({String Function()? base64, Map<String, dynamic> Function()? json, String Function()? plainText, }) { return AccountRequestTracerRequestTraceRequestBody(
+AccountRequestTracerRequestTraceRequestBody copyWith({String? Function()? base64, Map<String, dynamic>? Function()? json, String? Function()? plainText, }) { return AccountRequestTracerRequestTraceRequestBody(
   base64: base64 != null ? base64() : this.base64,
   json: json != null ? json() : this.json,
   plainText: plainText != null ? plainText() : this.plainText,

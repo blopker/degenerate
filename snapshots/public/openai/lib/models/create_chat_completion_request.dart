@@ -50,38 +50,38 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ResponseModalities2($value)'; } 
  }
-@immutable final class CreateChatCompletionRequest {const CreateChatCompletionRequest({required this.model, required this.messages, this.verbosity, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, this.topLogprobs, this.temperature, this.modalities, this.metadata, this.reasoningEffort, this.maxCompletionTokens, this.frequencyPenalty = 0.0, this.presencePenalty = 0.0, this.webSearchOptions, this.responseFormat, this.audio, this.store = false, this.stream = false, this.functions, this.logitBias, this.logprobs = false, this.maxTokens, this.n = 1, this.prediction, this.seed, this.streamOptions, this.tools, this.toolChoice, this.parallelToolCalls, this.functionCall, this.stop, });
+@immutable final class CreateChatCompletionRequest {const CreateChatCompletionRequest({required this.model, required this.messages, this.verbosity = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier = const Omittable.absent(), this.promptCacheRetention = const Omittable.absent(), this.topLogprobs = const Omittable.absent(), this.temperature = const Omittable.absent(), this.modalities = const Omittable.absent(), this.metadata = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.maxCompletionTokens = const Omittable.absent(), this.frequencyPenalty = 0.0, this.presencePenalty = 0.0, this.webSearchOptions, this.responseFormat, this.audio = const Omittable.absent(), this.store = false, this.stream = false, this.functions, this.logitBias = const Omittable.absent(), this.logprobs = false, this.maxTokens = const Omittable.absent(), this.n = 1, this.prediction = const Omittable.absent(), this.seed = const Omittable.absent(), this.streamOptions, this.tools, this.toolChoice, this.parallelToolCalls, this.functionCall, this.stop, });
 
 factory CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return CreateChatCompletionRequest(
-  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
-  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
+  metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
+  topLogprobs: json.containsKey('top_logprobs') ? Omittable(json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null) : const Omittable.absent(),
+  temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
+  topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   user: json['user'] as String?,
   safetyIdentifier: json['safety_identifier'] as String?,
   promptCacheKey: json['prompt_cache_key'] as String?,
-  serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
-  promptCacheRetention: json['prompt_cache_retention'] != null ? CreateChatCompletionRequestPromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null,
+  serviceTier: json.containsKey('service_tier') ? Omittable(json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null) : const Omittable.absent(),
+  promptCacheRetention: json.containsKey('prompt_cache_retention') ? Omittable(json['prompt_cache_retention'] != null ? CreateChatCompletionRequestPromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null) : const Omittable.absent(),
   messages: (json['messages'] as List<dynamic>).map((e) => ChatCompletionRequestMessage.fromJson(e as Map<String, dynamic>)).toList(),
   model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),),
-  modalities: (json['modalities'] as List<dynamic>?)?.map((e) => ResponseModalities2.fromJson(e as String)).toList(),
-  verbosity: json['verbosity'] != null ? Verbosity.fromJson(json['verbosity'] as String) : null,
-  reasoningEffort: json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
-  maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
+  modalities: json.containsKey('modalities') ? Omittable((json['modalities'] as List<dynamic>?)?.map((e) => ResponseModalities2.fromJson(e as String)).toList()) : const Omittable.absent(),
+  verbosity: json.containsKey('verbosity') ? Omittable(json['verbosity'] != null ? Verbosity.fromJson(json['verbosity'] as String) : null) : const Omittable.absent(),
+  reasoningEffort: json.containsKey('reasoning_effort') ? Omittable(json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null) : const Omittable.absent(),
+  maxCompletionTokens: json.containsKey('max_completion_tokens') ? Omittable(json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null) : const Omittable.absent(),
   frequencyPenalty: json.containsKey('frequency_penalty') ? json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null : 0.0,
   presencePenalty: json.containsKey('presence_penalty') ? json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null : 0.0,
   webSearchOptions: json['web_search_options'] != null ? CreateChatCompletionRequestWebSearchOptions.fromJson(json['web_search_options'] as Map<String, dynamic>) : null,
   responseFormat: json['response_format'] != null ? CreateChatCompletionRequestResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
-  audio: json['audio'] != null ? CreateChatCompletionRequestAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
+  audio: json.containsKey('audio') ? Omittable(json['audio'] != null ? CreateChatCompletionRequestAudio.fromJson(json['audio'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   store: json.containsKey('store') ? json['store'] as bool? : false,
   stream: json.containsKey('stream') ? json['stream'] as bool? : false,
   stop: json['stop'] != null ? OneOf2.parse(json['stop'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
-  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt())),
+  logitBias: json.containsKey('logit_bias') ? Omittable((json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt()))) : const Omittable.absent(),
   logprobs: json.containsKey('logprobs') ? json['logprobs'] as bool? : false,
-  maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
+  maxTokens: json.containsKey('max_tokens') ? Omittable(json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null) : const Omittable.absent(),
   n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
-  prediction: json['prediction'] != null ? PredictionContent.fromJson(json['prediction'] as Map<String, dynamic>) : null,
-  seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
+  prediction: json.containsKey('prediction') ? Omittable(json['prediction'] != null ? PredictionContent.fromJson(json['prediction'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  seed: json.containsKey('seed') ? Omittable(json['seed'] != null ? (json['seed'] as num).toInt() : null) : const Omittable.absent(),
   streamOptions: json['stream_options'] != null ? ChatCompletionStreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ChatCompletionTool.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomToolChatCompletions.fromJson(v as Map<String, dynamic>),)).toList(),
   toolChoice: json['tool_choice'] != null ? OneOf4.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ChatCompletionAllowedToolsChoice.fromJson(v as Map<String, dynamic>), fromC: (v) => ChatCompletionNamedToolChoice.fromJson(v as Map<String, dynamic>), fromD: (v) => ChatCompletionNamedToolChoiceCustom.fromJson(v as Map<String, dynamic>),) : null,
@@ -90,18 +90,18 @@ factory CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return
   functions: (json['functions'] as List<dynamic>?)?.map((e) => ChatCompletionFunctions.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final Map<String,String>? metadata;
+final Omittable<Map<String,String>?> metadata;
 
 /// An integer between 0 and 20 specifying the number of most likely tokens to
 /// return at each token position, each with an associated log probability.
 /// `logprobs` must be set to `true` if this parameter is used.
 /// 
-final int? topLogprobs;
+final Omittable<int?> topLogprobs;
 
 /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
 /// We generally recommend altering this or `top_p` but not both.
 /// 
-final double? temperature;
+final Omittable<double?> temperature;
 
 /// An alternative to sampling with temperature, called nucleus sampling,
 /// where the model considers the results of the tokens with top_p probability
@@ -110,7 +110,7 @@ final double? temperature;
 /// 
 /// We generally recommend altering this or `temperature` but not both.
 /// 
-final double? topP;
+final Omittable<double?> topP;
 
 /// This field is being replaced by `safety_identifier` and `prompt_cache_key`. Use `prompt_cache_key` instead to maintain caching optimizations.
 /// A stable identifier for your end-users.
@@ -127,11 +127,11 @@ final String? safetyIdentifier;
 /// 
 final String? promptCacheKey;
 
-final ServiceTier? serviceTier;
+final Omittable<ServiceTier?> serviceTier;
 
 /// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
 /// 
-final CreateChatCompletionRequestPromptCacheRetention? promptCacheRetention;
+final Omittable<CreateChatCompletionRequestPromptCacheRetention?> promptCacheRetention;
 
 /// A list of messages comprising the conversation so far. Depending on the
 /// [model](/docs/models) you use, different message types (modalities) are
@@ -147,15 +147,15 @@ final List<ChatCompletionRequestMessage> messages;
 /// 
 final ModelIdsShared model;
 
-final List<ResponseModalities2>? modalities;
+final Omittable<List<ResponseModalities2>?> modalities;
 
-final Verbosity? verbosity;
+final Omittable<Verbosity?> verbosity;
 
-final ReasoningEffort? reasoningEffort;
+final Omittable<ReasoningEffort?> reasoningEffort;
 
 /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
 /// 
-final int? maxCompletionTokens;
+final Omittable<int?> maxCompletionTokens;
 
 /// Number between -2.0 and 2.0. Positive values penalize new tokens based on
 /// their existing frequency in the text so far, decreasing the model's
@@ -190,7 +190,7 @@ final CreateChatCompletionRequestResponseFormat? responseFormat;
 /// Parameters for audio output. Required when audio output is requested with
 /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
 /// 
-final CreateChatCompletionRequestAudio? audio;
+final Omittable<CreateChatCompletionRequestAudio?> audio;
 
 /// Whether or not to store the output of this chat completion request for
 /// use in our [model distillation](/docs/guides/distillation) or
@@ -219,7 +219,7 @@ final StopConfiguration? stop;
 /// decrease or increase likelihood of selection; values like -100 or 100
 /// should result in a ban or exclusive selection of the relevant token.
 /// 
-final Map<String,int>? logitBias;
+final Omittable<Map<String,int>?> logitBias;
 
 /// Whether to return log probabilities of the output tokens or not. If true,
 /// returns the log probabilities of each output token returned in the
@@ -234,7 +234,7 @@ final bool? logprobs;
 /// This value is now deprecated in favor of `max_completion_tokens`, and is
 /// not compatible with [o-series models](/docs/guides/reasoning).
 /// 
-final int? maxTokens;
+final Omittable<int?> maxTokens;
 
 /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.
 final int? n;
@@ -244,13 +244,13 @@ final int? n;
 /// response are known ahead of time. This is most common when you are
 /// regenerating a file with only minor changes to most of the content.
 /// 
-final PredictionContent? prediction;
+final Omittable<PredictionContent?> prediction;
 
 /// This feature is in Beta.
 /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.
 /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
 /// 
-final int? seed;
+final Omittable<int?> seed;
 
 final ChatCompletionStreamOptions? streamOptions;
 
@@ -289,35 +289,35 @@ final CreateChatCompletionRequestFunctionCall? functionCall;
 final List<ChatCompletionFunctions>? functions;
 
 Map<String, dynamic> toJson() { return {
-  'metadata': ?metadata,
-  'top_logprobs': ?topLogprobs,
-  'temperature': ?temperature,
-  'top_p': ?topP,
+  if (metadata.isPresent) 'metadata': metadata.value,
+  if (topLogprobs.isPresent) 'top_logprobs': topLogprobs.value,
+  if (temperature.isPresent) 'temperature': temperature.value,
+  if (topP.isPresent) 'top_p': topP.value,
   'user': ?user,
   'safety_identifier': ?safetyIdentifier,
   'prompt_cache_key': ?promptCacheKey,
-  if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
-  if (promptCacheRetention != null) 'prompt_cache_retention': promptCacheRetention?.toJson(),
+  if (serviceTier.isPresent) 'service_tier': serviceTier.value?.toJson(),
+  if (promptCacheRetention.isPresent) 'prompt_cache_retention': promptCacheRetention.value?.toJson(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'model': model.toJson(),
-  if (modalities != null) 'modalities': modalities?.map((e) => e.toJson()).toList(),
-  if (verbosity != null) 'verbosity': verbosity?.toJson(),
-  if (reasoningEffort != null) 'reasoning_effort': reasoningEffort?.toJson(),
-  'max_completion_tokens': ?maxCompletionTokens,
+  if (modalities.isPresent) 'modalities': modalities.value?.map((e) => e.toJson()).toList(),
+  if (verbosity.isPresent) 'verbosity': verbosity.value?.toJson(),
+  if (reasoningEffort.isPresent) 'reasoning_effort': reasoningEffort.value?.toJson(),
+  if (maxCompletionTokens.isPresent) 'max_completion_tokens': maxCompletionTokens.value,
   'frequency_penalty': ?frequencyPenalty,
   'presence_penalty': ?presencePenalty,
   if (webSearchOptions != null) 'web_search_options': webSearchOptions?.toJson(),
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
-  if (audio != null) 'audio': audio?.toJson(),
+  if (audio.isPresent) 'audio': audio.value?.toJson(),
   'store': ?store,
   'stream': ?stream,
   if (stop != null) 'stop': stop?.toJson(),
-  'logit_bias': ?logitBias,
+  if (logitBias.isPresent) 'logit_bias': logitBias.value,
   'logprobs': ?logprobs,
-  'max_tokens': ?maxTokens,
+  if (maxTokens.isPresent) 'max_tokens': maxTokens.value,
   'n': ?n,
-  if (prediction != null) 'prediction': prediction?.toJson(),
-  'seed': ?seed,
+  if (prediction.isPresent) 'prediction': prediction.value?.toJson(),
+  if (seed.isPresent) 'seed': seed.value,
   if (streamOptions != null) 'stream_options': streamOptions?.toJson(),
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
@@ -327,36 +327,36 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
       json.containsKey('model'); } 
-CreateChatCompletionRequest copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String Function()? user, String Function()? safetyIdentifier, String Function()? promptCacheKey, ServiceTier? Function()? serviceTier, CreateChatCompletionRequestPromptCacheRetention? Function()? promptCacheRetention, List<ChatCompletionRequestMessage>? messages, ModelIdsShared? model, List<ResponseModalities2>? Function()? modalities, Verbosity? Function()? verbosity, ReasoningEffort? Function()? reasoningEffort, int? Function()? maxCompletionTokens, double? Function()? frequencyPenalty, double? Function()? presencePenalty, CreateChatCompletionRequestWebSearchOptions Function()? webSearchOptions, CreateChatCompletionRequestResponseFormat Function()? responseFormat, CreateChatCompletionRequestAudio? Function()? audio, bool? Function()? store, bool? Function()? stream, StopConfiguration Function()? stop, Map<String, int>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxTokens, int? Function()? n, PredictionContent? Function()? prediction, int? Function()? seed, ChatCompletionStreamOptions Function()? streamOptions, List<CreateChatCompletionRequestTools> Function()? tools, ChatCompletionToolChoiceOption Function()? toolChoice, ParallelToolCalls Function()? parallelToolCalls, CreateChatCompletionRequestFunctionCall Function()? functionCall, List<ChatCompletionFunctions> Function()? functions, }) { return CreateChatCompletionRequest(
-  metadata: metadata != null ? metadata() : this.metadata,
-  topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
-  temperature: temperature != null ? temperature() : this.temperature,
-  topP: topP != null ? topP() : this.topP,
+CreateChatCompletionRequest copyWith({Omittable<Map<String,String>?>? metadata, Omittable<int?>? topLogprobs, Omittable<double?>? temperature, Omittable<double?>? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, Omittable<ServiceTier?>? serviceTier, Omittable<CreateChatCompletionRequestPromptCacheRetention?>? promptCacheRetention, List<ChatCompletionRequestMessage>? messages, ModelIdsShared? model, Omittable<List<ResponseModalities2>?>? modalities, Omittable<Verbosity?>? verbosity, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<int?>? maxCompletionTokens, double? Function()? frequencyPenalty, double? Function()? presencePenalty, CreateChatCompletionRequestWebSearchOptions? Function()? webSearchOptions, CreateChatCompletionRequestResponseFormat? Function()? responseFormat, Omittable<CreateChatCompletionRequestAudio?>? audio, bool? Function()? store, bool? Function()? stream, StopConfiguration? Function()? stop, Omittable<Map<String,int>?>? logitBias, bool? Function()? logprobs, Omittable<int?>? maxTokens, int? Function()? n, Omittable<PredictionContent?>? prediction, Omittable<int?>? seed, ChatCompletionStreamOptions? Function()? streamOptions, List<CreateChatCompletionRequestTools>? Function()? tools, ChatCompletionToolChoiceOption? Function()? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, CreateChatCompletionRequestFunctionCall? Function()? functionCall, List<ChatCompletionFunctions>? Function()? functions, }) { return CreateChatCompletionRequest(
+  metadata: metadata ?? this.metadata,
+  topLogprobs: topLogprobs ?? this.topLogprobs,
+  temperature: temperature ?? this.temperature,
+  topP: topP ?? this.topP,
   user: user != null ? user() : this.user,
   safetyIdentifier: safetyIdentifier != null ? safetyIdentifier() : this.safetyIdentifier,
   promptCacheKey: promptCacheKey != null ? promptCacheKey() : this.promptCacheKey,
-  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
-  promptCacheRetention: promptCacheRetention != null ? promptCacheRetention() : this.promptCacheRetention,
+  serviceTier: serviceTier ?? this.serviceTier,
+  promptCacheRetention: promptCacheRetention ?? this.promptCacheRetention,
   messages: messages ?? this.messages,
   model: model ?? this.model,
-  modalities: modalities != null ? modalities() : this.modalities,
-  verbosity: verbosity != null ? verbosity() : this.verbosity,
-  reasoningEffort: reasoningEffort != null ? reasoningEffort() : this.reasoningEffort,
-  maxCompletionTokens: maxCompletionTokens != null ? maxCompletionTokens() : this.maxCompletionTokens,
+  modalities: modalities ?? this.modalities,
+  verbosity: verbosity ?? this.verbosity,
+  reasoningEffort: reasoningEffort ?? this.reasoningEffort,
+  maxCompletionTokens: maxCompletionTokens ?? this.maxCompletionTokens,
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   presencePenalty: presencePenalty != null ? presencePenalty() : this.presencePenalty,
   webSearchOptions: webSearchOptions != null ? webSearchOptions() : this.webSearchOptions,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
-  audio: audio != null ? audio() : this.audio,
+  audio: audio ?? this.audio,
   store: store != null ? store() : this.store,
   stream: stream != null ? stream() : this.stream,
   stop: stop != null ? stop() : this.stop,
-  logitBias: logitBias != null ? logitBias() : this.logitBias,
+  logitBias: logitBias ?? this.logitBias,
   logprobs: logprobs != null ? logprobs() : this.logprobs,
-  maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
+  maxTokens: maxTokens ?? this.maxTokens,
   n: n != null ? n() : this.n,
-  prediction: prediction != null ? prediction() : this.prediction,
-  seed: seed != null ? seed() : this.seed,
+  prediction: prediction ?? this.prediction,
+  seed: seed ?? this.seed,
   streamOptions: streamOptions != null ? streamOptions() : this.streamOptions,
   tools: tools != null ? tools() : this.tools,
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
@@ -377,7 +377,8 @@ CreateChatCompletionRequest copyWith({Map<String, String>? Function()? metadata,
           promptCacheRetention == other.promptCacheRetention &&
           listEquals(messages, other.messages) &&
           model == other.model &&
-          listEquals(modalities, other.modalities) &&
+          modalities.isPresent == other.modalities.isPresent &&
+          listEquals(modalities.value, other.modalities.value) &&
           verbosity == other.verbosity &&
           reasoningEffort == other.reasoningEffort &&
           maxCompletionTokens == other.maxCompletionTokens &&
@@ -401,6 +402,6 @@ CreateChatCompletionRequest copyWith({Map<String, String>? Function()? metadata,
           parallelToolCalls == other.parallelToolCalls &&
           functionCall == other.functionCall &&
           listEquals(functions, other.functions); } 
-@override int get hashCode { return Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, Object.hashAll(messages), model, Object.hashAll(modalities ?? const []), verbosity, reasoningEffort, maxCompletionTokens, frequencyPenalty, presencePenalty, webSearchOptions, responseFormat, audio, store, stream, stop, logitBias, logprobs, maxTokens, n, prediction, seed, streamOptions, Object.hashAll(tools ?? const []), toolChoice, parallelToolCalls, functionCall, Object.hashAll(functions ?? const [])]); } 
+@override int get hashCode { return Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, Object.hashAll(messages), model, Object.hashAll(modalities.value ?? const []), verbosity, reasoningEffort, maxCompletionTokens, frequencyPenalty, presencePenalty, webSearchOptions, responseFormat, audio, store, stream, stop, logitBias, logprobs, maxTokens, n, prediction, seed, streamOptions, Object.hashAll(tools ?? const []), toolChoice, parallelToolCalls, functionCall, Object.hashAll(functions ?? const [])]); } 
 @override String toString() { return 'CreateChatCompletionRequest(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention, messages: $messages, model: $model, modalities: $modalities, verbosity: $verbosity, reasoningEffort: $reasoningEffort, maxCompletionTokens: $maxCompletionTokens, frequencyPenalty: $frequencyPenalty, presencePenalty: $presencePenalty, webSearchOptions: $webSearchOptions, responseFormat: $responseFormat, audio: $audio, store: $store, stream: $stream, stop: $stop, logitBias: $logitBias, logprobs: $logprobs, maxTokens: $maxTokens, n: $n, prediction: $prediction, seed: $seed, streamOptions: $streamOptions, tools: $tools, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, functionCall: $functionCall, functions: $functions)'; } 
  }

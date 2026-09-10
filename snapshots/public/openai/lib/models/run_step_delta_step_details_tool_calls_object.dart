@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   if (toolCalls != null) 'tool_calls': toolCalls?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RunStepDeltaStepDetailsToolCallsObject copyWith({RunStepDeltaStepDetailsToolCallsObjectType? type, List<RunStepDeltaStepDetailsToolCallsObjectToolCalls> Function()? toolCalls, }) { return RunStepDeltaStepDetailsToolCallsObject(
+RunStepDeltaStepDetailsToolCallsObject copyWith({RunStepDeltaStepDetailsToolCallsObjectType? type, List<RunStepDeltaStepDetailsToolCallsObjectToolCalls>? Function()? toolCalls, }) { return RunStepDeltaStepDetailsToolCallsObject(
   type: type ?? this.type,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
 ); } 

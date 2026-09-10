@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
   'success': ?success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'errors', 'messages', 'success'}.contains(key)); } 
-Success copyWith({List<ErrorModel22> Function()? errors, List<String> Function()? messages, bool Function()? success, }) { return Success(
+Success copyWith({List<ErrorModel22>? Function()? errors, List<String>? Function()? messages, bool? Function()? success, }) { return Success(
   errors: errors != null ? errors() : this.errors,
   messages: messages != null ? messages() : this.messages,
   success: success != null ? success() : this.success,

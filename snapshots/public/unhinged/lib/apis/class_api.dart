@@ -2,7 +2,9 @@
 
 import 'dart:async';
 import 'dart:convert';
+
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 import '../models/self.dart';
 
 /// ClassApi operations.

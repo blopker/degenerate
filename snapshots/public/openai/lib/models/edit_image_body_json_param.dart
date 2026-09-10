@@ -168,7 +168,7 @@ bool get isUnknown { return !values.contains(this); }
 /// You can reference images via external URLs, data URLs, or uploaded file IDs.
 /// JSON edits support GPT image models only; DALL-E edits require multipart (`dall-e-2` only).
 /// 
-@immutable final class EditImageBodyJsonParam {const EditImageBodyJsonParam({required this.images, required this.prompt, this.model, this.mask, this.n = 1, this.quality = EditImageBodyJsonParamQuality.auto, this.inputFidelity, this.size = EditImageBodyJsonParamSize.auto, this.user, this.outputFormat = EditImageBodyJsonParamOutputFormat.png, this.outputCompression, this.moderation = EditImageBodyJsonParamModeration.auto, this.background = EditImageBodyJsonParamBackground.auto, this.stream = false, this.partialImages, });
+@immutable final class EditImageBodyJsonParam {const EditImageBodyJsonParam({required this.images, required this.prompt, this.model, this.mask, this.n = 1, this.quality = EditImageBodyJsonParamQuality.auto, this.inputFidelity = const Omittable.absent(), this.size = EditImageBodyJsonParamSize.auto, this.user, this.outputFormat = EditImageBodyJsonParamOutputFormat.png, this.outputCompression = const Omittable.absent(), this.moderation = EditImageBodyJsonParamModeration.auto, this.background = EditImageBodyJsonParamBackground.auto, this.stream = false, this.partialImages = const Omittable.absent(), });
 
 factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return EditImageBodyJsonParam(
   model: json['model'] != null ? OneOf3.parse(json['model'], fromA: (v) => v as String, fromB: (v) => EditImageBodyJsonParamModelVariant2.fromJson(v as String), fromC: (v) => v,) : null,
@@ -177,15 +177,15 @@ factory EditImageBodyJsonParam.fromJson(Map<String, dynamic> json) { return Edit
   prompt: json['prompt'] as String,
   n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
   quality: json.containsKey('quality') ? json['quality'] != null ? EditImageBodyJsonParamQuality.fromJson(json['quality'] as String) : null : EditImageBodyJsonParamQuality.auto,
-  inputFidelity: json['input_fidelity'] != null ? EditImageBodyJsonParamInputFidelity.fromJson(json['input_fidelity'] as String) : null,
+  inputFidelity: json.containsKey('input_fidelity') ? Omittable(json['input_fidelity'] != null ? EditImageBodyJsonParamInputFidelity.fromJson(json['input_fidelity'] as String) : null) : const Omittable.absent(),
   size: json.containsKey('size') ? json['size'] != null ? EditImageBodyJsonParamSize.fromJson(json['size'] as String) : null : EditImageBodyJsonParamSize.auto,
   user: json['user'] as String?,
   outputFormat: json.containsKey('output_format') ? json['output_format'] != null ? EditImageBodyJsonParamOutputFormat.fromJson(json['output_format'] as String) : null : EditImageBodyJsonParamOutputFormat.png,
-  outputCompression: json['output_compression'] != null ? (json['output_compression'] as num).toInt() : null,
+  outputCompression: json.containsKey('output_compression') ? Omittable(json['output_compression'] != null ? (json['output_compression'] as num).toInt() : null) : const Omittable.absent(),
   moderation: json.containsKey('moderation') ? json['moderation'] != null ? EditImageBodyJsonParamModeration.fromJson(json['moderation'] as String) : null : EditImageBodyJsonParamModeration.auto,
   background: json.containsKey('background') ? json['background'] != null ? EditImageBodyJsonParamBackground.fromJson(json['background'] as String) : null : EditImageBodyJsonParamBackground.auto,
   stream: json.containsKey('stream') ? json['stream'] as bool? : false,
-  partialImages: json['partial_images'] != null ? PartialImages.fromJson(json['partial_images'] as num) : null,
+  partialImages: json.containsKey('partial_images') ? Omittable(json['partial_images'] != null ? PartialImages.fromJson(json['partial_images'] as num) : null) : const Omittable.absent(),
 ); }
 
 /// The model to use for image editing.
@@ -209,7 +209,7 @@ final int? n;
 final EditImageBodyJsonParamQuality? quality;
 
 /// Controls fidelity to the original input image(s).
-final EditImageBodyJsonParamInputFidelity? inputFidelity;
+final Omittable<EditImageBodyJsonParamInputFidelity?> inputFidelity;
 
 /// Requested output image size.
 final EditImageBodyJsonParamSize? size;
@@ -223,7 +223,7 @@ final String? user;
 final EditImageBodyJsonParamOutputFormat? outputFormat;
 
 /// Compression level for `jpeg` or `webp` output.
-final int? outputCompression;
+final Omittable<int?> outputCompression;
 
 /// Moderation level for GPT image models.
 final EditImageBodyJsonParamModeration? moderation;
@@ -234,7 +234,7 @@ final EditImageBodyJsonParamBackground? background;
 /// Stream partial image results as events.
 final bool? stream;
 
-final PartialImages? partialImages;
+final Omittable<PartialImages?> partialImages;
 
 Map<String, dynamic> toJson() { return {
   if (model != null) 'model': model?.toJson(),
@@ -243,34 +243,34 @@ Map<String, dynamic> toJson() { return {
   'prompt': prompt,
   'n': ?n,
   if (quality != null) 'quality': quality?.toJson(),
-  if (inputFidelity != null) 'input_fidelity': inputFidelity?.toJson(),
+  if (inputFidelity.isPresent) 'input_fidelity': inputFidelity.value?.toJson(),
   if (size != null) 'size': size?.toJson(),
   'user': ?user,
   if (outputFormat != null) 'output_format': outputFormat?.toJson(),
-  'output_compression': ?outputCompression,
+  if (outputCompression.isPresent) 'output_compression': outputCompression.value,
   if (moderation != null) 'moderation': moderation?.toJson(),
   if (background != null) 'background': background?.toJson(),
   'stream': ?stream,
-  if (partialImages != null) 'partial_images': partialImages?.toJson(),
+  if (partialImages.isPresent) 'partial_images': partialImages.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('images') &&
       json.containsKey('prompt') && json['prompt'] is String; } 
-EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel Function()? model, List<ImageRefParam>? images, ImageRefParam Function()? mask, String? prompt, int? Function()? n, EditImageBodyJsonParamQuality? Function()? quality, EditImageBodyJsonParamInputFidelity? Function()? inputFidelity, EditImageBodyJsonParamSize? Function()? size, String Function()? user, EditImageBodyJsonParamOutputFormat? Function()? outputFormat, int? Function()? outputCompression, EditImageBodyJsonParamModeration? Function()? moderation, EditImageBodyJsonParamBackground? Function()? background, bool? Function()? stream, PartialImages? Function()? partialImages, }) { return EditImageBodyJsonParam(
+EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel? Function()? model, List<ImageRefParam>? images, ImageRefParam? Function()? mask, String? prompt, int? Function()? n, EditImageBodyJsonParamQuality? Function()? quality, Omittable<EditImageBodyJsonParamInputFidelity?>? inputFidelity, EditImageBodyJsonParamSize? Function()? size, String? Function()? user, EditImageBodyJsonParamOutputFormat? Function()? outputFormat, Omittable<int?>? outputCompression, EditImageBodyJsonParamModeration? Function()? moderation, EditImageBodyJsonParamBackground? Function()? background, bool? Function()? stream, Omittable<PartialImages?>? partialImages, }) { return EditImageBodyJsonParam(
   model: model != null ? model() : this.model,
   images: images ?? this.images,
   mask: mask != null ? mask() : this.mask,
   prompt: prompt ?? this.prompt,
   n: n != null ? n() : this.n,
   quality: quality != null ? quality() : this.quality,
-  inputFidelity: inputFidelity != null ? inputFidelity() : this.inputFidelity,
+  inputFidelity: inputFidelity ?? this.inputFidelity,
   size: size != null ? size() : this.size,
   user: user != null ? user() : this.user,
   outputFormat: outputFormat != null ? outputFormat() : this.outputFormat,
-  outputCompression: outputCompression != null ? outputCompression() : this.outputCompression,
+  outputCompression: outputCompression ?? this.outputCompression,
   moderation: moderation != null ? moderation() : this.moderation,
   background: background != null ? background() : this.background,
   stream: stream != null ? stream() : this.stream,
-  partialImages: partialImages != null ? partialImages() : this.partialImages,
+  partialImages: partialImages ?? this.partialImages,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is EditImageBodyJsonParam &&

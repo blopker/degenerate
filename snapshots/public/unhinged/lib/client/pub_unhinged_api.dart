@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+
 import '../apis/class_api.dart';
 import '../apis/default_api.dart';
 import '../apis/incidents_api.dart';

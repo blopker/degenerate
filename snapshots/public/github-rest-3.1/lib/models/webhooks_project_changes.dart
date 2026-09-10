@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (archivedAt != null) 'archived_at': archivedAt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'archived_at'}.contains(key)); } 
-WebhooksProjectChanges copyWith({WebhooksProjectChangesArchivedAt Function()? archivedAt}) { return WebhooksProjectChanges(
+WebhooksProjectChanges copyWith({WebhooksProjectChangesArchivedAt? Function()? archivedAt}) { return WebhooksProjectChanges(
   archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'photo': ?photo,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'photo'}.contains(key)); } 
-PatchItemRequest copyWith({String Function()? name, String Function()? photo, }) { return PatchItemRequest(
+PatchItemRequest copyWith({String? Function()? name, String? Function()? photo, }) { return PatchItemRequest(
   name: name != null ? name() : this.name,
   photo: photo != null ? photo() : this.photo,
 ); } 

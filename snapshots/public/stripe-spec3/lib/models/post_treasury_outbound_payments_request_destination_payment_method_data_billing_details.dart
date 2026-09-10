@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (phone != null) 'phone': phone?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone'}.contains(key)); } 
-PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails copyWith({PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddress Function()? address, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmail Function()? email, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsName Function()? name, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsPhone Function()? phone, }) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails(
+PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails copyWith({PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsAddress? Function()? address, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmail? Function()? email, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsName? Function()? name, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsPhone? Function()? phone, }) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,

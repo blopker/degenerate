@@ -37,7 +37,7 @@ Map<String, dynamic> toJson() { return {
   'message': message.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
-DestinationCreateResponse401Errors copyWith({String Function()? detail, DestinationCreateResponse401ErrorsMessage? message, }) { return DestinationCreateResponse401Errors(
+DestinationCreateResponse401Errors copyWith({String? Function()? detail, DestinationCreateResponse401ErrorsMessage? message, }) { return DestinationCreateResponse401Errors(
   detail: detail != null ? detail() : this.detail,
   message: message ?? this.message,
 ); } 

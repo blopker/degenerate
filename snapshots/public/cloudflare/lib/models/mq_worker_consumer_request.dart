@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('script_name') &&
       json.containsKey('type') && json['type'] is String; } 
-MqWorkerConsumerRequest copyWith({MqQueueName Function()? deadLetterQueue, MqScriptName? scriptName, MqWorkerConsumerRequestSettings Function()? settings, String? type, }) { return MqWorkerConsumerRequest(
+MqWorkerConsumerRequest copyWith({MqQueueName? Function()? deadLetterQueue, MqScriptName? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, String? type, }) { return MqWorkerConsumerRequest(
   deadLetterQueue: deadLetterQueue != null ? deadLetterQueue() : this.deadLetterQueue,
   scriptName: scriptName ?? this.scriptName,
   settings: settings != null ? settings() : this.settings,

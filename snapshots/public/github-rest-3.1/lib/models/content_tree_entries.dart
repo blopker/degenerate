@@ -42,9 +42,9 @@ Map<String, dynamic> toJson() { return {
   'path': path,
   'sha': sha,
   'url': url.toString(),
-  if (gitUrl != null) 'git_url': gitUrl?.toString(),
-  if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
-  if (downloadUrl != null) 'download_url': downloadUrl?.toString(),
+  'git_url': gitUrl?.toString(),
+  'html_url': htmlUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
   '_links': links.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
@@ -53,9 +53,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('path') && json['path'] is String &&
       json.containsKey('sha') && json['sha'] is String &&
       json.containsKey('url') && json['url'] is String &&
-      json.containsKey('git_url') && json['git_url'] is String &&
-      json.containsKey('html_url') && json['html_url'] is String &&
-      json.containsKey('download_url') && json['download_url'] is String &&
+      json.containsKey('git_url') && (json['git_url'] == null || json['git_url'] is String) &&
+      json.containsKey('html_url') && (json['html_url'] == null || json['html_url'] is String) &&
+      json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
       json.containsKey('_links'); } 
 ContentTreeEntries copyWith({String? type, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentTreeEntriesLinks? links, }) { return ContentTreeEntries(
   type: type ?? this.type,

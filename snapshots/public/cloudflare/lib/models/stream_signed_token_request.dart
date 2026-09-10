@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
   'pem': ?pem,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accessRules', 'downloadable', 'exp', 'id', 'nbf', 'pem'}.contains(key)); } 
-StreamSignedTokenRequest copyWith({List<StreamAccessRules> Function()? accessRules, bool Function()? downloadable, int Function()? exp, String Function()? id, int Function()? nbf, String Function()? pem, }) { return StreamSignedTokenRequest(
+StreamSignedTokenRequest copyWith({List<StreamAccessRules>? Function()? accessRules, bool Function()? downloadable, int? Function()? exp, String? Function()? id, int? Function()? nbf, String? Function()? pem, }) { return StreamSignedTokenRequest(
   accessRules: accessRules != null ? accessRules() : this.accessRules,
   downloadable: downloadable != null ? downloadable() : this.downloadable,
   exp: exp != null ? exp() : this.exp,

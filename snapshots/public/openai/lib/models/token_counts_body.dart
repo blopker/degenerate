@@ -24,87 +24,88 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TruncationEnum($value)'; } 
  }
-@immutable final class TokenCountsBody {const TokenCountsBody({this.model, this.input, this.previousResponseId, this.tools, this.text, this.reasoning, this.truncation, this.instructions, this.conversation, this.toolChoice, this.parallelToolCalls, });
+@immutable final class TokenCountsBody {const TokenCountsBody({this.model = const Omittable.absent(), this.input = const Omittable.absent(), this.previousResponseId = const Omittable.absent(), this.tools = const Omittable.absent(), this.text = const Omittable.absent(), this.reasoning = const Omittable.absent(), this.truncation, this.instructions = const Omittable.absent(), this.conversation = const Omittable.absent(), this.toolChoice = const Omittable.absent(), this.parallelToolCalls = const Omittable.absent(), });
 
 factory TokenCountsBody.fromJson(Map<String, dynamic> json) { return TokenCountsBody(
-  model: json['model'] as String?,
-  input: json['input'] != null ? OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => InputItem.fromJson(e as Map<String, dynamic>)).toList(),) : null,
-  previousResponseId: json['previous_response_id'] as String?,
-  tools: (json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
-  text: json['text'] != null ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>) : null,
-  reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
+  model: json.containsKey('model') ? Omittable(json['model'] as String?) : const Omittable.absent(),
+  input: json.containsKey('input') ? Omittable(json['input'] != null ? OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => InputItem.fromJson(e as Map<String, dynamic>)).toList(),) : null) : const Omittable.absent(),
+  previousResponseId: json.containsKey('previous_response_id') ? Omittable(json['previous_response_id'] as String?) : const Omittable.absent(),
+  tools: json.containsKey('tools') ? Omittable((json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
+  text: json.containsKey('text') ? Omittable(json['text'] != null ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  reasoning: json.containsKey('reasoning') ? Omittable(json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   truncation: json['truncation'] != null ? TruncationEnum.fromJson(json['truncation'] as String) : null,
-  instructions: json['instructions'] as String?,
-  conversation: json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => ConversationParam2.fromJson(v as Map<String, dynamic>),) : null,
-  toolChoice: json['tool_choice'] != null ? OneOf8.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceAllowed.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceTypes.fromJson(v as Map<String, dynamic>), fromD: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromE: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>), fromF: (v) => ToolChoiceCustom.fromJson(v as Map<String, dynamic>), fromG: (v) => SpecificApplyPatchParam.fromJson(v as Map<String, dynamic>), fromH: (v) => SpecificFunctionShellParam.fromJson(v as Map<String, dynamic>),) : null,
-  parallelToolCalls: json['parallel_tool_calls'] as bool?,
+  instructions: json.containsKey('instructions') ? Omittable(json['instructions'] as String?) : const Omittable.absent(),
+  conversation: json.containsKey('conversation') ? Omittable(json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => ConversationParam2.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  toolChoice: json.containsKey('tool_choice') ? Omittable(json['tool_choice'] != null ? OneOf8.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceAllowed.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceTypes.fromJson(v as Map<String, dynamic>), fromD: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromE: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>), fromF: (v) => ToolChoiceCustom.fromJson(v as Map<String, dynamic>), fromG: (v) => SpecificApplyPatchParam.fromJson(v as Map<String, dynamic>), fromH: (v) => SpecificFunctionShellParam.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  parallelToolCalls: json.containsKey('parallel_tool_calls') ? Omittable(json['parallel_tool_calls'] as bool?) : const Omittable.absent(),
 ); }
 
 /// Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](/docs/models) to browse and compare available models.
-final String? model;
+final Omittable<String?> model;
 
 /// Text, image, or file inputs to the model, used to generate a response
-final TokenCountsBodyInput? input;
+final Omittable<TokenCountsBodyInput?> input;
 
 /// The unique ID of the previous response to the model. Use this to create multi-turn conversations. Learn more about [conversation state](/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
-final String? previousResponseId;
+final Omittable<String?> previousResponseId;
 
 /// An array of tools the model may call while generating a response. You can specify which tool to use by setting the `tool_choice` parameter.
-final List<Tool>? tools;
+final Omittable<List<Tool>?> tools;
 
-final ResponseTextParam? text;
+final Omittable<ResponseTextParam?> text;
 
 /// **gpt-5 and o-series models only** Configuration options for [reasoning models](https://platform.openai.com/docs/guides/reasoning).
-final Reasoning? reasoning;
+final Omittable<Reasoning?> reasoning;
 
 /// The truncation strategy to use for the model response. - `auto`: If the input to this Response exceeds the model's context window size, the model will truncate the response to fit the context window by dropping items from the beginning of the conversation. - `disabled` (default): If the input size will exceed the context window size for a model, the request will fail with a 400 error.
 final TruncationEnum? truncation;
 
 /// A system (or developer) message inserted into the model's context.
 /// When used along with `previous_response_id`, the instructions from a previous response will not be carried over to the next response. This makes it simple to swap out system (or developer) messages in new responses.
-final String? instructions;
+final Omittable<String?> instructions;
 
-final ConversationParam? conversation;
+final Omittable<ConversationParam?> conversation;
 
 /// Controls which tool the model should use, if any.
-final ToolChoiceParam? toolChoice;
+final Omittable<ToolChoiceParam?> toolChoice;
 
 /// Whether to allow the model to run tool calls in parallel.
-final bool? parallelToolCalls;
+final Omittable<bool?> parallelToolCalls;
 
 Map<String, dynamic> toJson() { return {
-  'model': ?model,
-  if (input != null) 'input': input?.toJson(),
-  'previous_response_id': ?previousResponseId,
-  if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
-  if (text != null) 'text': text?.toJson(),
-  if (reasoning != null) 'reasoning': reasoning?.toJson(),
+  if (model.isPresent) 'model': model.value,
+  if (input.isPresent) 'input': input.value?.toJson(),
+  if (previousResponseId.isPresent) 'previous_response_id': previousResponseId.value,
+  if (tools.isPresent) 'tools': tools.value?.map((e) => e.toJson()).toList(),
+  if (text.isPresent) 'text': text.value?.toJson(),
+  if (reasoning.isPresent) 'reasoning': reasoning.value?.toJson(),
   if (truncation != null) 'truncation': truncation?.toJson(),
-  'instructions': ?instructions,
-  if (conversation != null) 'conversation': conversation?.toJson(),
-  if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
-  'parallel_tool_calls': ?parallelToolCalls,
+  if (instructions.isPresent) 'instructions': instructions.value,
+  if (conversation.isPresent) 'conversation': conversation.value?.toJson(),
+  if (toolChoice.isPresent) 'tool_choice': toolChoice.value?.toJson(),
+  if (parallelToolCalls.isPresent) 'parallel_tool_calls': parallelToolCalls.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model', 'input', 'previous_response_id', 'tools', 'text', 'reasoning', 'truncation', 'instructions', 'conversation', 'tool_choice', 'parallel_tool_calls'}.contains(key)); } 
-TokenCountsBody copyWith({String? Function()? model, TokenCountsBodyInput? Function()? input, String? Function()? previousResponseId, List<Tool>? Function()? tools, ResponseTextParam? Function()? text, Reasoning? Function()? reasoning, TruncationEnum Function()? truncation, String? Function()? instructions, ConversationParam? Function()? conversation, ToolChoiceParam? Function()? toolChoice, bool? Function()? parallelToolCalls, }) { return TokenCountsBody(
-  model: model != null ? model() : this.model,
-  input: input != null ? input() : this.input,
-  previousResponseId: previousResponseId != null ? previousResponseId() : this.previousResponseId,
-  tools: tools != null ? tools() : this.tools,
-  text: text != null ? text() : this.text,
-  reasoning: reasoning != null ? reasoning() : this.reasoning,
+TokenCountsBody copyWith({Omittable<String?>? model, Omittable<TokenCountsBodyInput?>? input, Omittable<String?>? previousResponseId, Omittable<List<Tool>?>? tools, Omittable<ResponseTextParam?>? text, Omittable<Reasoning?>? reasoning, TruncationEnum? Function()? truncation, Omittable<String?>? instructions, Omittable<ConversationParam?>? conversation, Omittable<ToolChoiceParam?>? toolChoice, Omittable<bool?>? parallelToolCalls, }) { return TokenCountsBody(
+  model: model ?? this.model,
+  input: input ?? this.input,
+  previousResponseId: previousResponseId ?? this.previousResponseId,
+  tools: tools ?? this.tools,
+  text: text ?? this.text,
+  reasoning: reasoning ?? this.reasoning,
   truncation: truncation != null ? truncation() : this.truncation,
-  instructions: instructions != null ? instructions() : this.instructions,
-  conversation: conversation != null ? conversation() : this.conversation,
-  toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
-  parallelToolCalls: parallelToolCalls != null ? parallelToolCalls() : this.parallelToolCalls,
+  instructions: instructions ?? this.instructions,
+  conversation: conversation ?? this.conversation,
+  toolChoice: toolChoice ?? this.toolChoice,
+  parallelToolCalls: parallelToolCalls ?? this.parallelToolCalls,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TokenCountsBody &&
           model == other.model &&
           input == other.input &&
           previousResponseId == other.previousResponseId &&
-          listEquals(tools, other.tools) &&
+          tools.isPresent == other.tools.isPresent &&
+          listEquals(tools.value, other.tools.value) &&
           text == other.text &&
           reasoning == other.reasoning &&
           truncation == other.truncation &&
@@ -112,6 +113,6 @@ TokenCountsBody copyWith({String? Function()? model, TokenCountsBodyInput? Funct
           conversation == other.conversation &&
           toolChoice == other.toolChoice &&
           parallelToolCalls == other.parallelToolCalls; } 
-@override int get hashCode { return Object.hash(model, input, previousResponseId, Object.hashAll(tools ?? const []), text, reasoning, truncation, instructions, conversation, toolChoice, parallelToolCalls); } 
+@override int get hashCode { return Object.hash(model, input, previousResponseId, Object.hashAll(tools.value ?? const []), text, reasoning, truncation, instructions, conversation, toolChoice, parallelToolCalls); } 
 @override String toString() { return 'TokenCountsBody(model: $model, input: $input, previousResponseId: $previousResponseId, tools: $tools, text: $text, reasoning: $reasoning, truncation: $truncation, instructions: $instructions, conversation: $conversation, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls)'; } 
  }

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   if (slug != null) 'slug': slug?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'login', 'slug'}.contains(key)); } 
-WebhookInstallationTargetRenamedChanges copyWith({WebhookInstallationTargetRenamedChangesLogin Function()? login, WebhookInstallationTargetRenamedChangesSlug Function()? slug, }) { return WebhookInstallationTargetRenamedChanges(
+WebhookInstallationTargetRenamedChanges copyWith({WebhookInstallationTargetRenamedChangesLogin? Function()? login, WebhookInstallationTargetRenamedChangesSlug? Function()? slug, }) { return WebhookInstallationTargetRenamedChanges(
   login: login != null ? login() : this.login,
   slug: slug != null ? slug() : this.slug,
 ); } 

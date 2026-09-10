@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
   if (postfixIds != null) 'postfix_ids': postfixIds?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination'); } 
-EmailSecurityPostBulkMessageMoveRequest copyWith({EmailSecurityPostBulkMessageMoveRequestDestination? destination, List<String> Function()? ids, List<EmailSecurityPostfixId> Function()? postfixIds, }) { return EmailSecurityPostBulkMessageMoveRequest(
+EmailSecurityPostBulkMessageMoveRequest copyWith({EmailSecurityPostBulkMessageMoveRequestDestination? destination, List<String>? Function()? ids, List<EmailSecurityPostfixId>? Function()? postfixIds, }) { return EmailSecurityPostBulkMessageMoveRequest(
   destination: destination ?? this.destination,
   ids: ids != null ? ids() : this.ids,
   postfixIds: postfixIds != null ? postfixIds() : this.postfixIds,

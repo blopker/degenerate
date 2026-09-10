@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
   'message': message,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
-AaaComponentsSchemasMessages2 copyWith({int Function()? code, String? message, }) { return AaaComponentsSchemasMessages2(
+AaaComponentsSchemasMessages2 copyWith({int? Function()? code, String? message, }) { return AaaComponentsSchemasMessages2(
   code: code != null ? code() : this.code,
   message: message ?? this.message,
 ); } 

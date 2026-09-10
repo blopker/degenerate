@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String &&
       json.containsKey('role'); } 
-InviteRequest copyWith({String? email, InviteRequestRole? role, List<InviteRequestProjects> Function()? projects, }) { return InviteRequest(
+InviteRequest copyWith({String? email, InviteRequestRole? role, List<InviteRequestProjects>? Function()? projects, }) { return InviteRequest(
   email: email ?? this.email,
   role: role ?? this.role,
   projects: projects != null ? projects() : this.projects,

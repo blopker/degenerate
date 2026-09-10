@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('notes') && json['notes'] is String &&
       json.containsKey('timezone') && json['timezone'] is String; } 
-MconnCustomerConnector copyWith({bool? activated, MconnCustomerDevice Function()? device, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String Function()? lastHeartbeat, String Function()? lastSeenVersion, String? lastUpdated, String Function()? licenseKey, String? notes, String? timezone, }) { return MconnCustomerConnector(
+MconnCustomerConnector copyWith({bool? activated, MconnCustomerDevice? Function()? device, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? lastUpdated, String? Function()? licenseKey, String? notes, String? timezone, }) { return MconnCustomerConnector(
   activated: activated ?? this.activated,
   device: device != null ? device() : this.device,
   id: id ?? this.id,

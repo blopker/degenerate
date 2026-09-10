@@ -384,33 +384,33 @@ bool get isUnknown { return !values.contains(this); }
 /// Customer and account tax IDs get displayed on related invoices and credit notes.
 /// 
 /// Related guides: [Customer tax identification numbers](https://docs.stripe.com/billing/taxes/tax-ids), [Account tax IDs](https://docs.stripe.com/invoicing/connect#account-tax-ids)
-@immutable final class TaxId {const TaxId({required this.created, required this.id, required this.livemode, required this.object, required this.type, required this.value, this.country, this.customer, this.customerAccount, this.owner, this.verification, });
+@immutable final class TaxId {const TaxId({required this.created, required this.id, required this.livemode, required this.object, required this.type, required this.value, this.country = const Omittable.absent(), this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.owner = const Omittable.absent(), this.verification = const Omittable.absent(), });
 
 factory TaxId.fromJson(Map<String, dynamic> json) { return TaxId(
-  country: json['country'] as String?,
+  country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
-  customer: json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null,
-  customerAccount: json['customer_account'] as String?,
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: TaxIdObject.fromJson(json['object'] as String),
-  owner: json['owner'] != null ? TaxIDsOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  owner: json.containsKey('owner') ? Omittable(json['owner'] != null ? TaxIDsOwner.fromJson(json['owner'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   type: TaxIdType.fromJson(json['type'] as String),
   value: json['value'] as String,
-  verification: json['verification'] != null ? TaxIdVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
+  verification: json.containsKey('verification') ? Omittable(json['verification'] != null ? TaxIdVerification.fromJson(json['verification'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// Two-letter ISO code representing the country of the tax ID.
-final String? country;
+final Omittable<String?> country;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
 
 /// ID of the customer.
-final TaxIdCustomer? customer;
+final Omittable<TaxIdCustomer?> customer;
 
 /// ID of the Account representing the customer.
-final String? customerAccount;
+final Omittable<String?> customerAccount;
 
 /// Unique identifier for the object.
 final String id;
@@ -422,7 +422,7 @@ final bool livemode;
 final TaxIdObject object;
 
 /// The account or customer the tax ID belongs to.
-final TaxIDsOwner? owner;
+final Omittable<TaxIDsOwner?> owner;
 
 /// Type of the tax ID, one of `ad_nrt`, `ae_trn`, `al_tin`, `am_tin`, `ao_tin`, `ar_cuit`, `au_abn`, `au_arn`, `aw_tin`, `az_tin`, `ba_tin`, `bb_tin`, `bd_bin`, `bf_ifu`, `bg_uic`, `bh_vat`, `bj_ifu`, `bo_tin`, `br_cnpj`, `br_cpf`, `bs_tin`, `by_tin`, `ca_bn`, `ca_gst_hst`, `ca_pst_bc`, `ca_pst_mb`, `ca_pst_sk`, `ca_qst`, `cd_nif`, `ch_uid`, `ch_vat`, `cl_tin`, `cm_niu`, `cn_tin`, `co_nit`, `cr_tin`, `cv_nif`, `de_stn`, `do_rcn`, `ec_ruc`, `eg_tin`, `es_cif`, `et_tin`, `eu_oss_vat`, `eu_vat`, `gb_vat`, `ge_vat`, `gn_nif`, `hk_br`, `hr_oib`, `hu_tin`, `id_npwp`, `il_vat`, `in_gst`, `is_vat`, `jp_cn`, `jp_rn`, `jp_trn`, `ke_pin`, `kg_tin`, `kh_tin`, `kr_brn`, `kz_bin`, `la_tin`, `li_uid`, `li_vat`, `lk_vat`, `ma_vat`, `md_vat`, `me_pib`, `mk_vat`, `mr_nif`, `mx_rfc`, `my_frp`, `my_itn`, `my_sst`, `ng_tin`, `no_vat`, `no_voec`, `np_pan`, `nz_gst`, `om_vat`, `pe_ruc`, `ph_tin`, `pl_nip`, `ro_tin`, `rs_pib`, `ru_inn`, `ru_kpp`, `sa_vat`, `sg_gst`, `sg_uen`, `si_tin`, `sn_ninea`, `sr_fin`, `sv_nit`, `th_vat`, `tj_tin`, `tr_tin`, `tw_vat`, `tz_vat`, `ua_vat`, `ug_tin`, `us_ein`, `uy_ruc`, `uz_tin`, `uz_vat`, `ve_rif`, `vn_tin`, `za_vat`, `zm_tin`, or `zw_tin`. Note that some legacy tax IDs have type `unknown`
 final TaxIdType type;
@@ -431,20 +431,20 @@ final TaxIdType type;
 final String value;
 
 /// Tax ID verification information.
-final TaxIdVerification? verification;
+final Omittable<TaxIdVerification?> verification;
 
 Map<String, dynamic> toJson() { return {
-  'country': ?country,
+  if (country.isPresent) 'country': country.value,
   'created': created,
-  if (customer != null) 'customer': customer?.toJson(),
-  'customer_account': ?customerAccount,
+  if (customer.isPresent) 'customer': customer.value?.toJson(),
+  if (customerAccount.isPresent) 'customer_account': customerAccount.value,
   'id': id,
   'livemode': livemode,
   'object': object.toJson(),
-  if (owner != null) 'owner': owner?.toJson(),
+  if (owner.isPresent) 'owner': owner.value?.toJson(),
   'type': type.toJson(),
   'value': value,
-  if (verification != null) 'verification': verification?.toJson(),
+  if (verification.isPresent) 'verification': verification.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
@@ -452,18 +452,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('type') &&
       json.containsKey('value') && json['value'] is String; } 
-TaxId copyWith({String? Function()? country, int? created, TaxIdCustomer? Function()? customer, String? Function()? customerAccount, String? id, bool? livemode, TaxIdObject? object, TaxIDsOwner? Function()? owner, TaxIdType? type, String? value, TaxIdVerification? Function()? verification, }) { return TaxId(
-  country: country != null ? country() : this.country,
+TaxId copyWith({Omittable<String?>? country, int? created, Omittable<TaxIdCustomer?>? customer, Omittable<String?>? customerAccount, String? id, bool? livemode, TaxIdObject? object, Omittable<TaxIDsOwner?>? owner, TaxIdType? type, String? value, Omittable<TaxIdVerification?>? verification, }) { return TaxId(
+  country: country ?? this.country,
   created: created ?? this.created,
-  customer: customer != null ? customer() : this.customer,
-  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount ?? this.customerAccount,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
-  owner: owner != null ? owner() : this.owner,
+  owner: owner ?? this.owner,
   type: type ?? this.type,
   value: value ?? this.value,
-  verification: verification != null ? verification() : this.verification,
+  verification: verification ?? this.verification,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TaxId &&

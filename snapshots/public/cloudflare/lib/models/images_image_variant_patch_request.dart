@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'options': options.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('options'); } 
-ImagesImageVariantPatchRequest copyWith({ImagesImageVariantNeverRequireSignedUrLs Function()? neverRequireSignedUrLs, ImagesImageVariantOptions? options, }) { return ImagesImageVariantPatchRequest(
+ImagesImageVariantPatchRequest copyWith({ImagesImageVariantNeverRequireSignedUrLs? Function()? neverRequireSignedUrLs, ImagesImageVariantOptions? options, }) { return ImagesImageVariantPatchRequest(
   neverRequireSignedUrLs: neverRequireSignedUrLs != null ? neverRequireSignedUrLs() : this.neverRequireSignedUrLs,
   options: options ?? this.options,
 ); } 

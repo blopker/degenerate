@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
   if (kubeletEndpoint != null) 'kubeletEndpoint': kubeletEndpoint?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'kubeletEndpoint'}.contains(key)); } 
-NodeDaemonEndpoints copyWith({DaemonEndpoint Function()? kubeletEndpoint}) { return NodeDaemonEndpoints(
+NodeDaemonEndpoints copyWith({DaemonEndpoint? Function()? kubeletEndpoint}) { return NodeDaemonEndpoints(
   kubeletEndpoint: kubeletEndpoint != null ? kubeletEndpoint() : this.kubeletEndpoint,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -155,7 +155,7 @@ final AbuseReportsCsamReportNcmecNotification ncmecNotification;
 final AbuseReportsCsamReportOwnerNotification ownerNotification;
 
 Map<String, dynamic> toJson() { return {
-  'act': ?act,
+  'act': act,
   'comments': ?comments,
   'company': ?company,
   'email': email,
@@ -181,7 +181,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('justification') && json['justification'] is String &&
       json.containsKey('ncmec_notification') &&
       json.containsKey('owner_notification'); } 
-AbuseReportsCsamReport copyWith({dynamic Function()? act, String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, String Function()? country, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, AbuseReportsCsamReportNcmecNotification? ncmecNotification, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) { return AbuseReportsCsamReport(
+AbuseReportsCsamReport copyWith({dynamic Function()? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, String? Function()? country, AbuseReportsCsamReportHostNotification? hostNotification, String? justification, AbuseReportsCsamReportNcmecNotification? ncmecNotification, AbuseReportsCsamReportOwnerNotification? ownerNotification, }) { return AbuseReportsCsamReport(
   act: act != null ? act() : this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,

@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (subnetType != null) 'subnet_type': subnetType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'created_at', 'deleted_at', 'id', 'is_default_network', 'name', 'network', 'subnet_type'}.contains(key)); } 
-TunnelSubnetResponseSingleNullableResult copyWith({TunnelSubnetComment Function()? comment, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelSubnetId Function()? id, TunnelSubnetIsDefaultNetwork Function()? isDefaultNetwork, TunnelSubnetName Function()? name, TunnelSubnetIpNetwork Function()? network, TunnelSubnetType Function()? subnetType, }) { return TunnelSubnetResponseSingleNullableResult(
+TunnelSubnetResponseSingleNullableResult copyWith({TunnelSubnetComment? Function()? comment, TunnelCreatedAt? Function()? createdAt, TunnelDeletedAt? Function()? deletedAt, TunnelSubnetId? Function()? id, TunnelSubnetIsDefaultNetwork? Function()? isDefaultNetwork, TunnelSubnetName? Function()? name, TunnelSubnetIpNetwork? Function()? network, TunnelSubnetType? Function()? subnetType, }) { return TunnelSubnetResponseSingleNullableResult(
   comment: comment != null ? comment() : this.comment,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,

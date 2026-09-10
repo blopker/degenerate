@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('act')
       json.containsKey('email2') && json['email2'] is String &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('urls') && json['urls'] is String; } 
-AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, String Function()? comments, String Function()? company, String? email, String? email2, String? name, String Function()? reportedCountry, String Function()? reportedUserAgent, String Function()? tele, String Function()? title, String? urls, }) { return AbuseReportsBaseReportFields(
+AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsBaseReportFields(
   act: act ?? this.act,
   comments: comments != null ? comments() : this.comments,
   company: company != null ? company() : this.company,

@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   if (docker != null) 'docker': docker?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('package_type'); } 
-PackageVersionMetadata copyWith({PackageVersionMetadataPackageType? packageType, PackageVersionMetadataContainer Function()? container, PackageVersionMetadataDocker Function()? docker, }) { return PackageVersionMetadata(
+PackageVersionMetadata copyWith({PackageVersionMetadataPackageType? packageType, PackageVersionMetadataContainer? Function()? container, PackageVersionMetadataDocker? Function()? docker, }) { return PackageVersionMetadata(
   packageType: packageType ?? this.packageType,
   container: container != null ? container() : this.container,
   docker: docker != null ? docker() : this.docker,

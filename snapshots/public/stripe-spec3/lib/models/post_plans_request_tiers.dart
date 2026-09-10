@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'up_to': upTo.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('up_to'); } 
-PostPlansRequestTiers copyWith({int Function()? flatAmount, String Function()? flatAmountDecimal, int Function()? unitAmount, String Function()? unitAmountDecimal, PostPlansRequestTiersUpTo? upTo, }) { return PostPlansRequestTiers(
+PostPlansRequestTiers copyWith({int? Function()? flatAmount, String? Function()? flatAmountDecimal, int? Function()? unitAmount, String? Function()? unitAmountDecimal, PostPlansRequestTiersUpTo? upTo, }) { return PostPlansRequestTiers(
   flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,
   flatAmountDecimal: flatAmountDecimal != null ? flatAmountDecimal() : this.flatAmountDecimal,
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,

@@ -63,7 +63,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('input') &&
       json.containsKey('model'); } 
-CreateEmbeddingRequest copyWith({CreateEmbeddingRequestInput? input, CreateEmbeddingRequestModel? model, CreateEmbeddingRequestEncodingFormat Function()? encodingFormat, int Function()? dimensions, String Function()? user, }) { return CreateEmbeddingRequest(
+CreateEmbeddingRequest copyWith({CreateEmbeddingRequestInput? input, CreateEmbeddingRequestModel? model, CreateEmbeddingRequestEncodingFormat Function()? encodingFormat, int? Function()? dimensions, String? Function()? user, }) { return CreateEmbeddingRequest(
   input: input ?? this.input,
   model: model ?? this.model,
   encodingFormat: encodingFormat != null ? encodingFormat() : this.encodingFormat,

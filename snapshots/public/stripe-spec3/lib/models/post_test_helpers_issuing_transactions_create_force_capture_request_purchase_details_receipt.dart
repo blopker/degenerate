@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'unit_cost': ?unitCost,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'quantity', 'total', 'unit_cost'}.contains(key)); } 
-PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsReceipt copyWith({String Function()? description, String Function()? quantity, int Function()? total, int Function()? unitCost, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsReceipt(
+PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsReceipt copyWith({String? Function()? description, String? Function()? quantity, int? Function()? total, int? Function()? unitCost, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsReceipt(
   description: description != null ? description() : this.description,
   quantity: quantity != null ? quantity() : this.quantity,
   total: total != null ? total() : this.total,

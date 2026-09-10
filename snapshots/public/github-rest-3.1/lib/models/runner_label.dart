@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-RunnerLabel copyWith({int Function()? id, String? name, RunnerLabelType Function()? type, }) { return RunnerLabel(
+RunnerLabel copyWith({int? Function()? id, String? name, RunnerLabelType? Function()? type, }) { return RunnerLabel(
   id: id != null ? id() : this.id,
   name: name ?? this.name,
   type: type != null ? type() : this.type,

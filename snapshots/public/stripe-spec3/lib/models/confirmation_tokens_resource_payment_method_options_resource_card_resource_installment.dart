@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (plan != null) 'plan': plan?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'plan'}.contains(key)); } 
-ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment copyWith({PaymentMethodDetailsCardInstallmentsPlan Function()? plan}) { return ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment(
+ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment copyWith({PaymentMethodDetailsCardInstallmentsPlan? Function()? plan}) { return ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment(
   plan: plan != null ? plan() : this.plan,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

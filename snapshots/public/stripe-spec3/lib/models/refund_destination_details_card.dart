@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-RefundDestinationDetailsCard copyWith({String Function()? reference, String Function()? referenceStatus, String Function()? referenceType, RefundDestinationDetailsCardType? type, }) { return RefundDestinationDetailsCard(
+RefundDestinationDetailsCard copyWith({String? Function()? reference, String? Function()? referenceStatus, String? Function()? referenceType, RefundDestinationDetailsCardType? type, }) { return RefundDestinationDetailsCard(
   reference: reference != null ? reference() : this.reference,
   referenceStatus: referenceStatus != null ? referenceStatus() : this.referenceStatus,
   referenceType: referenceType != null ? referenceType() : this.referenceType,

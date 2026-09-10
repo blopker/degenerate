@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_type') &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('update_mode'); } 
-McnCreateCatalogSyncRequest copyWith({String Function()? description, McnCatalogSyncDestinationType? destinationType, String? name, String Function()? policy, McnCatalogSyncUpdateMode? updateMode, }) { return McnCreateCatalogSyncRequest(
+McnCreateCatalogSyncRequest copyWith({String? Function()? description, McnCatalogSyncDestinationType? destinationType, String? name, String? Function()? policy, McnCatalogSyncUpdateMode? updateMode, }) { return McnCreateCatalogSyncRequest(
   description: description != null ? description() : this.description,
   destinationType: destinationType ?? this.destinationType,
   name: name ?? this.name,

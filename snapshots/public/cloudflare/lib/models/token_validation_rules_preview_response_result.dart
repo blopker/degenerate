@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
   'total': ?total,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'available_hosts', 'excluded', 'ignored', 'included', 'operations', 'selected_hosts', 'total'}.contains(key)); } 
-TokenValidationRulesPreviewResponseResult copyWith({List<ShieldHost> Function()? availableHosts, int Function()? excluded, int Function()? ignored, int Function()? included, List<TokenValidationRulesPreviewResponseResultOperations> Function()? operations, List<ShieldHost> Function()? selectedHosts, int Function()? total, }) { return TokenValidationRulesPreviewResponseResult(
+TokenValidationRulesPreviewResponseResult copyWith({List<ShieldHost>? Function()? availableHosts, int? Function()? excluded, int? Function()? ignored, int? Function()? included, List<TokenValidationRulesPreviewResponseResultOperations>? Function()? operations, List<ShieldHost>? Function()? selectedHosts, int? Function()? total, }) { return TokenValidationRulesPreviewResponseResult(
   availableHosts: availableHosts != null ? availableHosts() : this.availableHosts,
   excluded: excluded != null ? excluded() : this.excluded,
   ignored: ignored != null ? ignored() : this.ignored,

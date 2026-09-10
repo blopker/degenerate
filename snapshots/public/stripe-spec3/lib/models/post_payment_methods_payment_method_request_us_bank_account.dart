@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
   if (accountType != null) 'account_type': accountType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_type'}.contains(key)); } 
-PostPaymentMethodsPaymentMethodRequestUsBankAccount copyWith({PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType Function()? accountHolderType, PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType Function()? accountType, }) { return PostPaymentMethodsPaymentMethodRequestUsBankAccount(
+PostPaymentMethodsPaymentMethodRequestUsBankAccount copyWith({PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType? Function()? accountHolderType, PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType? Function()? accountType, }) { return PostPaymentMethodsPaymentMethodRequestUsBankAccount(
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountType: accountType != null ? accountType() : this.accountType,
 ); } 

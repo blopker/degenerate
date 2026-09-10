@@ -126,7 +126,7 @@ Map<String, dynamic> toJson() { return {
   if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'currency', 'mandate_options', 'setup_future_usage', 'target_date', 'verification_method'}.contains(key)); } 
-CheckoutAcssDebitPaymentMethodOptions copyWith({CheckoutAcssDebitPaymentMethodOptionsCurrency Function()? currency, CheckoutAcssDebitMandateOptions Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod Function()? verificationMethod, }) { return CheckoutAcssDebitPaymentMethodOptions(
+CheckoutAcssDebitPaymentMethodOptions copyWith({CheckoutAcssDebitPaymentMethodOptionsCurrency? Function()? currency, CheckoutAcssDebitMandateOptions? Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return CheckoutAcssDebitPaymentMethodOptions(
   currency: currency != null ? currency() : this.currency,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,

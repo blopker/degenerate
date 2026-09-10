@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'reference'}.contains(key)); } 
-PostCheckoutSessionsRequestPaymentMethodOptionsSwish copyWith({String Function()? reference}) { return PostCheckoutSessionsRequestPaymentMethodOptionsSwish(
+PostCheckoutSessionsRequestPaymentMethodOptionsSwish copyWith({String? Function()? reference}) { return PostCheckoutSessionsRequestPaymentMethodOptionsSwish(
   reference: reference != null ? reference() : this.reference,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

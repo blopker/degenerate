@@ -25,12 +25,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsReviewPatGrantRequestsInBulkRequestAction($value)'; } 
  }
-@immutable final class OrgsReviewPatGrantRequestsInBulkRequest {const OrgsReviewPatGrantRequestsInBulkRequest({required this.action, this.patRequestIds, this.reason, });
+@immutable final class OrgsReviewPatGrantRequestsInBulkRequest {const OrgsReviewPatGrantRequestsInBulkRequest({required this.action, this.patRequestIds, this.reason = const Omittable.absent(), });
 
 factory OrgsReviewPatGrantRequestsInBulkRequest.fromJson(Map<String, dynamic> json) { return OrgsReviewPatGrantRequestsInBulkRequest(
   patRequestIds: (json['pat_request_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
   action: OrgsReviewPatGrantRequestsInBulkRequestAction.fromJson(json['action'] as String),
-  reason: json['reason'] as String?,
+  reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
 ); }
 
 /// Unique identifiers of the requests for access via fine-grained personal access token. Must be formed of between 1 and 100 `pat_request_id` values.
@@ -40,18 +40,18 @@ final List<int>? patRequestIds;
 final OrgsReviewPatGrantRequestsInBulkRequestAction action;
 
 /// Reason for approving or denying the requests. Max 1024 characters.
-final String? reason;
+final Omittable<String?> reason;
 
 Map<String, dynamic> toJson() { return {
   'pat_request_ids': ?patRequestIds,
   'action': action.toJson(),
-  'reason': ?reason,
+  if (reason.isPresent) 'reason': reason.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
-OrgsReviewPatGrantRequestsInBulkRequest copyWith({List<int> Function()? patRequestIds, OrgsReviewPatGrantRequestsInBulkRequestAction? action, String? Function()? reason, }) { return OrgsReviewPatGrantRequestsInBulkRequest(
+OrgsReviewPatGrantRequestsInBulkRequest copyWith({List<int>? Function()? patRequestIds, OrgsReviewPatGrantRequestsInBulkRequestAction? action, Omittable<String?>? reason, }) { return OrgsReviewPatGrantRequestsInBulkRequest(
   patRequestIds: patRequestIds != null ? patRequestIds() : this.patRequestIds,
   action: action ?? this.action,
-  reason: reason != null ? reason() : this.reason,
+  reason: reason ?? this.reason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is OrgsReviewPatGrantRequestsInBulkRequest &&

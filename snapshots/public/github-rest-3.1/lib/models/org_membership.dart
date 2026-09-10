@@ -99,7 +99,7 @@ Map<String, dynamic> toJson() { return {
   'enterprise_teams_providing_indirect_membership': ?enterpriseTeamsProvidingIndirectMembership,
   'organization_url': organizationUrl.toString(),
   'organization': organization.toJson(),
-  if (user != null) 'user': user?.toJson(),
+  'user': user?.toJson(),
   if (permissions != null) 'permissions': permissions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
@@ -108,7 +108,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
       json.containsKey('organization_url') && json['organization_url'] is String &&
       json.containsKey('organization') &&
       json.containsKey('user'); } 
-OrgMembership copyWith({Uri? url, OrgMembershipState? state, OrgMembershipRole? role, bool Function()? directMembership, List<String> Function()? enterpriseTeamsProvidingIndirectMembership, Uri? organizationUrl, OrganizationSimple? organization, SimpleUser? Function()? user, OrgMembershipPermissions Function()? permissions, }) { return OrgMembership(
+OrgMembership copyWith({Uri? url, OrgMembershipState? state, OrgMembershipRole? role, bool? Function()? directMembership, List<String>? Function()? enterpriseTeamsProvidingIndirectMembership, Uri? organizationUrl, OrganizationSimple? organization, SimpleUser? Function()? user, OrgMembershipPermissions? Function()? permissions, }) { return OrgMembership(
   url: url ?? this.url,
   state: state ?? this.state,
   role: role ?? this.role,

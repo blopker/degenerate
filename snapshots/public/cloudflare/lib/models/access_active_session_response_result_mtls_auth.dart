@@ -28,7 +28,7 @@ Map<String, dynamic> toJson() { return {
   'cert_serial': ?certSerial,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'auth_status', 'cert_issuer_dn', 'cert_issuer_ski', 'cert_presented', 'cert_serial'}.contains(key)); } 
-AccessActiveSessionResponseResultMtlsAuth copyWith({String Function()? authStatus, String Function()? certIssuerDn, String Function()? certIssuerSki, bool Function()? certPresented, String Function()? certSerial, }) { return AccessActiveSessionResponseResultMtlsAuth(
+AccessActiveSessionResponseResultMtlsAuth copyWith({String? Function()? authStatus, String? Function()? certIssuerDn, String? Function()? certIssuerSki, bool? Function()? certPresented, String? Function()? certSerial, }) { return AccessActiveSessionResponseResultMtlsAuth(
   authStatus: authStatus != null ? authStatus() : this.authStatus,
   certIssuerDn: certIssuerDn != null ? certIssuerDn() : this.certIssuerDn,
   certIssuerSki: certIssuerSki != null ? certIssuerSki() : this.certIssuerSki,

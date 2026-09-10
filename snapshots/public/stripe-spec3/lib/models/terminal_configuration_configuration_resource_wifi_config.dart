@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TerminalConfigurationConfigurationResourceWifiConfig copyWith({TerminalConfigurationConfigurationResourceEnterprisePeapWifi Function()? enterpriseEapPeap, TerminalConfigurationConfigurationResourceEnterpriseTlsWifi Function()? enterpriseEapTls, TerminalConfigurationConfigurationResourcePersonalPskWifi Function()? personalPsk, TerminalConfigurationConfigurationResourceWifiConfigType? type, }) { return TerminalConfigurationConfigurationResourceWifiConfig(
+TerminalConfigurationConfigurationResourceWifiConfig copyWith({TerminalConfigurationConfigurationResourceEnterprisePeapWifi? Function()? enterpriseEapPeap, TerminalConfigurationConfigurationResourceEnterpriseTlsWifi? Function()? enterpriseEapTls, TerminalConfigurationConfigurationResourcePersonalPskWifi? Function()? personalPsk, TerminalConfigurationConfigurationResourceWifiConfigType? type, }) { return TerminalConfigurationConfigurationResourceWifiConfig(
   enterpriseEapPeap: enterpriseEapPeap != null ? enterpriseEapPeap() : this.enterpriseEapPeap,
   enterpriseEapTls: enterpriseEapTls != null ? enterpriseEapTls() : this.enterpriseEapTls,
   personalPsk: personalPsk != null ? personalPsk() : this.personalPsk,

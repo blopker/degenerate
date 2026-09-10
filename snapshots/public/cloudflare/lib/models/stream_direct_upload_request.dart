@@ -47,7 +47,7 @@ Map<String, dynamic> toJson() { return {
   if (watermark != null) 'watermark': watermark?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('maxDurationSeconds'); } 
-StreamDirectUploadRequest copyWith({List<String> Function()? allowedOrigins, StreamCreator Function()? creator, DateTime Function()? expiry, StreamMaxDurationSeconds? maxDurationSeconds, Map<String, dynamic> Function()? meta, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamWatermarkAtUpload Function()? watermark, }) { return StreamDirectUploadRequest(
+StreamDirectUploadRequest copyWith({List<String>? Function()? allowedOrigins, StreamCreator? Function()? creator, DateTime? Function()? expiry, StreamMaxDurationSeconds? maxDurationSeconds, Map<String, dynamic>? Function()? meta, StreamRequireSignedUrLs? Function()? requireSignedUrLs, StreamScheduledDeletion? Function()? scheduledDeletion, StreamThumbnailTimestampPct? Function()? thumbnailTimestampPct, StreamWatermarkAtUpload? Function()? watermark, }) { return StreamDirectUploadRequest(
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   creator: creator != null ? creator() : this.creator,
   expiry: expiry != null ? expiry() : this.expiry,

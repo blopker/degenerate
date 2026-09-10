@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
   if (scopes != null) 'scopes': scopes?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'name', 'scopes'}.contains(key)); } 
-IamPermissionsGroupResponseCollectionResult copyWith({String Function()? id, String Function()? name, List<IamPermissionsGroupResponseCollectionResultScopes> Function()? scopes, }) { return IamPermissionsGroupResponseCollectionResult(
+IamPermissionsGroupResponseCollectionResult copyWith({String? Function()? id, String? Function()? name, List<IamPermissionsGroupResponseCollectionResultScopes>? Function()? scopes, }) { return IamPermissionsGroupResponseCollectionResult(
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
   scopes: scopes != null ? scopes() : this.scopes,

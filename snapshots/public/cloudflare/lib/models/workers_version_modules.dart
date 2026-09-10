@@ -32,9 +32,9 @@ WorkersVersionModules copyWith({Uint8List? contentBase64, String? contentType, S
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WorkersVersionModules &&
-          contentBase64 == other.contentBase64 &&
+          listEquals(contentBase64, other.contentBase64) &&
           contentType == other.contentType &&
           name == other.name; } 
-@override int get hashCode { return Object.hash(contentBase64, contentType, name); } 
+@override int get hashCode { return Object.hash(Object.hashAll(contentBase64), contentType, name); } 
 @override String toString() { return 'WorkersVersionModules(contentBase64: $contentBase64, contentType: $contentType, name: $name)'; } 
  }

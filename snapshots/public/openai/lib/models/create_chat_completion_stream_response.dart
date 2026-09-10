@@ -26,17 +26,17 @@ bool get isUnknown { return !values.contains(this); }
 /// by the model, based on the provided input.
 /// [Learn more](/docs/guides/streaming-responses).
 /// 
-@immutable final class CreateChatCompletionStreamResponse {const CreateChatCompletionStreamResponse({required this.id, required this.choices, required this.created, required this.model, required this.object, this.serviceTier, this.systemFingerprint, this.usage, });
+@immutable final class CreateChatCompletionStreamResponse {const CreateChatCompletionStreamResponse({required this.id, required this.choices, required this.created, required this.model, required this.object, this.serviceTier = const Omittable.absent(), this.systemFingerprint, this.usage = const Omittable.absent(), });
 
 factory CreateChatCompletionStreamResponse.fromJson(Map<String, dynamic> json) { return CreateChatCompletionStreamResponse(
   id: json['id'] as String,
   choices: (json['choices'] as List<dynamic>).map((e) => CreateChatCompletionStreamResponseChoices.fromJson(e as Map<String, dynamic>)).toList(),
   created: (json['created'] as num).toInt(),
   model: json['model'] as String,
-  serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
+  serviceTier: json.containsKey('service_tier') ? Omittable(json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null) : const Omittable.absent(),
   systemFingerprint: json['system_fingerprint'] as String?,
   object: CreateChatCompletionStreamResponseObject.fromJson(json['object'] as String),
-  usage: json['usage'] != null ? CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
+  usage: json.containsKey('usage') ? Omittable(json['usage'] != null ? CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// A unique identifier for the chat completion. Each chunk has the same ID.
@@ -53,7 +53,7 @@ final int created;
 /// The model to generate the completion.
 final String model;
 
-final ServiceTier? serviceTier;
+final Omittable<ServiceTier?> serviceTier;
 
 /// This fingerprint represents the backend configuration that the model runs with.
 /// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.
@@ -72,32 +72,32 @@ final CreateChatCompletionStreamResponseObject object;
 /// receive the final usage chunk which contains the total token usage for
 /// the request.
 /// 
-final CompletionUsage? usage;
+final Omittable<CompletionUsage?> usage;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
   'choices': choices.map((e) => e.toJson()).toList(),
   'created': created,
   'model': model,
-  if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
+  if (serviceTier.isPresent) 'service_tier': serviceTier.value?.toJson(),
   'system_fingerprint': ?systemFingerprint,
   'object': object.toJson(),
-  if (usage != null) 'usage': usage?.toJson(),
+  if (usage.isPresent) 'usage': usage.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('choices') &&
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('model') && json['model'] is String &&
       json.containsKey('object'); } 
-CreateChatCompletionStreamResponse copyWith({String? id, List<CreateChatCompletionStreamResponseChoices>? choices, int? created, String? model, ServiceTier? Function()? serviceTier, String Function()? systemFingerprint, CreateChatCompletionStreamResponseObject? object, CompletionUsage? Function()? usage, }) { return CreateChatCompletionStreamResponse(
+CreateChatCompletionStreamResponse copyWith({String? id, List<CreateChatCompletionStreamResponseChoices>? choices, int? created, String? model, Omittable<ServiceTier?>? serviceTier, String? Function()? systemFingerprint, CreateChatCompletionStreamResponseObject? object, Omittable<CompletionUsage?>? usage, }) { return CreateChatCompletionStreamResponse(
   id: id ?? this.id,
   choices: choices ?? this.choices,
   created: created ?? this.created,
   model: model ?? this.model,
-  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
+  serviceTier: serviceTier ?? this.serviceTier,
   systemFingerprint: systemFingerprint != null ? systemFingerprint() : this.systemFingerprint,
   object: object ?? this.object,
-  usage: usage != null ? usage() : this.usage,
+  usage: usage ?? this.usage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is CreateChatCompletionStreamResponse &&

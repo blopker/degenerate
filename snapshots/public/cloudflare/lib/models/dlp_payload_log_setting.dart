@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_payload_log_masking_level.dart';@immutable final class DlpPayloadLogSetting {const DlpPayloadLogSetting({required this.updatedAt, this.maskingLevel, this.publicKey, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_payload_log_masking_level.dart';@immutable final class DlpPayloadLogSetting {const DlpPayloadLogSetting({required this.updatedAt, this.maskingLevel, this.publicKey = const Omittable.absent(), });
 
 factory DlpPayloadLogSetting.fromJson(Map<String, dynamic> json) { return DlpPayloadLogSetting(
   maskingLevel: json['masking_level'] != null ? DlpPayloadLogMaskingLevel.fromJson(json['masking_level'] as String) : null,
-  publicKey: json['public_key'] as String?,
+  publicKey: json.containsKey('public_key') ? Omittable(json['public_key'] as String?) : const Omittable.absent(),
   updatedAt: DateTime.parse(json['updated_at'] as String),
 ); }
 
@@ -17,19 +17,19 @@ factory DlpPayloadLogSetting.fromJson(Map<String, dynamic> json) { return DlpPay
 final DlpPayloadLogMaskingLevel? maskingLevel;
 
 /// Base64-encoded public key for encrypting payload logs. Null when payload logging is disabled.
-final String? publicKey;
+final Omittable<String?> publicKey;
 
 final DateTime updatedAt;
 
 Map<String, dynamic> toJson() { return {
   if (maskingLevel != null) 'masking_level': maskingLevel?.toJson(),
-  'public_key': ?publicKey,
+  if (publicKey.isPresent) 'public_key': publicKey.value,
   'updated_at': updatedAt.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('updated_at') && json['updated_at'] is String; } 
-DlpPayloadLogSetting copyWith({DlpPayloadLogMaskingLevel Function()? maskingLevel, String? Function()? publicKey, DateTime? updatedAt, }) { return DlpPayloadLogSetting(
+DlpPayloadLogSetting copyWith({DlpPayloadLogMaskingLevel? Function()? maskingLevel, Omittable<String?>? publicKey, DateTime? updatedAt, }) { return DlpPayloadLogSetting(
   maskingLevel: maskingLevel != null ? maskingLevel() : this.maskingLevel,
-  publicKey: publicKey != null ? publicKey() : this.publicKey,
+  publicKey: publicKey ?? this.publicKey,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

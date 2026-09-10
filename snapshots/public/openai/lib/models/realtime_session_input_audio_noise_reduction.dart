@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'type'}.contains(key)); } 
-RealtimeSessionInputAudioNoiseReduction copyWith({NoiseReductionType Function()? type}) { return RealtimeSessionInputAudioNoiseReduction(
+RealtimeSessionInputAudioNoiseReduction copyWith({NoiseReductionType? Function()? type}) { return RealtimeSessionInputAudioNoiseReduction(
   type: type != null ? type() : this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

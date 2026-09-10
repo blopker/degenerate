@@ -48,7 +48,7 @@ Map<String, dynamic> toJson() { return {
   'notification_type': ?notificationType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'frequency', 'notification_type'}.contains(key)); } 
-PatchEventQueryAlertUpdateRequest copyWith({bool Function()? enabled, PatchEventQueryAlertUpdateRequestFrequency Function()? frequency, String Function()? notificationType, }) { return PatchEventQueryAlertUpdateRequest(
+PatchEventQueryAlertUpdateRequest copyWith({bool? Function()? enabled, PatchEventQueryAlertUpdateRequestFrequency? Function()? frequency, String? Function()? notificationType, }) { return PatchEventQueryAlertUpdateRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   frequency: frequency != null ? frequency() : this.frequency,
   notificationType: notificationType != null ? notificationType() : this.notificationType,

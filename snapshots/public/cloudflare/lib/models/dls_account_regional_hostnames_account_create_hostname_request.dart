@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') &&
       json.containsKey('region_key'); } 
-DlsAccountRegionalHostnamesAccountCreateHostnameRequest copyWith({DlsHostname? hostname, DlsRegionKey? regionKey, DlsRouting Function()? routing, }) { return DlsAccountRegionalHostnamesAccountCreateHostnameRequest(
+DlsAccountRegionalHostnamesAccountCreateHostnameRequest copyWith({DlsHostname? hostname, DlsRegionKey? regionKey, DlsRouting? Function()? routing, }) { return DlsAccountRegionalHostnamesAccountCreateHostnameRequest(
   hostname: hostname ?? this.hostname,
   regionKey: regionKey ?? this.regionKey,
   routing: routing != null ? routing() : this.routing,

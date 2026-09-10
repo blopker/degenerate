@@ -96,7 +96,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_id') && json['certificate_id'] is String &&
       json.containsKey('check_private_key') && json['check_private_key'] is bool &&
       json.containsKey('operating_system'); } 
-InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String Function()? cn, List<TeamsDevicesExtendedKeyUsageEnum> Function()? extendedKeyUsage, InputRequestLocations Function()? locations, InputRequestOperatingSystem? operatingSystem, List<String> Function()? subjectAlternativeNames, }) { return InputRequest(
+InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Function()? cn, List<TeamsDevicesExtendedKeyUsageEnum>? Function()? extendedKeyUsage, InputRequestLocations? Function()? locations, InputRequestOperatingSystem? operatingSystem, List<String>? Function()? subjectAlternativeNames, }) { return InputRequest(
   certificateId: certificateId ?? this.certificateId,
   checkPrivateKey: checkPrivateKey ?? this.checkPrivateKey,
   cn: cn != null ? cn() : this.cn,

@@ -13,7 +13,7 @@ Map<String, dynamic> toJson() { return {
   if (advancing != null) 'advancing': advancing?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advancing'}.contains(key)); } 
-BillingClocksResourceStatusDetailsStatusDetails copyWith({BillingClocksResourceStatusDetailsAdvancingStatusDetails Function()? advancing}) { return BillingClocksResourceStatusDetailsStatusDetails(
+BillingClocksResourceStatusDetailsStatusDetails copyWith({BillingClocksResourceStatusDetailsAdvancingStatusDetails? Function()? advancing}) { return BillingClocksResourceStatusDetailsStatusDetails(
   advancing: advancing != null ? advancing() : this.advancing,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

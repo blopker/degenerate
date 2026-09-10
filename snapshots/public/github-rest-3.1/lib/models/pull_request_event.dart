@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
       json.containsKey('number') && json['number'] is num &&
       json.containsKey('pull_request'); } 
-PullRequestEvent copyWith({String? action, int? number, PullRequestMinimal? pullRequest, SimpleUser Function()? assignee, List<SimpleUser> Function()? assignees, Label Function()? label, List<Label> Function()? labels, }) { return PullRequestEvent(
+PullRequestEvent copyWith({String? action, int? number, PullRequestMinimal? pullRequest, SimpleUser? Function()? assignee, List<SimpleUser>? Function()? assignees, Label? Function()? label, List<Label>? Function()? labels, }) { return PullRequestEvent(
   action: action ?? this.action,
   number: number ?? this.number,
   pullRequest: pullRequest ?? this.pullRequest,

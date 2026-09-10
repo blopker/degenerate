@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   'total_count': ?totalCount,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'end_offset', 'start_offset', 'total_count'}.contains(key)); } 
-LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging copyWith({double Function()? endOffset, double Function()? startOffset, double Function()? totalCount, }) { return LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging(
+LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging copyWith({double? Function()? endOffset, double? Function()? startOffset, double? Function()? totalCount, }) { return LivestreamsessionSessionMeetingIdActiveLivestreamResponseDataPaging(
   endOffset: endOffset != null ? endOffset() : this.endOffset,
   startOffset: startOffset != null ? startOffset() : this.startOffset,
   totalCount: totalCount != null ? totalCount() : this.totalCount,

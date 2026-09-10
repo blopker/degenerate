@@ -28,15 +28,15 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'JobStepsStatus($value)'; } 
  }
-@immutable final class JobSteps {const JobSteps({required this.status, required this.conclusion, required this.name, required this.number, this.startedAt, this.completedAt, });
+@immutable final class JobSteps {const JobSteps({required this.status, required this.conclusion, required this.name, required this.number, this.startedAt = const Omittable.absent(), this.completedAt = const Omittable.absent(), });
 
 factory JobSteps.fromJson(Map<String, dynamic> json) { return JobSteps(
   status: JobStepsStatus.fromJson(json['status'] as String),
   conclusion: json['conclusion'] as String?,
   name: json['name'] as String,
   number: (json['number'] as num).toInt(),
-  startedAt: json['started_at'] != null ? DateTime.parse(json['started_at'] as String) : null,
-  completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
+  startedAt: json.containsKey('started_at') ? Omittable(json['started_at'] != null ? DateTime.parse(json['started_at'] as String) : null) : const Omittable.absent(),
+  completedAt: json.containsKey('completed_at') ? Omittable(json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// The phase of the lifecycle that the job is currently in.
@@ -51,30 +51,30 @@ final String name;
 final int number;
 
 /// The time that the step started, in ISO 8601 format.
-final DateTime? startedAt;
+final Omittable<DateTime?> startedAt;
 
 /// The time that the job finished, in ISO 8601 format.
-final DateTime? completedAt;
+final Omittable<DateTime?> completedAt;
 
 Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
-  'conclusion': ?conclusion,
+  'conclusion': conclusion,
   'name': name,
   'number': number,
-  if (startedAt != null) 'started_at': startedAt?.toIso8601String(),
-  if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
+  if (startedAt.isPresent) 'started_at': startedAt.value?.toIso8601String(),
+  if (completedAt.isPresent) 'completed_at': completedAt.value?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') &&
-      json.containsKey('conclusion') && json['conclusion'] is String &&
+      json.containsKey('conclusion') && (json['conclusion'] == null || json['conclusion'] is String) &&
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('number') && json['number'] is num; } 
-JobSteps copyWith({JobStepsStatus? status, String? Function()? conclusion, String? name, int? number, DateTime? Function()? startedAt, DateTime? Function()? completedAt, }) { return JobSteps(
+JobSteps copyWith({JobStepsStatus? status, String? Function()? conclusion, String? name, int? number, Omittable<DateTime?>? startedAt, Omittable<DateTime?>? completedAt, }) { return JobSteps(
   status: status ?? this.status,
   conclusion: conclusion != null ? conclusion() : this.conclusion,
   name: name ?? this.name,
   number: number ?? this.number,
-  startedAt: startedAt != null ? startedAt() : this.startedAt,
-  completedAt: completedAt != null ? completedAt() : this.completedAt,
+  startedAt: startedAt ?? this.startedAt,
+  completedAt: completedAt ?? this.completedAt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is JobSteps &&

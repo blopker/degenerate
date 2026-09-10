@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
   'value': ?value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'target', 'value'}.contains(key)); } 
-FirewallAsnConfiguration copyWith({FirewallAsnConfigurationTarget Function()? target, String Function()? value, }) { return FirewallAsnConfiguration(
+FirewallAsnConfiguration copyWith({FirewallAsnConfigurationTarget? Function()? target, String? Function()? value, }) { return FirewallAsnConfiguration(
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
 ); } 

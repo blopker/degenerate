@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('streamKey') &&
       json.containsKey('url'); } 
-StreamCreateOutputRequest copyWith({StreamOutputEnabled Function()? enabled, StreamOutputStreamKey? streamKey, StreamOutputUrl? url, }) { return StreamCreateOutputRequest(
+StreamCreateOutputRequest copyWith({StreamOutputEnabled? Function()? enabled, StreamOutputStreamKey? streamKey, StreamOutputUrl? url, }) { return StreamCreateOutputRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   streamKey: streamKey ?? this.streamKey,
   url: url ?? this.url,

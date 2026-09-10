@@ -64,7 +64,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') && json['image'] is String &&
       json.containsKey('messages'); } 
-ImageTextToTextVariant2 copyWith({double Function()? frequencyPenalty, bool Function()? ignoreEos, String? image, int Function()? maxTokens, List<ImageTextToTextVariant2Messages>? messages, double Function()? presencePenalty, double Function()? repetitionPenalty, double Function()? seed, double Function()? temperature, double Function()? topK, double Function()? topP, }) { return ImageTextToTextVariant2(
+ImageTextToTextVariant2 copyWith({double? Function()? frequencyPenalty, bool? Function()? ignoreEos, String? image, int Function()? maxTokens, List<ImageTextToTextVariant2Messages>? messages, double? Function()? presencePenalty, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageTextToTextVariant2(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   ignoreEos: ignoreEos != null ? ignoreEos() : this.ignoreEos,
   image: image ?? this.image,

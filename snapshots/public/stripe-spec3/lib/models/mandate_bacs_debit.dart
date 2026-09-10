@@ -66,19 +66,19 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MandateBacsDebitRevocationReason($value)'; } 
  }
 /// 
-@immutable final class MandateBacsDebit {const MandateBacsDebit({required this.networkStatus, required this.reference, required this.url, this.displayName, this.revocationReason, this.serviceUserNumber, });
+@immutable final class MandateBacsDebit {const MandateBacsDebit({required this.networkStatus, required this.reference, required this.url, this.displayName = const Omittable.absent(), this.revocationReason = const Omittable.absent(), this.serviceUserNumber = const Omittable.absent(), });
 
 factory MandateBacsDebit.fromJson(Map<String, dynamic> json) { return MandateBacsDebit(
-  displayName: json['display_name'] as String?,
+  displayName: json.containsKey('display_name') ? Omittable(json['display_name'] as String?) : const Omittable.absent(),
   networkStatus: MandateBacsDebitNetworkStatus.fromJson(json['network_status'] as String),
   reference: json['reference'] as String,
-  revocationReason: json['revocation_reason'] != null ? MandateBacsDebitRevocationReason.fromJson(json['revocation_reason'] as String) : null,
-  serviceUserNumber: json['service_user_number'] as String?,
+  revocationReason: json.containsKey('revocation_reason') ? Omittable(json['revocation_reason'] != null ? MandateBacsDebitRevocationReason.fromJson(json['revocation_reason'] as String) : null) : const Omittable.absent(),
+  serviceUserNumber: json.containsKey('service_user_number') ? Omittable(json['service_user_number'] as String?) : const Omittable.absent(),
   url: json['url'] as String,
 ); }
 
 /// The display name for the account on this mandate.
-final String? displayName;
+final Omittable<String?> displayName;
 
 /// The status of the mandate on the Bacs network. Can be one of `pending`, `revoked`, `refused`, or `accepted`.
 final MandateBacsDebitNetworkStatus networkStatus;
@@ -87,31 +87,31 @@ final MandateBacsDebitNetworkStatus networkStatus;
 final String reference;
 
 /// When the mandate is revoked on the Bacs network this field displays the reason for the revocation.
-final MandateBacsDebitRevocationReason? revocationReason;
+final Omittable<MandateBacsDebitRevocationReason?> revocationReason;
 
 /// The service user number for the account on this mandate.
-final String? serviceUserNumber;
+final Omittable<String?> serviceUserNumber;
 
 /// The URL that will contain the mandate that the customer has signed.
 final String url;
 
 Map<String, dynamic> toJson() { return {
-  'display_name': ?displayName,
+  if (displayName.isPresent) 'display_name': displayName.value,
   'network_status': networkStatus.toJson(),
   'reference': reference,
-  if (revocationReason != null) 'revocation_reason': revocationReason?.toJson(),
-  'service_user_number': ?serviceUserNumber,
+  if (revocationReason.isPresent) 'revocation_reason': revocationReason.value?.toJson(),
+  if (serviceUserNumber.isPresent) 'service_user_number': serviceUserNumber.value,
   'url': url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('network_status') &&
       json.containsKey('reference') && json['reference'] is String &&
       json.containsKey('url') && json['url'] is String; } 
-MandateBacsDebit copyWith({String? Function()? displayName, MandateBacsDebitNetworkStatus? networkStatus, String? reference, MandateBacsDebitRevocationReason? Function()? revocationReason, String? Function()? serviceUserNumber, String? url, }) { return MandateBacsDebit(
-  displayName: displayName != null ? displayName() : this.displayName,
+MandateBacsDebit copyWith({Omittable<String?>? displayName, MandateBacsDebitNetworkStatus? networkStatus, String? reference, Omittable<MandateBacsDebitRevocationReason?>? revocationReason, Omittable<String?>? serviceUserNumber, String? url, }) { return MandateBacsDebit(
+  displayName: displayName ?? this.displayName,
   networkStatus: networkStatus ?? this.networkStatus,
   reference: reference ?? this.reference,
-  revocationReason: revocationReason != null ? revocationReason() : this.revocationReason,
-  serviceUserNumber: serviceUserNumber != null ? serviceUserNumber() : this.serviceUserNumber,
+  revocationReason: revocationReason ?? this.revocationReason,
+  serviceUserNumber: serviceUserNumber ?? this.serviceUserNumber,
   url: url ?? this.url,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

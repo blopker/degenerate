@@ -26,18 +26,18 @@ final bool? contentReportsEnabled;
 
 Map<String, dynamic> toJson() { return {
   'health_percentage': healthPercentage,
-  'description': ?description,
-  'documentation': ?documentation,
+  'description': description,
+  'documentation': documentation,
   'files': files.toJson(),
-  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'updated_at': updatedAt?.toIso8601String(),
   'content_reports_enabled': ?contentReportsEnabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('health_percentage') && json['health_percentage'] is num &&
-      json.containsKey('description') && json['description'] is String &&
-      json.containsKey('documentation') && json['documentation'] is String &&
+      json.containsKey('description') && (json['description'] == null || json['description'] is String) &&
+      json.containsKey('documentation') && (json['documentation'] == null || json['documentation'] is String) &&
       json.containsKey('files') &&
-      json.containsKey('updated_at') && json['updated_at'] is String; } 
-CommunityProfile copyWith({int? healthPercentage, String? Function()? description, String? Function()? documentation, CommunityProfileFiles? files, DateTime? Function()? updatedAt, bool Function()? contentReportsEnabled, }) { return CommunityProfile(
+      json.containsKey('updated_at') && (json['updated_at'] == null || json['updated_at'] is String); } 
+CommunityProfile copyWith({int? healthPercentage, String? Function()? description, String? Function()? documentation, CommunityProfileFiles? files, DateTime? Function()? updatedAt, bool? Function()? contentReportsEnabled, }) { return CommunityProfile(
   healthPercentage: healthPercentage ?? this.healthPercentage,
   description: description != null ? description() : this.description,
   documentation: documentation != null ? documentation() : this.documentation,

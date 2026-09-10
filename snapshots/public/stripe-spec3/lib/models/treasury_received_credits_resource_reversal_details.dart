@@ -35,27 +35,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason($value)'; } 
  }
 /// 
-@immutable final class TreasuryReceivedCreditsResourceReversalDetails {const TreasuryReceivedCreditsResourceReversalDetails({this.deadline, this.restrictedReason, });
+@immutable final class TreasuryReceivedCreditsResourceReversalDetails {const TreasuryReceivedCreditsResourceReversalDetails({this.deadline = const Omittable.absent(), this.restrictedReason = const Omittable.absent(), });
 
 factory TreasuryReceivedCreditsResourceReversalDetails.fromJson(Map<String, dynamic> json) { return TreasuryReceivedCreditsResourceReversalDetails(
-  deadline: json['deadline'] != null ? (json['deadline'] as num).toInt() : null,
-  restrictedReason: json['restricted_reason'] != null ? TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason.fromJson(json['restricted_reason'] as String) : null,
+  deadline: json.containsKey('deadline') ? Omittable(json['deadline'] != null ? (json['deadline'] as num).toInt() : null) : const Omittable.absent(),
+  restrictedReason: json.containsKey('restricted_reason') ? Omittable(json['restricted_reason'] != null ? TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason.fromJson(json['restricted_reason'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Time before which a ReceivedCredit can be reversed.
-final int? deadline;
+final Omittable<int?> deadline;
 
 /// Set if a ReceivedCredit cannot be reversed.
-final TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason? restrictedReason;
+final Omittable<TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason?> restrictedReason;
 
 Map<String, dynamic> toJson() { return {
-  'deadline': ?deadline,
-  if (restrictedReason != null) 'restricted_reason': restrictedReason?.toJson(),
+  if (deadline.isPresent) 'deadline': deadline.value,
+  if (restrictedReason.isPresent) 'restricted_reason': restrictedReason.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'deadline', 'restricted_reason'}.contains(key)); } 
-TreasuryReceivedCreditsResourceReversalDetails copyWith({int? Function()? deadline, TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason? Function()? restrictedReason, }) { return TreasuryReceivedCreditsResourceReversalDetails(
-  deadline: deadline != null ? deadline() : this.deadline,
-  restrictedReason: restrictedReason != null ? restrictedReason() : this.restrictedReason,
+TreasuryReceivedCreditsResourceReversalDetails copyWith({Omittable<int?>? deadline, Omittable<TreasuryReceivedCreditsResourceReversalDetailsRestrictedReason?>? restrictedReason, }) { return TreasuryReceivedCreditsResourceReversalDetails(
+  deadline: deadline ?? this.deadline,
+  restrictedReason: restrictedReason ?? this.restrictedReason,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TreasuryReceivedCreditsResourceReversalDetails &&

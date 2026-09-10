@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (exitCodes != null) 'exitCodes': exitCodes?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String; } 
-ContainerRestartRule copyWith({String? action, ContainerRestartRuleOnExitCodes Function()? exitCodes, }) { return ContainerRestartRule(
+ContainerRestartRule copyWith({String? action, ContainerRestartRuleOnExitCodes? Function()? exitCodes, }) { return ContainerRestartRule(
   action: action ?? this.action,
   exitCodes: exitCodes != null ? exitCodes() : this.exitCodes,
 ); } 

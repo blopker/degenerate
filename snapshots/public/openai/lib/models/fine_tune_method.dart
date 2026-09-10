@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   if (reinforcement != null) 'reinforcement': reinforcement?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-FineTuneMethod copyWith({FineTuneMethodType? type, FineTuneSupervisedMethod Function()? supervised, FineTuneDpoMethod Function()? dpo, FineTuneReinforcementMethod Function()? reinforcement, }) { return FineTuneMethod(
+FineTuneMethod copyWith({FineTuneMethodType? type, FineTuneSupervisedMethod? Function()? supervised, FineTuneDpoMethod? Function()? dpo, FineTuneReinforcementMethod? Function()? reinforcement, }) { return FineTuneMethod(
   type: type ?? this.type,
   supervised: supervised != null ? supervised() : this.supervised,
   dpo: dpo != null ? dpo() : this.dpo,

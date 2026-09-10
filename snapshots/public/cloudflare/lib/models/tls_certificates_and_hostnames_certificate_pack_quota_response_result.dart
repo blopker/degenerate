@@ -12,7 +12,7 @@ Map<String, dynamic> toJson() { return {
   if (advanced != null) 'advanced': advanced?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'advanced'}.contains(key)); } 
-TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult copyWith({TlsCertificatesAndHostnamesQuota Function()? advanced}) { return TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult(
+TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult copyWith({TlsCertificatesAndHostnamesQuota? Function()? advanced}) { return TlsCertificatesAndHostnamesCertificatePackQuotaResponseResult(
   advanced: advanced != null ? advanced() : this.advanced,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

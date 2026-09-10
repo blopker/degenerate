@@ -108,7 +108,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CodeScanningVariantAnalysisFailureReason($value)'; } 
  }
 /// A run of a CodeQL query against one or more repositories.
-@immutable final class CodeScanningVariantAnalysis {const CodeScanningVariantAnalysis({required this.id, required this.controllerRepo, required this.actor, required this.queryLanguage, required this.queryPackUrl, required this.status, this.createdAt, this.updatedAt, this.completedAt, this.actionsWorkflowRunId, this.failureReason, this.scannedRepositories, this.skippedRepositories, });
+@immutable final class CodeScanningVariantAnalysis {const CodeScanningVariantAnalysis({required this.id, required this.controllerRepo, required this.actor, required this.queryLanguage, required this.queryPackUrl, required this.status, this.createdAt, this.updatedAt, this.completedAt = const Omittable.absent(), this.actionsWorkflowRunId, this.failureReason, this.scannedRepositories, this.skippedRepositories, });
 
 factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysis(
   id: (json['id'] as num).toInt(),
@@ -118,7 +118,7 @@ factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return
   queryPackUrl: json['query_pack_url'] as String,
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
-  completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
+  completedAt: json.containsKey('completed_at') ? Omittable(json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null) : const Omittable.absent(),
   status: CodeScanningVariantAnalysisStatus2.fromJson(json['status'] as String),
   actionsWorkflowRunId: json['actions_workflow_run_id'] != null ? (json['actions_workflow_run_id'] as num).toInt() : null,
   failureReason: json['failure_reason'] != null ? CodeScanningVariantAnalysisFailureReason.fromJson(json['failure_reason'] as String) : null,
@@ -146,7 +146,7 @@ final DateTime? createdAt;
 final DateTime? updatedAt;
 
 /// The date and time at which the variant analysis was completed, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ. Will be null if the variant analysis has not yet completed or this information is not available.
-final DateTime? completedAt;
+final Omittable<DateTime?> completedAt;
 
 final CodeScanningVariantAnalysisStatus2 status;
 
@@ -169,7 +169,7 @@ Map<String, dynamic> toJson() { return {
   'query_pack_url': queryPackUrl,
   if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
   if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
-  if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
+  if (completedAt.isPresent) 'completed_at': completedAt.value?.toIso8601String(),
   'status': status.toJson(),
   'actions_workflow_run_id': ?actionsWorkflowRunId,
   if (failureReason != null) 'failure_reason': failureReason?.toJson(),
@@ -182,7 +182,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('query_language') &&
       json.containsKey('query_pack_url') && json['query_pack_url'] is String &&
       json.containsKey('status'); } 
-CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime Function()? createdAt, DateTime Function()? updatedAt, DateTime? Function()? completedAt, CodeScanningVariantAnalysisStatus2? status, int Function()? actionsWorkflowRunId, CodeScanningVariantAnalysisFailureReason Function()? failureReason, List<CodeScanningVariantAnalysisScannedRepositories> Function()? scannedRepositories, CodeScanningVariantAnalysisSkippedRepositories Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
+CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, Omittable<DateTime?>? completedAt, CodeScanningVariantAnalysisStatus2? status, int? Function()? actionsWorkflowRunId, CodeScanningVariantAnalysisFailureReason? Function()? failureReason, List<CodeScanningVariantAnalysisScannedRepositories>? Function()? scannedRepositories, CodeScanningVariantAnalysisSkippedRepositories? Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
   id: id ?? this.id,
   controllerRepo: controllerRepo ?? this.controllerRepo,
   actor: actor ?? this.actor,
@@ -190,7 +190,7 @@ CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo,
   queryPackUrl: queryPackUrl ?? this.queryPackUrl,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
-  completedAt: completedAt != null ? completedAt() : this.completedAt,
+  completedAt: completedAt ?? this.completedAt,
   status: status ?? this.status,
   actionsWorkflowRunId: actionsWorkflowRunId != null ? actionsWorkflowRunId() : this.actionsWorkflowRunId,
   failureReason: failureReason != null ? failureReason() : this.failureReason,

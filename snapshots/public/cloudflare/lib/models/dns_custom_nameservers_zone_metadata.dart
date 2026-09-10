@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
   'ns_set': nsSet,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'ns_set'}.contains(key)); } 
-DnsCustomNameserversZoneMetadata copyWith({bool Function()? enabled, double Function()? nsSet, }) { return DnsCustomNameserversZoneMetadata(
+DnsCustomNameserversZoneMetadata copyWith({bool? Function()? enabled, double Function()? nsSet, }) { return DnsCustomNameserversZoneMetadata(
   enabled: enabled != null ? enabled() : this.enabled,
   nsSet: nsSet != null ? nsSet() : this.nsSet,
 ); } 

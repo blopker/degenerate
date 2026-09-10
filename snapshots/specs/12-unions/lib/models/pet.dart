@@ -21,7 +21,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-Pet copyWith({int? id, String? name, PetStatus Function()? status, }) { return Pet(
+Pet copyWith({int? id, String? name, PetStatus? Function()? status, }) { return Pet(
   id: id ?? this.id,
   name: name ?? this.name,
   status: status != null ? status() : this.status,

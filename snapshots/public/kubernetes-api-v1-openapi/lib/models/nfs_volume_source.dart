@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
       json.containsKey('server') && json['server'] is String; } 
-NfsVolumeSource copyWith({String? path, bool Function()? readOnly, String? server, }) { return NfsVolumeSource(
+NfsVolumeSource copyWith({String? path, bool? Function()? readOnly, String? server, }) { return NfsVolumeSource(
   path: path ?? this.path,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   server: server ?? this.server,

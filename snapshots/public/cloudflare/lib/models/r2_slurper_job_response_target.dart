@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   if (vendor != null) 'vendor': vendor?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bucket', 'jurisdiction', 'vendor'}.contains(key)); } 
-R2SlurperJobResponseTarget copyWith({String Function()? bucket, R2SlurperJurisdiction Function()? jurisdiction, R2SlurperJobResponseTargetVendor Function()? vendor, }) { return R2SlurperJobResponseTarget(
+R2SlurperJobResponseTarget copyWith({String? Function()? bucket, R2SlurperJurisdiction? Function()? jurisdiction, R2SlurperJobResponseTargetVendor? Function()? vendor, }) { return R2SlurperJobResponseTarget(
   bucket: bucket != null ? bucket() : this.bucket,
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   vendor: vendor != null ? vendor() : this.vendor,

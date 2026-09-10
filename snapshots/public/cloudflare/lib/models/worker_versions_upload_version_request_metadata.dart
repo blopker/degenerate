@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   if (usageModel != null) 'usage_model': usageModel?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('main_module') && json['main_module'] is String; } 
-WorkerVersionsUploadVersionRequestMetadata copyWith({WorkerVersionsUploadVersionRequestMetadataAnnotations Function()? annotations, List<WorkersBindingItem> Function()? bindings, WorkersCompatibilityDate Function()? compatibilityDate, List<WorkersCompatibilityFlag> Function()? compatibilityFlags, List<String> Function()? keepBindings, String? mainModule, WorkersUsageModel Function()? usageModel, }) { return WorkerVersionsUploadVersionRequestMetadata(
+WorkerVersionsUploadVersionRequestMetadata copyWith({WorkerVersionsUploadVersionRequestMetadataAnnotations? Function()? annotations, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, List<String>? Function()? keepBindings, String? mainModule, WorkersUsageModel? Function()? usageModel, }) { return WorkerVersionsUploadVersionRequestMetadata(
   annotations: annotations != null ? annotations() : this.annotations,
   bindings: bindings != null ? bindings() : this.bindings,
   compatibilityDate: compatibilityDate != null ? compatibilityDate() : this.compatibilityDate,

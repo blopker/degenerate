@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('message') && json['message'] is String &&
       json.containsKey('status') && json['status'] is num; } 
-UrlscannerCreateScanResponse4092 copyWith({String Function()? description, List<UrlscannerCreateScanResponse4092Errors>? errors, String? message, double? status, }) { return UrlscannerCreateScanResponse4092(
+UrlscannerCreateScanResponse4092 copyWith({String? Function()? description, List<UrlscannerCreateScanResponse4092Errors>? errors, String? message, double? status, }) { return UrlscannerCreateScanResponse4092(
   description: description != null ? description() : this.description,
   errors: errors ?? this.errors,
   message: message ?? this.message,

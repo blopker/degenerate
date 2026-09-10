@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'pattern': ?pattern,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comments', 'is_recent', 'is_regex', 'is_similarity', 'pattern'}.contains(key)); } 
-EmailSecurityUpdateTrustedDomain copyWith({String Function()? comments, bool Function()? isRecent, bool Function()? isRegex, bool Function()? isSimilarity, String Function()? pattern, }) { return EmailSecurityUpdateTrustedDomain(
+EmailSecurityUpdateTrustedDomain copyWith({String? Function()? comments, bool? Function()? isRecent, bool? Function()? isRegex, bool? Function()? isSimilarity, String? Function()? pattern, }) { return EmailSecurityUpdateTrustedDomain(
   comments: comments != null ? comments() : this.comments,
   isRecent: isRecent != null ? isRecent() : this.isRecent,
   isRegex: isRegex != null ? isRegex() : this.isRegex,

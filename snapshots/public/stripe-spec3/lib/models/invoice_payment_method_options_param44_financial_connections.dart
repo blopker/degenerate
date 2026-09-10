@@ -77,7 +77,7 @@ Map<String, dynamic> toJson() { return {
   if (prefetch != null) 'prefetch': prefetch?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filters', 'permissions', 'prefetch'}.contains(key)); } 
-InvoicePaymentMethodOptionsParam44FinancialConnections copyWith({InvoicePaymentMethodOptionsParam44FinancialConnectionsFilters Function()? filters, List<InvoicePaymentMethodOptionsParam44FinancialConnectionsPermissions> Function()? permissions, List<InvoicePaymentMethodOptionsParam44FinancialConnectionsPrefetch> Function()? prefetch, }) { return InvoicePaymentMethodOptionsParam44FinancialConnections(
+InvoicePaymentMethodOptionsParam44FinancialConnections copyWith({InvoicePaymentMethodOptionsParam44FinancialConnectionsFilters? Function()? filters, List<InvoicePaymentMethodOptionsParam44FinancialConnectionsPermissions>? Function()? permissions, List<InvoicePaymentMethodOptionsParam44FinancialConnectionsPrefetch>? Function()? prefetch, }) { return InvoicePaymentMethodOptionsParam44FinancialConnections(
   filters: filters != null ? filters() : this.filters,
   permissions: permissions != null ? permissions() : this.permissions,
   prefetch: prefetch != null ? prefetch() : this.prefetch,

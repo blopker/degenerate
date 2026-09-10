@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') &&
       json.containsKey('id') &&
       json.containsKey('modified_on'); } 
-ListsItemBase copyWith({ListsItemComment Function()? comment, ListsCreatedOn? createdOn, ListsItemId? id, ListsModifiedOn? modifiedOn, }) { return ListsItemBase(
+ListsItemBase copyWith({ListsItemComment? Function()? comment, ListsCreatedOn? createdOn, ListsItemId? id, ListsModifiedOn? modifiedOn, }) { return ListsItemBase(
   comment: comment != null ? comment() : this.comment,
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,

@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') &&
       json.containsKey('modified_on') && json['modified_on'] is String &&
       json.containsKey('name') && json['name'] is String; } 
-IamUserGroup copyWith({DateTime? createdOn, IamCommonComponentsSchemasIdentifier? id, DateTime? modifiedOn, String? name, List<IamUserGroupPolicies> Function()? policies, }) { return IamUserGroup(
+IamUserGroup copyWith({DateTime? createdOn, IamCommonComponentsSchemasIdentifier? id, DateTime? modifiedOn, String? name, List<IamUserGroupPolicies>? Function()? policies, }) { return IamUserGroup(
   createdOn: createdOn ?? this.createdOn,
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,

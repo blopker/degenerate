@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
       json.containsKey('type') && json['type'] is String; } 
-PodCondition copyWith({Time Function()? lastProbeTime, Time Function()? lastTransitionTime, String Function()? message, int Function()? observedGeneration, String Function()? reason, String? status, String? type, }) { return PodCondition(
+PodCondition copyWith({Time? Function()? lastProbeTime, Time? Function()? lastTransitionTime, String? Function()? message, int? Function()? observedGeneration, String? Function()? reason, String? status, String? type, }) { return PodCondition(
   lastProbeTime: lastProbeTime != null ? lastProbeTime() : this.lastProbeTime,
   lastTransitionTime: lastTransitionTime != null ? lastTransitionTime() : this.lastTransitionTime,
   message: message != null ? message() : this.message,

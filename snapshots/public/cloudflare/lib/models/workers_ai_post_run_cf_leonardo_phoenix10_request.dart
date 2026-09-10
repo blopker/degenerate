@@ -43,7 +43,7 @@ Map<String, dynamic> toJson() { return {
   'width': width,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-WorkersAiPostRunCfLeonardoPhoenix10Request copyWith({double Function()? guidance, int Function()? height, String Function()? negativePrompt, int Function()? numSteps, String? prompt, int Function()? seed, int Function()? width, }) { return WorkersAiPostRunCfLeonardoPhoenix10Request(
+WorkersAiPostRunCfLeonardoPhoenix10Request copyWith({double Function()? guidance, int Function()? height, String? Function()? negativePrompt, int Function()? numSteps, String? prompt, int? Function()? seed, int Function()? width, }) { return WorkersAiPostRunCfLeonardoPhoenix10Request(
   guidance: guidance != null ? guidance() : this.guidance,
   height: height != null ? height() : this.height,
   negativePrompt: negativePrompt != null ? negativePrompt() : this.negativePrompt,

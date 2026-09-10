@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
       json.containsKey('phishing') &&
       json.containsKey('radarRank') &&
       json.containsKey('wappa'); } 
-UrlscannerGetScanResponse2MetaProcessors copyWith({UrlscannerGetScanResponse2MetaProcessorsAsn? asn, UrlscannerGetScanResponse2MetaProcessorsDns? dns, UrlscannerGetScanResponse2MetaProcessorsDomainCategories? domainCategories, UrlscannerGetScanResponse2MetaProcessorsGeoip? geoip, UrlscannerGetScanResponse2MetaProcessorsPhishing? phishing, UrlscannerGetScanResponse2MetaProcessorsRadarRank? radarRank, UrlscannerGetScanResponse2MetaProcessorsRobotsTxt Function()? robotsTxt, UrlscannerGetScanResponse2MetaProcessorsUrlCategories Function()? urlCategories, UrlscannerGetScanResponse2MetaProcessorsWappa? wappa, }) { return UrlscannerGetScanResponse2MetaProcessors(
+UrlscannerGetScanResponse2MetaProcessors copyWith({UrlscannerGetScanResponse2MetaProcessorsAsn? asn, UrlscannerGetScanResponse2MetaProcessorsDns? dns, UrlscannerGetScanResponse2MetaProcessorsDomainCategories? domainCategories, UrlscannerGetScanResponse2MetaProcessorsGeoip? geoip, UrlscannerGetScanResponse2MetaProcessorsPhishing? phishing, UrlscannerGetScanResponse2MetaProcessorsRadarRank? radarRank, UrlscannerGetScanResponse2MetaProcessorsRobotsTxt? Function()? robotsTxt, UrlscannerGetScanResponse2MetaProcessorsUrlCategories? Function()? urlCategories, UrlscannerGetScanResponse2MetaProcessorsWappa? wappa, }) { return UrlscannerGetScanResponse2MetaProcessors(
   asn: asn ?? this.asn,
   dns: dns ?? this.dns,
   domainCategories: domainCategories ?? this.domainCategories,

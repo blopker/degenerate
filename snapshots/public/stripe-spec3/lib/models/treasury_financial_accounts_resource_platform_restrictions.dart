@@ -51,27 +51,27 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows($value)'; } 
  }
 /// Restrictions that a Connect Platform has placed on this FinancialAccount.
-@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictions {const TreasuryFinancialAccountsResourcePlatformRestrictions({this.inboundFlows, this.outboundFlows, });
+@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictions {const TreasuryFinancialAccountsResourcePlatformRestrictions({this.inboundFlows = const Omittable.absent(), this.outboundFlows = const Omittable.absent(), });
 
 factory TreasuryFinancialAccountsResourcePlatformRestrictions.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourcePlatformRestrictions(
-  inboundFlows: json['inbound_flows'] != null ? TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows.fromJson(json['inbound_flows'] as String) : null,
-  outboundFlows: json['outbound_flows'] != null ? TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows.fromJson(json['outbound_flows'] as String) : null,
+  inboundFlows: json.containsKey('inbound_flows') ? Omittable(json['inbound_flows'] != null ? TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows.fromJson(json['inbound_flows'] as String) : null) : const Omittable.absent(),
+  outboundFlows: json.containsKey('outbound_flows') ? Omittable(json['outbound_flows'] != null ? TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows.fromJson(json['outbound_flows'] as String) : null) : const Omittable.absent(),
 ); }
 
 /// Restricts all inbound money movement.
-final TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows? inboundFlows;
+final Omittable<TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows?> inboundFlows;
 
 /// Restricts all outbound money movement.
-final TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows? outboundFlows;
+final Omittable<TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows?> outboundFlows;
 
 Map<String, dynamic> toJson() { return {
-  if (inboundFlows != null) 'inbound_flows': inboundFlows?.toJson(),
-  if (outboundFlows != null) 'outbound_flows': outboundFlows?.toJson(),
+  if (inboundFlows.isPresent) 'inbound_flows': inboundFlows.value?.toJson(),
+  if (outboundFlows.isPresent) 'outbound_flows': outboundFlows.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'inbound_flows', 'outbound_flows'}.contains(key)); } 
-TreasuryFinancialAccountsResourcePlatformRestrictions copyWith({TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows? Function()? inboundFlows, TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows? Function()? outboundFlows, }) { return TreasuryFinancialAccountsResourcePlatformRestrictions(
-  inboundFlows: inboundFlows != null ? inboundFlows() : this.inboundFlows,
-  outboundFlows: outboundFlows != null ? outboundFlows() : this.outboundFlows,
+TreasuryFinancialAccountsResourcePlatformRestrictions copyWith({Omittable<TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows?>? inboundFlows, Omittable<TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows?>? outboundFlows, }) { return TreasuryFinancialAccountsResourcePlatformRestrictions(
+  inboundFlows: inboundFlows ?? this.inboundFlows,
+  outboundFlows: outboundFlows ?? this.outboundFlows,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is TreasuryFinancialAccountsResourcePlatformRestrictions &&

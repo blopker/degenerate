@@ -100,34 +100,34 @@ final RealtimekitStopReason? stopReason;
 final RealtimekitStorageConfig? storageConfig;
 
 Map<String, dynamic> toJson() { return {
-  if (audioDownloadUrl != null) 'audio_download_url': audioDownloadUrl?.toString(),
-  if (downloadUrl != null) 'download_url': downloadUrl?.toString(),
-  if (downloadUrlExpiry != null) 'download_url_expiry': downloadUrlExpiry?.toIso8601String(),
-  'file_size': ?fileSize,
+  'audio_download_url': audioDownloadUrl?.toString(),
+  'download_url': downloadUrl?.toString(),
+  'download_url_expiry': downloadUrlExpiry?.toIso8601String(),
+  'file_size': fileSize,
   'id': id,
   'invoked_time': invokedTime.toIso8601String(),
   'output_file_name': outputFileName,
   'recording_duration': ?recordingDuration,
-  'session_id': ?sessionId,
-  if (startedTime != null) 'started_time': startedTime?.toIso8601String(),
+  'session_id': sessionId,
+  'started_time': startedTime?.toIso8601String(),
   'status': status.toJson(),
-  if (stoppedTime != null) 'stopped_time': stoppedTime?.toIso8601String(),
+  'stopped_time': stoppedTime?.toIso8601String(),
   if (startReason != null) 'start_reason': startReason?.toJson(),
   if (stopReason != null) 'stop_reason': stopReason?.toJson(),
   if (storageConfig != null) 'storage_config': storageConfig?.toJson(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio_download_url') && json['audio_download_url'] is String &&
-      json.containsKey('download_url') && json['download_url'] is String &&
-      json.containsKey('download_url_expiry') && json['download_url_expiry'] is String &&
-      json.containsKey('file_size') && json['file_size'] is num &&
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio_download_url') && (json['audio_download_url'] == null || json['audio_download_url'] is String) &&
+      json.containsKey('download_url') && (json['download_url'] == null || json['download_url'] is String) &&
+      json.containsKey('download_url_expiry') && (json['download_url_expiry'] == null || json['download_url_expiry'] is String) &&
+      json.containsKey('file_size') && (json['file_size'] == null || json['file_size'] is num) &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('invoked_time') && json['invoked_time'] is String &&
       json.containsKey('output_file_name') && json['output_file_name'] is String &&
-      json.containsKey('session_id') && json['session_id'] is String &&
-      json.containsKey('started_time') && json['started_time'] is String &&
+      json.containsKey('session_id') && (json['session_id'] == null || json['session_id'] is String) &&
+      json.containsKey('started_time') && (json['started_time'] == null || json['started_time'] is String) &&
       json.containsKey('status') &&
-      json.containsKey('stopped_time') && json['stopped_time'] is String; } 
-StartRecordingResponseData copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, StartRecordingResponseDataStatus? status, DateTime? Function()? stoppedTime, RealtimekitStartReason Function()? startReason, RealtimekitStopReason Function()? stopReason, RealtimekitStorageConfig Function()? storageConfig, }) { return StartRecordingResponseData(
+      json.containsKey('stopped_time') && (json['stopped_time'] == null || json['stopped_time'] is String); } 
+StartRecordingResponseData copyWith({Uri? Function()? audioDownloadUrl, Uri? Function()? downloadUrl, DateTime? Function()? downloadUrlExpiry, double? Function()? fileSize, String? id, DateTime? invokedTime, String? outputFileName, int? Function()? recordingDuration, String? Function()? sessionId, DateTime? Function()? startedTime, StartRecordingResponseDataStatus? status, DateTime? Function()? stoppedTime, RealtimekitStartReason? Function()? startReason, RealtimekitStopReason? Function()? stopReason, RealtimekitStorageConfig? Function()? storageConfig, }) { return StartRecordingResponseData(
   audioDownloadUrl: audioDownloadUrl != null ? audioDownloadUrl() : this.audioDownloadUrl,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   downloadUrlExpiry: downloadUrlExpiry != null ? downloadUrlExpiry() : this.downloadUrlExpiry,

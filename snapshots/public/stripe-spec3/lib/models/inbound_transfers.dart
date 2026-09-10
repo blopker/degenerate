@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_details') &&
       json.containsKey('type'); } 
-InboundTransfers copyWith({TreasurySharedResourceBillingDetails? billingDetails, InboundTransfersType? type, InboundTransfersPaymentMethodDetailsUsBankAccount Function()? usBankAccount, }) { return InboundTransfers(
+InboundTransfers copyWith({TreasurySharedResourceBillingDetails? billingDetails, InboundTransfersType? type, InboundTransfersPaymentMethodDetailsUsBankAccount? Function()? usBankAccount, }) { return InboundTransfers(
   billingDetails: billingDetails ?? this.billingDetails,
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,

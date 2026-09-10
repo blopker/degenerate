@@ -50,7 +50,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('characteristics') &&
       json.containsKey('period') && json['period'] is num; } 
-RulesetsRuleRatelimit copyWith({List<String>? characteristics, String Function()? countingExpression, int Function()? mitigationTimeout, int? period, int Function()? requestsPerPeriod, bool Function()? requestsToOrigin, int Function()? scorePerPeriod, String Function()? scoreResponseHeaderName, }) { return RulesetsRuleRatelimit(
+RulesetsRuleRatelimit copyWith({List<String>? characteristics, String? Function()? countingExpression, int? Function()? mitigationTimeout, int? period, int? Function()? requestsPerPeriod, bool Function()? requestsToOrigin, int? Function()? scorePerPeriod, String? Function()? scoreResponseHeaderName, }) { return RulesetsRuleRatelimit(
   characteristics: characteristics ?? this.characteristics,
   countingExpression: countingExpression != null ? countingExpression() : this.countingExpression,
   mitigationTimeout: mitigationTimeout != null ? mitigationTimeout() : this.mitigationTimeout,

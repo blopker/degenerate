@@ -126,7 +126,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('inclusive') && json['inclusive'] is bool &&
       json.containsKey('percentage') && json['percentage'] is num; } 
-PostTaxRatesRequest copyWith({bool Function()? active, String Function()? country, String Function()? description, String? displayName, List<String> Function()? expand, bool? inclusive, String Function()? jurisdiction, Map<String, String> Function()? metadata, double? percentage, String Function()? state, PostTaxRatesRequestTaxType Function()? taxType, }) { return PostTaxRatesRequest(
+PostTaxRatesRequest copyWith({bool? Function()? active, String? Function()? country, String? Function()? description, String? displayName, List<String>? Function()? expand, bool? inclusive, String? Function()? jurisdiction, Map<String, String>? Function()? metadata, double? percentage, String? Function()? state, PostTaxRatesRequestTaxType? Function()? taxType, }) { return PostTaxRatesRequest(
   active: active != null ? active() : this.active,
   country: country != null ? country() : this.country,
   description: description != null ? description() : this.description,

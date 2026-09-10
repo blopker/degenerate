@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'width': ?width,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'height', 'width'}.contains(key)); } 
-RealtimekitVideoConfigWatermarkSize copyWith({int Function()? height, int Function()? width, }) { return RealtimekitVideoConfigWatermarkSize(
+RealtimekitVideoConfigWatermarkSize copyWith({int? Function()? height, int? Function()? width, }) { return RealtimekitVideoConfigWatermarkSize(
   height: height != null ? height() : this.height,
   width: width != null ? width() : this.width,
 ); } 

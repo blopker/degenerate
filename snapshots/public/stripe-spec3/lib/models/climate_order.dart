@@ -86,21 +86,21 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// Orders represent your intent to purchase a particular Climate product. When you create an order, the
 /// payment is deducted from your merchant balance.
-@immutable final class ClimateOrder {const ClimateOrder({required this.amountFees, required this.amountSubtotal, required this.amountTotal, required this.created, required this.currency, required this.deliveryDetails, required this.expectedDeliveryYear, required this.id, required this.livemode, required this.metadata, required this.metricTons, required this.object, required this.product, required this.status, this.beneficiary, this.canceledAt, this.cancellationReason, this.certificate, this.confirmedAt, this.delayedAt, this.deliveredAt, this.productSubstitutedAt, });
+@immutable final class ClimateOrder {const ClimateOrder({required this.amountFees, required this.amountSubtotal, required this.amountTotal, required this.created, required this.currency, required this.deliveryDetails, required this.expectedDeliveryYear, required this.id, required this.livemode, required this.metadata, required this.metricTons, required this.object, required this.product, required this.status, this.beneficiary, this.canceledAt = const Omittable.absent(), this.cancellationReason = const Omittable.absent(), this.certificate = const Omittable.absent(), this.confirmedAt = const Omittable.absent(), this.delayedAt = const Omittable.absent(), this.deliveredAt = const Omittable.absent(), this.productSubstitutedAt = const Omittable.absent(), });
 
 factory ClimateOrder.fromJson(Map<String, dynamic> json) { return ClimateOrder(
   amountFees: (json['amount_fees'] as num).toInt(),
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTotal: (json['amount_total'] as num).toInt(),
   beneficiary: json['beneficiary'] != null ? ClimateRemovalsBeneficiary.fromJson(json['beneficiary'] as Map<String, dynamic>) : null,
-  canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
-  cancellationReason: json['cancellation_reason'] != null ? ClimateOrderCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
-  certificate: json['certificate'] as String?,
-  confirmedAt: json['confirmed_at'] != null ? (json['confirmed_at'] as num).toInt() : null,
+  canceledAt: json.containsKey('canceled_at') ? Omittable(json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null) : const Omittable.absent(),
+  cancellationReason: json.containsKey('cancellation_reason') ? Omittable(json['cancellation_reason'] != null ? ClimateOrderCancellationReason.fromJson(json['cancellation_reason'] as String) : null) : const Omittable.absent(),
+  certificate: json.containsKey('certificate') ? Omittable(json['certificate'] as String?) : const Omittable.absent(),
+  confirmedAt: json.containsKey('confirmed_at') ? Omittable(json['confirmed_at'] != null ? (json['confirmed_at'] as num).toInt() : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  delayedAt: json['delayed_at'] != null ? (json['delayed_at'] as num).toInt() : null,
-  deliveredAt: json['delivered_at'] != null ? (json['delivered_at'] as num).toInt() : null,
+  delayedAt: json.containsKey('delayed_at') ? Omittable(json['delayed_at'] != null ? (json['delayed_at'] as num).toInt() : null) : const Omittable.absent(),
+  deliveredAt: json.containsKey('delivered_at') ? Omittable(json['delivered_at'] != null ? (json['delivered_at'] as num).toInt() : null) : const Omittable.absent(),
   deliveryDetails: (json['delivery_details'] as List<dynamic>).map((e) => ClimateRemovalsOrderDeliveries.fromJson(e as Map<String, dynamic>)).toList(),
   expectedDeliveryYear: (json['expected_delivery_year'] as num).toInt(),
   id: json['id'] as String,
@@ -109,7 +109,7 @@ factory ClimateOrder.fromJson(Map<String, dynamic> json) { return ClimateOrder(
   metricTons: json['metric_tons'] as String,
   object: ClimateOrderObject.fromJson(json['object'] as String),
   product: OneOf2.parse(json['product'], fromA: (v) => v as String, fromB: (v) => ClimateProduct.fromJson(v as Map<String, dynamic>),),
-  productSubstitutedAt: json['product_substituted_at'] != null ? (json['product_substituted_at'] as num).toInt() : null,
+  productSubstitutedAt: json.containsKey('product_substituted_at') ? Omittable(json['product_substituted_at'] != null ? (json['product_substituted_at'] as num).toInt() : null) : const Omittable.absent(),
   status: ClimateOrderStatus.fromJson(json['status'] as String),
 ); }
 
@@ -125,16 +125,16 @@ final int amountTotal;
 final ClimateRemovalsBeneficiary? beneficiary;
 
 /// Time at which the order was canceled. Measured in seconds since the Unix epoch.
-final int? canceledAt;
+final Omittable<int?> canceledAt;
 
 /// Reason for the cancellation of this order.
-final ClimateOrderCancellationReason? cancellationReason;
+final Omittable<ClimateOrderCancellationReason?> cancellationReason;
 
 /// For delivered orders, a URL to a delivery certificate for the order.
-final String? certificate;
+final Omittable<String?> certificate;
 
 /// Time at which the order was confirmed. Measured in seconds since the Unix epoch.
-final int? confirmedAt;
+final Omittable<int?> confirmedAt;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -143,10 +143,10 @@ final int created;
 final String currency;
 
 /// Time at which the order's expected_delivery_year was delayed. Measured in seconds since the Unix epoch.
-final int? delayedAt;
+final Omittable<int?> delayedAt;
 
 /// Time at which the order was delivered. Measured in seconds since the Unix epoch.
-final int? deliveredAt;
+final Omittable<int?> deliveredAt;
 
 /// Details about the delivery of carbon removal for this order.
 final List<ClimateRemovalsOrderDeliveries> deliveryDetails;
@@ -173,7 +173,7 @@ final ClimateOrderObject object;
 final ClimateOrderProduct product;
 
 /// Time at which the order's product was substituted for a different product. Measured in seconds since the Unix epoch.
-final int? productSubstitutedAt;
+final Omittable<int?> productSubstitutedAt;
 
 /// The current status of this order.
 final ClimateOrderStatus status;
@@ -183,14 +183,14 @@ Map<String, dynamic> toJson() { return {
   'amount_subtotal': amountSubtotal,
   'amount_total': amountTotal,
   if (beneficiary != null) 'beneficiary': beneficiary?.toJson(),
-  'canceled_at': ?canceledAt,
-  if (cancellationReason != null) 'cancellation_reason': cancellationReason?.toJson(),
-  'certificate': ?certificate,
-  'confirmed_at': ?confirmedAt,
+  if (canceledAt.isPresent) 'canceled_at': canceledAt.value,
+  if (cancellationReason.isPresent) 'cancellation_reason': cancellationReason.value?.toJson(),
+  if (certificate.isPresent) 'certificate': certificate.value,
+  if (confirmedAt.isPresent) 'confirmed_at': confirmedAt.value,
   'created': created,
   'currency': currency,
-  'delayed_at': ?delayedAt,
-  'delivered_at': ?deliveredAt,
+  if (delayedAt.isPresent) 'delayed_at': delayedAt.value,
+  if (deliveredAt.isPresent) 'delivered_at': deliveredAt.value,
   'delivery_details': deliveryDetails.map((e) => e.toJson()).toList(),
   'expected_delivery_year': expectedDeliveryYear,
   'id': id,
@@ -199,7 +199,7 @@ Map<String, dynamic> toJson() { return {
   'metric_tons': metricTons,
   'object': object.toJson(),
   'product': product.toJson(),
-  'product_substituted_at': ?productSubstitutedAt,
+  if (productSubstitutedAt.isPresent) 'product_substituted_at': productSubstitutedAt.value,
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_fees') && json['amount_fees'] is num &&
@@ -216,19 +216,19 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('product') &&
       json.containsKey('status'); } 
-ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, ClimateRemovalsBeneficiary Function()? beneficiary, int? Function()? canceledAt, ClimateOrderCancellationReason? Function()? cancellationReason, String? Function()? certificate, int? Function()? confirmedAt, int? created, String? currency, int? Function()? delayedAt, int? Function()? deliveredAt, List<ClimateRemovalsOrderDeliveries>? deliveryDetails, int? expectedDeliveryYear, String? id, bool? livemode, Map<String,String>? metadata, String? metricTons, ClimateOrderObject? object, ClimateOrderProduct? product, int? Function()? productSubstitutedAt, ClimateOrderStatus? status, }) { return ClimateOrder(
+ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, ClimateRemovalsBeneficiary? Function()? beneficiary, Omittable<int?>? canceledAt, Omittable<ClimateOrderCancellationReason?>? cancellationReason, Omittable<String?>? certificate, Omittable<int?>? confirmedAt, int? created, String? currency, Omittable<int?>? delayedAt, Omittable<int?>? deliveredAt, List<ClimateRemovalsOrderDeliveries>? deliveryDetails, int? expectedDeliveryYear, String? id, bool? livemode, Map<String,String>? metadata, String? metricTons, ClimateOrderObject? object, ClimateOrderProduct? product, Omittable<int?>? productSubstitutedAt, ClimateOrderStatus? status, }) { return ClimateOrder(
   amountFees: amountFees ?? this.amountFees,
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
   beneficiary: beneficiary != null ? beneficiary() : this.beneficiary,
-  canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
-  cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
-  certificate: certificate != null ? certificate() : this.certificate,
-  confirmedAt: confirmedAt != null ? confirmedAt() : this.confirmedAt,
+  canceledAt: canceledAt ?? this.canceledAt,
+  cancellationReason: cancellationReason ?? this.cancellationReason,
+  certificate: certificate ?? this.certificate,
+  confirmedAt: confirmedAt ?? this.confirmedAt,
   created: created ?? this.created,
   currency: currency ?? this.currency,
-  delayedAt: delayedAt != null ? delayedAt() : this.delayedAt,
-  deliveredAt: deliveredAt != null ? deliveredAt() : this.deliveredAt,
+  delayedAt: delayedAt ?? this.delayedAt,
+  deliveredAt: deliveredAt ?? this.deliveredAt,
   deliveryDetails: deliveryDetails ?? this.deliveryDetails,
   expectedDeliveryYear: expectedDeliveryYear ?? this.expectedDeliveryYear,
   id: id ?? this.id,
@@ -237,7 +237,7 @@ ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, C
   metricTons: metricTons ?? this.metricTons,
   object: object ?? this.object,
   product: product ?? this.product,
-  productSubstitutedAt: productSubstitutedAt != null ? productSubstitutedAt() : this.productSubstitutedAt,
+  productSubstitutedAt: productSubstitutedAt ?? this.productSubstitutedAt,
   status: status ?? this.status,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

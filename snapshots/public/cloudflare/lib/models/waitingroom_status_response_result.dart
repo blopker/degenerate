@@ -82,7 +82,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'estimated_queued_users', 'estimated_total_active_users', 'event_id', 'max_estimated_time_minutes', 'status'}.contains(key)); } 
-WaitingroomStatusResponseResult copyWith({WaitingroomEstimatedQueuedUsers Function()? estimatedQueuedUsers, WaitingroomEstimatedTotalActiveUsers Function()? estimatedTotalActiveUsers, WaitingroomStatusEventId Function()? eventId, WaitingroomMaxEstimatedTimeMinutes Function()? maxEstimatedTimeMinutes, WaitingroomStatus Function()? status, }) { return WaitingroomStatusResponseResult(
+WaitingroomStatusResponseResult copyWith({WaitingroomEstimatedQueuedUsers? Function()? estimatedQueuedUsers, WaitingroomEstimatedTotalActiveUsers? Function()? estimatedTotalActiveUsers, WaitingroomStatusEventId? Function()? eventId, WaitingroomMaxEstimatedTimeMinutes? Function()? maxEstimatedTimeMinutes, WaitingroomStatus? Function()? status, }) { return WaitingroomStatusResponseResult(
   estimatedQueuedUsers: estimatedQueuedUsers != null ? estimatedQueuedUsers() : this.estimatedQueuedUsers,
   estimatedTotalActiveUsers: estimatedTotalActiveUsers != null ? estimatedTotalActiveUsers() : this.estimatedTotalActiveUsers,
   eventId: eventId != null ? eventId() : this.eventId,

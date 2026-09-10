@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
   'scopes': ?scopes,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'comment', 'scopes'}.contains(key)); } 
-SecretsStorePatchSecretObject copyWith({SecretsStoreComment Function()? comment, List<String> Function()? scopes, }) { return SecretsStorePatchSecretObject(
+SecretsStorePatchSecretObject copyWith({SecretsStoreComment? Function()? comment, List<String>? Function()? scopes, }) { return SecretsStorePatchSecretObject(
   comment: comment != null ? comment() : this.comment,
   scopes: scopes != null ? scopes() : this.scopes,
 ); } 

@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('contexts') &&
       json.containsKey('checks'); } 
-ProtectedBranchRequiredStatusCheck copyWith({String Function()? url, String Function()? enforcementLevel, List<String>? contexts, List<ProtectedBranchRequiredStatusCheckChecks>? checks, String Function()? contextsUrl, bool Function()? strict, }) { return ProtectedBranchRequiredStatusCheck(
+ProtectedBranchRequiredStatusCheck copyWith({String? Function()? url, String? Function()? enforcementLevel, List<String>? contexts, List<ProtectedBranchRequiredStatusCheckChecks>? checks, String? Function()? contextsUrl, bool? Function()? strict, }) { return ProtectedBranchRequiredStatusCheck(
   url: url != null ? url() : this.url,
   enforcementLevel: enforcementLevel != null ? enforcementLevel() : this.enforcementLevel,
   contexts: contexts ?? this.contexts,

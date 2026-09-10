@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (sizeLimit != null) 'sizeLimit': sizeLimit?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'medium', 'sizeLimit'}.contains(key)); } 
-EmptyDirVolumeSource copyWith({String Function()? medium, ResourceQuantity Function()? sizeLimit, }) { return EmptyDirVolumeSource(
+EmptyDirVolumeSource copyWith({String? Function()? medium, ResourceQuantity? Function()? sizeLimit, }) { return EmptyDirVolumeSource(
   medium: medium != null ? medium() : this.medium,
   sizeLimit: sizeLimit != null ? sizeLimit() : this.sizeLimit,
 ); } 

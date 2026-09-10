@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-SchemaValidationListSchemaHostsResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, SchemaValidationListSchemaHostsResponseResultInfo Function()? resultInfo, List<ShieldSchemaHosts>? result, }) { return SchemaValidationListSchemaHostsResponse(
+SchemaValidationListSchemaHostsResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, SchemaValidationListSchemaHostsResponseResultInfo? Function()? resultInfo, List<ShieldSchemaHosts>? result, }) { return SchemaValidationListSchemaHostsResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
