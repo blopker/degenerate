@@ -17,11 +17,10 @@ typedef Handler = Future<StreamedApiResponse> Function(ApiRequest request);
 ///     final modified = request.copyWith(
 ///       headers: {...request.headers, 'X-Custom': 'value'},
 ///     );
-///     return next(modified);
+///     return await next(modified);
 ///   }
 /// }
 /// ```
-// ignore: one_member_abstracts
 abstract interface class Interceptor {
   /// Processes [request] and optionally delegates to [next].
   Future<StreamedApiResponse> intercept(ApiRequest request, Handler next);

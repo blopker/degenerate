@@ -39,7 +39,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -65,7 +65,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -88,7 +88,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -130,7 +130,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -159,7 +159,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -185,7 +185,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -217,7 +217,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -246,7 +246,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return await execute(request, onSuccess: (_) {});
   }
 
   /// Get Sessions History
@@ -263,7 +263,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -304,7 +304,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -329,7 +329,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -356,7 +356,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -382,7 +382,7 @@ final class SpacesApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);

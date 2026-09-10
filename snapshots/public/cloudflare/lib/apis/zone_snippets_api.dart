@@ -33,7 +33,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
 final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -68,7 +68,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
 final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -107,7 +107,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
 final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -142,7 +142,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
 final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -177,7 +177,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
 // TODO: Unsupported non-JSON response schema Cannot decode multipart/form-data response into Map<String, List<Uint8List>>
@@ -212,7 +212,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
 final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -249,7 +249,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
 final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -284,7 +284,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
 final json = jsonDecode(response.body) as Map<String, dynamic>;

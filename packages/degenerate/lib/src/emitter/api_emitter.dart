@@ -544,7 +544,7 @@ class ApiEmitter {
     buf.writeln(');');
     buf.writeln();
 
-    buf.writeln('return execute(');
+    buf.writeln('return await execute(');
     buf.writeln('  request,');
     if (successPlan.types.isNotEmpty) {
       buf.writeln('  onSuccess: (response) {');

@@ -71,7 +71,7 @@ final class IncidentsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -106,7 +106,7 @@ final class IncidentsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);

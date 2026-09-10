@@ -37,7 +37,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -63,7 +63,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -90,7 +90,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -117,7 +117,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -141,7 +141,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -166,7 +166,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -193,7 +193,7 @@ final class UsersApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);

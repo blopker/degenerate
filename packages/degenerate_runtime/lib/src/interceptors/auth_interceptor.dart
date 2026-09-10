@@ -49,7 +49,7 @@ class AuthInterceptor implements Interceptor {
       final retry = request.copyWith(
         headers: {...request.headers, 'Authorization': '$scheme $newToken'},
       );
-      return next(retry);
+      return await next(retry);
     }
 
     return response;

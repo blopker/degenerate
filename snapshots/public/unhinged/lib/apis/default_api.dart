@@ -37,7 +37,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return await execute(request, onSuccess: (_) {});
   }
 
   ///
@@ -55,7 +55,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return await execute(request, onSuccess: (_) {});
   }
 
   ///
@@ -75,7 +75,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return await execute(request, onSuccess: (_) {});
   }
 
   ///
@@ -93,7 +93,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(request, onSuccess: (_) {});
+    return await execute(request, onSuccess: (_) {});
   }
 
   ///
@@ -113,7 +113,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -137,7 +137,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into TypeModel
@@ -178,7 +178,7 @@ final class DefaultApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         // TODO: Unsupported non-JSON response schema Cannot decode application/jsonl response into StringModel

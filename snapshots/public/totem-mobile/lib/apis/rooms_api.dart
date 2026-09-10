@@ -44,7 +44,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -81,7 +81,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -118,7 +118,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);
@@ -156,7 +156,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: (response) {
@@ -190,7 +190,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (_) {},
       onError: (response) {
@@ -237,7 +237,7 @@ final class RoomsApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
         final json = jsonDecode(response.body);

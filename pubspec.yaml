@@ -16,13 +16,14 @@ dependencies:
   meta:
 
 dev_dependencies:
-  code_builder: ^4.10.0
+  # Pin emission tooling so dependency updates do not reformat raw snapshots.
+  code_builder: 4.11.1
   dart_style: ^3.0.0
   degenerate:
   degenerate_runtime:
   lints: ^6.0.0
   path: ^1.9.0
   test: ^1.25.6
-  very_good_analysis: ^10.2.0
+  very_good_analysis: ^11.0.0
   yaml: ^3.1.0
   yaml_edit: ^2.2.4

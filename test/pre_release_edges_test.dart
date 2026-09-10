@@ -321,7 +321,7 @@ void main() {
     },
   );
 
-  test('generated anyOf callbacks pass strict analysis', () async {
+  test('generated models and API methods pass strict analysis', () async {
     final root = Directory('outputs/anyof_analysis')
       ..createSync(recursive: true);
     final dir = root.createTempSync('client_');
@@ -335,7 +335,29 @@ void main() {
         stdinContent: jsonEncode({
           'openapi': '3.1.0',
           'info': {'title': 'Analysis', 'version': '1'},
-          'paths': <String, dynamic>{},
+          'paths': {
+            '/value': {
+              'get': {
+                'operationId': 'getValue',
+                'responses': {
+                  '200': {
+                    'description': 'Value',
+                    'content': {
+                      'application/json': {
+                        'schema': {r'$ref': '#/components/schemas/A'},
+                      },
+                    },
+                  },
+                },
+              },
+              'delete': {
+                'operationId': 'deleteValue',
+                'responses': {
+                  '204': {'description': 'Deleted'},
+                },
+              },
+            },
+          },
           'components': {
             'schemas': {
               'A': _a,

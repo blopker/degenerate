@@ -42,7 +42,7 @@ class _RetryOnceInterceptor implements Interceptor {
   Future<StreamedApiResponse> intercept(ApiRequest request, Handler next) async {
     final response = await next(request);
     if (!response.isSuccessful) {
-      return next(request);
+      return await next(request);
     }
     return response;
   }
