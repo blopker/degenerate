@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateImageVariationRequestModelVariant2($value)'; } 
  }
-typedef CreateImageVariationRequestModel = OneOf2<String,CreateImageVariationRequestModelVariant2>;
+/// The model to use for image generation. Only `dall-e-2` is supported at this time.
+@immutable
+final class CreateImageVariationRequestModel {
+  const CreateImageVariationRequestModel({this.string = const Omittable.absent(),
+this.createImageVariationRequestModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CreateImageVariationRequestModel._({required this.rawValue, required this.string,
+required this.createImageVariationRequestModelVariant2,});
+  factory CreateImageVariationRequestModel.fromJson(Object? json) => CreateImageVariationRequestModel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+createImageVariationRequestModelVariant2: parseAnyOfVariant<CreateImageVariationRequestModelVariant2>(json, (value) => CreateImageVariationRequestModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<CreateImageVariationRequestModelVariant2> createImageVariationRequestModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => (rawValue.isPresent && rawValue.value == null) || string.isPresent || createImageVariationRequestModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (createImageVariationRequestModelVariant2.isPresent) createImageVariationRequestModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CreateImageVariationRequestModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CreateImageVariationRequestModel(${toJson()})';
+}

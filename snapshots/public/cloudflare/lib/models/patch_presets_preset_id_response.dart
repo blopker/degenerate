@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'patch_presets_preset_id_response_data.dart';@immutable final class PatchPresetsPresetIdResponse {const PatchPresetsPresetIdResponse({required this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'patch_presets_preset_id_response_data.dart';@immutable final class PatchPresetsPresetIdResponse {const PatchPresetsPresetIdResponse({required this.data, required this.success, });
 
 factory PatchPresetsPresetIdResponse.fromJson(Map<String, dynamic> json) { return PatchPresetsPresetIdResponse(
   data: PatchPresetsPresetIdResponseData.fromJson(json['data'] as Map<String, dynamic>),

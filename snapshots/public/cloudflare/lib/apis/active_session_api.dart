@@ -22,13 +22,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return GetActiveSessionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetActiveSessionResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -48,13 +56,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return KickPartcipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return KickPartcipantsResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitGenericErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -72,10 +88,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return KickAllParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return KickAllParticipantsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -95,10 +112,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return MuteParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return MuteParticipantsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -118,10 +136,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return MuteAllParticipantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return MuteAllParticipantsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -141,10 +160,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return CreatePollResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CreatePollResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

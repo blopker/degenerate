@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2($value)'; } 
  }
-typedef PostAccountsAccountPersonsPersonRequestDocumentsPassportFiles = OneOf2<String,PostAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2>;
+
+@immutable
+final class PostAccountsAccountPersonsPersonRequestDocumentsPassportFiles {
+  const PostAccountsAccountPersonsPersonRequestDocumentsPassportFiles({this.string = const Omittable.absent(),
+this.postAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostAccountsAccountPersonsPersonRequestDocumentsPassportFiles._({required this.rawValue, required this.string,
+required this.postAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2,});
+  factory PostAccountsAccountPersonsPersonRequestDocumentsPassportFiles.fromJson(Object? json) => PostAccountsAccountPersonsPersonRequestDocumentsPassportFiles._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2: parseAnyOfVariant<PostAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2>(json, (value) => PostAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2> postAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2.isPresent) postAccountsAccountPersonsPersonRequestDocumentsPassportFilesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostAccountsAccountPersonsPersonRequestDocumentsPassportFiles && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostAccountsAccountPersonsPersonRequestDocumentsPassportFiles(${toJson()})';
+}

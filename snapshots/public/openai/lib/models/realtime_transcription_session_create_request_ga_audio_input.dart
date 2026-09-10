@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transcription.dart';import 'pcm_audio_format.dart';import 'pcma_audio_format.dart';import 'pcmu_audio_format.dart';import 'realtime_audio_formats.dart';import 'realtime_transcription_session_create_request_ga_audio_input_noise_reduction.dart';import 'realtime_turn_detection.dart';@immutable final class RealtimeTranscriptionSessionCreateRequestGaAudioInput {const RealtimeTranscriptionSessionCreateRequestGaAudioInput({this.format, this.transcription, this.noiseReduction, this.turnDetection, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audio_transcription.dart';import 'realtime_audio_formats.dart';import 'realtime_transcription_session_create_request_ga_audio_input_noise_reduction.dart';import 'realtime_turn_detection.dart';@immutable final class RealtimeTranscriptionSessionCreateRequestGaAudioInput {const RealtimeTranscriptionSessionCreateRequestGaAudioInput({this.format, this.transcription, this.noiseReduction, this.turnDetection = const Omittable.absent(), });
 
 factory RealtimeTranscriptionSessionCreateRequestGaAudioInput.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequestGaAudioInput(
-  format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => PcmAudioFormat.fromJson(v as Map<String, dynamic>), fromB: (v) => PcmuAudioFormat.fromJson(v as Map<String, dynamic>), fromC: (v) => PcmaAudioFormat.fromJson(v as Map<String, dynamic>),) : null,
+  format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
   transcription: json['transcription'] != null ? AudioTranscription.fromJson(json['transcription'] as Map<String, dynamic>) : null,
   noiseReduction: json['noise_reduction'] != null ? RealtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction.fromJson(json['noise_reduction'] as Map<String, dynamic>) : null,
-  turnDetection: json['turn_detection'] != null ? RealtimeTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
+  turnDetection: json.containsKey('turn_detection') ? Omittable(json['turn_detection'] != null ? RealtimeTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 final RealtimeAudioFormats? format;
@@ -21,20 +21,20 @@ final AudioTranscription? transcription;
 /// 
 final RealtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction? noiseReduction;
 
-final RealtimeTurnDetection? turnDetection;
+final Omittable<RealtimeTurnDetection?> turnDetection;
 
 Map<String, dynamic> toJson() { return {
   if (format != null) 'format': format?.toJson(),
   if (transcription != null) 'transcription': transcription?.toJson(),
   if (noiseReduction != null) 'noise_reduction': noiseReduction?.toJson(),
-  if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
+  if (turnDetection.isPresent) 'turn_detection': turnDetection.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'transcription', 'noise_reduction', 'turn_detection'}.contains(key)); } 
-RealtimeTranscriptionSessionCreateRequestGaAudioInput copyWith({RealtimeAudioFormats? Function()? format, AudioTranscription? Function()? transcription, RealtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction? Function()? noiseReduction, RealtimeTurnDetection? Function()? turnDetection, }) { return RealtimeTranscriptionSessionCreateRequestGaAudioInput(
+RealtimeTranscriptionSessionCreateRequestGaAudioInput copyWith({RealtimeAudioFormats? Function()? format, AudioTranscription? Function()? transcription, RealtimeTranscriptionSessionCreateRequestGaAudioInputNoiseReduction? Function()? noiseReduction, Omittable<RealtimeTurnDetection?>? turnDetection, }) { return RealtimeTranscriptionSessionCreateRequestGaAudioInput(
   format: format != null ? format() : this.format,
   transcription: transcription != null ? transcription() : this.transcription,
   noiseReduction: noiseReduction != null ? noiseReduction() : this.noiseReduction,
-  turnDetection: turnDetection != null ? turnDetection() : this.turnDetection,
+  turnDetection: turnDetection ?? this.turnDetection,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateRequestGaAudioInput &&

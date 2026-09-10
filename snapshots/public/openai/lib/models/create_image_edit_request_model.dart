@@ -33,4 +33,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateImageEditRequestModelVariant2($value)'; } 
  }
-typedef CreateImageEditRequestModel = OneOf2<String,CreateImageEditRequestModelVariant2>;
+/// The model to use for image generation. Defaults to `gpt-image-1.5`.
+@immutable
+final class CreateImageEditRequestModel {
+  const CreateImageEditRequestModel({this.string = const Omittable.absent(),
+this.createImageEditRequestModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CreateImageEditRequestModel._({required this.rawValue, required this.string,
+required this.createImageEditRequestModelVariant2,});
+  factory CreateImageEditRequestModel.fromJson(Object? json) => CreateImageEditRequestModel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+createImageEditRequestModelVariant2: parseAnyOfVariant<CreateImageEditRequestModelVariant2>(json, (value) => CreateImageEditRequestModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<CreateImageEditRequestModelVariant2> createImageEditRequestModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => (rawValue.isPresent && rawValue.value == null) || string.isPresent || createImageEditRequestModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (createImageEditRequestModelVariant2.isPresent) createImageEditRequestModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CreateImageEditRequestModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CreateImageEditRequestModel(${toJson()})';
+}

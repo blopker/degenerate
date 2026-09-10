@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2($value)'; } 
  }
-typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpay = OneOf2<PaymentMethodOptionsParam76,PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2>;
+
+@immutable
+final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpay {
+  const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpay({this.paymentMethodOptionsParam76 = const Omittable.absent(),
+this.postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpay._({required this.rawValue, required this.paymentMethodOptionsParam76,
+required this.postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2,});
+  factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpay.fromJson(Object? json) => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpay._(
+    rawValue: Omittable(json),
+    paymentMethodOptionsParam76: parseAnyOfVariant<PaymentMethodOptionsParam76>(json, (value) => PaymentMethodOptionsParam76.fromJson(value! as Map<String, dynamic>)),
+postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2: parseAnyOfVariant<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2>(json, (value) => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<PaymentMethodOptionsParam76> paymentMethodOptionsParam76;
+final Omittable<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2> postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => paymentMethodOptionsParam76.isPresent || postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (paymentMethodOptionsParam76.isPresent) paymentMethodOptionsParam76.value?.toJson(),
+if (postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2.isPresent) postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpayVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpay && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsAfterpayClearpay(${toJson()})';
+}

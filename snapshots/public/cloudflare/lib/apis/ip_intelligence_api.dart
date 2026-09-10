@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_identifier.dart';import '../models/intel_schemas_ip.dart';/// IpIntelligenceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/intel_identifier.dart';import '../models/intel_schemas_ip.dart';import '../models/ip_intelligence_get_ip_overview_response4_xx.dart';/// IpIntelligenceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class IpIntelligenceApi with ApiExecutor {const IpIntelligenceApi(this.api
 /// Gets the geolocation, ASN, infrastructure type of the ASN, and any security threat categories of an IP address. **Must provide ip query parameters.** For example, `/intel/ip?ipv4=1.1.1.1` or `/intel/ip?ipv6=2001:db8::1`.
 ///
 /// `GET /accounts/{account_id}/intel/ip`
-Future<ApiResult<List<IntelSchemasIp>, Never>> ipIntelligenceGetIpOverview({required IntelIdentifier accountId, String? ipv4, String? ipv6, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IntelSchemasIp>, IpIntelligenceGetIpOverviewResponse4Xx>> ipIntelligenceGetIpOverview({required IntelIdentifier accountId, String? ipv4, String? ipv6, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (ipv4 != null) {
   queryParameters['ipv4'] = ipv4;
@@ -33,11 +33,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => IntelSchemasIp.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => IntelSchemasIp.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return IpIntelligenceGetIpOverviewResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

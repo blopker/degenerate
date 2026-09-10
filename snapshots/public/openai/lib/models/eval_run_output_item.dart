@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A schema representing an evaluation run output item.
 /// 
-@immutable final class EvalRunOutputItem {const EvalRunOutputItem({required this.id, required this.runId, required this.evalId, required this.createdAt, required this.status, required this.datasourceItemId, required this.datasourceItem, required this.results, required this.sample, this.object = EvalRunOutputItemObject.evalRunOutputItem, });
+@immutable final class EvalRunOutputItem {const EvalRunOutputItem({required this.object, required this.id, required this.runId, required this.evalId, required this.createdAt, required this.status, required this.datasourceItemId, required this.datasourceItem, required this.results, required this.sample, });
 
 factory EvalRunOutputItem.fromJson(Map<String, dynamic> json) { return EvalRunOutputItem(
   object: EvalRunOutputItemObject.fromJson(json['object'] as String),

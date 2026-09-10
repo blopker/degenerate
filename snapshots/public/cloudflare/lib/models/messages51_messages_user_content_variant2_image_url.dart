@@ -27,23 +27,25 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Messages51MessagesUserContentVariant2ImageUrlDetail($value)'; } 
  }
-@immutable final class Messages51MessagesUserContentVariant2ImageUrl {const Messages51MessagesUserContentVariant2ImageUrl({this.detail = Messages51MessagesUserContentVariant2ImageUrlDetail.auto, this.url, });
+@immutable final class Messages51MessagesUserContentVariant2ImageUrl {const Messages51MessagesUserContentVariant2ImageUrl({this.detail, this.url, });
 
 factory Messages51MessagesUserContentVariant2ImageUrl.fromJson(Map<String, dynamic> json) { return Messages51MessagesUserContentVariant2ImageUrl(
-  detail: json.containsKey('detail') ? Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson(json['detail'] as String) : Messages51MessagesUserContentVariant2ImageUrlDetail.auto,
+  detail: json['detail'] != null ? Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson(json['detail'] as String) : null,
   url: json['url'] as String?,
 ); }
 
-final Messages51MessagesUserContentVariant2ImageUrlDetail detail;
+final Messages51MessagesUserContentVariant2ImageUrlDetail? detail;
 
 final String? url;
 
+/// The value with the schema default applied when absent.
+Messages51MessagesUserContentVariant2ImageUrlDetail get detailOrDefault { return detail ?? Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson('auto'); } 
 Map<String, dynamic> toJson() { return {
-  'detail': detail.toJson(),
+  if (detail != null) 'detail': detail?.toJson(),
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'detail', 'url'}.contains(key)); } 
-Messages51MessagesUserContentVariant2ImageUrl copyWith({Messages51MessagesUserContentVariant2ImageUrlDetail Function()? detail, String? Function()? url, }) { return Messages51MessagesUserContentVariant2ImageUrl(
+Messages51MessagesUserContentVariant2ImageUrl copyWith({Messages51MessagesUserContentVariant2ImageUrlDetail? Function()? detail, String? Function()? url, }) { return Messages51MessagesUserContentVariant2ImageUrl(
   detail: detail != null ? detail() : this.detail,
   url: url != null ? url() : this.url,
 ); } 

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingDisputesDisputeRequestEvidenceCanceledVariant2($value)'; } 
  }
-typedef PostIssuingDisputesDisputeRequestEvidenceCanceled = OneOf2<Canceled2,PostIssuingDisputesDisputeRequestEvidenceCanceledVariant2>;
+
+@immutable
+final class PostIssuingDisputesDisputeRequestEvidenceCanceled {
+  const PostIssuingDisputesDisputeRequestEvidenceCanceled({this.canceled2 = const Omittable.absent(),
+this.postIssuingDisputesDisputeRequestEvidenceCanceledVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostIssuingDisputesDisputeRequestEvidenceCanceled._({required this.rawValue, required this.canceled2,
+required this.postIssuingDisputesDisputeRequestEvidenceCanceledVariant2,});
+  factory PostIssuingDisputesDisputeRequestEvidenceCanceled.fromJson(Object? json) => PostIssuingDisputesDisputeRequestEvidenceCanceled._(
+    rawValue: Omittable(json),
+    canceled2: parseAnyOfVariant<Canceled2>(json, (value) => Canceled2.fromJson(value! as Map<String, dynamic>)),
+postIssuingDisputesDisputeRequestEvidenceCanceledVariant2: parseAnyOfVariant<PostIssuingDisputesDisputeRequestEvidenceCanceledVariant2>(json, (value) => PostIssuingDisputesDisputeRequestEvidenceCanceledVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<Canceled2> canceled2;
+final Omittable<PostIssuingDisputesDisputeRequestEvidenceCanceledVariant2> postIssuingDisputesDisputeRequestEvidenceCanceledVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => canceled2.isPresent || postIssuingDisputesDisputeRequestEvidenceCanceledVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (canceled2.isPresent) canceled2.value?.toJson(),
+if (postIssuingDisputesDisputeRequestEvidenceCanceledVariant2.isPresent) postIssuingDisputesDisputeRequestEvidenceCanceledVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostIssuingDisputesDisputeRequestEvidenceCanceled && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostIssuingDisputesDisputeRequestEvidenceCanceled(${toJson()})';
+}

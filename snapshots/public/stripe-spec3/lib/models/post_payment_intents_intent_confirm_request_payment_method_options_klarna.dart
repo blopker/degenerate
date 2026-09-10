@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2($value)'; } 
  }
-typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarna = OneOf2<PaymentMethodOptionsParam91,PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2>;
+
+@immutable
+final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarna {
+  const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarna({this.paymentMethodOptionsParam91 = const Omittable.absent(),
+this.postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarna._({required this.rawValue, required this.paymentMethodOptionsParam91,
+required this.postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2,});
+  factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarna.fromJson(Object? json) => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarna._(
+    rawValue: Omittable(json),
+    paymentMethodOptionsParam91: parseAnyOfVariant<PaymentMethodOptionsParam91>(json, (value) => PaymentMethodOptionsParam91.fromJson(value! as Map<String, dynamic>)),
+postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2: parseAnyOfVariant<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2>(json, (value) => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<PaymentMethodOptionsParam91> paymentMethodOptionsParam91;
+final Omittable<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2> postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => paymentMethodOptionsParam91.isPresent || postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (paymentMethodOptionsParam91.isPresent) paymentMethodOptionsParam91.value?.toJson(),
+if (postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2.isPresent) postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarna && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsKlarna(${toJson()})';
+}

@@ -1,82 +1,113 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'application_fee.dart';import 'charge.dart';import 'connect_collection_transfer.dart';import 'customer_cash_balance_transaction.dart';import 'dispute.dart';import 'fee_refund.dart';import 'issuing_authorization.dart';import 'issuing_dispute.dart';import 'issuing_transaction.dart';import 'payout.dart';import 'refund.dart';import 'reserve_transaction.dart';import 'tax_deducted_at_source.dart';import 'topup.dart';import 'transfer.dart';import 'transfer_reversal.dart';/// This transaction relates to the Stripe object.
-final class BalanceTransactionSource {const BalanceTransactionSource({this.string, this.applicationFee, this.charge, this.connectCollectionTransfer, this.customerCashBalanceTransaction, this.dispute, this.feeRefund, this.issuingAuthorization, this.issuingDispute, this.issuingTransaction, this.payout, this.refund, this.reserveTransaction, this.taxDeductedAtSource, this.topup, this.transfer, this.transferReversal, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application_fee.dart';import 'charge.dart';import 'connect_collection_transfer.dart';import 'customer_cash_balance_transaction.dart';import 'dispute.dart';import 'fee_refund.dart';import 'issuing_authorization.dart';import 'issuing_dispute.dart';import 'issuing_transaction.dart';import 'payout.dart';import 'refund.dart';import 'reserve_transaction.dart';import 'tax_deducted_at_source.dart';import 'topup.dart';import 'transfer.dart';import 'transfer_reversal.dart';/// This transaction relates to the Stripe object.
+@immutable
+final class BalanceTransactionSource {
+  const BalanceTransactionSource({this.string = const Omittable.absent(),
+this.applicationFee = const Omittable.absent(),
+this.charge = const Omittable.absent(),
+this.connectCollectionTransfer = const Omittable.absent(),
+this.customerCashBalanceTransaction = const Omittable.absent(),
+this.dispute = const Omittable.absent(),
+this.feeRefund = const Omittable.absent(),
+this.issuingAuthorization = const Omittable.absent(),
+this.issuingDispute = const Omittable.absent(),
+this.issuingTransaction = const Omittable.absent(),
+this.payout = const Omittable.absent(),
+this.refund = const Omittable.absent(),
+this.reserveTransaction = const Omittable.absent(),
+this.taxDeductedAtSource = const Omittable.absent(),
+this.topup = const Omittable.absent(),
+this.transfer = const Omittable.absent(),
+this.transferReversal = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const BalanceTransactionSource._({required this.rawValue, required this.string,
+required this.applicationFee,
+required this.charge,
+required this.connectCollectionTransfer,
+required this.customerCashBalanceTransaction,
+required this.dispute,
+required this.feeRefund,
+required this.issuingAuthorization,
+required this.issuingDispute,
+required this.issuingTransaction,
+required this.payout,
+required this.refund,
+required this.reserveTransaction,
+required this.taxDeductedAtSource,
+required this.topup,
+required this.transfer,
+required this.transferReversal,});
+  factory BalanceTransactionSource.fromJson(Object? json) => BalanceTransactionSource._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+applicationFee: parseAnyOfVariant<ApplicationFee>(json, (value) => ApplicationFee.fromJson(value! as Map<String, dynamic>)),
+charge: parseAnyOfVariant<Charge>(json, (value) => Charge.fromJson(value! as Map<String, dynamic>)),
+connectCollectionTransfer: parseAnyOfVariant<ConnectCollectionTransfer>(json, (value) => ConnectCollectionTransfer.fromJson(value! as Map<String, dynamic>)),
+customerCashBalanceTransaction: parseAnyOfVariant<CustomerCashBalanceTransaction>(json, (value) => CustomerCashBalanceTransaction.fromJson(value! as Map<String, dynamic>)),
+dispute: parseAnyOfVariant<Dispute>(json, (value) => Dispute.fromJson(value! as Map<String, dynamic>)),
+feeRefund: parseAnyOfVariant<FeeRefund>(json, (value) => FeeRefund.fromJson(value! as Map<String, dynamic>)),
+issuingAuthorization: parseAnyOfVariant<IssuingAuthorization>(json, (value) => IssuingAuthorization.fromJson(value! as Map<String, dynamic>)),
+issuingDispute: parseAnyOfVariant<IssuingDispute>(json, (value) => IssuingDispute.fromJson(value! as Map<String, dynamic>)),
+issuingTransaction: parseAnyOfVariant<IssuingTransaction>(json, (value) => IssuingTransaction.fromJson(value! as Map<String, dynamic>)),
+payout: parseAnyOfVariant<Payout>(json, (value) => Payout.fromJson(value! as Map<String, dynamic>)),
+refund: parseAnyOfVariant<Refund>(json, (value) => Refund.fromJson(value! as Map<String, dynamic>)),
+reserveTransaction: parseAnyOfVariant<ReserveTransaction>(json, (value) => ReserveTransaction.fromJson(value! as Map<String, dynamic>)),
+taxDeductedAtSource: parseAnyOfVariant<TaxDeductedAtSource>(json, (value) => TaxDeductedAtSource.fromJson(value! as Map<String, dynamic>)),
+topup: parseAnyOfVariant<Topup>(json, (value) => Topup.fromJson(value! as Map<String, dynamic>)),
+transfer: parseAnyOfVariant<Transfer>(json, (value) => Transfer.fromJson(value! as Map<String, dynamic>)),
+transferReversal: parseAnyOfVariant<TransferReversal>(json, (value) => TransferReversal.fromJson(value! as Map<String, dynamic>)),
+  );
 
-factory BalanceTransactionSource.fromJson(dynamic json) { final map = json is Map<String, dynamic> ? json : null;
-return BalanceTransactionSource(
-  string: json is String ? json : null,
-  applicationFee: map != null && ApplicationFee.canParse(map) ? ApplicationFee.fromJson(map) : null,
-  charge: map != null && Charge.canParse(map) ? Charge.fromJson(map) : null,
-  connectCollectionTransfer: map != null && ConnectCollectionTransfer.canParse(map) ? ConnectCollectionTransfer.fromJson(map) : null,
-  customerCashBalanceTransaction: map != null && CustomerCashBalanceTransaction.canParse(map) ? CustomerCashBalanceTransaction.fromJson(map) : null,
-  dispute: map != null && Dispute.canParse(map) ? Dispute.fromJson(map) : null,
-  feeRefund: map != null && FeeRefund.canParse(map) ? FeeRefund.fromJson(map) : null,
-  issuingAuthorization: map != null && IssuingAuthorization.canParse(map) ? IssuingAuthorization.fromJson(map) : null,
-  issuingDispute: map != null && IssuingDispute.canParse(map) ? IssuingDispute.fromJson(map) : null,
-  issuingTransaction: map != null && IssuingTransaction.canParse(map) ? IssuingTransaction.fromJson(map) : null,
-  payout: map != null && Payout.canParse(map) ? Payout.fromJson(map) : null,
-  refund: map != null && Refund.canParse(map) ? Refund.fromJson(map) : null,
-  reserveTransaction: map != null && ReserveTransaction.canParse(map) ? ReserveTransaction.fromJson(map) : null,
-  taxDeductedAtSource: map != null && TaxDeductedAtSource.canParse(map) ? TaxDeductedAtSource.fromJson(map) : null,
-  topup: map != null && Topup.canParse(map) ? Topup.fromJson(map) : null,
-  transfer: map != null && Transfer.canParse(map) ? Transfer.fromJson(map) : null,
-  transferReversal: map != null && TransferReversal.canParse(map) ? TransferReversal.fromJson(map) : null,
-); }
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<ApplicationFee> applicationFee;
+final Omittable<Charge> charge;
+final Omittable<ConnectCollectionTransfer> connectCollectionTransfer;
+final Omittable<CustomerCashBalanceTransaction> customerCashBalanceTransaction;
+final Omittable<Dispute> dispute;
+final Omittable<FeeRefund> feeRefund;
+final Omittable<IssuingAuthorization> issuingAuthorization;
+final Omittable<IssuingDispute> issuingDispute;
+final Omittable<IssuingTransaction> issuingTransaction;
+final Omittable<Payout> payout;
+final Omittable<Refund> refund;
+final Omittable<ReserveTransaction> reserveTransaction;
+final Omittable<TaxDeductedAtSource> taxDeductedAtSource;
+final Omittable<Topup> topup;
+final Omittable<Transfer> transfer;
+final Omittable<TransferReversal> transferReversal;
 
-final String? string;
+  /// Whether at least one known variant matched.
+  bool get isValid => (rawValue.isPresent && rawValue.value == null) || string.isPresent || applicationFee.isPresent || charge.isPresent || connectCollectionTransfer.isPresent || customerCashBalanceTransaction.isPresent || dispute.isPresent || feeRefund.isPresent || issuingAuthorization.isPresent || issuingDispute.isPresent || issuingTransaction.isPresent || payout.isPresent || refund.isPresent || reserveTransaction.isPresent || taxDeductedAtSource.isPresent || topup.isPresent || transfer.isPresent || transferReversal.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
 
-final ApplicationFee? applicationFee;
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (applicationFee.isPresent) applicationFee.value?.toJson(),
+if (charge.isPresent) charge.value?.toJson(),
+if (connectCollectionTransfer.isPresent) connectCollectionTransfer.value?.toJson(),
+if (customerCashBalanceTransaction.isPresent) customerCashBalanceTransaction.value?.toJson(),
+if (dispute.isPresent) dispute.value?.toJson(),
+if (feeRefund.isPresent) feeRefund.value?.toJson(),
+if (issuingAuthorization.isPresent) issuingAuthorization.value?.toJson(),
+if (issuingDispute.isPresent) issuingDispute.value?.toJson(),
+if (issuingTransaction.isPresent) issuingTransaction.value?.toJson(),
+if (payout.isPresent) payout.value?.toJson(),
+if (refund.isPresent) refund.value?.toJson(),
+if (reserveTransaction.isPresent) reserveTransaction.value?.toJson(),
+if (taxDeductedAtSource.isPresent) taxDeductedAtSource.value?.toJson(),
+if (topup.isPresent) topup.value?.toJson(),
+if (transfer.isPresent) transfer.value?.toJson(),
+if (transferReversal.isPresent) transferReversal.value?.toJson(),
+  ]);
 
-final Charge? charge;
-
-final ConnectCollectionTransfer? connectCollectionTransfer;
-
-final CustomerCashBalanceTransaction? customerCashBalanceTransaction;
-
-final Dispute? dispute;
-
-final FeeRefund? feeRefund;
-
-final IssuingAuthorization? issuingAuthorization;
-
-final IssuingDispute? issuingDispute;
-
-final IssuingTransaction? issuingTransaction;
-
-final Payout? payout;
-
-final Refund? refund;
-
-final ReserveTransaction? reserveTransaction;
-
-final TaxDeductedAtSource? taxDeductedAtSource;
-
-final Topup? topup;
-
-final Transfer? transfer;
-
-final TransferReversal? transferReversal;
-
-/// At least one variant must be present.
-bool get isValid { return string != null || applicationFee != null || charge != null || connectCollectionTransfer != null || customerCashBalanceTransaction != null || dispute != null || feeRefund != null || issuingAuthorization != null || issuingDispute != null || issuingTransaction != null || payout != null || refund != null || reserveTransaction != null || taxDeductedAtSource != null || topup != null || transfer != null || transferReversal != null; } 
-Map<String, dynamic> toJson() { return {
-  'string': ?string,
-  ...?applicationFee?.toJson(),
-  ...?charge?.toJson(),
-  ...?connectCollectionTransfer?.toJson(),
-  ...?customerCashBalanceTransaction?.toJson(),
-  ...?dispute?.toJson(),
-  ...?feeRefund?.toJson(),
-  ...?issuingAuthorization?.toJson(),
-  ...?issuingDispute?.toJson(),
-  ...?issuingTransaction?.toJson(),
-  ...?payout?.toJson(),
-  ...?refund?.toJson(),
-  ...?reserveTransaction?.toJson(),
-  ...?taxDeductedAtSource?.toJson(),
-  ...?topup?.toJson(),
-  ...?transfer?.toJson(),
-  ...?transferReversal?.toJson(),
-}; } 
- }
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is BalanceTransactionSource && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'BalanceTransactionSource(${toJson()})';
+}

@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages5.da
 factory ResponseSingle7.fromJson(Map<String, dynamic> json) { return ResponseSingle7(
   errors: (json['errors'] as List<dynamic>).map((e) => Messages5.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Messages5.fromJson(e as Map<String, dynamic>)).toList(),
-  result: OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,),
+  result: json['result'] != null ? ResponseSingle7Result.fromJson(json['result']) : null,
   success: json['success'] as bool,
 ); }
 
@@ -13,7 +13,7 @@ final List<Messages5> errors;
 
 final List<Messages5> messages;
 
-final ResponseSingle7Result result;
+final ResponseSingle7Result? result;
 
 /// Whether the API call was successful
 final bool success;
@@ -21,17 +21,17 @@ final bool success;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': result.toJson(),
+  'result': result?.toJson(),
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseSingle7 copyWith({List<Messages5>? errors, List<Messages5>? messages, ResponseSingle7Result? result, bool? success, }) { return ResponseSingle7(
+ResponseSingle7 copyWith({List<Messages5>? errors, List<Messages5>? messages, ResponseSingle7Result? Function()? result, bool? success, }) { return ResponseSingle7(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
-  result: result ?? this.result,
+  result: result != null ? result() : this.result,
   success: success ?? this.success,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

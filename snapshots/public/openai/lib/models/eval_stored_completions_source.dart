@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A StoredCompletionsRunDataSource configuration describing a set of filters
 /// 
-@immutable final class EvalStoredCompletionsSource {const EvalStoredCompletionsSource({this.type = EvalStoredCompletionsSourceType.storedCompletions, this.metadata = const Omittable.absent(), this.model = const Omittable.absent(), this.createdAfter = const Omittable.absent(), this.createdBefore = const Omittable.absent(), this.limit = const Omittable.absent(), });
+@immutable final class EvalStoredCompletionsSource {const EvalStoredCompletionsSource({required this.type, this.metadata = const Omittable.absent(), this.model = const Omittable.absent(), this.createdAfter = const Omittable.absent(), this.createdBefore = const Omittable.absent(), this.limit = const Omittable.absent(), });
 
 factory EvalStoredCompletionsSource.fromJson(Map<String, dynamic> json) { return EvalStoredCompletionsSource(
   type: EvalStoredCompletionsSourceType.fromJson(json['type'] as String),

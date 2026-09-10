@@ -129,13 +129,13 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptions {const PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, this.startDate, });
 
 factory PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptions(
-  amount: json['amount'] != null ? OneOf2.parse(json['amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountVariant2.fromJson(v as String),) : null,
+  amount: json['amount'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount.fromJson(json['amount']) : null,
   amountType: json['amount_type'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmountType.fromJson(json['amount_type'] as String) : null,
-  endDate: json['end_date'] != null ? OneOf2.parse(json['end_date'], fromA: (v) => v as String, fromB: (v) => PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsEndDateVariant2.fromJson(v as String),) : null,
+  endDate: json['end_date'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsEndDate.fromJson(json['end_date']) : null,
   paymentSchedule: json['payment_schedule'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
-  paymentsPerPeriod: json['payments_per_period'] != null ? OneOf2.parse(json['payments_per_period'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriodVariant2.fromJson(v as String),) : null,
+  paymentsPerPeriod: json['payments_per_period'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPaymentsPerPeriod.fromJson(json['payments_per_period']) : null,
   purpose: json['purpose'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsPurpose.fromJson(json['purpose'] as String) : null,
-  startDate: json['start_date'] != null ? OneOf2.parse(json['start_date'], fromA: (v) => v as String, fromB: (v) => PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsStartDateVariant2.fromJson(v as String),) : null,
+  startDate: json['start_date'] != null ? PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsStartDate.fromJson(json['start_date']) : null,
 ); }
 
 final PostSetupIntentsRequestPaymentMethodOptionsPaytoMandateOptionsAmount? amount;

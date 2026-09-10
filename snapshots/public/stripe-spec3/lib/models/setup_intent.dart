@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_customer.dart';import 'errors.dart';import 'mandate.dart';import 'payment_flows_automatic_payment_methods_setup_intent.dart';import 'payment_method.dart';import 'payment_method_config_biz_payment_method_configuration_details.dart';import 'setup_attempt.dart';import 'setup_intent_application.dart';import 'setup_intent_customer.dart';import 'setup_intent_latest_attempt.dart';import 'setup_intent_mandate.dart';import 'setup_intent_next_action.dart';import 'setup_intent_on_behalf_of.dart';import 'setup_intent_payment_method.dart';import 'setup_intent_payment_method_options.dart';import 'setup_intent_single_use_mandate.dart';/// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'errors.dart';import 'payment_flows_automatic_payment_methods_setup_intent.dart';import 'payment_method_config_biz_payment_method_configuration_details.dart';import 'setup_intent_application.dart';import 'setup_intent_customer.dart';import 'setup_intent_latest_attempt.dart';import 'setup_intent_mandate.dart';import 'setup_intent_next_action.dart';import 'setup_intent_on_behalf_of.dart';import 'setup_intent_payment_method.dart';import 'setup_intent_payment_method_options.dart';import 'setup_intent_single_use_mandate.dart';/// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
 @immutable final class SetupIntentCancellationReason {const SetupIntentCancellationReason._(this.value);
 
 factory SetupIntentCancellationReason.fromJson(String json) { return switch (json) {
@@ -300,31 +300,31 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class SetupIntent {const SetupIntent({required this.created, required this.id, required this.livemode, required this.object, required this.paymentMethodTypes, required this.status, required this.usage, this.application = const Omittable.absent(), this.attachToSelf, this.automaticPaymentMethods = const Omittable.absent(), this.cancellationReason = const Omittable.absent(), this.clientSecret = const Omittable.absent(), this.customer = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.description = const Omittable.absent(), this.excludedPaymentMethodTypes = const Omittable.absent(), this.flowDirections = const Omittable.absent(), this.lastSetupError = const Omittable.absent(), this.latestAttempt = const Omittable.absent(), this.mandate = const Omittable.absent(), this.metadata = const Omittable.absent(), this.nextAction = const Omittable.absent(), this.onBehalfOf = const Omittable.absent(), this.paymentMethod = const Omittable.absent(), this.paymentMethodConfigurationDetails = const Omittable.absent(), this.paymentMethodOptions = const Omittable.absent(), this.singleUseMandate = const Omittable.absent(), });
 
 factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
-  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? SetupIntentApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   attachToSelf: json['attach_to_self'] as bool?,
   automaticPaymentMethods: json.containsKey('automatic_payment_methods') ? Omittable(json['automatic_payment_methods'] != null ? PaymentFlowsAutomaticPaymentMethodsSetupIntent.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   cancellationReason: json.containsKey('cancellation_reason') ? Omittable(json['cancellation_reason'] != null ? SetupIntentCancellationReason.fromJson(json['cancellation_reason'] as String) : null) : const Omittable.absent(),
   clientSecret: json.containsKey('client_secret') ? Omittable(json['client_secret'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
-  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? SetupIntentCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   excludedPaymentMethodTypes: json.containsKey('excluded_payment_method_types') ? Omittable((json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => SetupIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList()) : const Omittable.absent(),
   flowDirections: json.containsKey('flow_directions') ? Omittable((json['flow_directions'] as List<dynamic>?)?.map((e) => SetupIntentFlowDirections.fromJson(e as String)).toList()) : const Omittable.absent(),
   id: json['id'] as String,
   lastSetupError: json.containsKey('last_setup_error') ? Omittable(json['last_setup_error'] != null ? Errors.fromJson(json['last_setup_error'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  latestAttempt: json.containsKey('latest_attempt') ? Omittable(json['latest_attempt'] != null ? OneOf2.parse(json['latest_attempt'], fromA: (v) => v as String, fromB: (v) => SetupAttempt.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  latestAttempt: json.containsKey('latest_attempt') ? Omittable(json['latest_attempt'] != null ? SetupIntentLatestAttempt.fromJson(json['latest_attempt']) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
-  mandate: json.containsKey('mandate') ? Omittable(json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  mandate: json.containsKey('mandate') ? Omittable(json['mandate'] != null ? SetupIntentMandate.fromJson(json['mandate']) : null) : const Omittable.absent(),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   nextAction: json.containsKey('next_action') ? Omittable(json['next_action'] != null ? SetupIntentNextAction.fromJson(json['next_action'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   object: SetupIntentObject.fromJson(json['object'] as String),
-  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  paymentMethod: json.containsKey('payment_method') ? Omittable(json['payment_method'] != null ? OneOf2.parse(json['payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? SetupIntentOnBehalfOf.fromJson(json['on_behalf_of']) : null) : const Omittable.absent(),
+  paymentMethod: json.containsKey('payment_method') ? Omittable(json['payment_method'] != null ? SetupIntentPaymentMethod.fromJson(json['payment_method']) : null) : const Omittable.absent(),
   paymentMethodConfigurationDetails: json.containsKey('payment_method_configuration_details') ? Omittable(json['payment_method_configuration_details'] != null ? PaymentMethodConfigBizPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   paymentMethodOptions: json.containsKey('payment_method_options') ? Omittable(json['payment_method_options'] != null ? SetupIntentPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>).map((e) => e as String).toList(),
-  singleUseMandate: json.containsKey('single_use_mandate') ? Omittable(json['single_use_mandate'] != null ? OneOf2.parse(json['single_use_mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  singleUseMandate: json.containsKey('single_use_mandate') ? Omittable(json['single_use_mandate'] != null ? SetupIntentSingleUseMandate.fromJson(json['single_use_mandate']) : null) : const Omittable.absent(),
   status: SetupIntentStatus.fromJson(json['status'] as String),
   usage: json['usage'] as String,
 ); }

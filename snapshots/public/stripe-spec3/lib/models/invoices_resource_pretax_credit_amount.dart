@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_transaction.dart';import 'deleted_discount.dart';import 'discount.dart';import 'invoices_resource_pretax_credit_amount_credit_balance_transaction.dart';import 'invoices_resource_pretax_credit_amount_discount.dart';/// Type of the pretax credit amount referenced.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoices_resource_pretax_credit_amount_credit_balance_transaction.dart';import 'invoices_resource_pretax_credit_amount_discount.dart';/// Type of the pretax credit amount referenced.
 @immutable final class InvoicesResourcePretaxCreditAmountType {const InvoicesResourcePretaxCreditAmountType._(this.value);
 
 factory InvoicesResourcePretaxCreditAmountType.fromJson(String json) { return switch (json) {
@@ -30,8 +30,8 @@ bool get isUnknown { return !values.contains(this); }
 
 factory InvoicesResourcePretaxCreditAmount.fromJson(Map<String, dynamic> json) { return InvoicesResourcePretaxCreditAmount(
   amount: (json['amount'] as num).toInt(),
-  creditBalanceTransaction: json.containsKey('credit_balance_transaction') ? Omittable(json['credit_balance_transaction'] != null ? OneOf2.parse(json['credit_balance_transaction'], fromA: (v) => v as String, fromB: (v) => BillingCreditBalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  discount: json['discount'] != null ? OneOf3.parse(json['discount'], fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedDiscount.fromJson(v as Map<String, dynamic>),) : null,
+  creditBalanceTransaction: json.containsKey('credit_balance_transaction') ? Omittable(json['credit_balance_transaction'] != null ? InvoicesResourcePretaxCreditAmountCreditBalanceTransaction.fromJson(json['credit_balance_transaction']) : null) : const Omittable.absent(),
+  discount: json['discount'] != null ? InvoicesResourcePretaxCreditAmountDiscount.fromJson(json['discount']) : null,
   type: InvoicesResourcePretaxCreditAmountType.fromJson(json['type'] as String),
 ); }
 

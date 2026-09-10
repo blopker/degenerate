@@ -564,35 +564,35 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CodeSecurityCreateConfigurationRequestEnforcement($value)'; } 
  }
-@immutable final class CodeSecurityCreateConfigurationRequest {const CodeSecurityCreateConfigurationRequest({required this.name, required this.description, this.advancedSecurity = CodeSecurityCreateConfigurationRequestAdvancedSecurity.disabled, this.codeSecurity, this.dependencyGraph = CodeSecurityCreateConfigurationRequestDependencyGraph.enabled, this.dependencyGraphAutosubmitAction = CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.disabled, this.dependencyGraphAutosubmitActionOptions, this.dependabotAlerts = CodeSecurityCreateConfigurationRequestDependabotAlerts.disabled, this.dependabotSecurityUpdates = CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates.disabled, this.dependabotDelegatedAlertDismissal = CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal.disabled, this.codeScanningOptions, this.codeScanningDefaultSetup = CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup.disabled, this.codeScanningDefaultSetupOptions, this.codeScanningDelegatedAlertDismissal = CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal.notSet, this.secretProtection, this.secretScanning = CodeSecurityCreateConfigurationRequestSecretScanning.disabled, this.secretScanningPushProtection = CodeSecurityCreateConfigurationRequestSecretScanningPushProtection.disabled, this.secretScanningDelegatedBypass = CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass.disabled, this.secretScanningDelegatedBypassOptions, this.secretScanningValidityChecks = CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks.disabled, this.secretScanningNonProviderPatterns = CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns.disabled, this.secretScanningGenericSecrets = CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets.disabled, this.secretScanningDelegatedAlertDismissal, this.secretScanningExtendedMetadata, this.privateVulnerabilityReporting = CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting.disabled, this.enforcement = CodeSecurityCreateConfigurationRequestEnforcement.enforced, });
+@immutable final class CodeSecurityCreateConfigurationRequest {const CodeSecurityCreateConfigurationRequest({required this.name, required this.description, this.advancedSecurity, this.codeSecurity, this.dependencyGraph, this.dependencyGraphAutosubmitAction, this.dependencyGraphAutosubmitActionOptions, this.dependabotAlerts, this.dependabotSecurityUpdates, this.dependabotDelegatedAlertDismissal, this.codeScanningOptions = const Omittable.absent(), this.codeScanningDefaultSetup, this.codeScanningDefaultSetupOptions = const Omittable.absent(), this.codeScanningDelegatedAlertDismissal, this.secretProtection, this.secretScanning, this.secretScanningPushProtection, this.secretScanningDelegatedBypass, this.secretScanningDelegatedBypassOptions, this.secretScanningValidityChecks, this.secretScanningNonProviderPatterns, this.secretScanningGenericSecrets, this.secretScanningDelegatedAlertDismissal, this.secretScanningExtendedMetadata, this.privateVulnerabilityReporting, this.enforcement, });
 
 factory CodeSecurityCreateConfigurationRequest.fromJson(Map<String, dynamic> json) { return CodeSecurityCreateConfigurationRequest(
   name: json['name'] as String,
   description: json['description'] as String,
-  advancedSecurity: json.containsKey('advanced_security') ? CodeSecurityCreateConfigurationRequestAdvancedSecurity.fromJson(json['advanced_security'] as String) : CodeSecurityCreateConfigurationRequestAdvancedSecurity.disabled,
+  advancedSecurity: json['advanced_security'] != null ? CodeSecurityCreateConfigurationRequestAdvancedSecurity.fromJson(json['advanced_security'] as String) : null,
   codeSecurity: json['code_security'] != null ? CodeSecurityCreateConfigurationRequestCodeSecurity.fromJson(json['code_security'] as String) : null,
-  dependencyGraph: json.containsKey('dependency_graph') ? CodeSecurityCreateConfigurationRequestDependencyGraph.fromJson(json['dependency_graph'] as String) : CodeSecurityCreateConfigurationRequestDependencyGraph.enabled,
-  dependencyGraphAutosubmitAction: json.containsKey('dependency_graph_autosubmit_action') ? CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.fromJson(json['dependency_graph_autosubmit_action'] as String) : CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.disabled,
+  dependencyGraph: json['dependency_graph'] != null ? CodeSecurityCreateConfigurationRequestDependencyGraph.fromJson(json['dependency_graph'] as String) : null,
+  dependencyGraphAutosubmitAction: json['dependency_graph_autosubmit_action'] != null ? CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.fromJson(json['dependency_graph_autosubmit_action'] as String) : null,
   dependencyGraphAutosubmitActionOptions: json['dependency_graph_autosubmit_action_options'] != null ? CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitActionOptions.fromJson(json['dependency_graph_autosubmit_action_options'] as Map<String, dynamic>) : null,
-  dependabotAlerts: json.containsKey('dependabot_alerts') ? CodeSecurityCreateConfigurationRequestDependabotAlerts.fromJson(json['dependabot_alerts'] as String) : CodeSecurityCreateConfigurationRequestDependabotAlerts.disabled,
-  dependabotSecurityUpdates: json.containsKey('dependabot_security_updates') ? CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates.fromJson(json['dependabot_security_updates'] as String) : CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates.disabled,
-  dependabotDelegatedAlertDismissal: json.containsKey('dependabot_delegated_alert_dismissal') ? CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal.fromJson(json['dependabot_delegated_alert_dismissal'] as String) : CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal.disabled,
-  codeScanningOptions: json['code_scanning_options'] != null ? CodeScanningOptions.fromJson(json['code_scanning_options'] as Map<String, dynamic>) : null,
-  codeScanningDefaultSetup: json.containsKey('code_scanning_default_setup') ? CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup.fromJson(json['code_scanning_default_setup'] as String) : CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup.disabled,
-  codeScanningDefaultSetupOptions: json['code_scanning_default_setup_options'] != null ? CodeScanningDefaultSetupOptions.fromJson(json['code_scanning_default_setup_options'] as Map<String, dynamic>) : null,
-  codeScanningDelegatedAlertDismissal: json.containsKey('code_scanning_delegated_alert_dismissal') ? CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson(json['code_scanning_delegated_alert_dismissal'] as String) : CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal.notSet,
+  dependabotAlerts: json['dependabot_alerts'] != null ? CodeSecurityCreateConfigurationRequestDependabotAlerts.fromJson(json['dependabot_alerts'] as String) : null,
+  dependabotSecurityUpdates: json['dependabot_security_updates'] != null ? CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates.fromJson(json['dependabot_security_updates'] as String) : null,
+  dependabotDelegatedAlertDismissal: json['dependabot_delegated_alert_dismissal'] != null ? CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal.fromJson(json['dependabot_delegated_alert_dismissal'] as String) : null,
+  codeScanningOptions: json.containsKey('code_scanning_options') ? Omittable(json['code_scanning_options'] != null ? CodeScanningOptions.fromJson(json['code_scanning_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  codeScanningDefaultSetup: json['code_scanning_default_setup'] != null ? CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup.fromJson(json['code_scanning_default_setup'] as String) : null,
+  codeScanningDefaultSetupOptions: json.containsKey('code_scanning_default_setup_options') ? Omittable(json['code_scanning_default_setup_options'] != null ? CodeScanningDefaultSetupOptions.fromJson(json['code_scanning_default_setup_options'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  codeScanningDelegatedAlertDismissal: json['code_scanning_delegated_alert_dismissal'] != null ? CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson(json['code_scanning_delegated_alert_dismissal'] as String) : null,
   secretProtection: json['secret_protection'] != null ? CodeSecurityCreateConfigurationRequestSecretProtection.fromJson(json['secret_protection'] as String) : null,
-  secretScanning: json.containsKey('secret_scanning') ? CodeSecurityCreateConfigurationRequestSecretScanning.fromJson(json['secret_scanning'] as String) : CodeSecurityCreateConfigurationRequestSecretScanning.disabled,
-  secretScanningPushProtection: json.containsKey('secret_scanning_push_protection') ? CodeSecurityCreateConfigurationRequestSecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as String) : CodeSecurityCreateConfigurationRequestSecretScanningPushProtection.disabled,
-  secretScanningDelegatedBypass: json.containsKey('secret_scanning_delegated_bypass') ? CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as String) : CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass.disabled,
+  secretScanning: json['secret_scanning'] != null ? CodeSecurityCreateConfigurationRequestSecretScanning.fromJson(json['secret_scanning'] as String) : null,
+  secretScanningPushProtection: json['secret_scanning_push_protection'] != null ? CodeSecurityCreateConfigurationRequestSecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as String) : null,
+  secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null ? CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as String) : null,
   secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null ? CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>) : null,
-  secretScanningValidityChecks: json.containsKey('secret_scanning_validity_checks') ? CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks.fromJson(json['secret_scanning_validity_checks'] as String) : CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks.disabled,
-  secretScanningNonProviderPatterns: json.containsKey('secret_scanning_non_provider_patterns') ? CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as String) : CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns.disabled,
-  secretScanningGenericSecrets: json.containsKey('secret_scanning_generic_secrets') ? CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets.fromJson(json['secret_scanning_generic_secrets'] as String) : CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets.disabled,
+  secretScanningValidityChecks: json['secret_scanning_validity_checks'] != null ? CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks.fromJson(json['secret_scanning_validity_checks'] as String) : null,
+  secretScanningNonProviderPatterns: json['secret_scanning_non_provider_patterns'] != null ? CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as String) : null,
+  secretScanningGenericSecrets: json['secret_scanning_generic_secrets'] != null ? CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets.fromJson(json['secret_scanning_generic_secrets'] as String) : null,
   secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null ? CodeSecurityCreateConfigurationRequestSecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as String) : null,
   secretScanningExtendedMetadata: json['secret_scanning_extended_metadata'] != null ? CodeSecurityCreateConfigurationRequestSecretScanningExtendedMetadata.fromJson(json['secret_scanning_extended_metadata'] as String) : null,
-  privateVulnerabilityReporting: json.containsKey('private_vulnerability_reporting') ? CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting.fromJson(json['private_vulnerability_reporting'] as String) : CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting.disabled,
-  enforcement: json.containsKey('enforcement') ? CodeSecurityCreateConfigurationRequestEnforcement.fromJson(json['enforcement'] as String) : CodeSecurityCreateConfigurationRequestEnforcement.enforced,
+  privateVulnerabilityReporting: json['private_vulnerability_reporting'] != null ? CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting.fromJson(json['private_vulnerability_reporting'] as String) : null,
+  enforcement: json['enforcement'] != null ? CodeSecurityCreateConfigurationRequestEnforcement.fromJson(json['enforcement'] as String) : null,
 ); }
 
 /// The name of the code security configuration. Must be unique within the organization.
@@ -606,62 +606,62 @@ final String description;
 /// > `[!WARNING]`
 /// > `code_security` and `secret_protection` are deprecated values for this field. Prefer the individual `code_security` and `secret_protection` fields to set the status of these features.
 /// 
-final CodeSecurityCreateConfigurationRequestAdvancedSecurity advancedSecurity;
+final CodeSecurityCreateConfigurationRequestAdvancedSecurity? advancedSecurity;
 
 /// The enablement status of GitHub Code Security features.
 final CodeSecurityCreateConfigurationRequestCodeSecurity? codeSecurity;
 
 /// The enablement status of Dependency Graph
-final CodeSecurityCreateConfigurationRequestDependencyGraph dependencyGraph;
+final CodeSecurityCreateConfigurationRequestDependencyGraph? dependencyGraph;
 
 /// The enablement status of Automatic dependency submission
-final CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction dependencyGraphAutosubmitAction;
+final CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction? dependencyGraphAutosubmitAction;
 
 /// Feature options for Automatic dependency submission
 final CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitActionOptions? dependencyGraphAutosubmitActionOptions;
 
 /// The enablement status of Dependabot alerts
-final CodeSecurityCreateConfigurationRequestDependabotAlerts dependabotAlerts;
+final CodeSecurityCreateConfigurationRequestDependabotAlerts? dependabotAlerts;
 
 /// The enablement status of Dependabot security updates
-final CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates dependabotSecurityUpdates;
+final CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates? dependabotSecurityUpdates;
 
 /// The enablement status of Dependabot delegated alert dismissal. Requires Dependabot alerts to be enabled.
-final CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal dependabotDelegatedAlertDismissal;
+final CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal? dependabotDelegatedAlertDismissal;
 
-final CodeScanningOptions? codeScanningOptions;
+final Omittable<CodeScanningOptions?> codeScanningOptions;
 
 /// The enablement status of code scanning default setup
-final CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup codeScanningDefaultSetup;
+final CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup? codeScanningDefaultSetup;
 
-final CodeScanningDefaultSetupOptions? codeScanningDefaultSetupOptions;
+final Omittable<CodeScanningDefaultSetupOptions?> codeScanningDefaultSetupOptions;
 
 /// The enablement status of code scanning delegated alert dismissal
-final CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal codeScanningDelegatedAlertDismissal;
+final CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal? codeScanningDelegatedAlertDismissal;
 
 /// The enablement status of GitHub Secret Protection features.
 final CodeSecurityCreateConfigurationRequestSecretProtection? secretProtection;
 
 /// The enablement status of secret scanning
-final CodeSecurityCreateConfigurationRequestSecretScanning secretScanning;
+final CodeSecurityCreateConfigurationRequestSecretScanning? secretScanning;
 
 /// The enablement status of secret scanning push protection
-final CodeSecurityCreateConfigurationRequestSecretScanningPushProtection secretScanningPushProtection;
+final CodeSecurityCreateConfigurationRequestSecretScanningPushProtection? secretScanningPushProtection;
 
 /// The enablement status of secret scanning delegated bypass
-final CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass secretScanningDelegatedBypass;
+final CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass? secretScanningDelegatedBypass;
 
 /// Feature options for secret scanning delegated bypass
 final CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions? secretScanningDelegatedBypassOptions;
 
 /// The enablement status of secret scanning validity checks
-final CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks secretScanningValidityChecks;
+final CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks? secretScanningValidityChecks;
 
 /// The enablement status of secret scanning non provider patterns
-final CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns secretScanningNonProviderPatterns;
+final CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns? secretScanningNonProviderPatterns;
 
 /// The enablement status of Copilot secret scanning
-final CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets secretScanningGenericSecrets;
+final CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets? secretScanningGenericSecrets;
 
 /// The enablement status of secret scanning delegated alert dismissal
 final CodeSecurityCreateConfigurationRequestSecretScanningDelegatedAlertDismissal? secretScanningDelegatedAlertDismissal;
@@ -670,42 +670,74 @@ final CodeSecurityCreateConfigurationRequestSecretScanningDelegatedAlertDismissa
 final CodeSecurityCreateConfigurationRequestSecretScanningExtendedMetadata? secretScanningExtendedMetadata;
 
 /// The enablement status of private vulnerability reporting
-final CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting privateVulnerabilityReporting;
+final CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting? privateVulnerabilityReporting;
 
 /// The enforcement status for a security configuration
-final CodeSecurityCreateConfigurationRequestEnforcement enforcement;
+final CodeSecurityCreateConfigurationRequestEnforcement? enforcement;
 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestAdvancedSecurity get advancedSecurityOrDefault { return advancedSecurity ?? CodeSecurityCreateConfigurationRequestAdvancedSecurity.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestDependencyGraph get dependencyGraphOrDefault { return dependencyGraph ?? CodeSecurityCreateConfigurationRequestDependencyGraph.fromJson('enabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction get dependencyGraphAutosubmitActionOrDefault { return dependencyGraphAutosubmitAction ?? CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestDependabotAlerts get dependabotAlertsOrDefault { return dependabotAlerts ?? CodeSecurityCreateConfigurationRequestDependabotAlerts.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates get dependabotSecurityUpdatesOrDefault { return dependabotSecurityUpdates ?? CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal get dependabotDelegatedAlertDismissalOrDefault { return dependabotDelegatedAlertDismissal ?? CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup get codeScanningDefaultSetupOrDefault { return codeScanningDefaultSetup ?? CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal get codeScanningDelegatedAlertDismissalOrDefault { return codeScanningDelegatedAlertDismissal ?? CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal.fromJson('not_set'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestSecretScanning get secretScanningOrDefault { return secretScanning ?? CodeSecurityCreateConfigurationRequestSecretScanning.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestSecretScanningPushProtection get secretScanningPushProtectionOrDefault { return secretScanningPushProtection ?? CodeSecurityCreateConfigurationRequestSecretScanningPushProtection.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass get secretScanningDelegatedBypassOrDefault { return secretScanningDelegatedBypass ?? CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks get secretScanningValidityChecksOrDefault { return secretScanningValidityChecks ?? CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns get secretScanningNonProviderPatternsOrDefault { return secretScanningNonProviderPatterns ?? CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets get secretScanningGenericSecretsOrDefault { return secretScanningGenericSecrets ?? CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting get privateVulnerabilityReportingOrDefault { return privateVulnerabilityReporting ?? CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting.fromJson('disabled'); } 
+/// The value with the schema default applied when absent.
+CodeSecurityCreateConfigurationRequestEnforcement get enforcementOrDefault { return enforcement ?? CodeSecurityCreateConfigurationRequestEnforcement.fromJson('enforced'); } 
 Map<String, dynamic> toJson() { return {
   'name': name,
   'description': description,
-  'advanced_security': advancedSecurity.toJson(),
+  if (advancedSecurity != null) 'advanced_security': advancedSecurity?.toJson(),
   if (codeSecurity != null) 'code_security': codeSecurity?.toJson(),
-  'dependency_graph': dependencyGraph.toJson(),
-  'dependency_graph_autosubmit_action': dependencyGraphAutosubmitAction.toJson(),
+  if (dependencyGraph != null) 'dependency_graph': dependencyGraph?.toJson(),
+  if (dependencyGraphAutosubmitAction != null) 'dependency_graph_autosubmit_action': dependencyGraphAutosubmitAction?.toJson(),
   if (dependencyGraphAutosubmitActionOptions != null) 'dependency_graph_autosubmit_action_options': dependencyGraphAutosubmitActionOptions?.toJson(),
-  'dependabot_alerts': dependabotAlerts.toJson(),
-  'dependabot_security_updates': dependabotSecurityUpdates.toJson(),
-  'dependabot_delegated_alert_dismissal': dependabotDelegatedAlertDismissal.toJson(),
-  if (codeScanningOptions != null) 'code_scanning_options': codeScanningOptions?.toJson(),
-  'code_scanning_default_setup': codeScanningDefaultSetup.toJson(),
-  if (codeScanningDefaultSetupOptions != null) 'code_scanning_default_setup_options': codeScanningDefaultSetupOptions?.toJson(),
-  'code_scanning_delegated_alert_dismissal': codeScanningDelegatedAlertDismissal.toJson(),
+  if (dependabotAlerts != null) 'dependabot_alerts': dependabotAlerts?.toJson(),
+  if (dependabotSecurityUpdates != null) 'dependabot_security_updates': dependabotSecurityUpdates?.toJson(),
+  if (dependabotDelegatedAlertDismissal != null) 'dependabot_delegated_alert_dismissal': dependabotDelegatedAlertDismissal?.toJson(),
+  if (codeScanningOptions.isPresent) 'code_scanning_options': codeScanningOptions.value?.toJson(),
+  if (codeScanningDefaultSetup != null) 'code_scanning_default_setup': codeScanningDefaultSetup?.toJson(),
+  if (codeScanningDefaultSetupOptions.isPresent) 'code_scanning_default_setup_options': codeScanningDefaultSetupOptions.value?.toJson(),
+  if (codeScanningDelegatedAlertDismissal != null) 'code_scanning_delegated_alert_dismissal': codeScanningDelegatedAlertDismissal?.toJson(),
   if (secretProtection != null) 'secret_protection': secretProtection?.toJson(),
-  'secret_scanning': secretScanning.toJson(),
-  'secret_scanning_push_protection': secretScanningPushProtection.toJson(),
-  'secret_scanning_delegated_bypass': secretScanningDelegatedBypass.toJson(),
+  if (secretScanning != null) 'secret_scanning': secretScanning?.toJson(),
+  if (secretScanningPushProtection != null) 'secret_scanning_push_protection': secretScanningPushProtection?.toJson(),
+  if (secretScanningDelegatedBypass != null) 'secret_scanning_delegated_bypass': secretScanningDelegatedBypass?.toJson(),
   if (secretScanningDelegatedBypassOptions != null) 'secret_scanning_delegated_bypass_options': secretScanningDelegatedBypassOptions?.toJson(),
-  'secret_scanning_validity_checks': secretScanningValidityChecks.toJson(),
-  'secret_scanning_non_provider_patterns': secretScanningNonProviderPatterns.toJson(),
-  'secret_scanning_generic_secrets': secretScanningGenericSecrets.toJson(),
+  if (secretScanningValidityChecks != null) 'secret_scanning_validity_checks': secretScanningValidityChecks?.toJson(),
+  if (secretScanningNonProviderPatterns != null) 'secret_scanning_non_provider_patterns': secretScanningNonProviderPatterns?.toJson(),
+  if (secretScanningGenericSecrets != null) 'secret_scanning_generic_secrets': secretScanningGenericSecrets?.toJson(),
   if (secretScanningDelegatedAlertDismissal != null) 'secret_scanning_delegated_alert_dismissal': secretScanningDelegatedAlertDismissal?.toJson(),
   if (secretScanningExtendedMetadata != null) 'secret_scanning_extended_metadata': secretScanningExtendedMetadata?.toJson(),
-  'private_vulnerability_reporting': privateVulnerabilityReporting.toJson(),
-  'enforcement': enforcement.toJson(),
+  if (privateVulnerabilityReporting != null) 'private_vulnerability_reporting': privateVulnerabilityReporting?.toJson(),
+  if (enforcement != null) 'enforcement': enforcement?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('description') && json['description'] is String; } 
-CodeSecurityCreateConfigurationRequest copyWith({String? name, String? description, CodeSecurityCreateConfigurationRequestAdvancedSecurity Function()? advancedSecurity, CodeSecurityCreateConfigurationRequestCodeSecurity? Function()? codeSecurity, CodeSecurityCreateConfigurationRequestDependencyGraph Function()? dependencyGraph, CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction Function()? dependencyGraphAutosubmitAction, CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitActionOptions? Function()? dependencyGraphAutosubmitActionOptions, CodeSecurityCreateConfigurationRequestDependabotAlerts Function()? dependabotAlerts, CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates Function()? dependabotSecurityUpdates, CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal Function()? dependabotDelegatedAlertDismissal, CodeScanningOptions? Function()? codeScanningOptions, CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup Function()? codeScanningDefaultSetup, CodeScanningDefaultSetupOptions? Function()? codeScanningDefaultSetupOptions, CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal Function()? codeScanningDelegatedAlertDismissal, CodeSecurityCreateConfigurationRequestSecretProtection? Function()? secretProtection, CodeSecurityCreateConfigurationRequestSecretScanning Function()? secretScanning, CodeSecurityCreateConfigurationRequestSecretScanningPushProtection Function()? secretScanningPushProtection, CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass Function()? secretScanningDelegatedBypass, CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks Function()? secretScanningValidityChecks, CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns Function()? secretScanningNonProviderPatterns, CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets Function()? secretScanningGenericSecrets, CodeSecurityCreateConfigurationRequestSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, CodeSecurityCreateConfigurationRequestSecretScanningExtendedMetadata? Function()? secretScanningExtendedMetadata, CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting Function()? privateVulnerabilityReporting, CodeSecurityCreateConfigurationRequestEnforcement Function()? enforcement, }) { return CodeSecurityCreateConfigurationRequest(
+CodeSecurityCreateConfigurationRequest copyWith({String? name, String? description, CodeSecurityCreateConfigurationRequestAdvancedSecurity? Function()? advancedSecurity, CodeSecurityCreateConfigurationRequestCodeSecurity? Function()? codeSecurity, CodeSecurityCreateConfigurationRequestDependencyGraph? Function()? dependencyGraph, CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction? Function()? dependencyGraphAutosubmitAction, CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitActionOptions? Function()? dependencyGraphAutosubmitActionOptions, CodeSecurityCreateConfigurationRequestDependabotAlerts? Function()? dependabotAlerts, CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates? Function()? dependabotSecurityUpdates, CodeSecurityCreateConfigurationRequestDependabotDelegatedAlertDismissal? Function()? dependabotDelegatedAlertDismissal, Omittable<CodeScanningOptions?>? codeScanningOptions, CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup? Function()? codeScanningDefaultSetup, Omittable<CodeScanningDefaultSetupOptions?>? codeScanningDefaultSetupOptions, CodeSecurityCreateConfigurationRequestCodeScanningDelegatedAlertDismissal? Function()? codeScanningDelegatedAlertDismissal, CodeSecurityCreateConfigurationRequestSecretProtection? Function()? secretProtection, CodeSecurityCreateConfigurationRequestSecretScanning? Function()? secretScanning, CodeSecurityCreateConfigurationRequestSecretScanningPushProtection? Function()? secretScanningPushProtection, CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypass? Function()? secretScanningDelegatedBypass, CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions? Function()? secretScanningDelegatedBypassOptions, CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks? Function()? secretScanningValidityChecks, CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns? Function()? secretScanningNonProviderPatterns, CodeSecurityCreateConfigurationRequestSecretScanningGenericSecrets? Function()? secretScanningGenericSecrets, CodeSecurityCreateConfigurationRequestSecretScanningDelegatedAlertDismissal? Function()? secretScanningDelegatedAlertDismissal, CodeSecurityCreateConfigurationRequestSecretScanningExtendedMetadata? Function()? secretScanningExtendedMetadata, CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting? Function()? privateVulnerabilityReporting, CodeSecurityCreateConfigurationRequestEnforcement? Function()? enforcement, }) { return CodeSecurityCreateConfigurationRequest(
   name: name ?? this.name,
   description: description ?? this.description,
   advancedSecurity: advancedSecurity != null ? advancedSecurity() : this.advancedSecurity,
@@ -716,9 +748,9 @@ CodeSecurityCreateConfigurationRequest copyWith({String? name, String? descripti
   dependabotAlerts: dependabotAlerts != null ? dependabotAlerts() : this.dependabotAlerts,
   dependabotSecurityUpdates: dependabotSecurityUpdates != null ? dependabotSecurityUpdates() : this.dependabotSecurityUpdates,
   dependabotDelegatedAlertDismissal: dependabotDelegatedAlertDismissal != null ? dependabotDelegatedAlertDismissal() : this.dependabotDelegatedAlertDismissal,
-  codeScanningOptions: codeScanningOptions != null ? codeScanningOptions() : this.codeScanningOptions,
+  codeScanningOptions: codeScanningOptions ?? this.codeScanningOptions,
   codeScanningDefaultSetup: codeScanningDefaultSetup != null ? codeScanningDefaultSetup() : this.codeScanningDefaultSetup,
-  codeScanningDefaultSetupOptions: codeScanningDefaultSetupOptions != null ? codeScanningDefaultSetupOptions() : this.codeScanningDefaultSetupOptions,
+  codeScanningDefaultSetupOptions: codeScanningDefaultSetupOptions ?? this.codeScanningDefaultSetupOptions,
   codeScanningDelegatedAlertDismissal: codeScanningDelegatedAlertDismissal != null ? codeScanningDelegatedAlertDismissal() : this.codeScanningDelegatedAlertDismissal,
   secretProtection: secretProtection != null ? secretProtection() : this.secretProtection,
   secretScanning: secretScanning != null ? secretScanning() : this.secretScanning,

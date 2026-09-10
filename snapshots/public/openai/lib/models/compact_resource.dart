@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CompactResourceObject($value)'; } 
  }
-@immutable final class CompactResource {const CompactResource({required this.id, required this.output, required this.createdAt, required this.usage, this.object = CompactResourceObject.responseCompaction, });
+@immutable final class CompactResource {const CompactResource({required this.id, required this.object, required this.output, required this.createdAt, required this.usage, });
 
 factory CompactResource.fromJson(Map<String, dynamic> json) { return CompactResource(
   id: json['id'] as String,

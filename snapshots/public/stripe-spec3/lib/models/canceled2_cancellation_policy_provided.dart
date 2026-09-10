@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Canceled2CancellationPolicyProvidedVariant2($value)'; } 
  }
-typedef Canceled2CancellationPolicyProvided = OneOf2<bool,Canceled2CancellationPolicyProvidedVariant2>;
+
+@immutable
+final class Canceled2CancellationPolicyProvided {
+  const Canceled2CancellationPolicyProvided({this.$bool = const Omittable.absent(),
+this.canceled2CancellationPolicyProvidedVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const Canceled2CancellationPolicyProvided._({required this.rawValue, required this.$bool,
+required this.canceled2CancellationPolicyProvidedVariant2,});
+  factory Canceled2CancellationPolicyProvided.fromJson(Object? json) => Canceled2CancellationPolicyProvided._(
+    rawValue: Omittable(json),
+    $bool: parseAnyOfVariant<bool>(json, (value) => value! as bool),
+canceled2CancellationPolicyProvidedVariant2: parseAnyOfVariant<Canceled2CancellationPolicyProvidedVariant2>(json, (value) => Canceled2CancellationPolicyProvidedVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<bool> $bool;
+final Omittable<Canceled2CancellationPolicyProvidedVariant2> canceled2CancellationPolicyProvidedVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $bool.isPresent || canceled2CancellationPolicyProvidedVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($bool.isPresent) $bool.value,
+if (canceled2CancellationPolicyProvidedVariant2.isPresent) canceled2CancellationPolicyProvidedVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is Canceled2CancellationPolicyProvided && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'Canceled2CancellationPolicyProvided(${toJson()})';
+}

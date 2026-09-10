@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoice_item_parents_invoice_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'customer.dart';import 'deleted_customer.dart';import 'discount.dart';import 'invoice.dart';import 'invoice_line_item_period.dart';import 'invoiceitem_customer.dart';import 'invoiceitem_discounts.dart';import 'invoiceitem_invoice.dart';import 'invoiceitem_test_clock.dart';import 'proration_details.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoice_item_parents_invoice_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'invoice_line_item_period.dart';import 'invoiceitem_customer.dart';import 'invoiceitem_discounts.dart';import 'invoiceitem_invoice.dart';import 'invoiceitem_test_clock.dart';import 'proration_details.dart';import 'tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class InvoiceitemObject {const InvoiceitemObject._(this.value);
 
 factory InvoiceitemObject.fromJson(String json) { return switch (json) {
@@ -35,14 +35,14 @@ bool get isUnknown { return !values.contains(this); }
 factory Invoiceitem.fromJson(Map<String, dynamic> json) { return Invoiceitem(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
-  customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
+  customer: InvoiceitemCustomer.fromJson(json['customer']),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   date: (json['date'] as num).toInt(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   discountable: json['discountable'] as bool,
-  discounts: json.containsKey('discounts') ? Omittable((json['discounts'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
+  discounts: json.containsKey('discounts') ? Omittable((json['discounts'] as List<dynamic>?)?.map(InvoiceitemDiscounts.fromJson).toList()) : const Omittable.absent(),
   id: json['id'] as String,
-  invoice: json.containsKey('invoice') ? Omittable(json['invoice'] != null ? OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  invoice: json.containsKey('invoice') ? Omittable(json['invoice'] != null ? InvoiceitemInvoice.fromJson(json['invoice']) : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   netAmount: json['net_amount'] != null ? (json['net_amount'] as num).toInt() : null,
@@ -54,7 +54,7 @@ factory Invoiceitem.fromJson(Map<String, dynamic> json) { return Invoiceitem(
   prorationDetails: json['proration_details'] != null ? ProrationDetails.fromJson(json['proration_details'] as Map<String, dynamic>) : null,
   quantity: (json['quantity'] as num).toInt(),
   taxRates: json.containsKey('tax_rates') ? Omittable((json['tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? InvoiceitemTestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
 ); }
 
 /// Amount (in the `currency` specified) of the invoice item. This should always be equal to `unit_amount * quantity`.

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/zero_trust_gateway_app_types.dart';import '../models/zero_trust_gateway_application.dart';import '../models/zero_trust_gateway_application_type.dart';import '../models/zero_trust_gateway_components_schemas_identifier.dart';/// ZeroTrustGatewayApplicationAndApplicationTypeMappingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/zero_trust_gateway_app_types.dart';import '../models/zero_trust_gateway_application.dart';import '../models/zero_trust_gateway_application_and_application_type_mappings_list_application_and_application_type_mappings_response4_xx.dart';import '../models/zero_trust_gateway_application_type.dart';import '../models/zero_trust_gateway_components_schemas_identifier.dart';/// ZeroTrustGatewayApplicationAndApplicationTypeMappingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustGatewayApplicationAndApplicationTypeMappingsApi with ApiExe
 /// List all application and application type mappings.
 ///
 /// `GET /accounts/{account_id}/gateway/app_types`
-Future<ApiResult<List<ZeroTrustGatewayAppTypes>?, Never>> zeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappings({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayAppTypes>?, ZeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappingsResponse4Xx>> zeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappings({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,11 +22,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ZeroTrustGatewayApplication.fromJson(v as Map<String, dynamic>), fromB: (v) => ZeroTrustGatewayApplicationType.fromJson(v as Map<String, dynamic>),)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ZeroTrustGatewayApplication.fromJson(v as Map<String, dynamic>), fromB: (v) => ZeroTrustGatewayApplicationType.fromJson(v as Map<String, dynamic>),)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ZeroTrustGatewayApplicationAndApplicationTypeMappingsListApplicationAndApplicationTypeMappingsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

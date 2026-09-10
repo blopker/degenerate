@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_credit_transaction.dart';import 'treasury_received_credits_resource_linked_flows.dart';import 'treasury_received_credits_resource_reversal_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'treasury_transaction.dart';/// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_credit_transaction.dart';import 'treasury_received_credits_resource_linked_flows.dart';import 'treasury_received_credits_resource_reversal_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';/// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
 @immutable final class TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode._(this.value);
 
 factory TreasuryReceivedCreditFailureCode.fromJson(String json) { return switch (json) {
@@ -128,7 +128,7 @@ factory TreasuryReceivedCredit.fromJson(Map<String, dynamic> json) { return Trea
   object: TreasuryReceivedCreditObject.fromJson(json['object'] as String),
   reversalDetails: json.containsKey('reversal_details') ? Omittable(json['reversal_details'] != null ? TreasuryReceivedCreditsResourceReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: TreasuryReceivedCreditStatus.fromJson(json['status'] as String),
-  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? TreasuryReceivedCreditTransaction.fromJson(json['transaction']) : null) : const Omittable.absent(),
 ); }
 
 /// Amount (in cents) transferred.

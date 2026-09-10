@@ -22,10 +22,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt()));
+final json = jsonDecode(response.body);
+return (json as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt()));
   },
 );
  } 
@@ -45,10 +46,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Order.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Order.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -66,10 +68,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Order.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return Order.fromJson(json as Map<String, dynamic>);
+}
+if (responseMediaTypeMatches(contentType, 'application/xml')) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into Order
+throw UnsupportedError('Cannot decode application/xml response into Order');
+}
+final json = jsonDecode(response.body);
+return Order.fromJson(json as Map<String, dynamic>);
+
   },
 );
  } 
@@ -87,7 +100,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );

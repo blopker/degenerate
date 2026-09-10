@@ -45,16 +45,16 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitPatchWebhookRequestEvents($value)'; } 
  }
-@immutable final class RealtimekitPatchWebhookRequest {const RealtimekitPatchWebhookRequest({this.enabled = true, this.events, this.name, this.url, });
+@immutable final class RealtimekitPatchWebhookRequest {const RealtimekitPatchWebhookRequest({this.enabled, this.events, this.name, this.url, });
 
 factory RealtimekitPatchWebhookRequest.fromJson(Map<String, dynamic> json) { return RealtimekitPatchWebhookRequest(
-  enabled: json.containsKey('enabled') ? json['enabled'] as bool : true,
+  enabled: json['enabled'] as bool?,
   events: (json['events'] as List<dynamic>?)?.map((e) => RealtimekitPatchWebhookRequestEvents.fromJson(e as String)).toList(),
   name: json['name'] as String?,
   url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
 ); }
 
-final bool enabled;
+final bool? enabled;
 
 /// Events that the webhook will get triggered by
 final List<RealtimekitPatchWebhookRequestEvents>? events;
@@ -65,14 +65,16 @@ final String? name;
 /// URL the webhook will send events to
 final Uri? url;
 
+/// The value with the schema default applied when absent.
+bool get enabledOrDefault { return enabled ?? true; } 
 Map<String, dynamic> toJson() { return {
-  'enabled': enabled,
+  'enabled': ?enabled,
   if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
   'name': ?name,
   if (url != null) 'url': url?.toString(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'events', 'name', 'url'}.contains(key)); } 
-RealtimekitPatchWebhookRequest copyWith({bool Function()? enabled, List<RealtimekitPatchWebhookRequestEvents>? Function()? events, String? Function()? name, Uri? Function()? url, }) { return RealtimekitPatchWebhookRequest(
+RealtimekitPatchWebhookRequest copyWith({bool? Function()? enabled, List<RealtimekitPatchWebhookRequestEvents>? Function()? events, String? Function()? name, Uri? Function()? url, }) { return RealtimekitPatchWebhookRequest(
   enabled: enabled != null ? enabled() : this.enabled,
   events: events != null ? events() : this.events,
   name: name != null ? name() : this.name,

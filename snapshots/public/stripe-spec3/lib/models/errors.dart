@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_account.dart';import 'card.dart';import 'errors_source.dart';import 'payment_intent.dart';import 'payment_method.dart';import 'setup_intent.dart';import 'source.dart';/// The type of error returned. One of `api_error`, `card_error`, `idempotency_error`, or `invalid_request_error`
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'errors_source.dart';import 'payment_intent.dart';import 'payment_method.dart';import 'setup_intent.dart';/// The type of error returned. One of `api_error`, `card_error`, `idempotency_error`, or `invalid_request_error`
 @immutable final class ErrorsType {const ErrorsType._(this.value);
 
 factory ErrorsType.fromJson(String json) { return switch (json) {
@@ -49,7 +49,7 @@ factory Errors.fromJson(Map<String, dynamic> json) { return Errors(
   paymentMethodType: json['payment_method_type'] as String?,
   requestLogUrl: json['request_log_url'] as String?,
   setupIntent: json['setup_intent'] != null ? SetupIntent.fromJson(json['setup_intent'] as Map<String, dynamic>) : null,
-  source: json['source'] != null ? OneOf3.parse(json['source'], fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),) : null,
+  source: json['source'] != null ? ErrorsSource.fromJson(json['source']) : null,
   type: ErrorsType.fromJson(json['type'] as String),
 ); }
 

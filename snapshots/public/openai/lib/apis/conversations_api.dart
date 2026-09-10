@@ -39,10 +39,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ConversationItemList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ConversationItemList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -70,10 +71,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ConversationItemList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ConversationItemList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -99,10 +101,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ConversationItem.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ConversationItem.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -118,10 +121,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ConversationResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -139,10 +143,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ConversationResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -158,10 +163,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ConversationResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -179,10 +185,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ConversationResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -198,10 +205,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return DeletedConversationResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeletedConversationResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

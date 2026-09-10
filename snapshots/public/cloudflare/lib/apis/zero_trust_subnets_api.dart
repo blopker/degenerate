@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_address_family.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_ip_network_encoded.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_subnet.dart';import '../models/tunnel_subnet_id.dart';import '../models/tunnel_subnet_query_comment.dart';import '../models/tunnel_subnet_query_name.dart';import '../models/tunnel_subnet_response_single_nullable_result.dart';import '../models/zero_trust_networks_subnet_create_warp_request.dart';import '../models/zero_trust_networks_subnet_update_cloudflare_source_request.dart';import '../models/zero_trust_networks_subnet_update_warp_request.dart';import '../models/zero_trust_networks_subnets_list_sort_order.dart';import '../models/zero_trust_networks_subnets_list_subnet_types.dart';/// ZeroTrustSubnetsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_address_family.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_ip_network_encoded.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_subnet.dart';import '../models/tunnel_subnet_id.dart';import '../models/tunnel_subnet_query_comment.dart';import '../models/tunnel_subnet_query_name.dart';import '../models/tunnel_subnet_response_single_nullable_result.dart';import '../models/zero_trust_networks_subnet_create_warp_request.dart';import '../models/zero_trust_networks_subnet_create_warp_response4_xx.dart';import '../models/zero_trust_networks_subnet_delete_warp_response4_xx.dart';import '../models/zero_trust_networks_subnet_get_warp_response4_xx.dart';import '../models/zero_trust_networks_subnet_update_cloudflare_source_request.dart';import '../models/zero_trust_networks_subnet_update_cloudflare_source_response4_xx.dart';import '../models/zero_trust_networks_subnet_update_warp_request.dart';import '../models/zero_trust_networks_subnet_update_warp_response4_xx.dart';import '../models/zero_trust_networks_subnets_list_response4_xx.dart';import '../models/zero_trust_networks_subnets_list_sort_order.dart';import '../models/zero_trust_networks_subnets_list_subnet_types.dart';/// ZeroTrustSubnetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustSubnetsApi with ApiExecutor {const ZeroTrustSubnetsApi(this
 /// Lists and filters subnets in an account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/subnets`
-Future<ApiResult<List<TunnelSubnet>, Never>> zeroTrustNetworksSubnetsList({required TunnelAccountId accountId, TunnelSubnetQueryName? name, TunnelSubnetQueryComment? comment, TunnelIpNetworkEncoded? network, TunnelExistedAt? existedAt, TunnelAddressFamily? addressFamily, bool? isDefaultNetwork, bool? isDeleted, ZeroTrustNetworksSubnetsListSortOrder? sortOrder, ZeroTrustNetworksSubnetsListSubnetTypes? subnetTypes, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TunnelSubnet>, ZeroTrustNetworksSubnetsListResponse4Xx>> zeroTrustNetworksSubnetsList({required TunnelAccountId accountId, TunnelSubnetQueryName? name, TunnelSubnetQueryComment? comment, TunnelIpNetworkEncoded? network, TunnelExistedAt? existedAt, TunnelAddressFamily? addressFamily, bool? isDefaultNetwork, bool? isDeleted, ZeroTrustNetworksSubnetsListSortOrder? sortOrder, ZeroTrustNetworksSubnetsListSubnetTypes? subnetTypes, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name.toString();
@@ -60,11 +60,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => TunnelSubnet.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => TunnelSubnet.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ZeroTrustNetworksSubnetsListResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -73,7 +83,7 @@ return execute(
 /// Updates the Cloudflare Source subnet of the given address family
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/subnets/cloudflare_source/{address_family}`
-Future<ApiResult<TunnelSubnet, Never>> zeroTrustNetworksSubnetUpdateCloudflareSource({required TunnelAccountId accountId, required TunnelAddressFamily addressFamily, required ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelSubnet, ZeroTrustNetworksSubnetUpdateCloudflareSourceResponse4Xx>> zeroTrustNetworksSubnetUpdateCloudflareSource({required TunnelAccountId accountId, required TunnelAddressFamily addressFamily, required ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -84,11 +94,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelSubnet.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelSubnet.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ZeroTrustNetworksSubnetUpdateCloudflareSourceResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -106,7 +126,7 @@ return execute(
 /// 
 ///
 /// `POST /accounts/{account_id}/zerotrust/subnets/warp`
-Future<ApiResult<TunnelSubnet, Never>> zeroTrustNetworksSubnetCreateWarp({required TunnelAccountId accountId, required ZeroTrustNetworksSubnetCreateWarpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelSubnet, ZeroTrustNetworksSubnetCreateWarpResponse4Xx>> zeroTrustNetworksSubnetCreateWarp({required TunnelAccountId accountId, required ZeroTrustNetworksSubnetCreateWarpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -117,11 +137,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelSubnet.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelSubnet.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ZeroTrustNetworksSubnetCreateWarpResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -130,7 +160,7 @@ return execute(
 /// Get a WARP IP assignment subnet.
 ///
 /// `GET /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}`
-Future<ApiResult<TunnelSubnet, Never>> zeroTrustNetworksSubnetGetWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelSubnet, ZeroTrustNetworksSubnetGetWarpResponse4Xx>> zeroTrustNetworksSubnetGetWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -139,11 +169,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelSubnet.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelSubnet.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ZeroTrustNetworksSubnetGetWarpResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -157,7 +197,7 @@ return execute(
 /// 
 ///
 /// `PATCH /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}`
-Future<ApiResult<TunnelSubnet, Never>> zeroTrustNetworksSubnetUpdateWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, required ZeroTrustNetworksSubnetUpdateWarpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelSubnet, ZeroTrustNetworksSubnetUpdateWarpResponse4Xx>> zeroTrustNetworksSubnetUpdateWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, required ZeroTrustNetworksSubnetUpdateWarpRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -168,11 +208,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelSubnet.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelSubnet.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ZeroTrustNetworksSubnetUpdateWarpResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -181,7 +231,7 @@ return execute(
 /// Delete a WARP IP assignment subnet. This operation is idempotent - deleting an already-deleted or non-existent subnet will return success with a null result.
 ///
 /// `DELETE /accounts/{account_id}/zerotrust/subnets/warp/{subnet_id}`
-Future<ApiResult<TunnelSubnetResponseSingleNullableResult?, Never>> zeroTrustNetworksSubnetDeleteWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelSubnetResponseSingleNullableResult?, ZeroTrustNetworksSubnetDeleteWarpResponse4Xx>> zeroTrustNetworksSubnetDeleteWarp({required TunnelAccountId accountId, required TunnelSubnetId subnetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -190,11 +240,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TunnelSubnetResponseSingleNullableResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? TunnelSubnetResponseSingleNullableResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ZeroTrustNetworksSubnetDeleteWarpResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

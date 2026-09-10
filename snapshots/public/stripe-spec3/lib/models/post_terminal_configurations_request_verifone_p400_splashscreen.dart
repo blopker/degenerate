@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2($value)'; } 
  }
-typedef PostTerminalConfigurationsRequestVerifoneP400Splashscreen = OneOf2<String,PostTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2>;
+
+@immutable
+final class PostTerminalConfigurationsRequestVerifoneP400Splashscreen {
+  const PostTerminalConfigurationsRequestVerifoneP400Splashscreen({this.string = const Omittable.absent(),
+this.postTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTerminalConfigurationsRequestVerifoneP400Splashscreen._({required this.rawValue, required this.string,
+required this.postTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2,});
+  factory PostTerminalConfigurationsRequestVerifoneP400Splashscreen.fromJson(Object? json) => PostTerminalConfigurationsRequestVerifoneP400Splashscreen._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2: parseAnyOfVariant<PostTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2>(json, (value) => PostTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2> postTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2.isPresent) postTerminalConfigurationsRequestVerifoneP400SplashscreenVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTerminalConfigurationsRequestVerifoneP400Splashscreen && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTerminalConfigurationsRequestVerifoneP400Splashscreen(${toJson()})';
+}

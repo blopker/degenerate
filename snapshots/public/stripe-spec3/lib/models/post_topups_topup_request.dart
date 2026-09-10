@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_topups_
 factory PostTopupsTopupRequest.fromJson(Map<String, dynamic> json) { return PostTopupsTopupRequest(
   description: json['description'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostTopupsTopupRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostTopupsTopupRequestMetadata.fromJson(json['metadata']) : null,
 ); }
 
 /// An arbitrary string attached to the object. Often useful for displaying to users.

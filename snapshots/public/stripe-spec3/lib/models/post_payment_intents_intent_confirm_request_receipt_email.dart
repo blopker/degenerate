@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentConfirmRequestReceiptEmailVariant2($value)'; } 
  }
-typedef PostPaymentIntentsIntentConfirmRequestReceiptEmail = OneOf2<String,PostPaymentIntentsIntentConfirmRequestReceiptEmailVariant2>;
+/// Email address that the receipt for the resulting payment will be sent to. If `receipt_email` is specified for a payment in live mode, a receipt will be sent regardless of your [email settings](https://dashboard.stripe.com/account/emails).
+@immutable
+final class PostPaymentIntentsIntentConfirmRequestReceiptEmail {
+  const PostPaymentIntentsIntentConfirmRequestReceiptEmail({this.string = const Omittable.absent(),
+this.postPaymentIntentsIntentConfirmRequestReceiptEmailVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsIntentConfirmRequestReceiptEmail._({required this.rawValue, required this.string,
+required this.postPaymentIntentsIntentConfirmRequestReceiptEmailVariant2,});
+  factory PostPaymentIntentsIntentConfirmRequestReceiptEmail.fromJson(Object? json) => PostPaymentIntentsIntentConfirmRequestReceiptEmail._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postPaymentIntentsIntentConfirmRequestReceiptEmailVariant2: parseAnyOfVariant<PostPaymentIntentsIntentConfirmRequestReceiptEmailVariant2>(json, (value) => PostPaymentIntentsIntentConfirmRequestReceiptEmailVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostPaymentIntentsIntentConfirmRequestReceiptEmailVariant2> postPaymentIntentsIntentConfirmRequestReceiptEmailVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postPaymentIntentsIntentConfirmRequestReceiptEmailVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postPaymentIntentsIntentConfirmRequestReceiptEmailVariant2.isPresent) postPaymentIntentsIntentConfirmRequestReceiptEmailVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsIntentConfirmRequestReceiptEmail && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsIntentConfirmRequestReceiptEmail(${toJson()})';
+}

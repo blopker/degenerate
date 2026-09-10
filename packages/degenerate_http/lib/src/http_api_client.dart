@@ -45,7 +45,7 @@ final class HttpApiClient implements ApiClient {
             );
         }
       }
-      return _send(multipart);
+      return await _send(multipart);
     }
 
     final httpRequest = http.AbortableRequest(
@@ -69,7 +69,7 @@ final class HttpApiClient implements ApiClient {
         );
       }
     }
-    return _send(httpRequest);
+    return await _send(httpRequest);
   }
 
   /// Send a request and convert the streamed response to [ApiResponse].

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_duplicate_evidence_additional_documentation.dart';import 'issuing_dispute_duplicate_evidence_card_statement.dart';import 'issuing_dispute_duplicate_evidence_cash_receipt.dart';import 'issuing_dispute_duplicate_evidence_check_image.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_dispute_duplicate_evidence_additional_documentation.dart';import 'issuing_dispute_duplicate_evidence_card_statement.dart';import 'issuing_dispute_duplicate_evidence_cash_receipt.dart';import 'issuing_dispute_duplicate_evidence_check_image.dart';/// 
 @immutable final class IssuingDisputeDuplicateEvidence {const IssuingDisputeDuplicateEvidence({this.additionalDocumentation = const Omittable.absent(), this.cardStatement = const Omittable.absent(), this.cashReceipt = const Omittable.absent(), this.checkImage = const Omittable.absent(), this.explanation = const Omittable.absent(), this.originalTransaction = const Omittable.absent(), });
 
 factory IssuingDisputeDuplicateEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeDuplicateEvidence(
-  additionalDocumentation: json.containsKey('additional_documentation') ? Omittable(json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  cardStatement: json.containsKey('card_statement') ? Omittable(json['card_statement'] != null ? OneOf2.parse(json['card_statement'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  cashReceipt: json.containsKey('cash_receipt') ? Omittable(json['cash_receipt'] != null ? OneOf2.parse(json['cash_receipt'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  checkImage: json.containsKey('check_image') ? Omittable(json['check_image'] != null ? OneOf2.parse(json['check_image'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  additionalDocumentation: json.containsKey('additional_documentation') ? Omittable(json['additional_documentation'] != null ? IssuingDisputeDuplicateEvidenceAdditionalDocumentation.fromJson(json['additional_documentation']) : null) : const Omittable.absent(),
+  cardStatement: json.containsKey('card_statement') ? Omittable(json['card_statement'] != null ? IssuingDisputeDuplicateEvidenceCardStatement.fromJson(json['card_statement']) : null) : const Omittable.absent(),
+  cashReceipt: json.containsKey('cash_receipt') ? Omittable(json['cash_receipt'] != null ? IssuingDisputeDuplicateEvidenceCashReceipt.fromJson(json['cash_receipt']) : null) : const Omittable.absent(),
+  checkImage: json.containsKey('check_image') ? Omittable(json['check_image'] != null ? IssuingDisputeDuplicateEvidenceCheckImage.fromJson(json['check_image']) : null) : const Omittable.absent(),
   explanation: json.containsKey('explanation') ? Omittable(json['explanation'] as String?) : const Omittable.absent(),
   originalTransaction: json.containsKey('original_transaction') ? Omittable(json['original_transaction'] as String?) : const Omittable.absent(),
 ); }

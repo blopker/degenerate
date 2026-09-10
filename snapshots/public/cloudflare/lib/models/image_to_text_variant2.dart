@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_to_text_variant2_image.dart';@immutable final class ImageToTextVariant2 {const ImageToTextVariant2({required this.image, this.frequencyPenalty, this.maxTokens = 512, this.presencePenalty, this.prompt, this.raw = false, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_to_text_variant2_image.dart';@immutable final class ImageToTextVariant2 {const ImageToTextVariant2({required this.image, this.frequencyPenalty, this.maxTokens, this.presencePenalty, this.prompt, this.raw, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
 
 factory ImageToTextVariant2.fromJson(Map<String, dynamic> json) { return ImageToTextVariant2(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   image: OneOf2.parse(json['image'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), fromB: (v) => base64Decode(v as String),),
-  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 512,
+  maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   prompt: json['prompt'] as String?,
-  raw: json.containsKey('raw') ? json['raw'] as bool : false,
+  raw: json['raw'] as bool?,
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
   seed: json['seed'] != null ? (json['seed'] as num).toDouble() : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
@@ -22,7 +22,7 @@ final double? frequencyPenalty;
 final ImageToTextVariant2Image image;
 
 /// The maximum number of tokens to generate in the response.
-final int maxTokens;
+final int? maxTokens;
 
 /// Increases the likelihood of the model introducing new topics.
 final double? presencePenalty;
@@ -31,7 +31,7 @@ final double? presencePenalty;
 final String? prompt;
 
 /// If true, a chat template is not applied and you must adhere to the specific model's expected formatting.
-final bool raw;
+final bool? raw;
 
 /// Penalty for repeated tokens; higher values discourage repetition.
 final double? repetitionPenalty;
@@ -48,13 +48,17 @@ final double? topK;
 /// Controls the creativity of the AI's responses by adjusting how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 final double? topP;
 
+/// The value with the schema default applied when absent.
+int get maxTokensOrDefault { return maxTokens ?? 512; } 
+/// The value with the schema default applied when absent.
+bool get rawOrDefault { return raw ?? false; } 
 Map<String, dynamic> toJson() { return {
   'frequency_penalty': ?frequencyPenalty,
   'image': image.toJson(),
-  'max_tokens': maxTokens,
+  'max_tokens': ?maxTokens,
   'presence_penalty': ?presencePenalty,
   'prompt': ?prompt,
-  'raw': raw,
+  'raw': ?raw,
   'repetition_penalty': ?repetitionPenalty,
   'seed': ?seed,
   'temperature': ?temperature,
@@ -62,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image'); } 
-ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, ImageToTextVariant2Image? image, int Function()? maxTokens, double? Function()? presencePenalty, String? Function()? prompt, bool Function()? raw, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageToTextVariant2(
+ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, ImageToTextVariant2Image? image, int? Function()? maxTokens, double? Function()? presencePenalty, String? Function()? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageToTextVariant2(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   image: image ?? this.image,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,

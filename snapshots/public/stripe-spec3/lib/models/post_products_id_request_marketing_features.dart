@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostProductsIdRequestMarketingFeaturesVariant2($value)'; } 
  }
-typedef PostProductsIdRequestMarketingFeatures = OneOf2<List<PostProductsIdRequestMarketingFeaturesVariant1>,PostProductsIdRequestMarketingFeaturesVariant2>;
+/// A list of up to 15 marketing features for this product. These are displayed in [pricing tables](https://docs.stripe.com/payments/checkout/pricing-table).
+@immutable
+final class PostProductsIdRequestMarketingFeatures {
+  const PostProductsIdRequestMarketingFeatures({this.listPostProductsIdRequestMarketingFeaturesVariant1 = const Omittable.absent(),
+this.postProductsIdRequestMarketingFeaturesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostProductsIdRequestMarketingFeatures._({required this.rawValue, required this.listPostProductsIdRequestMarketingFeaturesVariant1,
+required this.postProductsIdRequestMarketingFeaturesVariant2,});
+  factory PostProductsIdRequestMarketingFeatures.fromJson(Object? json) => PostProductsIdRequestMarketingFeatures._(
+    rawValue: Omittable(json),
+    listPostProductsIdRequestMarketingFeaturesVariant1: parseAnyOfVariant<List<PostProductsIdRequestMarketingFeaturesVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostProductsIdRequestMarketingFeaturesVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+postProductsIdRequestMarketingFeaturesVariant2: parseAnyOfVariant<PostProductsIdRequestMarketingFeaturesVariant2>(json, (value) => PostProductsIdRequestMarketingFeaturesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostProductsIdRequestMarketingFeaturesVariant1>> listPostProductsIdRequestMarketingFeaturesVariant1;
+final Omittable<PostProductsIdRequestMarketingFeaturesVariant2> postProductsIdRequestMarketingFeaturesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostProductsIdRequestMarketingFeaturesVariant1.isPresent || postProductsIdRequestMarketingFeaturesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostProductsIdRequestMarketingFeaturesVariant1.isPresent) listPostProductsIdRequestMarketingFeaturesVariant1.value?.map((e) => e.toJson()).toList(),
+if (postProductsIdRequestMarketingFeaturesVariant2.isPresent) postProductsIdRequestMarketingFeaturesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostProductsIdRequestMarketingFeatures && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostProductsIdRequestMarketingFeatures(${toJson()})';
+}

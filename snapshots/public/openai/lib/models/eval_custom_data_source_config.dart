@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 /// - Used to define your testing criteria and
 /// - What data is required when creating a run
 /// 
-@immutable final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({required this.schema, this.type = EvalCustomDataSourceConfigType.custom, });
+@immutable final class EvalCustomDataSourceConfig {const EvalCustomDataSourceConfig({required this.type, required this.schema, });
 
 factory EvalCustomDataSourceConfig.fromJson(Map<String, dynamic> json) { return EvalCustomDataSourceConfig(
   type: EvalCustomDataSourceConfigType.fromJson(json['type'] as String),

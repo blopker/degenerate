@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'UserMessageInputTextType($value)'; } 
  }
 /// Text block that a user contributed to the thread.
-@immutable final class UserMessageInputText {const UserMessageInputText({required this.text, this.type = UserMessageInputTextType.inputText, });
+@immutable final class UserMessageInputText {const UserMessageInputText({required this.type, required this.text, });
 
 factory UserMessageInputText.fromJson(Map<String, dynamic> json) { return UserMessageInputText(
   type: UserMessageInputTextType.fromJson(json['type'] as String),

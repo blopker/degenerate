@@ -28,25 +28,27 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MessageDeltaContentImageFileObjectImageFileDetail($value)'; } 
  }
-@immutable final class MessageDeltaContentImageFileObjectImageFile {const MessageDeltaContentImageFileObjectImageFile({this.fileId, this.detail = MessageDeltaContentImageFileObjectImageFileDetail.auto, });
+@immutable final class MessageDeltaContentImageFileObjectImageFile {const MessageDeltaContentImageFileObjectImageFile({this.fileId, this.detail, });
 
 factory MessageDeltaContentImageFileObjectImageFile.fromJson(Map<String, dynamic> json) { return MessageDeltaContentImageFileObjectImageFile(
   fileId: json['file_id'] as String?,
-  detail: json.containsKey('detail') ? MessageDeltaContentImageFileObjectImageFileDetail.fromJson(json['detail'] as String) : MessageDeltaContentImageFileObjectImageFileDetail.auto,
+  detail: json['detail'] != null ? MessageDeltaContentImageFileObjectImageFileDetail.fromJson(json['detail'] as String) : null,
 ); }
 
 /// The [File](/docs/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
 final String? fileId;
 
 /// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
-final MessageDeltaContentImageFileObjectImageFileDetail detail;
+final MessageDeltaContentImageFileObjectImageFileDetail? detail;
 
+/// The value with the schema default applied when absent.
+MessageDeltaContentImageFileObjectImageFileDetail get detailOrDefault { return detail ?? MessageDeltaContentImageFileObjectImageFileDetail.fromJson('auto'); } 
 Map<String, dynamic> toJson() { return {
   'file_id': ?fileId,
-  'detail': detail.toJson(),
+  if (detail != null) 'detail': detail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_id', 'detail'}.contains(key)); } 
-MessageDeltaContentImageFileObjectImageFile copyWith({String? Function()? fileId, MessageDeltaContentImageFileObjectImageFileDetail Function()? detail, }) { return MessageDeltaContentImageFileObjectImageFile(
+MessageDeltaContentImageFileObjectImageFile copyWith({String? Function()? fileId, MessageDeltaContentImageFileObjectImageFileDetail? Function()? detail, }) { return MessageDeltaContentImageFileObjectImageFile(
   fileId: fileId != null ? fileId() : this.fileId,
   detail: detail != null ? detail() : this.detail,
 ); } 

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'duplicate_additional_documentation.dart';import 'duplicate_card_statement.dart';import 'duplicate_cash_receipt.dart';import 'duplicate_check_image.dart';import 'duplicate_explanation.dart';@immutable final class Duplicate {const Duplicate({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
 
 factory Duplicate.fromJson(Map<String, dynamic> json) { return Duplicate(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => DuplicateAdditionalDocumentationVariant2.fromJson(v as String),) : null,
-  cardStatement: json['card_statement'] != null ? OneOf2.parse(json['card_statement'], fromA: (v) => v as String, fromB: (v) => DuplicateCardStatementVariant2.fromJson(v as String),) : null,
-  cashReceipt: json['cash_receipt'] != null ? OneOf2.parse(json['cash_receipt'], fromA: (v) => v as String, fromB: (v) => DuplicateCashReceiptVariant2.fromJson(v as String),) : null,
-  checkImage: json['check_image'] != null ? OneOf2.parse(json['check_image'], fromA: (v) => v as String, fromB: (v) => DuplicateCheckImageVariant2.fromJson(v as String),) : null,
-  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => DuplicateExplanationVariant2.fromJson(v as String),) : null,
+  additionalDocumentation: json['additional_documentation'] != null ? DuplicateAdditionalDocumentation.fromJson(json['additional_documentation']) : null,
+  cardStatement: json['card_statement'] != null ? DuplicateCardStatement.fromJson(json['card_statement']) : null,
+  cashReceipt: json['cash_receipt'] != null ? DuplicateCashReceipt.fromJson(json['cash_receipt']) : null,
+  checkImage: json['check_image'] != null ? DuplicateCheckImage.fromJson(json['check_image']) : null,
+  explanation: json['explanation'] != null ? DuplicateExplanation.fromJson(json['explanation']) : null,
   originalTransaction: json['original_transaction'] as String?,
 ); }
 

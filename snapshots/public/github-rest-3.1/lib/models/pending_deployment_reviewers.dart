@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_reviewer_type.dart';import 'pending_deployment_reviewers_reviewer.dart';import 'simple_user.dart';import 'team.dart';@immutable final class PendingDeploymentReviewers {const PendingDeploymentReviewers({this.type, this.reviewer, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_reviewer_type.dart';import 'pending_deployment_reviewers_reviewer.dart';@immutable final class PendingDeploymentReviewers {const PendingDeploymentReviewers({this.type, this.reviewer, });
 
 factory PendingDeploymentReviewers.fromJson(Map<String, dynamic> json) { return PendingDeploymentReviewers(
   type: json['type'] != null ? DeploymentReviewerType.fromJson(json['type'] as String) : null,
-  reviewer: json['reviewer'] != null ? OneOf2.parse(json['reviewer'], fromA: (v) => SimpleUser.fromJson(v as Map<String, dynamic>), fromB: (v) => Team.fromJson(v as Map<String, dynamic>),) : null,
+  reviewer: json['reviewer'] != null ? PendingDeploymentReviewersReviewer.fromJson(json['reviewer']) : null,
 ); }
 
 /// The type of reviewer.

@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SkillReferenceParamType($value)'; } 
  }
-@immutable final class SkillReferenceParam {const SkillReferenceParam({required this.skillId, this.type = SkillReferenceParamType.skillReference, this.version, });
+@immutable final class SkillReferenceParam {const SkillReferenceParam({required this.type, required this.skillId, this.version, });
 
 factory SkillReferenceParam.fromJson(Map<String, dynamic> json) { return SkillReferenceParam(
   type: SkillReferenceParamType.fromJson(json['type'] as String),

@@ -34,7 +34,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClickButtonType($value)'; } 
  }
 /// A click action.
-@immutable final class ClickParam {const ClickParam({required this.button, required this.x, required this.y, this.type = 'click', });
+@immutable final class ClickParam {const ClickParam({required this.type, required this.button, required this.x, required this.y, });
 
 factory ClickParam.fromJson(Map<String, dynamic> json) { return ClickParam(
   type: json['type'] as String,

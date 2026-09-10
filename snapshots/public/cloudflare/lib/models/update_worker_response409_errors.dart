@@ -4,6 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_erro
 
 /// Deserialize from JSON, dispatching on the `code` discriminator.
 factory UpdateWorkerResponse409Errors.fromJson(Map<String, dynamic> json) { return switch (json['code']) {
+  'workers_ErrorWorkerNameConflict' => UpdateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict.fromJson(json),
   '10040' => UpdateWorkerResponse409Errors10040.fromJson(json),
   _ => UpdateWorkerResponse409Errors$Unknown(json),
 }; }
@@ -13,6 +14,19 @@ String get code;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UpdateWorkerResponse409Errors$Unknown; } 
+ }
+@immutable final class UpdateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict extends UpdateWorkerResponse409Errors {const UpdateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict(this.workersErrorWorkerNameConflict);
+
+factory UpdateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict.fromJson(Map<String, dynamic> json) { return UpdateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict(WorkersErrorWorkerNameConflict.fromJson(json)); }
+
+final WorkersErrorWorkerNameConflict workersErrorWorkerNameConflict;
+
+@override String get code { return 'workers_ErrorWorkerNameConflict'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorWorkerNameConflict.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UpdateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict && workersErrorWorkerNameConflict == other.workersErrorWorkerNameConflict; } 
+@override int get hashCode { return workersErrorWorkerNameConflict.hashCode; } 
+@override String toString() { return 'UpdateWorkerResponse409ErrorsWorkersErrorWorkerNameConflict(workersErrorWorkerNameConflict: $workersErrorWorkerNameConflict)'; } 
  }
 @immutable final class UpdateWorkerResponse409Errors10040 extends UpdateWorkerResponse409Errors {const UpdateWorkerResponse409Errors10040(this.workersErrorWorkerNameConflict);
 

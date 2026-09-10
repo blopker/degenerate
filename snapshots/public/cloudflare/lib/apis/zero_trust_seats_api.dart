@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_identifier.dart';import '../models/access_seat.dart';import '../models/access_seats.dart';/// ZeroTrustSeatsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_identifier.dart';import '../models/access_seat.dart';import '../models/access_seats.dart';import '../models/response_common_failure4.dart';/// ZeroTrustSeatsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustSeatsApi with ApiExecutor {const ZeroTrustSeatsApi(this.api
 /// Removes a user from a Zero Trust seat when both `access_seat` and `gateway_seat` are set to false.
 ///
 /// `PATCH /accounts/{account_id}/access/seats`
-Future<ApiResult<List<AccessSeats>?, Never>> zeroTrustSeatsUpdateAUserSeat({required AccessIdentifier accountId, required List<AccessSeat> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSeats>?, ResponseCommonFailure4>> zeroTrustSeatsUpdateAUserSeat({required AccessIdentifier accountId, required List<AccessSeat> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -24,11 +24,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => AccessSeats.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>?)?.map((e) => AccessSeats.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure4.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

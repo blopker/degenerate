@@ -22,11 +22,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => e as String).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => e as String).toList();
   },
 );
  } 
@@ -48,10 +48,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return GitignoreTemplate.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GitignoreTemplate.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

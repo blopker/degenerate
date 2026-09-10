@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_one_recording_response_data.dart';@immutable final class GetOneRecordingResponse {const GetOneRecordingResponse({this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_one_recording_response_data.dart';@immutable final class GetOneRecordingResponse {const GetOneRecordingResponse({required this.success, this.data, });
 
 factory GetOneRecordingResponse.fromJson(Map<String, dynamic> json) { return GetOneRecordingResponse(
   data: json['data'] != null ? GetOneRecordingResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,

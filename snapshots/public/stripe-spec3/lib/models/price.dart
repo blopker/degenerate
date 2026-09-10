@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'currency_option.dart';import 'custom_unit_amount.dart';import 'deleted_product.dart';import 'price_product.dart';import 'price_tier.dart';import 'product.dart';import 'recurring.dart';import 'transform_quantity.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `unit_amount` or `unit_amount_decimal`) will be charged per unit in `quantity` (for prices with `usage_type=licensed`), or per unit of total usage (for prices with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'currency_option.dart';import 'custom_unit_amount.dart';import 'price_product.dart';import 'price_tier.dart';import 'recurring.dart';import 'transform_quantity.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `unit_amount` or `unit_amount_decimal`) will be charged per unit in `quantity` (for prices with `usage_type=licensed`), or per unit of total usage (for prices with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
 @immutable final class PriceBillingScheme {const PriceBillingScheme._(this.value);
 
 factory PriceBillingScheme.fromJson(String json) { return switch (json) {
@@ -146,7 +146,7 @@ factory Price.fromJson(Map<String, dynamic> json) { return Price(
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   nickname: json.containsKey('nickname') ? Omittable(json['nickname'] as String?) : const Omittable.absent(),
   object: PriceObject.fromJson(json['object'] as String),
-  product: OneOf3.parse(json['product'], fromA: (v) => v as String, fromB: (v) => Product.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedProduct.fromJson(v as Map<String, dynamic>),),
+  product: PriceProduct.fromJson(json['product']),
   recurring: json.containsKey('recurring') ? Omittable(json['recurring'] != null ? Recurring.fromJson(json['recurring'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   taxBehavior: json.containsKey('tax_behavior') ? Omittable(json['tax_behavior'] != null ? PriceTaxBehavior.fromJson(json['tax_behavior'] as String) : null) : const Omittable.absent(),
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PriceTier.fromJson(e as Map<String, dynamic>)).toList(),

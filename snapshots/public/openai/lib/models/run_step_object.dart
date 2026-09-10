@@ -101,7 +101,7 @@ factory RunStepObject.fromJson(Map<String, dynamic> json) { return RunStepObject
   failedAt: json['failed_at'] != null ? (json['failed_at'] as num).toInt() : null,
   completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  usage: RunStepCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>),
+  usage: json['usage'] != null ? RunStepCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
 ); }
 
 /// The identifier of the run step, which can be referenced in API endpoints.
@@ -155,7 +155,7 @@ final int? completedAt;
 /// 
 final Map<String,String>? metadata;
 
-final RunStepCompletionUsage usage;
+final RunStepCompletionUsage? usage;
 
 Map<String, dynamic> toJson() { return {
   'id': id,
@@ -173,7 +173,7 @@ Map<String, dynamic> toJson() { return {
   'failed_at': failedAt,
   'completed_at': completedAt,
   'metadata': metadata,
-  'usage': usage.toJson(),
+  'usage': usage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
       json.containsKey('object') &&
@@ -191,7 +191,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('completed_at') && (json['completed_at'] == null || json['completed_at'] is num) &&
       json.containsKey('metadata') &&
       json.containsKey('usage'); } 
-RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt, String? assistantId, String? threadId, String? runId, RunStepObjectType? type, RunStepObjectStatus? status, RunStepObjectStepDetails? stepDetails, RunStepObjectLastError? Function()? lastError, int? Function()? expiredAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, Map<String, String>? Function()? metadata, RunStepCompletionUsage? usage, }) { return RunStepObject(
+RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt, String? assistantId, String? threadId, String? runId, RunStepObjectType? type, RunStepObjectStatus? status, RunStepObjectStepDetails? stepDetails, RunStepObjectLastError? Function()? lastError, int? Function()? expiredAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, Map<String, String>? Function()? metadata, RunStepCompletionUsage? Function()? usage, }) { return RunStepObject(
   id: id ?? this.id,
   object: object ?? this.object,
   createdAt: createdAt ?? this.createdAt,
@@ -207,7 +207,7 @@ RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt,
   failedAt: failedAt != null ? failedAt() : this.failedAt,
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   metadata: metadata != null ? metadata() : this.metadata,
-  usage: usage ?? this.usage,
+  usage: usage != null ? usage() : this.usage,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RunStepObject &&

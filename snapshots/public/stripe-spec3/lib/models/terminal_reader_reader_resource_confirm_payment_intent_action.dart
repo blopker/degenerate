@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent.dart';import 'terminal_reader_reader_resource_confirm_config.dart';import 'terminal_reader_reader_resource_confirm_payment_intent_action_payment_intent.dart';/// Represents a reader action to confirm a payment
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_confirm_config.dart';import 'terminal_reader_reader_resource_confirm_payment_intent_action_payment_intent.dart';/// Represents a reader action to confirm a payment
 @immutable final class TerminalReaderReaderResourceConfirmPaymentIntentAction {const TerminalReaderReaderResourceConfirmPaymentIntentAction({required this.paymentIntent, this.confirmConfig, });
 
 factory TerminalReaderReaderResourceConfirmPaymentIntentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceConfirmPaymentIntentAction(
   confirmConfig: json['confirm_config'] != null ? TerminalReaderReaderResourceConfirmConfig.fromJson(json['confirm_config'] as Map<String, dynamic>) : null,
-  paymentIntent: OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),),
+  paymentIntent: TerminalReaderReaderResourceConfirmPaymentIntentActionPaymentIntent.fromJson(json['payment_intent']),
 ); }
 
 final TerminalReaderReaderResourceConfirmConfig? confirmConfig;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_account_app.dart';import '../models/magic_app.dart';import '../models/magic_app_add_single_request.dart';import '../models/magic_app_update_request.dart';import '../models/magic_identifier.dart';import '../models/magic_managed_app.dart';/// MagicAccountAppsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/magic_account_app.dart';import '../models/magic_app.dart';import '../models/magic_app_add_single_request.dart';import '../models/magic_app_update_request.dart';import '../models/magic_identifier.dart';import '../models/magic_managed_app.dart';import '../models/response_common_failure50.dart';/// MagicAccountAppsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class MagicAccountAppsApi with ApiExecutor {const MagicAccountAppsApi(this
 /// Lists Apps associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/apps`
-Future<ApiResult<List<MagicApp>, Never>> magicAccountAppsListApps({required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<MagicApp>, ResponseCommonFailure50>> magicAccountAppsListApps({required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,11 +22,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => MagicAccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicManagedApp.fromJson(v as Map<String, dynamic>),)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => MagicAccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => MagicManagedApp.fromJson(v as Map<String, dynamic>),)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -35,22 +45,32 @@ return execute(
 /// Creates a new App for an account
 ///
 /// `POST /accounts/{account_id}/magic/apps`
-Future<ApiResult<MagicAccountApp, Never>> magicAccountAppsAddApp({required MagicIdentifier accountId, required MagicAppAddSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAccountApp, ResponseCommonFailure50>> magicAccountAppsAddApp({required MagicIdentifier accountId, required MagicAppAddSingleRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'POST',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps',
   headers: headers,
-  body: jsonEncode(body.toJson()),
+  body: jsonEncode(body?.toJson()),
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MagicAccountApp.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MagicAccountApp.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -59,22 +79,32 @@ return execute(
 /// Updates an Account App
 ///
 /// `PUT /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAccountApp, Never>> magicAccountAppsUpdateApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAccountApp, ResponseCommonFailure50>> magicAccountAppsUpdateApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PUT',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps/${Uri.encodeComponent(accountAppId.toString())}',
   headers: headers,
-  body: jsonEncode(body.toJson()),
+  body: jsonEncode(body?.toJson()),
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MagicAccountApp.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MagicAccountApp.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -83,22 +113,32 @@ return execute(
 /// Updates an Account App
 ///
 /// `PATCH /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAccountApp, Never>> magicAccountAppsPatchApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAccountApp, ResponseCommonFailure50>> magicAccountAppsPatchApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, required MagicAppUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
   method: 'PATCH',
   path: '/accounts/${Uri.encodeComponent(accountId.toString())}/magic/apps/${Uri.encodeComponent(accountAppId.toString())}',
   headers: headers,
-  body: jsonEncode(body.toJson()),
+  body: jsonEncode(body?.toJson()),
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MagicAccountApp.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MagicAccountApp.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -107,7 +147,7 @@ return execute(
 /// Deletes specific Account App.
 ///
 /// `DELETE /accounts/{account_id}/magic/apps/{account_app_id}`
-Future<ApiResult<MagicAccountApp, Never>> magicAccountAppsDeleteApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicAccountApp, ResponseCommonFailure50>> magicAccountAppsDeleteApp({required MagicIdentifier accountId, required MagicIdentifier accountAppId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -116,11 +156,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MagicAccountApp.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MagicAccountApp.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

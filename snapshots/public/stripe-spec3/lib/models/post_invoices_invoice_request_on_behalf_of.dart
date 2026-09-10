@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesInvoiceRequestOnBehalfOfVariant2($value)'; } 
  }
-typedef PostInvoicesInvoiceRequestOnBehalfOf = OneOf2<String,PostInvoicesInvoiceRequestOnBehalfOfVariant2>;
+/// The account (if any) for which the funds of the invoice payment are intended. If set, the invoice will be presented with the branding and support information of the specified account. See the [Invoices with Connect](https://docs.stripe.com/billing/invoices/connect) documentation for details.
+@immutable
+final class PostInvoicesInvoiceRequestOnBehalfOf {
+  const PostInvoicesInvoiceRequestOnBehalfOf({this.string = const Omittable.absent(),
+this.postInvoicesInvoiceRequestOnBehalfOfVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostInvoicesInvoiceRequestOnBehalfOf._({required this.rawValue, required this.string,
+required this.postInvoicesInvoiceRequestOnBehalfOfVariant2,});
+  factory PostInvoicesInvoiceRequestOnBehalfOf.fromJson(Object? json) => PostInvoicesInvoiceRequestOnBehalfOf._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postInvoicesInvoiceRequestOnBehalfOfVariant2: parseAnyOfVariant<PostInvoicesInvoiceRequestOnBehalfOfVariant2>(json, (value) => PostInvoicesInvoiceRequestOnBehalfOfVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostInvoicesInvoiceRequestOnBehalfOfVariant2> postInvoicesInvoiceRequestOnBehalfOfVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postInvoicesInvoiceRequestOnBehalfOfVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postInvoicesInvoiceRequestOnBehalfOfVariant2.isPresent) postInvoicesInvoiceRequestOnBehalfOfVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostInvoicesInvoiceRequestOnBehalfOf && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostInvoicesInvoiceRequestOnBehalfOf(${toJson()})';
+}

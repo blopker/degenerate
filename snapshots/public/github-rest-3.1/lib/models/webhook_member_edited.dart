@@ -28,7 +28,7 @@ factory WebhookMemberEdited.fromJson(Map<String, dynamic> json) { return Webhook
   changes: WebhookMemberEditedChanges.fromJson(json['changes'] as Map<String, dynamic>),
   enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
-  member: WebhooksUser.fromJson(json['member'] as Map<String, dynamic>),
+  member: json['member'] != null ? WebhooksUser.fromJson(json['member'] as Map<String, dynamic>) : null,
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
@@ -43,7 +43,7 @@ final EnterpriseWebhooks? enterprise;
 
 final SimpleInstallation? installation;
 
-final WebhooksUser member;
+final WebhooksUser? member;
 
 final OrganizationSimpleWebhooks? organization;
 
@@ -56,7 +56,7 @@ Map<String, dynamic> toJson() { return {
   'changes': changes.toJson(),
   if (enterprise != null) 'enterprise': enterprise?.toJson(),
   if (installation != null) 'installation': installation?.toJson(),
-  'member': member.toJson(),
+  'member': member?.toJson(),
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
@@ -66,12 +66,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('member') &&
       json.containsKey('repository') &&
       json.containsKey('sender'); } 
-WebhookMemberEdited copyWith({WebhookMemberEditedAction? action, WebhookMemberEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksUser? member, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookMemberEdited(
+WebhookMemberEdited copyWith({WebhookMemberEditedAction? action, WebhookMemberEditedChanges? changes, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, WebhooksUser? Function()? member, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookMemberEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
-  member: member ?? this.member,
+  member: member != null ? member() : this.member,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,

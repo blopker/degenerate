@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_search_request_filters.dart';import 'autorag_config_search_request_filters_variant1.dart';import 'autorag_config_search_request_filters_variant2.dart';import 'autorag_config_search_request_ranking_options.dart';import 'autorag_config_search_request_reranking.dart';@immutable final class AutoragConfigSearchRequest {const AutoragConfigSearchRequest({required this.query, this.filters, this.maxNumResults = 10, this.rankingOptions, this.reranking, this.rewriteQuery = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'autorag_config_search_request_filters.dart';import 'autorag_config_search_request_ranking_options.dart';import 'autorag_config_search_request_reranking.dart';@immutable final class AutoragConfigSearchRequest {const AutoragConfigSearchRequest({required this.query, this.filters, this.maxNumResults, this.rankingOptions, this.reranking, this.rewriteQuery, });
 
 factory AutoragConfigSearchRequest.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchRequest(
-  filters: json['filters'] != null ? OneOf2.parse(json['filters'], fromA: (v) => AutoragConfigSearchRequestFiltersVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => AutoragConfigSearchRequestFiltersVariant2.fromJson(v as Map<String, dynamic>),) : null,
-  maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
+  filters: json['filters'] != null ? AutoragConfigSearchRequestFilters.fromJson(json['filters']) : null,
+  maxNumResults: json['max_num_results'] != null ? (json['max_num_results'] as num).toInt() : null,
   query: json['query'] as String,
   rankingOptions: json['ranking_options'] != null ? AutoragConfigSearchRequestRankingOptions.fromJson(json['ranking_options'] as Map<String, dynamic>) : null,
   reranking: json['reranking'] != null ? AutoragConfigSearchRequestReranking.fromJson(json['reranking'] as Map<String, dynamic>) : null,
-  rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
+  rewriteQuery: json['rewrite_query'] as bool?,
 ); }
 
 final AutoragConfigSearchRequestFilters? filters;
 
-final int maxNumResults;
+final int? maxNumResults;
 
 final String query;
 
@@ -21,18 +21,22 @@ final AutoragConfigSearchRequestRankingOptions? rankingOptions;
 
 final AutoragConfigSearchRequestReranking? reranking;
 
-final bool rewriteQuery;
+final bool? rewriteQuery;
 
+/// The value with the schema default applied when absent.
+int get maxNumResultsOrDefault { return maxNumResults ?? 10; } 
+/// The value with the schema default applied when absent.
+bool get rewriteQueryOrDefault { return rewriteQuery ?? false; } 
 Map<String, dynamic> toJson() { return {
   if (filters != null) 'filters': filters?.toJson(),
-  'max_num_results': maxNumResults,
+  'max_num_results': ?maxNumResults,
   'query': query,
   if (rankingOptions != null) 'ranking_options': rankingOptions?.toJson(),
   if (reranking != null) 'reranking': reranking?.toJson(),
-  'rewrite_query': rewriteQuery,
+  'rewrite_query': ?rewriteQuery,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('query') && json['query'] is String; } 
-AutoragConfigSearchRequest copyWith({AutoragConfigSearchRequestFilters? Function()? filters, int Function()? maxNumResults, String? query, AutoragConfigSearchRequestRankingOptions? Function()? rankingOptions, AutoragConfigSearchRequestReranking? Function()? reranking, bool Function()? rewriteQuery, }) { return AutoragConfigSearchRequest(
+AutoragConfigSearchRequest copyWith({AutoragConfigSearchRequestFilters? Function()? filters, int? Function()? maxNumResults, String? query, AutoragConfigSearchRequestRankingOptions? Function()? rankingOptions, AutoragConfigSearchRequestReranking? Function()? reranking, bool? Function()? rewriteQuery, }) { return AutoragConfigSearchRequest(
   filters: filters != null ? filters() : this.filters,
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   query: query ?? this.query,

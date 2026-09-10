@@ -5,6 +5,7 @@ import 'package:degenerate/src/emitter/enum_emitter.dart';
 import 'package:degenerate/src/emitter/extension_type_emitter.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/model_emitter.dart';
+import 'package:degenerate/src/emitter/response_plan.dart';
 import 'package:degenerate/src/emitter/sealed_union_emitter.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming.dart'
@@ -266,7 +267,7 @@ class FileEmitter {
         ).emit(),
       IrEnum() => EnumEmitter(type).emit(),
       IrExtensionType() => ExtensionTypeEmitter(type).emit(),
-      IrDiscriminatedUnion() => DiscriminatedUnionEmitter(type).emit(),
+      IrDiscriminatedUnion() => DiscriminatedUnionEmitter(type, typeRegistry: typeRegistry, omittable: omittable).emit(),
       IrUntaggedUnion(:final variants)
           when isOneOfEligible(variants) &&
               !_isSelfReferencing(type.name, variants) =>
@@ -275,10 +276,6 @@ class FileEmitter {
         type,
         typeRegistry: typeRegistry,
       ).emit(),
-      IrAnyOf(:final variants)
-          when isOneOfEligible(variants) &&
-              !_isSelfReferencing(type.name, variants) =>
-        _emitOneOfTypedef(type.name, variants, typeRegistry),
       IrAnyOf() => AnyOfEmitter(type, typeRegistry: typeRegistry).emit(),
       // IrList, IrMap, IrPrimitive, IrTypeRef are not top-level emittable types
       _ => [],
@@ -327,15 +324,13 @@ class FileEmitter {
 
   static final _dartEmitter = DartEmitter(useNullSafetySyntax: true);
 
-  /// Whether a type emits classes that have == and hashCode (needing
-  /// @immutable).
   /// Whether a type emits classes with @immutable (those with == and hashCode).
-  /// AnyOf classes don't override == or hashCode, so they don't need it.
   static bool _typeNeedsImmutable(IrType type) => switch (type) {
     IrObject() => true,
     IrEnum() => true,
     IrDiscriminatedUnion() => true,
     IrUntaggedUnion() => true,
+    IrAnyOf() => true,
     _ => false,
   };
 
@@ -364,25 +359,6 @@ class FileEmitter {
       IrMap(:final values) => isBytesType(values),
       _ => false,
     };
-
-    // Unwrap a response type if it matches unwrapFields config.
-    IrType maybeUnwrap(IrType type) {
-      if (unwrapFields.isEmpty || typeRegistry == null) return type;
-      IrObject? obj;
-      if (type is IrObject) {
-        obj = type;
-      } else if (type is IrTypeRef) {
-        final resolved = typeRegistry[type.name];
-        if (resolved is IrObject) obj = resolved;
-      }
-      if (obj == null) return type;
-      for (final fieldName in unwrapFields) {
-        for (final f in obj.fields) {
-          if (f.originalName.test((s) => s == fieldName)) return f.type;
-        }
-      }
-      return type;
-    }
 
     for (final op in api.operations) {
       for (final param in op.parameters) {
@@ -414,20 +390,15 @@ class FileEmitter {
         _collectTopLevelTypeName(schema, names);
         if (isBytesType(schema)) needsTypedData = true;
       }
-      // Collect types from success responses (2xx)
-      // Response deserialization generates parse code that references variant
-      // types directly, so resolve OneOf refs via typeRegistry.
-      for (final code in [200, 201, 202, 203, 204]) {
-        final resp = op.responses[code];
-        if (resp != null) {
-          final content = preferredContent(resp.content);
-          if (content != null) {
-            if (content.$1.test(isJsonLikeMediaType)) needsConvert = true;
-            final schema = maybeUnwrap(content.$2.schema);
-            _collectTopLevelTypeName(schema, names, typeRegistry);
-            if (isBytesType(schema)) needsTypedData = true;
-            break;
-          }
+      for (final errors in [false, true]) {
+        final plan = planResponses(op, errors: errors,
+            registry: typeRegistry ?? const {}, unwrapFields: unwrapFields);
+        for (final branch in plan.branches) {
+          if (branch.content?.$1.test(isJsonLikeMediaType) ?? false) needsConvert = true;
+          final schema = branch.type;
+          if (schema == null) continue;
+          _collectTopLevelTypeName(schema, names, typeRegistry);
+          if (isBytesType(schema)) needsTypedData = true;
         }
       }
       // Collect types from streaming responses (SSE, JSONL)
@@ -436,27 +407,6 @@ class FileEmitter {
         needsConvert = true;
         final eventType = streaming.$2.itemSchema ?? streaming.$2.schema;
         _collectTopLevelTypeName(eventType, names, typeRegistry);
-      }
-      // Collect error response type (matching ApiEmitter._errorResponseContent
-      // logic: prefer default, then first 4xx+, only one error type per
-      // operation).
-      {
-        (SpecString, IrMediaType)? errorContent;
-        if (op.defaultResponse != null) {
-          errorContent = preferredContent(op.defaultResponse!.content);
-        }
-        if (errorContent == null) {
-          for (final entry in op.responses.entries) {
-            if (entry.key >= 400) {
-              errorContent = preferredContent(entry.value.content);
-              if (errorContent != null) break;
-            }
-          }
-        }
-        if (errorContent != null) {
-          if (errorContent.$1.test(isJsonLikeMediaType)) needsConvert = true;
-          _collectTopLevelTypeName(errorContent.$2.schema, names, typeRegistry);
-        }
       }
     }
     return (
@@ -498,10 +448,6 @@ class FileEmitter {
                   when isOneOfEligible(variants) &&
                       !_isSelfReferencing(name, variants) =>
                 true,
-              IrAnyOf(:final variants)
-                  when isOneOfEligible(variants) &&
-                      !_isSelfReferencing(name, variants) =>
-                true,
               _ => false,
             };
         if (!isInlinedOneOf) {
@@ -516,8 +462,6 @@ class FileEmitter {
           if (target != null) {
             final variants = switch (target) {
               IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
-                variants,
-              IrAnyOf(:final variants) when isOneOfEligible(variants) =>
                 variants,
               _ => null,
             };
@@ -555,19 +499,8 @@ class FileEmitter {
             _collectTopLevelTypeName(v, names, typeRegistry, resolving, true);
           }
         }
-      case IrAnyOf(:final name, :final variants):
-        final skipAnyOf =
-            skipInlinedOneOfRefs &&
-            isOneOfEligible(variants) &&
-            !_isSelfReferencing(name, variants);
-        if (!skipAnyOf) {
-          names.add(name);
-        }
-        if (typeRegistry != null && isOneOfEligible(variants)) {
-          for (final v in variants) {
-            _collectTopLevelTypeName(v, names, typeRegistry, resolving, true);
-          }
-        }
+      case IrAnyOf(:final name):
+        names.add(name);
       case IrExtensionType(:final name):
         names.add(name);
       case IrList(:final items):
@@ -630,15 +563,10 @@ class FileEmitter {
       IrMap(:final values) => hasBytesAnywhere(values),
       IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
         variants.any(hasBytesAnywhere),
-      IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(
-        hasBytesAnywhere,
-      ),
       IrTypeRef(:final name)
           when typeRegistry != null && bytesVisited.add(name) =>
         switch (typeRegistry[name]) {
           IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
-            variants.any(hasBytesAnywhere),
-          IrAnyOf(:final variants) when isOneOfEligible(variants) =>
             variants.any(hasBytesAnywhere),
           _ => false,
         },
@@ -650,17 +578,9 @@ class FileEmitter {
           when isOneOfEligible(variants) &&
               !_isSelfReferencing(name, variants) =>
         true,
-      IrAnyOf(:final name, :final variants)
-          when isOneOfEligible(variants) &&
-              !_isSelfReferencing(name, variants) =>
-        true,
       IrTypeRef(:final name) when typeRegistry != null =>
         switch (typeRegistry[name]) {
           IrUntaggedUnion(:final variants)
-              when isOneOfEligible(variants) &&
-                  !_isSelfReferencing(name, variants) =>
-            true,
-          IrAnyOf(:final variants)
               when isOneOfEligible(variants) &&
                   !_isSelfReferencing(name, variants) =>
             true,
@@ -704,8 +624,9 @@ class FileEmitter {
           // no transitive resolution needed.
           _collectTopLevelTypeName(variant, names);
           if (variant is IrObject) {
+            names.remove(variant.name);
             for (final f in variant.fields) {
-              if (isListType(f.type)) needsCollection = true;
+              checkField(f.type);
             }
           }
           if (isDirectBytes(variant)) needsTypedData = true;
@@ -720,26 +641,7 @@ class FileEmitter {
         }
       case IrAnyOf(:final name, :final variants):
         names.add(name);
-        if (isOneOfEligible(variants) && !_isSelfReferencing(name, variants)) {
-          // OneOf typedef: only direct variant types needed.
-          // Typedef files don't contain base64 code, so only needsTypedData.
-          needsOneOf = true;
-          for (final variant in variants) {
-            _collectTopLevelTypeName(variant, names);
-            if (isDirectBytes(variant)) needsTypedData = true;
-          }
-        } else {
-          // AnyOf class: fromJson calls .fromJson()/.canParse() on variants,
-          // or inlines OneOf.parse for OneOf-eligible union variants.
-          for (final variant in variants) {
-            _collectTopLevelTypeName(variant, names, typeRegistry);
-            if (isOneOfType(variant)) needsOneOf = true;
-            if (isDirectBytes(variant)) {
-              needsTypedData = true;
-              needsConvert = true;
-            }
-          }
-        }
+        variants.forEach(checkField);
       case IrExtensionType(:final name, :final inner):
         names.add(name);
         if (isDirectBytes(inner)) {

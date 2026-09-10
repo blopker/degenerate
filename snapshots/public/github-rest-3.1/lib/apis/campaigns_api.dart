@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/campaign_state.dart';import '../models/campaign_summary.dart';import '../models/campaigns_list_org_campaigns_direction.dart';import '../models/campaigns_list_org_campaigns_sort.dart';import '../models/campaigns_update_campaign_request.dart';/// CampaignsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/campaign_state.dart';import '../models/campaign_summary.dart';import '../models/campaigns_create_campaign_response503.dart';import '../models/campaigns_delete_campaign_response503.dart';import '../models/campaigns_get_campaign_summary_response503.dart';import '../models/campaigns_list_org_campaigns_direction.dart';import '../models/campaigns_list_org_campaigns_response503.dart';import '../models/campaigns_list_org_campaigns_sort.dart';import '../models/campaigns_update_campaign_request.dart';import '../models/campaigns_update_campaign_response503.dart';/// CampaignsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -17,7 +17,7 @@ final class CampaignsApi with ApiExecutor {const CampaignsApi(this.apiConfig);
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/campaigns`
-Future<ApiResult<List<CampaignSummary>, BasicError>> campaignsListOrgCampaigns({required String org, int? page, int? perPage, CampaignsListOrgCampaignsDirection? direction, CampaignState? state, CampaignsListOrgCampaignsSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<CampaignSummary>, OneOf2<BasicError, CampaignsListOrgCampaignsResponse503>>> campaignsListOrgCampaigns({required String org, int? page, int? perPage, CampaignsListOrgCampaignsDirection? direction, CampaignState? state, CampaignsListOrgCampaignsSort? sort, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -46,14 +46,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CampaignSummary.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => CampaignSummary.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, CampaignsListOrgCampaignsResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, CampaignsListOrgCampaignsResponse503>.b(CampaignsListOrgCampaignsResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -69,7 +79,7 @@ return execute(
 /// in the campaign.
 ///
 /// `POST /orgs/{org}/campaigns`
-Future<ApiResult<CampaignSummary, BasicError>> campaignsCreateCampaign({required String org, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CampaignSummary, OneOf2<BasicError, CampaignsCreateCampaignResponse503>>> campaignsCreateCampaign({required String org, required dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -80,13 +90,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return CampaignSummary.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CampaignSummary.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 404 || 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, CampaignsCreateCampaignResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 429:
+return null;
+case 503:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, CampaignsCreateCampaignResponse503>.b(CampaignsCreateCampaignResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -99,7 +122,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/campaigns/{campaign_number}`
-Future<ApiResult<CampaignSummary, BasicError>> campaignsGetCampaignSummary({required String org, required int campaignNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CampaignSummary, OneOf2<BasicError, CampaignsGetCampaignSummaryResponse503>>> campaignsGetCampaignSummary({required String org, required int campaignNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -108,13 +131,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return CampaignSummary.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CampaignSummary.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404 || 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, CampaignsGetCampaignSummaryResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, CampaignsGetCampaignSummaryResponse503>.b(CampaignsGetCampaignSummaryResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -127,7 +161,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/campaigns/{campaign_number}`
-Future<ApiResult<CampaignSummary, BasicError>> campaignsUpdateCampaign({required String org, required int campaignNumber, required CampaignsUpdateCampaignRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CampaignSummary, OneOf2<BasicError, CampaignsUpdateCampaignResponse503>>> campaignsUpdateCampaign({required String org, required int campaignNumber, required CampaignsUpdateCampaignRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -138,13 +172,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return CampaignSummary.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CampaignSummary.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 404 || 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, CampaignsUpdateCampaignResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, CampaignsUpdateCampaignResponse503>.b(CampaignsUpdateCampaignResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -157,7 +202,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/campaigns/{campaign_number}`
-Future<ApiResult<void, BasicError>> campaignsDeleteCampaign({required String org, required int campaignNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, CampaignsDeleteCampaignResponse503>>> campaignsDeleteCampaign({required String org, required int campaignNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -166,11 +211,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, CampaignsDeleteCampaignResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, CampaignsDeleteCampaignResponse503>.b(CampaignsDeleteCampaignResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 

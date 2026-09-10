@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_hyperdrive_config.dart';import 'hyperdrive_messages2.dart';import 'hyperdrive_result_info.dart';@immutable final class ListHyperdriveResponse {const ListHyperdriveResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_hyperdrive_config_response2.dart';import 'hyperdrive_messages2.dart';import 'hyperdrive_result_info.dart';@immutable final class ListHyperdriveResponse {const ListHyperdriveResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory ListHyperdriveResponse.fromJson(Map<String, dynamic> json) { return ListHyperdriveResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => HyperdriveMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => HyperdriveMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: (json['result'] as List<dynamic>).map((e) => HyperdriveHyperdriveConfig.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => HyperdriveHyperdriveConfigResponse2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? HyperdriveResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }
@@ -14,7 +14,7 @@ final List<HyperdriveMessages2> errors;
 
 final List<HyperdriveMessages2> messages;
 
-final List<HyperdriveHyperdriveConfig> result;
+final List<HyperdriveHyperdriveConfigResponse2> result;
 
 /// Return the status of the API call success.
 final bool success;
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ListHyperdriveResponse copyWith({List<HyperdriveMessages2>? errors, List<HyperdriveMessages2>? messages, List<HyperdriveHyperdriveConfig>? result, bool? success, HyperdriveResultInfo? Function()? resultInfo, }) { return ListHyperdriveResponse(
+ListHyperdriveResponse copyWith({List<HyperdriveMessages2>? errors, List<HyperdriveMessages2>? messages, List<HyperdriveHyperdriveConfigResponse2>? result, bool? success, HyperdriveResultInfo? Function()? resultInfo, }) { return ListHyperdriveResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistSimpleFilesValue {const GistSimpleFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, this.truncated, this.content, this.encoding = 'utf-8', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GistSimpleFilesValue {const GistSimpleFilesValue({this.filename, this.type, this.language, this.rawUrl, this.size, this.truncated, this.content, this.encoding, });
 
 factory GistSimpleFilesValue.fromJson(Map<String, dynamic> json) { return GistSimpleFilesValue(
   filename: json['filename'] as String?,
@@ -10,7 +10,7 @@ factory GistSimpleFilesValue.fromJson(Map<String, dynamic> json) { return GistSi
   size: json['size'] != null ? (json['size'] as num).toInt() : null,
   truncated: json['truncated'] as bool?,
   content: json['content'] as String?,
-  encoding: json.containsKey('encoding') ? json['encoding'] as String : 'utf-8',
+  encoding: json['encoding'] as String?,
 ); }
 
 final String? filename;
@@ -28,8 +28,10 @@ final bool? truncated;
 final String? content;
 
 /// The encoding used for `content`. Currently, `"utf-8"` and `"base64"` are supported.
-final String encoding;
+final String? encoding;
 
+/// The value with the schema default applied when absent.
+String get encodingOrDefault { return encoding ?? 'utf-8'; } 
 Map<String, dynamic> toJson() { return {
   'filename': ?filename,
   'type': ?type,
@@ -38,10 +40,10 @@ Map<String, dynamic> toJson() { return {
   'size': ?size,
   'truncated': ?truncated,
   'content': ?content,
-  'encoding': encoding,
+  'encoding': ?encoding,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'filename', 'type', 'language', 'raw_url', 'size', 'truncated', 'content', 'encoding'}.contains(key)); } 
-GistSimpleFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, bool? Function()? truncated, String? Function()? content, String Function()? encoding, }) { return GistSimpleFilesValue(
+GistSimpleFilesValue copyWith({String? Function()? filename, String? Function()? type, String? Function()? language, String? Function()? rawUrl, int? Function()? size, bool? Function()? truncated, String? Function()? content, String? Function()? encoding, }) { return GistSimpleFilesValue(
   filename: filename != null ? filename() : this.filename,
   type: type != null ? type() : this.type,
   language: language != null ? language() : this.language,

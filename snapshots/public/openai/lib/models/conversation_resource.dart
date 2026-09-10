@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ConversationResourceObject($value)'; } 
  }
-@immutable final class ConversationResource {const ConversationResource({required this.id, required this.metadata, required this.createdAt, this.object = ConversationResourceObject.conversation, });
+@immutable final class ConversationResource {const ConversationResource({required this.id, required this.object, required this.metadata, required this.createdAt, });
 
 factory ConversationResource.fromJson(Map<String, dynamic> json) { return ConversationResource(
   id: json['id'] as String,

@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'InlineSkillParamType($value)'; } 
  }
-@immutable final class InlineSkillParam {const InlineSkillParam({required this.name, required this.description, required this.source, this.type = InlineSkillParamType.inline, });
+@immutable final class InlineSkillParam {const InlineSkillParam({required this.type, required this.name, required this.description, required this.source, });
 
 factory InlineSkillParam.fromJson(Map<String, dynamic> json) { return InlineSkillParam(
   type: InlineSkillParamType.fromJson(json['type'] as String),

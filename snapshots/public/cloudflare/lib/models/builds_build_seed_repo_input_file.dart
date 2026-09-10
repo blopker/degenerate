@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsBuildSeedRepoInputFile {const BuildsBuildSeedRepoInputFile({required this.content, required this.filename, this.isBase64 = false, this.replace, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsBuildSeedRepoInputFile {const BuildsBuildSeedRepoInputFile({required this.content, required this.filename, this.isBase64, this.replace, });
 
 factory BuildsBuildSeedRepoInputFile.fromJson(Map<String, dynamic> json) { return BuildsBuildSeedRepoInputFile(
   content: json['content'] as String,
   filename: json['filename'] as String,
-  isBase64: json.containsKey('isBase64') ? json['isBase64'] as bool : false,
+  isBase64: json['isBase64'] as bool?,
   replace: json['replace'] as String?,
 ); }
 
@@ -13,20 +13,22 @@ final String content;
 
 final String filename;
 
-final bool isBase64;
+final bool? isBase64;
 
 /// Text to replace in the file
 final String? replace;
 
+/// The value with the schema default applied when absent.
+bool get isBase64OrDefault { return isBase64 ?? false; } 
 Map<String, dynamic> toJson() { return {
   'content': content,
   'filename': filename,
-  'isBase64': isBase64,
+  'isBase64': ?isBase64,
   'replace': ?replace,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') && json['content'] is String &&
       json.containsKey('filename') && json['filename'] is String; } 
-BuildsBuildSeedRepoInputFile copyWith({String? content, String? filename, bool Function()? isBase64, String? Function()? replace, }) { return BuildsBuildSeedRepoInputFile(
+BuildsBuildSeedRepoInputFile copyWith({String? content, String? filename, bool? Function()? isBase64, String? Function()? replace, }) { return BuildsBuildSeedRepoInputFile(
   content: content ?? this.content,
   filename: filename ?? this.filename,
   isBase64: isBase64 != null ? isBase64() : this.isBase64,

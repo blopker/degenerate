@@ -12,7 +12,7 @@ final class PublicUserSchema {
     this.circleCount = const Omittable.absent(),
     this.name = const Omittable.absent(),
     this.slug = const Omittable.absent(),
-    this.isStaff = false,
+    this.isStaff,
     this.profileAvatarSeed,
     this.profileImage = const Omittable.absent(),
   });
@@ -35,7 +35,7 @@ final class PublicUserSchema {
       slug: json.containsKey('slug')
           ? Omittable(json['slug'] as String?)
           : const Omittable.absent(),
-      isStaff: json.containsKey('is_staff') ? json['is_staff'] as bool : false,
+      isStaff: json['is_staff'] as bool?,
       profileAvatarSeed: json['profile_avatar_seed'] as String?,
       profileImage: json.containsKey('profile_image')
           ? Omittable(json['profile_image'] as String?)
@@ -53,7 +53,7 @@ final class PublicUserSchema {
   final Omittable<String?> slug;
 
   /// Designates whether the user can log into this admin site.
-  final bool isStaff;
+  final bool? isStaff;
 
   final String? profileAvatarSeed;
 
@@ -62,13 +62,18 @@ final class PublicUserSchema {
 
   final DateTime dateCreated;
 
+  /// The value with the schema default applied when absent.
+  bool get isStaffOrDefault {
+    return isStaff ?? false;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'profile_avatar_type': profileAvatarType.toJson(),
       if (circleCount.isPresent) 'circle_count': circleCount.value,
       if (name.isPresent) 'name': name.value,
       if (slug.isPresent) 'slug': slug.value,
-      'is_staff': isStaff,
+      'is_staff': ?isStaff,
       'profile_avatar_seed': ?profileAvatarSeed,
       if (profileImage.isPresent) 'profile_image': profileImage.value,
       'date_created': dateCreated.toIso8601String(),
@@ -86,7 +91,7 @@ final class PublicUserSchema {
     Omittable<int?>? circleCount,
     Omittable<String?>? name,
     Omittable<String?>? slug,
-    bool Function()? isStaff,
+    bool? Function()? isStaff,
     String? Function()? profileAvatarSeed,
     Omittable<String?>? profileImage,
     DateTime? dateCreated,

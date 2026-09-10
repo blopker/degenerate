@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentDetailsCaptureParamsOrderReferenceVariant2($value)'; } 
  }
-typedef PaymentDetailsCaptureParamsOrderReference = OneOf2<String,PaymentDetailsCaptureParamsOrderReferenceVariant2>;
+
+@immutable
+final class PaymentDetailsCaptureParamsOrderReference {
+  const PaymentDetailsCaptureParamsOrderReference({this.string = const Omittable.absent(),
+this.paymentDetailsCaptureParamsOrderReferenceVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PaymentDetailsCaptureParamsOrderReference._({required this.rawValue, required this.string,
+required this.paymentDetailsCaptureParamsOrderReferenceVariant2,});
+  factory PaymentDetailsCaptureParamsOrderReference.fromJson(Object? json) => PaymentDetailsCaptureParamsOrderReference._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+paymentDetailsCaptureParamsOrderReferenceVariant2: parseAnyOfVariant<PaymentDetailsCaptureParamsOrderReferenceVariant2>(json, (value) => PaymentDetailsCaptureParamsOrderReferenceVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PaymentDetailsCaptureParamsOrderReferenceVariant2> paymentDetailsCaptureParamsOrderReferenceVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || paymentDetailsCaptureParamsOrderReferenceVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (paymentDetailsCaptureParamsOrderReferenceVariant2.isPresent) paymentDetailsCaptureParamsOrderReferenceVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PaymentDetailsCaptureParamsOrderReference && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PaymentDetailsCaptureParamsOrderReference(${toJson()})';
+}

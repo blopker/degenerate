@@ -6,7 +6,7 @@ factory AccessAppsComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> 
   errors: (json['errors'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? AccessAppResponse.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? AccessAppResponse.fromJson(json['result']) : null,
 ); }
 
 final List<AccessMessages2> errors;

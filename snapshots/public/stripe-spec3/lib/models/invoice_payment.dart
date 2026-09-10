@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_invoice.dart';import 'invoice.dart';import 'invoice_payment_invoice.dart';import 'invoices_payments_invoice_payment_associated_payment.dart';import 'invoices_payments_invoice_payment_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_invoice.dart';import 'invoices_payments_invoice_payment_associated_payment.dart';import 'invoices_payments_invoice_payment_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class InvoicePaymentObject {const InvoicePaymentObject._(this.value);
 
 factory InvoicePaymentObject.fromJson(String json) { return switch (json) {
@@ -38,7 +38,7 @@ factory InvoicePayment.fromJson(Map<String, dynamic> json) { return InvoicePayme
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   id: json['id'] as String,
-  invoice: OneOf3.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedInvoice.fromJson(v as Map<String, dynamic>),),
+  invoice: InvoicePaymentInvoice.fromJson(json['invoice']),
   isDefault: json['is_default'] as bool,
   livemode: json['livemode'] as bool,
   object: InvoicePaymentObject.fromJson(json['object'] as String),

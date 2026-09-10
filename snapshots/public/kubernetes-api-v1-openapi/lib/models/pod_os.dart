@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PodOS defines the OS parameters of a pod.
-@immutable final class PodOs {const PodOs({this.name = ''});
+@immutable final class PodOs {const PodOs({required this.name});
 
 factory PodOs.fromJson(Map<String, dynamic> json) { return PodOs(
   name: json['name'] as String,

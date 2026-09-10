@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing
 factory PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance.fromJson(Map<String, dynamic> json) { return PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
-  userAgent: json['user_agent'] != null ? OneOf2.parse(json['user_agent'], fromA: (v) => v as String, fromB: (v) => PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2.fromJson(v as String),) : null,
+  userAgent: json['user_agent'] != null ? PostIssuingCardholdersRequestIndividualCardIssuingUserTermsAcceptanceUserAgent.fromJson(json['user_agent']) : null,
 ); }
 
 final int? date;

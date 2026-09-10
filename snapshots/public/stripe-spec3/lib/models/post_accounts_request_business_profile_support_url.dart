@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsRequestBusinessProfileSupportUrlVariant2($value)'; } 
  }
-typedef PostAccountsRequestBusinessProfileSupportUrl = OneOf2<String,PostAccountsRequestBusinessProfileSupportUrlVariant2>;
+
+@immutable
+final class PostAccountsRequestBusinessProfileSupportUrl {
+  const PostAccountsRequestBusinessProfileSupportUrl({this.string = const Omittable.absent(),
+this.postAccountsRequestBusinessProfileSupportUrlVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostAccountsRequestBusinessProfileSupportUrl._({required this.rawValue, required this.string,
+required this.postAccountsRequestBusinessProfileSupportUrlVariant2,});
+  factory PostAccountsRequestBusinessProfileSupportUrl.fromJson(Object? json) => PostAccountsRequestBusinessProfileSupportUrl._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postAccountsRequestBusinessProfileSupportUrlVariant2: parseAnyOfVariant<PostAccountsRequestBusinessProfileSupportUrlVariant2>(json, (value) => PostAccountsRequestBusinessProfileSupportUrlVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostAccountsRequestBusinessProfileSupportUrlVariant2> postAccountsRequestBusinessProfileSupportUrlVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postAccountsRequestBusinessProfileSupportUrlVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postAccountsRequestBusinessProfileSupportUrlVariant2.isPresent) postAccountsRequestBusinessProfileSupportUrlVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostAccountsRequestBusinessProfileSupportUrl && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostAccountsRequestBusinessProfileSupportUrl(${toJson()})';
+}

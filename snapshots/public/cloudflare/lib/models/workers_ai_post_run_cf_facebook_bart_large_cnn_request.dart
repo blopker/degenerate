@@ -1,24 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfFacebookBartLargeCnnRequest {const WorkersAiPostRunCfFacebookBartLargeCnnRequest({required this.inputText, this.maxLength = 1024, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfFacebookBartLargeCnnRequest {const WorkersAiPostRunCfFacebookBartLargeCnnRequest({required this.inputText, this.maxLength, });
 
 factory WorkersAiPostRunCfFacebookBartLargeCnnRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfFacebookBartLargeCnnRequest(
   inputText: json['input_text'] as String,
-  maxLength: json.containsKey('max_length') ? (json['max_length'] as num).toInt() : 1024,
+  maxLength: json['max_length'] != null ? (json['max_length'] as num).toInt() : null,
 ); }
 
 /// The text that you want the model to summarize
 final String inputText;
 
 /// The maximum length of the generated summary in tokens
-final int maxLength;
+final int? maxLength;
 
+/// The value with the schema default applied when absent.
+int get maxLengthOrDefault { return maxLength ?? 1024; } 
 Map<String, dynamic> toJson() { return {
   'input_text': inputText,
-  'max_length': maxLength,
+  'max_length': ?maxLength,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('input_text') && json['input_text'] is String; } 
-WorkersAiPostRunCfFacebookBartLargeCnnRequest copyWith({String? inputText, int Function()? maxLength, }) { return WorkersAiPostRunCfFacebookBartLargeCnnRequest(
+WorkersAiPostRunCfFacebookBartLargeCnnRequest copyWith({String? inputText, int? Function()? maxLength, }) { return WorkersAiPostRunCfFacebookBartLargeCnnRequest(
   inputText: inputText ?? this.inputText,
   maxLength: maxLength != null ? maxLength() : this.maxLength,
 ); } 

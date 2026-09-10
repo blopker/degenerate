@@ -9,7 +9,7 @@ void main() {
 
       final chain = buildInterceptorChain(
         interceptors: [interceptor],
-        terminal: (_) async => ApiResponse(statusCode: 200, body: 'ok'),
+        terminal: (_) async => _response(statusCode: 200, body: 'ok'),
       );
 
       await chain(const ApiRequest(method: 'GET', path: '/pets'));
@@ -40,3 +40,11 @@ void main() {
     });
   });
 }
+
+StreamedApiResponse _response({
+  required int statusCode,
+  required String body,
+  Map<String, String> headers = const {},
+}) => StreamedApiResponse.fromResponse(ApiResponse(
+  statusCode: statusCode, body: body, headers: headers,
+));

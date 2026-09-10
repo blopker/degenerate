@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2($value)'; } 
  }
-typedef PostCustomersCustomerRequestInvoiceSettingsRenderingOptions = OneOf2<CustomerRenderingOptionsParam2,PostCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2>;
+
+@immutable
+final class PostCustomersCustomerRequestInvoiceSettingsRenderingOptions {
+  const PostCustomersCustomerRequestInvoiceSettingsRenderingOptions({this.customerRenderingOptionsParam2 = const Omittable.absent(),
+this.postCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCustomersCustomerRequestInvoiceSettingsRenderingOptions._({required this.rawValue, required this.customerRenderingOptionsParam2,
+required this.postCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2,});
+  factory PostCustomersCustomerRequestInvoiceSettingsRenderingOptions.fromJson(Object? json) => PostCustomersCustomerRequestInvoiceSettingsRenderingOptions._(
+    rawValue: Omittable(json),
+    customerRenderingOptionsParam2: parseAnyOfVariant<CustomerRenderingOptionsParam2>(json, (value) => CustomerRenderingOptionsParam2.fromJson(value! as Map<String, dynamic>)),
+postCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2: parseAnyOfVariant<PostCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2>(json, (value) => PostCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<CustomerRenderingOptionsParam2> customerRenderingOptionsParam2;
+final Omittable<PostCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2> postCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => customerRenderingOptionsParam2.isPresent || postCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (customerRenderingOptionsParam2.isPresent) customerRenderingOptionsParam2.value?.toJson(),
+if (postCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2.isPresent) postCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCustomersCustomerRequestInvoiceSettingsRenderingOptions && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCustomersCustomerRequestInvoiceSettingsRenderingOptions(${toJson()})';
+}

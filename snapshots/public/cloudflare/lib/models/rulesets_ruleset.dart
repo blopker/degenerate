@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_version.dart';/// A ruleset object.
-@immutable final class RulesetsRuleset {const RulesetsRuleset({required this.id, required this.lastUpdated, required this.version, this.description = '', this.name, });
+@immutable final class RulesetsRuleset {const RulesetsRuleset({required this.id, required this.lastUpdated, required this.version, this.description, this.name, });
 
 factory RulesetsRuleset.fromJson(Map<String, dynamic> json) { return RulesetsRuleset(
-  description: json.containsKey('description') ? json['description'] as String : '',
+  description: json['description'] as String?,
   id: RulesetsRulesetId.fromJson(json['id'] as String),
   lastUpdated: DateTime.parse(json['last_updated'] as String),
   name: json['name'] as String?,
@@ -12,7 +12,7 @@ factory RulesetsRuleset.fromJson(Map<String, dynamic> json) { return RulesetsRul
 ); }
 
 /// An informative description of the ruleset.
-final String description;
+final String? description;
 
 final RulesetsRulesetId id;
 
@@ -24,8 +24,10 @@ final String? name;
 
 final RulesetsRulesetVersion version;
 
+/// The value with the schema default applied when absent.
+String get descriptionOrDefault { return description ?? ''; } 
 Map<String, dynamic> toJson() { return {
-  'description': description,
+  'description': ?description,
   'id': id.toJson(),
   'last_updated': lastUpdated.toIso8601String(),
   'name': ?name,
@@ -34,7 +36,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
       json.containsKey('last_updated') && json['last_updated'] is String &&
       json.containsKey('version'); } 
-RulesetsRuleset copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? Function()? name, RulesetsRulesetVersion? version, }) { return RulesetsRuleset(
+RulesetsRuleset copyWith({String? Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? Function()? name, RulesetsRulesetVersion? version, }) { return RulesetsRuleset(
   description: description != null ? description() : this.description,
   id: id ?? this.id,
   lastUpdated: lastUpdated ?? this.lastUpdated,

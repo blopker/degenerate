@@ -1,3 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_payment_source_card2.dart';typedef PostCustomersCustomerRequestCard = OneOf2<CustomerPaymentSourceCard2,String>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_payment_source_card2.dart';/// A token, like the ones returned by [Stripe.js](https://stripe.com/docs/js).
+@immutable
+final class PostCustomersCustomerRequestCard {
+  const PostCustomersCustomerRequestCard({this.customerPaymentSourceCard2 = const Omittable.absent(),
+this.string = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCustomersCustomerRequestCard._({required this.rawValue, required this.customerPaymentSourceCard2,
+required this.string,});
+  factory PostCustomersCustomerRequestCard.fromJson(Object? json) => PostCustomersCustomerRequestCard._(
+    rawValue: Omittable(json),
+    customerPaymentSourceCard2: parseAnyOfVariant<CustomerPaymentSourceCard2>(json, (value) => CustomerPaymentSourceCard2.fromJson(value! as Map<String, dynamic>)),
+string: parseAnyOfVariant<String>(json, (value) => value! as String),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<CustomerPaymentSourceCard2> customerPaymentSourceCard2;
+final Omittable<String> string;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => customerPaymentSourceCard2.isPresent || string.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (customerPaymentSourceCard2.isPresent) customerPaymentSourceCard2.value?.toJson(),
+if (string.isPresent) string.value,
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCustomersCustomerRequestCard && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCustomersCustomerRequestCard(${toJson()})';
+}

@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OrgsCreateArtifactStorageRecordRequestStatus($value)'; } 
  }
-@immutable final class OrgsCreateArtifactStorageRecordRequest {const OrgsCreateArtifactStorageRecordRequest({required this.name, required this.digest, required this.registryUrl, this.version, this.artifactUrl, this.path, this.repository, this.status = OrgsCreateArtifactStorageRecordRequestStatus.active, this.githubRepository, });
+@immutable final class OrgsCreateArtifactStorageRecordRequest {const OrgsCreateArtifactStorageRecordRequest({required this.name, required this.digest, required this.registryUrl, this.version, this.artifactUrl, this.path, this.repository, this.status, this.githubRepository, });
 
 factory OrgsCreateArtifactStorageRecordRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateArtifactStorageRecordRequest(
   name: json['name'] as String,
@@ -38,7 +38,7 @@ factory OrgsCreateArtifactStorageRecordRequest.fromJson(Map<String, dynamic> jso
   path: json['path'] != null ? Uri.parse(json['path'] as String) : null,
   registryUrl: Uri.parse(json['registry_url'] as String),
   repository: json['repository'] as String?,
-  status: json.containsKey('status') ? OrgsCreateArtifactStorageRecordRequestStatus.fromJson(json['status'] as String) : OrgsCreateArtifactStorageRecordRequestStatus.active,
+  status: json['status'] != null ? OrgsCreateArtifactStorageRecordRequestStatus.fromJson(json['status'] as String) : null,
   githubRepository: json['github_repository'] as String?,
 ); }
 
@@ -64,7 +64,7 @@ final Uri registryUrl;
 final String? repository;
 
 /// The status of the artifact (e.g., active, inactive).
-final OrgsCreateArtifactStorageRecordRequestStatus status;
+final OrgsCreateArtifactStorageRecordRequestStatus? status;
 
 /// The name of the GitHub repository associated with the artifact. This should be used
 /// when there are no provenance attestations available for the artifact. The repository
@@ -74,6 +74,8 @@ final OrgsCreateArtifactStorageRecordRequestStatus status;
 /// the repository information from the attestation instead of this parameter.
 final String? githubRepository;
 
+/// The value with the schema default applied when absent.
+OrgsCreateArtifactStorageRecordRequestStatus get statusOrDefault { return status ?? OrgsCreateArtifactStorageRecordRequestStatus.fromJson('active'); } 
 Map<String, dynamic> toJson() { return {
   'name': name,
   'digest': digest,
@@ -82,13 +84,13 @@ Map<String, dynamic> toJson() { return {
   if (path != null) 'path': path?.toString(),
   'registry_url': registryUrl.toString(),
   'repository': ?repository,
-  'status': status.toJson(),
+  if (status != null) 'status': status?.toJson(),
   'github_repository': ?githubRepository,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('digest') && json['digest'] is String &&
       json.containsKey('registry_url') && json['registry_url'] is String; } 
-OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, String? Function()? version, Uri? Function()? artifactUrl, Uri? Function()? path, Uri? registryUrl, String? Function()? repository, OrgsCreateArtifactStorageRecordRequestStatus Function()? status, String? Function()? githubRepository, }) { return OrgsCreateArtifactStorageRecordRequest(
+OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, String? Function()? version, Uri? Function()? artifactUrl, Uri? Function()? path, Uri? registryUrl, String? Function()? repository, OrgsCreateArtifactStorageRecordRequestStatus? Function()? status, String? Function()? githubRepository, }) { return OrgsCreateArtifactStorageRecordRequest(
   name: name ?? this.name,
   digest: digest ?? this.digest,
   version: version != null ? version() : this.version,

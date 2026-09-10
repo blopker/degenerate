@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt55_response_format.dart';@immutable final class Prompt55 {const Prompt55({required this.prompt, this.frequencyPenalty, this.lora, this.maxTokens = 256, this.presencePenalty, this.raw = false, this.repetitionPenalty, this.responseFormat, this.seed, this.stream = false, this.temperature = 0.6, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt55_response_format.dart';@immutable final class Prompt55 {const Prompt55({required this.prompt, this.frequencyPenalty, this.lora, this.maxTokens, this.presencePenalty, this.raw, this.repetitionPenalty, this.responseFormat, this.seed, this.stream, this.temperature, this.topK, this.topP, });
 
 factory Prompt55.fromJson(Map<String, dynamic> json) { return Prompt55(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   lora: json['lora'] as String?,
-  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 256,
+  maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   prompt: json['prompt'] as String,
-  raw: json.containsKey('raw') ? json['raw'] as bool : false,
+  raw: json['raw'] as bool?,
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
   responseFormat: json['response_format'] != null ? Prompt55ResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
-  stream: json.containsKey('stream') ? json['stream'] as bool : false,
-  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.6,
+  stream: json['stream'] as bool?,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
 ); }
@@ -25,7 +25,7 @@ final double? frequencyPenalty;
 final String? lora;
 
 /// The maximum number of tokens to generate in the response.
-final int maxTokens;
+final int? maxTokens;
 
 /// Increases the likelihood of the model introducing new topics.
 final double? presencePenalty;
@@ -34,7 +34,7 @@ final double? presencePenalty;
 final String prompt;
 
 /// If true, a chat template is not applied and you must adhere to the specific model's expected formatting.
-final bool raw;
+final bool? raw;
 
 /// Penalty for repeated tokens; higher values discourage repetition.
 final double? repetitionPenalty;
@@ -45,10 +45,10 @@ final Prompt55ResponseFormat? responseFormat;
 final int? seed;
 
 /// If true, the response will be streamed back incrementally using SSE, Server Sent Events.
-final bool stream;
+final bool? stream;
 
 /// Controls the randomness of the output; higher values produce more random results.
-final double temperature;
+final double? temperature;
 
 /// Limits the AI to choose from the top 'k' most probable words. Lower values make responses more focused; higher values introduce more variety and potential surprises.
 final int? topK;
@@ -56,23 +56,31 @@ final int? topK;
 /// Adjusts the creativity of the AI's responses by controlling how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 final double? topP;
 
+/// The value with the schema default applied when absent.
+int get maxTokensOrDefault { return maxTokens ?? 256; } 
+/// The value with the schema default applied when absent.
+bool get rawOrDefault { return raw ?? false; } 
+/// The value with the schema default applied when absent.
+bool get streamOrDefault { return stream ?? false; } 
+/// The value with the schema default applied when absent.
+double get temperatureOrDefault { return temperature ?? 0.6; } 
 Map<String, dynamic> toJson() { return {
   'frequency_penalty': ?frequencyPenalty,
   'lora': ?lora,
-  'max_tokens': maxTokens,
+  'max_tokens': ?maxTokens,
   'presence_penalty': ?presencePenalty,
   'prompt': prompt,
-  'raw': raw,
+  'raw': ?raw,
   'repetition_penalty': ?repetitionPenalty,
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
   'seed': ?seed,
-  'stream': stream,
-  'temperature': temperature,
+  'stream': ?stream,
+  'temperature': ?temperature,
   'top_k': ?topK,
   'top_p': ?topP,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-Prompt55 copyWith({double? Function()? frequencyPenalty, String? Function()? lora, int Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool Function()? raw, double? Function()? repetitionPenalty, Prompt55ResponseFormat? Function()? responseFormat, int? Function()? seed, bool Function()? stream, double Function()? temperature, int? Function()? topK, double? Function()? topP, }) { return Prompt55(
+Prompt55 copyWith({double? Function()? frequencyPenalty, String? Function()? lora, int? Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool? Function()? raw, double? Function()? repetitionPenalty, Prompt55ResponseFormat? Function()? responseFormat, int? Function()? seed, bool? Function()? stream, double? Function()? temperature, int? Function()? topK, double? Function()? topP, }) { return Prompt55(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   lora: lora != null ? lora() : this.lora,
   maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,

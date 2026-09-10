@@ -1170,10 +1170,10 @@ bool get isUnknown { return !values.contains(this); }
 factory PostWebhookEndpointsRequest.fromJson(Map<String, dynamic> json) { return PostWebhookEndpointsRequest(
   apiVersion: json['api_version'] != null ? PostWebhookEndpointsRequestVersion.fromJson(json['api_version'] as String) : null,
   connect: json['connect'] as bool?,
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostWebhookEndpointsRequestDescriptionVariant2.fromJson(v as String),) : null,
+  description: json['description'] != null ? PostWebhookEndpointsRequestDescription.fromJson(json['description']) : null,
   enabledEvents: (json['enabled_events'] as List<dynamic>).map((e) => PostWebhookEndpointsRequestEnabledEvents.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostWebhookEndpointsRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostWebhookEndpointsRequestMetadata.fromJson(json['metadata']) : null,
   url: json['url'] as String,
 ); }
 

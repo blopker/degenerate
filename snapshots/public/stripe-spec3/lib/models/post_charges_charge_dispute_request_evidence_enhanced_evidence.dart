@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2($value)'; } 
  }
-typedef PostChargesChargeDisputeRequestEvidenceEnhancedEvidence = OneOf2<EnhancedEvidence,PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2>;
+
+@immutable
+final class PostChargesChargeDisputeRequestEvidenceEnhancedEvidence {
+  const PostChargesChargeDisputeRequestEvidenceEnhancedEvidence({this.enhancedEvidence = const Omittable.absent(),
+this.postChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostChargesChargeDisputeRequestEvidenceEnhancedEvidence._({required this.rawValue, required this.enhancedEvidence,
+required this.postChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2,});
+  factory PostChargesChargeDisputeRequestEvidenceEnhancedEvidence.fromJson(Object? json) => PostChargesChargeDisputeRequestEvidenceEnhancedEvidence._(
+    rawValue: Omittable(json),
+    enhancedEvidence: parseAnyOfVariant<EnhancedEvidence>(json, (value) => EnhancedEvidence.fromJson(value! as Map<String, dynamic>)),
+postChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2: parseAnyOfVariant<PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2>(json, (value) => PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<EnhancedEvidence> enhancedEvidence;
+final Omittable<PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2> postChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => enhancedEvidence.isPresent || postChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (enhancedEvidence.isPresent) enhancedEvidence.value?.toJson(),
+if (postChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2.isPresent) postChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostChargesChargeDisputeRequestEvidenceEnhancedEvidence && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostChargesChargeDisputeRequestEvidenceEnhancedEvidence(${toJson()})';
+}

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'add_dynamic_header.dart';import 'add_static_header.dart';import 'remove_header.dart';import 'rulesets_rewrite_headers_value.dart';import 'rulesets_rewrite_uri.dart';import 'set_dynamic_header.dart';import 'set_static_header.dart';import 'uri_path.dart';import 'uri_query.dart';@immutable final class RulesetsRewriteRuleActionParameters {const RulesetsRewriteRuleActionParameters({this.headers, this.uri, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'add_dynamic_header.dart';import 'add_static_header.dart';import 'remove_header.dart';import 'rulesets_rewrite_headers_value.dart';import 'rulesets_rewrite_uri.dart';import 'set_dynamic_header.dart';import 'set_static_header.dart';@immutable final class RulesetsRewriteRuleActionParameters {const RulesetsRewriteRuleActionParameters({this.headers, this.uri, });
 
 factory RulesetsRewriteRuleActionParameters.fromJson(Map<String, dynamic> json) { return RulesetsRewriteRuleActionParameters(
   headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf5.parse(v, fromA: (v) => AddStaticHeader.fromJson(v as Map<String, dynamic>), fromB: (v) => AddDynamicHeader.fromJson(v as Map<String, dynamic>), fromC: (v) => SetStaticHeader.fromJson(v as Map<String, dynamic>), fromD: (v) => SetDynamicHeader.fromJson(v as Map<String, dynamic>), fromE: (v) => RemoveHeader.fromJson(v as Map<String, dynamic>),))),
-  uri: json['uri'] != null ? OneOf2.parse(json['uri'], fromA: (v) => UriPath.fromJson(v as Map<String, dynamic>), fromB: (v) => UriQuery.fromJson(v as Map<String, dynamic>),) : null,
+  uri: json['uri'] != null ? RulesetsRewriteUri.fromJson(json['uri']) : null,
 ); }
 
 /// A map of headers to rewrite.

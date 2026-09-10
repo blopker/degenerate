@@ -25,25 +25,27 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchCreateInstancesResponseResultRetrievalOptionsKeywordMatchMode($value)'; } 
  }
-@immutable final class AiSearchCreateInstancesResponseResultRetrievalOptions {const AiSearchCreateInstancesResponseResultRetrievalOptions({this.boostBy, this.keywordMatchMode = AiSearchCreateInstancesResponseResultRetrievalOptionsKeywordMatchMode.exactMatch, });
+@immutable final class AiSearchCreateInstancesResponseResultRetrievalOptions {const AiSearchCreateInstancesResponseResultRetrievalOptions({this.boostBy, this.keywordMatchMode, });
 
 factory AiSearchCreateInstancesResponseResultRetrievalOptions.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesResponseResultRetrievalOptions(
   boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => AiSearchCreateInstancesResponseResultRetrievalOptionsBoostBy.fromJson(e as Map<String, dynamic>)).toList(),
-  keywordMatchMode: json.containsKey('keyword_match_mode') ? AiSearchCreateInstancesResponseResultRetrievalOptionsKeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : AiSearchCreateInstancesResponseResultRetrievalOptionsKeywordMatchMode.exactMatch,
+  keywordMatchMode: json['keyword_match_mode'] != null ? AiSearchCreateInstancesResponseResultRetrievalOptionsKeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : null,
 ); }
 
 /// Metadata fields to boost search results by. Each entry specifies a metadata field and an optional direction. Direction defaults to 'asc' for numeric fields and 'exists' for text/boolean fields. Fields must match 'timestamp' or a defined custom_metadata field.
 final List<AiSearchCreateInstancesResponseResultRetrievalOptionsBoostBy>? boostBy;
 
 /// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
-final AiSearchCreateInstancesResponseResultRetrievalOptionsKeywordMatchMode keywordMatchMode;
+final AiSearchCreateInstancesResponseResultRetrievalOptionsKeywordMatchMode? keywordMatchMode;
 
+/// The value with the schema default applied when absent.
+AiSearchCreateInstancesResponseResultRetrievalOptionsKeywordMatchMode get keywordMatchModeOrDefault { return keywordMatchMode ?? AiSearchCreateInstancesResponseResultRetrievalOptionsKeywordMatchMode.fromJson('exact_match'); } 
 Map<String, dynamic> toJson() { return {
   if (boostBy != null) 'boost_by': boostBy?.map((e) => e.toJson()).toList(),
-  'keyword_match_mode': keywordMatchMode.toJson(),
+  if (keywordMatchMode != null) 'keyword_match_mode': keywordMatchMode?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'boost_by', 'keyword_match_mode'}.contains(key)); } 
-AiSearchCreateInstancesResponseResultRetrievalOptions copyWith({List<AiSearchCreateInstancesResponseResultRetrievalOptionsBoostBy>? Function()? boostBy, AiSearchCreateInstancesResponseResultRetrievalOptionsKeywordMatchMode Function()? keywordMatchMode, }) { return AiSearchCreateInstancesResponseResultRetrievalOptions(
+AiSearchCreateInstancesResponseResultRetrievalOptions copyWith({List<AiSearchCreateInstancesResponseResultRetrievalOptionsBoostBy>? Function()? boostBy, AiSearchCreateInstancesResponseResultRetrievalOptionsKeywordMatchMode? Function()? keywordMatchMode, }) { return AiSearchCreateInstancesResponseResultRetrievalOptions(
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   keywordMatchMode: keywordMatchMode != null ? keywordMatchMode() : this.keywordMatchMode,
 ); } 

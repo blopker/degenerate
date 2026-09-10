@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2($value)'; } 
  }
-typedef PostWebhookEndpointsWebhookEndpointRequestDescription = OneOf2<String,PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2>;
+/// An optional description of what the webhook is used for.
+@immutable
+final class PostWebhookEndpointsWebhookEndpointRequestDescription {
+  const PostWebhookEndpointsWebhookEndpointRequestDescription({this.string = const Omittable.absent(),
+this.postWebhookEndpointsWebhookEndpointRequestDescriptionVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostWebhookEndpointsWebhookEndpointRequestDescription._({required this.rawValue, required this.string,
+required this.postWebhookEndpointsWebhookEndpointRequestDescriptionVariant2,});
+  factory PostWebhookEndpointsWebhookEndpointRequestDescription.fromJson(Object? json) => PostWebhookEndpointsWebhookEndpointRequestDescription._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postWebhookEndpointsWebhookEndpointRequestDescriptionVariant2: parseAnyOfVariant<PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2>(json, (value) => PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2> postWebhookEndpointsWebhookEndpointRequestDescriptionVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postWebhookEndpointsWebhookEndpointRequestDescriptionVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postWebhookEndpointsWebhookEndpointRequestDescriptionVariant2.isPresent) postWebhookEndpointsWebhookEndpointRequestDescriptionVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostWebhookEndpointsWebhookEndpointRequestDescription && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostWebhookEndpointsWebhookEndpointRequestDescription(${toJson()})';
+}

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_discount.dart';import 'discount.dart';import 'discounts_resource_discount_amount_discount.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discounts_resource_discount_amount_discount.dart';/// 
 @immutable final class DiscountsResourceDiscountAmount {const DiscountsResourceDiscountAmount({required this.amount, required this.discount, });
 
 factory DiscountsResourceDiscountAmount.fromJson(Map<String, dynamic> json) { return DiscountsResourceDiscountAmount(
   amount: (json['amount'] as num).toInt(),
-  discount: OneOf3.parse(json['discount'], fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedDiscount.fromJson(v as Map<String, dynamic>),),
+  discount: DiscountsResourceDiscountAmountDiscount.fromJson(json['discount']),
 ); }
 
 /// The amount, in cents (or local equivalent), of the discount.

@@ -85,7 +85,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsCreateRequestPermission($value)'; } 
  }
-@immutable final class TeamsCreateRequest {const TeamsCreateRequest({required this.name, this.description, this.maintainers, this.repoNames, this.privacy, this.notificationSetting, this.permission = TeamsCreateRequestPermission.pull, this.parentTeamId, });
+@immutable final class TeamsCreateRequest {const TeamsCreateRequest({required this.name, this.description, this.maintainers, this.repoNames, this.privacy, this.notificationSetting, this.permission, this.parentTeamId, });
 
 factory TeamsCreateRequest.fromJson(Map<String, dynamic> json) { return TeamsCreateRequest(
   name: json['name'] as String,
@@ -94,7 +94,7 @@ factory TeamsCreateRequest.fromJson(Map<String, dynamic> json) { return TeamsCre
   repoNames: (json['repo_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
   privacy: json['privacy'] != null ? TeamsCreateRequestPrivacy.fromJson(json['privacy'] as String) : null,
   notificationSetting: json['notification_setting'] != null ? TeamsCreateRequestNotificationSetting.fromJson(json['notification_setting'] as String) : null,
-  permission: json.containsKey('permission') ? TeamsCreateRequestPermission.fromJson(json['permission'] as String) : TeamsCreateRequestPermission.pull,
+  permission: json['permission'] != null ? TeamsCreateRequestPermission.fromJson(json['permission'] as String) : null,
   parentTeamId: json['parent_team_id'] != null ? (json['parent_team_id'] as num).toInt() : null,
 ); }
 
@@ -127,11 +127,13 @@ final TeamsCreateRequestPrivacy? privacy;
 final TeamsCreateRequestNotificationSetting? notificationSetting;
 
 /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
-final TeamsCreateRequestPermission permission;
+final TeamsCreateRequestPermission? permission;
 
 /// The ID of a team to set as the parent team.
 final int? parentTeamId;
 
+/// The value with the schema default applied when absent.
+TeamsCreateRequestPermission get permissionOrDefault { return permission ?? TeamsCreateRequestPermission.fromJson('pull'); } 
 Map<String, dynamic> toJson() { return {
   'name': name,
   'description': ?description,
@@ -139,11 +141,11 @@ Map<String, dynamic> toJson() { return {
   'repo_names': ?repoNames,
   if (privacy != null) 'privacy': privacy?.toJson(),
   if (notificationSetting != null) 'notification_setting': notificationSetting?.toJson(),
-  'permission': permission.toJson(),
+  if (permission != null) 'permission': permission?.toJson(),
   'parent_team_id': ?parentTeamId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
-TeamsCreateRequest copyWith({String? name, String? Function()? description, List<String>? Function()? maintainers, List<String>? Function()? repoNames, TeamsCreateRequestPrivacy? Function()? privacy, TeamsCreateRequestNotificationSetting? Function()? notificationSetting, TeamsCreateRequestPermission Function()? permission, int? Function()? parentTeamId, }) { return TeamsCreateRequest(
+TeamsCreateRequest copyWith({String? name, String? Function()? description, List<String>? Function()? maintainers, List<String>? Function()? repoNames, TeamsCreateRequestPrivacy? Function()? privacy, TeamsCreateRequestNotificationSetting? Function()? notificationSetting, TeamsCreateRequestPermission? Function()? permission, int? Function()? parentTeamId, }) { return TeamsCreateRequest(
   name: name ?? this.name,
   description: description != null ? description() : this.description,
   maintainers: maintainers != null ? maintainers() : this.maintainers,

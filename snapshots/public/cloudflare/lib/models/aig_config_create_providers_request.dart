@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateProvidersRequest {const AigConfigCreateProvidersRequest({required this.alias, required this.defaultConfig, required this.providerSlug, required this.secret, required this.secretId, this.rateLimit, this.rateLimitPeriod = 60.0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigCreateProvidersRequest {const AigConfigCreateProvidersRequest({required this.alias, required this.defaultConfig, required this.providerSlug, required this.secret, required this.secretId, this.rateLimit, this.rateLimitPeriod, });
 
 factory AigConfigCreateProvidersRequest.fromJson(Map<String, dynamic> json) { return AigConfigCreateProvidersRequest(
   alias: json['alias'] as String,
   defaultConfig: json['default_config'] as bool,
   providerSlug: json['provider_slug'] as String,
   rateLimit: json['rate_limit'] != null ? (json['rate_limit'] as num).toDouble() : null,
-  rateLimitPeriod: json.containsKey('rate_limit_period') ? (json['rate_limit_period'] as num).toDouble() : 60.0,
+  rateLimitPeriod: json['rate_limit_period'] != null ? (json['rate_limit_period'] as num).toDouble() : null,
   secret: json['secret'] as String,
   secretId: json['secret_id'] as String,
 ); }
@@ -20,18 +20,20 @@ final String providerSlug;
 
 final double? rateLimit;
 
-final double rateLimitPeriod;
+final double? rateLimitPeriod;
 
 final String secret;
 
 final String secretId;
 
+/// The value with the schema default applied when absent.
+double get rateLimitPeriodOrDefault { return rateLimitPeriod ?? 60.0; } 
 Map<String, dynamic> toJson() { return {
   'alias': alias,
   'default_config': defaultConfig,
   'provider_slug': providerSlug,
   'rate_limit': ?rateLimit,
-  'rate_limit_period': rateLimitPeriod,
+  'rate_limit_period': ?rateLimitPeriod,
   'secret': secret,
   'secret_id': secretId,
 }; } 
@@ -40,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('provider_slug') && json['provider_slug'] is String &&
       json.containsKey('secret') && json['secret'] is String &&
       json.containsKey('secret_id') && json['secret_id'] is String; } 
-AigConfigCreateProvidersRequest copyWith({String? alias, bool? defaultConfig, String? providerSlug, double? Function()? rateLimit, double Function()? rateLimitPeriod, String? secret, String? secretId, }) { return AigConfigCreateProvidersRequest(
+AigConfigCreateProvidersRequest copyWith({String? alias, bool? defaultConfig, String? providerSlug, double? Function()? rateLimit, double? Function()? rateLimitPeriod, String? secret, String? secretId, }) { return AigConfigCreateProvidersRequest(
   alias: alias ?? this.alias,
   defaultConfig: defaultConfig ?? this.defaultConfig,
   providerSlug: providerSlug ?? this.providerSlug,

@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ZeroTrustGatewayBlockPageSettingsMode($value)'; } 
  }
 /// Specify block page layout settings.
-@immutable final class ZeroTrustGatewayBlockPageSettings {const ZeroTrustGatewayBlockPageSettings({this.backgroundColor, this.enabled = const Omittable.absent(), this.footerText, this.headerText, this.includeContext, this.logoPath, this.mailtoAddress, this.mailtoSubject, this.mode = ZeroTrustGatewayBlockPageSettingsMode.$empty, this.name, this.readOnly = const Omittable.absent(), this.sourceAccount = const Omittable.absent(), this.suppressFooter, this.targetUri, this.version = const Omittable.absent(), });
+@immutable final class ZeroTrustGatewayBlockPageSettings {const ZeroTrustGatewayBlockPageSettings({this.backgroundColor, this.enabled = const Omittable.absent(), this.footerText, this.headerText, this.includeContext, this.logoPath, this.mailtoAddress, this.mailtoSubject, this.mode, this.name, this.readOnly = const Omittable.absent(), this.sourceAccount = const Omittable.absent(), this.suppressFooter, this.targetUri, this.version = const Omittable.absent(), });
 
 factory ZeroTrustGatewayBlockPageSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayBlockPageSettings(
   backgroundColor: json['background_color'] as String?,
@@ -40,7 +40,7 @@ factory ZeroTrustGatewayBlockPageSettings.fromJson(Map<String, dynamic> json) { 
   logoPath: json['logo_path'] as String?,
   mailtoAddress: json['mailto_address'] as String?,
   mailtoSubject: json['mailto_subject'] as String?,
-  mode: json.containsKey('mode') ? ZeroTrustGatewayBlockPageSettingsMode.fromJson(json['mode'] as String) : ZeroTrustGatewayBlockPageSettingsMode.$empty,
+  mode: json['mode'] != null ? ZeroTrustGatewayBlockPageSettingsMode.fromJson(json['mode'] as String) : null,
   name: json['name'] as String?,
   readOnly: json.containsKey('read_only') ? Omittable(json['read_only'] as bool?) : const Omittable.absent(),
   sourceAccount: json.containsKey('source_account') ? Omittable(json['source_account'] as String?) : const Omittable.absent(),
@@ -74,7 +74,7 @@ final String? mailtoAddress;
 final String? mailtoSubject;
 
 /// Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.
-final ZeroTrustGatewayBlockPageSettingsMode mode;
+final ZeroTrustGatewayBlockPageSettingsMode? mode;
 
 /// Specify the block page title when the mode is customized_block_page.
 final String? name;
@@ -94,6 +94,8 @@ final Uri? targetUri;
 /// Indicate the version number of the setting.
 final Omittable<int?> version;
 
+/// The value with the schema default applied when absent.
+ZeroTrustGatewayBlockPageSettingsMode get modeOrDefault { return mode ?? ZeroTrustGatewayBlockPageSettingsMode.fromJson(''); } 
 Map<String, dynamic> toJson() { return {
   'background_color': ?backgroundColor,
   if (enabled.isPresent) 'enabled': enabled.value,
@@ -103,7 +105,7 @@ Map<String, dynamic> toJson() { return {
   'logo_path': ?logoPath,
   'mailto_address': ?mailtoAddress,
   'mailto_subject': ?mailtoSubject,
-  'mode': mode.toJson(),
+  if (mode != null) 'mode': mode?.toJson(),
   'name': ?name,
   if (readOnly.isPresent) 'read_only': readOnly.value,
   if (sourceAccount.isPresent) 'source_account': sourceAccount.value,
@@ -112,7 +114,7 @@ Map<String, dynamic> toJson() { return {
   if (version.isPresent) 'version': version.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'background_color', 'enabled', 'footer_text', 'header_text', 'include_context', 'logo_path', 'mailto_address', 'mailto_subject', 'mode', 'name', 'read_only', 'source_account', 'suppress_footer', 'target_uri', 'version'}.contains(key)); } 
-ZeroTrustGatewayBlockPageSettings copyWith({String? Function()? backgroundColor, Omittable<bool?>? enabled, String? Function()? footerText, String? Function()? headerText, bool? Function()? includeContext, String? Function()? logoPath, String? Function()? mailtoAddress, String? Function()? mailtoSubject, ZeroTrustGatewayBlockPageSettingsMode Function()? mode, String? Function()? name, Omittable<bool?>? readOnly, Omittable<String?>? sourceAccount, bool? Function()? suppressFooter, Uri? Function()? targetUri, Omittable<int?>? version, }) { return ZeroTrustGatewayBlockPageSettings(
+ZeroTrustGatewayBlockPageSettings copyWith({String? Function()? backgroundColor, Omittable<bool?>? enabled, String? Function()? footerText, String? Function()? headerText, bool? Function()? includeContext, String? Function()? logoPath, String? Function()? mailtoAddress, String? Function()? mailtoSubject, ZeroTrustGatewayBlockPageSettingsMode? Function()? mode, String? Function()? name, Omittable<bool?>? readOnly, Omittable<String?>? sourceAccount, bool? Function()? suppressFooter, Uri? Function()? targetUri, Omittable<int?>? version, }) { return ZeroTrustGatewayBlockPageSettings(
   backgroundColor: backgroundColor != null ? backgroundColor() : this.backgroundColor,
   enabled: enabled ?? this.enabled,
   footerText: footerText != null ? footerText() : this.footerText,

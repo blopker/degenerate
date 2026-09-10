@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'function_call_item_status.dart';import 'function_call_output_item_param_output.dart';import 'function_call_output_item_param_output_variant2.dart';/// The output of a function tool call.
-@immutable final class FunctionCallOutputItemParam {const FunctionCallOutputItemParam({required this.callId, required this.output, this.id = const Omittable.absent(), this.type = 'function_call_output', this.status = const Omittable.absent(), });
+@immutable final class FunctionCallOutputItemParam {const FunctionCallOutputItemParam({required this.callId, required this.type, required this.output, this.id = const Omittable.absent(), this.status = const Omittable.absent(), });
 
 factory FunctionCallOutputItemParam.fromJson(Map<String, dynamic> json) { return FunctionCallOutputItemParam(
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),

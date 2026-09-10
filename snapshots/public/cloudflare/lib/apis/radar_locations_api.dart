@@ -48,14 +48,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetEntitiesLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return RadarGetEntitiesLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return RadarGetEntitiesLocationsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return RadarGetEntitiesLocationsResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -81,14 +88,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetEntitiesLocationByAlpha2ResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return RadarGetEntitiesLocationByAlpha2ResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return RadarGetEntitiesLocationByAlpha2Response404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return RadarGetEntitiesLocationByAlpha2Response404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

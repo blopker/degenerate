@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a volume that is populated with the contents of a git repository. Git repo volumes do not support ownership management. Git repo volumes support SELinux relabeling.
 /// 
 /// DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mount an EmptyDir into an InitContainer that clones the repo using git, then mount the EmptyDir into the Pod's container.
-@immutable final class GitRepoVolumeSource {const GitRepoVolumeSource({this.directory, this.repository = '', this.revision, });
+@immutable final class GitRepoVolumeSource {const GitRepoVolumeSource({required this.repository, this.directory, this.revision, });
 
 factory GitRepoVolumeSource.fromJson(Map<String, dynamic> json) { return GitRepoVolumeSource(
   directory: json['directory'] as String?,

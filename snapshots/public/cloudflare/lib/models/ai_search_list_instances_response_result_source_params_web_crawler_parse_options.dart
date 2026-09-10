@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_list_instances_response_result_source_params_web_crawler_parse_options_content_selector.dart';@immutable final class AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions {const AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions({this.contentSelector, this.includeHeaders, this.includeImages = false, this.specificSitemaps, this.useBrowserRendering = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_list_instances_response_result_source_params_web_crawler_parse_options_content_selector.dart';@immutable final class AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions {const AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions({this.contentSelector, this.includeHeaders, this.includeImages, this.specificSitemaps, this.useBrowserRendering, });
 
 factory AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions.fromJson(Map<String, dynamic> json) { return AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions(
   contentSelector: (json['content_selector'] as List<dynamic>?)?.map((e) => AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector.fromJson(e as Map<String, dynamic>)).toList(),
   includeHeaders: (json['include_headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  includeImages: json.containsKey('include_images') ? json['include_images'] as bool : false,
+  includeImages: json['include_images'] as bool?,
   specificSitemaps: (json['specific_sitemaps'] as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
-  useBrowserRendering: json.containsKey('use_browser_rendering') ? json['use_browser_rendering'] as bool : false,
+  useBrowserRendering: json['use_browser_rendering'] as bool?,
 ); }
 
 /// List of path-to-selector mappings for extracting specific content from crawled pages. Each entry pairs a URL glob pattern with a CSS selector. The first matching path wins. Only the matched HTML fragment is stored and indexed.
@@ -15,22 +15,26 @@ final List<AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions
 
 final Map<String,String>? includeHeaders;
 
-final bool includeImages;
+final bool? includeImages;
 
 /// List of specific sitemap URLs to use for crawling. Only valid when parse_type is 'sitemap'.
 final List<Uri>? specificSitemaps;
 
-final bool useBrowserRendering;
+final bool? useBrowserRendering;
 
+/// The value with the schema default applied when absent.
+bool get includeImagesOrDefault { return includeImages ?? false; } 
+/// The value with the schema default applied when absent.
+bool get useBrowserRenderingOrDefault { return useBrowserRendering ?? false; } 
 Map<String, dynamic> toJson() { return {
   if (contentSelector != null) 'content_selector': contentSelector?.map((e) => e.toJson()).toList(),
   'include_headers': ?includeHeaders,
-  'include_images': includeImages,
+  'include_images': ?includeImages,
   if (specificSitemaps != null) 'specific_sitemaps': specificSitemaps?.map((e) => e.toString()).toList(),
-  'use_browser_rendering': useBrowserRendering,
+  'use_browser_rendering': ?useBrowserRendering,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'content_selector', 'include_headers', 'include_images', 'specific_sitemaps', 'use_browser_rendering'}.contains(key)); } 
-AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions copyWith({List<AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector>? Function()? contentSelector, Map<String, String>? Function()? includeHeaders, bool Function()? includeImages, List<Uri>? Function()? specificSitemaps, bool Function()? useBrowserRendering, }) { return AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions(
+AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions copyWith({List<AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptionsContentSelector>? Function()? contentSelector, Map<String, String>? Function()? includeHeaders, bool? Function()? includeImages, List<Uri>? Function()? specificSitemaps, bool? Function()? useBrowserRendering, }) { return AiSearchListInstancesResponseResultSourceParamsWebCrawlerParseOptions(
   contentSelector: contentSelector != null ? contentSelector() : this.contentSelector,
   includeHeaders: includeHeaders != null ? includeHeaders() : this.includeHeaders,
   includeImages: includeImages != null ? includeImages() : this.includeImages,

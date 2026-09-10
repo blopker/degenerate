@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/org_private_registry_configuration.dart';import '../models/org_private_registry_configuration_with_selected_repositories.dart';import '../models/private_registries_create_org_private_registry_request.dart';import '../models/private_registries_get_org_public_key_response.dart';import '../models/private_registries_list_org_private_registries_response.dart';import '../models/private_registries_update_org_private_registry_request.dart';/// PrivateRegistriesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/org_private_registry_configuration.dart';import '../models/org_private_registry_configuration_with_selected_repositories.dart';import '../models/private_registries_create_org_private_registry_request.dart';import '../models/private_registries_get_org_public_key_response.dart';import '../models/private_registries_list_org_private_registries_response.dart';import '../models/private_registries_update_org_private_registry_request.dart';import '../models/scim_error.dart';import '../models/validation_error.dart';/// PrivateRegistriesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -17,7 +17,7 @@ final class PrivateRegistriesApi with ApiExecutor {const PrivateRegistriesApi(th
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/private-registries`
-Future<ApiResult<PrivateRegistriesListOrgPrivateRegistriesResponse, BasicError>> privateRegistriesListOrgPrivateRegistries({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<PrivateRegistriesListOrgPrivateRegistriesResponse, OneOf2<BasicError, ScimError>>> privateRegistriesListOrgPrivateRegistries({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -37,13 +37,34 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -55,7 +76,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/private-registries`
-Future<ApiResult<OrgPrivateRegistryConfigurationWithSelectedRepositories, BasicError>> privateRegistriesCreateOrgPrivateRegistry({required String org, required PrivateRegistriesCreateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgPrivateRegistryConfigurationWithSelectedRepositories, OneOf2<BasicError, ValidationError>>> privateRegistriesCreateOrgPrivateRegistry({required String org, required PrivateRegistriesCreateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -66,13 +87,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -93,13 +125,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return PrivateRegistriesGetOrgPublicKeyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PrivateRegistriesGetOrgPublicKeyResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -120,13 +160,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgPrivateRegistryConfiguration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgPrivateRegistryConfiguration.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -138,7 +186,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<void, BasicError>> privateRegistriesUpdateOrgPrivateRegistry({required String org, required String secretName, required PrivateRegistriesUpdateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> privateRegistriesUpdateOrgPrivateRegistry({required String org, required String secretName, required PrivateRegistriesUpdateOrgPrivateRegistryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -149,11 +197,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -165,7 +223,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/private-registries/{secret_name}`
-Future<ApiResult<void, BasicError>> privateRegistriesDeleteOrgPrivateRegistry({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ScimError>>> privateRegistriesDeleteOrgPrivateRegistry({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -174,11 +232,31 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ScimError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 

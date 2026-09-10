@@ -24,6 +24,6 @@ RadarGetAttacksLayer3TimeseriesGroupByVerticalResponseResultSerie0 copyWith({Lis
       other is RadarGetAttacksLayer3TimeseriesGroupByVerticalResponseResultSerie0 &&
           listEquals(timestamps, other.timestamps) &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(Object.hashAll(timestamps), Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(Object.hashAll(timestamps), mapHash(additionalProperties)); } 
 @override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByVerticalResponseResultSerie0(timestamps: $timestamps, additionalProperties: $additionalProperties)'; } 
  }

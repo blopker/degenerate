@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_dataset_request.dart';import '../models/aig_config_create_dataset_response400.dart';import '../models/aig_config_create_dataset_response_result.dart';import '../models/aig_config_delete_dataset_response404.dart';import '../models/aig_config_delete_dataset_response_result.dart';import '../models/aig_config_fetch_dataset_response404.dart';import '../models/aig_config_fetch_dataset_response_result.dart';import '../models/aig_config_list_dataset_response400.dart';import '../models/aig_config_list_dataset_response_result.dart';import '../models/aig_config_update_dataset_request.dart';import '../models/aig_config_update_dataset_response400.dart';import '../models/aig_config_update_dataset_response_result.dart';/// AiGatewayDatasetsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_dataset_request.dart';import '../models/aig_config_create_dataset_response400.dart';import '../models/aig_config_create_dataset_response_result.dart';import '../models/aig_config_delete_dataset_response404.dart';import '../models/aig_config_delete_dataset_response_result.dart';import '../models/aig_config_fetch_dataset_response404.dart';import '../models/aig_config_fetch_dataset_response_result.dart';import '../models/aig_config_list_dataset_response400.dart';import '../models/aig_config_list_dataset_response_result.dart';import '../models/aig_config_update_dataset_request.dart';import '../models/aig_config_update_dataset_response400.dart';import '../models/aig_config_update_dataset_response404.dart';import '../models/aig_config_update_dataset_response_result.dart';/// AiGatewayDatasetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -42,14 +42,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => AigConfigListDatasetResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => AigConfigListDatasetResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return AigConfigListDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return AigConfigListDatasetResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -69,14 +76,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AigConfigCreateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AigConfigCreateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AigConfigCreateDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return AigConfigCreateDatasetResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -94,14 +108,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AigConfigFetchDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AigConfigFetchDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AigConfigFetchDatasetResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return AigConfigFetchDatasetResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -110,7 +131,7 @@ return execute(
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/datasets/{id}`
-Future<ApiResult<AigConfigUpdateDatasetResponseResult, AigConfigUpdateDatasetResponse400>> aigConfigUpdateDataset({required String accountId, required String gatewayId, required String id, AigConfigUpdateDatasetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigUpdateDatasetResponseResult, OneOf2<AigConfigUpdateDatasetResponse400, AigConfigUpdateDatasetResponse404>>> aigConfigUpdateDataset({required String accountId, required String gatewayId, required String id, AigConfigUpdateDatasetRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -121,14 +142,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AigConfigUpdateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AigConfigUpdateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AigConfigUpdateDatasetResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<AigConfigUpdateDatasetResponse400, AigConfigUpdateDatasetResponse404>.a(AigConfigUpdateDatasetResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<AigConfigUpdateDatasetResponse400, AigConfigUpdateDatasetResponse404>.b(AigConfigUpdateDatasetResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -146,14 +177,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AigConfigDeleteDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AigConfigDeleteDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AigConfigDeleteDatasetResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return AigConfigDeleteDatasetResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

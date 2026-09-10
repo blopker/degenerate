@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'payment_intent.dart';import 'radar_early_fraud_warning_charge.dart';import 'radar_early_fraud_warning_payment_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_early_fraud_warning_charge.dart';import 'radar_early_fraud_warning_payment_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject._(this.value);
 
 factory RadarEarlyFraudWarningObject.fromJson(String json) { return switch (json) {
@@ -30,13 +30,13 @@ bool get isUnknown { return !values.contains(this); }
 
 factory RadarEarlyFraudWarning.fromJson(Map<String, dynamic> json) { return RadarEarlyFraudWarning(
   actionable: json['actionable'] as bool,
-  charge: OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),),
+  charge: RadarEarlyFraudWarningCharge.fromJson(json['charge']),
   created: (json['created'] as num).toInt(),
   fraudType: json['fraud_type'] as String,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: RadarEarlyFraudWarningObject.fromJson(json['object'] as String),
-  paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
+  paymentIntent: json['payment_intent'] != null ? RadarEarlyFraudWarningPaymentIntent.fromJson(json['payment_intent']) : null,
 ); }
 
 /// An EFW is actionable if it has not received a dispute and has not been fully refunded. You may wish to proactively refund a charge that receives an EFW, in order to avoid receiving a dispute later.

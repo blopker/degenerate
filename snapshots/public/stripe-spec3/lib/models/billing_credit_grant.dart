@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grant_customer.dart';import 'billing_credit_grant_test_clock.dart';import 'billing_credit_grants_resource_amount.dart';import 'billing_credit_grants_resource_applicability_config.dart';import 'customer.dart';import 'deleted_customer.dart';import 'test_helpers_test_clock.dart';/// The category of this credit grant. This is for tracking purposes and isn't displayed to the customer.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grant_customer.dart';import 'billing_credit_grant_test_clock.dart';import 'billing_credit_grants_resource_amount.dart';import 'billing_credit_grants_resource_applicability_config.dart';/// The category of this credit grant. This is for tracking purposes and isn't displayed to the customer.
 @immutable final class BillingCreditGrantCategory {const BillingCreditGrantCategory._(this.value);
 
 factory BillingCreditGrantCategory.fromJson(String json) { return switch (json) {
@@ -57,7 +57,7 @@ factory BillingCreditGrant.fromJson(Map<String, dynamic> json) { return BillingC
   applicabilityConfig: BillingCreditGrantsResourceApplicabilityConfig.fromJson(json['applicability_config'] as Map<String, dynamic>),
   category: BillingCreditGrantCategory.fromJson(json['category'] as String),
   created: (json['created'] as num).toInt(),
-  customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
+  customer: BillingCreditGrantCustomer.fromJson(json['customer']),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   effectiveAt: json.containsKey('effective_at') ? Omittable(json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null) : const Omittable.absent(),
   expiresAt: json.containsKey('expires_at') ? Omittable(json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null) : const Omittable.absent(),
@@ -67,7 +67,7 @@ factory BillingCreditGrant.fromJson(Map<String, dynamic> json) { return BillingC
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   object: BillingCreditGrantObject.fromJson(json['object'] as String),
   priority: json.containsKey('priority') ? Omittable(json['priority'] != null ? (json['priority'] as num).toInt() : null) : const Omittable.absent(),
-  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? BillingCreditGrantTestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
   updated: (json['updated'] as num).toInt(),
   voidedAt: json.containsKey('voided_at') ? Omittable(json['voided_at'] != null ? (json['voided_at'] as num).toInt() : null) : const Omittable.absent(),
 ); }

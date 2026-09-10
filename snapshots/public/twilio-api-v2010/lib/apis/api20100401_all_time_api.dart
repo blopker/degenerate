@@ -46,10 +46,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ListUsageRecordAllTimeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListUsageRecordAllTimeResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

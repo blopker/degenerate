@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_tunnel_create_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_create_a_warp_connector_tunnel_request.dart';import '../models/cloudflare_tunnel_get_a_cloudflare_tunnel_management_token_request.dart';import '../models/cloudflare_tunnel_update_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_update_a_warp_connector_tunnel_request.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_cfd_tunnel.dart';import '../models/tunnel_client_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_status.dart';import '../models/tunnel_tunnel_client.dart';import '../models/tunnel_tunnel_id.dart';import '../models/tunnel_tunnel_name.dart';import '../models/tunnel_tunnel_response_collection_result.dart';import '../models/tunnel_tunnel_response_token.dart';import '../models/tunnel_tunnel_type.dart';import '../models/tunnel_warp_connector_tunnel.dart';/// CloudflareTunnelApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_tunnel_clean_up_cloudflare_tunnel_connections_response4_xx.dart';import '../models/cloudflare_tunnel_create_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_create_a_cloudflare_tunnel_response4_xx.dart';import '../models/cloudflare_tunnel_create_a_warp_connector_tunnel_request.dart';import '../models/cloudflare_tunnel_create_a_warp_connector_tunnel_response4_xx.dart';import '../models/cloudflare_tunnel_delete_a_cloudflare_tunnel_response4_xx.dart';import '../models/cloudflare_tunnel_delete_a_warp_connector_tunnel_response4_xx.dart';import '../models/cloudflare_tunnel_get_a_cloudflare_tunnel_management_token_request.dart';import '../models/cloudflare_tunnel_get_a_cloudflare_tunnel_management_token_response4_xx.dart';import '../models/cloudflare_tunnel_get_a_cloudflare_tunnel_response4_xx.dart';import '../models/cloudflare_tunnel_get_a_cloudflare_tunnel_token_response4_xx.dart';import '../models/cloudflare_tunnel_get_a_warp_connector_tunnel_response4_xx.dart';import '../models/cloudflare_tunnel_get_a_warp_connector_tunnel_token_response4_xx.dart';import '../models/cloudflare_tunnel_get_cloudflare_tunnel_connector_response4_xx.dart';import '../models/cloudflare_tunnel_list_all_tunnels_response4_xx.dart';import '../models/cloudflare_tunnel_list_cloudflare_tunnel_connections_response4_xx.dart';import '../models/cloudflare_tunnel_list_cloudflare_tunnels_response4_xx.dart';import '../models/cloudflare_tunnel_list_warp_connector_tunnels_response4_xx.dart';import '../models/cloudflare_tunnel_update_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_update_a_cloudflare_tunnel_response4_xx.dart';import '../models/cloudflare_tunnel_update_a_warp_connector_tunnel_request.dart';import '../models/cloudflare_tunnel_update_a_warp_connector_tunnel_response4_xx.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_cfd_tunnel.dart';import '../models/tunnel_client_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_status.dart';import '../models/tunnel_tunnel_client.dart';import '../models/tunnel_tunnel_id.dart';import '../models/tunnel_tunnel_name.dart';import '../models/tunnel_tunnel_response_collection_result.dart';import '../models/tunnel_tunnel_response_token.dart';import '../models/tunnel_tunnel_type.dart';import '../models/tunnel_warp_connector_tunnel.dart';/// CloudflareTunnelApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CloudflareTunnelApi with ApiExecutor {const CloudflareTunnelApi(this
 /// Lists and filters Cloudflare Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel`
-Future<ApiResult<List<TunnelCfdTunnel>, Never>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TunnelCfdTunnel>, CloudflareTunnelListCloudflareTunnelsResponse4Xx>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name.toString();
@@ -60,11 +60,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => TunnelCfdTunnel.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => TunnelCfdTunnel.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelListCloudflareTunnelsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -73,7 +83,7 @@ return execute(
 /// Creates a new Cloudflare Tunnel in an account.
 ///
 /// `POST /accounts/{account_id}/cfd_tunnel`
-Future<ApiResult<TunnelCfdTunnel, Never>> cloudflareTunnelCreateACloudflareTunnel({required TunnelAccountId accountId, required CloudflareTunnelCreateACloudflareTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelCfdTunnel, CloudflareTunnelCreateACloudflareTunnelResponse4Xx>> cloudflareTunnelCreateACloudflareTunnel({required TunnelAccountId accountId, required CloudflareTunnelCreateACloudflareTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -84,11 +94,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelCfdTunnel.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelCfdTunnel.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelCreateACloudflareTunnelResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -97,7 +117,7 @@ return execute(
 /// Fetches a single Cloudflare Tunnel.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}`
-Future<ApiResult<TunnelCfdTunnel, Never>> cloudflareTunnelGetACloudflareTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelCfdTunnel, CloudflareTunnelGetACloudflareTunnelResponse4Xx>> cloudflareTunnelGetACloudflareTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -106,11 +126,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelCfdTunnel.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelCfdTunnel.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelGetACloudflareTunnelResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -119,7 +149,7 @@ return execute(
 /// Updates an existing Cloudflare Tunnel.
 ///
 /// `PATCH /accounts/{account_id}/cfd_tunnel/{tunnel_id}`
-Future<ApiResult<TunnelCfdTunnel, Never>> cloudflareTunnelUpdateACloudflareTunnel({required TunnelTunnelId tunnelId, required TunnelAccountId accountId, required CloudflareTunnelUpdateACloudflareTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelCfdTunnel, CloudflareTunnelUpdateACloudflareTunnelResponse4Xx>> cloudflareTunnelUpdateACloudflareTunnel({required TunnelTunnelId tunnelId, required TunnelAccountId accountId, required CloudflareTunnelUpdateACloudflareTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -130,11 +160,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelCfdTunnel.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelCfdTunnel.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelUpdateACloudflareTunnelResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -143,7 +183,7 @@ return execute(
 /// Deletes a Cloudflare Tunnel from an account.
 ///
 /// `DELETE /accounts/{account_id}/cfd_tunnel/{tunnel_id}`
-Future<ApiResult<TunnelCfdTunnel, Never>> cloudflareTunnelDeleteACloudflareTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required Map<String,dynamic> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelCfdTunnel, CloudflareTunnelDeleteACloudflareTunnelResponse4Xx>> cloudflareTunnelDeleteACloudflareTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required Map<String,dynamic> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -154,11 +194,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelCfdTunnel.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelCfdTunnel.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelDeleteACloudflareTunnelResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -167,7 +217,7 @@ return execute(
 /// Fetches connection details for a Cloudflare Tunnel.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections`
-Future<ApiResult<List<TunnelTunnelClient>, Never>> cloudflareTunnelListCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TunnelTunnelClient>, CloudflareTunnelListCloudflareTunnelConnectionsResponse4Xx>> cloudflareTunnelListCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -176,11 +226,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => TunnelTunnelClient.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => TunnelTunnelClient.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelListCloudflareTunnelConnectionsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -189,7 +249,7 @@ return execute(
 /// Removes a connection (aka Cloudflare Tunnel Connector) from a Cloudflare Tunnel independently of its current state. If no connector id (client_id) is provided all connectors will be removed. We recommend running this command after rotating tokens.
 ///
 /// `DELETE /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections`
-Future<ApiResult<Map<String, dynamic>?, Never>> cloudflareTunnelCleanUpCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required Map<String,dynamic> body, TunnelClientId? clientId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>?, CloudflareTunnelCleanUpCloudflareTunnelConnectionsResponse4Xx>> cloudflareTunnelCleanUpCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required Map<String,dynamic> body, TunnelClientId? clientId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (clientId != null) {
   queryParameters['client_id'] = clientId.toString();
@@ -208,11 +268,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] as Map<String, dynamic>?;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelCleanUpCloudflareTunnelConnectionsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -221,7 +291,7 @@ return execute(
 /// Fetches connector and connection details for a Cloudflare Tunnel.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connectors/{connector_id}`
-Future<ApiResult<TunnelTunnelClient, Never>> cloudflareTunnelGetCloudflareTunnelConnector({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required TunnelClientId connectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelTunnelClient, CloudflareTunnelGetCloudflareTunnelConnectorResponse4Xx>> cloudflareTunnelGetCloudflareTunnelConnector({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required TunnelClientId connectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -230,11 +300,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelTunnelClient.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelTunnelClient.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelGetCloudflareTunnelConnectorResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -243,7 +323,7 @@ return execute(
 /// Gets a management token used to access the management resources (i.e. Streaming Logs) of a tunnel.
 ///
 /// `POST /accounts/{account_id}/cfd_tunnel/{tunnel_id}/management`
-Future<ApiResult<TunnelTunnelToken, Never>> cloudflareTunnelGetACloudflareTunnelManagementToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required CloudflareTunnelGetACloudflareTunnelManagementTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelTunnelToken, CloudflareTunnelGetACloudflareTunnelManagementTokenResponse4Xx>> cloudflareTunnelGetACloudflareTunnelManagementToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required CloudflareTunnelGetACloudflareTunnelManagementTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -254,11 +334,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelTunnelToken.fromJson(json['result'] as String);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelTunnelToken.fromJson(json['result'] as String);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelGetACloudflareTunnelManagementTokenResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -267,7 +357,7 @@ return execute(
 /// Gets the token used to associate cloudflared with a specific tunnel.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/token`
-Future<ApiResult<TunnelTunnelToken, Never>> cloudflareTunnelGetACloudflareTunnelToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelTunnelToken, CloudflareTunnelGetACloudflareTunnelTokenResponse4Xx>> cloudflareTunnelGetACloudflareTunnelToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -276,11 +366,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelTunnelToken.fromJson(json['result'] as String);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelTunnelToken.fromJson(json['result'] as String);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelGetACloudflareTunnelTokenResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -289,7 +389,7 @@ return execute(
 /// Lists and filters all types of Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/tunnels`
-Future<ApiResult<List<TunnelTunnelResponseCollectionResult>, Never>> cloudflareTunnelListAllTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, List<TunnelTunnelType>? tunTypes, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TunnelTunnelResponseCollectionResult>, CloudflareTunnelListAllTunnelsResponse4Xx>> cloudflareTunnelListAllTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, List<TunnelTunnelType>? tunTypes, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -341,11 +441,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => TunnelCfdTunnel.fromJson(v as Map<String, dynamic>), fromB: (v) => TunnelWarpConnectorTunnel.fromJson(v as Map<String, dynamic>),)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map(TunnelTunnelResponseCollectionResult.fromJson).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelListAllTunnelsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -354,7 +464,7 @@ return execute(
 /// Lists and filters Warp Connector Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/warp_connector`
-Future<ApiResult<List<TunnelWarpConnectorTunnel>, Never>> cloudflareTunnelListWarpConnectorTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<TunnelWarpConnectorTunnel>, CloudflareTunnelListWarpConnectorTunnelsResponse4Xx>> cloudflareTunnelListWarpConnectorTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -401,11 +511,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => TunnelWarpConnectorTunnel.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => TunnelWarpConnectorTunnel.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelListWarpConnectorTunnelsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -414,7 +534,7 @@ return execute(
 /// Creates a new Warp Connector Tunnel in an account.
 ///
 /// `POST /accounts/{account_id}/warp_connector`
-Future<ApiResult<TunnelWarpConnectorTunnel, Never>> cloudflareTunnelCreateAWarpConnectorTunnel({required TunnelAccountId accountId, required CloudflareTunnelCreateAWarpConnectorTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelWarpConnectorTunnel, CloudflareTunnelCreateAWarpConnectorTunnelResponse4Xx>> cloudflareTunnelCreateAWarpConnectorTunnel({required TunnelAccountId accountId, required CloudflareTunnelCreateAWarpConnectorTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -425,11 +545,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelWarpConnectorTunnel.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelWarpConnectorTunnel.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelCreateAWarpConnectorTunnelResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -438,7 +568,7 @@ return execute(
 /// Fetches a single Warp Connector Tunnel.
 ///
 /// `GET /accounts/{account_id}/warp_connector/{tunnel_id}`
-Future<ApiResult<TunnelWarpConnectorTunnel, Never>> cloudflareTunnelGetAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelWarpConnectorTunnel, CloudflareTunnelGetAWarpConnectorTunnelResponse4Xx>> cloudflareTunnelGetAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -447,11 +577,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelWarpConnectorTunnel.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelWarpConnectorTunnel.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelGetAWarpConnectorTunnelResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -460,7 +600,7 @@ return execute(
 /// Updates an existing Warp Connector Tunnel.
 ///
 /// `PATCH /accounts/{account_id}/warp_connector/{tunnel_id}`
-Future<ApiResult<TunnelWarpConnectorTunnel, Never>> cloudflareTunnelUpdateAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required CloudflareTunnelUpdateAWarpConnectorTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelWarpConnectorTunnel, CloudflareTunnelUpdateAWarpConnectorTunnelResponse4Xx>> cloudflareTunnelUpdateAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required CloudflareTunnelUpdateAWarpConnectorTunnelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -471,11 +611,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelWarpConnectorTunnel.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelWarpConnectorTunnel.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelUpdateAWarpConnectorTunnelResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -484,7 +634,7 @@ return execute(
 /// Deletes a Warp Connector Tunnel from an account.
 ///
 /// `DELETE /accounts/{account_id}/warp_connector/{tunnel_id}`
-Future<ApiResult<TunnelWarpConnectorTunnel, Never>> cloudflareTunnelDeleteAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required Map<String,dynamic> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelWarpConnectorTunnel, CloudflareTunnelDeleteAWarpConnectorTunnelResponse4Xx>> cloudflareTunnelDeleteAWarpConnectorTunnel({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, required Map<String,dynamic> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -495,11 +645,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelWarpConnectorTunnel.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelWarpConnectorTunnel.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelDeleteAWarpConnectorTunnelResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -508,7 +668,7 @@ return execute(
 /// Gets the token used to associate warp device with a specific Warp Connector tunnel.
 ///
 /// `GET /accounts/{account_id}/warp_connector/{tunnel_id}/token`
-Future<ApiResult<TunnelTunnelToken, Never>> cloudflareTunnelGetAWarpConnectorTunnelToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelTunnelToken, CloudflareTunnelGetAWarpConnectorTunnelTokenResponse4Xx>> cloudflareTunnelGetAWarpConnectorTunnelToken({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -517,11 +677,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TunnelTunnelToken.fromJson(json['result'] as String);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TunnelTunnelToken.fromJson(json['result'] as String);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return CloudflareTunnelGetAWarpConnectorTunnelTokenResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

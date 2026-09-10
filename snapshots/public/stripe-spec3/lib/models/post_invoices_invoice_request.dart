@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_request_account_tax_ids.dart';import 'post_invoices_invoice_request_automatic_tax.dart';import 'post_invoices_invoice_request_custom_fields.dart';import 'post_invoices_invoice_request_custom_fields_variant1.dart';import 'post_invoices_invoice_request_default_source.dart';import 'post_invoices_invoice_request_default_tax_rates.dart';import 'post_invoices_invoice_request_discounts.dart';import 'post_invoices_invoice_request_discounts_variant1.dart';import 'post_invoices_invoice_request_effective_at.dart';import 'post_invoices_invoice_request_issuer.dart';import 'post_invoices_invoice_request_metadata.dart';import 'post_invoices_invoice_request_number.dart';import 'post_invoices_invoice_request_on_behalf_of.dart';import 'post_invoices_invoice_request_payment_settings.dart';import 'post_invoices_invoice_request_rendering.dart';import 'post_invoices_invoice_request_shipping_cost.dart';import 'post_invoices_invoice_request_shipping_details.dart';import 'post_invoices_invoice_request_transfer_data.dart';import 'recipient_shipping_with_optional_fields_address.dart';import 'shipping_cost.dart';import 'transfer_data_specs2.dart';/// Either `charge_automatically` or `send_invoice`. This field can be updated only on `draft` invoices.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_request_account_tax_ids.dart';import 'post_invoices_invoice_request_automatic_tax.dart';import 'post_invoices_invoice_request_custom_fields.dart';import 'post_invoices_invoice_request_default_source.dart';import 'post_invoices_invoice_request_default_tax_rates.dart';import 'post_invoices_invoice_request_discounts.dart';import 'post_invoices_invoice_request_effective_at.dart';import 'post_invoices_invoice_request_issuer.dart';import 'post_invoices_invoice_request_metadata.dart';import 'post_invoices_invoice_request_number.dart';import 'post_invoices_invoice_request_on_behalf_of.dart';import 'post_invoices_invoice_request_payment_settings.dart';import 'post_invoices_invoice_request_rendering.dart';import 'post_invoices_invoice_request_shipping_cost.dart';import 'post_invoices_invoice_request_shipping_details.dart';import 'post_invoices_invoice_request_transfer_data.dart';/// Either `charge_automatically` or `send_invoice`. This field can be updated only on `draft` invoices.
 @immutable final class PostInvoicesInvoiceRequestCollectionMethod {const PostInvoicesInvoiceRequestCollectionMethod._(this.value);
 
 factory PostInvoicesInvoiceRequestCollectionMethod.fromJson(String json) { return switch (json) {
@@ -28,33 +28,33 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostInvoicesInvoiceRequest {const PostInvoicesInvoiceRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.customFields, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.transferData, });
 
 factory PostInvoicesInvoiceRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequest(
-  accountTaxIds: json['account_tax_ids'] != null ? OneOf2.parse(json['account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesInvoiceRequestAccountTaxIdsVariant2.fromJson(v as String),) : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostInvoicesInvoiceRequestAccountTaxIds.fromJson(json['account_tax_ids']) : null,
   applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
   autoAdvance: json['auto_advance'] as bool?,
   automaticTax: json['automatic_tax'] != null ? PostInvoicesInvoiceRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   automaticallyFinalizesAt: json['automatically_finalizes_at'] != null ? (json['automatically_finalizes_at'] as num).toInt() : null,
   collectionMethod: json['collection_method'] != null ? PostInvoicesInvoiceRequestCollectionMethod.fromJson(json['collection_method'] as String) : null,
-  customFields: json['custom_fields'] != null ? OneOf2.parse(json['custom_fields'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesInvoiceRequestCustomFieldsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoicesInvoiceRequestCustomFieldsVariant2.fromJson(v as String),) : null,
+  customFields: json['custom_fields'] != null ? PostInvoicesInvoiceRequestCustomFields.fromJson(json['custom_fields']) : null,
   daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
   defaultPaymentMethod: json['default_payment_method'] as String?,
-  defaultSource: json['default_source'] != null ? OneOf2.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => PostInvoicesInvoiceRequestDefaultSourceVariant2.fromJson(v as String),) : null,
-  defaultTaxRates: json['default_tax_rates'] != null ? OneOf2.parse(json['default_tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesInvoiceRequestDefaultTaxRatesVariant2.fromJson(v as String),) : null,
+  defaultSource: json['default_source'] != null ? PostInvoicesInvoiceRequestDefaultSource.fromJson(json['default_source']) : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? PostInvoicesInvoiceRequestDefaultTaxRates.fromJson(json['default_tax_rates']) : null,
   description: json['description'] as String?,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesInvoiceRequestDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoicesInvoiceRequestDiscountsVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? PostInvoicesInvoiceRequestDiscounts.fromJson(json['discounts']) : null,
   dueDate: json['due_date'] != null ? (json['due_date'] as num).toInt() : null,
-  effectiveAt: json['effective_at'] != null ? OneOf2.parse(json['effective_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostInvoicesInvoiceRequestEffectiveAtVariant2.fromJson(v as String),) : null,
+  effectiveAt: json['effective_at'] != null ? PostInvoicesInvoiceRequestEffectiveAt.fromJson(json['effective_at']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   footer: json['footer'] as String?,
   issuer: json['issuer'] != null ? PostInvoicesInvoiceRequestIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostInvoicesInvoiceRequestMetadataVariant2.fromJson(v as String),) : null,
-  number: json['number'] != null ? OneOf2.parse(json['number'], fromA: (v) => v as String, fromB: (v) => PostInvoicesInvoiceRequestNumberVariant2.fromJson(v as String),) : null,
-  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => PostInvoicesInvoiceRequestOnBehalfOfVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostInvoicesInvoiceRequestMetadata.fromJson(json['metadata']) : null,
+  number: json['number'] != null ? PostInvoicesInvoiceRequestNumber.fromJson(json['number']) : null,
+  onBehalfOf: json['on_behalf_of'] != null ? PostInvoicesInvoiceRequestOnBehalfOf.fromJson(json['on_behalf_of']) : null,
   paymentSettings: json['payment_settings'] != null ? PostInvoicesInvoiceRequestPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,
   rendering: json['rendering'] != null ? PostInvoicesInvoiceRequestRendering.fromJson(json['rendering'] as Map<String, dynamic>) : null,
-  shippingCost: json['shipping_cost'] != null ? OneOf2.parse(json['shipping_cost'], fromA: (v) => ShippingCost.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesInvoiceRequestShippingCostVariant2.fromJson(v as String),) : null,
-  shippingDetails: json['shipping_details'] != null ? OneOf2.parse(json['shipping_details'], fromA: (v) => RecipientShippingWithOptionalFieldsAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesInvoiceRequestShippingDetailsVariant2.fromJson(v as String),) : null,
+  shippingCost: json['shipping_cost'] != null ? PostInvoicesInvoiceRequestShippingCost.fromJson(json['shipping_cost']) : null,
+  shippingDetails: json['shipping_details'] != null ? PostInvoicesInvoiceRequestShippingDetails.fromJson(json['shipping_details']) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
-  transferData: json['transfer_data'] != null ? OneOf2.parse(json['transfer_data'], fromA: (v) => TransferDataSpecs2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesInvoiceRequestTransferDataVariant2.fromJson(v as String),) : null,
+  transferData: json['transfer_data'] != null ? PostInvoicesInvoiceRequestTransferData.fromJson(json['transfer_data']) : null,
 ); }
 
 /// The account tax IDs associated with the invoice. Only editable when the invoice is a draft.

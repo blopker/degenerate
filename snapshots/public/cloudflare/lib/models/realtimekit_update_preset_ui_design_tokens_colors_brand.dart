@@ -1,34 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitUpdatePresetUiDesignTokensColorsBrand {const RealtimekitUpdatePresetUiDesignTokensColorsBrand({this.$300 = '#844d1c', this.$400 = '#9d5b22', this.$500 = '#b56927', this.$600 = '#d37c30', this.$700 = '#d9904f', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitUpdatePresetUiDesignTokensColorsBrand {const RealtimekitUpdatePresetUiDesignTokensColorsBrand({this.$300, this.$400, this.$500, this.$600, this.$700, });
 
 factory RealtimekitUpdatePresetUiDesignTokensColorsBrand.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetUiDesignTokensColorsBrand(
-  $300: json.containsKey('300') ? json['300'] as String : '#844d1c',
-  $400: json.containsKey('400') ? json['400'] as String : '#9d5b22',
-  $500: json.containsKey('500') ? json['500'] as String : '#b56927',
-  $600: json.containsKey('600') ? json['600'] as String : '#d37c30',
-  $700: json.containsKey('700') ? json['700'] as String : '#d9904f',
+  $300: json['300'] as String?,
+  $400: json['400'] as String?,
+  $500: json['500'] as String?,
+  $600: json['600'] as String?,
+  $700: json['700'] as String?,
 ); }
 
-final String $300;
+final String? $300;
 
-final String $400;
+final String? $400;
 
-final String $500;
+final String? $500;
 
-final String $600;
+final String? $600;
 
-final String $700;
+final String? $700;
 
+/// The value with the schema default applied when absent.
+String get $300OrDefault { return $300 ?? '#844d1c'; } 
+/// The value with the schema default applied when absent.
+String get $400OrDefault { return $400 ?? '#9d5b22'; } 
+/// The value with the schema default applied when absent.
+String get $500OrDefault { return $500 ?? '#b56927'; } 
+/// The value with the schema default applied when absent.
+String get $600OrDefault { return $600 ?? '#d37c30'; } 
+/// The value with the schema default applied when absent.
+String get $700OrDefault { return $700 ?? '#d9904f'; } 
 Map<String, dynamic> toJson() { return {
-  '300': $300,
-  '400': $400,
-  '500': $500,
-  '600': $600,
-  '700': $700,
+  '300': ?$300,
+  '400': ?$400,
+  '500': ?$500,
+  '600': ?$600,
+  '700': ?$700,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'300', '400', '500', '600', '700'}.contains(key)); } 
-RealtimekitUpdatePresetUiDesignTokensColorsBrand copyWith({String Function()? $300, String Function()? $400, String Function()? $500, String Function()? $600, String Function()? $700, }) { return RealtimekitUpdatePresetUiDesignTokensColorsBrand(
+RealtimekitUpdatePresetUiDesignTokensColorsBrand copyWith({String? Function()? $300, String? Function()? $400, String? Function()? $500, String? Function()? $600, String? Function()? $700, }) { return RealtimekitUpdatePresetUiDesignTokensColorsBrand(
   $300: $300 != null ? $300() : this.$300,
   $400: $400 != null ? $400() : this.$400,
   $500: $500 != null ? $500() : this.$500,

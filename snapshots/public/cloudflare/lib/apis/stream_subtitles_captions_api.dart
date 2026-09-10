@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/stream_caption_basic_upload.dart';import '../models/stream_captions.dart';import '../models/stream_identifier.dart';import '../models/stream_language.dart';import '../models/stream_schemas_identifier.dart';/// StreamSubtitlesCaptionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure69.dart';import '../models/stream_caption_basic_upload.dart';import '../models/stream_captions.dart';import '../models/stream_identifier.dart';import '../models/stream_language.dart';import '../models/stream_schemas_identifier.dart';/// StreamSubtitlesCaptionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class StreamSubtitlesCaptionsApi with ApiExecutor {const StreamSubtitlesCa
 /// Lists the available captions or subtitles for a specific video.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions`
-Future<ApiResult<List<StreamCaptions>?, Never>> streamSubtitlesCaptionsListCaptionsOrSubtitles({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<StreamCaptions>?, ResponseCommonFailure69>> streamSubtitlesCaptionsListCaptionsOrSubtitles({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,11 +22,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => StreamCaptions.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>?)?.map((e) => StreamCaptions.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -35,7 +45,7 @@ return execute(
 /// Lists the captions or subtitles for provided language.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<StreamCaptions?, Never>> streamSubtitlesCaptionsGetCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamCaptions?, ResponseCommonFailure69>> streamSubtitlesCaptionsGetCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -44,11 +54,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? StreamCaptions.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? StreamCaptions.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -57,7 +77,7 @@ return execute(
 /// Uploads the caption or subtitle file to the endpoint for a specific BCP47 language. One caption or subtitle file per language is allowed.
 ///
 /// `PUT /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<StreamCaptions?, Never>> streamSubtitlesCaptionsUploadCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamCaptionBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamCaptions?, ResponseCommonFailure69>> streamSubtitlesCaptionsUploadCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamCaptionBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -70,11 +90,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? StreamCaptions.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? StreamCaptions.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -83,7 +113,7 @@ return execute(
 /// Removes the captions or subtitles from a video.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/captions/{language}`
-Future<ApiResult<String?, Never>> streamSubtitlesCaptionsDeleteCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, ResponseCommonFailure69>> streamSubtitlesCaptionsDeleteCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -92,11 +122,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as String?;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] as String?;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -105,7 +145,7 @@ return execute(
 /// Generate captions or subtitles for provided language via AI.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/captions/{language}/generate`
-Future<ApiResult<StreamCaptions?, Never>> streamSubtitlesCaptionsGenerateCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamCaptions?, ResponseCommonFailure69>> streamSubtitlesCaptionsGenerateCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -114,11 +154,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? StreamCaptions.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? StreamCaptions.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -127,7 +177,7 @@ return execute(
 /// Return WebVTT captions for a provided language.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/captions/{language}/vtt`
-Future<ApiResult<String, Never>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String, ResponseCommonFailure69>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -136,10 +186,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+return response.body;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

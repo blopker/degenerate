@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ApproximateLocationType($value)'; } 
  }
-@immutable final class ApproximateLocation {const ApproximateLocation({this.type = ApproximateLocationType.approximate, this.country = const Omittable.absent(), this.region = const Omittable.absent(), this.city = const Omittable.absent(), this.timezone = const Omittable.absent(), });
+@immutable final class ApproximateLocation {const ApproximateLocation({required this.type, this.country = const Omittable.absent(), this.region = const Omittable.absent(), this.city = const Omittable.absent(), this.timezone = const Omittable.absent(), });
 
 factory ApproximateLocation.fromJson(Map<String, dynamic> json) { return ApproximateLocation(
   type: ApproximateLocationType.fromJson(json['type'] as String),

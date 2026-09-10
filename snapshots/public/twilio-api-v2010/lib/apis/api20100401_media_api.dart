@@ -43,10 +43,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ListMediaResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListMediaResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

@@ -66,4 +66,40 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeSessionModelVariant2($value)'; } 
  }
-typedef RealtimeSessionModel = OneOf2<String,RealtimeSessionModelVariant2>;
+/// The Realtime model used for this session.
+/// 
+@immutable
+final class RealtimeSessionModel {
+  const RealtimeSessionModel({this.string = const Omittable.absent(),
+this.realtimeSessionModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const RealtimeSessionModel._({required this.rawValue, required this.string,
+required this.realtimeSessionModelVariant2,});
+  factory RealtimeSessionModel.fromJson(Object? json) => RealtimeSessionModel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+realtimeSessionModelVariant2: parseAnyOfVariant<RealtimeSessionModelVariant2>(json, (value) => RealtimeSessionModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<RealtimeSessionModelVariant2> realtimeSessionModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || realtimeSessionModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (realtimeSessionModelVariant2.isPresent) realtimeSessionModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is RealtimeSessionModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'RealtimeSessionModel(${toJson()})';
+}

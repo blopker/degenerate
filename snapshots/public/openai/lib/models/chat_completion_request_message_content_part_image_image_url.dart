@@ -28,25 +28,27 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ChatCompletionRequestMessageContentPartImageImageUrlDetail($value)'; } 
  }
-@immutable final class ChatCompletionRequestMessageContentPartImageImageUrl {const ChatCompletionRequestMessageContentPartImageImageUrl({required this.url, this.detail = ChatCompletionRequestMessageContentPartImageImageUrlDetail.auto, });
+@immutable final class ChatCompletionRequestMessageContentPartImageImageUrl {const ChatCompletionRequestMessageContentPartImageImageUrl({required this.url, this.detail, });
 
 factory ChatCompletionRequestMessageContentPartImageImageUrl.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartImageImageUrl(
   url: Uri.parse(json['url'] as String),
-  detail: json.containsKey('detail') ? ChatCompletionRequestMessageContentPartImageImageUrlDetail.fromJson(json['detail'] as String) : ChatCompletionRequestMessageContentPartImageImageUrlDetail.auto,
+  detail: json['detail'] != null ? ChatCompletionRequestMessageContentPartImageImageUrlDetail.fromJson(json['detail'] as String) : null,
 ); }
 
 /// Either a URL of the image or the base64 encoded image data.
 final Uri url;
 
 /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).
-final ChatCompletionRequestMessageContentPartImageImageUrlDetail detail;
+final ChatCompletionRequestMessageContentPartImageImageUrlDetail? detail;
 
+/// The value with the schema default applied when absent.
+ChatCompletionRequestMessageContentPartImageImageUrlDetail get detailOrDefault { return detail ?? ChatCompletionRequestMessageContentPartImageImageUrlDetail.fromJson('auto'); } 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
-  'detail': detail.toJson(),
+  if (detail != null) 'detail': detail?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-ChatCompletionRequestMessageContentPartImageImageUrl copyWith({Uri? url, ChatCompletionRequestMessageContentPartImageImageUrlDetail Function()? detail, }) { return ChatCompletionRequestMessageContentPartImageImageUrl(
+ChatCompletionRequestMessageContentPartImageImageUrl copyWith({Uri? url, ChatCompletionRequestMessageContentPartImageImageUrlDetail? Function()? detail, }) { return ChatCompletionRequestMessageContentPartImageImageUrl(
   url: url ?? this.url,
   detail: detail != null ? detail() : this.detail,
 ); } 

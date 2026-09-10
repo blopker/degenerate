@@ -63,4 +63,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2($value)'; } 
  }
-typedef PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptions = OneOf2<List<PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1>,PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2>;
+
+@immutable
+final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptions {
+  const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptions({this.listPostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1 = const Omittable.absent(),
+this.postBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptions._({required this.rawValue, required this.listPostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1,
+required this.postBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2,});
+  factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptions.fromJson(Object? json) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptions._(
+    rawValue: Omittable(json),
+    listPostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1: parseAnyOfVariant<List<PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1.fromJson(e as String)).toList()),
+postBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2: parseAnyOfVariant<PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2>(json, (value) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1>> listPostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1;
+final Omittable<PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2> postBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1.isPresent || postBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1.isPresent) listPostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1.value?.map((e) => e.toJson()).toList(),
+if (postBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2.isPresent) postBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptions && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptions(${toJson()})';
+}

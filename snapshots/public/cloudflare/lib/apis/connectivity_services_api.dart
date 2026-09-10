@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/infra_account_tag.dart';import '../models/infra_service_config.dart';import '../models/infra_service_type.dart';/// ConnectivityServicesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/infra_account_tag.dart';import '../models/infra_service_config.dart';import '../models/infra_service_config_request.dart';import '../models/infra_service_type.dart';import '../models/response_common_failure40.dart';/// ConnectivityServicesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class ConnectivityServicesApi with ApiExecutor {const ConnectivityServices
 /// List connectivity services
 ///
 /// `GET /accounts/{account_id}/connectivity/directory/services`
-Future<ApiResult<List<InfraServiceConfig>?, Never>> connectivityServicesList({required InfraAccountTag accountId, InfraServiceType? type, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<InfraServiceConfig>?, ResponseCommonFailure40>> connectivityServicesList({required InfraAccountTag accountId, InfraServiceType? type, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) {
   queryParameters['type'] = type.toJson();
@@ -34,18 +34,28 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => InfraServiceConfig.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>?)?.map((e) => InfraServiceConfig.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure40.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
 /// Create connectivity service
 ///
 /// `POST /accounts/{account_id}/connectivity/directory/services`
-Future<ApiResult<InfraServiceConfig?, Never>> connectivityServicesPost({required InfraAccountTag accountId, required InfraServiceConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraServiceConfig?, ResponseCommonFailure40>> connectivityServicesPost({required InfraAccountTag accountId, required InfraServiceConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -56,18 +66,28 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? InfraServiceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? InfraServiceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure40.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
 /// Get connectivity service
 ///
 /// `GET /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<InfraServiceConfig?, Never>> connectivityServicesGet({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraServiceConfig?, ResponseCommonFailure40>> connectivityServicesGet({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -76,18 +96,28 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? InfraServiceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? InfraServiceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure40.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
 /// Update connectivity service
 ///
 /// `PUT /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<InfraServiceConfig?, Never>> connectivityServicesPut({required String accountId, required String serviceId, required InfraServiceConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraServiceConfig?, ResponseCommonFailure40>> connectivityServicesPut({required String accountId, required String serviceId, required InfraServiceConfigRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,18 +128,28 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? InfraServiceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? InfraServiceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure40.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
 /// Delete connectivity service
 ///
 /// `DELETE /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<void, Never>> connectivityServicesDelete({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure40>> connectivityServicesDelete({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -118,9 +158,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure40.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
+  },
 );
  } 
  }

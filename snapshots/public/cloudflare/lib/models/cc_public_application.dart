@@ -39,7 +39,7 @@ factory CcPublicApplication.fromJson(Map<String, dynamic> json) { return CcPubli
   health: CcApplicationHealthInstances.fromJson(json['health'] as Map<String, dynamic>),
   id: CcApplicationId.fromJson(json['id'] as String),
   image: CcImage.fromJson(json['image'] as String),
-  instanceType: OneOf2.parse(json['instance_type'], fromA: (v) => CcCustomResourceAllocation.fromJson(v as Map<String, dynamic>), fromB: (v) => CcInstanceType.fromJson(v as Map<String, dynamic>),),
+  instanceType: OneOf2.parse(json['instance_type'], fromA: (v) => CcCustomResourceAllocation.fromJson(v as Map<String, dynamic>), fromB: CcInstanceType.fromJson,),
   maxInstances: (json['max_instances'] as num).toInt(),
   name: json['name'] as String,
   network: json['network'] != null ? CcApplicationNetwork.fromJson(json['network'] as Map<String, dynamic>) : null,

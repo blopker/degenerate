@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/bot_management_feedback_report.dart';import '../models/bot_management_identifier.dart';/// FeedbackApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/bot_management_feedback_report.dart';import '../models/bot_management_feedback_report_request.dart';import '../models/bot_management_identifier.dart';import '../models/response_common_failure12.dart';/// FeedbackApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class FeedbackApi with ApiExecutor {const FeedbackApi(this.apiConfig);
 /// 
 ///
 /// `GET /zones/{zone_id}/bot_management/feedback`
-Future<ApiResult<List<BotManagementFeedbackReport>, Never>> botManagementZoneFeedbackList({required BotManagementIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BotManagementFeedbackReport>, ResponseCommonFailure12>> botManagementZoneFeedbackList({required BotManagementIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,11 +23,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => BotManagementFeedbackReport.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => BotManagementFeedbackReport.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure12.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -39,7 +49,7 @@ return execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/bot_management/feedback`
-Future<ApiResult<void, Never>> botManagementZoneFeedbackCreate({required BotManagementIdentifier zoneId, required BotManagementFeedbackReport body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ResponseCommonFailure12>> botManagementZoneFeedbackCreate({required BotManagementIdentifier zoneId, required BotManagementFeedbackReportRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -50,9 +60,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure12.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
+  },
 );
  } 
  }

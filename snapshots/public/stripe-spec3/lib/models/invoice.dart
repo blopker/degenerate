@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'address.dart';import 'application.dart';import 'automatic_tax.dart';import 'bank_account.dart';import 'billing_bill_resource_invoicing_parents_invoice_parent.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'card.dart';import 'connect_account_reference.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'deleted_discount.dart';import 'deleted_tax_id.dart';import 'discount.dart';import 'discounts_resource_discount_amount.dart';import 'errors.dart';import 'invoice_account_tax_ids.dart';import 'invoice_application.dart';import 'invoice_customer.dart';import 'invoice_default_payment_method.dart';import 'invoice_default_source.dart';import 'invoice_discounts.dart';import 'invoice_latest_revision.dart';import 'invoice_lines.dart';import 'invoice_on_behalf_of.dart';import 'invoice_payments.dart';import 'invoice_setting_custom_field.dart';import 'invoice_test_clock.dart';import 'invoice_threshold_reason.dart';import 'invoices_payment_settings.dart';import 'invoices_resource_confirmation_secret.dart';import 'invoices_resource_from_invoice.dart';import 'invoices_resource_invoice_rendering.dart';import 'invoices_resource_invoice_tax_id.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'invoices_resource_shipping_cost.dart';import 'invoices_resource_status_transitions.dart';import 'payment_method.dart';import 'shipping.dart';import 'source.dart';import 'tax_id.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// Indicates the reason why the invoice was created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'automatic_tax.dart';import 'billing_bill_resource_invoicing_parents_invoice_parent.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'connect_account_reference.dart';import 'discounts_resource_discount_amount.dart';import 'errors.dart';import 'invoice_account_tax_ids.dart';import 'invoice_application.dart';import 'invoice_customer.dart';import 'invoice_default_payment_method.dart';import 'invoice_default_source.dart';import 'invoice_discounts.dart';import 'invoice_latest_revision.dart';import 'invoice_lines.dart';import 'invoice_on_behalf_of.dart';import 'invoice_payments.dart';import 'invoice_setting_custom_field.dart';import 'invoice_test_clock.dart';import 'invoice_threshold_reason.dart';import 'invoices_payment_settings.dart';import 'invoices_resource_confirmation_secret.dart';import 'invoices_resource_from_invoice.dart';import 'invoices_resource_invoice_rendering.dart';import 'invoices_resource_invoice_tax_id.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'invoices_resource_shipping_cost.dart';import 'invoices_resource_status_transitions.dart';import 'shipping.dart';import 'tax_rate.dart';/// Indicates the reason why the invoice was created.
 /// 
 /// * `manual`: Unrelated to a subscription, for example, created via the invoice editor.
 /// * `subscription`: No longer in use. Applies to subscriptions from before May 2018 where no distinction was made between updates, cycles, and thresholds.
@@ -200,13 +200,13 @@ bool get isUnknown { return !values.contains(this); }
 factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   accountCountry: json.containsKey('account_country') ? Omittable(json['account_country'] as String?) : const Omittable.absent(),
   accountName: json.containsKey('account_name') ? Omittable(json['account_name'] as String?) : const Omittable.absent(),
-  accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => v as String, fromB: (v) => TaxId.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedTaxId.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
+  accountTaxIds: json.containsKey('account_tax_ids') ? Omittable((json['account_tax_ids'] as List<dynamic>?)?.map(InvoiceAccountTaxIds.fromJson).toList()) : const Omittable.absent(),
   amountDue: (json['amount_due'] as num).toInt(),
   amountOverpaid: (json['amount_overpaid'] as num).toInt(),
   amountPaid: (json['amount_paid'] as num).toInt(),
   amountRemaining: (json['amount_remaining'] as num).toInt(),
   amountShipping: (json['amount_shipping'] as num).toInt(),
-  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? InvoiceApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   attemptCount: (json['attempt_count'] as num).toInt(),
   attempted: json['attempted'] as bool,
   autoAdvance: json['auto_advance'] as bool,
@@ -218,7 +218,7 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   customFields: json.containsKey('custom_fields') ? Omittable((json['custom_fields'] as List<dynamic>?)?.map((e) => InvoiceSettingCustomField.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-  customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
+  customer: InvoiceCustomer.fromJson(json['customer']),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   customerAddress: json.containsKey('customer_address') ? Omittable(json['customer_address'] != null ? Address.fromJson(json['customer_address'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   customerEmail: json.containsKey('customer_email') ? Omittable(json['customer_email'] as String?) : const Omittable.absent(),
@@ -227,11 +227,11 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   customerShipping: json.containsKey('customer_shipping') ? Omittable(json['customer_shipping'] != null ? Shipping.fromJson(json['customer_shipping'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   customerTaxExempt: json.containsKey('customer_tax_exempt') ? Omittable(json['customer_tax_exempt'] != null ? InvoiceCustomerTaxExempt.fromJson(json['customer_tax_exempt'] as String) : null) : const Omittable.absent(),
   customerTaxIds: json.containsKey('customer_tax_ids') ? Omittable((json['customer_tax_ids'] as List<dynamic>?)?.map((e) => InvoicesResourceInvoiceTaxId.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
-  defaultPaymentMethod: json.containsKey('default_payment_method') ? Omittable(json['default_payment_method'] != null ? OneOf2.parse(json['default_payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  defaultSource: json.containsKey('default_source') ? Omittable(json['default_source'] != null ? OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  defaultPaymentMethod: json.containsKey('default_payment_method') ? Omittable(json['default_payment_method'] != null ? InvoiceDefaultPaymentMethod.fromJson(json['default_payment_method']) : null) : const Omittable.absent(),
+  defaultSource: json.containsKey('default_source') ? Omittable(json['default_source'] != null ? InvoiceDefaultSource.fromJson(json['default_source']) : null) : const Omittable.absent(),
   defaultTaxRates: (json['default_tax_rates'] as List<dynamic>).map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
-  discounts: (json['discounts'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedDiscount.fromJson(v as Map<String, dynamic>),)).toList(),
+  discounts: (json['discounts'] as List<dynamic>).map(InvoiceDiscounts.fromJson).toList(),
   dueDate: json.containsKey('due_date') ? Omittable(json['due_date'] != null ? (json['due_date'] as num).toInt() : null) : const Omittable.absent(),
   effectiveAt: json.containsKey('effective_at') ? Omittable(json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null) : const Omittable.absent(),
   endingBalance: json.containsKey('ending_balance') ? Omittable(json['ending_balance'] != null ? (json['ending_balance'] as num).toInt() : null) : const Omittable.absent(),
@@ -242,14 +242,14 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   invoicePdf: json.containsKey('invoice_pdf') ? Omittable(json['invoice_pdf'] as String?) : const Omittable.absent(),
   issuer: ConnectAccountReference.fromJson(json['issuer'] as Map<String, dynamic>),
   lastFinalizationError: json.containsKey('last_finalization_error') ? Omittable(json['last_finalization_error'] != null ? Errors.fromJson(json['last_finalization_error'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  latestRevision: json.containsKey('latest_revision') ? Omittable(json['latest_revision'] != null ? OneOf2.parse(json['latest_revision'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  latestRevision: json.containsKey('latest_revision') ? Omittable(json['latest_revision'] != null ? InvoiceLatestRevision.fromJson(json['latest_revision']) : null) : const Omittable.absent(),
   lines: InvoiceLines.fromJson(json['lines'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   nextPaymentAttempt: json.containsKey('next_payment_attempt') ? Omittable(json['next_payment_attempt'] != null ? (json['next_payment_attempt'] as num).toInt() : null) : const Omittable.absent(),
   number: json.containsKey('number') ? Omittable(json['number'] as String?) : const Omittable.absent(),
   object: InvoiceObject.fromJson(json['object'] as String),
-  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  onBehalfOf: json.containsKey('on_behalf_of') ? Omittable(json['on_behalf_of'] != null ? InvoiceOnBehalfOf.fromJson(json['on_behalf_of']) : null) : const Omittable.absent(),
   parent: json.containsKey('parent') ? Omittable(json['parent'] != null ? BillingBillResourceInvoicingParentsInvoiceParent.fromJson(json['parent'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   paymentSettings: InvoicesPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>),
   payments: json['payments'] != null ? InvoicePayments.fromJson(json['payments'] as Map<String, dynamic>) : null,
@@ -267,7 +267,7 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   statusTransitions: InvoicesResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   subtotal: (json['subtotal'] as num).toInt(),
   subtotalExcludingTax: json.containsKey('subtotal_excluding_tax') ? Omittable(json['subtotal_excluding_tax'] != null ? (json['subtotal_excluding_tax'] as num).toInt() : null) : const Omittable.absent(),
-  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? InvoiceTestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
   thresholdReason: json['threshold_reason'] != null ? InvoiceThresholdReason.fromJson(json['threshold_reason'] as Map<String, dynamic>) : null,
   total: (json['total'] as num).toInt(),
   totalDiscountAmounts: json.containsKey('total_discount_amounts') ? Omittable((json['total_discount_amounts'] as List<dynamic>?)?.map((e) => DiscountsResourceDiscountAmount.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),

@@ -31,11 +31,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateOrgRulesetRequestTarget($value)'; } 
  }
-@immutable final class ReposCreateOrgRulesetRequest {const ReposCreateOrgRulesetRequest({required this.name, required this.enforcement, this.target = ReposCreateOrgRulesetRequestTarget.branch, this.bypassActors, this.conditions, this.rules, });
+@immutable final class ReposCreateOrgRulesetRequest {const ReposCreateOrgRulesetRequest({required this.name, required this.enforcement, this.target, this.bypassActors, this.conditions, this.rules, });
 
 factory ReposCreateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { return ReposCreateOrgRulesetRequest(
   name: json['name'] as String,
-  target: json.containsKey('target') ? ReposCreateOrgRulesetRequestTarget.fromJson(json['target'] as String) : ReposCreateOrgRulesetRequestTarget.branch,
+  target: json['target'] != null ? ReposCreateOrgRulesetRequestTarget.fromJson(json['target'] as String) : null,
   enforcement: RepositoryRuleEnforcement.fromJson(json['enforcement'] as String),
   bypassActors: (json['bypass_actors'] as List<dynamic>?)?.map((e) => RepositoryRulesetBypassActor.fromJson(e as Map<String, dynamic>)).toList(),
   conditions: json['conditions'] != null ? OneOf3.parse(json['conditions'], fromA: (v) => RepositoryNameAndRefName.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryIdAndRefName.fromJson(v as Map<String, dynamic>), fromC: (v) => RepositoryPropertyAndRefName.fromJson(v as Map<String, dynamic>),) : null,
@@ -46,7 +46,7 @@ factory ReposCreateOrgRulesetRequest.fromJson(Map<String, dynamic> json) { retur
 final String name;
 
 /// The target of the ruleset
-final ReposCreateOrgRulesetRequestTarget target;
+final ReposCreateOrgRulesetRequestTarget? target;
 
 /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
 final RepositoryRuleEnforcement enforcement;
@@ -59,9 +59,11 @@ final OrgRulesetConditions? conditions;
 /// An array of rules within the ruleset.
 final List<OrgRules>? rules;
 
+/// The value with the schema default applied when absent.
+ReposCreateOrgRulesetRequestTarget get targetOrDefault { return target ?? ReposCreateOrgRulesetRequestTarget.fromJson('branch'); } 
 Map<String, dynamic> toJson() { return {
   'name': name,
-  'target': target.toJson(),
+  if (target != null) 'target': target?.toJson(),
   'enforcement': enforcement.toJson(),
   if (bypassActors != null) 'bypass_actors': bypassActors?.map((e) => e.toJson()).toList(),
   if (conditions != null) 'conditions': conditions?.toJson(),
@@ -69,7 +71,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('enforcement'); } 
-ReposCreateOrgRulesetRequest copyWith({String? name, ReposCreateOrgRulesetRequestTarget Function()? target, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, OrgRulesetConditions? Function()? conditions, List<OrgRules>? Function()? rules, }) { return ReposCreateOrgRulesetRequest(
+ReposCreateOrgRulesetRequest copyWith({String? name, ReposCreateOrgRulesetRequestTarget? Function()? target, RepositoryRuleEnforcement? enforcement, List<RepositoryRulesetBypassActor>? Function()? bypassActors, OrgRulesetConditions? Function()? conditions, List<OrgRules>? Function()? rules, }) { return ReposCreateOrgRulesetRequest(
   name: name ?? this.name,
   target: target != null ? target() : this.target,
   enforcement: enforcement ?? this.enforcement,

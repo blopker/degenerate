@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'model_ids_responses.dart';import 'model_ids_shared.dart';import 'prompt.dart';import 'reasoning.dart';import 'response_text_param.dart';import 'specific_apply_patch_param.dart';import 'specific_function_shell_param.dart';import 'tool.dart';import 'tool_choice_allowed.dart';import 'tool_choice_custom.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'tool_choice_param.dart';import 'tool_choice_types.dart';/// The truncation strategy to use for the model response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'model_ids_responses.dart';import 'prompt.dart';import 'reasoning.dart';import 'response_text_param.dart';import 'specific_apply_patch_param.dart';import 'specific_function_shell_param.dart';import 'tool.dart';import 'tool_choice_allowed.dart';import 'tool_choice_custom.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'tool_choice_param.dart';import 'tool_choice_types.dart';/// The truncation strategy to use for the model response.
 /// - `auto`: If the input to this Response exceeds
 ///   the model's context window size, the model will truncate the
 ///   response to fit the context window by dropping items from the beginning of the conversation.
@@ -31,11 +31,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ResponsePropertiesTruncation($value)'; } 
  }
-@immutable final class ResponseProperties {const ResponseProperties({this.previousResponseId = const Omittable.absent(), this.model, this.reasoning = const Omittable.absent(), this.background = const Omittable.absent(), this.maxOutputTokens = const Omittable.absent(), this.maxToolCalls = const Omittable.absent(), this.text, this.tools, this.toolChoice, this.prompt, this.truncation = const Omittable.absent(), });
+@immutable final class ResponseProperties {const ResponseProperties({this.previousResponseId = const Omittable.absent(), this.model, this.reasoning = const Omittable.absent(), this.background = const Omittable.absent(), this.maxOutputTokens = const Omittable.absent(), this.maxToolCalls = const Omittable.absent(), this.text, this.tools, this.toolChoice, this.prompt = const Omittable.absent(), this.truncation = const Omittable.absent(), });
 
 factory ResponseProperties.fromJson(Map<String, dynamic> json) { return ResponseProperties(
   previousResponseId: json.containsKey('previous_response_id') ? Omittable(json['previous_response_id'] as String?) : const Omittable.absent(),
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),), fromB: (v) => ResponsesOnlyModel.fromJson(v as String),) : null,
+  model: json['model'] != null ? ModelIdsResponses.fromJson(json['model']) : null,
   reasoning: json.containsKey('reasoning') ? Omittable(json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   background: json.containsKey('background') ? Omittable(json['background'] as bool?) : const Omittable.absent(),
   maxOutputTokens: json.containsKey('max_output_tokens') ? Omittable(json['max_output_tokens'] != null ? (json['max_output_tokens'] as num).toInt() : null) : const Omittable.absent(),
@@ -43,7 +43,7 @@ factory ResponseProperties.fromJson(Map<String, dynamic> json) { return Response
   text: json['text'] != null ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
   toolChoice: json['tool_choice'] != null ? OneOf8.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceAllowed.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceTypes.fromJson(v as Map<String, dynamic>), fromD: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromE: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>), fromF: (v) => ToolChoiceCustom.fromJson(v as Map<String, dynamic>), fromG: (v) => SpecificApplyPatchParam.fromJson(v as Map<String, dynamic>), fromH: (v) => SpecificFunctionShellParam.fromJson(v as Map<String, dynamic>),) : null,
-  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
+  prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   truncation: json.containsKey('truncation') ? Omittable(json['truncation'] != null ? ResponsePropertiesTruncation.fromJson(json['truncation'] as String) : null) : const Omittable.absent(),
 ); }
 
@@ -81,7 +81,7 @@ final List<Tool>? tools;
 
 final ToolChoiceParam? toolChoice;
 
-final Prompt? prompt;
+final Omittable<Prompt?> prompt;
 
 /// The truncation strategy to use for the model response.
 /// - `auto`: If the input to this Response exceeds
@@ -102,11 +102,11 @@ Map<String, dynamic> toJson() { return {
   if (text != null) 'text': text?.toJson(),
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
-  if (prompt != null) 'prompt': prompt?.toJson(),
+  if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
   if (truncation.isPresent) 'truncation': truncation.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'previous_response_id', 'model', 'reasoning', 'background', 'max_output_tokens', 'max_tool_calls', 'text', 'tools', 'tool_choice', 'prompt', 'truncation'}.contains(key)); } 
-ResponseProperties copyWith({Omittable<String?>? previousResponseId, ModelIdsResponses? Function()? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? Function()? tools, ToolChoiceParam? Function()? toolChoice, Prompt? Function()? prompt, Omittable<ResponsePropertiesTruncation?>? truncation, }) { return ResponseProperties(
+ResponseProperties copyWith({Omittable<String?>? previousResponseId, ModelIdsResponses? Function()? model, Omittable<Reasoning?>? reasoning, Omittable<bool?>? background, Omittable<int?>? maxOutputTokens, Omittable<int?>? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? Function()? tools, ToolChoiceParam? Function()? toolChoice, Omittable<Prompt?>? prompt, Omittable<ResponsePropertiesTruncation?>? truncation, }) { return ResponseProperties(
   previousResponseId: previousResponseId ?? this.previousResponseId,
   model: model != null ? model() : this.model,
   reasoning: reasoning ?? this.reasoning,
@@ -116,7 +116,7 @@ ResponseProperties copyWith({Omittable<String?>? previousResponseId, ModelIdsRes
   text: text != null ? text() : this.text,
   tools: tools != null ? tools() : this.tools,
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
-  prompt: prompt != null ? prompt() : this.prompt,
+  prompt: prompt ?? this.prompt,
   truncation: truncation ?? this.truncation,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

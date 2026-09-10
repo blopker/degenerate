@@ -77,7 +77,7 @@ bool get isUnknown { return !values.contains(this); }
 factory WorkersObservabilityTelemetryEvent$workersVariant1.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent$workersVariant1(
   durableObjectId: json['durableObjectId'] as String?,
   entrypoint: json['entrypoint'] as String?,
-  event: (json['event'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(), fromC: (v) => v as bool, fromD: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, OneOf4.parse(v, fromA: (v) => (v as List<dynamic>).map((e) => e).toList(), fromB: (v) => v as String, fromC: (v) => (v as num).toDouble(), fromD: (v) => v as bool,))),))),))),
+  event: (json['event'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, WorkersObservabilityTelemetryEvent$workersVariant1EventValue.fromJson(v))),
   eventType: WorkersObservabilityTelemetryEvent$workersVariant1EventType.fromJson(json['eventType'] as String),
   executionModel: json['executionModel'] != null ? WorkersObservabilityTelemetryEvent$workersVariant1ExecutionModel.fromJson(json['executionModel'] as String) : null,
   outcome: json['outcome'] as String?,

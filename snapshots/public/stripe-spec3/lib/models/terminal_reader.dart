@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_location.dart';import 'terminal_reader_location.dart';import 'terminal_reader_reader_resource_reader_action.dart';/// Device type of the reader.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_location.dart';import 'terminal_reader_reader_resource_reader_action.dart';/// Device type of the reader.
 @immutable final class TerminalReaderDeviceType {const TerminalReaderDeviceType._(this.value);
 
 factory TerminalReaderDeviceType.fromJson(String json) { return switch (json) {
@@ -113,7 +113,7 @@ factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalRead
   label: json['label'] as String,
   lastSeenAt: json.containsKey('last_seen_at') ? Omittable(json['last_seen_at'] != null ? (json['last_seen_at'] as num).toInt() : null) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
-  location: json.containsKey('location') ? Omittable(json['location'] != null ? OneOf2.parse(json['location'], fromA: (v) => v as String, fromB: (v) => TerminalLocation.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  location: json.containsKey('location') ? Omittable(json['location'] != null ? TerminalReaderLocation.fromJson(json['location']) : null) : const Omittable.absent(),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TerminalReaderObject.fromJson(json['object'] as String),
   serialNumber: json['serial_number'] as String,

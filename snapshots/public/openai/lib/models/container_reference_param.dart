@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ContainerReferenceParamType($value)'; } 
  }
-@immutable final class ContainerReferenceParam {const ContainerReferenceParam({required this.containerId, this.type = ContainerReferenceParamType.containerReference, });
+@immutable final class ContainerReferenceParam {const ContainerReferenceParam({required this.type, required this.containerId, });
 
 factory ContainerReferenceParam.fromJson(Map<String, dynamic> json) { return ContainerReferenceParam(
   type: ContainerReferenceParamType.fromJson(json['type'] as String),

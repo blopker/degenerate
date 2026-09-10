@@ -33,10 +33,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return GetOrgAnalyticsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetOrgAnalyticsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

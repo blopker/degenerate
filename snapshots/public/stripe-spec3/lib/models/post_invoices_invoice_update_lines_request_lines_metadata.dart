@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2($value)'; } 
  }
-typedef PostInvoicesInvoiceUpdateLinesRequestLinesMetadata = OneOf2<Map<String,String>,PostInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2>;
+
+@immutable
+final class PostInvoicesInvoiceUpdateLinesRequestLinesMetadata {
+  const PostInvoicesInvoiceUpdateLinesRequestLinesMetadata({this.mapStringString = const Omittable.absent(),
+this.postInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostInvoicesInvoiceUpdateLinesRequestLinesMetadata._({required this.rawValue, required this.mapStringString,
+required this.postInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2,});
+  factory PostInvoicesInvoiceUpdateLinesRequestLinesMetadata.fromJson(Object? json) => PostInvoicesInvoiceUpdateLinesRequestLinesMetadata._(
+    rawValue: Omittable(json),
+    mapStringString: parseAnyOfVariant<Map<String, String>>(json, (value) => (value! as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))),
+postInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2: parseAnyOfVariant<PostInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2>(json, (value) => PostInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<Map<String, String>> mapStringString;
+final Omittable<PostInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2> postInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => mapStringString.isPresent || postInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (mapStringString.isPresent) mapStringString.value,
+if (postInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2.isPresent) postInvoicesInvoiceUpdateLinesRequestLinesMetadataVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostInvoicesInvoiceUpdateLinesRequestLinesMetadata && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostInvoicesInvoiceUpdateLinesRequestLinesMetadata(${toJson()})';
+}

@@ -62,11 +62,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => TeamsDevicesPhysicalDevice.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => TeamsDevicesPhysicalDevice.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -92,11 +92,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return TeamsDevicesPhysicalDevice.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return TeamsDevicesPhysicalDevice.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -114,11 +114,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -136,11 +136,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] as Map<String, dynamic>?;
   },
 );
  } 
@@ -166,11 +166,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] as Map<String, dynamic>?;
   },
 );
  } 

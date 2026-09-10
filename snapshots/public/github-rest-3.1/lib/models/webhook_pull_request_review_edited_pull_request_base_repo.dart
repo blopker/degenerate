@@ -28,14 +28,14 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WebhookPullRequestReviewEditedPullRequestBaseRepoVisibility($value)'; } 
  }
 /// A git repository
-@immutable final class WebhookPullRequestReviewEditedPullRequestBaseRepo {const WebhookPullRequestReviewEditedPullRequestBaseRepo({required this.fullName, required this.watchers, required this.visibility, required this.url, required this.updatedAt, required this.treesUrl, required this.archiveUrl, required this.topics, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.cloneUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.createdAt, required this.defaultBranch, required this.teamsUrl, required this.deploymentsUrl, required this.description, required this.tagsUrl, required this.downloadsUrl, required this.eventsUrl, required this.fork, required this.forks, required this.forksCount, required this.forksUrl, required this.svnUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.subscriptionUrl, required this.subscribersUrl, required this.hasPages, required this.statusesUrl, required this.stargazersUrl, required this.homepage, required this.hooksUrl, required this.htmlUrl, required this.id, required this.nodeId, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.language, required this.languagesUrl, required this.license, required this.sshUrl, required this.mergesUrl, required this.milestonesUrl, required this.mirrorUrl, required this.name, required this.watchersCount, required this.notificationsUrl, required this.openIssues, required this.openIssuesCount, required this.size, required this.owner, required this.releasesUrl, required this.private, required this.pushedAt, required this.pullsUrl, required this.stargazersCount, this.permissions, this.roleName = const Omittable.absent(), this.organization, this.masterBranch, this.stargazers, this.isTemplate, this.hasWiki = true, this.hasProjects = true, this.hasIssues = true, this.hasDownloads = true, this.allowAutoMerge = false, this.disabled, this.deleteBranchOnMerge = false, this.archived = false, this.allowUpdateBranch, this.allowSquashMerge = true, this.allowRebaseMerge = true, this.allowMergeCommit = true, this.allowForking, this.public, });
+@immutable final class WebhookPullRequestReviewEditedPullRequestBaseRepo {const WebhookPullRequestReviewEditedPullRequestBaseRepo({required this.fullName, required this.watchers, required this.visibility, required this.url, required this.updatedAt, required this.treesUrl, required this.archiveUrl, required this.archived, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.cloneUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.createdAt, required this.defaultBranch, required this.topics, required this.deploymentsUrl, required this.description, required this.teamsUrl, required this.downloadsUrl, required this.eventsUrl, required this.fork, required this.forks, required this.forksCount, required this.forksUrl, required this.tagsUrl, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.gitUrl, required this.hasDownloads, required this.hasIssues, required this.hasPages, required this.hasProjects, required this.hasWiki, required this.homepage, required this.hooksUrl, required this.htmlUrl, required this.id, required this.nodeId, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.language, required this.languagesUrl, required this.license, required this.svnUrl, required this.mergesUrl, required this.milestonesUrl, required this.mirrorUrl, required this.name, required this.watchersCount, required this.notificationsUrl, required this.openIssues, required this.openIssuesCount, required this.subscriptionUrl, required this.owner, required this.subscribersUrl, required this.private, required this.statusesUrl, required this.pullsUrl, required this.pushedAt, required this.releasesUrl, required this.stargazersUrl, required this.size, required this.stargazersCount, required this.sshUrl, this.isTemplate, this.roleName = const Omittable.absent(), this.public, this.permissions, this.organization, this.masterBranch, this.allowAutoMerge, this.disabled, this.deleteBranchOnMerge, this.allowUpdateBranch, this.allowSquashMerge, this.allowRebaseMerge, this.allowMergeCommit, this.allowForking, this.stargazers, });
 
 factory WebhookPullRequestReviewEditedPullRequestBaseRepo.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEditedPullRequestBaseRepo(
-  allowAutoMerge: json.containsKey('allow_auto_merge') ? json['allow_auto_merge'] as bool : false,
+  allowAutoMerge: json['allow_auto_merge'] as bool?,
   allowForking: json['allow_forking'] as bool?,
-  allowMergeCommit: json.containsKey('allow_merge_commit') ? json['allow_merge_commit'] as bool : true,
-  allowRebaseMerge: json.containsKey('allow_rebase_merge') ? json['allow_rebase_merge'] as bool : true,
-  allowSquashMerge: json.containsKey('allow_squash_merge') ? json['allow_squash_merge'] as bool : true,
+  allowMergeCommit: json['allow_merge_commit'] as bool?,
+  allowRebaseMerge: json['allow_rebase_merge'] as bool?,
+  allowSquashMerge: json['allow_squash_merge'] as bool?,
   allowUpdateBranch: json['allow_update_branch'] as bool?,
   archiveUrl: json['archive_url'] as String,
   archived: json['archived'] as bool,
@@ -51,7 +51,7 @@ factory WebhookPullRequestReviewEditedPullRequestBaseRepo.fromJson(Map<String, d
   contributorsUrl: Uri.parse(json['contributors_url'] as String),
   createdAt: json['created_at'],
   defaultBranch: json['default_branch'] as String,
-  deleteBranchOnMerge: json.containsKey('delete_branch_on_merge') ? json['delete_branch_on_merge'] as bool : false,
+  deleteBranchOnMerge: json['delete_branch_on_merge'] as bool?,
   deploymentsUrl: Uri.parse(json['deployments_url'] as String),
   description: json['description'] as String?,
   disabled: json['disabled'] as bool?,
@@ -123,19 +123,19 @@ factory WebhookPullRequestReviewEditedPullRequestBaseRepo.fromJson(Map<String, d
 ); }
 
 /// Whether to allow auto-merge for pull requests.
-final bool allowAutoMerge;
+final bool? allowAutoMerge;
 
 /// Whether to allow private forks
 final bool? allowForking;
 
 /// Whether to allow merge commits for pull requests.
-final bool allowMergeCommit;
+final bool? allowMergeCommit;
 
 /// Whether to allow rebase merges for pull requests.
-final bool allowRebaseMerge;
+final bool? allowRebaseMerge;
 
 /// Whether to allow squash merges for pull requests.
-final bool allowSquashMerge;
+final bool? allowSquashMerge;
 
 final bool? allowUpdateBranch;
 
@@ -171,7 +171,7 @@ final dynamic createdAt;
 final String defaultBranch;
 
 /// Whether to delete head branches when pull requests are merged
-final bool deleteBranchOnMerge;
+final bool? deleteBranchOnMerge;
 
 final Uri deploymentsUrl;
 
@@ -318,12 +318,22 @@ final int watchers;
 
 final int watchersCount;
 
+/// The value with the schema default applied when absent.
+bool get allowAutoMergeOrDefault { return allowAutoMerge ?? false; } 
+/// The value with the schema default applied when absent.
+bool get allowMergeCommitOrDefault { return allowMergeCommit ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowRebaseMergeOrDefault { return allowRebaseMerge ?? true; } 
+/// The value with the schema default applied when absent.
+bool get allowSquashMergeOrDefault { return allowSquashMerge ?? true; } 
+/// The value with the schema default applied when absent.
+bool get deleteBranchOnMergeOrDefault { return deleteBranchOnMerge ?? false; } 
 Map<String, dynamic> toJson() { return {
-  'allow_auto_merge': allowAutoMerge,
+  'allow_auto_merge': ?allowAutoMerge,
   'allow_forking': ?allowForking,
-  'allow_merge_commit': allowMergeCommit,
-  'allow_rebase_merge': allowRebaseMerge,
-  'allow_squash_merge': allowSquashMerge,
+  'allow_merge_commit': ?allowMergeCommit,
+  'allow_rebase_merge': ?allowRebaseMerge,
+  'allow_squash_merge': ?allowSquashMerge,
   'allow_update_branch': ?allowUpdateBranch,
   'archive_url': archiveUrl,
   'archived': archived,
@@ -339,7 +349,7 @@ Map<String, dynamic> toJson() { return {
   'contributors_url': contributorsUrl.toString(),
   'created_at': createdAt,
   'default_branch': defaultBranch,
-  'delete_branch_on_merge': deleteBranchOnMerge,
+  'delete_branch_on_merge': ?deleteBranchOnMerge,
   'deployments_url': deploymentsUrl.toString(),
   'description': description,
   'disabled': ?disabled,
@@ -483,7 +493,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('archi
       json.containsKey('visibility') &&
       json.containsKey('watchers') && json['watchers'] is num &&
       json.containsKey('watchers_count') && json['watchers_count'] is num; } 
-WebhookPullRequestReviewEditedPullRequestBaseRepo copyWith({bool Function()? allowAutoMerge, bool? Function()? allowForking, bool Function()? allowMergeCommit, bool Function()? allowRebaseMerge, bool Function()? allowSquashMerge, bool? Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, Uri? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, dynamic createdAt, String? defaultBranch, bool Function()? deleteBranchOnMerge, Uri? deploymentsUrl, String? Function()? description, bool? Function()? disabled, Uri? downloadsUrl, Uri? eventsUrl, bool? fork, int? forks, int? forksCount, Uri? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, Uri? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, String? Function()? homepage, Uri? hooksUrl, Uri? htmlUrl, int? id, bool? Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, String? Function()? language, Uri? languagesUrl, WebhookPullRequestReviewEditedPullRequestBaseRepoLicense? Function()? license, String? Function()? masterBranch, Uri? mergesUrl, String? milestonesUrl, Uri? Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String? Function()? organization, WebhookPullRequestReviewEditedPullRequestBaseRepoOwner? Function()? owner, WebhookPullRequestReviewEditedPullRequestBaseRepoPermissions? Function()? permissions, bool? private, bool? Function()? public, String? pullsUrl, dynamic Function()? pushedAt, String? releasesUrl, Omittable<String?>? roleName, int? size, String? sshUrl, int? Function()? stargazers, int? stargazersCount, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? svnUrl, Uri? tagsUrl, Uri? teamsUrl, List<String>? topics, String? treesUrl, DateTime? updatedAt, Uri? url, WebhookPullRequestReviewEditedPullRequestBaseRepoVisibility? visibility, int? watchers, int? watchersCount, }) { return WebhookPullRequestReviewEditedPullRequestBaseRepo(
+WebhookPullRequestReviewEditedPullRequestBaseRepo copyWith({bool? Function()? allowAutoMerge, bool? Function()? allowForking, bool? Function()? allowMergeCommit, bool? Function()? allowRebaseMerge, bool? Function()? allowSquashMerge, bool? Function()? allowUpdateBranch, String? archiveUrl, bool? archived, String? assigneesUrl, String? blobsUrl, String? branchesUrl, Uri? cloneUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, dynamic createdAt, String? defaultBranch, bool? Function()? deleteBranchOnMerge, Uri? deploymentsUrl, String? Function()? description, bool? Function()? disabled, Uri? downloadsUrl, Uri? eventsUrl, bool? fork, int? forks, int? forksCount, Uri? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, Uri? gitUrl, bool? hasDownloads, bool? hasIssues, bool? hasPages, bool? hasProjects, bool? hasWiki, String? Function()? homepage, Uri? hooksUrl, Uri? htmlUrl, int? id, bool? Function()? isTemplate, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, String? Function()? language, Uri? languagesUrl, WebhookPullRequestReviewEditedPullRequestBaseRepoLicense? Function()? license, String? Function()? masterBranch, Uri? mergesUrl, String? milestonesUrl, Uri? Function()? mirrorUrl, String? name, String? nodeId, String? notificationsUrl, int? openIssues, int? openIssuesCount, String? Function()? organization, WebhookPullRequestReviewEditedPullRequestBaseRepoOwner? Function()? owner, WebhookPullRequestReviewEditedPullRequestBaseRepoPermissions? Function()? permissions, bool? private, bool? Function()? public, String? pullsUrl, dynamic Function()? pushedAt, String? releasesUrl, Omittable<String?>? roleName, int? size, String? sshUrl, int? Function()? stargazers, int? stargazersCount, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? svnUrl, Uri? tagsUrl, Uri? teamsUrl, List<String>? topics, String? treesUrl, DateTime? updatedAt, Uri? url, WebhookPullRequestReviewEditedPullRequestBaseRepoVisibility? visibility, int? watchers, int? watchersCount, }) { return WebhookPullRequestReviewEditedPullRequestBaseRepo(
   allowAutoMerge: allowAutoMerge != null ? allowAutoMerge() : this.allowAutoMerge,
   allowForking: allowForking != null ? allowForking() : this.allowForking,
   allowMergeCommit: allowMergeCommit != null ? allowMergeCommit() : this.allowMergeCommit,

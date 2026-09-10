@@ -165,4 +165,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2($value)'; } 
  }
-typedef PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes = OneOf2<List<PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1>,PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2>;
+
+@immutable
+final class PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes {
+  const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes({this.listPostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 = const Omittable.absent(),
+this.postSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes._({required this.rawValue, required this.listPostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1,
+required this.postSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2,});
+  factory PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes.fromJson(Object? json) => PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes._(
+    rawValue: Omittable(json),
+    listPostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1: parseAnyOfVariant<List<PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1.fromJson(e as String)).toList()),
+postSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2: parseAnyOfVariant<PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2>(json, (value) => PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1>> listPostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1;
+final Omittable<PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2> postSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1.isPresent || postSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1.isPresent) listPostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1.value?.map((e) => e.toJson()).toList(),
+if (postSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2.isPresent) postSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes(${toJson()})';
+}

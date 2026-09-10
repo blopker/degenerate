@@ -19,7 +19,7 @@ final class ImagesApi with ApiExecutor {const ImagesApi(this.apiConfig);
 /// 
 ///
 /// `POST /images/edits`
-Future<ApiResult<ImagesResponse, Never>> createImageEdit({required EditImageBodyJsonParam body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOf2<ImagesResponse, ImageEditStreamEvent>, Never>> createImageEdit({required EditImageBodyJsonParam body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -30,10 +30,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ImagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<ImagesResponse, ImageEditStreamEvent>.a(ImagesResponse.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ImageEditStreamEvent
+throw UnsupportedError('Cannot decode text/event-stream response into ImageEditStreamEvent');
+}
+final json = jsonDecode(response.body);
+return OneOf2<ImagesResponse, ImageEditStreamEvent>.a(ImagesResponse.fromJson(json as Map<String, dynamic>));
+
   },
 );
  } 
@@ -41,7 +52,7 @@ return execute(
 /// 
 ///
 /// `POST /images/generations`
-Future<ApiResult<ImagesResponse, Never>> createImage({required CreateImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOf2<ImagesResponse, ImageGenStreamEvent>, Never>> createImage({required CreateImageRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -52,10 +63,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ImagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<ImagesResponse, ImageGenStreamEvent>.a(ImagesResponse.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ImageGenStreamEvent
+throw UnsupportedError('Cannot decode text/event-stream response into ImageGenStreamEvent');
+}
+final json = jsonDecode(response.body);
+return OneOf2<ImagesResponse, ImageGenStreamEvent>.a(ImagesResponse.fromJson(json as Map<String, dynamic>));
+
   },
 );
  } 
@@ -72,11 +94,11 @@ final request = ApiRequest(
     ApiMultipartField.file('image', body.image),
     if (body.model.value case final model$?)
       ApiMultipartField.text('model', model$.toString()),
-    if (body.n case final n$?)
+    if (body.n.value case final n$?)
       ApiMultipartField.text('n', n$.toString()),
-    if (body.responseFormat case final responseFormat$?)
+    if (body.responseFormat.value case final responseFormat$?)
       ApiMultipartField.text('response_format', responseFormat$.toJson()),
-    if (body.size case final size$?)
+    if (body.size.value case final size$?)
       ApiMultipartField.text('size', size$.toJson()),
     if (body.user case final user$?)
       ApiMultipartField.text('user', user$),
@@ -85,10 +107,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ImagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ImagesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

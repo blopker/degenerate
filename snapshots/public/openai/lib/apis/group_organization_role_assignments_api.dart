@@ -34,10 +34,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RoleListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RoleListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -55,10 +56,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return GroupRoleAssignment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GroupRoleAssignment.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -74,10 +76,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return DeletedRoleAssignmentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

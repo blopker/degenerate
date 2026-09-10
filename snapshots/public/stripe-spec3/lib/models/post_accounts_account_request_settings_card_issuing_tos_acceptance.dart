@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_account
 factory PostAccountsAccountRequestSettingsCardIssuingTosAcceptance.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestSettingsCardIssuingTosAcceptance(
   date: json['date'] != null ? (json['date'] as num).toInt() : null,
   ip: json['ip'] as String?,
-  userAgent: json['user_agent'] != null ? OneOf2.parse(json['user_agent'], fromA: (v) => v as String, fromB: (v) => PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2.fromJson(v as String),) : null,
+  userAgent: json['user_agent'] != null ? PostAccountsAccountRequestSettingsCardIssuingTosAcceptanceUserAgent.fromJson(json['user_agent']) : null,
 ); }
 
 final int? date;

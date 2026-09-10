@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'service_not_as_described2_additional_documentation.dart';import 'service_not_as_described2_canceled_at.dart';import 'service_not_as_described2_cancellation_reason.dart';import 'service_not_as_described2_explanation.dart';import 'service_not_as_described2_received_at.dart';@immutable final class ServiceNotAsDescribed2 {const ServiceNotAsDescribed2({this.additionalDocumentation, this.canceledAt, this.cancellationReason, this.explanation, this.receivedAt, });
 
 factory ServiceNotAsDescribed2.fromJson(Map<String, dynamic> json) { return ServiceNotAsDescribed2(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => ServiceNotAsDescribed2AdditionalDocumentationVariant2.fromJson(v as String),) : null,
-  canceledAt: json['canceled_at'] != null ? OneOf2.parse(json['canceled_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => ServiceNotAsDescribed2CanceledAtVariant2.fromJson(v as String),) : null,
-  cancellationReason: json['cancellation_reason'] != null ? OneOf2.parse(json['cancellation_reason'], fromA: (v) => v as String, fromB: (v) => ServiceNotAsDescribed2CancellationReasonVariant2.fromJson(v as String),) : null,
-  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => ServiceNotAsDescribed2ExplanationVariant2.fromJson(v as String),) : null,
-  receivedAt: json['received_at'] != null ? OneOf2.parse(json['received_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => ServiceNotAsDescribed2ReceivedAtVariant2.fromJson(v as String),) : null,
+  additionalDocumentation: json['additional_documentation'] != null ? ServiceNotAsDescribed2AdditionalDocumentation.fromJson(json['additional_documentation']) : null,
+  canceledAt: json['canceled_at'] != null ? ServiceNotAsDescribed2CanceledAt.fromJson(json['canceled_at']) : null,
+  cancellationReason: json['cancellation_reason'] != null ? ServiceNotAsDescribed2CancellationReason.fromJson(json['cancellation_reason']) : null,
+  explanation: json['explanation'] != null ? ServiceNotAsDescribed2Explanation.fromJson(json['explanation']) : null,
+  receivedAt: json['received_at'] != null ? ServiceNotAsDescribed2ReceivedAt.fromJson(json['received_at']) : null,
 ); }
 
 final ServiceNotAsDescribed2AdditionalDocumentation? additionalDocumentation;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/asn_intelligence_get_asn_subnets_response.dart';import '../models/intel_asn.dart';import '../models/intel_identifier.dart';/// AsnIntelligenceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/asn_intelligence_get_asn_overview_response4_xx.dart';import '../models/asn_intelligence_get_asn_subnets_response.dart';import '../models/asn_intelligence_get_asn_subnets_response4_xx.dart';import '../models/intel_asn.dart';import '../models/intel_identifier.dart';/// AsnIntelligenceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AsnIntelligenceApi with ApiExecutor {const AsnIntelligenceApi(this.a
 /// Gets an overview of the Autonomous System Number (ASN) and a list of subnets for it.
 ///
 /// `GET /accounts/{account_id}/intel/asn/{asn}`
-Future<ApiResult<IntelAsn?, Never>> asnIntelligenceGetAsnOverview({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IntelAsn?, AsnIntelligenceGetAsnOverviewResponse4Xx>> asnIntelligenceGetAsnOverview({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,11 +22,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? IntelAsn.fromJson(json['result'] as num) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? IntelAsn.fromJson(json['result'] as num) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return AsnIntelligenceGetAsnOverviewResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -35,7 +45,7 @@ return execute(
 /// Get ASN Subnets.
 ///
 /// `GET /accounts/{account_id}/intel/asn/{asn}/subnets`
-Future<ApiResult<AsnIntelligenceGetAsnSubnetsResponse, Never>> asnIntelligenceGetAsnSubnets({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AsnIntelligenceGetAsnSubnetsResponse, AsnIntelligenceGetAsnSubnetsResponse4Xx>> asnIntelligenceGetAsnSubnets({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -44,10 +54,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AsnIntelligenceGetAsnSubnetsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AsnIntelligenceGetAsnSubnetsResponse.fromJson(json as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return AsnIntelligenceGetAsnSubnetsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

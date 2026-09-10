@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'CustomTextFormatParamType($value)'; } 
  }
 /// Unconstrained free-form text.
-@immutable final class CustomTextFormatParam {const CustomTextFormatParam({this.type = CustomTextFormatParamType.text});
+@immutable final class CustomTextFormatParam {const CustomTextFormatParam({required this.type});
 
 factory CustomTextFormatParam.fromJson(Map<String, dynamic> json) { return CustomTextFormatParam(
   type: CustomTextFormatParamType.fromJson(json['type'] as String),

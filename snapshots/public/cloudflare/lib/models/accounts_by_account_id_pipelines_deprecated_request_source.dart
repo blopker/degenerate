@@ -4,6 +4,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_p
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory AccountsByAccountIdPipelinesDeprecatedRequestSource.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+  'cloudflare-pipelines_workers_pipelines_http_source' => AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesHttpSource.fromJson(json),
+  'cloudflare-pipelines_workers_pipelines_binding_source' => AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesBindingSource.fromJson(json),
   'binding' => AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding.fromJson(json),
   'http' => AccountsByAccountIdPipelinesDeprecatedRequestSourceHttp.fromJson(json),
   _ => AccountsByAccountIdPipelinesDeprecatedRequestSource$Unknown(json),
@@ -14,6 +16,32 @@ String get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is AccountsByAccountIdPipelinesDeprecatedRequestSource$Unknown; } 
+ }
+@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesHttpSource extends AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesHttpSource(this.cloudflarePipelinesWorkersPipelinesHttpSource);
+
+factory AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesHttpSource.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesHttpSource(CloudflarePipelinesWorkersPipelinesHttpSource.fromJson(json)); }
+
+final CloudflarePipelinesWorkersPipelinesHttpSource cloudflarePipelinesWorkersPipelinesHttpSource;
+
+@override String get type { return 'cloudflare-pipelines_workers_pipelines_http_source'; } 
+@override Map<String, dynamic> toJson() { return {...cloudflarePipelinesWorkersPipelinesHttpSource.toJson(), 'type': type}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesHttpSource && cloudflarePipelinesWorkersPipelinesHttpSource == other.cloudflarePipelinesWorkersPipelinesHttpSource; } 
+@override int get hashCode { return cloudflarePipelinesWorkersPipelinesHttpSource.hashCode; } 
+@override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesHttpSource(cloudflarePipelinesWorkersPipelinesHttpSource: $cloudflarePipelinesWorkersPipelinesHttpSource)'; } 
+ }
+@immutable final class AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesBindingSource extends AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesBindingSource(this.cloudflarePipelinesWorkersPipelinesBindingSource);
+
+factory AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesBindingSource.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesBindingSource(CloudflarePipelinesWorkersPipelinesBindingSource.fromJson(json)); }
+
+final CloudflarePipelinesWorkersPipelinesBindingSource cloudflarePipelinesWorkersPipelinesBindingSource;
+
+@override String get type { return 'cloudflare-pipelines_workers_pipelines_binding_source'; } 
+@override Map<String, dynamic> toJson() { return {...cloudflarePipelinesWorkersPipelinesBindingSource.toJson(), 'type': type}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesBindingSource && cloudflarePipelinesWorkersPipelinesBindingSource == other.cloudflarePipelinesWorkersPipelinesBindingSource; } 
+@override int get hashCode { return cloudflarePipelinesWorkersPipelinesBindingSource.hashCode; } 
+@override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedRequestSourceCloudflarePipelinesWorkersPipelinesBindingSource(cloudflarePipelinesWorkersPipelinesBindingSource: $cloudflarePipelinesWorkersPipelinesBindingSource)'; } 
  }
 @immutable final class AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding extends AccountsByAccountIdPipelinesDeprecatedRequestSource {const AccountsByAccountIdPipelinesDeprecatedRequestSourceBinding(this.cloudflarePipelinesWorkersPipelinesBindingSource);
 

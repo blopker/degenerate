@@ -111,14 +111,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => AigConfigListGatewayLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => AigConfigListGatewayLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return AigConfigListGatewayLogsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return AigConfigListGatewayLogsResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -153,13 +160,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AigConfigDeleteGatewayLogsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AigConfigDeleteGatewayLogsResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return AigConfigDeleteGatewayLogsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return AigConfigDeleteGatewayLogsResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -177,14 +192,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AigConfigGetGatewayLogDetailResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AigConfigGetGatewayLogDetailResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AigConfigGetGatewayLogDetailResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return AigConfigGetGatewayLogDetailResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -204,14 +226,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] as Map<String, dynamic>;
   },
   onError: (response) {
-    return AigConfigPatchGatewayLogResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return AigConfigPatchGatewayLogResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -229,13 +258,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return AigConfigGetGatewayLogRequestResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return AigConfigGetGatewayLogRequestResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -253,13 +290,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return AigConfigGetGatewayLogResponseResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return AigConfigGetGatewayLogResponseResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

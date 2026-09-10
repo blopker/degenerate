@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_supported_models.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'assistants_named_tool_choice.dart';import 'create_message_request.dart';import 'create_run_request_model.dart';import 'create_run_request_tools.dart';import 'parallel_tool_calls.dart';import 'reasoning_effort.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';import 'tool_choice_option.dart';import 'truncation_object.dart';@immutable final class CreateRunRequest {const CreateRunRequest({required this.assistantId, this.model = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.instructions = const Omittable.absent(), this.additionalInstructions = const Omittable.absent(), this.additionalMessages = const Omittable.absent(), this.tools = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = 1.0, this.topP = 1.0, this.stream = const Omittable.absent(), this.maxPromptTokens = const Omittable.absent(), this.maxCompletionTokens = const Omittable.absent(), this.truncationStrategy = const Omittable.absent(), this.toolChoice = const Omittable.absent(), this.parallelToolCalls, this.responseFormat = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'assistants_named_tool_choice.dart';import 'create_message_request.dart';import 'create_run_request_model.dart';import 'create_run_request_tools.dart';import 'parallel_tool_calls.dart';import 'reasoning_effort.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';import 'tool_choice_option.dart';import 'truncation_object.dart';@immutable final class CreateRunRequest {const CreateRunRequest({required this.assistantId, this.model = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.instructions = const Omittable.absent(), this.additionalInstructions = const Omittable.absent(), this.additionalMessages = const Omittable.absent(), this.tools = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.stream = const Omittable.absent(), this.maxPromptTokens = const Omittable.absent(), this.maxCompletionTokens = const Omittable.absent(), this.truncationStrategy = const Omittable.absent(), this.toolChoice = const Omittable.absent(), this.parallelToolCalls, this.responseFormat = const Omittable.absent(), });
 
 factory CreateRunRequest.fromJson(Map<String, dynamic> json) { return CreateRunRequest(
   assistantId: json['assistant_id'] as String,
-  model: json.containsKey('model') ? Omittable(json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => AssistantSupportedModels.fromJson(v as String),) : null) : const Omittable.absent(),
+  model: json.containsKey('model') ? Omittable(json['model'] != null ? CreateRunRequestModel.fromJson(json['model']) : null) : const Omittable.absent(),
   reasoningEffort: json.containsKey('reasoning_effort') ? Omittable(json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null) : const Omittable.absent(),
   instructions: json.containsKey('instructions') ? Omittable(json['instructions'] as String?) : const Omittable.absent(),
   additionalInstructions: json.containsKey('additional_instructions') ? Omittable(json['additional_instructions'] as String?) : const Omittable.absent(),
   additionalMessages: json.containsKey('additional_messages') ? Omittable((json['additional_messages'] as List<dynamic>?)?.map((e) => CreateMessageRequest.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   tools: json.containsKey('tools') ? Omittable((json['tools'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList()) : const Omittable.absent(),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
-  temperature: json.containsKey('temperature') ? json['temperature'] != null ? (json['temperature'] as num).toDouble() : null : 1.0,
-  topP: json.containsKey('top_p') ? json['top_p'] != null ? (json['top_p'] as num).toDouble() : null : 1.0,
+  temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
+  topP: json.containsKey('top_p') ? Omittable(json['top_p'] != null ? (json['top_p'] as num).toDouble() : null) : const Omittable.absent(),
   stream: json.containsKey('stream') ? Omittable(json['stream'] as bool?) : const Omittable.absent(),
   maxPromptTokens: json.containsKey('max_prompt_tokens') ? Omittable(json['max_prompt_tokens'] != null ? (json['max_prompt_tokens'] as num).toInt() : null) : const Omittable.absent(),
   maxCompletionTokens: json.containsKey('max_completion_tokens') ? Omittable(json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null) : const Omittable.absent(),
@@ -46,13 +46,13 @@ final Omittable<Map<String,String>?> metadata;
 
 /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
 /// 
-final double? temperature;
+final Omittable<double?> temperature;
 
 /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
 /// 
 /// We generally recommend altering this or temperature but not both.
 /// 
-final double? topP;
+final Omittable<double?> topP;
 
 /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
 /// 
@@ -74,6 +74,10 @@ final ParallelToolCalls? parallelToolCalls;
 
 final Omittable<ResponseFormatOption?> responseFormat;
 
+/// The value with the schema default applied when absent.
+double? get temperatureOrDefault { return temperature.valueOr(1.0); } 
+/// The value with the schema default applied when absent.
+double? get topPOrDefault { return topP.valueOr(1.0); } 
 Map<String, dynamic> toJson() { return {
   'assistant_id': assistantId,
   if (model.isPresent) 'model': model.value?.toJson(),
@@ -83,8 +87,8 @@ Map<String, dynamic> toJson() { return {
   if (additionalMessages.isPresent) 'additional_messages': additionalMessages.value?.map((e) => e.toJson()).toList(),
   if (tools.isPresent) 'tools': tools.value?.map((e) => e.toJson()).toList(),
   if (metadata.isPresent) 'metadata': metadata.value,
-  'temperature': ?temperature,
-  'top_p': ?topP,
+  if (temperature.isPresent) 'temperature': temperature.value,
+  if (topP.isPresent) 'top_p': topP.value,
   if (stream.isPresent) 'stream': stream.value,
   if (maxPromptTokens.isPresent) 'max_prompt_tokens': maxPromptTokens.value,
   if (maxCompletionTokens.isPresent) 'max_completion_tokens': maxCompletionTokens.value,
@@ -94,7 +98,7 @@ Map<String, dynamic> toJson() { return {
   if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('assistant_id') && json['assistant_id'] is String; } 
-CreateRunRequest copyWith({String? assistantId, Omittable<CreateRunRequestModel?>? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? instructions, Omittable<String?>? additionalInstructions, Omittable<List<CreateMessageRequest>?>? additionalMessages, Omittable<List<CreateRunRequestTools>?>? tools, Omittable<Map<String,String>?>? metadata, double? Function()? temperature, double? Function()? topP, Omittable<bool?>? stream, Omittable<int?>? maxPromptTokens, Omittable<int?>? maxCompletionTokens, Omittable<TruncationObject?>? truncationStrategy, Omittable<ToolChoiceOption?>? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, Omittable<ResponseFormatOption?>? responseFormat, }) { return CreateRunRequest(
+CreateRunRequest copyWith({String? assistantId, Omittable<CreateRunRequestModel?>? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? instructions, Omittable<String?>? additionalInstructions, Omittable<List<CreateMessageRequest>?>? additionalMessages, Omittable<List<CreateRunRequestTools>?>? tools, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<bool?>? stream, Omittable<int?>? maxPromptTokens, Omittable<int?>? maxCompletionTokens, Omittable<TruncationObject?>? truncationStrategy, Omittable<ToolChoiceOption?>? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, Omittable<ResponseFormatOption?>? responseFormat, }) { return CreateRunRequest(
   assistantId: assistantId ?? this.assistantId,
   model: model ?? this.model,
   reasoningEffort: reasoningEffort ?? this.reasoningEffort,
@@ -103,8 +107,8 @@ CreateRunRequest copyWith({String? assistantId, Omittable<CreateRunRequestModel?
   additionalMessages: additionalMessages ?? this.additionalMessages,
   tools: tools ?? this.tools,
   metadata: metadata ?? this.metadata,
-  temperature: temperature != null ? temperature() : this.temperature,
-  topP: topP != null ? topP() : this.topP,
+  temperature: temperature ?? this.temperature,
+  topP: topP ?? this.topP,
   stream: stream ?? this.stream,
   maxPromptTokens: maxPromptTokens ?? this.maxPromptTokens,
   maxCompletionTokens: maxCompletionTokens ?? this.maxCompletionTokens,

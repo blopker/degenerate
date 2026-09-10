@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'balance_transaction.dart';import 'charge.dart';import 'transfer_balance_transaction.dart';import 'transfer_destination.dart';import 'transfer_destination_payment.dart';import 'transfer_reversals.dart';import 'transfer_source_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_balance_transaction.dart';import 'transfer_destination.dart';import 'transfer_destination_payment.dart';import 'transfer_reversals.dart';import 'transfer_source_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TransferObject {const TransferObject._(this.value);
 
 factory TransferObject.fromJson(String json) { return switch (json) {
@@ -37,19 +37,19 @@ bool get isUnknown { return !values.contains(this); }
 factory Transfer.fromJson(Map<String, dynamic> json) { return Transfer(
   amount: (json['amount'] as num).toInt(),
   amountReversed: (json['amount_reversed'] as num).toInt(),
-  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? TransferBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
-  destination: json.containsKey('destination') ? Omittable(json['destination'] != null ? OneOf2.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  destinationPayment: json['destination_payment'] != null ? OneOf2.parse(json['destination_payment'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
+  destination: json.containsKey('destination') ? Omittable(json['destination'] != null ? TransferDestination.fromJson(json['destination']) : null) : const Omittable.absent(),
+  destinationPayment: json['destination_payment'] != null ? TransferDestinationPayment.fromJson(json['destination_payment']) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TransferObject.fromJson(json['object'] as String),
   reversals: TransferReversals.fromJson(json['reversals'] as Map<String, dynamic>),
   reversed: json['reversed'] as bool,
-  sourceTransaction: json.containsKey('source_transaction') ? Omittable(json['source_transaction'] != null ? OneOf2.parse(json['source_transaction'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  sourceTransaction: json.containsKey('source_transaction') ? Omittable(json['source_transaction'] != null ? TransferSourceTransaction.fromJson(json['source_transaction']) : null) : const Omittable.absent(),
   sourceType: json['source_type'] as String?,
   transferGroup: json.containsKey('transfer_group') ? Omittable(json['transfer_group'] as String?) : const Omittable.absent(),
 ); }

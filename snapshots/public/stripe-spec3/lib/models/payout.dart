@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'bank_account.dart';import 'card.dart';import 'deleted_bank_account.dart';import 'deleted_card.dart';import 'payout_application_fee.dart';import 'payout_balance_transaction.dart';import 'payout_destination.dart';import 'payout_failure_balance_transaction.dart';import 'payout_original_payout.dart';import 'payout_reversed_by.dart';import 'payouts_trace_id.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payout_application_fee.dart';import 'payout_balance_transaction.dart';import 'payout_destination.dart';import 'payout_failure_balance_transaction.dart';import 'payout_original_payout.dart';import 'payout_reversed_by.dart';import 'payouts_trace_id.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PayoutObject {const PayoutObject._(this.value);
 
 factory PayoutObject.fromJson(String json) { return switch (json) {
@@ -87,16 +87,16 @@ bool get isUnknown { return !values.contains(this); }
 
 factory Payout.fromJson(Map<String, dynamic> json) { return Payout(
   amount: (json['amount'] as num).toInt(),
-  applicationFee: json.containsKey('application_fee') ? Omittable(json['application_fee'] != null ? OneOf2.parse(json['application_fee'], fromA: (v) => v as String, fromB: (v) => ApplicationFee.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  applicationFee: json.containsKey('application_fee') ? Omittable(json['application_fee'] != null ? PayoutApplicationFee.fromJson(json['application_fee']) : null) : const Omittable.absent(),
   applicationFeeAmount: json.containsKey('application_fee_amount') ? Omittable(json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null) : const Omittable.absent(),
   arrivalDate: (json['arrival_date'] as num).toInt(),
   automatic: json['automatic'] as bool,
-  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  balanceTransaction: json.containsKey('balance_transaction') ? Omittable(json['balance_transaction'] != null ? PayoutBalanceTransaction.fromJson(json['balance_transaction']) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
-  destination: json.containsKey('destination') ? Omittable(json['destination'] != null ? OneOf5.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => DeletedBankAccount.fromJson(v as Map<String, dynamic>), fromE: (v) => DeletedCard.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  failureBalanceTransaction: json.containsKey('failure_balance_transaction') ? Omittable(json['failure_balance_transaction'] != null ? OneOf2.parse(json['failure_balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  destination: json.containsKey('destination') ? Omittable(json['destination'] != null ? PayoutDestination.fromJson(json['destination']) : null) : const Omittable.absent(),
+  failureBalanceTransaction: json.containsKey('failure_balance_transaction') ? Omittable(json['failure_balance_transaction'] != null ? PayoutFailureBalanceTransaction.fromJson(json['failure_balance_transaction']) : null) : const Omittable.absent(),
   failureCode: json.containsKey('failure_code') ? Omittable(json['failure_code'] as String?) : const Omittable.absent(),
   failureMessage: json.containsKey('failure_message') ? Omittable(json['failure_message'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
@@ -104,10 +104,10 @@ factory Payout.fromJson(Map<String, dynamic> json) { return Payout(
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   method: json['method'] as String,
   object: PayoutObject.fromJson(json['object'] as String),
-  originalPayout: json.containsKey('original_payout') ? Omittable(json['original_payout'] != null ? OneOf2.parse(json['original_payout'], fromA: (v) => v as String, fromB: (v) => Payout.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  originalPayout: json.containsKey('original_payout') ? Omittable(json['original_payout'] != null ? PayoutOriginalPayout.fromJson(json['original_payout']) : null) : const Omittable.absent(),
   payoutMethod: json.containsKey('payout_method') ? Omittable(json['payout_method'] as String?) : const Omittable.absent(),
   reconciliationStatus: PayoutReconciliationStatus.fromJson(json['reconciliation_status'] as String),
-  reversedBy: json.containsKey('reversed_by') ? Omittable(json['reversed_by'] != null ? OneOf2.parse(json['reversed_by'], fromA: (v) => v as String, fromB: (v) => Payout.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  reversedBy: json.containsKey('reversed_by') ? Omittable(json['reversed_by'] != null ? PayoutReversedBy.fromJson(json['reversed_by']) : null) : const Omittable.absent(),
   sourceType: json['source_type'] as String,
   statementDescriptor: json.containsKey('statement_descriptor') ? Omittable(json['statement_descriptor'] as String?) : const Omittable.absent(),
   status: json['status'] as String,

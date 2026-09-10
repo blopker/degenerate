@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_calculations_request_ship_from_details_address_city.dart';import 'post_tax_calculations_request_ship_from_details_address_line1.dart';import 'post_tax_calculations_request_ship_from_details_address_line2.dart';import 'post_tax_calculations_request_ship_from_details_address_postal_code.dart';import 'post_tax_calculations_request_ship_from_details_address_state.dart';@immutable final class PostTaxCalculationsRequestShipFromDetailsAddress {const PostTaxCalculationsRequestShipFromDetailsAddress({required this.country, this.city, this.line1, this.line2, this.postalCode, this.state, });
 
 factory PostTaxCalculationsRequestShipFromDetailsAddress.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestShipFromDetailsAddress(
-  city: json['city'] != null ? OneOf2.parse(json['city'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestShipFromDetailsAddressCityVariant2.fromJson(v as String),) : null,
+  city: json['city'] != null ? PostTaxCalculationsRequestShipFromDetailsAddressCity.fromJson(json['city']) : null,
   country: json['country'] as String,
-  line1: json['line1'] != null ? OneOf2.parse(json['line1'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestShipFromDetailsAddressLine1Variant2.fromJson(v as String),) : null,
-  line2: json['line2'] != null ? OneOf2.parse(json['line2'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestShipFromDetailsAddressLine2Variant2.fromJson(v as String),) : null,
-  postalCode: json['postal_code'] != null ? OneOf2.parse(json['postal_code'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestShipFromDetailsAddressPostalCodeVariant2.fromJson(v as String),) : null,
-  state: json['state'] != null ? OneOf2.parse(json['state'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestShipFromDetailsAddressStateVariant2.fromJson(v as String),) : null,
+  line1: json['line1'] != null ? PostTaxCalculationsRequestShipFromDetailsAddressLine1.fromJson(json['line1']) : null,
+  line2: json['line2'] != null ? PostTaxCalculationsRequestShipFromDetailsAddressLine2.fromJson(json['line2']) : null,
+  postalCode: json['postal_code'] != null ? PostTaxCalculationsRequestShipFromDetailsAddressPostalCode.fromJson(json['postal_code']) : null,
+  state: json['state'] != null ? PostTaxCalculationsRequestShipFromDetailsAddressState.fromJson(json['state']) : null,
 ); }
 
 final PostTaxCalculationsRequestShipFromDetailsAddressCity? city;

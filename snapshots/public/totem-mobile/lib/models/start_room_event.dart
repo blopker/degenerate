@@ -4,25 +4,28 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 
 @immutable
 final class StartRoomEvent {
-  const StartRoomEvent({this.type = 'start_room'});
+  const StartRoomEvent({this.type});
 
   factory StartRoomEvent.fromJson(Map<String, dynamic> json) {
-    return StartRoomEvent(
-      type: json.containsKey('type') ? json['type'] as String : 'start_room',
-    );
+    return StartRoomEvent(type: json['type'] as String?);
   }
 
-  final String type;
+  final String? type;
+
+  /// The value with the schema default applied when absent.
+  String get typeOrDefault {
+    return type ?? 'start_room';
+  }
 
   Map<String, dynamic> toJson() {
-    return {'type': type};
+    return {'type': ?type};
   }
 
   static bool canParse(Map<String, dynamic> json) {
     return json.keys.any((key) => const {'type'}.contains(key));
   }
 
-  StartRoomEvent copyWith({String Function()? type}) {
+  StartRoomEvent copyWith({String? Function()? type}) {
     return StartRoomEvent(type: type != null ? type() : this.type);
   }
 

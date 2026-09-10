@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests {const WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests({required this.targetLang, required this.text, this.sourceLang = 'en', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests {const WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests({required this.targetLang, required this.text, this.sourceLang, });
 
 factory WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(
-  sourceLang: json.containsKey('source_lang') ? json['source_lang'] as String : 'en',
+  sourceLang: json['source_lang'] as String?,
   targetLang: json['target_lang'] as String,
   text: json['text'] as String,
 ); }
 
 /// The language code of the source text (e.g., 'en' for English). Defaults to 'en' if not specified
-final String sourceLang;
+final String? sourceLang;
 
 /// The language code to translate the text into (e.g., 'es' for Spanish)
 final String targetLang;
@@ -17,14 +17,16 @@ final String targetLang;
 /// The text to be translated
 final String text;
 
+/// The value with the schema default applied when absent.
+String get sourceLangOrDefault { return sourceLang ?? 'en'; } 
 Map<String, dynamic> toJson() { return {
-  'source_lang': sourceLang,
+  'source_lang': ?sourceLang,
   'target_lang': targetLang,
   'text': text,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_lang') && json['target_lang'] is String &&
       json.containsKey('text') && json['text'] is String; } 
-WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests copyWith({String Function()? sourceLang, String? targetLang, String? text, }) { return WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(
+WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests copyWith({String? Function()? sourceLang, String? targetLang, String? text, }) { return WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(
   sourceLang: sourceLang != null ? sourceLang() : this.sourceLang,
   targetLang: targetLang ?? this.targetLang,
   text: text ?? this.text,

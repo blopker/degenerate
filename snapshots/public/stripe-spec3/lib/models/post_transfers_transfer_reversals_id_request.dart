@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_transfe
 
 factory PostTransfersTransferReversalsIdRequest.fromJson(Map<String, dynamic> json) { return PostTransfersTransferReversalsIdRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostTransfersTransferReversalsIdRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostTransfersTransferReversalsIdRequestMetadata.fromJson(json['metadata']) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

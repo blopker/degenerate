@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostQuotesRequestHeaderVariant2($value)'; } 
  }
-typedef PostQuotesRequestHeader = OneOf2<String,PostQuotesRequestHeaderVariant2>;
+/// A header that will be displayed on the quote PDF. If no value is passed, the default header configured in your [quote template settings](https://dashboard.stripe.com/settings/billing/quote) will be used.
+@immutable
+final class PostQuotesRequestHeader {
+  const PostQuotesRequestHeader({this.string = const Omittable.absent(),
+this.postQuotesRequestHeaderVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostQuotesRequestHeader._({required this.rawValue, required this.string,
+required this.postQuotesRequestHeaderVariant2,});
+  factory PostQuotesRequestHeader.fromJson(Object? json) => PostQuotesRequestHeader._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postQuotesRequestHeaderVariant2: parseAnyOfVariant<PostQuotesRequestHeaderVariant2>(json, (value) => PostQuotesRequestHeaderVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostQuotesRequestHeaderVariant2> postQuotesRequestHeaderVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postQuotesRequestHeaderVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postQuotesRequestHeaderVariant2.isPresent) postQuotesRequestHeaderVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostQuotesRequestHeader && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostQuotesRequestHeader(${toJson()})';
+}

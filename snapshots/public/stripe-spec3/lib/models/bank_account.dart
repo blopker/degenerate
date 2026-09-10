@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'bank_account_account.dart';import 'bank_account_customer.dart';import 'customer.dart';import 'deleted_customer.dart';import 'external_account_requirements.dart';@immutable final class BankAccountAvailablePayoutMethods {const BankAccountAvailablePayoutMethods._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_account_account.dart';import 'bank_account_customer.dart';import 'external_account_requirements.dart';@immutable final class BankAccountAvailablePayoutMethods {const BankAccountAvailablePayoutMethods._(this.value);
 
 factory BankAccountAvailablePayoutMethods.fromJson(String json) { return switch (json) {
   'instant' => instant,
@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class BankAccount {const BankAccount({required this.country, required this.currency, required this.id, required this.last4, required this.object, required this.status, this.account = const Omittable.absent(), this.accountHolderName = const Omittable.absent(), this.accountHolderType = const Omittable.absent(), this.accountType = const Omittable.absent(), this.availablePayoutMethods = const Omittable.absent(), this.bankName = const Omittable.absent(), this.customer = const Omittable.absent(), this.defaultForCurrency = const Omittable.absent(), this.fingerprint = const Omittable.absent(), this.futureRequirements = const Omittable.absent(), this.metadata = const Omittable.absent(), this.requirements = const Omittable.absent(), this.routingNumber = const Omittable.absent(), });
 
 factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
-  account: json.containsKey('account') ? Omittable(json['account'] != null ? OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  account: json.containsKey('account') ? Omittable(json['account'] != null ? BankAccountAccount.fromJson(json['account']) : null) : const Omittable.absent(),
   accountHolderName: json.containsKey('account_holder_name') ? Omittable(json['account_holder_name'] as String?) : const Omittable.absent(),
   accountHolderType: json.containsKey('account_holder_type') ? Omittable(json['account_holder_type'] as String?) : const Omittable.absent(),
   accountType: json.containsKey('account_type') ? Omittable(json['account_type'] as String?) : const Omittable.absent(),
@@ -64,7 +64,7 @@ factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
   bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
   country: json['country'] as String,
   currency: json['currency'] as String,
-  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? BankAccountCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
   defaultForCurrency: json.containsKey('default_for_currency') ? Omittable(json['default_for_currency'] as bool?) : const Omittable.absent(),
   fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
   futureRequirements: json.containsKey('future_requirements') ? Omittable(json['future_requirements'] != null ? ExternalAccountRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>) : null) : const Omittable.absent(),

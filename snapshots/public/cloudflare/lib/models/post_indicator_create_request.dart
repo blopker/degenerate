@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_request_related_events.dart';import 'post_indicator_create_request_tags.dart';import 'post_indicator_create_request_tags_variant2.dart';@immutable final class PostIndicatorCreateRequest {const PostIndicatorCreateRequest({required this.indicatorType, required this.value, this.autoCreateType, this.relatedEvents, this.tags, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_request_related_events.dart';import 'post_indicator_create_request_tags.dart';@immutable final class PostIndicatorCreateRequest {const PostIndicatorCreateRequest({required this.indicatorType, required this.value, this.autoCreateType, this.relatedEvents, this.tags, });
 
 factory PostIndicatorCreateRequest.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateRequest(
   autoCreateType: json['autoCreateType'] as bool?,
   indicatorType: json['indicatorType'] as String,
   relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => PostIndicatorCreateRequestRelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => PostIndicatorCreateRequestTagsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
+  tags: (json['tags'] as List<dynamic>?)?.map(PostIndicatorCreateRequestTags.fromJson).toList(),
   value: json['value'] as String,
 ); }
 

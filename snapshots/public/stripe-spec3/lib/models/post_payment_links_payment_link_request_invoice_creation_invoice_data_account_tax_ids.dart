@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2($value)'; } 
  }
-typedef PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIds = OneOf2<List<String>,PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2>;
+
+@immutable
+final class PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIds {
+  const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIds({this.listString = const Omittable.absent(),
+this.postPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIds._({required this.rawValue, required this.listString,
+required this.postPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2,});
+  factory PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIds.fromJson(Object? json) => PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIds._(
+    rawValue: Omittable(json),
+    listString: parseAnyOfVariant<List<String>>(json, (value) => (value! as List<dynamic>).map((e) => e as String).toList()),
+postPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2: parseAnyOfVariant<PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2>(json, (value) => PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<String>> listString;
+final Omittable<PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2> postPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listString.isPresent || postPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listString.isPresent) listString.value,
+if (postPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2.isPresent) postPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIds && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceDataAccountTaxIds(${toJson()})';
+}

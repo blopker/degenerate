@@ -30,7 +30,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ComputerToolCallOutputResourceStatus($value)'; } 
  }
-@immutable final class ComputerToolCallOutputResource {const ComputerToolCallOutputResource({required this.id, required this.callId, required this.output, this.type = 'computer_call_output', this.acknowledgedSafetyChecks, this.status, });
+@immutable final class ComputerToolCallOutputResource {const ComputerToolCallOutputResource({required this.type, required this.id, required this.callId, required this.output, this.acknowledgedSafetyChecks, this.status, });
 
 factory ComputerToolCallOutputResource.fromJson(Map<String, dynamic> json) { return ComputerToolCallOutputResource(
   type: json['type'] as String,

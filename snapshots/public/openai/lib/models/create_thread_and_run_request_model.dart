@@ -132,4 +132,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateThreadAndRunRequestModelVariant2($value)'; } 
  }
-typedef CreateThreadAndRunRequestModel = OneOf2<String,CreateThreadAndRunRequestModelVariant2>;
+/// The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.
+@immutable
+final class CreateThreadAndRunRequestModel {
+  const CreateThreadAndRunRequestModel({this.string = const Omittable.absent(),
+this.createThreadAndRunRequestModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CreateThreadAndRunRequestModel._({required this.rawValue, required this.string,
+required this.createThreadAndRunRequestModelVariant2,});
+  factory CreateThreadAndRunRequestModel.fromJson(Object? json) => CreateThreadAndRunRequestModel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+createThreadAndRunRequestModelVariant2: parseAnyOfVariant<CreateThreadAndRunRequestModelVariant2>(json, (value) => CreateThreadAndRunRequestModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<CreateThreadAndRunRequestModelVariant2> createThreadAndRunRequestModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => (rawValue.isPresent && rawValue.value == null) || string.isPresent || createThreadAndRunRequestModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (createThreadAndRunRequestModelVariant2.isPresent) createThreadAndRunRequestModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CreateThreadAndRunRequestModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CreateThreadAndRunRequestModel(${toJson()})';
+}

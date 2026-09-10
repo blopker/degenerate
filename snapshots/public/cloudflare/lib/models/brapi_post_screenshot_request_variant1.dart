@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostScreenshotRequestVariant1RejectResourceTypes($value)'; } 
  }
-@immutable final class BrapiPostScreenshotRequestVariant1 {const BrapiPostScreenshotRequestVariant1({required this.html, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.gotoOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.screenshotOptions, this.scrollPage, this.selector, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.waitForSelector, this.waitForTimeout, });
+@immutable final class BrapiPostScreenshotRequestVariant1 {const BrapiPostScreenshotRequestVariant1({required this.html, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.gotoOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.screenshotOptions, this.scrollPage, this.selector, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent, this.viewport, this.waitForSelector, this.waitForTimeout, });
 
 factory BrapiPostScreenshotRequestVariant1.fromJson(Map<String, dynamic> json) { return BrapiPostScreenshotRequestVariant1(
   actionTimeout: json['actionTimeout'] != null ? (json['actionTimeout'] as num).toDouble() : null,
@@ -165,7 +165,7 @@ factory BrapiPostScreenshotRequestVariant1.fromJson(Map<String, dynamic> json) {
   selector: json['selector'] as String?,
   setExtraHttpHeaders: (json['setExtraHTTPHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   setJavaScriptEnabled: json['setJavaScriptEnabled'] as bool?,
-  userAgent: json.containsKey('userAgent') ? json['userAgent'] as String : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+  userAgent: json['userAgent'] as String?,
   viewport: json['viewport'] != null ? BrapiPostScreenshotRequestVariant1Viewport.fromJson(json['viewport'] as Map<String, dynamic>) : null,
   waitForSelector: json['waitForSelector'] != null ? BrapiPostScreenshotRequestVariant1WaitForSelector.fromJson(json['waitForSelector'] as Map<String, dynamic>) : null,
   waitForTimeout: json['waitForTimeout'] != null ? (json['waitForTimeout'] as num).toDouble() : null,
@@ -220,7 +220,7 @@ final Map<String,String>? setExtraHttpHeaders;
 
 final bool? setJavaScriptEnabled;
 
-final String userAgent;
+final String? userAgent;
 
 /// Check [options](https://pptr.dev/api/puppeteer.page.setviewport).
 final BrapiPostScreenshotRequestVariant1Viewport? viewport;
@@ -231,6 +231,8 @@ final BrapiPostScreenshotRequestVariant1WaitForSelector? waitForSelector;
 /// Waits for a specified timeout before continuing.
 final double? waitForTimeout;
 
+/// The value with the schema default applied when absent.
+String get userAgentOrDefault { return userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'; } 
 Map<String, dynamic> toJson() { return {
   'actionTimeout': ?actionTimeout,
   if (addScriptTag != null) 'addScriptTag': addScriptTag?.map((e) => e.toJson()).toList(),
@@ -250,13 +252,13 @@ Map<String, dynamic> toJson() { return {
   'selector': ?selector,
   'setExtraHTTPHeaders': ?setExtraHttpHeaders,
   'setJavaScriptEnabled': ?setJavaScriptEnabled,
-  'userAgent': userAgent,
+  'userAgent': ?userAgent,
   if (viewport != null) 'viewport': viewport?.toJson(),
   if (waitForSelector != null) 'waitForSelector': waitForSelector?.toJson(),
   'waitForTimeout': ?waitForTimeout,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('html') && json['html'] is String; } 
-BrapiPostScreenshotRequestVariant1 copyWith({double? Function()? actionTimeout, List<BrapiPostScreenshotRequestVariant1AddScriptTag>? Function()? addScriptTag, List<BrapiPostScreenshotRequestVariant1AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostScreenshotRequestVariant1AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostScreenshotRequestVariant1Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostScreenshotRequestVariant1Cookies>? Function()? cookies, String? Function()? emulateMediaType, BrapiPostScreenshotRequestVariant1GotoOptions? Function()? gotoOptions, String? html, List<String>? Function()? rejectRequestPattern, List<BrapiPostScreenshotRequestVariant1RejectResourceTypes>? Function()? rejectResourceTypes, BrapiPostScreenshotRequestVariant1ScreenshotOptions? Function()? screenshotOptions, bool? Function()? scrollPage, String? Function()? selector, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, String Function()? userAgent, BrapiPostScreenshotRequestVariant1Viewport? Function()? viewport, BrapiPostScreenshotRequestVariant1WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostScreenshotRequestVariant1(
+BrapiPostScreenshotRequestVariant1 copyWith({double? Function()? actionTimeout, List<BrapiPostScreenshotRequestVariant1AddScriptTag>? Function()? addScriptTag, List<BrapiPostScreenshotRequestVariant1AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostScreenshotRequestVariant1AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostScreenshotRequestVariant1Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostScreenshotRequestVariant1Cookies>? Function()? cookies, String? Function()? emulateMediaType, BrapiPostScreenshotRequestVariant1GotoOptions? Function()? gotoOptions, String? html, List<String>? Function()? rejectRequestPattern, List<BrapiPostScreenshotRequestVariant1RejectResourceTypes>? Function()? rejectResourceTypes, BrapiPostScreenshotRequestVariant1ScreenshotOptions? Function()? screenshotOptions, bool? Function()? scrollPage, String? Function()? selector, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, String? Function()? userAgent, BrapiPostScreenshotRequestVariant1Viewport? Function()? viewport, BrapiPostScreenshotRequestVariant1WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostScreenshotRequestVariant1(
   actionTimeout: actionTimeout != null ? actionTimeout() : this.actionTimeout,
   addScriptTag: addScriptTag != null ? addScriptTag() : this.addScriptTag,
   addStyleTag: addStyleTag != null ? addStyleTag() : this.addStyleTag,

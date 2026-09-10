@@ -313,7 +313,7 @@ void main() {
       });
 
       test('uses escaped field name', () {
-        expect(source, contains(r'final String $toString'));
+        expect(source, contains(r'final String? $toString'));
       });
 
       test('is valid Dart (no conflicting_field_and_method)', () {
@@ -1359,7 +1359,7 @@ void main() {
       // Return type must carry item nullability, and the element decode
       // must not cast with `as String` (throws on null elements).
       expect(source, contains('ApiResult<List<String?>, Never>'));
-      expect(source, contains('json.map((e) => e as String?).toList()'));
+      expect(source, contains('(json as List<dynamic>).map((e) => e as String?).toList()'));
       expect(source, isNot(contains('e as String)')));
     });
 
@@ -1388,7 +1388,7 @@ void main() {
       expect(source, contains('ApiResult<Map<String, Pet?>, Never>'));
       expect(
         source,
-        contains('v != null ? Pet.fromJson(v as Map<String, dynamic>) : null'),
+        contains('v == null ? null : Pet.fromJson(v as Map<String, dynamic>)'),
       );
     });
 
@@ -2070,7 +2070,7 @@ void main() {
       );
       final source = emitRaw(library);
 
-      expect(source, contains('Payload.fromJson(jsonDecode(response.body)'));
+      expect(source, contains('Payload.fromJson(json as Map<String, dynamic>)'));
     });
 
     test('emits TODO and throw for unsupported text response objects', () {
@@ -2156,7 +2156,7 @@ void main() {
       );
       final source = emitRaw(library);
 
-      expect(source, contains('// TODO: Unsupported non-JSON error schema'));
+      expect(source, contains('// TODO: Unsupported non-JSON response schema'));
       expect(source, contains('return null;'));
     });
 
@@ -2457,6 +2457,9 @@ void main() {
               responses: {
                 200: IrResponse(
                   content: {
+                    const SpecString('application/json'): const IrMediaType(
+                      IrPrimitive(PrimitiveKind.string),
+                    ),
                     const SpecString('text/plain'): const IrMediaType(
                       IrObject(
                         'PlainObject',
@@ -3046,8 +3049,8 @@ void main() {
       // The typedef file should contain both the enum class and the typedef
       final typedefFile = files['models/container_value.dart'];
       expect(typedefFile, isNotNull);
-      expect(typedefFile, contains('typedef ContainerValue'));
-      expect(typedefFile, contains('OneOf2'));
+      expect(typedefFile, contains('final class ContainerValue'));
+      expect(typedefFile, contains('parseAnyOfVariant'));
       expect(typedefFile, contains('final class ContainerValueVariant2'));
     });
 
@@ -3152,9 +3155,9 @@ void main() {
       expect(file, contains("import 'dart:typed_data'"));
     });
 
-    test('IrAnyOf typedef file does not import dart:convert', () {
+    test('IrAnyOf class imports dart:convert for byte codecs', () {
       final file = files['models/bytes_or_string_any_of.dart']!;
-      expect(file, isNot(contains("import 'dart:convert'")));
+      expect(file, contains("import 'dart:convert'"));
       expect(file, contains("import 'dart:typed_data'"));
     });
   });
@@ -4410,9 +4413,8 @@ void main() {
         expect(source, contains('String? Function()? email'));
       });
 
-      test('copyWith thunk for defaulted field stays non-nullable', () {
-        expect(source, contains('String Function()? role'));
-        expect(source, isNot(contains('String? Function()? role')));
+      test('copyWith thunk can unset a defaulted optional field', () {
+        expect(source, contains('String? Function()? role'));
       });
 
       test('required nullable field stays plain and always serializes', () {
@@ -4420,8 +4422,9 @@ void main() {
         expect(source, contains("'mode': mode,"));
       });
 
-      test('defaulted field stays plain', () {
-        expect(source, contains('final String role;'));
+      test('defaulted optional non-nullable field stays plain and nullable', () {
+        expect(source, contains('final String? role;'));
+        expect(source, contains('String get roleOrDefault'));
         expect(source, isNot(contains('Omittable<String?> role')));
       });
 
@@ -4440,9 +4443,9 @@ void main() {
         expect(source, contains("if (email.isPresent) 'email': email.value,"));
       });
 
-      test('required and defaulted fields still stay plain', () {
+      test('required fields stay plain and defaulted optional fields wrap', () {
         expect(source, contains('final String? mode;'));
-        expect(source, contains('final String role;'));
+        expect(source, contains('final Omittable<String?> role;'));
       });
 
       test('is valid Dart', () {

@@ -88,14 +88,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetAttacksLayer7SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return RadarGetAttacksLayer7SummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return RadarGetAttacksLayer7SummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return RadarGetAttacksLayer7SummaryResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -182,14 +189,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetAttacksLayer7TimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return RadarGetAttacksLayer7TimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return RadarGetAttacksLayer7TimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return RadarGetAttacksLayer7TimeseriesResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -279,14 +293,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetAttacksLayer7TimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return RadarGetAttacksLayer7TimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return RadarGetAttacksLayer7TimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return RadarGetAttacksLayer7TimeseriesGroupResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -365,14 +386,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetAttacksLayer7TopOriginAsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return RadarGetAttacksLayer7TopOriginAsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return RadarGetAttacksLayer7TopOriginAsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return RadarGetAttacksLayer7TopOriginAsResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -450,14 +478,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetAttacksLayer7TopAttacksResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return RadarGetAttacksLayer7TopAttacksResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return RadarGetAttacksLayer7TopAttacksResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return RadarGetAttacksLayer7TopAttacksResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -536,14 +571,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetAttacksLayer7TopOriginLocationResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return RadarGetAttacksLayer7TopOriginLocationResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return RadarGetAttacksLayer7TopOriginLocationResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return RadarGetAttacksLayer7TopOriginLocationResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -602,14 +644,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return RadarGetAttacksLayer7TopTargetLocationResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return RadarGetAttacksLayer7TopTargetLocationResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return RadarGetAttacksLayer7TopTargetLocationResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return RadarGetAttacksLayer7TopTargetLocationResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

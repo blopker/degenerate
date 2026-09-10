@@ -181,20 +181,20 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A tool that generates images using the GPT image models.
 /// 
-@immutable final class ImageGenTool {const ImageGenTool({required this.type, this.model, this.quality = ImageGenToolQuality.auto, this.size = ImageGenToolSize.auto, this.outputFormat = ImageGenToolOutputFormat.png, this.outputCompression = 100, this.moderation = ImageGenToolModeration.auto, this.background = ImageGenToolBackground.auto, this.inputFidelity = const Omittable.absent(), this.inputImageMask, this.partialImages = 0, this.action, });
+@immutable final class ImageGenTool {const ImageGenTool({required this.type, this.model, this.quality, this.size, this.outputFormat, this.outputCompression, this.moderation, this.background, this.inputFidelity = const Omittable.absent(), this.inputImageMask, this.partialImages, this.action, });
 
 factory ImageGenTool.fromJson(Map<String, dynamic> json) { return ImageGenTool(
   type: json['type'] as String,
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => ImageGenToolModelVariant2.fromJson(v as String),) : null,
-  quality: json.containsKey('quality') ? ImageGenToolQuality.fromJson(json['quality'] as String) : ImageGenToolQuality.auto,
-  size: json.containsKey('size') ? ImageGenToolSize.fromJson(json['size'] as String) : ImageGenToolSize.auto,
-  outputFormat: json.containsKey('output_format') ? ImageGenToolOutputFormat.fromJson(json['output_format'] as String) : ImageGenToolOutputFormat.png,
-  outputCompression: json.containsKey('output_compression') ? (json['output_compression'] as num).toInt() : 100,
-  moderation: json.containsKey('moderation') ? ImageGenToolModeration.fromJson(json['moderation'] as String) : ImageGenToolModeration.auto,
-  background: json.containsKey('background') ? ImageGenToolBackground.fromJson(json['background'] as String) : ImageGenToolBackground.auto,
+  model: json['model'] != null ? ImageGenToolModel.fromJson(json['model']) : null,
+  quality: json['quality'] != null ? ImageGenToolQuality.fromJson(json['quality'] as String) : null,
+  size: json['size'] != null ? ImageGenToolSize.fromJson(json['size'] as String) : null,
+  outputFormat: json['output_format'] != null ? ImageGenToolOutputFormat.fromJson(json['output_format'] as String) : null,
+  outputCompression: json['output_compression'] != null ? (json['output_compression'] as num).toInt() : null,
+  moderation: json['moderation'] != null ? ImageGenToolModeration.fromJson(json['moderation'] as String) : null,
+  background: json['background'] != null ? ImageGenToolBackground.fromJson(json['background'] as String) : null,
   inputFidelity: json.containsKey('input_fidelity') ? Omittable(json['input_fidelity'] != null ? InputFidelity.fromJson(json['input_fidelity'] as String) : null) : const Omittable.absent(),
   inputImageMask: json['input_image_mask'] != null ? ImageGenToolInputImageMask.fromJson(json['input_image_mask'] as Map<String, dynamic>) : null,
-  partialImages: json.containsKey('partial_images') ? (json['partial_images'] as num).toInt() : 0,
+  partialImages: json['partial_images'] != null ? (json['partial_images'] as num).toInt() : null,
   action: json['action'] != null ? ImageGenActionEnum.fromJson(json['action'] as String) : null,
 ); }
 
@@ -207,30 +207,30 @@ final ImageGenToolModel? model;
 /// The quality of the generated image. One of `low`, `medium`, `high`,
 /// or `auto`. Default: `auto`.
 /// 
-final ImageGenToolQuality quality;
+final ImageGenToolQuality? quality;
 
 /// The size of the generated image. One of `1024x1024`, `1024x1536`,
 /// `1536x1024`, or `auto`. Default: `auto`.
 /// 
-final ImageGenToolSize size;
+final ImageGenToolSize? size;
 
 /// The output format of the generated image. One of `png`, `webp`, or
 /// `jpeg`. Default: `png`.
 /// 
-final ImageGenToolOutputFormat outputFormat;
+final ImageGenToolOutputFormat? outputFormat;
 
 /// Compression level for the output image. Default: 100.
 /// 
-final int outputCompression;
+final int? outputCompression;
 
 /// Moderation level for the generated image. Default: `auto`.
 /// 
-final ImageGenToolModeration moderation;
+final ImageGenToolModeration? moderation;
 
 /// Background type for the generated image. One of `transparent`,
 /// `opaque`, or `auto`. Default: `auto`.
 /// 
-final ImageGenToolBackground background;
+final ImageGenToolBackground? background;
 
 final Omittable<InputFidelity?> inputFidelity;
 
@@ -241,28 +241,42 @@ final ImageGenToolInputImageMask? inputImageMask;
 
 /// Number of partial images to generate in streaming mode, from 0 (default value) to 3.
 /// 
-final int partialImages;
+final int? partialImages;
 
 /// Whether to generate a new image or edit an existing image. Default: `auto`.
 /// 
 final ImageGenActionEnum? action;
 
+/// The value with the schema default applied when absent.
+ImageGenToolQuality get qualityOrDefault { return quality ?? ImageGenToolQuality.fromJson('auto'); } 
+/// The value with the schema default applied when absent.
+ImageGenToolSize get sizeOrDefault { return size ?? ImageGenToolSize.fromJson('auto'); } 
+/// The value with the schema default applied when absent.
+ImageGenToolOutputFormat get outputFormatOrDefault { return outputFormat ?? ImageGenToolOutputFormat.fromJson('png'); } 
+/// The value with the schema default applied when absent.
+int get outputCompressionOrDefault { return outputCompression ?? 100; } 
+/// The value with the schema default applied when absent.
+ImageGenToolModeration get moderationOrDefault { return moderation ?? ImageGenToolModeration.fromJson('auto'); } 
+/// The value with the schema default applied when absent.
+ImageGenToolBackground get backgroundOrDefault { return background ?? ImageGenToolBackground.fromJson('auto'); } 
+/// The value with the schema default applied when absent.
+int get partialImagesOrDefault { return partialImages ?? 0; } 
 Map<String, dynamic> toJson() { return {
   'type': type,
   if (model != null) 'model': model?.toJson(),
-  'quality': quality.toJson(),
-  'size': size.toJson(),
-  'output_format': outputFormat.toJson(),
-  'output_compression': outputCompression,
-  'moderation': moderation.toJson(),
-  'background': background.toJson(),
+  if (quality != null) 'quality': quality?.toJson(),
+  if (size != null) 'size': size?.toJson(),
+  if (outputFormat != null) 'output_format': outputFormat?.toJson(),
+  'output_compression': ?outputCompression,
+  if (moderation != null) 'moderation': moderation?.toJson(),
+  if (background != null) 'background': background?.toJson(),
   if (inputFidelity.isPresent) 'input_fidelity': inputFidelity.value?.toJson(),
   if (inputImageMask != null) 'input_image_mask': inputImageMask?.toJson(),
-  'partial_images': partialImages,
+  'partial_images': ?partialImages,
   if (action != null) 'action': action?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, ImageGenToolQuality Function()? quality, ImageGenToolSize Function()? size, ImageGenToolOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageGenToolBackground Function()? background, Omittable<InputFidelity?>? inputFidelity, ImageGenToolInputImageMask? Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ImageGenTool(
+ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, ImageGenToolQuality? Function()? quality, ImageGenToolSize? Function()? size, ImageGenToolOutputFormat? Function()? outputFormat, int? Function()? outputCompression, ImageGenToolModeration? Function()? moderation, ImageGenToolBackground? Function()? background, Omittable<InputFidelity?>? inputFidelity, ImageGenToolInputImageMask? Function()? inputImageMask, int? Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ImageGenTool(
   type: type ?? this.type,
   model: model != null ? model() : this.model,
   quality: quality != null ? quality() : this.quality,

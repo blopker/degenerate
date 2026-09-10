@@ -6,7 +6,7 @@ factory LogpushLogpushJobResponseCollection.fromJson(Map<String, dynamic> json) 
   errors: (json['errors'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LogpushMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: (json['result'] as List<dynamic>?)?.map((e) => LogpushLogpushJob.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>?)?.map((e) => e == null ? null : LogpushLogpushJob.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 final List<LogpushMessages2> errors;
@@ -16,18 +16,18 @@ final List<LogpushMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final List<LogpushLogpushJob>? result;
+final List<LogpushLogpushJob?>? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  if (result != null) 'result': result?.map((e) => e.toJson()).toList(),
+  if (result != null) 'result': result?.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-LogpushLogpushJobResponseCollection copyWith({List<LogpushMessages2>? errors, List<LogpushMessages2>? messages, bool? success, List<LogpushLogpushJob>? Function()? result, }) { return LogpushLogpushJobResponseCollection(
+LogpushLogpushJobResponseCollection copyWith({List<LogpushMessages2>? errors, List<LogpushMessages2>? messages, bool? success, List<LogpushLogpushJob?>? Function()? result, }) { return LogpushLogpushJobResponseCollection(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

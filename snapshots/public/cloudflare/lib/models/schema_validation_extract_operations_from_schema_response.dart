@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'schema_validation_extract_operations_from_schema_response_result.dart';import 'schema_validation_extract_operations_from_schema_response_result_info.dart';import 'shield_basic_operation.dart';import 'shield_messages2.dart';import 'shield_operation.dart';@immutable final class SchemaValidationExtractOperationsFromSchemaResponse {const SchemaValidationExtractOperationsFromSchemaResponse({required this.errors, required this.messages, required this.success, required this.result, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'schema_validation_extract_operations_from_schema_response_result.dart';import 'schema_validation_extract_operations_from_schema_response_result_info.dart';import 'shield_messages2.dart';@immutable final class SchemaValidationExtractOperationsFromSchemaResponse {const SchemaValidationExtractOperationsFromSchemaResponse({required this.errors, required this.messages, required this.success, required this.result, this.resultInfo, });
 
 factory SchemaValidationExtractOperationsFromSchemaResponse.fromJson(Map<String, dynamic> json) { return SchemaValidationExtractOperationsFromSchemaResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ShieldMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? SchemaValidationExtractOperationsFromSchemaResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-  result: (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => ShieldOperation.fromJson(v as Map<String, dynamic>), fromB: (v) => ShieldBasicOperation.fromJson(v as Map<String, dynamic>),)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => e == null ? null : SchemaValidationExtractOperationsFromSchemaResponseResult.fromJson(e)).toList(),
 ); }
 
 final List<ShieldMessages2> errors;
@@ -19,20 +19,20 @@ final bool success;
 
 final SchemaValidationExtractOperationsFromSchemaResponseResultInfo? resultInfo;
 
-final List<SchemaValidationExtractOperationsFromSchemaResponseResult> result;
+final List<SchemaValidationExtractOperationsFromSchemaResponseResult?> result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
   if (resultInfo != null) 'result_info': resultInfo?.toJson(),
-  'result': result.map((e) => e.toJson()).toList(),
+  'result': result.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-SchemaValidationExtractOperationsFromSchemaResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, SchemaValidationExtractOperationsFromSchemaResponseResultInfo? Function()? resultInfo, List<SchemaValidationExtractOperationsFromSchemaResponseResult>? result, }) { return SchemaValidationExtractOperationsFromSchemaResponse(
+SchemaValidationExtractOperationsFromSchemaResponse copyWith({List<ShieldMessages2>? errors, List<ShieldMessages2>? messages, bool? success, SchemaValidationExtractOperationsFromSchemaResponseResultInfo? Function()? resultInfo, List<SchemaValidationExtractOperationsFromSchemaResponseResult?>? result, }) { return SchemaValidationExtractOperationsFromSchemaResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

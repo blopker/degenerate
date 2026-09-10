@@ -39,10 +39,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ContainerListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ContainerListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -62,10 +63,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ContainerResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ContainerResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -83,10 +85,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ContainerResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ContainerResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -104,7 +107,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -137,10 +140,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ContainerFileListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ContainerFileListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -164,10 +168,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ContainerFileResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ContainerFileResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -185,10 +190,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ContainerFileResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ContainerFileResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -206,7 +212,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -225,7 +231,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -258,10 +264,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return KeyList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return KeyList.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -281,10 +288,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Key.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -302,10 +310,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Key.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Key.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -323,10 +332,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return KeysDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return KeysDeleteResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -346,10 +356,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return TokenCountsResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return TokenCountsResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -369,10 +380,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return CompactResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CompactResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -390,10 +402,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ChatSessionResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ChatSessionResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -411,10 +424,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ChatSessionResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ChatSessionResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -447,10 +461,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ThreadItemListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ThreadItemListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -466,10 +481,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ThreadResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ThreadResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -485,10 +501,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return DeletedThreadResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeletedThreadResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -524,10 +541,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ThreadListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ThreadListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

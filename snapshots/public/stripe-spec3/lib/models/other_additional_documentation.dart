@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'OtherAdditionalDocumentationVariant2($value)'; } 
  }
-typedef OtherAdditionalDocumentation = OneOf2<String,OtherAdditionalDocumentationVariant2>;
+
+@immutable
+final class OtherAdditionalDocumentation {
+  const OtherAdditionalDocumentation({this.string = const Omittable.absent(),
+this.otherAdditionalDocumentationVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const OtherAdditionalDocumentation._({required this.rawValue, required this.string,
+required this.otherAdditionalDocumentationVariant2,});
+  factory OtherAdditionalDocumentation.fromJson(Object? json) => OtherAdditionalDocumentation._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+otherAdditionalDocumentationVariant2: parseAnyOfVariant<OtherAdditionalDocumentationVariant2>(json, (value) => OtherAdditionalDocumentationVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<OtherAdditionalDocumentationVariant2> otherAdditionalDocumentationVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || otherAdditionalDocumentationVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (otherAdditionalDocumentationVariant2.isPresent) otherAdditionalDocumentationVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is OtherAdditionalDocumentation && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'OtherAdditionalDocumentation(${toJson()})';
+}

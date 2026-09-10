@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing
 @immutable final class PostBillingPortalConfigurationsRequestBusinessProfile {const PostBillingPortalConfigurationsRequestBusinessProfile({this.headline, this.privacyPolicyUrl, this.termsOfServiceUrl, });
 
 factory PostBillingPortalConfigurationsRequestBusinessProfile.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestBusinessProfile(
-  headline: json['headline'] != null ? OneOf2.parse(json['headline'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsRequestBusinessProfileHeadlineVariant2.fromJson(v as String),) : null,
+  headline: json['headline'] != null ? PostBillingPortalConfigurationsRequestBusinessProfileHeadline.fromJson(json['headline']) : null,
   privacyPolicyUrl: json['privacy_policy_url'] as String?,
   termsOfServiceUrl: json['terms_of_service_url'] as String?,
 ); }

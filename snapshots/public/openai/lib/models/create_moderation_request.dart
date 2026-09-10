@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_moder
 
 factory CreateModerationRequest.fromJson(Map<String, dynamic> json) { return CreateModerationRequest(
   input: OneOf3.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => CreateModerationRequestInputVariant3ImageUrl.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateModerationRequestInputVariant3Text.fromJson(v as Map<String, dynamic>),)).toList(),),
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateModerationRequestModelVariant2.fromJson(v as String),) : null,
+  model: json['model'] != null ? CreateModerationRequestModel.fromJson(json['model']) : null,
 ); }
 
 /// Input (or inputs) to classify. Can be a single string, an array of strings, or

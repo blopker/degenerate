@@ -1,61 +1,40 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_request_rule.dart';import 'rulesets_ruleset_id.dart';import 'rulesets_ruleset_version.dart';@immutable final class UpdateZoneEntrypointRulesetRequest {const UpdateZoneEntrypointRulesetRequest({required this.id, required this.lastUpdated, required this.version, this.description = '', this.name, this.rules, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_request_rule_request.dart';@immutable final class UpdateZoneEntrypointRulesetRequest {const UpdateZoneEntrypointRulesetRequest({this.description, this.name, this.rules, });
 
 factory UpdateZoneEntrypointRulesetRequest.fromJson(Map<String, dynamic> json) { return UpdateZoneEntrypointRulesetRequest(
-  description: json.containsKey('description') ? json['description'] as String : '',
-  id: RulesetsRulesetId.fromJson(json['id'] as String),
-  lastUpdated: DateTime.parse(json['last_updated'] as String),
+  description: json['description'] as String?,
   name: json['name'] as String?,
-  version: RulesetsRulesetVersion.fromJson(json['version'] as String),
-  rules: (json['rules'] as List<dynamic>?)?.map((e) => RulesetsRequestRule.fromJson(e as Map<String, dynamic>)).toList(),
+  rules: (json['rules'] as List<dynamic>?)?.map((e) => RulesetsRequestRuleRequest.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// An informative description of the ruleset.
-final String description;
-
-/// The unique ID of the ruleset.
-final RulesetsRulesetId id;
-
-/// The timestamp of when the ruleset was last modified.
-final DateTime lastUpdated;
+final String? description;
 
 /// The human-readable name of the ruleset.
 final String? name;
 
-/// The version of the ruleset.
-final RulesetsRulesetVersion version;
-
 /// The list of rules in the ruleset.
-final List<RulesetsRequestRule>? rules;
+final List<RulesetsRequestRuleRequest>? rules;
 
+/// The value with the schema default applied when absent.
+String get descriptionOrDefault { return description ?? ''; } 
 Map<String, dynamic> toJson() { return {
-  'description': description,
-  'id': id.toJson(),
-  'last_updated': lastUpdated.toIso8601String(),
+  'description': ?description,
   'name': ?name,
-  'version': version.toJson(),
   if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
-      json.containsKey('last_updated') && json['last_updated'] is String &&
-      json.containsKey('version'); } 
-UpdateZoneEntrypointRulesetRequest copyWith({String Function()? description, RulesetsRulesetId? id, DateTime? lastUpdated, String? Function()? name, RulesetsRulesetVersion? version, List<RulesetsRequestRule>? Function()? rules, }) { return UpdateZoneEntrypointRulesetRequest(
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'name', 'rules'}.contains(key)); } 
+UpdateZoneEntrypointRulesetRequest copyWith({String? Function()? description, String? Function()? name, List<RulesetsRequestRuleRequest>? Function()? rules, }) { return UpdateZoneEntrypointRulesetRequest(
   description: description != null ? description() : this.description,
-  id: id ?? this.id,
-  lastUpdated: lastUpdated ?? this.lastUpdated,
   name: name != null ? name() : this.name,
-  version: version ?? this.version,
   rules: rules != null ? rules() : this.rules,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is UpdateZoneEntrypointRulesetRequest &&
           description == other.description &&
-          id == other.id &&
-          lastUpdated == other.lastUpdated &&
           name == other.name &&
-          version == other.version &&
           listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hash(description, id, lastUpdated, name, version, Object.hashAll(rules ?? const [])); } 
-@override String toString() { return 'UpdateZoneEntrypointRulesetRequest(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, rules: $rules)'; } 
+@override int get hashCode { return Object.hash(description, name, Object.hashAll(rules ?? const [])); } 
+@override String toString() { return 'UpdateZoneEntrypointRulesetRequest(description: $description, name: $name, rules: $rules)'; } 
  }

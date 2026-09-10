@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_branch_protection_request_required_pull_request_reviews.dart';import 'repos_update_branch_protection_request_required_status_checks.dart';import 'repos_update_branch_protection_request_restrictions.dart';@immutable final class ReposUpdateBranchProtectionRequest {const ReposUpdateBranchProtectionRequest({required this.requiredStatusChecks, required this.enforceAdmins, required this.requiredPullRequestReviews, required this.restrictions, this.requiredLinearHistory, this.allowForcePushes = const Omittable.absent(), this.allowDeletions, this.blockCreations, this.requiredConversationResolution, this.lockBranch = false, this.allowForkSyncing = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_branch_protection_request_required_pull_request_reviews.dart';import 'repos_update_branch_protection_request_required_status_checks.dart';import 'repos_update_branch_protection_request_restrictions.dart';@immutable final class ReposUpdateBranchProtectionRequest {const ReposUpdateBranchProtectionRequest({required this.requiredStatusChecks, required this.enforceAdmins, required this.requiredPullRequestReviews, required this.restrictions, this.requiredLinearHistory, this.allowForcePushes = const Omittable.absent(), this.allowDeletions, this.blockCreations, this.requiredConversationResolution, this.lockBranch, this.allowForkSyncing, });
 
 factory ReposUpdateBranchProtectionRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateBranchProtectionRequest(
   requiredStatusChecks: json['required_status_checks'] != null ? ReposUpdateBranchProtectionRequestRequiredStatusChecks.fromJson(json['required_status_checks'] as Map<String, dynamic>) : null,
@@ -12,8 +12,8 @@ factory ReposUpdateBranchProtectionRequest.fromJson(Map<String, dynamic> json) {
   allowDeletions: json['allow_deletions'] as bool?,
   blockCreations: json['block_creations'] as bool?,
   requiredConversationResolution: json['required_conversation_resolution'] as bool?,
-  lockBranch: json.containsKey('lock_branch') ? json['lock_branch'] as bool : false,
-  allowForkSyncing: json.containsKey('allow_fork_syncing') ? json['allow_fork_syncing'] as bool : false,
+  lockBranch: json['lock_branch'] as bool?,
+  allowForkSyncing: json['allow_fork_syncing'] as bool?,
 ); }
 
 /// Require status checks to pass before merging. Set to `null` to disable.
@@ -44,11 +44,15 @@ final bool? blockCreations;
 final bool? requiredConversationResolution;
 
 /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch. Default: `false`.
-final bool lockBranch;
+final bool? lockBranch;
 
 /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.
-final bool allowForkSyncing;
+final bool? allowForkSyncing;
 
+/// The value with the schema default applied when absent.
+bool get lockBranchOrDefault { return lockBranch ?? false; } 
+/// The value with the schema default applied when absent.
+bool get allowForkSyncingOrDefault { return allowForkSyncing ?? false; } 
 Map<String, dynamic> toJson() { return {
   'required_status_checks': requiredStatusChecks?.toJson(),
   'enforce_admins': enforceAdmins,
@@ -59,14 +63,14 @@ Map<String, dynamic> toJson() { return {
   'allow_deletions': ?allowDeletions,
   'block_creations': ?blockCreations,
   'required_conversation_resolution': ?requiredConversationResolution,
-  'lock_branch': lockBranch,
-  'allow_fork_syncing': allowForkSyncing,
+  'lock_branch': ?lockBranch,
+  'allow_fork_syncing': ?allowForkSyncing,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('required_status_checks') &&
       json.containsKey('enforce_admins') && (json['enforce_admins'] == null || json['enforce_admins'] is bool) &&
       json.containsKey('required_pull_request_reviews') &&
       json.containsKey('restrictions'); } 
-ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestRequiredStatusChecks? Function()? requiredStatusChecks, bool? Function()? enforceAdmins, ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? Function()? requiredPullRequestReviews, ReposUpdateBranchProtectionRequestRestrictions? Function()? restrictions, bool? Function()? requiredLinearHistory, Omittable<bool?>? allowForcePushes, bool? Function()? allowDeletions, bool? Function()? blockCreations, bool? Function()? requiredConversationResolution, bool Function()? lockBranch, bool Function()? allowForkSyncing, }) { return ReposUpdateBranchProtectionRequest(
+ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestRequiredStatusChecks? Function()? requiredStatusChecks, bool? Function()? enforceAdmins, ReposUpdateBranchProtectionRequestRequiredPullRequestReviews? Function()? requiredPullRequestReviews, ReposUpdateBranchProtectionRequestRestrictions? Function()? restrictions, bool? Function()? requiredLinearHistory, Omittable<bool?>? allowForcePushes, bool? Function()? allowDeletions, bool? Function()? blockCreations, bool? Function()? requiredConversationResolution, bool? Function()? lockBranch, bool? Function()? allowForkSyncing, }) { return ReposUpdateBranchProtectionRequest(
   requiredStatusChecks: requiredStatusChecks != null ? requiredStatusChecks() : this.requiredStatusChecks,
   enforceAdmins: enforceAdmins != null ? enforceAdmins() : this.enforceAdmins,
   requiredPullRequestReviews: requiredPullRequestReviews != null ? requiredPullRequestReviews() : this.requiredPullRequestReviews,

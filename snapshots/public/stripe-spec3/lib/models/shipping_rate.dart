@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate_delivery_estimate.dart';import 'shipping_rate_fixed_amount.dart';import 'shipping_rate_tax_code.dart';import 'tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate_delivery_estimate.dart';import 'shipping_rate_fixed_amount.dart';import 'shipping_rate_tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ShippingRateObject {const ShippingRateObject._(this.value);
 
 factory ShippingRateObject.fromJson(String json) { return switch (json) {
@@ -87,7 +87,7 @@ factory ShippingRate.fromJson(Map<String, dynamic> json) { return ShippingRate(
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: ShippingRateObject.fromJson(json['object'] as String),
   taxBehavior: json.containsKey('tax_behavior') ? Omittable(json['tax_behavior'] != null ? ShippingRateTaxBehavior.fromJson(json['tax_behavior'] as String) : null) : const Omittable.absent(),
-  taxCode: json.containsKey('tax_code') ? Omittable(json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => TaxCode.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  taxCode: json.containsKey('tax_code') ? Omittable(json['tax_code'] != null ? ShippingRateTaxCode.fromJson(json['tax_code']) : null) : const Omittable.absent(),
   type: ShippingRateType.fromJson(json['type'] as String),
 ); }
 

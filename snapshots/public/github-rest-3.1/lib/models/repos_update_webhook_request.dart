@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config.dart';@immutable final class ReposUpdateWebhookRequest {const ReposUpdateWebhookRequest({this.config, this.events, this.addEvents, this.removeEvents, this.active = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_config.dart';@immutable final class ReposUpdateWebhookRequest {const ReposUpdateWebhookRequest({this.config, this.events, this.addEvents, this.removeEvents, this.active, });
 
 factory ReposUpdateWebhookRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateWebhookRequest(
   config: json['config'] != null ? WebhookConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
   events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   addEvents: (json['add_events'] as List<dynamic>?)?.map((e) => e as String).toList(),
   removeEvents: (json['remove_events'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  active: json.containsKey('active') ? json['active'] as bool : true,
+  active: json['active'] as bool?,
 ); }
 
 final WebhookConfig? config;
@@ -22,17 +22,19 @@ final List<String>? addEvents;
 final List<String>? removeEvents;
 
 /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
-final bool active;
+final bool? active;
 
+/// The value with the schema default applied when absent.
+bool get activeOrDefault { return active ?? true; } 
 Map<String, dynamic> toJson() { return {
   if (config != null) 'config': config?.toJson(),
   'events': ?events,
   'add_events': ?addEvents,
   'remove_events': ?removeEvents,
-  'active': active,
+  'active': ?active,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'config', 'events', 'add_events', 'remove_events', 'active'}.contains(key)); } 
-ReposUpdateWebhookRequest copyWith({WebhookConfig? Function()? config, List<String>? Function()? events, List<String>? Function()? addEvents, List<String>? Function()? removeEvents, bool Function()? active, }) { return ReposUpdateWebhookRequest(
+ReposUpdateWebhookRequest copyWith({WebhookConfig? Function()? config, List<String>? Function()? events, List<String>? Function()? addEvents, List<String>? Function()? removeEvents, bool? Function()? active, }) { return ReposUpdateWebhookRequest(
   config: config != null ? config() : this.config,
   events: events != null ? events() : this.events,
   addEvents: addEvents != null ? addEvents() : this.addEvents,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_credit_reversal_transaction.dart';import 'treasury_received_credits_resource_status_transitions.dart';import 'treasury_transaction.dart';/// The rails used to reverse the funds.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_credit_reversal_transaction.dart';import 'treasury_received_credits_resource_status_transitions.dart';/// The rails used to reverse the funds.
 @immutable final class TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork._(this.value);
 
 factory TreasuryCreditReversalNetwork.fromJson(String json) { return switch (json) {
@@ -92,7 +92,7 @@ factory TreasuryCreditReversal.fromJson(Map<String, dynamic> json) { return Trea
   receivedCredit: json['received_credit'] as String,
   status: TreasuryCreditReversalStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryReceivedCreditsResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? TreasuryCreditReversalTransaction.fromJson(json['transaction']) : null) : const Omittable.absent(),
 ); }
 
 /// Amount (in cents) transferred.

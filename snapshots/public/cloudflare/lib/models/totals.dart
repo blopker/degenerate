@@ -7,10 +7,10 @@ factory Totals.fromJson(Map<String, dynamic> json) { return Totals(
   bandwidth: json['bandwidth'] != null ? Bandwidth2.fromJson(json['bandwidth'] as Map<String, dynamic>) : null,
   pageviews: json['pageviews'] != null ? Pageviews.fromJson(json['pageviews'] as Map<String, dynamic>) : null,
   requests: json['requests'] != null ? Requests.fromJson(json['requests'] as Map<String, dynamic>) : null,
-  since: json['since'] != null ? OneOf2.parse(json['since'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(),) : null,
+  since: json['since'] != null ? Since.fromJson(json['since']) : null,
   threats: json['threats'] != null ? Threats.fromJson(json['threats'] as Map<String, dynamic>) : null,
   uniques: json['uniques'] != null ? Uniques.fromJson(json['uniques'] as Map<String, dynamic>) : null,
-  until: json['until'] != null ? OneOf2.parse(json['until'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(),) : null,
+  until: json['until'] != null ? Until.fromJson(json['until']) : null,
 ); }
 
 final Bandwidth2? bandwidth;

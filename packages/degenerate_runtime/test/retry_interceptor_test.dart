@@ -14,8 +14,8 @@ void main() {
         terminal: (_) async {
           attempts++;
           return attempts < 3
-              ? ApiResponse(statusCode: 503, body: 'unavailable')
-              : ApiResponse(statusCode: 200, body: 'ok');
+              ? _response(statusCode: 503, body: 'unavailable')
+              : _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -38,8 +38,8 @@ void main() {
         terminal: (_) async {
           attempts++;
           return attempts == 1
-              ? ApiResponse(statusCode: 429, body: 'rate limited')
-              : ApiResponse(statusCode: 200, body: 'ok');
+              ? _response(statusCode: 429, body: 'rate limited')
+              : _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -60,7 +60,7 @@ void main() {
         interceptors: [interceptor],
         terminal: (_) async {
           attempts++;
-          return ApiResponse(statusCode: 400, body: 'bad request');
+          return _response(statusCode: 400, body: 'bad request');
         },
       );
 
@@ -82,7 +82,7 @@ void main() {
         interceptors: [interceptor],
         terminal: (_) async {
           attempts++;
-          return ApiResponse(statusCode: 503, body: 'unavailable');
+          return _response(statusCode: 503, body: 'unavailable');
         },
       );
 
@@ -105,7 +105,7 @@ void main() {
         terminal: (_) async {
           attempts++;
           if (attempts < 3) throw Exception('connection refused');
-          return ApiResponse(statusCode: 200, body: 'ok');
+          return _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -146,8 +146,8 @@ void main() {
         terminal: (_) async {
           attempts++;
           return attempts == 1
-              ? ApiResponse(statusCode: 409, body: 'conflict')
-              : ApiResponse(statusCode: 200, body: 'ok');
+              ? _response(statusCode: 409, body: 'conflict')
+              : _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -172,12 +172,12 @@ void main() {
         terminal: (_) async {
           attempts++;
           return attempts == 1
-              ? ApiResponse(
+              ? _response(
                   statusCode: 429,
                   body: 'rate limited',
                   headers: const {'retry-after': '2'},
                 )
-              : ApiResponse(statusCode: 200, body: 'ok');
+              : _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -204,8 +204,8 @@ void main() {
         terminal: (_) async {
           attempts++;
           return attempts == 1
-              ? ApiResponse(statusCode: 503, body: 'unavailable')
-              : ApiResponse(statusCode: 200, body: 'ok');
+              ? _response(statusCode: 503, body: 'unavailable')
+              : _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -233,14 +233,14 @@ void main() {
           terminal: (_) async {
             attempts++;
             return attempts == 1
-                ? ApiResponse(
+                ? _response(
                     statusCode: 503,
                     body: 'unavailable',
                     headers: const {
                       'Retry-After': 'Tue, 10 Mar 2026 12:00:03 GMT',
                     },
                   )
-                : ApiResponse(statusCode: 200, body: 'ok');
+                : _response(statusCode: 200, body: 'ok');
           },
         );
 
@@ -264,7 +264,7 @@ void main() {
         interceptors: [interceptor],
         terminal: (_) async {
           attempts++;
-          return ApiResponse(statusCode: 503, body: 'unavailable');
+          return _response(statusCode: 503, body: 'unavailable');
         },
       );
 
@@ -288,8 +288,8 @@ void main() {
         terminal: (_) async {
           attempts++;
           return attempts == 1
-              ? ApiResponse(statusCode: 503, body: 'unavailable')
-              : ApiResponse(statusCode: 200, body: 'ok');
+              ? _response(statusCode: 503, body: 'unavailable')
+              : _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -301,3 +301,11 @@ void main() {
     });
   });
 }
+
+StreamedApiResponse _response({
+  required int statusCode,
+  required String body,
+  Map<String, String> headers = const {},
+}) => StreamedApiResponse.fromResponse(ApiResponse(
+  statusCode: statusCode, body: body, headers: headers,
+));

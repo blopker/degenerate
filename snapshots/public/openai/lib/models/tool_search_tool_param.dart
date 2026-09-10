@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'empty_model_param.dart';import 'tool_search_execution_type.dart';/// Hosted or BYOT tool search configuration for deferred tools.
-@immutable final class ToolSearchToolParam {const ToolSearchToolParam({this.type = 'tool_search', this.execution, this.description = const Omittable.absent(), this.parameters = const Omittable.absent(), });
+@immutable final class ToolSearchToolParam {const ToolSearchToolParam({required this.type, this.execution, this.description = const Omittable.absent(), this.parameters = const Omittable.absent(), });
 
 factory ToolSearchToolParam.fromJson(Map<String, dynamic> json) { return ToolSearchToolParam(
   type: json['type'] as String,

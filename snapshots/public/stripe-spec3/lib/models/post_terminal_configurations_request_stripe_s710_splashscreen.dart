@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2($value)'; } 
  }
-typedef PostTerminalConfigurationsRequestStripeS710Splashscreen = OneOf2<String,PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2>;
+
+@immutable
+final class PostTerminalConfigurationsRequestStripeS710Splashscreen {
+  const PostTerminalConfigurationsRequestStripeS710Splashscreen({this.string = const Omittable.absent(),
+this.postTerminalConfigurationsRequestStripeS710SplashscreenVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTerminalConfigurationsRequestStripeS710Splashscreen._({required this.rawValue, required this.string,
+required this.postTerminalConfigurationsRequestStripeS710SplashscreenVariant2,});
+  factory PostTerminalConfigurationsRequestStripeS710Splashscreen.fromJson(Object? json) => PostTerminalConfigurationsRequestStripeS710Splashscreen._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postTerminalConfigurationsRequestStripeS710SplashscreenVariant2: parseAnyOfVariant<PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2>(json, (value) => PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostTerminalConfigurationsRequestStripeS710SplashscreenVariant2> postTerminalConfigurationsRequestStripeS710SplashscreenVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postTerminalConfigurationsRequestStripeS710SplashscreenVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postTerminalConfigurationsRequestStripeS710SplashscreenVariant2.isPresent) postTerminalConfigurationsRequestStripeS710SplashscreenVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTerminalConfigurationsRequestStripeS710Splashscreen && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTerminalConfigurationsRequestStripeS710Splashscreen(${toJson()})';
+}

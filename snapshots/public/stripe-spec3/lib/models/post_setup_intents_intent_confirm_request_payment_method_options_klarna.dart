@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_on_demand.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions_variant1.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_on_demand.dart';import 'post_setup_intents_intent_confirm_request_payment_method_options_klarna_subscriptions.dart';@immutable final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale._(this.value);
 
 factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale.fromJson(String json) { return switch (json) {
   'cs-CZ' => csCz,
@@ -162,7 +162,7 @@ factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna.fromJson(
   currency: json['currency'] as String?,
   onDemand: json['on_demand'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
   preferredLocale: json['preferred_locale'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaPreferredLocale.fromJson(json['preferred_locale'] as String) : null,
-  subscriptions: json['subscriptions'] != null ? OneOf2.parse(json['subscriptions'], fromA: (v) => (v as List<dynamic>).map((e) => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2.fromJson(v as String),) : null,
+  subscriptions: json['subscriptions'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptions.fromJson(json['subscriptions']) : null,
 ); }
 
 final String? currency;

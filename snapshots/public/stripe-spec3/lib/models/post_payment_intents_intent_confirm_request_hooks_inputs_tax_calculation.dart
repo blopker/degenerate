@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2($value)'; } 
  }
-typedef PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation = OneOf2<String,PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2>;
+
+@immutable
+final class PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation {
+  const PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation({this.string = const Omittable.absent(),
+this.postPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation._({required this.rawValue, required this.string,
+required this.postPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2,});
+  factory PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation.fromJson(Object? json) => PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2: parseAnyOfVariant<PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2>(json, (value) => PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2> postPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2.isPresent) postPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculationVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsIntentConfirmRequestHooksInputsTaxCalculation(${toJson()})';
+}

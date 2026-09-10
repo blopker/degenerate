@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfLeonardoLucidOriginRequest {const WorkersAiPostRunCfLeonardoLucidOriginRequest({required this.prompt, this.guidance = 4.5, this.height = 1120, this.numSteps, this.seed, this.steps, this.width = 1120, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkersAiPostRunCfLeonardoLucidOriginRequest {const WorkersAiPostRunCfLeonardoLucidOriginRequest({required this.prompt, this.guidance, this.height, this.numSteps, this.seed, this.steps, this.width, });
 
 factory WorkersAiPostRunCfLeonardoLucidOriginRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfLeonardoLucidOriginRequest(
-  guidance: json.containsKey('guidance') ? (json['guidance'] as num).toDouble() : 4.5,
-  height: json.containsKey('height') ? (json['height'] as num).toInt() : 1120,
+  guidance: json['guidance'] != null ? (json['guidance'] as num).toDouble() : null,
+  height: json['height'] != null ? (json['height'] as num).toInt() : null,
   numSteps: json['num_steps'] != null ? (json['num_steps'] as num).toInt() : null,
   prompt: json['prompt'] as String,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   steps: json['steps'] != null ? (json['steps'] as num).toInt() : null,
-  width: json.containsKey('width') ? (json['width'] as num).toInt() : 1120,
+  width: json['width'] != null ? (json['width'] as num).toInt() : null,
 ); }
 
 /// Controls how closely the generated image should adhere to the prompt; higher values make the image more aligned with the prompt
-final double guidance;
+final double? guidance;
 
 /// The height of the generated image in pixels
-final int height;
+final int? height;
 
 /// The number of diffusion steps; higher values can improve quality but take longer
 final int? numSteps;
@@ -31,19 +31,25 @@ final int? seed;
 final int? steps;
 
 /// The width of the generated image in pixels
-final int width;
+final int? width;
 
+/// The value with the schema default applied when absent.
+double get guidanceOrDefault { return guidance ?? 4.5; } 
+/// The value with the schema default applied when absent.
+int get heightOrDefault { return height ?? 1120; } 
+/// The value with the schema default applied when absent.
+int get widthOrDefault { return width ?? 1120; } 
 Map<String, dynamic> toJson() { return {
-  'guidance': guidance,
-  'height': height,
+  'guidance': ?guidance,
+  'height': ?height,
   'num_steps': ?numSteps,
   'prompt': prompt,
   'seed': ?seed,
   'steps': ?steps,
-  'width': width,
+  'width': ?width,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double Function()? guidance, int Function()? height, int? Function()? numSteps, String? prompt, int? Function()? seed, int? Function()? steps, int Function()? width, }) { return WorkersAiPostRunCfLeonardoLucidOriginRequest(
+WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double? Function()? guidance, int? Function()? height, int? Function()? numSteps, String? prompt, int? Function()? seed, int? Function()? steps, int? Function()? width, }) { return WorkersAiPostRunCfLeonardoLucidOriginRequest(
   guidance: guidance != null ? guidance() : this.guidance,
   height: height != null ? height() : this.height,
   numSteps: numSteps != null ? numSteps() : this.numSteps,

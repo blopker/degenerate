@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'subscription.dart';import 'subscription_schedule_application.dart';import 'subscription_schedule_current_phase.dart';import 'subscription_schedule_customer.dart';import 'subscription_schedule_phase_configuration.dart';import 'subscription_schedule_subscription.dart';import 'subscription_schedule_test_clock.dart';import 'subscription_schedules_resource_default_settings.dart';import 'subscriptions_resource_billing_mode.dart';import 'test_helpers_test_clock.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'subscription_schedule_application.dart';import 'subscription_schedule_current_phase.dart';import 'subscription_schedule_customer.dart';import 'subscription_schedule_phase_configuration.dart';import 'subscription_schedule_subscription.dart';import 'subscription_schedule_test_clock.dart';import 'subscription_schedules_resource_default_settings.dart';import 'subscriptions_resource_billing_mode.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
 @immutable final class SubscriptionScheduleEndBehavior {const SubscriptionScheduleEndBehavior._(this.value);
 
 factory SubscriptionScheduleEndBehavior.fromJson(String json) { return switch (json) {
@@ -93,13 +93,13 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class SubscriptionSchedule {const SubscriptionSchedule({required this.billingMode, required this.created, required this.customer, required this.defaultSettings, required this.endBehavior, required this.id, required this.livemode, required this.object, required this.phases, required this.status, this.application = const Omittable.absent(), this.canceledAt = const Omittable.absent(), this.completedAt = const Omittable.absent(), this.currentPhase = const Omittable.absent(), this.customerAccount = const Omittable.absent(), this.metadata = const Omittable.absent(), this.releasedAt = const Omittable.absent(), this.releasedSubscription = const Omittable.absent(), this.subscription = const Omittable.absent(), this.testClock = const Omittable.absent(), });
 
 factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return SubscriptionSchedule(
-  application: json.containsKey('application') ? Omittable(json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  application: json.containsKey('application') ? Omittable(json['application'] != null ? SubscriptionScheduleApplication.fromJson(json['application']) : null) : const Omittable.absent(),
   billingMode: SubscriptionsResourceBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>),
   canceledAt: json.containsKey('canceled_at') ? Omittable(json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null) : const Omittable.absent(),
   completedAt: json.containsKey('completed_at') ? Omittable(json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   currentPhase: json.containsKey('current_phase') ? Omittable(json['current_phase'] != null ? SubscriptionScheduleCurrentPhase.fromJson(json['current_phase'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
+  customer: SubscriptionScheduleCustomer.fromJson(json['customer']),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   defaultSettings: SubscriptionSchedulesResourceDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>),
   endBehavior: SubscriptionScheduleEndBehavior.fromJson(json['end_behavior'] as String),
@@ -111,8 +111,8 @@ factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return Subscr
   releasedAt: json.containsKey('released_at') ? Omittable(json['released_at'] != null ? (json['released_at'] as num).toInt() : null) : const Omittable.absent(),
   releasedSubscription: json.containsKey('released_subscription') ? Omittable(json['released_subscription'] as String?) : const Omittable.absent(),
   status: SubscriptionScheduleStatus.fromJson(json['status'] as String),
-  subscription: json.containsKey('subscription') ? Omittable(json['subscription'] != null ? OneOf2.parse(json['subscription'], fromA: (v) => v as String, fromB: (v) => Subscription.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  subscription: json.containsKey('subscription') ? Omittable(json['subscription'] != null ? SubscriptionScheduleSubscription.fromJson(json['subscription']) : null) : const Omittable.absent(),
+  testClock: json.containsKey('test_clock') ? Omittable(json['test_clock'] != null ? SubscriptionScheduleTestClock.fromJson(json['test_clock']) : null) : const Omittable.absent(),
 ); }
 
 /// ID of the Connect Application that created the schedule.

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoice
 
 factory PostInvoicesInvoiceUpdateLinesRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceUpdateLinesRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  invoiceMetadata: json['invoice_metadata'] != null ? OneOf2.parse(json['invoice_metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2.fromJson(v as String),) : null,
+  invoiceMetadata: json['invoice_metadata'] != null ? PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadata.fromJson(json['invoice_metadata']) : null,
   lines: (json['lines'] as List<dynamic>).map((e) => PostInvoicesInvoiceUpdateLinesRequestLines.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';import 'outbound_transfers_payment_method_details_us_bank_account_mandate.dart';/// Account holder type: individual or company.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_transfers_payment_method_details_us_bank_account_mandate.dart';/// Account holder type: individual or company.
 @immutable final class OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType {const OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType._(this.value);
 
 factory OutboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
@@ -84,7 +84,7 @@ factory OutboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(Map<String, 
   bankName: json.containsKey('bank_name') ? Omittable(json['bank_name'] as String?) : const Omittable.absent(),
   fingerprint: json.containsKey('fingerprint') ? Omittable(json['fingerprint'] as String?) : const Omittable.absent(),
   last4: json.containsKey('last4') ? Omittable(json['last4'] as String?) : const Omittable.absent(),
-  mandate: json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null,
+  mandate: json['mandate'] != null ? OutboundTransfersPaymentMethodDetailsUsBankAccountMandate.fromJson(json['mandate']) : null,
   network: OutboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(json['network'] as String),
   routingNumber: json.containsKey('routing_number') ? Omittable(json['routing_number'] as String?) : const Omittable.absent(),
 ); }

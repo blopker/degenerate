@@ -33,10 +33,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return GetLivestreamAnalyticsCompleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetLivestreamAnalyticsCompleteResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -80,10 +81,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return FetchAllLivestreamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return FetchAllLivestreamsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -103,10 +105,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -135,10 +138,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return LivestreamSessionLivestreamIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return LivestreamSessionLivestreamIdResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -156,10 +160,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ActiveLivestreamSessionDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ActiveLivestreamSessionDetailsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -177,10 +182,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return LivestreamsLivestreamSessionIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return LivestreamsLivestreamSessionIdResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -198,10 +204,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return MeetingsMeetingIdActiveLivestreamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return MeetingsMeetingIdActiveLivestreamResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -219,10 +226,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return StopLivestreamingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return StopLivestreamingResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -251,10 +259,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return LivestreamSessionDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return LivestreamSessionDetailsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -274,10 +283,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return StartLivestreamingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return StartLivestreamingResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -306,10 +316,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return LivestreamsessionSessionMeetingIdActiveLivestreamResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return LivestreamsessionSessionMeetingIdActiveLivestreamResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

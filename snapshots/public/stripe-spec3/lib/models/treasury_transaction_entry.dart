@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_transaction.dart';import 'treasury_transaction_entry_transaction.dart';import 'treasury_transactions_resource_balance_impact.dart';import 'treasury_transactions_resource_flow_details.dart';/// Type of the flow associated with the TransactionEntry.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_transaction_entry_transaction.dart';import 'treasury_transactions_resource_balance_impact.dart';import 'treasury_transactions_resource_flow_details.dart';/// Type of the flow associated with the TransactionEntry.
 @immutable final class TreasuryTransactionEntryFlowType {const TreasuryTransactionEntryFlowType._(this.value);
 
 factory TreasuryTransactionEntryFlowType.fromJson(String json) { return switch (json) {
@@ -162,7 +162,7 @@ factory TreasuryTransactionEntry.fromJson(Map<String, dynamic> json) { return Tr
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: TreasuryTransactionEntryObject.fromJson(json['object'] as String),
-  transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),),
+  transaction: TreasuryTransactionEntryTransaction.fromJson(json['transaction']),
   type: TreasuryTransactionEntryType.fromJson(json['type'] as String),
 ); }
 

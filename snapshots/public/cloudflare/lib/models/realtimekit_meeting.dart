@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitMeetingStatus($value)'; } 
  }
-@immutable final class RealtimekitMeeting {const RealtimekitMeeting({required this.createdAt, required this.id, required this.updatedAt, this.liveStreamOnStart, this.persistChat, this.recordOnStart, this.sessionKeepAliveTimeInSecs = 60.0, this.status, this.summarizeOnEnd, this.title, });
+@immutable final class RealtimekitMeeting {const RealtimekitMeeting({required this.createdAt, required this.id, required this.updatedAt, this.liveStreamOnStart, this.persistChat, this.recordOnStart, this.sessionKeepAliveTimeInSecs, this.status, this.summarizeOnEnd, this.title, });
 
 factory RealtimekitMeeting.fromJson(Map<String, dynamic> json) { return RealtimekitMeeting(
   createdAt: DateTime.parse(json['created_at'] as String),
@@ -33,7 +33,7 @@ factory RealtimekitMeeting.fromJson(Map<String, dynamic> json) { return Realtime
   liveStreamOnStart: json['live_stream_on_start'] as bool?,
   persistChat: json['persist_chat'] as bool?,
   recordOnStart: json['record_on_start'] as bool?,
-  sessionKeepAliveTimeInSecs: json.containsKey('session_keep_alive_time_in_secs') ? (json['session_keep_alive_time_in_secs'] as num).toDouble() : 60.0,
+  sessionKeepAliveTimeInSecs: json['session_keep_alive_time_in_secs'] != null ? (json['session_keep_alive_time_in_secs'] as num).toDouble() : null,
   status: json['status'] != null ? RealtimekitMeetingStatus.fromJson(json['status'] as String) : null,
   summarizeOnEnd: json['summarize_on_end'] as bool?,
   title: json['title'] as String?,
@@ -56,7 +56,7 @@ final bool? persistChat;
 final bool? recordOnStart;
 
 /// Time in seconds, for which a session remains active, after the last participant has left the meeting.
-final double sessionKeepAliveTimeInSecs;
+final double? sessionKeepAliveTimeInSecs;
 
 /// Whether the meeting is `ACTIVE` or `INACTIVE`. Users will not be able to join an `INACTIVE` meeting.
 final RealtimekitMeetingStatus? status;
@@ -70,13 +70,15 @@ final String? title;
 /// Timestamp the object was updated at. The time is returned in ISO format.
 final DateTime updatedAt;
 
+/// The value with the schema default applied when absent.
+double get sessionKeepAliveTimeInSecsOrDefault { return sessionKeepAliveTimeInSecs ?? 60.0; } 
 Map<String, dynamic> toJson() { return {
   'created_at': createdAt.toIso8601String(),
   'id': id,
   'live_stream_on_start': ?liveStreamOnStart,
   'persist_chat': ?persistChat,
   'record_on_start': ?recordOnStart,
-  'session_keep_alive_time_in_secs': sessionKeepAliveTimeInSecs,
+  'session_keep_alive_time_in_secs': ?sessionKeepAliveTimeInSecs,
   if (status != null) 'status': status?.toJson(),
   'summarize_on_end': ?summarizeOnEnd,
   'title': ?title,
@@ -85,7 +87,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('updated_at') && json['updated_at'] is String; } 
-RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? liveStreamOnStart, bool? Function()? persistChat, bool? Function()? recordOnStart, double Function()? sessionKeepAliveTimeInSecs, RealtimekitMeetingStatus? Function()? status, bool? Function()? summarizeOnEnd, String? Function()? title, DateTime? updatedAt, }) { return RealtimekitMeeting(
+RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? liveStreamOnStart, bool? Function()? persistChat, bool? Function()? recordOnStart, double? Function()? sessionKeepAliveTimeInSecs, RealtimekitMeetingStatus? Function()? status, bool? Function()? summarizeOnEnd, String? Function()? title, DateTime? updatedAt, }) { return RealtimekitMeeting(
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
   liveStreamOnStart: liveStreamOnStart != null ? liveStreamOnStart() : this.liveStreamOnStart,

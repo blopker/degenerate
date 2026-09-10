@@ -64,6 +64,6 @@ AiSearchInstanceSearchRequestMessages copyWith({String? Function()? content, AiS
           content == other.content &&
           role == other.role &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(content, role, Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(content, role, mapHash(additionalProperties)); } 
 @override String toString() { return 'AiSearchInstanceSearchRequestMessages(content: $content, role: $role, additionalProperties: $additionalProperties)'; } 
  }

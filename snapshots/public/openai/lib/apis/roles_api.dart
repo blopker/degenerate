@@ -34,10 +34,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return PublicRoleListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PublicRoleListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -55,10 +56,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Role.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Role.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -76,10 +78,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Role.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Role.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -95,10 +98,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RoleDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RoleDeletedResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -128,10 +132,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return PublicRoleListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PublicRoleListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -149,10 +154,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Role.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Role.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -170,10 +176,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Role.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Role.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -189,10 +196,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RoleDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RoleDeletedResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

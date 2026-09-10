@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTokensRequestPersonDocumentsPassportFilesVariant2($value)'; } 
  }
-typedef PostTokensRequestPersonDocumentsPassportFiles = OneOf2<String,PostTokensRequestPersonDocumentsPassportFilesVariant2>;
+
+@immutable
+final class PostTokensRequestPersonDocumentsPassportFiles {
+  const PostTokensRequestPersonDocumentsPassportFiles({this.string = const Omittable.absent(),
+this.postTokensRequestPersonDocumentsPassportFilesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTokensRequestPersonDocumentsPassportFiles._({required this.rawValue, required this.string,
+required this.postTokensRequestPersonDocumentsPassportFilesVariant2,});
+  factory PostTokensRequestPersonDocumentsPassportFiles.fromJson(Object? json) => PostTokensRequestPersonDocumentsPassportFiles._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postTokensRequestPersonDocumentsPassportFilesVariant2: parseAnyOfVariant<PostTokensRequestPersonDocumentsPassportFilesVariant2>(json, (value) => PostTokensRequestPersonDocumentsPassportFilesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostTokensRequestPersonDocumentsPassportFilesVariant2> postTokensRequestPersonDocumentsPassportFilesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postTokensRequestPersonDocumentsPassportFilesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postTokensRequestPersonDocumentsPassportFilesVariant2.isPresent) postTokensRequestPersonDocumentsPassportFilesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTokensRequestPersonDocumentsPassportFiles && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTokensRequestPersonDocumentsPassportFiles(${toJson()})';
+}

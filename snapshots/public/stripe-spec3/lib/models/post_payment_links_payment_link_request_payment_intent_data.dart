@@ -4,11 +4,11 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment
 @immutable final class PostPaymentLinksPaymentLinkRequestPaymentIntentData {const PostPaymentLinksPaymentLinkRequestPaymentIntentData({this.description, this.metadata, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
 
 factory PostPaymentLinksPaymentLinkRequestPaymentIntentData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestPaymentIntentData(
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataDescriptionVariant2.fromJson(v as String),) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataMetadataVariant2.fromJson(v as String),) : null,
-  statementDescriptor: json['statement_descriptor'] != null ? OneOf2.parse(json['statement_descriptor'], fromA: (v) => v as String, fromB: (v) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2.fromJson(v as String),) : null,
-  statementDescriptorSuffix: json['statement_descriptor_suffix'] != null ? OneOf2.parse(json['statement_descriptor_suffix'], fromA: (v) => v as String, fromB: (v) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorSuffixVariant2.fromJson(v as String),) : null,
-  transferGroup: json['transfer_group'] != null ? OneOf2.parse(json['transfer_group'], fromA: (v) => v as String, fromB: (v) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataTransferGroupVariant2.fromJson(v as String),) : null,
+  description: json['description'] != null ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataDescription.fromJson(json['description']) : null,
+  metadata: json['metadata'] != null ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataMetadata.fromJson(json['metadata']) : null,
+  statementDescriptor: json['statement_descriptor'] != null ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor.fromJson(json['statement_descriptor']) : null,
+  statementDescriptorSuffix: json['statement_descriptor_suffix'] != null ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorSuffix.fromJson(json['statement_descriptor_suffix']) : null,
+  transferGroup: json['transfer_group'] != null ? PostPaymentLinksPaymentLinkRequestPaymentIntentDataTransferGroup.fromJson(json['transfer_group']) : null,
 ); }
 
 final PostPaymentLinksPaymentLinkRequestPaymentIntentDataDescription? description;

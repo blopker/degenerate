@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsRequestOnBehalfOfVariant2($value)'; } 
  }
-typedef PostSubscriptionsRequestOnBehalfOf = OneOf2<String,PostSubscriptionsRequestOnBehalfOfVariant2>;
+/// The account on behalf of which to charge, for each of the subscription's invoices.
+@immutable
+final class PostSubscriptionsRequestOnBehalfOf {
+  const PostSubscriptionsRequestOnBehalfOf({this.string = const Omittable.absent(),
+this.postSubscriptionsRequestOnBehalfOfVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSubscriptionsRequestOnBehalfOf._({required this.rawValue, required this.string,
+required this.postSubscriptionsRequestOnBehalfOfVariant2,});
+  factory PostSubscriptionsRequestOnBehalfOf.fromJson(Object? json) => PostSubscriptionsRequestOnBehalfOf._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postSubscriptionsRequestOnBehalfOfVariant2: parseAnyOfVariant<PostSubscriptionsRequestOnBehalfOfVariant2>(json, (value) => PostSubscriptionsRequestOnBehalfOfVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostSubscriptionsRequestOnBehalfOfVariant2> postSubscriptionsRequestOnBehalfOfVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postSubscriptionsRequestOnBehalfOfVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postSubscriptionsRequestOnBehalfOfVariant2.isPresent) postSubscriptionsRequestOnBehalfOfVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSubscriptionsRequestOnBehalfOf && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSubscriptionsRequestOnBehalfOf(${toJson()})';
+}

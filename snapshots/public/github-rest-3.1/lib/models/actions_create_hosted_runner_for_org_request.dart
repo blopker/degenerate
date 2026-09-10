@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_create_hosted_runner_for_org_request_image.dart';@immutable final class ActionsCreateHostedRunnerForOrgRequest {const ActionsCreateHostedRunnerForOrgRequest({required this.name, required this.image, required this.size, required this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.imageGen = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_create_hosted_runner_for_org_request_image.dart';@immutable final class ActionsCreateHostedRunnerForOrgRequest {const ActionsCreateHostedRunnerForOrgRequest({required this.name, required this.image, required this.size, required this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.imageGen, });
 
 factory ActionsCreateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateHostedRunnerForOrgRequest(
   name: json['name'] as String,
@@ -9,7 +9,7 @@ factory ActionsCreateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> jso
   runnerGroupId: (json['runner_group_id'] as num).toInt(),
   maximumRunners: json['maximum_runners'] != null ? (json['maximum_runners'] as num).toInt() : null,
   enableStaticIp: json['enable_static_ip'] as bool?,
-  imageGen: json.containsKey('image_gen') ? json['image_gen'] as bool : false,
+  imageGen: json['image_gen'] as bool?,
 ); }
 
 /// Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
@@ -31,8 +31,10 @@ final int? maximumRunners;
 final bool? enableStaticIp;
 
 /// Whether this runner should be used to generate custom images.
-final bool imageGen;
+final bool? imageGen;
 
+/// The value with the schema default applied when absent.
+bool get imageGenOrDefault { return imageGen ?? false; } 
 Map<String, dynamic> toJson() { return {
   'name': name,
   'image': image.toJson(),
@@ -40,13 +42,13 @@ Map<String, dynamic> toJson() { return {
   'runner_group_id': runnerGroupId,
   'maximum_runners': ?maximumRunners,
   'enable_static_ip': ?enableStaticIp,
-  'image_gen': imageGen,
+  'image_gen': ?imageGen,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('image') &&
       json.containsKey('size') && json['size'] is String &&
       json.containsKey('runner_group_id') && json['runner_group_id'] is num; } 
-ActionsCreateHostedRunnerForOrgRequest copyWith({String? name, ActionsCreateHostedRunnerForOrgRequestImage? image, String? size, int? runnerGroupId, int? Function()? maximumRunners, bool? Function()? enableStaticIp, bool Function()? imageGen, }) { return ActionsCreateHostedRunnerForOrgRequest(
+ActionsCreateHostedRunnerForOrgRequest copyWith({String? name, ActionsCreateHostedRunnerForOrgRequestImage? image, String? size, int? runnerGroupId, int? Function()? maximumRunners, bool? Function()? enableStaticIp, bool? Function()? imageGen, }) { return ActionsCreateHostedRunnerForOrgRequest(
   name: name ?? this.name,
   image: image ?? this.image,
   size: size ?? this.size,

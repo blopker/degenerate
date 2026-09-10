@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge_outcome_rule.dart';import 'rule.dart';/// An enumerated value providing a more detailed explanation on [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge_outcome_rule.dart';/// An enumerated value providing a more detailed explanation on [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines).
 @immutable final class ChargeOutcomeAdviceCode {const ChargeOutcomeAdviceCode._(this.value);
 
 factory ChargeOutcomeAdviceCode.fromJson(String json) { return switch (json) {
@@ -39,7 +39,7 @@ factory ChargeOutcome.fromJson(Map<String, dynamic> json) { return ChargeOutcome
   reason: json.containsKey('reason') ? Omittable(json['reason'] as String?) : const Omittable.absent(),
   riskLevel: json['risk_level'] as String?,
   riskScore: json['risk_score'] != null ? (json['risk_score'] as num).toInt() : null,
-  rule: json['rule'] != null ? OneOf2.parse(json['rule'], fromA: (v) => v as String, fromB: (v) => Rule.fromJson(v as Map<String, dynamic>),) : null,
+  rule: json['rule'] != null ? ChargeOutcomeRule.fromJson(json['rule']) : null,
   sellerMessage: json.containsKey('seller_message') ? Omittable(json['seller_message'] as String?) : const Omittable.absent(),
   type: json['type'] as String,
 ); }

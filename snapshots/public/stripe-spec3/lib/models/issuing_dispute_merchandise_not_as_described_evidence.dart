@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_dispute_merchandise_not_as_described_evidence_additional_documentation.dart';/// Result of cardholder's attempt to return the product.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_dispute_merchandise_not_as_described_evidence_additional_documentation.dart';/// Result of cardholder's attempt to return the product.
 @immutable final class IssuingDisputeMerchandiseNotAsDescribedEvidenceReturnStatus {const IssuingDisputeMerchandiseNotAsDescribedEvidenceReturnStatus._(this.value);
 
 factory IssuingDisputeMerchandiseNotAsDescribedEvidenceReturnStatus.fromJson(String json) { return switch (json) {
@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class IssuingDisputeMerchandiseNotAsDescribedEvidence {const IssuingDisputeMerchandiseNotAsDescribedEvidence({this.additionalDocumentation = const Omittable.absent(), this.explanation = const Omittable.absent(), this.receivedAt = const Omittable.absent(), this.returnDescription = const Omittable.absent(), this.returnStatus = const Omittable.absent(), this.returnedAt = const Omittable.absent(), });
 
 factory IssuingDisputeMerchandiseNotAsDescribedEvidence.fromJson(Map<String, dynamic> json) { return IssuingDisputeMerchandiseNotAsDescribedEvidence(
-  additionalDocumentation: json.containsKey('additional_documentation') ? Omittable(json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  additionalDocumentation: json.containsKey('additional_documentation') ? Omittable(json['additional_documentation'] != null ? IssuingDisputeMerchandiseNotAsDescribedEvidenceAdditionalDocumentation.fromJson(json['additional_documentation']) : null) : const Omittable.absent(),
   explanation: json.containsKey('explanation') ? Omittable(json['explanation'] as String?) : const Omittable.absent(),
   receivedAt: json.containsKey('received_at') ? Omittable(json['received_at'] != null ? (json['received_at'] as num).toInt() : null) : const Omittable.absent(),
   returnDescription: json.containsKey('return_description') ? Omittable(json['return_description'] as String?) : const Omittable.absent(),

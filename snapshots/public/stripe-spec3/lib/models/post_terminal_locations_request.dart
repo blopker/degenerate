@@ -11,7 +11,7 @@ factory PostTerminalLocationsRequest.fromJson(Map<String, dynamic> json) { retur
   displayNameKana: json['display_name_kana'] as String?,
   displayNameKanji: json['display_name_kanji'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostTerminalLocationsRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostTerminalLocationsRequestMetadata.fromJson(json['metadata']) : null,
   phone: json['phone'] as String?,
 ); }
 

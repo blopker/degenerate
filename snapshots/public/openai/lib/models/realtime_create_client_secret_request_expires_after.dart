@@ -28,27 +28,31 @@ bool get isUnknown { return !values.contains(this); }
 /// continue after that time once started. A secret can be used to create multiple sessions
 /// until it expires.
 /// 
-@immutable final class RealtimeCreateClientSecretRequestExpiresAfter {const RealtimeCreateClientSecretRequestExpiresAfter({this.anchor = RealtimeCreateClientSecretRequestExpiresAfterAnchor.createdAt, this.seconds = 600, });
+@immutable final class RealtimeCreateClientSecretRequestExpiresAfter {const RealtimeCreateClientSecretRequestExpiresAfter({this.anchor, this.seconds, });
 
 factory RealtimeCreateClientSecretRequestExpiresAfter.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretRequestExpiresAfter(
-  anchor: json.containsKey('anchor') ? RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson(json['anchor'] as String) : RealtimeCreateClientSecretRequestExpiresAfterAnchor.createdAt,
-  seconds: json.containsKey('seconds') ? (json['seconds'] as num).toInt() : 600,
+  anchor: json['anchor'] != null ? RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson(json['anchor'] as String) : null,
+  seconds: json['seconds'] != null ? (json['seconds'] as num).toInt() : null,
 ); }
 
 /// The anchor point for the client secret expiration, meaning that `seconds` will be added to the `created_at` time of the client secret to produce an expiration timestamp. Only `created_at` is currently supported.
 /// 
-final RealtimeCreateClientSecretRequestExpiresAfterAnchor anchor;
+final RealtimeCreateClientSecretRequestExpiresAfterAnchor? anchor;
 
 /// The number of seconds from the anchor point to the expiration. Select a value between `10` and `7200` (2 hours). This default to 600 seconds (10 minutes) if not specified.
 /// 
-final int seconds;
+final int? seconds;
 
+/// The value with the schema default applied when absent.
+RealtimeCreateClientSecretRequestExpiresAfterAnchor get anchorOrDefault { return anchor ?? RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson('created_at'); } 
+/// The value with the schema default applied when absent.
+int get secondsOrDefault { return seconds ?? 600; } 
 Map<String, dynamic> toJson() { return {
-  'anchor': anchor.toJson(),
-  'seconds': seconds,
+  if (anchor != null) 'anchor': anchor?.toJson(),
+  'seconds': ?seconds,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'anchor', 'seconds'}.contains(key)); } 
-RealtimeCreateClientSecretRequestExpiresAfter copyWith({RealtimeCreateClientSecretRequestExpiresAfterAnchor Function()? anchor, int Function()? seconds, }) { return RealtimeCreateClientSecretRequestExpiresAfter(
+RealtimeCreateClientSecretRequestExpiresAfter copyWith({RealtimeCreateClientSecretRequestExpiresAfterAnchor? Function()? anchor, int? Function()? seconds, }) { return RealtimeCreateClientSecretRequestExpiresAfter(
   anchor: anchor != null ? anchor() : this.anchor,
   seconds: seconds != null ? seconds() : this.seconds,
 ); } 

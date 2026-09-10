@@ -1,24 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type.dart';@immutable final class ZeroTrustGatewayGatewayAccountLoggingSettings {const ZeroTrustGatewayGatewayAccountLoggingSettings({this.redactPii = false, this.settingsByRuleType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type.dart';@immutable final class ZeroTrustGatewayGatewayAccountLoggingSettings {const ZeroTrustGatewayGatewayAccountLoggingSettings({this.redactPii, this.settingsByRuleType, });
 
 factory ZeroTrustGatewayGatewayAccountLoggingSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayGatewayAccountLoggingSettings(
-  redactPii: json.containsKey('redact_pii') ? json['redact_pii'] as bool : false,
+  redactPii: json['redact_pii'] as bool?,
   settingsByRuleType: json['settings_by_rule_type'] != null ? ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType.fromJson(json['settings_by_rule_type'] as Map<String, dynamic>) : null,
 ); }
 
 /// Indicate whether to redact personally identifiable information from activity logging (PII fields include source IP, user email, user ID, device ID, URL, referrer, and user agent).
-final bool redactPii;
+final bool? redactPii;
 
 /// Configure logging settings for each rule type.
 final ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType? settingsByRuleType;
 
+/// The value with the schema default applied when absent.
+bool get redactPiiOrDefault { return redactPii ?? false; } 
 Map<String, dynamic> toJson() { return {
-  'redact_pii': redactPii,
+  'redact_pii': ?redactPii,
   if (settingsByRuleType != null) 'settings_by_rule_type': settingsByRuleType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'redact_pii', 'settings_by_rule_type'}.contains(key)); } 
-ZeroTrustGatewayGatewayAccountLoggingSettings copyWith({bool Function()? redactPii, ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType? Function()? settingsByRuleType, }) { return ZeroTrustGatewayGatewayAccountLoggingSettings(
+ZeroTrustGatewayGatewayAccountLoggingSettings copyWith({bool? Function()? redactPii, ZeroTrustGatewayGatewayAccountLoggingSettingsSettingsByRuleType? Function()? settingsByRuleType, }) { return ZeroTrustGatewayGatewayAccountLoggingSettings(
   redactPii: redactPii != null ? redactPii() : this.redactPii,
   settingsByRuleType: settingsByRuleType != null ? settingsByRuleType() : this.settingsByRuleType,
 ); } 

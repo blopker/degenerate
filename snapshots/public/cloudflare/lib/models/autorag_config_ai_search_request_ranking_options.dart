@@ -1,22 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigAiSearchRequestRankingOptions {const AutoragConfigAiSearchRequestRankingOptions({this.ranker, this.scoreThreshold = 0.4, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigAiSearchRequestRankingOptions {const AutoragConfigAiSearchRequestRankingOptions({this.ranker, this.scoreThreshold, });
 
 factory AutoragConfigAiSearchRequestRankingOptions.fromJson(Map<String, dynamic> json) { return AutoragConfigAiSearchRequestRankingOptions(
   ranker: json['ranker'] as String?,
-  scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.4,
+  scoreThreshold: json['score_threshold'] != null ? (json['score_threshold'] as num).toDouble() : null,
 ); }
 
 final String? ranker;
 
-final double scoreThreshold;
+final double? scoreThreshold;
 
+/// The value with the schema default applied when absent.
+double get scoreThresholdOrDefault { return scoreThreshold ?? 0.4; } 
 Map<String, dynamic> toJson() { return {
   'ranker': ?ranker,
-  'score_threshold': scoreThreshold,
+  'score_threshold': ?scoreThreshold,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ranker', 'score_threshold'}.contains(key)); } 
-AutoragConfigAiSearchRequestRankingOptions copyWith({String? Function()? ranker, double Function()? scoreThreshold, }) { return AutoragConfigAiSearchRequestRankingOptions(
+AutoragConfigAiSearchRequestRankingOptions copyWith({String? Function()? ranker, double? Function()? scoreThreshold, }) { return AutoragConfigAiSearchRequestRankingOptions(
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
 ); } 

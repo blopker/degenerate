@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/stream_create_input_request.dart';import '../models/stream_create_output_request.dart';import '../models/stream_include_counts.dart';import '../models/stream_live_input.dart';import '../models/stream_live_input_identifier.dart';import '../models/stream_live_input_response_collection_result.dart';import '../models/stream_output.dart';import '../models/stream_output_identifier.dart';import '../models/stream_schemas_identifier.dart';import '../models/stream_update_input_request.dart';import '../models/stream_update_output_request.dart';/// StreamLiveInputsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure69.dart';import '../models/stream_create_input_request.dart';import '../models/stream_create_output_request.dart';import '../models/stream_include_counts.dart';import '../models/stream_live_input.dart';import '../models/stream_live_input_identifier.dart';import '../models/stream_live_input_response_collection_result.dart';import '../models/stream_output.dart';import '../models/stream_output_identifier.dart';import '../models/stream_schemas_identifier.dart';import '../models/stream_update_input_request.dart';import '../models/stream_update_output_request.dart';/// StreamLiveInputsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class StreamLiveInputsApi with ApiExecutor {const StreamLiveInputsApi(this
 /// Lists the live inputs created for an account. To get the credentials needed to stream to a specific live input, request a single live input.
 ///
 /// `GET /accounts/{account_id}/stream/live_inputs`
-Future<ApiResult<StreamLiveInputResponseCollectionResult?, Never>> streamLiveInputsListLiveInputs({required StreamSchemasIdentifier accountId, StreamIncludeCounts? includeCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<StreamLiveInputResponseCollectionResult?, ResponseCommonFailure69>> streamLiveInputsListLiveInputs({required StreamSchemasIdentifier accountId, StreamIncludeCounts? includeCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeCounts != null) {
   queryParameters['include_counts'] = includeCounts.toString();
@@ -30,11 +30,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? StreamLiveInputResponseCollectionResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? StreamLiveInputResponseCollectionResult.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -43,7 +53,7 @@ return execute(
 /// Creates a live input, and returns credentials that you or your users can use to stream live video to Cloudflare Stream.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs`
-Future<ApiResult<StreamLiveInput?, Never>> streamLiveInputsCreateALiveInput({required StreamSchemasIdentifier accountId, required StreamCreateInputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamLiveInput?, ResponseCommonFailure69>> streamLiveInputsCreateALiveInput({required StreamSchemasIdentifier accountId, required StreamCreateInputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,11 +64,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? StreamLiveInput.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? StreamLiveInput.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -67,7 +87,7 @@ return execute(
 /// Retrieves details of an existing live input.
 ///
 /// `GET /accounts/{account_id}/stream/live_inputs/{live_input_identifier}`
-Future<ApiResult<StreamLiveInput?, Never>> streamLiveInputsRetrieveALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamLiveInput?, ResponseCommonFailure69>> streamLiveInputsRetrieveALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -76,11 +96,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? StreamLiveInput.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? StreamLiveInput.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -89,7 +119,7 @@ return execute(
 /// Updates a specified live input.
 ///
 /// `PUT /accounts/{account_id}/stream/live_inputs/{live_input_identifier}`
-Future<ApiResult<StreamLiveInput?, Never>> streamLiveInputsUpdateALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateInputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamLiveInput?, ResponseCommonFailure69>> streamLiveInputsUpdateALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateInputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,11 +130,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? StreamLiveInput.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? StreamLiveInput.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -122,7 +162,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -132,7 +172,7 @@ return execute(
 /// Prevents a live input from being streamed to and makes the live input inaccessible to any future API calls until enabled.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/disable`
-Future<ApiResult<StreamLiveInput?, Never>> streamLiveInputsDisableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamLiveInput?, ResponseCommonFailure69>> streamLiveInputsDisableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -141,11 +181,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? StreamLiveInput.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? StreamLiveInput.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -154,7 +204,7 @@ return execute(
 /// Allows a live input to be streamed to and makes the live input accessible to any future API calls.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/enable`
-Future<ApiResult<StreamLiveInput?, Never>> streamLiveInputsEnableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamLiveInput?, ResponseCommonFailure69>> streamLiveInputsEnableALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -163,11 +213,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? StreamLiveInput.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? StreamLiveInput.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -176,7 +236,7 @@ return execute(
 /// Retrieves all outputs associated with a specified live input.
 ///
 /// `GET /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs`
-Future<ApiResult<List<StreamOutput>?, Never>> streamLiveInputsListAllOutputsAssociatedWithASpecifiedLiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<StreamOutput>?, ResponseCommonFailure69>> streamLiveInputsListAllOutputsAssociatedWithASpecifiedLiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -185,11 +245,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => StreamOutput.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>?)?.map((e) => StreamOutput.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -198,7 +268,7 @@ return execute(
 /// Creates a new output that can be used to simulcast or restream live video to other RTMP or SRT destinations. Outputs are always linked to a specific live input — one live input can have many outputs.
 ///
 /// `POST /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs`
-Future<ApiResult<StreamOutput?, Never>> streamLiveInputsCreateANewOutputConnectedToALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamCreateOutputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamOutput?, ResponseCommonFailure69>> streamLiveInputsCreateANewOutputConnectedToALiveInput({required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamCreateOutputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -209,11 +279,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? StreamOutput.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? StreamOutput.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -222,7 +302,7 @@ return execute(
 /// Updates the state of an output.
 ///
 /// `PUT /accounts/{account_id}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}`
-Future<ApiResult<StreamOutput?, Never>> streamLiveInputsUpdateAnOutput({required StreamOutputIdentifier outputIdentifier, required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateOutputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamOutput?, ResponseCommonFailure69>> streamLiveInputsUpdateAnOutput({required StreamOutputIdentifier outputIdentifier, required StreamLiveInputIdentifier liveInputIdentifier, required StreamSchemasIdentifier accountId, required StreamUpdateOutputRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -233,11 +313,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? StreamOutput.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? StreamOutput.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure69.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -255,7 +345,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );

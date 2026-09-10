@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_query_and_contexts4_contexts.dart';@immutable final class InputQueryAndContexts4 {const InputQueryAndContexts4({required this.contexts, this.query, this.truncateInputs = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_query_and_contexts4_contexts.dart';@immutable final class InputQueryAndContexts4 {const InputQueryAndContexts4({required this.contexts, this.query, this.truncateInputs, });
 
 factory InputQueryAndContexts4.fromJson(Map<String, dynamic> json) { return InputQueryAndContexts4(
   contexts: (json['contexts'] as List<dynamic>).map((e) => InputQueryAndContexts4Contexts.fromJson(e as Map<String, dynamic>)).toList(),
   query: json['query'] as String?,
-  truncateInputs: json.containsKey('truncate_inputs') ? json['truncate_inputs'] as bool : false,
+  truncateInputs: json['truncate_inputs'] as bool?,
 ); }
 
 /// List of provided contexts. Note that the index in this array is important, as the response will refer to it.
@@ -15,15 +15,17 @@ final List<InputQueryAndContexts4Contexts> contexts;
 final String? query;
 
 /// When provided with too long context should the model error out or truncate the context to fit?
-final bool truncateInputs;
+final bool? truncateInputs;
 
+/// The value with the schema default applied when absent.
+bool get truncateInputsOrDefault { return truncateInputs ?? false; } 
 Map<String, dynamic> toJson() { return {
   'contexts': contexts.map((e) => e.toJson()).toList(),
   'query': ?query,
-  'truncate_inputs': truncateInputs,
+  'truncate_inputs': ?truncateInputs,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('contexts'); } 
-InputQueryAndContexts4 copyWith({List<InputQueryAndContexts4Contexts>? contexts, String? Function()? query, bool Function()? truncateInputs, }) { return InputQueryAndContexts4(
+InputQueryAndContexts4 copyWith({List<InputQueryAndContexts4Contexts>? contexts, String? Function()? query, bool? Function()? truncateInputs, }) { return InputQueryAndContexts4(
   contexts: contexts ?? this.contexts,
   query: query != null ? query() : this.query,
   truncateInputs: truncateInputs != null ? truncateInputs() : this.truncateInputs,

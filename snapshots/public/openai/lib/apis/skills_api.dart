@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_skill_body.dart';import '../models/create_skill_version_body.dart';import '../models/deleted_skill_resource.dart';import '../models/deleted_skill_version_resource.dart';import '../models/order_enum.dart';import '../models/set_default_skill_version_body.dart';import '../models/skill_list_resource.dart';import '../models/skill_resource.dart';import '../models/skill_version_list_resource.dart';import '../models/skill_version_resource.dart';/// SkillsApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_skill_body.dart';import '../models/create_skill_version_body.dart';import '../models/deleted_skill_resource.dart';import '../models/deleted_skill_version_resource.dart';import '../models/order_enum.dart';import '../models/set_default_skill_version_body.dart';import '../models/skill_list_resource.dart';import '../models/skill_resource.dart';import '../models/skill_version_list_resource.dart';import '../models/skill_version_resource.dart';/// SkillsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -34,10 +34,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return SkillListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SkillListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -55,10 +56,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return SkillResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SkillResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -74,10 +76,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return SkillResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SkillResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -95,10 +98,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return SkillResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SkillResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -114,17 +118,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return DeletedSkillResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeletedSkillResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
 /// Download a skill zip bundle by its ID.
 ///
 /// `GET /skills/{skill_id}/content`
-Future<ApiResult<String, Never>> getSkillContent({required String skillId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOf2<String, Uint8List>, Never>> getSkillContent({required String skillId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -133,10 +138,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<String, Uint8List>.a(json as String);
+}
+if (responseMediaTypeMatches(contentType, 'application/zip')) {
+final value = (() { return Uint8List.fromList(response.bodyBytes); })();
+return OneOf2<String, Uint8List>.b(value);
+}
+final json = jsonDecode(response.body);
+return OneOf2<String, Uint8List>.a(json as String);
+
   },
 );
  } 
@@ -166,10 +182,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return SkillVersionListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SkillVersionListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -187,10 +204,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return SkillVersionResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SkillVersionResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -206,10 +224,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return SkillVersionResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return SkillVersionResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -225,17 +244,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return DeletedSkillVersionResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeletedSkillVersionResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
 /// Download a skill version zip bundle.
 ///
 /// `GET /skills/{skill_id}/versions/{version}/content`
-Future<ApiResult<String, Never>> getSkillVersionContent({required String skillId, required String version, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOf2<String, Uint8List>, Never>> getSkillVersionContent({required String skillId, required String version, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -244,10 +264,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<String, Uint8List>.a(json as String);
+}
+if (responseMediaTypeMatches(contentType, 'application/zip')) {
+final value = (() { return Uint8List.fromList(response.bodyBytes); })();
+return OneOf2<String, Uint8List>.b(value);
+}
+final json = jsonDecode(response.body);
+return OneOf2<String, Uint8List>.a(json as String);
+
   },
 );
  } 

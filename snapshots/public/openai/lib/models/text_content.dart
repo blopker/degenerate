@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TextContentType($value)'; } 
  }
 /// A text content.
-@immutable final class TextContent {const TextContent({required this.text, this.type = TextContentType.text, });
+@immutable final class TextContent {const TextContent({required this.type, required this.text, });
 
 factory TextContent.fromJson(Map<String, dynamic> json) { return TextContent(
   type: TextContentType.fromJson(json['type'] as String),

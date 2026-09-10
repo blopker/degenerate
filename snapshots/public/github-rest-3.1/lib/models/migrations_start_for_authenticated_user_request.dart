@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MigrationsStartForAuthenticatedUserRequestExclude($value)'; } 
  }
-@immutable final class MigrationsStartForAuthenticatedUserRequest {const MigrationsStartForAuthenticatedUserRequest({required this.repositories, this.lockRepositories, this.excludeMetadata, this.excludeGitData, this.excludeAttachments, this.excludeReleases, this.excludeOwnerProjects, this.orgMetadataOnly = false, this.exclude, });
+@immutable final class MigrationsStartForAuthenticatedUserRequest {const MigrationsStartForAuthenticatedUserRequest({required this.repositories, this.lockRepositories, this.excludeMetadata, this.excludeGitData, this.excludeAttachments, this.excludeReleases, this.excludeOwnerProjects, this.orgMetadataOnly, this.exclude, });
 
 factory MigrationsStartForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return MigrationsStartForAuthenticatedUserRequest(
   lockRepositories: json['lock_repositories'] as bool?,
@@ -31,7 +31,7 @@ factory MigrationsStartForAuthenticatedUserRequest.fromJson(Map<String, dynamic>
   excludeAttachments: json['exclude_attachments'] as bool?,
   excludeReleases: json['exclude_releases'] as bool?,
   excludeOwnerProjects: json['exclude_owner_projects'] as bool?,
-  orgMetadataOnly: json.containsKey('org_metadata_only') ? json['org_metadata_only'] as bool : false,
+  orgMetadataOnly: json['org_metadata_only'] as bool?,
   exclude: (json['exclude'] as List<dynamic>?)?.map((e) => MigrationsStartForAuthenticatedUserRequestExclude.fromJson(e as String)).toList(),
   repositories: (json['repositories'] as List<dynamic>).map((e) => e as String).toList(),
 ); }
@@ -55,13 +55,15 @@ final bool? excludeReleases;
 final bool? excludeOwnerProjects;
 
 /// Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).
-final bool orgMetadataOnly;
+final bool? orgMetadataOnly;
 
 /// Exclude attributes from the API response to improve performance
 final List<MigrationsStartForAuthenticatedUserRequestExclude>? exclude;
 
 final List<String> repositories;
 
+/// The value with the schema default applied when absent.
+bool get orgMetadataOnlyOrDefault { return orgMetadataOnly ?? false; } 
 Map<String, dynamic> toJson() { return {
   'lock_repositories': ?lockRepositories,
   'exclude_metadata': ?excludeMetadata,
@@ -69,12 +71,12 @@ Map<String, dynamic> toJson() { return {
   'exclude_attachments': ?excludeAttachments,
   'exclude_releases': ?excludeReleases,
   'exclude_owner_projects': ?excludeOwnerProjects,
-  'org_metadata_only': orgMetadataOnly,
+  'org_metadata_only': ?orgMetadataOnly,
   if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
   'repositories': repositories,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('repositories'); } 
-MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepositories, bool? Function()? excludeMetadata, bool? Function()? excludeGitData, bool? Function()? excludeAttachments, bool? Function()? excludeReleases, bool? Function()? excludeOwnerProjects, bool Function()? orgMetadataOnly, List<MigrationsStartForAuthenticatedUserRequestExclude>? Function()? exclude, List<String>? repositories, }) { return MigrationsStartForAuthenticatedUserRequest(
+MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepositories, bool? Function()? excludeMetadata, bool? Function()? excludeGitData, bool? Function()? excludeAttachments, bool? Function()? excludeReleases, bool? Function()? excludeOwnerProjects, bool? Function()? orgMetadataOnly, List<MigrationsStartForAuthenticatedUserRequestExclude>? Function()? exclude, List<String>? repositories, }) { return MigrationsStartForAuthenticatedUserRequest(
   lockRepositories: lockRepositories != null ? lockRepositories() : this.lockRepositories,
   excludeMetadata: excludeMetadata != null ? excludeMetadata() : this.excludeMetadata,
   excludeGitData: excludeGitData != null ? excludeGitData() : this.excludeGitData,

@@ -3,25 +3,27 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// SecretEnvSource selects a Secret to populate the environment variables with.
 /// 
 /// The contents of the target Secret's Data field will represent the key-value pairs as environment variables.
-@immutable final class SecretEnvSource {const SecretEnvSource({this.name = '', this.optional, });
+@immutable final class SecretEnvSource {const SecretEnvSource({this.name, this.optional, });
 
 factory SecretEnvSource.fromJson(Map<String, dynamic> json) { return SecretEnvSource(
-  name: json.containsKey('name') ? json['name'] as String : '',
+  name: json['name'] as String?,
   optional: json['optional'] as bool?,
 ); }
 
 /// Name of the referent. This field is effectively required, but due to backwards compatibility is allowed to be empty. Instances of this type with an empty value here are almost certainly wrong. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-final String name;
+final String? name;
 
 /// Specify whether the Secret must be defined
 final bool? optional;
 
+/// The value with the schema default applied when absent.
+String get nameOrDefault { return name ?? ''; } 
 Map<String, dynamic> toJson() { return {
-  'name': name,
+  'name': ?name,
   'optional': ?optional,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'optional'}.contains(key)); } 
-SecretEnvSource copyWith({String Function()? name, bool? Function()? optional, }) { return SecretEnvSource(
+SecretEnvSource copyWith({String? Function()? name, bool? Function()? optional, }) { return SecretEnvSource(
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,
 ); } 

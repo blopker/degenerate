@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'empty_model_param.dart';import 'function_call_item_status.dart';import 'tool_search_execution_type.dart';@immutable final class ToolSearchCallItemParam {const ToolSearchCallItemParam({required this.arguments, this.id = const Omittable.absent(), this.callId = const Omittable.absent(), this.type = 'tool_search_call', this.execution, this.status = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'empty_model_param.dart';import 'function_call_item_status.dart';import 'tool_search_execution_type.dart';@immutable final class ToolSearchCallItemParam {const ToolSearchCallItemParam({required this.type, required this.arguments, this.id = const Omittable.absent(), this.callId = const Omittable.absent(), this.execution, this.status = const Omittable.absent(), });
 
 factory ToolSearchCallItemParam.fromJson(Map<String, dynamic> json) { return ToolSearchCallItemParam(
   id: json.containsKey('id') ? Omittable(json['id'] as String?) : const Omittable.absent(),

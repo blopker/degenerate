@@ -51,7 +51,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TeamMembershipState($value)'; } 
  }
 /// Team Membership
-@immutable final class TeamMembership {const TeamMembership({required this.url, required this.state, this.role = TeamMembershipRole.member, });
+@immutable final class TeamMembership {const TeamMembership({required this.url, required this.role, required this.state, });
 
 factory TeamMembership.fromJson(Map<String, dynamic> json) { return TeamMembership(
   url: Uri.parse(json['url'] as String),

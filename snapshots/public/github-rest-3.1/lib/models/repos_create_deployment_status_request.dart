@@ -40,15 +40,15 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ReposCreateDeploymentStatusRequestState($value)'; } 
  }
-@immutable final class ReposCreateDeploymentStatusRequest {const ReposCreateDeploymentStatusRequest({required this.state, this.targetUrl = '', this.logUrl = '', this.description = '', this.environment, this.environmentUrl = '', this.autoInactive, });
+@immutable final class ReposCreateDeploymentStatusRequest {const ReposCreateDeploymentStatusRequest({required this.state, this.targetUrl, this.logUrl, this.description, this.environment, this.environmentUrl, this.autoInactive, });
 
 factory ReposCreateDeploymentStatusRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentStatusRequest(
   state: ReposCreateDeploymentStatusRequestState.fromJson(json['state'] as String),
-  targetUrl: json.containsKey('target_url') ? json['target_url'] as String : '',
-  logUrl: json.containsKey('log_url') ? json['log_url'] as String : '',
-  description: json.containsKey('description') ? json['description'] as String : '',
+  targetUrl: json['target_url'] as String?,
+  logUrl: json['log_url'] as String?,
+  description: json['description'] as String?,
   environment: json['environment'] as String?,
-  environmentUrl: json.containsKey('environment_url') ? json['environment_url'] as String : '',
+  environmentUrl: json['environment_url'] as String?,
   autoInactive: json['auto_inactive'] as bool?,
 ); }
 
@@ -59,34 +59,42 @@ final ReposCreateDeploymentStatusRequestState state;
 /// 
 /// > `[!NOTE]`
 /// > It's recommended to use the `log_url` parameter, which replaces `target_url`.
-final String targetUrl;
+final String? targetUrl;
 
 /// The full URL of the deployment's output. This parameter replaces `target_url`. We will continue to accept `target_url` to support legacy uses, but we recommend replacing `target_url` with `log_url`. Setting `log_url` will automatically set `target_url` to the same value. Default: `""`
-final String logUrl;
+final String? logUrl;
 
 /// A short description of the status. The maximum description length is 140 characters.
-final String description;
+final String? description;
 
 /// Name for the target deployment environment, which can be changed when setting a deploy status. For example, `production`, `staging`, or `qa`. If not defined, the environment of the previous status on the deployment will be used, if it exists. Otherwise, the environment of the deployment will be used.
 final String? environment;
 
 /// Sets the URL for accessing your environment. Default: `""`
-final String environmentUrl;
+final String? environmentUrl;
 
 /// Adds a new `inactive` status to all prior non-transient, non-production environment deployments with the same repository and `environment` name as the created status's deployment. An `inactive` status is only added to deployments that had a `success` state. Default: `true`
 final bool? autoInactive;
 
+/// The value with the schema default applied when absent.
+String get targetUrlOrDefault { return targetUrl ?? ''; } 
+/// The value with the schema default applied when absent.
+String get logUrlOrDefault { return logUrl ?? ''; } 
+/// The value with the schema default applied when absent.
+String get descriptionOrDefault { return description ?? ''; } 
+/// The value with the schema default applied when absent.
+String get environmentUrlOrDefault { return environmentUrl ?? ''; } 
 Map<String, dynamic> toJson() { return {
   'state': state.toJson(),
-  'target_url': targetUrl,
-  'log_url': logUrl,
-  'description': description,
+  'target_url': ?targetUrl,
+  'log_url': ?logUrl,
+  'description': ?description,
   'environment': ?environment,
-  'environment_url': environmentUrl,
+  'environment_url': ?environmentUrl,
   'auto_inactive': ?autoInactive,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
-ReposCreateDeploymentStatusRequest copyWith({ReposCreateDeploymentStatusRequestState? state, String Function()? targetUrl, String Function()? logUrl, String Function()? description, String? Function()? environment, String Function()? environmentUrl, bool? Function()? autoInactive, }) { return ReposCreateDeploymentStatusRequest(
+ReposCreateDeploymentStatusRequest copyWith({ReposCreateDeploymentStatusRequestState? state, String? Function()? targetUrl, String? Function()? logUrl, String? Function()? description, String? Function()? environment, String? Function()? environmentUrl, bool? Function()? autoInactive, }) { return ReposCreateDeploymentStatusRequest(
   state: state ?? this.state,
   targetUrl: targetUrl != null ? targetUrl() : this.targetUrl,
   logUrl: logUrl != null ? logUrl() : this.logUrl,

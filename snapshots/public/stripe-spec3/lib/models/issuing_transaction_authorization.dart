@@ -1,3 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization.dart';typedef IssuingTransactionAuthorization = OneOf2<String,IssuingAuthorization>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_authorization.dart';/// The `Authorization` object that led to this transaction.
+@immutable
+final class IssuingTransactionAuthorization {
+  const IssuingTransactionAuthorization({this.string = const Omittable.absent(),
+this.issuingAuthorization = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const IssuingTransactionAuthorization._({required this.rawValue, required this.string,
+required this.issuingAuthorization,});
+  factory IssuingTransactionAuthorization.fromJson(Object? json) => IssuingTransactionAuthorization._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+issuingAuthorization: parseAnyOfVariant<IssuingAuthorization>(json, (value) => IssuingAuthorization.fromJson(value! as Map<String, dynamic>)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<IssuingAuthorization> issuingAuthorization;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => (rawValue.isPresent && rawValue.value == null) || string.isPresent || issuingAuthorization.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (issuingAuthorization.isPresent) issuingAuthorization.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is IssuingTransactionAuthorization && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'IssuingTransactionAuthorization(${toJson()})';
+}

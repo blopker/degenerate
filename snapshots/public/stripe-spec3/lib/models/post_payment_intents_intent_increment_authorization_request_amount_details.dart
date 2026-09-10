@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_shipping_param5.dart';import 'amount_details_tax_param5.dart';import 'post_payment_intents_intent_increment_authorization_request_amount_details_discount_amount.dart';import 'post_payment_intents_intent_increment_authorization_request_amount_details_line_items.dart';import 'post_payment_intents_intent_increment_authorization_request_amount_details_line_items_variant1.dart';import 'post_payment_intents_intent_increment_authorization_request_amount_details_shipping.dart';import 'post_payment_intents_intent_increment_authorization_request_amount_details_tax.dart';/// Provides industry-specific information about the amount.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_increment_authorization_request_amount_details_discount_amount.dart';import 'post_payment_intents_intent_increment_authorization_request_amount_details_line_items.dart';import 'post_payment_intents_intent_increment_authorization_request_amount_details_shipping.dart';import 'post_payment_intents_intent_increment_authorization_request_amount_details_tax.dart';/// Provides industry-specific information about the amount.
 @immutable final class PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails {const PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
 
 factory PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetails(
-  discountAmount: json['discount_amount'] != null ? OneOf2.parse(json['discount_amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmountVariant2.fromJson(v as String),) : null,
+  discountAmount: json['discount_amount'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmount.fromJson(json['discount_amount']) : null,
   enforceArithmeticValidation: json['enforce_arithmetic_validation'] as bool?,
-  lineItems: json['line_items'] != null ? OneOf2.parse(json['line_items'], fromA: (v) => (v as List<dynamic>).map((e) => PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItemsVariant2.fromJson(v as String),) : null,
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => AmountDetailsShippingParam5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsShippingVariant2.fromJson(v as String),) : null,
-  tax: json['tax'] != null ? OneOf2.parse(json['tax'], fromA: (v) => AmountDetailsTaxParam5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsTaxVariant2.fromJson(v as String),) : null,
+  lineItems: json['line_items'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsLineItems.fromJson(json['line_items']) : null,
+  shipping: json['shipping'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsShipping.fromJson(json['shipping']) : null,
+  tax: json['tax'] != null ? PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsTax.fromJson(json['tax']) : null,
 ); }
 
 final PostPaymentIntentsIntentIncrementAuthorizationRequestAmountDetailsDiscountAmount? discountAmount;

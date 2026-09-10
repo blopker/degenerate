@@ -160,10 +160,10 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TlsCertificatesAndHostnamesSslDvType($value)'; } 
  }
-@immutable final class TlsCertificatesAndHostnamesSslDv {const TlsCertificatesAndHostnamesSslDv({this.bundleMethod = TlsCertificatesAndHostnamesSslDvBundleMethod.ubiquitous, this.certificateAuthority, this.customCertificate, this.customCsrId, this.customKey, this.dcvDelegationRecords, this.expiresOn, this.hosts, this.id, this.issuer, this.method, this.serialNumber, this.settings, this.signature, this.status, this.type, this.uploadedOn, this.validationErrors, this.validationRecords, this.wildcard, });
+@immutable final class TlsCertificatesAndHostnamesSslDv {const TlsCertificatesAndHostnamesSslDv({this.bundleMethod, this.certificateAuthority, this.customCertificate, this.customCsrId, this.customKey, this.dcvDelegationRecords, this.expiresOn, this.hosts, this.id, this.issuer, this.method, this.serialNumber, this.settings, this.signature, this.status, this.type, this.uploadedOn, this.validationErrors, this.validationRecords, this.wildcard, });
 
 factory TlsCertificatesAndHostnamesSslDv.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSslDv(
-  bundleMethod: json.containsKey('bundle_method') ? TlsCertificatesAndHostnamesSslDvBundleMethod.fromJson(json['bundle_method'] as String) : TlsCertificatesAndHostnamesSslDvBundleMethod.ubiquitous,
+  bundleMethod: json['bundle_method'] != null ? TlsCertificatesAndHostnamesSslDvBundleMethod.fromJson(json['bundle_method'] as String) : null,
   certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,
   customCertificate: json['custom_certificate'] as String?,
   customCsrId: json['custom_csr_id'] as String?,
@@ -186,7 +186,7 @@ factory TlsCertificatesAndHostnamesSslDv.fromJson(Map<String, dynamic> json) { r
 ); }
 
 /// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
-final TlsCertificatesAndHostnamesSslDvBundleMethod bundleMethod;
+final TlsCertificatesAndHostnamesSslDvBundleMethod? bundleMethod;
 
 /// The Certificate Authority that will issue the certificate
 final TlsCertificatesAndHostnamesCertificateAuthority? certificateAuthority;
@@ -243,8 +243,10 @@ final List<TlsCertificatesAndHostnamesValidationRecord>? validationRecords;
 /// Indicates whether the certificate covers a wildcard.
 final bool? wildcard;
 
+/// The value with the schema default applied when absent.
+TlsCertificatesAndHostnamesSslDvBundleMethod get bundleMethodOrDefault { return bundleMethod ?? TlsCertificatesAndHostnamesSslDvBundleMethod.fromJson('ubiquitous'); } 
 Map<String, dynamic> toJson() { return {
-  'bundle_method': bundleMethod.toJson(),
+  if (bundleMethod != null) 'bundle_method': bundleMethod?.toJson(),
   if (certificateAuthority != null) 'certificate_authority': certificateAuthority?.toJson(),
   'custom_certificate': ?customCertificate,
   'custom_csr_id': ?customCsrId,
@@ -266,7 +268,7 @@ Map<String, dynamic> toJson() { return {
   'wildcard': ?wildcard,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bundle_method', 'certificate_authority', 'custom_certificate', 'custom_csr_id', 'custom_key', 'dcv_delegation_records', 'expires_on', 'hosts', 'id', 'issuer', 'method', 'serial_number', 'settings', 'signature', 'status', 'type', 'uploaded_on', 'validation_errors', 'validation_records', 'wildcard'}.contains(key)); } 
-TlsCertificatesAndHostnamesSslDv copyWith({TlsCertificatesAndHostnamesSslDvBundleMethod Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, String? Function()? customCertificate, String? Function()? customCsrId, String? Function()? customKey, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? dcvDelegationRecords, DateTime? Function()? expiresOn, List<String>? Function()? hosts, String? Function()? id, String? Function()? issuer, TlsCertificatesAndHostnamesSslDvMethod? Function()? method, String? Function()? serialNumber, TlsCertificatesAndHostnamesSslsettings? Function()? settings, String? Function()? signature, TlsCertificatesAndHostnamesSslDvStatus? Function()? status, TlsCertificatesAndHostnamesSslDvType? Function()? type, DateTime? Function()? uploadedOn, List<TlsCertificatesAndHostnamesSslDvValidationErrors>? Function()? validationErrors, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? validationRecords, bool? Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslDv(
+TlsCertificatesAndHostnamesSslDv copyWith({TlsCertificatesAndHostnamesSslDvBundleMethod? Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, String? Function()? customCertificate, String? Function()? customCsrId, String? Function()? customKey, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? dcvDelegationRecords, DateTime? Function()? expiresOn, List<String>? Function()? hosts, String? Function()? id, String? Function()? issuer, TlsCertificatesAndHostnamesSslDvMethod? Function()? method, String? Function()? serialNumber, TlsCertificatesAndHostnamesSslsettings? Function()? settings, String? Function()? signature, TlsCertificatesAndHostnamesSslDvStatus? Function()? status, TlsCertificatesAndHostnamesSslDvType? Function()? type, DateTime? Function()? uploadedOn, List<TlsCertificatesAndHostnamesSslDvValidationErrors>? Function()? validationErrors, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? validationRecords, bool? Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslDv(
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   customCertificate: customCertificate != null ? customCertificate() : this.customCertificate,

@@ -76,7 +76,7 @@ factory PostAccountsAccountExternalAccountsIdRequest.fromJson(Map<String, dynami
   expMonth: json['exp_month'] as String?,
   expYear: json['exp_year'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostAccountsAccountExternalAccountsIdRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostAccountsAccountExternalAccountsIdRequestMetadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
 ); }
 

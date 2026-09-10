@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'FunctionCallStatus($value)'; } 
  }
-@immutable final class ToolSearchCall {const ToolSearchCall({required this.id, required this.callId, required this.execution, required this.arguments, required this.status, this.type = 'tool_search_call', this.createdBy, });
+@immutable final class ToolSearchCall {const ToolSearchCall({required this.type, required this.id, required this.callId, required this.execution, required this.arguments, required this.status, this.createdBy, });
 
 factory ToolSearchCall.fromJson(Map<String, dynamic> json) { return ToolSearchCall(
   type: json['type'] as String,

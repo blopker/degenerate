@@ -30,9 +30,9 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class Other {const Other({this.additionalDocumentation, this.explanation, this.productDescription, this.productType, });
 
 factory Other.fromJson(Map<String, dynamic> json) { return Other(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => OtherAdditionalDocumentationVariant2.fromJson(v as String),) : null,
-  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => OtherExplanationVariant2.fromJson(v as String),) : null,
-  productDescription: json['product_description'] != null ? OneOf2.parse(json['product_description'], fromA: (v) => v as String, fromB: (v) => OtherProductDescriptionVariant2.fromJson(v as String),) : null,
+  additionalDocumentation: json['additional_documentation'] != null ? OtherAdditionalDocumentation.fromJson(json['additional_documentation']) : null,
+  explanation: json['explanation'] != null ? OtherExplanation.fromJson(json['explanation']) : null,
+  productDescription: json['product_description'] != null ? OtherProductDescription.fromJson(json['product_description']) : null,
   productType: json['product_type'] != null ? OtherProductType.fromJson(json['product_type'] as String) : null,
 ); }
 

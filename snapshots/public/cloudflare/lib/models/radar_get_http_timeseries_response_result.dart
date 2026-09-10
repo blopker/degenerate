@@ -25,6 +25,6 @@ RadarGetHttpTimeseriesResponseResult copyWith({RadarGetHttpTimeseriesResponseRes
       other is RadarGetHttpTimeseriesResponseResult &&
           meta == other.meta &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(meta, Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(meta, mapHash(additionalProperties)); } 
 @override String toString() { return 'RadarGetHttpTimeseriesResponseResult(meta: $meta, additionalProperties: $additionalProperties)'; } 
  }

@@ -1,24 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitUpdateRefRequest {const GitUpdateRefRequest({required this.sha, this.force = false, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GitUpdateRefRequest {const GitUpdateRefRequest({required this.sha, this.force, });
 
 factory GitUpdateRefRequest.fromJson(Map<String, dynamic> json) { return GitUpdateRefRequest(
   sha: json['sha'] as String,
-  force: json.containsKey('force') ? json['force'] as bool : false,
+  force: json['force'] as bool?,
 ); }
 
 /// The SHA1 value to set this reference to
 final String sha;
 
 /// Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to `false` will make sure you're not overwriting work.
-final bool force;
+final bool? force;
 
+/// The value with the schema default applied when absent.
+bool get forceOrDefault { return force ?? false; } 
 Map<String, dynamic> toJson() { return {
   'sha': sha,
-  'force': force,
+  'force': ?force,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String; } 
-GitUpdateRefRequest copyWith({String? sha, bool Function()? force, }) { return GitUpdateRefRequest(
+GitUpdateRefRequest copyWith({String? sha, bool? Function()? force, }) { return GitUpdateRefRequest(
   sha: sha ?? this.sha,
   force: force != null ? force() : this.force,
 ); } 

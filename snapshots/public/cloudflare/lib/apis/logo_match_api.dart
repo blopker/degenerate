@@ -38,13 +38,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return LogoMatch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return LogoMatch.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 422:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -78,13 +87,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return LogoMatch.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return LogoMatch.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 422:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -93,7 +111,7 @@ return execute(
 /// Return all saved logo queries
 ///
 /// `GET /accounts/{account_id}/brand-protection/logos`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionLogos({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionLogos({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -102,11 +120,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -143,13 +169,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Logo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Logo.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 422:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -158,7 +193,7 @@ return execute(
 /// Return saved logo queries based on ID
 ///
 /// `GET /accounts/{account_id}/brand-protection/logos/{logo_id}`
-Future<ApiResult<void, ErrorModel>> getAccountsBrandProtectionLogos2({required String accountId, required String logoId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getAccountsBrandProtectionLogos2({required String accountId, required String logoId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -167,11 +202,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -189,11 +232,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -202,7 +250,7 @@ return execute(
 /// Return new logo queries created from image files
 ///
 /// `POST /accounts/{account_id}/brand-protection/scan-logo`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionScanLogo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> postAccountsBrandProtectionScanLogo({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -211,11 +259,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -224,7 +280,7 @@ return execute(
 /// Return new logo queries created from URLs
 ///
 /// `POST /accounts/{account_id}/brand-protection/scan-page`
-Future<ApiResult<void, ErrorModel>> postAccountsBrandProtectionScanPage({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> postAccountsBrandProtectionScanPage({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -233,18 +289,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
 /// Internal route for testing signed URLs
 ///
 /// `GET /signed-url`
-Future<ApiResult<void, ErrorModel>> getSignedUrl({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ErrorModel, ErrorModel>> getSignedUrl({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -253,11 +317,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+  },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 

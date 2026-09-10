@@ -14,7 +14,7 @@ final class AudioApi with ApiExecutor {const AudioApi(this.apiConfig);
 /// 
 ///
 /// `POST /audio/speech`
-Future<ApiResult<Uint8List, Never>> createSpeech({required CreateSpeechRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOf2<Uint8List, CreateSpeechResponseStreamEvent>, Never>> createSpeech({required CreateSpeechRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,10 +25,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Uint8List.fromList(response.bodyBytes);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/octet-stream')) {
+final value = (() { return Uint8List.fromList(response.bodyBytes); })();
+return OneOf2<Uint8List, CreateSpeechResponseStreamEvent>.a(value);
+}
+if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into CreateSpeechResponseStreamEvent
+throw UnsupportedError('Cannot decode text/event-stream response into CreateSpeechResponseStreamEvent');
+}
+final value = (() { return Uint8List.fromList(response.bodyBytes); })();
+return OneOf2<Uint8List, CreateSpeechResponseStreamEvent>.a(value);
+
   },
 );
  } 
@@ -39,7 +50,7 @@ return execute(
 /// 
 ///
 /// `POST /audio/transcriptions`
-Future<ApiResult<CreateTranscriptionResponse, Never>> createTranscription({required CreateTranscriptionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OneOf2<CreateTranscriptionResponse, CreateTranscriptionResponseStreamEvent>, Never>> createTranscription({required CreateTranscriptionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -54,7 +65,8 @@ final request = ApiRequest(
       ApiMultipartField.text('prompt', prompt$),
     if (body.responseFormat case final responseFormat$?)
       ApiMultipartField.text('response_format', responseFormat$.toJson()),
-    ApiMultipartField.text('temperature', body.temperature.toString()),
+    if (body.temperature case final temperature$?)
+      ApiMultipartField.text('temperature', temperature$.toString()),
     if (body.include case final include$?)
       ApiMultipartField.text('include', include$.toString()),
     if (body.timestampGranularities case final timestampGranularities$?)
@@ -72,10 +84,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<CreateTranscriptionResponse, CreateTranscriptionResponseStreamEvent>.a(OneOf3.parse(json, fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),));
+}
+if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into CreateTranscriptionResponseStreamEvent
+throw UnsupportedError('Cannot decode text/event-stream response into CreateTranscriptionResponseStreamEvent');
+}
+final json = jsonDecode(response.body);
+return OneOf2<CreateTranscriptionResponse, CreateTranscriptionResponseStreamEvent>.a(OneOf3.parse(json, fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),));
+
   },
 );
  } 
@@ -93,17 +116,20 @@ final request = ApiRequest(
     ApiMultipartField.text('model', body.model.toString()),
     if (body.prompt case final prompt$?)
       ApiMultipartField.text('prompt', prompt$),
-    ApiMultipartField.text('response_format', body.responseFormat.toJson()),
-    ApiMultipartField.text('temperature', body.temperature.toString()),
+    if (body.responseFormat case final responseFormat$?)
+      ApiMultipartField.text('response_format', responseFormat$.toJson()),
+    if (body.temperature case final temperature$?)
+      ApiMultipartField.text('temperature', temperature$.toString()),
   ],
   contentType: 'multipart/form-data',
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
+final json = jsonDecode(response.body);
+return OneOf2.parse(json, fromA: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 
@@ -135,10 +161,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return VoiceConsentListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VoiceConsentListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -165,10 +192,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -189,10 +217,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -215,10 +244,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -239,10 +269,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return VoiceConsentDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VoiceConsentDeletedResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -269,10 +300,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return VoiceResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VoiceResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -322,7 +354,8 @@ final request = ApiRequest(
       ApiMultipartField.text('prompt', prompt$),
     if (body.responseFormat case final responseFormat$?)
       ApiMultipartField.text('response_format', responseFormat$.toJson()),
-    ApiMultipartField.text('temperature', body.temperature.toString()),
+    if (body.temperature case final temperature$?)
+      ApiMultipartField.text('temperature', temperature$.toString()),
     if (body.include case final include$?)
       ApiMultipartField.text('include', include$.toString()),
     if (body.timestampGranularities case final timestampGranularities$?)

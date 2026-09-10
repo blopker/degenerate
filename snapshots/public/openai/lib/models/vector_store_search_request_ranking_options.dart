@@ -29,24 +29,28 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'VectorStoreSearchRequestRankingOptionsRanker($value)'; } 
  }
 /// Ranking options for search.
-@immutable final class VectorStoreSearchRequestRankingOptions {const VectorStoreSearchRequestRankingOptions({this.ranker = VectorStoreSearchRequestRankingOptionsRanker.auto, this.scoreThreshold = 0.0, });
+@immutable final class VectorStoreSearchRequestRankingOptions {const VectorStoreSearchRequestRankingOptions({this.ranker, this.scoreThreshold, });
 
 factory VectorStoreSearchRequestRankingOptions.fromJson(Map<String, dynamic> json) { return VectorStoreSearchRequestRankingOptions(
-  ranker: json.containsKey('ranker') ? VectorStoreSearchRequestRankingOptionsRanker.fromJson(json['ranker'] as String) : VectorStoreSearchRequestRankingOptionsRanker.auto,
-  scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.0,
+  ranker: json['ranker'] != null ? VectorStoreSearchRequestRankingOptionsRanker.fromJson(json['ranker'] as String) : null,
+  scoreThreshold: json['score_threshold'] != null ? (json['score_threshold'] as num).toDouble() : null,
 ); }
 
 /// Enable re-ranking; set to `none` to disable, which can help reduce latency.
-final VectorStoreSearchRequestRankingOptionsRanker ranker;
+final VectorStoreSearchRequestRankingOptionsRanker? ranker;
 
-final double scoreThreshold;
+final double? scoreThreshold;
 
+/// The value with the schema default applied when absent.
+VectorStoreSearchRequestRankingOptionsRanker get rankerOrDefault { return ranker ?? VectorStoreSearchRequestRankingOptionsRanker.fromJson('auto'); } 
+/// The value with the schema default applied when absent.
+double get scoreThresholdOrDefault { return scoreThreshold ?? 0.0; } 
 Map<String, dynamic> toJson() { return {
-  'ranker': ranker.toJson(),
-  'score_threshold': scoreThreshold,
+  if (ranker != null) 'ranker': ranker?.toJson(),
+  'score_threshold': ?scoreThreshold,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ranker', 'score_threshold'}.contains(key)); } 
-VectorStoreSearchRequestRankingOptions copyWith({VectorStoreSearchRequestRankingOptionsRanker Function()? ranker, double Function()? scoreThreshold, }) { return VectorStoreSearchRequestRankingOptions(
+VectorStoreSearchRequestRankingOptions copyWith({VectorStoreSearchRequestRankingOptionsRanker? Function()? ranker, double? Function()? scoreThreshold, }) { return VectorStoreSearchRequestRankingOptions(
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
 ); } 

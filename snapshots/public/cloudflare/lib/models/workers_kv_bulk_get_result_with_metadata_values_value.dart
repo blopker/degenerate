@@ -4,29 +4,29 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_kv_a
 
 factory WorkersKvBulkGetResultWithMetadataValuesValue.fromJson(Map<String, dynamic> json) { return WorkersKvBulkGetResultWithMetadataValuesValue(
   expiration: json['expiration'] != null ? WorkersKvExpiration.fromJson(json['expiration'] as num) : null,
-  metadata: WorkersKvAny.fromJson(json['metadata'] as Map<String, dynamic>),
-  value: WorkersKvAny.fromJson(json['value'] as Map<String, dynamic>),
+  metadata: json['metadata'] != null ? WorkersKvAny.fromJson(json['metadata']) : null,
+  value: json['value'] != null ? WorkersKvAny.fromJson(json['value']) : null,
 ); }
 
 final WorkersKvExpiration? expiration;
 
 /// The metadata associated with the key.
-final WorkersKvAny metadata;
+final WorkersKvAny? metadata;
 
 /// The value associated with the key.
-final WorkersKvAny value;
+final WorkersKvAny? value;
 
 Map<String, dynamic> toJson() { return {
   if (expiration != null) 'expiration': expiration?.toJson(),
-  'metadata': metadata.toJson(),
-  'value': value.toJson(),
+  'metadata': metadata?.toJson(),
+  'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('metadata') &&
       json.containsKey('value'); } 
-WorkersKvBulkGetResultWithMetadataValuesValue copyWith({WorkersKvExpiration? Function()? expiration, WorkersKvAny? metadata, WorkersKvAny? value, }) { return WorkersKvBulkGetResultWithMetadataValuesValue(
+WorkersKvBulkGetResultWithMetadataValuesValue copyWith({WorkersKvExpiration? Function()? expiration, WorkersKvAny? Function()? metadata, WorkersKvAny? Function()? value, }) { return WorkersKvBulkGetResultWithMetadataValuesValue(
   expiration: expiration != null ? expiration() : this.expiration,
-  metadata: metadata ?? this.metadata,
-  value: value ?? this.value,
+  metadata: metadata != null ? metadata() : this.metadata,
+  value: value != null ? value() : this.value,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is WorkersKvBulkGetResultWithMetadataValuesValue &&

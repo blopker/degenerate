@@ -25,11 +25,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'MarkdownRenderRequestMode($value)'; } 
  }
-@immutable final class MarkdownRenderRequest {const MarkdownRenderRequest({required this.text, this.mode = MarkdownRenderRequestMode.markdown, this.context, });
+@immutable final class MarkdownRenderRequest {const MarkdownRenderRequest({required this.text, this.mode, this.context, });
 
 factory MarkdownRenderRequest.fromJson(Map<String, dynamic> json) { return MarkdownRenderRequest(
   text: json['text'] as String,
-  mode: json.containsKey('mode') ? MarkdownRenderRequestMode.fromJson(json['mode'] as String) : MarkdownRenderRequestMode.markdown,
+  mode: json['mode'] != null ? MarkdownRenderRequestMode.fromJson(json['mode'] as String) : null,
   context: json['context'] as String?,
 ); }
 
@@ -37,18 +37,20 @@ factory MarkdownRenderRequest.fromJson(Map<String, dynamic> json) { return Markd
 final String text;
 
 /// The rendering mode.
-final MarkdownRenderRequestMode mode;
+final MarkdownRenderRequestMode? mode;
 
 /// The repository context to use when creating references in `gfm` mode.  For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.
 final String? context;
 
+/// The value with the schema default applied when absent.
+MarkdownRenderRequestMode get modeOrDefault { return mode ?? MarkdownRenderRequestMode.fromJson('markdown'); } 
 Map<String, dynamic> toJson() { return {
   'text': text,
-  'mode': mode.toJson(),
+  if (mode != null) 'mode': mode?.toJson(),
   'context': ?context,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
-MarkdownRenderRequest copyWith({String? text, MarkdownRenderRequestMode Function()? mode, String? Function()? context, }) { return MarkdownRenderRequest(
+MarkdownRenderRequest copyWith({String? text, MarkdownRenderRequestMode? Function()? mode, String? Function()? context, }) { return MarkdownRenderRequest(
   text: text ?? this.text,
   mode: mode != null ? mode() : this.mode,
   context: context != null ? context() : this.context,

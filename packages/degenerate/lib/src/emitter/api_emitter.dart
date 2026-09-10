@@ -1,6 +1,7 @@
 import 'package:code_builder/code_builder.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
+import 'package:degenerate/src/emitter/response_plan.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 
 /// Emits an API client class from an [IrApi].
@@ -90,8 +91,6 @@ class ApiEmitter {
       final requestBodyContent = op.requestBody != null
           ? _preferredRequestBodyContent(op.requestBody!)
           : null;
-      final successResponseContent = _successResponseContent(op);
-      final errorResponseContent = _errorResponseContent(op);
 
       if (requestBodyContent != null &&
           !requestBodyContent.$1.test(isJsonLikeMediaType) &&
@@ -105,23 +104,23 @@ class ApiEmitter {
         );
       }
 
-      if (successResponseContent != null &&
-          !successResponseContent.$1.test(isJsonLikeMediaType) &&
-          !_supportsNonJsonDecode(successResponseContent.$2.schema)) {
-        warnings.add(
-          'Operation ${op.operationId} uses unsupported non-JSON success response media type ${successResponseContent.$1.forDiagnostics} with type ${irTypeName(successResponseContent.$2.schema)}.',
-        );
-      }
-
-      if (errorResponseContent != null &&
-          !errorResponseContent.$1.test(isJsonLikeMediaType) &&
-          !_supportsNonJsonDecode(errorResponseContent.$2.schema)) {
-        warnings.add(
-          'Operation ${op.operationId} uses unsupported non-JSON error response media type ${errorResponseContent.$1.forDiagnostics} with type ${irTypeName(errorResponseContent.$2.schema)}.',
-        );
+      for (final errors in [false, true]) {
+        final plan = planResponses(op, errors: errors,
+            registry: typeRegistry, unwrapFields: unwrapFields);
+        for (final branch in plan.branches) {
+          final content = branch.content;
+          final type = branch.type;
+          if (content == null || type == null ||
+              content.$1.test(isJsonLikeMediaType) || _supportsNonJsonDecode(type)) {
+            continue;
+          }
+          warnings.add(
+            'Operation ${op.operationId} uses unsupported non-JSON ${errors ? 'error' : 'success'} response media type ${content.$1.forDiagnostics} with type ${irTypeName(type)}.',
+          );
+        }
       }
     }
-    return warnings;
+    return warnings.toSet().toList();
   }
 
   List<String> _buildDocs() {
@@ -244,41 +243,22 @@ class ApiEmitter {
       ),
     );
 
-    // Determine return type from success response
-    final successResponseContent = _successResponseContent(op);
-    var returnType = successResponseContent?.$2.schema;
-    // Unwrap response envelope if configured.
-    final unwrapResult = _maybeUnwrapResponseType(returnType);
-    returnType = unwrapResult.type;
-    final unwrappedFieldIsOptional = unwrapResult.fieldIsOptional;
-    final errorResponseContent = _errorResponseContent(op);
-    final errorType = errorResponseContent?.$2.schema;
-    final needsNullableSuffix =
-        unwrapResult.unwrappedField != null &&
-        returnType != null &&
-        returnType.isNullable &&
-        !(returnType is IrPrimitive &&
-            returnType.kind == PrimitiveKind.dynamic_);
-    final returnTypeStr = returnType != null
-        ? '${irTypeName(returnType)}${needsNullableSuffix ? '?' : ''}'
-        : 'void';
-    final errorTypeStr = errorType != null ? irTypeName(errorType) : 'Never';
-    final futureType = 'Future<ApiResult<$returnTypeStr, $errorTypeStr>>';
+    final successPlan = planResponses(op, errors: false,
+        registry: typeRegistry, unwrapFields: unwrapFields);
+    final errorPlan = planResponses(op, errors: true, registry: typeRegistry);
+    final futureType = 'Future<ApiResult<${successPlan.typeName}, ${errorPlan.typeName}>>';
 
     // Build method body
     final bodyCode = _buildOperationBody(
       op,
-      returnType,
-      successResponseContent: successResponseContent,
-      errorResponseContent: errorResponseContent,
+      successPlan: successPlan,
+      errorPlan: errorPlan,
       requestBodyContent: requestBodyContent,
       bodyType: bodyType,
       pathParams: pathParams,
       queryParams: queryParams,
       headerParams: headerParams,
       cookieParams: cookieParams,
-      unwrappedField: unwrapResult.unwrappedField,
-      unwrappedFieldIsOptional: unwrappedFieldIsOptional,
     );
 
     final docs = <String>[];
@@ -417,7 +397,7 @@ class ApiEmitter {
   /// Nullability of the scalar after removing any presence wrapper.
   bool _objectFieldIsNullable(IrField field) =>
       isOmittableField(field, omittable) ||
-      (!field.isRequired && !hasUsableDartDefault(field)) ||
+      !field.isRequired ||
       field.type.isNullable;
 
   /// The explode=false pair/item join delimiter for a query style.
@@ -428,18 +408,15 @@ class ApiEmitter {
   };
 
   String _buildOperationBody(
-    IrOperation op,
-    IrType? returnType, {
+    IrOperation op, {
+    required ResponsePlan successPlan,
+    required ResponsePlan errorPlan,
     required List<IrParameter> pathParams,
     required List<IrParameter> queryParams,
     required List<IrParameter> headerParams,
     required List<IrParameter> cookieParams,
-    (SpecString, IrMediaType)? successResponseContent,
-    (SpecString, IrMediaType)? errorResponseContent,
     (SpecString, IrMediaType)? requestBodyContent,
     IrType? bodyType,
-    String? unwrappedField,
-    bool unwrappedFieldIsOptional = false,
   }) {
     final buf = StringBuffer();
     final httpMethod = _httpMethodString(op);
@@ -567,40 +544,18 @@ class ApiEmitter {
     buf.writeln(');');
     buf.writeln();
 
-    // Build onSuccess callback
-    if (returnType != null) {
-      buf.writeln('return execute(');
-      buf.writeln('  request,');
+    buf.writeln('return await execute(');
+    buf.writeln('  request,');
+    if (successPlan.types.isNotEmpty) {
       buf.writeln('  onSuccess: (response) {');
-      if (unwrappedField != null) {
-        // Unwrap: parse full JSON, extract the field, deserialize it.
-        final escaped = escapeDartString(unwrappedField);
-        buf.writeln(
-          '    final json = jsonDecode(response.body) as Map<String, dynamic>;',
-        );
-        buf.writeln(
-          "    return ${_fromJson(returnType, "json['$escaped']", isOptional: unwrappedFieldIsOptional)};",
-        );
-      } else {
-        final deserialize = _buildDeserializeExpr(
-          successResponseContent!.$1,
-          returnType,
-        );
-        buf.writeln('    $deserialize');
-      }
+      buf.writeln(_responseDecoder(successPlan));
       buf.writeln('  },');
     } else {
-      buf.writeln('return execute(');
-      buf.writeln('  request,');
       buf.writeln('  onSuccess: (_) {},');
     }
-    if (errorResponseContent != null) {
-      final errorDeserialize = _buildErrorDeserializeExpr(
-        errorResponseContent.$1,
-        errorResponseContent.$2.schema,
-      );
+    if (errorPlan.types.isNotEmpty) {
       buf.writeln('  onError: (response) {');
-      buf.writeln('    $errorDeserialize');
+      buf.writeln(_responseDecoder(errorPlan));
       buf.writeln('  },');
     }
     buf.writeln(');');
@@ -608,35 +563,103 @@ class ApiEmitter {
     return buf.toString();
   }
 
-  String _buildDeserializeExpr(SpecString mediaType, IrType returnType) {
-    if (mediaType.test(isJsonLikeMediaType)) {
-      return switch (returnType) {
-        IrList(:final items) =>
-          'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${_fromJson(items, 'e', isOptional: items.isNullable)}).toList();',
-        IrMap(:final values) => () {
-          final valueExpr = _fromJson(values, 'v', isOptional: values.isNullable);
-          if (valueExpr == 'v') {
-            return 'return jsonDecode(response.body) as Map<String, dynamic>;';
-          }
-          return 'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, $valueExpr));';
-        }(),
-        IrPrimitive(:final kind) => switch (kind) {
-          PrimitiveKind.string => 'return response.body;',
-          PrimitiveKind.int => 'return int.parse(response.body);',
-          PrimitiveKind.double => 'return double.parse(response.body);',
-          PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
-          PrimitiveKind.bytes =>
-            'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
-          _ => 'return jsonDecode(response.body);',
-        },
-        IrExtensionType() =>
-          'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
-        // All named types with .fromJson(Map)
-        _ => 'return ${_fromJson(returnType, 'jsonDecode(response.body)')};',
-      };
+  String _responseDecoder(ResponsePlan plan) {
+    final groups = <int?, List<ResponseBranch>>{};
+    for (final branch in plan.branches) {
+      groups.putIfAbsent(branch.status, () => []).add(branch);
     }
+    // A single successful shape can also decode compatible, newly added 2xx
+    // statuses. Multiple shapes require a declared status to disambiguate.
+    if (!plan.isError && groups.length == 1) {
+      return _responseMediaDecoder(plan, groups.values.single);
+    }
+    final buf = StringBuffer('switch (response.statusCode) {\n');
+    final decoders = <String, List<int>>{};
+    for (final entry in groups.entries.where((e) => e.key != null)) {
+      decoders.putIfAbsent(_responseMediaDecoder(plan, entry.value), () => []).add(entry.key!);
+    }
+    for (final entry in decoders.entries) {
+      buf.writeln('case ${_statusPattern(entry.value)}:');
+      buf.writeln(entry.key);
+    }
+    buf.writeln('default:');
+    if (groups[null] case final branches?) {
+      buf.writeln(_responseMediaDecoder(plan, branches));
+    } else if (plan.isError) {
+      buf.writeln('return null;');
+    } else if (plan.types.length == 1) {
+      buf.writeln(_responseMediaDecoder(plan,
+          [plan.branches.firstWhere((b) => b.type != null)]));
+    } else {
+      buf.writeln("throw const FormatException('Undeclared success response status');");
+    }
+    buf.writeln('}');
+    return buf.toString();
+  }
 
+  /// Groups consecutive statuses without including gaps owned by other decoders.
+  String _statusPattern(List<int> statuses) {
+    final sorted = [...statuses]..sort();
+    final patterns = <String>[];
+    for (var i = 0; i < sorted.length; i++) {
+      final first = sorted[i];
+      var last = first;
+      while (i + 1 < sorted.length && sorted[i + 1] == last + 1) {
+        last = sorted[++i];
+      }
+      if (last - first >= 2) {
+        patterns.add('>= $first && < ${last + 1}');
+      } else {
+        for (var status = first; status <= last; status++) {
+          patterns.add('$status');
+        }
+      }
+    }
+    return patterns.join(' || ');
+  }
+
+  String _responseMediaDecoder(ResponsePlan plan, List<ResponseBranch> branches) {
+    if (branches.length == 1) return _responseBranchDecoder(plan, branches.single);
+    final buf = StringBuffer(
+      "final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;\n",
+    );
+    int specificity(ResponseBranch branch) {
+      final mediaType = branch.content!.$1.rebuild(normalizeMediaType);
+      if (mediaType.test((s) => s == '*/*')) return 0;
+      if (mediaType.test((s) => s.endsWith('/*'))) return 1;
+      return 2;
+    }
+    final ordered = [...branches]..sort((a, b) {
+      final byType = specificity(b).compareTo(specificity(a));
+      if (byType != 0) return byType;
+      return b.content!.$1.literal.split(';').length.compareTo(a.content!.$1.literal.split(';').length);
+    });
+    for (final branch in ordered) {
+      buf.writeln('if (responseMediaTypeMatches(contentType, ${branch.content!.$1.literal})) {');
+      buf.writeln(_responseBranchDecoder(plan, branch));
+      buf.writeln('}');
+    }
+    buf.writeln(_responseBranchDecoder(plan, branches.first));
+    return buf.toString();
+  }
+
+  String _responseBranchDecoder(ResponsePlan plan, ResponseBranch branch) {
+    final type = branch.type;
+    if (type == null) return 'return null;';
+    final mediaType = branch.content!.$1;
+    if (mediaType.test(isJsonLikeMediaType)) {
+      final field = branch.field;
+      final accessor = field == null ? 'json' : 'json[${field.literal}]';
+      final parsed = _fromJson(type, accessor, isOptional: type.isNullable);
+      return 'final json = jsonDecode(response.body)${field == null ? '' : ' as Map<String, dynamic>'};\n'
+          'return ${plan.wrap(type, parsed)};';
+    }
+    final decoded = _buildDeserializeExpr(mediaType, type);
+    if (plan.types.length == 1 || decoded.contains('throw UnsupportedError(')) return decoded;
+    return 'final value = (() { $decoded })();\nreturn ${plan.wrap(type, 'value')};';
+  }
+
+  String _buildDeserializeExpr(SpecString mediaType, IrType returnType) {
     final unsupportedMessage = mediaType.rebuild(
       (m) => 'Cannot decode $m response into ${irTypeName(returnType)}',
     );
@@ -962,47 +985,6 @@ class ApiEmitter {
   static SpecString _httpMethodString(IrOperation op) =>
       op.customMethod ?? SpecString(op.method.name.toUpperCase());
 
-  /// If [unwrapFields] is configured and [type] is an object (or ref to one)
-  /// with a matching field, return that field's type and the JSON key used
-  /// to extract it. Otherwise returns the original type with no field name.
-  ({IrType? type, String? unwrappedField, bool fieldIsOptional})
-  _maybeUnwrapResponseType(IrType? type) {
-    if (type == null || unwrapFields.isEmpty) {
-      return (type: type, unwrappedField: null, fieldIsOptional: false);
-    }
-    final obj = _resolveToObject(type);
-    if (obj == null) {
-      return (type: type, unwrappedField: null, fieldIsOptional: false);
-    }
-    for (final fieldName in unwrapFields) {
-      for (final f in obj.fields) {
-        if (f.originalName.test((s) => s == fieldName)) {
-          final isOptional = !f.isRequired || f.type.isNullable;
-          var fieldType = f.type;
-          if (isOptional && !fieldType.isNullable) {
-            fieldType = fieldType.copyAsNullable();
-          }
-          return (
-            type: fieldType,
-            unwrappedField: fieldName,
-            fieldIsOptional: isOptional,
-          );
-        }
-      }
-    }
-    return (type: type, unwrappedField: null, fieldIsOptional: false);
-  }
-
-  /// Resolve an IrType to an IrObject if possible (through IrTypeRef).
-  IrObject? _resolveToObject(IrType type) {
-    if (type is IrObject) return type;
-    if (type is IrTypeRef) {
-      final resolved = typeRegistry[type.name];
-      if (resolved is IrObject) return resolved;
-    }
-    return null;
-  }
-
   Method _buildStreamingOperation(IrOperation op) {
     final params = <Parameter>[];
 
@@ -1304,96 +1286,6 @@ class ApiEmitter {
       IrEnum() => true,
       _ => false,
     };
-  }
-
-  (SpecString, IrMediaType)? _errorResponseContent(IrOperation op) {
-    // Check for a default error response first (most common pattern)
-    if (op.defaultResponse != null) {
-      final content = preferredContent(op.defaultResponse!.content);
-      if (content != null) return content;
-    }
-    // Check for specific error status codes
-    for (final entry in op.responses.entries) {
-      if (entry.key >= 400) {
-        final content = preferredContent(entry.value.content);
-        if (content != null) return content;
-      }
-    }
-    return null;
-  }
-
-  String _buildErrorDeserializeExpr(SpecString mediaType, IrType errorType) {
-    if (mediaType.test(isJsonLikeMediaType)) {
-      return switch (errorType) {
-        IrPrimitive(:final kind) => switch (kind) {
-          PrimitiveKind.string => 'return response.body;',
-          PrimitiveKind.int => 'return int.parse(response.body);',
-          PrimitiveKind.double => 'return double.parse(response.body);',
-          PrimitiveKind.bool => 'return jsonDecode(response.body) as bool;',
-          PrimitiveKind.bytes =>
-            'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
-          _ => 'return jsonDecode(response.body);',
-        },
-        IrEnum(:final name) =>
-          'return $name.fromJson(jsonDecode(response.body) as String);',
-        IrList(:final items) =>
-          'final json = jsonDecode(response.body) as List<dynamic>;\n'
-              '    return json.map((e) => ${_fromJson(items, 'e', isOptional: items.isNullable)}).toList();',
-        IrMap(:final values) => () {
-          final valueExpr = _fromJson(values, 'v', isOptional: values.isNullable);
-          if (valueExpr == 'v') {
-            return 'return jsonDecode(response.body) as Map<String, dynamic>;';
-          }
-          return 'return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, $valueExpr));';
-        }(),
-        // All named types with .fromJson(Map)
-        _ => 'return ${_fromJson(errorType, 'jsonDecode(response.body)')};',
-      };
-    }
-
-    final unsupportedMessage = mediaType.rebuild(
-      (m) => 'Cannot decode $m error into ${irTypeName(errorType)}',
-    );
-    return switch (errorType) {
-      IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.dynamic_ ||
-        PrimitiveKind.string => 'return response.body;',
-        PrimitiveKind.int => 'return int.parse(response.body);',
-        PrimitiveKind.double => 'return double.parse(response.body);',
-        PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
-        PrimitiveKind.bytes => 'return Uint8List.fromList(response.bodyBytes);',
-        _ => 'return null;',
-      },
-      IrEnum(:final name) => 'return $name.fromJson(response.body);',
-      _ =>
-        '// TODO: Unsupported non-JSON error schema ${unsupportedMessage.commentText}\nreturn null;',
-    };
-  }
-
-  (SpecString, IrMediaType)? _successResponseContent(IrOperation op) {
-    // Find the first 2xx response with content.
-    // Check common codes first, then any other 2xx code.
-    final priorityCodes = [200, 201, 202, 203, 204];
-    for (final code in priorityCodes) {
-      final resp = op.responses[code];
-      if (resp != null) {
-        final content = preferredContent(resp.content);
-        if (content != null) return content;
-        // 201/204 with no content means void
-        if (resp.content.isEmpty) return null;
-      }
-    }
-    // Check remaining 2xx codes (206, 207, etc.)
-    for (final entry in op.responses.entries) {
-      if (entry.key >= 200 &&
-          entry.key < 300 &&
-          !priorityCodes.contains(entry.key)) {
-        final content = preferredContent(entry.value.content);
-        if (content != null) return content;
-        if (entry.value.content.isEmpty) return null;
-      }
-    }
-    return null;
   }
 
   String _buildRequestBodyExpr(

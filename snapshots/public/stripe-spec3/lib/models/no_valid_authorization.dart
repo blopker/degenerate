@@ -3,8 +3,8 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'no_valid_authorization_additional_documentation.dart';import 'no_valid_authorization_explanation.dart';@immutable final class NoValidAuthorization {const NoValidAuthorization({this.additionalDocumentation, this.explanation, });
 
 factory NoValidAuthorization.fromJson(Map<String, dynamic> json) { return NoValidAuthorization(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => NoValidAuthorizationAdditionalDocumentationVariant2.fromJson(v as String),) : null,
-  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => NoValidAuthorizationExplanationVariant2.fromJson(v as String),) : null,
+  additionalDocumentation: json['additional_documentation'] != null ? NoValidAuthorizationAdditionalDocumentation.fromJson(json['additional_documentation']) : null,
+  explanation: json['explanation'] != null ? NoValidAuthorizationExplanation.fromJson(json['explanation']) : null,
 ); }
 
 final NoValidAuthorizationAdditionalDocumentation? additionalDocumentation;

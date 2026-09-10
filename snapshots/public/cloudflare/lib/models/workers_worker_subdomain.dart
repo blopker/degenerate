@@ -1,25 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Subdomain settings for the Worker.
-@immutable final class WorkersWorkerSubdomain {const WorkersWorkerSubdomain({this.enabled = false, this.previewsEnabled, });
+@immutable final class WorkersWorkerSubdomain {const WorkersWorkerSubdomain({this.enabled, this.previewsEnabled, });
 
 factory WorkersWorkerSubdomain.fromJson(Map<String, dynamic> json) { return WorkersWorkerSubdomain(
-  enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,
+  enabled: json['enabled'] as bool?,
   previewsEnabled: json['previews_enabled'] as bool?,
 ); }
 
 /// Whether the *.workers.dev subdomain is enabled for the Worker.
-final bool enabled;
+final bool? enabled;
 
 /// Whether [preview URLs](https://developers.cloudflare.com/workers/configuration/previews/) are enabled for the Worker.
 final bool? previewsEnabled;
 
+/// The value with the schema default applied when absent.
+bool get enabledOrDefault { return enabled ?? false; } 
 Map<String, dynamic> toJson() { return {
-  'enabled': enabled,
+  'enabled': ?enabled,
   'previews_enabled': ?previewsEnabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'previews_enabled'}.contains(key)); } 
-WorkersWorkerSubdomain copyWith({bool Function()? enabled, bool? Function()? previewsEnabled, }) { return WorkersWorkerSubdomain(
+WorkersWorkerSubdomain copyWith({bool? Function()? enabled, bool? Function()? previewsEnabled, }) { return WorkersWorkerSubdomain(
   enabled: enabled != null ? enabled() : this.enabled,
   previewsEnabled: previewsEnabled != null ? previewsEnabled() : this.previewsEnabled,
 ); } 

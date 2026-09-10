@@ -89,7 +89,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class CheckRunWithSimpleCheckSuite {const CheckRunWithSimpleCheckSuite({required this.app, required this.checkSuite, required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.output, required this.pullRequests, required this.startedAt, required this.status, required this.url, this.deployment, });
 
 factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) { return CheckRunWithSimpleCheckSuite(
-  app: Integration.fromJson(json['app'] as Map<String, dynamic>),
+  app: json['app'] != null ? Integration.fromJson(json['app'] as Map<String, dynamic>) : null,
   checkSuite: SimpleCheckSuite.fromJson(json['check_suite'] as Map<String, dynamic>),
   completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
   conclusion: json['conclusion'] != null ? CheckRunWithSimpleCheckSuiteConclusion.fromJson(json['conclusion'] as String) : null,
@@ -108,7 +108,7 @@ factory CheckRunWithSimpleCheckSuite.fromJson(Map<String, dynamic> json) { retur
   url: json['url'] as String,
 ); }
 
-final Integration app;
+final Integration? app;
 
 final SimpleCheckSuite checkSuite;
 
@@ -147,7 +147,7 @@ final CheckRunWithSimpleCheckSuiteStatus status;
 final String url;
 
 Map<String, dynamic> toJson() { return {
-  'app': app.toJson(),
+  'app': app?.toJson(),
   'check_suite': checkSuite.toJson(),
   'completed_at': completedAt?.toIso8601String(),
   'conclusion': conclusion?.toJson(),
@@ -181,8 +181,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('app')
       json.containsKey('started_at') && json['started_at'] is String &&
       json.containsKey('status') &&
       json.containsKey('url') && json['url'] is String; } 
-CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple? Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, CheckRunWithSimpleCheckSuiteOutput? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) { return CheckRunWithSimpleCheckSuite(
-  app: app ?? this.app,
+CheckRunWithSimpleCheckSuite copyWith({Integration? Function()? app, SimpleCheckSuite? checkSuite, DateTime? Function()? completedAt, CheckRunWithSimpleCheckSuiteConclusion? Function()? conclusion, DeploymentSimple? Function()? deployment, String? detailsUrl, String? externalId, String? headSha, String? htmlUrl, int? id, String? name, String? nodeId, CheckRunWithSimpleCheckSuiteOutput? output, List<PullRequestMinimal>? pullRequests, DateTime? startedAt, CheckRunWithSimpleCheckSuiteStatus? status, String? url, }) { return CheckRunWithSimpleCheckSuite(
+  app: app != null ? app() : this.app,
   checkSuite: checkSuite ?? this.checkSuite,
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   conclusion: conclusion != null ? conclusion() : this.conclusion,

@@ -20,10 +20,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AccountConference.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountConference.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -48,10 +49,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AccountConference.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountConference.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -105,10 +107,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ListConferenceResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListConferenceResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

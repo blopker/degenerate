@@ -35,13 +35,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return WorkersAiPostRunCfFacebookBartLargeCnnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostRunCfFacebookBartLargeCnnResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -72,13 +80,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostRunCfFacebookNonomniBartLargeCnnResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

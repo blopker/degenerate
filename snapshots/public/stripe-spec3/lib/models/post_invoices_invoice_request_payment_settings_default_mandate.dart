@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2($value)'; } 
  }
-typedef PostInvoicesInvoiceRequestPaymentSettingsDefaultMandate = OneOf2<String,PostInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2>;
+
+@immutable
+final class PostInvoicesInvoiceRequestPaymentSettingsDefaultMandate {
+  const PostInvoicesInvoiceRequestPaymentSettingsDefaultMandate({this.string = const Omittable.absent(),
+this.postInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostInvoicesInvoiceRequestPaymentSettingsDefaultMandate._({required this.rawValue, required this.string,
+required this.postInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2,});
+  factory PostInvoicesInvoiceRequestPaymentSettingsDefaultMandate.fromJson(Object? json) => PostInvoicesInvoiceRequestPaymentSettingsDefaultMandate._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2: parseAnyOfVariant<PostInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2>(json, (value) => PostInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2> postInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2.isPresent) postInvoicesInvoiceRequestPaymentSettingsDefaultMandateVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostInvoicesInvoiceRequestPaymentSettingsDefaultMandate && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostInvoicesInvoiceRequestPaymentSettingsDefaultMandate(${toJson()})';
+}

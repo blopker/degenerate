@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cvss_severities.dart';import 'webhooks_security_advisory_cvss.dart';import 'webhooks_security_advisory_cwes.dart';import 'webhooks_security_advisory_identifiers.dart';import 'webhooks_security_advisory_references.dart';import 'webhooks_security_advisory_vulnerabilities.dart';/// The details of the security advisory, including summary, description, and severity.
-@immutable final class WebhooksSecurityAdvisory {const WebhooksSecurityAdvisory({required this.cvss, required this.cwes, required this.description, required this.ghsaId, required this.identifiers, required this.publishedAt, required this.references, required this.severity, required this.summary, required this.updatedAt, required this.vulnerabilities, required this.withdrawnAt, this.cvssSeverities, });
+@immutable final class WebhooksSecurityAdvisory {const WebhooksSecurityAdvisory({required this.cvss, required this.cwes, required this.description, required this.ghsaId, required this.identifiers, required this.publishedAt, required this.references, required this.severity, required this.summary, required this.updatedAt, required this.vulnerabilities, required this.withdrawnAt, this.cvssSeverities = const Omittable.absent(), });
 
 factory WebhooksSecurityAdvisory.fromJson(Map<String, dynamic> json) { return WebhooksSecurityAdvisory(
   cvss: WebhooksSecurityAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>),
-  cvssSeverities: json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null,
+  cvssSeverities: json.containsKey('cvss_severities') ? Omittable(json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   cwes: (json['cwes'] as List<dynamic>).map((e) => WebhooksSecurityAdvisoryCwes.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String,
   ghsaId: json['ghsa_id'] as String,
@@ -21,7 +21,7 @@ factory WebhooksSecurityAdvisory.fromJson(Map<String, dynamic> json) { return We
 
 final WebhooksSecurityAdvisoryCvss cvss;
 
-final CvssSeverities? cvssSeverities;
+final Omittable<CvssSeverities?> cvssSeverities;
 
 final List<WebhooksSecurityAdvisoryCwes> cwes;
 
@@ -47,7 +47,7 @@ final String? withdrawnAt;
 
 Map<String, dynamic> toJson() { return {
   'cvss': cvss.toJson(),
-  if (cvssSeverities != null) 'cvss_severities': cvssSeverities?.toJson(),
+  if (cvssSeverities.isPresent) 'cvss_severities': cvssSeverities.value?.toJson(),
   'cwes': cwes.map((e) => e.toJson()).toList(),
   'description': description,
   'ghsa_id': ghsaId,
@@ -72,9 +72,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cvss'
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('vulnerabilities') &&
       json.containsKey('withdrawn_at') && (json['withdrawn_at'] == null || json['withdrawn_at'] is String); } 
-WebhooksSecurityAdvisory copyWith({WebhooksSecurityAdvisoryCvss? cvss, CvssSeverities? Function()? cvssSeverities, List<WebhooksSecurityAdvisoryCwes>? cwes, String? description, String? ghsaId, List<WebhooksSecurityAdvisoryIdentifiers>? identifiers, String? publishedAt, List<WebhooksSecurityAdvisoryReferences>? references, String? severity, String? summary, String? updatedAt, List<WebhooksSecurityAdvisoryVulnerabilities>? vulnerabilities, String? Function()? withdrawnAt, }) { return WebhooksSecurityAdvisory(
+WebhooksSecurityAdvisory copyWith({WebhooksSecurityAdvisoryCvss? cvss, Omittable<CvssSeverities?>? cvssSeverities, List<WebhooksSecurityAdvisoryCwes>? cwes, String? description, String? ghsaId, List<WebhooksSecurityAdvisoryIdentifiers>? identifiers, String? publishedAt, List<WebhooksSecurityAdvisoryReferences>? references, String? severity, String? summary, String? updatedAt, List<WebhooksSecurityAdvisoryVulnerabilities>? vulnerabilities, String? Function()? withdrawnAt, }) { return WebhooksSecurityAdvisory(
   cvss: cvss ?? this.cvss,
-  cvssSeverities: cvssSeverities != null ? cvssSeverities() : this.cvssSeverities,
+  cvssSeverities: cvssSeverities ?? this.cvssSeverities,
   cwes: cwes ?? this.cwes,
   description: description ?? this.description,
   ghsaId: ghsaId ?? this.ghsaId,

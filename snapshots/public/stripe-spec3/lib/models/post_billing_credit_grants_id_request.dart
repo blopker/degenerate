@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing
 
 factory PostBillingCreditGrantsIdRequest.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsIdRequest(
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  expiresAt: json['expires_at'] != null ? OneOf2.parse(json['expires_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostBillingCreditGrantsIdRequestExpiresAtVariant2.fromJson(v as String),) : null,
+  expiresAt: json['expires_at'] != null ? PostBillingCreditGrantsIdRequestExpiresAt.fromJson(json['expires_at']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
 ); }
 

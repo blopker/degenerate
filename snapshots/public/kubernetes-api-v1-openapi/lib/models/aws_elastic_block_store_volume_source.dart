@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents a Persistent Disk resource in AWS.
 /// 
 /// An AWS EBS disk must exist before mounting to a container. The disk must also be in the same AWS zone as the kubelet. An AWS EBS disk can only be mounted as read/write once. AWS EBS volumes support ownership management and SELinux relabeling.
-@immutable final class AwsElasticBlockStoreVolumeSource {const AwsElasticBlockStoreVolumeSource({this.fsType, this.partition, this.readOnly, this.volumeId = '', });
+@immutable final class AwsElasticBlockStoreVolumeSource {const AwsElasticBlockStoreVolumeSource({required this.volumeId, this.fsType, this.partition, this.readOnly, });
 
 factory AwsElasticBlockStoreVolumeSource.fromJson(Map<String, dynamic> json) { return AwsElasticBlockStoreVolumeSource(
   fsType: json['fsType'] as String?,

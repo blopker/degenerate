@@ -49,6 +49,6 @@ AiSearchInstanceChatCompletionResponse copyWith({List<AiSearchInstanceChatComple
           model == other.model &&
           object == other.object &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(Object.hashAll(choices), Object.hashAll(chunks), id, model, object, Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(Object.hashAll(choices), Object.hashAll(chunks), id, model, object, mapHash(additionalProperties)); } 
 @override String toString() { return 'AiSearchInstanceChatCompletionResponse(choices: $choices, chunks: $chunks, id: $id, model: $model, object: $object, additionalProperties: $additionalProperties)'; } 
  }

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2($value)'; } 
  }
-typedef PostSubscriptionsSubscriptionExposedIdRequestDescription = OneOf2<String,PostSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2>;
+/// The subscription's description, meant to be displayable to the customer. Use this field to optionally store an explanation of the subscription for rendering in Stripe surfaces and certain local payment methods UIs.
+@immutable
+final class PostSubscriptionsSubscriptionExposedIdRequestDescription {
+  const PostSubscriptionsSubscriptionExposedIdRequestDescription({this.string = const Omittable.absent(),
+this.postSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSubscriptionsSubscriptionExposedIdRequestDescription._({required this.rawValue, required this.string,
+required this.postSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2,});
+  factory PostSubscriptionsSubscriptionExposedIdRequestDescription.fromJson(Object? json) => PostSubscriptionsSubscriptionExposedIdRequestDescription._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2: parseAnyOfVariant<PostSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2>(json, (value) => PostSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2> postSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2.isPresent) postSubscriptionsSubscriptionExposedIdRequestDescriptionVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSubscriptionsSubscriptionExposedIdRequestDescription && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSubscriptionsSubscriptionExposedIdRequestDescription(${toJson()})';
+}

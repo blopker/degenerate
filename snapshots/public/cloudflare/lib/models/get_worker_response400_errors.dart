@@ -4,6 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_erro
 
 /// Deserialize from JSON, dispatching on the `code` discriminator.
 factory GetWorkerResponse400Errors.fromJson(Map<String, dynamic> json) { return switch (json['code']) {
+  'workers_ErrorMissingParam' => GetWorkerResponse400ErrorsWorkersErrorMissingParam.fromJson(json),
   '10003' => GetWorkerResponse400Errors10003.fromJson(json),
   _ => GetWorkerResponse400Errors$Unknown(json),
 }; }
@@ -13,6 +14,19 @@ String get code;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is GetWorkerResponse400Errors$Unknown; } 
+ }
+@immutable final class GetWorkerResponse400ErrorsWorkersErrorMissingParam extends GetWorkerResponse400Errors {const GetWorkerResponse400ErrorsWorkersErrorMissingParam(this.workersErrorMissingParam);
+
+factory GetWorkerResponse400ErrorsWorkersErrorMissingParam.fromJson(Map<String, dynamic> json) { return GetWorkerResponse400ErrorsWorkersErrorMissingParam(WorkersErrorMissingParam.fromJson(json)); }
+
+final WorkersErrorMissingParam workersErrorMissingParam;
+
+@override String get code { return 'workers_ErrorMissingParam'; } 
+@override Map<String, dynamic> toJson() { return {...workersErrorMissingParam.toJson(), 'code': code}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetWorkerResponse400ErrorsWorkersErrorMissingParam && workersErrorMissingParam == other.workersErrorMissingParam; } 
+@override int get hashCode { return workersErrorMissingParam.hashCode; } 
+@override String toString() { return 'GetWorkerResponse400ErrorsWorkersErrorMissingParam(workersErrorMissingParam: $workersErrorMissingParam)'; } 
  }
 @immutable final class GetWorkerResponse400Errors10003 extends GetWorkerResponse400Errors {const GetWorkerResponse400Errors10003(this.workersErrorMissingParam);
 

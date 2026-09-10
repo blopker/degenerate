@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_card_specs.dart';import 'post_tokens_request_account.dart';import 'post_tokens_request_bank_account.dart';import 'post_tokens_request_card.dart';import 'post_tokens_request_cvc_update.dart';import 'post_tokens_request_person.dart';import 'post_tokens_request_pii.dart';@immutable final class PostTokensRequest {const PostTokensRequest({this.account, this.bankAccount, this.card, this.customer, this.cvcUpdate, this.expand, this.person, this.pii, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_account.dart';import 'post_tokens_request_bank_account.dart';import 'post_tokens_request_card.dart';import 'post_tokens_request_cvc_update.dart';import 'post_tokens_request_person.dart';import 'post_tokens_request_pii.dart';@immutable final class PostTokensRequest {const PostTokensRequest({this.account, this.bankAccount, this.card, this.customer, this.cvcUpdate, this.expand, this.person, this.pii, });
 
 factory PostTokensRequest.fromJson(Map<String, dynamic> json) { return PostTokensRequest(
   account: json['account'] != null ? PostTokensRequestAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
   bankAccount: json['bank_account'] != null ? PostTokensRequestBankAccount.fromJson(json['bank_account'] as Map<String, dynamic>) : null,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CreditCardSpecs.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  card: json['card'] != null ? PostTokensRequestCard.fromJson(json['card']) : null,
   customer: json['customer'] as String?,
   cvcUpdate: json['cvc_update'] != null ? PostTokensRequestCvcUpdate.fromJson(json['cvc_update'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),

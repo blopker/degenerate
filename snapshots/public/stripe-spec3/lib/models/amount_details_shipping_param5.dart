@@ -3,9 +3,9 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_shipping_param5_amount.dart';import 'amount_details_shipping_param5_from_postal_code.dart';import 'amount_details_shipping_param5_to_postal_code.dart';@immutable final class AmountDetailsShippingParam5 {const AmountDetailsShippingParam5({this.amount, this.fromPostalCode, this.toPostalCode, });
 
 factory AmountDetailsShippingParam5.fromJson(Map<String, dynamic> json) { return AmountDetailsShippingParam5(
-  amount: json['amount'] != null ? OneOf2.parse(json['amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => AmountDetailsShippingParam5AmountVariant2.fromJson(v as String),) : null,
-  fromPostalCode: json['from_postal_code'] != null ? OneOf2.parse(json['from_postal_code'], fromA: (v) => v as String, fromB: (v) => AmountDetailsShippingParam5FromPostalCodeVariant2.fromJson(v as String),) : null,
-  toPostalCode: json['to_postal_code'] != null ? OneOf2.parse(json['to_postal_code'], fromA: (v) => v as String, fromB: (v) => AmountDetailsShippingParam5ToPostalCodeVariant2.fromJson(v as String),) : null,
+  amount: json['amount'] != null ? AmountDetailsShippingParam5Amount.fromJson(json['amount']) : null,
+  fromPostalCode: json['from_postal_code'] != null ? AmountDetailsShippingParam5FromPostalCode.fromJson(json['from_postal_code']) : null,
+  toPostalCode: json['to_postal_code'] != null ? AmountDetailsShippingParam5ToPostalCode.fromJson(json['to_postal_code']) : null,
 ); }
 
 final AmountDetailsShippingParam5Amount? amount;

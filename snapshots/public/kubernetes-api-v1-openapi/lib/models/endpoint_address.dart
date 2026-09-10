@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'object_reference.dart';/// EndpointAddress is a tuple that describes single IP address. Deprecated: This API is deprecated in v1.33+.
-@immutable final class EndpointAddress {const EndpointAddress({this.hostname, this.ip = '', this.nodeName, this.targetRef, });
+@immutable final class EndpointAddress {const EndpointAddress({required this.ip, this.hostname, this.nodeName, this.targetRef, });
 
 factory EndpointAddress.fromJson(Map<String, dynamic> json) { return EndpointAddress(
   hostname: json['hostname'] as String?,

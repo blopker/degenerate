@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CarrierTextParamHeaderTitleVariant2($value)'; } 
  }
-typedef CarrierTextParamHeaderTitle = OneOf2<String,CarrierTextParamHeaderTitleVariant2>;
+
+@immutable
+final class CarrierTextParamHeaderTitle {
+  const CarrierTextParamHeaderTitle({this.string = const Omittable.absent(),
+this.carrierTextParamHeaderTitleVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CarrierTextParamHeaderTitle._({required this.rawValue, required this.string,
+required this.carrierTextParamHeaderTitleVariant2,});
+  factory CarrierTextParamHeaderTitle.fromJson(Object? json) => CarrierTextParamHeaderTitle._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+carrierTextParamHeaderTitleVariant2: parseAnyOfVariant<CarrierTextParamHeaderTitleVariant2>(json, (value) => CarrierTextParamHeaderTitleVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<CarrierTextParamHeaderTitleVariant2> carrierTextParamHeaderTitleVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || carrierTextParamHeaderTitleVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (carrierTextParamHeaderTitleVariant2.isPresent) carrierTextParamHeaderTitleVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CarrierTextParamHeaderTitle && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CarrierTextParamHeaderTitle(${toJson()})';
+}

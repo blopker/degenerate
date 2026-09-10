@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_price.dart';import 'discounts_resource_stackable_discount_with_discount_end.dart';import 'price.dart';import 'subscription_schedule_add_invoice_item_period.dart';import 'subscription_schedule_add_invoice_item_price.dart';import 'tax_rate.dart';/// An Add Invoice Item describes the prices and quantities that will be added as pending invoice items when entering a phase.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discounts_resource_stackable_discount_with_discount_end.dart';import 'subscription_schedule_add_invoice_item_period.dart';import 'subscription_schedule_add_invoice_item_price.dart';import 'tax_rate.dart';/// An Add Invoice Item describes the prices and quantities that will be added as pending invoice items when entering a phase.
 @immutable final class SubscriptionScheduleAddInvoiceItem {const SubscriptionScheduleAddInvoiceItem({required this.discounts, required this.period, required this.price, this.metadata = const Omittable.absent(), this.quantity = const Omittable.absent(), this.taxRates = const Omittable.absent(), });
 
 factory SubscriptionScheduleAddInvoiceItem.fromJson(Map<String, dynamic> json) { return SubscriptionScheduleAddInvoiceItem(
   discounts: (json['discounts'] as List<dynamic>).map((e) => DiscountsResourceStackableDiscountWithDiscountEnd.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   period: SubscriptionScheduleAddInvoiceItemPeriod.fromJson(json['period'] as Map<String, dynamic>),
-  price: OneOf3.parse(json['price'], fromA: (v) => v as String, fromB: (v) => Price.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedPrice.fromJson(v as Map<String, dynamic>),),
+  price: SubscriptionScheduleAddInvoiceItemPrice.fromJson(json['price']),
   quantity: json.containsKey('quantity') ? Omittable(json['quantity'] != null ? (json['quantity'] as num).toInt() : null) : const Omittable.absent(),
   taxRates: json.containsKey('tax_rates') ? Omittable((json['tax_rates'] as List<dynamic>?)?.map((e) => TaxRate.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
 ); }

@@ -33,11 +33,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => BuildsListTokensResponse.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => BuildsListTokensResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -57,11 +57,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return BuildsCreateBuildTokenResponse.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return BuildsCreateBuildTokenResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
 );
  } 
@@ -79,14 +79,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] as Map<String, dynamic>?;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] as Map<String, dynamic>?;
   },
   onError: (response) {
-    return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BuildsErrorResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

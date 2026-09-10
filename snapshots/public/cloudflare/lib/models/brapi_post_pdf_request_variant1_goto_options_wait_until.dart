@@ -114,4 +114,54 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5($value)'; } 
  }
-typedef BrapiPostPdfRequestVariant1GotoOptionsWaitUntil = OneOf5<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant1,BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant2,BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant3,BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant4,List<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5>>;
+
+@immutable
+final class BrapiPostPdfRequestVariant1GotoOptionsWaitUntil {
+  const BrapiPostPdfRequestVariant1GotoOptionsWaitUntil({this.brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant1 = const Omittable.absent(),
+this.brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant2 = const Omittable.absent(),
+this.brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant3 = const Omittable.absent(),
+this.brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant4 = const Omittable.absent(),
+this.listBrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const BrapiPostPdfRequestVariant1GotoOptionsWaitUntil._({required this.rawValue, required this.brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant1,
+required this.brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant2,
+required this.brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant3,
+required this.brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant4,
+required this.listBrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5,});
+  factory BrapiPostPdfRequestVariant1GotoOptionsWaitUntil.fromJson(Object? json) => BrapiPostPdfRequestVariant1GotoOptionsWaitUntil._(
+    rawValue: Omittable(json),
+    brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant1: parseAnyOfVariant<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant1>(json, (value) => BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant1.fromJson(value! as String)),
+brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant2: parseAnyOfVariant<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant2>(json, (value) => BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant2.fromJson(value! as String)),
+brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant3: parseAnyOfVariant<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant3>(json, (value) => BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant3.fromJson(value! as String)),
+brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant4: parseAnyOfVariant<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant4>(json, (value) => BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant4.fromJson(value! as String)),
+listBrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5: parseAnyOfVariant<List<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5>>(json, (value) => (value! as List<dynamic>).map((e) => BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5.fromJson(e as String)).toList()),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant1> brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant1;
+final Omittable<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant2> brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant2;
+final Omittable<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant3> brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant3;
+final Omittable<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant4> brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant4;
+final Omittable<List<BrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5>> listBrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant1.isPresent || brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant2.isPresent || brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant3.isPresent || brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant4.isPresent || listBrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant1.isPresent) brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant1.value?.toJson(),
+if (brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant2.isPresent) brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant2.value?.toJson(),
+if (brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant3.isPresent) brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant3.value?.toJson(),
+if (brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant4.isPresent) brapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant4.value?.toJson(),
+if (listBrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5.isPresent) listBrapiPostPdfRequestVariant1GotoOptionsWaitUntilVariant5.value?.map((e) => e.toJson()).toList(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is BrapiPostPdfRequestVariant1GotoOptionsWaitUntil && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'BrapiPostPdfRequestVariant1GotoOptionsWaitUntil(${toJson()})';
+}

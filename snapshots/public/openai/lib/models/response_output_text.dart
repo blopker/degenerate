@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ResponseOutputTextType($value)'; } 
  }
 /// Assistant response text accompanied by optional annotations.
-@immutable final class ResponseOutputText {const ResponseOutputText({required this.text, required this.annotations, this.type = ResponseOutputTextType.outputText, });
+@immutable final class ResponseOutputText {const ResponseOutputText({required this.type, required this.text, required this.annotations, });
 
 factory ResponseOutputText.fromJson(Map<String, dynamic> json) { return ResponseOutputText(
   type: ResponseOutputTextType.fromJson(json['type'] as String),

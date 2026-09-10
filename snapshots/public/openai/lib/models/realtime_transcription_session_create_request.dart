@@ -53,12 +53,12 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'RealtimeTranscriptionSessionCreateRequestInclude($value)'; } 
  }
 /// Realtime transcription session object configuration.
-@immutable final class RealtimeTranscriptionSessionCreateRequest {const RealtimeTranscriptionSessionCreateRequest({this.turnDetection, this.inputAudioNoiseReduction, this.inputAudioFormat = RealtimeTranscriptionSessionCreateRequestInputAudioFormat.pcm16, this.inputAudioTranscription, this.include, });
+@immutable final class RealtimeTranscriptionSessionCreateRequest {const RealtimeTranscriptionSessionCreateRequest({this.turnDetection, this.inputAudioNoiseReduction, this.inputAudioFormat, this.inputAudioTranscription, this.include, });
 
 factory RealtimeTranscriptionSessionCreateRequest.fromJson(Map<String, dynamic> json) { return RealtimeTranscriptionSessionCreateRequest(
   turnDetection: json['turn_detection'] != null ? RealtimeTranscriptionSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
   inputAudioNoiseReduction: json['input_audio_noise_reduction'] != null ? RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction.fromJson(json['input_audio_noise_reduction'] as Map<String, dynamic>) : null,
-  inputAudioFormat: json.containsKey('input_audio_format') ? RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson(json['input_audio_format'] as String) : RealtimeTranscriptionSessionCreateRequestInputAudioFormat.pcm16,
+  inputAudioFormat: json['input_audio_format'] != null ? RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson(json['input_audio_format'] as String) : null,
   inputAudioTranscription: json['input_audio_transcription'] != null ? AudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null,
   include: (json['include'] as List<dynamic>?)?.map((e) => RealtimeTranscriptionSessionCreateRequestInclude.fromJson(e as String)).toList(),
 ); }
@@ -77,7 +77,7 @@ final RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? inputAu
 /// For `pcm16`, input audio must be 16-bit PCM at a 24kHz sample rate,
 /// single channel (mono), and little-endian byte order.
 /// 
-final RealtimeTranscriptionSessionCreateRequestInputAudioFormat inputAudioFormat;
+final RealtimeTranscriptionSessionCreateRequestInputAudioFormat? inputAudioFormat;
 
 /// Configuration for input audio transcription. The client can optionally set the language and prompt for transcription, these offer additional guidance to the transcription service.
 /// 
@@ -88,15 +88,17 @@ final AudioTranscription? inputAudioTranscription;
 /// 
 final List<RealtimeTranscriptionSessionCreateRequestInclude>? include;
 
+/// The value with the schema default applied when absent.
+RealtimeTranscriptionSessionCreateRequestInputAudioFormat get inputAudioFormatOrDefault { return inputAudioFormat ?? RealtimeTranscriptionSessionCreateRequestInputAudioFormat.fromJson('pcm16'); } 
 Map<String, dynamic> toJson() { return {
   if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
   if (inputAudioNoiseReduction != null) 'input_audio_noise_reduction': inputAudioNoiseReduction?.toJson(),
-  'input_audio_format': inputAudioFormat.toJson(),
+  if (inputAudioFormat != null) 'input_audio_format': inputAudioFormat?.toJson(),
   if (inputAudioTranscription != null) 'input_audio_transcription': inputAudioTranscription?.toJson(),
   if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'turn_detection', 'input_audio_noise_reduction', 'input_audio_format', 'input_audio_transcription', 'include'}.contains(key)); } 
-RealtimeTranscriptionSessionCreateRequest copyWith({RealtimeTranscriptionSessionCreateRequestTurnDetection? Function()? turnDetection, RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? Function()? inputAudioNoiseReduction, RealtimeTranscriptionSessionCreateRequestInputAudioFormat Function()? inputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, List<RealtimeTranscriptionSessionCreateRequestInclude>? Function()? include, }) { return RealtimeTranscriptionSessionCreateRequest(
+RealtimeTranscriptionSessionCreateRequest copyWith({RealtimeTranscriptionSessionCreateRequestTurnDetection? Function()? turnDetection, RealtimeTranscriptionSessionCreateRequestInputAudioNoiseReduction? Function()? inputAudioNoiseReduction, RealtimeTranscriptionSessionCreateRequestInputAudioFormat? Function()? inputAudioFormat, AudioTranscription? Function()? inputAudioTranscription, List<RealtimeTranscriptionSessionCreateRequestInclude>? Function()? include, }) { return RealtimeTranscriptionSessionCreateRequest(
   turnDetection: turnDetection != null ? turnDetection() : this.turnDetection,
   inputAudioNoiseReduction: inputAudioNoiseReduction != null ? inputAudioNoiseReduction() : this.inputAudioNoiseReduction,
   inputAudioFormat: inputAudioFormat != null ? inputAudioFormat() : this.inputAudioFormat,

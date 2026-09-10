@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.
 factory ProtectedBranchPullRequestReviewDismissalRestrictions.fromJson(Map<String, dynamic> json) { return ProtectedBranchPullRequestReviewDismissalRestrictions(
   users: (json['users'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   teams: (json['teams'] as List<dynamic>?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList(),
-  apps: (json['apps'] as List<dynamic>?)?.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList(),
+  apps: (json['apps'] as List<dynamic>?)?.map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList(),
   url: json['url'] as String?,
   usersUrl: json['users_url'] as String?,
   teamsUrl: json['teams_url'] as String?,
@@ -18,7 +18,7 @@ final List<SimpleUser>? users;
 final List<Team>? teams;
 
 /// The list of apps with review dismissal access.
-final List<Integration>? apps;
+final List<Integration?>? apps;
 
 final String? url;
 
@@ -29,13 +29,13 @@ final String? teamsUrl;
 Map<String, dynamic> toJson() { return {
   if (users != null) 'users': users?.map((e) => e.toJson()).toList(),
   if (teams != null) 'teams': teams?.map((e) => e.toJson()).toList(),
-  if (apps != null) 'apps': apps?.map((e) => e.toJson()).toList(),
+  if (apps != null) 'apps': apps?.map((e) => e?.toJson()).toList(),
   'url': ?url,
   'users_url': ?usersUrl,
   'teams_url': ?teamsUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'users', 'teams', 'apps', 'url', 'users_url', 'teams_url'}.contains(key)); } 
-ProtectedBranchPullRequestReviewDismissalRestrictions copyWith({List<SimpleUser>? Function()? users, List<Team>? Function()? teams, List<Integration>? Function()? apps, String? Function()? url, String? Function()? usersUrl, String? Function()? teamsUrl, }) { return ProtectedBranchPullRequestReviewDismissalRestrictions(
+ProtectedBranchPullRequestReviewDismissalRestrictions copyWith({List<SimpleUser>? Function()? users, List<Team>? Function()? teams, List<Integration?>? Function()? apps, String? Function()? url, String? Function()? usersUrl, String? Function()? teamsUrl, }) { return ProtectedBranchPullRequestReviewDismissalRestrictions(
   users: users != null ? users() : this.users,
   teams: teams != null ? teams() : this.teams,
   apps: apps != null ? apps() : this.apps,

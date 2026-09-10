@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2($value)'; } 
  }
-typedef PostIssuingDisputesDisputeRequestEvidenceNotReceived = OneOf2<NotReceived2,PostIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2>;
+
+@immutable
+final class PostIssuingDisputesDisputeRequestEvidenceNotReceived {
+  const PostIssuingDisputesDisputeRequestEvidenceNotReceived({this.notReceived2 = const Omittable.absent(),
+this.postIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostIssuingDisputesDisputeRequestEvidenceNotReceived._({required this.rawValue, required this.notReceived2,
+required this.postIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2,});
+  factory PostIssuingDisputesDisputeRequestEvidenceNotReceived.fromJson(Object? json) => PostIssuingDisputesDisputeRequestEvidenceNotReceived._(
+    rawValue: Omittable(json),
+    notReceived2: parseAnyOfVariant<NotReceived2>(json, (value) => NotReceived2.fromJson(value! as Map<String, dynamic>)),
+postIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2: parseAnyOfVariant<PostIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2>(json, (value) => PostIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<NotReceived2> notReceived2;
+final Omittable<PostIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2> postIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => notReceived2.isPresent || postIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (notReceived2.isPresent) notReceived2.value?.toJson(),
+if (postIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2.isPresent) postIssuingDisputesDisputeRequestEvidenceNotReceivedVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostIssuingDisputesDisputeRequestEvidenceNotReceived && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostIssuingDisputesDisputeRequestEvidenceNotReceived(${toJson()})';
+}

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// PodCondition contains details for the current condition of this pod.
-@immutable final class PodCondition {const PodCondition({this.lastProbeTime, this.lastTransitionTime, this.message, this.observedGeneration, this.reason, this.status = '', this.type = '', });
+@immutable final class PodCondition {const PodCondition({required this.status, required this.type, this.lastProbeTime, this.lastTransitionTime, this.message, this.observedGeneration, this.reason, });
 
 factory PodCondition.fromJson(Map<String, dynamic> json) { return PodCondition(
   lastProbeTime: json['lastProbeTime'] != null ? Time.fromJson(json['lastProbeTime'] as String) : null,

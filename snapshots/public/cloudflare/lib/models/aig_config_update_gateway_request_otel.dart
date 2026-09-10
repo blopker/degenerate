@@ -24,33 +24,35 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigUpdateGatewayRequestOtelContentType($value)'; } 
  }
-@immutable final class AigConfigUpdateGatewayRequestOtel {const AigConfigUpdateGatewayRequestOtel({required this.authorization, required this.headers, required this.url, this.contentType = AigConfigUpdateGatewayRequestOtelContentType.$json, });
+@immutable final class AigConfigUpdateGatewayRequestOtel {const AigConfigUpdateGatewayRequestOtel({required this.authorization, required this.headers, required this.url, this.contentType, });
 
 factory AigConfigUpdateGatewayRequestOtel.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayRequestOtel(
   authorization: json['authorization'] as String,
-  contentType: json.containsKey('content_type') ? AigConfigUpdateGatewayRequestOtelContentType.fromJson(json['content_type'] as String) : AigConfigUpdateGatewayRequestOtelContentType.$json,
+  contentType: json['content_type'] != null ? AigConfigUpdateGatewayRequestOtelContentType.fromJson(json['content_type'] as String) : null,
   headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   url: json['url'] as String,
 ); }
 
 final String authorization;
 
-final AigConfigUpdateGatewayRequestOtelContentType contentType;
+final AigConfigUpdateGatewayRequestOtelContentType? contentType;
 
 final Map<String,String> headers;
 
 final String url;
 
+/// The value with the schema default applied when absent.
+AigConfigUpdateGatewayRequestOtelContentType get contentTypeOrDefault { return contentType ?? AigConfigUpdateGatewayRequestOtelContentType.fromJson('json'); } 
 Map<String, dynamic> toJson() { return {
   'authorization': authorization,
-  'content_type': contentType.toJson(),
+  if (contentType != null) 'content_type': contentType?.toJson(),
   'headers': headers,
   'url': url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('authorization') && json['authorization'] is String &&
       json.containsKey('headers') &&
       json.containsKey('url') && json['url'] is String; } 
-AigConfigUpdateGatewayRequestOtel copyWith({String? authorization, AigConfigUpdateGatewayRequestOtelContentType Function()? contentType, Map<String,String>? headers, String? url, }) { return AigConfigUpdateGatewayRequestOtel(
+AigConfigUpdateGatewayRequestOtel copyWith({String? authorization, AigConfigUpdateGatewayRequestOtelContentType? Function()? contentType, Map<String,String>? headers, String? url, }) { return AigConfigUpdateGatewayRequestOtel(
   authorization: authorization ?? this.authorization,
   contentType: contentType != null ? contentType() : this.contentType,
   headers: headers ?? this.headers,

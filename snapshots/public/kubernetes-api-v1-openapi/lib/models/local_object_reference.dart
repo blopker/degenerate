@@ -1,20 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// LocalObjectReference contains enough information to let you locate the referenced object inside the same namespace.
-@immutable final class LocalObjectReference {const LocalObjectReference({this.name = ''});
+@immutable final class LocalObjectReference {const LocalObjectReference({this.name});
 
 factory LocalObjectReference.fromJson(Map<String, dynamic> json) { return LocalObjectReference(
-  name: json.containsKey('name') ? json['name'] as String : '',
+  name: json['name'] as String?,
 ); }
 
 /// Name of the referent. This field is effectively required, but due to backwards compatibility is allowed to be empty. Instances of this type with an empty value here are almost certainly wrong. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-final String name;
+final String? name;
 
+/// The value with the schema default applied when absent.
+String get nameOrDefault { return name ?? ''; } 
 Map<String, dynamic> toJson() { return {
-  'name': name,
+  'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name'}.contains(key)); } 
-LocalObjectReference copyWith({String Function()? name}) { return LocalObjectReference(
+LocalObjectReference copyWith({String? Function()? name}) { return LocalObjectReference(
   name: name != null ? name() : this.name,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

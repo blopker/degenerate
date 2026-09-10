@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2($value)'; } 
  }
-typedef PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbini = OneOf2<InvoicePaymentMethodOptionsParam4,PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2>;
+
+@immutable
+final class PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbini {
+  const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbini({this.invoicePaymentMethodOptionsParam4 = const Omittable.absent(),
+this.postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbini._({required this.rawValue, required this.invoicePaymentMethodOptionsParam4,
+required this.postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2,});
+  factory PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbini.fromJson(Object? json) => PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbini._(
+    rawValue: Omittable(json),
+    invoicePaymentMethodOptionsParam4: parseAnyOfVariant<InvoicePaymentMethodOptionsParam4>(json, (value) => InvoicePaymentMethodOptionsParam4.fromJson(value! as Map<String, dynamic>)),
+postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2: parseAnyOfVariant<PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2>(json, (value) => PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<InvoicePaymentMethodOptionsParam4> invoicePaymentMethodOptionsParam4;
+final Omittable<PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2> postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => invoicePaymentMethodOptionsParam4.isPresent || postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (invoicePaymentMethodOptionsParam4.isPresent) invoicePaymentMethodOptionsParam4.value?.toJson(),
+if (postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2.isPresent) postCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbini && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptionsKonbini(${toJson()})';
+}

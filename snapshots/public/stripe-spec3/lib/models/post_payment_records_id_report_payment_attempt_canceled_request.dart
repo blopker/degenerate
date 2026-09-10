@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment
 factory PostPaymentRecordsIdReportPaymentAttemptCanceledRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptCanceledRequest(
   canceledAt: (json['canceled_at'] as num).toInt(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentRecordsIdReportPaymentAttemptCanceledRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostPaymentRecordsIdReportPaymentAttemptCanceledRequestMetadata.fromJson(json['metadata']) : null,
 ); }
 
 /// When the reported payment was canceled. Measured in seconds since the Unix epoch.

@@ -24,33 +24,35 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AigConfigListGatewayResponseResultOtelContentType($value)'; } 
  }
-@immutable final class AigConfigListGatewayResponseResultOtel {const AigConfigListGatewayResponseResultOtel({required this.authorization, required this.headers, required this.url, this.contentType = AigConfigListGatewayResponseResultOtelContentType.$json, });
+@immutable final class AigConfigListGatewayResponseResultOtel {const AigConfigListGatewayResponseResultOtel({required this.authorization, required this.headers, required this.url, this.contentType, });
 
 factory AigConfigListGatewayResponseResultOtel.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayResponseResultOtel(
   authorization: json['authorization'] as String,
-  contentType: json.containsKey('content_type') ? AigConfigListGatewayResponseResultOtelContentType.fromJson(json['content_type'] as String) : AigConfigListGatewayResponseResultOtelContentType.$json,
+  contentType: json['content_type'] != null ? AigConfigListGatewayResponseResultOtelContentType.fromJson(json['content_type'] as String) : null,
   headers: (json['headers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   url: json['url'] as String,
 ); }
 
 final String authorization;
 
-final AigConfigListGatewayResponseResultOtelContentType contentType;
+final AigConfigListGatewayResponseResultOtelContentType? contentType;
 
 final Map<String,String> headers;
 
 final String url;
 
+/// The value with the schema default applied when absent.
+AigConfigListGatewayResponseResultOtelContentType get contentTypeOrDefault { return contentType ?? AigConfigListGatewayResponseResultOtelContentType.fromJson('json'); } 
 Map<String, dynamic> toJson() { return {
   'authorization': authorization,
-  'content_type': contentType.toJson(),
+  if (contentType != null) 'content_type': contentType?.toJson(),
   'headers': headers,
   'url': url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('authorization') && json['authorization'] is String &&
       json.containsKey('headers') &&
       json.containsKey('url') && json['url'] is String; } 
-AigConfigListGatewayResponseResultOtel copyWith({String? authorization, AigConfigListGatewayResponseResultOtelContentType Function()? contentType, Map<String,String>? headers, String? url, }) { return AigConfigListGatewayResponseResultOtel(
+AigConfigListGatewayResponseResultOtel copyWith({String? authorization, AigConfigListGatewayResponseResultOtelContentType? Function()? contentType, Map<String,String>? headers, String? url, }) { return AigConfigListGatewayResponseResultOtel(
   authorization: authorization ?? this.authorization,
   contentType: contentType != null ? contentType() : this.contentType,
   headers: headers ?? this.headers,

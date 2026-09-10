@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_saml_config_header_attributes.dart';@immutable final class AccessSamlConfig {const AccessSamlConfig({this.attributes, this.emailAttributeName, this.headerAttributes, this.idpPublicCerts, this.issuerUrl, this.signRequest = false, this.ssoTargetUrl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_saml_config_header_attributes.dart';@immutable final class AccessSamlConfig {const AccessSamlConfig({this.attributes, this.emailAttributeName, this.headerAttributes, this.idpPublicCerts, this.issuerUrl, this.signRequest, this.ssoTargetUrl, });
 
 factory AccessSamlConfig.fromJson(Map<String, dynamic> json) { return AccessSamlConfig(
   attributes: (json['attributes'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -8,7 +8,7 @@ factory AccessSamlConfig.fromJson(Map<String, dynamic> json) { return AccessSaml
   headerAttributes: (json['header_attributes'] as List<dynamic>?)?.map((e) => AccessSamlConfigHeaderAttributes.fromJson(e as Map<String, dynamic>)).toList(),
   idpPublicCerts: (json['idp_public_certs'] as List<dynamic>?)?.map((e) => e as String).toList(),
   issuerUrl: json['issuer_url'] as String?,
-  signRequest: json.containsKey('sign_request') ? json['sign_request'] as bool : false,
+  signRequest: json['sign_request'] as bool?,
   ssoTargetUrl: json['sso_target_url'] as String?,
 ); }
 
@@ -28,22 +28,24 @@ final List<String>? idpPublicCerts;
 final String? issuerUrl;
 
 /// Sign the SAML authentication request with Access credentials. To verify the signature, use the public key from the Access certs endpoints.
-final bool signRequest;
+final bool? signRequest;
 
 /// URL to send the SAML authentication requests to
 final String? ssoTargetUrl;
 
+/// The value with the schema default applied when absent.
+bool get signRequestOrDefault { return signRequest ?? false; } 
 Map<String, dynamic> toJson() { return {
   'attributes': ?attributes,
   'email_attribute_name': ?emailAttributeName,
   if (headerAttributes != null) 'header_attributes': headerAttributes?.map((e) => e.toJson()).toList(),
   'idp_public_certs': ?idpPublicCerts,
   'issuer_url': ?issuerUrl,
-  'sign_request': signRequest,
+  'sign_request': ?signRequest,
   'sso_target_url': ?ssoTargetUrl,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attributes', 'email_attribute_name', 'header_attributes', 'idp_public_certs', 'issuer_url', 'sign_request', 'sso_target_url'}.contains(key)); } 
-AccessSamlConfig copyWith({List<String>? Function()? attributes, String? Function()? emailAttributeName, List<AccessSamlConfigHeaderAttributes>? Function()? headerAttributes, List<String>? Function()? idpPublicCerts, String? Function()? issuerUrl, bool Function()? signRequest, String? Function()? ssoTargetUrl, }) { return AccessSamlConfig(
+AccessSamlConfig copyWith({List<String>? Function()? attributes, String? Function()? emailAttributeName, List<AccessSamlConfigHeaderAttributes>? Function()? headerAttributes, List<String>? Function()? idpPublicCerts, String? Function()? issuerUrl, bool? Function()? signRequest, String? Function()? ssoTargetUrl, }) { return AccessSamlConfig(
   attributes: attributes != null ? attributes() : this.attributes,
   emailAttributeName: emailAttributeName != null ? emailAttributeName() : this.emailAttributeName,
   headerAttributes: headerAttributes != null ? headerAttributes() : this.headerAttributes,

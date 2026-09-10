@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bundle_messa
 factory ResponseSingle54.fromJson(Map<String, dynamic> json) { return ResponseSingle54(
   errors: (json['errors'] as List<dynamic>).map((e) => BundleMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => BundleMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,),
+  result: json['result'] != null ? ResponseSingle54Result.fromJson(json['result']) : null,
   success: json['success'] as bool,
 ); }
 
@@ -13,7 +13,7 @@ final List<BundleMessages2> errors;
 
 final List<BundleMessages2> messages;
 
-final ResponseSingle54Result result;
+final ResponseSingle54Result? result;
 
 /// Defines whether the API call was successful.
 final bool success;
@@ -21,17 +21,17 @@ final bool success;
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': result.toJson(),
+  'result': result?.toJson(),
   'success': success,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-ResponseSingle54 copyWith({List<BundleMessages2>? errors, List<BundleMessages2>? messages, ResponseSingle54Result? result, bool? success, }) { return ResponseSingle54(
+ResponseSingle54 copyWith({List<BundleMessages2>? errors, List<BundleMessages2>? messages, ResponseSingle54Result? Function()? result, bool? success, }) { return ResponseSingle54(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
-  result: result ?? this.result,
+  result: result != null ? result() : this.result,
   success: success ?? this.success,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

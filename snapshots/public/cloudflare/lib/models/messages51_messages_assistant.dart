@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_assistant_audio_variant1.dart';import 'messages51_messages_assistant_content.dart';import 'messages51_messages_assistant_content_variant2.dart';import 'messages51_messages_assistant_function_call_variant1.dart';import 'messages51_messages_assistant_tool_calls.dart';import 'messages51_messages_assistant_tool_calls_custom.dart';import 'messages51_messages_assistant_tool_calls_function.dart';@immutable final class Messages51MessagesAssistantRole {const Messages51MessagesAssistantRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_assistant_audio_variant1.dart';import 'messages51_messages_assistant_content.dart';import 'messages51_messages_assistant_function_call_variant1.dart';import 'messages51_messages_assistant_tool_calls.dart';import 'messages51_messages_assistant_tool_calls_custom.dart';import 'messages51_messages_assistant_tool_calls_function.dart';@immutable final class Messages51MessagesAssistantRole {const Messages51MessagesAssistantRole._(this.value);
 
 factory Messages51MessagesAssistantRole.fromJson(String json) { return switch (json) {
   'assistant' => assistant,
@@ -25,7 +25,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory Messages51MessagesAssistant.fromJson(Map<String, dynamic> json) { return Messages51MessagesAssistant(
   audio: json['audio'] != null ? Messages51MessagesAssistantAudioVariant1.fromJson(json['audio'] as Map<String, dynamic>) : null,
-  content: json['content'] != null ? OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => Messages51MessagesAssistantContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),) : null,
+  content: json['content'] != null ? Messages51MessagesAssistantContent.fromJson(json['content']) : null,
   functionCall: json['function_call'] != null ? Messages51MessagesAssistantFunctionCallVariant1.fromJson(json['function_call'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   refusal: json.containsKey('refusal') ? Omittable(json['refusal'] as String?) : const Omittable.absent(),

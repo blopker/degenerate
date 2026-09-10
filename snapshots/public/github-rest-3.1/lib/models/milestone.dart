@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'MilestoneState($value)'; } 
  }
 /// A collection of related issues and pull requests.
-@immutable final class Milestone {const Milestone({required this.url, required this.htmlUrl, required this.labelsUrl, required this.id, required this.nodeId, required this.number, required this.title, required this.description, required this.creator, required this.openIssues, required this.closedIssues, required this.createdAt, required this.updatedAt, required this.closedAt, required this.dueOn, this.state = MilestoneState.open, });
+@immutable final class Milestone {const Milestone({required this.url, required this.htmlUrl, required this.labelsUrl, required this.id, required this.nodeId, required this.number, required this.state, required this.title, required this.description, required this.creator, required this.openIssues, required this.closedIssues, required this.createdAt, required this.updatedAt, required this.closedAt, required this.dueOn, });
 
 factory Milestone.fromJson(Map<String, dynamic> json) { return Milestone(
   url: Uri.parse(json['url'] as String),

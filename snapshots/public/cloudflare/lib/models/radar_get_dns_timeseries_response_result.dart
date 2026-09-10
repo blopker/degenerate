@@ -25,6 +25,6 @@ RadarGetDnsTimeseriesResponseResult copyWith({RadarGetDnsTimeseriesResponseResul
       other is RadarGetDnsTimeseriesResponseResult &&
           meta == other.meta &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(meta, Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(meta, mapHash(additionalProperties)); } 
 @override String toString() { return 'RadarGetDnsTimeseriesResponseResult(meta: $meta, additionalProperties: $additionalProperties)'; } 
  }

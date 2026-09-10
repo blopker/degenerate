@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_address.dart';import 'smartshield_check_regions2.dart';import 'smartshield_consecutive_fails.dart';import 'smartshield_consecutive_successes.dart';import 'smartshield_description.dart';import 'smartshield_http_config.dart';import 'smartshield_interval.dart';import 'smartshield_name.dart';import 'smartshield_retries.dart';import 'smartshield_suspended.dart';import 'smartshield_tcp_config.dart';import 'smartshield_timeout.dart';import 'smartshield_type.dart';@immutable final class SmartshieldQueryHealthcheck {const SmartshieldQueryHealthcheck({required this.address, required this.name, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.description, this.httpConfig, this.interval, this.retries, this.suspended, this.tcpConfig, this.timeout, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'smartshield_address.dart';import 'smartshield_check_regions2.dart';import 'smartshield_consecutive_fails.dart';import 'smartshield_consecutive_successes.dart';import 'smartshield_description.dart';import 'smartshield_http_config.dart';import 'smartshield_interval.dart';import 'smartshield_name.dart';import 'smartshield_retries.dart';import 'smartshield_suspended.dart';import 'smartshield_tcp_config.dart';import 'smartshield_timeout.dart';import 'smartshield_type.dart';@immutable final class SmartshieldQueryHealthcheck {const SmartshieldQueryHealthcheck({required this.address, required this.name, this.checkRegions = const Omittable.absent(), this.consecutiveFails, this.consecutiveSuccesses, this.description, this.httpConfig = const Omittable.absent(), this.interval, this.retries, this.suspended, this.tcpConfig = const Omittable.absent(), this.timeout, this.type, });
 
 factory SmartshieldQueryHealthcheck.fromJson(Map<String, dynamic> json) { return SmartshieldQueryHealthcheck(
   address: SmartshieldAddress.fromJson(json['address'] as String),
@@ -8,12 +8,12 @@ factory SmartshieldQueryHealthcheck.fromJson(Map<String, dynamic> json) { return
   consecutiveFails: json['consecutive_fails'] != null ? SmartshieldConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
   consecutiveSuccesses: json['consecutive_successes'] != null ? SmartshieldConsecutiveSuccesses.fromJson(json['consecutive_successes'] as num) : null,
   description: json['description'] != null ? SmartshieldDescription.fromJson(json['description'] as String) : null,
-  httpConfig: json['http_config'] != null ? SmartshieldHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null,
+  httpConfig: json.containsKey('http_config') ? Omittable(json['http_config'] != null ? SmartshieldHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   interval: json['interval'] != null ? SmartshieldInterval.fromJson(json['interval'] as num) : null,
   name: SmartshieldName.fromJson(json['name'] as String),
   retries: json['retries'] != null ? SmartshieldRetries.fromJson(json['retries'] as num) : null,
   suspended: json['suspended'] != null ? SmartshieldSuspended.fromJson(json['suspended'] as bool) : null,
-  tcpConfig: json['tcp_config'] != null ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null,
+  tcpConfig: json.containsKey('tcp_config') ? Omittable(json['tcp_config'] != null ? SmartshieldTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   timeout: json['timeout'] != null ? SmartshieldTimeout.fromJson(json['timeout'] as num) : null,
   type: json['type'] != null ? SmartshieldType.fromJson(json['type'] as String) : null,
 ); }
@@ -33,7 +33,7 @@ final SmartshieldConsecutiveSuccesses? consecutiveSuccesses;
 /// A human-readable description of the health check.
 final SmartshieldDescription? description;
 
-final SmartshieldHttpConfig? httpConfig;
+final Omittable<SmartshieldHttpConfig?> httpConfig;
 
 /// The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations.
 final SmartshieldInterval? interval;
@@ -45,7 +45,7 @@ final SmartshieldRetries? retries;
 
 final SmartshieldSuspended? suspended;
 
-final SmartshieldTcpConfig? tcpConfig;
+final Omittable<SmartshieldTcpConfig?> tcpConfig;
 
 final SmartshieldTimeout? timeout;
 
@@ -57,29 +57,29 @@ Map<String, dynamic> toJson() { return {
   if (consecutiveFails != null) 'consecutive_fails': consecutiveFails?.toJson(),
   if (consecutiveSuccesses != null) 'consecutive_successes': consecutiveSuccesses?.toJson(),
   if (description != null) 'description': description?.toJson(),
-  if (httpConfig != null) 'http_config': httpConfig?.toJson(),
+  if (httpConfig.isPresent) 'http_config': httpConfig.value?.toJson(),
   if (interval != null) 'interval': interval?.toJson(),
   'name': name.toJson(),
   if (retries != null) 'retries': retries?.toJson(),
   if (suspended != null) 'suspended': suspended?.toJson(),
-  if (tcpConfig != null) 'tcp_config': tcpConfig?.toJson(),
+  if (tcpConfig.isPresent) 'tcp_config': tcpConfig.value?.toJson(),
   if (timeout != null) 'timeout': timeout?.toJson(),
   if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
       json.containsKey('name'); } 
-SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, Omittable<List<SmartshieldCheckRegions2>?>? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldDescription? Function()? description, SmartshieldHttpConfig? Function()? httpConfig, SmartshieldInterval? Function()? interval, SmartshieldName? name, SmartshieldRetries? Function()? retries, SmartshieldSuspended? Function()? suspended, SmartshieldTcpConfig? Function()? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) { return SmartshieldQueryHealthcheck(
+SmartshieldQueryHealthcheck copyWith({SmartshieldAddress? address, Omittable<List<SmartshieldCheckRegions2>?>? checkRegions, SmartshieldConsecutiveFails? Function()? consecutiveFails, SmartshieldConsecutiveSuccesses? Function()? consecutiveSuccesses, SmartshieldDescription? Function()? description, Omittable<SmartshieldHttpConfig?>? httpConfig, SmartshieldInterval? Function()? interval, SmartshieldName? name, SmartshieldRetries? Function()? retries, SmartshieldSuspended? Function()? suspended, Omittable<SmartshieldTcpConfig?>? tcpConfig, SmartshieldTimeout? Function()? timeout, SmartshieldType? Function()? type, }) { return SmartshieldQueryHealthcheck(
   address: address ?? this.address,
   checkRegions: checkRegions ?? this.checkRegions,
   consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
   consecutiveSuccesses: consecutiveSuccesses != null ? consecutiveSuccesses() : this.consecutiveSuccesses,
   description: description != null ? description() : this.description,
-  httpConfig: httpConfig != null ? httpConfig() : this.httpConfig,
+  httpConfig: httpConfig ?? this.httpConfig,
   interval: interval != null ? interval() : this.interval,
   name: name ?? this.name,
   retries: retries != null ? retries() : this.retries,
   suspended: suspended != null ? suspended() : this.suspended,
-  tcpConfig: tcpConfig != null ? tcpConfig() : this.tcpConfig,
+  tcpConfig: tcpConfig ?? this.tcpConfig,
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
 ); } 

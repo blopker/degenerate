@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_billing_thresholds_param7.dart';import 'post_subscription_schedules_request_phases_items_billing_thresholds.dart';import 'post_subscription_schedules_request_phases_items_discounts.dart';import 'post_subscription_schedules_request_phases_items_discounts_variant1.dart';import 'post_subscription_schedules_request_phases_items_price_data.dart';import 'post_subscription_schedules_request_phases_items_tax_rates.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesItems {const PostSubscriptionSchedulesRequestPhasesItems({this.billingThresholds, this.discounts, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscription_schedules_request_phases_items_billing_thresholds.dart';import 'post_subscription_schedules_request_phases_items_discounts.dart';import 'post_subscription_schedules_request_phases_items_price_data.dart';import 'post_subscription_schedules_request_phases_items_tax_rates.dart';@immutable final class PostSubscriptionSchedulesRequestPhasesItems {const PostSubscriptionSchedulesRequestPhasesItems({this.billingThresholds, this.discounts, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
 
 factory PostSubscriptionSchedulesRequestPhasesItems.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhasesItems(
-  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => ItemBillingThresholdsParam7.fromJson(v as Map<String, dynamic>), fromB: (v) => PostSubscriptionSchedulesRequestPhasesItemsBillingThresholdsVariant2.fromJson(v as String),) : null,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostSubscriptionSchedulesRequestPhasesItemsDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostSubscriptionSchedulesRequestPhasesItemsDiscountsVariant2.fromJson(v as String),) : null,
+  billingThresholds: json['billing_thresholds'] != null ? PostSubscriptionSchedulesRequestPhasesItemsBillingThresholds.fromJson(json['billing_thresholds']) : null,
+  discounts: json['discounts'] != null ? PostSubscriptionSchedulesRequestPhasesItemsDiscounts.fromJson(json['discounts']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   price: json['price'] as String?,
   priceData: json['price_data'] != null ? PostSubscriptionSchedulesRequestPhasesItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostSubscriptionSchedulesRequestPhasesItemsTaxRatesVariant2.fromJson(v as String),) : null,
+  taxRates: json['tax_rates'] != null ? PostSubscriptionSchedulesRequestPhasesItemsTaxRates.fromJson(json['tax_rates']) : null,
 ); }
 
 final PostSubscriptionSchedulesRequestPhasesItemsBillingThresholds? billingThresholds;

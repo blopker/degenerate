@@ -38,13 +38,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RateLimitOverview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RateLimitOverview.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

@@ -24,27 +24,29 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel($value)'; } 
  }
-@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking {const AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking({this.enabled, this.matchThreshold = 0.4, this.model, });
+@immutable final class AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking {const AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking({this.enabled, this.matchThreshold, this.model, });
 
 factory AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(
   enabled: json['enabled'] as bool?,
-  matchThreshold: json.containsKey('match_threshold') ? (json['match_threshold'] as num).toDouble() : 0.4,
+  matchThreshold: json['match_threshold'] != null ? (json['match_threshold'] as num).toDouble() : null,
   model: json['model'] != null ? AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel.fromJson(json['model'] as String) : null,
 ); }
 
 final bool? enabled;
 
-final double matchThreshold;
+final double? matchThreshold;
 
 final AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel? model;
 
+/// The value with the schema default applied when absent.
+double get matchThresholdOrDefault { return matchThreshold ?? 0.4; } 
 Map<String, dynamic> toJson() { return {
   'enabled': ?enabled,
-  'match_threshold': matchThreshold,
+  'match_threshold': ?matchThreshold,
   if (model != null) 'model': model?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'match_threshold', 'model'}.contains(key)); } 
-AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking copyWith({bool? Function()? enabled, double Function()? matchThreshold, AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel? Function()? model, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(
+AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking copyWith({bool? Function()? enabled, double? Function()? matchThreshold, AiSearchInstanceChatCompletionRequestAiSearchOptionsRerankingModel? Function()? model, }) { return AiSearchInstanceChatCompletionRequestAiSearchOptionsReranking(
   enabled: enabled != null ? enabled() : this.enabled,
   matchThreshold: matchThreshold != null ? matchThreshold() : this.matchThreshold,
   model: model != null ? model() : this.model,

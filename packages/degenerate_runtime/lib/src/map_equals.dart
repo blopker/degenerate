@@ -11,3 +11,8 @@ bool mapEquals<K, V>(Map<K, V>? a, Map<K, V>? b) {
   }
   return true;
 }
+
+/// An order-independent hash using the same entry equality as [mapEquals].
+int mapHash<K, V>(Map<K, V> map) => Object.hashAllUnordered(
+  map.entries.map((entry) => Object.hash(entry.key, entry.value)),
+);

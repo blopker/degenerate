@@ -182,6 +182,7 @@ class OperationLowerer {
 
     // Responses.
     final responses = <int, IrResponse>{};
+    final ranges = <int, IrResponse>{};
     IrResponse? defaultResponse;
     final rawResponses = op['responses'] as Map<String, dynamic>?;
     if (rawResponses != null) {
@@ -202,8 +203,16 @@ class OperationLowerer {
           final statusCode = int.tryParse(statusKey);
           if (statusCode != null) {
             responses[statusCode] = irResponse;
+          } else if (RegExp(r'^[1-5]XX$').hasMatch(statusKey)) {
+            ranges[int.parse(statusKey[0])] = irResponse;
           }
         }
+      }
+    }
+
+    for (final entry in ranges.entries) {
+      for (var code = entry.key * 100; code < (entry.key + 1) * 100; code++) {
+        responses.putIfAbsent(code, () => entry.value);
       }
     }
 

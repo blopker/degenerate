@@ -1,19 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint {const AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint({this.disabled = false});
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint {const AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint({this.disabled});
 
 factory AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint(
-  disabled: json.containsKey('disabled') ? json['disabled'] as bool : false,
+  disabled: json['disabled'] as bool?,
 ); }
 
 /// Disable chat completions endpoint for this public endpoint
-final bool disabled;
+final bool? disabled;
 
+/// The value with the schema default applied when absent.
+bool get disabledOrDefault { return disabled ?? false; } 
 Map<String, dynamic> toJson() { return {
-  'disabled': disabled,
+  'disabled': ?disabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'disabled'}.contains(key)); } 
-AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint copyWith({bool Function()? disabled}) { return AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint(
+AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint copyWith({bool? Function()? disabled}) { return AiSearchUpdateInstancesRequestPublicEndpointParamsChatCompletionsEndpoint(
   disabled: disabled != null ? disabled() : this.disabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'discount.dart';import 'discounts_resource_discount_amount.dart';import 'invoice_line_item_period.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'line_item_discounts.dart';import 'line_item_subscription.dart';import 'subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'discounts_resource_discount_amount.dart';import 'invoice_line_item_period.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'line_item_discounts.dart';import 'line_item_subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class LineItemObject {const LineItemObject._(this.value);
 
 factory LineItemObject.fromJson(String json) { return switch (json) {
@@ -33,7 +33,7 @@ factory LineItem.fromJson(Map<String, dynamic> json) { return LineItem(
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   discountAmounts: json.containsKey('discount_amounts') ? Omittable((json['discount_amounts'] as List<dynamic>?)?.map((e) => DiscountsResourceDiscountAmount.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   discountable: json['discountable'] as bool,
-  discounts: (json['discounts'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>),)).toList(),
+  discounts: (json['discounts'] as List<dynamic>).map(LineItemDiscounts.fromJson).toList(),
   id: json['id'] as String,
   invoice: json.containsKey('invoice') ? Omittable(json['invoice'] as String?) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
@@ -44,7 +44,7 @@ factory LineItem.fromJson(Map<String, dynamic> json) { return LineItem(
   pretaxCreditAmounts: json.containsKey('pretax_credit_amounts') ? Omittable((json['pretax_credit_amounts'] as List<dynamic>?)?.map((e) => InvoicesResourcePretaxCreditAmount.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   pricing: json.containsKey('pricing') ? Omittable(json['pricing'] != null ? BillingBillResourceInvoicingPricingPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   quantity: json.containsKey('quantity') ? Omittable(json['quantity'] != null ? (json['quantity'] as num).toInt() : null) : const Omittable.absent(),
-  subscription: json.containsKey('subscription') ? Omittable(json['subscription'] != null ? OneOf2.parse(json['subscription'], fromA: (v) => v as String, fromB: (v) => Subscription.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  subscription: json.containsKey('subscription') ? Omittable(json['subscription'] != null ? LineItemSubscription.fromJson(json['subscription']) : null) : const Omittable.absent(),
   subtotal: (json['subtotal'] as num).toInt(),
   taxes: json.containsKey('taxes') ? Omittable((json['taxes'] as List<dynamic>?)?.map((e) => BillingBillResourceInvoicingTaxesTax.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
 ); }

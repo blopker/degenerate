@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxCalculationsRequestShipFromDetailsAddressLine2Variant2($value)'; } 
  }
-typedef PostTaxCalculationsRequestShipFromDetailsAddressLine2 = OneOf2<String,PostTaxCalculationsRequestShipFromDetailsAddressLine2Variant2>;
+
+@immutable
+final class PostTaxCalculationsRequestShipFromDetailsAddressLine2 {
+  const PostTaxCalculationsRequestShipFromDetailsAddressLine2({this.string = const Omittable.absent(),
+this.postTaxCalculationsRequestShipFromDetailsAddressLine2Variant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTaxCalculationsRequestShipFromDetailsAddressLine2._({required this.rawValue, required this.string,
+required this.postTaxCalculationsRequestShipFromDetailsAddressLine2Variant2,});
+  factory PostTaxCalculationsRequestShipFromDetailsAddressLine2.fromJson(Object? json) => PostTaxCalculationsRequestShipFromDetailsAddressLine2._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postTaxCalculationsRequestShipFromDetailsAddressLine2Variant2: parseAnyOfVariant<PostTaxCalculationsRequestShipFromDetailsAddressLine2Variant2>(json, (value) => PostTaxCalculationsRequestShipFromDetailsAddressLine2Variant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostTaxCalculationsRequestShipFromDetailsAddressLine2Variant2> postTaxCalculationsRequestShipFromDetailsAddressLine2Variant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postTaxCalculationsRequestShipFromDetailsAddressLine2Variant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postTaxCalculationsRequestShipFromDetailsAddressLine2Variant2.isPresent) postTaxCalculationsRequestShipFromDetailsAddressLine2Variant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTaxCalculationsRequestShipFromDetailsAddressLine2 && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTaxCalculationsRequestShipFromDetailsAddressLine2(${toJson()})';
+}

@@ -21,7 +21,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DeletedSkillResourceObject($value)'; } 
  }
-@immutable final class DeletedSkillResource {const DeletedSkillResource({required this.deleted, required this.id, this.object = DeletedSkillResourceObject.skillDeleted, });
+@immutable final class DeletedSkillResource {const DeletedSkillResource({required this.object, required this.deleted, required this.id, });
 
 factory DeletedSkillResource.fromJson(Map<String, dynamic> json) { return DeletedSkillResource(
   object: DeletedSkillResourceObject.fromJson(json['object'] as String),

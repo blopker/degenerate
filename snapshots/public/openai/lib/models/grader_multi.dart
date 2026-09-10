@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GraderMultiType($value)'; } 
  }
 /// A MultiGrader object combines the output of multiple graders to produce a single score.
-@immutable final class GraderMulti {const GraderMulti({required this.name, required this.graders, required this.calculateOutput, this.type = GraderMultiType.multi, });
+@immutable final class GraderMulti {const GraderMulti({required this.type, required this.name, required this.graders, required this.calculateOutput, });
 
 factory GraderMulti.fromJson(Map<String, dynamic> json) { return GraderMulti(
   type: GraderMultiType.fromJson(json['type'] as String),

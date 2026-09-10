@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostLinksRequestVariant2RejectResourceTypes($value)'; } 
  }
-@immutable final class BrapiPostLinksRequestVariant2 {const BrapiPostLinksRequestVariant2({required this.url, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.excludeExternalLinks = false, this.gotoOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.visibleLinksOnly = false, this.waitForSelector, this.waitForTimeout, });
+@immutable final class BrapiPostLinksRequestVariant2 {const BrapiPostLinksRequestVariant2({required this.url, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.emulateMediaType, this.excludeExternalLinks, this.gotoOptions, this.rejectRequestPattern, this.rejectResourceTypes, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent, this.viewport, this.visibleLinksOnly, this.waitForSelector, this.waitForTimeout, });
 
 factory BrapiPostLinksRequestVariant2.fromJson(Map<String, dynamic> json) { return BrapiPostLinksRequestVariant2(
   actionTimeout: json['actionTimeout'] != null ? (json['actionTimeout'] as num).toDouble() : null,
@@ -156,16 +156,16 @@ factory BrapiPostLinksRequestVariant2.fromJson(Map<String, dynamic> json) { retu
   bestAttempt: json['bestAttempt'] as bool?,
   cookies: (json['cookies'] as List<dynamic>?)?.map((e) => BrapiPostLinksRequestVariant2Cookies.fromJson(e as Map<String, dynamic>)).toList(),
   emulateMediaType: json['emulateMediaType'] as String?,
-  excludeExternalLinks: json.containsKey('excludeExternalLinks') ? json['excludeExternalLinks'] as bool : false,
+  excludeExternalLinks: json['excludeExternalLinks'] as bool?,
   gotoOptions: json['gotoOptions'] != null ? BrapiPostLinksRequestVariant2GotoOptions.fromJson(json['gotoOptions'] as Map<String, dynamic>) : null,
   rejectRequestPattern: (json['rejectRequestPattern'] as List<dynamic>?)?.map((e) => e as String).toList(),
   rejectResourceTypes: (json['rejectResourceTypes'] as List<dynamic>?)?.map((e) => BrapiPostLinksRequestVariant2RejectResourceTypes.fromJson(e as String)).toList(),
   setExtraHttpHeaders: (json['setExtraHTTPHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   setJavaScriptEnabled: json['setJavaScriptEnabled'] as bool?,
   url: Uri.parse(json['url'] as String),
-  userAgent: json.containsKey('userAgent') ? json['userAgent'] as String : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+  userAgent: json['userAgent'] as String?,
   viewport: json['viewport'] != null ? BrapiPostLinksRequestVariant2Viewport.fromJson(json['viewport'] as Map<String, dynamic>) : null,
-  visibleLinksOnly: json.containsKey('visibleLinksOnly') ? json['visibleLinksOnly'] as bool : false,
+  visibleLinksOnly: json['visibleLinksOnly'] as bool?,
   waitForSelector: json['waitForSelector'] != null ? BrapiPostLinksRequestVariant2WaitForSelector.fromJson(json['waitForSelector'] as Map<String, dynamic>) : null,
   waitForTimeout: json['waitForTimeout'] != null ? (json['waitForTimeout'] as num).toDouble() : null,
 ); }
@@ -196,7 +196,7 @@ final List<BrapiPostLinksRequestVariant2Cookies>? cookies;
 
 final String? emulateMediaType;
 
-final bool excludeExternalLinks;
+final bool? excludeExternalLinks;
 
 /// Check [options](https://pptr.dev/api/puppeteer.gotooptions).
 final BrapiPostLinksRequestVariant2GotoOptions? gotoOptions;
@@ -214,12 +214,12 @@ final bool? setJavaScriptEnabled;
 /// URL to navigate to, eg. `https://example.com`.
 final Uri url;
 
-final String userAgent;
+final String? userAgent;
 
 /// Check [options](https://pptr.dev/api/puppeteer.page.setviewport).
 final BrapiPostLinksRequestVariant2Viewport? viewport;
 
-final bool visibleLinksOnly;
+final bool? visibleLinksOnly;
 
 /// Wait for the selector to appear in page. Check [options](https://pptr.dev/api/puppeteer.page.waitforselector).
 final BrapiPostLinksRequestVariant2WaitForSelector? waitForSelector;
@@ -227,6 +227,12 @@ final BrapiPostLinksRequestVariant2WaitForSelector? waitForSelector;
 /// Waits for a specified timeout before continuing.
 final double? waitForTimeout;
 
+/// The value with the schema default applied when absent.
+bool get excludeExternalLinksOrDefault { return excludeExternalLinks ?? false; } 
+/// The value with the schema default applied when absent.
+String get userAgentOrDefault { return userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'; } 
+/// The value with the schema default applied when absent.
+bool get visibleLinksOnlyOrDefault { return visibleLinksOnly ?? false; } 
 Map<String, dynamic> toJson() { return {
   'actionTimeout': ?actionTimeout,
   if (addScriptTag != null) 'addScriptTag': addScriptTag?.map((e) => e.toJson()).toList(),
@@ -237,21 +243,21 @@ Map<String, dynamic> toJson() { return {
   'bestAttempt': ?bestAttempt,
   if (cookies != null) 'cookies': cookies?.map((e) => e.toJson()).toList(),
   'emulateMediaType': ?emulateMediaType,
-  'excludeExternalLinks': excludeExternalLinks,
+  'excludeExternalLinks': ?excludeExternalLinks,
   if (gotoOptions != null) 'gotoOptions': gotoOptions?.toJson(),
   'rejectRequestPattern': ?rejectRequestPattern,
   if (rejectResourceTypes != null) 'rejectResourceTypes': rejectResourceTypes?.map((e) => e.toJson()).toList(),
   'setExtraHTTPHeaders': ?setExtraHttpHeaders,
   'setJavaScriptEnabled': ?setJavaScriptEnabled,
   'url': url.toString(),
-  'userAgent': userAgent,
+  'userAgent': ?userAgent,
   if (viewport != null) 'viewport': viewport?.toJson(),
-  'visibleLinksOnly': visibleLinksOnly,
+  'visibleLinksOnly': ?visibleLinksOnly,
   if (waitForSelector != null) 'waitForSelector': waitForSelector?.toJson(),
   'waitForTimeout': ?waitForTimeout,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
-BrapiPostLinksRequestVariant2 copyWith({double? Function()? actionTimeout, List<BrapiPostLinksRequestVariant2AddScriptTag>? Function()? addScriptTag, List<BrapiPostLinksRequestVariant2AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostLinksRequestVariant2AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostLinksRequestVariant2Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostLinksRequestVariant2Cookies>? Function()? cookies, String? Function()? emulateMediaType, bool Function()? excludeExternalLinks, BrapiPostLinksRequestVariant2GotoOptions? Function()? gotoOptions, List<String>? Function()? rejectRequestPattern, List<BrapiPostLinksRequestVariant2RejectResourceTypes>? Function()? rejectResourceTypes, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, Uri? url, String Function()? userAgent, BrapiPostLinksRequestVariant2Viewport? Function()? viewport, bool Function()? visibleLinksOnly, BrapiPostLinksRequestVariant2WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostLinksRequestVariant2(
+BrapiPostLinksRequestVariant2 copyWith({double? Function()? actionTimeout, List<BrapiPostLinksRequestVariant2AddScriptTag>? Function()? addScriptTag, List<BrapiPostLinksRequestVariant2AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostLinksRequestVariant2AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostLinksRequestVariant2Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostLinksRequestVariant2Cookies>? Function()? cookies, String? Function()? emulateMediaType, bool? Function()? excludeExternalLinks, BrapiPostLinksRequestVariant2GotoOptions? Function()? gotoOptions, List<String>? Function()? rejectRequestPattern, List<BrapiPostLinksRequestVariant2RejectResourceTypes>? Function()? rejectResourceTypes, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, Uri? url, String? Function()? userAgent, BrapiPostLinksRequestVariant2Viewport? Function()? viewport, bool? Function()? visibleLinksOnly, BrapiPostLinksRequestVariant2WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostLinksRequestVariant2(
   actionTimeout: actionTimeout != null ? actionTimeout() : this.actionTimeout,
   addScriptTag: addScriptTag != null ? addScriptTag() : this.addScriptTag,
   addStyleTag: addStyleTag != null ? addStyleTag() : this.addStyleTag,

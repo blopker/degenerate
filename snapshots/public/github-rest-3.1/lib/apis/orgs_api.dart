@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/custom_property.dart';import '../models/custom_property_set_payload.dart';import '../models/hook_delivery.dart';import '../models/hook_delivery_item.dart';import '../models/immutable_releases_organization_settings.dart';import '../models/insights_get_route_stats_by_actor_actor_type.dart';import '../models/insights_get_route_stats_by_actor_direction.dart';import '../models/insights_get_route_stats_by_actor_sort.dart';import '../models/insights_get_subject_stats_direction.dart';import '../models/insights_get_subject_stats_sort.dart';import '../models/insights_get_summary_stats_by_actor_actor_type.dart';import '../models/insights_get_time_stats_by_actor_actor_type.dart';import '../models/insights_get_user_stats_direction.dart';import '../models/insights_get_user_stats_sort.dart';import '../models/insights_route_stats2.dart';import '../models/insights_subject_stats2.dart';import '../models/insights_summary_stats.dart';import '../models/insights_time_stats2.dart';import '../models/insights_user_stats2.dart';import '../models/issue_type.dart';import '../models/minimal_repository.dart';import '../models/org_hook.dart';import '../models/org_membership.dart';import '../models/org_repo_custom_property_values.dart';import '../models/organization_create_issue_type.dart';import '../models/organization_full.dart';import '../models/organization_invitation.dart';import '../models/organization_programmatic_access_grant.dart';import '../models/organization_programmatic_access_grant_request.dart';import '../models/organization_role.dart';import '../models/organization_simple.dart';import '../models/organization_update_issue_type.dart';import '../models/orgs_convert_member_to_outside_collaborator_request.dart';import '../models/orgs_convert_member_to_outside_collaborator_response202.dart';import '../models/orgs_create_artifact_deployment_record_request.dart';import '../models/orgs_create_artifact_deployment_record_response.dart';import '../models/orgs_create_artifact_storage_record_request.dart';import '../models/orgs_create_artifact_storage_record_response.dart';import '../models/orgs_create_invitation_request.dart';import '../models/orgs_create_webhook_request.dart';import '../models/orgs_custom_properties_for_repos_create_or_update_organization_definitions_request.dart';import '../models/orgs_custom_properties_for_repos_create_or_update_organization_values_request.dart';import '../models/orgs_delete_attestations_bulk_request.dart';import '../models/orgs_get_immutable_releases_settings_repositories_response.dart';import '../models/orgs_list_app_installations_response.dart';import '../models/orgs_list_artifact_deployment_records_response.dart';import '../models/orgs_list_artifact_storage_records_response.dart';import '../models/orgs_list_attestation_repositories_response.dart';import '../models/orgs_list_attestations_bulk_request.dart';import '../models/orgs_list_attestations_bulk_response.dart';import '../models/orgs_list_attestations_response.dart';import '../models/orgs_list_members_filter.dart';import '../models/orgs_list_members_role.dart';import '../models/orgs_list_memberships_for_authenticated_user_state.dart';import '../models/orgs_list_org_roles_response.dart';import '../models/orgs_list_outside_collaborators_filter.dart';import '../models/orgs_list_pat_grant_requests_direction.dart';import '../models/orgs_list_pat_grant_requests_sort.dart';import '../models/orgs_list_pat_grants_direction.dart';import '../models/orgs_list_pat_grants_sort.dart';import '../models/orgs_list_pending_invitations_invitation_source.dart';import '../models/orgs_list_pending_invitations_role.dart';import '../models/orgs_remove_outside_collaborator_response422.dart';import '../models/orgs_review_pat_grant_request_request.dart';import '../models/orgs_review_pat_grant_requests_in_bulk_request.dart';import '../models/orgs_set_cluster_deployment_records_request.dart';import '../models/orgs_set_cluster_deployment_records_response.dart';import '../models/orgs_set_immutable_releases_settings_repositories_request.dart';import '../models/orgs_set_immutable_releases_settings_request.dart';import '../models/orgs_set_membership_for_user_request.dart';import '../models/orgs_update_membership_for_authenticated_user_request.dart';import '../models/orgs_update_pat_access_request.dart';import '../models/orgs_update_pat_accesses_request.dart';import '../models/orgs_update_request.dart';import '../models/orgs_update_response422.dart';import '../models/orgs_update_webhook_config_for_org_request.dart';import '../models/orgs_update_webhook_request.dart';import '../models/ruleset_version.dart';import '../models/ruleset_version_with_state.dart';import '../models/simple_user.dart';import '../models/team.dart';import '../models/team_role_assignment.dart';import '../models/user_role_assignment.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';import '../models/webhook_config.dart';/// OrgsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/custom_property.dart';import '../models/custom_property_set_payload.dart';import '../models/hook_delivery.dart';import '../models/hook_delivery_item.dart';import '../models/immutable_releases_organization_settings.dart';import '../models/insights_get_route_stats_by_actor_actor_type.dart';import '../models/insights_get_route_stats_by_actor_direction.dart';import '../models/insights_get_route_stats_by_actor_sort.dart';import '../models/insights_get_subject_stats_direction.dart';import '../models/insights_get_subject_stats_sort.dart';import '../models/insights_get_summary_stats_by_actor_actor_type.dart';import '../models/insights_get_time_stats_by_actor_actor_type.dart';import '../models/insights_get_user_stats_direction.dart';import '../models/insights_get_user_stats_sort.dart';import '../models/insights_route_stats2.dart';import '../models/insights_subject_stats2.dart';import '../models/insights_summary_stats.dart';import '../models/insights_time_stats2.dart';import '../models/insights_user_stats2.dart';import '../models/issue_type.dart';import '../models/minimal_repository.dart';import '../models/org_hook.dart';import '../models/org_membership.dart';import '../models/org_repo_custom_property_values.dart';import '../models/organization_create_issue_type.dart';import '../models/organization_full.dart';import '../models/organization_invitation.dart';import '../models/organization_programmatic_access_grant.dart';import '../models/organization_programmatic_access_grant_request.dart';import '../models/organization_role.dart';import '../models/organization_simple.dart';import '../models/organization_update_issue_type.dart';import '../models/orgs_convert_member_to_outside_collaborator_request.dart';import '../models/orgs_convert_member_to_outside_collaborator_response202.dart';import '../models/orgs_create_artifact_deployment_record_request.dart';import '../models/orgs_create_artifact_deployment_record_response.dart';import '../models/orgs_create_artifact_storage_record_request.dart';import '../models/orgs_create_artifact_storage_record_response.dart';import '../models/orgs_create_invitation_request.dart';import '../models/orgs_create_webhook_request.dart';import '../models/orgs_custom_properties_for_repos_create_or_update_organization_definitions_request.dart';import '../models/orgs_custom_properties_for_repos_create_or_update_organization_values_request.dart';import '../models/orgs_delete_attestations_bulk_request.dart';import '../models/orgs_get_immutable_releases_settings_repositories_response.dart';import '../models/orgs_list_app_installations_response.dart';import '../models/orgs_list_artifact_deployment_records_response.dart';import '../models/orgs_list_artifact_storage_records_response.dart';import '../models/orgs_list_attestation_repositories_response.dart';import '../models/orgs_list_attestations_bulk_request.dart';import '../models/orgs_list_attestations_bulk_response.dart';import '../models/orgs_list_attestations_response.dart';import '../models/orgs_list_members_filter.dart';import '../models/orgs_list_members_role.dart';import '../models/orgs_list_memberships_for_authenticated_user_state.dart';import '../models/orgs_list_org_roles_response.dart';import '../models/orgs_list_outside_collaborators_filter.dart';import '../models/orgs_list_pat_grant_requests_direction.dart';import '../models/orgs_list_pat_grant_requests_sort.dart';import '../models/orgs_list_pat_grants_direction.dart';import '../models/orgs_list_pat_grants_sort.dart';import '../models/orgs_list_pending_invitations_invitation_source.dart';import '../models/orgs_list_pending_invitations_role.dart';import '../models/orgs_remove_outside_collaborator_response422.dart';import '../models/orgs_review_pat_grant_request_request.dart';import '../models/orgs_review_pat_grant_requests_in_bulk_request.dart';import '../models/orgs_set_cluster_deployment_records_request.dart';import '../models/orgs_set_cluster_deployment_records_response.dart';import '../models/orgs_set_immutable_releases_settings_repositories_request.dart';import '../models/orgs_set_immutable_releases_settings_request.dart';import '../models/orgs_set_membership_for_user_request.dart';import '../models/orgs_update_membership_for_authenticated_user_request.dart';import '../models/orgs_update_pat_access_request.dart';import '../models/orgs_update_pat_accesses_request.dart';import '../models/orgs_update_request.dart';import '../models/orgs_update_response422.dart';import '../models/orgs_update_webhook_config_for_org_request.dart';import '../models/orgs_update_webhook_request.dart';import '../models/ruleset_version.dart';import '../models/ruleset_version_with_state.dart';import '../models/scim_error.dart';import '../models/simple_user.dart';import '../models/team.dart';import '../models/team_role_assignment.dart';import '../models/user_role_assignment.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';import '../models/webhook_config.dart';/// OrgsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -36,11 +36,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -66,13 +66,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrganizationFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrganizationFull.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -91,7 +99,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
 ///
 /// `PATCH /orgs/{org}`
-Future<ApiResult<OrganizationFull, OrgsUpdateResponse422>> orgsUpdate({required String org, OrgsUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrganizationFull, OneOf2<BasicError, OrgsUpdateResponse422>>> orgsUpdate({required String org, OrgsUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -102,13 +110,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrganizationFull.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrganizationFull.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ValidationError.fromJson(v as Map<String, dynamic>), fromB: (v) => ValidationErrorSimple.fromJson(v as Map<String, dynamic>),);
+switch (response.statusCode) {
+case 409:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, OrgsUpdateResponse422>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, OrgsUpdateResponse422>.b(OneOf2.parse(json, fromA: (v) => ValidationError.fromJson(v as Map<String, dynamic>), fromB: (v) => ValidationErrorSimple.fromJson(v as Map<String, dynamic>),));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -132,13 +151,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -170,10 +197,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgsCreateArtifactDeploymentRecordResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgsCreateArtifactDeploymentRecordResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -196,10 +224,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgsSetClusterDeploymentRecordsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgsSetClusterDeploymentRecordsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -221,10 +250,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgsCreateArtifactStorageRecordResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgsCreateArtifactStorageRecordResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -242,10 +272,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgsListArtifactDeploymentRecordsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgsListArtifactDeploymentRecordsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -265,10 +296,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgsListArtifactStorageRecordsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgsListArtifactStorageRecordsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -306,10 +338,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgsListAttestationsBulkResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgsListAttestationsBulkResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -329,11 +362,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -351,11 +391,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -391,11 +438,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrgsListAttestationRepositoriesResponse.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrgsListAttestationRepositoriesResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -413,11 +460,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -456,10 +510,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgsListAttestationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgsListAttestationsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -488,11 +543,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -510,11 +565,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -532,11 +594,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 422:
+final json = jsonDecode(response.body);
+return ValidationError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -554,7 +623,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -584,14 +653,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -625,14 +701,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrgHook.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrgHook.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -646,7 +729,7 @@ return execute(
 /// edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `POST /orgs/{org}/hooks`
-Future<ApiResult<OrgHook, ValidationError>> orgsCreateWebhook({required String org, required OrgsCreateWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgHook, OneOf2<BasicError, ValidationError>>> orgsCreateWebhook({required String org, required OrgsCreateWebhookRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -657,13 +740,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgHook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgHook.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -687,13 +781,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgHook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgHook.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -711,7 +813,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `PATCH /orgs/{org}/hooks/{hook_id}`
-Future<ApiResult<OrgHook, ValidationError>> orgsUpdateWebhook({required String org, required int hookId, OrgsUpdateWebhookRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgHook, OneOf2<BasicError, ValidationError>>> orgsUpdateWebhook({required String org, required int hookId, OrgsUpdateWebhookRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -722,13 +824,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgHook.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgHook.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -751,11 +864,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -778,10 +898,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return WebhookConfig.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return WebhookConfig.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -806,10 +927,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return WebhookConfig.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return WebhookConfig.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -823,7 +945,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `GET /orgs/{org}/hooks/{hook_id}/deliveries`
-Future<ApiResult<List<HookDeliveryItem>, BasicError>> orgsListWebhookDeliveries({required String org, required int hookId, int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<HookDeliveryItem>, OneOf3<BasicError, ScimError, ValidationError>>> orgsListWebhookDeliveries({required String org, required int hookId, int? perPage, String? cursor, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -843,14 +965,34 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 422:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.c(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -864,7 +1006,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}`
-Future<ApiResult<HookDelivery, BasicError>> orgsGetWebhookDelivery({required String org, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<HookDelivery, OneOf3<BasicError, ScimError, ValidationError>>> orgsGetWebhookDelivery({required String org, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -873,13 +1015,34 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return HookDelivery.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return HookDelivery.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 422:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.c(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -893,7 +1056,7 @@ return execute(
 /// webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 ///
 /// `POST /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts`
-Future<ApiResult<Map<String, dynamic>, BasicError>> orgsRedeliverWebhookDelivery({required String org, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, OneOf3<BasicError, ScimError, ValidationError>>> orgsRedeliverWebhookDelivery({required String org, required int hookId, required int deliveryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -902,13 +1065,34 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+}
+if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.b(ScimError.fromJson(json as Map<String, dynamic>));
+}
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+
+case 422:
+final json = jsonDecode(response.body);
+return OneOf3<BasicError, ScimError, ValidationError>.c(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -932,11 +1116,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -980,11 +1171,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => InsightsRouteStats2.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => InsightsRouteStats2.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -1028,11 +1219,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => InsightsSubjectStats2.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => InsightsSubjectStats2.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -1059,10 +1250,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return InsightsSummaryStats.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return InsightsSummaryStats.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1089,10 +1281,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return InsightsSummaryStats.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return InsightsSummaryStats.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1119,10 +1312,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return InsightsSummaryStats.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return InsightsSummaryStats.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1150,11 +1344,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -1182,11 +1376,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -1214,11 +1408,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -1262,11 +1456,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => InsightsUserStats2.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => InsightsUserStats2.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -1300,10 +1494,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgsListAppInstallationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgsListAppInstallationsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -1341,14 +1536,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1360,7 +1562,7 @@ return execute(
 /// and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
 ///
 /// `POST /orgs/{org}/invitations`
-Future<ApiResult<OrganizationInvitation, ValidationError>> orgsCreateInvitation({required String org, OrgsCreateInvitationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrganizationInvitation, OneOf2<BasicError, ValidationError>>> orgsCreateInvitation({required String org, OrgsCreateInvitationRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1371,13 +1573,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrganizationInvitation.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrganizationInvitation.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1388,7 +1601,7 @@ return execute(
 /// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications).
 ///
 /// `DELETE /orgs/{org}/invitations/{invitation_id}`
-Future<ApiResult<void, ValidationError>> orgsCancelInvitation({required String org, required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> orgsCancelInvitation({required String org, required int invitationId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1397,11 +1610,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1430,14 +1653,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1446,7 +1676,7 @@ return execute(
 /// Lists all issue types for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/issue-types`
-Future<ApiResult<List<IssueType>, BasicError>> orgsListIssueTypes({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<IssueType?>, BasicError>> orgsListIssueTypes({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1455,14 +1685,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => IssueType.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => e == null ? null : IssueType.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1476,7 +1713,7 @@ return execute(
 /// personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `POST /orgs/{org}/issue-types`
-Future<ApiResult<IssueType, BasicError>> orgsCreateIssueType({required String org, required OrganizationCreateIssueType body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueType?, OneOf2<BasicError, ValidationErrorSimple>>> orgsCreateIssueType({required String org, required OrganizationCreateIssueType body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1487,13 +1724,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return IssueType.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return json != null ? IssueType.fromJson(json as Map<String, dynamic>) : null;
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1507,7 +1755,7 @@ return execute(
 /// personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `PUT /orgs/{org}/issue-types/{issue_type_id}`
-Future<ApiResult<IssueType, BasicError>> orgsUpdateIssueType({required String org, required int issueTypeId, required OrganizationUpdateIssueType body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IssueType?, OneOf2<BasicError, ValidationErrorSimple>>> orgsUpdateIssueType({required String org, required int issueTypeId, required OrganizationUpdateIssueType body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1518,13 +1766,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return IssueType.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return json != null ? IssueType.fromJson(json as Map<String, dynamic>) : null;
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1538,7 +1797,7 @@ return execute(
 /// personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `DELETE /orgs/{org}/issue-types/{issue_type_id}`
-Future<ApiResult<void, ValidationErrorSimple>> orgsDeleteIssueType({required String org, required int issueTypeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationErrorSimple>>> orgsDeleteIssueType({required String org, required int issueTypeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1547,11 +1806,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationErrorSimple>.b(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1586,14 +1855,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 422:
+final json = jsonDecode(response.body);
+return ValidationError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1611,7 +1887,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1633,11 +1909,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1655,13 +1938,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgMembership.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1678,7 +1969,7 @@ return execute(
 /// To prevent abuse, organization owners are limited to creating 50 organization invitations for an organization within a 24 hour period. If the organization is more than one month old or on a paid plan, the limit is 500 invitations per 24 hour period.
 ///
 /// `PUT /orgs/{org}/memberships/{username}`
-Future<ApiResult<OrgMembership, ValidationError>> orgsSetMembershipForUser({required String org, required String username, OrgsSetMembershipForUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgMembership, OneOf2<BasicError, ValidationError>>> orgsSetMembershipForUser({required String org, required String username, OrgsSetMembershipForUserRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1689,13 +1980,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgMembership.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1718,11 +2020,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1738,7 +2047,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/organization-roles`
-Future<ApiResult<OrgsListOrgRolesResponse, BasicError>> orgsListOrgRoles({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgsListOrgRolesResponse, OneOf2<BasicError, ValidationError>>> orgsListOrgRoles({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1747,13 +2056,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgsListOrgRolesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgsListOrgRolesResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1775,7 +2095,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1798,7 +2118,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1821,7 +2141,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1844,7 +2164,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1867,7 +2187,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1890,7 +2210,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -1907,7 +2227,7 @@ return execute(
 /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 ///
 /// `GET /orgs/{org}/organization-roles/{role_id}`
-Future<ApiResult<OrganizationRole, BasicError>> orgsGetOrgRole({required String org, required int roleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrganizationRole, OneOf2<BasicError, ValidationError>>> orgsGetOrgRole({required String org, required int roleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1916,13 +2236,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrganizationRole.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrganizationRole.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -1955,11 +2286,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => TeamRoleAssignment.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => TeamRoleAssignment.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -1992,11 +2323,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => UserRoleAssignment.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => UserRoleAssignment.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -2028,11 +2359,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -2041,7 +2372,7 @@ return execute(
 /// When an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. The user will no longer be a member of the organization. For more information, see "[Converting an organization member to an outside collaborator](https://docs.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)". Converting an organization member to an outside collaborator may be restricted by enterprise administrators. For more information, see "[Enforcing repository management policies in your enterprise](https://docs.github.com/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-inviting-outside-collaborators-to-repositories)."
 ///
 /// `PUT /orgs/{org}/outside_collaborators/{username}`
-Future<ApiResult<OrgsConvertMemberToOutsideCollaboratorResponse202, BasicError>> orgsConvertMemberToOutsideCollaborator({required String org, required String username, OrgsConvertMemberToOutsideCollaboratorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgsConvertMemberToOutsideCollaboratorResponse202?, BasicError>> orgsConvertMemberToOutsideCollaborator({required String org, required String username, OrgsConvertMemberToOutsideCollaboratorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2052,13 +2383,32 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgsConvertMemberToOutsideCollaboratorResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 202:
+final json = jsonDecode(response.body);
+return OrgsConvertMemberToOutsideCollaboratorResponse202.fromJson(json as Map<String, dynamic>);
+case 204:
+return null;
+default:
+final json = jsonDecode(response.body);
+return OrgsConvertMemberToOutsideCollaboratorResponse202.fromJson(json as Map<String, dynamic>);
+}
+
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403:
+return null;
+case 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2076,11 +2426,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return OrgsRemoveOutsideCollaboratorResponse422.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 422:
+final json = jsonDecode(response.body);
+return OrgsRemoveOutsideCollaboratorResponse422.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2091,7 +2448,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `GET /orgs/{org}/personal-access-token-requests`
-Future<ApiResult<List<OrganizationProgrammaticAccessGrantRequest>, BasicError>> orgsListPatGrantRequests({required String org, int? perPage, int? page, OrgsListPatGrantRequestsSort? sort, OrgsListPatGrantRequestsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrganizationProgrammaticAccessGrantRequest>, OneOf2<BasicError, ValidationError>>> orgsListPatGrantRequests({required String org, int? perPage, int? page, OrgsListPatGrantRequestsSort? sort, OrgsListPatGrantRequestsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -2139,14 +2496,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrganizationProgrammaticAccessGrantRequest.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrganizationProgrammaticAccessGrantRequest.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2157,7 +2524,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-token-requests`
-Future<ApiResult<Map<String, dynamic>, BasicError>> orgsReviewPatGrantRequestsInBulk({required String org, required OrgsReviewPatGrantRequestsInBulkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, OneOf2<BasicError, ValidationError>>> orgsReviewPatGrantRequestsInBulk({required String org, required OrgsReviewPatGrantRequestsInBulkRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2168,13 +2535,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2185,7 +2563,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-token-requests/{pat_request_id}`
-Future<ApiResult<void, BasicError>> orgsReviewPatGrantRequest({required String org, required int patRequestId, required OrgsReviewPatGrantRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> orgsReviewPatGrantRequest({required String org, required int patRequestId, required OrgsReviewPatGrantRequestRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2196,11 +2574,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2231,14 +2619,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2249,7 +2644,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `GET /orgs/{org}/personal-access-tokens`
-Future<ApiResult<List<OrganizationProgrammaticAccessGrant>, BasicError>> orgsListPatGrants({required String org, int? perPage, int? page, OrgsListPatGrantsSort? sort, OrgsListPatGrantsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrganizationProgrammaticAccessGrant>, OneOf2<BasicError, ValidationError>>> orgsListPatGrants({required String org, int? perPage, int? page, OrgsListPatGrantsSort? sort, OrgsListPatGrantsDirection? direction, List<String>? owner, String? repository, String? permission, DateTime? lastUsedBefore, DateTime? lastUsedAfter, List<String>? tokenId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -2297,14 +2692,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrganizationProgrammaticAccessGrant.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrganizationProgrammaticAccessGrant.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2315,7 +2720,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-tokens`
-Future<ApiResult<Map<String, dynamic>, BasicError>> orgsUpdatePatAccesses({required String org, required OrgsUpdatePatAccessesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, OneOf2<BasicError, ValidationError>>> orgsUpdatePatAccesses({required String org, required OrgsUpdatePatAccessesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2326,13 +2731,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2343,7 +2759,7 @@ return execute(
 /// Only GitHub Apps can use this endpoint.
 ///
 /// `POST /orgs/{org}/personal-access-tokens/{pat_id}`
-Future<ApiResult<void, BasicError>> orgsUpdatePatAccess({required String org, required int patId, required OrgsUpdatePatAccessRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> orgsUpdatePatAccess({required String org, required int patId, required OrgsUpdatePatAccessRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2354,11 +2770,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2389,14 +2815,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2415,14 +2848,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2450,14 +2890,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2476,13 +2923,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return CustomProperty.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CustomProperty.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2506,13 +2961,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return CustomProperty.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CustomProperty.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2534,11 +2997,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2571,14 +3041,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrgRepoCustomPropertyValues.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrgRepoCustomPropertyValues.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2596,7 +3073,7 @@ return execute(
 ///   - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.
 ///
 /// `PATCH /orgs/{org}/properties/values`
-Future<ApiResult<void, BasicError>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationValues({required String org, required OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, OneOf2<BasicError, ValidationError>>> orgsCustomPropertiesForReposCreateOrUpdateOrganizationValues({required String org, required OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2607,11 +3084,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2640,11 +3127,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -2662,7 +3149,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -2683,11 +3170,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2705,7 +3199,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -2735,14 +3229,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => RulesetVersion.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => RulesetVersion.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2760,13 +3261,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RulesetVersionWithState.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RulesetVersionWithState.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404 || 500:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2786,10 +3295,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ImmutableReleasesOrganizationSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ImmutableReleasesOrganizationSettings.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2811,7 +3321,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -2843,10 +3353,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgsGetImmutableReleasesSettingsRepositoriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgsGetImmutableReleasesSettingsRepositoriesResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -2868,7 +3379,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -2889,7 +3400,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -2910,7 +3421,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -2920,7 +3431,7 @@ return execute(
 /// Lists all of the authenticated user's organization memberships.
 ///
 /// `GET /user/memberships/orgs`
-Future<ApiResult<List<OrgMembership>, BasicError>> orgsListMembershipsForAuthenticatedUser({OrgsListMembershipsForAuthenticatedUserState? state, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<OrgMembership>, OneOf2<BasicError, ValidationError>>> orgsListMembershipsForAuthenticatedUser({OrgsListMembershipsForAuthenticatedUserState? state, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (state != null) {
   queryParameters['state'] = state.toJson();
@@ -2943,14 +3454,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrgMembership.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrgMembership.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2968,13 +3491,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgMembership.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -2983,7 +3514,7 @@ return execute(
 /// Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.
 ///
 /// `PATCH /user/memberships/orgs/{org}`
-Future<ApiResult<OrgMembership, BasicError>> orgsUpdateMembershipForAuthenticatedUser({required String org, required OrgsUpdateMembershipForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<OrgMembership, OneOf2<BasicError, ValidationError>>> orgsUpdateMembershipForAuthenticatedUser({required String org, required OrgsUpdateMembershipForAuthenticatedUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -2994,13 +3525,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OrgMembership.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return OrgMembership.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403 || 404:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3034,14 +3576,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -3072,11 +3623,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2($value)'; } 
  }
-typedef DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment = OneOf2<String,DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2>;
+
+@immutable
+final class DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment {
+  const DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment({this.string = const Omittable.absent(),
+this.deleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment._({required this.rawValue, required this.string,
+required this.deleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2,});
+  factory DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment.fromJson(Object? json) => DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+deleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2: parseAnyOfVariant<DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2>(json, (value) => DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2> deleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || deleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (deleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2.isPresent) deleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment(${toJson()})';
+}

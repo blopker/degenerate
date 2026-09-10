@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ModifyVolumeStatus represents the status object of ControllerModifyVolume operation
-@immutable final class ModifyVolumeStatus {const ModifyVolumeStatus({this.status = '', this.targetVolumeAttributesClassName, });
+@immutable final class ModifyVolumeStatus {const ModifyVolumeStatus({required this.status, this.targetVolumeAttributesClassName, });
 
 factory ModifyVolumeStatus.fromJson(Map<String, dynamic> json) { return ModifyVolumeStatus(
   status: json['status'] as String,

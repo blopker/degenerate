@@ -11,7 +11,7 @@ void main() {
         interceptors: [interceptor],
         terminal: (req) async {
           capturedHeaders = req.headers;
-          return ApiResponse(statusCode: 200, body: 'ok');
+          return _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -30,7 +30,7 @@ void main() {
         interceptors: [interceptor],
         terminal: (req) async {
           capturedHeaders = req.headers;
-          return ApiResponse(statusCode: 200, body: 'ok');
+          return _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -55,9 +55,9 @@ void main() {
           callCount++;
           final auth = req.headers['Authorization'];
           if (auth == 'Bearer expired-token') {
-            return ApiResponse(statusCode: 401, body: 'unauthorized');
+            return _response(statusCode: 401, body: 'unauthorized');
           }
-          return ApiResponse(statusCode: 200, body: 'ok');
+          return _response(statusCode: 200, body: 'ok');
         },
       );
 
@@ -77,7 +77,7 @@ void main() {
         interceptors: [interceptor],
         terminal: (req) async {
           callCount++;
-          return ApiResponse(statusCode: 401, body: 'unauthorized');
+          return _response(statusCode: 401, body: 'unauthorized');
         },
       );
 
@@ -99,7 +99,7 @@ void main() {
         interceptors: [interceptor],
         terminal: (req) async {
           callCount++;
-          return ApiResponse(statusCode: 401, body: 'unauthorized');
+          return _response(statusCode: 401, body: 'unauthorized');
         },
       );
 
@@ -111,3 +111,11 @@ void main() {
     });
   });
 }
+
+StreamedApiResponse _response({
+  required int statusCode,
+  required String body,
+  Map<String, String> headers = const {},
+}) => StreamedApiResponse.fromResponse(ApiResponse(
+  statusCode: statusCode, body: body, headers: headers,
+));

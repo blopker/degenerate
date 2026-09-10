@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_messages2.dart';import 'web3_single_response_result_info.dart';import 'web3_web3_hostname.dart';@immutable final class Web3SingleResponse {const Web3SingleResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'web3_messages2.dart';import 'web3_single_response_result_info.dart';import 'web3_web3_hostname.dart';@immutable final class Web3SingleResponse {const Web3SingleResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo = const Omittable.absent(), });
 
 factory Web3SingleResponse.fromJson(Map<String, dynamic> json) { return Web3SingleResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => Web3Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => Web3Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: Web3Web3Hostname.fromJson(json['result'] as Map<String, dynamic>),
   success: json['success'] as bool,
-  resultInfo: json['result_info'] != null ? OneOf2.parse(json['result_info'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,) : null,
+  resultInfo: json.containsKey('result_info') ? Omittable(json['result_info'] != null ? Web3SingleResponseResultInfo.fromJson(json['result_info']) : null) : const Omittable.absent(),
 ); }
 
 final List<Web3Messages2> errors;
@@ -20,25 +20,25 @@ final Web3Web3Hostname result;
 final bool success;
 
 /// Provides the API response.
-final Web3SingleResponseResultInfo? resultInfo;
+final Omittable<Web3SingleResponseResultInfo?> resultInfo;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'result': result.toJson(),
   'success': success,
-  if (resultInfo != null) 'result_info': resultInfo?.toJson(),
+  if (resultInfo.isPresent) 'result_info': resultInfo.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-Web3SingleResponse copyWith({List<Web3Messages2>? errors, List<Web3Messages2>? messages, Web3Web3Hostname? result, bool? success, Web3SingleResponseResultInfo? Function()? resultInfo, }) { return Web3SingleResponse(
+Web3SingleResponse copyWith({List<Web3Messages2>? errors, List<Web3Messages2>? messages, Web3Web3Hostname? result, bool? success, Omittable<Web3SingleResponseResultInfo?>? resultInfo, }) { return Web3SingleResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,
   success: success ?? this.success,
-  resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
+  resultInfo: resultInfo ?? this.resultInfo,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is Web3SingleResponse &&

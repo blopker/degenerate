@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_ai_bots_protection.dart';import 'bot_management_bot_fight_mode_config_stale_zone_configuration.dart';import 'bot_management_cf_robots_variant.dart';import 'bot_management_crawler_protection.dart';import 'bot_management_enable_js.dart';import 'bot_management_is_robots_txt_managed.dart';import 'bot_management_using_latest_model.dart';/// Whether to enable Bot Fight Mode.
-extension type const BotManagementFightMode(bool value) {
-factory BotManagementFightMode.fromJson(bool json) => BotManagementFightMode(json);
-
-bool toJson() => value;
-
-}
-@immutable final class BotManagementBotFightModeConfig {const BotManagementBotFightModeConfig({this.aiBotsProtection, this.cfRobotsVariant, this.crawlerProtection, this.enableJs, this.isRobotsTxtManaged, this.usingLatestModel, this.fightMode, this.staleZoneConfiguration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_ai_bots_protection.dart';import 'bot_management_bot_fight_mode_config_stale_zone_configuration.dart';import 'bot_management_cf_robots_variant.dart';import 'bot_management_crawler_protection.dart';import 'bot_management_enable_js.dart';import 'bot_management_fight_mode.dart';import 'bot_management_is_robots_txt_managed.dart';import 'bot_management_using_latest_model.dart';@immutable final class BotManagementBotFightModeConfig {const BotManagementBotFightModeConfig({this.aiBotsProtection, this.cfRobotsVariant, this.crawlerProtection, this.enableJs, this.isRobotsTxtManaged, this.usingLatestModel, this.fightMode, this.staleZoneConfiguration, });
 
 factory BotManagementBotFightModeConfig.fromJson(Map<String, dynamic> json) { return BotManagementBotFightModeConfig(
   aiBotsProtection: json['ai_bots_protection'] != null ? BotManagementAiBotsProtection.fromJson(json['ai_bots_protection'] as String) : null,

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscri
 @immutable final class PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettings {const PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettings({this.accountTaxIds, this.issuer, });
 
 factory PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettings(
-  accountTaxIds: json['account_tax_ids'] != null ? OneOf2.parse(json['account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIdsVariant2.fromJson(v as String),) : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsAccountTaxIds.fromJson(json['account_tax_ids']) : null,
   issuer: json['issuer'] != null ? PostSubscriptionsSubscriptionExposedIdRequestInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
 ); }
 

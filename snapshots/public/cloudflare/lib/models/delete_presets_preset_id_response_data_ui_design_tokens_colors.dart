@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_presets_preset_id_response_data_ui_design_tokens_colors_background.dart';import 'delete_presets_preset_id_response_data_ui_design_tokens_colors_brand.dart';@immutable final class DeletePresetsPresetIdResponseDataUiDesignTokensColors {const DeletePresetsPresetIdResponseDataUiDesignTokensColors({required this.background, required this.brand, this.danger = '#FF2D2D', this.success = '#62A504', this.text = '#EEEEEE', this.textOnBrand = '#EEEEEE', this.videoBg = '#191919', this.warning = '#FFCD07', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'delete_presets_preset_id_response_data_ui_design_tokens_colors_background.dart';import 'delete_presets_preset_id_response_data_ui_design_tokens_colors_brand.dart';@immutable final class DeletePresetsPresetIdResponseDataUiDesignTokensColors {const DeletePresetsPresetIdResponseDataUiDesignTokensColors({required this.background, required this.brand, required this.danger, required this.success, required this.text, required this.textOnBrand, required this.videoBg, required this.warning, });
 
 factory DeletePresetsPresetIdResponseDataUiDesignTokensColors.fromJson(Map<String, dynamic> json) { return DeletePresetsPresetIdResponseDataUiDesignTokensColors(
   background: DeletePresetsPresetIdResponseDataUiDesignTokensColorsBackground.fromJson(json['background'] as Map<String, dynamic>),

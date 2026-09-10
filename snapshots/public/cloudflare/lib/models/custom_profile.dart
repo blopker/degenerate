@@ -21,12 +21,12 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CustomProfileType($value)'; } 
  }
-@immutable final class CustomProfile {const CustomProfile({required this.createdAt, required this.id, required this.name, required this.updatedAt, required this.type, this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = DlpConfidence.low, this.contextAwareness, this.dataClasses, this.dataTags, this.description = const Omittable.absent(), this.entries, this.ocrEnabled = false, this.sensitivityLevels, this.sharedEntries, });
+@immutable final class CustomProfile {const CustomProfile({required this.allowedMatchCount, required this.createdAt, required this.id, required this.name, required this.ocrEnabled, required this.updatedAt, required this.type, this.aiContextEnabled, this.confidenceThreshold, this.contextAwareness, this.dataClasses, this.dataTags, this.description = const Omittable.absent(), this.entries, this.sensitivityLevels, this.sharedEntries, });
 
 factory CustomProfile.fromJson(Map<String, dynamic> json) { return CustomProfile(
-  aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
+  aiContextEnabled: json['ai_context_enabled'] as bool?,
   allowedMatchCount: (json['allowed_match_count'] as num).toInt(),
-  confidenceThreshold: json.containsKey('confidence_threshold') ? DlpConfidence.fromJson(json['confidence_threshold'] as String) : DlpConfidence.low,
+  confidenceThreshold: json['confidence_threshold'] != null ? DlpConfidence.fromJson(json['confidence_threshold'] as String) : null,
   contextAwareness: json['context_awareness'] != null ? DlpContextAwareness.fromJson(json['context_awareness'] as Map<String, dynamic>) : null,
   createdAt: DateTime.parse(json['created_at'] as String),
   dataClasses: (json['data_classes'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -42,12 +42,12 @@ factory CustomProfile.fromJson(Map<String, dynamic> json) { return CustomProfile
   type: CustomProfileType.fromJson(json['type'] as String),
 ); }
 
-final bool aiContextEnabled;
+final bool? aiContextEnabled;
 
 /// Related DLP policies will trigger when the match count exceeds the number set.
 final int allowedMatchCount;
 
-final DlpConfidence confidenceThreshold;
+final DlpConfidence? confidenceThreshold;
 
 final DlpContextAwareness? contextAwareness;
 
@@ -83,10 +83,14 @@ final DateTime updatedAt;
 
 final CustomProfileType type;
 
+/// The value with the schema default applied when absent.
+bool get aiContextEnabledOrDefault { return aiContextEnabled ?? false; } 
+/// The value with the schema default applied when absent.
+DlpConfidence get confidenceThresholdOrDefault { return confidenceThreshold ?? DlpConfidence.fromJson('low'); } 
 Map<String, dynamic> toJson() { return {
-  'ai_context_enabled': aiContextEnabled,
+  'ai_context_enabled': ?aiContextEnabled,
   'allowed_match_count': allowedMatchCount,
-  'confidence_threshold': confidenceThreshold.toJson(),
+  if (confidenceThreshold != null) 'confidence_threshold': confidenceThreshold?.toJson(),
   if (contextAwareness != null) 'context_awareness': contextAwareness?.toJson(),
   'created_at': createdAt.toIso8601String(),
   'data_classes': ?dataClasses,
@@ -108,7 +112,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
       json.containsKey('ocr_enabled') && json['ocr_enabled'] is bool &&
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('type'); } 
-CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, DateTime? createdAt, List<String>? Function()? dataClasses, List<String>? Function()? dataTags, Omittable<String?>? description, List<DlpEntry>? Function()? entries, String? id, String? name, bool? ocrEnabled, List<List<String>>? Function()? sensitivityLevels, List<DlpEntry>? Function()? sharedEntries, DateTime? updatedAt, CustomProfileType? type, }) { return CustomProfile(
+CustomProfile copyWith({bool? Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence? Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, DateTime? createdAt, List<String>? Function()? dataClasses, List<String>? Function()? dataTags, Omittable<String?>? description, List<DlpEntry>? Function()? entries, String? id, String? name, bool? ocrEnabled, List<List<String>>? Function()? sensitivityLevels, List<DlpEntry>? Function()? sharedEntries, DateTime? updatedAt, CustomProfileType? type, }) { return CustomProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
   allowedMatchCount: allowedMatchCount ?? this.allowedMatchCount,
   confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,

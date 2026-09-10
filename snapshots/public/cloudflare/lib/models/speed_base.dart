@@ -25,17 +25,17 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'SpeedBaseValue($value)'; } 
  }
-@immutable final class SpeedBase {const SpeedBase({this.editable = true, this.id, this.modifiedOn = const Omittable.absent(), this.value, });
+@immutable final class SpeedBase {const SpeedBase({this.editable, this.id, this.modifiedOn = const Omittable.absent(), this.value, });
 
 factory SpeedBase.fromJson(Map<String, dynamic> json) { return SpeedBase(
-  editable: json.containsKey('editable') ? json['editable'] as bool : true,
+  editable: json['editable'] as bool?,
   id: json['id'] as String?,
   modifiedOn: json.containsKey('modified_on') ? Omittable(json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null) : const Omittable.absent(),
   value: json['value'] != null ? SpeedBaseValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Whether or not this setting can be modified for this zone (based on your Cloudflare plan level).
-final bool editable;
+final bool? editable;
 
 /// Identifier of the zone setting.
 final String? id;
@@ -46,14 +46,16 @@ final Omittable<DateTime?> modifiedOn;
 /// Current value of the zone setting.
 final SpeedBaseValue? value;
 
+/// The value with the schema default applied when absent.
+bool get editableOrDefault { return editable ?? true; } 
 Map<String, dynamic> toJson() { return {
-  'editable': editable,
+  'editable': ?editable,
   'id': ?id,
   if (modifiedOn.isPresent) 'modified_on': modifiedOn.value?.toIso8601String(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'editable', 'id', 'modified_on', 'value'}.contains(key)); } 
-SpeedBase copyWith({bool Function()? editable, String? Function()? id, Omittable<DateTime?>? modifiedOn, SpeedBaseValue? Function()? value, }) { return SpeedBase(
+SpeedBase copyWith({bool? Function()? editable, String? Function()? id, Omittable<DateTime?>? modifiedOn, SpeedBaseValue? Function()? value, }) { return SpeedBase(
   editable: editable != null ? editable() : this.editable,
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,

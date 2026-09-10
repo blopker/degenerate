@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_create_deployment_request_payload.dart';@immutable final class ReposCreateDeploymentRequest {const ReposCreateDeploymentRequest({required this.ref, this.task = 'deploy', this.autoMerge = true, this.requiredContexts, this.payload, this.environment = 'production', this.description = '', this.transientEnvironment = false, this.productionEnvironment, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_create_deployment_request_payload.dart';@immutable final class ReposCreateDeploymentRequest {const ReposCreateDeploymentRequest({required this.ref, this.task, this.autoMerge, this.requiredContexts, this.payload, this.environment, this.description = const Omittable.absent(), this.transientEnvironment, this.productionEnvironment, });
 
 factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentRequest(
   ref: json['ref'] as String,
-  task: json.containsKey('task') ? json['task'] as String : 'deploy',
-  autoMerge: json.containsKey('auto_merge') ? json['auto_merge'] as bool : true,
+  task: json['task'] as String?,
+  autoMerge: json['auto_merge'] as bool?,
   requiredContexts: (json['required_contexts'] as List<dynamic>?)?.map((e) => e as String).toList(),
   payload: json['payload'] != null ? OneOf2.parse(json['payload'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,) : null,
-  environment: json.containsKey('environment') ? json['environment'] as String : 'production',
-  description: json.containsKey('description') ? json['description'] as String? : '',
-  transientEnvironment: json.containsKey('transient_environment') ? json['transient_environment'] as bool : false,
+  environment: json['environment'] as String?,
+  description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
+  transientEnvironment: json['transient_environment'] as bool?,
   productionEnvironment: json['production_environment'] as bool?,
 ); }
 
@@ -18,10 +18,10 @@ factory ReposCreateDeploymentRequest.fromJson(Map<String, dynamic> json) { retur
 final String ref;
 
 /// Specifies a task to execute (e.g., `deploy` or `deploy:migrations`).
-final String task;
+final String? task;
 
 /// Attempts to automatically merge the default branch into the requested ref, if it's behind the default branch.
-final bool autoMerge;
+final bool? autoMerge;
 
 /// The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
 final List<String>? requiredContexts;
@@ -29,37 +29,47 @@ final List<String>? requiredContexts;
 final ReposCreateDeploymentRequestPayload? payload;
 
 /// Name for the target deployment environment (e.g., `production`, `staging`, `qa`).
-final String environment;
+final String? environment;
 
 /// Short description of the deployment.
-final String? description;
+final Omittable<String?> description;
 
 /// Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
-final bool transientEnvironment;
+final bool? transientEnvironment;
 
 /// Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
 final bool? productionEnvironment;
 
+/// The value with the schema default applied when absent.
+String get taskOrDefault { return task ?? 'deploy'; } 
+/// The value with the schema default applied when absent.
+bool get autoMergeOrDefault { return autoMerge ?? true; } 
+/// The value with the schema default applied when absent.
+String get environmentOrDefault { return environment ?? 'production'; } 
+/// The value with the schema default applied when absent.
+String? get descriptionOrDefault { return description.valueOr(''); } 
+/// The value with the schema default applied when absent.
+bool get transientEnvironmentOrDefault { return transientEnvironment ?? false; } 
 Map<String, dynamic> toJson() { return {
   'ref': ref,
-  'task': task,
-  'auto_merge': autoMerge,
+  'task': ?task,
+  'auto_merge': ?autoMerge,
   'required_contexts': ?requiredContexts,
   if (payload != null) 'payload': payload?.toJson(),
-  'environment': environment,
-  'description': ?description,
-  'transient_environment': transientEnvironment,
+  'environment': ?environment,
+  if (description.isPresent) 'description': description.value,
+  'transient_environment': ?transientEnvironment,
   'production_environment': ?productionEnvironment,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String; } 
-ReposCreateDeploymentRequest copyWith({String? ref, String Function()? task, bool Function()? autoMerge, List<String>? Function()? requiredContexts, ReposCreateDeploymentRequestPayload? Function()? payload, String Function()? environment, String? Function()? description, bool Function()? transientEnvironment, bool? Function()? productionEnvironment, }) { return ReposCreateDeploymentRequest(
+ReposCreateDeploymentRequest copyWith({String? ref, String? Function()? task, bool? Function()? autoMerge, List<String>? Function()? requiredContexts, ReposCreateDeploymentRequestPayload? Function()? payload, String? Function()? environment, Omittable<String?>? description, bool? Function()? transientEnvironment, bool? Function()? productionEnvironment, }) { return ReposCreateDeploymentRequest(
   ref: ref ?? this.ref,
   task: task != null ? task() : this.task,
   autoMerge: autoMerge != null ? autoMerge() : this.autoMerge,
   requiredContexts: requiredContexts != null ? requiredContexts() : this.requiredContexts,
   payload: payload != null ? payload() : this.payload,
   environment: environment != null ? environment() : this.environment,
-  description: description != null ? description() : this.description,
+  description: description ?? this.description,
   transientEnvironment: transientEnvironment != null ? transientEnvironment() : this.transientEnvironment,
   productionEnvironment: productionEnvironment != null ? productionEnvironment() : this.productionEnvironment,
 ); } 

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTaxRegistrationsRequestActiveFromVariant1($value)'; } 
  }
-typedef PostTaxRegistrationsRequestActiveFrom = OneOf2<PostTaxRegistrationsRequestActiveFromVariant1,int>;
+/// Time at which the Tax Registration becomes active. It can be either `now` to indicate the current time, or a future timestamp measured in seconds since the Unix epoch.
+@immutable
+final class PostTaxRegistrationsRequestActiveFrom {
+  const PostTaxRegistrationsRequestActiveFrom({this.postTaxRegistrationsRequestActiveFromVariant1 = const Omittable.absent(),
+this.$int = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTaxRegistrationsRequestActiveFrom._({required this.rawValue, required this.postTaxRegistrationsRequestActiveFromVariant1,
+required this.$int,});
+  factory PostTaxRegistrationsRequestActiveFrom.fromJson(Object? json) => PostTaxRegistrationsRequestActiveFrom._(
+    rawValue: Omittable(json),
+    postTaxRegistrationsRequestActiveFromVariant1: parseAnyOfVariant<PostTaxRegistrationsRequestActiveFromVariant1>(json, (value) => PostTaxRegistrationsRequestActiveFromVariant1.fromJson(value! as String)),
+$int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<PostTaxRegistrationsRequestActiveFromVariant1> postTaxRegistrationsRequestActiveFromVariant1;
+final Omittable<int> $int;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => postTaxRegistrationsRequestActiveFromVariant1.isPresent || $int.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (postTaxRegistrationsRequestActiveFromVariant1.isPresent) postTaxRegistrationsRequestActiveFromVariant1.value?.toJson(),
+if ($int.isPresent) $int.value,
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTaxRegistrationsRequestActiveFrom && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTaxRegistrationsRequestActiveFrom(${toJson()})';
+}

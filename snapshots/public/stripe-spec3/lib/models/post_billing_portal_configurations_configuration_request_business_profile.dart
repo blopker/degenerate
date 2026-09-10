@@ -4,9 +4,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing
 @immutable final class PostBillingPortalConfigurationsConfigurationRequestBusinessProfile {const PostBillingPortalConfigurationsConfigurationRequestBusinessProfile({this.headline, this.privacyPolicyUrl, this.termsOfServiceUrl, });
 
 factory PostBillingPortalConfigurationsConfigurationRequestBusinessProfile.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsConfigurationRequestBusinessProfile(
-  headline: json['headline'] != null ? OneOf2.parse(json['headline'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadlineVariant2.fromJson(v as String),) : null,
-  privacyPolicyUrl: json['privacy_policy_url'] != null ? OneOf2.parse(json['privacy_policy_url'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrlVariant2.fromJson(v as String),) : null,
-  termsOfServiceUrl: json['terms_of_service_url'] != null ? OneOf2.parse(json['terms_of_service_url'], fromA: (v) => v as String, fromB: (v) => PostBillingPortalConfigurationsConfigurationRequestBusinessProfileTermsOfServiceUrlVariant2.fromJson(v as String),) : null,
+  headline: json['headline'] != null ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline.fromJson(json['headline']) : null,
+  privacyPolicyUrl: json['privacy_policy_url'] != null ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrl.fromJson(json['privacy_policy_url']) : null,
+  termsOfServiceUrl: json['terms_of_service_url'] != null ? PostBillingPortalConfigurationsConfigurationRequestBusinessProfileTermsOfServiceUrl.fromJson(json['terms_of_service_url']) : null,
 ); }
 
 final PostBillingPortalConfigurationsConfigurationRequestBusinessProfileHeadline? headline;

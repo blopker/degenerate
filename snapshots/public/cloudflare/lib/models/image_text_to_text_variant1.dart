@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageTextToTextVariant1 {const ImageTextToTextVariant1({required this.image, required this.prompt, this.frequencyPenalty, this.ignoreEos, this.maxTokens = 512, this.presencePenalty, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ImageTextToTextVariant1 {const ImageTextToTextVariant1({required this.image, required this.prompt, this.frequencyPenalty, this.ignoreEos, this.maxTokens, this.presencePenalty, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
 
 factory ImageTextToTextVariant1.fromJson(Map<String, dynamic> json) { return ImageTextToTextVariant1(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   ignoreEos: json['ignore_eos'] as bool?,
   image: json['image'] as String,
-  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 512,
+  maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   prompt: json['prompt'] as String,
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
@@ -26,7 +26,7 @@ final bool? ignoreEos;
 final String image;
 
 /// The maximum number of tokens to generate in the response.
-final int maxTokens;
+final int? maxTokens;
 
 /// Increases the likelihood of the model introducing new topics.
 final double? presencePenalty;
@@ -49,11 +49,13 @@ final double? topK;
 /// Controls the creativity of the AI's responses by adjusting how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 final double? topP;
 
+/// The value with the schema default applied when absent.
+int get maxTokensOrDefault { return maxTokens ?? 512; } 
 Map<String, dynamic> toJson() { return {
   'frequency_penalty': ?frequencyPenalty,
   'ignore_eos': ?ignoreEos,
   'image': image,
-  'max_tokens': maxTokens,
+  'max_tokens': ?maxTokens,
   'presence_penalty': ?presencePenalty,
   'prompt': prompt,
   'repetition_penalty': ?repetitionPenalty,
@@ -64,7 +66,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') && json['image'] is String &&
       json.containsKey('prompt') && json['prompt'] is String; } 
-ImageTextToTextVariant1 copyWith({double? Function()? frequencyPenalty, bool? Function()? ignoreEos, String? image, int Function()? maxTokens, double? Function()? presencePenalty, String? prompt, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageTextToTextVariant1(
+ImageTextToTextVariant1 copyWith({double? Function()? frequencyPenalty, bool? Function()? ignoreEos, String? image, int? Function()? maxTokens, double? Function()? presencePenalty, String? prompt, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageTextToTextVariant1(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   ignoreEos: ignoreEos != null ? ignoreEos() : this.ignoreEos,
   image: image ?? this.image,

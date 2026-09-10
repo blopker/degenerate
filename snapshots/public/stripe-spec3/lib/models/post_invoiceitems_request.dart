@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoiceitems_request_discounts.dart';import 'post_invoiceitems_request_discounts_variant1.dart';import 'post_invoiceitems_request_metadata.dart';import 'post_invoiceitems_request_period.dart';import 'post_invoiceitems_request_price_data.dart';import 'post_invoiceitems_request_pricing.dart';import 'post_invoiceitems_request_tax_code.dart';/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoiceitems_request_discounts.dart';import 'post_invoiceitems_request_metadata.dart';import 'post_invoiceitems_request_period.dart';import 'post_invoiceitems_request_price_data.dart';import 'post_invoiceitems_request_pricing.dart';import 'post_invoiceitems_request_tax_code.dart';/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
 @immutable final class PostInvoiceitemsRequestTaxBehavior {const PostInvoiceitemsRequestTaxBehavior._(this.value);
 
 factory PostInvoiceitemsRequestTaxBehavior.fromJson(String json) { return switch (json) {
@@ -37,17 +37,17 @@ factory PostInvoiceitemsRequest.fromJson(Map<String, dynamic> json) { return Pos
   customerAccount: json['customer_account'] as String?,
   description: json['description'] as String?,
   discountable: json['discountable'] as bool?,
-  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoiceitemsRequestDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoiceitemsRequestDiscountsVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? PostInvoiceitemsRequestDiscounts.fromJson(json['discounts']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   invoice: json['invoice'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostInvoiceitemsRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostInvoiceitemsRequestMetadata.fromJson(json['metadata']) : null,
   period: json['period'] != null ? PostInvoiceitemsRequestPeriod.fromJson(json['period'] as Map<String, dynamic>) : null,
   priceData: json['price_data'] != null ? PostInvoiceitemsRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
   pricing: json['pricing'] != null ? PostInvoiceitemsRequestPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   subscription: json['subscription'] as String?,
   taxBehavior: json['tax_behavior'] != null ? PostInvoiceitemsRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
-  taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => PostInvoiceitemsRequestTaxCodeVariant2.fromJson(v as String),) : null,
+  taxCode: json['tax_code'] != null ? PostInvoiceitemsRequestTaxCode.fromJson(json['tax_code']) : null,
   taxRates: (json['tax_rates'] as List<dynamic>?)?.map((e) => e as String).toList(),
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
 ); }

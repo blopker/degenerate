@@ -25,25 +25,27 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitTrackLayerOutputType($value)'; } 
  }
-@immutable final class RealtimekitTrackLayerOutput {const RealtimekitTrackLayerOutput({this.storageConfig, this.type = RealtimekitTrackLayerOutputType.realtimekitBucket, });
+@immutable final class RealtimekitTrackLayerOutput {const RealtimekitTrackLayerOutput({this.storageConfig = const Omittable.absent(), this.type, });
 
 factory RealtimekitTrackLayerOutput.fromJson(Map<String, dynamic> json) { return RealtimekitTrackLayerOutput(
-  storageConfig: json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null,
-  type: json.containsKey('type') ? RealtimekitTrackLayerOutputType.fromJson(json['type'] as String) : RealtimekitTrackLayerOutputType.realtimekitBucket,
+  storageConfig: json.containsKey('storage_config') ? Omittable(json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  type: json['type'] != null ? RealtimekitTrackLayerOutputType.fromJson(json['type'] as String) : null,
 ); }
 
-final RealtimekitStorageConfig? storageConfig;
+final Omittable<RealtimekitStorageConfig?> storageConfig;
 
 /// The type of output destination this layer is being exported to.
-final RealtimekitTrackLayerOutputType type;
+final RealtimekitTrackLayerOutputType? type;
 
+/// The value with the schema default applied when absent.
+RealtimekitTrackLayerOutputType get typeOrDefault { return type ?? RealtimekitTrackLayerOutputType.fromJson('REALTIMEKIT_BUCKET'); } 
 Map<String, dynamic> toJson() { return {
-  if (storageConfig != null) 'storage_config': storageConfig?.toJson(),
-  'type': type.toJson(),
+  if (storageConfig.isPresent) 'storage_config': storageConfig.value?.toJson(),
+  if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'storage_config', 'type'}.contains(key)); } 
-RealtimekitTrackLayerOutput copyWith({RealtimekitStorageConfig? Function()? storageConfig, RealtimekitTrackLayerOutputType Function()? type, }) { return RealtimekitTrackLayerOutput(
-  storageConfig: storageConfig != null ? storageConfig() : this.storageConfig,
+RealtimekitTrackLayerOutput copyWith({Omittable<RealtimekitStorageConfig?>? storageConfig, RealtimekitTrackLayerOutputType? Function()? type, }) { return RealtimekitTrackLayerOutput(
+  storageConfig: storageConfig ?? this.storageConfig,
   type: type != null ? type() : this.type,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

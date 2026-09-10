@@ -21,6 +21,6 @@ OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelop
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hashAll(additionalProperties.entries).hashCode; } 
+@override int get hashCode { return mapHash(additionalProperties).hashCode; } 
 @override String toString() { return 'OrgsListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope(additionalProperties: $additionalProperties)'; } 
  }

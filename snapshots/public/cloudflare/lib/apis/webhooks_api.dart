@@ -22,10 +22,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RealtimekitWebhooksListSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RealtimekitWebhooksListSuccessResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -45,13 +46,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RealtimekitWebhookSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>);
+case 401:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -69,13 +80,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RealtimekitWebhookSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>);
+case 401:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -95,13 +116,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RealtimekitWebhookSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>);
+case 401:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -121,13 +152,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RealtimekitWebhookSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>);
+case 401:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -145,13 +186,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RealtimekitWebhookSuccessResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return RealtimekitErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>);
+case 401:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 

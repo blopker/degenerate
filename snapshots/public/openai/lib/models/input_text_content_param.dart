@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InputTextContentParamType($value)'; } 
  }
 /// A text input to the model.
-@immutable final class InputTextContentParam {const InputTextContentParam({required this.text, this.type = InputTextContentParamType.inputText, });
+@immutable final class InputTextContentParam {const InputTextContentParam({required this.type, required this.text, });
 
 factory InputTextContentParam.fromJson(Map<String, dynamic> json) { return InputTextContentParam(
   type: InputTextContentParamType.fromJson(json['type'] as String),

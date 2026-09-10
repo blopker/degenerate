@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_providers_request.dart';import '../models/aig_config_create_providers_response400.dart';import '../models/aig_config_create_providers_response_result.dart';import '../models/aig_config_delete_providers_response404.dart';import '../models/aig_config_delete_providers_response_result.dart';import '../models/aig_config_list_providers_response400.dart';import '../models/aig_config_list_providers_response_result.dart';import '../models/aig_config_update_providers_request.dart';import '../models/aig_config_update_providers_response400.dart';import '../models/aig_config_update_providers_response_result.dart';/// AiGatewayProviderConfigsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/aig_config_create_providers_request.dart';import '../models/aig_config_create_providers_response400.dart';import '../models/aig_config_create_providers_response_result.dart';import '../models/aig_config_delete_providers_response404.dart';import '../models/aig_config_delete_providers_response_result.dart';import '../models/aig_config_list_providers_response400.dart';import '../models/aig_config_list_providers_response_result.dart';import '../models/aig_config_update_providers_request.dart';import '../models/aig_config_update_providers_response400.dart';import '../models/aig_config_update_providers_response404.dart';import '../models/aig_config_update_providers_response_result.dart';/// AiGatewayProviderConfigsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -33,14 +33,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => AigConfigListProvidersResponseResult.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => AigConfigListProvidersResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return AigConfigListProvidersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return AigConfigListProvidersResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -60,14 +67,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AigConfigCreateProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AigConfigCreateProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AigConfigCreateProvidersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return AigConfigCreateProvidersResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -76,7 +90,7 @@ return execute(
 /// Updates an existing AI Gateway dataset.
 ///
 /// `PUT /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/provider_configs/{id}`
-Future<ApiResult<AigConfigUpdateProvidersResponseResult, AigConfigUpdateProvidersResponse400>> aigConfigUpdateProviders({required String accountId, required String gatewayId, required String id, AigConfigUpdateProvidersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AigConfigUpdateProvidersResponseResult, OneOf2<AigConfigUpdateProvidersResponse400, AigConfigUpdateProvidersResponse404>>> aigConfigUpdateProviders({required String accountId, required String gatewayId, required String id, AigConfigUpdateProvidersRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -87,14 +101,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AigConfigUpdateProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AigConfigUpdateProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AigConfigUpdateProvidersResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<AigConfigUpdateProvidersResponse400, AigConfigUpdateProvidersResponse404>.a(AigConfigUpdateProvidersResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<AigConfigUpdateProvidersResponse400, AigConfigUpdateProvidersResponse404>.b(AigConfigUpdateProvidersResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -112,14 +136,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return AigConfigDeleteProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return AigConfigDeleteProvidersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return AigConfigDeleteProvidersResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 404:
+final json = jsonDecode(response.body);
+return AigConfigDeleteProvidersResponse404.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

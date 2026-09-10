@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_developer_content.dart';import 'messages51_messages_developer_content_variant2.dart';@immutable final class Messages51MessagesDeveloperRole {const Messages51MessagesDeveloperRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_developer_content.dart';@immutable final class Messages51MessagesDeveloperRole {const Messages51MessagesDeveloperRole._(this.value);
 
 factory Messages51MessagesDeveloperRole.fromJson(String json) { return switch (json) {
   'developer' => developer,
@@ -24,7 +24,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class Messages51MessagesDeveloper {const Messages51MessagesDeveloper({required this.content, required this.role, this.name, });
 
 factory Messages51MessagesDeveloper.fromJson(Map<String, dynamic> json) { return Messages51MessagesDeveloper(
-  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => Messages51MessagesDeveloperContentVariant2.fromJson(e as Map<String, dynamic>)).toList(),),
+  content: Messages51MessagesDeveloperContent.fromJson(json['content']),
   name: json['name'] as String?,
   role: Messages51MessagesDeveloperRole.fromJson(json['role'] as String),
 ); }

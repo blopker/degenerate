@@ -66,4 +66,40 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimeSessionCreateResponseGaModelVariant2($value)'; } 
  }
-typedef RealtimeSessionCreateResponseGaModel = OneOf2<String,RealtimeSessionCreateResponseGaModelVariant2>;
+/// The Realtime model used for this session.
+/// 
+@immutable
+final class RealtimeSessionCreateResponseGaModel {
+  const RealtimeSessionCreateResponseGaModel({this.string = const Omittable.absent(),
+this.realtimeSessionCreateResponseGaModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const RealtimeSessionCreateResponseGaModel._({required this.rawValue, required this.string,
+required this.realtimeSessionCreateResponseGaModelVariant2,});
+  factory RealtimeSessionCreateResponseGaModel.fromJson(Object? json) => RealtimeSessionCreateResponseGaModel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+realtimeSessionCreateResponseGaModelVariant2: parseAnyOfVariant<RealtimeSessionCreateResponseGaModelVariant2>(json, (value) => RealtimeSessionCreateResponseGaModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<RealtimeSessionCreateResponseGaModelVariant2> realtimeSessionCreateResponseGaModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || realtimeSessionCreateResponseGaModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (realtimeSessionCreateResponseGaModelVariant2.isPresent) realtimeSessionCreateResponseGaModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is RealtimeSessionCreateResponseGaModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'RealtimeSessionCreateResponseGaModel(${toJson()})';
+}

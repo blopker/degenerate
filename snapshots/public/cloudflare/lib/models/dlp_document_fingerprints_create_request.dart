@@ -1,27 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDocumentFingerprintsCreateRequest {const DlpDocumentFingerprintsCreateRequest({required this.matchPercent, required this.name, this.description = '', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpDocumentFingerprintsCreateRequest {const DlpDocumentFingerprintsCreateRequest({required this.matchPercent, required this.name, this.description, });
 
 factory DlpDocumentFingerprintsCreateRequest.fromJson(Map<String, dynamic> json) { return DlpDocumentFingerprintsCreateRequest(
-  description: json.containsKey('description') ? json['description'] as String : '',
+  description: json['description'] as String?,
   matchPercent: (json['match_percent'] as num).toInt(),
   name: json['name'] as String,
 ); }
 
-final String description;
+final String? description;
 
 final int matchPercent;
 
 final String name;
 
+/// The value with the schema default applied when absent.
+String get descriptionOrDefault { return description ?? ''; } 
 Map<String, dynamic> toJson() { return {
-  'description': description,
+  'description': ?description,
   'match_percent': matchPercent,
   'name': name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('match_percent') && json['match_percent'] is num &&
       json.containsKey('name') && json['name'] is String; } 
-DlpDocumentFingerprintsCreateRequest copyWith({String Function()? description, int? matchPercent, String? name, }) { return DlpDocumentFingerprintsCreateRequest(
+DlpDocumentFingerprintsCreateRequest copyWith({String? Function()? description, int? matchPercent, String? name, }) { return DlpDocumentFingerprintsCreateRequest(
   description: description != null ? description() : this.description,
   matchPercent: matchPercent ?? this.matchPercent,
   name: name ?? this.name,

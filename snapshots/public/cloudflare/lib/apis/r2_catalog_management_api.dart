@@ -25,14 +25,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? R2DataCatalogCatalogList.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? R2DataCatalogCatalogList.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
-    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -52,14 +59,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? R2DataCatalogCatalog.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? R2DataCatalogCatalog.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
-    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -80,11 +94,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -105,14 +126,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? R2DataCatalogCatalogActivationResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? R2DataCatalogCatalogActivationResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
   onError: (response) {
-    return ResponseCommonFailure55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 409 || 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

@@ -22,11 +22,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramFluxResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostWebsocketRunCfDeepgramFluxResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -57,13 +64,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return WorkersAiPostRunCfDeepgramFluxResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostRunCfDeepgramFluxResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -81,11 +96,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramNova3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostWebsocketRunCfDeepgramNova3Response400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -116,13 +138,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return WorkersAiPostRunCfDeepgramNova3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostRunCfDeepgramNova3Response400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -140,11 +170,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return WorkersAiPostWebsocketRunCfDeepgramNova3InternalResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostWebsocketRunCfDeepgramNova3InternalResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -175,13 +212,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return WorkersAiPostRunCfOpenaiWhisperResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostRunCfOpenaiWhisperResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -212,13 +257,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return TurboResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return TurboResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -249,13 +302,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return jsonDecode(response.body) as Map<String, dynamic>;
+final json = jsonDecode(response.body);
+return json as Map<String, dynamic>;
   },
   onError: (response) {
-    return WorkersAiPostRunCfOpenaiWhisperTinyEnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return WorkersAiPostRunCfOpenaiWhisperTinyEnResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

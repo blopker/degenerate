@@ -20,14 +20,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>).map((e) => MconnCustomerConnector.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return (json['result'] as List<dynamic>).map((e) => MconnCustomerConnector.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return MconnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 500:
+final json = jsonDecode(response.body);
+return MconnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -45,14 +52,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return MconnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 409 || 500:
+final json = jsonDecode(response.body);
+return MconnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -68,14 +82,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return MconnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return MconnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -93,14 +114,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return MconnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return MconnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -118,14 +146,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return MconnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return MconnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -141,14 +176,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return MconnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 500:
+final json = jsonDecode(response.body);
+return MconnBadResponse.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -180,14 +222,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MconnCustomerEventsGetResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MconnCustomerEventsGetResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 429 || 500:
+final json = jsonDecode(response.body);
+return MconnEnvelope.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -203,14 +252,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MconnRecordedEvent.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MconnRecordedEvent.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 429 || 500:
+final json = jsonDecode(response.body);
+return MconnEnvelope.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -226,14 +282,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MconnCustomerEventsGetLatestResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MconnCustomerEventsGetLatestResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 429 || 500:
+final json = jsonDecode(response.body);
+return MconnEnvelope.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -262,14 +325,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MconnCustomerSnapshotsGetResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MconnCustomerSnapshotsGetResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 429 || 500:
+final json = jsonDecode(response.body);
+return MconnEnvelope.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -285,14 +355,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MconnSnapshot.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MconnSnapshot.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 429 || 500:
+final json = jsonDecode(response.body);
+return MconnEnvelope.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -308,14 +385,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return MconnCustomerSnapshotsGetLatestResult.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return MconnCustomerSnapshotsGetLatestResult.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return MconnEnvelope.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400 || 401 || 403 || 404 || 429 || 500:
+final json = jsonDecode(response.body);
+return MconnEnvelope.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

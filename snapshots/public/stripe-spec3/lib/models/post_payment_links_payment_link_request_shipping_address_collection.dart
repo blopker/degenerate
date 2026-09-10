@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2($value)'; } 
  }
-typedef PostPaymentLinksPaymentLinkRequestShippingAddressCollection = OneOf2<ShippingAddressCollectionParams,PostPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2>;
+/// Configuration for collecting the customer's shipping address.
+@immutable
+final class PostPaymentLinksPaymentLinkRequestShippingAddressCollection {
+  const PostPaymentLinksPaymentLinkRequestShippingAddressCollection({this.shippingAddressCollectionParams = const Omittable.absent(),
+this.postPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentLinksPaymentLinkRequestShippingAddressCollection._({required this.rawValue, required this.shippingAddressCollectionParams,
+required this.postPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2,});
+  factory PostPaymentLinksPaymentLinkRequestShippingAddressCollection.fromJson(Object? json) => PostPaymentLinksPaymentLinkRequestShippingAddressCollection._(
+    rawValue: Omittable(json),
+    shippingAddressCollectionParams: parseAnyOfVariant<ShippingAddressCollectionParams>(json, (value) => ShippingAddressCollectionParams.fromJson(value! as Map<String, dynamic>)),
+postPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2: parseAnyOfVariant<PostPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2>(json, (value) => PostPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<ShippingAddressCollectionParams> shippingAddressCollectionParams;
+final Omittable<PostPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2> postPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => shippingAddressCollectionParams.isPresent || postPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (shippingAddressCollectionParams.isPresent) shippingAddressCollectionParams.value?.toJson(),
+if (postPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2.isPresent) postPaymentLinksPaymentLinkRequestShippingAddressCollectionVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestShippingAddressCollection && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentLinksPaymentLinkRequestShippingAddressCollection(${toJson()})';
+}

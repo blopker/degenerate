@@ -22,10 +22,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return GetAppsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetAppsResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -45,10 +46,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return CreateAppResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return CreateAppResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

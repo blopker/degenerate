@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reasoning text from the model.
-@immutable final class ReasoningTextContent {const ReasoningTextContent({required this.text, this.type = 'reasoning_text', });
+@immutable final class ReasoningTextContent {const ReasoningTextContent({required this.type, required this.text, });
 
 factory ReasoningTextContent.fromJson(Map<String, dynamic> json) { return ReasoningTextContent(
   type: json['type'] as String,

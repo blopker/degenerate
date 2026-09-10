@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_bulk_request_indicators_related_events.dart';import 'post_indicator_create_bulk_request_indicators_tags.dart';import 'post_indicator_create_bulk_request_indicators_tags_variant2.dart';@immutable final class PostIndicatorCreateBulkRequestIndicators {const PostIndicatorCreateBulkRequestIndicators({required this.indicatorType, required this.value, this.autoCreateType, this.relatedEvents, this.tags, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_bulk_request_indicators_related_events.dart';import 'post_indicator_create_bulk_request_indicators_tags.dart';@immutable final class PostIndicatorCreateBulkRequestIndicators {const PostIndicatorCreateBulkRequestIndicators({required this.indicatorType, required this.value, this.autoCreateType, this.relatedEvents, this.tags, });
 
 factory PostIndicatorCreateBulkRequestIndicators.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateBulkRequestIndicators(
   autoCreateType: json['autoCreateType'] as bool?,
   indicatorType: json['indicatorType'] as String,
   relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => PostIndicatorCreateBulkRequestIndicatorsRelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
-  tags: (json['tags'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => PostIndicatorCreateBulkRequestIndicatorsTagsVariant2.fromJson(v as Map<String, dynamic>),)).toList(),
+  tags: (json['tags'] as List<dynamic>?)?.map(PostIndicatorCreateBulkRequestIndicatorsTags.fromJson).toList(),
   value: json['value'] as String,
 ); }
 

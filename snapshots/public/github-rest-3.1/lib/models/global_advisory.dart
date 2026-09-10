@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'GlobalAdvisorySeverity($value)'; } 
  }
 /// A GitHub Security Advisory.
-@immutable final class GlobalAdvisory {const GlobalAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.repositoryAdvisoryUrl, required this.summary, required this.description, required this.type, required this.severity, required this.sourceCodeLocation, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.githubReviewedAt, required this.nvdPublishedAt, required this.withdrawnAt, required this.vulnerabilities, required this.cvss, required this.cwes, required this.credits, this.cvssSeverities, this.epss, });
+@immutable final class GlobalAdvisory {const GlobalAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.repositoryAdvisoryUrl, required this.summary, required this.description, required this.type, required this.severity, required this.sourceCodeLocation, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.githubReviewedAt, required this.nvdPublishedAt, required this.withdrawnAt, required this.vulnerabilities, required this.cvss, required this.cwes, required this.credits, this.cvssSeverities = const Omittable.absent(), this.epss = const Omittable.absent(), });
 
 factory GlobalAdvisory.fromJson(Map<String, dynamic> json) { return GlobalAdvisory(
   ghsaId: json['ghsa_id'] as String,
@@ -85,8 +85,8 @@ factory GlobalAdvisory.fromJson(Map<String, dynamic> json) { return GlobalAdviso
   withdrawnAt: json['withdrawn_at'] != null ? DateTime.parse(json['withdrawn_at'] as String) : null,
   vulnerabilities: (json['vulnerabilities'] as List<dynamic>?)?.map((e) => Vulnerability.fromJson(e as Map<String, dynamic>)).toList(),
   cvss: json['cvss'] != null ? GlobalAdvisoryCvss.fromJson(json['cvss'] as Map<String, dynamic>) : null,
-  cvssSeverities: json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null,
-  epss: json['epss'] != null ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>) : null,
+  cvssSeverities: json.containsKey('cvss_severities') ? Omittable(json['cvss_severities'] != null ? CvssSeverities.fromJson(json['cvss_severities'] as Map<String, dynamic>) : null) : const Omittable.absent(),
+  epss: json.containsKey('epss') ? Omittable(json['epss'] != null ? SecurityAdvisoryEpss.fromJson(json['epss'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   cwes: (json['cwes'] as List<dynamic>?)?.map((e) => GlobalAdvisoryCwes.fromJson(e as Map<String, dynamic>)).toList(),
   credits: (json['credits'] as List<dynamic>?)?.map((e) => GlobalAdvisoryCredits.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
@@ -146,9 +146,9 @@ final List<Vulnerability>? vulnerabilities;
 
 final GlobalAdvisoryCvss? cvss;
 
-final CvssSeverities? cvssSeverities;
+final Omittable<CvssSeverities?> cvssSeverities;
 
-final SecurityAdvisoryEpss? epss;
+final Omittable<SecurityAdvisoryEpss?> epss;
 
 final List<GlobalAdvisoryCwes>? cwes;
 
@@ -175,8 +175,8 @@ Map<String, dynamic> toJson() { return {
   'withdrawn_at': withdrawnAt?.toIso8601String(),
   'vulnerabilities': vulnerabilities?.map((e) => e.toJson()).toList(),
   'cvss': cvss?.toJson(),
-  if (cvssSeverities != null) 'cvss_severities': cvssSeverities?.toJson(),
-  if (epss != null) 'epss': epss?.toJson(),
+  if (cvssSeverities.isPresent) 'cvss_severities': cvssSeverities.value?.toJson(),
+  if (epss.isPresent) 'epss': epss.value?.toJson(),
   'cwes': cwes?.map((e) => e.toJson()).toList(),
   'credits': credits?.map((e) => e.toJson()).toList(),
 }; } 
@@ -201,7 +201,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('cvss') &&
       json.containsKey('cwes') &&
       json.containsKey('credits'); } 
-GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url, Uri? htmlUrl, Uri? Function()? repositoryAdvisoryUrl, String? summary, String? Function()? description, GlobalAdvisoryType? type, GlobalAdvisorySeverity? severity, Uri? Function()? sourceCodeLocation, List<GlobalAdvisoryIdentifiers>? Function()? identifiers, List<String>? Function()? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? githubReviewedAt, DateTime? Function()? nvdPublishedAt, DateTime? Function()? withdrawnAt, List<Vulnerability>? Function()? vulnerabilities, GlobalAdvisoryCvss? Function()? cvss, CvssSeverities? Function()? cvssSeverities, SecurityAdvisoryEpss? Function()? epss, List<GlobalAdvisoryCwes>? Function()? cwes, List<GlobalAdvisoryCredits>? Function()? credits, }) { return GlobalAdvisory(
+GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url, Uri? htmlUrl, Uri? Function()? repositoryAdvisoryUrl, String? summary, String? Function()? description, GlobalAdvisoryType? type, GlobalAdvisorySeverity? severity, Uri? Function()? sourceCodeLocation, List<GlobalAdvisoryIdentifiers>? Function()? identifiers, List<String>? Function()? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? githubReviewedAt, DateTime? Function()? nvdPublishedAt, DateTime? Function()? withdrawnAt, List<Vulnerability>? Function()? vulnerabilities, GlobalAdvisoryCvss? Function()? cvss, Omittable<CvssSeverities?>? cvssSeverities, Omittable<SecurityAdvisoryEpss?>? epss, List<GlobalAdvisoryCwes>? Function()? cwes, List<GlobalAdvisoryCredits>? Function()? credits, }) { return GlobalAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,
   cveId: cveId != null ? cveId() : this.cveId,
   url: url ?? this.url,
@@ -221,8 +221,8 @@ GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url,
   withdrawnAt: withdrawnAt != null ? withdrawnAt() : this.withdrawnAt,
   vulnerabilities: vulnerabilities != null ? vulnerabilities() : this.vulnerabilities,
   cvss: cvss != null ? cvss() : this.cvss,
-  cvssSeverities: cvssSeverities != null ? cvssSeverities() : this.cvssSeverities,
-  epss: epss != null ? epss() : this.epss,
+  cvssSeverities: cvssSeverities ?? this.cvssSeverities,
+  epss: epss ?? this.epss,
   cwes: cwes != null ? cwes() : this.cwes,
   credits: credits != null ? credits() : this.credits,
 ); } 

@@ -10,7 +10,7 @@ final class DefaultApi with ApiExecutor {const DefaultApi(this.apiConfig);
 
 ///
 /// `POST /jobs`
-Future<ApiResult<Job, ErrorModel>> createJob({NewJob? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Job?, ErrorModel>> createJob({NewJob? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -21,13 +21,28 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Job.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 200 || >= 202 && < 300:
+return null;
+case 201:
+final json = jsonDecode(response.body);
+return Job.fromJson(json as Map<String, dynamic>);
+default:
+final json = jsonDecode(response.body);
+return Job.fromJson(json as Map<String, dynamic>);
+}
+
   },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -42,10 +57,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Job.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Job.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

@@ -213,11 +213,11 @@ final class NewType {
 @immutable
 final class New {
   const New({
+    required this.$false,
     required this.none,
+    required this.$null,
     required this.$0,
     required this.$empty,
-    this.$false = true,
-    this.$null = NewNull.$null,
     this.constructor,
     this.proto,
     this.hasOwnProperty,
@@ -227,7 +227,7 @@ final class New {
     this.xExtensionLookalike,
     this.$class,
     this.$import,
-    this.$return = false,
+    this.$return,
     this.$void,
     this.package,
   });
@@ -252,7 +252,7 @@ final class New {
       $import: (json['import'] as List<dynamic>?)
           ?.map((e) => $3Incident.fromJson(e as Map<String, dynamic>))
           .toList(),
-      $return: json.containsKey('return') ? json['return'] as bool : false,
+      $return: json['return'] as bool?,
       $void: json['void'] != null ? base64Decode(json['void'] as String) : null,
       package: json['package'] as String?,
     );
@@ -288,11 +288,16 @@ final class New {
 
   final List<$3Incident>? $import;
 
-  final bool $return;
+  final bool? $return;
 
   final Uint8List? $void;
 
   final String? package;
+
+  /// The value with the schema default applied when absent.
+  bool get $returnOrDefault {
+    return $return ?? false;
+  }
 
   Map<String, dynamic> toJson() {
     return {
@@ -310,7 +315,7 @@ final class New {
       'x-extension-lookalike': ?xExtensionLookalike,
       'class': ?$class,
       if ($import != null) 'import': $import?.map((e) => e.toJson()).toList(),
-      'return': $return,
+      'return': ?$return,
       if ($void != null)
         'void': switch ($void) {
           final bytes? => base64Encode(bytes),
@@ -345,7 +350,7 @@ final class New {
     String? Function()? xExtensionLookalike,
     String? Function()? $class,
     List<$3Incident>? Function()? $import,
-    bool Function()? $return,
+    bool? Function()? $return,
     Uint8List? Function()? $void,
     String? Function()? package,
   }) {

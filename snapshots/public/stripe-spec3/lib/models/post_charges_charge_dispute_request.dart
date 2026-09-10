@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges
 factory PostChargesChargeDisputeRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeDisputeRequest(
   evidence: json['evidence'] != null ? PostChargesChargeDisputeRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostChargesChargeDisputeRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostChargesChargeDisputeRequestMetadata.fromJson(json['metadata']) : null,
   submit: json['submit'] as bool?,
 ); }
 

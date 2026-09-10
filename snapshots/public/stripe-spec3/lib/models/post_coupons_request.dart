@@ -40,7 +40,7 @@ factory PostCouponsRequest.fromJson(Map<String, dynamic> json) { return PostCoup
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   id: json['id'] as String?,
   maxRedemptions: json['max_redemptions'] != null ? (json['max_redemptions'] as num).toInt() : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostCouponsRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostCouponsRequestMetadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
   percentOff: json['percent_off'] != null ? (json['percent_off'] as num).toDouble() : null,
   redeemBy: json['redeem_by'] != null ? (json['redeem_by'] as num).toInt() : null,

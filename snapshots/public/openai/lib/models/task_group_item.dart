@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'TaskGroupItemObject($value)'; } 
  }
 /// Collection of workflow tasks grouped together in the thread.
-@immutable final class TaskGroupItem {const TaskGroupItem({required this.id, required this.createdAt, required this.threadId, required this.tasks, this.object = TaskGroupItemObject.chatkitThreadItem, this.type = 'chatkit.task_group', });
+@immutable final class TaskGroupItem {const TaskGroupItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.tasks, });
 
 factory TaskGroupItem.fromJson(Map<String, dynamic> json) { return TaskGroupItem(
   id: json['id'] as String,

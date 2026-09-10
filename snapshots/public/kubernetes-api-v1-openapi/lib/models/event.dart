@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'event_series.dart';import 'event_source.dart';import 'micro_time.dart';import 'object_meta.dart';import 'object_reference.dart';import 'time.dart';/// Event is a report of an event somewhere in the cluster.  Events have a limited retention time and triggers and messages may evolve with time.  Event consumers should not rely on the timing of an event with a given Reason reflecting a consistent underlying trigger, or the continued existence of events with that Reason.  Events should be treated as informative, best-effort, supplemental data.
-@immutable final class Event {const Event({required this.involvedObject, required this.metadata, this.action, this.apiVersion, this.count, this.eventTime, this.firstTimestamp, this.kind, this.lastTimestamp, this.message, this.reason, this.related, this.reportingComponent = '', this.reportingInstance = '', this.series, this.source, this.type, });
+@immutable final class Event {const Event({required this.involvedObject, required this.metadata, this.action, this.apiVersion, this.count, this.eventTime, this.firstTimestamp, this.kind, this.lastTimestamp, this.message, this.reason, this.related, this.reportingComponent, this.reportingInstance, this.series, this.source, this.type, });
 
 factory Event.fromJson(Map<String, dynamic> json) { return Event(
   action: json['action'] as String?,
@@ -16,8 +16,8 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
   metadata: ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>),
   reason: json['reason'] as String?,
   related: json['related'] != null ? ObjectReference.fromJson(json['related'] as Map<String, dynamic>) : null,
-  reportingComponent: json.containsKey('reportingComponent') ? json['reportingComponent'] as String : '',
-  reportingInstance: json.containsKey('reportingInstance') ? json['reportingInstance'] as String : '',
+  reportingComponent: json['reportingComponent'] as String?,
+  reportingInstance: json['reportingInstance'] as String?,
   series: json['series'] != null ? EventSeries.fromJson(json['series'] as Map<String, dynamic>) : null,
   source: json['source'] != null ? EventSource.fromJson(json['source'] as Map<String, dynamic>) : null,
   type: json['type'] as String?,
@@ -60,10 +60,10 @@ final String? reason;
 final ObjectReference? related;
 
 /// Name of the controller that emitted this Event, e.g. `kubernetes.io/kubelet`.
-final String reportingComponent;
+final String? reportingComponent;
 
 /// ID of the controller instance, e.g. `kubelet-xyzf`.
-final String reportingInstance;
+final String? reportingInstance;
 
 /// Data about the Event series this event represents or nil if it's a singleton Event.
 final EventSeries? series;
@@ -74,6 +74,10 @@ final EventSource? source;
 /// Type of this event (Normal, Warning), new types could be added in the future
 final String? type;
 
+/// The value with the schema default applied when absent.
+String get reportingComponentOrDefault { return reportingComponent ?? ''; } 
+/// The value with the schema default applied when absent.
+String get reportingInstanceOrDefault { return reportingInstance ?? ''; } 
 Map<String, dynamic> toJson() { return {
   'action': ?action,
   'apiVersion': ?apiVersion,
@@ -87,15 +91,15 @@ Map<String, dynamic> toJson() { return {
   'metadata': metadata.toJson(),
   'reason': ?reason,
   if (related != null) 'related': related?.toJson(),
-  'reportingComponent': reportingComponent,
-  'reportingInstance': reportingInstance,
+  'reportingComponent': ?reportingComponent,
+  'reportingInstance': ?reportingInstance,
   if (series != null) 'series': series?.toJson(),
   if (source != null) 'source': source?.toJson(),
   'type': ?type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('involvedObject') &&
       json.containsKey('metadata'); } 
-Event copyWith({String? Function()? action, String? Function()? apiVersion, int? Function()? count, MicroTime? Function()? eventTime, Time? Function()? firstTimestamp, ObjectReference? involvedObject, String? Function()? kind, Time? Function()? lastTimestamp, String? Function()? message, ObjectMeta? metadata, String? Function()? reason, ObjectReference? Function()? related, String Function()? reportingComponent, String Function()? reportingInstance, EventSeries? Function()? series, EventSource? Function()? source, String? Function()? type, }) { return Event(
+Event copyWith({String? Function()? action, String? Function()? apiVersion, int? Function()? count, MicroTime? Function()? eventTime, Time? Function()? firstTimestamp, ObjectReference? involvedObject, String? Function()? kind, Time? Function()? lastTimestamp, String? Function()? message, ObjectMeta? metadata, String? Function()? reason, ObjectReference? Function()? related, String? Function()? reportingComponent, String? Function()? reportingInstance, EventSeries? Function()? series, EventSource? Function()? source, String? Function()? type, }) { return Event(
   action: action != null ? action() : this.action,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   count: count != null ? count() : this.count,

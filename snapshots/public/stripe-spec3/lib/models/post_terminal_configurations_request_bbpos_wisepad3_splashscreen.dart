@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2($value)'; } 
  }
-typedef PostTerminalConfigurationsRequestBbposWisepad3Splashscreen = OneOf2<String,PostTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2>;
+
+@immutable
+final class PostTerminalConfigurationsRequestBbposWisepad3Splashscreen {
+  const PostTerminalConfigurationsRequestBbposWisepad3Splashscreen({this.string = const Omittable.absent(),
+this.postTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTerminalConfigurationsRequestBbposWisepad3Splashscreen._({required this.rawValue, required this.string,
+required this.postTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2,});
+  factory PostTerminalConfigurationsRequestBbposWisepad3Splashscreen.fromJson(Object? json) => PostTerminalConfigurationsRequestBbposWisepad3Splashscreen._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2: parseAnyOfVariant<PostTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2>(json, (value) => PostTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2> postTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2.isPresent) postTerminalConfigurationsRequestBbposWisepad3SplashscreenVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTerminalConfigurationsRequestBbposWisepad3Splashscreen && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTerminalConfigurationsRequestBbposWisepad3Splashscreen(${toJson()})';
+}

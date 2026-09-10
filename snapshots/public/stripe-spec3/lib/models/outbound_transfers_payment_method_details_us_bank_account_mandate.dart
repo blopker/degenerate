@@ -1,3 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';typedef OutboundTransfersPaymentMethodDetailsUsBankAccountMandate = OneOf2<String,Mandate>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';/// ID of the mandate used to make this payment.
+@immutable
+final class OutboundTransfersPaymentMethodDetailsUsBankAccountMandate {
+  const OutboundTransfersPaymentMethodDetailsUsBankAccountMandate({this.string = const Omittable.absent(),
+this.mandate = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const OutboundTransfersPaymentMethodDetailsUsBankAccountMandate._({required this.rawValue, required this.string,
+required this.mandate,});
+  factory OutboundTransfersPaymentMethodDetailsUsBankAccountMandate.fromJson(Object? json) => OutboundTransfersPaymentMethodDetailsUsBankAccountMandate._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+mandate: parseAnyOfVariant<Mandate>(json, (value) => Mandate.fromJson(value! as Map<String, dynamic>)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<Mandate> mandate;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || mandate.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (mandate.isPresent) mandate.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is OutboundTransfersPaymentMethodDetailsUsBankAccountMandate && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'OutboundTransfersPaymentMethodDetailsUsBankAccountMandate(${toJson()})';
+}

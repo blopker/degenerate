@@ -3,8 +3,8 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fraudulent_additional_documentation.dart';import 'fraudulent_explanation.dart';@immutable final class Fraudulent {const Fraudulent({this.additionalDocumentation, this.explanation, });
 
 factory Fraudulent.fromJson(Map<String, dynamic> json) { return Fraudulent(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => FraudulentAdditionalDocumentationVariant2.fromJson(v as String),) : null,
-  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => FraudulentExplanationVariant2.fromJson(v as String),) : null,
+  additionalDocumentation: json['additional_documentation'] != null ? FraudulentAdditionalDocumentation.fromJson(json['additional_documentation']) : null,
+  explanation: json['explanation'] != null ? FraudulentExplanation.fromJson(json['explanation']) : null,
 ); }
 
 final FraudulentAdditionalDocumentation? additionalDocumentation;

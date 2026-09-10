@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'ClosedStatusType($value)'; } 
  }
 /// Indicates that a thread has been closed.
-@immutable final class ClosedStatus {const ClosedStatus({required this.reason, this.type = ClosedStatusType.closed, });
+@immutable final class ClosedStatus {const ClosedStatus({required this.type, required this.reason, });
 
 factory ClosedStatus.fromJson(Map<String, dynamic> json) { return ClosedStatus(
   type: ClosedStatusType.fromJson(json['type'] as String),

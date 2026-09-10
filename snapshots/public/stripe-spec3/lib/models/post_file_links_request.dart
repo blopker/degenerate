@@ -6,7 +6,7 @@ factory PostFileLinksRequest.fromJson(Map<String, dynamic> json) { return PostFi
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   file: json['file'] as String,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostFileLinksRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostFileLinksRequestMetadata.fromJson(json['metadata']) : null,
 ); }
 
 /// Specifies which fields in the response should be expanded.

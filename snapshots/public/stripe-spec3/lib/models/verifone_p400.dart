@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'verifone_p400_splashscreen.dart';@immutable final class VerifoneP400 {const VerifoneP400({this.splashscreen});
 
 factory VerifoneP400.fromJson(Map<String, dynamic> json) { return VerifoneP400(
-  splashscreen: json['splashscreen'] != null ? OneOf2.parse(json['splashscreen'], fromA: (v) => v as String, fromB: (v) => VerifoneP400SplashscreenVariant2.fromJson(v as String),) : null,
+  splashscreen: json['splashscreen'] != null ? VerifoneP400Splashscreen.fromJson(json['splashscreen']) : null,
 ); }
 
 final VerifoneP400Splashscreen? splashscreen;

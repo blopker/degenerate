@@ -34,10 +34,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AccountValidationRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountValidationRequest.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

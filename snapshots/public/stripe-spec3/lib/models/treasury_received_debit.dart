@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_debit_transaction.dart';import 'treasury_received_debits_resource_linked_flows.dart';import 'treasury_received_debits_resource_reversal_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'treasury_transaction.dart';/// Reason for the failure. A ReceivedDebit might fail because the FinancialAccount doesn't have sufficient funds, is closed, or is frozen.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_debit_transaction.dart';import 'treasury_received_debits_resource_linked_flows.dart';import 'treasury_received_debits_resource_reversal_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';/// Reason for the failure. A ReceivedDebit might fail because the FinancialAccount doesn't have sufficient funds, is closed, or is frozen.
 @immutable final class TreasuryReceivedDebitFailureCode {const TreasuryReceivedDebitFailureCode._(this.value);
 
 factory TreasuryReceivedDebitFailureCode.fromJson(String json) { return switch (json) {
@@ -128,7 +128,7 @@ factory TreasuryReceivedDebit.fromJson(Map<String, dynamic> json) { return Treas
   object: TreasuryReceivedDebitObject.fromJson(json['object'] as String),
   reversalDetails: json.containsKey('reversal_details') ? Omittable(json['reversal_details'] != null ? TreasuryReceivedDebitsResourceReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   status: TreasuryReceivedDebitStatus.fromJson(json['status'] as String),
-  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? TreasuryReceivedDebitTransaction.fromJson(json['transaction']) : null) : const Omittable.absent(),
 ); }
 
 /// Amount (in cents) transferred.

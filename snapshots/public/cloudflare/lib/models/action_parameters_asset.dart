@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of a custom asset to serve as the error response.
-extension type const RulesetsServeErrorAssetName(String value) {
-factory RulesetsServeErrorAssetName.fromJson(String json) => RulesetsServeErrorAssetName(json);
-
-String toJson() => value;
-
-}
-@immutable final class ActionParametersAsset {const ActionParametersAsset({required this.assetName});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rulesets_serve_error_asset_name.dart';@immutable final class ActionParametersAsset {const ActionParametersAsset({required this.assetName});
 
 factory ActionParametersAsset.fromJson(Map<String, dynamic> json) { return ActionParametersAsset(
   assetName: RulesetsServeErrorAssetName.fromJson(json['asset_name'] as String),

@@ -80,7 +80,7 @@ factory EmailDnsRecord.fromJson(Map<String, dynamic> json) { return EmailDnsReco
   content: json['content'] as String?,
   name: json['name'] as String?,
   priority: json['priority'] != null ? (json['priority'] as num).toDouble() : null,
-  ttl: json['ttl'] != null ? OneOf2.parse(json['ttl'], fromA: (v) => (v as num).toDouble(), fromB: (v) => EmailDnsRecordTtlVariant2.fromJson((v as num).toDouble()),) : null,
+  ttl: json['ttl'] != null ? EmailDnsRecordTtl.fromJson(json['ttl']) : null,
   type: json['type'] != null ? EmailDnsRecordType.fromJson(json['type'] as String) : null,
 ); }
 

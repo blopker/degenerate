@@ -4,6 +4,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'private_user
 
 /// Deserialize from JSON, dispatching on the `user_view_type` discriminator.
 factory UsersGetByIdResponse.fromJson(Map<String, dynamic> json) { return switch (json['user_view_type']) {
+  'private-user' => UsersGetByIdResponsePrivateUser.fromJson(json),
+  'public-user' => UsersGetByIdResponsePublicUser.fromJson(json),
   'public' => UsersGetByIdResponsePublic.fromJson(json),
   'private' => UsersGetByIdResponsePrivate.fromJson(json),
   _ => UsersGetByIdResponse$Unknown(json),
@@ -14,6 +16,32 @@ String get userViewType;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is UsersGetByIdResponse$Unknown; } 
+ }
+@immutable final class UsersGetByIdResponsePrivateUser extends UsersGetByIdResponse {const UsersGetByIdResponsePrivateUser(this.privateUser);
+
+factory UsersGetByIdResponsePrivateUser.fromJson(Map<String, dynamic> json) { return UsersGetByIdResponsePrivateUser(PrivateUser.fromJson(json)); }
+
+final PrivateUser privateUser;
+
+@override String get userViewType { return 'private-user'; } 
+@override Map<String, dynamic> toJson() { return {...privateUser.toJson(), 'user_view_type': userViewType}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UsersGetByIdResponsePrivateUser && privateUser == other.privateUser; } 
+@override int get hashCode { return privateUser.hashCode; } 
+@override String toString() { return 'UsersGetByIdResponsePrivateUser(privateUser: $privateUser)'; } 
+ }
+@immutable final class UsersGetByIdResponsePublicUser extends UsersGetByIdResponse {const UsersGetByIdResponsePublicUser(this.publicUser);
+
+factory UsersGetByIdResponsePublicUser.fromJson(Map<String, dynamic> json) { return UsersGetByIdResponsePublicUser(PublicUser.fromJson(json)); }
+
+final PublicUser publicUser;
+
+@override String get userViewType { return 'public-user'; } 
+@override Map<String, dynamic> toJson() { return {...publicUser.toJson(), 'user_view_type': userViewType}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UsersGetByIdResponsePublicUser && publicUser == other.publicUser; } 
+@override int get hashCode { return publicUser.hashCode; } 
+@override String toString() { return 'UsersGetByIdResponsePublicUser(publicUser: $publicUser)'; } 
  }
 @immutable final class UsersGetByIdResponsePublic extends UsersGetByIdResponse {const UsersGetByIdResponsePublic(this.publicUser);
 

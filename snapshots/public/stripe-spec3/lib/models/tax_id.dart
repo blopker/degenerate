@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'tax_i_ds_owner.dart';import 'tax_id_customer.dart';import 'tax_id_verification.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_i_ds_owner.dart';import 'tax_id_customer.dart';import 'tax_id_verification.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxIdObject {const TaxIdObject._(this.value);
 
 factory TaxIdObject.fromJson(String json) { return switch (json) {
@@ -389,7 +389,7 @@ bool get isUnknown { return !values.contains(this); }
 factory TaxId.fromJson(Map<String, dynamic> json) { return TaxId(
   country: json.containsKey('country') ? Omittable(json['country'] as String?) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
-  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  customer: json.containsKey('customer') ? Omittable(json['customer'] != null ? TaxIdCustomer.fromJson(json['customer']) : null) : const Omittable.absent(),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,

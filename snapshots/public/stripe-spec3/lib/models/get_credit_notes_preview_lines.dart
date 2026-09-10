@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_tax_amounts.dart';import 'get_credit_notes_preview_lines_tax_amounts_variant1.dart';import 'get_credit_notes_preview_lines_tax_rates.dart';@immutable final class GetCreditNotesPreviewLinesType {const GetCreditNotesPreviewLinesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_tax_amounts.dart';import 'get_credit_notes_preview_lines_tax_rates.dart';@immutable final class GetCreditNotesPreviewLinesType {const GetCreditNotesPreviewLinesType._(this.value);
 
 factory GetCreditNotesPreviewLinesType.fromJson(String json) { return switch (json) {
   'custom_line_item' => customLineItem,
@@ -31,8 +31,8 @@ factory GetCreditNotesPreviewLines.fromJson(Map<String, dynamic> json) { return 
   description: json['description'] as String?,
   invoiceLineItem: json['invoice_line_item'] as String?,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
-  taxAmounts: json['tax_amounts'] != null ? OneOf2.parse(json['tax_amounts'], fromA: (v) => (v as List<dynamic>).map((e) => GetCreditNotesPreviewLinesTaxAmountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetCreditNotesPreviewLinesTaxAmountsVariant2.fromJson(v as String),) : null,
-  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetCreditNotesPreviewLinesTaxRatesVariant2.fromJson(v as String),) : null,
+  taxAmounts: json['tax_amounts'] != null ? GetCreditNotesPreviewLinesTaxAmounts.fromJson(json['tax_amounts']) : null,
+  taxRates: json['tax_rates'] != null ? GetCreditNotesPreviewLinesTaxRates.fromJson(json['tax_rates']) : null,
   type: GetCreditNotesPreviewLinesType.fromJson(json['type'] as String),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,

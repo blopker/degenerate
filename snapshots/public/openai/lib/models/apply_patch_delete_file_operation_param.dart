@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Instruction for deleting an existing file via the apply_patch tool.
-@immutable final class ApplyPatchDeleteFileOperationParam {const ApplyPatchDeleteFileOperationParam({required this.path, this.type = 'delete_file', });
+@immutable final class ApplyPatchDeleteFileOperationParam {const ApplyPatchDeleteFileOperationParam({required this.type, required this.path, });
 
 factory ApplyPatchDeleteFileOperationParam.fromJson(Map<String, dynamic> json) { return ApplyPatchDeleteFileOperationParam(
   type: json['type'] as String,

@@ -30,10 +30,10 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class NotReceived2 {const NotReceived2({this.additionalDocumentation, this.expectedAt, this.explanation, this.productDescription, this.productType, });
 
 factory NotReceived2.fromJson(Map<String, dynamic> json) { return NotReceived2(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => NotReceived2AdditionalDocumentationVariant2.fromJson(v as String),) : null,
-  expectedAt: json['expected_at'] != null ? OneOf2.parse(json['expected_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => NotReceived2ExpectedAtVariant2.fromJson(v as String),) : null,
-  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => NotReceived2ExplanationVariant2.fromJson(v as String),) : null,
-  productDescription: json['product_description'] != null ? OneOf2.parse(json['product_description'], fromA: (v) => v as String, fromB: (v) => NotReceived2ProductDescriptionVariant2.fromJson(v as String),) : null,
+  additionalDocumentation: json['additional_documentation'] != null ? NotReceived2AdditionalDocumentation.fromJson(json['additional_documentation']) : null,
+  expectedAt: json['expected_at'] != null ? NotReceived2ExpectedAt.fromJson(json['expected_at']) : null,
+  explanation: json['explanation'] != null ? NotReceived2Explanation.fromJson(json['explanation']) : null,
+  productDescription: json['product_description'] != null ? NotReceived2ProductDescription.fromJson(json['product_description']) : null,
   productType: json['product_type'] != null ? NotReceived2ProductType.fromJson(json['product_type'] as String) : null,
 ); }
 

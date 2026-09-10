@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_fine_tuning_job_request_hyperparameters.dart';import 'create_fine_tuning_job_request_integrations.dart';import 'create_fine_tuning_job_request_model.dart';import 'fine_tune_method.dart';@immutable final class CreateFineTuningJobRequest {const CreateFineTuningJobRequest({required this.model, required this.trainingFile, this.hyperparameters, this.suffix = const Omittable.absent(), this.validationFile = const Omittable.absent(), this.integrations = const Omittable.absent(), this.seed = const Omittable.absent(), this.method, this.metadata = const Omittable.absent(), });
 
 factory CreateFineTuningJobRequest.fromJson(Map<String, dynamic> json) { return CreateFineTuningJobRequest(
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateFineTuningJobRequestModelVariant2.fromJson(v as String),),
+  model: CreateFineTuningJobRequestModel.fromJson(json['model']),
   trainingFile: json['training_file'] as String,
   hyperparameters: json['hyperparameters'] != null ? CreateFineTuningJobRequestHyperparameters.fromJson(json['hyperparameters'] as Map<String, dynamic>) : null,
   suffix: json.containsKey('suffix') ? Omittable(json['suffix'] as String?) : const Omittable.absent(),

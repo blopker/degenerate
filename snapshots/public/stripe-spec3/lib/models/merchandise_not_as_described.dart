@@ -30,12 +30,12 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class MerchandiseNotAsDescribed {const MerchandiseNotAsDescribed({this.additionalDocumentation, this.explanation, this.receivedAt, this.returnDescription, this.returnStatus, this.returnedAt, });
 
 factory MerchandiseNotAsDescribed.fromJson(Map<String, dynamic> json) { return MerchandiseNotAsDescribed(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => MerchandiseNotAsDescribedAdditionalDocumentationVariant2.fromJson(v as String),) : null,
-  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => MerchandiseNotAsDescribedExplanationVariant2.fromJson(v as String),) : null,
-  receivedAt: json['received_at'] != null ? OneOf2.parse(json['received_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => MerchandiseNotAsDescribedReceivedAtVariant2.fromJson(v as String),) : null,
-  returnDescription: json['return_description'] != null ? OneOf2.parse(json['return_description'], fromA: (v) => v as String, fromB: (v) => MerchandiseNotAsDescribedReturnDescriptionVariant2.fromJson(v as String),) : null,
+  additionalDocumentation: json['additional_documentation'] != null ? MerchandiseNotAsDescribedAdditionalDocumentation.fromJson(json['additional_documentation']) : null,
+  explanation: json['explanation'] != null ? MerchandiseNotAsDescribedExplanation.fromJson(json['explanation']) : null,
+  receivedAt: json['received_at'] != null ? MerchandiseNotAsDescribedReceivedAt.fromJson(json['received_at']) : null,
+  returnDescription: json['return_description'] != null ? MerchandiseNotAsDescribedReturnDescription.fromJson(json['return_description']) : null,
   returnStatus: json['return_status'] != null ? MerchandiseNotAsDescribedReturnStatus.fromJson(json['return_status'] as String) : null,
-  returnedAt: json['returned_at'] != null ? OneOf2.parse(json['returned_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => MerchandiseNotAsDescribedReturnedAtVariant2.fromJson(v as String),) : null,
+  returnedAt: json['returned_at'] != null ? MerchandiseNotAsDescribedReturnedAt.fromJson(json['returned_at']) : null,
 ); }
 
 final MerchandiseNotAsDescribedAdditionalDocumentation? additionalDocumentation;

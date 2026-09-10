@@ -1,7 +1,8 @@
 import 'package:degenerate_runtime/src/api_client.dart';
+import 'package:degenerate_runtime/src/streamed_api_response.dart';
 
 /// A function that processes a request and returns a response.
-typedef Handler = Future<ApiResponse> Function(ApiRequest request);
+typedef Handler = Future<StreamedApiResponse> Function(ApiRequest request);
 
 /// Middleware that can inspect/modify requests and responses.
 ///
@@ -12,18 +13,17 @@ typedef Handler = Future<ApiResponse> Function(ApiRequest request);
 /// ```dart
 /// class MyInterceptor implements Interceptor {
 ///   @override
-///   Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
+///   Future<StreamedApiResponse> intercept(ApiRequest request, Handler next) async {
 ///     final modified = request.copyWith(
 ///       headers: {...request.headers, 'X-Custom': 'value'},
 ///     );
-///     return next(modified);
+///     return await next(modified);
 ///   }
 /// }
 /// ```
-// ignore: one_member_abstracts
 abstract interface class Interceptor {
   /// Processes [request] and optionally delegates to [next].
-  Future<ApiResponse> intercept(ApiRequest request, Handler next);
+  Future<StreamedApiResponse> intercept(ApiRequest request, Handler next);
 }
 
 /// Build a middleware chain from a list of interceptors and a terminal handler.

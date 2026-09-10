@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'transfer_data_destination.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'transfer_data_destination.dart';/// 
 @immutable final class TransferData {const TransferData({required this.destination, this.amount, });
 
 factory TransferData.fromJson(Map<String, dynamic> json) { return TransferData(
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
-  destination: OneOf2.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
+  destination: TransferDataDestination.fromJson(json['destination']),
 ); }
 
 /// The amount transferred to the destination account. This transfer will occur automatically after the payment succeeds. If no amount is specified, by default the entire payment amount is transferred to the destination account.

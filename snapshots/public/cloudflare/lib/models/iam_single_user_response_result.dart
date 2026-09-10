@@ -7,19 +7,19 @@ factory IamTwoFactorAuthenticationLocked.fromJson(bool json) => IamTwoFactorAuth
 bool toJson() => value;
 
 }
-@immutable final class IamSingleUserResponseResult {const IamSingleUserResponseResult({this.betas, this.country = const Omittable.absent(), this.firstName = const Omittable.absent(), this.hasBusinessZones = false, this.hasEnterpriseZones = false, this.hasProZones = false, this.id, this.lastName = const Omittable.absent(), this.organizations, this.suspended = false, this.telephone = const Omittable.absent(), this.twoFactorAuthenticationEnabled, this.twoFactorAuthenticationLocked, this.zipcode = const Omittable.absent(), });
+@immutable final class IamSingleUserResponseResult {const IamSingleUserResponseResult({this.betas, this.country = const Omittable.absent(), this.firstName = const Omittable.absent(), this.hasBusinessZones, this.hasEnterpriseZones, this.hasProZones, this.id, this.lastName = const Omittable.absent(), this.organizations, this.suspended, this.telephone = const Omittable.absent(), this.twoFactorAuthenticationEnabled, this.twoFactorAuthenticationLocked, this.zipcode = const Omittable.absent(), });
 
 factory IamSingleUserResponseResult.fromJson(Map<String, dynamic> json) { return IamSingleUserResponseResult(
   betas: (json['betas'] as List<dynamic>?)?.map((e) => e as String).toList(),
   country: json.containsKey('country') ? Omittable(json['country'] != null ? IamCountry.fromJson(json['country'] as String) : null) : const Omittable.absent(),
   firstName: json.containsKey('first_name') ? Omittable(json['first_name'] != null ? IamFirstName.fromJson(json['first_name'] as String) : null) : const Omittable.absent(),
-  hasBusinessZones: json.containsKey('has_business_zones') ? json['has_business_zones'] as bool : false,
-  hasEnterpriseZones: json.containsKey('has_enterprise_zones') ? json['has_enterprise_zones'] as bool : false,
-  hasProZones: json.containsKey('has_pro_zones') ? json['has_pro_zones'] as bool : false,
+  hasBusinessZones: json['has_business_zones'] as bool?,
+  hasEnterpriseZones: json['has_enterprise_zones'] as bool?,
+  hasProZones: json['has_pro_zones'] as bool?,
   id: json['id'] as String?,
   lastName: json.containsKey('last_name') ? Omittable(json['last_name'] != null ? IamLastName.fromJson(json['last_name'] as String) : null) : const Omittable.absent(),
   organizations: (json['organizations'] as List<dynamic>?)?.map((e) => IamOrganization.fromJson(e as Map<String, dynamic>)).toList(),
-  suspended: json.containsKey('suspended') ? json['suspended'] as bool : false,
+  suspended: json['suspended'] as bool?,
   telephone: json.containsKey('telephone') ? Omittable(json['telephone'] != null ? IamTelephone.fromJson(json['telephone'] as String) : null) : const Omittable.absent(),
   twoFactorAuthenticationEnabled: json['two_factor_authentication_enabled'] != null ? IamTwoFactorAuthenticationEnabled.fromJson(json['two_factor_authentication_enabled'] as bool) : null,
   twoFactorAuthenticationLocked: json['two_factor_authentication_locked'] != null ? IamTwoFactorAuthenticationLocked.fromJson(json['two_factor_authentication_locked'] as bool) : null,
@@ -36,13 +36,13 @@ final Omittable<IamCountry?> country;
 final Omittable<IamFirstName?> firstName;
 
 /// Indicates whether user has any business zones
-final bool hasBusinessZones;
+final bool? hasBusinessZones;
 
 /// Indicates whether user has any enterprise zones
-final bool hasEnterpriseZones;
+final bool? hasEnterpriseZones;
 
 /// Indicates whether user has any pro zones
-final bool hasProZones;
+final bool? hasProZones;
 
 /// Identifier of the user.
 final String? id;
@@ -53,7 +53,7 @@ final Omittable<IamLastName?> lastName;
 final List<IamOrganization>? organizations;
 
 /// Indicates whether user has been suspended
-final bool suspended;
+final bool? suspended;
 
 final Omittable<IamTelephone?> telephone;
 
@@ -63,24 +63,32 @@ final IamTwoFactorAuthenticationLocked? twoFactorAuthenticationLocked;
 
 final Omittable<IamZipcode?> zipcode;
 
+/// The value with the schema default applied when absent.
+bool get hasBusinessZonesOrDefault { return hasBusinessZones ?? false; } 
+/// The value with the schema default applied when absent.
+bool get hasEnterpriseZonesOrDefault { return hasEnterpriseZones ?? false; } 
+/// The value with the schema default applied when absent.
+bool get hasProZonesOrDefault { return hasProZones ?? false; } 
+/// The value with the schema default applied when absent.
+bool get suspendedOrDefault { return suspended ?? false; } 
 Map<String, dynamic> toJson() { return {
   'betas': ?betas,
   if (country.isPresent) 'country': country.value?.toJson(),
   if (firstName.isPresent) 'first_name': firstName.value?.toJson(),
-  'has_business_zones': hasBusinessZones,
-  'has_enterprise_zones': hasEnterpriseZones,
-  'has_pro_zones': hasProZones,
+  'has_business_zones': ?hasBusinessZones,
+  'has_enterprise_zones': ?hasEnterpriseZones,
+  'has_pro_zones': ?hasProZones,
   'id': ?id,
   if (lastName.isPresent) 'last_name': lastName.value?.toJson(),
   if (organizations != null) 'organizations': organizations?.map((e) => e.toJson()).toList(),
-  'suspended': suspended,
+  'suspended': ?suspended,
   if (telephone.isPresent) 'telephone': telephone.value?.toJson(),
   if (twoFactorAuthenticationEnabled != null) 'two_factor_authentication_enabled': twoFactorAuthenticationEnabled?.toJson(),
   if (twoFactorAuthenticationLocked != null) 'two_factor_authentication_locked': twoFactorAuthenticationLocked?.toJson(),
   if (zipcode.isPresent) 'zipcode': zipcode.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'betas', 'country', 'first_name', 'has_business_zones', 'has_enterprise_zones', 'has_pro_zones', 'id', 'last_name', 'organizations', 'suspended', 'telephone', 'two_factor_authentication_enabled', 'two_factor_authentication_locked', 'zipcode'}.contains(key)); } 
-IamSingleUserResponseResult copyWith({List<String>? Function()? betas, Omittable<IamCountry?>? country, Omittable<IamFirstName?>? firstName, bool Function()? hasBusinessZones, bool Function()? hasEnterpriseZones, bool Function()? hasProZones, String? Function()? id, Omittable<IamLastName?>? lastName, List<IamOrganization>? Function()? organizations, bool Function()? suspended, Omittable<IamTelephone?>? telephone, IamTwoFactorAuthenticationEnabled? Function()? twoFactorAuthenticationEnabled, IamTwoFactorAuthenticationLocked? Function()? twoFactorAuthenticationLocked, Omittable<IamZipcode?>? zipcode, }) { return IamSingleUserResponseResult(
+IamSingleUserResponseResult copyWith({List<String>? Function()? betas, Omittable<IamCountry?>? country, Omittable<IamFirstName?>? firstName, bool? Function()? hasBusinessZones, bool? Function()? hasEnterpriseZones, bool? Function()? hasProZones, String? Function()? id, Omittable<IamLastName?>? lastName, List<IamOrganization>? Function()? organizations, bool? Function()? suspended, Omittable<IamTelephone?>? telephone, IamTwoFactorAuthenticationEnabled? Function()? twoFactorAuthenticationEnabled, IamTwoFactorAuthenticationLocked? Function()? twoFactorAuthenticationLocked, Omittable<IamZipcode?>? zipcode, }) { return IamSingleUserResponseResult(
   betas: betas != null ? betas() : this.betas,
   country: country ?? this.country,
   firstName: firstName ?? this.firstName,

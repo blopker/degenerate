@@ -35,14 +35,14 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateTranslationRequestResponseFormat($value)'; } 
  }
-@immutable final class CreateTranslationRequest {const CreateTranslationRequest({required this.file, required this.model, this.prompt, this.responseFormat = CreateTranslationRequestResponseFormat.$json, this.temperature = 0.0, });
+@immutable final class CreateTranslationRequest {const CreateTranslationRequest({required this.file, required this.model, this.prompt, this.responseFormat, this.temperature, });
 
 factory CreateTranslationRequest.fromJson(Map<String, dynamic> json) { return CreateTranslationRequest(
   file: base64Decode(json['file'] as String),
-  model: OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateTranslationRequestModelVariant2.fromJson(v as String),),
+  model: CreateTranslationRequestModel.fromJson(json['model']),
   prompt: json['prompt'] as String?,
-  responseFormat: json.containsKey('response_format') ? CreateTranslationRequestResponseFormat.fromJson(json['response_format'] as String) : CreateTranslationRequestResponseFormat.$json,
-  temperature: json.containsKey('temperature') ? (json['temperature'] as num).toDouble() : 0.0,
+  responseFormat: json['response_format'] != null ? CreateTranslationRequestResponseFormat.fromJson(json['response_format'] as String) : null,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
 ); }
 
 /// The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
@@ -59,22 +59,26 @@ final String? prompt;
 
 /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
 /// 
-final CreateTranslationRequestResponseFormat responseFormat;
+final CreateTranslationRequestResponseFormat? responseFormat;
 
 /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.
 /// 
-final double temperature;
+final double? temperature;
 
+/// The value with the schema default applied when absent.
+CreateTranslationRequestResponseFormat get responseFormatOrDefault { return responseFormat ?? CreateTranslationRequestResponseFormat.fromJson('json'); } 
+/// The value with the schema default applied when absent.
+double get temperatureOrDefault { return temperature ?? 0.0; } 
 Map<String, dynamic> toJson() { return {
   'file': base64Encode(file),
   'model': model.toJson(),
   'prompt': ?prompt,
-  'response_format': responseFormat.toJson(),
-  'temperature': temperature,
+  if (responseFormat != null) 'response_format': responseFormat?.toJson(),
+  'temperature': ?temperature,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
       json.containsKey('model'); } 
-CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestModel? model, String? Function()? prompt, CreateTranslationRequestResponseFormat Function()? responseFormat, double Function()? temperature, }) { return CreateTranslationRequest(
+CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestModel? model, String? Function()? prompt, CreateTranslationRequestResponseFormat? Function()? responseFormat, double? Function()? temperature, }) { return CreateTranslationRequest(
   file: file ?? this.file,
   model: model ?? this.model,
   prompt: prompt != null ? prompt() : this.prompt,

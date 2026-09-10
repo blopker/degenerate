@@ -28,20 +28,20 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PagesDeploymentConfigValuesRequestUsageModel($value)'; } 
  }
-@immutable final class PagesDeploymentConfigValuesRequest {const PagesDeploymentConfigValuesRequest({this.aiBindings, this.alwaysUseLatestCompatibilityDate = false, this.analyticsEngineDatasets, this.browsers, this.buildImageMajorVersion = 3, this.compatibilityDate, this.compatibilityFlags, this.d1Databases, this.durableObjectNamespaces, this.envVars, this.failOpen = true, this.hyperdriveBindings, this.kvNamespaces, this.limits, this.mtlsCertificates, this.placement, this.queueProducers, this.r2Buckets, this.services, this.usageModel = PagesDeploymentConfigValuesRequestUsageModel.standard, this.vectorizeBindings, this.wranglerConfigHash, });
+@immutable final class PagesDeploymentConfigValuesRequest {const PagesDeploymentConfigValuesRequest({this.aiBindings, this.alwaysUseLatestCompatibilityDate, this.analyticsEngineDatasets, this.browsers, this.buildImageMajorVersion, this.compatibilityDate, this.compatibilityFlags, this.d1Databases, this.durableObjectNamespaces, this.envVars, this.failOpen, this.hyperdriveBindings, this.kvNamespaces, this.limits, this.mtlsCertificates, this.placement, this.queueProducers, this.r2Buckets, this.services, this.usageModel, this.vectorizeBindings, this.wranglerConfigHash, });
 
 factory PagesDeploymentConfigValuesRequest.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequest(
   aiBindings: (json['ai_bindings'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesDeploymentConfigValuesRequestAiBindingsValue.fromJson(v as Map<String, dynamic>))),
-  alwaysUseLatestCompatibilityDate: json.containsKey('always_use_latest_compatibility_date') ? json['always_use_latest_compatibility_date'] as bool : false,
+  alwaysUseLatestCompatibilityDate: json['always_use_latest_compatibility_date'] as bool?,
   analyticsEngineDatasets: (json['analytics_engine_datasets'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesDeploymentConfigValuesRequestAnalyticsEngineDatasetsValue.fromJson(v as Map<String, dynamic>))),
   browsers: (json['browsers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Map<String, dynamic>?)),
-  buildImageMajorVersion: json.containsKey('build_image_major_version') ? (json['build_image_major_version'] as num).toInt() : 3,
+  buildImageMajorVersion: json['build_image_major_version'] != null ? (json['build_image_major_version'] as num).toInt() : null,
   compatibilityDate: json['compatibility_date'] as String?,
   compatibilityFlags: (json['compatibility_flags'] as List<dynamic>?)?.map((e) => e as String).toList(),
   d1Databases: (json['d1_databases'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesDeploymentConfigValuesRequestD1DatabasesValue.fromJson(v as Map<String, dynamic>))),
   durableObjectNamespaces: (json['durable_object_namespaces'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue.fromJson(v as Map<String, dynamic>))),
   envVars: (json['env_vars'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesDeploymentConfigValuesRequestEnvVarsValue.fromJson(v as Map<String, dynamic>))),
-  failOpen: json.containsKey('fail_open') ? json['fail_open'] as bool : true,
+  failOpen: json['fail_open'] as bool?,
   hyperdriveBindings: (json['hyperdrive_bindings'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesDeploymentConfigValuesRequestHyperdriveBindingsValue.fromJson(v as Map<String, dynamic>))),
   kvNamespaces: (json['kv_namespaces'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesDeploymentConfigValuesRequestKvNamespacesValue.fromJson(v as Map<String, dynamic>))),
   limits: json['limits'] != null ? PagesDeploymentConfigValuesRequestLimits.fromJson(json['limits'] as Map<String, dynamic>) : null,
@@ -50,7 +50,7 @@ factory PagesDeploymentConfigValuesRequest.fromJson(Map<String, dynamic> json) {
   queueProducers: (json['queue_producers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesDeploymentConfigValuesRequestQueueProducersValue.fromJson(v as Map<String, dynamic>))),
   r2Buckets: (json['r2_buckets'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesDeploymentConfigValuesRequestR2BucketsValue.fromJson(v as Map<String, dynamic>))),
   services: (json['services'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesDeploymentConfigValuesRequestServicesValue.fromJson(v as Map<String, dynamic>))),
-  usageModel: json.containsKey('usage_model') ? PagesDeploymentConfigValuesRequestUsageModel.fromJson(json['usage_model'] as String) : PagesDeploymentConfigValuesRequestUsageModel.standard,
+  usageModel: json['usage_model'] != null ? PagesDeploymentConfigValuesRequestUsageModel.fromJson(json['usage_model'] as String) : null,
   vectorizeBindings: (json['vectorize_bindings'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v == null ? null : PagesDeploymentConfigValuesRequestVectorizeBindingsValue.fromJson(v as Map<String, dynamic>))),
   wranglerConfigHash: json['wrangler_config_hash'] as String?,
 ); }
@@ -59,7 +59,7 @@ factory PagesDeploymentConfigValuesRequest.fromJson(Map<String, dynamic> json) {
 final Map<String,PagesDeploymentConfigValuesRequestAiBindingsValue?>? aiBindings;
 
 /// Whether to always use the latest compatibility date for Pages Functions.
-final bool alwaysUseLatestCompatibilityDate;
+final bool? alwaysUseLatestCompatibilityDate;
 
 /// Analytics Engine bindings used for Pages Functions.
 final Map<String,PagesDeploymentConfigValuesRequestAnalyticsEngineDatasetsValue?>? analyticsEngineDatasets;
@@ -68,7 +68,7 @@ final Map<String,PagesDeploymentConfigValuesRequestAnalyticsEngineDatasetsValue?
 final Map<String,Map<String,dynamic>?>? browsers;
 
 /// The major version of the build image to use for Pages Functions.
-final int buildImageMajorVersion;
+final int? buildImageMajorVersion;
 
 /// Compatibility date used for Pages Functions.
 final String? compatibilityDate;
@@ -86,7 +86,7 @@ final Map<String,PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue?
 final Map<String,PagesDeploymentConfigValuesRequestEnvVarsValue?>? envVars;
 
 /// Whether to fail open when the deployment config cannot be applied.
-final bool failOpen;
+final bool? failOpen;
 
 /// Hyperdrive bindings used for Pages Functions.
 final Map<String,PagesDeploymentConfigValuesRequestHyperdriveBindingsValue?>? hyperdriveBindings;
@@ -113,7 +113,7 @@ final Map<String,PagesDeploymentConfigValuesRequestR2BucketsValue?>? r2Buckets;
 final Map<String,PagesDeploymentConfigValuesRequestServicesValue?>? services;
 
 /// The usage model for Pages Functions.
-final PagesDeploymentConfigValuesRequestUsageModel usageModel;
+final PagesDeploymentConfigValuesRequestUsageModel? usageModel;
 
 /// Vectorize bindings used for Pages Functions.
 final Map<String,PagesDeploymentConfigValuesRequestVectorizeBindingsValue?>? vectorizeBindings;
@@ -121,18 +121,26 @@ final Map<String,PagesDeploymentConfigValuesRequestVectorizeBindingsValue?>? vec
 /// Hash of the Wrangler configuration used for the deployment.
 final String? wranglerConfigHash;
 
+/// The value with the schema default applied when absent.
+bool get alwaysUseLatestCompatibilityDateOrDefault { return alwaysUseLatestCompatibilityDate ?? false; } 
+/// The value with the schema default applied when absent.
+int get buildImageMajorVersionOrDefault { return buildImageMajorVersion ?? 3; } 
+/// The value with the schema default applied when absent.
+bool get failOpenOrDefault { return failOpen ?? true; } 
+/// The value with the schema default applied when absent.
+PagesDeploymentConfigValuesRequestUsageModel get usageModelOrDefault { return usageModel ?? PagesDeploymentConfigValuesRequestUsageModel.fromJson('standard'); } 
 Map<String, dynamic> toJson() { return {
   if (aiBindings != null) 'ai_bindings': aiBindings?.map((k, v) => MapEntry(k, v?.toJson())),
-  'always_use_latest_compatibility_date': alwaysUseLatestCompatibilityDate,
+  'always_use_latest_compatibility_date': ?alwaysUseLatestCompatibilityDate,
   if (analyticsEngineDatasets != null) 'analytics_engine_datasets': analyticsEngineDatasets?.map((k, v) => MapEntry(k, v?.toJson())),
   'browsers': ?browsers,
-  'build_image_major_version': buildImageMajorVersion,
+  'build_image_major_version': ?buildImageMajorVersion,
   'compatibility_date': ?compatibilityDate,
   'compatibility_flags': ?compatibilityFlags,
   if (d1Databases != null) 'd1_databases': d1Databases?.map((k, v) => MapEntry(k, v?.toJson())),
   if (durableObjectNamespaces != null) 'durable_object_namespaces': durableObjectNamespaces?.map((k, v) => MapEntry(k, v?.toJson())),
   if (envVars != null) 'env_vars': envVars?.map((k, v) => MapEntry(k, v?.toJson())),
-  'fail_open': failOpen,
+  'fail_open': ?failOpen,
   if (hyperdriveBindings != null) 'hyperdrive_bindings': hyperdriveBindings?.map((k, v) => MapEntry(k, v?.toJson())),
   if (kvNamespaces != null) 'kv_namespaces': kvNamespaces?.map((k, v) => MapEntry(k, v?.toJson())),
   if (limits != null) 'limits': limits?.toJson(),
@@ -141,12 +149,12 @@ Map<String, dynamic> toJson() { return {
   if (queueProducers != null) 'queue_producers': queueProducers?.map((k, v) => MapEntry(k, v?.toJson())),
   if (r2Buckets != null) 'r2_buckets': r2Buckets?.map((k, v) => MapEntry(k, v?.toJson())),
   if (services != null) 'services': services?.map((k, v) => MapEntry(k, v?.toJson())),
-  'usage_model': usageModel.toJson(),
+  if (usageModel != null) 'usage_model': usageModel?.toJson(),
   if (vectorizeBindings != null) 'vectorize_bindings': vectorizeBindings?.map((k, v) => MapEntry(k, v?.toJson())),
   'wrangler_config_hash': ?wranglerConfigHash,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_bindings', 'always_use_latest_compatibility_date', 'analytics_engine_datasets', 'browsers', 'build_image_major_version', 'compatibility_date', 'compatibility_flags', 'd1_databases', 'durable_object_namespaces', 'env_vars', 'fail_open', 'hyperdrive_bindings', 'kv_namespaces', 'limits', 'mtls_certificates', 'placement', 'queue_producers', 'r2_buckets', 'services', 'usage_model', 'vectorize_bindings', 'wrangler_config_hash'}.contains(key)); } 
-PagesDeploymentConfigValuesRequest copyWith({Map<String, PagesDeploymentConfigValuesRequestAiBindingsValue?>? Function()? aiBindings, bool Function()? alwaysUseLatestCompatibilityDate, Map<String, PagesDeploymentConfigValuesRequestAnalyticsEngineDatasetsValue?>? Function()? analyticsEngineDatasets, Map<String, Map<String, dynamic>?>? Function()? browsers, int Function()? buildImageMajorVersion, String? Function()? compatibilityDate, List<String>? Function()? compatibilityFlags, Map<String, PagesDeploymentConfigValuesRequestD1DatabasesValue?>? Function()? d1Databases, Map<String, PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue?>? Function()? durableObjectNamespaces, Map<String, PagesDeploymentConfigValuesRequestEnvVarsValue?>? Function()? envVars, bool Function()? failOpen, Map<String, PagesDeploymentConfigValuesRequestHyperdriveBindingsValue?>? Function()? hyperdriveBindings, Map<String, PagesDeploymentConfigValuesRequestKvNamespacesValue?>? Function()? kvNamespaces, PagesDeploymentConfigValuesRequestLimits? Function()? limits, Map<String, PagesDeploymentConfigValuesRequestMtlsCertificatesValue?>? Function()? mtlsCertificates, PagesDeploymentConfigValuesRequestPlacement? Function()? placement, Map<String, PagesDeploymentConfigValuesRequestQueueProducersValue?>? Function()? queueProducers, Map<String, PagesDeploymentConfigValuesRequestR2BucketsValue?>? Function()? r2Buckets, Map<String, PagesDeploymentConfigValuesRequestServicesValue?>? Function()? services, PagesDeploymentConfigValuesRequestUsageModel Function()? usageModel, Map<String, PagesDeploymentConfigValuesRequestVectorizeBindingsValue?>? Function()? vectorizeBindings, String? Function()? wranglerConfigHash, }) { return PagesDeploymentConfigValuesRequest(
+PagesDeploymentConfigValuesRequest copyWith({Map<String, PagesDeploymentConfigValuesRequestAiBindingsValue?>? Function()? aiBindings, bool? Function()? alwaysUseLatestCompatibilityDate, Map<String, PagesDeploymentConfigValuesRequestAnalyticsEngineDatasetsValue?>? Function()? analyticsEngineDatasets, Map<String, Map<String, dynamic>?>? Function()? browsers, int? Function()? buildImageMajorVersion, String? Function()? compatibilityDate, List<String>? Function()? compatibilityFlags, Map<String, PagesDeploymentConfigValuesRequestD1DatabasesValue?>? Function()? d1Databases, Map<String, PagesDeploymentConfigValuesRequestDurableObjectNamespacesValue?>? Function()? durableObjectNamespaces, Map<String, PagesDeploymentConfigValuesRequestEnvVarsValue?>? Function()? envVars, bool? Function()? failOpen, Map<String, PagesDeploymentConfigValuesRequestHyperdriveBindingsValue?>? Function()? hyperdriveBindings, Map<String, PagesDeploymentConfigValuesRequestKvNamespacesValue?>? Function()? kvNamespaces, PagesDeploymentConfigValuesRequestLimits? Function()? limits, Map<String, PagesDeploymentConfigValuesRequestMtlsCertificatesValue?>? Function()? mtlsCertificates, PagesDeploymentConfigValuesRequestPlacement? Function()? placement, Map<String, PagesDeploymentConfigValuesRequestQueueProducersValue?>? Function()? queueProducers, Map<String, PagesDeploymentConfigValuesRequestR2BucketsValue?>? Function()? r2Buckets, Map<String, PagesDeploymentConfigValuesRequestServicesValue?>? Function()? services, PagesDeploymentConfigValuesRequestUsageModel? Function()? usageModel, Map<String, PagesDeploymentConfigValuesRequestVectorizeBindingsValue?>? Function()? vectorizeBindings, String? Function()? wranglerConfigHash, }) { return PagesDeploymentConfigValuesRequest(
   aiBindings: aiBindings != null ? aiBindings() : this.aiBindings,
   alwaysUseLatestCompatibilityDate: alwaysUseLatestCompatibilityDate != null ? alwaysUseLatestCompatibilityDate() : this.alwaysUseLatestCompatibilityDate,
   analyticsEngineDatasets: analyticsEngineDatasets != null ? analyticsEngineDatasets() : this.analyticsEngineDatasets,

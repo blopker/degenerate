@@ -129,11 +129,11 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PaymentIntentPaymentMethodOptionsParam39MandateOptions {const PaymentIntentPaymentMethodOptionsParam39MandateOptions({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, });
 
 factory PaymentIntentPaymentMethodOptionsParam39MandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam39MandateOptions(
-  amount: json['amount'] != null ? OneOf2.parse(json['amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => PaymentIntentPaymentMethodOptionsParam39MandateOptionsAmountVariant2.fromJson(v as String),) : null,
+  amount: json['amount'] != null ? PaymentIntentPaymentMethodOptionsParam39MandateOptionsAmount.fromJson(json['amount']) : null,
   amountType: json['amount_type'] != null ? PaymentIntentPaymentMethodOptionsParam39MandateOptionsAmountType.fromJson(json['amount_type'] as String) : null,
-  endDate: json['end_date'] != null ? OneOf2.parse(json['end_date'], fromA: (v) => v as String, fromB: (v) => PaymentIntentPaymentMethodOptionsParam39MandateOptionsEndDateVariant2.fromJson(v as String),) : null,
+  endDate: json['end_date'] != null ? PaymentIntentPaymentMethodOptionsParam39MandateOptionsEndDate.fromJson(json['end_date']) : null,
   paymentSchedule: json['payment_schedule'] != null ? PaymentIntentPaymentMethodOptionsParam39MandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
-  paymentsPerPeriod: json['payments_per_period'] != null ? OneOf2.parse(json['payments_per_period'], fromA: (v) => (v as num).toInt(), fromB: (v) => PaymentIntentPaymentMethodOptionsParam39MandateOptionsPaymentsPerPeriodVariant2.fromJson(v as String),) : null,
+  paymentsPerPeriod: json['payments_per_period'] != null ? PaymentIntentPaymentMethodOptionsParam39MandateOptionsPaymentsPerPeriod.fromJson(json['payments_per_period']) : null,
   purpose: json['purpose'] != null ? PaymentIntentPaymentMethodOptionsParam39MandateOptionsPurpose.fromJson(json['purpose'] as String) : null,
 ); }
 

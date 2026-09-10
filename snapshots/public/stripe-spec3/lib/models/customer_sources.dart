@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_account.dart';import 'card.dart';import 'customer_sources_data.dart';import 'source.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_sources_data.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
 @immutable final class CustomerSourcesObject {const CustomerSourcesObject._(this.value);
 
 factory CustomerSourcesObject.fromJson(String json) { return switch (json) {
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class CustomerSources {const CustomerSources({required this.data, required this.hasMore, required this.object, required this.url, });
 
 factory CustomerSources.fromJson(Map<String, dynamic> json) { return CustomerSources(
-  data: (json['data'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => Card.fromJson(v as Map<String, dynamic>), fromC: (v) => Source.fromJson(v as Map<String, dynamic>),)).toList(),
+  data: (json['data'] as List<dynamic>).map(CustomerSourcesData.fromJson).toList(),
   hasMore: json['has_more'] as bool,
   object: CustomerSourcesObject.fromJson(json['object'] as String),
   url: json['url'] as String,

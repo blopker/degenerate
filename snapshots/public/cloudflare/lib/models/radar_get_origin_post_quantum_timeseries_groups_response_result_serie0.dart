@@ -24,6 +24,6 @@ RadarGetOriginPostQuantumTimeseriesGroupsResponseResultSerie0 copyWith({List<Dat
       other is RadarGetOriginPostQuantumTimeseriesGroupsResponseResultSerie0 &&
           listEquals(timestamps, other.timestamps) &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(Object.hashAll(timestamps), Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(Object.hashAll(timestamps), mapHash(additionalProperties)); } 
 @override String toString() { return 'RadarGetOriginPostQuantumTimeseriesGroupsResponseResultSerie0(timestamps: $timestamps, additionalProperties: $additionalProperties)'; } 
  }

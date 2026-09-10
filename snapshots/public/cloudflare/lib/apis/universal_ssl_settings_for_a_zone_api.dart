@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';import '../models/tls_certificates_and_hostnames_universal.dart';/// UniversalSslSettingsForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';import '../models/tls_certificates_and_hostnames_universal.dart';import '../models/universal_ssl_settings_for_a_zone_edit_universal_ssl_settings_response4_xx.dart';import '../models/universal_ssl_settings_for_a_zone_universal_ssl_settings_details_response4_xx.dart';/// UniversalSslSettingsForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class UniversalSslSettingsForAZoneApi with ApiExecutor {const UniversalSsl
 /// Get Universal SSL Settings for a Zone.
 ///
 /// `GET /zones/{zone_id}/ssl/universal/settings`
-Future<ApiResult<TlsCertificatesAndHostnamesUniversal?, Never>> universalSslSettingsForAZoneUniversalSslSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesUniversal?, UniversalSslSettingsForAZoneUniversalSslSettingsDetailsResponse4Xx>> universalSslSettingsForAZoneUniversalSslSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -22,11 +22,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TlsCertificatesAndHostnamesUniversal.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? TlsCertificatesAndHostnamesUniversal.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return UniversalSslSettingsForAZoneUniversalSslSettingsDetailsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -35,7 +45,7 @@ return execute(
 /// Patch Universal SSL Settings for a Zone.
 ///
 /// `PATCH /zones/{zone_id}/ssl/universal/settings`
-Future<ApiResult<TlsCertificatesAndHostnamesUniversal?, Never>> universalSslSettingsForAZoneEditUniversalSslSettings({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesUniversal body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesUniversal?, UniversalSslSettingsForAZoneEditUniversalSslSettingsResponse4Xx>> universalSslSettingsForAZoneEditUniversalSslSettings({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesUniversal body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -46,11 +56,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? TlsCertificatesAndHostnamesUniversal.fromJson(json['result'] as Map<String, dynamic>) : null;
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return json['result'] != null ? TlsCertificatesAndHostnamesUniversal.fromJson(json['result'] as Map<String, dynamic>) : null;
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return UniversalSslSettingsForAZoneEditUniversalSslSettingsResponse4Xx.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

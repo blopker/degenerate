@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_payment_source_bank_account.dart';import 'customer_payment_source_card2.dart';import 'customer_shipping3.dart';import 'optional_fields_customer_address2.dart';import 'post_customers_customer_request_address.dart';import 'post_customers_customer_request_bank_account.dart';import 'post_customers_customer_request_business_name.dart';import 'post_customers_customer_request_card.dart';import 'post_customers_customer_request_cash_balance.dart';import 'post_customers_customer_request_individual_name.dart';import 'post_customers_customer_request_invoice_settings.dart';import 'post_customers_customer_request_metadata.dart';import 'post_customers_customer_request_shipping.dart';import 'post_customers_customer_request_tax.dart';/// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_request_address.dart';import 'post_customers_customer_request_bank_account.dart';import 'post_customers_customer_request_business_name.dart';import 'post_customers_customer_request_card.dart';import 'post_customers_customer_request_cash_balance.dart';import 'post_customers_customer_request_individual_name.dart';import 'post_customers_customer_request_invoice_settings.dart';import 'post_customers_customer_request_metadata.dart';import 'post_customers_customer_request_shipping.dart';import 'post_customers_customer_request_tax.dart';/// The customer's tax exemption. One of `none`, `exempt`, or `reverse`.
 @immutable final class PostCustomersCustomerRequestTaxExempt {const PostCustomersCustomerRequestTaxExempt._(this.value);
 
 factory PostCustomersCustomerRequestTaxExempt.fromJson(String json) { return switch (json) {
@@ -34,11 +34,11 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostCustomersCustomerRequest {const PostCustomersCustomerRequest({this.address, this.balance, this.bankAccount, this.businessName, this.card, this.cashBalance, this.defaultAlipayAccount, this.defaultBankAccount, this.defaultCard, this.defaultSource, this.description, this.email, this.expand, this.individualName, this.invoicePrefix, this.invoiceSettings, this.metadata, this.name, this.nextInvoiceSequence, this.phone, this.preferredLocales, this.shipping, this.source, this.tax, this.taxExempt, });
 
 factory PostCustomersCustomerRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerRequest(
-  address: json['address'] != null ? OneOf2.parse(json['address'], fromA: (v) => OptionalFieldsCustomerAddress2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostCustomersCustomerRequestAddressVariant2.fromJson(v as String),) : null,
+  address: json['address'] != null ? PostCustomersCustomerRequestAddress.fromJson(json['address']) : null,
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
-  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => CustomerPaymentSourceBankAccount.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
-  businessName: json['business_name'] != null ? OneOf2.parse(json['business_name'], fromA: (v) => v as String, fromB: (v) => PostCustomersCustomerRequestBusinessNameVariant2.fromJson(v as String),) : null,
-  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => CustomerPaymentSourceCard2.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  bankAccount: json['bank_account'] != null ? PostCustomersCustomerRequestBankAccount.fromJson(json['bank_account']) : null,
+  businessName: json['business_name'] != null ? PostCustomersCustomerRequestBusinessName.fromJson(json['business_name']) : null,
+  card: json['card'] != null ? PostCustomersCustomerRequestCard.fromJson(json['card']) : null,
   cashBalance: json['cash_balance'] != null ? PostCustomersCustomerRequestCashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>) : null,
   defaultAlipayAccount: json['default_alipay_account'] as String?,
   defaultBankAccount: json['default_bank_account'] as String?,
@@ -47,15 +47,15 @@ factory PostCustomersCustomerRequest.fromJson(Map<String, dynamic> json) { retur
   description: json['description'] as String?,
   email: json['email'] as String?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  individualName: json['individual_name'] != null ? OneOf2.parse(json['individual_name'], fromA: (v) => v as String, fromB: (v) => PostCustomersCustomerRequestIndividualNameVariant2.fromJson(v as String),) : null,
+  individualName: json['individual_name'] != null ? PostCustomersCustomerRequestIndividualName.fromJson(json['individual_name']) : null,
   invoicePrefix: json['invoice_prefix'] as String?,
   invoiceSettings: json['invoice_settings'] != null ? PostCustomersCustomerRequestInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostCustomersCustomerRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostCustomersCustomerRequestMetadata.fromJson(json['metadata']) : null,
   name: json['name'] as String?,
   nextInvoiceSequence: json['next_invoice_sequence'] != null ? (json['next_invoice_sequence'] as num).toInt() : null,
   phone: json['phone'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => CustomerShipping3.fromJson(v as Map<String, dynamic>), fromB: (v) => PostCustomersCustomerRequestShippingVariant2.fromJson(v as String),) : null,
+  shipping: json['shipping'] != null ? PostCustomersCustomerRequestShipping.fromJson(json['shipping']) : null,
   source: json['source'] as String?,
   tax: json['tax'] != null ? PostCustomersCustomerRequestTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   taxExempt: json['tax_exempt'] != null ? PostCustomersCustomerRequestTaxExempt.fromJson(json['tax_exempt'] as String) : null,

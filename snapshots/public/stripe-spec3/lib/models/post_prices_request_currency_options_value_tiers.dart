@@ -7,7 +7,7 @@ factory PostPricesRequestCurrencyOptionsValueTiers.fromJson(Map<String, dynamic>
   flatAmountDecimal: json['flat_amount_decimal'] as String?,
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
-  upTo: OneOf2.parse(json['up_to'], fromA: (v) => PostPricesRequestCurrencyOptionsValueTiersUpToVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),),
+  upTo: PostPricesRequestCurrencyOptionsValueTiersUpTo.fromJson(json['up_to']),
 ); }
 
 final int? flatAmount;

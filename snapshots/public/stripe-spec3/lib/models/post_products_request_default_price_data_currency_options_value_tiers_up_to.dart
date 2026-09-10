@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1($value)'; } 
  }
-typedef PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpTo = OneOf2<PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1,int>;
+
+@immutable
+final class PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpTo {
+  const PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpTo({this.postProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1 = const Omittable.absent(),
+this.$int = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpTo._({required this.rawValue, required this.postProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1,
+required this.$int,});
+  factory PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpTo.fromJson(Object? json) => PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpTo._(
+    rawValue: Omittable(json),
+    postProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1: parseAnyOfVariant<PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1>(json, (value) => PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1.fromJson(value! as String)),
+$int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1> postProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1;
+final Omittable<int> $int;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => postProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1.isPresent || $int.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (postProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1.isPresent) postProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpToVariant1.value?.toJson(),
+if ($int.isPresent) $int.value,
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpTo && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostProductsRequestDefaultPriceDataCurrencyOptionsValueTiersUpTo(${toJson()})';
+}

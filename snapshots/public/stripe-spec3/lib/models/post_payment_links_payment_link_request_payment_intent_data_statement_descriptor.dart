@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2($value)'; } 
  }
-typedef PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor = OneOf2<String,PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2>;
+
+@immutable
+final class PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor {
+  const PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor({this.string = const Omittable.absent(),
+this.postPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor._({required this.rawValue, required this.string,
+required this.postPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2,});
+  factory PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor.fromJson(Object? json) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2: parseAnyOfVariant<PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2>(json, (value) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2> postPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2.isPresent) postPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor(${toJson()})';
+}

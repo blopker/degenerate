@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_bm_subscription_config_request.dart';import 'bot_management_bot_fight_mode_config_request.dart';import 'bot_management_sbfm_definitely_config_request.dart';import 'bot_management_sbfm_likely_config_request.dart';typedef BotManagementConfigSingleRequest = OneOf4<BotManagementBotFightModeConfigRequest,BotManagementSbfmDefinitelyConfigRequest,BotManagementSbfmLikelyConfigRequest,BotManagementBmSubscriptionConfigRequest>;

@@ -3,8 +3,8 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_details_customer_reference.dart';import 'payment_details_order_reference.dart';@immutable final class PaymentDetails {const PaymentDetails({this.customerReference, this.orderReference, });
 
 factory PaymentDetails.fromJson(Map<String, dynamic> json) { return PaymentDetails(
-  customerReference: json['customer_reference'] != null ? OneOf2.parse(json['customer_reference'], fromA: (v) => v as String, fromB: (v) => PaymentDetailsCustomerReferenceVariant2.fromJson(v as String),) : null,
-  orderReference: json['order_reference'] != null ? OneOf2.parse(json['order_reference'], fromA: (v) => v as String, fromB: (v) => PaymentDetailsOrderReferenceVariant2.fromJson(v as String),) : null,
+  customerReference: json['customer_reference'] != null ? PaymentDetailsCustomerReference.fromJson(json['customer_reference']) : null,
+  orderReference: json['order_reference'] != null ? PaymentDetailsOrderReference.fromJson(json['order_reference']) : null,
 ); }
 
 final PaymentDetailsCustomerReference? customerReference;

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2($value)'; } 
  }
-typedef PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields = OneOf2<List<PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant1>,PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2>;
+
+@immutable
+final class PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields {
+  const PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields({this.listPostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant1 = const Omittable.absent(),
+this.postCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields._({required this.rawValue, required this.listPostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant1,
+required this.postCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2,});
+  factory PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields.fromJson(Object? json) => PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields._(
+    rawValue: Omittable(json),
+    listPostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant1: parseAnyOfVariant<List<PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+postCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2: parseAnyOfVariant<PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2>(json, (value) => PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant1>> listPostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant1;
+final Omittable<PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2> postCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant1.isPresent || postCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant1.isPresent) listPostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant1.value?.map((e) => e.toJson()).toList(),
+if (postCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2.isPresent) postCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFieldsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCheckoutSessionsRequestInvoiceCreationInvoiceDataCustomFields(${toJson()})';
+}

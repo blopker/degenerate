@@ -22,14 +22,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return SmartshieldSmartShieldSettingsGetResponse.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return SmartshieldSmartShieldSettingsGetResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return ResponseCommonFailure65.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case >= 400 && < 501 || 502:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure65.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -49,14 +56,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return SmartshieldSmartShieldSettingsPatchResponse.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return SmartshieldSmartShieldSettingsPatchResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
   onError: (response) {
-    return ResponseCommonFailure65.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case >= 400 && < 501 || 502:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure65.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

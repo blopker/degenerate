@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.
 factory ProtectedBranchPullRequestReviewBypassPullRequestAllowances.fromJson(Map<String, dynamic> json) { return ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
   users: (json['users'] as List<dynamic>?)?.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   teams: (json['teams'] as List<dynamic>?)?.map((e) => Team.fromJson(e as Map<String, dynamic>)).toList(),
-  apps: (json['apps'] as List<dynamic>?)?.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList(),
+  apps: (json['apps'] as List<dynamic>?)?.map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// The list of users allowed to bypass pull request requirements.
@@ -16,15 +16,15 @@ final List<SimpleUser>? users;
 final List<Team>? teams;
 
 /// The list of apps allowed to bypass pull request requirements.
-final List<Integration>? apps;
+final List<Integration?>? apps;
 
 Map<String, dynamic> toJson() { return {
   if (users != null) 'users': users?.map((e) => e.toJson()).toList(),
   if (teams != null) 'teams': teams?.map((e) => e.toJson()).toList(),
-  if (apps != null) 'apps': apps?.map((e) => e.toJson()).toList(),
+  if (apps != null) 'apps': apps?.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'users', 'teams', 'apps'}.contains(key)); } 
-ProtectedBranchPullRequestReviewBypassPullRequestAllowances copyWith({List<SimpleUser>? Function()? users, List<Team>? Function()? teams, List<Integration>? Function()? apps, }) { return ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
+ProtectedBranchPullRequestReviewBypassPullRequestAllowances copyWith({List<SimpleUser>? Function()? users, List<Team>? Function()? teams, List<Integration?>? Function()? apps, }) { return ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
   users: users != null ? users() : this.users,
   teams: teams != null ? teams() : this.teams,
   apps: apps != null ? apps() : this.apps,

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentPaymentMethodOptionsParam27ReferenceVariant2($value)'; } 
  }
-typedef PaymentIntentPaymentMethodOptionsParam27Reference = OneOf2<String,PaymentIntentPaymentMethodOptionsParam27ReferenceVariant2>;
+
+@immutable
+final class PaymentIntentPaymentMethodOptionsParam27Reference {
+  const PaymentIntentPaymentMethodOptionsParam27Reference({this.string = const Omittable.absent(),
+this.paymentIntentPaymentMethodOptionsParam27ReferenceVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PaymentIntentPaymentMethodOptionsParam27Reference._({required this.rawValue, required this.string,
+required this.paymentIntentPaymentMethodOptionsParam27ReferenceVariant2,});
+  factory PaymentIntentPaymentMethodOptionsParam27Reference.fromJson(Object? json) => PaymentIntentPaymentMethodOptionsParam27Reference._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+paymentIntentPaymentMethodOptionsParam27ReferenceVariant2: parseAnyOfVariant<PaymentIntentPaymentMethodOptionsParam27ReferenceVariant2>(json, (value) => PaymentIntentPaymentMethodOptionsParam27ReferenceVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PaymentIntentPaymentMethodOptionsParam27ReferenceVariant2> paymentIntentPaymentMethodOptionsParam27ReferenceVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || paymentIntentPaymentMethodOptionsParam27ReferenceVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (paymentIntentPaymentMethodOptionsParam27ReferenceVariant2.isPresent) paymentIntentPaymentMethodOptionsParam27ReferenceVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PaymentIntentPaymentMethodOptionsParam27Reference && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PaymentIntentPaymentMethodOptionsParam27Reference(${toJson()})';
+}

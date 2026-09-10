@@ -4,8 +4,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment
 @immutable final class PostPaymentIntentsRequestPaymentDetails {const PostPaymentIntentsRequestPaymentDetails({this.customerReference, this.orderReference, });
 
 factory PostPaymentIntentsRequestPaymentDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentDetails(
-  customerReference: json['customer_reference'] != null ? OneOf2.parse(json['customer_reference'], fromA: (v) => v as String, fromB: (v) => PostPaymentIntentsRequestPaymentDetailsCustomerReferenceVariant2.fromJson(v as String),) : null,
-  orderReference: json['order_reference'] != null ? OneOf2.parse(json['order_reference'], fromA: (v) => v as String, fromB: (v) => PostPaymentIntentsRequestPaymentDetailsOrderReferenceVariant2.fromJson(v as String),) : null,
+  customerReference: json['customer_reference'] != null ? PostPaymentIntentsRequestPaymentDetailsCustomerReference.fromJson(json['customer_reference']) : null,
+  orderReference: json['order_reference'] != null ? PostPaymentIntentsRequestPaymentDetailsOrderReference.fromJson(json['order_reference']) : null,
 ); }
 
 final PostPaymentIntentsRequestPaymentDetailsCustomerReference? customerReference;

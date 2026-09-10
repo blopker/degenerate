@@ -53,7 +53,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'InputImageContentParamAutoParamType($value)'; } 
  }
 /// An image input to the model. Learn about [image inputs](/docs/guides/vision)
-@immutable final class InputImageContentParamAutoParam {const InputImageContentParamAutoParam({this.type = InputImageContentParamAutoParamType.inputImage, this.imageUrl = const Omittable.absent(), this.fileId = const Omittable.absent(), this.detail = const Omittable.absent(), });
+@immutable final class InputImageContentParamAutoParam {const InputImageContentParamAutoParam({required this.type, this.imageUrl = const Omittable.absent(), this.fileId = const Omittable.absent(), this.detail = const Omittable.absent(), });
 
 factory InputImageContentParamAutoParam.fromJson(Map<String, dynamic> json) { return InputImageContentParamAutoParam(
   type: InputImageContentParamAutoParamType.fromJson(json['type'] as String),

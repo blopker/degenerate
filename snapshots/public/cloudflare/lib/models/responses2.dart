@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'responses2_input.dart';import 'responses2_reasoning.dart';@immutable final class Responses2 {const Responses2({required this.input, this.reasoning, });
 
 factory Responses2.fromJson(Map<String, dynamic> json) { return Responses2(
-  input: OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(),),
+  input: Responses2Input.fromJson(json['input']),
   reasoning: json['reasoning'] != null ? Responses2Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
 ); }
 

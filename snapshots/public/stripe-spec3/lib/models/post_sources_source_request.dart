@@ -6,7 +6,7 @@ factory PostSourcesSourceRequest.fromJson(Map<String, dynamic> json) { return Po
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
   mandate: json['mandate'] != null ? PostSourcesSourceRequestMandate.fromJson(json['mandate'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostSourcesSourceRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostSourcesSourceRequestMetadata.fromJson(json['metadata']) : null,
   owner: json['owner'] != null ? PostSourcesSourceRequestOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   sourceOrder: json['source_order'] != null ? PostSourcesSourceRequestSourceOrder.fromJson(json['source_order'] as Map<String, dynamic>) : null,
 ); }

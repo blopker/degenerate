@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_presets_response_data.dart';@immutable final class PostPresetsResponse {const PostPresetsResponse({required this.data, this.success = true, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_presets_response_data.dart';@immutable final class PostPresetsResponse {const PostPresetsResponse({required this.data, required this.success, });
 
 factory PostPresetsResponse.fromJson(Map<String, dynamic> json) { return PostPresetsResponse(
   data: PostPresetsResponseData.fromJson(json['data'] as Map<String, dynamic>),

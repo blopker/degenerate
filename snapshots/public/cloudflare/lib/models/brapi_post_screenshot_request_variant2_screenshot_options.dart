@@ -52,25 +52,25 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'BrapiPostScreenshotRequestVariant2ScreenshotOptionsType($value)'; } 
  }
 /// Check [options](https://pptr.dev/api/puppeteer.screenshotoptions).
-@immutable final class BrapiPostScreenshotRequestVariant2ScreenshotOptions {const BrapiPostScreenshotRequestVariant2ScreenshotOptions({this.captureBeyondViewport, this.clip, this.encoding = BrapiPostScreenshotRequestVariant2ScreenshotOptionsEncoding.binary, this.fromSurface, this.fullPage, this.omitBackground, this.optimizeForSpeed, this.quality, this.type = BrapiPostScreenshotRequestVariant2ScreenshotOptionsType.png, });
+@immutable final class BrapiPostScreenshotRequestVariant2ScreenshotOptions {const BrapiPostScreenshotRequestVariant2ScreenshotOptions({this.captureBeyondViewport, this.clip, this.encoding, this.fromSurface, this.fullPage, this.omitBackground, this.optimizeForSpeed, this.quality, this.type, });
 
 factory BrapiPostScreenshotRequestVariant2ScreenshotOptions.fromJson(Map<String, dynamic> json) { return BrapiPostScreenshotRequestVariant2ScreenshotOptions(
   captureBeyondViewport: json['captureBeyondViewport'] as bool?,
   clip: json['clip'] != null ? BrapiPostScreenshotRequestVariant2ScreenshotOptionsClip.fromJson(json['clip'] as Map<String, dynamic>) : null,
-  encoding: json.containsKey('encoding') ? BrapiPostScreenshotRequestVariant2ScreenshotOptionsEncoding.fromJson(json['encoding'] as String) : BrapiPostScreenshotRequestVariant2ScreenshotOptionsEncoding.binary,
+  encoding: json['encoding'] != null ? BrapiPostScreenshotRequestVariant2ScreenshotOptionsEncoding.fromJson(json['encoding'] as String) : null,
   fromSurface: json['fromSurface'] as bool?,
   fullPage: json['fullPage'] as bool?,
   omitBackground: json['omitBackground'] as bool?,
   optimizeForSpeed: json['optimizeForSpeed'] as bool?,
   quality: json['quality'] != null ? (json['quality'] as num).toDouble() : null,
-  type: json.containsKey('type') ? BrapiPostScreenshotRequestVariant2ScreenshotOptionsType.fromJson(json['type'] as String) : BrapiPostScreenshotRequestVariant2ScreenshotOptionsType.png,
+  type: json['type'] != null ? BrapiPostScreenshotRequestVariant2ScreenshotOptionsType.fromJson(json['type'] as String) : null,
 ); }
 
 final bool? captureBeyondViewport;
 
 final BrapiPostScreenshotRequestVariant2ScreenshotOptionsClip? clip;
 
-final BrapiPostScreenshotRequestVariant2ScreenshotOptionsEncoding encoding;
+final BrapiPostScreenshotRequestVariant2ScreenshotOptionsEncoding? encoding;
 
 final bool? fromSurface;
 
@@ -82,21 +82,25 @@ final bool? optimizeForSpeed;
 
 final double? quality;
 
-final BrapiPostScreenshotRequestVariant2ScreenshotOptionsType type;
+final BrapiPostScreenshotRequestVariant2ScreenshotOptionsType? type;
 
+/// The value with the schema default applied when absent.
+BrapiPostScreenshotRequestVariant2ScreenshotOptionsEncoding get encodingOrDefault { return encoding ?? BrapiPostScreenshotRequestVariant2ScreenshotOptionsEncoding.fromJson('binary'); } 
+/// The value with the schema default applied when absent.
+BrapiPostScreenshotRequestVariant2ScreenshotOptionsType get typeOrDefault { return type ?? BrapiPostScreenshotRequestVariant2ScreenshotOptionsType.fromJson('png'); } 
 Map<String, dynamic> toJson() { return {
   'captureBeyondViewport': ?captureBeyondViewport,
   if (clip != null) 'clip': clip?.toJson(),
-  'encoding': encoding.toJson(),
+  if (encoding != null) 'encoding': encoding?.toJson(),
   'fromSurface': ?fromSurface,
   'fullPage': ?fullPage,
   'omitBackground': ?omitBackground,
   'optimizeForSpeed': ?optimizeForSpeed,
   'quality': ?quality,
-  'type': type.toJson(),
+  if (type != null) 'type': type?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'captureBeyondViewport', 'clip', 'encoding', 'fromSurface', 'fullPage', 'omitBackground', 'optimizeForSpeed', 'quality', 'type'}.contains(key)); } 
-BrapiPostScreenshotRequestVariant2ScreenshotOptions copyWith({bool? Function()? captureBeyondViewport, BrapiPostScreenshotRequestVariant2ScreenshotOptionsClip? Function()? clip, BrapiPostScreenshotRequestVariant2ScreenshotOptionsEncoding Function()? encoding, bool? Function()? fromSurface, bool? Function()? fullPage, bool? Function()? omitBackground, bool? Function()? optimizeForSpeed, double? Function()? quality, BrapiPostScreenshotRequestVariant2ScreenshotOptionsType Function()? type, }) { return BrapiPostScreenshotRequestVariant2ScreenshotOptions(
+BrapiPostScreenshotRequestVariant2ScreenshotOptions copyWith({bool? Function()? captureBeyondViewport, BrapiPostScreenshotRequestVariant2ScreenshotOptionsClip? Function()? clip, BrapiPostScreenshotRequestVariant2ScreenshotOptionsEncoding? Function()? encoding, bool? Function()? fromSurface, bool? Function()? fullPage, bool? Function()? omitBackground, bool? Function()? optimizeForSpeed, double? Function()? quality, BrapiPostScreenshotRequestVariant2ScreenshotOptionsType? Function()? type, }) { return BrapiPostScreenshotRequestVariant2ScreenshotOptions(
   captureBeyondViewport: captureBeyondViewport != null ? captureBeyondViewport() : this.captureBeyondViewport,
   clip: clip != null ? clip() : this.clip,
   encoding: encoding != null ? encoding() : this.encoding,

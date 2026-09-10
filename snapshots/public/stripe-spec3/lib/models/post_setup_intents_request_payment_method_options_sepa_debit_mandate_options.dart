@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_request_payment_method_options_sepa_debit_mandate_options_reference_prefix.dart';@immutable final class PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptions {const PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptions({this.referencePrefix});
 
 factory PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptions(
-  referencePrefix: json['reference_prefix'] != null ? OneOf2.parse(json['reference_prefix'], fromA: (v) => v as String, fromB: (v) => PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2.fromJson(v as String),) : null,
+  referencePrefix: json['reference_prefix'] != null ? PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefix.fromJson(json['reference_prefix']) : null,
 ); }
 
 final PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefix? referencePrefix;

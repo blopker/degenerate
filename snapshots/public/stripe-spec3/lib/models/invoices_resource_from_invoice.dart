@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice.dart';import 'invoices_resource_from_invoice_invoice.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoices_resource_from_invoice_invoice.dart';/// 
 @immutable final class InvoicesResourceFromInvoice {const InvoicesResourceFromInvoice({required this.action, required this.invoice, });
 
 factory InvoicesResourceFromInvoice.fromJson(Map<String, dynamic> json) { return InvoicesResourceFromInvoice(
   action: json['action'] as String,
-  invoice: OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),),
+  invoice: InvoicesResourceFromInvoiceInvoice.fromJson(json['invoice']),
 ); }
 
 /// The relation between this invoice and the cloned invoice

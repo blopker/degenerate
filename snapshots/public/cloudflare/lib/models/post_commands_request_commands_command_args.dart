@@ -24,40 +24,48 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCommandsRequestCommandsCommandArgsInterfaces($value)'; } 
  }
-@immutable final class PostCommandsRequestCommandsCommandArgs {const PostCommandsRequestCommandsCommandArgs({this.interfaces, this.maxFileSizeMb = 5.0, this.packetSizeBytes = 160.0, this.testAllRoutes = true, this.timeLimitMin = 5.0, });
+@immutable final class PostCommandsRequestCommandsCommandArgs {const PostCommandsRequestCommandsCommandArgs({this.interfaces, this.maxFileSizeMb, this.packetSizeBytes, this.testAllRoutes, this.timeLimitMin, });
 
 factory PostCommandsRequestCommandsCommandArgs.fromJson(Map<String, dynamic> json) { return PostCommandsRequestCommandsCommandArgs(
   interfaces: (json['interfaces'] as List<dynamic>?)?.map((e) => PostCommandsRequestCommandsCommandArgsInterfaces.fromJson(e as String)).toList(),
-  maxFileSizeMb: json.containsKey('max-file-size-mb') ? (json['max-file-size-mb'] as num).toDouble() : 5.0,
-  packetSizeBytes: json.containsKey('packet-size-bytes') ? (json['packet-size-bytes'] as num).toDouble() : 160.0,
-  testAllRoutes: json.containsKey('test-all-routes') ? json['test-all-routes'] as bool : true,
-  timeLimitMin: json.containsKey('time-limit-min') ? (json['time-limit-min'] as num).toDouble() : 5.0,
+  maxFileSizeMb: json['max-file-size-mb'] != null ? (json['max-file-size-mb'] as num).toDouble() : null,
+  packetSizeBytes: json['packet-size-bytes'] != null ? (json['packet-size-bytes'] as num).toDouble() : null,
+  testAllRoutes: json['test-all-routes'] as bool?,
+  timeLimitMin: json['time-limit-min'] != null ? (json['time-limit-min'] as num).toDouble() : null,
 ); }
 
 /// List of interfaces to capture packets on
 final List<PostCommandsRequestCommandsCommandArgsInterfaces>? interfaces;
 
 /// Maximum file size (in MB) for the capture file. Specifies the maximum file size of the warp-diag zip artifact that can be uploaded. If the zip artifact exceeds the specified max file size, it will NOT be uploaded
-final double maxFileSizeMb;
+final double? maxFileSizeMb;
 
 /// Maximum number of bytes to save for each packet
-final double packetSizeBytes;
+final double? packetSizeBytes;
 
 /// Test an IP address from all included or excluded ranges. Tests an IP address from all included or excluded ranges. Essentially the same as running 'route get `<ip>`'' and collecting the results. This option may increase the time taken to collect the warp-diag
-final bool testAllRoutes;
+final bool? testAllRoutes;
 
 /// Limit on capture duration (in minutes)
-final double timeLimitMin;
+final double? timeLimitMin;
 
+/// The value with the schema default applied when absent.
+double get maxFileSizeMbOrDefault { return maxFileSizeMb ?? 5.0; } 
+/// The value with the schema default applied when absent.
+double get packetSizeBytesOrDefault { return packetSizeBytes ?? 160.0; } 
+/// The value with the schema default applied when absent.
+bool get testAllRoutesOrDefault { return testAllRoutes ?? true; } 
+/// The value with the schema default applied when absent.
+double get timeLimitMinOrDefault { return timeLimitMin ?? 5.0; } 
 Map<String, dynamic> toJson() { return {
   if (interfaces != null) 'interfaces': interfaces?.map((e) => e.toJson()).toList(),
-  'max-file-size-mb': maxFileSizeMb,
-  'packet-size-bytes': packetSizeBytes,
-  'test-all-routes': testAllRoutes,
-  'time-limit-min': timeLimitMin,
+  'max-file-size-mb': ?maxFileSizeMb,
+  'packet-size-bytes': ?packetSizeBytes,
+  'test-all-routes': ?testAllRoutes,
+  'time-limit-min': ?timeLimitMin,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'interfaces', 'max-file-size-mb', 'packet-size-bytes', 'test-all-routes', 'time-limit-min'}.contains(key)); } 
-PostCommandsRequestCommandsCommandArgs copyWith({List<PostCommandsRequestCommandsCommandArgsInterfaces>? Function()? interfaces, double Function()? maxFileSizeMb, double Function()? packetSizeBytes, bool Function()? testAllRoutes, double Function()? timeLimitMin, }) { return PostCommandsRequestCommandsCommandArgs(
+PostCommandsRequestCommandsCommandArgs copyWith({List<PostCommandsRequestCommandsCommandArgsInterfaces>? Function()? interfaces, double? Function()? maxFileSizeMb, double? Function()? packetSizeBytes, bool? Function()? testAllRoutes, double? Function()? timeLimitMin, }) { return PostCommandsRequestCommandsCommandArgs(
   interfaces: interfaces != null ? interfaces() : this.interfaces,
   maxFileSizeMb: maxFileSizeMb != null ? maxFileSizeMb() : this.maxFileSizeMb,
   packetSizeBytes: packetSizeBytes != null ? packetSizeBytes() : this.packetSizeBytes,

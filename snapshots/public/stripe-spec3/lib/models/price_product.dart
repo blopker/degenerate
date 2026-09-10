@@ -1,3 +1,43 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_product.dart';import 'product.dart';typedef PriceProduct = OneOf3<String,Product,DeletedProduct>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_product.dart';import 'product.dart';/// The ID of the product this price is associated with.
+@immutable
+final class PriceProduct {
+  const PriceProduct({this.string = const Omittable.absent(),
+this.product = const Omittable.absent(),
+this.deletedProduct = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PriceProduct._({required this.rawValue, required this.string,
+required this.product,
+required this.deletedProduct,});
+  factory PriceProduct.fromJson(Object? json) => PriceProduct._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+product: parseAnyOfVariant<Product>(json, (value) => Product.fromJson(value! as Map<String, dynamic>)),
+deletedProduct: parseAnyOfVariant<DeletedProduct>(json, (value) => DeletedProduct.fromJson(value! as Map<String, dynamic>)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<Product> product;
+final Omittable<DeletedProduct> deletedProduct;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || product.isPresent || deletedProduct.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (product.isPresent) product.value?.toJson(),
+if (deletedProduct.isPresent) deletedProduct.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PriceProduct && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PriceProduct(${toJson()})';
+}

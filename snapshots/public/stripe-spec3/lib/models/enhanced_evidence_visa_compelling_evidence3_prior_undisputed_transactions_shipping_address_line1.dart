@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2($value)'; } 
  }
-typedef EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1 = OneOf2<String,EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2>;
+
+@immutable
+final class EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1 {
+  const EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1({this.string = const Omittable.absent(),
+this.enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1._({required this.rawValue, required this.string,
+required this.enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2,});
+  factory EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1.fromJson(Object? json) => EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2: parseAnyOfVariant<EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2>(json, (value) => EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2> enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2.isPresent) enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1 && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1(${toJson()})';
+}

@@ -1,19 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
-@immutable final class ZonesNelValue {const ZonesNelValue({this.enabled = false});
+@immutable final class ZonesNelValue {const ZonesNelValue({this.enabled});
 
 factory ZonesNelValue.fromJson(Map<String, dynamic> json) { return ZonesNelValue(
-  enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,
+  enabled: json['enabled'] as bool?,
 ); }
 
-final bool enabled;
+final bool? enabled;
 
+/// The value with the schema default applied when absent.
+bool get enabledOrDefault { return enabled ?? false; } 
 Map<String, dynamic> toJson() { return {
-  'enabled': enabled,
+  'enabled': ?enabled,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled'}.contains(key)); } 
-ZonesNelValue copyWith({bool Function()? enabled}) { return ZonesNelValue(
+ZonesNelValue copyWith({bool? Function()? enabled}) { return ZonesNelValue(
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

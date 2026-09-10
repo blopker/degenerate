@@ -42,4 +42,44 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostFileLinksLinkRequestExpiresAtVariant3($value)'; } 
  }
-typedef PostFileLinksLinkRequestExpiresAt = OneOf3<PostFileLinksLinkRequestExpiresAtVariant1,int,PostFileLinksLinkRequestExpiresAtVariant3>;
+/// A future timestamp after which the link will no longer be usable, or `now` to expire the link immediately.
+@immutable
+final class PostFileLinksLinkRequestExpiresAt {
+  const PostFileLinksLinkRequestExpiresAt({this.postFileLinksLinkRequestExpiresAtVariant1 = const Omittable.absent(),
+this.$int = const Omittable.absent(),
+this.postFileLinksLinkRequestExpiresAtVariant3 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostFileLinksLinkRequestExpiresAt._({required this.rawValue, required this.postFileLinksLinkRequestExpiresAtVariant1,
+required this.$int,
+required this.postFileLinksLinkRequestExpiresAtVariant3,});
+  factory PostFileLinksLinkRequestExpiresAt.fromJson(Object? json) => PostFileLinksLinkRequestExpiresAt._(
+    rawValue: Omittable(json),
+    postFileLinksLinkRequestExpiresAtVariant1: parseAnyOfVariant<PostFileLinksLinkRequestExpiresAtVariant1>(json, (value) => PostFileLinksLinkRequestExpiresAtVariant1.fromJson(value! as String)),
+$int: parseAnyOfVariant<int>(json, (value) => (value! as num).toInt()),
+postFileLinksLinkRequestExpiresAtVariant3: parseAnyOfVariant<PostFileLinksLinkRequestExpiresAtVariant3>(json, (value) => PostFileLinksLinkRequestExpiresAtVariant3.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<PostFileLinksLinkRequestExpiresAtVariant1> postFileLinksLinkRequestExpiresAtVariant1;
+final Omittable<int> $int;
+final Omittable<PostFileLinksLinkRequestExpiresAtVariant3> postFileLinksLinkRequestExpiresAtVariant3;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => postFileLinksLinkRequestExpiresAtVariant1.isPresent || $int.isPresent || postFileLinksLinkRequestExpiresAtVariant3.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (postFileLinksLinkRequestExpiresAtVariant1.isPresent) postFileLinksLinkRequestExpiresAtVariant1.value?.toJson(),
+if ($int.isPresent) $int.value,
+if (postFileLinksLinkRequestExpiresAtVariant3.isPresent) postFileLinksLinkRequestExpiresAtVariant3.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostFileLinksLinkRequestExpiresAt && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostFileLinksLinkRequestExpiresAt(${toJson()})';
+}

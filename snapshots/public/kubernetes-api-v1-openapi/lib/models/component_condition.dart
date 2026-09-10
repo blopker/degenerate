@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Information about the condition of a component.
-@immutable final class ComponentCondition {const ComponentCondition({this.error, this.message, this.status = '', this.type = '', });
+@immutable final class ComponentCondition {const ComponentCondition({required this.status, required this.type, this.error, this.message, });
 
 factory ComponentCondition.fromJson(Map<String, dynamic> json) { return ComponentCondition(
   error: json['error'] as String?,

@@ -24,4 +24,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentConfirmRequestOffSessionVariant2($value)'; } 
  }
-typedef PostPaymentIntentsIntentConfirmRequestOffSession = OneOf2<bool,PostPaymentIntentsIntentConfirmRequestOffSessionVariant2>;
+/// Set to `true` to indicate that the customer isn't in your checkout flow during this payment attempt and can't authenticate. Use this parameter in scenarios where you collect card details and [charge them later](https://docs.stripe.com/payments/cards/charging-saved-cards).
+@immutable
+final class PostPaymentIntentsIntentConfirmRequestOffSession {
+  const PostPaymentIntentsIntentConfirmRequestOffSession({this.$bool = const Omittable.absent(),
+this.postPaymentIntentsIntentConfirmRequestOffSessionVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsIntentConfirmRequestOffSession._({required this.rawValue, required this.$bool,
+required this.postPaymentIntentsIntentConfirmRequestOffSessionVariant2,});
+  factory PostPaymentIntentsIntentConfirmRequestOffSession.fromJson(Object? json) => PostPaymentIntentsIntentConfirmRequestOffSession._(
+    rawValue: Omittable(json),
+    $bool: parseAnyOfVariant<bool>(json, (value) => value! as bool),
+postPaymentIntentsIntentConfirmRequestOffSessionVariant2: parseAnyOfVariant<PostPaymentIntentsIntentConfirmRequestOffSessionVariant2>(json, (value) => PostPaymentIntentsIntentConfirmRequestOffSessionVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<bool> $bool;
+final Omittable<PostPaymentIntentsIntentConfirmRequestOffSessionVariant2> postPaymentIntentsIntentConfirmRequestOffSessionVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => $bool.isPresent || postPaymentIntentsIntentConfirmRequestOffSessionVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if ($bool.isPresent) $bool.value,
+if (postPaymentIntentsIntentConfirmRequestOffSessionVariant2.isPresent) postPaymentIntentsIntentConfirmRequestOffSessionVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsIntentConfirmRequestOffSession && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsIntentConfirmRequestOffSession(${toJson()})';
+}

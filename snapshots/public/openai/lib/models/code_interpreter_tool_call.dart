@@ -37,7 +37,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A tool call to run code.
 /// 
-@immutable final class CodeInterpreterToolCall {const CodeInterpreterToolCall({required this.id, required this.status, required this.containerId, required this.code, required this.outputs, this.type = 'code_interpreter_call', });
+@immutable final class CodeInterpreterToolCall {const CodeInterpreterToolCall({required this.type, required this.id, required this.status, required this.containerId, required this.code, required this.outputs, });
 
 factory CodeInterpreterToolCall.fromJson(Map<String, dynamic> json) { return CodeInterpreterToolCall(
   type: json['type'] as String,

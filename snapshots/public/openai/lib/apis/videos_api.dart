@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_video_body.dart';import '../models/create_video_remix_body.dart';import '../models/deleted_video_resource.dart';import '../models/order_enum.dart';import '../models/video_content_variant.dart';import '../models/video_list_resource.dart';import '../models/video_resource.dart';/// VideosApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_video_body.dart';import '../models/create_video_remix_body.dart';import '../models/deleted_video_resource.dart';import '../models/order_enum.dart';import '../models/video_content_variant.dart';import '../models/video_list_resource.dart';import '../models/video_resource.dart';/// VideosApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -34,10 +34,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return VideoListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VideoListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -55,10 +56,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return VideoResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VideoResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -74,10 +76,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return VideoResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VideoResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -93,10 +96,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return DeletedVideoResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeletedVideoResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -105,7 +109,7 @@ return execute(
 /// Streams the rendered video content for the specified video job.
 ///
 /// `GET /videos/{video_id}/content`
-Future<ApiResult<String, Never>> retrieveVideoContent({required String videoId, VideoContentVariant? variant, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<OneOf2<String, Uint8List>, Never>> retrieveVideoContent({required String videoId, VideoContentVariant? variant, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (variant != null) {
   queryParameters['variant'] = variant.toJson();
@@ -122,10 +126,25 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<String, Uint8List>.a(json as String);
+}
+if (responseMediaTypeMatches(contentType, 'image/webp')) {
+final value = (() { return Uint8List.fromList(response.bodyBytes); })();
+return OneOf2<String, Uint8List>.b(value);
+}
+if (responseMediaTypeMatches(contentType, 'video/mp4')) {
+final value = (() { return Uint8List.fromList(response.bodyBytes); })();
+return OneOf2<String, Uint8List>.b(value);
+}
+final json = jsonDecode(response.body);
+return OneOf2<String, Uint8List>.a(json as String);
+
   },
 );
  } 
@@ -143,10 +162,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return VideoResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return VideoResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

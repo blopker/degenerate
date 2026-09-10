@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'apply_patch_call_output_status.dart';/// The streamed output emitted by an apply patch tool call.
-@immutable final class ApplyPatchToolCallOutputItemParam {const ApplyPatchToolCallOutputItemParam({required this.callId, required this.status, this.type = 'apply_patch_call_output', this.id = const Omittable.absent(), this.output = const Omittable.absent(), });
+@immutable final class ApplyPatchToolCallOutputItemParam {const ApplyPatchToolCallOutputItemParam({required this.type, required this.callId, required this.status, this.id = const Omittable.absent(), this.output = const Omittable.absent(), });
 
 factory ApplyPatchToolCallOutputItemParam.fromJson(Map<String, dynamic> json) { return ApplyPatchToolCallOutputItemParam(
   type: json['type'] as String,

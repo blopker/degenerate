@@ -33,13 +33,13 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SemanticVadEagerness($value)'; } 
  }
 /// Server-side semantic turn detection which uses a model to determine when the user has finished speaking.
-@immutable final class SemanticVad {const SemanticVad({required this.type, this.eagerness = SemanticVadEagerness.auto, this.createResponse = true, this.interruptResponse = true, });
+@immutable final class SemanticVad {const SemanticVad({required this.type, this.eagerness, this.createResponse, this.interruptResponse, });
 
 factory SemanticVad.fromJson(Map<String, dynamic> json) { return SemanticVad(
   type: json['type'] as String,
-  eagerness: json.containsKey('eagerness') ? SemanticVadEagerness.fromJson(json['eagerness'] as String) : SemanticVadEagerness.auto,
-  createResponse: json.containsKey('create_response') ? json['create_response'] as bool : true,
-  interruptResponse: json.containsKey('interrupt_response') ? json['interrupt_response'] as bool : true,
+  eagerness: json['eagerness'] != null ? SemanticVadEagerness.fromJson(json['eagerness'] as String) : null,
+  createResponse: json['create_response'] as bool?,
+  interruptResponse: json['interrupt_response'] as bool?,
 ); }
 
 /// Type of turn detection, `semantic_vad` to turn on Semantic VAD.
@@ -48,25 +48,31 @@ final String type;
 
 /// Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`. `low`, `medium`, and `high` have max timeouts of 8s, 4s, and 2s respectively.
 /// 
-final SemanticVadEagerness eagerness;
+final SemanticVadEagerness? eagerness;
 
 /// Whether or not to automatically generate a response when a VAD stop event occurs.
 /// 
-final bool createResponse;
+final bool? createResponse;
 
 /// Whether or not to automatically interrupt any ongoing response with output to the default
 /// conversation (i.e. `conversation` of `auto`) when a VAD start event occurs.
 /// 
-final bool interruptResponse;
+final bool? interruptResponse;
 
+/// The value with the schema default applied when absent.
+SemanticVadEagerness get eagernessOrDefault { return eagerness ?? SemanticVadEagerness.fromJson('auto'); } 
+/// The value with the schema default applied when absent.
+bool get createResponseOrDefault { return createResponse ?? true; } 
+/// The value with the schema default applied when absent.
+bool get interruptResponseOrDefault { return interruptResponse ?? true; } 
 Map<String, dynamic> toJson() { return {
   'type': type,
-  'eagerness': eagerness.toJson(),
-  'create_response': createResponse,
-  'interrupt_response': interruptResponse,
+  if (eagerness != null) 'eagerness': eagerness?.toJson(),
+  'create_response': ?createResponse,
+  'interrupt_response': ?interruptResponse,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-SemanticVad copyWith({String? type, SemanticVadEagerness Function()? eagerness, bool Function()? createResponse, bool Function()? interruptResponse, }) { return SemanticVad(
+SemanticVad copyWith({String? type, SemanticVadEagerness? Function()? eagerness, bool? Function()? createResponse, bool? Function()? interruptResponse, }) { return SemanticVad(
   type: type ?? this.type,
   eagerness: eagerness != null ? eagerness() : this.eagerness,
   createResponse: createResponse != null ? createResponse() : this.createResponse,

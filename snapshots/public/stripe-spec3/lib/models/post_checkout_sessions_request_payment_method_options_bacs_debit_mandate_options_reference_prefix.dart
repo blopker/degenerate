@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2($value)'; } 
  }
-typedef PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix = OneOf2<String,PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2>;
+
+@immutable
+final class PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix {
+  const PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix({this.string = const Omittable.absent(),
+this.postCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix._({required this.rawValue, required this.string,
+required this.postCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2,});
+  factory PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix.fromJson(Object? json) => PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2: parseAnyOfVariant<PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2>(json, (value) => PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2> postCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2.isPresent) postCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix(${toJson()})';
+}

@@ -24,23 +24,25 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AutoragConfigSearchRequestRerankingModel($value)'; } 
  }
-@immutable final class AutoragConfigSearchRequestReranking {const AutoragConfigSearchRequestReranking({this.enabled = false, this.model, });
+@immutable final class AutoragConfigSearchRequestReranking {const AutoragConfigSearchRequestReranking({this.enabled, this.model, });
 
 factory AutoragConfigSearchRequestReranking.fromJson(Map<String, dynamic> json) { return AutoragConfigSearchRequestReranking(
-  enabled: json.containsKey('enabled') ? json['enabled'] as bool : false,
+  enabled: json['enabled'] as bool?,
   model: json['model'] != null ? AutoragConfigSearchRequestRerankingModel.fromJson(json['model'] as String) : null,
 ); }
 
-final bool enabled;
+final bool? enabled;
 
 final AutoragConfigSearchRequestRerankingModel? model;
 
+/// The value with the schema default applied when absent.
+bool get enabledOrDefault { return enabled ?? false; } 
 Map<String, dynamic> toJson() { return {
-  'enabled': enabled,
+  'enabled': ?enabled,
   if (model != null) 'model': model?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'model'}.contains(key)); } 
-AutoragConfigSearchRequestReranking copyWith({bool Function()? enabled, AutoragConfigSearchRequestRerankingModel? Function()? model, }) { return AutoragConfigSearchRequestReranking(
+AutoragConfigSearchRequestReranking copyWith({bool? Function()? enabled, AutoragConfigSearchRequestRerankingModel? Function()? model, }) { return AutoragConfigSearchRequestReranking(
   enabled: enabled != null ? enabled() : this.enabled,
   model: model != null ? model() : this.model,
 ); } 

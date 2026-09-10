@@ -52,7 +52,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SearchContentType($value)'; } 
  }
 /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
-@immutable final class WebSearchPreviewTool {const WebSearchPreviewTool({this.type = 'web_search_preview', this.userLocation = const Omittable.absent(), this.searchContextSize, this.searchContentTypes, });
+@immutable final class WebSearchPreviewTool {const WebSearchPreviewTool({required this.type, this.userLocation = const Omittable.absent(), this.searchContextSize, this.searchContentTypes, });
 
 factory WebSearchPreviewTool.fromJson(Map<String, dynamic> json) { return WebSearchPreviewTool(
   type: json['type'] as String,

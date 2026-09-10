@@ -120,4 +120,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchDeleteInstancesResponseResultAiSearchModelVariant2($value)'; } 
  }
-typedef AiSearchDeleteInstancesResponseResultAiSearchModel = OneOf2<AiSearchDeleteInstancesResponseResultAiSearchModelVariant1,AiSearchDeleteInstancesResponseResultAiSearchModelVariant2>;
+
+@immutable
+final class AiSearchDeleteInstancesResponseResultAiSearchModel {
+  const AiSearchDeleteInstancesResponseResultAiSearchModel({this.aiSearchDeleteInstancesResponseResultAiSearchModelVariant1 = const Omittable.absent(),
+this.aiSearchDeleteInstancesResponseResultAiSearchModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const AiSearchDeleteInstancesResponseResultAiSearchModel._({required this.rawValue, required this.aiSearchDeleteInstancesResponseResultAiSearchModelVariant1,
+required this.aiSearchDeleteInstancesResponseResultAiSearchModelVariant2,});
+  factory AiSearchDeleteInstancesResponseResultAiSearchModel.fromJson(Object? json) => AiSearchDeleteInstancesResponseResultAiSearchModel._(
+    rawValue: Omittable(json),
+    aiSearchDeleteInstancesResponseResultAiSearchModelVariant1: parseAnyOfVariant<AiSearchDeleteInstancesResponseResultAiSearchModelVariant1>(json, (value) => AiSearchDeleteInstancesResponseResultAiSearchModelVariant1.fromJson(value! as String)),
+aiSearchDeleteInstancesResponseResultAiSearchModelVariant2: parseAnyOfVariant<AiSearchDeleteInstancesResponseResultAiSearchModelVariant2>(json, (value) => AiSearchDeleteInstancesResponseResultAiSearchModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<AiSearchDeleteInstancesResponseResultAiSearchModelVariant1> aiSearchDeleteInstancesResponseResultAiSearchModelVariant1;
+final Omittable<AiSearchDeleteInstancesResponseResultAiSearchModelVariant2> aiSearchDeleteInstancesResponseResultAiSearchModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => aiSearchDeleteInstancesResponseResultAiSearchModelVariant1.isPresent || aiSearchDeleteInstancesResponseResultAiSearchModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (aiSearchDeleteInstancesResponseResultAiSearchModelVariant1.isPresent) aiSearchDeleteInstancesResponseResultAiSearchModelVariant1.value?.toJson(),
+if (aiSearchDeleteInstancesResponseResultAiSearchModelVariant2.isPresent) aiSearchDeleteInstancesResponseResultAiSearchModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is AiSearchDeleteInstancesResponseResultAiSearchModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'AiSearchDeleteInstancesResponseResultAiSearchModel(${toJson()})';
+}

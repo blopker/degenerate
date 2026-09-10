@@ -57,16 +57,16 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class Canceled {const Canceled({this.additionalDocumentation, this.canceledAt, this.cancellationPolicyProvided, this.cancellationReason, this.expectedAt, this.explanation, this.productDescription, this.productType, this.returnStatus, this.returnedAt, });
 
 factory Canceled.fromJson(Map<String, dynamic> json) { return Canceled(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => CanceledAdditionalDocumentationVariant2.fromJson(v as String),) : null,
-  canceledAt: json['canceled_at'] != null ? OneOf2.parse(json['canceled_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => CanceledCanceledAtVariant2.fromJson(v as String),) : null,
-  cancellationPolicyProvided: json['cancellation_policy_provided'] != null ? OneOf2.parse(json['cancellation_policy_provided'], fromA: (v) => v as bool, fromB: (v) => CanceledCancellationPolicyProvidedVariant2.fromJson(v as String),) : null,
-  cancellationReason: json['cancellation_reason'] != null ? OneOf2.parse(json['cancellation_reason'], fromA: (v) => v as String, fromB: (v) => CanceledCancellationReasonVariant2.fromJson(v as String),) : null,
-  expectedAt: json['expected_at'] != null ? OneOf2.parse(json['expected_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => CanceledExpectedAtVariant2.fromJson(v as String),) : null,
-  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => CanceledExplanationVariant2.fromJson(v as String),) : null,
-  productDescription: json['product_description'] != null ? OneOf2.parse(json['product_description'], fromA: (v) => v as String, fromB: (v) => CanceledProductDescriptionVariant2.fromJson(v as String),) : null,
+  additionalDocumentation: json['additional_documentation'] != null ? CanceledAdditionalDocumentation.fromJson(json['additional_documentation']) : null,
+  canceledAt: json['canceled_at'] != null ? CanceledCanceledAt.fromJson(json['canceled_at']) : null,
+  cancellationPolicyProvided: json['cancellation_policy_provided'] != null ? CanceledCancellationPolicyProvided.fromJson(json['cancellation_policy_provided']) : null,
+  cancellationReason: json['cancellation_reason'] != null ? CanceledCancellationReason.fromJson(json['cancellation_reason']) : null,
+  expectedAt: json['expected_at'] != null ? CanceledExpectedAt.fromJson(json['expected_at']) : null,
+  explanation: json['explanation'] != null ? CanceledExplanation.fromJson(json['explanation']) : null,
+  productDescription: json['product_description'] != null ? CanceledProductDescription.fromJson(json['product_description']) : null,
   productType: json['product_type'] != null ? CanceledProductType.fromJson(json['product_type'] as String) : null,
   returnStatus: json['return_status'] != null ? CanceledReturnStatus.fromJson(json['return_status'] as String) : null,
-  returnedAt: json['returned_at'] != null ? OneOf2.parse(json['returned_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => CanceledReturnedAtVariant2.fromJson(v as String),) : null,
+  returnedAt: json['returned_at'] != null ? CanceledReturnedAt.fromJson(json['returned_at']) : null,
 ); }
 
 final CanceledAdditionalDocumentation? additionalDocumentation;

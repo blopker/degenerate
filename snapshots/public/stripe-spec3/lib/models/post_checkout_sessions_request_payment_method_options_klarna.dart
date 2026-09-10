@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_klarna_subscriptions.dart';import 'post_checkout_sessions_request_payment_method_options_klarna_subscriptions_variant1.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_request_payment_method_options_klarna_subscriptions.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod._(this.value);
 
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
@@ -47,7 +47,7 @@ bool get isUnknown { return !values.contains(this); }
 factory PostCheckoutSessionsRequestPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsKlarna(
   captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod.fromJson(json['capture_method'] as String) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
-  subscriptions: json['subscriptions'] != null ? OneOf2.parse(json['subscriptions'], fromA: (v) => (v as List<dynamic>).map((e) => PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2.fromJson(v as String),) : null,
+  subscriptions: json['subscriptions'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptions.fromJson(json['subscriptions']) : null,
 ); }
 
 final PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaCaptureMethod? captureMethod;

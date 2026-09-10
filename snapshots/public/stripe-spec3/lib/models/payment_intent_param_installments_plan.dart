@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PaymentIntentParamInstallmentsPlanVariant2($value)'; } 
  }
-typedef PaymentIntentParamInstallmentsPlan = OneOf2<InstallmentPlan3,PaymentIntentParamInstallmentsPlanVariant2>;
+
+@immutable
+final class PaymentIntentParamInstallmentsPlan {
+  const PaymentIntentParamInstallmentsPlan({this.installmentPlan3 = const Omittable.absent(),
+this.paymentIntentParamInstallmentsPlanVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PaymentIntentParamInstallmentsPlan._({required this.rawValue, required this.installmentPlan3,
+required this.paymentIntentParamInstallmentsPlanVariant2,});
+  factory PaymentIntentParamInstallmentsPlan.fromJson(Object? json) => PaymentIntentParamInstallmentsPlan._(
+    rawValue: Omittable(json),
+    installmentPlan3: parseAnyOfVariant<InstallmentPlan3>(json, (value) => InstallmentPlan3.fromJson(value! as Map<String, dynamic>)),
+paymentIntentParamInstallmentsPlanVariant2: parseAnyOfVariant<PaymentIntentParamInstallmentsPlanVariant2>(json, (value) => PaymentIntentParamInstallmentsPlanVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<InstallmentPlan3> installmentPlan3;
+final Omittable<PaymentIntentParamInstallmentsPlanVariant2> paymentIntentParamInstallmentsPlanVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => installmentPlan3.isPresent || paymentIntentParamInstallmentsPlanVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (installmentPlan3.isPresent) installmentPlan3.value?.toJson(),
+if (paymentIntentParamInstallmentsPlanVariant2.isPresent) paymentIntentParamInstallmentsPlanVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PaymentIntentParamInstallmentsPlan && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PaymentIntentParamInstallmentsPlan(${toJson()})';
+}

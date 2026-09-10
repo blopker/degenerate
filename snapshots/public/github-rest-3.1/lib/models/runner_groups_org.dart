@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunnerGroupsOrg {const RunnerGroupsOrg({required this.id, required this.name, required this.visibility, required this.$default, required this.runnersUrl, required this.inherited, required this.allowsPublicRepositories, this.selectedRepositoriesUrl, this.hostedRunnersUrl, this.networkConfigurationId, this.inheritedAllowsPublicRepositories, this.workflowRestrictionsReadOnly = false, this.restrictedToWorkflows = false, this.selectedWorkflows, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RunnerGroupsOrg {const RunnerGroupsOrg({required this.id, required this.name, required this.visibility, required this.$default, required this.runnersUrl, required this.inherited, required this.allowsPublicRepositories, this.selectedRepositoriesUrl, this.hostedRunnersUrl, this.networkConfigurationId, this.inheritedAllowsPublicRepositories, this.workflowRestrictionsReadOnly, this.restrictedToWorkflows, this.selectedWorkflows, });
 
 factory RunnerGroupsOrg.fromJson(Map<String, dynamic> json) { return RunnerGroupsOrg(
   id: (json['id'] as num).toDouble(),
@@ -14,8 +14,8 @@ factory RunnerGroupsOrg.fromJson(Map<String, dynamic> json) { return RunnerGroup
   inherited: json['inherited'] as bool,
   inheritedAllowsPublicRepositories: json['inherited_allows_public_repositories'] as bool?,
   allowsPublicRepositories: json['allows_public_repositories'] as bool,
-  workflowRestrictionsReadOnly: json.containsKey('workflow_restrictions_read_only') ? json['workflow_restrictions_read_only'] as bool : false,
-  restrictedToWorkflows: json.containsKey('restricted_to_workflows') ? json['restricted_to_workflows'] as bool : false,
+  workflowRestrictionsReadOnly: json['workflow_restrictions_read_only'] as bool?,
+  restrictedToWorkflows: json['restricted_to_workflows'] as bool?,
   selectedWorkflows: (json['selected_workflows'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }
 
@@ -44,14 +44,18 @@ final bool? inheritedAllowsPublicRepositories;
 final bool allowsPublicRepositories;
 
 /// If `true`, the `restricted_to_workflows` and `selected_workflows` fields cannot be modified.
-final bool workflowRestrictionsReadOnly;
+final bool? workflowRestrictionsReadOnly;
 
 /// If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
-final bool restrictedToWorkflows;
+final bool? restrictedToWorkflows;
 
 /// List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
 final List<String>? selectedWorkflows;
 
+/// The value with the schema default applied when absent.
+bool get workflowRestrictionsReadOnlyOrDefault { return workflowRestrictionsReadOnly ?? false; } 
+/// The value with the schema default applied when absent.
+bool get restrictedToWorkflowsOrDefault { return restrictedToWorkflows ?? false; } 
 Map<String, dynamic> toJson() { return {
   'id': id,
   'name': name,
@@ -64,8 +68,8 @@ Map<String, dynamic> toJson() { return {
   'inherited': inherited,
   'inherited_allows_public_repositories': ?inheritedAllowsPublicRepositories,
   'allows_public_repositories': allowsPublicRepositories,
-  'workflow_restrictions_read_only': workflowRestrictionsReadOnly,
-  'restricted_to_workflows': restrictedToWorkflows,
+  'workflow_restrictions_read_only': ?workflowRestrictionsReadOnly,
+  'restricted_to_workflows': ?restrictedToWorkflows,
   'selected_workflows': ?selectedWorkflows,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
@@ -75,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('runners_url') && json['runners_url'] is String &&
       json.containsKey('inherited') && json['inherited'] is bool &&
       json.containsKey('allows_public_repositories') && json['allows_public_repositories'] is bool; } 
-RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $default, String? Function()? selectedRepositoriesUrl, String? runnersUrl, String? Function()? hostedRunnersUrl, String? Function()? networkConfigurationId, bool? inherited, bool? Function()? inheritedAllowsPublicRepositories, bool? allowsPublicRepositories, bool Function()? workflowRestrictionsReadOnly, bool Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, }) { return RunnerGroupsOrg(
+RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $default, String? Function()? selectedRepositoriesUrl, String? runnersUrl, String? Function()? hostedRunnersUrl, String? Function()? networkConfigurationId, bool? inherited, bool? Function()? inheritedAllowsPublicRepositories, bool? allowsPublicRepositories, bool? Function()? workflowRestrictionsReadOnly, bool? Function()? restrictedToWorkflows, List<String>? Function()? selectedWorkflows, }) { return RunnerGroupsOrg(
   id: id ?? this.id,
   name: name ?? this.name,
   visibility: visibility ?? this.visibility,

@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'AssistantMessageItemObject($value)'; } 
  }
 /// Assistant-authored message within a thread.
-@immutable final class AssistantMessageItem {const AssistantMessageItem({required this.id, required this.createdAt, required this.threadId, required this.content, this.object = AssistantMessageItemObject.chatkitThreadItem, this.type = 'chatkit.assistant_message', });
+@immutable final class AssistantMessageItem {const AssistantMessageItem({required this.id, required this.object, required this.createdAt, required this.threadId, required this.type, required this.content, });
 
 factory AssistantMessageItem.fromJson(Map<String, dynamic> json) { return AssistantMessageItem(
   id: json['id'] as String,

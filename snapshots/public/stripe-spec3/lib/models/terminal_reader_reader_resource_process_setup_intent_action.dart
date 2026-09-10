@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent.dart';import 'terminal_reader_reader_resource_process_setup_config.dart';import 'terminal_reader_reader_resource_process_setup_intent_action_setup_intent.dart';/// Represents a reader action to process a setup intent
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_process_setup_config.dart';import 'terminal_reader_reader_resource_process_setup_intent_action_setup_intent.dart';/// Represents a reader action to process a setup intent
 @immutable final class TerminalReaderReaderResourceProcessSetupIntentAction {const TerminalReaderReaderResourceProcessSetupIntentAction({required this.setupIntent, this.generatedCard, this.processConfig, });
 
 factory TerminalReaderReaderResourceProcessSetupIntentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceProcessSetupIntentAction(
   generatedCard: json['generated_card'] as String?,
   processConfig: json['process_config'] != null ? TerminalReaderReaderResourceProcessSetupConfig.fromJson(json['process_config'] as Map<String, dynamic>) : null,
-  setupIntent: OneOf2.parse(json['setup_intent'], fromA: (v) => v as String, fromB: (v) => SetupIntent.fromJson(v as Map<String, dynamic>),),
+  setupIntent: TerminalReaderReaderResourceProcessSetupIntentActionSetupIntent.fromJson(json['setup_intent']),
 ); }
 
 /// ID of a card PaymentMethod generated from the card_present PaymentMethod that may be attached to a Customer for future transactions. Only present if it was possible to generate a card PaymentMethod.

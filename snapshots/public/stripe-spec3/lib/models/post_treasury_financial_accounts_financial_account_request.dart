@@ -7,7 +7,7 @@ factory PostTreasuryFinancialAccountsFinancialAccountRequest.fromJson(Map<String
   features: json['features'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
   forwardingSettings: json['forwarding_settings'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestForwardingSettings.fromJson(json['forwarding_settings'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nickname: json['nickname'] != null ? OneOf2.parse(json['nickname'], fromA: (v) => v as String, fromB: (v) => PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2.fromJson(v as String),) : null,
+  nickname: json['nickname'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestNickname.fromJson(json['nickname']) : null,
   platformRestrictions: json['platform_restrictions'] != null ? PostTreasuryFinancialAccountsFinancialAccountRequestPlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
 ); }
 

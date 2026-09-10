@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_use_fedramp_language.dart';@immutable final class InitNewSsoConnectorRequest {const InitNewSsoConnectorRequest({required this.emailDomain, this.beginVerification = true, this.useFedrampLanguage, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_use_fedramp_language.dart';@immutable final class InitNewSsoConnectorRequest {const InitNewSsoConnectorRequest({required this.emailDomain, this.beginVerification, this.useFedrampLanguage, });
 
 factory InitNewSsoConnectorRequest.fromJson(Map<String, dynamic> json) { return InitNewSsoConnectorRequest(
-  beginVerification: json.containsKey('begin_verification') ? json['begin_verification'] as bool : true,
+  beginVerification: json['begin_verification'] as bool?,
   emailDomain: json['email_domain'] as String,
   useFedrampLanguage: json['use_fedramp_language'] != null ? IamUseFedrampLanguage.fromJson(json['use_fedramp_language'] as bool) : null,
 ); }
 
 /// Begin the verification process after creation
-final bool beginVerification;
+final bool? beginVerification;
 
 /// Email domain of the new SSO connector
 final String emailDomain;
@@ -17,13 +17,15 @@ final String emailDomain;
 /// Controls the display of FedRAMP language to the user during SSO login
 final IamUseFedrampLanguage? useFedrampLanguage;
 
+/// The value with the schema default applied when absent.
+bool get beginVerificationOrDefault { return beginVerification ?? true; } 
 Map<String, dynamic> toJson() { return {
-  'begin_verification': beginVerification,
+  'begin_verification': ?beginVerification,
   'email_domain': emailDomain,
   if (useFedrampLanguage != null) 'use_fedramp_language': useFedrampLanguage?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('email_domain') && json['email_domain'] is String; } 
-InitNewSsoConnectorRequest copyWith({bool Function()? beginVerification, String? emailDomain, IamUseFedrampLanguage? Function()? useFedrampLanguage, }) { return InitNewSsoConnectorRequest(
+InitNewSsoConnectorRequest copyWith({bool? Function()? beginVerification, String? emailDomain, IamUseFedrampLanguage? Function()? useFedrampLanguage, }) { return InitNewSsoConnectorRequest(
   beginVerification: beginVerification != null ? beginVerification() : this.beginVerification,
   emailDomain: emailDomain ?? this.emailDomain,
   useFedrampLanguage: useFedrampLanguage != null ? useFedrampLanguage() : this.useFedrampLanguage,

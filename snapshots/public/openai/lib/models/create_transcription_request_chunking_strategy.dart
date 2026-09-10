@@ -23,4 +23,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateTranscriptionRequestChunkingStrategyVariant1($value)'; } 
  }
-typedef CreateTranscriptionRequestChunkingStrategy = OneOf2<CreateTranscriptionRequestChunkingStrategyVariant1,VadConfig>;
+/// Controls how the audio is cut into chunks. When set to `"auto"`, the server first normalizes loudness and then uses voice activity detection (VAD) to choose boundaries. `server_vad` object can be provided to tweak VAD detection parameters manually. If unset, the audio is transcribed as a single block. Required when using `gpt-4o-transcribe-diarize` for inputs longer than 30 seconds.
+@immutable
+final class CreateTranscriptionRequestChunkingStrategy {
+  const CreateTranscriptionRequestChunkingStrategy({this.createTranscriptionRequestChunkingStrategyVariant1 = const Omittable.absent(),
+this.vadConfig = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CreateTranscriptionRequestChunkingStrategy._({required this.rawValue, required this.createTranscriptionRequestChunkingStrategyVariant1,
+required this.vadConfig,});
+  factory CreateTranscriptionRequestChunkingStrategy.fromJson(Object? json) => CreateTranscriptionRequestChunkingStrategy._(
+    rawValue: Omittable(json),
+    createTranscriptionRequestChunkingStrategyVariant1: parseAnyOfVariant<CreateTranscriptionRequestChunkingStrategyVariant1>(json, (value) => CreateTranscriptionRequestChunkingStrategyVariant1.fromJson(value! as String)),
+vadConfig: parseAnyOfVariant<VadConfig>(json, (value) => VadConfig.fromJson(value! as Map<String, dynamic>)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<CreateTranscriptionRequestChunkingStrategyVariant1> createTranscriptionRequestChunkingStrategyVariant1;
+final Omittable<VadConfig> vadConfig;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => (rawValue.isPresent && rawValue.value == null) || createTranscriptionRequestChunkingStrategyVariant1.isPresent || vadConfig.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (createTranscriptionRequestChunkingStrategyVariant1.isPresent) createTranscriptionRequestChunkingStrategyVariant1.value?.toJson(),
+if (vadConfig.isPresent) vadConfig.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CreateTranscriptionRequestChunkingStrategy && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CreateTranscriptionRequestChunkingStrategy(${toJson()})';
+}

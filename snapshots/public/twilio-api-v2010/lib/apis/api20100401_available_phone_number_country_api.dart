@@ -34,10 +34,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ListAvailablePhoneNumberCountryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListAvailablePhoneNumberCountryResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -53,10 +54,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AccountAvailablePhoneNumberCountry.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountAvailablePhoneNumberCountry.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

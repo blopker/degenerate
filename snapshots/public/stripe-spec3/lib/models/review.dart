@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'payment_intent.dart';import 'radar_review_resource_location.dart';import 'radar_review_resource_session.dart';import 'review_charge.dart';import 'review_payment_intent.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_review_resource_location.dart';import 'radar_review_resource_session.dart';import 'review_charge.dart';import 'review_payment_intent.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
 @immutable final class ReviewClosedReason {const ReviewClosedReason._(this.value);
 
 factory ReviewClosedReason.fromJson(String json) { return switch (json) {
@@ -98,7 +98,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory Review.fromJson(Map<String, dynamic> json) { return Review(
   billingZip: json.containsKey('billing_zip') ? Omittable(json['billing_zip'] as String?) : const Omittable.absent(),
-  charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? ReviewCharge.fromJson(json['charge']) : null) : const Omittable.absent(),
   closedReason: json.containsKey('closed_reason') ? Omittable(json['closed_reason'] != null ? ReviewClosedReason.fromJson(json['closed_reason'] as String) : null) : const Omittable.absent(),
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
@@ -108,7 +108,7 @@ factory Review.fromJson(Map<String, dynamic> json) { return Review(
   object: ReviewObject.fromJson(json['object'] as String),
   open: json['open'] as bool,
   openedReason: ReviewOpenedReason.fromJson(json['opened_reason'] as String),
-  paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
+  paymentIntent: json['payment_intent'] != null ? ReviewPaymentIntent.fromJson(json['payment_intent']) : null,
   reason: json['reason'] as String,
   session: json.containsKey('session') ? Omittable(json['session'] != null ? RadarReviewResourceSession.fromJson(json['session'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }

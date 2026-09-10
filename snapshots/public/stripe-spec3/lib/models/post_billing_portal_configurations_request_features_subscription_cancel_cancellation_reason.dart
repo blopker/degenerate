@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing
 
 factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason(
   enabled: json['enabled'] as bool,
-  options: OneOf2.parse(json['options'], fromA: (v) => (v as List<dynamic>).map((e) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1.fromJson(e as String)).toList(), fromB: (v) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2.fromJson(v as String),),
+  options: PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptions.fromJson(json['options']),
 ); }
 
 final bool enabled;

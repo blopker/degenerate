@@ -24,10 +24,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return User.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return User.fromJson(json as Map<String, dynamic>);
+}
+if (responseMediaTypeMatches(contentType, 'application/xml')) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into User
+throw UnsupportedError('Cannot decode application/xml response into User');
+}
+final json = jsonDecode(response.body);
+return User.fromJson(json as Map<String, dynamic>);
+
   },
 );
  } 
@@ -45,10 +56,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return User.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return User.fromJson(json as Map<String, dynamic>);
+}
+if (responseMediaTypeMatches(contentType, 'application/xml')) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into User
+throw UnsupportedError('Cannot decode application/xml response into User');
+}
+final json = jsonDecode(response.body);
+return User.fromJson(json as Map<String, dynamic>);
+
   },
 );
  } 
@@ -77,10 +99,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return response.body;
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return json as String;
+}
+if (responseMediaTypeMatches(contentType, 'application/xml')) {
+return response.body;
+}
+final json = jsonDecode(response.body);
+return json as String;
+
   },
 );
  } 
@@ -98,7 +130,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -117,10 +149,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return User.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return User.fromJson(json as Map<String, dynamic>);
+}
+if (responseMediaTypeMatches(contentType, 'application/xml')) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into User
+throw UnsupportedError('Cannot decode application/xml response into User');
+}
+final json = jsonDecode(response.body);
+return User.fromJson(json as Map<String, dynamic>);
+
   },
 );
  } 
@@ -140,7 +183,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -159,7 +202,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );

@@ -144,7 +144,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BrapiPostJsonRequestVariant1RejectResourceTypes($value)'; } 
  }
-@immutable final class BrapiPostJsonRequestVariant1 {const BrapiPostJsonRequestVariant1({required this.html, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.customAi, this.emulateMediaType, this.gotoOptions, this.prompt, this.rejectRequestPattern, this.rejectResourceTypes, this.responseFormat, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36', this.viewport, this.waitForSelector, this.waitForTimeout, });
+@immutable final class BrapiPostJsonRequestVariant1 {const BrapiPostJsonRequestVariant1({required this.html, this.actionTimeout, this.addScriptTag, this.addStyleTag, this.allowRequestPattern, this.allowResourceTypes, this.authenticate, this.bestAttempt, this.cookies, this.customAi, this.emulateMediaType, this.gotoOptions, this.prompt, this.rejectRequestPattern, this.rejectResourceTypes, this.responseFormat, this.setExtraHttpHeaders, this.setJavaScriptEnabled, this.userAgent, this.viewport, this.waitForSelector, this.waitForTimeout, });
 
 factory BrapiPostJsonRequestVariant1.fromJson(Map<String, dynamic> json) { return BrapiPostJsonRequestVariant1(
   actionTimeout: json['actionTimeout'] != null ? (json['actionTimeout'] as num).toDouble() : null,
@@ -165,7 +165,7 @@ factory BrapiPostJsonRequestVariant1.fromJson(Map<String, dynamic> json) { retur
   responseFormat: json['response_format'] != null ? BrapiPostJsonRequestVariant1ResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
   setExtraHttpHeaders: (json['setExtraHTTPHeaders'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   setJavaScriptEnabled: json['setJavaScriptEnabled'] as bool?,
-  userAgent: json.containsKey('userAgent') ? json['userAgent'] as String : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+  userAgent: json['userAgent'] as String?,
   viewport: json['viewport'] != null ? BrapiPostJsonRequestVariant1Viewport.fromJson(json['viewport'] as Map<String, dynamic>) : null,
   waitForSelector: json['waitForSelector'] != null ? BrapiPostJsonRequestVariant1WaitForSelector.fromJson(json['waitForSelector'] as Map<String, dynamic>) : null,
   waitForTimeout: json['waitForTimeout'] != null ? (json['waitForTimeout'] as num).toDouble() : null,
@@ -220,7 +220,7 @@ final Map<String,String>? setExtraHttpHeaders;
 
 final bool? setJavaScriptEnabled;
 
-final String userAgent;
+final String? userAgent;
 
 /// Check [options](https://pptr.dev/api/puppeteer.page.setviewport).
 final BrapiPostJsonRequestVariant1Viewport? viewport;
@@ -231,6 +231,8 @@ final BrapiPostJsonRequestVariant1WaitForSelector? waitForSelector;
 /// Waits for a specified timeout before continuing.
 final double? waitForTimeout;
 
+/// The value with the schema default applied when absent.
+String get userAgentOrDefault { return userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'; } 
 Map<String, dynamic> toJson() { return {
   'actionTimeout': ?actionTimeout,
   if (addScriptTag != null) 'addScriptTag': addScriptTag?.map((e) => e.toJson()).toList(),
@@ -250,13 +252,13 @@ Map<String, dynamic> toJson() { return {
   if (responseFormat != null) 'response_format': responseFormat?.toJson(),
   'setExtraHTTPHeaders': ?setExtraHttpHeaders,
   'setJavaScriptEnabled': ?setJavaScriptEnabled,
-  'userAgent': userAgent,
+  'userAgent': ?userAgent,
   if (viewport != null) 'viewport': viewport?.toJson(),
   if (waitForSelector != null) 'waitForSelector': waitForSelector?.toJson(),
   'waitForTimeout': ?waitForTimeout,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('html') && json['html'] is String; } 
-BrapiPostJsonRequestVariant1 copyWith({double? Function()? actionTimeout, List<BrapiPostJsonRequestVariant1AddScriptTag>? Function()? addScriptTag, List<BrapiPostJsonRequestVariant1AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostJsonRequestVariant1AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostJsonRequestVariant1Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostJsonRequestVariant1Cookies>? Function()? cookies, List<BrapiPostJsonRequestVariant1CustomAi>? Function()? customAi, String? Function()? emulateMediaType, BrapiPostJsonRequestVariant1GotoOptions? Function()? gotoOptions, String? html, String? Function()? prompt, List<String>? Function()? rejectRequestPattern, List<BrapiPostJsonRequestVariant1RejectResourceTypes>? Function()? rejectResourceTypes, BrapiPostJsonRequestVariant1ResponseFormat? Function()? responseFormat, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, String Function()? userAgent, BrapiPostJsonRequestVariant1Viewport? Function()? viewport, BrapiPostJsonRequestVariant1WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostJsonRequestVariant1(
+BrapiPostJsonRequestVariant1 copyWith({double? Function()? actionTimeout, List<BrapiPostJsonRequestVariant1AddScriptTag>? Function()? addScriptTag, List<BrapiPostJsonRequestVariant1AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<BrapiPostJsonRequestVariant1AllowResourceTypes>? Function()? allowResourceTypes, BrapiPostJsonRequestVariant1Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<BrapiPostJsonRequestVariant1Cookies>? Function()? cookies, List<BrapiPostJsonRequestVariant1CustomAi>? Function()? customAi, String? Function()? emulateMediaType, BrapiPostJsonRequestVariant1GotoOptions? Function()? gotoOptions, String? html, String? Function()? prompt, List<String>? Function()? rejectRequestPattern, List<BrapiPostJsonRequestVariant1RejectResourceTypes>? Function()? rejectResourceTypes, BrapiPostJsonRequestVariant1ResponseFormat? Function()? responseFormat, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, String? Function()? userAgent, BrapiPostJsonRequestVariant1Viewport? Function()? viewport, BrapiPostJsonRequestVariant1WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostJsonRequestVariant1(
   actionTimeout: actionTimeout != null ? actionTimeout() : this.actionTimeout,
   addScriptTag: addScriptTag != null ? addScriptTag() : this.addScriptTag,
   addStyleTag: addStyleTag != null ? addStyleTag() : this.addStyleTag,

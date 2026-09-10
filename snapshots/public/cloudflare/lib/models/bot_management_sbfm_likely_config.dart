@@ -1,34 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_ai_bots_protection.dart';import 'bot_management_cf_robots_variant.dart';import 'bot_management_crawler_protection.dart';import 'bot_management_enable_js.dart';import 'bot_management_is_robots_txt_managed.dart';import 'bot_management_optimize_wordpress.dart';import 'bot_management_sbfm_definitely_automated.dart';import 'bot_management_sbfm_likely_config_stale_zone_configuration.dart';import 'bot_management_sbfm_static_resource_protection.dart';import 'bot_management_sbfm_verified_bots.dart';import 'bot_management_using_latest_model.dart';/// Super Bot Fight Mode (SBFM) action to take on likely automated requests.
-@immutable final class BotManagementSbfmLikelyAutomated {const BotManagementSbfmLikelyAutomated._(this.value);
-
-factory BotManagementSbfmLikelyAutomated.fromJson(String json) { return switch (json) {
-  'allow' => allow,
-  'block' => block,
-  'managed_challenge' => managedChallenge,
-  _ => BotManagementSbfmLikelyAutomated._(json),
-}; }
-
-static const BotManagementSbfmLikelyAutomated allow = BotManagementSbfmLikelyAutomated._('allow');
-
-static const BotManagementSbfmLikelyAutomated block = BotManagementSbfmLikelyAutomated._('block');
-
-static const BotManagementSbfmLikelyAutomated managedChallenge = BotManagementSbfmLikelyAutomated._('managed_challenge');
-
-static const List<BotManagementSbfmLikelyAutomated> values = [allow, block, managedChallenge];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BotManagementSbfmLikelyAutomated && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BotManagementSbfmLikelyAutomated($value)'; } 
- }
-@immutable final class BotManagementSbfmLikelyConfig {const BotManagementSbfmLikelyConfig({this.aiBotsProtection, this.cfRobotsVariant, this.crawlerProtection, this.enableJs, this.isRobotsTxtManaged, this.usingLatestModel, this.optimizeWordpress, this.sbfmDefinitelyAutomated, this.sbfmLikelyAutomated, this.sbfmStaticResourceProtection, this.sbfmVerifiedBots, this.staleZoneConfiguration, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bot_management_ai_bots_protection.dart';import 'bot_management_cf_robots_variant.dart';import 'bot_management_crawler_protection.dart';import 'bot_management_enable_js.dart';import 'bot_management_is_robots_txt_managed.dart';import 'bot_management_optimize_wordpress.dart';import 'bot_management_sbfm_definitely_automated.dart';import 'bot_management_sbfm_likely_automated.dart';import 'bot_management_sbfm_likely_config_stale_zone_configuration.dart';import 'bot_management_sbfm_static_resource_protection.dart';import 'bot_management_sbfm_verified_bots.dart';import 'bot_management_using_latest_model.dart';@immutable final class BotManagementSbfmLikelyConfig {const BotManagementSbfmLikelyConfig({this.aiBotsProtection, this.cfRobotsVariant, this.crawlerProtection, this.enableJs, this.isRobotsTxtManaged, this.usingLatestModel, this.optimizeWordpress, this.sbfmDefinitelyAutomated, this.sbfmLikelyAutomated, this.sbfmStaticResourceProtection, this.sbfmVerifiedBots, this.staleZoneConfiguration, });
 
 factory BotManagementSbfmLikelyConfig.fromJson(Map<String, dynamic> json) { return BotManagementSbfmLikelyConfig(
   aiBotsProtection: json['ai_bots_protection'] != null ? BotManagementAiBotsProtection.fromJson(json['ai_bots_protection'] as String) : null,

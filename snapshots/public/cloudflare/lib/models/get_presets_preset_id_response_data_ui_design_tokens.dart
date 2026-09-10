@@ -63,7 +63,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'GetPresetsPresetIdResponseDataUiDesignTokensTheme($value)'; } 
  }
-@immutable final class GetPresetsPresetIdResponseDataUiDesignTokens {const GetPresetsPresetIdResponseDataUiDesignTokens({required this.borderRadius, required this.borderWidth, required this.colors, required this.logo, required this.theme, this.spacingBase = 4.0, });
+@immutable final class GetPresetsPresetIdResponseDataUiDesignTokens {const GetPresetsPresetIdResponseDataUiDesignTokens({required this.borderRadius, required this.borderWidth, required this.colors, required this.logo, required this.spacingBase, required this.theme, });
 
 factory GetPresetsPresetIdResponseDataUiDesignTokens.fromJson(Map<String, dynamic> json) { return GetPresetsPresetIdResponseDataUiDesignTokens(
   borderRadius: GetPresetsPresetIdResponseDataUiDesignTokensBorderRadius.fromJson(json['border_radius'] as String),

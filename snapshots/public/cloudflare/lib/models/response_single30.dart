@@ -6,7 +6,7 @@ factory ResponseSingle30.fromJson(Map<String, dynamic> json) { return ResponseSi
   errors: (json['errors'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: OneOf2.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => v as String,),
+  result: json['result'] != null ? ResponseSingle30Result.fromJson(json['result']) : null,
 ); }
 
 final List<LoadBalancingMessages2> errors;
@@ -16,23 +16,23 @@ final List<LoadBalancingMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final ResponseSingle30Result result;
+final ResponseSingle30Result? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
   'success': success,
-  'result': result.toJson(),
+  'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool &&
       json.containsKey('result'); } 
-ResponseSingle30 copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, ResponseSingle30Result? result, }) { return ResponseSingle30(
+ResponseSingle30 copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, ResponseSingle30Result? Function()? result, }) { return ResponseSingle30(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,
-  result: result ?? this.result,
+  result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is ResponseSingle30 &&

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalLocationsRequestMetadataVariant2($value)'; } 
  }
-typedef PostTerminalLocationsRequestMetadata = OneOf2<Map<String,String>,PostTerminalLocationsRequestMetadataVariant2>;
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+@immutable
+final class PostTerminalLocationsRequestMetadata {
+  const PostTerminalLocationsRequestMetadata({this.mapStringString = const Omittable.absent(),
+this.postTerminalLocationsRequestMetadataVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTerminalLocationsRequestMetadata._({required this.rawValue, required this.mapStringString,
+required this.postTerminalLocationsRequestMetadataVariant2,});
+  factory PostTerminalLocationsRequestMetadata.fromJson(Object? json) => PostTerminalLocationsRequestMetadata._(
+    rawValue: Omittable(json),
+    mapStringString: parseAnyOfVariant<Map<String, String>>(json, (value) => (value! as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))),
+postTerminalLocationsRequestMetadataVariant2: parseAnyOfVariant<PostTerminalLocationsRequestMetadataVariant2>(json, (value) => PostTerminalLocationsRequestMetadataVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<Map<String, String>> mapStringString;
+final Omittable<PostTerminalLocationsRequestMetadataVariant2> postTerminalLocationsRequestMetadataVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => mapStringString.isPresent || postTerminalLocationsRequestMetadataVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (mapStringString.isPresent) mapStringString.value,
+if (postTerminalLocationsRequestMetadataVariant2.isPresent) postTerminalLocationsRequestMetadataVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTerminalLocationsRequestMetadata && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTerminalLocationsRequestMetadata(${toJson()})';
+}

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2($value)'; } 
  }
-typedef PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgent = OneOf2<String,PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2>;
+
+@immutable
+final class PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgent {
+  const PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgent({this.string = const Omittable.absent(),
+this.postAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgent._({required this.rawValue, required this.string,
+required this.postAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2,});
+  factory PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgent.fromJson(Object? json) => PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgent._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2: parseAnyOfVariant<PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2>(json, (value) => PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2> postAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2.isPresent) postAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgentVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgent && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostAccountsAccountPersonsRequestAdditionalTosAcceptancesAccountUserAgent(${toJson()})';
+}

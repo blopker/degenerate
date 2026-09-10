@@ -20,10 +20,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -39,7 +40,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -70,10 +71,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ListIncomingPhoneNumberAssignedAddOnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListIncomingPhoneNumberAssignedAddOnResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -93,10 +95,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

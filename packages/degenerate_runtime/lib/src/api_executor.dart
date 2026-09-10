@@ -8,6 +8,7 @@ import 'package:degenerate_runtime/src/interceptor.dart';
 import 'package:degenerate_runtime/src/jsonl.dart';
 import 'package:degenerate_runtime/src/request_options.dart';
 import 'package:degenerate_runtime/src/sse.dart';
+import 'package:degenerate_runtime/src/streamed_api_response.dart';
 
 /// Shared execution logic for generated API classes.
 ///
@@ -65,10 +66,12 @@ mixin ApiExecutor {
       try {
         final chain = buildInterceptorChain(
           interceptors: apiConfig.interceptors,
-          terminal: (req) => apiConfig.client.send(req),
+          terminal: (req) async => StreamedApiResponse.fromResponse(
+            await apiConfig.client.send(req),
+          ),
         );
 
-        final response = await chain(effectiveRequest);
+        final response = await (await chain(effectiveRequest)).toApiResponse();
         timeoutTimer?.cancel();
 
         try {
@@ -89,11 +92,12 @@ mixin ApiExecutor {
           return ApiParseException(e, st, response: response);
         }
       } on CancelledException {
-        timeoutTimer?.cancel();
         if (timedOut) {
           throw TimeoutException('Request timed out', effectiveTimeout);
         }
         rethrow;
+      } finally {
+        timeoutTimer?.cancel();
       }
     } on Object catch (e, st) {
       return ApiException(e, st);
@@ -144,24 +148,11 @@ mixin ApiExecutor {
     );
 
     try {
-      // Run interceptors to apply auth headers, logging, etc.
-      // The terminal handler captures the final request and sends it as
-      // a streaming request.
-      late ApiRequest finalRequest;
       final chain = buildInterceptorChain(
         interceptors: apiConfig.interceptors,
-        terminal: (req) async {
-          finalRequest = req;
-          // Return a dummy response — the real streaming
-          // request is sent below.
-          return ApiResponse(statusCode: 200, body: '');
-        },
+        terminal: apiConfig.client.sendStreaming,
       );
-      await chain(effectiveRequest);
-
-      final streamedResponse = await apiConfig.client.sendStreaming(
-        finalRequest,
-      );
+      final streamedResponse = await chain(effectiveRequest);
       timeoutTimer?.cancel();
 
       if (!streamedResponse.isSuccessful) {
@@ -187,6 +178,8 @@ mixin ApiExecutor {
       // Wrap raw network/platform exceptions (SocketException, ClientException,
       // etc.) in ApiStreamError so callers have a consistent error type.
       throw ApiStreamError(statusCode: 0, rawError: e.toString());
+    } finally {
+      timeoutTimer?.cancel();
     }
   }
 

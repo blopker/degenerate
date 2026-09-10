@@ -6,9 +6,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_quotes_
 factory PostQuotesRequestSubscriptionData.fromJson(Map<String, dynamic> json) { return PostQuotesRequestSubscriptionData(
   billingMode: json['billing_mode'] != null ? PostQuotesRequestSubscriptionDataBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>) : null,
   description: json['description'] as String?,
-  effectiveDate: json['effective_date'] != null ? OneOf3.parse(json['effective_date'], fromA: (v) => PostQuotesRequestSubscriptionDataEffectiveDateVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(), fromC: (v) => PostQuotesRequestSubscriptionDataEffectiveDateVariant3.fromJson(v as String),) : null,
+  effectiveDate: json['effective_date'] != null ? PostQuotesRequestSubscriptionDataEffectiveDate.fromJson(json['effective_date']) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  trialPeriodDays: json['trial_period_days'] != null ? OneOf2.parse(json['trial_period_days'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostQuotesRequestSubscriptionDataTrialPeriodDaysVariant2.fromJson(v as String),) : null,
+  trialPeriodDays: json['trial_period_days'] != null ? PostQuotesRequestSubscriptionDataTrialPeriodDays.fromJson(json['trial_period_days']) : null,
 ); }
 
 final PostQuotesRequestSubscriptionDataBillingMode? billingMode;

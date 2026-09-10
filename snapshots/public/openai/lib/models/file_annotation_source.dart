@@ -23,7 +23,7 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'FileAnnotationSourceType($value)'; } 
  }
 /// Attachment source referenced by an annotation.
-@immutable final class FileAnnotationSource {const FileAnnotationSource({required this.filename, this.type = FileAnnotationSourceType.file, });
+@immutable final class FileAnnotationSource {const FileAnnotationSource({required this.type, required this.filename, });
 
 factory FileAnnotationSource.fromJson(Map<String, dynamic> json) { return FileAnnotationSource(
   type: FileAnnotationSourceType.fromJson(json['type'] as String),

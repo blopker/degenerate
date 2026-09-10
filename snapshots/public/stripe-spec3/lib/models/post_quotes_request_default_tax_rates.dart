@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostQuotesRequestDefaultTaxRatesVariant2($value)'; } 
  }
-typedef PostQuotesRequestDefaultTaxRates = OneOf2<List<String>,PostQuotesRequestDefaultTaxRatesVariant2>;
+/// The tax rates that will apply to any line item that does not have `tax_rates` set.
+@immutable
+final class PostQuotesRequestDefaultTaxRates {
+  const PostQuotesRequestDefaultTaxRates({this.listString = const Omittable.absent(),
+this.postQuotesRequestDefaultTaxRatesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostQuotesRequestDefaultTaxRates._({required this.rawValue, required this.listString,
+required this.postQuotesRequestDefaultTaxRatesVariant2,});
+  factory PostQuotesRequestDefaultTaxRates.fromJson(Object? json) => PostQuotesRequestDefaultTaxRates._(
+    rawValue: Omittable(json),
+    listString: parseAnyOfVariant<List<String>>(json, (value) => (value! as List<dynamic>).map((e) => e as String).toList()),
+postQuotesRequestDefaultTaxRatesVariant2: parseAnyOfVariant<PostQuotesRequestDefaultTaxRatesVariant2>(json, (value) => PostQuotesRequestDefaultTaxRatesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<String>> listString;
+final Omittable<PostQuotesRequestDefaultTaxRatesVariant2> postQuotesRequestDefaultTaxRatesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listString.isPresent || postQuotesRequestDefaultTaxRatesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listString.isPresent) listString.value,
+if (postQuotesRequestDefaultTaxRatesVariant2.isPresent) postQuotesRequestDefaultTaxRatesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostQuotesRequestDefaultTaxRates && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostQuotesRequestDefaultTaxRates(${toJson()})';
+}

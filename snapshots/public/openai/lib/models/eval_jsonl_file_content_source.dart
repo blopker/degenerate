@@ -22,7 +22,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EvalJsonlFileContentSourceType($value)'; } 
  }
-@immutable final class EvalJsonlFileContentSource {const EvalJsonlFileContentSource({required this.content, this.type = EvalJsonlFileContentSourceType.fileContent, });
+@immutable final class EvalJsonlFileContentSource {const EvalJsonlFileContentSource({required this.type, required this.content, });
 
 factory EvalJsonlFileContentSource.fromJson(Map<String, dynamic> json) { return EvalJsonlFileContentSource(
   type: EvalJsonlFileContentSourceType.fromJson(json['type'] as String),

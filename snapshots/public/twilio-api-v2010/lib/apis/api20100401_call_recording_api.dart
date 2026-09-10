@@ -43,10 +43,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ListCallRecordingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListCallRecordingResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -77,10 +78,18 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AccountCallCallRecording.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 200 || 201:
+final json = jsonDecode(response.body);
+return AccountCallCallRecording.fromJson(json as Map<String, dynamic>);
+default:
+final json = jsonDecode(response.body);
+return AccountCallCallRecording.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -96,10 +105,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AccountCallCallRecording.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountCallCallRecording.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -121,13 +131,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AccountCallCallRecording.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountCallCallRecording.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return UpdateCallRecordingResponse408.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 408:
+final json = jsonDecode(response.body);
+return UpdateCallRecordingResponse408.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -143,7 +161,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );

@@ -48,35 +48,43 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingLoadSheddingSessionPolicy($value)'; } 
  }
 /// Configures load shedding policies and percentages for the pool.
-@immutable final class LoadBalancingLoadShedding {const LoadBalancingLoadShedding({this.defaultPercent = 0.0, this.defaultPolicy = LoadBalancingLoadSheddingDefaultPolicy.random, this.sessionPercent = 0.0, this.sessionPolicy = LoadBalancingLoadSheddingSessionPolicy.hash, });
+@immutable final class LoadBalancingLoadShedding {const LoadBalancingLoadShedding({this.defaultPercent, this.defaultPolicy, this.sessionPercent, this.sessionPolicy, });
 
 factory LoadBalancingLoadShedding.fromJson(Map<String, dynamic> json) { return LoadBalancingLoadShedding(
-  defaultPercent: json.containsKey('default_percent') ? (json['default_percent'] as num).toDouble() : 0.0,
-  defaultPolicy: json.containsKey('default_policy') ? LoadBalancingLoadSheddingDefaultPolicy.fromJson(json['default_policy'] as String) : LoadBalancingLoadSheddingDefaultPolicy.random,
-  sessionPercent: json.containsKey('session_percent') ? (json['session_percent'] as num).toDouble() : 0.0,
-  sessionPolicy: json.containsKey('session_policy') ? LoadBalancingLoadSheddingSessionPolicy.fromJson(json['session_policy'] as String) : LoadBalancingLoadSheddingSessionPolicy.hash,
+  defaultPercent: json['default_percent'] != null ? (json['default_percent'] as num).toDouble() : null,
+  defaultPolicy: json['default_policy'] != null ? LoadBalancingLoadSheddingDefaultPolicy.fromJson(json['default_policy'] as String) : null,
+  sessionPercent: json['session_percent'] != null ? (json['session_percent'] as num).toDouble() : null,
+  sessionPolicy: json['session_policy'] != null ? LoadBalancingLoadSheddingSessionPolicy.fromJson(json['session_policy'] as String) : null,
 ); }
 
 /// The percent of traffic to shed from the pool, according to the default policy. Applies to new sessions and traffic without session affinity.
-final double defaultPercent;
+final double? defaultPercent;
 
 /// The default policy to use when load shedding. A random policy randomly sheds a given percent of requests. A hash policy computes a hash over the CF-Connecting-IP address and sheds all requests originating from a percent of IPs.
-final LoadBalancingLoadSheddingDefaultPolicy defaultPolicy;
+final LoadBalancingLoadSheddingDefaultPolicy? defaultPolicy;
 
 /// The percent of existing sessions to shed from the pool, according to the session policy.
-final double sessionPercent;
+final double? sessionPercent;
 
 /// Only the hash policy is supported for existing sessions (to avoid exponential decay).
-final LoadBalancingLoadSheddingSessionPolicy sessionPolicy;
+final LoadBalancingLoadSheddingSessionPolicy? sessionPolicy;
 
+/// The value with the schema default applied when absent.
+double get defaultPercentOrDefault { return defaultPercent ?? 0.0; } 
+/// The value with the schema default applied when absent.
+LoadBalancingLoadSheddingDefaultPolicy get defaultPolicyOrDefault { return defaultPolicy ?? LoadBalancingLoadSheddingDefaultPolicy.fromJson('random'); } 
+/// The value with the schema default applied when absent.
+double get sessionPercentOrDefault { return sessionPercent ?? 0.0; } 
+/// The value with the schema default applied when absent.
+LoadBalancingLoadSheddingSessionPolicy get sessionPolicyOrDefault { return sessionPolicy ?? LoadBalancingLoadSheddingSessionPolicy.fromJson('hash'); } 
 Map<String, dynamic> toJson() { return {
-  'default_percent': defaultPercent,
-  'default_policy': defaultPolicy.toJson(),
-  'session_percent': sessionPercent,
-  'session_policy': sessionPolicy.toJson(),
+  'default_percent': ?defaultPercent,
+  if (defaultPolicy != null) 'default_policy': defaultPolicy?.toJson(),
+  'session_percent': ?sessionPercent,
+  if (sessionPolicy != null) 'session_policy': sessionPolicy?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_percent', 'default_policy', 'session_percent', 'session_policy'}.contains(key)); } 
-LoadBalancingLoadShedding copyWith({double Function()? defaultPercent, LoadBalancingLoadSheddingDefaultPolicy Function()? defaultPolicy, double Function()? sessionPercent, LoadBalancingLoadSheddingSessionPolicy Function()? sessionPolicy, }) { return LoadBalancingLoadShedding(
+LoadBalancingLoadShedding copyWith({double? Function()? defaultPercent, LoadBalancingLoadSheddingDefaultPolicy? Function()? defaultPolicy, double? Function()? sessionPercent, LoadBalancingLoadSheddingSessionPolicy? Function()? sessionPolicy, }) { return LoadBalancingLoadShedding(
   defaultPercent: defaultPercent != null ? defaultPercent() : this.defaultPercent,
   defaultPolicy: defaultPolicy != null ? defaultPolicy() : this.defaultPolicy,
   sessionPercent: sessionPercent != null ? sessionPercent() : this.sessionPercent,

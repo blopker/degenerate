@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_city.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_country.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_line1.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_line2.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_postal_code.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions_shipping_address_state.dart';@immutable final class EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress {const EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
 
 factory EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress.fromJson(Map<String, dynamic> json) { return EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddress(
-  city: json['city'] != null ? OneOf2.parse(json['city'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCityVariant2.fromJson(v as String),) : null,
-  country: json['country'] != null ? OneOf2.parse(json['country'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCountryVariant2.fromJson(v as String),) : null,
-  line1: json['line1'] != null ? OneOf2.parse(json['line1'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1Variant2.fromJson(v as String),) : null,
-  line2: json['line2'] != null ? OneOf2.parse(json['line2'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine2Variant2.fromJson(v as String),) : null,
-  postalCode: json['postal_code'] != null ? OneOf2.parse(json['postal_code'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressPostalCodeVariant2.fromJson(v as String),) : null,
-  state: json['state'] != null ? OneOf2.parse(json['state'], fromA: (v) => v as String, fromB: (v) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressStateVariant2.fromJson(v as String),) : null,
+  city: json['city'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCity.fromJson(json['city']) : null,
+  country: json['country'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCountry.fromJson(json['country']) : null,
+  line1: json['line1'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine1.fromJson(json['line1']) : null,
+  line2: json['line2'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressLine2.fromJson(json['line2']) : null,
+  postalCode: json['postal_code'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressPostalCode.fromJson(json['postal_code']) : null,
+  state: json['state'] != null ? EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressState.fromJson(json['state']) : null,
 ); }
 
 final EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactionsShippingAddressCity? city;

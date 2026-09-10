@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostQuotesRequestFooterVariant2($value)'; } 
  }
-typedef PostQuotesRequestFooter = OneOf2<String,PostQuotesRequestFooterVariant2>;
+/// A footer that will be displayed on the quote PDF. If no value is passed, the default footer configured in your [quote template settings](https://dashboard.stripe.com/settings/billing/quote) will be used.
+@immutable
+final class PostQuotesRequestFooter {
+  const PostQuotesRequestFooter({this.string = const Omittable.absent(),
+this.postQuotesRequestFooterVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostQuotesRequestFooter._({required this.rawValue, required this.string,
+required this.postQuotesRequestFooterVariant2,});
+  factory PostQuotesRequestFooter.fromJson(Object? json) => PostQuotesRequestFooter._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postQuotesRequestFooterVariant2: parseAnyOfVariant<PostQuotesRequestFooterVariant2>(json, (value) => PostQuotesRequestFooterVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostQuotesRequestFooterVariant2> postQuotesRequestFooterVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postQuotesRequestFooterVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postQuotesRequestFooterVariant2.isPresent) postQuotesRequestFooterVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostQuotesRequestFooter && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostQuotesRequestFooter(${toJson()})';
+}

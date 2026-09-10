@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGenerateRunnerJitconfigForRepoRequest {const ActionsGenerateRunnerJitconfigForRepoRequest({required this.name, required this.runnerGroupId, required this.labels, this.workFolder = '_work', });
+import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGenerateRunnerJitconfigForRepoRequest {const ActionsGenerateRunnerJitconfigForRepoRequest({required this.name, required this.runnerGroupId, required this.labels, this.workFolder, });
 
 factory ActionsGenerateRunnerJitconfigForRepoRequest.fromJson(Map<String, dynamic> json) { return ActionsGenerateRunnerJitconfigForRepoRequest(
   name: json['name'] as String,
   runnerGroupId: (json['runner_group_id'] as num).toInt(),
   labels: (json['labels'] as List<dynamic>).map((e) => e as String).toList(),
-  workFolder: json.containsKey('work_folder') ? json['work_folder'] as String : '_work',
+  workFolder: json['work_folder'] as String?,
 ); }
 
 /// The name of the new runner.
@@ -19,18 +19,20 @@ final int runnerGroupId;
 final List<String> labels;
 
 /// The working directory to be used for job execution, relative to the runner install directory.
-final String workFolder;
+final String? workFolder;
 
+/// The value with the schema default applied when absent.
+String get workFolderOrDefault { return workFolder ?? '_work'; } 
 Map<String, dynamic> toJson() { return {
   'name': name,
   'runner_group_id': runnerGroupId,
   'labels': labels,
-  'work_folder': workFolder,
+  'work_folder': ?workFolder,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('runner_group_id') && json['runner_group_id'] is num &&
       json.containsKey('labels'); } 
-ActionsGenerateRunnerJitconfigForRepoRequest copyWith({String? name, int? runnerGroupId, List<String>? labels, String Function()? workFolder, }) { return ActionsGenerateRunnerJitconfigForRepoRequest(
+ActionsGenerateRunnerJitconfigForRepoRequest copyWith({String? name, int? runnerGroupId, List<String>? labels, String? Function()? workFolder, }) { return ActionsGenerateRunnerJitconfigForRepoRequest(
   name: name ?? this.name,
   runnerGroupId: runnerGroupId ?? this.runnerGroupId,
   labels: labels ?? this.labels,

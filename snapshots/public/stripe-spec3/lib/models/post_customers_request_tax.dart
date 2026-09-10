@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostCustomersRequestTax {const PostCustomersRequestTax({this.ipAddress, this.validateLocation, });
 
 factory PostCustomersRequestTax.fromJson(Map<String, dynamic> json) { return PostCustomersRequestTax(
-  ipAddress: json['ip_address'] != null ? OneOf2.parse(json['ip_address'], fromA: (v) => v as String, fromB: (v) => PostCustomersRequestTaxIpAddressVariant2.fromJson(v as String),) : null,
+  ipAddress: json['ip_address'] != null ? PostCustomersRequestTaxIpAddress.fromJson(json['ip_address']) : null,
   validateLocation: json['validate_location'] != null ? PostCustomersRequestTaxValidateLocation.fromJson(json['validate_location'] as String) : null,
 ); }
 

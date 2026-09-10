@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2($value)'; } 
  }
-typedef EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceId = OneOf2<String,EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2>;
+
+@immutable
+final class EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceId {
+  const EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceId({this.string = const Omittable.absent(),
+this.enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceId._({required this.rawValue, required this.string,
+required this.enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2,});
+  factory EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceId.fromJson(Object? json) => EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceId._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2: parseAnyOfVariant<EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2>(json, (value) => EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2> enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2.isPresent) enhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceIdVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceId && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'EnhancedEvidenceVisaCompellingEvidence3PriorUndisputedTransactionsCustomerDeviceId(${toJson()})';
+}

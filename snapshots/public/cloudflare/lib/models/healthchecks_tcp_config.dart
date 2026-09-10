@@ -23,25 +23,29 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'HealthchecksTcpConfigMethod($value)'; } 
  }
 /// Parameters specific to TCP health check.
-@immutable final class HealthchecksTcpConfig {const HealthchecksTcpConfig({this.method = HealthchecksTcpConfigMethod.connectionEstablished, this.port = 80, });
+@immutable final class HealthchecksTcpConfig {const HealthchecksTcpConfig({this.method, this.port, });
 
 factory HealthchecksTcpConfig.fromJson(Map<String, dynamic> json) { return HealthchecksTcpConfig(
-  method: json.containsKey('method') ? HealthchecksTcpConfigMethod.fromJson(json['method'] as String) : HealthchecksTcpConfigMethod.connectionEstablished,
-  port: json.containsKey('port') ? (json['port'] as num).toInt() : 80,
+  method: json['method'] != null ? HealthchecksTcpConfigMethod.fromJson(json['method'] as String) : null,
+  port: json['port'] != null ? (json['port'] as num).toInt() : null,
 ); }
 
 /// The TCP connection method to use for the health check.
-final HealthchecksTcpConfigMethod method;
+final HealthchecksTcpConfigMethod? method;
 
 /// Port number to connect to for the health check. Defaults to 80.
-final int port;
+final int? port;
 
+/// The value with the schema default applied when absent.
+HealthchecksTcpConfigMethod get methodOrDefault { return method ?? HealthchecksTcpConfigMethod.fromJson('connection_established'); } 
+/// The value with the schema default applied when absent.
+int get portOrDefault { return port ?? 80; } 
 Map<String, dynamic> toJson() { return {
-  'method': method.toJson(),
-  'port': port,
+  if (method != null) 'method': method?.toJson(),
+  'port': ?port,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'method', 'port'}.contains(key)); } 
-HealthchecksTcpConfig copyWith({HealthchecksTcpConfigMethod Function()? method, int Function()? port, }) { return HealthchecksTcpConfig(
+HealthchecksTcpConfig copyWith({HealthchecksTcpConfigMethod? Function()? method, int? Function()? port, }) { return HealthchecksTcpConfig(
   method: method != null ? method() : this.method,
   port: port != null ? port() : this.port,
 ); } 

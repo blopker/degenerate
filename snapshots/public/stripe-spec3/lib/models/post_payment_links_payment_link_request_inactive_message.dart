@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2($value)'; } 
  }
-typedef PostPaymentLinksPaymentLinkRequestInactiveMessage = OneOf2<String,PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2>;
+/// The custom message to be displayed to a customer when a payment link is no longer active.
+@immutable
+final class PostPaymentLinksPaymentLinkRequestInactiveMessage {
+  const PostPaymentLinksPaymentLinkRequestInactiveMessage({this.string = const Omittable.absent(),
+this.postPaymentLinksPaymentLinkRequestInactiveMessageVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentLinksPaymentLinkRequestInactiveMessage._({required this.rawValue, required this.string,
+required this.postPaymentLinksPaymentLinkRequestInactiveMessageVariant2,});
+  factory PostPaymentLinksPaymentLinkRequestInactiveMessage.fromJson(Object? json) => PostPaymentLinksPaymentLinkRequestInactiveMessage._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postPaymentLinksPaymentLinkRequestInactiveMessageVariant2: parseAnyOfVariant<PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2>(json, (value) => PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostPaymentLinksPaymentLinkRequestInactiveMessageVariant2> postPaymentLinksPaymentLinkRequestInactiveMessageVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postPaymentLinksPaymentLinkRequestInactiveMessageVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postPaymentLinksPaymentLinkRequestInactiveMessageVariant2.isPresent) postPaymentLinksPaymentLinkRequestInactiveMessageVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestInactiveMessage && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentLinksPaymentLinkRequestInactiveMessage(${toJson()})';
+}

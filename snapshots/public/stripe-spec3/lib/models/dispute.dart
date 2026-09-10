@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'charge.dart';import 'dispute_charge.dart';import 'dispute_evidence.dart';import 'dispute_evidence_details.dart';import 'dispute_payment_intent.dart';import 'dispute_payment_method_details.dart';import 'payment_intent.dart';@immutable final class DisputeEnhancedEligibilityTypes {const DisputeEnhancedEligibilityTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'dispute_charge.dart';import 'dispute_evidence.dart';import 'dispute_evidence_details.dart';import 'dispute_payment_intent.dart';import 'dispute_payment_method_details.dart';@immutable final class DisputeEnhancedEligibilityTypes {const DisputeEnhancedEligibilityTypes._(this.value);
 
 factory DisputeEnhancedEligibilityTypes.fromJson(String json) { return switch (json) {
   'visa_compelling_evidence_3' => visaCompellingEvidence3,
@@ -99,7 +99,7 @@ bool get isUnknown { return !values.contains(this); }
 factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
   amount: (json['amount'] as num).toInt(),
   balanceTransactions: (json['balance_transactions'] as List<dynamic>).map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
-  charge: OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),),
+  charge: DisputeCharge.fromJson(json['charge']),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   enhancedEligibilityTypes: (json['enhanced_eligibility_types'] as List<dynamic>).map((e) => DisputeEnhancedEligibilityTypes.fromJson(e as String)).toList(),
@@ -110,7 +110,7 @@ factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: DisputeObject.fromJson(json['object'] as String),
-  paymentIntent: json.containsKey('payment_intent') ? Omittable(json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  paymentIntent: json.containsKey('payment_intent') ? Omittable(json['payment_intent'] != null ? DisputePaymentIntent.fromJson(json['payment_intent']) : null) : const Omittable.absent(),
   paymentMethodDetails: json['payment_method_details'] != null ? DisputePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   reason: json['reason'] as String,
   status: DisputeStatus.fromJson(json['status'] as String),

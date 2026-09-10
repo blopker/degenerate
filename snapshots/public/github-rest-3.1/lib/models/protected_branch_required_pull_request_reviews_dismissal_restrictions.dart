@@ -8,7 +8,7 @@ factory ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions.fromJson(
   teamsUrl: Uri.parse(json['teams_url'] as String),
   users: (json['users'] as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
   teams: (json['teams'] as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList(),
-  apps: (json['apps'] as List<dynamic>?)?.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList(),
+  apps: (json['apps'] as List<dynamic>?)?.map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 final Uri url;
@@ -21,7 +21,7 @@ final List<SimpleUser> users;
 
 final List<Team> teams;
 
-final List<Integration>? apps;
+final List<Integration?>? apps;
 
 Map<String, dynamic> toJson() { return {
   'url': url.toString(),
@@ -29,14 +29,14 @@ Map<String, dynamic> toJson() { return {
   'teams_url': teamsUrl.toString(),
   'users': users.map((e) => e.toJson()).toList(),
   'teams': teams.map((e) => e.toJson()).toList(),
-  if (apps != null) 'apps': apps?.map((e) => e.toJson()).toList(),
+  if (apps != null) 'apps': apps?.map((e) => e?.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
       json.containsKey('users_url') && json['users_url'] is String &&
       json.containsKey('teams_url') && json['teams_url'] is String &&
       json.containsKey('users') &&
       json.containsKey('teams'); } 
-ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions copyWith({Uri? url, Uri? usersUrl, Uri? teamsUrl, List<SimpleUser>? users, List<Team>? teams, List<Integration>? Function()? apps, }) { return ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions(
+ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions copyWith({Uri? url, Uri? usersUrl, Uri? teamsUrl, List<SimpleUser>? users, List<Team>? teams, List<Integration?>? Function()? apps, }) { return ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions(
   url: url ?? this.url,
   usersUrl: usersUrl ?? this.usersUrl,
   teamsUrl: teamsUrl ?? this.teamsUrl,

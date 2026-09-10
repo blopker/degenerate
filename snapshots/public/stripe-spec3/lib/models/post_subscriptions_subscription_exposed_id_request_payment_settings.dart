@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestPaymentSettings(
   paymentMethodOptions: json['payment_method_options'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
-  paymentMethodTypes: json['payment_method_types'] != null ? OneOf2.parse(json['payment_method_types'], fromA: (v) => (v as List<dynamic>).map((e) => PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1.fromJson(e as String)).toList(), fromB: (v) => PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2.fromJson(v as String),) : null,
+  paymentMethodTypes: json['payment_method_types'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes.fromJson(json['payment_method_types']) : null,
   saveDefaultPaymentMethod: json['save_default_payment_method'] != null ? PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsSaveDefaultPaymentMethod.fromJson(json['save_default_payment_method'] as String) : null,
 ); }
 

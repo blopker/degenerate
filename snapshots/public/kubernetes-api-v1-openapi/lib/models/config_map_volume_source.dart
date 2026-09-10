@@ -3,12 +3,12 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key_to_path.dart';/// Adapts a ConfigMap into a volume.
 /// 
 /// The contents of the target ConfigMap's Data field will be presented in a volume as files using the keys in the Data field as the file names, unless the items element is populated with specific mappings of keys to paths. ConfigMap volumes support ownership management and SELinux relabeling.
-@immutable final class ConfigMapVolumeSource {const ConfigMapVolumeSource({this.defaultMode, this.items, this.name = '', this.optional, });
+@immutable final class ConfigMapVolumeSource {const ConfigMapVolumeSource({this.defaultMode, this.items, this.name, this.optional, });
 
 factory ConfigMapVolumeSource.fromJson(Map<String, dynamic> json) { return ConfigMapVolumeSource(
   defaultMode: json['defaultMode'] != null ? (json['defaultMode'] as num).toInt() : null,
   items: (json['items'] as List<dynamic>?)?.map((e) => KeyToPath.fromJson(e as Map<String, dynamic>)).toList(),
-  name: json.containsKey('name') ? json['name'] as String : '',
+  name: json['name'] as String?,
   optional: json['optional'] as bool?,
 ); }
 
@@ -19,19 +19,21 @@ final int? defaultMode;
 final List<KeyToPath>? items;
 
 /// Name of the referent. This field is effectively required, but due to backwards compatibility is allowed to be empty. Instances of this type with an empty value here are almost certainly wrong. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-final String name;
+final String? name;
 
 /// optional specify whether the ConfigMap or its keys must be defined
 final bool? optional;
 
+/// The value with the schema default applied when absent.
+String get nameOrDefault { return name ?? ''; } 
 Map<String, dynamic> toJson() { return {
   'defaultMode': ?defaultMode,
   if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
-  'name': name,
+  'name': ?name,
   'optional': ?optional,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'defaultMode', 'items', 'name', 'optional'}.contains(key)); } 
-ConfigMapVolumeSource copyWith({int? Function()? defaultMode, List<KeyToPath>? Function()? items, String Function()? name, bool? Function()? optional, }) { return ConfigMapVolumeSource(
+ConfigMapVolumeSource copyWith({int? Function()? defaultMode, List<KeyToPath>? Function()? items, String? Function()? name, bool? Function()? optional, }) { return ConfigMapVolumeSource(
   defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
   items: items != null ? items() : this.items,
   name: name != null ? name() : this.name,

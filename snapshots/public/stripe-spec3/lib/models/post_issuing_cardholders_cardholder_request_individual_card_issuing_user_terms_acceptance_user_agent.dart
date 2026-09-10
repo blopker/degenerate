@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2($value)'; } 
  }
-typedef PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgent = OneOf2<String,PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2>;
+
+@immutable
+final class PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgent {
+  const PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgent({this.string = const Omittable.absent(),
+this.postIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgent._({required this.rawValue, required this.string,
+required this.postIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2,});
+  factory PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgent.fromJson(Object? json) => PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgent._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2: parseAnyOfVariant<PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2>(json, (value) => PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2> postIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2.isPresent) postIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgentVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgent && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostIssuingCardholdersCardholderRequestIndividualCardIssuingUserTermsAcceptanceUserAgent(${toJson()})';
+}

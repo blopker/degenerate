@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2($value)'; } 
  }
-typedef PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRates = OneOf2<List<String>,PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2>;
+
+@immutable
+final class PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRates {
+  const PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRates({this.listString = const Omittable.absent(),
+this.postSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRates._({required this.rawValue, required this.listString,
+required this.postSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2,});
+  factory PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRates.fromJson(Object? json) => PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRates._(
+    rawValue: Omittable(json),
+    listString: parseAnyOfVariant<List<String>>(json, (value) => (value! as List<dynamic>).map((e) => e as String).toList()),
+postSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2: parseAnyOfVariant<PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2>(json, (value) => PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<String>> listString;
+final Omittable<PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2> postSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listString.isPresent || postSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listString.isPresent) listString.value,
+if (postSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2.isPresent) postSubscriptionsSubscriptionExposedIdRequestItemsTaxRatesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRates && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostSubscriptionsSubscriptionExposedIdRequestItemsTaxRates(${toJson()})';
+}

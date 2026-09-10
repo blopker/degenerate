@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_rendering_options_param2.dart';import 'post_customers_customer_request_invoice_settings_custom_fields.dart';import 'post_customers_customer_request_invoice_settings_custom_fields_variant1.dart';import 'post_customers_customer_request_invoice_settings_rendering_options.dart';/// Default invoice settings for this customer.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_request_invoice_settings_custom_fields.dart';import 'post_customers_customer_request_invoice_settings_rendering_options.dart';/// Default invoice settings for this customer.
 @immutable final class PostCustomersCustomerRequestInvoiceSettings {const PostCustomersCustomerRequestInvoiceSettings({this.customFields, this.defaultPaymentMethod, this.footer, this.renderingOptions, });
 
 factory PostCustomersCustomerRequestInvoiceSettings.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerRequestInvoiceSettings(
-  customFields: json['custom_fields'] != null ? OneOf2.parse(json['custom_fields'], fromA: (v) => (v as List<dynamic>).map((e) => PostCustomersCustomerRequestInvoiceSettingsCustomFieldsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostCustomersCustomerRequestInvoiceSettingsCustomFieldsVariant2.fromJson(v as String),) : null,
+  customFields: json['custom_fields'] != null ? PostCustomersCustomerRequestInvoiceSettingsCustomFields.fromJson(json['custom_fields']) : null,
   defaultPaymentMethod: json['default_payment_method'] as String?,
   footer: json['footer'] as String?,
-  renderingOptions: json['rendering_options'] != null ? OneOf2.parse(json['rendering_options'], fromA: (v) => CustomerRenderingOptionsParam2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostCustomersCustomerRequestInvoiceSettingsRenderingOptionsVariant2.fromJson(v as String),) : null,
+  renderingOptions: json['rendering_options'] != null ? PostCustomersCustomerRequestInvoiceSettingsRenderingOptions.fromJson(json['rendering_options']) : null,
 ); }
 
 final PostCustomersCustomerRequestInvoiceSettingsCustomFields? customFields;

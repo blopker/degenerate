@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2($value)'; } 
  }
-typedef PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings = OneOf2<TrialSettingsConfig,PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2>;
+
+@immutable
+final class PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings {
+  const PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings({this.trialSettingsConfig = const Omittable.absent(),
+this.postPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings._({required this.rawValue, required this.trialSettingsConfig,
+required this.postPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2,});
+  factory PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings.fromJson(Object? json) => PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings._(
+    rawValue: Omittable(json),
+    trialSettingsConfig: parseAnyOfVariant<TrialSettingsConfig>(json, (value) => TrialSettingsConfig.fromJson(value! as Map<String, dynamic>)),
+postPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2: parseAnyOfVariant<PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2>(json, (value) => PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<TrialSettingsConfig> trialSettingsConfig;
+final Omittable<PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2> postPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => trialSettingsConfig.isPresent || postPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (trialSettingsConfig.isPresent) trialSettingsConfig.value?.toJson(),
+if (postPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2.isPresent) postPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings(${toJson()})';
+}

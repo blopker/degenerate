@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
       json.containsKey('photoUrls'); } 
-Pet copyWith({int Function()? id, String? name, Category Function()? category, List<String>? photoUrls, List<Tag> Function()? tags, PetStatus Function()? status, }) { return Pet(
+Pet copyWith({int? Function()? id, String? name, Category? Function()? category, List<String>? photoUrls, List<Tag>? Function()? tags, PetStatus? Function()? status, }) { return Pet(
   id: id != null ? id() : this.id,
   name: name ?? this.name,
   category: category != null ? category() : this.category,

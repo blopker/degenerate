@@ -60,4 +60,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchCreateInstancesRequestEmbeddingModelVariant2($value)'; } 
  }
-typedef AiSearchCreateInstancesRequestEmbeddingModel = OneOf2<AiSearchCreateInstancesRequestEmbeddingModelVariant1,AiSearchCreateInstancesRequestEmbeddingModelVariant2>;
+
+@immutable
+final class AiSearchCreateInstancesRequestEmbeddingModel {
+  const AiSearchCreateInstancesRequestEmbeddingModel({this.aiSearchCreateInstancesRequestEmbeddingModelVariant1 = const Omittable.absent(),
+this.aiSearchCreateInstancesRequestEmbeddingModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const AiSearchCreateInstancesRequestEmbeddingModel._({required this.rawValue, required this.aiSearchCreateInstancesRequestEmbeddingModelVariant1,
+required this.aiSearchCreateInstancesRequestEmbeddingModelVariant2,});
+  factory AiSearchCreateInstancesRequestEmbeddingModel.fromJson(Object? json) => AiSearchCreateInstancesRequestEmbeddingModel._(
+    rawValue: Omittable(json),
+    aiSearchCreateInstancesRequestEmbeddingModelVariant1: parseAnyOfVariant<AiSearchCreateInstancesRequestEmbeddingModelVariant1>(json, (value) => AiSearchCreateInstancesRequestEmbeddingModelVariant1.fromJson(value! as String)),
+aiSearchCreateInstancesRequestEmbeddingModelVariant2: parseAnyOfVariant<AiSearchCreateInstancesRequestEmbeddingModelVariant2>(json, (value) => AiSearchCreateInstancesRequestEmbeddingModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<AiSearchCreateInstancesRequestEmbeddingModelVariant1> aiSearchCreateInstancesRequestEmbeddingModelVariant1;
+final Omittable<AiSearchCreateInstancesRequestEmbeddingModelVariant2> aiSearchCreateInstancesRequestEmbeddingModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => aiSearchCreateInstancesRequestEmbeddingModelVariant1.isPresent || aiSearchCreateInstancesRequestEmbeddingModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (aiSearchCreateInstancesRequestEmbeddingModelVariant1.isPresent) aiSearchCreateInstancesRequestEmbeddingModelVariant1.value?.toJson(),
+if (aiSearchCreateInstancesRequestEmbeddingModelVariant2.isPresent) aiSearchCreateInstancesRequestEmbeddingModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is AiSearchCreateInstancesRequestEmbeddingModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'AiSearchCreateInstancesRequestEmbeddingModel(${toJson()})';
+}

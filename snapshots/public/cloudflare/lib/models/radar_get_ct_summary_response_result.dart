@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ct_summary_response_result_meta.dart';import 'radar_get_ct_summary_response_result_summary0.dart';import 'radar_get_ct_summary_response_result_summary0_variant2.dart';import 'radar_get_ct_summary_response_result_summary0_variant3.dart';import 'radar_get_ct_summary_response_result_summary0_variant4.dart';import 'radar_get_ct_summary_response_result_summary0_variant5.dart';import 'radar_get_ct_summary_response_result_summary0_variant6.dart';import 'radar_get_ct_summary_response_result_summary0_variant7.dart';import 'radar_get_ct_summary_response_result_summary0_variant8.dart';@immutable final class RadarGetCtSummaryResponseResult {const RadarGetCtSummaryResponseResult({required this.meta, required this.summary0, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ct_summary_response_result_meta.dart';import 'radar_get_ct_summary_response_result_summary0.dart';@immutable final class RadarGetCtSummaryResponseResult {const RadarGetCtSummaryResponseResult({required this.meta, required this.summary0, });
 
 factory RadarGetCtSummaryResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetCtSummaryResponseResult(
   meta: RadarGetCtSummaryResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
-  summary0: OneOf8.parse(json['summary_0'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => RadarGetCtSummaryResponseResultSummary0Variant2.fromJson(v as Map<String, dynamic>), fromC: (v) => RadarGetCtSummaryResponseResultSummary0Variant3.fromJson(v as Map<String, dynamic>), fromD: (v) => RadarGetCtSummaryResponseResultSummary0Variant4.fromJson(v as Map<String, dynamic>), fromE: (v) => RadarGetCtSummaryResponseResultSummary0Variant5.fromJson(v as Map<String, dynamic>), fromF: (v) => RadarGetCtSummaryResponseResultSummary0Variant6.fromJson(v as Map<String, dynamic>), fromG: (v) => RadarGetCtSummaryResponseResultSummary0Variant7.fromJson(v as Map<String, dynamic>), fromH: (v) => RadarGetCtSummaryResponseResultSummary0Variant8.fromJson(v as Map<String, dynamic>),),
+  summary0: RadarGetCtSummaryResponseResultSummary0.fromJson(json['summary_0']),
 ); }
 
 /// Metadata for the results.

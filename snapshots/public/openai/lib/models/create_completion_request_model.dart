@@ -27,4 +27,40 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'CreateCompletionRequestModelVariant2($value)'; } 
  }
-typedef CreateCompletionRequestModel = OneOf2<String,CreateCompletionRequestModelVariant2>;
+/// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+/// 
+@immutable
+final class CreateCompletionRequestModel {
+  const CreateCompletionRequestModel({this.string = const Omittable.absent(),
+this.createCompletionRequestModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const CreateCompletionRequestModel._({required this.rawValue, required this.string,
+required this.createCompletionRequestModelVariant2,});
+  factory CreateCompletionRequestModel.fromJson(Object? json) => CreateCompletionRequestModel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+createCompletionRequestModelVariant2: parseAnyOfVariant<CreateCompletionRequestModelVariant2>(json, (value) => CreateCompletionRequestModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<CreateCompletionRequestModelVariant2> createCompletionRequestModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || createCompletionRequestModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (createCompletionRequestModelVariant2.isPresent) createCompletionRequestModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is CreateCompletionRequestModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'CreateCompletionRequestModel(${toJson()})';
+}

@@ -27,7 +27,7 @@
 
 - **Strives for full OpenAPI 3.0, 3.1, and 3.2 compatibility** including `allOf`, `oneOf`, `anyOf`, discriminated unions, `additionalProperties`, nullable types, circular references, external `$ref` file resolution, and the OAS 3.2 `query` method + `additionalOperations`. [File a bug](https://github.com/blopker/degenerate/issues) if something doesn't work
 - **Forward-compatible**: unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
-- **Lightweight unions**: `oneOf`/`anyOf` schemas emit `typedef` aliases over generic `OneOf` containers with pattern matching support, avoiding heavy sealed class hierarchies
+- **Typed unions**: `oneOf` schemas use generic `OneOf` containers with pattern matching; `anyOf` classes retain the original JSON and expose every matching typed view
 - **Typed streaming**: SSE (`text/event-stream`) and JSONL (`application/jsonl`) responses with `itemSchema` return `Stream<T>` with typed deserialization
 - **Omittable fields (JSON Merge Patch)**: optional nullable fields generate as `Omittable<T>` so "omitted", "explicit null", and "value" all survive serialization — PATCH endpoints can clear a field with `Omittable(null)`
 - **Response envelope unwrapping**: `--unwrap-fields=result` returns the inner type directly instead of the full envelope, matching how Stainless generates Cloudflare/OpenAI SDKs
@@ -297,6 +297,27 @@ optional field so you can send explicit nulls the spec doesn't declare, and
 `--omittable=off` restores plain `T?` fields where Dart `null` serializes as
 omitted.
 
+Schema defaults do not make an optional field present. For a defaulted field
+such as `status`, `statusOrDefault` exposes the declared default when the field
+is absent; `toJson()` still omits it. With omittable fields, an explicit null
+stays null, including through the default getter. These rules also apply to
+fields on discriminated-union variants.
+
+### Request and Response Models
+
+Operations use separate `NameRequest` and `NameResponse` models when
+`readOnly` or `writeOnly` changes their shape. Request models exclude read-only
+properties; response models exclude write-only properties and their required
+constraints. Nested and recursive references use the same direction. Models
+whose shapes do not change stay shared.
+
+Declared `2xx` responses determine the success type. A `200` model plus an
+empty `204` returns `ApiResult<Model?, E>`;
+different body types use `OneOfN` on the success or error side. Decoders select
+the shape by status and `Content-Type`. Exact statuses override ranges such
+as `2XX`. A `default` response supplies the fallback error type; it contributes
+to the success type only when the operation declares no `2xx` response.
+
 ### Enums
 
 String, integer, and number enums generate a `final class` with static const instances. Unknown server values are preserved via the raw `value` field, enabling round-trip fidelity:
@@ -343,9 +364,9 @@ extension type Timestamp(DateTime value) {
 }
 ```
 
-### Untagged Unions (oneOf / anyOf)
+### Untagged Unions (oneOf)
 
-`oneOf` and `anyOf` schemas with 2-9 variants generate lightweight type aliases using generic `OneOf` containers from `degenerate_runtime`:
+`oneOf` schemas with 2-9 variants generate lightweight type aliases using generic `OneOf` containers from `degenerate_runtime`:
 
 ```dart
 // Generated: typedef Notification = OneOf2<EmailDetails, SmsDetails>;
@@ -373,6 +394,28 @@ await sdk.chat.createCompletion(
 ```
 
 Named constructors `.a()`, `.b()`, `.c()` etc. wrap a specific variant. `.from()` selects the variant by runtime type. Pattern matching on `.value` gives you type checking.
+
+### Overlapping Unions (anyOf)
+
+An `anyOf` value can match several schemas at once. Generated classes expose
+each variant as an `Omittable` typed view and preserve the decoded JSON,
+including unknown properties and unknown future shapes:
+
+```dart
+// Combined declares anyOf: [A, B].
+final combined = Combined.fromJson({'a': 'first', 'b': 'second', 'future': 42});
+print(combined.a.value);
+print(combined.b.value);
+print(combined.toJson()); // includes a, b, and future
+
+final created = Combined(a: Omittable(A(a: 'first')), b: Omittable(B(b: 'second')));
+print(created.toJson()); // merges both object views
+```
+
+`isValid` reports whether a known variant matched; `isUnknown` identifies a
+decoded value with no matching view. Decoded values serialize their original
+`rawValue`. Caller-created values merge their present views; conflicting wire
+values or no present views throw `StateError` when serialized.
 
 ### Discriminated Unions
 
@@ -432,11 +475,18 @@ Interceptors use an OkHttp-style chain where each interceptor receives the reque
 
 ```dart
 abstract interface class Interceptor {
-  Future<ApiResponse> intercept(ApiRequest request, Handler next);
+  Future<StreamedApiResponse> intercept(ApiRequest request, Handler next);
 }
 ```
 
 ### Built-in Interceptors
+
+The chain receives actual response headers and status for buffered and streaming
+operations. Response bodies are single-use streams: call `discard()` before
+retrying, or `toApiResponse()` to buffer one deliberately. An interceptor that
+reads a body and then forwards it must return
+`StreamedApiResponse.fromResponse(bufferedResponse)` so downstream code can read
+it. The same factory supports cached responses without calling `next`.
 
 **RetryInterceptor**: exponential backoff on 429 and 5xx:
 
@@ -473,7 +523,7 @@ LoggingInterceptor(logger: myLogger.info)  // custom logger
 ```dart
 class TimingInterceptor implements Interceptor {
   @override
-  Future<ApiResponse> intercept(ApiRequest request, Handler next) async {
+  Future<StreamedApiResponse> intercept(ApiRequest request, Handler next) async {
     final sw = Stopwatch()..start();
     final response = await next(request);
     print('${request.method} ${request.path} took ${sw.elapsedMilliseconds}ms');

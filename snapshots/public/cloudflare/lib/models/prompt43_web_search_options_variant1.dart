@@ -28,23 +28,25 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'Prompt43WebSearchOptionsVariant1SearchContextSize($value)'; } 
  }
 /// Options for the web search tool (when using built-in web search).
-@immutable final class Prompt43WebSearchOptionsVariant1 {const Prompt43WebSearchOptionsVariant1({this.searchContextSize = Prompt43WebSearchOptionsVariant1SearchContextSize.medium, this.userLocation, });
+@immutable final class Prompt43WebSearchOptionsVariant1 {const Prompt43WebSearchOptionsVariant1({this.searchContextSize, this.userLocation, });
 
 factory Prompt43WebSearchOptionsVariant1.fromJson(Map<String, dynamic> json) { return Prompt43WebSearchOptionsVariant1(
-  searchContextSize: json.containsKey('search_context_size') ? Prompt43WebSearchOptionsVariant1SearchContextSize.fromJson(json['search_context_size'] as String) : Prompt43WebSearchOptionsVariant1SearchContextSize.medium,
+  searchContextSize: json['search_context_size'] != null ? Prompt43WebSearchOptionsVariant1SearchContextSize.fromJson(json['search_context_size'] as String) : null,
   userLocation: json['user_location'] != null ? Prompt43WebSearchOptionsVariant1UserLocation.fromJson(json['user_location'] as Map<String, dynamic>) : null,
 ); }
 
-final Prompt43WebSearchOptionsVariant1SearchContextSize searchContextSize;
+final Prompt43WebSearchOptionsVariant1SearchContextSize? searchContextSize;
 
 final Prompt43WebSearchOptionsVariant1UserLocation? userLocation;
 
+/// The value with the schema default applied when absent.
+Prompt43WebSearchOptionsVariant1SearchContextSize get searchContextSizeOrDefault { return searchContextSize ?? Prompt43WebSearchOptionsVariant1SearchContextSize.fromJson('medium'); } 
 Map<String, dynamic> toJson() { return {
-  'search_context_size': searchContextSize.toJson(),
+  if (searchContextSize != null) 'search_context_size': searchContextSize?.toJson(),
   if (userLocation != null) 'user_location': userLocation?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'search_context_size', 'user_location'}.contains(key)); } 
-Prompt43WebSearchOptionsVariant1 copyWith({Prompt43WebSearchOptionsVariant1SearchContextSize Function()? searchContextSize, Prompt43WebSearchOptionsVariant1UserLocation? Function()? userLocation, }) { return Prompt43WebSearchOptionsVariant1(
+Prompt43WebSearchOptionsVariant1 copyWith({Prompt43WebSearchOptionsVariant1SearchContextSize? Function()? searchContextSize, Prompt43WebSearchOptionsVariant1UserLocation? Function()? userLocation, }) { return Prompt43WebSearchOptionsVariant1(
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
   userLocation: userLocation != null ? userLocation() : this.userLocation,
 ); } 

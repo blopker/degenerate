@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2($value)'; } 
  }
-typedef PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscounts = OneOf2<List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant1>,PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2>;
+/// The coupons to redeem into discounts for the subscription. If not specified or empty, inherits the discount from the subscription's customer.
+@immutable
+final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscounts {
+  const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscounts({this.listPostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant1 = const Omittable.absent(),
+this.postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscounts._({required this.rawValue, required this.listPostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant1,
+required this.postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2,});
+  factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscounts.fromJson(Object? json) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscounts._(
+    rawValue: Omittable(json),
+    listPostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant1: parseAnyOfVariant<List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2: parseAnyOfVariant<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2>(json, (value) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant1>> listPostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant1;
+final Omittable<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2> postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant1.isPresent || postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant1.isPresent) listPostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant1.value?.map((e) => e.toJson()).toList(),
+if (postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2.isPresent) postCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscountsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscounts && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDiscounts(${toJson()})';
+}

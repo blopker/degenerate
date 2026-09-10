@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2($value)'; } 
  }
-typedef PostPaymentMethodsPaymentMethodRequestBillingDetailsEmail = OneOf2<String,PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2>;
+
+@immutable
+final class PostPaymentMethodsPaymentMethodRequestBillingDetailsEmail {
+  const PostPaymentMethodsPaymentMethodRequestBillingDetailsEmail({this.string = const Omittable.absent(),
+this.postPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentMethodsPaymentMethodRequestBillingDetailsEmail._({required this.rawValue, required this.string,
+required this.postPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2,});
+  factory PostPaymentMethodsPaymentMethodRequestBillingDetailsEmail.fromJson(Object? json) => PostPaymentMethodsPaymentMethodRequestBillingDetailsEmail._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2: parseAnyOfVariant<PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2>(json, (value) => PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2> postPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2.isPresent) postPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentMethodsPaymentMethodRequestBillingDetailsEmail && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentMethodsPaymentMethodRequestBillingDetailsEmail(${toJson()})';
+}

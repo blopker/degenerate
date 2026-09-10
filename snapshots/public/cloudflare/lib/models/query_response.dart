@@ -4,9 +4,9 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'since.dart';
 @immutable final class QueryResponse {const QueryResponse({this.since, this.timeDelta, this.until, });
 
 factory QueryResponse.fromJson(Map<String, dynamic> json) { return QueryResponse(
-  since: json['since'] != null ? OneOf2.parse(json['since'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(),) : null,
+  since: json['since'] != null ? Since.fromJson(json['since']) : null,
   timeDelta: json['time_delta'] != null ? (json['time_delta'] as num).toInt() : null,
-  until: json['until'] != null ? OneOf2.parse(json['until'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(),) : null,
+  until: json['until'] != null ? Until.fromJson(json['until']) : null,
 ); }
 
 final Since? since;

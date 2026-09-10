@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'BeneficiaryParamsPublicNameVariant2($value)'; } 
  }
-typedef BeneficiaryParamsPublicName = OneOf2<String,BeneficiaryParamsPublicNameVariant2>;
+
+@immutable
+final class BeneficiaryParamsPublicName {
+  const BeneficiaryParamsPublicName({this.string = const Omittable.absent(),
+this.beneficiaryParamsPublicNameVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const BeneficiaryParamsPublicName._({required this.rawValue, required this.string,
+required this.beneficiaryParamsPublicNameVariant2,});
+  factory BeneficiaryParamsPublicName.fromJson(Object? json) => BeneficiaryParamsPublicName._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+beneficiaryParamsPublicNameVariant2: parseAnyOfVariant<BeneficiaryParamsPublicNameVariant2>(json, (value) => BeneficiaryParamsPublicNameVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<BeneficiaryParamsPublicNameVariant2> beneficiaryParamsPublicNameVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || beneficiaryParamsPublicNameVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (beneficiaryParamsPublicNameVariant2.isPresent) beneficiaryParamsPublicNameVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is BeneficiaryParamsPublicName && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'BeneficiaryParamsPublicName(${toJson()})';
+}

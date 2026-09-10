@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_rendering_options_param2.dart';import 'post_payment_links_request_invoice_creation_invoice_data_account_tax_ids.dart';import 'post_payment_links_request_invoice_creation_invoice_data_custom_fields.dart';import 'post_payment_links_request_invoice_creation_invoice_data_custom_fields_variant1.dart';import 'post_payment_links_request_invoice_creation_invoice_data_issuer.dart';import 'post_payment_links_request_invoice_creation_invoice_data_metadata.dart';import 'post_payment_links_request_invoice_creation_invoice_data_rendering_options.dart';@immutable final class PostPaymentLinksRequestInvoiceCreationInvoiceData {const PostPaymentLinksRequestInvoiceCreationInvoiceData({this.accountTaxIds, this.customFields, this.description, this.footer, this.issuer, this.metadata, this.renderingOptions, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_invoice_creation_invoice_data_account_tax_ids.dart';import 'post_payment_links_request_invoice_creation_invoice_data_custom_fields.dart';import 'post_payment_links_request_invoice_creation_invoice_data_issuer.dart';import 'post_payment_links_request_invoice_creation_invoice_data_metadata.dart';import 'post_payment_links_request_invoice_creation_invoice_data_rendering_options.dart';@immutable final class PostPaymentLinksRequestInvoiceCreationInvoiceData {const PostPaymentLinksRequestInvoiceCreationInvoiceData({this.accountTaxIds, this.customFields, this.description, this.footer, this.issuer, this.metadata, this.renderingOptions, });
 
 factory PostPaymentLinksRequestInvoiceCreationInvoiceData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestInvoiceCreationInvoiceData(
-  accountTaxIds: json['account_tax_ids'] != null ? OneOf2.parse(json['account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostPaymentLinksRequestInvoiceCreationInvoiceDataAccountTaxIdsVariant2.fromJson(v as String),) : null,
-  customFields: json['custom_fields'] != null ? OneOf2.parse(json['custom_fields'], fromA: (v) => (v as List<dynamic>).map((e) => PostPaymentLinksRequestInvoiceCreationInvoiceDataCustomFieldsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostPaymentLinksRequestInvoiceCreationInvoiceDataCustomFieldsVariant2.fromJson(v as String),) : null,
+  accountTaxIds: json['account_tax_ids'] != null ? PostPaymentLinksRequestInvoiceCreationInvoiceDataAccountTaxIds.fromJson(json['account_tax_ids']) : null,
+  customFields: json['custom_fields'] != null ? PostPaymentLinksRequestInvoiceCreationInvoiceDataCustomFields.fromJson(json['custom_fields']) : null,
   description: json['description'] as String?,
   footer: json['footer'] as String?,
   issuer: json['issuer'] != null ? PostPaymentLinksRequestInvoiceCreationInvoiceDataIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentLinksRequestInvoiceCreationInvoiceDataMetadataVariant2.fromJson(v as String),) : null,
-  renderingOptions: json['rendering_options'] != null ? OneOf2.parse(json['rendering_options'], fromA: (v) => CheckoutRenderingOptionsParam2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentLinksRequestInvoiceCreationInvoiceDataRenderingOptionsVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostPaymentLinksRequestInvoiceCreationInvoiceDataMetadata.fromJson(json['metadata']) : null,
+  renderingOptions: json['rendering_options'] != null ? PostPaymentLinksRequestInvoiceCreationInvoiceDataRenderingOptions.fromJson(json['rendering_options']) : null,
 ); }
 
 final PostPaymentLinksRequestInvoiceCreationInvoiceDataAccountTaxIds? accountTaxIds;

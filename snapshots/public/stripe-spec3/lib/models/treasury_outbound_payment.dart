@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_payments_payment_method_details.dart';import 'treasury_outbound_payment_transaction.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_end_user_details.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_status_transitions.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_tracking_details.dart';import 'treasury_outbound_payments_resource_returned_status.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_payments_payment_method_details.dart';import 'treasury_outbound_payment_transaction.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_end_user_details.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_status_transitions.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_tracking_details.dart';import 'treasury_outbound_payments_resource_returned_status.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryOutboundPaymentObject {const TreasuryOutboundPaymentObject._(this.value);
 
 factory TreasuryOutboundPaymentObject.fromJson(String json) { return switch (json) {
@@ -85,7 +85,7 @@ factory TreasuryOutboundPayment.fromJson(Map<String, dynamic> json) { return Tre
   status: TreasuryOutboundPaymentStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
   trackingDetails: json.containsKey('tracking_details') ? Omittable(json['tracking_details'] != null ? TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),),
+  transaction: TreasuryOutboundPaymentTransaction.fromJson(json['transaction']),
 ); }
 
 /// Amount (in cents) transferred.

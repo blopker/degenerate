@@ -186,4 +186,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2($value)'; } 
  }
-typedef PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes = OneOf2<List<PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1>,PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2>;
+/// The list of payment method types to exclude from use with this payment.
+@immutable
+final class PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes {
+  const PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes({this.listPostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1 = const Omittable.absent(),
+this.postPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes._({required this.rawValue, required this.listPostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1,
+required this.postPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2,});
+  factory PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes.fromJson(Object? json) => PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes._(
+    rawValue: Omittable(json),
+    listPostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1: parseAnyOfVariant<List<PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1.fromJson(e as String)).toList()),
+postPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2: parseAnyOfVariant<PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2>(json, (value) => PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1>> listPostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1;
+final Omittable<PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2> postPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listPostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1.isPresent || postPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listPostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1.isPresent) listPostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant1.value?.map((e) => e.toJson()).toList(),
+if (postPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2.isPresent) postPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes(${toJson()})';
+}

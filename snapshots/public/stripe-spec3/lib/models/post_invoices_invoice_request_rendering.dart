@@ -34,7 +34,7 @@ factory PostInvoicesInvoiceRequestRendering.fromJson(Map<String, dynamic> json) 
   amountTaxDisplay: json['amount_tax_display'] != null ? PostInvoicesInvoiceRequestRenderingAmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,
   pdf: json['pdf'] != null ? PostInvoicesInvoiceRequestRenderingPdf.fromJson(json['pdf'] as Map<String, dynamic>) : null,
   template: json['template'] as String?,
-  templateVersion: json['template_version'] != null ? OneOf2.parse(json['template_version'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostInvoicesInvoiceRequestRenderingTemplateVersionVariant2.fromJson(v as String),) : null,
+  templateVersion: json['template_version'] != null ? PostInvoicesInvoiceRequestRenderingTemplateVersion.fromJson(json['template_version']) : null,
 ); }
 
 final PostInvoicesInvoiceRequestRenderingAmountTaxDisplay? amountTaxDisplay;

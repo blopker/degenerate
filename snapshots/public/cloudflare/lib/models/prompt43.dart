@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_audio_variant1.dart';import 'prompt43_chat_template_kwargs.dart';import 'prompt43_function_call.dart';import 'prompt43_function_call_variant2.dart';import 'prompt43_functions.dart';import 'prompt43_prediction_content.dart';import 'prompt43_response_format_variant1.dart';import 'prompt43_response_format_variant1_json_object.dart';import 'prompt43_response_format_variant1_json_schema.dart';import 'prompt43_response_format_variant1_text.dart';import 'prompt43_stop.dart';import 'prompt43_stream_options_variant1.dart';import 'prompt43_tool_choice_variant1.dart';import 'prompt43_tool_choice_variant1_allowed_tools.dart';import 'prompt43_tool_choice_variant1_custom.dart';import 'prompt43_tool_choice_variant1_function.dart';import 'prompt43_tools.dart';import 'prompt43_tools_custom.dart';import 'prompt43_tools_function.dart';import 'prompt43_web_search_options_variant1.dart';@immutable final class Prompt43Modalities {const Prompt43Modalities._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_audio_variant1.dart';import 'prompt43_chat_template_kwargs.dart';import 'prompt43_function_call.dart';import 'prompt43_functions.dart';import 'prompt43_prediction_content.dart';import 'prompt43_response_format_variant1.dart';import 'prompt43_response_format_variant1_json_object.dart';import 'prompt43_response_format_variant1_json_schema.dart';import 'prompt43_response_format_variant1_text.dart';import 'prompt43_stop.dart';import 'prompt43_stream_options_variant1.dart';import 'prompt43_tool_choice_variant1.dart';import 'prompt43_tool_choice_variant1_allowed_tools.dart';import 'prompt43_tool_choice_variant1_custom.dart';import 'prompt43_tool_choice_variant1_function.dart';import 'prompt43_tools.dart';import 'prompt43_tools_custom.dart';import 'prompt43_tools_function.dart';import 'prompt43_web_search_options_variant1.dart';@immutable final class Prompt43Modalities {const Prompt43Modalities._(this.value);
 
 factory Prompt43Modalities.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -84,13 +84,13 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'Prompt43ServiceTier($value)'; } 
  }
-@immutable final class Prompt43 {const Prompt43({required this.prompt, this.audio, this.chatTemplateKwargs, this.frequencyPenalty = const Omittable.absent(), this.functionCall, this.functions, this.logitBias = const Omittable.absent(), this.logprobs = const Omittable.absent(), this.maxCompletionTokens = const Omittable.absent(), this.maxTokens = const Omittable.absent(), this.metadata = const Omittable.absent(), this.modalities = const Omittable.absent(), this.model, this.n = const Omittable.absent(), this.parallelToolCalls = true, this.prediction, this.presencePenalty = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.responseFormat, this.seed = const Omittable.absent(), this.serviceTier = const Omittable.absent(), this.stop, this.store = const Omittable.absent(), this.stream = const Omittable.absent(), this.streamOptions, this.temperature = const Omittable.absent(), this.toolChoice, this.tools, this.topLogprobs = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, this.webSearchOptions, });
+@immutable final class Prompt43 {const Prompt43({required this.prompt, this.audio, this.chatTemplateKwargs, this.frequencyPenalty = const Omittable.absent(), this.functionCall, this.functions, this.logitBias = const Omittable.absent(), this.logprobs = const Omittable.absent(), this.maxCompletionTokens = const Omittable.absent(), this.maxTokens = const Omittable.absent(), this.metadata = const Omittable.absent(), this.modalities = const Omittable.absent(), this.model, this.n = const Omittable.absent(), this.parallelToolCalls, this.prediction, this.presencePenalty = const Omittable.absent(), this.reasoningEffort = const Omittable.absent(), this.responseFormat, this.seed = const Omittable.absent(), this.serviceTier = const Omittable.absent(), this.stop, this.store = const Omittable.absent(), this.stream = const Omittable.absent(), this.streamOptions, this.temperature = const Omittable.absent(), this.toolChoice, this.tools, this.topLogprobs = const Omittable.absent(), this.topP = const Omittable.absent(), this.user, this.webSearchOptions, });
 
 factory Prompt43.fromJson(Map<String, dynamic> json) { return Prompt43(
   audio: json['audio'] != null ? Prompt43AudioVariant1.fromJson(json['audio'] as Map<String, dynamic>) : null,
   chatTemplateKwargs: json['chat_template_kwargs'] != null ? Prompt43ChatTemplateKwargs.fromJson(json['chat_template_kwargs'] as Map<String, dynamic>) : null,
   frequencyPenalty: json.containsKey('frequency_penalty') ? Omittable(json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null) : const Omittable.absent(),
-  functionCall: json['function_call'] != null ? OneOf2.parse(json['function_call'], fromA: (v) => Prompt43FunctionCallVariant1.fromJson(v as String), fromB: (v) => Prompt43FunctionCallVariant2.fromJson(v as Map<String, dynamic>),) : null,
+  functionCall: json['function_call'] != null ? Prompt43FunctionCall.fromJson(json['function_call']) : null,
   functions: (json['functions'] as List<dynamic>?)?.map((e) => Prompt43Functions.fromJson(e as Map<String, dynamic>)).toList(),
   logitBias: json.containsKey('logit_bias') ? Omittable(json['logit_bias'] as Map<String, dynamic>?) : const Omittable.absent(),
   logprobs: json.containsKey('logprobs') ? Omittable(json['logprobs'] as bool?) : const Omittable.absent(),
@@ -100,7 +100,7 @@ factory Prompt43.fromJson(Map<String, dynamic> json) { return Prompt43(
   modalities: json.containsKey('modalities') ? Omittable((json['modalities'] as List<dynamic>?)?.map((e) => Prompt43Modalities.fromJson(e as String)).toList()) : const Omittable.absent(),
   model: json['model'] as String?,
   n: json.containsKey('n') ? Omittable(json['n'] != null ? (json['n'] as num).toInt() : null) : const Omittable.absent(),
-  parallelToolCalls: json.containsKey('parallel_tool_calls') ? json['parallel_tool_calls'] as bool : true,
+  parallelToolCalls: json['parallel_tool_calls'] as bool?,
   prediction: json['prediction'] != null ? Prompt43PredictionContent.fromJson(json['prediction'] as Map<String, dynamic>) : null,
   presencePenalty: json.containsKey('presence_penalty') ? Omittable(json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null) : const Omittable.absent(),
   prompt: json['prompt'] as String,
@@ -108,7 +108,7 @@ factory Prompt43.fromJson(Map<String, dynamic> json) { return Prompt43(
   responseFormat: json['response_format'] != null ? OneOf3.parse(json['response_format'], fromA: (v) => Prompt43ResponseFormatVariant1Text.fromJson(v as Map<String, dynamic>), fromB: (v) => Prompt43ResponseFormatVariant1JsonObject.fromJson(v as Map<String, dynamic>), fromC: (v) => Prompt43ResponseFormatVariant1JsonSchema.fromJson(v as Map<String, dynamic>),) : null,
   seed: json.containsKey('seed') ? Omittable(json['seed'] != null ? (json['seed'] as num).toInt() : null) : const Omittable.absent(),
   serviceTier: json.containsKey('service_tier') ? Omittable(json['service_tier'] != null ? Prompt43ServiceTier.fromJson(json['service_tier'] as String) : null) : const Omittable.absent(),
-  stop: json['stop'] != null ? OneOf2.parse(json['stop'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
+  stop: json['stop'] != null ? Prompt43Stop.fromJson(json['stop']) : null,
   store: json.containsKey('store') ? Omittable(json['store'] as bool?) : const Omittable.absent(),
   stream: json.containsKey('stream') ? Omittable(json['stream'] as bool?) : const Omittable.absent(),
   streamOptions: json['stream_options'] != null ? Prompt43StreamOptionsVariant1.fromJson(json['stream_options'] as Map<String, dynamic>) : null,
@@ -150,7 +150,7 @@ final String? model;
 final Omittable<int?> n;
 
 /// Whether to enable parallel function calling during tool use.
-final bool parallelToolCalls;
+final bool? parallelToolCalls;
 
 final Prompt43PredictionContent? prediction;
 
@@ -194,6 +194,8 @@ final String? user;
 /// Options for the web search tool (when using built-in web search).
 final Prompt43WebSearchOptionsVariant1? webSearchOptions;
 
+/// The value with the schema default applied when absent.
+bool get parallelToolCallsOrDefault { return parallelToolCalls ?? true; } 
 Map<String, dynamic> toJson() { return {
   if (audio != null) 'audio': audio?.toJson(),
   if (chatTemplateKwargs != null) 'chat_template_kwargs': chatTemplateKwargs?.toJson(),
@@ -208,7 +210,7 @@ Map<String, dynamic> toJson() { return {
   if (modalities.isPresent) 'modalities': modalities.value?.map((e) => e.toJson()).toList(),
   'model': ?model,
   if (n.isPresent) 'n': n.value,
-  'parallel_tool_calls': parallelToolCalls,
+  'parallel_tool_calls': ?parallelToolCalls,
   if (prediction != null) 'prediction': prediction?.toJson(),
   if (presencePenalty.isPresent) 'presence_penalty': presencePenalty.value,
   'prompt': prompt,
@@ -229,7 +231,7 @@ Map<String, dynamic> toJson() { return {
   if (webSearchOptions != null) 'web_search_options': webSearchOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
-Prompt43 copyWith({Prompt43AudioVariant1? Function()? audio, Prompt43ChatTemplateKwargs? Function()? chatTemplateKwargs, Omittable<double?>? frequencyPenalty, Prompt43FunctionCall? Function()? functionCall, List<Prompt43Functions>? Function()? functions, Omittable<Map<String,dynamic>?>? logitBias, Omittable<bool?>? logprobs, Omittable<int?>? maxCompletionTokens, Omittable<int?>? maxTokens, Omittable<Map<String,dynamic>?>? metadata, Omittable<List<Prompt43Modalities>?>? modalities, String? Function()? model, Omittable<int?>? n, bool Function()? parallelToolCalls, Prompt43PredictionContent? Function()? prediction, Omittable<double?>? presencePenalty, String? prompt, Omittable<Prompt43ReasoningEffort?>? reasoningEffort, Prompt43ResponseFormatVariant1? Function()? responseFormat, Omittable<int?>? seed, Omittable<Prompt43ServiceTier?>? serviceTier, Prompt43Stop? Function()? stop, Omittable<bool?>? store, Omittable<bool?>? stream, Prompt43StreamOptionsVariant1? Function()? streamOptions, Omittable<double?>? temperature, Prompt43ToolChoiceVariant1? Function()? toolChoice, List<Prompt43Tools>? Function()? tools, Omittable<int?>? topLogprobs, Omittable<double?>? topP, String? Function()? user, Prompt43WebSearchOptionsVariant1? Function()? webSearchOptions, }) { return Prompt43(
+Prompt43 copyWith({Prompt43AudioVariant1? Function()? audio, Prompt43ChatTemplateKwargs? Function()? chatTemplateKwargs, Omittable<double?>? frequencyPenalty, Prompt43FunctionCall? Function()? functionCall, List<Prompt43Functions>? Function()? functions, Omittable<Map<String,dynamic>?>? logitBias, Omittable<bool?>? logprobs, Omittable<int?>? maxCompletionTokens, Omittable<int?>? maxTokens, Omittable<Map<String,dynamic>?>? metadata, Omittable<List<Prompt43Modalities>?>? modalities, String? Function()? model, Omittable<int?>? n, bool? Function()? parallelToolCalls, Prompt43PredictionContent? Function()? prediction, Omittable<double?>? presencePenalty, String? prompt, Omittable<Prompt43ReasoningEffort?>? reasoningEffort, Prompt43ResponseFormatVariant1? Function()? responseFormat, Omittable<int?>? seed, Omittable<Prompt43ServiceTier?>? serviceTier, Prompt43Stop? Function()? stop, Omittable<bool?>? store, Omittable<bool?>? stream, Prompt43StreamOptionsVariant1? Function()? streamOptions, Omittable<double?>? temperature, Prompt43ToolChoiceVariant1? Function()? toolChoice, List<Prompt43Tools>? Function()? tools, Omittable<int?>? topLogprobs, Omittable<double?>? topP, String? Function()? user, Prompt43WebSearchOptionsVariant1? Function()? webSearchOptions, }) { return Prompt43(
   audio: audio != null ? audio() : this.audio,
   chatTemplateKwargs: chatTemplateKwargs != null ? chatTemplateKwargs() : this.chatTemplateKwargs,
   frequencyPenalty: frequencyPenalty ?? this.frequencyPenalty,

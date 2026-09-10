@@ -3,10 +3,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_payload_log_masking_level.dart';/// Request model for payload log settings within the DLP settings endpoint.
 /// Unlike the legacy endpoint, null and missing are treated identically here
 /// (both mean "not provided" for PATCH, "reset to default" for PUT).
-@immutable final class DlpPayloadLogSettingUpdate {const DlpPayloadLogSettingUpdate({this.maskingLevel = DlpPayloadLogMaskingLevel.$default, this.publicKey = const Omittable.absent(), });
+@immutable final class DlpPayloadLogSettingUpdate {const DlpPayloadLogSettingUpdate({this.maskingLevel, this.publicKey = const Omittable.absent(), });
 
 factory DlpPayloadLogSettingUpdate.fromJson(Map<String, dynamic> json) { return DlpPayloadLogSettingUpdate(
-  maskingLevel: json.containsKey('masking_level') ? DlpPayloadLogMaskingLevel.fromJson(json['masking_level'] as String) : DlpPayloadLogMaskingLevel.$default,
+  maskingLevel: json['masking_level'] != null ? DlpPayloadLogMaskingLevel.fromJson(json['masking_level'] as String) : null,
   publicKey: json.containsKey('public_key') ? Omittable(json['public_key'] as String?) : const Omittable.absent(),
 ); }
 
@@ -16,7 +16,7 @@ factory DlpPayloadLogSettingUpdate.fromJson(Map<String, dynamic> json) { return 
 /// - `partial`: Only partial payload content is masked.
 /// - `clear`: No masking is applied to the payload content.
 /// - `default`: DLP uses its default masking behavior.
-final DlpPayloadLogMaskingLevel maskingLevel;
+final DlpPayloadLogMaskingLevel? maskingLevel;
 
 /// Base64-encoded public key for encrypting payload logs.
 /// 
@@ -25,12 +25,14 @@ final DlpPayloadLogMaskingLevel maskingLevel;
 /// - Omit or set to null to leave unchanged (PATCH) or reset to disabled (PUT).
 final Omittable<String?> publicKey;
 
+/// The value with the schema default applied when absent.
+DlpPayloadLogMaskingLevel get maskingLevelOrDefault { return maskingLevel ?? DlpPayloadLogMaskingLevel.fromJson('default'); } 
 Map<String, dynamic> toJson() { return {
-  'masking_level': maskingLevel.toJson(),
+  if (maskingLevel != null) 'masking_level': maskingLevel?.toJson(),
   if (publicKey.isPresent) 'public_key': publicKey.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'masking_level', 'public_key'}.contains(key)); } 
-DlpPayloadLogSettingUpdate copyWith({DlpPayloadLogMaskingLevel Function()? maskingLevel, Omittable<String?>? publicKey, }) { return DlpPayloadLogSettingUpdate(
+DlpPayloadLogSettingUpdate copyWith({DlpPayloadLogMaskingLevel? Function()? maskingLevel, Omittable<String?>? publicKey, }) { return DlpPayloadLogSettingUpdate(
   maskingLevel: maskingLevel != null ? maskingLevel() : this.maskingLevel,
   publicKey: publicKey ?? this.publicKey,
 ); } 

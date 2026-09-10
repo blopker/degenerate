@@ -85,14 +85,14 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'TeamsUpdateInOrgRequestPermission($value)'; } 
  }
-@immutable final class TeamsUpdateInOrgRequest {const TeamsUpdateInOrgRequest({this.name, this.description, this.privacy, this.notificationSetting, this.permission = TeamsUpdateInOrgRequestPermission.pull, this.parentTeamId = const Omittable.absent(), });
+@immutable final class TeamsUpdateInOrgRequest {const TeamsUpdateInOrgRequest({this.name, this.description, this.privacy, this.notificationSetting, this.permission, this.parentTeamId = const Omittable.absent(), });
 
 factory TeamsUpdateInOrgRequest.fromJson(Map<String, dynamic> json) { return TeamsUpdateInOrgRequest(
   name: json['name'] as String?,
   description: json['description'] as String?,
   privacy: json['privacy'] != null ? TeamsUpdateInOrgRequestPrivacy.fromJson(json['privacy'] as String) : null,
   notificationSetting: json['notification_setting'] != null ? TeamsUpdateInOrgRequestNotificationSetting.fromJson(json['notification_setting'] as String) : null,
-  permission: json.containsKey('permission') ? TeamsUpdateInOrgRequestPermission.fromJson(json['permission'] as String) : TeamsUpdateInOrgRequestPermission.pull,
+  permission: json['permission'] != null ? TeamsUpdateInOrgRequestPermission.fromJson(json['permission'] as String) : null,
   parentTeamId: json.containsKey('parent_team_id') ? Omittable(json['parent_team_id'] != null ? (json['parent_team_id'] as num).toInt() : null) : const Omittable.absent(),
 ); }
 
@@ -116,21 +116,23 @@ final TeamsUpdateInOrgRequestPrivacy? privacy;
 final TeamsUpdateInOrgRequestNotificationSetting? notificationSetting;
 
 /// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
-final TeamsUpdateInOrgRequestPermission permission;
+final TeamsUpdateInOrgRequestPermission? permission;
 
 /// The ID of a team to set as the parent team.
 final Omittable<int?> parentTeamId;
 
+/// The value with the schema default applied when absent.
+TeamsUpdateInOrgRequestPermission get permissionOrDefault { return permission ?? TeamsUpdateInOrgRequestPermission.fromJson('pull'); } 
 Map<String, dynamic> toJson() { return {
   'name': ?name,
   'description': ?description,
   if (privacy != null) 'privacy': privacy?.toJson(),
   if (notificationSetting != null) 'notification_setting': notificationSetting?.toJson(),
-  'permission': permission.toJson(),
+  if (permission != null) 'permission': permission?.toJson(),
   if (parentTeamId.isPresent) 'parent_team_id': parentTeamId.value,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'description', 'privacy', 'notification_setting', 'permission', 'parent_team_id'}.contains(key)); } 
-TeamsUpdateInOrgRequest copyWith({String? Function()? name, String? Function()? description, TeamsUpdateInOrgRequestPrivacy? Function()? privacy, TeamsUpdateInOrgRequestNotificationSetting? Function()? notificationSetting, TeamsUpdateInOrgRequestPermission Function()? permission, Omittable<int?>? parentTeamId, }) { return TeamsUpdateInOrgRequest(
+TeamsUpdateInOrgRequest copyWith({String? Function()? name, String? Function()? description, TeamsUpdateInOrgRequestPrivacy? Function()? privacy, TeamsUpdateInOrgRequestNotificationSetting? Function()? notificationSetting, TeamsUpdateInOrgRequestPermission? Function()? permission, Omittable<int?>? parentTeamId, }) { return TeamsUpdateInOrgRequest(
   name: name != null ? name() : this.name,
   description: description != null ? description() : this.description,
   privacy: privacy != null ? privacy() : this.privacy,

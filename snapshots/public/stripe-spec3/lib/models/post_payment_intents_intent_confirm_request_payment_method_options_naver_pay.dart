@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2($value)'; } 
  }
-typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPay = OneOf2<PaymentMethodOptionsParam97,PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2>;
+
+@immutable
+final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPay {
+  const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPay({this.paymentMethodOptionsParam97 = const Omittable.absent(),
+this.postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPay._({required this.rawValue, required this.paymentMethodOptionsParam97,
+required this.postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2,});
+  factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPay.fromJson(Object? json) => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPay._(
+    rawValue: Omittable(json),
+    paymentMethodOptionsParam97: parseAnyOfVariant<PaymentMethodOptionsParam97>(json, (value) => PaymentMethodOptionsParam97.fromJson(value! as Map<String, dynamic>)),
+postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2: parseAnyOfVariant<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2>(json, (value) => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<PaymentMethodOptionsParam97> paymentMethodOptionsParam97;
+final Omittable<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2> postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => paymentMethodOptionsParam97.isPresent || postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (paymentMethodOptionsParam97.isPresent) paymentMethodOptionsParam97.value?.toJson(),
+if (postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2.isPresent) postPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPayVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPay && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsNaverPay(${toJson()})';
+}

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/shield_configuration.dart';import '../models/shield_identifier.dart';/// ShieldSettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common_failure7.dart';import '../models/shield_configuration.dart';import '../models/shield_identifier.dart';/// ShieldSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ShieldSettingsApi with ApiExecutor {const ShieldSettingsApi(this.api
 /// Gets the current API Shield configuration settings for a zone, including validation behavior and enforcement mode.
 ///
 /// `GET /zones/{zone_id}/api_gateway/configuration`
-Future<ApiResult<ShieldConfiguration, Never>> apiShieldSettingsRetrieveInformationAboutSpecificConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShieldConfiguration, ResponseCommonFailure7>> apiShieldSettingsRetrieveInformationAboutSpecificConfigurationProperties({required ShieldIdentifier zoneId, bool? normalize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (normalize != null) {
   queryParameters['normalize'] = normalize.toString();
@@ -30,11 +30,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return ShieldConfiguration.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return ShieldConfiguration.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -43,7 +53,7 @@ return execute(
 /// Updates API Shield configuration settings for a zone. Can modify validation strictness, enforcement mode, and other global settings.
 ///
 /// `PUT /zones/{zone_id}/api_gateway/configuration`
-Future<ApiResult<ShieldConfiguration, Never>> apiShieldSettingsSetConfigurationProperties({required ShieldIdentifier zoneId, required ShieldConfiguration body, bool? normalize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ShieldConfiguration, ResponseCommonFailure7>> apiShieldSettingsSetConfigurationProperties({required ShieldIdentifier zoneId, required ShieldConfiguration body, bool? normalize, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (normalize != null) {
   queryParameters['normalize'] = normalize.toString();
@@ -62,11 +72,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return ShieldConfiguration.fromJson(json['result'] as Map<String, dynamic>);
+final json = jsonDecode(response.body) as Map<String, dynamic>;
+return ShieldConfiguration.fromJson(json['result'] as Map<String, dynamic>);
+  },
+  onError: (response) {
+switch (response.statusCode) {
+case >= 400 && < 500:
+final json = jsonDecode(response.body);
+return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

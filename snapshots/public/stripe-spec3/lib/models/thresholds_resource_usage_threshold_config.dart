@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_meter.dart';import 'thresholds_resource_usage_alert_filter.dart';import 'thresholds_resource_usage_threshold_config_meter.dart';/// Defines how the alert will behave.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'thresholds_resource_usage_alert_filter.dart';import 'thresholds_resource_usage_threshold_config_meter.dart';/// Defines how the alert will behave.
 @immutable final class ThresholdsResourceUsageThresholdConfigRecurrence {const ThresholdsResourceUsageThresholdConfigRecurrence._(this.value);
 
 factory ThresholdsResourceUsageThresholdConfigRecurrence.fromJson(String json) { return switch (json) {
@@ -28,7 +28,7 @@ bool get isUnknown { return !values.contains(this); }
 factory ThresholdsResourceUsageThresholdConfig.fromJson(Map<String, dynamic> json) { return ThresholdsResourceUsageThresholdConfig(
   filters: json.containsKey('filters') ? Omittable((json['filters'] as List<dynamic>?)?.map((e) => ThresholdsResourceUsageAlertFilter.fromJson(e as Map<String, dynamic>)).toList()) : const Omittable.absent(),
   gte: (json['gte'] as num).toInt(),
-  meter: OneOf2.parse(json['meter'], fromA: (v) => v as String, fromB: (v) => BillingMeter.fromJson(v as Map<String, dynamic>),),
+  meter: ThresholdsResourceUsageThresholdConfigMeter.fromJson(json['meter']),
   recurrence: ThresholdsResourceUsageThresholdConfigRecurrence.fromJson(json['recurrence'] as String),
 ); }
 

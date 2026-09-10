@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pcm_audio_format.dart';import 'pcma_audio_format.dart';import 'pcmu_audio_format.dart';import 'realtime_audio_formats.dart';import 'voice_ids_shared.dart';@immutable final class RealtimeSessionCreateResponseAudioOutput {const RealtimeSessionCreateResponseAudioOutput({this.format, this.voice, this.speed, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_audio_formats.dart';import 'voice_ids_shared.dart';@immutable final class RealtimeSessionCreateResponseAudioOutput {const RealtimeSessionCreateResponseAudioOutput({this.format, this.voice, this.speed, });
 
 factory RealtimeSessionCreateResponseAudioOutput.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateResponseAudioOutput(
-  format: json['format'] != null ? OneOf3.parse(json['format'], fromA: (v) => PcmAudioFormat.fromJson(v as Map<String, dynamic>), fromB: (v) => PcmuAudioFormat.fromJson(v as Map<String, dynamic>), fromC: (v) => PcmaAudioFormat.fromJson(v as Map<String, dynamic>),) : null,
-  voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),) : null,
+  format: json['format'] != null ? RealtimeAudioFormats.fromJson(json['format']) : null,
+  voice: json['voice'] != null ? VoiceIdsShared.fromJson(json['voice']) : null,
   speed: json['speed'] != null ? (json['speed'] as num).toDouble() : null,
 ); }
 

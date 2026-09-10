@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_text_to_text_variant2_messages.dart';@immutable final class ImageTextToTextVariant2 {const ImageTextToTextVariant2({required this.image, required this.messages, this.frequencyPenalty, this.ignoreEos, this.maxTokens = 512, this.presencePenalty, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image_text_to_text_variant2_messages.dart';@immutable final class ImageTextToTextVariant2 {const ImageTextToTextVariant2({required this.image, required this.messages, this.frequencyPenalty, this.ignoreEos, this.maxTokens, this.presencePenalty, this.repetitionPenalty, this.seed, this.temperature, this.topK, this.topP, });
 
 factory ImageTextToTextVariant2.fromJson(Map<String, dynamic> json) { return ImageTextToTextVariant2(
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   ignoreEos: json['ignore_eos'] as bool?,
   image: json['image'] as String,
-  maxTokens: json.containsKey('max_tokens') ? (json['max_tokens'] as num).toInt() : 512,
+  maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   messages: (json['messages'] as List<dynamic>).map((e) => ImageTextToTextVariant2Messages.fromJson(e as Map<String, dynamic>)).toList(),
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   repetitionPenalty: json['repetition_penalty'] != null ? (json['repetition_penalty'] as num).toDouble() : null,
@@ -26,7 +26,7 @@ final bool? ignoreEos;
 final String image;
 
 /// The maximum number of tokens to generate in the response.
-final int maxTokens;
+final int? maxTokens;
 
 /// An array of message objects representing the conversation history.
 final List<ImageTextToTextVariant2Messages> messages;
@@ -49,11 +49,13 @@ final double? topK;
 /// Controls the creativity of the AI's responses by adjusting how many possible words it considers. Lower values make outputs more predictable; higher values allow for more varied and creative responses.
 final double? topP;
 
+/// The value with the schema default applied when absent.
+int get maxTokensOrDefault { return maxTokens ?? 512; } 
 Map<String, dynamic> toJson() { return {
   'frequency_penalty': ?frequencyPenalty,
   'ignore_eos': ?ignoreEos,
   'image': image,
-  'max_tokens': maxTokens,
+  'max_tokens': ?maxTokens,
   'messages': messages.map((e) => e.toJson()).toList(),
   'presence_penalty': ?presencePenalty,
   'repetition_penalty': ?repetitionPenalty,
@@ -64,7 +66,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('image') && json['image'] is String &&
       json.containsKey('messages'); } 
-ImageTextToTextVariant2 copyWith({double? Function()? frequencyPenalty, bool? Function()? ignoreEos, String? image, int Function()? maxTokens, List<ImageTextToTextVariant2Messages>? messages, double? Function()? presencePenalty, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageTextToTextVariant2(
+ImageTextToTextVariant2 copyWith({double? Function()? frequencyPenalty, bool? Function()? ignoreEos, String? image, int? Function()? maxTokens, List<ImageTextToTextVariant2Messages>? messages, double? Function()? presencePenalty, double? Function()? repetitionPenalty, double? Function()? seed, double? Function()? temperature, double? Function()? topK, double? Function()? topP, }) { return ImageTextToTextVariant2(
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
   ignoreEos: ignoreEos != null ? ignoreEos() : this.ignoreEos,
   image: image ?? this.image,

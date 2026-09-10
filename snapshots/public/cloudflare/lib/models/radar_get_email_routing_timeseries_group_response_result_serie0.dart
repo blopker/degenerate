@@ -24,6 +24,6 @@ RadarGetEmailRoutingTimeseriesGroupResponseResultSerie0 copyWith({List<DateTime>
       other is RadarGetEmailRoutingTimeseriesGroupResponseResultSerie0 &&
           listEquals(timestamps, other.timestamps) &&
           mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(Object.hashAll(timestamps), Object.hashAll(additionalProperties.entries)); } 
+@override int get hashCode { return Object.hash(Object.hashAll(timestamps), mapHash(additionalProperties)); } 
 @override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupResponseResultSerie0(timestamps: $timestamps, additionalProperties: $additionalProperties)'; } 
  }

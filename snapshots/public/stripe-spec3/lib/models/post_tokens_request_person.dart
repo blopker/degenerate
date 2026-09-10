@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'date_of_birth_specs8.dart';import 'post_tokens_request_person_additional_tos_acceptances.dart';import 'post_tokens_request_person_address.dart';import 'post_tokens_request_person_address_kana.dart';import 'post_tokens_request_person_address_kanji.dart';import 'post_tokens_request_person_dob.dart';import 'post_tokens_request_person_documents.dart';import 'post_tokens_request_person_full_name_aliases.dart';import 'post_tokens_request_person_metadata.dart';import 'post_tokens_request_person_registered_address.dart';import 'post_tokens_request_person_relationship.dart';import 'post_tokens_request_person_us_cfpb_data.dart';import 'post_tokens_request_person_verification.dart';@immutable final class PostTokensRequestPersonPoliticalExposure {const PostTokensRequestPersonPoliticalExposure._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_person_additional_tos_acceptances.dart';import 'post_tokens_request_person_address.dart';import 'post_tokens_request_person_address_kana.dart';import 'post_tokens_request_person_address_kanji.dart';import 'post_tokens_request_person_dob.dart';import 'post_tokens_request_person_documents.dart';import 'post_tokens_request_person_full_name_aliases.dart';import 'post_tokens_request_person_metadata.dart';import 'post_tokens_request_person_registered_address.dart';import 'post_tokens_request_person_relationship.dart';import 'post_tokens_request_person_us_cfpb_data.dart';import 'post_tokens_request_person_verification.dart';@immutable final class PostTokensRequestPersonPoliticalExposure {const PostTokensRequestPersonPoliticalExposure._(this.value);
 
 factory PostTokensRequestPersonPoliticalExposure.fromJson(String json) { return switch (json) {
   'existing' => existing,
@@ -32,13 +32,13 @@ factory PostTokensRequestPerson.fromJson(Map<String, dynamic> json) { return Pos
   address: json['address'] != null ? PostTokensRequestPersonAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressKana: json['address_kana'] != null ? PostTokensRequestPersonAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
   addressKanji: json['address_kanji'] != null ? PostTokensRequestPersonAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
-  dob: json['dob'] != null ? OneOf2.parse(json['dob'], fromA: (v) => DateOfBirthSpecs8.fromJson(v as Map<String, dynamic>), fromB: (v) => PostTokensRequestPersonDobVariant2.fromJson(v as String),) : null,
+  dob: json['dob'] != null ? PostTokensRequestPersonDob.fromJson(json['dob']) : null,
   documents: json['documents'] != null ? PostTokensRequestPersonDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   firstName: json['first_name'] as String?,
   firstNameKana: json['first_name_kana'] as String?,
   firstNameKanji: json['first_name_kanji'] as String?,
-  fullNameAliases: json['full_name_aliases'] != null ? OneOf2.parse(json['full_name_aliases'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostTokensRequestPersonFullNameAliasesVariant2.fromJson(v as String),) : null,
+  fullNameAliases: json['full_name_aliases'] != null ? PostTokensRequestPersonFullNameAliases.fromJson(json['full_name_aliases']) : null,
   gender: json['gender'] as String?,
   idNumber: json['id_number'] as String?,
   idNumberSecondary: json['id_number_secondary'] as String?,
@@ -46,7 +46,7 @@ factory PostTokensRequestPerson.fromJson(Map<String, dynamic> json) { return Pos
   lastNameKana: json['last_name_kana'] as String?,
   lastNameKanji: json['last_name_kanji'] as String?,
   maidenName: json['maiden_name'] as String?,
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostTokensRequestPersonMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostTokensRequestPersonMetadata.fromJson(json['metadata']) : null,
   nationality: json['nationality'] as String?,
   phone: json['phone'] as String?,
   politicalExposure: json['political_exposure'] != null ? PostTokensRequestPersonPoliticalExposure.fromJson(json['political_exposure'] as String) : null,

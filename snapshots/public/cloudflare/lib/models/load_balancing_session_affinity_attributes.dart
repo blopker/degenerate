@@ -88,15 +88,15 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'LoadBalancingSessionAffinityAttributesZeroDowntimeFailover($value)'; } 
  }
 /// Configures attributes for session affinity.
-@immutable final class LoadBalancingSessionAffinityAttributes {const LoadBalancingSessionAffinityAttributes({this.drainDuration, this.headers, this.requireAllHeaders = false, this.samesite = LoadBalancingSessionAffinityAttributesSamesite.auto, this.secure = LoadBalancingSessionAffinityAttributesSecure.auto, this.zeroDowntimeFailover = LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.none, });
+@immutable final class LoadBalancingSessionAffinityAttributes {const LoadBalancingSessionAffinityAttributes({this.drainDuration, this.headers, this.requireAllHeaders, this.samesite, this.secure, this.zeroDowntimeFailover, });
 
 factory LoadBalancingSessionAffinityAttributes.fromJson(Map<String, dynamic> json) { return LoadBalancingSessionAffinityAttributes(
   drainDuration: json['drain_duration'] != null ? (json['drain_duration'] as num).toDouble() : null,
   headers: (json['headers'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  requireAllHeaders: json.containsKey('require_all_headers') ? json['require_all_headers'] as bool : false,
-  samesite: json.containsKey('samesite') ? LoadBalancingSessionAffinityAttributesSamesite.fromJson(json['samesite'] as String) : LoadBalancingSessionAffinityAttributesSamesite.auto,
-  secure: json.containsKey('secure') ? LoadBalancingSessionAffinityAttributesSecure.fromJson(json['secure'] as String) : LoadBalancingSessionAffinityAttributesSecure.auto,
-  zeroDowntimeFailover: json.containsKey('zero_downtime_failover') ? LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.fromJson(json['zero_downtime_failover'] as String) : LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.none,
+  requireAllHeaders: json['require_all_headers'] as bool?,
+  samesite: json['samesite'] != null ? LoadBalancingSessionAffinityAttributesSamesite.fromJson(json['samesite'] as String) : null,
+  secure: json['secure'] != null ? LoadBalancingSessionAffinityAttributesSecure.fromJson(json['secure'] as String) : null,
+  zeroDowntimeFailover: json['zero_downtime_failover'] != null ? LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.fromJson(json['zero_downtime_failover'] as String) : null,
 ); }
 
 /// Configures the drain duration in seconds. This field is only used when session affinity is enabled on the load balancer.
@@ -106,27 +106,35 @@ final double? drainDuration;
 final List<String>? headers;
 
 /// When header `session_affinity` is enabled, this option can be used to specify how HTTP headers on load balancing requests will be used. The supported values are: - `"true"`: Load balancing requests must contain *all* of the HTTP headers specified by the `headers` session affinity attribute, otherwise sessions aren't created. - `"false"`: Load balancing requests must contain *at least one* of the HTTP headers specified by the `headers` session affinity attribute, otherwise sessions aren't created.
-final bool requireAllHeaders;
+final bool? requireAllHeaders;
 
 /// Configures the SameSite attribute on session affinity cookie. Value "Auto" will be translated to "Lax" or "None" depending if Always Use HTTPS is enabled. Note: when using value "None", the secure attribute can not be set to "Never".
-final LoadBalancingSessionAffinityAttributesSamesite samesite;
+final LoadBalancingSessionAffinityAttributesSamesite? samesite;
 
 /// Configures the Secure attribute on session affinity cookie. Value "Always" indicates the Secure attribute will be set in the Set-Cookie header, "Never" indicates the Secure attribute will not be set, and "Auto" will set the Secure attribute depending if Always Use HTTPS is enabled.
-final LoadBalancingSessionAffinityAttributesSecure secure;
+final LoadBalancingSessionAffinityAttributesSecure? secure;
 
 /// Configures the zero-downtime failover between origins within a pool when session affinity is enabled. This feature is currently incompatible with Argo, Tiered Cache, and Bandwidth Alliance. The supported values are: - `"none"`: No failover takes place for sessions pinned to the origin (default). - `"temporary"`: Traffic will be sent to another other healthy origin until the originally pinned origin is available; note that this can potentially result in heavy origin flapping. - `"sticky"`: The session affinity cookie is updated and subsequent requests are sent to the new origin. Note: Zero-downtime failover with sticky sessions is currently not supported for session affinity by header.
-final LoadBalancingSessionAffinityAttributesZeroDowntimeFailover zeroDowntimeFailover;
+final LoadBalancingSessionAffinityAttributesZeroDowntimeFailover? zeroDowntimeFailover;
 
+/// The value with the schema default applied when absent.
+bool get requireAllHeadersOrDefault { return requireAllHeaders ?? false; } 
+/// The value with the schema default applied when absent.
+LoadBalancingSessionAffinityAttributesSamesite get samesiteOrDefault { return samesite ?? LoadBalancingSessionAffinityAttributesSamesite.fromJson('Auto'); } 
+/// The value with the schema default applied when absent.
+LoadBalancingSessionAffinityAttributesSecure get secureOrDefault { return secure ?? LoadBalancingSessionAffinityAttributesSecure.fromJson('Auto'); } 
+/// The value with the schema default applied when absent.
+LoadBalancingSessionAffinityAttributesZeroDowntimeFailover get zeroDowntimeFailoverOrDefault { return zeroDowntimeFailover ?? LoadBalancingSessionAffinityAttributesZeroDowntimeFailover.fromJson('none'); } 
 Map<String, dynamic> toJson() { return {
   'drain_duration': ?drainDuration,
   'headers': ?headers,
-  'require_all_headers': requireAllHeaders,
-  'samesite': samesite.toJson(),
-  'secure': secure.toJson(),
-  'zero_downtime_failover': zeroDowntimeFailover.toJson(),
+  'require_all_headers': ?requireAllHeaders,
+  if (samesite != null) 'samesite': samesite?.toJson(),
+  if (secure != null) 'secure': secure?.toJson(),
+  if (zeroDowntimeFailover != null) 'zero_downtime_failover': zeroDowntimeFailover?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'drain_duration', 'headers', 'require_all_headers', 'samesite', 'secure', 'zero_downtime_failover'}.contains(key)); } 
-LoadBalancingSessionAffinityAttributes copyWith({double? Function()? drainDuration, List<String>? Function()? headers, bool Function()? requireAllHeaders, LoadBalancingSessionAffinityAttributesSamesite Function()? samesite, LoadBalancingSessionAffinityAttributesSecure Function()? secure, LoadBalancingSessionAffinityAttributesZeroDowntimeFailover Function()? zeroDowntimeFailover, }) { return LoadBalancingSessionAffinityAttributes(
+LoadBalancingSessionAffinityAttributes copyWith({double? Function()? drainDuration, List<String>? Function()? headers, bool? Function()? requireAllHeaders, LoadBalancingSessionAffinityAttributesSamesite? Function()? samesite, LoadBalancingSessionAffinityAttributesSecure? Function()? secure, LoadBalancingSessionAffinityAttributesZeroDowntimeFailover? Function()? zeroDowntimeFailover, }) { return LoadBalancingSessionAffinityAttributes(
   drainDuration: drainDuration != null ? drainDuration() : this.drainDuration,
   headers: headers != null ? headers() : this.headers,
   requireAllHeaders: requireAllHeaders != null ? requireAllHeaders() : this.requireAllHeaders,

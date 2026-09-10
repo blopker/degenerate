@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'label_selector.dart';/// TopologySpreadConstraint specifies how to spread matching pods among the given topology.
-@immutable final class TopologySpreadConstraint {const TopologySpreadConstraint({this.labelSelector, this.matchLabelKeys, this.maxSkew = 0, this.minDomains, this.nodeAffinityPolicy, this.nodeTaintsPolicy, this.topologyKey = '', this.whenUnsatisfiable = '', });
+@immutable final class TopologySpreadConstraint {const TopologySpreadConstraint({required this.maxSkew, required this.topologyKey, required this.whenUnsatisfiable, this.labelSelector, this.matchLabelKeys, this.minDomains, this.nodeAffinityPolicy, this.nodeTaintsPolicy, });
 
 factory TopologySpreadConstraint.fromJson(Map<String, dynamic> json) { return TopologySpreadConstraint(
   labelSelector: json['labelSelector'] != null ? LabelSelector.fromJson(json['labelSelector'] as Map<String, dynamic>) : null,

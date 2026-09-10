@@ -120,4 +120,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2($value)'; } 
  }
-typedef AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel = OneOf2<AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1,AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2>;
+
+@immutable
+final class AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel {
+  const AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel({this.aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1 = const Omittable.absent(),
+this.aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel._({required this.rawValue, required this.aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1,
+required this.aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2,});
+  factory AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel.fromJson(Object? json) => AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel._(
+    rawValue: Omittable(json),
+    aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1: parseAnyOfVariant<AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1>(json, (value) => AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1.fromJson(value! as String)),
+aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2: parseAnyOfVariant<AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2>(json, (value) => AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1> aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1;
+final Omittable<AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2> aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1.isPresent || aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1.isPresent) aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant1.value?.toJson(),
+if (aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2.isPresent) aiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'AiSearchInstanceChatCompletionRequestAiSearchOptionsQueryRewriteModel(${toJson()})';
+}

@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'recipient_sh
 factory RecipientShippingWithOptionalFieldsAddress.fromJson(Map<String, dynamic> json) { return RecipientShippingWithOptionalFieldsAddress(
   address: RecipientShippingWithOptionalFieldsAddressAddress.fromJson(json['address'] as Map<String, dynamic>),
   name: json['name'] as String,
-  phone: json['phone'] != null ? OneOf2.parse(json['phone'], fromA: (v) => v as String, fromB: (v) => RecipientShippingWithOptionalFieldsAddressPhoneVariant2.fromJson(v as String),) : null,
+  phone: json['phone'] != null ? RecipientShippingWithOptionalFieldsAddressPhone.fromJson(json['phone']) : null,
 ); }
 
 final RecipientShippingWithOptionalFieldsAddressAddress address;

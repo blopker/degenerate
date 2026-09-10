@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'discount.dart';import 'price.dart';import 'subscription_item_billing_thresholds.dart';import 'subscription_item_discounts.dart';import 'tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'price.dart';import 'subscription_item_billing_thresholds.dart';import 'subscription_item_discounts.dart';import 'tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SubscriptionItemObject {const SubscriptionItemObject._(this.value);
 
 factory SubscriptionItemObject.fromJson(String json) { return switch (json) {
@@ -31,7 +31,7 @@ factory SubscriptionItem.fromJson(Map<String, dynamic> json) { return Subscripti
   created: (json['created'] as num).toInt(),
   currentPeriodEnd: (json['current_period_end'] as num).toInt(),
   currentPeriodStart: (json['current_period_start'] as num).toInt(),
-  discounts: (json['discounts'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => Discount.fromJson(v as Map<String, dynamic>),)).toList(),
+  discounts: (json['discounts'] as List<dynamic>).map(SubscriptionItemDiscounts.fromJson).toList(),
   id: json['id'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: SubscriptionItemObject.fromJson(json['object'] as String),

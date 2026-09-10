@@ -1,25 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_runtime_handler_features.dart';/// NodeRuntimeHandler is a set of runtime handler information.
-@immutable final class NodeRuntimeHandler {const NodeRuntimeHandler({this.features, this.name = '', });
+@immutable final class NodeRuntimeHandler {const NodeRuntimeHandler({this.features, this.name, });
 
 factory NodeRuntimeHandler.fromJson(Map<String, dynamic> json) { return NodeRuntimeHandler(
   features: json['features'] != null ? NodeRuntimeHandlerFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
-  name: json.containsKey('name') ? json['name'] as String : '',
+  name: json['name'] as String?,
 ); }
 
 /// Supported features.
 final NodeRuntimeHandlerFeatures? features;
 
 /// Runtime handler name. Empty for the default runtime handler.
-final String name;
+final String? name;
 
+/// The value with the schema default applied when absent.
+String get nameOrDefault { return name ?? ''; } 
 Map<String, dynamic> toJson() { return {
   if (features != null) 'features': features?.toJson(),
-  'name': name,
+  'name': ?name,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'features', 'name'}.contains(key)); } 
-NodeRuntimeHandler copyWith({NodeRuntimeHandlerFeatures? Function()? features, String Function()? name, }) { return NodeRuntimeHandler(
+NodeRuntimeHandler copyWith({NodeRuntimeHandlerFeatures? Function()? features, String? Function()? name, }) { return NodeRuntimeHandler(
   features: features != null ? features() : this.features,
   name: name != null ? name() : this.name,
 ); } 

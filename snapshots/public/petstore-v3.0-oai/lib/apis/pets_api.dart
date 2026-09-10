@@ -28,14 +28,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -53,11 +58,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -73,13 +83,19 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Pet.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Pet.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return ErrorModel.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+default:
+final json = jsonDecode(response.body);
+return ErrorModel.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostAccountsRequestIndividualFullNameAliasesVariant2($value)'; } 
  }
-typedef PostAccountsRequestIndividualFullNameAliases = OneOf2<List<String>,PostAccountsRequestIndividualFullNameAliasesVariant2>;
+
+@immutable
+final class PostAccountsRequestIndividualFullNameAliases {
+  const PostAccountsRequestIndividualFullNameAliases({this.listString = const Omittable.absent(),
+this.postAccountsRequestIndividualFullNameAliasesVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostAccountsRequestIndividualFullNameAliases._({required this.rawValue, required this.listString,
+required this.postAccountsRequestIndividualFullNameAliasesVariant2,});
+  factory PostAccountsRequestIndividualFullNameAliases.fromJson(Object? json) => PostAccountsRequestIndividualFullNameAliases._(
+    rawValue: Omittable(json),
+    listString: parseAnyOfVariant<List<String>>(json, (value) => (value! as List<dynamic>).map((e) => e as String).toList()),
+postAccountsRequestIndividualFullNameAliasesVariant2: parseAnyOfVariant<PostAccountsRequestIndividualFullNameAliasesVariant2>(json, (value) => PostAccountsRequestIndividualFullNameAliasesVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<String>> listString;
+final Omittable<PostAccountsRequestIndividualFullNameAliasesVariant2> postAccountsRequestIndividualFullNameAliasesVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listString.isPresent || postAccountsRequestIndividualFullNameAliasesVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listString.isPresent) listString.value,
+if (postAccountsRequestIndividualFullNameAliasesVariant2.isPresent) postAccountsRequestIndividualFullNameAliasesVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostAccountsRequestIndividualFullNameAliases && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostAccountsRequestIndividualFullNameAliases(${toJson()})';
+}

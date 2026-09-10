@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_branding_settings_icon.dart';import 'account_branding_settings_logo.dart';import 'file.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_branding_settings_icon.dart';import 'account_branding_settings_logo.dart';/// 
 @immutable final class AccountBrandingSettings {const AccountBrandingSettings({this.icon = const Omittable.absent(), this.logo = const Omittable.absent(), this.primaryColor = const Omittable.absent(), this.secondaryColor = const Omittable.absent(), });
 
 factory AccountBrandingSettings.fromJson(Map<String, dynamic> json) { return AccountBrandingSettings(
-  icon: json.containsKey('icon') ? Omittable(json['icon'] != null ? OneOf2.parse(json['icon'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  logo: json.containsKey('logo') ? Omittable(json['logo'] != null ? OneOf2.parse(json['logo'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  icon: json.containsKey('icon') ? Omittable(json['icon'] != null ? AccountBrandingSettingsIcon.fromJson(json['icon']) : null) : const Omittable.absent(),
+  logo: json.containsKey('logo') ? Omittable(json['logo'] != null ? AccountBrandingSettingsLogo.fromJson(json['logo']) : null) : const Omittable.absent(),
   primaryColor: json.containsKey('primary_color') ? Omittable(json['primary_color'] as String?) : const Omittable.absent(),
   secondaryColor: json.containsKey('secondary_color') ? Omittable(json['secondary_color'] as String?) : const Omittable.absent(),
 ); }

@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_customer_details.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_description.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_metadata.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_shipping_details.dart';import 'shipping_details.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptInformationalRequest {const PostPaymentRecordsIdReportPaymentAttemptInformationalRequest({this.customerDetails, this.description, this.expand, this.metadata, this.shippingDetails, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_customer_details.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_description.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_metadata.dart';import 'post_payment_records_id_report_payment_attempt_informational_request_shipping_details.dart';@immutable final class PostPaymentRecordsIdReportPaymentAttemptInformationalRequest {const PostPaymentRecordsIdReportPaymentAttemptInformationalRequest({this.customerDetails, this.description, this.expand, this.metadata, this.shippingDetails, });
 
 factory PostPaymentRecordsIdReportPaymentAttemptInformationalRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptInformationalRequest(
   customerDetails: json['customer_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescriptionVariant2.fromJson(v as String),) : null,
+  description: json['description'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestDescription.fromJson(json['description']) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadataVariant2.fromJson(v as String),) : null,
-  shippingDetails: json['shipping_details'] != null ? OneOf2.parse(json['shipping_details'], fromA: (v) => ShippingDetails.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentRecordsIdReportPaymentAttemptInformationalRequestShippingDetailsVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestMetadata.fromJson(json['metadata']) : null,
+  shippingDetails: json['shipping_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptInformationalRequestShippingDetails.fromJson(json['shipping_details']) : null,
 ); }
 
 /// Customer information for this payment.

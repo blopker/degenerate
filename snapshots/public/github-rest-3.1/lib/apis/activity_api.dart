@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/activity_list_repos_starred_by_authenticated_user_direction.dart';import '../models/activity_list_repos_starred_by_authenticated_user_sort.dart';import '../models/activity_list_repos_starred_by_user_direction.dart';import '../models/activity_list_repos_starred_by_user_response.dart';import '../models/activity_list_repos_starred_by_user_sort.dart';import '../models/activity_list_stargazers_for_repo_response.dart';import '../models/activity_mark_notifications_as_read_request.dart';import '../models/activity_mark_notifications_as_read_response202.dart';import '../models/activity_mark_repo_notifications_as_read_request.dart';import '../models/activity_mark_repo_notifications_as_read_response202.dart';import '../models/activity_set_repo_subscription_request.dart';import '../models/activity_set_thread_subscription_request.dart';import '../models/basic_error.dart';import '../models/event.dart';import '../models/feed.dart';import '../models/minimal_repository.dart';import '../models/repository.dart';import '../models/repository_subscription.dart';import '../models/simple_user.dart';import '../models/stargazer.dart';import '../models/starred_repository.dart';import '../models/thread.dart';import '../models/thread_subscription.dart';import '../models/validation_error.dart';/// ActivityApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/activity_list_public_events_response503.dart';import '../models/activity_list_repos_starred_by_authenticated_user_direction.dart';import '../models/activity_list_repos_starred_by_authenticated_user_sort.dart';import '../models/activity_list_repos_starred_by_user_direction.dart';import '../models/activity_list_repos_starred_by_user_response.dart';import '../models/activity_list_repos_starred_by_user_sort.dart';import '../models/activity_list_stargazers_for_repo_response.dart';import '../models/activity_mark_notifications_as_read_request.dart';import '../models/activity_mark_notifications_as_read_response202.dart';import '../models/activity_mark_repo_notifications_as_read_request.dart';import '../models/activity_mark_repo_notifications_as_read_response202.dart';import '../models/activity_set_repo_subscription_request.dart';import '../models/activity_set_thread_subscription_request.dart';import '../models/basic_error.dart';import '../models/event.dart';import '../models/feed.dart';import '../models/minimal_repository.dart';import '../models/repository.dart';import '../models/repository_subscription.dart';import '../models/simple_user.dart';import '../models/starred_repository.dart';import '../models/thread.dart';import '../models/thread_subscription.dart';import '../models/validation_error.dart';/// ActivityApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ActivityApi with ApiExecutor {const ActivityApi(this.apiConfig);
 /// > This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 ///
 /// `GET /events`
-Future<ApiResult<List<Event>, BasicError>> activityListPublicEvents({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Event>, OneOf2<BasicError, ActivityListPublicEventsResponse503>>> activityListPublicEvents({int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -34,14 +34,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 403:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ActivityListPublicEventsResponse503>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 503:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ActivityListPublicEventsResponse503>.b(ActivityListPublicEventsResponse503.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -72,10 +84,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Feed.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Feed.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -105,14 +118,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 301 || 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+case 304:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -121,7 +143,7 @@ return execute(
 /// List all notifications for the current user, sorted by most recently updated.
 ///
 /// `GET /notifications`
-Future<ApiResult<List<Thread>, BasicError>> activityListNotificationsForAuthenticatedUser({bool? all, bool? participating, DateTime? since, DateTime? before, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<Thread>, OneOf2<BasicError, ValidationError>>> activityListNotificationsForAuthenticatedUser({bool? all, bool? participating, DateTime? since, DateTime? before, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (all != null) {
   queryParameters['all'] = all.toString();
@@ -153,14 +175,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.a(BasicError.fromJson(json as Map<String, dynamic>));
+case 422:
+final json = jsonDecode(response.body);
+return OneOf2<BasicError, ValidationError>.b(ValidationError.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -169,7 +203,7 @@ return execute(
 /// Marks all notifications as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
 ///
 /// `PUT /notifications`
-Future<ApiResult<ActivityMarkNotificationsAsReadResponse202, BasicError>> activityMarkNotificationsAsRead({ActivityMarkNotificationsAsReadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActivityMarkNotificationsAsReadResponse202?, BasicError>> activityMarkNotificationsAsRead({ActivityMarkNotificationsAsReadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -180,13 +214,32 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ActivityMarkNotificationsAsReadResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 202:
+final json = jsonDecode(response.body);
+return ActivityMarkNotificationsAsReadResponse202.fromJson(json as Map<String, dynamic>);
+case 205:
+return null;
+default:
+final json = jsonDecode(response.body);
+return ActivityMarkNotificationsAsReadResponse202.fromJson(json as Map<String, dynamic>);
+}
+
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -204,13 +257,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return Thread.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return Thread.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -228,11 +291,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -250,7 +322,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -271,13 +343,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ThreadSubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ThreadSubscription.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -301,13 +383,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ThreadSubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ThreadSubscription.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -325,11 +417,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -359,11 +460,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -393,11 +494,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -438,11 +539,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -451,7 +552,7 @@ return execute(
 /// Marks all notifications in a repository as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List repository notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
 ///
 /// `PUT /repos/{owner}/{repo}/notifications`
-Future<ApiResult<ActivityMarkRepoNotificationsAsReadResponse202, Never>> activityMarkRepoNotificationsAsRead({required String owner, required String repo, ActivityMarkRepoNotificationsAsReadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ActivityMarkRepoNotificationsAsReadResponse202?, Never>> activityMarkRepoNotificationsAsRead({required String owner, required String repo, ActivityMarkRepoNotificationsAsReadRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -462,10 +563,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ActivityMarkRepoNotificationsAsReadResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 202:
+final json = jsonDecode(response.body);
+return ActivityMarkRepoNotificationsAsReadResponse202.fromJson(json as Map<String, dynamic>);
+case 205:
+return null;
+default:
+final json = jsonDecode(response.body);
+return ActivityMarkRepoNotificationsAsReadResponse202.fromJson(json as Map<String, dynamic>);
+}
+
   },
 );
  } 
@@ -498,13 +609,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => (v as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => (v as List<dynamic>).map((e) => Stargazer.fromJson(e as Map<String, dynamic>)).toList(),);
+final json = jsonDecode(response.body);
+return ActivityListStargazersForRepoResponse.fromJson(json);
   },
   onError: (response) {
-    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 422:
+final json = jsonDecode(response.body);
+return ValidationError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -533,11 +652,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -555,13 +674,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RepositorySubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RepositorySubscription.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+case 404:
+return null;
+default:
+return null;
+}
+
   },
 );
  } 
@@ -581,10 +710,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return RepositorySubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return RepositorySubscription.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -602,7 +732,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
 );
@@ -616,7 +746,7 @@ return execute(
 /// - **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 ///
 /// `GET /user/starred`
-Future<ApiResult<List<Repository>, BasicError>> activityListReposStarredByAuthenticatedUser({ActivityListReposStarredByAuthenticatedUserSort? sort, ActivityListReposStarredByAuthenticatedUserDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<OneOf2<List<Repository>, List<StarredRepository>>, BasicError>> activityListReposStarredByAuthenticatedUser({ActivityListReposStarredByAuthenticatedUserSort? sort, ActivityListReposStarredByAuthenticatedUserDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (sort != null) {
   queryParameters['sort'] = sort.toJson();
@@ -642,14 +772,33 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList();
+final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json')) {
+final json = jsonDecode(response.body);
+return OneOf2<List<Repository>, List<StarredRepository>>.a((json as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList());
+}
+if (responseMediaTypeMatches(contentType, 'application/vnd.github.v3.star+json')) {
+final json = jsonDecode(response.body);
+return OneOf2<List<Repository>, List<StarredRepository>>.b((json as List<dynamic>).map((e) => StarredRepository.fromJson(e as Map<String, dynamic>)).toList());
+}
+final json = jsonDecode(response.body);
+return OneOf2<List<Repository>, List<StarredRepository>>.a((json as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList());
+
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -667,11 +816,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -689,11 +847,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -711,11 +878,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (_) {},
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403 || 404:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -744,14 +920,23 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 304:
+return null;
+case 401 || 403:
+final json = jsonDecode(response.body);
+return BasicError.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -783,11 +968,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -819,11 +1004,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -853,11 +1038,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -890,11 +1075,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -924,11 +1109,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 
@@ -967,10 +1152,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => (v as List<dynamic>).map((e) => StarredRepository.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => (v as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(),);
+final json = jsonDecode(response.body);
+return ActivityListReposStarredByUserResponse.fromJson(json);
   },
 );
  } 
@@ -999,11 +1185,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
   },
 );
  } 

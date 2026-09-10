@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'time.dart';/// NamespaceCondition contains details about state of namespace.
-@immutable final class NamespaceCondition {const NamespaceCondition({this.lastTransitionTime, this.message, this.reason, this.status = '', this.type = '', });
+@immutable final class NamespaceCondition {const NamespaceCondition({required this.status, required this.type, this.lastTransitionTime, this.message, this.reason, });
 
 factory NamespaceCondition.fromJson(Map<String, dynamic> json) { return NamespaceCondition(
   lastTransitionTime: json['lastTransitionTime'] != null ? Time.fromJson(json['lastTransitionTime'] as String) : null,

@@ -60,25 +60,29 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'WaitingroomCookieAttributesSecure($value)'; } 
  }
 /// Configures cookie attributes for the waiting room cookie. This encrypted cookie stores a user's status in the waiting room, such as queue position.
-@immutable final class WaitingroomCookieAttributes {const WaitingroomCookieAttributes({this.samesite = WaitingroomCookieAttributesSamesite.auto, this.secure = WaitingroomCookieAttributesSecure.auto, });
+@immutable final class WaitingroomCookieAttributes {const WaitingroomCookieAttributes({this.samesite, this.secure, });
 
 factory WaitingroomCookieAttributes.fromJson(Map<String, dynamic> json) { return WaitingroomCookieAttributes(
-  samesite: json.containsKey('samesite') ? WaitingroomCookieAttributesSamesite.fromJson(json['samesite'] as String) : WaitingroomCookieAttributesSamesite.auto,
-  secure: json.containsKey('secure') ? WaitingroomCookieAttributesSecure.fromJson(json['secure'] as String) : WaitingroomCookieAttributesSecure.auto,
+  samesite: json['samesite'] != null ? WaitingroomCookieAttributesSamesite.fromJson(json['samesite'] as String) : null,
+  secure: json['secure'] != null ? WaitingroomCookieAttributesSecure.fromJson(json['secure'] as String) : null,
 ); }
 
 /// Configures the SameSite attribute on the waiting room cookie. Value `auto` will be translated to `lax` or `none` depending if **Always Use HTTPS** is enabled. Note that when using value `none`, the secure attribute cannot be set to `never`.
-final WaitingroomCookieAttributesSamesite samesite;
+final WaitingroomCookieAttributesSamesite? samesite;
 
 /// Configures the Secure attribute on the waiting room cookie. Value `always` indicates that the Secure attribute will be set in the Set-Cookie header, `never` indicates that the Secure attribute will not be set, and `auto` will set the Secure attribute depending if **Always Use HTTPS** is enabled.
-final WaitingroomCookieAttributesSecure secure;
+final WaitingroomCookieAttributesSecure? secure;
 
+/// The value with the schema default applied when absent.
+WaitingroomCookieAttributesSamesite get samesiteOrDefault { return samesite ?? WaitingroomCookieAttributesSamesite.fromJson('auto'); } 
+/// The value with the schema default applied when absent.
+WaitingroomCookieAttributesSecure get secureOrDefault { return secure ?? WaitingroomCookieAttributesSecure.fromJson('auto'); } 
 Map<String, dynamic> toJson() { return {
-  'samesite': samesite.toJson(),
-  'secure': secure.toJson(),
+  if (samesite != null) 'samesite': samesite?.toJson(),
+  if (secure != null) 'secure': secure?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'samesite', 'secure'}.contains(key)); } 
-WaitingroomCookieAttributes copyWith({WaitingroomCookieAttributesSamesite Function()? samesite, WaitingroomCookieAttributesSecure Function()? secure, }) { return WaitingroomCookieAttributes(
+WaitingroomCookieAttributes copyWith({WaitingroomCookieAttributesSamesite? Function()? samesite, WaitingroomCookieAttributesSecure? Function()? secure, }) { return WaitingroomCookieAttributes(
   samesite: samesite != null ? samesite() : this.samesite,
   secure: secure != null ? secure() : this.secure,
 ); } 

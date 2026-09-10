@@ -49,7 +49,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails({this.comment, this.feedback, });
 
 factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetails(
-  comment: json['comment'] != null ? OneOf2.parse(json['comment'], fromA: (v) => v as String, fromB: (v) => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2.fromJson(v as String),) : null,
+  comment: json['comment'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment.fromJson(json['comment']) : null,
   feedback: json['feedback'] != null ? PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback.fromJson(json['feedback'] as String) : null,
 ); }
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// PortworxVolumeSource represents a Portworx volume resource.
-@immutable final class PortworxVolumeSource {const PortworxVolumeSource({this.fsType, this.readOnly, this.volumeId = '', });
+@immutable final class PortworxVolumeSource {const PortworxVolumeSource({required this.volumeId, this.fsType, this.readOnly, });
 
 factory PortworxVolumeSource.fromJson(Map<String, dynamic> json) { return PortworxVolumeSource(
   fsType: json['fsType'] as String?,

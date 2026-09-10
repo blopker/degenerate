@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bool_allocation.dart';import 'entitlement_allocation.dart';import 'feature.dart';import 'max_count_allocation.dart';import 'null_allocation.dart';@immutable final class Entitlement {const Entitlement({required this.allocation, required this.feature, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'entitlement_allocation.dart';import 'feature.dart';@immutable final class Entitlement {const Entitlement({required this.allocation, required this.feature, });
 
 factory Entitlement.fromJson(Map<String, dynamic> json) { return Entitlement(
-  allocation: OneOf3.parse(json['allocation'], fromA: (v) => MaxCountAllocation.fromJson(v as Map<String, dynamic>), fromB: (v) => BoolAllocation.fromJson(v as Map<String, dynamic>), fromC: (v) => NullAllocation.fromJson(v as Map<String, dynamic>),),
+  allocation: EntitlementAllocation.fromJson(json['allocation']),
   feature: Feature.fromJson(json['feature'] as Map<String, dynamic>),
 ); }
 

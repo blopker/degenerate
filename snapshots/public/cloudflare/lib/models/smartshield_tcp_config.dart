@@ -23,25 +23,29 @@ bool get isUnknown { return !values.contains(this); }
 @override String toString() { return 'SmartshieldTcpConfigMethod($value)'; } 
  }
 /// Parameters specific to TCP health check.
-@immutable final class SmartshieldTcpConfig {const SmartshieldTcpConfig({this.method = SmartshieldTcpConfigMethod.connectionEstablished, this.port = 80, });
+@immutable final class SmartshieldTcpConfig {const SmartshieldTcpConfig({this.method, this.port, });
 
 factory SmartshieldTcpConfig.fromJson(Map<String, dynamic> json) { return SmartshieldTcpConfig(
-  method: json.containsKey('method') ? SmartshieldTcpConfigMethod.fromJson(json['method'] as String) : SmartshieldTcpConfigMethod.connectionEstablished,
-  port: json.containsKey('port') ? (json['port'] as num).toInt() : 80,
+  method: json['method'] != null ? SmartshieldTcpConfigMethod.fromJson(json['method'] as String) : null,
+  port: json['port'] != null ? (json['port'] as num).toInt() : null,
 ); }
 
 /// The TCP connection method to use for the health check.
-final SmartshieldTcpConfigMethod method;
+final SmartshieldTcpConfigMethod? method;
 
 /// Port number to connect to for the health check. Defaults to 80.
-final int port;
+final int? port;
 
+/// The value with the schema default applied when absent.
+SmartshieldTcpConfigMethod get methodOrDefault { return method ?? SmartshieldTcpConfigMethod.fromJson('connection_established'); } 
+/// The value with the schema default applied when absent.
+int get portOrDefault { return port ?? 80; } 
 Map<String, dynamic> toJson() { return {
-  'method': method.toJson(),
-  'port': port,
+  if (method != null) 'method': method?.toJson(),
+  'port': ?port,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'method', 'port'}.contains(key)); } 
-SmartshieldTcpConfig copyWith({SmartshieldTcpConfigMethod Function()? method, int Function()? port, }) { return SmartshieldTcpConfig(
+SmartshieldTcpConfig copyWith({SmartshieldTcpConfigMethod? Function()? method, int? Function()? port, }) { return SmartshieldTcpConfig(
   method: method != null ? method() : this.method,
   port: port != null ? port() : this.port,
 ); } 

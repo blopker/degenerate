@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_supported_models.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'modify_assistant_request_model.dart';import 'modify_assistant_request_tool_resources.dart';import 'modify_assistant_request_tools.dart';import 'reasoning_effort.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';@immutable final class ModifyAssistantRequest {const ModifyAssistantRequest({this.model, this.reasoningEffort = const Omittable.absent(), this.name = const Omittable.absent(), this.description = const Omittable.absent(), this.instructions = const Omittable.absent(), this.tools = const [], this.toolResources = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.responseFormat = const Omittable.absent(), });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'modify_assistant_request_model.dart';import 'modify_assistant_request_tool_resources.dart';import 'modify_assistant_request_tools.dart';import 'reasoning_effort.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';@immutable final class ModifyAssistantRequest {const ModifyAssistantRequest({this.model, this.reasoningEffort = const Omittable.absent(), this.name = const Omittable.absent(), this.description = const Omittable.absent(), this.instructions = const Omittable.absent(), this.tools, this.toolResources = const Omittable.absent(), this.metadata = const Omittable.absent(), this.temperature = const Omittable.absent(), this.topP = const Omittable.absent(), this.responseFormat = const Omittable.absent(), });
 
 factory ModifyAssistantRequest.fromJson(Map<String, dynamic> json) { return ModifyAssistantRequest(
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => AssistantSupportedModels.fromJson(v as String),) : null,
+  model: json['model'] != null ? ModifyAssistantRequestModel.fromJson(json['model']) : null,
   reasoningEffort: json.containsKey('reasoning_effort') ? Omittable(json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null) : const Omittable.absent(),
   name: json.containsKey('name') ? Omittable(json['name'] as String?) : const Omittable.absent(),
   description: json.containsKey('description') ? Omittable(json['description'] as String?) : const Omittable.absent(),
   instructions: json.containsKey('instructions') ? Omittable(json['instructions'] as String?) : const Omittable.absent(),
-  tools: json.containsKey('tools') ? (json['tools'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList() : const [],
+  tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList(),
   toolResources: json.containsKey('tool_resources') ? Omittable(json['tool_resources'] != null ? ModifyAssistantRequestToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null) : const Omittable.absent(),
   metadata: json.containsKey('metadata') ? Omittable((json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String))) : const Omittable.absent(),
   temperature: json.containsKey('temperature') ? Omittable(json['temperature'] != null ? (json['temperature'] as num).toDouble() : null) : const Omittable.absent(),
@@ -36,7 +36,7 @@ final Omittable<String?> instructions;
 
 /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
 /// 
-final List<ModifyAssistantRequestTools> tools;
+final List<ModifyAssistantRequestTools>? tools;
 
 /// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
 /// 
@@ -63,13 +63,15 @@ final Omittable<double?> topP;
 
 final Omittable<ResponseFormatOption?> responseFormat;
 
+/// The value with the schema default applied when absent.
+List<ModifyAssistantRequestTools> get toolsOrDefault { return tools ?? const []; } 
 Map<String, dynamic> toJson() { return {
   if (model != null) 'model': model?.toJson(),
   if (reasoningEffort.isPresent) 'reasoning_effort': reasoningEffort.value?.toJson(),
   if (name.isPresent) 'name': name.value,
   if (description.isPresent) 'description': description.value,
   if (instructions.isPresent) 'instructions': instructions.value,
-  'tools': tools.map((e) => e.toJson()).toList(),
+  if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
   if (toolResources.isPresent) 'tool_resources': toolResources.value?.toJson(),
   if (metadata.isPresent) 'metadata': metadata.value,
   if (temperature.isPresent) 'temperature': temperature.value,
@@ -77,7 +79,7 @@ Map<String, dynamic> toJson() { return {
   if (responseFormat.isPresent) 'response_format': responseFormat.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'model', 'reasoning_effort', 'name', 'description', 'instructions', 'tools', 'tool_resources', 'metadata', 'temperature', 'top_p', 'response_format'}.contains(key)); } 
-ModifyAssistantRequest copyWith({ModifyAssistantRequestModel? Function()? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? name, Omittable<String?>? description, Omittable<String?>? instructions, List<ModifyAssistantRequestTools> Function()? tools, Omittable<ModifyAssistantRequestToolResources?>? toolResources, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) { return ModifyAssistantRequest(
+ModifyAssistantRequest copyWith({ModifyAssistantRequestModel? Function()? model, Omittable<ReasoningEffort?>? reasoningEffort, Omittable<String?>? name, Omittable<String?>? description, Omittable<String?>? instructions, List<ModifyAssistantRequestTools>? Function()? tools, Omittable<ModifyAssistantRequestToolResources?>? toolResources, Omittable<Map<String,String>?>? metadata, Omittable<double?>? temperature, Omittable<double?>? topP, Omittable<ResponseFormatOption?>? responseFormat, }) { return ModifyAssistantRequest(
   model: model != null ? model() : this.model,
   reasoningEffort: reasoningEffort ?? this.reasoningEffort,
   name: name ?? this.name,
@@ -103,6 +105,6 @@ ModifyAssistantRequest copyWith({ModifyAssistantRequestModel? Function()? model,
           temperature == other.temperature &&
           topP == other.topP &&
           responseFormat == other.responseFormat; } 
-@override int get hashCode { return Object.hash(model, reasoningEffort, name, description, instructions, Object.hashAll(tools), toolResources, metadata, temperature, topP, responseFormat); } 
+@override int get hashCode { return Object.hash(model, reasoningEffort, name, description, instructions, Object.hashAll(tools ?? const []), toolResources, metadata, temperature, topP, responseFormat); } 
 @override String toString() { return 'ModifyAssistantRequest(model: $model, reasoningEffort: $reasoningEffort, name: $name, description: $description, instructions: $instructions, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)'; } 
  }

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostPaymentIntentsIntentRequestShippingVariant2($value)'; } 
  }
-typedef PostPaymentIntentsIntentRequestShipping = OneOf2<OptionalFieldsShipping,PostPaymentIntentsIntentRequestShippingVariant2>;
+/// Shipping information for this PaymentIntent.
+@immutable
+final class PostPaymentIntentsIntentRequestShipping {
+  const PostPaymentIntentsIntentRequestShipping({this.optionalFieldsShipping = const Omittable.absent(),
+this.postPaymentIntentsIntentRequestShippingVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostPaymentIntentsIntentRequestShipping._({required this.rawValue, required this.optionalFieldsShipping,
+required this.postPaymentIntentsIntentRequestShippingVariant2,});
+  factory PostPaymentIntentsIntentRequestShipping.fromJson(Object? json) => PostPaymentIntentsIntentRequestShipping._(
+    rawValue: Omittable(json),
+    optionalFieldsShipping: parseAnyOfVariant<OptionalFieldsShipping>(json, (value) => OptionalFieldsShipping.fromJson(value! as Map<String, dynamic>)),
+postPaymentIntentsIntentRequestShippingVariant2: parseAnyOfVariant<PostPaymentIntentsIntentRequestShippingVariant2>(json, (value) => PostPaymentIntentsIntentRequestShippingVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<OptionalFieldsShipping> optionalFieldsShipping;
+final Omittable<PostPaymentIntentsIntentRequestShippingVariant2> postPaymentIntentsIntentRequestShippingVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => optionalFieldsShipping.isPresent || postPaymentIntentsIntentRequestShippingVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (optionalFieldsShipping.isPresent) optionalFieldsShipping.value?.toJson(),
+if (postPaymentIntentsIntentRequestShippingVariant2.isPresent) postPaymentIntentsIntentRequestShippingVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostPaymentIntentsIntentRequestShipping && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostPaymentIntentsIntentRequestShipping(${toJson()})';
+}

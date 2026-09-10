@@ -56,7 +56,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'RealtimekitUpdatePresetPermissionsWaitingRoomType($value)'; } 
  }
-@immutable final class RealtimekitUpdatePresetPermissions {const RealtimekitUpdatePresetPermissions({this.acceptWaitingRequests, this.canAcceptProductionRequests, this.canChangeParticipantPermissions, this.canEditDisplayName, this.canLivestream, this.canRecord, this.canSpotlight, this.chat, this.connectedMeetings, this.disableParticipantAudio, this.disableParticipantScreensharing, this.disableParticipantVideo, this.hiddenParticipant, this.isRecorder = false, this.kickParticipant, this.media, this.pinParticipant, this.plugins, this.polls, this.recorderType = RealtimekitUpdatePresetPermissionsRecorderType.none, this.showParticipantList, this.waitingRoomType, });
+@immutable final class RealtimekitUpdatePresetPermissions {const RealtimekitUpdatePresetPermissions({this.acceptWaitingRequests, this.canAcceptProductionRequests, this.canChangeParticipantPermissions, this.canEditDisplayName, this.canLivestream, this.canRecord, this.canSpotlight, this.chat, this.connectedMeetings, this.disableParticipantAudio, this.disableParticipantScreensharing, this.disableParticipantVideo, this.hiddenParticipant, this.isRecorder, this.kickParticipant, this.media, this.pinParticipant, this.plugins, this.polls, this.recorderType, this.showParticipantList, this.waitingRoomType, });
 
 factory RealtimekitUpdatePresetPermissions.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissions(
   acceptWaitingRequests: json['accept_waiting_requests'] as bool?,
@@ -72,13 +72,13 @@ factory RealtimekitUpdatePresetPermissions.fromJson(Map<String, dynamic> json) {
   disableParticipantScreensharing: json['disable_participant_screensharing'] as bool?,
   disableParticipantVideo: json['disable_participant_video'] as bool?,
   hiddenParticipant: json['hidden_participant'] as bool?,
-  isRecorder: json.containsKey('is_recorder') ? json['is_recorder'] as bool : false,
+  isRecorder: json['is_recorder'] as bool?,
   kickParticipant: json['kick_participant'] as bool?,
   media: json['media'] != null ? RealtimekitUpdatePresetPermissionsMedia.fromJson(json['media'] as Map<String, dynamic>) : null,
   pinParticipant: json['pin_participant'] as bool?,
   plugins: json['plugins'] != null ? RealtimekitUpdatePresetPermissionsPlugins.fromJson(json['plugins'] as Map<String, dynamic>) : null,
   polls: json['polls'] != null ? RealtimekitUpdatePresetPermissionsPolls.fromJson(json['polls'] as Map<String, dynamic>) : null,
-  recorderType: json.containsKey('recorder_type') ? RealtimekitUpdatePresetPermissionsRecorderType.fromJson(json['recorder_type'] as String) : RealtimekitUpdatePresetPermissionsRecorderType.none,
+  recorderType: json['recorder_type'] != null ? RealtimekitUpdatePresetPermissionsRecorderType.fromJson(json['recorder_type'] as String) : null,
   showParticipantList: json['show_participant_list'] as bool?,
   waitingRoomType: json['waiting_room_type'] != null ? RealtimekitUpdatePresetPermissionsWaitingRoomType.fromJson(json['waiting_room_type'] as String) : null,
 ); }
@@ -112,7 +112,7 @@ final bool? disableParticipantVideo;
 /// Whether this participant is visible to others or not
 final bool? hiddenParticipant;
 
-final bool isRecorder;
+final bool? isRecorder;
 
 final bool? kickParticipant;
 
@@ -128,13 +128,17 @@ final RealtimekitUpdatePresetPermissionsPlugins? plugins;
 final RealtimekitUpdatePresetPermissionsPolls? polls;
 
 /// Type of the recording peer
-final RealtimekitUpdatePresetPermissionsRecorderType recorderType;
+final RealtimekitUpdatePresetPermissionsRecorderType? recorderType;
 
 final bool? showParticipantList;
 
 /// Waiting room type
 final RealtimekitUpdatePresetPermissionsWaitingRoomType? waitingRoomType;
 
+/// The value with the schema default applied when absent.
+bool get isRecorderOrDefault { return isRecorder ?? false; } 
+/// The value with the schema default applied when absent.
+RealtimekitUpdatePresetPermissionsRecorderType get recorderTypeOrDefault { return recorderType ?? RealtimekitUpdatePresetPermissionsRecorderType.fromJson('NONE'); } 
 Map<String, dynamic> toJson() { return {
   'accept_waiting_requests': ?acceptWaitingRequests,
   'can_accept_production_requests': ?canAcceptProductionRequests,
@@ -149,18 +153,18 @@ Map<String, dynamic> toJson() { return {
   'disable_participant_screensharing': ?disableParticipantScreensharing,
   'disable_participant_video': ?disableParticipantVideo,
   'hidden_participant': ?hiddenParticipant,
-  'is_recorder': isRecorder,
+  'is_recorder': ?isRecorder,
   'kick_participant': ?kickParticipant,
   if (media != null) 'media': media?.toJson(),
   'pin_participant': ?pinParticipant,
   if (plugins != null) 'plugins': plugins?.toJson(),
   if (polls != null) 'polls': polls?.toJson(),
-  'recorder_type': recorderType.toJson(),
+  if (recorderType != null) 'recorder_type': recorderType?.toJson(),
   'show_participant_list': ?showParticipantList,
   if (waitingRoomType != null) 'waiting_room_type': waitingRoomType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'accept_waiting_requests', 'can_accept_production_requests', 'can_change_participant_permissions', 'can_edit_display_name', 'can_livestream', 'can_record', 'can_spotlight', 'chat', 'connected_meetings', 'disable_participant_audio', 'disable_participant_screensharing', 'disable_participant_video', 'hidden_participant', 'is_recorder', 'kick_participant', 'media', 'pin_participant', 'plugins', 'polls', 'recorder_type', 'show_participant_list', 'waiting_room_type'}.contains(key)); } 
-RealtimekitUpdatePresetPermissions copyWith({bool? Function()? acceptWaitingRequests, bool? Function()? canAcceptProductionRequests, bool? Function()? canChangeParticipantPermissions, bool? Function()? canEditDisplayName, bool? Function()? canLivestream, bool? Function()? canRecord, bool? Function()? canSpotlight, RealtimekitUpdatePresetPermissionsChat? Function()? chat, RealtimekitUpdatePresetPermissionsConnectedMeetings? Function()? connectedMeetings, bool? Function()? disableParticipantAudio, bool? Function()? disableParticipantScreensharing, bool? Function()? disableParticipantVideo, bool? Function()? hiddenParticipant, bool Function()? isRecorder, bool? Function()? kickParticipant, RealtimekitUpdatePresetPermissionsMedia? Function()? media, bool? Function()? pinParticipant, RealtimekitUpdatePresetPermissionsPlugins? Function()? plugins, RealtimekitUpdatePresetPermissionsPolls? Function()? polls, RealtimekitUpdatePresetPermissionsRecorderType Function()? recorderType, bool? Function()? showParticipantList, RealtimekitUpdatePresetPermissionsWaitingRoomType? Function()? waitingRoomType, }) { return RealtimekitUpdatePresetPermissions(
+RealtimekitUpdatePresetPermissions copyWith({bool? Function()? acceptWaitingRequests, bool? Function()? canAcceptProductionRequests, bool? Function()? canChangeParticipantPermissions, bool? Function()? canEditDisplayName, bool? Function()? canLivestream, bool? Function()? canRecord, bool? Function()? canSpotlight, RealtimekitUpdatePresetPermissionsChat? Function()? chat, RealtimekitUpdatePresetPermissionsConnectedMeetings? Function()? connectedMeetings, bool? Function()? disableParticipantAudio, bool? Function()? disableParticipantScreensharing, bool? Function()? disableParticipantVideo, bool? Function()? hiddenParticipant, bool? Function()? isRecorder, bool? Function()? kickParticipant, RealtimekitUpdatePresetPermissionsMedia? Function()? media, bool? Function()? pinParticipant, RealtimekitUpdatePresetPermissionsPlugins? Function()? plugins, RealtimekitUpdatePresetPermissionsPolls? Function()? polls, RealtimekitUpdatePresetPermissionsRecorderType? Function()? recorderType, bool? Function()? showParticipantList, RealtimekitUpdatePresetPermissionsWaitingRoomType? Function()? waitingRoomType, }) { return RealtimekitUpdatePresetPermissions(
   acceptWaitingRequests: acceptWaitingRequests != null ? acceptWaitingRequests() : this.acceptWaitingRequests,
   canAcceptProductionRequests: canAcceptProductionRequests != null ? canAcceptProductionRequests() : this.canAcceptProductionRequests,
   canChangeParticipantPermissions: canChangeParticipantPermissions != null ? canChangeParticipantPermissions() : this.canChangeParticipantPermissions,

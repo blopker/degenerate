@@ -34,10 +34,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return UserListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return UserListResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -55,10 +56,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return GroupUserAssignment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GroupUserAssignment.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -74,10 +76,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return GroupUserDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GroupUserDeletedResource.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

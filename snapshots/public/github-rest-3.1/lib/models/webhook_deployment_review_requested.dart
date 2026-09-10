@@ -30,7 +30,7 @@ factory WebhookDeploymentReviewRequested.fromJson(Map<String, dynamic> json) { r
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
-  requestor: WebhooksUser.fromJson(json['requestor'] as Map<String, dynamic>),
+  requestor: json['requestor'] != null ? WebhooksUser.fromJson(json['requestor'] as Map<String, dynamic>) : null,
   reviewers: (json['reviewers'] as List<dynamic>).map((e) => WebhookDeploymentReviewRequestedReviewers.fromJson(e as Map<String, dynamic>)).toList(),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
   since: json['since'] as String,
@@ -50,7 +50,7 @@ final OrganizationSimpleWebhooks organization;
 
 final RepositoryWebhooks repository;
 
-final WebhooksUser requestor;
+final WebhooksUser? requestor;
 
 final List<WebhookDeploymentReviewRequestedReviewers> reviewers;
 
@@ -69,7 +69,7 @@ Map<String, dynamic> toJson() { return {
   if (installation != null) 'installation': installation?.toJson(),
   'organization': organization.toJson(),
   'repository': repository.toJson(),
-  'requestor': requestor.toJson(),
+  'requestor': requestor?.toJson(),
   'reviewers': reviewers.map((e) => e.toJson()).toList(),
   'sender': sender.toJson(),
   'since': since,
@@ -86,14 +86,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('since') && json['since'] is String &&
       json.containsKey('workflow_job_run') &&
       json.containsKey('workflow_run'); } 
-WebhookDeploymentReviewRequested copyWith({WebhookDeploymentReviewRequestedAction? action, EnterpriseWebhooks? Function()? enterprise, String? environment, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, WebhooksUser? requestor, List<WebhookDeploymentReviewRequestedReviewers>? reviewers, SimpleUser? sender, String? since, WebhookDeploymentReviewRequestedWorkflowJobRun? workflowJobRun, WebhookDeploymentReviewRequestedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewRequested(
+WebhookDeploymentReviewRequested copyWith({WebhookDeploymentReviewRequestedAction? action, EnterpriseWebhooks? Function()? enterprise, String? environment, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, WebhooksUser? Function()? requestor, List<WebhookDeploymentReviewRequestedReviewers>? reviewers, SimpleUser? sender, String? since, WebhookDeploymentReviewRequestedWorkflowJobRun? workflowJobRun, WebhookDeploymentReviewRequestedWorkflowRun? Function()? workflowRun, }) { return WebhookDeploymentReviewRequested(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   environment: environment ?? this.environment,
   installation: installation != null ? installation() : this.installation,
   organization: organization ?? this.organization,
   repository: repository ?? this.repository,
-  requestor: requestor ?? this.requestor,
+  requestor: requestor != null ? requestor() : this.requestor,
   reviewers: reviewers ?? this.reviewers,
   sender: sender ?? this.sender,
   since: since ?? this.since,

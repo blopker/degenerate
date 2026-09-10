@@ -7,7 +7,7 @@ factory AccessAppsComponentsSchemasResponseCollection.fromJson(Map<String, dynam
   messages: (json['messages'] as List<dynamic>).map((e) => AccessMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
   resultInfo: json['result_info'] != null ? AccessAppsComponentsSchemasResponseCollectionResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
-  result: (json['result'] as List<dynamic>?)?.map((e) => AccessAppResponse.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>?)?.map(AccessAppResponse.fromJson).toList(),
 ); }
 
 final List<AccessMessages2> errors;

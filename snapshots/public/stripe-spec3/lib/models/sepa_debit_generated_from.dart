@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'sepa_debit_generated_from_charge.dart';import 'sepa_debit_generated_from_setup_attempt.dart';import 'setup_attempt.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'sepa_debit_generated_from_charge.dart';import 'sepa_debit_generated_from_setup_attempt.dart';/// 
 @immutable final class SepaDebitGeneratedFrom {const SepaDebitGeneratedFrom({this.charge = const Omittable.absent(), this.setupAttempt = const Omittable.absent(), });
 
 factory SepaDebitGeneratedFrom.fromJson(Map<String, dynamic> json) { return SepaDebitGeneratedFrom(
-  charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
-  setupAttempt: json.containsKey('setup_attempt') ? Omittable(json['setup_attempt'] != null ? OneOf2.parse(json['setup_attempt'], fromA: (v) => v as String, fromB: (v) => SetupAttempt.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  charge: json.containsKey('charge') ? Omittable(json['charge'] != null ? SepaDebitGeneratedFromCharge.fromJson(json['charge']) : null) : const Omittable.absent(),
+  setupAttempt: json.containsKey('setup_attempt') ? Omittable(json['setup_attempt'] != null ? SepaDebitGeneratedFromSetupAttempt.fromJson(json['setup_attempt']) : null) : const Omittable.absent(),
 ); }
 
 /// The ID of the Charge that generated this PaymentMethod, if any.

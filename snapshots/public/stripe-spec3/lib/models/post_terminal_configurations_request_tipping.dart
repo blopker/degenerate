@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostTerminalConfigurationsRequestTippingVariant2($value)'; } 
  }
-typedef PostTerminalConfigurationsRequestTipping = OneOf2<Tipping,PostTerminalConfigurationsRequestTippingVariant2>;
+/// Tipping configurations for readers that support on-reader tips.
+@immutable
+final class PostTerminalConfigurationsRequestTipping {
+  const PostTerminalConfigurationsRequestTipping({this.tipping = const Omittable.absent(),
+this.postTerminalConfigurationsRequestTippingVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostTerminalConfigurationsRequestTipping._({required this.rawValue, required this.tipping,
+required this.postTerminalConfigurationsRequestTippingVariant2,});
+  factory PostTerminalConfigurationsRequestTipping.fromJson(Object? json) => PostTerminalConfigurationsRequestTipping._(
+    rawValue: Omittable(json),
+    tipping: parseAnyOfVariant<Tipping>(json, (value) => Tipping.fromJson(value! as Map<String, dynamic>)),
+postTerminalConfigurationsRequestTippingVariant2: parseAnyOfVariant<PostTerminalConfigurationsRequestTippingVariant2>(json, (value) => PostTerminalConfigurationsRequestTippingVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<Tipping> tipping;
+final Omittable<PostTerminalConfigurationsRequestTippingVariant2> postTerminalConfigurationsRequestTippingVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => tipping.isPresent || postTerminalConfigurationsRequestTippingVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (tipping.isPresent) tipping.value?.toJson(),
+if (postTerminalConfigurationsRequestTippingVariant2.isPresent) postTerminalConfigurationsRequestTippingVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostTerminalConfigurationsRequestTipping && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostTerminalConfigurationsRequestTipping(${toJson()})';
+}

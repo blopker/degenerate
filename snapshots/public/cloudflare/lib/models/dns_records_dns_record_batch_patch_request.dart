@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_identifier.dart';@immutable final class DnsRecordsDnsRecordBatchPatchRequest {const DnsRecordsDnsRecordBatchPatchRequest({required this.id});
+
+factory DnsRecordsDnsRecordBatchPatchRequest.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRecordBatchPatchRequest(
+  id: DnsRecordsIdentifier.fromJson(json['id'] as String),
+); }
+
+/// Identifier.
+final DnsRecordsIdentifier id;
+
+Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
+DnsRecordsDnsRecordBatchPatchRequest copyWith({DnsRecordsIdentifier? id}) { return DnsRecordsDnsRecordBatchPatchRequest(
+  id: id ?? this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DnsRecordsDnsRecordBatchPatchRequest &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordBatchPatchRequest(id: $id)'; } 
+ }

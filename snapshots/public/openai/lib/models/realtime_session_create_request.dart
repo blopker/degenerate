@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt.dart';import 'realtime_session_create_request_client_secret.dart';import 'realtime_session_create_request_input_audio_transcription.dart';import 'realtime_session_create_request_max_response_output_tokens.dart';import 'realtime_session_create_request_tools.dart';import 'realtime_session_create_request_tracing.dart';import 'realtime_session_create_request_turn_detection.dart';import 'realtime_truncation.dart';import 'retention_ratio_truncation.dart';import 'tracing_configuration2.dart';import 'voice_ids_or_custom_voice.dart';import 'voice_ids_or_custom_voice_variant2.dart';import 'voice_ids_shared.dart';/// A new Realtime session configuration, with an ephemeral key. Default TTL
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt.dart';import 'realtime_session_create_request_client_secret.dart';import 'realtime_session_create_request_input_audio_transcription.dart';import 'realtime_session_create_request_max_response_output_tokens.dart';import 'realtime_session_create_request_tools.dart';import 'realtime_session_create_request_tracing.dart';import 'realtime_session_create_request_turn_detection.dart';import 'realtime_truncation.dart';import 'retention_ratio_truncation.dart';import 'tracing_configuration2.dart';import 'voice_ids_or_custom_voice.dart';/// A new Realtime session configuration, with an ephemeral key. Default TTL
 /// for keys is one minute.
 /// 
-@immutable final class RealtimeSessionCreateRequest {const RealtimeSessionCreateRequest({required this.clientSecret, this.modalities = const Omittable.absent(), this.instructions, this.voice, this.inputAudioFormat, this.outputAudioFormat, this.inputAudioTranscription, this.speed = 1.0, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.temperature, this.maxResponseOutputTokens, this.truncation, this.prompt, });
+@immutable final class RealtimeSessionCreateRequest {const RealtimeSessionCreateRequest({required this.clientSecret, this.modalities = const Omittable.absent(), this.instructions, this.voice, this.inputAudioFormat, this.outputAudioFormat, this.inputAudioTranscription, this.speed, this.tracing, this.turnDetection, this.tools, this.toolChoice, this.temperature, this.maxResponseOutputTokens, this.truncation, this.prompt = const Omittable.absent(), });
 
 factory RealtimeSessionCreateRequest.fromJson(Map<String, dynamic> json) { return RealtimeSessionCreateRequest(
   clientSecret: RealtimeSessionCreateRequestClientSecret.fromJson(json['client_secret'] as Map<String, dynamic>),
   modalities: json.containsKey('modalities') ? Omittable(json['modalities']) : const Omittable.absent(),
   instructions: json['instructions'] as String?,
-  voice: json['voice'] != null ? OneOf2.parse(json['voice'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => VoiceIdsSharedVariant2.fromJson(v as String),), fromB: (v) => VoiceIdsOrCustomVoiceVariant2.fromJson(v as Map<String, dynamic>),) : null,
+  voice: json['voice'] != null ? VoiceIdsOrCustomVoice.fromJson(json['voice']) : null,
   inputAudioFormat: json['input_audio_format'] as String?,
   outputAudioFormat: json['output_audio_format'] as String?,
   inputAudioTranscription: json['input_audio_transcription'] != null ? RealtimeSessionCreateRequestInputAudioTranscription.fromJson(json['input_audio_transcription'] as Map<String, dynamic>) : null,
-  speed: json.containsKey('speed') ? (json['speed'] as num).toDouble() : 1.0,
+  speed: json['speed'] != null ? (json['speed'] as num).toDouble() : null,
   tracing: json['tracing'] != null ? OneOf2.parse(json['tracing'], fromA: (v) => RealtimeSessionCreateRequestTracingVariant1.fromJson(v as String), fromB: (v) => TracingConfiguration2.fromJson(v as Map<String, dynamic>),) : null,
   turnDetection: json['turn_detection'] != null ? RealtimeSessionCreateRequestTurnDetection.fromJson(json['turn_detection'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => RealtimeSessionCreateRequestTools.fromJson(e as Map<String, dynamic>)).toList(),
@@ -21,7 +21,7 @@ factory RealtimeSessionCreateRequest.fromJson(Map<String, dynamic> json) { retur
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
   maxResponseOutputTokens: json['max_response_output_tokens'] != null ? OneOf2.parse(json['max_response_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeSessionCreateRequestMaxResponseOutputTokensVariant2.fromJson(v as String),) : null,
   truncation: json['truncation'] != null ? OneOf2.parse(json['truncation'], fromA: (v) => RealtimeTruncationVariant1.fromJson(v as String), fromB: (v) => RetentionRatioTruncation.fromJson(v as Map<String, dynamic>),) : null,
-  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
+  prompt: json.containsKey('prompt') ? Omittable(json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null) : const Omittable.absent(),
 ); }
 
 /// Ephemeral key returned by the API.
@@ -65,7 +65,7 @@ final RealtimeSessionCreateRequestInputAudioTranscription? inputAudioTranscripti
 /// the minimum speed. 1.5 is the maximum speed. This value can only be changed
 /// in between model turns, not while a response is in progress.
 /// 
-final double speed;
+final double? speed;
 
 /// Configuration options for tracing. Set to null to disable tracing. Once
 /// tracing is enabled for a session, the configuration cannot be modified.
@@ -102,8 +102,10 @@ final RealtimeSessionCreateRequestMaxResponseOutputTokens? maxResponseOutputToke
 
 final RealtimeTruncation? truncation;
 
-final Prompt? prompt;
+final Omittable<Prompt?> prompt;
 
+/// The value with the schema default applied when absent.
+double get speedOrDefault { return speed ?? 1.0; } 
 Map<String, dynamic> toJson() { return {
   'client_secret': clientSecret.toJson(),
   if (modalities.isPresent) 'modalities': modalities.value,
@@ -112,7 +114,7 @@ Map<String, dynamic> toJson() { return {
   'input_audio_format': ?inputAudioFormat,
   'output_audio_format': ?outputAudioFormat,
   if (inputAudioTranscription != null) 'input_audio_transcription': inputAudioTranscription?.toJson(),
-  'speed': speed,
+  'speed': ?speed,
   if (tracing != null) 'tracing': tracing?.toJson(),
   if (turnDetection != null) 'turn_detection': turnDetection?.toJson(),
   if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
@@ -120,10 +122,10 @@ Map<String, dynamic> toJson() { return {
   'temperature': ?temperature,
   if (maxResponseOutputTokens != null) 'max_response_output_tokens': maxResponseOutputTokens?.toJson(),
   if (truncation != null) 'truncation': truncation?.toJson(),
-  if (prompt != null) 'prompt': prompt?.toJson(),
+  if (prompt.isPresent) 'prompt': prompt.value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('client_secret'); } 
-RealtimeSessionCreateRequest copyWith({RealtimeSessionCreateRequestClientSecret? clientSecret, Omittable<dynamic>? modalities, String? Function()? instructions, VoiceIdsOrCustomVoice? Function()? voice, String? Function()? inputAudioFormat, String? Function()? outputAudioFormat, RealtimeSessionCreateRequestInputAudioTranscription? Function()? inputAudioTranscription, double Function()? speed, RealtimeSessionCreateRequestTracing? Function()? tracing, RealtimeSessionCreateRequestTurnDetection? Function()? turnDetection, List<RealtimeSessionCreateRequestTools>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, RealtimeSessionCreateRequestMaxResponseOutputTokens? Function()? maxResponseOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeSessionCreateRequest(
+RealtimeSessionCreateRequest copyWith({RealtimeSessionCreateRequestClientSecret? clientSecret, Omittable<dynamic>? modalities, String? Function()? instructions, VoiceIdsOrCustomVoice? Function()? voice, String? Function()? inputAudioFormat, String? Function()? outputAudioFormat, RealtimeSessionCreateRequestInputAudioTranscription? Function()? inputAudioTranscription, double? Function()? speed, RealtimeSessionCreateRequestTracing? Function()? tracing, RealtimeSessionCreateRequestTurnDetection? Function()? turnDetection, List<RealtimeSessionCreateRequestTools>? Function()? tools, String? Function()? toolChoice, double? Function()? temperature, RealtimeSessionCreateRequestMaxResponseOutputTokens? Function()? maxResponseOutputTokens, RealtimeTruncation? Function()? truncation, Omittable<Prompt?>? prompt, }) { return RealtimeSessionCreateRequest(
   clientSecret: clientSecret ?? this.clientSecret,
   modalities: modalities ?? this.modalities,
   instructions: instructions != null ? instructions() : this.instructions,
@@ -139,7 +141,7 @@ RealtimeSessionCreateRequest copyWith({RealtimeSessionCreateRequestClientSecret?
   temperature: temperature != null ? temperature() : this.temperature,
   maxResponseOutputTokens: maxResponseOutputTokens != null ? maxResponseOutputTokens() : this.maxResponseOutputTokens,
   truncation: truncation != null ? truncation() : this.truncation,
-  prompt: prompt != null ? prompt() : this.prompt,
+  prompt: prompt ?? this.prompt,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||
       other is RealtimeSessionCreateRequest &&

@@ -3,11 +3,11 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'duplicate2_additional_documentation.dart';import 'duplicate2_card_statement.dart';import 'duplicate2_cash_receipt.dart';import 'duplicate2_check_image.dart';import 'duplicate2_explanation.dart';@immutable final class Duplicate2 {const Duplicate2({this.additionalDocumentation, this.cardStatement, this.cashReceipt, this.checkImage, this.explanation, this.originalTransaction, });
 
 factory Duplicate2.fromJson(Map<String, dynamic> json) { return Duplicate2(
-  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => Duplicate2AdditionalDocumentationVariant2.fromJson(v as String),) : null,
-  cardStatement: json['card_statement'] != null ? OneOf2.parse(json['card_statement'], fromA: (v) => v as String, fromB: (v) => Duplicate2CardStatementVariant2.fromJson(v as String),) : null,
-  cashReceipt: json['cash_receipt'] != null ? OneOf2.parse(json['cash_receipt'], fromA: (v) => v as String, fromB: (v) => Duplicate2CashReceiptVariant2.fromJson(v as String),) : null,
-  checkImage: json['check_image'] != null ? OneOf2.parse(json['check_image'], fromA: (v) => v as String, fromB: (v) => Duplicate2CheckImageVariant2.fromJson(v as String),) : null,
-  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => Duplicate2ExplanationVariant2.fromJson(v as String),) : null,
+  additionalDocumentation: json['additional_documentation'] != null ? Duplicate2AdditionalDocumentation.fromJson(json['additional_documentation']) : null,
+  cardStatement: json['card_statement'] != null ? Duplicate2CardStatement.fromJson(json['card_statement']) : null,
+  cashReceipt: json['cash_receipt'] != null ? Duplicate2CashReceipt.fromJson(json['cash_receipt']) : null,
+  checkImage: json['check_image'] != null ? Duplicate2CheckImage.fromJson(json['check_image']) : null,
+  explanation: json['explanation'] != null ? Duplicate2Explanation.fromJson(json['explanation']) : null,
   originalTransaction: json['original_transaction'] as String?,
 ); }
 

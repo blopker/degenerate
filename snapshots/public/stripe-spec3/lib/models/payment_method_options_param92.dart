@@ -24,10 +24,10 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PaymentMethodOptionsParam92 {const PaymentMethodOptionsParam92({this.confirmationNumber, this.expiresAfterDays, this.expiresAt, this.productDescription, this.setupFutureUsage, });
 
 factory PaymentMethodOptionsParam92.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam92(
-  confirmationNumber: json['confirmation_number'] != null ? OneOf2.parse(json['confirmation_number'], fromA: (v) => v as String, fromB: (v) => PaymentMethodOptionsParam92ConfirmationNumberVariant2.fromJson(v as String),) : null,
-  expiresAfterDays: json['expires_after_days'] != null ? OneOf2.parse(json['expires_after_days'], fromA: (v) => (v as num).toInt(), fromB: (v) => PaymentMethodOptionsParam92ExpiresAfterDaysVariant2.fromJson(v as String),) : null,
-  expiresAt: json['expires_at'] != null ? OneOf2.parse(json['expires_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => PaymentMethodOptionsParam92ExpiresAtVariant2.fromJson(v as String),) : null,
-  productDescription: json['product_description'] != null ? OneOf2.parse(json['product_description'], fromA: (v) => v as String, fromB: (v) => PaymentMethodOptionsParam92ProductDescriptionVariant2.fromJson(v as String),) : null,
+  confirmationNumber: json['confirmation_number'] != null ? PaymentMethodOptionsParam92ConfirmationNumber.fromJson(json['confirmation_number']) : null,
+  expiresAfterDays: json['expires_after_days'] != null ? PaymentMethodOptionsParam92ExpiresAfterDays.fromJson(json['expires_after_days']) : null,
+  expiresAt: json['expires_at'] != null ? PaymentMethodOptionsParam92ExpiresAt.fromJson(json['expires_at']) : null,
+  productDescription: json['product_description'] != null ? PaymentMethodOptionsParam92ProductDescription.fromJson(json['product_description']) : null,
   setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam92SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
 ); }
 

@@ -1,33 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_address.dart';import 'load_balancing_schemas_enabled.dart';import 'load_balancing_schemas_header.dart';import 'load_balancing_schemas_name.dart';/// This field shows up only if the origin is disabled. This field is set with the time the origin was disabled.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_address.dart';import 'load_balancing_origin_port.dart';import 'load_balancing_schemas_enabled.dart';import 'load_balancing_schemas_header.dart';import 'load_balancing_schemas_name.dart';import 'load_balancing_virtual_network_id.dart';import 'load_balancing_weight.dart';/// This field shows up only if the origin is disabled. This field is set with the time the origin was disabled.
 extension type LoadBalancingDisabledAt(DateTime value) {
 factory LoadBalancingDisabledAt.fromJson(String json) => LoadBalancingDisabledAt(DateTime.parse(json));
 
 String toJson() => value.toIso8601String();
-
-}
-/// The port for upstream connections. A value of 0 means the default port for the protocol will be used.
-extension type const LoadBalancingOriginPort(int value) {
-factory LoadBalancingOriginPort.fromJson(num json) => LoadBalancingOriginPort(json.toInt());
-
-num toJson() => value;
-
-}
-/// The virtual network subnet ID the origin belongs in. Virtual network must also belong to the account.
-extension type const LoadBalancingVirtualNetworkId(String value) {
-factory LoadBalancingVirtualNetworkId.fromJson(String json) => LoadBalancingVirtualNetworkId(json);
-
-String toJson() => value;
-
-}
-/// The weight of this origin relative to other origins in the pool. Based on the configured weight the total traffic is distributed among origins within the pool.
-/// - `origin_steering.policy="least_outstanding_requests"`: Use weight to scale the origin's outstanding requests.
-/// - `origin_steering.policy="least_connections"`: Use weight to scale the origin's open connections.
-extension type const LoadBalancingWeight(double value) {
-factory LoadBalancingWeight.fromJson(num json) => LoadBalancingWeight(json.toDouble());
-
-num toJson() => value;
 
 }
 @immutable final class LoadBalancingOrigin {const LoadBalancingOrigin({this.address, this.disabledAt, this.enabled, this.header, this.name, this.port, this.virtualNetworkId, this.weight, });

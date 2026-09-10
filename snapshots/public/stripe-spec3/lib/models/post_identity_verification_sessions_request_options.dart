@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'document_options.dart';import 'post_identity_verification_sessions_request_options_document.dart';/// A set of options for the session’s verification checks.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_identity_verification_sessions_request_options_document.dart';/// A set of options for the session’s verification checks.
 @immutable final class PostIdentityVerificationSessionsRequestOptions {const PostIdentityVerificationSessionsRequestOptions({this.document});
 
 factory PostIdentityVerificationSessionsRequestOptions.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsRequestOptions(
-  document: json['document'] != null ? OneOf2.parse(json['document'], fromA: (v) => DocumentOptions.fromJson(v as Map<String, dynamic>), fromB: (v) => PostIdentityVerificationSessionsRequestOptionsDocumentVariant2.fromJson(v as String),) : null,
+  document: json['document'] != null ? PostIdentityVerificationSessionsRequestOptionsDocument.fromJson(json['document']) : null,
 ); }
 
 final PostIdentityVerificationSessionsRequestOptionsDocument? document;

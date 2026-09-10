@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_promoti
 factory PostPromotionCodesPromotionCodeRequest.fromJson(Map<String, dynamic> json) { return PostPromotionCodesPromotionCodeRequest(
   active: json['active'] as bool?,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPromotionCodesPromotionCodeRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostPromotionCodesPromotionCodeRequestMetadata.fromJson(json['metadata']) : null,
   restrictions: json['restrictions'] != null ? PostPromotionCodesPromotionCodeRequestRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
 ); }
 

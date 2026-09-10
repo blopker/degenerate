@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_dataset_delete_response.dart';import '../models/delete_dataset_delete_response400.dart';import '../models/get_dataset_list_response.dart';import '../models/get_dataset_list_response400.dart';import '../models/get_dataset_read_response.dart';import '../models/get_dataset_read_response400.dart';import '../models/patch_dataset_update_request.dart';import '../models/patch_dataset_update_response.dart';import '../models/patch_dataset_update_response400.dart';import '../models/post_dataset_create_request.dart';import '../models/post_dataset_create_response.dart';import '../models/post_dataset_create_response400.dart';import '../models/post_dataset_update_request.dart';import '../models/post_dataset_update_response.dart';import '../models/post_dataset_update_response400.dart';/// DatasetApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_dataset_delete_response.dart';import '../models/delete_dataset_delete_response400.dart';import '../models/delete_dataset_delete_response404.dart';import '../models/get_dataset_list_response.dart';import '../models/get_dataset_list_response400.dart';import '../models/get_dataset_read_response.dart';import '../models/get_dataset_read_response400.dart';import '../models/patch_dataset_update_request.dart';import '../models/patch_dataset_update_response.dart';import '../models/patch_dataset_update_response400.dart';import '../models/post_dataset_create_request.dart';import '../models/post_dataset_create_response.dart';import '../models/post_dataset_create_response400.dart';import '../models/post_dataset_update_request.dart';import '../models/post_dataset_update_response.dart';import '../models/post_dataset_update_response400.dart';/// DatasetApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -20,14 +20,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    final json = jsonDecode(response.body) as List<dynamic>;
-    return json.map((e) => GetDatasetListResponse.fromJson(e as Map<String, dynamic>)).toList();
+final json = jsonDecode(response.body);
+return (json as List<dynamic>).map((e) => GetDatasetListResponse.fromJson(e as Map<String, dynamic>)).toList();
   },
   onError: (response) {
-    return GetDatasetListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return GetDatasetListResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -43,13 +50,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return GetDatasetReadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return GetDatasetReadResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return GetDatasetReadResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return GetDatasetReadResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -67,13 +82,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return PostDatasetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostDatasetUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostDatasetUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostDatasetUpdateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -91,13 +114,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return PatchDatasetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PatchDatasetUpdateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PatchDatasetUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PatchDatasetUpdateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 
@@ -106,7 +137,7 @@ return execute(
 /// Deletes a dataset given a datasetId.
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
-Future<ApiResult<DeleteDatasetDeleteResponse, DeleteDatasetDeleteResponse400>> deleteDatasetDelete({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteDatasetDeleteResponse, OneOf2<DeleteDatasetDeleteResponse400, DeleteDatasetDeleteResponse404>>> deleteDatasetDelete({required String accountId, required String datasetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -115,13 +146,24 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return DeleteDatasetDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return DeleteDatasetDeleteResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return DeleteDatasetDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return OneOf2<DeleteDatasetDeleteResponse400, DeleteDatasetDeleteResponse404>.a(DeleteDatasetDeleteResponse400.fromJson(json as Map<String, dynamic>));
+case 404:
+final json = jsonDecode(response.body);
+return OneOf2<DeleteDatasetDeleteResponse400, DeleteDatasetDeleteResponse404>.b(DeleteDatasetDeleteResponse404.fromJson(json as Map<String, dynamic>));
+default:
+return null;
+}
+
   },
 );
  } 
@@ -139,13 +181,21 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return PostDatasetCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return PostDatasetCreateResponse.fromJson(json as Map<String, dynamic>);
   },
   onError: (response) {
-    return PostDatasetCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+switch (response.statusCode) {
+case 400:
+final json = jsonDecode(response.body);
+return PostDatasetCreateResponse400.fromJson(json as Map<String, dynamic>);
+default:
+return null;
+}
+
   },
 );
  } 

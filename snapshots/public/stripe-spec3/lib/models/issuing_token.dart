@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_card.dart';import 'issuing_network_token_network_data.dart';import 'issuing_token_card.dart';/// The token service provider / card network associated with the token.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_network_token_network_data.dart';import 'issuing_token_card.dart';/// The token service provider / card network associated with the token.
 @immutable final class IssuingTokenNetwork {const IssuingTokenNetwork._(this.value);
 
 factory IssuingTokenNetwork.fromJson(String json) { return switch (json) {
@@ -110,7 +110,7 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class IssuingToken {const IssuingToken({required this.card, required this.created, required this.id, required this.livemode, required this.network, required this.networkUpdatedAt, required this.object, required this.status, this.deviceFingerprint = const Omittable.absent(), this.last4, this.networkData, this.walletProvider, });
 
 factory IssuingToken.fromJson(Map<String, dynamic> json) { return IssuingToken(
-  card: OneOf2.parse(json['card'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),),
+  card: IssuingTokenCard.fromJson(json['card']),
   created: (json['created'] as num).toInt(),
   deviceFingerprint: json.containsKey('device_fingerprint') ? Omittable(json['device_fingerprint'] as String?) : const Omittable.absent(),
   id: json['id'] as String,

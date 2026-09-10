@@ -6,7 +6,7 @@ factory ZonesZoneSettingsResponseCollection.fromJson(Map<String, dynamic> json) 
   errors: (json['errors'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZonesMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: (json['result'] as List<dynamic>?)?.map((e) => ZonesZoneSettingsResponseCollectionResult.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>?)?.map(ZonesZoneSettingsResponseCollectionResult.fromJson).toList(),
 ); }
 
 final List<ZonesMessages2> errors;

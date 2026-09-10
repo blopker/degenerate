@@ -6,7 +6,7 @@ factory PostIssuingDisputesDisputeRequest.fromJson(Map<String, dynamic> json) { 
   amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
   evidence: json['evidence'] != null ? PostIssuingDisputesDisputeRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostIssuingDisputesDisputeRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostIssuingDisputesDisputeRequestMetadata.fromJson(json['metadata']) : null,
 ); }
 
 /// The dispute amount in the card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).

@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'PostProductsIdRequestUnitLabelVariant2($value)'; } 
  }
-typedef PostProductsIdRequestUnitLabel = OneOf2<String,PostProductsIdRequestUnitLabelVariant2>;
+/// A label that represents units of this product. When set, this will be included in customers' receipts, invoices, Checkout, and the customer portal. May only be set if `type=service`.
+@immutable
+final class PostProductsIdRequestUnitLabel {
+  const PostProductsIdRequestUnitLabel({this.string = const Omittable.absent(),
+this.postProductsIdRequestUnitLabelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const PostProductsIdRequestUnitLabel._({required this.rawValue, required this.string,
+required this.postProductsIdRequestUnitLabelVariant2,});
+  factory PostProductsIdRequestUnitLabel.fromJson(Object? json) => PostProductsIdRequestUnitLabel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+postProductsIdRequestUnitLabelVariant2: parseAnyOfVariant<PostProductsIdRequestUnitLabelVariant2>(json, (value) => PostProductsIdRequestUnitLabelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<PostProductsIdRequestUnitLabelVariant2> postProductsIdRequestUnitLabelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || postProductsIdRequestUnitLabelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (postProductsIdRequestUnitLabelVariant2.isPresent) postProductsIdRequestUnitLabelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is PostProductsIdRequestUnitLabel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'PostProductsIdRequestUnitLabel(${toJson()})';
+}

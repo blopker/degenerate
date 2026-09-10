@@ -29,7 +29,7 @@ bool get isUnknown { return !values.contains(this); }
 ///  - See how well my chatbot handles customer support
 ///  - Check if o4-mini is better at my usecase than gpt-4o
 /// 
-@immutable final class Eval {const Eval({required this.id, required this.name, required this.dataSourceConfig, required this.testingCriteria, required this.createdAt, required this.metadata, this.object = EvalObject.eval, });
+@immutable final class Eval {const Eval({required this.object, required this.id, required this.name, required this.dataSourceConfig, required this.testingCriteria, required this.createdAt, required this.metadata, });
 
 factory Eval.fromJson(Map<String, dynamic> json) { return Eval(
   object: EvalObject.fromJson(json['object'] as String),

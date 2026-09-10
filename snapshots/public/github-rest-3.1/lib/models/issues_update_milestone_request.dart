@@ -25,11 +25,11 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'IssuesUpdateMilestoneRequestState($value)'; } 
  }
-@immutable final class IssuesUpdateMilestoneRequest {const IssuesUpdateMilestoneRequest({this.title, this.state = IssuesUpdateMilestoneRequestState.open, this.description, this.dueOn, });
+@immutable final class IssuesUpdateMilestoneRequest {const IssuesUpdateMilestoneRequest({this.title, this.state, this.description, this.dueOn, });
 
 factory IssuesUpdateMilestoneRequest.fromJson(Map<String, dynamic> json) { return IssuesUpdateMilestoneRequest(
   title: json['title'] as String?,
-  state: json.containsKey('state') ? IssuesUpdateMilestoneRequestState.fromJson(json['state'] as String) : IssuesUpdateMilestoneRequestState.open,
+  state: json['state'] != null ? IssuesUpdateMilestoneRequestState.fromJson(json['state'] as String) : null,
   description: json['description'] as String?,
   dueOn: json['due_on'] != null ? DateTime.parse(json['due_on'] as String) : null,
 ); }
@@ -38,7 +38,7 @@ factory IssuesUpdateMilestoneRequest.fromJson(Map<String, dynamic> json) { retur
 final String? title;
 
 /// The state of the milestone. Either `open` or `closed`.
-final IssuesUpdateMilestoneRequestState state;
+final IssuesUpdateMilestoneRequestState? state;
 
 /// A description of the milestone.
 final String? description;
@@ -46,14 +46,16 @@ final String? description;
 /// The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
 final DateTime? dueOn;
 
+/// The value with the schema default applied when absent.
+IssuesUpdateMilestoneRequestState get stateOrDefault { return state ?? IssuesUpdateMilestoneRequestState.fromJson('open'); } 
 Map<String, dynamic> toJson() { return {
   'title': ?title,
-  'state': state.toJson(),
+  if (state != null) 'state': state?.toJson(),
   'description': ?description,
   if (dueOn != null) 'due_on': dueOn?.toIso8601String(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'title', 'state', 'description', 'due_on'}.contains(key)); } 
-IssuesUpdateMilestoneRequest copyWith({String? Function()? title, IssuesUpdateMilestoneRequestState Function()? state, String? Function()? description, DateTime? Function()? dueOn, }) { return IssuesUpdateMilestoneRequest(
+IssuesUpdateMilestoneRequest copyWith({String? Function()? title, IssuesUpdateMilestoneRequestState? Function()? state, String? Function()? description, DateTime? Function()? dueOn, }) { return IssuesUpdateMilestoneRequest(
   title: title != null ? title() : this.title,
   state: state != null ? state() : this.state,
   description: description != null ? description() : this.description,

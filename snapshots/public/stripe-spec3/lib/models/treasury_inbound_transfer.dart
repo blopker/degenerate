@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inbound_transfers.dart';import 'treasury_inbound_transfer_transaction.dart';import 'treasury_inbound_transfers_resource_failure_details.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_linked_flows.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_status_transitions.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inbound_transfers.dart';import 'treasury_inbound_transfer_transaction.dart';import 'treasury_inbound_transfers_resource_failure_details.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_linked_flows.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryInboundTransferObject {const TreasuryInboundTransferObject._(this.value);
 
 factory TreasuryInboundTransferObject.fromJson(String json) { return switch (json) {
@@ -78,7 +78,7 @@ factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) { return Tre
   statementDescriptor: json['statement_descriptor'] as String,
   status: TreasuryInboundTransferStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null) : const Omittable.absent(),
+  transaction: json.containsKey('transaction') ? Omittable(json['transaction'] != null ? TreasuryInboundTransferTransaction.fromJson(json['transaction']) : null) : const Omittable.absent(),
 ); }
 
 /// Amount (in cents) transferred.

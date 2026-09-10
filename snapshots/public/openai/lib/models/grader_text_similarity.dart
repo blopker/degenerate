@@ -79,7 +79,7 @@ bool get isUnknown { return !values.contains(this); }
  }
 /// A TextSimilarityGrader object which grades text based on similarity metrics.
 /// 
-@immutable final class GraderTextSimilarity {const GraderTextSimilarity({required this.name, required this.input, required this.reference, required this.evaluationMetric, this.type = GraderTextSimilarityType.textSimilarity, });
+@immutable final class GraderTextSimilarity {const GraderTextSimilarity({required this.type, required this.name, required this.input, required this.reference, required this.evaluationMetric, });
 
 factory GraderTextSimilarity.fromJson(Map<String, dynamic> json) { return GraderTextSimilarity(
   type: GraderTextSimilarityType.fromJson(json['type'] as String),

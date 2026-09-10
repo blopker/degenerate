@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_summary_customer.dart';import 'credit_balance.dart';import 'customer.dart';import 'deleted_customer.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_summary_customer.dart';import 'credit_balance.dart';/// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingCreditBalanceSummaryObject {const BillingCreditBalanceSummaryObject._(this.value);
 
 factory BillingCreditBalanceSummaryObject.fromJson(String json) { return switch (json) {
@@ -27,7 +27,7 @@ bool get isUnknown { return !values.contains(this); }
 
 factory BillingCreditBalanceSummary.fromJson(Map<String, dynamic> json) { return BillingCreditBalanceSummary(
   balances: (json['balances'] as List<dynamic>).map((e) => CreditBalance.fromJson(e as Map<String, dynamic>)).toList(),
-  customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
+  customer: BillingCreditBalanceSummaryCustomer.fromJson(json['customer']),
   customerAccount: json.containsKey('customer_account') ? Omittable(json['customer_account'] as String?) : const Omittable.absent(),
   livemode: json['livemode'] as bool,
   object: BillingCreditBalanceSummaryObject.fromJson(json['object'] as String),

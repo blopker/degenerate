@@ -4,28 +4,38 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 
 @immutable
 final class Input {
-  const Input({this.limit = 100, this.offset = 0});
+  const Input({this.limit, this.offset});
 
   factory Input.fromJson(Map<String, dynamic> json) {
     return Input(
-      limit: json.containsKey('limit') ? (json['limit'] as num).toInt() : 100,
-      offset: json.containsKey('offset') ? (json['offset'] as num).toInt() : 0,
+      limit: json['limit'] != null ? (json['limit'] as num).toInt() : null,
+      offset: json['offset'] != null ? (json['offset'] as num).toInt() : null,
     );
   }
 
-  final int limit;
+  final int? limit;
 
-  final int offset;
+  final int? offset;
+
+  /// The value with the schema default applied when absent.
+  int get limitOrDefault {
+    return limit ?? 100;
+  }
+
+  /// The value with the schema default applied when absent.
+  int get offsetOrDefault {
+    return offset ?? 0;
+  }
 
   Map<String, dynamic> toJson() {
-    return {'limit': limit, 'offset': offset};
+    return {'limit': ?limit, 'offset': ?offset};
   }
 
   static bool canParse(Map<String, dynamic> json) {
     return json.keys.any((key) => const {'limit', 'offset'}.contains(key));
   }
 
-  Input copyWith({int Function()? limit, int Function()? offset}) {
+  Input copyWith({int? Function()? limit, int? Function()? offset}) {
     return Input(
       limit: limit != null ? limit() : this.limit,
       offset: offset != null ? offset() : this.offset,

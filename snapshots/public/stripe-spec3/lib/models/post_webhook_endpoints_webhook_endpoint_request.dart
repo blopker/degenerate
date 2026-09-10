@@ -786,11 +786,11 @@ bool get isUnknown { return !values.contains(this); }
 @immutable final class PostWebhookEndpointsWebhookEndpointRequest {const PostWebhookEndpointsWebhookEndpointRequest({this.description, this.disabled, this.enabledEvents, this.expand, this.metadata, this.url, });
 
 factory PostWebhookEndpointsWebhookEndpointRequest.fromJson(Map<String, dynamic> json) { return PostWebhookEndpointsWebhookEndpointRequest(
-  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostWebhookEndpointsWebhookEndpointRequestDescriptionVariant2.fromJson(v as String),) : null,
+  description: json['description'] != null ? PostWebhookEndpointsWebhookEndpointRequestDescription.fromJson(json['description']) : null,
   disabled: json['disabled'] as bool?,
   enabledEvents: (json['enabled_events'] as List<dynamic>?)?.map((e) => PostWebhookEndpointsWebhookEndpointRequestEnabledEvents.fromJson(e as String)).toList(),
   expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostWebhookEndpointsWebhookEndpointRequestMetadataVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? PostWebhookEndpointsWebhookEndpointRequestMetadata.fromJson(json['metadata']) : null,
   url: json['url'] as String?,
 ); }
 

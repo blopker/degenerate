@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Instruction for creating a new file via the apply_patch tool.
-@immutable final class ApplyPatchCreateFileOperationParam {const ApplyPatchCreateFileOperationParam({required this.path, required this.diff, this.type = 'create_file', });
+@immutable final class ApplyPatchCreateFileOperationParam {const ApplyPatchCreateFileOperationParam({required this.type, required this.path, required this.diff, });
 
 factory ApplyPatchCreateFileOperationParam.fromJson(Map<String, dynamic> json) { return ApplyPatchCreateFileOperationParam(
   type: json['type'] as String,

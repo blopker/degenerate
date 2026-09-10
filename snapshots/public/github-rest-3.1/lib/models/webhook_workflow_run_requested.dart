@@ -30,7 +30,7 @@ factory WebhookWorkflowRunRequested.fromJson(Map<String, dynamic> json) { return
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
-  workflow: WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>),
+  workflow: json['workflow'] != null ? WebhooksWorkflow.fromJson(json['workflow'] as Map<String, dynamic>) : null,
   workflowRun: WebhookWorkflowRunRequestedWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>),
 ); }
 
@@ -46,7 +46,7 @@ final RepositoryWebhooks repository;
 
 final SimpleUser sender;
 
-final WebhooksWorkflow workflow;
+final WebhooksWorkflow? workflow;
 
 final WebhookWorkflowRunRequestedWorkflowRun workflowRun;
 
@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   if (organization != null) 'organization': organization?.toJson(),
   'repository': repository.toJson(),
   'sender': sender.toJson(),
-  'workflow': workflow.toJson(),
+  'workflow': workflow?.toJson(),
   'workflow_run': workflowRun.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
@@ -65,14 +65,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('sender') &&
       json.containsKey('workflow') &&
       json.containsKey('workflow_run'); } 
-WebhookWorkflowRunRequested copyWith({WebhookWorkflowRunRequestedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? workflow, WebhookWorkflowRunRequestedWorkflowRun? workflowRun, }) { return WebhookWorkflowRunRequested(
+WebhookWorkflowRunRequested copyWith({WebhookWorkflowRunRequestedAction? action, EnterpriseWebhooks? Function()? enterprise, SimpleInstallation? Function()? installation, OrganizationSimpleWebhooks? Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, WebhooksWorkflow? Function()? workflow, WebhookWorkflowRunRequestedWorkflowRun? workflowRun, }) { return WebhookWorkflowRunRequested(
   action: action ?? this.action,
   enterprise: enterprise != null ? enterprise() : this.enterprise,
   installation: installation != null ? installation() : this.installation,
   organization: organization != null ? organization() : this.organization,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
-  workflow: workflow ?? this.workflow,
+  workflow: workflow != null ? workflow() : this.workflow,
   workflowRun: workflowRun ?? this.workflowRun,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -20,10 +20,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return AccountCallCallNotificationInstance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return AccountCallCallNotificationInstance.fromJson(json as Map<String, dynamic>);
   },
 );
  } 
@@ -65,10 +66,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return execute(
+return await execute(
   request,
   onSuccess: (response) {
-    return ListCallNotificationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+final json = jsonDecode(response.body);
+return ListCallNotificationResponse.fromJson(json as Map<String, dynamic>);
   },
 );
  } 

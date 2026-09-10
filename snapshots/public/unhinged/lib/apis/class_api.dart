@@ -32,10 +32,11 @@ final class ClassApi with ApiExecutor {
       options: options,
     );
 
-    return execute(
+    return await execute(
       request,
       onSuccess: (response) {
-        return Self.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+        final json = jsonDecode(response.body);
+        return Self.fromJson(json as Map<String, dynamic>);
       },
     );
   }

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_note_refund_refund.dart';import 'credit_notes_payment_record_refund.dart';import 'refund.dart';/// Type of the refund, one of `refund` or `payment_record_refund`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_note_refund_refund.dart';import 'credit_notes_payment_record_refund.dart';/// Type of the refund, one of `refund` or `payment_record_refund`.
 @immutable final class CreditNoteRefundType {const CreditNoteRefundType._(this.value);
 
 factory CreditNoteRefundType.fromJson(String json) { return switch (json) {
@@ -31,7 +31,7 @@ bool get isUnknown { return !values.contains(this); }
 factory CreditNoteRefund.fromJson(Map<String, dynamic> json) { return CreditNoteRefund(
   amountRefunded: (json['amount_refunded'] as num).toInt(),
   paymentRecordRefund: json.containsKey('payment_record_refund') ? Omittable(json['payment_record_refund'] != null ? CreditNotesPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null) : const Omittable.absent(),
-  refund: OneOf2.parse(json['refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),),
+  refund: CreditNoteRefundRefund.fromJson(json['refund']),
   type: json.containsKey('type') ? Omittable(json['type'] != null ? CreditNoteRefundType.fromJson(json['type'] as String) : null) : const Omittable.absent(),
 ); }
 

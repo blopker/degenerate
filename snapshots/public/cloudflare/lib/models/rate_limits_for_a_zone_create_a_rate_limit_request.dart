@@ -3,7 +3,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action.dart';import 'firewall_match.dart';import 'firewall_period.dart';import 'firewall_threshold.dart';@immutable final class RateLimitsForAZoneCreateARateLimitRequest {const RateLimitsForAZoneCreateARateLimitRequest({required this.action, required this.match, required this.period, required this.threshold, });
 
 factory RateLimitsForAZoneCreateARateLimitRequest.fromJson(Map<String, dynamic> json) { return RateLimitsForAZoneCreateARateLimitRequest(
-  action: FirewallAction.fromJson(json['action'] as Map<String, dynamic>),
+  action: FirewallAction.fromJson(json['action']),
   match: FirewallMatch.fromJson(json['match'] as Map<String, dynamic>),
   period: FirewallPeriod.fromJson(json['period'] as num),
   threshold: FirewallThreshold.fromJson(json['threshold'] as num),

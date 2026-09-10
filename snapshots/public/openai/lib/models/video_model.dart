@@ -33,4 +33,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'VideoModelVariant2($value)'; } 
  }
-typedef VideoModel = OneOf2<String,VideoModelVariant2>;
+
+@immutable
+final class VideoModel {
+  const VideoModel({this.string = const Omittable.absent(),
+this.videoModelVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const VideoModel._({required this.rawValue, required this.string,
+required this.videoModelVariant2,});
+  factory VideoModel.fromJson(Object? json) => VideoModel._(
+    rawValue: Omittable(json),
+    string: parseAnyOfVariant<String>(json, (value) => value! as String),
+videoModelVariant2: parseAnyOfVariant<VideoModelVariant2>(json, (value) => VideoModelVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<String> string;
+final Omittable<VideoModelVariant2> videoModelVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => string.isPresent || videoModelVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (string.isPresent) string.value,
+if (videoModelVariant2.isPresent) videoModelVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is VideoModel && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'VideoModel(${toJson()})';
+}

@@ -4,7 +4,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_in
 
 factory AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestAiSearchOptionsQueryRewrite(
   enabled: json['enabled'] as bool?,
-  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant1.fromJson(v as String), fromB: (v) => AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModelVariant2.fromJson(v as String),) : null,
+  model: json['model'] != null ? AiSearchInstanceSearchRequestAiSearchOptionsQueryRewriteModel.fromJson(json['model']) : null,
   rewritePrompt: json['rewrite_prompt'] as String?,
 ); }
 

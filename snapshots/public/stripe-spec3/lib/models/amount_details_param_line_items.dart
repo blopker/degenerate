@@ -21,4 +21,39 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'AmountDetailsParamLineItemsVariant2($value)'; } 
  }
-typedef AmountDetailsParamLineItems = OneOf2<List<AmountDetailsParamLineItemsVariant1>,AmountDetailsParamLineItemsVariant2>;
+
+@immutable
+final class AmountDetailsParamLineItems {
+  const AmountDetailsParamLineItems({this.listAmountDetailsParamLineItemsVariant1 = const Omittable.absent(),
+this.amountDetailsParamLineItemsVariant2 = const Omittable.absent(),}) : rawValue = const Omittable.absent();
+  const AmountDetailsParamLineItems._({required this.rawValue, required this.listAmountDetailsParamLineItemsVariant1,
+required this.amountDetailsParamLineItemsVariant2,});
+  factory AmountDetailsParamLineItems.fromJson(Object? json) => AmountDetailsParamLineItems._(
+    rawValue: Omittable(json),
+    listAmountDetailsParamLineItemsVariant1: parseAnyOfVariant<List<AmountDetailsParamLineItemsVariant1>>(json, (value) => (value! as List<dynamic>).map((e) => AmountDetailsParamLineItemsVariant1.fromJson(e as Map<String, dynamic>)).toList()),
+amountDetailsParamLineItemsVariant2: parseAnyOfVariant<AmountDetailsParamLineItemsVariant2>(json, (value) => AmountDetailsParamLineItemsVariant2.fromJson(value! as String)),
+  );
+
+  /// Original wire value when decoded. Typed views do not replace this payload.
+  final Omittable<Object?> rawValue;
+  final Omittable<List<AmountDetailsParamLineItemsVariant1>> listAmountDetailsParamLineItemsVariant1;
+final Omittable<AmountDetailsParamLineItemsVariant2> amountDetailsParamLineItemsVariant2;
+
+  /// Whether at least one known variant matched.
+  bool get isValid => listAmountDetailsParamLineItemsVariant1.isPresent || amountDetailsParamLineItemsVariant2.isPresent;
+  bool get isUnknown => rawValue.isPresent && !isValid;
+
+  /// Decoded values round-trip exactly; constructed views must agree.
+  Object? toJson() => rawValue.isPresent ? rawValue.value : mergeAnyOf([
+    if (listAmountDetailsParamLineItemsVariant1.isPresent) listAmountDetailsParamLineItemsVariant1.value?.map((e) => e.toJson()).toList(),
+if (amountDetailsParamLineItemsVariant2.isPresent) amountDetailsParamLineItemsVariant2.value?.toJson(),
+  ]);
+
+  @override
+  bool operator ==(Object other) => identical(this, other) ||
+      other is AmountDetailsParamLineItems && jsonValueEquals(toJson(), other.toJson());
+  @override
+  int get hashCode => jsonValueHash(toJson());
+  @override
+  String toString() => 'AmountDetailsParamLineItems(${toJson()})';
+}
