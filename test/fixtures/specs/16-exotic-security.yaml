@@ -1,0 +1,85 @@
+openapi: "3.1.1"
+
+info:
+  title: Exotic Security API
+  version: "1.0.0"
+
+security:
+  - CookieAuth: []
+
+paths:
+  /secure:
+    get:
+      operationId: secureRead
+      security:  # Replaces global setting, per the spec, when defined, so re-include it for both
+        - CookieAuth: []
+          QueryAuth: []
+      responses:
+        200:
+          description: Authorized
+        401:
+          description: Unauthorized
+  /maybe-secure:
+    get:
+      operationId: maybeSecureRead
+      security:
+        - {}     # Explicitly permits auth to be optional
+        - CookieAuth: []
+          QueryAuth: []
+      responses:
+        200:
+          description: Authorized
+        401:
+          description: Unauthorized
+  /roulette-secure:
+    get:
+      operationId: rouletteSecureRead
+      security:  # Permit any combination of supported authentication options - one, the other, both, neither
+        - {}
+        - CookieAuth: []
+        - QueryAuth: []
+        - CookieAuth: []
+          QueryAuth: []
+      responses:
+        200:
+          description: Authorized
+        401:
+          description: Unauthorized
+  /less-secure:
+    get:
+      operationId: lessSecureRead  # Only the global security setting
+      responses:
+        200:
+          description: Authorized
+        401:
+          description: Unauthorized
+  /least-secure:
+    get:
+      operationId: leastSecureRead
+      security:  # The querystring is notoriously not great for security
+        - QueryAuth: []
+      responses:
+        200:
+          description: Authorized
+        401:
+          description: Unauthorized
+  /insecure:
+    get:
+      operationId: insecureRead
+      security: []  # No security at all!
+      responses:
+        200:
+          description: Authorized
+        401:
+          description: Unauthorized
+
+components:
+  securitySchemes:
+    CookieAuth:
+      type: apiKey
+      name: sessionid
+      in: cookie
+    QueryAuth:
+      type: apiKey
+      name: apiKey
+      in: query

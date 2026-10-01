@@ -747,3 +747,28 @@ String primitiveToJsonExpr(
         : 'switch ($accessor) { final bytes? => base64Encode(bytes), _ => null }',
   _ => accessor,
 };
+
+class SecurityLocations {
+  const SecurityLocations({
+    required this.query,
+    required this.header,
+    required this.cookie,
+  });
+
+  final bool query;
+  final bool header;
+  final bool cookie;
+
+  static const none = SecurityLocations(
+    query: false,
+    header: false,
+    cookie: false,
+  );
+}
+
+class SecurityNeeds {
+  const SecurityNeeds({this.op, required this.global});
+
+  final SecurityLocations? op;
+  final SecurityLocations global;
+}

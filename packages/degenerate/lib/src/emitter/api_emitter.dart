@@ -17,6 +17,8 @@ class ApiEmitter {
     this.unwrapFields = const [],
     this.omittable = OmittableMode.nullableOnly,
     this.responsePlans = const {},
+    this.securitySchemes = const [],
+    this.globalSecurityLocations = SecurityLocations.none,
   });
 
   /// The API group to emit.
@@ -32,6 +34,12 @@ class ApiEmitter {
   final OmittableMode omittable;
 
   final Map<IrOperation, OperationResponsePlans> responsePlans;
+
+  // All securitySchemes used by any operation in this API
+  final List<IrSecurityScheme> securitySchemes;
+
+  // All locations where spec-wide security values are passed
+  final SecurityLocations globalSecurityLocations;
 
   /// Wrapper around [buildFromJsonCode] that passes the type registry.
   String _fromJson(
@@ -253,6 +261,42 @@ class ApiEmitter {
       ),
     );
 
+    // Sanity check to ensure we don't leave out any defaults relied upon by auth mechanisms
+    final securityNeeds = SecurityNeeds(
+      op: op.securityRequirements != null
+          ? SecurityLocations(
+              query:
+                  op.securityRequirements?.any(
+                    (sr) => sr.schemes.keys.any(
+                      (scheme) => securitySchemes.any(
+                        (ss) => ss.name == scheme && ss.location == 'query',
+                      ),
+                    ),
+                  ) ??
+                  false,
+              header:
+                  op.securityRequirements?.any(
+                    (sr) => sr.schemes.keys.any(
+                      (scheme) => securitySchemes.any(
+                        (ss) => ss.name == scheme && ss.location == 'header',
+                      ),
+                    ),
+                  ) ??
+                  false,
+              cookie:
+                  op.securityRequirements?.any(
+                    (sr) => sr.schemes.keys.any(
+                      (scheme) => securitySchemes.any(
+                        (ss) => ss.name == scheme && ss.location == 'cookie',
+                      ),
+                    ),
+                  ) ??
+                  false,
+            )
+          : null,
+      global: globalSecurityLocations,
+    );
+
     final successPlan =
         responsePlans[op]?.success ??
         planResponses(
@@ -278,6 +322,7 @@ class ApiEmitter {
       queryParams: queryParams,
       headerParams: headerParams,
       cookieParams: cookieParams,
+      securityNeeds: securityNeeds,
     );
 
     final docs = <String>[];
@@ -432,6 +477,7 @@ class ApiEmitter {
     required List<IrParameter> queryParams,
     required List<IrParameter> headerParams,
     required List<IrParameter> cookieParams,
+    required SecurityNeeds securityNeeds,
     (SpecString, IrMediaType)? requestBodyContent,
     IrType? bodyType,
   }) {
@@ -470,7 +516,8 @@ class ApiEmitter {
       }
     }
 
-    if (queryParams.isNotEmpty) {
+    if (queryParams.isNotEmpty ||
+        (securityNeeds.op?.query ?? securityNeeds.global.query)) {
       buf.writeln(
         'final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};',
       );
@@ -481,7 +528,8 @@ class ApiEmitter {
       buf.writeln();
     }
 
-    if (cookieParams.isNotEmpty) {
+    if (cookieParams.isNotEmpty ||
+        (securityNeeds.op?.cookie ?? securityNeeds.global.cookie)) {
       buf.writeln(
         'final cookies = <String, String>{...apiConfig.defaultCookies};',
       );
@@ -531,11 +579,13 @@ class ApiEmitter {
     buf.writeln('  path: $path,');
     buf.writeln('  headers: headers,');
 
-    if (queryParams.isNotEmpty) {
+    if (queryParams.isNotEmpty ||
+        (securityNeeds.op?.query ?? securityNeeds.global.query)) {
       buf.writeln('  queryParameters: queryParameters,');
       buf.writeln('  queryParametersList: queryParametersList,');
     }
-    if (cookieParams.isNotEmpty) {
+    if (cookieParams.isNotEmpty ||
+        (securityNeeds.op?.cookie ?? securityNeeds.global.cookie)) {
       buf.writeln('  cookies: cookies,');
     }
 
@@ -998,6 +1048,41 @@ class ApiEmitter {
       ),
     );
 
+    final securityNeeds = SecurityNeeds(
+      op: op.securityRequirements != null
+          ? SecurityLocations(
+              query:
+                  op.securityRequirements?.any(
+                    (sr) => sr.schemes.keys.any(
+                      (scheme) => securitySchemes.any(
+                        (ss) => ss.name == scheme && ss.location == 'query',
+                      ),
+                    ),
+                  ) ??
+                  false,
+              header:
+                  op.securityRequirements?.any(
+                    (sr) => sr.schemes.keys.any(
+                      (scheme) => securitySchemes.any(
+                        (ss) => ss.name == scheme && ss.location == 'header',
+                      ),
+                    ),
+                  ) ??
+                  false,
+              cookie:
+                  op.securityRequirements?.any(
+                    (sr) => sr.schemes.keys.any(
+                      (scheme) => securitySchemes.any(
+                        (ss) => ss.name == scheme && ss.location == 'cookie',
+                      ),
+                    ),
+                  ) ??
+                  false,
+            )
+          : null,
+      global: globalSecurityLocations,
+    );
+
     final streaming = streamingContent(op)!;
     final streamKind = streaming.$3;
     // Prefer itemSchema (per-event type) over schema (full response type).
@@ -1014,6 +1099,7 @@ class ApiEmitter {
       queryParams: queryParams,
       headerParams: headerParams,
       cookieParams: cookieParams,
+      securityNeeds: securityNeeds,
     );
 
     final docs = <String>[];
@@ -1043,6 +1129,7 @@ class ApiEmitter {
     required List<IrParameter> queryParams,
     required List<IrParameter> headerParams,
     required List<IrParameter> cookieParams,
+    required SecurityNeeds securityNeeds,
     StreamKind streamKind = StreamKind.sse,
     (SpecString, IrMediaType)? requestBodyContent,
     IrType? bodyType,
@@ -1081,7 +1168,8 @@ class ApiEmitter {
       }
     }
 
-    if (queryParams.isNotEmpty) {
+    if (queryParams.isNotEmpty ||
+        (securityNeeds.op?.query ?? securityNeeds.global.query)) {
       buf.writeln(
         'final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};',
       );
@@ -1092,7 +1180,8 @@ class ApiEmitter {
       buf.writeln();
     }
 
-    if (cookieParams.isNotEmpty) {
+    if (cookieParams.isNotEmpty ||
+        (securityNeeds.op?.cookie ?? securityNeeds.global.cookie)) {
       buf.writeln(
         'final cookies = <String, String>{...apiConfig.defaultCookies};',
       );
@@ -1139,11 +1228,13 @@ class ApiEmitter {
     buf.writeln('  method: ${httpMethod.literal},');
     buf.writeln('  path: $path,');
     buf.writeln('  headers: headers,');
-    if (queryParams.isNotEmpty) {
+    if (queryParams.isNotEmpty ||
+        (securityNeeds.op?.query ?? securityNeeds.global.query)) {
       buf.writeln('  queryParameters: queryParameters,');
       buf.writeln('  queryParametersList: queryParametersList,');
     }
-    if (cookieParams.isNotEmpty) {
+    if (cookieParams.isNotEmpty ||
+        (securityNeeds.op?.cookie ?? securityNeeds.global.cookie)) {
       buf.writeln('  cookies: cookies,');
     }
 

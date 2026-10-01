@@ -235,6 +235,22 @@ class FileEmitter {
       );
     }
 
+    // Pre-calculate where spec-wide security fields are located
+    final globalSecuritySchemes = securitySchemes
+        .where(
+          (scheme) =>
+              globalSecurity?.any(
+                (sr) => sr.schemes.containsKey(scheme.name),
+              ) ??
+              false,
+        )
+        .toList();
+    final globalSecurityLocations = SecurityLocations(
+      query: globalSecuritySchemes.any((gss) => gss.location == 'query'),
+      header: globalSecuritySchemes.any((gss) => gss.location == 'header'),
+      cookie: globalSecuritySchemes.any((gss) => gss.location == 'cookie'),
+    );
+
     // Emit API files
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
@@ -245,6 +261,18 @@ class FileEmitter {
         unwrapFields: unwrapFields,
         omittable: omittable,
         responsePlans: responsePlans,
+        securitySchemes: securitySchemes
+            .where(
+              (scheme) => api.operations.any(
+                (op) =>
+                    op.securityRequirements?.any(
+                      (sr) => sr.schemes.containsKey(scheme.name),
+                    ) ??
+                    false,
+              ),
+            )
+            .toList(),
+        globalSecurityLocations: globalSecurityLocations,
       );
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
