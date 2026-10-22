@@ -612,10 +612,12 @@ class IrMapper {
     final properties =
         schema['properties'] as Map<String, dynamic>? ?? <String, dynamic>{};
     final fields = <IrField>[];
+    final usedFieldNames = <String>{};
 
     for (final entry in properties.entries) {
       final fieldOriginalName = entry.key;
-      final fieldDartName = sanitizeFieldName(toCamelCase(fieldOriginalName));
+      final fieldDartName = deduplicateName(sanitizeFieldName(toCamelCase(fieldOriginalName)), usedFieldNames);
+      usedFieldNames.add(fieldDartName);
       // Property values can be boolean schemas (true/false) in JSON Schema.
       // Treat boolean schemas as unconstrained (true) or impossible (false).
       if (entry.value is! Map<String, dynamic>) {
